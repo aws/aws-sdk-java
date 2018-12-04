@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class CreatePipelineResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineId", targetDepth)) {
                     context.nextToken();
-                    createPipelineResult.setPipelineId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createPipelineResult.setPipelineId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteCertificateRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteCertificateRequestMarshaller implements
         Marshaller<Request<DeleteCertificateRequest>, DeleteCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteCertificateRequest> marshall(
             DeleteCertificateRequest deleteCertificateRequest) {
@@ -63,11 +72,14 @@ public class DeleteCertificateRequestMarshaller implements
 
         String uriResourcePath = "/certificates/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (deleteCertificateRequest.getCertificateId() == null) ? ""
-                        : StringUtils.fromString(deleteCertificateRequest
-                                .getCertificateId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{certificateId}",
+                        (deleteCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteCertificateRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

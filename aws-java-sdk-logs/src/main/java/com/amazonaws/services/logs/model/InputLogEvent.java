@@ -21,7 +21,7 @@ import java.io.Serializable;
 /**
  * <p>
  * A log event is a record of some activity that was recorded by the application
- * or resource being monitored. The log event record that Amazon CloudWatch Logs
+ * or resource being monitored. The log event record that CloudWatch Logs
  * understands contains two properties: the timestamp of when the event
  * occurred, and the raw event message.
  * </p>
@@ -35,6 +35,7 @@ public class InputLogEvent implements Serializable, Cloneable {
     /**
      * @param timestamp
      */
+
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
@@ -42,6 +43,7 @@ public class InputLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getTimestamp() {
         return this.timestamp;
     }
@@ -51,6 +53,7 @@ public class InputLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InputLogEvent withTimestamp(Long timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -59,6 +62,7 @@ public class InputLogEvent implements Serializable, Cloneable {
     /**
      * @param message
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -66,6 +70,7 @@ public class InputLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -75,6 +80,7 @@ public class InputLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InputLogEvent withMessage(String message) {
         setMessage(message);
         return this;

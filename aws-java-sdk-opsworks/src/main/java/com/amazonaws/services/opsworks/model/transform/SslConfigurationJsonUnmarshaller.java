@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class SslConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
-                    sslConfiguration.setCertificate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sslConfiguration.setCertificate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateKey", targetDepth)) {
                     context.nextToken();
-                    sslConfiguration.setPrivateKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sslConfiguration.setPrivateKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Chain", targetDepth)) {
                     context.nextToken();
-                    sslConfiguration.setChain(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sslConfiguration.setChain(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

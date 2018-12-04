@@ -35,8 +35,11 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      */
     private String macAddress;
     /**
@@ -55,6 +58,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @param ipv4Address
      *        The Internet Protocol version 4 (IPv4) address of the interface.
      */
+
     public void setIpv4Address(String ipv4Address) {
         this.ipv4Address = ipv4Address;
     }
@@ -66,6 +70,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * 
      * @return The Internet Protocol version 4 (IPv4) address of the interface.
      */
+
     public String getIpv4Address() {
         return this.ipv4Address;
     }
@@ -80,6 +85,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withIpv4Address(String ipv4Address) {
         setIpv4Address(ipv4Address);
         return this;
@@ -89,14 +95,20 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @param macAddress
      *        The Media Access Control (MAC) address of the interface.</p>
-     *        <note>This is currently unsupported and will not be returned in
-     *        output.
+     *        <note>
+     *        <p>
+     *        This is currently unsupported and will not be returned in output.
+     *        </p>
      */
+
     public void setMacAddress(String macAddress) {
         this.macAddress = macAddress;
     }
@@ -105,13 +117,19 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @return The Media Access Control (MAC) address of the interface.</p>
-     *         <note>This is currently unsupported and will not be returned in
-     *         output.
+     *         <note>
+     *         <p>
+     *         This is currently unsupported and will not be returned in output.
+     *         </p>
      */
+
     public String getMacAddress() {
         return this.macAddress;
     }
@@ -120,16 +138,22 @@ public class NetworkInterface implements Serializable, Cloneable {
      * <p>
      * The Media Access Control (MAC) address of the interface.
      * </p>
-     * <note>This is currently unsupported and will not be returned in
-     * output.</note>
+     * <note>
+     * <p>
+     * This is currently unsupported and will not be returned in output.
+     * </p>
+     * </note>
      * 
      * @param macAddress
      *        The Media Access Control (MAC) address of the interface.</p>
-     *        <note>This is currently unsupported and will not be returned in
-     *        output.
+     *        <note>
+     *        <p>
+     *        This is currently unsupported and will not be returned in output.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withMacAddress(String macAddress) {
         setMacAddress(macAddress);
         return this;
@@ -145,6 +169,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      *        The Internet Protocol version 6 (IPv6) address of the interface.
      *        <i>Currently not supported</i>.
      */
+
     public void setIpv6Address(String ipv6Address) {
         this.ipv6Address = ipv6Address;
     }
@@ -158,6 +183,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return The Internet Protocol version 6 (IPv6) address of the interface.
      *         <i>Currently not supported</i>.
      */
+
     public String getIpv6Address() {
         return this.ipv6Address;
     }
@@ -174,6 +200,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterface withIpv6Address(String ipv6Address) {
         setIpv6Address(ipv6Address);
         return this;

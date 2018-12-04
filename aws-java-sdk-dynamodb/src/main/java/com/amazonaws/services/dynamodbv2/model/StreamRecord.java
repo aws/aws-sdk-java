@@ -97,6 +97,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return The primary key attribute(s) for the DynamoDB item that was
      *         modified.
      */
+
     public java.util.Map<String, AttributeValue> getKeys() {
         return keys;
     }
@@ -110,6 +111,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        The primary key attribute(s) for the DynamoDB item that was
      *        modified.
      */
+
     public void setKeys(java.util.Map<String, AttributeValue> keys) {
         this.keys = keys;
     }
@@ -125,6 +127,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamRecord withKeys(java.util.Map<String, AttributeValue> keys) {
         setKeys(keys);
         return this;
@@ -145,6 +148,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * Removes all the entries added into Keys. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public StreamRecord clearKeysEntries() {
         this.keys = null;
         return this;
@@ -158,6 +162,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return The item in the DynamoDB table as it appeared after it was
      *         modified.
      */
+
     public java.util.Map<String, AttributeValue> getNewImage() {
         return newImage;
     }
@@ -171,6 +176,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        The item in the DynamoDB table as it appeared after it was
      *        modified.
      */
+
     public void setNewImage(java.util.Map<String, AttributeValue> newImage) {
         this.newImage = newImage;
     }
@@ -186,6 +192,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamRecord withNewImage(
             java.util.Map<String, AttributeValue> newImage) {
         setNewImage(newImage);
@@ -207,6 +214,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * Removes all the entries added into NewImage. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public StreamRecord clearNewImageEntries() {
         this.newImage = null;
         return this;
@@ -220,6 +228,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return The item in the DynamoDB table as it appeared before it was
      *         modified.
      */
+
     public java.util.Map<String, AttributeValue> getOldImage() {
         return oldImage;
     }
@@ -233,6 +242,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        The item in the DynamoDB table as it appeared before it was
      *        modified.
      */
+
     public void setOldImage(java.util.Map<String, AttributeValue> oldImage) {
         this.oldImage = oldImage;
     }
@@ -248,6 +258,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamRecord withOldImage(
             java.util.Map<String, AttributeValue> oldImage) {
         setOldImage(oldImage);
@@ -269,6 +280,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * Removes all the entries added into OldImage. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public StreamRecord clearOldImageEntries() {
         this.oldImage = null;
         return this;
@@ -282,6 +294,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @param sequenceNumber
      *        The sequence number of the stream record.
      */
+
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
@@ -293,6 +306,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * 
      * @return The sequence number of the stream record.
      */
+
     public String getSequenceNumber() {
         return this.sequenceNumber;
     }
@@ -307,6 +321,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamRecord withSequenceNumber(String sequenceNumber) {
         setSequenceNumber(sequenceNumber);
         return this;
@@ -320,6 +335,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @param sizeBytes
      *        The size of the stream record, in bytes.
      */
+
     public void setSizeBytes(Long sizeBytes) {
         this.sizeBytes = sizeBytes;
     }
@@ -331,6 +347,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * 
      * @return The size of the stream record, in bytes.
      */
+
     public Long getSizeBytes() {
         return this.sizeBytes;
     }
@@ -345,6 +362,7 @@ public class StreamRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamRecord withSizeBytes(Long sizeBytes) {
         setSizeBytes(sizeBytes);
         return this;
@@ -411,6 +429,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *        </li>
      * @see StreamViewType
      */
+
     public void setStreamViewType(String streamViewType) {
         this.streamViewType = streamViewType;
     }
@@ -475,6 +494,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         </li>
      * @see StreamViewType
      */
+
     public String getStreamViewType() {
         return this.streamViewType;
     }
@@ -542,6 +562,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamRecord withStreamViewType(String streamViewType) {
         setStreamViewType(streamViewType);
         return this;
@@ -606,10 +627,9 @@ public class StreamRecord implements Serializable, Cloneable {
      *        images of the item.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
+
     public void setStreamViewType(StreamViewType streamViewType) {
         this.streamViewType = streamViewType.toString();
     }
@@ -677,6 +697,7 @@ public class StreamRecord implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamRecord withStreamViewType(StreamViewType streamViewType) {
         setStreamViewType(streamViewType);
         return this;

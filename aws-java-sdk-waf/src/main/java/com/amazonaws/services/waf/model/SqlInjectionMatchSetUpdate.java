@@ -62,6 +62,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *        <code>SqlInjectionMatchSet</code>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -81,6 +82,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *         <code>SqlInjectionMatchSet</code>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -103,6 +105,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public SqlInjectionMatchSetUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -122,10 +125,9 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *        <a>SqlInjectionMatchSet</a>. Use <code>DELETE</code> to remove a
      *        <code>SqlInjectionMatchSetUpdate</code> from a
      *        <code>SqlInjectionMatchSet</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -148,6 +150,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public SqlInjectionMatchSetUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -165,6 +168,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *        inspect for snippets of malicious SQL code and, if you want AWS
      *        WAF to inspect a header, the name of the header.
      */
+
     public void setSqlInjectionMatchTuple(
             SqlInjectionMatchTuple sqlInjectionMatchTuple) {
         this.sqlInjectionMatchTuple = sqlInjectionMatchTuple;
@@ -181,6 +185,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      *         inspect for snippets of malicious SQL code and, if you want AWS
      *         WAF to inspect a header, the name of the header.
      */
+
     public SqlInjectionMatchTuple getSqlInjectionMatchTuple() {
         return this.sqlInjectionMatchTuple;
     }
@@ -199,6 +204,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSetUpdate withSqlInjectionMatchTuple(
             SqlInjectionMatchTuple sqlInjectionMatchTuple) {
         setSqlInjectionMatchTuple(sqlInjectionMatchTuple);

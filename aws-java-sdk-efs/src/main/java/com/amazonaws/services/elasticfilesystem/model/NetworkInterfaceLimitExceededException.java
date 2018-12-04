@@ -49,6 +49,7 @@ public class NetworkInterfaceLimitExceededException extends
     /**
      * @param errorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -56,6 +57,7 @@ public class NetworkInterfaceLimitExceededException extends
     /**
      * @return
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -65,6 +67,7 @@ public class NetworkInterfaceLimitExceededException extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkInterfaceLimitExceededException withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;

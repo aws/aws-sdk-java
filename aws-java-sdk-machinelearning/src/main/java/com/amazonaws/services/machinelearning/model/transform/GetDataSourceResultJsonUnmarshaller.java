@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,66 +55,64 @@ public class GetDataSourceResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataSourceId", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setDataSourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setDataSourceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataLocationS3", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult
-                            .setDataLocationS3(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDataSourceResult.setDataLocationS3(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult
-                            .setDataRearrangement(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDataSourceResult.setDataRearrangement(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult
-                            .setCreatedByIamUser(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDataSourceResult.setCreatedByIamUser(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setLastUpdatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setLastUpdatedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("DataSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setDataSizeInBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setDataSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfFiles", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setNumberOfFiles(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setNumberOfFiles(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setLogUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setLogUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RedshiftMetadata", targetDepth)) {
                     context.nextToken();
@@ -128,20 +128,19 @@ public class GetDataSourceResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult.setRoleARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDataSourceResult.setRoleARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputeStatistics", targetDepth)) {
                     context.nextToken();
                     getDataSourceResult
-                            .setComputeStatistics(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setComputeStatistics(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSourceSchema", targetDepth)) {
                     context.nextToken();
-                    getDataSourceResult
-                            .setDataSourceSchema(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDataSourceResult.setDataSourceSchema(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

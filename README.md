@@ -6,7 +6,7 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 
 * [SDK Homepage][sdk-website]
 * [API Docs][docs-api]
-* [Developer Guide][docs-guide]
+* [Developer Guide][docs-guide] ([source][docs-guide-source])
 * [Forum][sdk-forum]
 * [Issues][sdk-issues]
 * [SDK Blog][blog]
@@ -39,7 +39,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.10.49</version>
+      <version>1.11.2</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -102,16 +102,17 @@ mvn clean install -Dgpg.skip=true
 
 ## Supported Versions
 
-* **1.10.x** - Recommended.
+* **1.11.x** - Recommended.
 
-* **1.9.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
-    1.10.x version of the SDK.
+* **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
+    1.11.x version of the SDK.
 
 [aws-iam-credentials]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://java.awsblog.com
 [docs-api]: http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/index.html
 [docs-guide]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/welcome.html
+[docs-guide-source]: https://github.com/awsdocs/aws-java-developer-guide
 [docs-java-env]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-java-env.html
 [docs-signup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/getting-started-signup.html
 [docs-setup]: http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-install-sdk.html

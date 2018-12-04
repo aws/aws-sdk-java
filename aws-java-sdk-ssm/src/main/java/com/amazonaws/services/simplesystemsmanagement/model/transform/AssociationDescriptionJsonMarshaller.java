@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AssociationDescriptionMarshaller
@@ -39,62 +34,64 @@ import com.amazonaws.util.json.*;
 public class AssociationDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AssociationDescription associationDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (associationDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (associationDescription.getName() != null) {
-                jsonWriter.key("Name").value(associationDescription.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        associationDescription.getName());
             }
-
             if (associationDescription.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         associationDescription.getInstanceId());
             }
-
             if (associationDescription.getDate() != null) {
-                jsonWriter.key("Date").value(associationDescription.getDate());
+                jsonGenerator.writeFieldName("Date").writeValue(
+                        associationDescription.getDate());
             }
-
             if (associationDescription.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 AssociationStatusJsonMarshaller.getInstance().marshall(
-                        associationDescription.getStatus(), jsonWriter);
+                        associationDescription.getStatus(), jsonGenerator);
             }
 
             java.util.Map<String, java.util.List<String>> parametersMap = associationDescription
                     .getParameters();
             if (parametersMap != null) {
-                jsonWriter.key("Parameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
                         .entrySet()) {
                     if (parametersMapValue.getValue() != null) {
-                        jsonWriter.key(parametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(parametersMapValue
+                                .getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (String parametersMapValueList : parametersMapValue
                                 .getValue()) {
                             if (parametersMapValueList != null) {
-                                jsonWriter.value(parametersMapValueList);
+                                jsonGenerator
+                                        .writeValue(parametersMapValueList);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

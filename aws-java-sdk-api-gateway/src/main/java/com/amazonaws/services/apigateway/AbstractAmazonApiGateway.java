@@ -44,6 +44,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateAuthorizerResult createAuthorizer(
+            CreateAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBasePathMappingResult createBasePathMapping(
             CreateBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -82,73 +88,91 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
-    public void deleteApiKey(DeleteApiKeyRequest request) {
+    public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteBasePathMapping(DeleteBasePathMappingRequest request) {
+    public DeleteAuthorizerResult deleteAuthorizer(
+            DeleteAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteClientCertificate(DeleteClientCertificateRequest request) {
+    public DeleteBasePathMappingResult deleteBasePathMapping(
+            DeleteBasePathMappingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDeployment(DeleteDeploymentRequest request) {
+    public DeleteClientCertificateResult deleteClientCertificate(
+            DeleteClientCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDomainName(DeleteDomainNameRequest request) {
+    public DeleteDeploymentResult deleteDeployment(
+            DeleteDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteIntegration(DeleteIntegrationRequest request) {
+    public DeleteDomainNameResult deleteDomainName(
+            DeleteDomainNameRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteIntegrationResponse(
+    public DeleteIntegrationResult deleteIntegration(
+            DeleteIntegrationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteIntegrationResponseResult deleteIntegrationResponse(
             DeleteIntegrationResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMethod(DeleteMethodRequest request) {
+    public DeleteMethodResult deleteMethod(DeleteMethodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMethodResponse(DeleteMethodResponseRequest request) {
+    public DeleteMethodResponseResult deleteMethodResponse(
+            DeleteMethodResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteModel(DeleteModelRequest request) {
+    public DeleteModelResult deleteModel(DeleteModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteResource(DeleteResourceRequest request) {
+    public DeleteResourceResult deleteResource(DeleteResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteRestApi(DeleteRestApiRequest request) {
+    public DeleteRestApiResult deleteRestApi(DeleteRestApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStage(DeleteStageRequest request) {
+    public DeleteStageResult deleteStage(DeleteStageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void flushStageCache(FlushStageCacheRequest request) {
+    public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(
+            FlushStageAuthorizersCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public FlushStageCacheResult flushStageCache(FlushStageCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,6 +194,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public GetApiKeysResult getApiKeys(GetApiKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAuthorizerResult getAuthorizer(GetAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAuthorizersResult getAuthorizers(GetAuthorizersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +248,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public GetDomainNamesResult getDomainNames(GetDomainNamesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExportResult getExport(GetExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -291,6 +330,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public ImportRestApiResult importRestApi(ImportRestApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutIntegrationResult putIntegration(PutIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -313,6 +357,17 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public PutRestApiResult putRestApi(PutRestApiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(
+            TestInvokeAuthorizerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestInvokeMethodResult testInvokeMethod(
             TestInvokeMethodRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -325,6 +380,12 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(
+            UpdateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

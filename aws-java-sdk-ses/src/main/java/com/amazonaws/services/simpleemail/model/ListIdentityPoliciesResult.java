@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a list of policy names returned from a successful
- * <code>ListIdentityPolicies</code> request.
- * </p>
+ * 
  */
 public class ListIdentityPoliciesResult implements Serializable, Cloneable {
 
@@ -40,6 +37,7 @@ public class ListIdentityPoliciesResult implements Serializable, Cloneable {
      * 
      * @return A list of names of policies that apply to the specified identity.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -55,6 +53,7 @@ public class ListIdentityPoliciesResult implements Serializable, Cloneable {
      * @param policyNames
      *        A list of names of policies that apply to the specified identity.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -81,6 +80,7 @@ public class ListIdentityPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoliciesResult withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -102,6 +102,7 @@ public class ListIdentityPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoliciesResult withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);

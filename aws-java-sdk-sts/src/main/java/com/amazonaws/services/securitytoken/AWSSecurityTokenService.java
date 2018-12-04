@@ -33,33 +33,35 @@ import com.amazonaws.services.securitytoken.model.*;
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
  * >Temporary Security Credentials</a>.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
+ * <note>
+ * <p>
+ * As an alternative to using the API, you can use one of the AWS SDKs, which
+ * consist of libraries and sample code for various programming languages and
+ * platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
  * convenient way to create programmatic access to STS. For example, the SDKs
  * take care of cryptographically signing requests, managing errors, and
  * retrying requests automatically. For information about the AWS SDKs,
  * including how to download and install them, see the <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * For information about setting up signatures and authorization through the
  * API, go to <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * target="_blank">Signing AWS API Requests</a> in the <i>AWS General
- * Reference</i>. For general information about the Query API, go to <a href=
+ * >Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For
+ * general information about the Query API, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
- * target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For
- * information about using security tokens with other AWS products, go to <a
- * href=
+ * >Making Query Requests</a> in <i>Using IAM</i>. For information about using
+ * security tokens with other AWS products, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
- * >AWS Services That Work with IAM</a> in the <i>Using IAM</i>.
+ * >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
  * specific AWS product, you can find the product's technical documentation at
- * <a href="http://aws.amazon.com/documentation/"
- * target="_blank">http://aws.amazon.com/documentation/</a>.
+ * <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/
+ * documentation/</a>.
  * </p>
  * <p>
  * <b>Endpoints</b>
@@ -67,11 +69,11 @@ import com.amazonaws.services.securitytoken.model.*;
  * <p>
  * The AWS Security Token Service (STS) has a default endpoint of
  * https://sts.amazonaws.com that maps to the US East (N. Virginia) region.
- * Additional regions are available, but must first be activated in the AWS
- * Management Console before you can use a different region's endpoint. For more
- * information about activating a region for STS see <a href=
+ * Additional regions are available and are activated by default. For more
+ * information, see <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating STS in a New Region</a> in the <i>Using IAM</i>.
+ * >Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User
+ * Guide</i>.
  * </p>
  * <p>
  * For information about STS endpoints, see <a
@@ -156,13 +158,17 @@ public interface AWSSecurityTokenService {
      * key ID, a secret access key, and a security token) that you can use to
      * access AWS resources that you might not normally have access to.
      * Typically, you use <code>AssumeRole</code> for cross-account access or
-     * federation.
+     * federation. For a comparison of <code>AssumeRole</code> with the other
+     * APIs that produce temporary credentials, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html"
+     * >Requesting Temporary Security Credentials</a> and <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
+     * >Comparing the AWS STS APIs</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>Important:</b> You cannot call <code>AssumeRole</code> by using AWS
-     * account credentials; access will be denied. You must use IAM user
-     * credentials or temporary security credentials to call
-     * <code>AssumeRole</code>.
+     * root account credentials; access is denied. You must use credentials for
+     * an IAM user or an IAM role to call <code>AssumeRole</code>.
      * </p>
      * <p>
      * For cross-account access, imagine that you own multiple accounts and need
@@ -174,7 +180,7 @@ public interface AWSSecurityTokenService {
      * access all the other accounts by assuming roles in those accounts. For
      * more information about roles, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
-     * Roles (Delegation and Federation)</a> in the <i>Using IAM</i>.
+     * Roles (Delegation and Federation)</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For federation, you can, for example, grant single sign-on access to the
@@ -187,12 +193,20 @@ public interface AWSSecurityTokenService {
      * those temporary security credentials, you construct a sign-in URL that
      * users can use to access the console. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html#sts-introduction"
-     * >Common Scenarios for Temporary Credentials</a> in the <i>Using IAM</i>.
+     * >Common Scenarios for Temporary Credentials</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <p>
      * The temporary security credentials are valid for the duration that you
      * specified when calling <code>AssumeRole</code>, which can be from 900
-     * seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour.
+     * seconds (15 minutes) to a maximum of 3600 seconds (1 hour). The default
+     * is 1 hour.
+     * </p>
+     * <p>
+     * The temporary security credentials created by <code>AssumeRole</code> can
+     * be used to make API calls to any AWS service with the following
+     * exception: you cannot call the STS service's
+     * <code>GetFederationToken</code> or <code>GetSessionToken</code> APIs.
      * </p>
      * <p>
      * Optionally, you can pass an IAM access policy to this operation. If you
@@ -201,7 +215,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -209,13 +223,23 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * To assume a role, your AWS account must be trusted by the role. The trust
      * relationship is defined in the role's trust policy when the role is
-     * created. You must also have a policy that allows you to call
-     * <code>sts:AssumeRole</code>.
+     * created. That trust policy states which accounts are allowed to delegate
+     * access to this account's role.
+     * </p>
+     * <p>
+     * The user who wants to access the role must also have permissions
+     * delegated from the role's administrator. If the user is in a different
+     * account than the role, then the user's administrator must attach a policy
+     * that allows the user to call AssumeRole on the ARN of the role in the
+     * other account. If the user is in the same account as the role, then you
+     * can either attach a policy to the user (identical to the previous
+     * different account user), or you can add the user as a principal directly
+     * in the role's trust policy
      * </p>
      * <p>
      * <b>Using MFA with AssumeRole</b>
@@ -237,7 +261,8 @@ public interface AWSSecurityTokenService {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/MFAProtectedAPI.html"
-     * >Configuring MFA-Protected API Access</a> in the <i>Using IAM</i> guide.
+     * >Configuring MFA-Protected API Access</a> in the <i>IAM User Guide</i>
+     * guide.
      * </p>
      * <p>
      * To use MFA with <code>AssumeRole</code>, you pass values for the
@@ -246,11 +271,6 @@ public interface AWSSecurityTokenService {
      * MFA device. The <code>TokenCode</code> is the time-based one-time
      * password (TOTP) that the MFA devices produces.
      * </p>
-     * <member name="RoleArn" target="arnType"/> <member name="RoleSessionName"
-     * target="userNameType"/> <member name="Policy"
-     * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-     * target="roleDurationSecondsType"/> <member name="ExternalId"
-     * target="externalIdType"/>
      * 
      * @param assumeRoleRequest
      * @return Result of the AssumeRole operation returned by the service.
@@ -263,12 +283,12 @@ public interface AWSSecurityTokenService {
      *         is, in packed form, as a percentage of what the API allows.
      * @throws RegionDisabledException
      *         STS is not activated in the requested region for the account that
-     *         is being asked to create temporary credentials. The account
-     *         administrator must activate STS in that region using the IAM
-     *         Console. For more information, see <a href=
+     *         is being asked to generate credentials. The account administrator
+     *         must use the IAM console to activate STS in that region. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>Using IAM</i>.
+     *         <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRole
      */
     AssumeRoleResult assumeRole(AssumeRoleRequest assumeRoleRequest);
@@ -279,19 +299,33 @@ public interface AWSSecurityTokenService {
      * authenticated via a SAML authentication response. This operation provides
      * a mechanism for tying an enterprise identity store or directory to
      * role-based AWS access without user-specific credentials or configuration.
+     * For a comparison of <code>AssumeRoleWithSAML</code> with the other APIs
+     * that produce temporary credentials, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html"
+     * >Requesting Temporary Security Credentials</a> and <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
+     * >Comparing the AWS STS APIs</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The temporary security credentials returned by this operation consist of
      * an access key ID, a secret access key, and a security token. Applications
      * can use these temporary security credentials to sign calls to AWS
-     * services. The credentials are valid for the duration that you specified
-     * when calling <code>AssumeRoleWithSAML</code>, which can be up to 3600
-     * seconds (1 hour) or until the time specified in the SAML authentication
-     * response's <code>SessionNotOnOrAfter</code> value, whichever is shorter.
+     * services.
      * </p>
-     * <note>The maximum duration for a session is 1 hour, and the minimum
-     * duration is 15 minutes, even if values outside this range are specified.
-     * </note>
+     * <p>
+     * The temporary security credentials are valid for the duration that you
+     * specified when calling <code>AssumeRole</code>, or until the time
+     * specified in the SAML authentication response's
+     * <code>SessionNotOnOrAfter</code> value, whichever is shorter. The
+     * duration can be from 900 seconds (15 minutes) to a maximum of 3600
+     * seconds (1 hour). The default is 1 hour.
+     * </p>
+     * <p>
+     * The temporary security credentials created by
+     * <code>AssumeRoleWithSAML</code> can be used to make API calls to any AWS
+     * service with the following exception: you cannot call the STS service's
+     * <code>GetFederationToken</code> or <code>GetSessionToken</code> APIs.
+     * </p>
      * <p>
      * Optionally, you can pass an IAM access policy to this operation. If you
      * choose not to pass a policy, the temporary security credentials that are
@@ -299,7 +333,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -307,7 +341,7 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithSAML</code>, you
@@ -323,27 +357,51 @@ public interface AWSSecurityTokenService {
      * keys in the metadata document that is uploaded for the SAML provider
      * entity for your identity provider.
      * </p>
+     * <important>
+     * <p>
+     * Calling <code>AssumeRoleWithSAML</code> can result in an entry in your
+     * AWS CloudTrail logs. The entry includes the value in the
+     * <code>NameID</code> element of the SAML assertion. We recommend that you
+     * use a NameIDType that is not associated with any personally identifiable
+     * information (PII). For example, you could instead use the Persistent
+     * Identifier (
+     * <code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
+     * </p>
+     * </important>
      * <p>
      * For more information, see the following resources:
      * </p>
      * <ul>
-     * <li><a href=
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html"
-     * >About SAML 2.0-based Federation</a> in the <i>Using IAM</i>.</li>
-     * <li><a href=
+     * >About SAML 2.0-based Federation</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml.html"
-     * >Creating SAML Identity Providers</a> in the <i>Using IAM</i>.</li>
-     * <li><a href=
+     * >Creating SAML Identity Providers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_saml_relying-party.html"
-     * >Configuring a Relying Party and Claims</a> in the <i>Using IAM</i>.</li>
-     * <li><a href=
+     * >Configuring a Relying Party and Claims</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_saml.html"
-     * >Creating a Role for SAML 2.0 Federation</a> in the <i>Using IAM</i>.</li>
+     * >Creating a Role for SAML 2.0 Federation</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * </li>
      * </ul>
-     * <member name="RoleArn" target="arnType"/> <member name="SAMLAssertion"
-     * target="SAMLAssertionType"/> <member name="Policy"
-     * target="sessionPolicyDocumentType"/> <member name="DurationSeconds"
-     * target="roleDurationSecondsType"/>
      * 
      * @param assumeRoleWithSAMLRequest
      * @return Result of the AssumeRoleWithSAML operation returned by the
@@ -372,12 +430,12 @@ public interface AWSSecurityTokenService {
      *         then retry the request.
      * @throws RegionDisabledException
      *         STS is not activated in the requested region for the account that
-     *         is being asked to create temporary credentials. The account
-     *         administrator must activate STS in that region using the IAM
-     *         Console. For more information, see <a href=
+     *         is being asked to generate credentials. The account administrator
+     *         must use the IAM console to activate STS in that region. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>Using IAM</i>.
+     *         <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithSAML
      */
     AssumeRoleWithSAMLResult assumeRoleWithSAML(
@@ -416,16 +474,32 @@ public interface AWSSecurityTokenService {
      * credentials without including long-term AWS credentials in the
      * application, and without deploying server-based proxy services that use
      * long-term AWS credentials. Instead, the identity of the caller is
-     * validated by using a token from the web identity provider.
+     * validated by using a token from the web identity provider. For a
+     * comparison of <code>AssumeRoleWithWebIdentity</code> with the other APIs
+     * that produce temporary credentials, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html"
+     * >Requesting Temporary Security Credentials</a> and <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
+     * >Comparing the AWS STS APIs</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The temporary security credentials returned by this API consist of an
      * access key ID, a secret access key, and a security token. Applications
      * can use these temporary security credentials to sign calls to AWS service
-     * APIs. The credentials are valid for the duration that you specified when
+     * APIs.
+     * </p>
+     * <p>
+     * The credentials are valid for the duration that you specified when
      * calling <code>AssumeRoleWithWebIdentity</code>, which can be from 900
-     * seconds (15 minutes) to 3600 seconds (1 hour). By default, the temporary
-     * security credentials are valid for 1 hour.
+     * seconds (15 minutes) to a maximum of 3600 seconds (1 hour). The default
+     * is 1 hour.
+     * </p>
+     * <p>
+     * The temporary security credentials created by
+     * <code>AssumeRoleWithWebIdentity</code> can be used to make API calls to
+     * any AWS service with the following exception: you cannot call the STS
+     * service's <code>GetFederationToken</code> or <code>GetSessionToken</code>
+     * APIs.
      * </p>
      * <p>
      * Optionally, you can pass an IAM access policy to this operation. If you
@@ -434,7 +508,7 @@ public interface AWSSecurityTokenService {
      * access policy of the role that is being assumed. If you pass a policy to
      * this operation, the temporary security credentials that are returned by
      * the operation have the permissions that are allowed by both the access
-     * policy of the role that is being assumed, <i><b>and</b></i> the policy
+     * policy of the role that is being assumed, <i> <b>and</b> </i> the policy
      * that you pass. This gives you a way to further restrict the permissions
      * for the resulting temporary security credentials. You cannot use the
      * passed policy to grant permissions that are in excess of those allowed by
@@ -442,7 +516,7 @@ public interface AWSSecurityTokenService {
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * Before your application can call <code>AssumeRoleWithWebIdentity</code>,
@@ -452,31 +526,60 @@ public interface AWSSecurityTokenService {
      * with the identity token. In other words, the identity provider must be
      * specified in the role's trust policy.
      * </p>
+     * <important>
+     * <p>
+     * Calling <code>AssumeRoleWithWebIdentity</code> can result in an entry in
+     * your AWS CloudTrail logs. The entry includes the <a
+     * href="http://openid.net/specs/openid-connect-core-1_0.html#Claims"
+     * >Subject</a> of the provided Web Identity Token. We recommend that you
+     * avoid using any personally identifiable information (PII) in this field.
+     * For example, you could instead use a GUID or a pairwise identifier, as <a
+     * href
+     * ="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes"
+     * >suggested in the OIDC specification</a>.
+     * </p>
+     * </important>
      * <p>
      * For more information about how to use web identity federation and the
      * <code>AssumeRoleWithWebIdentity</code> API, see the following resources:
      * </p>
      * <ul>
-     * <li><a href=
+     * <li>
+     * <p>
+     * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual"
      * >Using Web Identity Federation APIs for Mobile Apps</a> and <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
-     * >Federation Through a Web-based Identity Provider</a>.</li>
-     * <li><a href=
+     * >Federation Through a Web-based Identity Provider</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
      * "https://web-identity-federation-playground.s3.amazonaws.com/index.html">
      * Web Identity Federation Playground</a>. This interactive website lets you
      * walk through the process of authenticating via Login with Amazon,
      * Facebook, or Google, getting temporary security credentials, and then
-     * using those credentials to make a request to AWS.</li>
-     * <li><a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
+     * using those credentials to make a request to AWS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/sdkforios/">AWS SDK for iOS</a> and <a
      * href="http://aws.amazon.com/sdkforandroid/">AWS SDK for Android</a>.
      * These toolkits contain sample apps that show how to invoke the identity
      * providers, and then how to use the information from these providers to
-     * get and use temporary security credentials.</li>
-     * <li><a href="http://aws.amazon.com/articles/4617974389850313">Web
-     * Identity Federation with Mobile Applications</a>. This article discusses
-     * web identity federation and shows an example of how to use web identity
-     * federation to get access to content in Amazon S3.</li>
+     * get and use temporary security credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/articles/4617974389850313">Web Identity
+     * Federation with Mobile Applications</a>. This article discusses web
+     * identity federation and shows an example of how to use web identity
+     * federation to get access to content in Amazon S3.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param assumeRoleWithWebIdentityRequest
@@ -514,12 +617,12 @@ public interface AWSSecurityTokenService {
      *         then retry the request.
      * @throws RegionDisabledException
      *         STS is not activated in the requested region for the account that
-     *         is being asked to create temporary credentials. The account
-     *         administrator must activate STS in that region using the IAM
-     *         Console. For more information, see <a href=
+     *         is being asked to generate credentials. The account administrator
+     *         must use the IAM console to activate STS in that region. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>Using IAM</i>.
+     *         <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.AssumeRoleWithWebIdentity
      */
     AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(
@@ -537,9 +640,13 @@ public interface AWSSecurityTokenService {
      * response). Some AWS actions additionally return an encoded message that
      * can provide details about this authorization failure.
      * </p>
-     * <note> Only certain AWS actions return an encoded authorization message.
-     * The documentation for an individual action indicates whether that action
-     * returns an encoded message in addition to returning an HTTP code. </note>
+     * <note>
+     * <p>
+     * Only certain AWS actions return an encoded authorization message. The
+     * documentation for an individual action indicates whether that action
+     * returns an encoded message in addition to returning an HTTP code.
+     * </p>
+     * </note>
      * <p>
      * The message is encoded because the details of the authorization status
      * can constitute privileged information that the user who requested the
@@ -552,15 +659,35 @@ public interface AWSSecurityTokenService {
      * The decoded message includes the following type of information:
      * </p>
      * <ul>
-     * <li>Whether the request was denied due to an explicit deny or due to the
+     * <li>
+     * <p>
+     * Whether the request was denied due to an explicit deny or due to the
      * absence of an explicit allow. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-denyallow"
-     * >Determining Whether a Request is Allowed or Denied</a> in the <i>Using
-     * IAM</i>.</li>
-     * <li>The principal who made the request.</li>
-     * <li>The requested action.</li>
-     * <li>The requested resource.</li>
-     * <li>The values of condition keys in the context of the user's request.</li>
+     * >Determining Whether a Request is Allowed or Denied</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The principal who made the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The requested action.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The requested resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The values of condition keys in the context of the user's request.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param decodeAuthorizationMessageRequest
@@ -578,6 +705,20 @@ public interface AWSSecurityTokenService {
 
     /**
      * <p>
+     * Returns details about the IAM identity whose credentials are used to call
+     * the API.
+     * </p>
+     * 
+     * @param getCallerIdentityRequest
+     * @return Result of the GetCallerIdentity operation returned by the
+     *         service.
+     * @sample AWSSecurityTokenService.GetCallerIdentity
+     */
+    GetCallerIdentityResult getCallerIdentity(
+            GetCallerIdentityRequest getCallerIdentityRequest);
+
+    /**
+     * <p>
      * Returns a set of temporary security credentials (consisting of an access
      * key ID, a secret access key, and a security token) for a federated user.
      * A typical use is in a proxy application that gets temporary security
@@ -585,7 +726,13 @@ public interface AWSSecurityTokenService {
      * network. Because you must call the <code>GetFederationToken</code> action
      * using the long-term security credentials of an IAM user, this call is
      * appropriate in contexts where those credentials can be safely stored,
-     * usually in a server-based application.
+     * usually in a server-based application. For a comparison of
+     * <code>GetFederationToken</code> with the other APIs that produce
+     * temporary credentials, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html"
+     * >Requesting Temporary Security Credentials</a> and <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
+     * >Comparing the AWS STS APIs</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -603,21 +750,39 @@ public interface AWSSecurityTokenService {
      * The <code>GetFederationToken</code> action must be called by using the
      * long-term AWS security credentials of an IAM user. You can also call
      * <code>GetFederationToken</code> using the security credentials of an AWS
-     * account (root), but this is not recommended. Instead, we recommend that
+     * root account, but we do not recommended it. Instead, we recommend that
      * you create an IAM user for the purpose of the proxy application and then
      * attach a policy to the IAM user that limits federated users to only the
-     * actions and resources they need access to. For more information, see <a
-     * href
-     * ="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
-     * >IAM Best Practices</a> in the <i>Using IAM</i>.
+     * actions and resources that they need access to. For more information, see
+     * <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM
+     * Best Practices</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The temporary security credentials that are obtained by using the
      * long-term credentials of an IAM user are valid for the specified
-     * duration, between 900 seconds (15 minutes) and 129600 seconds (36 hours).
-     * Temporary credentials that are obtained by using AWS account (root)
-     * credentials have a maximum duration of 3600 seconds (1 hour)
+     * duration, from 900 seconds (15 minutes) up to a maximium of 129600
+     * seconds (36 hours). The default is 43200 seconds (12 hours). Temporary
+     * credentials that are obtained by using AWS root account credentials have
+     * a maximum duration of 3600 seconds (1 hour).
      * </p>
+     * <p>
+     * The temporary security credentials created by
+     * <code>GetFederationToken</code> can be used to make API calls to any AWS
+     * service with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot use these credentials to call any IAM APIs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot call any STS APIs.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>Permissions</b>
      * </p>
@@ -627,9 +792,17 @@ public interface AWSSecurityTokenService {
      * following:
      * </p>
      * <ul>
-     * <li>The policy or policies that are attached to the IAM user whose
-     * credentials are used to call <code>GetFederationToken</code>.</li>
-     * <li>The policy that is passed as a parameter in the call.</li>
+     * <li>
+     * <p>
+     * The policy or policies that are attached to the IAM user whose
+     * credentials are used to call <code>GetFederationToken</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy that is passed as a parameter in the call.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The passed policy is attached to the temporary security credentials that
@@ -638,7 +811,7 @@ public interface AWSSecurityTokenService {
      * evaluates the policy attached to the federated user in combination with
      * the policy or policies attached to the IAM user whose credentials were
      * used to call <code>GetFederationToken</code>. AWS allows the federated
-     * user's request only when both the federated user <i><b>and</b></i> the
+     * user's request only when both the federated user <i> <b>and</b> </i> the
      * IAM user are explicitly allowed to perform the requested action. The
      * passed policy cannot grant more permissions than those that are defined
      * in the IAM user policy.
@@ -681,12 +854,12 @@ public interface AWSSecurityTokenService {
      *         is, in packed form, as a percentage of what the API allows.
      * @throws RegionDisabledException
      *         STS is not activated in the requested region for the account that
-     *         is being asked to create temporary credentials. The account
-     *         administrator must activate STS in that region using the IAM
-     *         Console. For more information, see <a href=
+     *         is being asked to generate credentials. The account administrator
+     *         must use the IAM console to activate STS in that region. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>Using IAM</i>.
+     *         <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetFederationToken
      */
     GetFederationTokenResult getFederationToken(
@@ -704,15 +877,41 @@ public interface AWSSecurityTokenService {
      * credentials that are returned from the call, IAM users can then make
      * programmatic calls to APIs that require MFA authentication. If you do not
      * supply a correct MFA code, then the API returns an access denied error.
+     * For a comparison of <code>GetSessionToken</code> with the other APIs that
+     * produce temporary credentials, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html"
+     * >Requesting Temporary Security Credentials</a> and <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
+     * >Comparing the AWS STS APIs</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The <code>GetSessionToken</code> action must be called by using the
      * long-term AWS security credentials of the AWS account or an IAM user.
      * Credentials that are created by IAM users are valid for the duration that
-     * you specify, between 900 seconds (15 minutes) and 129600 seconds (36
-     * hours); credentials that are created by using account credentials have a
-     * maximum duration of 3600 seconds (1 hour).
+     * you specify, from 900 seconds (15 minutes) up to a maximum of 129600
+     * seconds (36 hours), with a default of 43200 seconds (12 hours);
+     * credentials that are created by using account credentials can range from
+     * 900 seconds (15 minutes) up to a maximum of 3600 seconds (1 hour), with a
+     * default of 1 hour.
      * </p>
+     * <p>
+     * The temporary security credentials created by
+     * <code>GetSessionToken</code> can be used to make API calls to any AWS
+     * service with the following exceptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot call any IAM APIs unless MFA authentication information is
+     * included in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * We recommend that you do not call <code>GetSessionToken</code> with root
@@ -738,19 +937,19 @@ public interface AWSSecurityTokenService {
      * temporary credentials, go to <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"
      * >Temporary Credentials for Users in Untrusted Environments</a> in the
-     * <i>Using IAM</i>.
+     * <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getSessionTokenRequest
      * @return Result of the GetSessionToken operation returned by the service.
      * @throws RegionDisabledException
      *         STS is not activated in the requested region for the account that
-     *         is being asked to create temporary credentials. The account
-     *         administrator must activate STS in that region using the IAM
-     *         Console. For more information, see <a href=
+     *         is being asked to generate credentials. The account administrator
+     *         must use the IAM console to activate STS in that region. For more
+     *         information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
      *         >Activating and Deactivating AWS STS in an AWS Region</a> in the
-     *         <i>Using IAM</i>.
+     *         <i>IAM User Guide</i>.
      * @sample AWSSecurityTokenService.GetSessionToken
      */
     GetSessionTokenResult getSessionToken(

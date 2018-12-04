@@ -25,15 +25,16 @@ import java.net.URI;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.message.BasicStatusLine;
 import org.apache.http.params.HttpParams;
@@ -65,7 +66,7 @@ public class RetryPolicyTestBase {
     protected static ContextDataCollectionRetryCondition retryCondition;
     protected static ContextDataCollectionBackoffStrategy backoffStrategy;
     
-    public static void injectMockHttpClient(AmazonHttpClient amazonHttpClient, HttpClient mockHttpClient) {
+    public static void injectMockHttpClient(AmazonHttpClient amazonHttpClient, ConnectionManagerAwareHttpClient mockHttpClient) {
         try {
             Field f = AmazonHttpClient.class.getDeclaredField("httpClient");
             f.setAccessible(true);
@@ -268,7 +269,7 @@ public class RetryPolicyTestBase {
     }
     
     /** A base abstract class for fake HttpClient implementations */
-    public static abstract class MockHttpClient implements HttpClient {
+    public static abstract class MockHttpClient implements ConnectionManagerAwareHttpClient {
 
         @Override
         public abstract HttpResponse execute(HttpUriRequest request) throws IOException,
@@ -321,6 +322,11 @@ public class RetryPolicyTestBase {
                 ResponseHandler<? extends T> responseHandler,
                 HttpContext context) throws IOException,
                 ClientProtocolException { return null; }
+
+        @Override
+        public HttpClientConnectionManager getHttpClientConnectionManager() {
+            return null;
+        }
     }
     
 }

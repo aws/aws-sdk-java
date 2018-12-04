@@ -55,6 +55,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      * @param documents
      *        A batch of documents formatted in JSON or HTML.
      */
+
     public void setDocuments(java.io.InputStream documents) {
         this.documents = documents;
     }
@@ -66,6 +67,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A batch of documents formatted in JSON or HTML.
      */
+
     public java.io.InputStream getDocuments() {
         return this.documents;
     }
@@ -80,6 +82,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsRequest withDocuments(java.io.InputStream documents) {
         setDocuments(documents);
         return this;
@@ -103,6 +106,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *        <li>application/xml</li>
      * @see ContentType
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -124,6 +128,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *         <li>application/xml</li>
      * @see ContentType
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -148,6 +153,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ContentType
      */
+
     public UploadDocumentsRequest withContentType(String contentType) {
         setContentType(contentType);
         return this;
@@ -169,10 +175,9 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>application/json</li>
      *        <li>application/xml</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContentType
      */
+
     public void setContentType(ContentType contentType) {
         this.contentType = contentType.toString();
     }
@@ -197,6 +202,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ContentType
      */
+
     public UploadDocumentsRequest withContentType(ContentType contentType) {
         setContentType(contentType);
         return this;
@@ -205,6 +211,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
     /**
      * @param contentLength
      */
+
     public void setContentLength(Long contentLength) {
         this.contentLength = contentLength;
     }
@@ -212,6 +219,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public Long getContentLength() {
         return this.contentLength;
     }
@@ -221,6 +229,7 @@ public class UploadDocumentsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsRequest withContentLength(Long contentLength) {
         setContentLength(contentLength);
         return this;

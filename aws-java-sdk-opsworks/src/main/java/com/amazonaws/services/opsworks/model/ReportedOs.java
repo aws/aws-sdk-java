@@ -52,6 +52,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @param family
      *        The operating system family.
      */
+
     public void setFamily(String family) {
         this.family = family;
     }
@@ -63,6 +64,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * 
      * @return The operating system family.
      */
+
     public String getFamily() {
         return this.family;
     }
@@ -77,6 +79,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportedOs withFamily(String family) {
         setFamily(family);
         return this;
@@ -90,6 +93,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @param name
      *        The operating system name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -101,6 +105,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * 
      * @return The operating system name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -115,6 +120,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportedOs withName(String name) {
         setName(name);
         return this;
@@ -128,6 +134,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @param version
      *        The operating system version.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -139,6 +146,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * 
      * @return The operating system version.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -153,6 +161,7 @@ public class ReportedOs implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportedOs withVersion(String version) {
         setVersion(version);
         return this;

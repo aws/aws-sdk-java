@@ -50,6 +50,7 @@ public class DescribeElasticLoadBalancersRequest extends
      *        A stack ID. The action describes the stack's Elastic Load
      *        Balancing instances.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -63,6 +64,7 @@ public class DescribeElasticLoadBalancersRequest extends
      * @return A stack ID. The action describes the stack's Elastic Load
      *         Balancing instances.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -79,6 +81,7 @@ public class DescribeElasticLoadBalancersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticLoadBalancersRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -93,6 +96,7 @@ public class DescribeElasticLoadBalancersRequest extends
      * @return A list of layer IDs. The action describes the Elastic Load
      *         Balancing instances for the specified layers.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -110,6 +114,7 @@ public class DescribeElasticLoadBalancersRequest extends
      *        A list of layer IDs. The action describes the Elastic Load
      *        Balancing instances for the specified layers.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -138,6 +143,7 @@ public class DescribeElasticLoadBalancersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticLoadBalancersRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -161,6 +167,7 @@ public class DescribeElasticLoadBalancersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticLoadBalancersRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);

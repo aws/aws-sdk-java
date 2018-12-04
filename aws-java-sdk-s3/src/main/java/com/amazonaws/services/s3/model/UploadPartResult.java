@@ -15,19 +15,27 @@
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
 /**
  * Contains the details returned from Amazon S3 after calling the UploadPart
  * operation.
  */
-public class UploadPartResult extends SSEResultBase implements Serializable {
+public class UploadPartResult extends SSEResultBase
+        implements Serializable, S3RequesterChargedResult {
 
     /** The part number of the newly uploaded part */
     private int partNumber;
 
     /** The entity tag generated from the content of the upload part */
     private String eTag;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Returns the part number of the newly uploaded part.
@@ -78,5 +86,15 @@ public class UploadPartResult extends SSEResultBase implements Serializable {
      */
     public PartETag getPartETag() {
         return new PartETag(partNumber, eTag);
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 }

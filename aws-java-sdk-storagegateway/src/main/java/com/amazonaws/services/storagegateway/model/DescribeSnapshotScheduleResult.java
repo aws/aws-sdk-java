@@ -36,6 +36,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -43,6 +44,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -52,6 +54,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -60,6 +63,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param startAt
      */
+
     public void setStartAt(Integer startAt) {
         this.startAt = startAt;
     }
@@ -67,6 +71,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getStartAt() {
         return this.startAt;
     }
@@ -76,6 +81,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleResult withStartAt(Integer startAt) {
         setStartAt(startAt);
         return this;
@@ -84,6 +90,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param recurrenceInHours
      */
+
     public void setRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
     }
@@ -91,6 +98,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getRecurrenceInHours() {
         return this.recurrenceInHours;
     }
@@ -100,6 +108,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleResult withRecurrenceInHours(
             Integer recurrenceInHours) {
         setRecurrenceInHours(recurrenceInHours);
@@ -109,6 +118,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param description
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -116,6 +126,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -125,6 +136,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -133,6 +145,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @param timezone
      */
+
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
@@ -140,6 +153,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTimezone() {
         return this.timezone;
     }
@@ -149,6 +163,7 @@ public class DescribeSnapshotScheduleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSnapshotScheduleResult withTimezone(String timezone) {
         setTimezone(timezone);
         return this;

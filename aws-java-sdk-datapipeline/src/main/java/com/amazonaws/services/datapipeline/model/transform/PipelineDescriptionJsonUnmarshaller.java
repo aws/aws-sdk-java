@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class PipelineDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineId", targetDepth)) {
                     context.nextToken();
-                    pipelineDescription.setPipelineId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDescription.setPipelineId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    pipelineDescription.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDescription.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
@@ -69,8 +71,8 @@ public class PipelineDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    pipelineDescription.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDescription.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

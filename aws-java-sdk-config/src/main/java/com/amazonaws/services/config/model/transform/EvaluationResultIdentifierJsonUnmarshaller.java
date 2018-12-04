@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,9 +62,9 @@ public class EvaluationResultIdentifierJsonUnmarshaller implements
                 }
                 if (context.testExpression("OrderingTimestamp", targetDepth)) {
                     context.nextToken();
-                    evaluationResultIdentifier
-                            .setOrderingTimestamp(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    evaluationResultIdentifier.setOrderingTimestamp(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

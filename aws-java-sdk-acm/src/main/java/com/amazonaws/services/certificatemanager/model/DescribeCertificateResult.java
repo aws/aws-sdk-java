@@ -19,7 +19,7 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class DescribeCertificateResult implements Serializable, Cloneable {
 
@@ -41,6 +41,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      *        Contains a <a>CertificateDetail</a> structure that lists the
      *        fields of an ACM Certificate.
      */
+
     public void setCertificate(CertificateDetail certificate) {
         this.certificate = certificate;
     }
@@ -54,6 +55,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      * @return Contains a <a>CertificateDetail</a> structure that lists the
      *         fields of an ACM Certificate.
      */
+
     public CertificateDetail getCertificate() {
         return this.certificate;
     }
@@ -70,6 +72,7 @@ public class DescribeCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCertificateResult withCertificate(
             CertificateDetail certificate) {
         setCertificate(certificate);

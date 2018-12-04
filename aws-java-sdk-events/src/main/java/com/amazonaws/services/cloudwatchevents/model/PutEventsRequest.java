@@ -47,6 +47,7 @@ public class PutEventsRequest extends AmazonWebServiceRequest implements
      *         several parameters for the entry such as the source and type of
      *         the event, resources associated with the event, and so on.
      */
+
     public java.util.List<PutEventsRequestEntry> getEntries() {
         return entries;
     }
@@ -63,6 +64,7 @@ public class PutEventsRequest extends AmazonWebServiceRequest implements
      *        several parameters for the entry such as the source and type of
      *        the event, resources associated with the event, and so on.
      */
+
     public void setEntries(java.util.Collection<PutEventsRequestEntry> entries) {
         if (entries == null) {
             this.entries = null;
@@ -92,6 +94,7 @@ public class PutEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequest withEntries(PutEventsRequestEntry... entries) {
         if (this.entries == null) {
             setEntries(new java.util.ArrayList<PutEventsRequestEntry>(
@@ -117,6 +120,7 @@ public class PutEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsRequest withEntries(
             java.util.Collection<PutEventsRequestEntry> entries) {
         setEntries(entries);

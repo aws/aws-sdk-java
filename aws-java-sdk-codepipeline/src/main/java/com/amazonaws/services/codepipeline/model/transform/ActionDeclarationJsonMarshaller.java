@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActionDeclarationMarshaller
@@ -39,85 +34,87 @@ import com.amazonaws.util.json.*;
 public class ActionDeclarationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ActionDeclaration actionDeclaration,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (actionDeclaration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionDeclaration.getName() != null) {
-                jsonWriter.key("name").value(actionDeclaration.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        actionDeclaration.getName());
             }
-
             if (actionDeclaration.getActionTypeId() != null) {
-                jsonWriter.key("actionTypeId");
+                jsonGenerator.writeFieldName("actionTypeId");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
-                        actionDeclaration.getActionTypeId(), jsonWriter);
+                        actionDeclaration.getActionTypeId(), jsonGenerator);
             }
-
             if (actionDeclaration.getRunOrder() != null) {
-                jsonWriter.key("runOrder").value(
+                jsonGenerator.writeFieldName("runOrder").writeValue(
                         actionDeclaration.getRunOrder());
             }
 
             java.util.Map<String, String> configurationMap = actionDeclaration
                     .getConfiguration();
             if (configurationMap != null) {
-                jsonWriter.key("configuration");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("configuration");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> configurationMapValue : configurationMap
                         .entrySet()) {
                     if (configurationMapValue.getValue() != null) {
-                        jsonWriter.key(configurationMapValue.getKey());
+                        jsonGenerator.writeFieldName(configurationMapValue
+                                .getKey());
 
-                        jsonWriter.value(configurationMapValue.getValue());
+                        jsonGenerator.writeValue(configurationMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.List<OutputArtifact> outputArtifactsList = actionDeclaration
                     .getOutputArtifacts();
             if (outputArtifactsList != null) {
-                jsonWriter.key("outputArtifacts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("outputArtifacts");
+                jsonGenerator.writeStartArray();
                 for (OutputArtifact outputArtifactsListValue : outputArtifactsList) {
                     if (outputArtifactsListValue != null) {
 
                         OutputArtifactJsonMarshaller.getInstance().marshall(
-                                outputArtifactsListValue, jsonWriter);
+                                outputArtifactsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<InputArtifact> inputArtifactsList = actionDeclaration
                     .getInputArtifacts();
             if (inputArtifactsList != null) {
-                jsonWriter.key("inputArtifacts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("inputArtifacts");
+                jsonGenerator.writeStartArray();
                 for (InputArtifact inputArtifactsListValue : inputArtifactsList) {
                     if (inputArtifactsListValue != null) {
 
                         InputArtifactJsonMarshaller.getInstance().marshall(
-                                inputArtifactsListValue, jsonWriter);
+                                inputArtifactsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (actionDeclaration.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(actionDeclaration.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        actionDeclaration.getRoleArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -69,6 +69,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -86,6 +87,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -106,6 +108,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocatePublicVirtualInterfaceRequest withConnectionId(
             String connectionId) {
         setConnectionId(connectionId);
@@ -126,6 +129,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;
     }
@@ -143,6 +147,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *         <p>
      *         Default: None
      */
+
     public String getOwnerAccount() {
         return this.ownerAccount;
     }
@@ -163,6 +168,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocatePublicVirtualInterfaceRequest withOwnerAccount(
             String ownerAccount) {
         setOwnerAccount(ownerAccount);
@@ -183,6 +189,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *        <p>
      *        Default: None
      */
+
     public void setNewPublicVirtualInterfaceAllocation(
             NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation) {
         this.newPublicVirtualInterfaceAllocation = newPublicVirtualInterfaceAllocation;
@@ -201,6 +208,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      *         <p>
      *         Default: None
      */
+
     public NewPublicVirtualInterfaceAllocation getNewPublicVirtualInterfaceAllocation() {
         return this.newPublicVirtualInterfaceAllocation;
     }
@@ -221,6 +229,7 @@ public class AllocatePublicVirtualInterfaceRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AllocatePublicVirtualInterfaceRequest withNewPublicVirtualInterfaceAllocation(
             NewPublicVirtualInterfaceAllocation newPublicVirtualInterfaceAllocation) {
         setNewPublicVirtualInterfaceAllocation(newPublicVirtualInterfaceAllocation);

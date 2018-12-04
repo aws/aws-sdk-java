@@ -146,6 +146,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @param masterInstanceType
      *        The EC2 instance type of the master node.
      */
+
     public void setMasterInstanceType(String masterInstanceType) {
         this.masterInstanceType = masterInstanceType;
     }
@@ -157,6 +158,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * 
      * @return The EC2 instance type of the master node.
      */
+
     public String getMasterInstanceType() {
         return this.masterInstanceType;
     }
@@ -171,6 +173,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withMasterInstanceType(
             String masterInstanceType) {
         setMasterInstanceType(masterInstanceType);
@@ -185,6 +188,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @param slaveInstanceType
      *        The EC2 instance type of the slave nodes.
      */
+
     public void setSlaveInstanceType(String slaveInstanceType) {
         this.slaveInstanceType = slaveInstanceType;
     }
@@ -196,6 +200,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * 
      * @return The EC2 instance type of the slave nodes.
      */
+
     public String getSlaveInstanceType() {
         return this.slaveInstanceType;
     }
@@ -210,6 +215,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withSlaveInstanceType(String slaveInstanceType) {
         setSlaveInstanceType(slaveInstanceType);
         return this;
@@ -223,6 +229,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @param instanceCount
      *        The number of Amazon EC2 instances used to execute the job flow.
      */
+
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
@@ -234,6 +241,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * 
      * @return The number of Amazon EC2 instances used to execute the job flow.
      */
+
     public Integer getInstanceCount() {
         return this.instanceCount;
     }
@@ -248,6 +256,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
         return this;
@@ -260,6 +269,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * 
      * @return Configuration for the job flow's instance groups.
      */
+
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
         if (instanceGroups == null) {
             instanceGroups = new com.amazonaws.internal.SdkInternalList<InstanceGroupConfig>();
@@ -275,6 +285,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @param instanceGroups
      *        Configuration for the job flow's instance groups.
      */
+
     public void setInstanceGroups(
             java.util.Collection<InstanceGroupConfig> instanceGroups) {
         if (instanceGroups == null) {
@@ -302,6 +313,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withInstanceGroups(
             InstanceGroupConfig... instanceGroups) {
         if (this.instanceGroups == null) {
@@ -324,6 +336,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withInstanceGroups(
             java.util.Collection<InstanceGroupConfig> instanceGroups) {
         setInstanceGroups(instanceGroups);
@@ -340,6 +353,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        The name of the Amazon EC2 key pair that can be used to ssh to the
      *        master node as the user called "hadoop."
      */
+
     public void setEc2KeyName(String ec2KeyName) {
         this.ec2KeyName = ec2KeyName;
     }
@@ -353,6 +367,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return The name of the Amazon EC2 key pair that can be used to ssh to
      *         the master node as the user called "hadoop."
      */
+
     public String getEc2KeyName() {
         return this.ec2KeyName;
     }
@@ -369,6 +384,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withEc2KeyName(String ec2KeyName) {
         setEc2KeyName(ec2KeyName);
         return this;
@@ -382,6 +398,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @param placement
      *        The Availability Zone the job flow will run in.
      */
+
     public void setPlacement(PlacementType placement) {
         this.placement = placement;
     }
@@ -393,6 +410,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * 
      * @return The Availability Zone the job flow will run in.
      */
+
     public PlacementType getPlacement() {
         return this.placement;
     }
@@ -407,6 +425,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withPlacement(PlacementType placement) {
         setPlacement(placement);
         return this;
@@ -422,6 +441,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        Specifies whether the job flow should be kept alive after
      *        completing all steps.
      */
+
     public void setKeepJobFlowAliveWhenNoSteps(
             Boolean keepJobFlowAliveWhenNoSteps) {
         this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
@@ -436,6 +456,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Specifies whether the job flow should be kept alive after
      *         completing all steps.
      */
+
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
         return this.keepJobFlowAliveWhenNoSteps;
     }
@@ -452,6 +473,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withKeepJobFlowAliveWhenNoSteps(
             Boolean keepJobFlowAliveWhenNoSteps) {
         setKeepJobFlowAliveWhenNoSteps(keepJobFlowAliveWhenNoSteps);
@@ -467,6 +489,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Specifies whether the job flow should be kept alive after
      *         completing all steps.
      */
+
     public Boolean isKeepJobFlowAliveWhenNoSteps() {
         return this.keepJobFlowAliveWhenNoSteps;
     }
@@ -483,6 +506,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        instances from being terminated by API call, user intervention, or
      *        in the event of a job flow error.
      */
+
     public void setTerminationProtected(Boolean terminationProtected) {
         this.terminationProtected = terminationProtected;
     }
@@ -498,6 +522,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *         instances from being terminated by API call, user intervention,
      *         or in the event of a job flow error.
      */
+
     public Boolean getTerminationProtected() {
         return this.terminationProtected;
     }
@@ -516,6 +541,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withTerminationProtected(
             Boolean terminationProtected) {
         setTerminationProtected(terminationProtected);
@@ -533,6 +559,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *         instances from being terminated by API call, user intervention,
      *         or in the event of a job flow error.
      */
+
     public Boolean isTerminationProtected() {
         return this.terminationProtected;
     }
@@ -554,6 +581,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        the RunJobFlow call, in which case the default version of Hadoop
      *        for that AMI version is used.
      */
+
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
@@ -574,6 +602,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *         in the RunJobFlow call, in which case the default version of
      *         Hadoop for that AMI version is used.
      */
+
     public String getHadoopVersion() {
         return this.hadoopVersion;
     }
@@ -597,6 +626,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withHadoopVersion(String hadoopVersion) {
         setHadoopVersion(hadoopVersion);
         return this;
@@ -628,6 +658,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        cc1.4xlarge instance type for nodes of a job flow launched in a
      *        Amazon VPC.
      */
+
     public void setEc2SubnetId(String ec2SubnetId) {
         this.ec2SubnetId = ec2SubnetId;
     }
@@ -657,6 +688,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *         cc1.4xlarge instance type for nodes of a job flow launched in a
      *         Amazon VPC.
      */
+
     public String getEc2SubnetId() {
         return this.ec2SubnetId;
     }
@@ -689,6 +721,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withEc2SubnetId(String ec2SubnetId) {
         setEc2SubnetId(ec2SubnetId);
         return this;
@@ -703,6 +736,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the master
      *        node.
      */
+
     public void setEmrManagedMasterSecurityGroup(
             String emrManagedMasterSecurityGroup) {
         this.emrManagedMasterSecurityGroup = emrManagedMasterSecurityGroup;
@@ -716,6 +750,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the master
      *         node.
      */
+
     public String getEmrManagedMasterSecurityGroup() {
         return this.emrManagedMasterSecurityGroup;
     }
@@ -731,6 +766,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withEmrManagedMasterSecurityGroup(
             String emrManagedMasterSecurityGroup) {
         setEmrManagedMasterSecurityGroup(emrManagedMasterSecurityGroup);
@@ -746,6 +782,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the slave
      *        nodes.
      */
+
     public void setEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
         this.emrManagedSlaveSecurityGroup = emrManagedSlaveSecurityGroup;
@@ -759,6 +796,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the slave
      *         nodes.
      */
+
     public String getEmrManagedSlaveSecurityGroup() {
         return this.emrManagedSlaveSecurityGroup;
     }
@@ -774,6 +812,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withEmrManagedSlaveSecurityGroup(
             String emrManagedSlaveSecurityGroup) {
         setEmrManagedSlaveSecurityGroup(emrManagedSlaveSecurityGroup);
@@ -790,6 +829,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        The identifier of the Amazon EC2 security group for the Amazon EMR
      *        service to access clusters in VPC private subnets.
      */
+
     public void setServiceAccessSecurityGroup(String serviceAccessSecurityGroup) {
         this.serviceAccessSecurityGroup = serviceAccessSecurityGroup;
     }
@@ -803,6 +843,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return The identifier of the Amazon EC2 security group for the Amazon
      *         EMR service to access clusters in VPC private subnets.
      */
+
     public String getServiceAccessSecurityGroup() {
         return this.serviceAccessSecurityGroup;
     }
@@ -819,6 +860,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withServiceAccessSecurityGroup(
             String serviceAccessSecurityGroup) {
         setServiceAccessSecurityGroup(serviceAccessSecurityGroup);
@@ -833,6 +875,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return A list of additional Amazon EC2 security group IDs for the master
      *         node.
      */
+
     public java.util.List<String> getAdditionalMasterSecurityGroups() {
         if (additionalMasterSecurityGroups == null) {
             additionalMasterSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -849,6 +892,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        A list of additional Amazon EC2 security group IDs for the master
      *        node.
      */
+
     public void setAdditionalMasterSecurityGroups(
             java.util.Collection<String> additionalMasterSecurityGroups) {
         if (additionalMasterSecurityGroups == null) {
@@ -878,6 +922,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withAdditionalMasterSecurityGroups(
             String... additionalMasterSecurityGroups) {
         if (this.additionalMasterSecurityGroups == null) {
@@ -901,6 +946,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withAdditionalMasterSecurityGroups(
             java.util.Collection<String> additionalMasterSecurityGroups) {
         setAdditionalMasterSecurityGroups(additionalMasterSecurityGroups);
@@ -915,6 +961,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return A list of additional Amazon EC2 security group IDs for the slave
      *         nodes.
      */
+
     public java.util.List<String> getAdditionalSlaveSecurityGroups() {
         if (additionalSlaveSecurityGroups == null) {
             additionalSlaveSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -931,6 +978,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      *        A list of additional Amazon EC2 security group IDs for the slave
      *        nodes.
      */
+
     public void setAdditionalSlaveSecurityGroups(
             java.util.Collection<String> additionalSlaveSecurityGroups) {
         if (additionalSlaveSecurityGroups == null) {
@@ -959,6 +1007,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withAdditionalSlaveSecurityGroups(
             String... additionalSlaveSecurityGroups) {
         if (this.additionalSlaveSecurityGroups == null) {
@@ -982,6 +1031,7 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowInstancesConfig withAdditionalSlaveSecurityGroups(
             java.util.Collection<String> additionalSlaveSecurityGroups) {
         setAdditionalSlaveSecurityGroups(additionalSlaveSecurityGroups);

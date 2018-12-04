@@ -45,6 +45,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the virtual tape to delete from
      *        the virtual tape shelf (VTS).
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -58,6 +59,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the virtual tape to delete from
      *         the virtual tape shelf (VTS).
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -74,6 +76,7 @@ public class DeleteTapeArchiveRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTapeArchiveRequest withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;

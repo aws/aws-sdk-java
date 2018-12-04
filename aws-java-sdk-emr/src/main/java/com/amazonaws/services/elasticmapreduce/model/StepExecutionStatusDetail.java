@@ -105,6 +105,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      *        The state of the job flow step.
      * @see StepExecutionState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -117,6 +118,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @return The state of the job flow step.
      * @see StepExecutionState
      */
+
     public String getState() {
         return this.state;
     }
@@ -132,6 +134,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      *         chained together.
      * @see StepExecutionState
      */
+
     public StepExecutionStatusDetail withState(String state) {
         setState(state);
         return this;
@@ -144,10 +147,9 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the job flow step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepExecutionState
      */
+
     public void setState(StepExecutionState state) {
         this.state = state.toString();
     }
@@ -163,6 +165,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      *         chained together.
      * @see StepExecutionState
      */
+
     public StepExecutionStatusDetail withState(StepExecutionState state) {
         setState(state);
         return this;
@@ -176,6 +179,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @param creationDateTime
      *        The creation date and time of the step.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -187,6 +191,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The creation date and time of the step.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -201,6 +206,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepExecutionStatusDetail withCreationDateTime(
             java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
@@ -215,6 +221,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @param startDateTime
      *        The start date and time of the step.
      */
+
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
@@ -226,6 +233,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The start date and time of the step.
      */
+
     public java.util.Date getStartDateTime() {
         return this.startDateTime;
     }
@@ -240,6 +248,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepExecutionStatusDetail withStartDateTime(
             java.util.Date startDateTime) {
         setStartDateTime(startDateTime);
@@ -254,6 +263,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @param endDateTime
      *        The completion date and time of the step.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -265,6 +275,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The completion date and time of the step.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -279,6 +290,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepExecutionStatusDetail withEndDateTime(java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
         return this;
@@ -292,6 +304,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @param lastStateChangeReason
      *        A description of the step's current state.
      */
+
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
@@ -303,6 +316,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return A description of the step's current state.
      */
+
     public String getLastStateChangeReason() {
         return this.lastStateChangeReason;
     }
@@ -317,6 +331,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepExecutionStatusDetail withLastStateChangeReason(
             String lastStateChangeReason) {
         setLastStateChangeReason(lastStateChangeReason);

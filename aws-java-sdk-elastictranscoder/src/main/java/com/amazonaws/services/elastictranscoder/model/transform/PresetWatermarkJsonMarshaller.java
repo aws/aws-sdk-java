@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PresetWatermarkMarshaller
@@ -39,64 +34,61 @@ import com.amazonaws.util.json.*;
 public class PresetWatermarkJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(PresetWatermark presetWatermark, JSONWriter jsonWriter) {
+    public void marshall(PresetWatermark presetWatermark,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (presetWatermark == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (presetWatermark.getId() != null) {
-                jsonWriter.key("Id").value(presetWatermark.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(
+                        presetWatermark.getId());
             }
-
             if (presetWatermark.getMaxWidth() != null) {
-                jsonWriter.key("MaxWidth").value(presetWatermark.getMaxWidth());
+                jsonGenerator.writeFieldName("MaxWidth").writeValue(
+                        presetWatermark.getMaxWidth());
             }
-
             if (presetWatermark.getMaxHeight() != null) {
-                jsonWriter.key("MaxHeight").value(
+                jsonGenerator.writeFieldName("MaxHeight").writeValue(
                         presetWatermark.getMaxHeight());
             }
-
             if (presetWatermark.getSizingPolicy() != null) {
-                jsonWriter.key("SizingPolicy").value(
+                jsonGenerator.writeFieldName("SizingPolicy").writeValue(
                         presetWatermark.getSizingPolicy());
             }
-
             if (presetWatermark.getHorizontalAlign() != null) {
-                jsonWriter.key("HorizontalAlign").value(
+                jsonGenerator.writeFieldName("HorizontalAlign").writeValue(
                         presetWatermark.getHorizontalAlign());
             }
-
             if (presetWatermark.getHorizontalOffset() != null) {
-                jsonWriter.key("HorizontalOffset").value(
+                jsonGenerator.writeFieldName("HorizontalOffset").writeValue(
                         presetWatermark.getHorizontalOffset());
             }
-
             if (presetWatermark.getVerticalAlign() != null) {
-                jsonWriter.key("VerticalAlign").value(
+                jsonGenerator.writeFieldName("VerticalAlign").writeValue(
                         presetWatermark.getVerticalAlign());
             }
-
             if (presetWatermark.getVerticalOffset() != null) {
-                jsonWriter.key("VerticalOffset").value(
+                jsonGenerator.writeFieldName("VerticalOffset").writeValue(
                         presetWatermark.getVerticalOffset());
             }
-
             if (presetWatermark.getOpacity() != null) {
-                jsonWriter.key("Opacity").value(presetWatermark.getOpacity());
+                jsonGenerator.writeFieldName("Opacity").writeValue(
+                        presetWatermark.getOpacity());
             }
-
             if (presetWatermark.getTarget() != null) {
-                jsonWriter.key("Target").value(presetWatermark.getTarget());
+                jsonGenerator.writeFieldName("Target").writeValue(
+                        presetWatermark.getTarget());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateDataSourceFromRedshiftRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateDataSourceFromRedshiftRequestMarshaller
         implements
         Marshaller<Request<CreateDataSourceFromRedshiftRequest>, CreateDataSourceFromRedshiftRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateDataSourceFromRedshiftRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateDataSourceFromRedshiftRequest> marshall(
             CreateDataSourceFromRedshiftRequest createDataSourceFromRedshiftRequest) {
@@ -65,48 +66,44 @@ public class CreateDataSourceFromRedshiftRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDataSourceFromRedshiftRequest.getDataSourceId() != null) {
-                jsonWriter.key("DataSourceId").value(
+                jsonGenerator.writeFieldName("DataSourceId").writeValue(
                         createDataSourceFromRedshiftRequest.getDataSourceId());
             }
-
             if (createDataSourceFromRedshiftRequest.getDataSourceName() != null) {
-                jsonWriter.key("DataSourceName")
-                        .value(createDataSourceFromRedshiftRequest
-                                .getDataSourceName());
+                jsonGenerator.writeFieldName("DataSourceName")
+                        .writeValue(
+                                createDataSourceFromRedshiftRequest
+                                        .getDataSourceName());
             }
-
             if (createDataSourceFromRedshiftRequest.getDataSpec() != null) {
-                jsonWriter.key("DataSpec");
+                jsonGenerator.writeFieldName("DataSpec");
                 RedshiftDataSpecJsonMarshaller.getInstance().marshall(
                         createDataSourceFromRedshiftRequest.getDataSpec(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (createDataSourceFromRedshiftRequest.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         createDataSourceFromRedshiftRequest.getRoleARN());
             }
-
             if (createDataSourceFromRedshiftRequest.getComputeStatistics() != null) {
-                jsonWriter.key("ComputeStatistics").value(
+                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
                         createDataSourceFromRedshiftRequest
                                 .getComputeStatistics());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

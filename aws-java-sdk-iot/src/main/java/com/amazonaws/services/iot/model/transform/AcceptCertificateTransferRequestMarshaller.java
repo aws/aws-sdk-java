@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AcceptCertificateTransferRequest Marshaller
@@ -47,7 +49,14 @@ public class AcceptCertificateTransferRequestMarshaller
         implements
         Marshaller<Request<AcceptCertificateTransferRequest>, AcceptCertificateTransferRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AcceptCertificateTransferRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AcceptCertificateTransferRequest> marshall(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest) {
@@ -67,17 +76,17 @@ public class AcceptCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (acceptCertificateTransferRequest.getCertificateId() == null) ? ""
-                                : StringUtils
+                        (acceptCertificateTransferRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(acceptCertificateTransferRequest
-                                                .getCertificateId()));
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String setAsActive = (acceptCertificateTransferRequest.getSetAsActive() == null) ? null
-                : StringUtils.fromBoolean(acceptCertificateTransferRequest
-                        .getSetAsActive());
-        if (setAsActive != null) {
-            request.addParameter("setAsActive", setAsActive);
+        if (acceptCertificateTransferRequest.getSetAsActive() != null) {
+            request.addParameter("setAsActive", StringUtils
+                    .fromBoolean(acceptCertificateTransferRequest
+                            .getSetAsActive()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

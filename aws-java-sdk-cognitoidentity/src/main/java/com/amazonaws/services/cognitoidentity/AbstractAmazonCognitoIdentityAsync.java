@@ -60,16 +60,16 @@ public class AbstractAmazonCognitoIdentityAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
+    public java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest request) {
 
         return deleteIdentityPoolAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteIdentityPoolAsync(
+    public java.util.concurrent.Future<DeleteIdentityPoolResult> deleteIdentityPoolAsync(
             DeleteIdentityPoolRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteIdentityPoolRequest, DeleteIdentityPoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,46 +240,46 @@ public class AbstractAmazonCognitoIdentityAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
+    public java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest request) {
 
         return setIdentityPoolRolesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setIdentityPoolRolesAsync(
+    public java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(
             SetIdentityPoolRolesRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
+    public java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest request) {
 
         return unlinkDeveloperIdentityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unlinkDeveloperIdentityAsync(
+    public java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(
             UnlinkDeveloperIdentityRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnlinkDeveloperIdentityRequest, UnlinkDeveloperIdentityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unlinkIdentityAsync(
+    public java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(
             UnlinkIdentityRequest request) {
 
         return unlinkIdentityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unlinkIdentityAsync(
+    public java.util.concurrent.Future<UnlinkIdentityResult> unlinkIdentityAsync(
             UnlinkIdentityRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnlinkIdentityRequest, UnlinkIdentityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

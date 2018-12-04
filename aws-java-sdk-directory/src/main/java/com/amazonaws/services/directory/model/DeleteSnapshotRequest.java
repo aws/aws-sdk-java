@@ -42,6 +42,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * @param snapshotId
      *        The identifier of the directory snapshot to be deleted.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -53,6 +54,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the directory snapshot to be deleted.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -67,6 +69,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSnapshotRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;

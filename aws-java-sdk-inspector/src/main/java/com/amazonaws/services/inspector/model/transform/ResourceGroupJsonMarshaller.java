@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.inspector.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ResourceGroupMarshaller
@@ -39,28 +34,43 @@ import com.amazonaws.util.json.*;
 public class ResourceGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ResourceGroup resourceGroup, JSONWriter jsonWriter) {
+    public void marshall(ResourceGroup resourceGroup,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (resourceGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
-            if (resourceGroup.getResourceGroupArn() != null) {
-                jsonWriter.key("resourceGroupArn").value(
-                        resourceGroup.getResourceGroupArn());
+            if (resourceGroup.getArn() != null) {
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        resourceGroup.getArn());
             }
 
-            if (resourceGroup.getResourceGroupTags() != null) {
-                jsonWriter.key("resourceGroupTags").value(
-                        resourceGroup.getResourceGroupTags());
+            java.util.List<ResourceGroupTag> tagsList = resourceGroup.getTags();
+            if (tagsList != null) {
+                jsonGenerator.writeFieldName("tags");
+                jsonGenerator.writeStartArray();
+                for (ResourceGroupTag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+
+                        ResourceGroupTagJsonMarshaller.getInstance().marshall(
+                                tagsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (resourceGroup.getCreatedAt() != null) {
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        resourceGroup.getCreatedAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

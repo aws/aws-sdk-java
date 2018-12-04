@@ -46,6 +46,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -57,6 +58,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -71,6 +73,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostnameSuggestionResult withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -84,6 +87,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * @param hostname
      *        The generated host name.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -95,6 +99,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * 
      * @return The generated host name.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -109,6 +114,7 @@ public class GetHostnameSuggestionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHostnameSuggestionResult withHostname(String hostname) {
         setHostname(hostname);
         return this;

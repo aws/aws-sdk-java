@@ -72,6 +72,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      *        <code>ByteMatchSetId</code> is returned by
      *        <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public void setByteMatchSetId(String byteMatchSetId) {
         this.byteMatchSetId = byteMatchSetId;
     }
@@ -98,6 +99,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      *         <code>ByteMatchSetId</code> is returned by
      *         <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
      */
+
     public String getByteMatchSetId() {
         return this.byteMatchSetId;
     }
@@ -127,6 +129,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSetSummary withByteMatchSetId(String byteMatchSetId) {
         setByteMatchSetId(byteMatchSetId);
         return this;
@@ -143,6 +146,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      *        can't change <code>Name</code> after you create a
      *        <code>ByteMatchSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -157,6 +161,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      *         can't change <code>Name</code> after you create a
      *         <code>ByteMatchSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -174,6 +179,7 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSetSummary withName(String name) {
         setName(name);
         return this;

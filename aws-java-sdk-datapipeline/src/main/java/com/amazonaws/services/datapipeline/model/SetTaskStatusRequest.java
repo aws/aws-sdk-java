@@ -80,6 +80,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        The ID of the task assigned to the task runner. This value is
      *        provided in the response for <a>PollForTask</a>.
      */
+
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
@@ -93,6 +94,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      * @return The ID of the task assigned to the task runner. This value is
      *         provided in the response for <a>PollForTask</a>.
      */
+
     public String getTaskId() {
         return this.taskId;
     }
@@ -109,6 +111,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTaskStatusRequest withTaskId(String taskId) {
         setTaskId(taskId);
         return this;
@@ -127,6 +130,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        use false.
      * @see TaskStatus
      */
+
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
     }
@@ -143,6 +147,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         use false.
      * @see TaskStatus
      */
+
     public String getTaskStatus() {
         return this.taskStatus;
     }
@@ -162,6 +167,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TaskStatus
      */
+
     public SetTaskStatusRequest withTaskStatus(String taskStatus) {
         setTaskStatus(taskStatus);
         return this;
@@ -178,10 +184,9 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        If <code>FINISHED</code>, the task successfully completed. If
      *        <code>FAILED</code>, the task ended unsuccessfully. Preconditions
      *        use false.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TaskStatus
      */
+
     public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus.toString();
     }
@@ -201,6 +206,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TaskStatus
      */
+
     public SetTaskStatusRequest withTaskStatus(TaskStatus taskStatus) {
         setTaskStatus(taskStatus);
         return this;
@@ -220,6 +226,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        is used to display error information to the user. It should not
      *        start with string "Service_" which is reserved by the system.
      */
+
     public void setErrorId(String errorId) {
         this.errorId = errorId;
     }
@@ -237,6 +244,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         is used to display error information to the user. It should not
      *         start with string "Service_" which is reserved by the system.
      */
+
     public String getErrorId() {
         return this.errorId;
     }
@@ -257,6 +265,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTaskStatusRequest withErrorId(String errorId) {
         setErrorId(errorId);
         return this;
@@ -276,6 +285,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        attempt object. It is used to display error information to the
      *        user. The web service does not parse this value.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -293,6 +303,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         attempt object. It is used to display error information to the
      *         user. The web service does not parse this value.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -313,6 +324,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTaskStatusRequest withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;
@@ -332,6 +344,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *        physical attempt object. It is used to display error information
      *        to the user. The web service does not parse this value.
      */
+
     public void setErrorStackTrace(String errorStackTrace) {
         this.errorStackTrace = errorStackTrace;
     }
@@ -349,6 +362,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      *         physical attempt object. It is used to display error information
      *         to the user. The web service does not parse this value.
      */
+
     public String getErrorStackTrace() {
         return this.errorStackTrace;
     }
@@ -369,6 +383,7 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetTaskStatusRequest withErrorStackTrace(String errorStackTrace) {
         setErrorStackTrace(errorStackTrace);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class InstanceInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("instanceName", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setInstanceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInfo.setInstanceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("iamUserArn", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setIamUserArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInfo.setIamUserArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("instanceArn", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setInstanceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInfo.setInstanceArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("registerTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setRegisterTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInfo.setRegisterTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("deregisterTime", targetDepth)) {
                     context.nextToken();
-                    instanceInfo.setDeregisterTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceInfo.setDeregisterTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

@@ -337,6 +337,7 @@ public class Condition implements Serializable, Cloneable {
      *         For Binary, DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values.
      */
+
     public java.util.List<AttributeValue> getAttributeValueList() {
         return attributeValueList;
     }
@@ -384,6 +385,7 @@ public class Condition implements Serializable, Cloneable {
      *        For Binary, DynamoDB treats each byte of the binary data as
      *        unsigned when it compares binary values.
      */
+
     public void setAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         if (attributeValueList == null) {
@@ -446,6 +448,7 @@ public class Condition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Condition withAttributeValueList(
             AttributeValue... attributeValueList) {
         if (this.attributeValueList == null) {
@@ -503,6 +506,7 @@ public class Condition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Condition withAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         setAttributeValueList(attributeValueList);
@@ -963,6 +967,7 @@ public class Condition implements Serializable, Cloneable {
      *        Developer Guide</i>.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1423,6 +1428,7 @@ public class Condition implements Serializable, Cloneable {
      *         Developer Guide</i>.
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -1883,6 +1889,7 @@ public class Condition implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public Condition withComparisonOperator(String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
         return this;
@@ -2340,10 +2347,9 @@ public class Condition implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB
      *        Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -2804,6 +2810,7 @@ public class Condition implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public Condition withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);

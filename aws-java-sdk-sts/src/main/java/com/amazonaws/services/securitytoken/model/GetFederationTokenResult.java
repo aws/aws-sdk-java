@@ -81,6 +81,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *        less than 4096 bytes, but that can vary. Also, future updates to
      *        AWS might require larger sizes.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -107,6 +108,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *         less than 4096 bytes, but that can vary. Also, future updates to
      *         AWS might require larger sizes.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -136,6 +138,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenResult withCredentials(Credentials credentials) {
         setCredentials(credentials);
         return this;
@@ -156,6 +159,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *        user's ARN in your resource-based policies, such as an Amazon S3
      *        bucket policy.
      */
+
     public void setFederatedUser(FederatedUser federatedUser) {
         this.federatedUser = federatedUser;
     }
@@ -175,6 +179,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *         ARN in your resource-based policies, such as an Amazon S3 bucket
      *         policy.
      */
+
     public FederatedUser getFederatedUser() {
         return this.federatedUser;
     }
@@ -196,6 +201,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenResult withFederatedUser(
             FederatedUser federatedUser) {
         setFederatedUser(federatedUser);
@@ -214,6 +220,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *        form. The service rejects policies for which the packed size is
      *        greater than 100 percent of the allowed value.
      */
+
     public void setPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;
     }
@@ -229,6 +236,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      *         form. The service rejects policies for which the packed size is
      *         greater than 100 percent of the allowed value.
      */
+
     public Integer getPackedPolicySize() {
         return this.packedPolicySize;
     }
@@ -247,6 +255,7 @@ public class GetFederationTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenResult withPackedPolicySize(
             Integer packedPolicySize) {
         setPackedPolicySize(packedPolicySize);

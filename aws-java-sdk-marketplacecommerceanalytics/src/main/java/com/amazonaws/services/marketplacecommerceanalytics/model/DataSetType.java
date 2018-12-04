@@ -17,7 +17,7 @@
 package com.amazonaws.services.marketplacecommerceanalytics.model;
 
 /**
- * The type of the data set to publish.
+ * 
  */
 public enum DataSetType {
 
@@ -39,13 +39,16 @@ public enum DataSetType {
             "monthly_revenue_billing_and_revenue_data"),
     Monthly_revenue_annual_subscriptions("monthly_revenue_annual_subscriptions"),
     Disbursed_amount_by_product("disbursed_amount_by_product"),
+    Disbursed_amount_by_product_with_uncollected_funds(
+            "disbursed_amount_by_product_with_uncollected_funds"),
     Disbursed_amount_by_customer_geo("disbursed_amount_by_customer_geo"),
     Disbursed_amount_by_age_of_uncollected_funds(
             "disbursed_amount_by_age_of_uncollected_funds"),
     Disbursed_amount_by_age_of_disbursed_funds(
             "disbursed_amount_by_age_of_disbursed_funds"),
     Customer_profile_by_industry("customer_profile_by_industry"),
-    Customer_profile_by_revenue("customer_profile_by_revenue");
+    Customer_profile_by_revenue("customer_profile_by_revenue"),
+    Customer_profile_by_geography("customer_profile_by_geography");
 
     private String value;
 
@@ -91,6 +94,9 @@ public enum DataSetType {
             return Monthly_revenue_annual_subscriptions;
         } else if ("disbursed_amount_by_product".equals(value)) {
             return Disbursed_amount_by_product;
+        } else if ("disbursed_amount_by_product_with_uncollected_funds"
+                .equals(value)) {
+            return Disbursed_amount_by_product_with_uncollected_funds;
         } else if ("disbursed_amount_by_customer_geo".equals(value)) {
             return Disbursed_amount_by_customer_geo;
         } else if ("disbursed_amount_by_age_of_uncollected_funds".equals(value)) {
@@ -101,6 +107,8 @@ public enum DataSetType {
             return Customer_profile_by_industry;
         } else if ("customer_profile_by_revenue".equals(value)) {
             return Customer_profile_by_revenue;
+        } else if ("customer_profile_by_geography".equals(value)) {
+            return Customer_profile_by_geography;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

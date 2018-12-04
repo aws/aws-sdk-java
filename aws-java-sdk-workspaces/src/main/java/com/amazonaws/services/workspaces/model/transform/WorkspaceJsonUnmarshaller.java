@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,72 +55,74 @@ public class WorkspaceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkspaceId", targetDepth)) {
                     context.nextToken();
-                    workspace.setWorkspaceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspace.setWorkspaceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    workspace.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspace.setDirectoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
                     context.nextToken();
-                    workspace.setUserName(StringJsonUnmarshaller.getInstance()
+                    workspace.setUserName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("IpAddress", targetDepth)) {
                     context.nextToken();
-                    workspace.setIpAddress(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    workspace.setIpAddress(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    workspace.setState(StringJsonUnmarshaller.getInstance()
+                    workspace.setState(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("BundleId", targetDepth)) {
                     context.nextToken();
-                    workspace.setBundleId(StringJsonUnmarshaller.getInstance()
+                    workspace.setBundleId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    workspace.setSubnetId(StringJsonUnmarshaller.getInstance()
+                    workspace.setSubnetId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    workspace.setErrorMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspace.setErrorMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    workspace.setErrorCode(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    workspace.setErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
                     context.nextToken();
-                    workspace.setComputerName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspace.setComputerName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeEncryptionKey", targetDepth)) {
                     context.nextToken();
-                    workspace.setVolumeEncryptionKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspace.setVolumeEncryptionKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserVolumeEncryptionEnabled",
                         targetDepth)) {
                     context.nextToken();
                     workspace
-                            .setUserVolumeEncryptionEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUserVolumeEncryptionEnabled(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("RootVolumeEncryptionEnabled",
                         targetDepth)) {
                     context.nextToken();
                     workspace
-                            .setRootVolumeEncryptionEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRootVolumeEncryptionEnabled(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

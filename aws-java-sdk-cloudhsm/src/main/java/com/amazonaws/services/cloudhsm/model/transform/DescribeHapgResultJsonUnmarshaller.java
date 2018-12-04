@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudhsm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,26 @@ public class DescribeHapgResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HapgArn", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHapgArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeHapgResult.setHapgArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HapgSerial", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHapgSerial(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeHapgResult.setHapgSerial(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HsmsLastActionFailed", targetDepth)) {
                     context.nextToken();
                     describeHapgResult
                             .setHsmsLastActionFailed(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingDeletion", targetDepth)) {
                     context.nextToken();
                     describeHapgResult
                             .setHsmsPendingDeletion(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingRegistration",
@@ -80,32 +82,31 @@ public class DescribeHapgResultJsonUnmarshaller implements
                     context.nextToken();
                     describeHapgResult
                             .setHsmsPendingRegistration(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeHapgResult.setLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LastModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult
-                            .setLastModifiedTimestamp(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeHapgResult.setLastModifiedTimestamp(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionSerialList", targetDepth)) {
                     context.nextToken();
                     describeHapgResult
                             .setPartitionSerialList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeHapgResult.setState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -48,6 +48,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * @param logStreamName
      *        The name of the log stream.
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -59,6 +60,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * 
      * @return The name of the log stream.
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -73,6 +75,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchedLogStream withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;
@@ -88,6 +91,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      *        Indicates whether all the events in this log stream were searched
      *        or more data exists to search by paginating further.
      */
+
     public void setSearchedCompletely(Boolean searchedCompletely) {
         this.searchedCompletely = searchedCompletely;
     }
@@ -101,6 +105,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * @return Indicates whether all the events in this log stream were searched
      *         or more data exists to search by paginating further.
      */
+
     public Boolean getSearchedCompletely() {
         return this.searchedCompletely;
     }
@@ -117,6 +122,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchedLogStream withSearchedCompletely(Boolean searchedCompletely) {
         setSearchedCompletely(searchedCompletely);
         return this;
@@ -131,6 +137,7 @@ public class SearchedLogStream implements Serializable, Cloneable {
      * @return Indicates whether all the events in this log stream were searched
      *         or more data exists to search by paginating further.
      */
+
     public Boolean isSearchedCompletely() {
         return this.searchedCompletely;
     }

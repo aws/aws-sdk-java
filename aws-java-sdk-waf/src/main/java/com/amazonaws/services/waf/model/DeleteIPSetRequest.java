@@ -52,6 +52,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      *        delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and
      *        by <a>ListIPSets</a>.
      */
+
     public void setIPSetId(String iPSetId) {
         this.iPSetId = iPSetId;
     }
@@ -67,6 +68,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      *         delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a>
      *         and by <a>ListIPSets</a>.
      */
+
     public String getIPSetId() {
         return this.iPSetId;
     }
@@ -85,6 +87,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIPSetRequest withIPSetId(String iPSetId) {
         setIPSetId(iPSetId);
         return this;
@@ -99,6 +102,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -111,6 +115,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -126,6 +131,7 @@ public class DeleteIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIPSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

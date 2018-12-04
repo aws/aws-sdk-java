@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class ListDomainsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextPageMarker", targetDepth)) {
                     context.nextToken();
-                    listDomainsResult.setNextPageMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listDomainsResult.setNextPageMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

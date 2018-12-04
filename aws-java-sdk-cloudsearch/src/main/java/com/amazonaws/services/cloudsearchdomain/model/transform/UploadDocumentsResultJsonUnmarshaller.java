@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class UploadDocumentsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    uploadDocumentsResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    uploadDocumentsResult.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("adds", targetDepth)) {
                     context.nextToken();
-                    uploadDocumentsResult.setAdds(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    uploadDocumentsResult.setAdds(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("deletes", targetDepth)) {
                     context.nextToken();
-                    uploadDocumentsResult.setDeletes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    uploadDocumentsResult.setDeletes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("warnings", targetDepth)) {
                     context.nextToken();

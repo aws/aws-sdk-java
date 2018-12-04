@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecr.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * LayerFailureMarshaller
@@ -39,33 +34,33 @@ import com.amazonaws.util.json.*;
 public class LayerFailureJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LayerFailure layerFailure, JSONWriter jsonWriter) {
+    public void marshall(LayerFailure layerFailure,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (layerFailure == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (layerFailure.getLayerDigest() != null) {
-                jsonWriter.key("layerDigest").value(
+                jsonGenerator.writeFieldName("layerDigest").writeValue(
                         layerFailure.getLayerDigest());
             }
-
             if (layerFailure.getFailureCode() != null) {
-                jsonWriter.key("failureCode").value(
+                jsonGenerator.writeFieldName("failureCode").writeValue(
                         layerFailure.getFailureCode());
             }
-
             if (layerFailure.getFailureReason() != null) {
-                jsonWriter.key("failureReason").value(
+                jsonGenerator.writeFieldName("failureReason").writeValue(
                         layerFailure.getFailureReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DirectoryConnectSettingsMarshaller
@@ -39,56 +34,56 @@ import com.amazonaws.util.json.*;
 public class DirectoryConnectSettingsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DirectoryConnectSettings directoryConnectSettings,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (directoryConnectSettings == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (directoryConnectSettings.getVpcId() != null) {
-                jsonWriter.key("VpcId").value(
+                jsonGenerator.writeFieldName("VpcId").writeValue(
                         directoryConnectSettings.getVpcId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) directoryConnectSettings
                     .getSubnetIds();
             if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> customerDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) directoryConnectSettings
                     .getCustomerDnsIps();
             if (!customerDnsIpsList.isEmpty()
                     || !customerDnsIpsList.isAutoConstruct()) {
-                jsonWriter.key("CustomerDnsIps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CustomerDnsIps");
+                jsonGenerator.writeStartArray();
                 for (String customerDnsIpsListValue : customerDnsIpsList) {
                     if (customerDnsIpsListValue != null) {
-                        jsonWriter.value(customerDnsIpsListValue);
+                        jsonGenerator.writeValue(customerDnsIpsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (directoryConnectSettings.getCustomerUserName() != null) {
-                jsonWriter.key("CustomerUserName").value(
+                jsonGenerator.writeFieldName("CustomerUserName").writeValue(
                         directoryConnectSettings.getCustomerUserName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

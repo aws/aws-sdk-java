@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class UserProfileJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    userProfile.setIamUserArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    userProfile.setIamUserArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    userProfile.setName(StringJsonUnmarshaller.getInstance()
+                    userProfile.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SshUsername", targetDepth)) {
                     context.nextToken();
-                    userProfile.setSshUsername(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    userProfile.setSshUsername(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKey", targetDepth)) {
                     context.nextToken();
-                    userProfile.setSshPublicKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    userProfile.setSshPublicKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSelfManagement", targetDepth)) {
                     context.nextToken();
-                    userProfile.setAllowSelfManagement(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    userProfile.setAllowSelfManagement(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

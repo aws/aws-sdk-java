@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteMountTargetRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteMountTargetRequestMarshaller implements
         Marshaller<Request<DeleteMountTargetRequest>, DeleteMountTargetRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteMountTargetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteMountTargetRequest> marshall(
             DeleteMountTargetRequest deleteMountTargetRequest) {
@@ -63,11 +72,14 @@ public class DeleteMountTargetRequestMarshaller implements
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{MountTargetId}",
-                (deleteMountTargetRequest.getMountTargetId() == null) ? ""
-                        : StringUtils.fromString(deleteMountTargetRequest
-                                .getMountTargetId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{MountTargetId}",
+                        (deleteMountTargetRequest.getMountTargetId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteMountTargetRequest
+                                                .getMountTargetId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.services.cloudhsm.model.transform.*;
@@ -43,6 +45,7 @@ import com.amazonaws.services.cloudhsm.model.transform.*;
  * <p>
  * <fullname>AWS CloudHSM Service</fullname>
  */
+@ThreadSafe
 public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         AWSCloudHSM {
     /** Provider for AWS credentials. */
@@ -57,9 +60,30 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "cloudhsm";
 
     /**
-     * List of exception unmarshallers for all CloudHSM exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CloudHsmServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CloudHsmInternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A
@@ -79,8 +103,8 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudHSMClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -121,8 +145,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSCloudHSMClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -161,8 +184,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSCloudHSMClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -213,21 +235,6 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class,
-                        "CloudHsmServiceException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class,
-                        "CloudHsmInternalException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudhsm.model.InvalidRequestException.class,
-                        "InvalidRequestException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -239,6 +246,65 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         requestHandler2s
                 .addAll(chainFactory
                         .newRequestHandler2Chain("/com/amazonaws/services/cloudhsm/request.handler2s"));
+    }
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified AWS CloudHSM
+     * resource.
+     * </p>
+     * <p>
+     * Each tag consists of a key and a value. Tag keys must be unique to each
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return Result of the AddTagsToResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.AddTagsToResource
+     */
+    @Override
+    public AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest addTagsToResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsToResourceRequest> request = null;
+        Response<AddTagsToResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addTagsToResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -272,17 +338,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHapgRequestMarshaller().marshall(super
-                        .beforeMarshalling(createHapgRequest));
+                request = new CreateHapgRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateHapgResult> responseHandler = new JsonResponseHandler<CreateHapgResult>(
-                    new CreateHapgResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateHapgResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateHapgResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -295,12 +363,28 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command provisions an
-     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * Creates an uninitialized HSM instance.
      * </p>
+     * <p>
+     * There is an upfront fee charged for each HSM instance that you create
+     * with the <a>CreateHsm</a> operation. If you accidentally provision an HSM
+     * and want to request a refund, delete the instance using the
+     * <a>DeleteHsm</a> operation, go to the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support
+     * Center</a>, create a new case, and select <b>Account and Billing
+     * Support</b>.
+     * </p>
+     * <important>
+     * <p>
+     * It can take up to 20 minutes to create and provision an HSM. You can
+     * monitor the status of the HSM with the <a>DescribeHsm</a> operation. The
+     * HSM is ready to be initialized when the status changes to
+     * <code>RUNNING</code>.
+     * </p>
+     * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> action.
+     *        Contains the inputs for the <a>CreateHsm</a> operation.
      * @return Result of the CreateHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -323,17 +407,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateHsmRequestMarshaller().marshall(super
-                        .beforeMarshalling(createHsmRequest));
+                request = new CreateHsmRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateHsmResult> responseHandler = new JsonResponseHandler<CreateHsmResult>(
-                    new CreateHsmResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateHsmResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateHsmResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -374,7 +460,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLunaClientRequestMarshaller()
+                request = new CreateLunaClientRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createLunaClientRequest));
                 // Binds the request metrics to the current request.
@@ -383,9 +469,11 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateLunaClientResult> responseHandler = new JsonResponseHandler<CreateLunaClientResult>(
-                    new CreateLunaClientResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLunaClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateLunaClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -425,17 +513,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHapgRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteHapgRequest));
+                request = new DeleteHapgRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteHapgResult> responseHandler = new JsonResponseHandler<DeleteHapgResult>(
-                    new DeleteHapgResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHapgResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteHapgResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -448,12 +538,12 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and your
-     * key material cannot be recovered.
+     * Deletes an HSM. After completion, this operation cannot be undone and
+     * your key material cannot be recovered.
      * </p>
      * 
      * @param deleteHsmRequest
-     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     *        Contains the inputs for the <a>DeleteHsm</a> operation.
      * @return Result of the DeleteHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -476,17 +566,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteHsmRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteHsmRequest));
+                request = new DeleteHsmRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteHsmResult> responseHandler = new JsonResponseHandler<DeleteHsmResult>(
-                    new DeleteHsmResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHsmResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteHsmResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -526,7 +618,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLunaClientRequestMarshaller()
+                request = new DeleteLunaClientRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteLunaClientRequest));
                 // Binds the request metrics to the current request.
@@ -535,9 +627,11 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteLunaClientResult> responseHandler = new JsonResponseHandler<DeleteLunaClientResult>(
-                    new DeleteLunaClientResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLunaClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteLunaClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -578,17 +672,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHapgRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeHapgRequest));
+                request = new DescribeHapgRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeHapgResult> responseHandler = new JsonResponseHandler<DescribeHapgResult>(
-                    new DescribeHapgResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHapgResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeHapgResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -606,7 +702,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeHsmRequest
-     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     *        Contains the inputs for the <a>DescribeHsm</a> operation.
      * @return Result of the DescribeHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -629,17 +725,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeHsmRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeHsmRequest));
+                request = new DescribeHsmRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeHsmResult> responseHandler = new JsonResponseHandler<DescribeHsmResult>(
-                    new DescribeHsmResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHsmResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeHsmResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -685,18 +783,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLunaClientRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeLunaClientRequest));
+                request = new DescribeLunaClientRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeLunaClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLunaClientResult> responseHandler = new JsonResponseHandler<DescribeLunaClientResult>(
-                    new DescribeLunaClientResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLunaClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeLunaClientResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -741,17 +841,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetConfigRequestMarshaller().marshall(super
-                        .beforeMarshalling(getConfigRequest));
+                request = new GetConfigRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetConfigResult> responseHandler = new JsonResponseHandler<GetConfigResult>(
-                    new GetConfigResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -793,18 +895,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAvailableZonesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listAvailableZonesRequest));
+                request = new ListAvailableZonesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listAvailableZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAvailableZonesResult> responseHandler = new JsonResponseHandler<ListAvailableZonesResult>(
-                    new ListAvailableZonesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAvailableZonesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAvailableZonesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -854,17 +958,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHapgsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listHapgsRequest));
+                request = new ListHapgsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listHapgsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListHapgsResult> responseHandler = new JsonResponseHandler<ListHapgsResult>(
-                    new ListHapgsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListHapgsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListHapgsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -915,17 +1021,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListHsmsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listHsmsRequest));
+                request = new ListHsmsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listHsmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListHsmsResult> responseHandler = new JsonResponseHandler<ListHsmsResult>(
-                    new ListHsmsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListHsmsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListHsmsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -976,17 +1084,20 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLunaClientsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listLunaClientsRequest));
+                request = new ListLunaClientsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listLunaClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListLunaClientsResult> responseHandler = new JsonResponseHandler<ListLunaClientsResult>(
-                    new ListLunaClientsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListLunaClientsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListLunaClientsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1000,6 +1111,60 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
     @Override
     public ListLunaClientsResult listLunaClients() {
         return listLunaClients(new ListLunaClientsRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a list of all tags for the specified AWS CloudHSM resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.ListTagsForResource
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1030,17 +1195,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHapgRequestMarshaller().marshall(super
-                        .beforeMarshalling(modifyHapgRequest));
+                request = new ModifyHapgRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(modifyHapgRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyHapgResult> responseHandler = new JsonResponseHandler<ModifyHapgResult>(
-                    new ModifyHapgResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyHapgResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ModifyHapgResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1055,9 +1222,18 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
      * <p>
      * Modifies an HSM.
      * </p>
+     * <important>
+     * <p>
+     * This operation can result in the HSM being offline for up to 15 minutes
+     * while the AWS CloudHSM service is reconfigured. If you are modifying a
+     * production HSM, you should ensure that your AWS CloudHSM service is
+     * configured for high availability, and consider executing this operation
+     * during a maintenance window.
+     * </p>
+     * </important>
      * 
      * @param modifyHsmRequest
-     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     *        Contains the inputs for the <a>ModifyHsm</a> operation.
      * @return Result of the ModifyHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -1080,17 +1256,19 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyHsmRequestMarshaller().marshall(super
-                        .beforeMarshalling(modifyHsmRequest));
+                request = new ModifyHsmRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(modifyHsmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyHsmResult> responseHandler = new JsonResponseHandler<ModifyHsmResult>(
-                    new ModifyHsmResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyHsmResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ModifyHsmResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1129,7 +1307,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyLunaClientRequestMarshaller()
+                request = new ModifyLunaClientRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(modifyLunaClientRequest));
                 // Binds the request metrics to the current request.
@@ -1138,9 +1316,69 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ModifyLunaClientResult> responseHandler = new JsonResponseHandler<ModifyLunaClientResult>(
-                    new ModifyLunaClientResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyLunaClientResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ModifyLunaClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified AWS CloudHSM resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify only the tag key to remove (not the value). To
+     * overwrite the value for an existing tag, use <a>AddTagsToResource</a>.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return Result of the RemoveTagsFromResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.RemoveTagsFromResource
+     */
+    @Override
+    public RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsFromResourceRequest> request = null;
+        Response<RemoveTagsFromResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1174,33 +1412,48 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

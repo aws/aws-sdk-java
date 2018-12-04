@@ -37,8 +37,10 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PublishRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class PublishRequestMarshaller implements
         Marshaller<Request<PublishRequest>, PublishRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PublishRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PublishRequest> marshall(PublishRequest publishRequest) {
 
@@ -64,14 +72,14 @@ public class PublishRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{topic}",
-                (publishRequest.getTopic() == null) ? "" : StringUtils
-                        .fromString(publishRequest.getTopic()));
+                (publishRequest.getTopic() != null) ? SdkHttpUtils.urlEncode(
+                        StringUtils.fromString(publishRequest.getTopic()),
+                        false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String qos = (publishRequest.getQos() == null) ? null : StringUtils
-                .fromInteger(publishRequest.getQos());
-        if (qos != null) {
-            request.addParameter("qos", qos);
+        if (publishRequest.getQos() != null) {
+            request.addParameter("qos",
+                    StringUtils.fromInteger(publishRequest.getQos()));
         }
 
         request.setContent(BinaryUtils.toStream(publishRequest.getPayload()));

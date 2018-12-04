@@ -34,6 +34,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @param jobId
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -41,6 +42,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -50,6 +52,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -58,6 +61,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @param creationDate
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -65,6 +69,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -74,6 +79,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -82,6 +88,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @param isCanceled
      */
+
     public void setIsCanceled(Boolean isCanceled) {
         this.isCanceled = isCanceled;
     }
@@ -89,6 +96,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getIsCanceled() {
         return this.isCanceled;
     }
@@ -98,6 +106,7 @@ public class Job implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Job withIsCanceled(Boolean isCanceled) {
         setIsCanceled(isCanceled);
         return this;
@@ -106,6 +115,7 @@ public class Job implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isCanceled() {
         return this.isCanceled;
     }
@@ -114,6 +124,7 @@ public class Job implements Serializable, Cloneable {
      * @param jobType
      * @see JobType
      */
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -122,6 +133,7 @@ public class Job implements Serializable, Cloneable {
      * @return
      * @see JobType
      */
+
     public String getJobType() {
         return this.jobType;
     }
@@ -132,6 +144,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public Job withJobType(String jobType) {
         setJobType(jobType);
         return this;
@@ -139,10 +152,9 @@ public class Job implements Serializable, Cloneable {
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobType
      */
+
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -153,6 +165,7 @@ public class Job implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public Job withJobType(JobType jobType) {
         setJobType(jobType);
         return this;

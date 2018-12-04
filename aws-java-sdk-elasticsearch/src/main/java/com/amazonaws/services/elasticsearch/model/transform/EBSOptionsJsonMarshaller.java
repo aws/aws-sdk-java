@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EBSOptionsMarshaller
@@ -39,34 +34,37 @@ import com.amazonaws.util.json.*;
 public class EBSOptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(EBSOptions eBSOptions, JSONWriter jsonWriter) {
+    public void marshall(EBSOptions eBSOptions,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (eBSOptions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eBSOptions.getEBSEnabled() != null) {
-                jsonWriter.key("EBSEnabled").value(eBSOptions.getEBSEnabled());
+                jsonGenerator.writeFieldName("EBSEnabled").writeValue(
+                        eBSOptions.getEBSEnabled());
             }
-
             if (eBSOptions.getVolumeType() != null) {
-                jsonWriter.key("VolumeType").value(eBSOptions.getVolumeType());
+                jsonGenerator.writeFieldName("VolumeType").writeValue(
+                        eBSOptions.getVolumeType());
             }
-
             if (eBSOptions.getVolumeSize() != null) {
-                jsonWriter.key("VolumeSize").value(eBSOptions.getVolumeSize());
+                jsonGenerator.writeFieldName("VolumeSize").writeValue(
+                        eBSOptions.getVolumeSize());
             }
-
             if (eBSOptions.getIops() != null) {
-                jsonWriter.key("Iops").value(eBSOptions.getIops());
+                jsonGenerator.writeFieldName("Iops").writeValue(
+                        eBSOptions.getIops());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

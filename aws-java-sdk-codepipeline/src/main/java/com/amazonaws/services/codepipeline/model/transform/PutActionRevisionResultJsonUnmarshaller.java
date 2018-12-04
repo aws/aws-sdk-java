@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,13 @@ public class PutActionRevisionResultJsonUnmarshaller implements
                 if (context.testExpression("newRevision", targetDepth)) {
                     context.nextToken();
                     putActionRevisionResult
-                            .setNewRevision(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setNewRevision(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineExecutionId", targetDepth)) {
                     context.nextToken();
-                    putActionRevisionResult
-                            .setPipelineExecutionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putActionRevisionResult.setPipelineExecutionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

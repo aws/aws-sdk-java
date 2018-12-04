@@ -41,8 +41,8 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      */
     private String containerInstance;
@@ -73,6 +73,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        that hosts the container instance to deregister. If you do not
      *        specify a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -88,6 +89,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         that hosts the container instance to deregister. If you do not
      *         specify a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -106,6 +108,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -119,8 +122,8 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstance
@@ -130,9 +133,10 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the
      *        container instance ID. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     *        </i>:container-instance/<i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      */
+
     public void setContainerInstance(String containerInstance) {
         this.containerInstance = containerInstance;
     }
@@ -145,8 +149,8 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @return The container instance ID or full Amazon Resource Name (ARN) of
@@ -155,10 +159,10 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         container instance, the AWS account ID of the container instance
      *         owner, the <code>container-instance</code> namespace, and then
      *         the container instance ID. For example,
-     *         arn:aws:ecs:<i>region</i>:
-     *         <i>aws_account_id</i>:container-instance
-     *         /<i>container_instance_ID</i>.
+     *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *         .
      */
+
     public String getContainerInstance() {
         return this.containerInstance;
     }
@@ -171,8 +175,8 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * container instance, the AWS account ID of the container instance owner,
      * the <code>container-instance</code> namespace, and then the container
      * instance ID. For example,
-     * arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:
-     * container-instance/<i>container_instance_ID</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     * .
      * </p>
      * 
      * @param containerInstance
@@ -182,11 +186,12 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        container instance, the AWS account ID of the container instance
      *        owner, the <code>container-instance</code> namespace, and then the
      *        container instance ID. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>aws_account_id
-     *        </i>:container-instance/<i>container_instance_ID</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withContainerInstance(
             String containerInstance) {
         setContainerInstance(containerInstance);
@@ -218,6 +223,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *        service scheduler starts another copy of that task, on a different
      *        container instance if possible.
      */
+
     public void setForce(Boolean force) {
         this.force = force;
     }
@@ -246,6 +252,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         the service scheduler starts another copy of that task, on a
      *         different container instance if possible.
      */
+
     public Boolean getForce() {
         return this.force;
     }
@@ -277,6 +284,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterContainerInstanceRequest withForce(Boolean force) {
         setForce(force);
         return this;
@@ -306,6 +314,7 @@ public class DeregisterContainerInstanceRequest extends AmazonWebServiceRequest
      *         the service scheduler starts another copy of that task, on a
      *         different container instance if possible.
      */
+
     public Boolean isForce() {
         return this.force;
     }

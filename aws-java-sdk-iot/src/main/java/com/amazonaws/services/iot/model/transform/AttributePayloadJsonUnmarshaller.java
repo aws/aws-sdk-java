@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,8 +57,8 @@ public class AttributePayloadJsonUnmarshaller implements
                     context.nextToken();
                     attributePayload
                             .setAttributes(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

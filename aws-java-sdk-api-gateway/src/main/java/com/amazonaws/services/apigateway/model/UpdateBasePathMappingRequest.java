@@ -55,6 +55,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @param domainName
      *        The domain name of the <a>BasePathMapping</a> resource to change.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -66,6 +67,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * 
      * @return The domain name of the <a>BasePathMapping</a> resource to change.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -80,6 +82,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBasePathMappingRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -93,6 +96,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @param basePath
      *        The base path of the <a>BasePathMapping</a> resource to change.
      */
+
     public void setBasePath(String basePath) {
         this.basePath = basePath;
     }
@@ -104,6 +108,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * 
      * @return The base path of the <a>BasePathMapping</a> resource to change.
      */
+
     public String getBasePath() {
         return this.basePath;
     }
@@ -118,6 +123,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBasePathMappingRequest withBasePath(String basePath) {
         setBasePath(basePath);
         return this;
@@ -133,6 +139,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -148,6 +155,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -178,6 +186,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBasePathMappingRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -203,6 +212,7 @@ public class UpdateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBasePathMappingRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

@@ -81,6 +81,7 @@ public class ActionExecution implements Serializable, Cloneable {
      *        status of the action.
      * @see ActionExecutionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -95,6 +96,7 @@ public class ActionExecution implements Serializable, Cloneable {
      *         status of the action.
      * @see ActionExecutionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -112,6 +114,7 @@ public class ActionExecution implements Serializable, Cloneable {
      *         chained together.
      * @see ActionExecutionStatus
      */
+
     public ActionExecution withStatus(String status) {
         setStatus(status);
         return this;
@@ -126,10 +129,9 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param status
      *        The status of the action, or for a completed action, the last
      *        status of the action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionExecutionStatus
      */
+
     public void setStatus(ActionExecutionStatus status) {
         this.status = status.toString();
     }
@@ -147,6 +149,7 @@ public class ActionExecution implements Serializable, Cloneable {
      *         chained together.
      * @see ActionExecutionStatus
      */
+
     public ActionExecution withStatus(ActionExecutionStatus status) {
         setStatus(status);
         return this;
@@ -160,6 +163,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param summary
      *        A summary of the run of the action.
      */
+
     public void setSummary(String summary) {
         this.summary = summary;
     }
@@ -171,6 +175,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * 
      * @return A summary of the run of the action.
      */
+
     public String getSummary() {
         return this.summary;
     }
@@ -185,6 +190,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withSummary(String summary) {
         setSummary(summary);
         return this;
@@ -198,6 +204,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param lastStatusChange
      *        The last status change of the action.
      */
+
     public void setLastStatusChange(java.util.Date lastStatusChange) {
         this.lastStatusChange = lastStatusChange;
     }
@@ -209,6 +216,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * 
      * @return The last status change of the action.
      */
+
     public java.util.Date getLastStatusChange() {
         return this.lastStatusChange;
     }
@@ -223,6 +231,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withLastStatusChange(java.util.Date lastStatusChange) {
         setLastStatusChange(lastStatusChange);
         return this;
@@ -236,6 +245,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param externalExecutionId
      *        The external ID of the run of the action.
      */
+
     public void setExternalExecutionId(String externalExecutionId) {
         this.externalExecutionId = externalExecutionId;
     }
@@ -247,6 +257,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * 
      * @return The external ID of the run of the action.
      */
+
     public String getExternalExecutionId() {
         return this.externalExecutionId;
     }
@@ -261,6 +272,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withExternalExecutionId(String externalExecutionId) {
         setExternalExecutionId(externalExecutionId);
         return this;
@@ -276,6 +288,7 @@ public class ActionExecution implements Serializable, Cloneable {
      *        The URL of a resource external to AWS that will be used when
      *        running the action, for example an external repository URL.
      */
+
     public void setExternalExecutionUrl(String externalExecutionUrl) {
         this.externalExecutionUrl = externalExecutionUrl;
     }
@@ -289,6 +302,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return The URL of a resource external to AWS that will be used when
      *         running the action, for example an external repository URL.
      */
+
     public String getExternalExecutionUrl() {
         return this.externalExecutionUrl;
     }
@@ -305,6 +319,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withExternalExecutionUrl(String externalExecutionUrl) {
         setExternalExecutionUrl(externalExecutionUrl);
         return this;
@@ -318,6 +333,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param percentComplete
      *        A percentage of completeness of the action as it runs.
      */
+
     public void setPercentComplete(Integer percentComplete) {
         this.percentComplete = percentComplete;
     }
@@ -329,6 +345,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * 
      * @return A percentage of completeness of the action as it runs.
      */
+
     public Integer getPercentComplete() {
         return this.percentComplete;
     }
@@ -343,6 +360,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withPercentComplete(Integer percentComplete) {
         setPercentComplete(percentComplete);
         return this;
@@ -356,6 +374,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @param errorDetails
      *        The details of an error returned by a URL external to AWS.
      */
+
     public void setErrorDetails(ErrorDetails errorDetails) {
         this.errorDetails = errorDetails;
     }
@@ -367,6 +386,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * 
      * @return The details of an error returned by a URL external to AWS.
      */
+
     public ErrorDetails getErrorDetails() {
         return this.errorDetails;
     }
@@ -381,6 +401,7 @@ public class ActionExecution implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionExecution withErrorDetails(ErrorDetails errorDetails) {
         setErrorDetails(errorDetails);
         return this;

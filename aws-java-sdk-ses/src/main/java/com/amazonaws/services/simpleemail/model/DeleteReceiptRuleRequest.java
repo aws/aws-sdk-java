@@ -49,6 +49,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      *        The name of the receipt rule set that contains the receipt rule to
      *        delete.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -62,6 +63,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return The name of the receipt rule set that contains the receipt rule
      *         to delete.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -78,6 +80,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteReceiptRuleRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -91,6 +94,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @param ruleName
      *        The name of the receipt rule to delete.
      */
+
     public void setRuleName(String ruleName) {
         this.ruleName = ruleName;
     }
@@ -102,6 +106,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the receipt rule to delete.
      */
+
     public String getRuleName() {
         return this.ruleName;
     }
@@ -116,6 +121,7 @@ public class DeleteReceiptRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteReceiptRuleRequest withRuleName(String ruleName) {
         setRuleName(ruleName);
         return this;

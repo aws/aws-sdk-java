@@ -24,8 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing zero or more of the following fields:
  * </p>
  * <ul>
- * <li><a>ListGatewaysInput$Limit</a></li>
- * <li><a>ListGatewaysInput$Marker</a></li>
+ * <li>
+ * <p>
+ * <a>ListGatewaysInput$Limit</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListGatewaysInput$Marker</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ListGatewaysRequest extends AmazonWebServiceRequest implements
@@ -56,6 +64,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      *        An opaque string that indicates the position at which to begin the
      *        returned list of gateways.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -69,6 +78,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      * @return An opaque string that indicates the position at which to begin
      *         the returned list of gateways.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -85,6 +95,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGatewaysRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -100,6 +111,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      *        Specifies that the list of gateways returned be limited to the
      *        specified number of items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -113,6 +125,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      * @return Specifies that the list of gateways returned be limited to the
      *         specified number of items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -129,6 +142,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGatewaysRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

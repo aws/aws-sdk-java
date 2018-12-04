@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -122,12 +124,38 @@ public class HealthCheckConfigStaxUnmarshaller implements
 
                 if (context.testExpression(
                         "ChildHealthChecks/ChildHealthCheck", targetDepth)) {
-                    healthCheckConfig.getChildHealthChecks().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    healthCheckConfig
+                            .withChildHealthChecks(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("EnableSNI", targetDepth)) {
+                    healthCheckConfig.setEnableSNI(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Regions/Region", targetDepth)) {
+                    healthCheckConfig.withRegions(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AlarmIdentifier", targetDepth)) {
+                    healthCheckConfig
+                            .setAlarmIdentifier(AlarmIdentifierStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("InsufficientDataHealthStatus",
+                        targetDepth)) {
+                    healthCheckConfig
+                            .setInsufficientDataHealthStatus(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return healthCheckConfig;

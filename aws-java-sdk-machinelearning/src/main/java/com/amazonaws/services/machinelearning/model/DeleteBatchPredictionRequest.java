@@ -43,6 +43,7 @@ public class DeleteBatchPredictionRequest extends AmazonWebServiceRequest
      *        A user-supplied ID that uniquely identifies the
      *        <code>BatchPrediction</code>.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -56,6 +57,7 @@ public class DeleteBatchPredictionRequest extends AmazonWebServiceRequest
      * @return A user-supplied ID that uniquely identifies the
      *         <code>BatchPrediction</code>.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -72,6 +74,7 @@ public class DeleteBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteBatchPredictionRequest withBatchPredictionId(
             String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);

@@ -260,6 +260,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param topicArn
      *        The topic you want to publish to.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -271,6 +272,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The topic you want to publish to.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -285,6 +287,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -298,6 +301,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param targetArn
      *        Either TopicArn or EndpointArn, but not both.
      */
+
     public void setTargetArn(String targetArn) {
         this.targetArn = targetArn;
     }
@@ -309,6 +313,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return Either TopicArn or EndpointArn, but not both.
      */
+
     public String getTargetArn() {
         return this.targetArn;
     }
@@ -323,6 +328,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withTargetArn(String targetArn) {
         setTargetArn(targetArn);
         return this;
@@ -408,6 +414,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        partial delivery).</li>
      *        </ul>
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -491,6 +498,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         partial delivery).</li>
      *         </ul>
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -577,6 +585,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withMessage(String message) {
         setMessage(message);
         return this;
@@ -604,6 +613,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        letter, number, or punctuation mark; must not include line breaks
      *        or control characters; and must be less than 100 characters long.
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -629,6 +639,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         letter, number, or punctuation mark; must not include line breaks
      *         or control characters; and must be less than 100 characters long.
      */
+
     public String getSubject() {
         return this.subject;
     }
@@ -657,6 +668,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withSubject(String subject) {
         setSubject(subject);
         return this;
@@ -717,6 +729,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Valid value: <code>json</code>
      */
+
     public void setMessageStructure(String messageStructure) {
         this.messageStructure = messageStructure;
     }
@@ -775,6 +788,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Valid value: <code>json</code>
      */
+
     public String getMessageStructure() {
         return this.messageStructure;
     }
@@ -836,6 +850,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withMessageStructure(String messageStructure) {
         setMessageStructure(messageStructure);
         return this;
@@ -848,6 +863,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return Message attributes for Publish action.
      */
+
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
         if (messageAttributes == null) {
             messageAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue>();
@@ -863,6 +879,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param messageAttributes
      *        Message attributes for Publish action.
      */
+
     public void setMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         this.messageAttributes = messageAttributes == null ? null
@@ -880,6 +897,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         setMessageAttributes(messageAttributes);
@@ -902,6 +920,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into MessageAttributes. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PublishRequest clearMessageAttributesEntries() {
         this.messageAttributes = null;
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateJobOutputMarshaller
@@ -39,95 +34,93 @@ import com.amazonaws.util.json.*;
 public class CreateJobOutputJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CreateJobOutput createJobOutput, JSONWriter jsonWriter) {
+    public void marshall(CreateJobOutput createJobOutput,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (createJobOutput == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createJobOutput.getKey() != null) {
-                jsonWriter.key("Key").value(createJobOutput.getKey());
+                jsonGenerator.writeFieldName("Key").writeValue(
+                        createJobOutput.getKey());
             }
-
             if (createJobOutput.getThumbnailPattern() != null) {
-                jsonWriter.key("ThumbnailPattern").value(
+                jsonGenerator.writeFieldName("ThumbnailPattern").writeValue(
                         createJobOutput.getThumbnailPattern());
             }
-
             if (createJobOutput.getThumbnailEncryption() != null) {
-                jsonWriter.key("ThumbnailEncryption");
-                EncryptionJsonMarshaller.getInstance().marshall(
-                        createJobOutput.getThumbnailEncryption(), jsonWriter);
+                jsonGenerator.writeFieldName("ThumbnailEncryption");
+                EncryptionJsonMarshaller.getInstance()
+                        .marshall(createJobOutput.getThumbnailEncryption(),
+                                jsonGenerator);
             }
-
             if (createJobOutput.getRotate() != null) {
-                jsonWriter.key("Rotate").value(createJobOutput.getRotate());
+                jsonGenerator.writeFieldName("Rotate").writeValue(
+                        createJobOutput.getRotate());
             }
-
             if (createJobOutput.getPresetId() != null) {
-                jsonWriter.key("PresetId").value(createJobOutput.getPresetId());
+                jsonGenerator.writeFieldName("PresetId").writeValue(
+                        createJobOutput.getPresetId());
             }
-
             if (createJobOutput.getSegmentDuration() != null) {
-                jsonWriter.key("SegmentDuration").value(
+                jsonGenerator.writeFieldName("SegmentDuration").writeValue(
                         createJobOutput.getSegmentDuration());
             }
 
             com.amazonaws.internal.SdkInternalList<JobWatermark> watermarksList = (com.amazonaws.internal.SdkInternalList<JobWatermark>) createJobOutput
                     .getWatermarks();
             if (!watermarksList.isEmpty() || !watermarksList.isAutoConstruct()) {
-                jsonWriter.key("Watermarks");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Watermarks");
+                jsonGenerator.writeStartArray();
                 for (JobWatermark watermarksListValue : watermarksList) {
                     if (watermarksListValue != null) {
 
                         JobWatermarkJsonMarshaller.getInstance().marshall(
-                                watermarksListValue, jsonWriter);
+                                watermarksListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (createJobOutput.getAlbumArt() != null) {
-                jsonWriter.key("AlbumArt");
+                jsonGenerator.writeFieldName("AlbumArt");
                 JobAlbumArtJsonMarshaller.getInstance().marshall(
-                        createJobOutput.getAlbumArt(), jsonWriter);
+                        createJobOutput.getAlbumArt(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<Clip> compositionList = (com.amazonaws.internal.SdkInternalList<Clip>) createJobOutput
                     .getComposition();
             if (!compositionList.isEmpty()
                     || !compositionList.isAutoConstruct()) {
-                jsonWriter.key("Composition");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Composition");
+                jsonGenerator.writeStartArray();
                 for (Clip compositionListValue : compositionList) {
                     if (compositionListValue != null) {
 
                         ClipJsonMarshaller.getInstance().marshall(
-                                compositionListValue, jsonWriter);
+                                compositionListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (createJobOutput.getCaptions() != null) {
-                jsonWriter.key("Captions");
+                jsonGenerator.writeFieldName("Captions");
                 CaptionsJsonMarshaller.getInstance().marshall(
-                        createJobOutput.getCaptions(), jsonWriter);
+                        createJobOutput.getCaptions(), jsonGenerator);
             }
-
             if (createJobOutput.getEncryption() != null) {
-                jsonWriter.key("Encryption");
+                jsonGenerator.writeFieldName("Encryption");
                 EncryptionJsonMarshaller.getInstance().marshall(
-                        createJobOutput.getEncryption(), jsonWriter);
+                        createJobOutput.getEncryption(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

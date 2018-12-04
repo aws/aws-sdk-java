@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,9 +62,8 @@ public class DescribeWorkspaceBundlesResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    describeWorkspaceBundlesResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeWorkspaceBundlesResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

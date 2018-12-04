@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class DescribeEventsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Events/member", targetDepth)) {
-                    describeEventsResult.getEvents().add(
-                            EventDescriptionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeEventsResult
+                            .withEvents(EventDescriptionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

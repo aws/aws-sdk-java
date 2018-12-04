@@ -53,6 +53,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      *        Pipeline names must be unique under an Amazon Web Services (AWS)
      *        user account.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +68,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      *         Pipeline names must be unique under an Amazon Web Services (AWS)
      *         user account.
      */
+
     public String getName() {
         return this.name;
     }
@@ -84,6 +86,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineRequest withName(String name) {
         setName(name);
         return this;
@@ -99,6 +102,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      *        The version number of the pipeline. If you do not specify a
      *        version, defaults to the most current version.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -112,6 +116,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      * @return The version number of the pipeline. If you do not specify a
      *         version, defaults to the most current version.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -128,6 +133,7 @@ public class GetPipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPipelineRequest withVersion(Integer version) {
         setVersion(version);
         return this;

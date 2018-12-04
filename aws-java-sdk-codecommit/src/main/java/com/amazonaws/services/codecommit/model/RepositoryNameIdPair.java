@@ -25,33 +25,55 @@ import java.io.Serializable;
  */
 public class RepositoryNameIdPair implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name associated with the repository.
+     * </p>
+     */
     private String repositoryName;
     /**
      * <p>
-     * The ID associated with the repository name.
+     * The ID associated with the repository.
      * </p>
      */
     private String repositoryId;
 
     /**
+     * <p>
+     * The name associated with the repository.
+     * </p>
+     * 
      * @param repositoryName
+     *        The name associated with the repository.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
 
     /**
-     * @return
+     * <p>
+     * The name associated with the repository.
+     * </p>
+     * 
+     * @return The name associated with the repository.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
 
     /**
+     * <p>
+     * The name associated with the repository.
+     * </p>
+     * 
      * @param repositoryName
+     *        The name associated with the repository.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryNameIdPair withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -59,37 +81,40 @@ public class RepositoryNameIdPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID associated with the repository name.
+     * The ID associated with the repository.
      * </p>
      * 
      * @param repositoryId
-     *        The ID associated with the repository name.
+     *        The ID associated with the repository.
      */
+
     public void setRepositoryId(String repositoryId) {
         this.repositoryId = repositoryId;
     }
 
     /**
      * <p>
-     * The ID associated with the repository name.
+     * The ID associated with the repository.
      * </p>
      * 
-     * @return The ID associated with the repository name.
+     * @return The ID associated with the repository.
      */
+
     public String getRepositoryId() {
         return this.repositoryId;
     }
 
     /**
      * <p>
-     * The ID associated with the repository name.
+     * The ID associated with the repository.
      * </p>
      * 
      * @param repositoryId
-     *        The ID associated with the repository name.
+     *        The ID associated with the repository.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryNameIdPair withRepositoryId(String repositoryId) {
         setRepositoryId(repositoryId);
         return this;

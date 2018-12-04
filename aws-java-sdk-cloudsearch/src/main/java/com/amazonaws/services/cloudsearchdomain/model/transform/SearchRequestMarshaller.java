@@ -37,8 +37,10 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SearchRequest Marshaller
@@ -47,6 +49,12 @@ public class SearchRequestMarshaller implements
         Marshaller<Request<SearchRequest>, SearchRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SearchRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SearchRequest> marshall(SearchRequest searchRequest) {
 
@@ -67,82 +75,74 @@ public class SearchRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String cursor = (searchRequest.getCursor() == null) ? null
-                : StringUtils.fromString(searchRequest.getCursor());
-        if (cursor != null) {
-            request.addParameter("cursor", cursor);
+        if (searchRequest.getCursor() != null) {
+            request.addParameter("cursor",
+                    StringUtils.fromString(searchRequest.getCursor()));
         }
 
-        String expr = (searchRequest.getExpr() == null) ? null : StringUtils
-                .fromString(searchRequest.getExpr());
-        if (expr != null) {
-            request.addParameter("expr", expr);
+        if (searchRequest.getExpr() != null) {
+            request.addParameter("expr",
+                    StringUtils.fromString(searchRequest.getExpr()));
         }
 
-        String facet = (searchRequest.getFacet() == null) ? null : StringUtils
-                .fromString(searchRequest.getFacet());
-        if (facet != null) {
-            request.addParameter("facet", facet);
+        if (searchRequest.getFacet() != null) {
+            request.addParameter("facet",
+                    StringUtils.fromString(searchRequest.getFacet()));
         }
 
-        String filterQuery = (searchRequest.getFilterQuery() == null) ? null
-                : StringUtils.fromString(searchRequest.getFilterQuery());
-        if (filterQuery != null) {
-            request.addParameter("fq", filterQuery);
+        if (searchRequest.getFilterQuery() != null) {
+            request.addParameter("fq",
+                    StringUtils.fromString(searchRequest.getFilterQuery()));
         }
 
-        String highlight = (searchRequest.getHighlight() == null) ? null
-                : StringUtils.fromString(searchRequest.getHighlight());
-        if (highlight != null) {
-            request.addParameter("highlight", highlight);
+        if (searchRequest.getHighlight() != null) {
+            request.addParameter("highlight",
+                    StringUtils.fromString(searchRequest.getHighlight()));
         }
 
-        String partial = (searchRequest.getPartial() == null) ? null
-                : StringUtils.fromBoolean(searchRequest.getPartial());
-        if (partial != null) {
-            request.addParameter("partial", partial);
+        if (searchRequest.getPartial() != null) {
+            request.addParameter("partial",
+                    StringUtils.fromBoolean(searchRequest.getPartial()));
         }
 
-        String query = (searchRequest.getQuery() == null) ? null : StringUtils
-                .fromString(searchRequest.getQuery());
-        if (query != null) {
-            request.addParameter("q", query);
+        if (searchRequest.getQuery() != null) {
+            request.addParameter("q",
+                    StringUtils.fromString(searchRequest.getQuery()));
         }
 
-        String queryOptions = (searchRequest.getQueryOptions() == null) ? null
-                : StringUtils.fromString(searchRequest.getQueryOptions());
-        if (queryOptions != null) {
-            request.addParameter("q.options", queryOptions);
+        if (searchRequest.getQueryOptions() != null) {
+            request.addParameter("q.options",
+                    StringUtils.fromString(searchRequest.getQueryOptions()));
         }
 
-        String queryParser = (searchRequest.getQueryParser() == null) ? null
-                : StringUtils.fromString(searchRequest.getQueryParser());
-        if (queryParser != null) {
-            request.addParameter("q.parser", queryParser);
+        if (searchRequest.getQueryParser() != null) {
+            request.addParameter("q.parser",
+                    StringUtils.fromString(searchRequest.getQueryParser()));
         }
 
-        String returnValue = (searchRequest.getReturn() == null) ? null
-                : StringUtils.fromString(searchRequest.getReturn());
-        if (returnValue != null) {
-            request.addParameter("return", returnValue);
+        if (searchRequest.getReturn() != null) {
+            request.addParameter("return",
+                    StringUtils.fromString(searchRequest.getReturn()));
         }
 
-        String size = (searchRequest.getSize() == null) ? null : StringUtils
-                .fromLong(searchRequest.getSize());
-        if (size != null) {
-            request.addParameter("size", size);
+        if (searchRequest.getSize() != null) {
+            request.addParameter("size",
+                    StringUtils.fromLong(searchRequest.getSize()));
         }
 
-        String sort = (searchRequest.getSort() == null) ? null : StringUtils
-                .fromString(searchRequest.getSort());
-        if (sort != null) {
-            request.addParameter("sort", sort);
+        if (searchRequest.getSort() != null) {
+            request.addParameter("sort",
+                    StringUtils.fromString(searchRequest.getSort()));
         }
 
-        String start = (searchRequest.getStart() == null) ? null : StringUtils
-                .fromLong(searchRequest.getStart());
-        if (start != null) {
-            request.addParameter("start", start);
+        if (searchRequest.getStart() != null) {
+            request.addParameter("start",
+                    StringUtils.fromLong(searchRequest.getStart()));
+        }
+
+        if (searchRequest.getStats() != null) {
+            request.addParameter("stats",
+                    StringUtils.fromString(searchRequest.getStats()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

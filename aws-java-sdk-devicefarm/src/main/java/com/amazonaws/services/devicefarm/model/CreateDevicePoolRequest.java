@@ -60,6 +60,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @param projectArn
      *        The ARN of the project for the device pool.
      */
+
     public void setProjectArn(String projectArn) {
         this.projectArn = projectArn;
     }
@@ -71,6 +72,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the project for the device pool.
      */
+
     public String getProjectArn() {
         return this.projectArn;
     }
@@ -85,6 +87,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolRequest withProjectArn(String projectArn) {
         setProjectArn(projectArn);
         return this;
@@ -98,6 +101,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The device pool's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -109,6 +113,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * 
      * @return The device pool's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -123,6 +128,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolRequest withName(String name) {
         setName(name);
         return this;
@@ -136,6 +142,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The device pool's description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -147,6 +154,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * 
      * @return The device pool's description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -161,6 +169,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -173,6 +182,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * 
      * @return The device pool's rules.
      */
+
     public java.util.List<Rule> getRules() {
         return rules;
     }
@@ -185,6 +195,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @param rules
      *        The device pool's rules.
      */
+
     public void setRules(java.util.Collection<Rule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -210,6 +221,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolRequest withRules(Rule... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<Rule>(rules.length));
@@ -230,6 +242,7 @@ public class CreateDevicePoolRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDevicePoolRequest withRules(java.util.Collection<Rule> rules) {
         setRules(rules);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class AddInstanceGroupsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("JobFlowId", targetDepth)) {
                     context.nextToken();
-                    addInstanceGroupsResult.setJobFlowId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    addInstanceGroupsResult.setJobFlowId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceGroupIds", targetDepth)) {
                     context.nextToken();
                     addInstanceGroupsResult
                             .setInstanceGroupIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

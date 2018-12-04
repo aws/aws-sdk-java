@@ -40,6 +40,7 @@ public class RegisterDeviceResult implements Serializable, Cloneable {
      * @param deviceId
      *        The unique ID generated for this device by Cognito.
      */
+
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
@@ -51,6 +52,7 @@ public class RegisterDeviceResult implements Serializable, Cloneable {
      * 
      * @return The unique ID generated for this device by Cognito.
      */
+
     public String getDeviceId() {
         return this.deviceId;
     }
@@ -65,6 +67,7 @@ public class RegisterDeviceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDeviceResult withDeviceId(String deviceId) {
         setDeviceId(deviceId);
         return this;

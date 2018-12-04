@@ -49,20 +49,24 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      */
     private String destinationArn;
     /**
      * <p>
-     * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to
-     * provide the ARN when you are working with a logical destination (used via
-     * an ARN of <code>Destination</code>) for cross-account delivery.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide
+     * the ARN when you are working with a logical destination (used via an ARN
+     * of <code>Destination</code>) for cross-account delivery.
      * </p>
      */
     private String roleArn;
@@ -76,6 +80,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        The name of the log group to associate the subscription filter
      *        with.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -88,6 +93,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return The name of the log group to associate the subscription filter
      *         with.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -103,6 +109,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -116,6 +123,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @param filterName
      *        A name for the subscription filter.
      */
+
     public void setFilterName(String filterName) {
         this.filterName = filterName;
     }
@@ -127,6 +135,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * 
      * @return A name for the subscription filter.
      */
+
     public String getFilterName() {
         return this.filterName;
     }
@@ -141,6 +150,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withFilterName(String filterName) {
         setFilterName(filterName);
         return this;
@@ -156,6 +166,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        A valid CloudWatch Logs filter pattern for subscribing to a
      *        filtered stream of log events.
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -169,6 +180,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return A valid CloudWatch Logs filter pattern for subscribing to a
      *         filtered stream of log events.
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -185,6 +197,7 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -195,10 +208,14 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * 
@@ -206,13 +223,18 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        The ARN of the destination to deliver matching log events to.
      *        Currently, the supported destinations are:
      *        <ul>
-     *        <li>A Amazon Kinesis stream belonging to the same account as the
+     *        <li>An Amazon Kinesis stream belonging to the same account as the
      *        subscription filter, for same-account delivery.</li>
      *        <li>A logical destination (used via an ARN of
      *        <code>Destination</code>) belonging to a different account, for
      *        cross-account delivery.</li>
+     *        <li>An Amazon Kinesis Firehose stream belonging to the same
+     *        account as the subscription filter, for same-account delivery.</li>
+     *        <li>An AWS Lambda function belonging to the same account as the
+     *        subscription filter, for same-account delivery.</li>
      *        </ul>
      */
+
     public void setDestinationArn(String destinationArn) {
         this.destinationArn = destinationArn;
     }
@@ -222,23 +244,32 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * 
      * @return The ARN of the destination to deliver matching log events to.
      *         Currently, the supported destinations are:
      *         <ul>
-     *         <li>A Amazon Kinesis stream belonging to the same account as the
+     *         <li>An Amazon Kinesis stream belonging to the same account as the
      *         subscription filter, for same-account delivery.</li>
      *         <li>A logical destination (used via an ARN of
      *         <code>Destination</code>) belonging to a different account, for
      *         cross-account delivery.</li>
+     *         <li>An Amazon Kinesis Firehose stream belonging to the same
+     *         account as the subscription filter, for same-account delivery.</li>
+     *         <li>An AWS Lambda function belonging to the same account as the
+     *         subscription filter, for same-account delivery.</li>
      *         </ul>
      */
+
     public String getDestinationArn() {
         return this.destinationArn;
     }
@@ -248,10 +279,14 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      * The ARN of the destination to deliver matching log events to. Currently,
      * the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * 
@@ -259,15 +294,20 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
      *        The ARN of the destination to deliver matching log events to.
      *        Currently, the supported destinations are:
      *        <ul>
-     *        <li>A Amazon Kinesis stream belonging to the same account as the
+     *        <li>An Amazon Kinesis stream belonging to the same account as the
      *        subscription filter, for same-account delivery.</li>
      *        <li>A logical destination (used via an ARN of
      *        <code>Destination</code>) belonging to a different account, for
      *        cross-account delivery.</li>
+     *        <li>An Amazon Kinesis Firehose stream belonging to the same
+     *        account as the subscription filter, for same-account delivery.</li>
+     *        <li>An AWS Lambda function belonging to the same account as the
+     *        subscription filter, for same-account delivery.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withDestinationArn(String destinationArn) {
         setDestinationArn(destinationArn);
         return this;
@@ -275,58 +315,61 @@ public class PutSubscriptionFilterRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to
-     * provide the ARN when you are working with a logical destination (used via
-     * an ARN of <code>Destination</code>) for cross-account delivery.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide
+     * the ARN when you are working with a logical destination (used via an ARN
+     * of <code>Destination</code>) for cross-account delivery.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants Amazon CloudWatch Logs
-     *        permissions to deliver ingested log events to the destination
-     *        stream. You don't need to provide the ARN when you are working
-     *        with a logical destination (used via an ARN of
-     *        <code>Destination</code>) for cross-account delivery.
+     *        The ARN of an IAM role that grants CloudWatch Logs permissions to
+     *        deliver ingested log events to the destination stream. You don't
+     *        need to provide the ARN when you are working with a logical
+     *        destination (used via an ARN of <code>Destination</code>) for
+     *        cross-account delivery.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
 
     /**
      * <p>
-     * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to
-     * provide the ARN when you are working with a logical destination (used via
-     * an ARN of <code>Destination</code>) for cross-account delivery.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide
+     * the ARN when you are working with a logical destination (used via an ARN
+     * of <code>Destination</code>) for cross-account delivery.
      * </p>
      * 
-     * @return The ARN of an IAM role that grants Amazon CloudWatch Logs
-     *         permissions to deliver ingested log events to the destination
-     *         stream. You don't need to provide the ARN when you are working
-     *         with a logical destination (used via an ARN of
-     *         <code>Destination</code>) for cross-account delivery.
+     * @return The ARN of an IAM role that grants CloudWatch Logs permissions to
+     *         deliver ingested log events to the destination stream. You don't
+     *         need to provide the ARN when you are working with a logical
+     *         destination (used via an ARN of <code>Destination</code>) for
+     *         cross-account delivery.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
 
     /**
      * <p>
-     * The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to
-     * deliver ingested log events to the destination stream. You don't need to
-     * provide the ARN when you are working with a logical destination (used via
-     * an ARN of <code>Destination</code>) for cross-account delivery.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
+     * ingested log events to the destination stream. You don't need to provide
+     * the ARN when you are working with a logical destination (used via an ARN
+     * of <code>Destination</code>) for cross-account delivery.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants Amazon CloudWatch Logs
-     *        permissions to deliver ingested log events to the destination
-     *        stream. You don't need to provide the ARN when you are working
-     *        with a logical destination (used via an ARN of
-     *        <code>Destination</code>) for cross-account delivery.
+     *        The ARN of an IAM role that grants CloudWatch Logs permissions to
+     *        deliver ingested log events to the destination stream. You don't
+     *        need to provide the ARN when you are working with a logical
+     *        destination (used via an ARN of <code>Destination</code>) for
+     *        cross-account delivery.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutSubscriptionFilterRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

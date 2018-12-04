@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutTargetsRequest Marshaller
  */
 public class PutTargetsRequestMarshaller implements
         Marshaller<Request<PutTargetsRequest>, PutTargetsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutTargetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutTargetsRequest> marshall(
             PutTargetsRequest putTargetsRequest) {
@@ -63,37 +63,37 @@ public class PutTargetsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putTargetsRequest.getRule() != null) {
-                jsonWriter.key("Rule").value(putTargetsRequest.getRule());
+                jsonGenerator.writeFieldName("Rule").writeValue(
+                        putTargetsRequest.getRule());
             }
 
             java.util.List<Target> targetsList = putTargetsRequest.getTargets();
             if (targetsList != null) {
-                jsonWriter.key("Targets");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Targets");
+                jsonGenerator.writeStartArray();
                 for (Target targetsListValue : targetsList) {
                     if (targetsListValue != null) {
 
                         TargetJsonMarshaller.getInstance().marshall(
-                                targetsListValue, jsonWriter);
+                                targetsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

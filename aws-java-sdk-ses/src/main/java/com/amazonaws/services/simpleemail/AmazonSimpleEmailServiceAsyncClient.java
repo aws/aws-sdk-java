@@ -16,6 +16,7 @@
 package com.amazonaws.services.simpleemail;
 
 import com.amazonaws.services.simpleemail.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SES asynchronously. Each asynchronous method
@@ -35,6 +36,7 @@ import com.amazonaws.services.simpleemail.model.*;
  * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
  * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
  */
+@ThreadSafe
 public class AmazonSimpleEmailServiceAsyncClient extends
         AmazonSimpleEmailServiceClient implements AmazonSimpleEmailServiceAsync {
 
@@ -133,8 +135,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -226,9 +227,7 @@ public class AmazonSimpleEmailServiceAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -582,26 +581,26 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest request) {
 
         return deleteVerifiedEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    public java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             final DeleteVerifiedEmailAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteVerifiedEmailAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteVerifiedEmailAddressResult call()
+                            throws Exception {
+                        DeleteVerifiedEmailAddressResult result;
 
                         try {
-                            deleteVerifiedEmailAddress(request);
-                            result = null;
+                            result = deleteVerifiedEmailAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -744,6 +743,42 @@ public class AmazonSimpleEmailServiceAsyncClient extends
 
                         try {
                             result = getIdentityDkimAttributes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest request) {
+
+        return getIdentityMailFromDomainAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            final GetIdentityMailFromDomainAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetIdentityMailFromDomainAttributesResult>() {
+                    @Override
+                    public GetIdentityMailFromDomainAttributesResult call()
+                            throws Exception {
+                        GetIdentityMailFromDomainAttributesResult result;
+
+                        try {
+                            result = getIdentityMailFromDomainAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1494,6 +1529,42 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest request) {
+
+        return setIdentityMailFromDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            final SetIdentityMailFromDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetIdentityMailFromDomainResult>() {
+                    @Override
+                    public SetIdentityMailFromDomainResult call()
+                            throws Exception {
+                        SetIdentityMailFromDomainResult result;
+
+                        try {
+                            result = setIdentityMailFromDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetIdentityNotificationTopicResult> setIdentityNotificationTopicAsync(
             SetIdentityNotificationTopicRequest request) {
 
@@ -1670,26 +1741,25 @@ public class AmazonSimpleEmailServiceAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest request) {
 
         return verifyEmailAddressAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    public java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             final VerifyEmailAddressRequest request,
-            final com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, VerifyEmailAddressResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<VerifyEmailAddressResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public VerifyEmailAddressResult call() throws Exception {
+                        VerifyEmailAddressResult result;
 
                         try {
-                            verifyEmailAddress(request);
-                            result = null;
+                            result = verifyEmailAddress(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

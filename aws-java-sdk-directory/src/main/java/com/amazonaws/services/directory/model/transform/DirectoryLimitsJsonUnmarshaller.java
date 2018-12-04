@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,64 +57,73 @@ public class DirectoryLimitsJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyDirectoriesLimit(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyDirectoriesLimit(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("CloudOnlyDirectoriesCurrentCount",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyDirectoriesCurrentCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyDirectoriesCurrentCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("CloudOnlyDirectoriesLimitReached",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyDirectoriesLimitReached(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyDirectoriesLimitReached(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADLimit",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyMicrosoftADLimit(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyMicrosoftADLimit(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADCurrentCount",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyMicrosoftADCurrentCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyMicrosoftADCurrentCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("CloudOnlyMicrosoftADLimitReached",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setCloudOnlyMicrosoftADLimitReached(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCloudOnlyMicrosoftADLimitReached(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ConnectedDirectoriesLimit",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setConnectedDirectoriesLimit(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectedDirectoriesLimit(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ConnectedDirectoriesCurrentCount",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setConnectedDirectoriesCurrentCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectedDirectoriesCurrentCount(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ConnectedDirectoriesLimitReached",
                         targetDepth)) {
                     context.nextToken();
                     directoryLimits
-                            .setConnectedDirectoriesLimitReached(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setConnectedDirectoriesLimitReached(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

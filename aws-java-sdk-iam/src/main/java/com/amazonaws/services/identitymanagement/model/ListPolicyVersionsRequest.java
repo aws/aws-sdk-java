@@ -25,6 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
     /**
      * <p>
@@ -54,24 +66,80 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
     private Integer maxItems;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you
+     *        want the versions.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy for which you
+     *         want the versions.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you
+     *        want the versions.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -91,6 +159,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -109,6 +178,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -129,6 +199,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -164,6 +235,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -198,6 +270,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -234,6 +307,7 @@ public class ListPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPolicyVersionsRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

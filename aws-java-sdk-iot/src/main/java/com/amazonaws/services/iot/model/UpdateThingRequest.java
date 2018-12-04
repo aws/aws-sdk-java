@@ -36,10 +36,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The attribute payload, a JSON string containing up to three key-value
-     * pairs.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * pairs (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      */
     private AttributePayload attributePayload;
@@ -52,6 +49,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The thing name.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -63,6 +61,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The thing name.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -77,6 +76,7 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -85,18 +85,15 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The attribute payload, a JSON string containing up to three key-value
-     * pairs.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * pairs (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, a JSON string containing up to three
-     *        key-value pairs.</p>
-     *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *        key-value pairs (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public void setAttributePayload(AttributePayload attributePayload) {
         this.attributePayload = attributePayload;
     }
@@ -104,17 +101,14 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The attribute payload, a JSON string containing up to three key-value
-     * pairs.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * pairs (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @return The attribute payload, a JSON string containing up to three
-     *         key-value pairs.</p>
-     *         <p>
-     *         For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *         key-value pairs (for example,
+     *         {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public AttributePayload getAttributePayload() {
         return this.attributePayload;
     }
@@ -122,20 +116,17 @@ public class UpdateThingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The attribute payload, a JSON string containing up to three key-value
-     * pairs.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * pairs (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, a JSON string containing up to three
-     *        key-value pairs.</p>
-     *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *        key-value pairs (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingRequest withAttributePayload(
             AttributePayload attributePayload) {
         setAttributePayload(attributePayload);

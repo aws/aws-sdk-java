@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateDirectoryRequest Marshaller
  */
 public class CreateDirectoryRequestMarshaller implements
         Marshaller<Request<CreateDirectoryRequest>, CreateDirectoryRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateDirectoryRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateDirectoryRequest> marshall(
             CreateDirectoryRequest createDirectoryRequest) {
@@ -64,48 +65,44 @@ public class CreateDirectoryRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createDirectoryRequest.getName() != null) {
-                jsonWriter.key("Name").value(createDirectoryRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createDirectoryRequest.getName());
             }
-
             if (createDirectoryRequest.getShortName() != null) {
-                jsonWriter.key("ShortName").value(
+                jsonGenerator.writeFieldName("ShortName").writeValue(
                         createDirectoryRequest.getShortName());
             }
-
             if (createDirectoryRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createDirectoryRequest.getPassword());
             }
-
             if (createDirectoryRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         createDirectoryRequest.getDescription());
             }
-
             if (createDirectoryRequest.getSize() != null) {
-                jsonWriter.key("Size").value(createDirectoryRequest.getSize());
+                jsonGenerator.writeFieldName("Size").writeValue(
+                        createDirectoryRequest.getSize());
             }
-
             if (createDirectoryRequest.getVpcSettings() != null) {
-                jsonWriter.key("VpcSettings");
+                jsonGenerator.writeFieldName("VpcSettings");
                 DirectoryVpcSettingsJsonMarshaller.getInstance().marshall(
-                        createDirectoryRequest.getVpcSettings(), jsonWriter);
+                        createDirectoryRequest.getVpcSettings(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

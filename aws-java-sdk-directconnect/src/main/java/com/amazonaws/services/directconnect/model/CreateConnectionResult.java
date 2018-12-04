@@ -26,6 +26,11 @@ import java.io.Serializable;
  */
 public class CreateConnectionResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     */
     private String ownerAccount;
 
     private String connectionId;
@@ -52,28 +57,50 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     private String bandwidth;
 
     private Integer vlan;
-
+    /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     */
     private String partnerName;
 
     /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new connection.
      */
+
     public void setOwnerAccount(String ownerAccount) {
         this.ownerAccount = ownerAccount;
     }
 
     /**
-     * @return
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
+     * @return The AWS account that will own the new connection.
      */
+
     public String getOwnerAccount() {
         return this.ownerAccount;
     }
 
     /**
+     * <p>
+     * The AWS account that will own the new connection.
+     * </p>
+     * 
      * @param ownerAccount
+     *        The AWS account that will own the new connection.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withOwnerAccount(String ownerAccount) {
         setOwnerAccount(ownerAccount);
         return this;
@@ -82,6 +109,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -89,6 +117,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -98,6 +127,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
@@ -106,6 +136,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @param connectionName
      */
+
     public void setConnectionName(String connectionName) {
         this.connectionName = connectionName;
     }
@@ -113,6 +144,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getConnectionName() {
         return this.connectionName;
     }
@@ -122,6 +154,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withConnectionName(String connectionName) {
         setConnectionName(connectionName);
         return this;
@@ -131,6 +164,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @param connectionState
      * @see ConnectionState
      */
+
     public void setConnectionState(String connectionState) {
         this.connectionState = connectionState;
     }
@@ -139,6 +173,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return
      * @see ConnectionState
      */
+
     public String getConnectionState() {
         return this.connectionState;
     }
@@ -149,6 +184,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public CreateConnectionResult withConnectionState(String connectionState) {
         setConnectionState(connectionState);
         return this;
@@ -156,10 +192,9 @@ public class CreateConnectionResult implements Serializable, Cloneable {
 
     /**
      * @param connectionState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConnectionState
      */
+
     public void setConnectionState(ConnectionState connectionState) {
         this.connectionState = connectionState.toString();
     }
@@ -170,6 +205,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      *         chained together.
      * @see ConnectionState
      */
+
     public CreateConnectionResult withConnectionState(
             ConnectionState connectionState) {
         setConnectionState(connectionState);
@@ -179,6 +215,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @param region
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -186,6 +223,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -195,6 +233,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withRegion(String region) {
         setRegion(region);
         return this;
@@ -203,6 +242,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -210,6 +250,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -219,6 +260,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -245,6 +287,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      *        <p>
      *        Default: None
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -269,6 +312,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      *         <p>
      *         Default: None
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -296,6 +340,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
@@ -304,6 +349,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @param vlan
      */
+
     public void setVlan(Integer vlan) {
         this.vlan = vlan;
     }
@@ -311,6 +357,7 @@ public class CreateConnectionResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVlan() {
         return this.vlan;
     }
@@ -320,30 +367,54 @@ public class CreateConnectionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withVlan(Integer vlan) {
         setVlan(vlan);
         return this;
     }
 
     /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
      * @param partnerName
+     *        The name of the AWS Direct Connect service provider associated
+     *        with the connection.
      */
+
     public void setPartnerName(String partnerName) {
         this.partnerName = partnerName;
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
+     * @return The name of the AWS Direct Connect service provider associated
+     *         with the connection.
      */
+
     public String getPartnerName() {
         return this.partnerName;
     }
 
     /**
+     * <p>
+     * The name of the AWS Direct Connect service provider associated with the
+     * connection.
+     * </p>
+     * 
      * @param partnerName
+     *        The name of the AWS Direct Connect service provider associated
+     *        with the connection.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConnectionResult withPartnerName(String partnerName) {
         setPartnerName(partnerName);
         return this;

@@ -48,6 +48,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      * @param resourceType
      *        The type of AWS resource.
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -59,6 +60,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      * 
      * @return The type of AWS resource.
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -73,6 +75,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceSummaryByResourceType withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -88,6 +91,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      *        The number of AWS resources that are compliant or noncompliant, up
      *        to a maximum of 100 for each compliance.
      */
+
     public void setComplianceSummary(ComplianceSummary complianceSummary) {
         this.complianceSummary = complianceSummary;
     }
@@ -101,6 +105,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      * @return The number of AWS resources that are compliant or noncompliant,
      *         up to a maximum of 100 for each compliance.
      */
+
     public ComplianceSummary getComplianceSummary() {
         return this.complianceSummary;
     }
@@ -117,6 +122,7 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceSummaryByResourceType withComplianceSummary(
             ComplianceSummary complianceSummary) {
         setComplianceSummary(complianceSummary);

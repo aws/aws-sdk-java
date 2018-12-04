@@ -33,7 +33,7 @@ public class S3Action implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      */
     private String bucketName;
@@ -52,6 +52,7 @@ public class S3Action implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -63,6 +64,7 @@ public class S3Action implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -77,6 +79,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -84,37 +87,40 @@ public class S3Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The S3 bucket.
+     *        The Amazon S3 bucket.
      */
+
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
-     * @return The S3 bucket.
+     * @return The Amazon S3 bucket.
      */
+
     public String getBucketName() {
         return this.bucketName;
     }
 
     /**
      * <p>
-     * The S3 bucket.
+     * The Amazon S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        The S3 bucket.
+     *        The Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withBucketName(String bucketName) {
         setBucketName(bucketName);
         return this;
@@ -128,6 +134,7 @@ public class S3Action implements Serializable, Cloneable {
      * @param key
      *        The object key.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -139,6 +146,7 @@ public class S3Action implements Serializable, Cloneable {
      * 
      * @return The object key.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -153,6 +161,7 @@ public class S3Action implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Action withKey(String key) {
         setKey(key);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class ArtifactLocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    artifactLocation.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    artifactLocation.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("s3Location", targetDepth)) {
                     context.nextToken();

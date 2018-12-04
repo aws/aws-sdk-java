@@ -39,15 +39,15 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public void addPermission(AddPermissionRequest request) {
+    public AddPermissionResult addPermission(AddPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void addPermission(String topicArn, String label,
+    public AddPermissionResult addPermission(String topicArn, String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames) {
-        addPermission(new AddPermissionRequest().withTopicArn(topicArn)
+        return addPermission(new AddPermissionRequest().withTopicArn(topicArn)
                 .withLabel(label).withAWSAccountIds(aWSAccountIds)
                 .withActionNames(actionNames));
     }
@@ -96,24 +96,24 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public void deleteEndpoint(DeleteEndpointRequest request) {
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePlatformApplication(
+    public DeletePlatformApplicationResult deletePlatformApplication(
             DeletePlatformApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteTopic(DeleteTopicRequest request) {
+    public DeleteTopicResult deleteTopic(DeleteTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteTopic(String topicArn) {
-        deleteTopic(new DeleteTopicRequest().withTopicArn(topicArn));
+    public DeleteTopicResult deleteTopic(String topicArn) {
+        return deleteTopic(new DeleteTopicRequest().withTopicArn(topicArn));
     }
 
     @Override
@@ -240,51 +240,54 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public void removePermission(RemovePermissionRequest request) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removePermission(String topicArn, String label) {
-        removePermission(new RemovePermissionRequest().withTopicArn(topicArn)
-                .withLabel(label));
+    public RemovePermissionResult removePermission(String topicArn, String label) {
+        return removePermission(new RemovePermissionRequest().withTopicArn(
+                topicArn).withLabel(label));
     }
 
     @Override
-    public void setEndpointAttributes(SetEndpointAttributesRequest request) {
+    public SetEndpointAttributesResult setEndpointAttributes(
+            SetEndpointAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setPlatformApplicationAttributes(
+    public SetPlatformApplicationAttributesResult setPlatformApplicationAttributes(
             SetPlatformApplicationAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setSubscriptionAttributes(
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(
             SetSubscriptionAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setSubscriptionAttributes(String subscriptionArn,
-            String attributeName, String attributeValue) {
-        setSubscriptionAttributes(new SetSubscriptionAttributesRequest()
+    public SetSubscriptionAttributesResult setSubscriptionAttributes(
+            String subscriptionArn, String attributeName, String attributeValue) {
+        return setSubscriptionAttributes(new SetSubscriptionAttributesRequest()
                 .withSubscriptionArn(subscriptionArn)
                 .withAttributeName(attributeName)
                 .withAttributeValue(attributeValue));
     }
 
     @Override
-    public void setTopicAttributes(SetTopicAttributesRequest request) {
+    public SetTopicAttributesResult setTopicAttributes(
+            SetTopicAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setTopicAttributes(String topicArn, String attributeName,
-            String attributeValue) {
-        setTopicAttributes(new SetTopicAttributesRequest()
+    public SetTopicAttributesResult setTopicAttributes(String topicArn,
+            String attributeName, String attributeValue) {
+        return setTopicAttributes(new SetTopicAttributesRequest()
                 .withTopicArn(topicArn).withAttributeName(attributeName)
                 .withAttributeValue(attributeValue));
     }
@@ -302,13 +305,13 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
-    public void unsubscribe(UnsubscribeRequest request) {
+    public UnsubscribeResult unsubscribe(UnsubscribeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void unsubscribe(String subscriptionArn) {
-        unsubscribe(new UnsubscribeRequest()
+    public UnsubscribeResult unsubscribe(String subscriptionArn) {
+        return unsubscribe(new UnsubscribeRequest()
                 .withSubscriptionArn(subscriptionArn));
     }
 

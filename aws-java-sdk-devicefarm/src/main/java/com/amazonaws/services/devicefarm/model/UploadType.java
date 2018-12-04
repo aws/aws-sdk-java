@@ -35,7 +35,8 @@ public enum UploadType {
     INSTRUMENTATION_TEST_PACKAGE("INSTRUMENTATION_TEST_PACKAGE"),
     UIAUTOMATION_TEST_PACKAGE("UIAUTOMATION_TEST_PACKAGE"),
     UIAUTOMATOR_TEST_PACKAGE("UIAUTOMATOR_TEST_PACKAGE"),
-    XCTEST_TEST_PACKAGE("XCTEST_TEST_PACKAGE");
+    XCTEST_TEST_PACKAGE("XCTEST_TEST_PACKAGE"),
+    XCTEST_UI_TEST_PACKAGE("XCTEST_UI_TEST_PACKAGE");
 
     private String value;
 
@@ -88,6 +89,8 @@ public enum UploadType {
             return UIAUTOMATOR_TEST_PACKAGE;
         } else if ("XCTEST_TEST_PACKAGE".equals(value)) {
             return XCTEST_TEST_PACKAGE;
+        } else if ("XCTEST_UI_TEST_PACKAGE".equals(value)) {
+            return XCTEST_UI_TEST_PACKAGE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

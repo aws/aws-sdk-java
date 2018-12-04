@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for <a>UpdateStack</a> action.
+ * The input for an <a>UpdateStack</a> action.
  * </p>
  */
 public class UpdateStackRequest extends AmazonWebServiceRequest implements
@@ -108,12 +108,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -128,9 +131,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
@@ -189,6 +194,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -198,6 +216,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @param stackName
      *        The name or unique stack ID of the stack to update.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -209,6 +228,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name or unique stack ID of the stack to update.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -223,6 +243,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -251,6 +272,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -278,6 +300,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -307,6 +330,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -335,6 +359,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -362,6 +387,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -391,6 +417,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -406,6 +433,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        Reuse the existing template that is associated with the stack that
      *        you are updating.
      */
+
     public void setUsePreviousTemplate(Boolean usePreviousTemplate) {
         this.usePreviousTemplate = usePreviousTemplate;
     }
@@ -419,6 +447,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Reuse the existing template that is associated with the stack
      *         that you are updating.
      */
+
     public Boolean getUsePreviousTemplate() {
         return this.usePreviousTemplate;
     }
@@ -435,6 +464,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withUsePreviousTemplate(
             Boolean usePreviousTemplate) {
         setUsePreviousTemplate(usePreviousTemplate);
@@ -450,6 +480,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Reuse the existing template that is associated with the stack
      *         that you are updating.
      */
+
     public Boolean isUsePreviousTemplate() {
         return this.usePreviousTemplate;
     }
@@ -478,6 +509,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        a stack policy, the current policy that is associated with the
      *        stack will be used.
      */
+
     public void setStackPolicyDuringUpdateBody(
             String stackPolicyDuringUpdateBody) {
         this.stackPolicyDuringUpdateBody = stackPolicyDuringUpdateBody;
@@ -506,6 +538,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         a stack policy, the current policy that is associated with the
      *         stack will be used.
      */
+
     public String getStackPolicyDuringUpdateBody() {
         return this.stackPolicyDuringUpdateBody;
     }
@@ -536,6 +569,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyDuringUpdateBody(
             String stackPolicyDuringUpdateBody) {
         setStackPolicyDuringUpdateBody(stackPolicyDuringUpdateBody);
@@ -569,6 +603,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        a stack policy, the current policy that is associated with the
      *        stack will be used.
      */
+
     public void setStackPolicyDuringUpdateURL(String stackPolicyDuringUpdateURL) {
         this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
     }
@@ -599,6 +634,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         a stack policy, the current policy that is associated with the
      *         stack will be used.
      */
+
     public String getStackPolicyDuringUpdateURL() {
         return this.stackPolicyDuringUpdateURL;
     }
@@ -632,6 +668,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyDuringUpdateURL(
             String stackPolicyDuringUpdateURL) {
         setStackPolicyDuringUpdateURL(stackPolicyDuringUpdateURL);
@@ -651,6 +688,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *         >Parameter</a> data type.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -672,6 +710,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *        >Parameter</a> data type.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -704,6 +743,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -731,6 +771,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
@@ -740,12 +781,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -760,16 +804,20 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @return A list of capabilities that you must specify before AWS
-     *         CloudFormation can create or update certain stacks. Some stack
-     *         templates might include resources that can affect permissions in
-     *         your AWS account. For those stacks, you must explicitly
-     *         acknowledge their capabilities by specifying this parameter.
+     *         CloudFormation can update certain stacks. Some stack templates
+     *         might include resources that can affect permissions in your AWS
+     *         account, for example, by creating new AWS Identity and Access
+     *         Management (IAM) users. For those stacks, you must explicitly
+     *         acknowledge their capabilities by specifying this parameter.</p>
+     *         <p>
      *         Currently, the only valid value is <code>CAPABILITY_IAM</code>,
      *         which is required for the following resources: <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
@@ -786,11 +834,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         > AWS::IAM::User</a>, and <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *         > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *         contains these resources, we recommend that you review any
-     *         permissions associated with them. If you don't specify this
-     *         parameter, this action returns an InsufficientCapabilities error.
+     *         contains these resources, we recommend that you review all
+     *         permissions associated with them and edit their permissions if
+     *         necessary. If your template contains any of the listed resources
+     *         and you don't specify this parameter, this action returns an
+     *         <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -801,12 +852,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -821,17 +875,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.
+     *        CloudFormation can update certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
+     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
      *        which is required for the following resources: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
@@ -848,11 +906,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an InsufficientCapabilities error.
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
+     *        <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -866,12 +927,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -886,9 +950,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -899,10 +965,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.
+     *        CloudFormation can update certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
+     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
      *        which is required for the following resources: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
@@ -919,13 +987,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an InsufficientCapabilities error.
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
+     *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -940,12 +1011,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -960,17 +1034,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.
+     *        CloudFormation can update certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
+     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
      *        which is required for the following resources: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
@@ -987,13 +1065,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an InsufficientCapabilities error.
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
+     *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -1003,12 +1084,15 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter. Currently, the only valid value is
-     * <code>CAPABILITY_IAM</code>, which is required for the following
-     * resources: <a href=
+     * can update certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
+     * </p>
+     * <p>
+     * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
+     * required for the following resources: <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
      * > AWS::IAM::AccessKey</a>, <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html"
@@ -1023,17 +1107,21 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * InsufficientCapabilities error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.
+     *        CloudFormation can update certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
+     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
      *        which is required for the following resources: <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
@@ -1050,13 +1138,16 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an InsufficientCapabilities error.
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
+     *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public UpdateStackRequest withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -1101,6 +1192,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *         >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1139,6 +1231,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *        >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -1188,6 +1281,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1232,6 +1326,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -1261,6 +1356,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        you do not specify a stack policy, the current policy that is
      *        associated with the stack is unchanged.
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -1287,6 +1383,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         you do not specify a stack policy, the current policy that is
      *         associated with the stack is unchanged.
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -1316,6 +1413,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;
@@ -1348,6 +1446,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        you do not specify a stack policy, the current policy that is
      *        associated with the stack is unchanged.
      */
+
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
     }
@@ -1378,6 +1477,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         you do not specify a stack policy, the current policy that is
      *         associated with the stack is unchanged.
      */
+
     public String getStackPolicyURL() {
         return this.stackPolicyURL;
     }
@@ -1411,6 +1511,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withStackPolicyURL(String stackPolicyURL) {
         setStackPolicyURL(stackPolicyURL);
         return this;
@@ -1427,6 +1528,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *         (ARNs) that AWS CloudFormation associates with the stack. Specify
      *         an empty list to remove all notification topics.
      */
+
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
             notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1446,6 +1548,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      *        (ARNs) that AWS CloudFormation associates with the stack. Specify
      *        an empty list to remove all notification topics.
      */
+
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -1477,6 +1580,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withNotificationARNs(String... notificationARNs) {
         if (this.notificationARNs == null) {
             setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1502,9 +1606,138 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackRequest withNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @return Key-value pairs to associate with this stack. AWS CloudFormation
+     *         also propagates these tags to supported resources in the stack.
+     *         You can specify a maximum number of 10 tags.</p>
+     *         <p>
+     *         If you don't specify this parameter, AWS CloudFormation doesn't
+     *         modify the stack's tags. If you specify an empty value, AWS
+     *         CloudFormation removes all associated tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateStackRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs to associate with this stack. AWS CloudFormation also
+     * propagates these tags to supported resources in the stack. You can
+     * specify a maximum number of 10 tags.
+     * </p>
+     * <p>
+     * If you don't specify this parameter, AWS CloudFormation doesn't modify
+     * the stack's tags. If you specify an empty value, AWS CloudFormation
+     * removes all associated tags.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs to associate with this stack. AWS CloudFormation
+     *        also propagates these tags to supported resources in the stack.
+     *        You can specify a maximum number of 10 tags.</p>
+     *        <p>
+     *        If you don't specify this parameter, AWS CloudFormation doesn't
+     *        modify the stack's tags. If you specify an empty value, AWS
+     *        CloudFormation removes all associated tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateStackRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -1545,7 +1778,9 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
         if (getStackPolicyURL() != null)
             sb.append("StackPolicyURL: " + getStackPolicyURL() + ",");
         if (getNotificationARNs() != null)
-            sb.append("NotificationARNs: " + getNotificationARNs());
+            sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1630,6 +1865,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
                 && other.getNotificationARNs().equals(
                         this.getNotificationARNs()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1681,6 +1921,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getNotificationARNs() == null) ? 0 : getNotificationARNs()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

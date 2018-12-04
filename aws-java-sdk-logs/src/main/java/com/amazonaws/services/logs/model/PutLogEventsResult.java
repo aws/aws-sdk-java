@@ -30,6 +30,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     /**
      * @param nextSequenceToken
      */
+
     public void setNextSequenceToken(String nextSequenceToken) {
         this.nextSequenceToken = nextSequenceToken;
     }
@@ -37,6 +38,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextSequenceToken() {
         return this.nextSequenceToken;
     }
@@ -46,6 +48,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsResult withNextSequenceToken(String nextSequenceToken) {
         setNextSequenceToken(nextSequenceToken);
         return this;
@@ -54,6 +57,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     /**
      * @param rejectedLogEventsInfo
      */
+
     public void setRejectedLogEventsInfo(
             RejectedLogEventsInfo rejectedLogEventsInfo) {
         this.rejectedLogEventsInfo = rejectedLogEventsInfo;
@@ -62,6 +66,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RejectedLogEventsInfo getRejectedLogEventsInfo() {
         return this.rejectedLogEventsInfo;
     }
@@ -71,6 +76,7 @@ public class PutLogEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutLogEventsResult withRejectedLogEventsInfo(
             RejectedLogEventsInfo rejectedLogEventsInfo) {
         setRejectedLogEventsInfo(rejectedLogEventsInfo);

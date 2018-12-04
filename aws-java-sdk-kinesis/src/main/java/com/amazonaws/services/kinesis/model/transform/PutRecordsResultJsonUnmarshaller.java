@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,8 @@ public class PutRecordsResultJsonUnmarshaller implements
                 if (context.testExpression("FailedRecordCount", targetDepth)) {
                     context.nextToken();
                     putRecordsResult
-                            .setFailedRecordCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setFailedRecordCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Records", targetDepth)) {
                     context.nextToken();

@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,25 +55,25 @@ public class ChapInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    chapInfo.setTargetARN(StringJsonUnmarshaller.getInstance()
+                    chapInfo.setTargetARN(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SecretToAuthenticateInitiator",
                         targetDepth)) {
                     context.nextToken();
-                    chapInfo.setSecretToAuthenticateInitiator(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    chapInfo.setSecretToAuthenticateInitiator(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitiatorName", targetDepth)) {
                     context.nextToken();
-                    chapInfo.setInitiatorName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    chapInfo.setInitiatorName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretToAuthenticateTarget",
                         targetDepth)) {
                     context.nextToken();
-                    chapInfo.setSecretToAuthenticateTarget(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    chapInfo.setSecretToAuthenticateTarget(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

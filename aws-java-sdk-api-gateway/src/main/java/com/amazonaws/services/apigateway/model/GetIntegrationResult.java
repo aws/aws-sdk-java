@@ -27,7 +27,8 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      */
     private String type;
@@ -41,16 +42,16 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP
      * integrations, the URI must be a fully formed, encoded HTTP(S) URL
-     * according to the <a target="_blank"
-     * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
-     * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI
+     * should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      */
     private String uri;
@@ -81,10 +82,38 @@ public class GetIntegrationResult implements Serializable, Cloneable {
     private java.util.Map<String, String> requestParameters;
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     */
+    private String passthroughBehavior;
     /**
      * <p>
      * Specifies the integration's cache namespace.
@@ -106,40 +135,49 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @see IntegrationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
-     * @return Specifies the integration's type.
+     * @return Specifies the integration's type. The valid value is
+     *         <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @see IntegrationType
      */
+
     public String getType() {
         return this.type;
     }
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see IntegrationType
      */
+
     public GetIntegrationResult withType(String type) {
         setType(type);
         return this;
@@ -147,30 +185,34 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @see IntegrationType
      */
+
     public void setType(IntegrationType type) {
         this.type = type.toString();
     }
 
     /**
      * <p>
-     * Specifies the integration's type.
+     * Specifies the integration's type. The valid value is <code>HTTP</code>,
+     * <code>AWS</code>, or <code>MOCK</code>.
      * </p>
      * 
      * @param type
-     *        Specifies the integration's type.
+     *        Specifies the integration's type. The valid value is
+     *        <code>HTTP</code>, <code>AWS</code>, or <code>MOCK</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see IntegrationType
      */
+
     public GetIntegrationResult withType(IntegrationType type) {
         setType(type);
         return this;
@@ -184,6 +226,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @param httpMethod
      *        Specifies the integration's HTTP method type.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -195,6 +238,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's HTTP method type.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -209,6 +253,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -218,35 +263,36 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP
      * integrations, the URI must be a fully formed, encoded HTTP(S) URL
-     * according to the <a target="_blank"
-     * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
-     * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI
+     * should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @param uri
      *        Specifies the integration's Uniform Resource Identifier (URI). For
      *        HTTP integrations, the URI must be a fully formed, encoded HTTP(S)
-     *        URL according to the <a target="_blank"
-     *        href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
-     *        specification</a>. For AWS integrations, the URI should be of the
-     *        form
-     *        <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *        . <code>Region</code> and <code>service</code> are used to
-     *        determine the right endpoint. For AWS services that use the
-     *        <code>Action=</code> query string parameter,
-     *        <code>service_api</code> should be a valid action for the desired
-     *        service. For RESTful AWS service APIs, <code>path</code> is used
-     *        to indicate that the remaining substring in the URI should be
-     *        treated as the path to the resource, including the initial
-     *        <code>/</code>.
+     *        URL according to the <a
+     *        href="https://www.ietf.org/rfc/rfc3986.txt"
+     *        target="_blank">RFC-3986 specification</a>. For AWS integrations,
+     *        the URI should be of the form
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *        . <code>Region</code>, <code>subdomain</code> and
+     *        <code>service</code> are used to determine the right endpoint. For
+     *        AWS services that use the <code>Action=</code> query string
+     *        parameter, <code>service_api</code> should be a valid action for
+     *        the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring
+     *        in the URI should be treated as the path to the resource,
+     *        including the initial <code>/</code>.
      */
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -255,34 +301,35 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP
      * integrations, the URI must be a fully formed, encoded HTTP(S) URL
-     * according to the <a target="_blank"
-     * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
-     * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI
+     * should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @return Specifies the integration's Uniform Resource Identifier (URI).
      *         For HTTP integrations, the URI must be a fully formed, encoded
-     *         HTTP(S) URL according to the <a target="_blank"
-     *         href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
-     *         specification</a>. For AWS integrations, the URI should be of the
-     *         form
-     *         <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *         . <code>Region</code> and <code>service</code> are used to
-     *         determine the right endpoint. For AWS services that use the
-     *         <code>Action=</code> query string parameter,
-     *         <code>service_api</code> should be a valid action for the desired
-     *         service. For RESTful AWS service APIs, <code>path</code> is used
-     *         to indicate that the remaining substring in the URI should be
-     *         treated as the path to the resource, including the initial
-     *         <code>/</code>.
+     *         HTTP(S) URL according to the <a
+     *         href="https://www.ietf.org/rfc/rfc3986.txt"
+     *         target="_blank">RFC-3986 specification</a>. For AWS integrations,
+     *         the URI should be of the form
+     *         <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *         . <code>Region</code>, <code>subdomain</code> and
+     *         <code>service</code> are used to determine the right endpoint.
+     *         For AWS services that use the <code>Action=</code> query string
+     *         parameter, <code>service_api</code> should be a valid action for
+     *         the desired service. For RESTful AWS service APIs,
+     *         <code>path</code> is used to indicate that the remaining
+     *         substring in the URI should be treated as the path to the
+     *         resource, including the initial <code>/</code>.
      */
+
     public String getUri() {
         return this.uri;
     }
@@ -291,37 +338,38 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP
      * integrations, the URI must be a fully formed, encoded HTTP(S) URL
-     * according to the <a target="_blank"
-     * href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986 specification</a>.
-     * For AWS integrations, the URI should be of the form
-     * <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>. <code>Region</code> and <code>service</code> are used to determine the
-     * right endpoint. For AWS services that use the <code>Action=</code> query
-     * string parameter, <code>service_api</code> should be a valid action for
-     * the desired service. For RESTful AWS service APIs, <code>path</code> is
-     * used to indicate that the remaining substring in the URI should be
-     * treated as the path to the resource, including the initial <code>/</code>
-     * .
+     * according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI
+     * should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code>
+     * are used to determine the right endpoint. For AWS services that use the
+     * <code>Action=</code> query string parameter, <code>service_api</code>
+     * should be a valid action for the desired service. For RESTful AWS service
+     * APIs, <code>path</code> is used to indicate that the remaining substring
+     * in the URI should be treated as the path to the resource, including the
+     * initial <code>/</code>.
      * </p>
      * 
      * @param uri
      *        Specifies the integration's Uniform Resource Identifier (URI). For
      *        HTTP integrations, the URI must be a fully formed, encoded HTTP(S)
-     *        URL according to the <a target="_blank"
-     *        href="https://www.ietf.org/rfc/rfc3986.txt">RFC-3986
-     *        specification</a>. For AWS integrations, the URI should be of the
-     *        form
-     *        <code>arn:aws:apigateway:{region}:{service}:{path|action}/{service_api}</code>
-     *        . <code>Region</code> and <code>service</code> are used to
-     *        determine the right endpoint. For AWS services that use the
-     *        <code>Action=</code> query string parameter,
-     *        <code>service_api</code> should be a valid action for the desired
-     *        service. For RESTful AWS service APIs, <code>path</code> is used
-     *        to indicate that the remaining substring in the URI should be
-     *        treated as the path to the resource, including the initial
-     *        <code>/</code>.
+     *        URL according to the <a
+     *        href="https://www.ietf.org/rfc/rfc3986.txt"
+     *        target="_blank">RFC-3986 specification</a>. For AWS integrations,
+     *        the URI should be of the form
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>
+     *        . <code>Region</code>, <code>subdomain</code> and
+     *        <code>service</code> are used to determine the right endpoint. For
+     *        AWS services that use the <code>Action=</code> query string
+     *        parameter, <code>service_api</code> should be a valid action for
+     *        the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring
+     *        in the URI should be treated as the path to the resource,
+     *        including the initial <code>/</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withUri(String uri) {
         setUri(uri);
         return this;
@@ -346,6 +394,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      *        <code>arn:aws:iam::\*:user/\*</code>. To use resource-based
      *        permissions on supported AWS services, specify null.
      */
+
     public void setCredentials(String credentials) {
         this.credentials = credentials;
     }
@@ -368,6 +417,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      *         <code>arn:aws:iam::\*:user/\*</code>. To use resource-based
      *         permissions on supported AWS services, specify null.
      */
+
     public String getCredentials() {
         return this.credentials;
     }
@@ -393,6 +443,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withCredentials(String credentials) {
         setCredentials(credentials);
         return this;
@@ -422,6 +473,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      *         <code>location</code> is either querystring, path, or header.
      *         <code>name</code> must be a valid, unique parameter name.
      */
+
     public java.util.Map<String, String> getRequestParameters() {
         return requestParameters;
     }
@@ -451,6 +503,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      *        <code>location</code> is either querystring, path, or header.
      *        <code>name</code> must be a valid, unique parameter name.
      */
+
     public void setRequestParameters(
             java.util.Map<String, String> requestParameters) {
         this.requestParameters = requestParameters;
@@ -483,6 +536,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withRequestParameters(
             java.util.Map<String, String> requestParameters) {
         setRequestParameters(requestParameters);
@@ -505,6 +559,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetIntegrationResult clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -512,23 +567,37 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
-     * @return Specifies the integration's request templates.
+     * @return Represents a map of Velocity templates that are applied on the
+     *         request payload based on the value of the Content-Type header
+     *         sent by the client. The content type value is the key in this
+     *         map, and the template (as a String) is the value.
      */
+
     public java.util.Map<String, String> getRequestTemplates() {
         return requestTemplates;
     }
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the integration's request templates.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      */
+
     public void setRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         this.requestTemplates = requestTemplates;
@@ -536,14 +605,21 @@ public class GetIntegrationResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the integration's request templates.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the integration's request templates.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         setRequestTemplates(requestTemplates);
@@ -566,8 +642,165 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * Removes all the entries added into RequestTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetIntegrationResult clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     */
+
+    public void setPassthroughBehavior(String passthroughBehavior) {
+        this.passthroughBehavior = passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @return Specifies the pass-through behavior for incoming requests based
+     *         on the Content-Type header in the request, and the available
+     *         requestTemplates defined on the Integration. There are three
+     *         valid values: <code>WHEN_NO_MATCH</code>,
+     *         <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p>
+     *         <p/>
+     *         <p>
+     *         <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *         content types through to the Integration backend without
+     *         transformation.
+     *         </p>
+     *         <p>
+     *         <code>NEVER</code> rejects unmapped content types with an HTTP
+     *         415 'Unsupported Media Type' response.
+     *         </p>
+     *         <p>
+     *         <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *         Integration has NO content types mapped to templates. However if
+     *         there is at least one content type defined, unmapped content
+     *         types will be rejected with the same 415 response.
+     */
+
+    public String getPassthroughBehavior() {
+        return this.passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public GetIntegrationResult withPassthroughBehavior(
+            String passthroughBehavior) {
+        setPassthroughBehavior(passthroughBehavior);
         return this;
     }
 
@@ -579,6 +812,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @param cacheNamespace
      *        Specifies the integration's cache namespace.
      */
+
     public void setCacheNamespace(String cacheNamespace) {
         this.cacheNamespace = cacheNamespace;
     }
@@ -590,6 +824,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's cache namespace.
      */
+
     public String getCacheNamespace() {
         return this.cacheNamespace;
     }
@@ -604,6 +839,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withCacheNamespace(String cacheNamespace) {
         setCacheNamespace(cacheNamespace);
         return this;
@@ -616,6 +852,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's cache key parameters.
      */
+
     public java.util.List<String> getCacheKeyParameters() {
         return cacheKeyParameters;
     }
@@ -628,6 +865,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @param cacheKeyParameters
      *        Specifies the integration's cache key parameters.
      */
+
     public void setCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         if (cacheKeyParameters == null) {
@@ -655,6 +893,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withCacheKeyParameters(
             String... cacheKeyParameters) {
         if (this.cacheKeyParameters == null) {
@@ -677,6 +916,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         setCacheKeyParameters(cacheKeyParameters);
@@ -690,6 +930,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * 
      * @return Specifies the integration's responses.
      */
+
     public java.util.Map<String, IntegrationResponse> getIntegrationResponses() {
         return integrationResponses;
     }
@@ -702,6 +943,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @param integrationResponses
      *        Specifies the integration's responses.
      */
+
     public void setIntegrationResponses(
             java.util.Map<String, IntegrationResponse> integrationResponses) {
         this.integrationResponses = integrationResponses;
@@ -717,6 +959,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationResult withIntegrationResponses(
             java.util.Map<String, IntegrationResponse> integrationResponses) {
         setIntegrationResponses(integrationResponses);
@@ -739,6 +982,7 @@ public class GetIntegrationResult implements Serializable, Cloneable {
      * Removes all the entries added into IntegrationResponses. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetIntegrationResult clearIntegrationResponsesEntries() {
         this.integrationResponses = null;
         return this;
@@ -768,6 +1012,8 @@ public class GetIntegrationResult implements Serializable, Cloneable {
             sb.append("RequestParameters: " + getRequestParameters() + ",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+        if (getPassthroughBehavior() != null)
+            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: " + getCacheNamespace() + ",");
         if (getCacheKeyParameters() != null)
@@ -822,6 +1068,13 @@ public class GetIntegrationResult implements Serializable, Cloneable {
                 && other.getRequestTemplates().equals(
                         this.getRequestTemplates()) == false)
             return false;
+        if (other.getPassthroughBehavior() == null
+                ^ this.getPassthroughBehavior() == null)
+            return false;
+        if (other.getPassthroughBehavior() != null
+                && other.getPassthroughBehavior().equals(
+                        this.getPassthroughBehavior()) == false)
+            return false;
         if (other.getCacheNamespace() == null
                 ^ this.getCacheNamespace() == null)
             return false;
@@ -867,6 +1120,10 @@ public class GetIntegrationResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getRequestTemplates() == null) ? 0 : getRequestTemplates()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPassthroughBehavior() == null) ? 0
+                        : getPassthroughBehavior().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCacheNamespace() == null) ? 0 : getCacheNamespace()

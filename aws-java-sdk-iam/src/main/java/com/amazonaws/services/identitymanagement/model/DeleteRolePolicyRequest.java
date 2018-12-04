@@ -30,11 +30,23 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String roleName;
     /**
      * <p>
-     * The name identifying the policy document to delete.
+     * The name of the inline policy to delete from the specified IAM role.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -44,11 +56,23 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
      *        The name (friendly name, not ARN) identifying the role that the
-     *        policy is embedded in.
+     *        policy is embedded in.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -58,10 +82,22 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name (friendly name, not ARN) identifying the role that the
-     *         policy is embedded in.
+     *         policy is embedded in.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -71,13 +107,25 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the role that the policy is
      * embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
      *        The name (friendly name, not ARN) identifying the role that the
-     *        policy is embedded in.
+     *        policy is embedded in.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -85,37 +133,76 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name identifying the policy document to delete.
+     * The name of the inline policy to delete from the specified IAM role.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param policyName
-     *        The name identifying the policy document to delete.
+     *        The name of the inline policy to delete from the specified IAM
+     *        role.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
 
     /**
      * <p>
-     * The name identifying the policy document to delete.
+     * The name of the inline policy to delete from the specified IAM role.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name identifying the policy document to delete.
+     * @return The name of the inline policy to delete from the specified IAM
+     *         role.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
 
     /**
      * <p>
-     * The name identifying the policy document to delete.
+     * The name of the inline policy to delete from the specified IAM role.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param policyName
-     *        The name identifying the policy document to delete.
+     *        The name of the inline policy to delete from the specified IAM
+     *        role.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRolePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

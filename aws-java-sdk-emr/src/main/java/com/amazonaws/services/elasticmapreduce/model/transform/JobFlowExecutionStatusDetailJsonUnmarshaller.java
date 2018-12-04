@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,40 +55,39 @@ public class JobFlowExecutionStatusDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail
-                            .setState(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    jobFlowExecutionStatusDetail.setState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail
-                            .setCreationDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowExecutionStatusDetail.setCreationDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail
-                            .setStartDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowExecutionStatusDetail.setStartDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ReadyDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail
-                            .setReadyDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobFlowExecutionStatusDetail.setReadyDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    jobFlowExecutionStatusDetail
-                            .setEndDateTime(DateJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    jobFlowExecutionStatusDetail.setEndDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context
                         .testExpression("LastStateChangeReason", targetDepth)) {
                     context.nextToken();
                     jobFlowExecutionStatusDetail
-                            .setLastStateChangeReason(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastStateChangeReason(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

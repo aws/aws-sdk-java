@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListCloudFrontOriginAccessIdentitiesRequest Marshaller
@@ -59,20 +62,16 @@ public class ListCloudFrontOriginAccessIdentitiesRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listCloudFrontOriginAccessIdentitiesRequest
-                .getMarker() == null) ? null : StringUtils
-                .fromString(listCloudFrontOriginAccessIdentitiesRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (listCloudFrontOriginAccessIdentitiesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(listCloudFrontOriginAccessIdentitiesRequest
+                            .getMarker()));
         }
 
-        String maxItems = (listCloudFrontOriginAccessIdentitiesRequest
-                .getMaxItems() == null) ? null : StringUtils
-                .fromString(listCloudFrontOriginAccessIdentitiesRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (listCloudFrontOriginAccessIdentitiesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils
+                    .fromString(listCloudFrontOriginAccessIdentitiesRequest
+                            .getMaxItems()));
         }
 
         return request;

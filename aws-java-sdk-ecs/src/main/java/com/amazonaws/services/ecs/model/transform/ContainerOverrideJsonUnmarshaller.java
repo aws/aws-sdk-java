@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ContainerOverrideJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    containerOverride.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    containerOverride.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
                     containerOverride.setCommand(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {

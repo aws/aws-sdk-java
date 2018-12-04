@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class AssociationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    association.setName(StringJsonUnmarshaller.getInstance()
+                    association.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    association.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    association.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

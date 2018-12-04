@@ -45,6 +45,7 @@ public class UpdateTrafficPolicyInstanceResult implements Serializable,
      *        A complex type that contains settings for the updated traffic
      *        policy instance.
      */
+
     public void setTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         this.trafficPolicyInstance = trafficPolicyInstance;
@@ -59,6 +60,7 @@ public class UpdateTrafficPolicyInstanceResult implements Serializable,
      * @return A complex type that contains settings for the updated traffic
      *         policy instance.
      */
+
     public TrafficPolicyInstance getTrafficPolicyInstance() {
         return this.trafficPolicyInstance;
     }
@@ -75,6 +77,7 @@ public class UpdateTrafficPolicyInstanceResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateTrafficPolicyInstanceResult withTrafficPolicyInstance(
             TrafficPolicyInstance trafficPolicyInstance) {
         setTrafficPolicyInstance(trafficPolicyInstance);

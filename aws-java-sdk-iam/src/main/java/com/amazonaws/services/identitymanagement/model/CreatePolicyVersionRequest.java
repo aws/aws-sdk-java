@@ -25,10 +25,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
+     * a new version.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for this new
+     * version of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String policyDocument;
@@ -50,24 +70,80 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     private Boolean setAsDefault;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
+     * a new version.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy to which you want
+     *        to add a new version.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
+     * a new version.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy to which you
+     *         want to add a new version.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy to which you want to add
+     * a new version.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy to which you want
+     *        to add a new version.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -75,37 +151,88 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for this new
+     * version of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The JSON policy document that you want to use as the content for
+     *        this new version of the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for this new
+     * version of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
-     * @return The policy document.
+     * @return The JSON policy document that you want to use as the content for
+     *         this new version of the policy.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for this new
+     * version of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The JSON policy document that you want to use as the content for
+     *        this new version of the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -140,6 +267,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setSetAsDefault(Boolean setAsDefault) {
         this.setAsDefault = setAsDefault;
     }
@@ -173,6 +301,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public Boolean getSetAsDefault() {
         return this.setAsDefault;
     }
@@ -208,6 +337,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withSetAsDefault(Boolean setAsDefault) {
         setSetAsDefault(setAsDefault);
         return this;
@@ -242,6 +372,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public Boolean isSetAsDefault() {
         return this.setAsDefault;
     }

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RuleMarshaller
@@ -39,47 +34,46 @@ import com.amazonaws.util.json.*;
 public class RuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Rule rule, JSONWriter jsonWriter) {
+    public void marshall(Rule rule, StructuredJsonGenerator jsonGenerator) {
+
         if (rule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rule.getName() != null) {
-                jsonWriter.key("Name").value(rule.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(rule.getName());
             }
-
             if (rule.getArn() != null) {
-                jsonWriter.key("Arn").value(rule.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(rule.getArn());
             }
-
             if (rule.getEventPattern() != null) {
-                jsonWriter.key("EventPattern").value(rule.getEventPattern());
+                jsonGenerator.writeFieldName("EventPattern").writeValue(
+                        rule.getEventPattern());
             }
-
             if (rule.getState() != null) {
-                jsonWriter.key("State").value(rule.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        rule.getState());
             }
-
             if (rule.getDescription() != null) {
-                jsonWriter.key("Description").value(rule.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        rule.getDescription());
             }
-
             if (rule.getScheduleExpression() != null) {
-                jsonWriter.key("ScheduleExpression").value(
+                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(
                         rule.getScheduleExpression());
             }
-
             if (rule.getRoleArn() != null) {
-                jsonWriter.key("RoleArn").value(rule.getRoleArn());
+                jsonGenerator.writeFieldName("RoleArn").writeValue(
+                        rule.getRoleArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

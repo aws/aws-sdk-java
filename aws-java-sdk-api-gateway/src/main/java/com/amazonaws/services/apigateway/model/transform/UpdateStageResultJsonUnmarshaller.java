@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,45 @@ public class UpdateStageResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setDeploymentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateStageResult.setDeploymentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("clientCertificateId", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setClientCertificateId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateStageResult.setClientCertificateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stageName", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setStageName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateStageResult.setStageName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateStageResult.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterEnabled", targetDepth)) {
                     context.nextToken();
                     updateStageResult
-                            .setCacheClusterEnabled(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCacheClusterEnabled(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterSize", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setCacheClusterSize(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateStageResult.setCacheClusterSize(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheClusterStatus", targetDepth)) {
                     context.nextToken();
-                    updateStageResult
-                            .setCacheClusterStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateStageResult.setCacheClusterStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("methodSettings", targetDepth)) {
                     context.nextToken();
                     updateStageResult
                             .setMethodSettings(new MapUnmarshaller<String, MethodSetting>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     MethodSettingJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
@@ -102,19 +101,20 @@ public class UpdateStageResultJsonUnmarshaller implements
                     context.nextToken();
                     updateStageResult
                             .setVariables(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setCreatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateStageResult.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    updateStageResult.setLastUpdatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateStageResult.setLastUpdatedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

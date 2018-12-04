@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudwatchevents.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,39 +55,38 @@ public class DescribeRuleResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EventPattern", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setEventPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setEventPattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult
-                            .setScheduleExpression(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeRuleResult.setScheduleExpression(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
-                    describeRuleResult.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeRuleResult.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

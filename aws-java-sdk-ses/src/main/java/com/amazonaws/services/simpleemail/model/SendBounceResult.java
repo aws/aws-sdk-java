@@ -38,6 +38,7 @@ public class SendBounceResult implements Serializable, Cloneable {
      * @param messageId
      *        The message ID of the bounce message.
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -49,6 +50,7 @@ public class SendBounceResult implements Serializable, Cloneable {
      * 
      * @return The message ID of the bounce message.
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -63,6 +65,7 @@ public class SendBounceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendBounceResult withMessageId(String messageId) {
         setMessageId(messageId);
         return this;

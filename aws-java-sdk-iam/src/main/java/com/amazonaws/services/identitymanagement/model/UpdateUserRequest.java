@@ -30,12 +30,26 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * Name of the user to update. If you're changing the name of the user, this
      * is the original user name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
-     * New path for the user. Include this parameter only if you're changing the
-     * user's path.
+     * New path for the IAM user. Include this parameter only if you're changing
+     * the user's path.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String newPath;
@@ -43,6 +57,12 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * <p>
      * New name for the user. Include this parameter only if you're changing the
      * user's name.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String newUserName;
@@ -62,7 +82,12 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * 
      * @param userName
      *        Name of the user to update. If you're changing the name of the
-     *        user, this is the original user name.
+     *        user, this is the original user name.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public UpdateUserRequest(String userName) {
         setUserName(userName);
@@ -73,11 +98,23 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * Name of the user to update. If you're changing the name of the user, this
      * is the original user name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
      *        Name of the user to update. If you're changing the name of the
-     *        user, this is the original user name.
+     *        user, this is the original user name.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -87,10 +124,22 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * Name of the user to update. If you're changing the name of the user, this
      * is the original user name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return Name of the user to update. If you're changing the name of the
-     *         user, this is the original user name.
+     *         user, this is the original user name.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -100,13 +149,25 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * Name of the user to update. If you're changing the name of the user, this
      * is the original user name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
      *        Name of the user to update. If you're changing the name of the
-     *        user, this is the original user name.
+     *        user, this is the original user name.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -114,43 +175,91 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * New path for the user. Include this parameter only if you're changing the
-     * user's path.
+     * New path for the IAM user. Include this parameter only if you're changing
+     * the user's path.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param newPath
-     *        New path for the user. Include this parameter only if you're
-     *        changing the user's path.
+     *        New path for the IAM user. Include this parameter only if you're
+     *        changing the user's path.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
+
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
 
     /**
      * <p>
-     * New path for the user. Include this parameter only if you're changing the
-     * user's path.
+     * New path for the IAM user. Include this parameter only if you're changing
+     * the user's path.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
-     * @return New path for the user. Include this parameter only if you're
-     *         changing the user's path.
+     * @return New path for the IAM user. Include this parameter only if you're
+     *         changing the user's path.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
+
     public String getNewPath() {
         return this.newPath;
     }
 
     /**
      * <p>
-     * New path for the user. Include this parameter only if you're changing the
-     * user's path.
+     * New path for the IAM user. Include this parameter only if you're changing
+     * the user's path.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param newPath
-     *        New path for the user. Include this parameter only if you're
-     *        changing the user's path.
+     *        New path for the IAM user. Include this parameter only if you're
+     *        changing the user's path.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withNewPath(String newPath) {
         setNewPath(newPath);
         return this;
@@ -161,11 +270,23 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * New name for the user. Include this parameter only if you're changing the
      * user's name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param newUserName
      *        New name for the user. Include this parameter only if you're
-     *        changing the user's name.
+     *        changing the user's name.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setNewUserName(String newUserName) {
         this.newUserName = newUserName;
     }
@@ -175,10 +296,22 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * New name for the user. Include this parameter only if you're changing the
      * user's name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return New name for the user. Include this parameter only if you're
-     *         changing the user's name.
+     *         changing the user's name.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getNewUserName() {
         return this.newUserName;
     }
@@ -188,13 +321,25 @@ public class UpdateUserRequest extends AmazonWebServiceRequest implements
      * New name for the user. Include this parameter only if you're changing the
      * user's name.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param newUserName
      *        New name for the user. Include this parameter only if you're
-     *        changing the user's name.
+     *        changing the user's name.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateUserRequest withNewUserName(String newUserName) {
         setNewUserName(newUserName);
         return this;

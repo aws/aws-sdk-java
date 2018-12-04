@@ -100,6 +100,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      *        The name of an existing global secondary index, along with new
      *        provisioned throughput settings to be applied to that index.
      */
+
     public void setUpdate(UpdateGlobalSecondaryIndexAction update) {
         this.update = update;
     }
@@ -113,6 +114,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * @return The name of an existing global secondary index, along with new
      *         provisioned throughput settings to be applied to that index.
      */
+
     public UpdateGlobalSecondaryIndexAction getUpdate() {
         return this.update;
     }
@@ -129,6 +131,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndexUpdate withUpdate(
             UpdateGlobalSecondaryIndexAction update) {
         setUpdate(update);
@@ -198,6 +201,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setCreate(CreateGlobalSecondaryIndexAction create) {
         this.create = create;
     }
@@ -264,6 +268,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public CreateGlobalSecondaryIndexAction getCreate() {
         return this.create;
     }
@@ -333,6 +338,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndexUpdate withCreate(
             CreateGlobalSecondaryIndexAction create) {
         setCreate(create);
@@ -347,6 +353,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * @param delete
      *        The name of an existing global secondary index to be removed.
      */
+
     public void setDelete(DeleteGlobalSecondaryIndexAction delete) {
         this.delete = delete;
     }
@@ -358,6 +365,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * 
      * @return The name of an existing global secondary index to be removed.
      */
+
     public DeleteGlobalSecondaryIndexAction getDelete() {
         return this.delete;
     }
@@ -372,6 +380,7 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GlobalSecondaryIndexUpdate withDelete(
             DeleteGlobalSecondaryIndexAction delete) {
         setDelete(delete);

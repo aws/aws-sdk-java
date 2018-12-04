@@ -19,7 +19,9 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A list of your queues.
+ * </p>
  */
 public class ListQueuesResult implements Serializable, Cloneable {
 
@@ -37,6 +39,7 @@ public class ListQueuesResult implements Serializable, Cloneable {
      * 
      * @return A list of queue URLs, up to 1000 entries.
      */
+
     public java.util.List<String> getQueueUrls() {
         if (queueUrls == null) {
             queueUrls = new com.amazonaws.internal.SdkInternalList<String>();
@@ -52,6 +55,7 @@ public class ListQueuesResult implements Serializable, Cloneable {
      * @param queueUrls
      *        A list of queue URLs, up to 1000 entries.
      */
+
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
         if (queueUrls == null) {
             this.queueUrls = null;
@@ -78,6 +82,7 @@ public class ListQueuesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListQueuesResult withQueueUrls(String... queueUrls) {
         if (this.queueUrls == null) {
             setQueueUrls(new com.amazonaws.internal.SdkInternalList<String>(
@@ -99,6 +104,7 @@ public class ListQueuesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListQueuesResult withQueueUrls(java.util.Collection<String> queueUrls) {
         setQueueUrls(queueUrls);
         return this;

@@ -48,6 +48,13 @@ public class Repository implements Serializable, Cloneable {
      * </p>
      */
     private String repositoryName;
+    /**
+     * <p>
+     * The URI for the repository. You can use this URI for Docker
+     * <code>push</code> and <code>pull</code> operations.
+     * </p>
+     */
+    private String repositoryUri;
 
     /**
      * <p>
@@ -66,6 +73,7 @@ public class Repository implements Serializable, Cloneable {
      *        example,
      *        <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
+
     public void setRepositoryArn(String repositoryArn) {
         this.repositoryArn = repositoryArn;
     }
@@ -86,6 +94,7 @@ public class Repository implements Serializable, Cloneable {
      *         repository name. For example,
      *         <code>arn:aws:ecr:region:012345678910:repository/test</code>.
      */
+
     public String getRepositoryArn() {
         return this.repositoryArn;
     }
@@ -109,6 +118,7 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRepositoryArn(String repositoryArn) {
         setRepositoryArn(repositoryArn);
         return this;
@@ -124,6 +134,7 @@ public class Repository implements Serializable, Cloneable {
      *        The AWS account ID associated with the registry that contains the
      *        repository.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -137,6 +148,7 @@ public class Repository implements Serializable, Cloneable {
      * @return The AWS account ID associated with the registry that contains the
      *         repository.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -153,6 +165,7 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -166,6 +179,7 @@ public class Repository implements Serializable, Cloneable {
      * @param repositoryName
      *        The name of the repository.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -177,6 +191,7 @@ public class Repository implements Serializable, Cloneable {
      * 
      * @return The name of the repository.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -191,8 +206,56 @@ public class Repository implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Repository withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URI for the repository. You can use this URI for Docker
+     * <code>push</code> and <code>pull</code> operations.
+     * </p>
+     * 
+     * @param repositoryUri
+     *        The URI for the repository. You can use this URI for Docker
+     *        <code>push</code> and <code>pull</code> operations.
+     */
+
+    public void setRepositoryUri(String repositoryUri) {
+        this.repositoryUri = repositoryUri;
+    }
+
+    /**
+     * <p>
+     * The URI for the repository. You can use this URI for Docker
+     * <code>push</code> and <code>pull</code> operations.
+     * </p>
+     * 
+     * @return The URI for the repository. You can use this URI for Docker
+     *         <code>push</code> and <code>pull</code> operations.
+     */
+
+    public String getRepositoryUri() {
+        return this.repositoryUri;
+    }
+
+    /**
+     * <p>
+     * The URI for the repository. You can use this URI for Docker
+     * <code>push</code> and <code>pull</code> operations.
+     * </p>
+     * 
+     * @param repositoryUri
+     *        The URI for the repository. You can use this URI for Docker
+     *        <code>push</code> and <code>pull</code> operations.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Repository withRepositoryUri(String repositoryUri) {
+        setRepositoryUri(repositoryUri);
         return this;
     }
 
@@ -213,7 +276,9 @@ public class Repository implements Serializable, Cloneable {
         if (getRegistryId() != null)
             sb.append("RegistryId: " + getRegistryId() + ",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName());
+            sb.append("RepositoryName: " + getRepositoryName() + ",");
+        if (getRepositoryUri() != null)
+            sb.append("RepositoryUri: " + getRepositoryUri());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +309,11 @@ public class Repository implements Serializable, Cloneable {
         if (other.getRepositoryName() != null
                 && other.getRepositoryName().equals(this.getRepositoryName()) == false)
             return false;
+        if (other.getRepositoryUri() == null ^ this.getRepositoryUri() == null)
+            return false;
+        if (other.getRepositoryUri() != null
+                && other.getRepositoryUri().equals(this.getRepositoryUri()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +331,10 @@ public class Repository implements Serializable, Cloneable {
         hashCode = prime
                 * hashCode
                 + ((getRepositoryName() == null) ? 0 : getRepositoryName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRepositoryUri() == null) ? 0 : getRepositoryUri()
                         .hashCode());
         return hashCode;
     }

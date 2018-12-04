@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,33 @@ public class VolumeInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    volumeInfo.setVolumeARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeInfo.setVolumeARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeId", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setVolumeId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GatewayARN", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setGatewayARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("GatewayId", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setGatewayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    volumeInfo.setVolumeType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeInfo.setVolumeType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    volumeInfo.setVolumeSizeInBytes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

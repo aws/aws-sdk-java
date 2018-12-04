@@ -48,6 +48,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of streams to list.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -59,6 +60,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of streams to list.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -73,6 +75,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -86,6 +89,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @param exclusiveStartStreamName
      *        The name of the stream to start the list with.
      */
+
     public void setExclusiveStartStreamName(String exclusiveStartStreamName) {
         this.exclusiveStartStreamName = exclusiveStartStreamName;
     }
@@ -97,6 +101,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream to start the list with.
      */
+
     public String getExclusiveStartStreamName() {
         return this.exclusiveStartStreamName;
     }
@@ -111,6 +116,7 @@ public class ListStreamsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsRequest withExclusiveStartStreamName(
             String exclusiveStartStreamName) {
         setExclusiveStartStreamName(exclusiveStartStreamName);

@@ -112,13 +112,14 @@ public interface AmazonCloudWatchEvents {
      * <a>RemoveTargets</a> before you can delete the rule.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might still continue to match to the deleted rule. Please allow a short
-     * period of time for changes to take effect.
+     * <b>Note:</b> When you delete a rule, incoming events might still continue
+     * to match to the deleted rule. Please allow a short period of time for
+     * changes to take effect.
      * </p>
      * 
      * @param deleteRuleRequest
      *        Container for the parameters to the <a>DeleteRule</a> operation.
+     * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
      *         This exception occurs if there is concurrent modification on rule
      *         or target.
@@ -126,7 +127,7 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
      */
-    void deleteRule(DeleteRuleRequest deleteRuleRequest);
+    DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
     /**
      * <p>
@@ -150,13 +151,14 @@ public interface AmazonCloudWatchEvents {
      * self-trigger if it has a schedule expression.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might still continue to match to the disabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * <b>Note:</b> When you disable a rule, incoming events might still
+     * continue to match to the disabled rule. Please allow a short period of
+     * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
      *        Container for the parameters to the <a>DisableRule</a> operation.
+     * @return Result of the DisableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -166,20 +168,21 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
      */
-    void disableRule(DisableRuleRequest disableRuleRequest);
+    DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest);
 
     /**
      * <p>
      * Enables a rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might not immediately start matching to a newly enabled rule. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you enable a rule, incoming events might not
+     * immediately start matching to a newly enabled rule. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
      *        Container for the parameters to the <a>EnableRule</a> operation.
+     * @return Result of the EnableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -189,17 +192,16 @@ public interface AmazonCloudWatchEvents {
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
      */
-    void enableRule(EnableRuleRequest enableRuleRequest);
+    EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest);
 
     /**
      * <p>
-     * Lists the names of the rules that the given target is put to. Using this
-     * action, you can find out which of the rules in Amazon CloudWatch Events
-     * can invoke a specific target in your account. If you have more rules in
-     * your account than the given limit, the results will be paginated. In that
-     * case, use the next token returned in the response and repeat the
-     * ListRulesByTarget action until the NextToken in the response is returned
-     * as null.
+     * Lists the names of the rules that the given target is put to. You can see
+     * which of the rules in Amazon CloudWatch Events can invoke a specific
+     * target in your account. If you have more rules in your account than the
+     * given limit, the results will be paginated. In that case, use the next
+     * token returned in the response and repeat ListRulesByTarget until the
+     * NextToken in the response is returned as null.
      * </p>
      * 
      * @param listRuleNamesByTargetRequest
@@ -220,8 +222,8 @@ public interface AmazonCloudWatchEvents {
      * list all the rules or you can provide a prefix to match to the rule
      * names. If you have more rules in your account than the given limit, the
      * results will be paginated. In that case, use the next token returned in
-     * the response and repeat the ListRules action until the NextToken in the
-     * response is returned as null.
+     * the response and repeat ListRules until the NextToken in the response is
+     * returned as null.
      * </p>
      * 
      * @param listRulesRequest
@@ -274,9 +276,9 @@ public interface AmazonCloudWatchEvents {
      * <a>DisableRule</a>.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might not immediately start matching to new or updated rules. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you create or update a rule, incoming events might not
+     * immediately start matching to new or updated rules. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * <p>
      * A rule must contain at least an EventPattern or ScheduleExpression. Rules
@@ -312,15 +314,42 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Adds target(s) to a rule. Updates the target(s) if they are already
-     * associated with the role. In other words, if there is already a target
-     * with the given target ID, then the target associated with that ID is
-     * updated.
+     * Adds target(s) to a rule. Targets are the resources that can be invoked
+     * when a rule is triggered. For example, AWS Lambda functions, Amazon
+     * Kinesis streams, and built-in targets. Updates the target(s) if they are
+     * already associated with the role. In other words, if there is already a
+     * target with the given target ID, then the target associated with that ID
+     * is updated.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, when the associated
-     * rule triggers, new or updated targets might not be immediately invoked.
-     * Please allow a short period of time for changes to take effect.
+     * In order to be able to make API calls against the resources you own,
+     * Amazon CloudWatch Events needs the appropriate permissions. For AWS
+     * Lambda and Amazon SNS resources, CloudWatch Events relies on
+     * resource-based policies. For Amazon Kinesis streams, CloudWatch Events
+     * relies on IAM roles. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html"
+     * >Permissions for Sending Events to Targets</a> in the <b><i>Amazon
+     * CloudWatch Developer Guide</i></b>.
+     * </p>
+     * <p>
+     * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional
+     * parameters of a target. When a rule is triggered due to a matched event,
+     * if for a target:
+     * </p>
+     * <ul>
+     * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the
+     * entire event is passed to the target in JSON form.</li>
+     * <li><b>InputPath</b> is specified in the form of JSONPath (e.g.
+     * <b>$.detail</b>), then only the part of the event specified in the path
+     * is passed to the target (e.g. only the detail part of the event is
+     * passed).</li>
+     * <li><b>Input</b> is specified in the form of a valid JSON, then the
+     * matched event is overridden with this constant.</li>
+     * </ul>
+     * <p>
+     * <b>Note:</b> When you add targets to a rule, when the associated rule
+     * triggers, new or updated targets might not be immediately invoked. Please
+     * allow a short period of time for changes to take effect.
      * </p>
      * 
      * @param putTargetsRequest
@@ -346,9 +375,9 @@ public interface AmazonCloudWatchEvents {
      * targets will no longer be invoked.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, when the associated
-     * rule triggers, removed targets might still continue to be invoked. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you remove a target, when the associated rule triggers,
+     * removed targets might still continue to be invoked. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * 
      * @param removeTargetsRequest

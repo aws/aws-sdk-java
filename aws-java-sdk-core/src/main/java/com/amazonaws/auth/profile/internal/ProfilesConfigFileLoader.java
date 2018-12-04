@@ -28,14 +28,19 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.auth.BasicSessionCredentials;
+import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
+import com.amazonaws.auth.profile.internal.securitytoken.RoleInfo;
+import com.amazonaws.util.StringUtils;
 
 public class ProfilesConfigFileLoader {
 
     private static final Log LOG = LogFactory.getLog(ProfilesConfigFileLoader.class);
 
-    public static Map<String, Profile> loadProfiles(File file) {
+    public static Map<String, Profile> loadProfiles(File file, ProfileCredentialsService profileCredentialsService) {
         if (file == null) {
             throw new IllegalArgumentException(
                     "Unable to load AWS profiles: specified file is null.");
@@ -44,13 +49,13 @@ public class ProfilesConfigFileLoader {
         if (!file.exists() || !file.isFile()) {
             throw new IllegalArgumentException(
                     "AWS credential profiles file not found in the given path: "
-                            + file.getAbsolutePath());
+                    + file.getAbsolutePath());
         }
 
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(file);
-            return loadProfiles(fis);
+            return loadProfiles(fis, profileCredentialsService);
         } catch (IOException ioe) {
             throw new AmazonClientException(
                     "Unable to load AWS credential profiles file at: " + file.getAbsolutePath(), ioe);
@@ -65,9 +70,9 @@ public class ProfilesConfigFileLoader {
      * @param is input stream from where the profile details are read.
      * @throws IOException
      */
-    private static Map<String, Profile> loadProfiles(InputStream is) throws IOException {
+    private static Map<String, Profile> loadProfiles(InputStream is, ProfileCredentialsService profileCredentialsService) throws IOException {
         ProfilesConfigFileLoaderHelper helper = new ProfilesConfigFileLoaderHelper();
-        Map<String, Map<String, String>> allProfileProperties = helper.parseProfileProperties(new Scanner(is));
+        Map<String, Map<String, String>> allProfileProperties = helper.parseProfileProperties(new Scanner(is, StringUtils.UTF8.name()));
 
         // Convert the loaded property map to credential objects
         Map<String, Profile> profilesByName = new LinkedHashMap<String, Profile>();
@@ -78,47 +83,110 @@ public class ProfilesConfigFileLoader {
 
             if (profileName.startsWith("profile ")) {
                 LOG.warn("The legacy profile format requires the 'profile ' prefix before the profile name. "
-                        + "The latest code does not require such prefix, and will consider it as part of the profile name. "
-                        + "Please remove the prefix if you are seeing this warning.");
+                         + "The latest code does not require such prefix, and will consider it as part of the profile name. "
+                         + "Please remove the prefix if you are seeing this warning.");
             }
-
-            String accessKey    = properties.get(Profile.AWS_ACCESS_KEY_ID);
-            String secretKey    = properties.get(Profile.AWS_SECRET_ACCESS_KEY);
-            String sessionToken = properties.get(Profile.AWS_SESSION_TOKEN);
 
             assertParameterNotEmpty(profileName,
-                                  "Unable to load credentials into profile: ProfileName is empty.");
-            if (accessKey == null) {
-                throw new AmazonClientException(
-                        String.format("Unable to load credentials into profile [%s]: AWS Access Key ID is not specified.",
-                                      profileName));
-            }
-            if (secretKey == null) {
-                throw new AmazonClientException(
-                        String.format("Unable to load credentials into profile [%s]: AWS Secret Access Key is not specified.",
-                                profileName));
-            }
+                                    "Unable to load credentials into profile: ProfileName is empty.");
 
-            if (sessionToken == null) {
-                profilesByName.put(
-                        profileName,
-                        new Profile(profileName,
-                                    new BasicAWSCredentials(accessKey, secretKey)));
+            if (properties.containsKey(Profile.ROLE_ARN)) {
+                profilesByName.put(profileName, fromAssumeRole(profileName, properties, allProfileProperties, profileCredentialsService));
             } else {
-                if (sessionToken.isEmpty()) {
-                    throw new AmazonClientException(
-                            String.format("Unable to load credentials into profile [%s]: AWS Session Token is empty.",
-                                    profileName));
-                }
-
-                profilesByName.put(
-                        profileName,
-                        new Profile(profileName,
-                                    new BasicSessionCredentials(accessKey, secretKey, sessionToken)));
+                profilesByName.put(profileName, fromStaticCredentials(profileName, properties));
             }
         }
 
         return profilesByName;
+    }
+
+    private static Profile fromStaticCredentials(String profileName, Map<String, String> properties) {
+        String accessKey = properties.get(Profile.AWS_ACCESS_KEY_ID);
+        String secretKey = properties.get(Profile.AWS_SECRET_ACCESS_KEY);
+        String sessionToken = properties.get(Profile.AWS_SESSION_TOKEN);
+
+        if (StringUtils.isNullOrEmpty(accessKey)) {
+            throw new AmazonClientException(
+                    String.format("Unable to load credentials into profile [%s]: AWS Access Key ID is not specified.",
+                                  profileName));
+        }
+        if (StringUtils.isNullOrEmpty(secretKey)) {
+            throw new AmazonClientException(
+                    String.format("Unable to load credentials into profile [%s]: AWS Secret Access Key is not specified.",
+                                  profileName));
+        }
+
+        if (sessionToken == null) {
+            return new Profile(profileName,
+                               new BasicAWSCredentials(accessKey, secretKey));
+        } else {
+            if (sessionToken.isEmpty()) {
+                throw new AmazonClientException(
+                        String.format("Unable to load credentials into profile [%s]: AWS Session Token is empty.",
+                                      profileName));
+            }
+
+            return new Profile(profileName,
+                               new BasicSessionCredentials(accessKey, secretKey, sessionToken));
+        }
+    }
+
+    private static Profile fromAssumeRole(String profileName, Map<String, String> properties,
+                                          Map<String, Map<String, String>> allProfileProperties,
+                                          ProfileCredentialsService profileCredentialsService) {
+        String roleArn = properties.get(Profile.ROLE_ARN);
+        String sourceProfileName = properties.get(Profile.SOURCE_PROFILE);
+        String roleSessionName = properties.get(Profile.ROLE_SESSION_NAME);
+        String externalId = properties.get(Profile.EXTERNAL_ID);
+
+        if (StringUtils.isNullOrEmpty(sourceProfileName)) {
+            return Profile.createInvalidProfile(profileName, String.format(
+                    "Unable to load credentials into profile [%s]: Source profile name is not specified",
+                    profileName));
+        }
+
+        Map<String, String> sourceProfileProperties = allProfileProperties.get(sourceProfileName);
+
+        if (sourceProfileProperties == null) {
+            return Profile.createInvalidProfile(profileName, String.format(
+                    "Unable to load source profile [%s]: Source profile not found [%s]",
+                    profileName, sourceProfileName));
+        }
+
+        String sourceAccessKey = sourceProfileProperties.get(Profile.AWS_ACCESS_KEY_ID);
+        String sourceSecretKey = sourceProfileProperties.get(Profile.AWS_SECRET_ACCESS_KEY);
+        String sourceSessionToken = sourceProfileProperties.get(Profile.AWS_SESSION_TOKEN);
+        AWSCredentials sourceCredentials;
+
+        if (StringUtils.isNullOrEmpty(sourceAccessKey)) {
+            return Profile.createInvalidProfile(profileName, String.format(
+                    "Unable to load credentials into profile [%s]: AWS Access Key ID is not specified in source profile [%s].",
+                    profileName, sourceProfileName));
+        }
+
+        if (StringUtils.isNullOrEmpty(sourceSecretKey)) {
+            return Profile.createInvalidProfile(profileName, String.format(
+                    "Unable to load credentials into profile [%s]: AWS Secret Access Key is not specified in source profile [%s].",
+                    profileName, sourceProfileName));
+        }
+
+        if (StringUtils.isNullOrEmpty(sourceSessionToken)) {
+            sourceCredentials = new BasicAWSCredentials(sourceAccessKey, sourceSecretKey);
+        } else {
+            sourceCredentials = new BasicSessionCredentials(sourceAccessKey, sourceSecretKey,
+                                                            sourceSessionToken);
+        }
+
+        if (StringUtils.isNullOrEmpty(roleSessionName)) {
+            roleSessionName = "aws-sdk-java-" + System.currentTimeMillis();
+        }
+
+        RoleInfo roleInfo = new RoleInfo()
+                .withRoleArn(roleArn)
+                .withRoleSessionName(roleSessionName)
+                .withExternalId(externalId)
+                .withLongLivedCredentials(sourceCredentials);
+        return new Profile(profileName, sourceProfileName, profileCredentialsService.getAssumeRoleCredentialsProvider(roleInfo), roleInfo);
     }
 
     /**
@@ -135,8 +203,9 @@ public class ProfilesConfigFileLoader {
      *            the specified parameter value is empty.
      */
     private static void assertParameterNotEmpty(String parameterValue, String errorMessage) {
-        if (parameterValue == null || parameterValue.isEmpty())
+        if (StringUtils.isNullOrEmpty(parameterValue)) {
             throw new AmazonClientException(errorMessage);
+        }
     }
 
     /**
@@ -179,8 +248,8 @@ public class ProfilesConfigFileLoader {
 
         @Override
         protected void onProfileProperty(String profileName,
-                String propertyKey, String propertyValue,
-                boolean isSupportedProperty, String line) {
+                                         String propertyKey, String propertyValue,
+                                         boolean isSupportedProperty, String line) {
             if ( !isSupportedProperty ) {
                 LOG.info(String.format(
                         "Skip unsupported property name %s in profile [%s].",
@@ -200,7 +269,7 @@ public class ProfilesConfigFileLoader {
             if (properties.containsKey(propertyKey)) {
                 throw new IllegalArgumentException(
                         "Duplicate property values for ["
-                                + propertyKey + "].");
+                        + propertyKey + "].");
             }
 
             properties.put(propertyKey, propertyValue);

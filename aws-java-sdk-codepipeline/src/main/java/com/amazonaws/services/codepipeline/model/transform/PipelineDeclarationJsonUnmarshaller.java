@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class PipelineDeclarationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    pipelineDeclaration.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDeclaration.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    pipelineDeclaration.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDeclaration.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("artifactStore", targetDepth)) {
                     context.nextToken();
@@ -76,8 +78,8 @@ public class PipelineDeclarationJsonUnmarshaller implements
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    pipelineDeclaration.setVersion(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipelineDeclaration.setVersion(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

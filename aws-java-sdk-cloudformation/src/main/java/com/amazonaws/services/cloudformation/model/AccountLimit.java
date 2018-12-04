@@ -49,6 +49,7 @@ public class AccountLimit implements Serializable, Cloneable {
      *        The name of the account limit. Currently, the only account limit
      *        is <code>StackLimit</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,6 +63,7 @@ public class AccountLimit implements Serializable, Cloneable {
      * @return The name of the account limit. Currently, the only account limit
      *         is <code>StackLimit</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -78,6 +80,7 @@ public class AccountLimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountLimit withName(String name) {
         setName(name);
         return this;
@@ -91,6 +94,7 @@ public class AccountLimit implements Serializable, Cloneable {
      * @param value
      *        The value that is associated with the account limit name.
      */
+
     public void setValue(Integer value) {
         this.value = value;
     }
@@ -102,6 +106,7 @@ public class AccountLimit implements Serializable, Cloneable {
      * 
      * @return The value that is associated with the account limit name.
      */
+
     public Integer getValue() {
         return this.value;
     }
@@ -116,6 +121,7 @@ public class AccountLimit implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccountLimit withValue(Integer value) {
         setValue(value);
         return this;

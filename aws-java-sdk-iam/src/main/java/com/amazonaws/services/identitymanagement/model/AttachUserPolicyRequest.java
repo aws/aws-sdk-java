@@ -27,73 +27,182 @@ public class AttachUserPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to attach the policy to.
+     * The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to attach the policy to.
+     * The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name (friendly name, not ARN) of the user to attach the policy
-     *        to.
+     *        The name (friendly name, not ARN) of the IAM user to attach the
+     *        policy to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to attach the policy to.
+     * The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name (friendly name, not ARN) of the user to attach the
-     *         policy to.
+     * @return The name (friendly name, not ARN) of the IAM user to attach the
+     *         policy to.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the user to attach the policy to.
+     * The name (friendly name, not ARN) of the IAM user to attach the policy
+     * to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name (friendly name, not ARN) of the user to attach the policy
-     *        to.
+     *        The name (friendly name, not ARN) of the IAM user to attach the
+     *        policy to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachUserPolicyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to
+     *        attach.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy you want to
+     *         attach.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to attach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to
+     *        attach.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachUserPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

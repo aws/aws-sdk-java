@@ -27,73 +27,182 @@ public class DetachGroupPolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the group to detach the policy from.
+     * The name (friendly name, not ARN) of the IAM group to detach the policy
+     * from.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String groupName;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the group to detach the policy from.
+     * The name (friendly name, not ARN) of the IAM group to detach the policy
+     * from.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param groupName
-     *        The name (friendly name, not ARN) of the group to detach the
-     *        policy from.
+     *        The name (friendly name, not ARN) of the IAM group to detach the
+     *        policy from.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the group to detach the policy from.
+     * The name (friendly name, not ARN) of the IAM group to detach the policy
+     * from.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name (friendly name, not ARN) of the group to detach the
-     *         policy from.
+     * @return The name (friendly name, not ARN) of the IAM group to detach the
+     *         policy from.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getGroupName() {
         return this.groupName;
     }
 
     /**
      * <p>
-     * The name (friendly name, not ARN) of the group to detach the policy from.
+     * The name (friendly name, not ARN) of the IAM group to detach the policy
+     * from.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param groupName
-     *        The name (friendly name, not ARN) of the group to detach the
-     *        policy from.
+     *        The name (friendly name, not ARN) of the IAM group to detach the
+     *        policy from.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to
+     *        detach.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy you want to
+     *         detach.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy you want to detach.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy you want to
+     *        detach.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachGroupPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;

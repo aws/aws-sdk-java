@@ -1,587 +1,738 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest) DescribeReservedDBInstances operation}.
- * <p>
- * Returns information about reserved DB instances for this account, or
- * about a specified reserved DB instance.
- * </p>
- *
- * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest)
+ * <p/>
  */
-public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
-     * The reserved DB instance identifier filter value. Specify this
-     * parameter to show only the reservation that matches the specified
-     * reservation ID.
+     * <p>
+     * The reserved DB instance identifier filter value. Specify this parameter
+     * to show only the reservation that matches the specified reservation ID.
+     * </p>
      */
     private String reservedDBInstanceId;
-
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only purchased reservations matching the specified offering
-     * identifier.
+     * <p>
+     * The offering identifier filter value. Specify this parameter to show only
+     * purchased reservations matching the specified offering identifier.
+     * </p>
      */
     private String reservedDBInstancesOfferingId;
-
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only those reservations matching the specified DB instances class.
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * those reservations matching the specified DB instances class.
+     * </p>
      */
     private String dBInstanceClass;
-
     /**
+     * <p>
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
-     * Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * parameter to show only reservations for this duration.
+     * </p>
+     * <p>
+     * Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * </p>
      */
     private String duration;
-
     /**
-     * The product description filter value. Specify this parameter to show
-     * only those reservations matching the specified product description.
+     * <p>
+     * The product description filter value. Specify this parameter to show only
+     * those reservations matching the specified product description.
+     * </p>
      */
     private String productDescription;
-
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * <p>
+     * The offering type filter value. Specify this parameter to show only the
+     * available offerings matching the specified offering type.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * </p>
      */
     private String offeringType;
-
     /**
+     * <p>
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
+     * </p>
      */
     private Boolean multiAZ;
-
     /**
+     * <p>
      * This parameter is not currently supported.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
-
+    private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
+     * <p>
      * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a pagination token
-     * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     * maximum 100.
+     * the <code>MaxRecords</code> value is available, a pagination token called
+     * a marker is included in the response so that the following results can be
+     * retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
      */
     private Integer maxRecords;
-
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
      */
     private String marker;
 
     /**
-     * Default constructor for a new DescribeReservedDBInstancesRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * <p>
+     * The reserved DB instance identifier filter value. Specify this parameter
+     * to show only the reservation that matches the specified reservation ID.
+     * </p>
+     * 
+     * @param reservedDBInstanceId
+     *        The reserved DB instance identifier filter value. Specify this
+     *        parameter to show only the reservation that matches the specified
+     *        reservation ID.
      */
-    public DescribeReservedDBInstancesRequest() {}
-    
+
+    public void setReservedDBInstanceId(String reservedDBInstanceId) {
+        this.reservedDBInstanceId = reservedDBInstanceId;
+    }
+
     /**
-     * The reserved DB instance identifier filter value. Specify this
-     * parameter to show only the reservation that matches the specified
-     * reservation ID.
-     *
+     * <p>
+     * The reserved DB instance identifier filter value. Specify this parameter
+     * to show only the reservation that matches the specified reservation ID.
+     * </p>
+     * 
      * @return The reserved DB instance identifier filter value. Specify this
      *         parameter to show only the reservation that matches the specified
      *         reservation ID.
      */
+
     public String getReservedDBInstanceId() {
-        return reservedDBInstanceId;
+        return this.reservedDBInstanceId;
     }
-    
+
     /**
-     * The reserved DB instance identifier filter value. Specify this
-     * parameter to show only the reservation that matches the specified
-     * reservation ID.
-     *
-     * @param reservedDBInstanceId The reserved DB instance identifier filter value. Specify this
-     *         parameter to show only the reservation that matches the specified
-     *         reservation ID.
-     */
-    public void setReservedDBInstanceId(String reservedDBInstanceId) {
-        this.reservedDBInstanceId = reservedDBInstanceId;
-    }
-    
-    /**
-     * The reserved DB instance identifier filter value. Specify this
-     * parameter to show only the reservation that matches the specified
-     * reservation ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param reservedDBInstanceId The reserved DB instance identifier filter value. Specify this
-     *         parameter to show only the reservation that matches the specified
-     *         reservation ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The reserved DB instance identifier filter value. Specify this parameter
+     * to show only the reservation that matches the specified reservation ID.
+     * </p>
+     * 
+     * @param reservedDBInstanceId
+     *        The reserved DB instance identifier filter value. Specify this
+     *        parameter to show only the reservation that matches the specified
+     *        reservation ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeReservedDBInstancesRequest withReservedDBInstanceId(String reservedDBInstanceId) {
-        this.reservedDBInstanceId = reservedDBInstanceId;
+
+    public DescribeReservedDBInstancesRequest withReservedDBInstanceId(
+            String reservedDBInstanceId) {
+        setReservedDBInstanceId(reservedDBInstanceId);
         return this;
     }
 
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only purchased reservations matching the specified offering
-     * identifier.
-     *
-     * @return The offering identifier filter value. Specify this parameter to show
-     *         only purchased reservations matching the specified offering
+     * <p>
+     * The offering identifier filter value. Specify this parameter to show only
+     * purchased reservations matching the specified offering identifier.
+     * </p>
+     * 
+     * @param reservedDBInstancesOfferingId
+     *        The offering identifier filter value. Specify this parameter to
+     *        show only purchased reservations matching the specified offering
+     *        identifier.
+     */
+
+    public void setReservedDBInstancesOfferingId(
+            String reservedDBInstancesOfferingId) {
+        this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
+    }
+
+    /**
+     * <p>
+     * The offering identifier filter value. Specify this parameter to show only
+     * purchased reservations matching the specified offering identifier.
+     * </p>
+     * 
+     * @return The offering identifier filter value. Specify this parameter to
+     *         show only purchased reservations matching the specified offering
      *         identifier.
      */
+
     public String getReservedDBInstancesOfferingId() {
-        return reservedDBInstancesOfferingId;
+        return this.reservedDBInstancesOfferingId;
     }
-    
+
     /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only purchased reservations matching the specified offering
-     * identifier.
-     *
-     * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
-     *         only purchased reservations matching the specified offering
-     *         identifier.
-     */
-    public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
-        this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
-    }
-    
-    /**
-     * The offering identifier filter value. Specify this parameter to show
-     * only purchased reservations matching the specified offering
-     * identifier.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
-     *         only purchased reservations matching the specified offering
-     *         identifier.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The offering identifier filter value. Specify this parameter to show only
+     * purchased reservations matching the specified offering identifier.
+     * </p>
+     * 
+     * @param reservedDBInstancesOfferingId
+     *        The offering identifier filter value. Specify this parameter to
+     *        show only purchased reservations matching the specified offering
+     *        identifier.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeReservedDBInstancesRequest withReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
-        this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
+
+    public DescribeReservedDBInstancesRequest withReservedDBInstancesOfferingId(
+            String reservedDBInstancesOfferingId) {
+        setReservedDBInstancesOfferingId(reservedDBInstancesOfferingId);
         return this;
     }
 
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only those reservations matching the specified DB instances class.
-     *
-     * @return The DB instance class filter value. Specify this parameter to show
-     *         only those reservations matching the specified DB instances class.
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * those reservations matching the specified DB instances class.
+     * </p>
+     * 
+     * @param dBInstanceClass
+     *        The DB instance class filter value. Specify this parameter to show
+     *        only those reservations matching the specified DB instances class.
      */
-    public String getDBInstanceClass() {
-        return dBInstanceClass;
-    }
-    
-    /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only those reservations matching the specified DB instances class.
-     *
-     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
-     *         only those reservations matching the specified DB instances class.
-     */
+
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
-    
+
     /**
-     * The DB instance class filter value. Specify this parameter to show
-     * only those reservations matching the specified DB instances class.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBInstanceClass The DB instance class filter value. Specify this parameter to show
-     *         only those reservations matching the specified DB instances class.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The DB instance class filter value. Specify this parameter to show only
+     * those reservations matching the specified DB instances class.
+     * </p>
+     * 
+     * @return The DB instance class filter value. Specify this parameter to
+     *         show only those reservations matching the specified DB instances
+     *         class.
      */
-    public DescribeReservedDBInstancesRequest withDBInstanceClass(String dBInstanceClass) {
-        this.dBInstanceClass = dBInstanceClass;
+
+    public String getDBInstanceClass() {
+        return this.dBInstanceClass;
+    }
+
+    /**
+     * <p>
+     * The DB instance class filter value. Specify this parameter to show only
+     * those reservations matching the specified DB instances class.
+     * </p>
+     * 
+     * @param dBInstanceClass
+     *        The DB instance class filter value. Specify this parameter to show
+     *        only those reservations matching the specified DB instances class.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeReservedDBInstancesRequest withDBInstanceClass(
+            String dBInstanceClass) {
+        setDBInstanceClass(dBInstanceClass);
         return this;
     }
 
     /**
+     * <p>
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
-     * Values: <code>1 | 3 | 31536000 | 94608000</code>
-     *
-     * @return The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
-     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * parameter to show only reservations for this duration.
+     * </p>
+     * <p>
+     * Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * </p>
+     * 
+     * @param duration
+     *        The duration filter value, specified in years or seconds. Specify
+     *        this parameter to show only reservations for this duration. </p>
+     *        <p>
+     *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
-    public String getDuration() {
-        return duration;
-    }
-    
-    /**
-     * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
-     * Values: <code>1 | 3 | 31536000 | 94608000</code>
-     *
-     * @param duration The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
-     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
-     */
+
     public void setDuration(String duration) {
         this.duration = duration;
     }
-    
+
     /**
-     * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration. <p>Valid
-     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param duration The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration. <p>Valid
-     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
+     * </p>
+     * <p>
+     * Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * </p>
+     * 
+     * @return The duration filter value, specified in years or seconds. Specify
+     *         this parameter to show only reservations for this duration. </p>
+     *         <p>
+     *         Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
+
+    public String getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
+     * </p>
+     * <p>
+     * Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * </p>
+     * 
+     * @param duration
+     *        The duration filter value, specified in years or seconds. Specify
+     *        this parameter to show only reservations for this duration. </p>
+     *        <p>
+     *        Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeReservedDBInstancesRequest withDuration(String duration) {
-        this.duration = duration;
+        setDuration(duration);
         return this;
     }
 
     /**
-     * The product description filter value. Specify this parameter to show
-     * only those reservations matching the specified product description.
-     *
-     * @return The product description filter value. Specify this parameter to show
-     *         only those reservations matching the specified product description.
+     * <p>
+     * The product description filter value. Specify this parameter to show only
+     * those reservations matching the specified product description.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description filter value. Specify this parameter to
+     *        show only those reservations matching the specified product
+     *        description.
      */
-    public String getProductDescription() {
-        return productDescription;
-    }
-    
-    /**
-     * The product description filter value. Specify this parameter to show
-     * only those reservations matching the specified product description.
-     *
-     * @param productDescription The product description filter value. Specify this parameter to show
-     *         only those reservations matching the specified product description.
-     */
+
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
-    
+
     /**
-     * The product description filter value. Specify this parameter to show
-     * only those reservations matching the specified product description.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param productDescription The product description filter value. Specify this parameter to show
-     *         only those reservations matching the specified product description.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The product description filter value. Specify this parameter to show only
+     * those reservations matching the specified product description.
+     * </p>
+     * 
+     * @return The product description filter value. Specify this parameter to
+     *         show only those reservations matching the specified product
+     *         description.
      */
-    public DescribeReservedDBInstancesRequest withProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+
+    public String getProductDescription() {
+        return this.productDescription;
+    }
+
+    /**
+     * <p>
+     * The product description filter value. Specify this parameter to show only
+     * those reservations matching the specified product description.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description filter value. Specify this parameter to
+     *        show only those reservations matching the specified product
+     *        description.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeReservedDBInstancesRequest withProductDescription(
+            String productDescription) {
+        setProductDescription(productDescription);
         return this;
     }
 
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
-     *
-     * @return The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * <p>
+     * The offering type filter value. Specify this parameter to show only the
+     * available offerings matching the specified offering type.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * </p>
+     * 
+     * @param offeringType
+     *        The offering type filter value. Specify this parameter to show
+     *        only the available offerings matching the specified offering type.
+     *        </p>
+     *        <p>
+     *        Valid Values:
+     *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      */
-    public String getOfferingType() {
-        return offeringType;
-    }
-    
-    /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
-     *
-     * @param offeringType The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
-     */
+
     public void setOfferingType(String offeringType) {
         this.offeringType = offeringType;
     }
-    
+
     /**
-     * The offering type filter value. Specify this parameter to show only
-     * the available offerings matching the specified offering type. <p>Valid
-     * Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param offeringType The offering type filter value. Specify this parameter to show only
-     *         the available offerings matching the specified offering type. <p>Valid
-     *         Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The offering type filter value. Specify this parameter to show only the
+     * available offerings matching the specified offering type.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * </p>
+     * 
+     * @return The offering type filter value. Specify this parameter to show
+     *         only the available offerings matching the specified offering
+     *         type. </p>
+     *         <p>
+     *         Valid Values:
+     *         <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
      */
-    public DescribeReservedDBInstancesRequest withOfferingType(String offeringType) {
-        this.offeringType = offeringType;
+
+    public String getOfferingType() {
+        return this.offeringType;
+    }
+
+    /**
+     * <p>
+     * The offering type filter value. Specify this parameter to show only the
+     * available offerings matching the specified offering type.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * </p>
+     * 
+     * @param offeringType
+     *        The offering type filter value. Specify this parameter to show
+     *        only the available offerings matching the specified offering type.
+     *        </p>
+     *        <p>
+     *        Valid Values:
+     *        <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeReservedDBInstancesRequest withOfferingType(
+            String offeringType) {
+        setOfferingType(offeringType);
         return this;
     }
 
     /**
+     * <p>
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
-     *
-     * @return The Multi-AZ filter value. Specify this parameter to show only those
-     *         reservations matching the specified Multi-AZ parameter.
+     * </p>
+     * 
+     * @param multiAZ
+     *        The Multi-AZ filter value. Specify this parameter to show only
+     *        those reservations matching the specified Multi-AZ parameter.
      */
-    public Boolean isMultiAZ() {
-        return multiAZ;
-    }
-    
-    /**
-     * The Multi-AZ filter value. Specify this parameter to show only those
-     * reservations matching the specified Multi-AZ parameter.
-     *
-     * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only those
-     *         reservations matching the specified Multi-AZ parameter.
-     */
+
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
-    
+
     /**
+     * <p>
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only those
-     *         reservations matching the specified Multi-AZ parameter.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The Multi-AZ filter value. Specify this parameter to show only
+     *         those reservations matching the specified Multi-AZ parameter.
      */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
+     * </p>
+     * 
+     * @param multiAZ
+     *        The Multi-AZ filter value. Specify this parameter to show only
+     *        those reservations matching the specified Multi-AZ parameter.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeReservedDBInstancesRequest withMultiAZ(Boolean multiAZ) {
-        this.multiAZ = multiAZ;
+        setMultiAZ(multiAZ);
         return this;
     }
 
     /**
+     * <p>
      * The Multi-AZ filter value. Specify this parameter to show only those
      * reservations matching the specified Multi-AZ parameter.
-     *
-     * @return The Multi-AZ filter value. Specify this parameter to show only those
-     *         reservations matching the specified Multi-AZ parameter.
+     * </p>
+     * 
+     * @return The Multi-AZ filter value. Specify this parameter to show only
+     *         those reservations matching the specified Multi-AZ parameter.
      */
-    public Boolean getMultiAZ() {
-        return multiAZ;
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
     }
 
     /**
+     * <p>
      * This parameter is not currently supported.
-     *
+     * </p>
+     * 
      * @return This parameter is not currently supported.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
-              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
-              filters.setAutoConstruct(true);
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
         }
         return filters;
     }
-    
+
     /**
+     * <p>
      * This parameter is not currently supported.
-     *
-     * @param filters This parameter is not currently supported.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-        filtersCopy.addAll(filters);
-        this.filters = filtersCopy;
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
+                filters);
     }
-    
+
     /**
+     * <p>
      * This parameter is not currently supported.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or {@link
-     * #withFilters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setFilters(java.util.Collection)} or
+     * {@link #withFilters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters This parameter is not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public DescribeReservedDBInstancesRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
-        for (Filter value : filters) {
-            getFilters().add(value);
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
+                    filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * This parameter is not currently supported.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters This parameter is not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * This parameter is not currently supported.
+     * </p>
+     * 
+     * @param filters
+     *        This parameter is not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeReservedDBInstancesRequest withFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-            filtersCopy.addAll(filters);
-            this.filters = filtersCopy;
-        }
 
+    public DescribeReservedDBInstancesRequest withFilters(
+            java.util.Collection<Filter> filters) {
+        setFilters(filters);
         return this;
     }
 
     /**
+     * <p>
      * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a pagination token
-     * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     * maximum 100.
-     *
-     * @return The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a pagination token
-     *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     *         maximum 100.
+     * the <code>MaxRecords</code> value is available, a pagination token called
+     * a marker is included in the response so that the following results can be
+     * retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        than the <code>MaxRecords</code> value is available, a pagination
+     *        token called a marker is included in the response so that the
+     *        following results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
      */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a pagination token
-     * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     * maximum 100.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a pagination token
-     *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     *         maximum 100.
-     */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of records to include in the response. If more than
-     * the <code>MaxRecords</code> value is available, a pagination token
-     * called a marker is included in the response so that the following
-     * results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     * maximum 100.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more than
-     *         the <code>MaxRecords</code> value is available, a pagination token
-     *         called a marker is included in the response so that the following
-     *         results can be retrieved. <p>Default: 100 <p>Constraints: Minimum 20,
-     *         maximum 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a pagination token called
+     * a marker is included in the response so that the following results can be
+     * retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @return The maximum number of records to include in the response. If more
+     *         than the <code>MaxRecords</code> value is available, a pagination
+     *         token called a marker is included in the response so that the
+     *         following results can be retrieved. </p>
+     *         <p>
+     *         Default: 100
+     *         </p>
+     *         <p>
+     *         Constraints: Minimum 20, maximum 100.
      */
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a pagination token called
+     * a marker is included in the response so that the following results can be
+     * retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        than the <code>MaxRecords</code> value is available, a pagination
+     *        token called a marker is included in the response so that the
+     *        following results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeReservedDBInstancesRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+        setMaxRecords(maxRecords);
         return this;
     }
 
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous request. If
+     *        this parameter is specified, the response includes only records
+     *        beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @param marker An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return An optional pagination token provided by a previous request. If
+     *         this parameter is specified, the response includes only records
+     *         beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous request. If
+     *        this parameter is specified, the response includes only records
+     *        beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeReservedDBInstancesRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
@@ -597,74 +748,142 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");
-        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getReservedDBInstanceId() != null)
+            sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId()
+                    + ",");
+        if (getReservedDBInstancesOfferingId() != null)
+            sb.append("ReservedDBInstancesOfferingId: "
+                    + getReservedDBInstancesOfferingId() + ",");
+        if (getDBInstanceClass() != null)
+            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getDuration() != null)
+            sb.append("Duration: " + getDuration() + ",");
+        if (getProductDescription() != null)
+            sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getOfferingType() != null)
+            sb.append("OfferingType: " + getOfferingType() + ",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: " + getMultiAZ() + ",");
+        if (getFilters() != null)
+            sb.append("Filters: " + getFilters() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeReservedDBInstancesRequest == false)
+            return false;
+        DescribeReservedDBInstancesRequest other = (DescribeReservedDBInstancesRequest) obj;
+        if (other.getReservedDBInstanceId() == null
+                ^ this.getReservedDBInstanceId() == null)
+            return false;
+        if (other.getReservedDBInstanceId() != null
+                && other.getReservedDBInstanceId().equals(
+                        this.getReservedDBInstanceId()) == false)
+            return false;
+        if (other.getReservedDBInstancesOfferingId() == null
+                ^ this.getReservedDBInstancesOfferingId() == null)
+            return false;
+        if (other.getReservedDBInstancesOfferingId() != null
+                && other.getReservedDBInstancesOfferingId().equals(
+                        this.getReservedDBInstancesOfferingId()) == false)
+            return false;
+        if (other.getDBInstanceClass() == null
+                ^ this.getDBInstanceClass() == null)
+            return false;
+        if (other.getDBInstanceClass() != null
+                && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false)
+            return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null
+                && other.getDuration().equals(this.getDuration()) == false)
+            return false;
+        if (other.getProductDescription() == null
+                ^ this.getProductDescription() == null)
+            return false;
+        if (other.getProductDescription() != null
+                && other.getProductDescription().equals(
+                        this.getProductDescription()) == false)
+            return false;
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null)
+            return false;
+        if (other.getOfferingType() != null
+                && other.getOfferingType().equals(this.getOfferingType()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null
+                && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null
+                && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getReservedDBInstanceId() == null) ? 0 : getReservedDBInstanceId().hashCode()); 
-        hashCode = prime * hashCode + ((getReservedDBInstancesOfferingId() == null) ? 0 : getReservedDBInstancesOfferingId().hashCode()); 
-        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
-        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
-        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
-        hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getReservedDBInstanceId() == null) ? 0
+                        : getReservedDBInstanceId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReservedDBInstancesOfferingId() == null) ? 0
+                        : getReservedDBInstancesOfferingId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getProductDescription() == null) ? 0
+                        : getProductDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getOfferingType() == null) ? 0 : getOfferingType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
+        hashCode = prime * hashCode
+                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeReservedDBInstancesRequest == false) return false;
-        DescribeReservedDBInstancesRequest other = (DescribeReservedDBInstancesRequest)obj;
-        
-        if (other.getReservedDBInstanceId() == null ^ this.getReservedDBInstanceId() == null) return false;
-        if (other.getReservedDBInstanceId() != null && other.getReservedDBInstanceId().equals(this.getReservedDBInstanceId()) == false) return false; 
-        if (other.getReservedDBInstancesOfferingId() == null ^ this.getReservedDBInstancesOfferingId() == null) return false;
-        if (other.getReservedDBInstancesOfferingId() != null && other.getReservedDBInstancesOfferingId().equals(this.getReservedDBInstancesOfferingId()) == false) return false; 
-        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null) return false;
-        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
-        if (other.getDuration() == null ^ this.getDuration() == null) return false;
-        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
-        if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
-        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
-        if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
-        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
-        if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
-        if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
-        if (other.getFilters() == null ^ this.getFilters() == null) return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeReservedDBInstancesRequest clone() {
-        
-            return (DescribeReservedDBInstancesRequest) super.clone();
+        return (DescribeReservedDBInstancesRequest) super.clone();
     }
-
 }
-    

@@ -53,6 +53,12 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String lifecycleActionResult;
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * <p>
@@ -62,6 +68,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -73,6 +80,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -87,6 +95,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLifecycleActionRequest withLifecycleHookName(
             String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
@@ -101,6 +110,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group for the lifecycle hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -112,6 +122,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group for the lifecycle hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -126,6 +137,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLifecycleActionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -146,6 +158,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      *        this token to the notification target you specified when you
      *        created the lifecycle hook.
      */
+
     public void setLifecycleActionToken(String lifecycleActionToken) {
         this.lifecycleActionToken = lifecycleActionToken;
     }
@@ -163,6 +176,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      *         this token to the notification target you specified when you
      *         created the lifecycle hook.
      */
+
     public String getLifecycleActionToken() {
         return this.lifecycleActionToken;
     }
@@ -183,6 +197,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLifecycleActionRequest withLifecycleActionToken(
             String lifecycleActionToken) {
         setLifecycleActionToken(lifecycleActionToken);
@@ -199,6 +214,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      *        The action for the group to take. This parameter can be either
      *        <code>CONTINUE</code> or <code>ABANDON</code>.
      */
+
     public void setLifecycleActionResult(String lifecycleActionResult) {
         this.lifecycleActionResult = lifecycleActionResult;
     }
@@ -212,6 +228,7 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @return The action for the group to take. This parameter can be either
      *         <code>CONTINUE</code> or <code>ABANDON</code>.
      */
+
     public String getLifecycleActionResult() {
         return this.lifecycleActionResult;
     }
@@ -228,9 +245,51 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLifecycleActionRequest withLifecycleActionResult(
             String lifecycleActionResult) {
         setLifecycleActionResult(lifecycleActionResult);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CompleteLifecycleActionRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -255,7 +314,10 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
             sb.append("LifecycleActionToken: " + getLifecycleActionToken()
                     + ",");
         if (getLifecycleActionResult() != null)
-            sb.append("LifecycleActionResult: " + getLifecycleActionResult());
+            sb.append("LifecycleActionResult: " + getLifecycleActionResult()
+                    + ",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: " + getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -298,6 +360,11 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
                 && other.getLifecycleActionResult().equals(
                         this.getLifecycleActionResult()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null
+                && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +389,8 @@ public class CompleteLifecycleActionRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getLifecycleActionResult() == null) ? 0
                         : getLifecycleActionResult().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

@@ -40,6 +40,7 @@ public class UpdatePipelineResult implements Serializable, Cloneable {
      * @param pipeline
      *        The structure of the updated pipeline.
      */
+
     public void setPipeline(PipelineDeclaration pipeline) {
         this.pipeline = pipeline;
     }
@@ -51,6 +52,7 @@ public class UpdatePipelineResult implements Serializable, Cloneable {
      * 
      * @return The structure of the updated pipeline.
      */
+
     public PipelineDeclaration getPipeline() {
         return this.pipeline;
     }
@@ -65,6 +67,7 @@ public class UpdatePipelineResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineResult withPipeline(PipelineDeclaration pipeline) {
         setPipeline(pipeline);
         return this;

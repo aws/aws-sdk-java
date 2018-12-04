@@ -14,13 +14,13 @@
  */
 package com.amazonaws;
 
-import java.net.URI;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.util.AWSRequestMetrics;
+
+import java.net.URI;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Represents a request being sent to an Amazon Web Service, including the
@@ -39,7 +39,7 @@ public interface Request<T> extends SignableRequest<T> {
     /**
      * Sets all headers, clearing any existing ones.
      */
-    public void setHeaders(Map<String, String> headers);
+    void setHeaders(Map<String, String> headers);
 
     /**
      * Sets the path to the resource being requested.
@@ -47,7 +47,7 @@ public interface Request<T> extends SignableRequest<T> {
      * @param path
      *            The path to the resource being requested.
      */
-    public void setResourcePath(String path);
+    void setResourcePath(String path);
 
     /**
      * Adds the specified request parameter to this request, and returns the
@@ -60,12 +60,25 @@ public interface Request<T> extends SignableRequest<T> {
      *
      * @return The updated request object.
      */
-    public Request<T> withParameter(String name, String value);
+    Request<T> withParameter(String name, String value);
 
     /**
      * Sets all parameters, clearing any existing values.
+     *
+     * Note that List values within the parameters Map must use an implementation that supports null
+     * values.
      */
-    public void setParameters(Map<String, List<String>> parameters);
+    void setParameters(Map<String, List<String>> parameters);
+
+    /**
+     * Adds the specified request parameter and list of values to this request.
+     *
+     * @param name
+     *            The name of the request parameter.
+     * @param values
+     *            The value of the request parameter.
+     */
+    void addParameters(String name, List<String> values);
 
     /**
      * Sets the service endpoint (ex: "https://ec2.amazonaws.com") to which this
@@ -74,7 +87,7 @@ public interface Request<T> extends SignableRequest<T> {
      * @param endpoint
      *            The service endpoint to which this request should be sent.
      */
-    public void setEndpoint(URI endpoint);
+    void setEndpoint(URI endpoint);
 
     /**
      * Sets the HTTP method (GET, POST, etc) to use when sending this request.
@@ -82,7 +95,7 @@ public interface Request<T> extends SignableRequest<T> {
      * @param httpMethod
      *            The HTTP method to use when sending this request.
      */
-    public void setHttpMethod(HttpMethodName httpMethod);
+    void setHttpMethod(HttpMethodName httpMethod);
 
     /**
      * @return The name of the Amazon service this request is for. This is used
@@ -94,13 +107,13 @@ public interface Request<T> extends SignableRequest<T> {
      * @see {@link AmazonServiceException#getServiceName()}
      * @see {@link AWSRequestMetrics.Field#ServiceName}
      */
-    public String getServiceName();
+    String getServiceName();
 
     /**
      * Returns the original, user facing request object which this internal
      * request object is representing.
      */
-    public AmazonWebServiceRequest getOriginalRequest();
+    AmazonWebServiceRequest getOriginalRequest();
 
     /**
      * Sets the optional value for time offset for this request.  This
@@ -111,7 +124,7 @@ public interface Request<T> extends SignableRequest<T> {
      * @param timeOffset
      *            The optional value for time offset (in seconds) for this request.
      */
-    public void setTimeOffset(int timeOffset);
+    void setTimeOffset(int timeOffset);
 
     /**
      * Sets the optional value for time offset for this request.  This
@@ -121,12 +134,12 @@ public interface Request<T> extends SignableRequest<T> {
      *
      * @return The updated request object.
      */
-    public Request<T> withTimeOffset(int timeOffset);
+    Request<T> withTimeOffset(int timeOffset);
 
     /**
      * Returns the request metrics.
      */
-    public AWSRequestMetrics getAWSRequestMetrics();
+    AWSRequestMetrics getAWSRequestMetrics();
 
     /**
      * Bind the request metrics to the request. Note metrics can be captured
@@ -134,7 +147,7 @@ public interface Request<T> extends SignableRequest<T> {
      *
      * @throws IllegalStateException if the binding has already occurred
      */
-    public void setAWSRequestMetrics(AWSRequestMetrics metrics);
+    void setAWSRequestMetrics(AWSRequestMetrics metrics);
 
     /**
      * Adds a context to the request object that is visible

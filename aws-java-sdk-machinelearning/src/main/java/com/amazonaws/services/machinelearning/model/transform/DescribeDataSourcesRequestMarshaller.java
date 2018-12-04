@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeDataSourcesRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeDataSourcesRequestMarshaller
         implements
         Marshaller<Request<DescribeDataSourcesRequest>, DescribeDataSourcesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeDataSourcesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeDataSourcesRequest> marshall(
             DescribeDataSourcesRequest describeDataSourcesRequest) {
@@ -65,68 +66,63 @@ public class DescribeDataSourcesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeDataSourcesRequest.getFilterVariable() != null) {
-                jsonWriter.key("FilterVariable").value(
+                jsonGenerator.writeFieldName("FilterVariable").writeValue(
                         describeDataSourcesRequest.getFilterVariable());
             }
-
             if (describeDataSourcesRequest.getEQ() != null) {
-                jsonWriter.key("EQ").value(describeDataSourcesRequest.getEQ());
+                jsonGenerator.writeFieldName("EQ").writeValue(
+                        describeDataSourcesRequest.getEQ());
             }
-
             if (describeDataSourcesRequest.getGT() != null) {
-                jsonWriter.key("GT").value(describeDataSourcesRequest.getGT());
+                jsonGenerator.writeFieldName("GT").writeValue(
+                        describeDataSourcesRequest.getGT());
             }
-
             if (describeDataSourcesRequest.getLT() != null) {
-                jsonWriter.key("LT").value(describeDataSourcesRequest.getLT());
+                jsonGenerator.writeFieldName("LT").writeValue(
+                        describeDataSourcesRequest.getLT());
             }
-
             if (describeDataSourcesRequest.getGE() != null) {
-                jsonWriter.key("GE").value(describeDataSourcesRequest.getGE());
+                jsonGenerator.writeFieldName("GE").writeValue(
+                        describeDataSourcesRequest.getGE());
             }
-
             if (describeDataSourcesRequest.getLE() != null) {
-                jsonWriter.key("LE").value(describeDataSourcesRequest.getLE());
+                jsonGenerator.writeFieldName("LE").writeValue(
+                        describeDataSourcesRequest.getLE());
             }
-
             if (describeDataSourcesRequest.getNE() != null) {
-                jsonWriter.key("NE").value(describeDataSourcesRequest.getNE());
+                jsonGenerator.writeFieldName("NE").writeValue(
+                        describeDataSourcesRequest.getNE());
             }
-
             if (describeDataSourcesRequest.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(
+                jsonGenerator.writeFieldName("Prefix").writeValue(
                         describeDataSourcesRequest.getPrefix());
             }
-
             if (describeDataSourcesRequest.getSortOrder() != null) {
-                jsonWriter.key("SortOrder").value(
+                jsonGenerator.writeFieldName("SortOrder").writeValue(
                         describeDataSourcesRequest.getSortOrder());
             }
-
             if (describeDataSourcesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeDataSourcesRequest.getNextToken());
             }
-
             if (describeDataSourcesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeDataSourcesRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

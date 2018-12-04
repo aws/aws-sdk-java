@@ -27,7 +27,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -98,7 +99,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -127,7 +129,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -154,13 +157,15 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      * @see DeviceAttribute
      */
+
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -188,7 +193,8 @@ public class Rule implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The rule's attribute.</p>
+     * @return The rule's stringified attribute. For example, specify the value
+     *         as <code>"\"abc\""</code>.</p>
      *         <p>
      *         Allowed values include:
      *         </p>
@@ -215,13 +221,15 @@ public class Rule implements Serializable, Cloneable {
      *         </li>
      * @see DeviceAttribute
      */
+
     public String getAttribute() {
         return this.attribute;
     }
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -250,7 +258,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -279,6 +288,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceAttribute
      */
+
     public Rule withAttribute(String attribute) {
         setAttribute(attribute);
         return this;
@@ -286,7 +296,8 @@ public class Rule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -315,7 +326,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -340,17 +352,17 @@ public class Rule implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceAttribute
      */
+
     public void setAttribute(DeviceAttribute attribute) {
         this.attribute = attribute.toString();
     }
 
     /**
      * <p>
-     * The rule's attribute.
+     * The rule's stringified attribute. For example, specify the value as
+     * <code>"\"abc\""</code>.
      * </p>
      * <p>
      * Allowed values include:
@@ -379,7 +391,8 @@ public class Rule implements Serializable, Cloneable {
      * </ul>
      * 
      * @param attribute
-     *        The rule's attribute.</p>
+     *        The rule's stringified attribute. For example, specify the value
+     *        as <code>"\"abc\""</code>.</p>
      *        <p>
      *        Allowed values include:
      *        </p>
@@ -408,6 +421,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceAttribute
      */
+
     public Rule withAttribute(DeviceAttribute attribute) {
         setAttribute(attribute);
         return this;
@@ -475,6 +489,7 @@ public class Rule implements Serializable, Cloneable {
      *        </li>
      * @see RuleOperator
      */
+
     public void setOperator(String operator) {
         this.operator = operator;
     }
@@ -540,6 +555,7 @@ public class Rule implements Serializable, Cloneable {
      *         </li>
      * @see RuleOperator
      */
+
     public String getOperator() {
         return this.operator;
     }
@@ -608,6 +624,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see RuleOperator
      */
+
     public Rule withOperator(String operator) {
         setOperator(operator);
         return this;
@@ -673,10 +690,9 @@ public class Rule implements Serializable, Cloneable {
      *        NOT_IN: The not-in operator.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleOperator
      */
+
     public void setOperator(RuleOperator operator) {
         this.operator = operator.toString();
     }
@@ -745,6 +761,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see RuleOperator
      */
+
     public Rule withOperator(RuleOperator operator) {
         setOperator(operator);
         return this;
@@ -758,6 +775,7 @@ public class Rule implements Serializable, Cloneable {
      * @param value
      *        The rule's value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -769,6 +787,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @return The rule's value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -783,6 +802,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withValue(String value) {
         setValue(value);
         return this;

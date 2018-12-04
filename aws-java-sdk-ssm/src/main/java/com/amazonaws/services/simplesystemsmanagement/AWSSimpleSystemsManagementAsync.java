@@ -24,14 +24,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Simple Systems Manager (SSM) enables you to remotely manage the configuration
- * of your Amazon EC2 instance. Using SSM, you can run scripts or commands using
- * either EC2 Run Command or SSM Config. (SSM Config is currently available only
- * for Windows instances.)
+ * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
+ * you to remotely manage the configuration of your Amazon EC2 instance using
+ * scripts or commands with either an on-demand solution called <i>SSM Run
+ * Command</i> or a lightweight instance configuration solution called <i>SSM
+ * Config</i>.
  * </p>
  * <p>
+ * This references is intended to be used with the SSM User Guide for <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html"
+ * >Linux</a> or <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html"
+ * >Windows</a>.
  * </p>
+ * <p>
  * <b>Run Command</b>
+ * </p>
  * <p>
  * Run Command provides an on-demand experience for executing commands. You can
  * use pre-defined Amazon SSM documents to perform the actions listed later in
@@ -40,9 +48,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * <b>Commands</b> page in the <a
  * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a href=
  * "http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html"
- * >AWS Tools for Windows PowerShell</a>, or the <a
+ * >AWS Tools for Windows PowerShell</a>, the <a
  * href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
- * CLI</a>.
+ * CLI</a>, or AWS SDKs.
  * </p>
  * <p>
  * Run Command reports the status of the command execution for each instance
@@ -57,9 +65,10 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html"
  * >Windows</a>).
  * </p>
+ * <p/>
  * <p>
- * </p>
  * <b>SSM Config</b>
+ * </p>
  * <p>
  * SSM Config is a lightweight instance configuration solution. SSM Config is
  * currently only available for Windows instances. With SSM Config, you can
@@ -80,139 +89,132 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * >Managing Windows Instance Configuration</a>.
  * </p>
  * <p>
- * SSM Config and Run Command include the following pre-defined documents.
+ * SSM Config and SSM Run Command include the following pre-defined documents.
  * </p>
- * <table>
- * <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
- * colnum="1" colname="col1" colwidth="1*"></colspec> <colspec colnum="2"
- * colname="col2" colwidth="1*"></colspec> <colspec colnum="3" colname="col3"
- * colwidth="1*"></colspec> <thead> <row> <entry>Name</entry>
- * <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody>
- * <row> <entry>
  * <p>
- * AWS-RunShellScript
+ * <b>Linux</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Run shell scripts
+ * <b>AWS-RunShellScript</b> to run shell scripts
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <p/>
  * <p>
- * AWS-UpdateSSMAgent
+ * <b>Windows</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Update the Amazon SSM agent
+ * <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-JoinDirectoryServiceDomain
+ * <b>AWS-UpdateEC2Config</b> to update the EC2Config service
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Join an AWS Directory
+ * <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallApplication</b> to install, repair, or uninstall software using
+ * an MSI package
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-RunPowerShellScript
+ * <b>AWS-InstallPowerShellModule</b> to install PowerShell modules
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Run PowerShell commands or scripts
+ * <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor
+ * applications and systems
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance
+ * running in Windows.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-UpdateEC2Config
+ * <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which
+ * updates are missing.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Update the EC2Config service
+ * <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your
+ * EC2 instance.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific
+ * updates.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <important>
  * <p>
- * AWS-ConfigureWindowsUpdate
+ * The commands or scripts specified in SSM documents run with administrative
+ * privilege on your instances because the Amazon SSM agent runs as root on
+ * Linux and the EC2Config service runs in the Local System account on Windows.
+ * If a user has permission to execute any of the pre-defined SSM documents (any
+ * document that begins with AWS-*) then that user also has administrator access
+ * to the instance. Delegate access to SSM and Run Command judiciously. This
+ * becomes extremely important if you create your own SSM documents. Amazon Web
+ * Services does not provide guidance about how to create secure SSM documents.
+ * You create SSM documents and delegate access to Run Command at your own risk.
+ * As a security best practice, we recommend that you assign access to "AWS-*"
+ * documents, especially the AWS-RunShellScript document on Linux and the
+ * AWS-RunPowerShellScript document on Windows, to trusted administrators only.
+ * You can create SSM documents for specific tasks and delegate access to
+ * non-administrators.
  * </p>
- * </entry> <entry>
- * <p>
- * Configure Windows Update settings
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallApplication
- * </p>
- * </entry> <entry>
- * <p>
- * Install, repair, or uninstall software using an MSI package
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallPowerShellModule
- * </p>
- * </entry> <entry>
- * <p>
- * Install PowerShell modules
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-ConfigureCloudWatch
- * </p>
- * </entry> <entry>
- * <p>
- * Configure Amazon CloudWatch Logs to monitor applications and systems
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> </tbody> </tgroup>
- * </table>
- * <important> <simpara>The commands or scripts specified in SSM documents run
- * with administrative privilege on your instances because the Amazon SSM agent
- * runs as root on Linux and the EC2Config service runs in the Local System
- * account on Windows. If a user has permission to execute any of the
- * pre-defined SSM documents (any document that begins with AWS-*) then that
- * user also has administrator access to the instance. Delegate access to SSM
- * and Run Command judiciously. This becomes extremely important if you create
- * your own SSM documents. Amazon Web Services does not provide guidance about
- * how to create secure SSM documents. You create SSM documents and delegate
- * access to Run Command at your own risk. As a security best practice, we
- * recommend that you assign access to "AWS-*" documents, especially the
- * AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript document
- * on Windows, to trusted administrators only. You can create SSM documents for
- * specific tasks and delegate access to non-administrators.</simpara>
  * </important>
+ * <p>
+ * For information about creating and sharing SSM documents, see the following
+ * topics in the SSM User Guide:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Linux)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Windows)
+ * </p>
+ * </li>
+ * </ul>
  */
 public interface AWSSimpleSystemsManagementAsync extends
         AWSSimpleSystemsManagement {
@@ -362,7 +364,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * Creates an SSM document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use <a>CreateAssociation</a> to
+     * After you create an SSM document, you can use CreateAssociation to
      * associate it with one or more running instances.
      * </p>
      * 
@@ -379,7 +381,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * Creates an SSM document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use <a>CreateAssociation</a> to
+     * After you create an SSM document, you can use CreateAssociation to
      * associate it with one or more running instances.
      * </p>
      * 
@@ -550,6 +552,45 @@ public interface AWSSimpleSystemsManagementAsync extends
             com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler);
 
     /**
+     * <p>
+     * Describes the permissions for an SSM document. If you created the
+     * document, you are the owner. If a document is shared, it can either be
+     * shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
+     * </p>
+     * 
+     * @param describeDocumentPermissionRequest
+     * @return A Java Future containing the result of the
+     *         DescribeDocumentPermission operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeDocumentPermission
+     */
+    java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            DescribeDocumentPermissionRequest describeDocumentPermissionRequest);
+
+    /**
+     * <p>
+     * Describes the permissions for an SSM document. If you created the
+     * document, you are the owner. If a document is shared, it can either be
+     * shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
+     * </p>
+     * 
+     * @param describeDocumentPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DescribeDocumentPermission operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeDocumentPermission
+     */
+    java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(
+            DescribeDocumentPermissionRequest describeDocumentPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your instances. You can use this to get
      * information about instances like the operating system platform, the SSM
      * agent version, status etc. If you specify one or more instance IDs, it
@@ -557,6 +598,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * IDs, it returns information for all your instances. If you specify an
      * instance ID that is not valid or an instance that you do not own, you
      * receive an error.
+     * </p>
      * 
      * @param describeInstanceInformationRequest
      * @return A Java Future containing the result of the
@@ -567,6 +609,7 @@ public interface AWSSimpleSystemsManagementAsync extends
             DescribeInstanceInformationRequest describeInstanceInformationRequest);
 
     /**
+     * <p>
      * Describes one or more of your instances. You can use this to get
      * information about instances like the operating system platform, the SSM
      * agent version, status etc. If you specify one or more instance IDs, it
@@ -574,6 +617,7 @@ public interface AWSSimpleSystemsManagementAsync extends
      * IDs, it returns information for all your instances. If you specify an
      * instance ID that is not valid or an instance that you do not own, you
      * receive an error.
+     * </p>
      * 
      * @param describeInstanceInformationRequest
      * @param asyncHandler
@@ -655,12 +699,14 @@ public interface AWSSimpleSystemsManagementAsync extends
             com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler);
 
     /**
+     * <p>
      * An invocation is copy of a command sent to a specific instance. A command
      * can apply to one or more instances. A command invocation applies to one
      * instance. For example, if a user executes SendCommand against three
      * instances, then a command invocation is created for each requested
      * instance ID. ListCommandInvocations provide status about command
      * execution.
+     * </p>
      * 
      * @param listCommandInvocationsRequest
      * @return A Java Future containing the result of the ListCommandInvocations
@@ -671,12 +717,14 @@ public interface AWSSimpleSystemsManagementAsync extends
             ListCommandInvocationsRequest listCommandInvocationsRequest);
 
     /**
+     * <p>
      * An invocation is copy of a command sent to a specific instance. A command
      * can apply to one or more instances. A command invocation applies to one
      * instance. For example, if a user executes SendCommand against three
      * instances, then a command invocation is created for each requested
      * instance ID. ListCommandInvocations provide status about command
      * execution.
+     * </p>
      * 
      * @param listCommandInvocationsRequest
      * @param asyncHandler
@@ -774,7 +822,47 @@ public interface AWSSimpleSystemsManagementAsync extends
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler);
 
     /**
+     * <p>
+     * Share a document publicly or privately. If you share a document
+     * privately, you must specify the AWS user account IDs for those people who
+     * can use the document. If you share a document publicly, you must specify
+     * <i>All</i> as the account ID.
+     * </p>
+     * 
+     * @param modifyDocumentPermissionRequest
+     * @return A Java Future containing the result of the
+     *         ModifyDocumentPermission operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ModifyDocumentPermission
+     */
+    java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            ModifyDocumentPermissionRequest modifyDocumentPermissionRequest);
+
+    /**
+     * <p>
+     * Share a document publicly or privately. If you share a document
+     * privately, you must specify the AWS user account IDs for those people who
+     * can use the document. If you share a document publicly, you must specify
+     * <i>All</i> as the account ID.
+     * </p>
+     * 
+     * @param modifyDocumentPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ModifyDocumentPermission operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ModifyDocumentPermission
+     */
+    java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(
+            ModifyDocumentPermissionRequest modifyDocumentPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Executes commands on one or more remote instances.
+     * </p>
      * 
      * @param sendCommandRequest
      * @return A Java Future containing the result of the SendCommand operation
@@ -785,7 +873,9 @@ public interface AWSSimpleSystemsManagementAsync extends
             SendCommandRequest sendCommandRequest);
 
     /**
+     * <p>
      * Executes commands on one or more remote instances.
+     * </p>
      * 
      * @param sendCommandRequest
      * @param asyncHandler

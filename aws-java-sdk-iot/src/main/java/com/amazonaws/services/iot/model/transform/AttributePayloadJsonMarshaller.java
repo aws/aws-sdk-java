@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AttributePayloadMarshaller
@@ -39,36 +34,38 @@ import com.amazonaws.util.json.*;
 public class AttributePayloadJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AttributePayload attributePayload,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (attributePayload == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, String> attributesMap = attributePayload
                     .getAttributes();
             if (attributesMap != null) {
-                jsonWriter.key("attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

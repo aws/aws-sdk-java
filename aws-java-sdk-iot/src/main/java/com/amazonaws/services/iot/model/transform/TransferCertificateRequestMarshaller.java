@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TransferCertificateRequest Marshaller
@@ -47,7 +49,14 @@ public class TransferCertificateRequestMarshaller
         implements
         Marshaller<Request<TransferCertificateRequest>, TransferCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TransferCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TransferCertificateRequest> marshall(
             TransferCertificateRequest transferCertificateRequest) {
@@ -64,23 +73,44 @@ public class TransferCertificateRequestMarshaller
 
         String uriResourcePath = "/transfer-certificate/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (transferCertificateRequest.getCertificateId() == null) ? ""
-                        : StringUtils.fromString(transferCertificateRequest
-                                .getCertificateId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{certificateId}",
+                        (transferCertificateRequest.getCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(transferCertificateRequest
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String targetAwsAccount = (transferCertificateRequest
-                .getTargetAwsAccount() == null) ? null : StringUtils
-                .fromString(transferCertificateRequest.getTargetAwsAccount());
-        if (targetAwsAccount != null) {
-            request.addParameter("targetAwsAccount", targetAwsAccount);
+        if (transferCertificateRequest.getTargetAwsAccount() != null) {
+            request.addParameter("targetAwsAccount", StringUtils
+                    .fromString(transferCertificateRequest
+                            .getTargetAwsAccount()));
         }
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
+
+            if (transferCertificateRequest.getTransferMessage() != null) {
+                jsonGenerator.writeFieldName("transferMessage").writeValue(
+                        transferCertificateRequest.getTransferMessage());
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

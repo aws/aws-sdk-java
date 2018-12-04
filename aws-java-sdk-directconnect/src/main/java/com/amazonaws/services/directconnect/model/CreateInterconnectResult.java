@@ -53,6 +53,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @param interconnectId
      */
+
     public void setInterconnectId(String interconnectId) {
         this.interconnectId = interconnectId;
     }
@@ -60,6 +61,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getInterconnectId() {
         return this.interconnectId;
     }
@@ -69,6 +71,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectResult withInterconnectId(String interconnectId) {
         setInterconnectId(interconnectId);
         return this;
@@ -77,6 +80,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @param interconnectName
      */
+
     public void setInterconnectName(String interconnectName) {
         this.interconnectName = interconnectName;
     }
@@ -84,6 +88,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getInterconnectName() {
         return this.interconnectName;
     }
@@ -93,6 +98,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectResult withInterconnectName(String interconnectName) {
         setInterconnectName(interconnectName);
         return this;
@@ -102,6 +108,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @param interconnectState
      * @see InterconnectState
      */
+
     public void setInterconnectState(String interconnectState) {
         this.interconnectState = interconnectState;
     }
@@ -110,6 +117,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return
      * @see InterconnectState
      */
+
     public String getInterconnectState() {
         return this.interconnectState;
     }
@@ -120,6 +128,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      *         chained together.
      * @see InterconnectState
      */
+
     public CreateInterconnectResult withInterconnectState(
             String interconnectState) {
         setInterconnectState(interconnectState);
@@ -128,10 +137,9 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
 
     /**
      * @param interconnectState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InterconnectState
      */
+
     public void setInterconnectState(InterconnectState interconnectState) {
         this.interconnectState = interconnectState.toString();
     }
@@ -142,6 +150,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      *         chained together.
      * @see InterconnectState
      */
+
     public CreateInterconnectResult withInterconnectState(
             InterconnectState interconnectState) {
         setInterconnectState(interconnectState);
@@ -151,6 +160,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @param region
      */
+
     public void setRegion(String region) {
         this.region = region;
     }
@@ -158,6 +168,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRegion() {
         return this.region;
     }
@@ -167,6 +178,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectResult withRegion(String region) {
         setRegion(region);
         return this;
@@ -175,6 +187,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @param location
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -182,6 +195,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -191,6 +205,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -199,6 +214,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @param bandwidth
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -206,6 +222,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -215,6 +232,7 @@ public class CreateInterconnectResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectResult withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;

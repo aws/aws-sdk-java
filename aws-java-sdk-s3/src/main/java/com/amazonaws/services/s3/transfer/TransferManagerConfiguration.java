@@ -192,4 +192,36 @@ public class TransferManagerConfiguration {
     public void setMultipartCopyThreshold(long multipartCopyThreshold) {
         this.multipartCopyThreshold = multipartCopyThreshold;
     }
+
+    /**
+     * Sets the size threshold in bytes for when to use multipart uploads.
+     * Uploads over this size will automatically use a multipart upload
+     * strategy, while uploads smaller than this threshold will use a single
+     * connection to upload the whole object.
+     * <p>
+     * Multipart uploads are easier to recover from and potentially faster
+     * than single part uploads, especially when the upload parts can be
+     * uploaded in parallel as with files. Due to additional network
+     * communication, small uploads should use a single
+     * connection for the upload.
+     *
+     * This reversed the backward incompatibility with Hadoop 2.7 and S3A filesystem
+     * introduced in AWS SDK v1.7.6 by this pull request:
+     * https://github.com/aws/aws-sdk-java/pull/201
+     *
+     * See details (on error message, and fix targeted for Hadoop 2.8) here:
+     * - https://issues.apache.org/jira/browse/HADOOP-12420
+     * - https://issues.apache.org/jira/browse/HADOOP-12496
+     * - https://issues.apache.org/jira/browse/HADOOP-12269
+     * Once Hadoop 2.8 (which uses aws-sdk 1.10.6 or later) is used commonly, this may be removed
+     *
+     * @param multipartUploadThreshold
+     *            The size threshold in bytes for when to use multipart
+     *            uploads.
+     * @deprecated replaced by {@link #setMultipartUploadThreshold(long)}
+     */
+    @Deprecated
+    public void setMultipartUploadThreshold(int multipartUploadThreshold) {
+        setMultipartUploadThreshold((long) multipartUploadThreshold);
+    }
 }

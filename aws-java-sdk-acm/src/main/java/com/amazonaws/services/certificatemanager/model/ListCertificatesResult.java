@@ -19,7 +19,7 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class ListCertificatesResult implements Serializable, Cloneable {
 
@@ -50,6 +50,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      *        be used for the <code>NextToken</code> input parameter on your
      *        next call to <code>ListCertificates</code>.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -65,6 +66,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      *         be used for the <code>NextToken</code> input parameter on your
      *         next call to <code>ListCertificates</code>.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -83,6 +85,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -95,6 +98,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * 
      * @return A list of the certificate ARNs.
      */
+
     public java.util.List<CertificateSummary> getCertificateSummaryList() {
         return certificateSummaryList;
     }
@@ -107,6 +111,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @param certificateSummaryList
      *        A list of the certificate ARNs.
      */
+
     public void setCertificateSummaryList(
             java.util.Collection<CertificateSummary> certificateSummaryList) {
         if (certificateSummaryList == null) {
@@ -134,6 +139,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withCertificateSummaryList(
             CertificateSummary... certificateSummaryList) {
         if (this.certificateSummaryList == null) {
@@ -156,6 +162,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withCertificateSummaryList(
             java.util.Collection<CertificateSummary> certificateSummaryList) {
         setCertificateSummaryList(certificateSummaryList);

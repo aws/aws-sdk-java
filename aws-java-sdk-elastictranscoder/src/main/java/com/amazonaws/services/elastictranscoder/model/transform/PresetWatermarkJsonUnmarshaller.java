@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,53 +55,53 @@ public class PresetWatermarkJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setId(StringJsonUnmarshaller.getInstance()
+                    presetWatermark.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setMaxWidth(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setMaxWidth(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setMaxHeight(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setMaxHeight(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setSizingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setSizingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalAlign", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setHorizontalAlign(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setHorizontalAlign(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HorizontalOffset", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setHorizontalOffset(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setHorizontalOffset(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalAlign", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setVerticalAlign(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setVerticalAlign(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VerticalOffset", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setVerticalOffset(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setVerticalOffset(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Opacity", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setOpacity(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setOpacity(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Target", targetDepth)) {
                     context.nextToken();
-                    presetWatermark.setTarget(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    presetWatermark.setTarget(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

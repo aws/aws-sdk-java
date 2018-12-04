@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.simpleworkflow.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,11 +29,14 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Start Child Workflow Execution Initiated Event Attributes JSON Unmarshaller
+ * StartChildWorkflowExecutionInitiatedEventAttributes JSON Unmarshaller
  */
-public class StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller implements Unmarshaller<StartChildWorkflowExecutionInitiatedEventAttributes, JsonUnmarshallerContext> {
+public class StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
+        implements
+        Unmarshaller<StartChildWorkflowExecutionInitiatedEventAttributes, JsonUnmarshallerContext> {
 
-    public StartChildWorkflowExecutionInitiatedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public StartChildWorkflowExecutionInitiatedEventAttributes unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         StartChildWorkflowExecutionInitiatedEventAttributes startChildWorkflowExecutionInitiatedEventAttributes = new StartChildWorkflowExecutionInitiatedEventAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,77 +44,116 @@ public class StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setWorkflowId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setWorkflowId(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("workflowType", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setWorkflowType(WorkflowTypeJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("control", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setControl(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setControl(context.getUnmarshaller(String.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setInput(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setInput(context.getUnmarshaller(String.class)
+                                    .unmarshall(context));
                 }
-                if (context.testExpression("executionStartToCloseTimeout", targetDepth)) {
+                if (context.testExpression("executionStartToCloseTimeout",
+                        targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setExecutionStartToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setExecutionStartToCloseTimeout(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("taskList", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setTaskList(TaskListJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("taskPriority", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setTaskPriority(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setTaskPriority(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
-                if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
+                if (context.testExpression("decisionTaskCompletedEventId",
+                        targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setDecisionTaskCompletedEventId(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("childPolicy", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setChildPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setChildPolicy(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
-                if (context.testExpression("taskStartToCloseTimeout", targetDepth)) {
+                if (context.testExpression("taskStartToCloseTimeout",
+                        targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setTaskStartToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setTaskStartToCloseTimeout(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("tagList", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setTagList(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setTagList(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("lambdaRole", targetDepth)) {
                     context.nextToken();
-                    startChildWorkflowExecutionInitiatedEventAttributes.setLambdaRole(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChildWorkflowExecutionInitiatedEventAttributes
+                            .setLambdaRole(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return startChildWorkflowExecutionInitiatedEventAttributes;
     }
 
     private static StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller instance;
+
     public static StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller();
+        if (instance == null)
+            instance = new StartChildWorkflowExecutionInitiatedEventAttributesJsonUnmarshaller();
         return instance;
     }
 }
-    

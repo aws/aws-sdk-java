@@ -72,6 +72,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *        <code>corp.example.com</code>. This name will resolve inside your
      *        VPC only. It does not need to be publicly resolvable.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -87,6 +88,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *         <code>corp.example.com</code>. This name will resolve inside your
      *         VPC only. It does not need to be publicly resolvable.
      */
+
     public String getName() {
         return this.name;
     }
@@ -105,6 +107,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADRequest withName(String name) {
         setName(name);
         return this;
@@ -125,6 +128,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *        example, <code>CORP</code> for the directory DNS
      *        <code>corp.example.com</code>.
      */
+
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
@@ -143,6 +147,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *         For example, <code>CORP</code> for the directory DNS
      *         <code>corp.example.com</code>.
      */
+
     public String getShortName() {
         return this.shortName;
     }
@@ -164,6 +169,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADRequest withShortName(String shortName) {
         setShortName(shortName);
         return this;
@@ -179,6 +185,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *        The password for the default administrative user named
      *        <code>Admin</code>.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -192,6 +199,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return The password for the default administrative user named
      *         <code>Admin</code>.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -208,6 +216,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADRequest withPassword(String password) {
         setPassword(password);
         return this;
@@ -225,6 +234,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *        the AWS console <code>Directory Details</code> page after the
      *        directory is created.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -240,6 +250,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      *         on the AWS console <code>Directory Details</code> page after the
      *         directory is created.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -258,6 +269,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -266,6 +278,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
     /**
      * @param vpcSettings
      */
+
     public void setVpcSettings(DirectoryVpcSettings vpcSettings) {
         this.vpcSettings = vpcSettings;
     }
@@ -273,6 +286,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public DirectoryVpcSettings getVpcSettings() {
         return this.vpcSettings;
     }
@@ -282,6 +296,7 @@ public class CreateMicrosoftADRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMicrosoftADRequest withVpcSettings(
             DirectoryVpcSettings vpcSettings) {
         setVpcSettings(vpcSettings);

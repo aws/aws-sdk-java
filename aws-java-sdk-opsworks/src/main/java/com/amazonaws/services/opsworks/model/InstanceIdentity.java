@@ -50,6 +50,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * @param document
      *        A JSON document that contains the metadata.
      */
+
     public void setDocument(String document) {
         this.document = document;
     }
@@ -61,6 +62,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * 
      * @return A JSON document that contains the metadata.
      */
+
     public String getDocument() {
         return this.document;
     }
@@ -75,6 +77,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceIdentity withDocument(String document) {
         setDocument(document);
         return this;
@@ -90,6 +93,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      *        A signature that can be used to verify the document's accuracy and
      *        authenticity.
      */
+
     public void setSignature(String signature) {
         this.signature = signature;
     }
@@ -103,6 +107,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * @return A signature that can be used to verify the document's accuracy
      *         and authenticity.
      */
+
     public String getSignature() {
         return this.signature;
     }
@@ -119,6 +124,7 @@ public class InstanceIdentity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceIdentity withSignature(String signature) {
         setSignature(signature);
         return this;

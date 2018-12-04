@@ -59,6 +59,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @param namespace
      *        The namespace to filter against.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -70,6 +71,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The namespace to filter against.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -84,6 +86,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsRequest withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -97,6 +100,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @param metricName
      *        The name of the metric to filter against.
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -108,6 +112,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the metric to filter against.
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -122,6 +127,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsRequest withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -134,6 +140,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of dimensions to filter against.
      */
+
     public java.util.List<DimensionFilter> getDimensions() {
         if (dimensions == null) {
             dimensions = new com.amazonaws.internal.SdkInternalList<DimensionFilter>();
@@ -149,6 +156,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @param dimensions
      *        A list of dimensions to filter against.
      */
+
     public void setDimensions(java.util.Collection<DimensionFilter> dimensions) {
         if (dimensions == null) {
             this.dimensions = null;
@@ -175,6 +183,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
         if (this.dimensions == null) {
             setDimensions(new com.amazonaws.internal.SdkInternalList<DimensionFilter>(
@@ -196,6 +205,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsRequest withDimensions(
             java.util.Collection<DimensionFilter> dimensions) {
         setDimensions(dimensions);
@@ -212,6 +222,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      *        The token returned by a previous call to indicate that there is
      *        more data available.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -225,6 +236,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return The token returned by a previous call to indicate that there is
      *         more data available.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -241,6 +253,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListMetricsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

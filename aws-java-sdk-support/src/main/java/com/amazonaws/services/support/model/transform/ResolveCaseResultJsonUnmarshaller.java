@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class ResolveCaseResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("initialCaseStatus", targetDepth)) {
                     context.nextToken();
-                    resolveCaseResult
-                            .setInitialCaseStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    resolveCaseResult.setInitialCaseStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("finalCaseStatus", targetDepth)) {
                     context.nextToken();
-                    resolveCaseResult.setFinalCaseStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resolveCaseResult.setFinalCaseStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

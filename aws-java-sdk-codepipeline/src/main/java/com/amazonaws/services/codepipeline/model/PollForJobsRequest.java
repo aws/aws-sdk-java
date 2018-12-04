@@ -48,6 +48,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @param actionTypeId
      */
+
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
@@ -55,6 +56,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
@@ -64,6 +66,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForJobsRequest withActionTypeId(ActionTypeId actionTypeId) {
         setActionTypeId(actionTypeId);
         return this;
@@ -77,6 +80,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * @param maxBatchSize
      *        The maximum number of jobs to return in a poll for jobs call.
      */
+
     public void setMaxBatchSize(Integer maxBatchSize) {
         this.maxBatchSize = maxBatchSize;
     }
@@ -88,6 +92,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of jobs to return in a poll for jobs call.
      */
+
     public Integer getMaxBatchSize() {
         return this.maxBatchSize;
     }
@@ -102,6 +107,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForJobsRequest withMaxBatchSize(Integer maxBatchSize) {
         setMaxBatchSize(maxBatchSize);
         return this;
@@ -122,6 +128,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      *         that property as a key in the map. Only jobs whose action
      *         configuration matches the mapped value will be returned.
      */
+
     public java.util.Map<String, String> getQueryParam() {
         return queryParam;
     }
@@ -142,6 +149,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      *        property as a key in the map. Only jobs whose action configuration
      *        matches the mapped value will be returned.
      */
+
     public void setQueryParam(java.util.Map<String, String> queryParam) {
         this.queryParam = queryParam;
     }
@@ -164,6 +172,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PollForJobsRequest withQueryParam(
             java.util.Map<String, String> queryParam) {
         setQueryParam(queryParam);
@@ -185,6 +194,7 @@ public class PollForJobsRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into QueryParam. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public PollForJobsRequest clearQueryParamEntries() {
         this.queryParam = null;
         return this;

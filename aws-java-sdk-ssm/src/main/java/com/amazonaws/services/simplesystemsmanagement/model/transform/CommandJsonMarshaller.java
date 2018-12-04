@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CommandMarshaller
@@ -39,91 +34,92 @@ import com.amazonaws.util.json.*;
 public class CommandJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Command command, JSONWriter jsonWriter) {
+    public void marshall(Command command, StructuredJsonGenerator jsonGenerator) {
+
         if (command == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (command.getCommandId() != null) {
-                jsonWriter.key("CommandId").value(command.getCommandId());
+                jsonGenerator.writeFieldName("CommandId").writeValue(
+                        command.getCommandId());
             }
-
             if (command.getDocumentName() != null) {
-                jsonWriter.key("DocumentName").value(command.getDocumentName());
+                jsonGenerator.writeFieldName("DocumentName").writeValue(
+                        command.getDocumentName());
             }
-
             if (command.getComment() != null) {
-                jsonWriter.key("Comment").value(command.getComment());
+                jsonGenerator.writeFieldName("Comment").writeValue(
+                        command.getComment());
             }
-
             if (command.getExpiresAfter() != null) {
-                jsonWriter.key("ExpiresAfter").value(command.getExpiresAfter());
+                jsonGenerator.writeFieldName("ExpiresAfter").writeValue(
+                        command.getExpiresAfter());
             }
 
             java.util.Map<String, java.util.List<String>> parametersMap = command
                     .getParameters();
             if (parametersMap != null) {
-                jsonWriter.key("Parameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Parameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap
                         .entrySet()) {
                     if (parametersMapValue.getValue() != null) {
-                        jsonWriter.key(parametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(parametersMapValue
+                                .getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (String parametersMapValueList : parametersMapValue
                                 .getValue()) {
                             if (parametersMapValueList != null) {
-                                jsonWriter.value(parametersMapValueList);
+                                jsonGenerator
+                                        .writeValue(parametersMapValueList);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) command
                     .getInstanceIds();
             if (!instanceIdsList.isEmpty()
                     || !instanceIdsList.isAutoConstruct()) {
-                jsonWriter.key("InstanceIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("InstanceIds");
+                jsonGenerator.writeStartArray();
                 for (String instanceIdsListValue : instanceIdsList) {
                     if (instanceIdsListValue != null) {
-                        jsonWriter.value(instanceIdsListValue);
+                        jsonGenerator.writeValue(instanceIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (command.getRequestedDateTime() != null) {
-                jsonWriter.key("RequestedDateTime").value(
+                jsonGenerator.writeFieldName("RequestedDateTime").writeValue(
                         command.getRequestedDateTime());
             }
-
             if (command.getStatus() != null) {
-                jsonWriter.key("Status").value(command.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        command.getStatus());
             }
-
             if (command.getOutputS3BucketName() != null) {
-                jsonWriter.key("OutputS3BucketName").value(
+                jsonGenerator.writeFieldName("OutputS3BucketName").writeValue(
                         command.getOutputS3BucketName());
             }
-
             if (command.getOutputS3KeyPrefix() != null) {
-                jsonWriter.key("OutputS3KeyPrefix").value(
+                jsonGenerator.writeFieldName("OutputS3KeyPrefix").writeValue(
                         command.getOutputS3KeyPrefix());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -19,9 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a list of all the email addresses verified for the current user.
- * </p>
+ * 
  */
 public class ListVerifiedEmailAddressesResult implements Serializable,
         Cloneable {
@@ -40,6 +38,7 @@ public class ListVerifiedEmailAddressesResult implements Serializable,
      * 
      * @return A list of email addresses that have been verified.
      */
+
     public java.util.List<String> getVerifiedEmailAddresses() {
         if (verifiedEmailAddresses == null) {
             verifiedEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -55,6 +54,7 @@ public class ListVerifiedEmailAddressesResult implements Serializable,
      * @param verifiedEmailAddresses
      *        A list of email addresses that have been verified.
      */
+
     public void setVerifiedEmailAddresses(
             java.util.Collection<String> verifiedEmailAddresses) {
         if (verifiedEmailAddresses == null) {
@@ -82,6 +82,7 @@ public class ListVerifiedEmailAddressesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(
             String... verifiedEmailAddresses) {
         if (this.verifiedEmailAddresses == null) {
@@ -104,6 +105,7 @@ public class ListVerifiedEmailAddressesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(
             java.util.Collection<String> verifiedEmailAddresses) {
         setVerifiedEmailAddresses(verifiedEmailAddresses);

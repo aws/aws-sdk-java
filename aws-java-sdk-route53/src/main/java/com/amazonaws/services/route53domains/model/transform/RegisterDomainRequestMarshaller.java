@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.route53domains.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterDomainRequest Marshaller
  */
 public class RegisterDomainRequestMarshaller implements
         Marshaller<Request<RegisterDomainRequest>, RegisterDomainRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterDomainRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterDomainRequest> marshall(
             RegisterDomainRequest registerDomainRequest) {
@@ -64,74 +65,69 @@ public class RegisterDomainRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         registerDomainRequest.getDomainName());
             }
-
             if (registerDomainRequest.getIdnLangCode() != null) {
-                jsonWriter.key("IdnLangCode").value(
+                jsonGenerator.writeFieldName("IdnLangCode").writeValue(
                         registerDomainRequest.getIdnLangCode());
             }
-
             if (registerDomainRequest.getDurationInYears() != null) {
-                jsonWriter.key("DurationInYears").value(
+                jsonGenerator.writeFieldName("DurationInYears").writeValue(
                         registerDomainRequest.getDurationInYears());
             }
-
             if (registerDomainRequest.getAutoRenew() != null) {
-                jsonWriter.key("AutoRenew").value(
+                jsonGenerator.writeFieldName("AutoRenew").writeValue(
                         registerDomainRequest.getAutoRenew());
             }
-
             if (registerDomainRequest.getAdminContact() != null) {
-                jsonWriter.key("AdminContact");
+                jsonGenerator.writeFieldName("AdminContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
-                        registerDomainRequest.getAdminContact(), jsonWriter);
+                        registerDomainRequest.getAdminContact(), jsonGenerator);
             }
-
             if (registerDomainRequest.getRegistrantContact() != null) {
-                jsonWriter.key("RegistrantContact");
+                jsonGenerator.writeFieldName("RegistrantContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         registerDomainRequest.getRegistrantContact(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (registerDomainRequest.getTechContact() != null) {
-                jsonWriter.key("TechContact");
+                jsonGenerator.writeFieldName("TechContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
-                        registerDomainRequest.getTechContact(), jsonWriter);
+                        registerDomainRequest.getTechContact(), jsonGenerator);
             }
-
             if (registerDomainRequest.getPrivacyProtectAdminContact() != null) {
-                jsonWriter.key("PrivacyProtectAdminContact").value(
-                        registerDomainRequest.getPrivacyProtectAdminContact());
+                jsonGenerator.writeFieldName("PrivacyProtectAdminContact")
+                        .writeValue(
+                                registerDomainRequest
+                                        .getPrivacyProtectAdminContact());
             }
-
             if (registerDomainRequest.getPrivacyProtectRegistrantContact() != null) {
-                jsonWriter.key("PrivacyProtectRegistrantContact").value(
-                        registerDomainRequest
-                                .getPrivacyProtectRegistrantContact());
+                jsonGenerator.writeFieldName("PrivacyProtectRegistrantContact")
+                        .writeValue(
+                                registerDomainRequest
+                                        .getPrivacyProtectRegistrantContact());
             }
-
             if (registerDomainRequest.getPrivacyProtectTechContact() != null) {
-                jsonWriter.key("PrivacyProtectTechContact").value(
-                        registerDomainRequest.getPrivacyProtectTechContact());
+                jsonGenerator.writeFieldName("PrivacyProtectTechContact")
+                        .writeValue(
+                                registerDomainRequest
+                                        .getPrivacyProtectTechContact());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

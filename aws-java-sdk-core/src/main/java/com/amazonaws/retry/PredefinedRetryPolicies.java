@@ -14,15 +14,13 @@
  */
 package com.amazonaws.retry;
 
-import java.io.IOException;
-import java.util.Random;
-
-import org.apache.http.HttpStatus;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
+
+import java.io.IOException;
+import java.util.Random;
 
 /**
  * This class includes a set of pre-defined retry policies, including default
@@ -168,10 +166,7 @@ public class PredefinedRetryPolicies {
                  * an exponential back-off strategy so that we don't overload
                  * a server with a flood of retries.
                  */
-                if (ase.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
-                    || ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
-                    return true;
-                }
+                if (RetryUtils.isRetryableServiceException(ase)) return true;
 
                 /*
                  * Throttling is reported as a 400 error from newer services. To try
@@ -197,23 +192,11 @@ public class PredefinedRetryPolicies {
     /** A private class that implements the default back-off strategy. **/
     private static class SDKDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
 
-        /** Base sleep time (milliseconds) for general exceptions. **/
-        private static final int SCALE_FACTOR = 300;
-
-        /** Base sleep time (milliseconds) for throttling exceptions. **/
-        private static final int THROTTLING_SCALE_FACTOR = 500;
-
-        private static final int THROTTLING_SCALE_FACTOR_RANDOM_RANGE = THROTTLING_SCALE_FACTOR / 4;
+        /** Base sleep time (milliseconds) for all exceptions. **/
+        private static final int BASE_DELAY = 100;
 
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
-
-        /**
-         * Maximum number of retries before the max backoff will be hit. This is
-         * calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
-         * based on the code below.
-         */
-        private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 6;
 
         /** For generating a random scale factor **/
         private final Random random = new Random();
@@ -223,21 +206,8 @@ public class PredefinedRetryPolicies {
         public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                                AmazonClientException exception,
                                                int retriesAttempted) {
-            if (retriesAttempted < 0) return 0;
-            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
-
-            int scaleFactor;
-            if (exception instanceof AmazonServiceException
-                    && RetryUtils.isThrottlingException((AmazonServiceException)exception)) {
-                scaleFactor = THROTTLING_SCALE_FACTOR + random.nextInt(THROTTLING_SCALE_FACTOR_RANDOM_RANGE);
-            } else {
-                scaleFactor = SCALE_FACTOR;
-            }
-
-            long delay = (1L << retriesAttempted) * scaleFactor;
-            delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-
-            return delay;
+            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
+                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
         }
     }
 
@@ -245,29 +215,20 @@ public class PredefinedRetryPolicies {
     private static class DynamoDBDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
 
         /** Base sleep time (milliseconds) **/
-        private static final int SCALE_FACTOR = 25;
+        private static final int BASE_DELAY = 25;
 
         /** Maximum exponential back-off time before retrying a request */
         private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
-        /**
-         * Maximum number of retries before the max backoff will be hit. This is
-         * calculated via log_2(MAX_BACKOFF_IN_MILLISECONDS / SCALE_FACTOR)
-         * based on the code below.
-         */
-        private static final int MAX_RETRIES_BEFORE_MAX_BACKOFF = 9;
+        /** For generating a random scale factor **/
+        private final Random random = new Random();
 
         @Override
         public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                                AmazonClientException exception,
                                                int retriesAttempted) {
-            if (retriesAttempted < 0) return 0;
-            if (retriesAttempted > MAX_RETRIES_BEFORE_MAX_BACKOFF) return MAX_BACKOFF_IN_MILLISECONDS;
-
-            long delay = (1L << retriesAttempted) * SCALE_FACTOR;
-            delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-
-            return delay;
+            return (retriesAttempted < 0) ? 0 : RetryUtils.calculateFullJitterBackoff(retriesAttempted,
+                    BASE_DELAY, MAX_BACKOFF_IN_MILLISECONDS, random);
         }
     }
 }

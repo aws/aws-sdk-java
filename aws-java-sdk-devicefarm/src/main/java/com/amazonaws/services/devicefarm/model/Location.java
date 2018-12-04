@@ -50,6 +50,7 @@ public class Location implements Serializable, Cloneable {
      * @param latitude
      *        The latitude.
      */
+
     public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
@@ -61,6 +62,7 @@ public class Location implements Serializable, Cloneable {
      * 
      * @return The latitude.
      */
+
     public Double getLatitude() {
         return this.latitude;
     }
@@ -75,6 +77,7 @@ public class Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Location withLatitude(Double latitude) {
         setLatitude(latitude);
         return this;
@@ -88,6 +91,7 @@ public class Location implements Serializable, Cloneable {
      * @param longitude
      *        The longitude.
      */
+
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
@@ -99,6 +103,7 @@ public class Location implements Serializable, Cloneable {
      * 
      * @return The longitude.
      */
+
     public Double getLongitude() {
         return this.longitude;
     }
@@ -113,6 +118,7 @@ public class Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Location withLongitude(Double longitude) {
         setLongitude(longitude);
         return this;

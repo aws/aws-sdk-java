@@ -30,6 +30,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -37,6 +38,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -46,6 +48,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLocalDisksResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -54,6 +57,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Disk> getDisks() {
         if (disks == null) {
             disks = new com.amazonaws.internal.SdkInternalList<Disk>();
@@ -64,6 +68,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
     /**
      * @param disks
      */
+
     public void setDisks(java.util.Collection<Disk> disks) {
         if (disks == null) {
             this.disks = null;
@@ -85,6 +90,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLocalDisksResult withDisks(Disk... disks) {
         if (this.disks == null) {
             setDisks(new com.amazonaws.internal.SdkInternalList<Disk>(
@@ -101,6 +107,7 @@ public class ListLocalDisksResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLocalDisksResult withDisks(java.util.Collection<Disk> disks) {
         setDisks(disks);
         return this;

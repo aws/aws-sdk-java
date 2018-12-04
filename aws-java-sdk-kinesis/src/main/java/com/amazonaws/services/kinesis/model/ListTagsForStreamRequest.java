@@ -59,6 +59,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -70,6 +71,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -84,6 +86,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -101,6 +104,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      *        parameter is set, <code>ListTagsForStream</code> gets all tags
      *        that occur after <code>ExclusiveStartTagKey</code>.
      */
+
     public void setExclusiveStartTagKey(String exclusiveStartTagKey) {
         this.exclusiveStartTagKey = exclusiveStartTagKey;
     }
@@ -116,6 +120,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      *         this parameter is set, <code>ListTagsForStream</code> gets all
      *         tags that occur after <code>ExclusiveStartTagKey</code>.
      */
+
     public String getExclusiveStartTagKey() {
         return this.exclusiveStartTagKey;
     }
@@ -134,6 +139,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamRequest withExclusiveStartTagKey(
             String exclusiveStartTagKey) {
         setExclusiveStartTagKey(exclusiveStartTagKey);
@@ -155,6 +161,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      *        additional tags, set <code>ExclusiveStartTagKey</code> to the last
      *        key in the response.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -173,6 +180,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      *         additional tags, set <code>ExclusiveStartTagKey</code> to the
      *         last key in the response.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -194,6 +202,7 @@ public class ListTagsForStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

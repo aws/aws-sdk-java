@@ -16,6 +16,7 @@
 package com.amazonaws.services.securitytoken;
 
 import com.amazonaws.services.securitytoken.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS STS asynchronously. Each asynchronous method will
@@ -33,33 +34,35 @@ import com.amazonaws.services.securitytoken.model.*;
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
  * >Temporary Security Credentials</a>.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
+ * <note>
+ * <p>
+ * As an alternative to using the API, you can use one of the AWS SDKs, which
+ * consist of libraries and sample code for various programming languages and
+ * platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
  * convenient way to create programmatic access to STS. For example, the SDKs
  * take care of cryptographically signing requests, managing errors, and
  * retrying requests automatically. For information about the AWS SDKs,
  * including how to download and install them, see the <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * For information about setting up signatures and authorization through the
  * API, go to <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * target="_blank">Signing AWS API Requests</a> in the <i>AWS General
- * Reference</i>. For general information about the Query API, go to <a href=
+ * >Signing AWS API Requests</a> in the <i>AWS General Reference</i>. For
+ * general information about the Query API, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html"
- * target="_blank">Making Query Requests</a> in <i>Using IAM</i>. For
- * information about using security tokens with other AWS products, go to <a
- * href=
+ * >Making Query Requests</a> in <i>Using IAM</i>. For information about using
+ * security tokens with other AWS products, go to <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
- * >AWS Services That Work with IAM</a> in the <i>Using IAM</i>.
+ * >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
  * specific AWS product, you can find the product's technical documentation at
- * <a href="http://aws.amazon.com/documentation/"
- * target="_blank">http://aws.amazon.com/documentation/</a>.
+ * <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/
+ * documentation/</a>.
  * </p>
  * <p>
  * <b>Endpoints</b>
@@ -67,11 +70,11 @@ import com.amazonaws.services.securitytoken.model.*;
  * <p>
  * The AWS Security Token Service (STS) has a default endpoint of
  * https://sts.amazonaws.com that maps to the US East (N. Virginia) region.
- * Additional regions are available, but must first be activated in the AWS
- * Management Console before you can use a different region's endpoint. For more
- * information about activating a region for STS see <a href=
+ * Additional regions are available and are activated by default. For more
+ * information, see <a href=
  * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
- * >Activating STS in a New Region</a> in the <i>Using IAM</i>.
+ * >Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User
+ * Guide</i>.
  * </p>
  * <p>
  * For information about STS endpoints, see <a
@@ -92,6 +95,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * >AWS CloudTrail User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSSecurityTokenServiceAsyncClient extends
         AWSSecurityTokenServiceClient implements AWSSecurityTokenServiceAsync {
 
@@ -190,8 +194,7 @@ public class AWSSecurityTokenServiceAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -283,9 +286,7 @@ public class AWSSecurityTokenServiceAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -450,6 +451,41 @@ public class AWSSecurityTokenServiceAsyncClient extends
 
                         try {
                             result = decodeAuthorizationMessage(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            GetCallerIdentityRequest request) {
+
+        return getCallerIdentityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCallerIdentityResult> getCallerIdentityAsync(
+            final GetCallerIdentityRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCallerIdentityRequest, GetCallerIdentityResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetCallerIdentityResult>() {
+                    @Override
+                    public GetCallerIdentityResult call() throws Exception {
+                        GetCallerIdentityResult result;
+
+                        try {
+                            result = getCallerIdentity(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

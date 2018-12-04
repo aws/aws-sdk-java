@@ -78,6 +78,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of an archived virtual tape.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -89,6 +90,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of an archived virtual tape.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -103,6 +105,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;
@@ -116,6 +119,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @param tapeBarcode
      *        The barcode that identifies the archived virtual tape.
      */
+
     public void setTapeBarcode(String tapeBarcode) {
         this.tapeBarcode = tapeBarcode;
     }
@@ -127,6 +131,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @return The barcode that identifies the archived virtual tape.
      */
+
     public String getTapeBarcode() {
         return this.tapeBarcode;
     }
@@ -141,6 +146,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withTapeBarcode(String tapeBarcode) {
         setTapeBarcode(tapeBarcode);
         return this;
@@ -154,6 +160,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @param tapeSizeInBytes
      *        The size, in bytes, of the archived virtual tape.
      */
+
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
@@ -165,6 +172,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @return The size, in bytes, of the archived virtual tape.
      */
+
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
     }
@@ -179,6 +187,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withTapeSizeInBytes(Long tapeSizeInBytes) {
         setTapeSizeInBytes(tapeSizeInBytes);
         return this;
@@ -199,6 +208,7 @@ public class TapeArchive implements Serializable, Cloneable {
      *        The string format of the completion time is in the ISO8601
      *        extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
+
     public void setCompletionTime(java.util.Date completionTime) {
         this.completionTime = completionTime;
     }
@@ -218,6 +228,7 @@ public class TapeArchive implements Serializable, Cloneable {
      *         The string format of the completion time is in the ISO8601
      *         extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
+
     public java.util.Date getCompletionTime() {
         return this.completionTime;
     }
@@ -239,6 +250,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withCompletionTime(java.util.Date completionTime) {
         setCompletionTime(completionTime);
         return this;
@@ -255,10 +267,11 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param retrievedTo
      *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to. </p>
+     *        tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
+
     public void setRetrievedTo(String retrievedTo) {
         this.retrievedTo = retrievedTo;
     }
@@ -273,10 +286,11 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the gateway-VTL that the
-     *         virtual tape is being retrieved to. </p>
+     *         virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
+
     public String getRetrievedTo() {
         return this.retrievedTo;
     }
@@ -292,12 +306,13 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @param retrievedTo
      *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual
-     *        tape is being retrieved to. </p>
+     *        tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withRetrievedTo(String retrievedTo) {
         setRetrievedTo(retrievedTo);
         return this;
@@ -311,6 +326,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @param tapeStatus
      *        The current state of the archived virtual tape.
      */
+
     public void setTapeStatus(String tapeStatus) {
         this.tapeStatus = tapeStatus;
     }
@@ -322,6 +338,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * 
      * @return The current state of the archived virtual tape.
      */
+
     public String getTapeStatus() {
         return this.tapeStatus;
     }
@@ -336,6 +353,7 @@ public class TapeArchive implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeArchive withTapeStatus(String tapeStatus) {
         setTapeStatus(tapeStatus);
         return this;

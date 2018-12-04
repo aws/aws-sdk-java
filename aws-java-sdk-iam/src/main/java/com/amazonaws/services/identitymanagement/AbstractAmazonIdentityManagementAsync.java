@@ -31,106 +31,106 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addClientIDToOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest request) {
 
         return addClientIDToOpenIDConnectProviderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addClientIDToOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<AddClientIDToOpenIDConnectProviderResult> addClientIDToOpenIDConnectProviderAsync(
             AddClientIDToOpenIDConnectProviderRequest request,
-            com.amazonaws.handlers.AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddClientIDToOpenIDConnectProviderRequest, AddClientIDToOpenIDConnectProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addRoleToInstanceProfileAsync(
+    public java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(
             AddRoleToInstanceProfileRequest request) {
 
         return addRoleToInstanceProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addRoleToInstanceProfileAsync(
+    public java.util.concurrent.Future<AddRoleToInstanceProfileResult> addRoleToInstanceProfileAsync(
             AddRoleToInstanceProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addUserToGroupAsync(
+    public java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(
             AddUserToGroupRequest request) {
 
         return addUserToGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addUserToGroupAsync(
+    public java.util.concurrent.Future<AddUserToGroupResult> addUserToGroupAsync(
             AddUserToGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachGroupPolicyAsync(
+    public java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(
             AttachGroupPolicyRequest request) {
 
         return attachGroupPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachGroupPolicyAsync(
+    public java.util.concurrent.Future<AttachGroupPolicyResult> attachGroupPolicyAsync(
             AttachGroupPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachGroupPolicyRequest, AttachGroupPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachRolePolicyAsync(
+    public java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(
             AttachRolePolicyRequest request) {
 
         return attachRolePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachRolePolicyAsync(
+    public java.util.concurrent.Future<AttachRolePolicyResult> attachRolePolicyAsync(
             AttachRolePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachRolePolicyRequest, AttachRolePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachUserPolicyAsync(
+    public java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(
             AttachUserPolicyRequest request) {
 
         return attachUserPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachUserPolicyAsync(
+    public java.util.concurrent.Future<AttachUserPolicyResult> attachUserPolicyAsync(
             AttachUserPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachUserPolicyRequest, AttachUserPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> changePasswordAsync(
+    public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest request) {
 
         return changePasswordAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> changePasswordAsync(
+    public java.util.concurrent.Future<ChangePasswordResult> changePasswordAsync(
             ChangePasswordRequest request,
-            com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ChangePasswordRequest, ChangePasswordResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -175,16 +175,16 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAccountAliasAsync(
+    public java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(
             CreateAccountAliasRequest request) {
 
         return createAccountAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAccountAliasAsync(
+    public java.util.concurrent.Future<CreateAccountAliasResult> createAccountAliasAsync(
             CreateAccountAliasRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateAccountAliasRequest, CreateAccountAliasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -340,61 +340,61 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deactivateMFADeviceAsync(
+    public java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(
             DeactivateMFADeviceRequest request) {
 
         return deactivateMFADeviceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deactivateMFADeviceAsync(
+    public java.util.concurrent.Future<DeactivateMFADeviceResult> deactivateMFADeviceAsync(
             DeactivateMFADeviceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeactivateMFADeviceRequest, DeactivateMFADeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccessKeyAsync(
+    public java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(
             DeleteAccessKeyRequest request) {
 
         return deleteAccessKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccessKeyAsync(
+    public java.util.concurrent.Future<DeleteAccessKeyResult> deleteAccessKeyAsync(
             DeleteAccessKeyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessKeyRequest, DeleteAccessKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccountAliasAsync(
+    public java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(
             DeleteAccountAliasRequest request) {
 
         return deleteAccountAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccountAliasAsync(
+    public java.util.concurrent.Future<DeleteAccountAliasResult> deleteAccountAliasAsync(
             DeleteAccountAliasRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountAliasRequest, DeleteAccountAliasResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
+    public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest request) {
 
         return deleteAccountPasswordPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
+    public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
             DeleteAccountPasswordPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -406,7 +406,7 @@ public class AbstractAmazonIdentityManagementAsync extends
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync() {
+    public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync() {
 
         return deleteAccountPasswordPolicyAsync(new DeleteAccountPasswordPolicyRequest());
     }
@@ -418,309 +418,309 @@ public class AbstractAmazonIdentityManagementAsync extends
      * @see #deleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteAccountPasswordPolicyAsync(
-            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAccountPasswordPolicyResult> deleteAccountPasswordPolicyAsync(
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResult> asyncHandler) {
 
         return deleteAccountPasswordPolicyAsync(
                 new DeleteAccountPasswordPolicyRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteGroupAsync(
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(
             DeleteGroupRequest request) {
 
         return deleteGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteGroupAsync(
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(
             DeleteGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteGroupPolicyAsync(
+    public java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(
             DeleteGroupPolicyRequest request) {
 
         return deleteGroupPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteGroupPolicyAsync(
+    public java.util.concurrent.Future<DeleteGroupPolicyResult> deleteGroupPolicyAsync(
             DeleteGroupPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupPolicyRequest, DeleteGroupPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceProfileAsync(
+    public java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(
             DeleteInstanceProfileRequest request) {
 
         return deleteInstanceProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceProfileAsync(
+    public java.util.concurrent.Future<DeleteInstanceProfileResult> deleteInstanceProfileAsync(
             DeleteInstanceProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceProfileRequest, DeleteInstanceProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLoginProfileAsync(
+    public java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(
             DeleteLoginProfileRequest request) {
 
         return deleteLoginProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLoginProfileAsync(
+    public java.util.concurrent.Future<DeleteLoginProfileResult> deleteLoginProfileAsync(
             DeleteLoginProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteLoginProfileRequest, DeleteLoginProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest request) {
 
         return deleteOpenIDConnectProviderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<DeleteOpenIDConnectProviderResult> deleteOpenIDConnectProviderAsync(
             DeleteOpenIDConnectProviderRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteOpenIDConnectProviderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteOpenIDConnectProviderRequest, DeleteOpenIDConnectProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request) {
 
         return deletePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest request) {
 
         return deletePolicyVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRoleAsync(
+    public java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(
             DeleteRoleRequest request) {
 
         return deleteRoleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRoleAsync(
+    public java.util.concurrent.Future<DeleteRoleResult> deleteRoleAsync(
             DeleteRoleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRoleRequest, DeleteRoleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRolePolicyAsync(
+    public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(
             DeleteRolePolicyRequest request) {
 
         return deleteRolePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRolePolicyAsync(
+    public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(
             DeleteRolePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRolePolicyRequest, DeleteRolePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSAMLProviderAsync(
+    public java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(
             DeleteSAMLProviderRequest request) {
 
         return deleteSAMLProviderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSAMLProviderAsync(
+    public java.util.concurrent.Future<DeleteSAMLProviderResult> deleteSAMLProviderAsync(
             DeleteSAMLProviderRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSAMLProviderRequest, DeleteSAMLProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSSHPublicKeyAsync(
+    public java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(
             DeleteSSHPublicKeyRequest request) {
 
         return deleteSSHPublicKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSSHPublicKeyAsync(
+    public java.util.concurrent.Future<DeleteSSHPublicKeyResult> deleteSSHPublicKeyAsync(
             DeleteSSHPublicKeyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteServerCertificateAsync(
+    public java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(
             DeleteServerCertificateRequest request) {
 
         return deleteServerCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteServerCertificateAsync(
+    public java.util.concurrent.Future<DeleteServerCertificateResult> deleteServerCertificateAsync(
             DeleteServerCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteServerCertificateRequest, DeleteServerCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSigningCertificateAsync(
+    public java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(
             DeleteSigningCertificateRequest request) {
 
         return deleteSigningCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSigningCertificateAsync(
+    public java.util.concurrent.Future<DeleteSigningCertificateResult> deleteSigningCertificateAsync(
             DeleteSigningCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSigningCertificateRequest, DeleteSigningCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserAsync(
+    public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(
             DeleteUserRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPolicyAsync(
+    public java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(
             DeleteUserPolicyRequest request) {
 
         return deleteUserPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserPolicyAsync(
+    public java.util.concurrent.Future<DeleteUserPolicyResult> deleteUserPolicyAsync(
             DeleteUserPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPolicyRequest, DeleteUserPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVirtualMFADeviceAsync(
+    public java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(
             DeleteVirtualMFADeviceRequest request) {
 
         return deleteVirtualMFADeviceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteVirtualMFADeviceAsync(
+    public java.util.concurrent.Future<DeleteVirtualMFADeviceResult> deleteVirtualMFADeviceAsync(
             DeleteVirtualMFADeviceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachGroupPolicyAsync(
+    public java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(
             DetachGroupPolicyRequest request) {
 
         return detachGroupPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachGroupPolicyAsync(
+    public java.util.concurrent.Future<DetachGroupPolicyResult> detachGroupPolicyAsync(
             DetachGroupPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachGroupPolicyRequest, DetachGroupPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachRolePolicyAsync(
+    public java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(
             DetachRolePolicyRequest request) {
 
         return detachRolePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachRolePolicyAsync(
+    public java.util.concurrent.Future<DetachRolePolicyResult> detachRolePolicyAsync(
             DetachRolePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachRolePolicyRequest, DetachRolePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachUserPolicyAsync(
+    public java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(
             DetachUserPolicyRequest request) {
 
         return detachUserPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachUserPolicyAsync(
+    public java.util.concurrent.Future<DetachUserPolicyResult> detachUserPolicyAsync(
             DetachUserPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachUserPolicyRequest, DetachUserPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMFADeviceAsync(
+    public java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(
             EnableMFADeviceRequest request) {
 
         return enableMFADeviceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMFADeviceAsync(
+    public java.util.concurrent.Future<EnableMFADeviceResult> enableMFADeviceAsync(
             EnableMFADeviceRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableMFADeviceRequest, EnableMFADeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1913,121 +1913,121 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putGroupPolicyAsync(
+    public java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(
             PutGroupPolicyRequest request) {
 
         return putGroupPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putGroupPolicyAsync(
+    public java.util.concurrent.Future<PutGroupPolicyResult> putGroupPolicyAsync(
             PutGroupPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutGroupPolicyRequest, PutGroupPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRolePolicyAsync(
+    public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(
             PutRolePolicyRequest request) {
 
         return putRolePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRolePolicyAsync(
+    public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(
             PutRolePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutRolePolicyRequest, PutRolePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putUserPolicyAsync(
+    public java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(
             PutUserPolicyRequest request) {
 
         return putUserPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putUserPolicyAsync(
+    public java.util.concurrent.Future<PutUserPolicyResult> putUserPolicyAsync(
             PutUserPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutUserPolicyRequest, PutUserPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeClientIDFromOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest request) {
 
         return removeClientIDFromOpenIDConnectProviderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeClientIDFromOpenIDConnectProviderAsync(
+    public java.util.concurrent.Future<RemoveClientIDFromOpenIDConnectProviderResult> removeClientIDFromOpenIDConnectProviderAsync(
             RemoveClientIDFromOpenIDConnectProviderRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemoveClientIDFromOpenIDConnectProviderRequest, RemoveClientIDFromOpenIDConnectProviderResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeRoleFromInstanceProfileAsync(
+    public java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest request) {
 
         return removeRoleFromInstanceProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeRoleFromInstanceProfileAsync(
+    public java.util.concurrent.Future<RemoveRoleFromInstanceProfileResult> removeRoleFromInstanceProfileAsync(
             RemoveRoleFromInstanceProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromInstanceProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeUserFromGroupAsync(
+    public java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(
             RemoveUserFromGroupRequest request) {
 
         return removeUserFromGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeUserFromGroupAsync(
+    public java.util.concurrent.Future<RemoveUserFromGroupResult> removeUserFromGroupAsync(
             RemoveUserFromGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resyncMFADeviceAsync(
+    public java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(
             ResyncMFADeviceRequest request) {
 
         return resyncMFADeviceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resyncMFADeviceAsync(
+    public java.util.concurrent.Future<ResyncMFADeviceResult> resyncMFADeviceAsync(
             ResyncMFADeviceRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResyncMFADeviceRequest, ResyncMFADeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest request) {
 
         return setDefaultPolicyVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2063,91 +2063,91 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAccessKeyAsync(
+    public java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(
             UpdateAccessKeyRequest request) {
 
         return updateAccessKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAccessKeyAsync(
+    public java.util.concurrent.Future<UpdateAccessKeyResult> updateAccessKeyAsync(
             UpdateAccessKeyRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessKeyRequest, UpdateAccessKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAccountPasswordPolicyAsync(
+    public java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest request) {
 
         return updateAccountPasswordPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAccountPasswordPolicyAsync(
+    public java.util.concurrent.Future<UpdateAccountPasswordPolicyResult> updateAccountPasswordPolicyAsync(
             UpdateAccountPasswordPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAccountPasswordPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAssumeRolePolicyAsync(
+    public java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(
             UpdateAssumeRolePolicyRequest request) {
 
         return updateAssumeRolePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAssumeRolePolicyAsync(
+    public java.util.concurrent.Future<UpdateAssumeRolePolicyResult> updateAssumeRolePolicyAsync(
             UpdateAssumeRolePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateGroupAsync(
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(
             UpdateGroupRequest request) {
 
         return updateGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateGroupAsync(
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(
             UpdateGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLoginProfileAsync(
+    public java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(
             UpdateLoginProfileRequest request) {
 
         return updateLoginProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLoginProfileAsync(
+    public java.util.concurrent.Future<UpdateLoginProfileResult> updateLoginProfileAsync(
             UpdateLoginProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateLoginProfileRequest, UpdateLoginProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateOpenIDConnectProviderThumbprintAsync(
+    public java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest request) {
 
         return updateOpenIDConnectProviderThumbprintAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateOpenIDConnectProviderThumbprintAsync(
+    public java.util.concurrent.Future<UpdateOpenIDConnectProviderThumbprintResult> updateOpenIDConnectProviderThumbprintAsync(
             UpdateOpenIDConnectProviderThumbprintRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2168,61 +2168,61 @@ public class AbstractAmazonIdentityManagementAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateSSHPublicKeyAsync(
+    public java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(
             UpdateSSHPublicKeyRequest request) {
 
         return updateSSHPublicKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateSSHPublicKeyAsync(
+    public java.util.concurrent.Future<UpdateSSHPublicKeyResult> updateSSHPublicKeyAsync(
             UpdateSSHPublicKeyRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateServerCertificateAsync(
+    public java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(
             UpdateServerCertificateRequest request) {
 
         return updateServerCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateServerCertificateAsync(
+    public java.util.concurrent.Future<UpdateServerCertificateResult> updateServerCertificateAsync(
             UpdateServerCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateServerCertificateRequest, UpdateServerCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateSigningCertificateAsync(
+    public java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(
             UpdateSigningCertificateRequest request) {
 
         return updateSigningCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateSigningCertificateAsync(
+    public java.util.concurrent.Future<UpdateSigningCertificateResult> updateSigningCertificateAsync(
             UpdateSigningCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateSigningCertificateRequest, UpdateSigningCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserAsync(
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(
             UpdateUserRequest request) {
 
         return updateUserAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserAsync(
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(
             UpdateUserRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -59,6 +59,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      *        forwarding. Examples: <code>user@example.com</code>,
      *        <code>example.com</code>.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -74,6 +75,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      *         forwarding. Examples: <code>user@example.com</code>,
      *         <code>example.com</code>.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -92,6 +94,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityFeedbackForwardingEnabledRequest withIdentity(
             String identity) {
         setIdentity(identity);
@@ -121,6 +124,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      *        set for both <code>Bounce</code> and <code>Complaint</code>
      *        notification types.
      */
+
     public void setForwardingEnabled(Boolean forwardingEnabled) {
         this.forwardingEnabled = forwardingEnabled;
     }
@@ -147,6 +151,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      *         set for both <code>Bounce</code> and <code>Complaint</code>
      *         notification types.
      */
+
     public Boolean getForwardingEnabled() {
         return this.forwardingEnabled;
     }
@@ -176,6 +181,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityFeedbackForwardingEnabledRequest withForwardingEnabled(
             Boolean forwardingEnabled) {
         setForwardingEnabled(forwardingEnabled);
@@ -204,6 +210,7 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends
      *         set for both <code>Bounce</code> and <code>Complaint</code>
      *         notification types.
      */
+
     public Boolean isForwardingEnabled() {
         return this.forwardingEnabled;
     }

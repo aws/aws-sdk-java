@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -57,9 +59,8 @@ public class CustomHeadersStaxUnmarshaller implements
 
                 if (context.testExpression("Items/OriginCustomHeader",
                         targetDepth)) {
-                    customHeaders.getItems().add(
-                            OriginCustomHeaderStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    customHeaders.withItems(OriginCustomHeaderStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

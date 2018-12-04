@@ -40,6 +40,7 @@ public class DescribeDeliveryChannelStatusResult implements Serializable,
      * 
      * @return A list that contains the status of a specified delivery channel.
      */
+
     public java.util.List<DeliveryChannelStatus> getDeliveryChannelsStatus() {
         if (deliveryChannelsStatus == null) {
             deliveryChannelsStatus = new com.amazonaws.internal.SdkInternalList<DeliveryChannelStatus>();
@@ -55,6 +56,7 @@ public class DescribeDeliveryChannelStatusResult implements Serializable,
      * @param deliveryChannelsStatus
      *        A list that contains the status of a specified delivery channel.
      */
+
     public void setDeliveryChannelsStatus(
             java.util.Collection<DeliveryChannelStatus> deliveryChannelsStatus) {
         if (deliveryChannelsStatus == null) {
@@ -82,6 +84,7 @@ public class DescribeDeliveryChannelStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelStatusResult withDeliveryChannelsStatus(
             DeliveryChannelStatus... deliveryChannelsStatus) {
         if (this.deliveryChannelsStatus == null) {
@@ -104,6 +107,7 @@ public class DescribeDeliveryChannelStatusResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelStatusResult withDeliveryChannelsStatus(
             java.util.Collection<DeliveryChannelStatus> deliveryChannelsStatus) {
         setDeliveryChannelsStatus(deliveryChannelsStatus);

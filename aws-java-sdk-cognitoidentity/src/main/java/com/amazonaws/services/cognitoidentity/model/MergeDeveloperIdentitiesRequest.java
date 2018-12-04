@@ -69,6 +69,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      *        User identifier for the source user. The value should be a
      *        <code>DeveloperUserIdentifier</code>.
      */
+
     public void setSourceUserIdentifier(String sourceUserIdentifier) {
         this.sourceUserIdentifier = sourceUserIdentifier;
     }
@@ -82,6 +83,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return User identifier for the source user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
      */
+
     public String getSourceUserIdentifier() {
         return this.sourceUserIdentifier;
     }
@@ -98,6 +100,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeDeveloperIdentitiesRequest withSourceUserIdentifier(
             String sourceUserIdentifier) {
         setSourceUserIdentifier(sourceUserIdentifier);
@@ -114,6 +117,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      *        User identifier for the destination user. The value should be a
      *        <code>DeveloperUserIdentifier</code>.
      */
+
     public void setDestinationUserIdentifier(String destinationUserIdentifier) {
         this.destinationUserIdentifier = destinationUserIdentifier;
     }
@@ -127,6 +131,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return User identifier for the destination user. The value should be a
      *         <code>DeveloperUserIdentifier</code>.
      */
+
     public String getDestinationUserIdentifier() {
         return this.destinationUserIdentifier;
     }
@@ -143,6 +148,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeDeveloperIdentitiesRequest withDestinationUserIdentifier(
             String destinationUserIdentifier) {
         setDestinationUserIdentifier(destinationUserIdentifier);
@@ -167,6 +173,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      *        For the <code>DeveloperProviderName</code>, you can use letters as
      *        well as period (.), underscore (_), and dash (-).
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -188,6 +195,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      *         provider. For the <code>DeveloperProviderName</code>, you can use
      *         letters as well as period (.), underscore (_), and dash (-).
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -212,6 +220,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeDeveloperIdentitiesRequest withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -226,6 +235,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -237,6 +247,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -251,6 +262,7 @@ public class MergeDeveloperIdentitiesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeDeveloperIdentitiesRequest withIdentityPoolId(
             String identityPoolId) {
         setIdentityPoolId(identityPoolId);

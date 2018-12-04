@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class GetDomainDetailResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setDomainName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Nameservers", targetDepth)) {
                     context.nextToken();
@@ -65,8 +67,8 @@ public class GetDomainDetailResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("AutoRenew", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setAutoRenew(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setAutoRenew(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AdminContact", targetDepth)) {
                     context.nextToken();
@@ -89,87 +91,84 @@ public class GetDomainDetailResultJsonUnmarshaller implements
                 if (context.testExpression("AdminPrivacy", targetDepth)) {
                     context.nextToken();
                     getDomainDetailResult
-                            .setAdminPrivacy(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAdminPrivacy(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrantPrivacy", targetDepth)) {
                     context.nextToken();
                     getDomainDetailResult
-                            .setRegistrantPrivacy(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRegistrantPrivacy(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TechPrivacy", targetDepth)) {
                     context.nextToken();
                     getDomainDetailResult
-                            .setTechPrivacy(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTechPrivacy(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrarName", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setRegistrarName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setRegistrarName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WhoIsServer", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setWhoIsServer(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setWhoIsServer(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrarUrl", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setRegistrarUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setRegistrarUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AbuseContactEmail", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setAbuseContactEmail(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setAbuseContactEmail(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AbuseContactPhone", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setAbuseContactPhone(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setAbuseContactPhone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistryDomainId", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setRegistryDomainId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setRegistryDomainId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setCreationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("UpdatedDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setUpdatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setUpdatedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("ExpirationDate", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult
-                            .setExpirationDate(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getDomainDetailResult.setExpirationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Reseller", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setReseller(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setReseller(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DnsSec", targetDepth)) {
                     context.nextToken();
-                    getDomainDetailResult.setDnsSec(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getDomainDetailResult.setDnsSec(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusList", targetDepth)) {
                     context.nextToken();
                     getDomainDetailResult
-                            .setStatusList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setStatusList(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

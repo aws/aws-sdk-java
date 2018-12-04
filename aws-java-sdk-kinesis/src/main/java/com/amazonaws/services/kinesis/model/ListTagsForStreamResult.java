@@ -53,6 +53,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      *         with the first tag after <code>ExclusiveStartTagKey</code> and up
      *         to the specified <code>Limit</code>.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -72,6 +73,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      *        with the first tag after <code>ExclusiveStartTagKey</code> and up
      *        to the specified <code>Limit</code>.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -101,6 +103,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamResult withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -125,6 +128,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamResult withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -142,6 +146,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      *        additional tags, set <code>ExclusiveStartTagKey</code> to the key
      *        of the last tag returned.
      */
+
     public void setHasMoreTags(Boolean hasMoreTags) {
         this.hasMoreTags = hasMoreTags;
     }
@@ -157,6 +162,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      *         additional tags, set <code>ExclusiveStartTagKey</code> to the key
      *         of the last tag returned.
      */
+
     public Boolean getHasMoreTags() {
         return this.hasMoreTags;
     }
@@ -175,6 +181,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForStreamResult withHasMoreTags(Boolean hasMoreTags) {
         setHasMoreTags(hasMoreTags);
         return this;
@@ -191,6 +198,7 @@ public class ListTagsForStreamResult implements Serializable, Cloneable {
      *         additional tags, set <code>ExclusiveStartTagKey</code> to the key
      *         of the last tag returned.
      */
+
     public Boolean isHasMoreTags() {
         return this.hasMoreTags;
     }

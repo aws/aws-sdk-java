@@ -30,6 +30,7 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -37,6 +38,7 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -46,6 +48,7 @@ public class DeleteSnapshotScheduleRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSnapshotScheduleRequest withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

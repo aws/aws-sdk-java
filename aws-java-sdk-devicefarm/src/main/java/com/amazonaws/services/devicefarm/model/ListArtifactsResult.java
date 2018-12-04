@@ -47,6 +47,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      * 
      * @return Information about the artifacts.
      */
+
     public java.util.List<Artifact> getArtifacts() {
         return artifacts;
     }
@@ -59,6 +60,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      * @param artifacts
      *        Information about the artifacts.
      */
+
     public void setArtifacts(java.util.Collection<Artifact> artifacts) {
         if (artifacts == null) {
             this.artifacts = null;
@@ -84,6 +86,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListArtifactsResult withArtifacts(Artifact... artifacts) {
         if (this.artifacts == null) {
             setArtifacts(new java.util.ArrayList<Artifact>(artifacts.length));
@@ -104,6 +107,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListArtifactsResult withArtifacts(
             java.util.Collection<Artifact> artifacts) {
         setArtifacts(artifacts);
@@ -123,6 +127,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -139,6 +144,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -158,6 +164,7 @@ public class ListArtifactsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListArtifactsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

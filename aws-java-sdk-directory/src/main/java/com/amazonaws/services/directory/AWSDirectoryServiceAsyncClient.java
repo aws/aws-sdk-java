@@ -16,6 +16,7 @@
 package com.amazonaws.services.directory;
 
 import com.amazonaws.services.directory.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Directory Service asynchronously. Each asynchronous
@@ -30,6 +31,7 @@ import com.amazonaws.services.directory.model.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
         implements AWSDirectoryServiceAsync {
 
@@ -129,8 +131,7 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -222,9 +223,7 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -352,6 +351,42 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = createComputer(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            CreateConditionalForwarderRequest request) {
+
+        return createConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConditionalForwarderResult> createConditionalForwarderAsync(
+            final CreateConditionalForwarderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConditionalForwarderRequest, CreateConditionalForwarderResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateConditionalForwarderResult>() {
+                    @Override
+                    public CreateConditionalForwarderResult call()
+                            throws Exception {
+                        CreateConditionalForwarderResult result;
+
+                        try {
+                            result = createConditionalForwarder(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -508,6 +543,42 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            DeleteConditionalForwarderRequest request) {
+
+        return deleteConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConditionalForwarderResult> deleteConditionalForwarderAsync(
+            final DeleteConditionalForwarderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConditionalForwarderRequest, DeleteConditionalForwarderResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeleteConditionalForwarderResult>() {
+                    @Override
+                    public DeleteConditionalForwarderResult call()
+                            throws Exception {
+                        DeleteConditionalForwarderResult result;
+
+                        try {
+                            result = deleteConditionalForwarder(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(
             DeleteDirectoryRequest request) {
 
@@ -613,6 +684,77 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            DeregisterEventTopicRequest request) {
+
+        return deregisterEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterEventTopicResult> deregisterEventTopicAsync(
+            final DeregisterEventTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterEventTopicRequest, DeregisterEventTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DeregisterEventTopicResult>() {
+                    @Override
+                    public DeregisterEventTopicResult call() throws Exception {
+                        DeregisterEventTopicResult result;
+
+                        try {
+                            result = deregisterEventTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            DescribeConditionalForwardersRequest request) {
+
+        return describeConditionalForwardersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConditionalForwardersResult> describeConditionalForwardersAsync(
+            final DescribeConditionalForwardersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeConditionalForwardersRequest, DescribeConditionalForwardersResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeConditionalForwardersResult>() {
+                    @Override
+                    public DescribeConditionalForwardersResult call()
+                            throws Exception {
+                        DescribeConditionalForwardersResult result;
+
+                        try {
+                            result = describeConditionalForwarders(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDirectoriesResult> describeDirectoriesAsync(
             DescribeDirectoriesRequest request) {
 
@@ -670,6 +812,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
         return describeDirectoriesAsync(new DescribeDirectoriesRequest(),
                 asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            DescribeEventTopicsRequest request) {
+
+        return describeEventTopicsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(
+            final DescribeEventTopicsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventTopicsRequest, DescribeEventTopicsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeEventTopicsResult>() {
+                    @Override
+                    public DescribeEventTopicsResult call() throws Exception {
+                        DescribeEventTopicsResult result;
+
+                        try {
+                            result = describeEventTopics(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override
@@ -1003,6 +1180,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            RegisterEventTopicRequest request) {
+
+        return registerEventTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterEventTopicResult> registerEventTopicAsync(
+            final RegisterEventTopicRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterEventTopicRequest, RegisterEventTopicResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RegisterEventTopicResult>() {
+                    @Override
+                    public RegisterEventTopicResult call() throws Exception {
+                        RegisterEventTopicResult result;
+
+                        try {
+                            result = registerEventTopic(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(
             RestoreFromSnapshotRequest request) {
 
@@ -1022,6 +1234,42 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient
 
                         try {
                             result = restoreFromSnapshot(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            UpdateConditionalForwarderRequest request) {
+
+        return updateConditionalForwarderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
+            final UpdateConditionalForwarderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateConditionalForwarderResult>() {
+                    @Override
+                    public UpdateConditionalForwarderResult call()
+                            throws Exception {
+                        UpdateConditionalForwarderResult result;
+
+                        try {
+                            result = updateConditionalForwarder(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

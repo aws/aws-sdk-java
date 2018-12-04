@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ComputerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ComputerId", targetDepth)) {
                     context.nextToken();
-                    computer.setComputerId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    computer.setComputerId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerName", targetDepth)) {
                     context.nextToken();
-                    computer.setComputerName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    computer.setComputerName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ComputerAttributes", targetDepth)) {
                     context.nextToken();

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.inspector.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FindingMarshaller
@@ -39,95 +34,115 @@ import com.amazonaws.util.json.*;
 public class FindingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Finding finding, JSONWriter jsonWriter) {
+    public void marshall(Finding finding, StructuredJsonGenerator jsonGenerator) {
+
         if (finding == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
-            if (finding.getFindingArn() != null) {
-                jsonWriter.key("findingArn").value(finding.getFindingArn());
+            if (finding.getArn() != null) {
+                jsonGenerator.writeFieldName("arn")
+                        .writeValue(finding.getArn());
             }
-
-            if (finding.getRunArn() != null) {
-                jsonWriter.key("runArn").value(finding.getRunArn());
+            if (finding.getSchemaVersion() != null) {
+                jsonGenerator.writeFieldName("schemaVersion").writeValue(
+                        finding.getSchemaVersion());
             }
-
-            if (finding.getRulesPackageArn() != null) {
-                jsonWriter.key("rulesPackageArn").value(
-                        finding.getRulesPackageArn());
+            if (finding.getService() != null) {
+                jsonGenerator.writeFieldName("service").writeValue(
+                        finding.getService());
             }
-
-            if (finding.getRuleName() != null) {
-                jsonWriter.key("ruleName").value(finding.getRuleName());
+            if (finding.getServiceAttributes() != null) {
+                jsonGenerator.writeFieldName("serviceAttributes");
+                InspectorServiceAttributesJsonMarshaller
+                        .getInstance()
+                        .marshall(finding.getServiceAttributes(), jsonGenerator);
             }
-
-            if (finding.getAgentId() != null) {
-                jsonWriter.key("agentId").value(finding.getAgentId());
+            if (finding.getAssetType() != null) {
+                jsonGenerator.writeFieldName("assetType").writeValue(
+                        finding.getAssetType());
             }
-
-            if (finding.getAutoScalingGroup() != null) {
-                jsonWriter.key("autoScalingGroup").value(
-                        finding.getAutoScalingGroup());
+            if (finding.getAssetAttributes() != null) {
+                jsonGenerator.writeFieldName("assetAttributes");
+                AssetAttributesJsonMarshaller.getInstance().marshall(
+                        finding.getAssetAttributes(), jsonGenerator);
             }
-
-            if (finding.getSeverity() != null) {
-                jsonWriter.key("severity").value(finding.getSeverity());
+            if (finding.getId() != null) {
+                jsonGenerator.writeFieldName("id").writeValue(finding.getId());
             }
-
-            if (finding.getFinding() != null) {
-                jsonWriter.key("finding");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getFinding(), jsonWriter);
+            if (finding.getTitle() != null) {
+                jsonGenerator.writeFieldName("title").writeValue(
+                        finding.getTitle());
             }
-
             if (finding.getDescription() != null) {
-                jsonWriter.key("description");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getDescription(), jsonWriter);
+                jsonGenerator.writeFieldName("description").writeValue(
+                        finding.getDescription());
             }
-
             if (finding.getRecommendation() != null) {
-                jsonWriter.key("recommendation");
-                LocalizedTextJsonMarshaller.getInstance().marshall(
-                        finding.getRecommendation(), jsonWriter);
+                jsonGenerator.writeFieldName("recommendation").writeValue(
+                        finding.getRecommendation());
+            }
+            if (finding.getSeverity() != null) {
+                jsonGenerator.writeFieldName("severity").writeValue(
+                        finding.getSeverity());
+            }
+            if (finding.getNumericSeverity() != null) {
+                jsonGenerator.writeFieldName("numericSeverity").writeValue(
+                        finding.getNumericSeverity());
+            }
+            if (finding.getConfidence() != null) {
+                jsonGenerator.writeFieldName("confidence").writeValue(
+                        finding.getConfidence());
+            }
+            if (finding.getIndicatorOfCompromise() != null) {
+                jsonGenerator.writeFieldName("indicatorOfCompromise")
+                        .writeValue(finding.getIndicatorOfCompromise());
             }
 
             java.util.List<Attribute> attributesList = finding.getAttributes();
             if (attributesList != null) {
-                jsonWriter.key("attributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("attributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute attributesListValue : attributesList) {
                     if (attributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                attributesListValue, jsonWriter);
+                                attributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<Attribute> userAttributesList = finding
                     .getUserAttributes();
             if (userAttributesList != null) {
-                jsonWriter.key("userAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("userAttributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute userAttributesListValue : userAttributesList) {
                     if (userAttributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                userAttributesListValue, jsonWriter);
+                                userAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
+            }
+            if (finding.getCreatedAt() != null) {
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        finding.getCreatedAt());
+            }
+            if (finding.getUpdatedAt() != null) {
+                jsonGenerator.writeFieldName("updatedAt").writeValue(
+                        finding.getUpdatedAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

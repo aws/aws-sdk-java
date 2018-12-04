@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,67 +55,67 @@ public class RaidArrayJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RaidArrayId", targetDepth)) {
                     context.nextToken();
-                    raidArray.setRaidArrayId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setRaidArrayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    raidArray.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    raidArray.setName(StringJsonUnmarshaller.getInstance()
+                    raidArray.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RaidLevel", targetDepth)) {
                     context.nextToken();
-                    raidArray.setRaidLevel(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setRaidLevel(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NumberOfDisks", targetDepth)) {
                     context.nextToken();
-                    raidArray.setNumberOfDisks(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setNumberOfDisks(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Size", targetDepth)) {
                     context.nextToken();
-                    raidArray.setSize(IntegerJsonUnmarshaller.getInstance()
+                    raidArray.setSize(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Device", targetDepth)) {
                     context.nextToken();
-                    raidArray.setDevice(StringJsonUnmarshaller.getInstance()
+                    raidArray.setDevice(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("MountPoint", targetDepth)) {
                     context.nextToken();
-                    raidArray.setMountPoint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setMountPoint(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    raidArray.setAvailabilityZone(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setAvailabilityZone(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    raidArray.setCreatedAt(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    raidArray.setCreatedAt(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    raidArray.setStackId(StringJsonUnmarshaller.getInstance()
+                    raidArray.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    raidArray.setVolumeType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    raidArray.setVolumeType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
                     context.nextToken();
-                    raidArray.setIops(IntegerJsonUnmarshaller.getInstance()
+                    raidArray.setIops(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

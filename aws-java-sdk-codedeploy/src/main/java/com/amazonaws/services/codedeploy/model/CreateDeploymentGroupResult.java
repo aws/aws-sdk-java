@@ -40,6 +40,7 @@ public class CreateDeploymentGroupResult implements Serializable, Cloneable {
      * @param deploymentGroupId
      *        A unique deployment group ID.
      */
+
     public void setDeploymentGroupId(String deploymentGroupId) {
         this.deploymentGroupId = deploymentGroupId;
     }
@@ -51,6 +52,7 @@ public class CreateDeploymentGroupResult implements Serializable, Cloneable {
      * 
      * @return A unique deployment group ID.
      */
+
     public String getDeploymentGroupId() {
         return this.deploymentGroupId;
     }
@@ -65,6 +67,7 @@ public class CreateDeploymentGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupResult withDeploymentGroupId(
             String deploymentGroupId) {
         setDeploymentGroupId(deploymentGroupId);

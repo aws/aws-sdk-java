@@ -48,6 +48,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * @param streamName
      *        The name of the stream.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -59,6 +60,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the stream.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -73,6 +75,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -86,6 +89,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * @return A list of tag keys. Each corresponding tag is removed from the
      *         stream.
      */
+
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
             tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -102,6 +106,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      *        A list of tag keys. Each corresponding tag is removed from the
      *        stream.
      */
+
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
@@ -129,6 +134,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromStreamRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
             setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -151,6 +157,7 @@ public class RemoveTagsFromStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromStreamRequest withTagKeys(
             java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);

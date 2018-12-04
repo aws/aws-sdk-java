@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.inspector.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RemoveAttributesFromFindingsRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class RemoveAttributesFromFindingsRequestMarshaller
         implements
         Marshaller<Request<RemoveAttributesFromFindingsRequest>, RemoveAttributesFromFindingsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RemoveAttributesFromFindingsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RemoveAttributesFromFindingsRequest> marshall(
             RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest) {
@@ -65,45 +66,44 @@ public class RemoveAttributesFromFindingsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> findingArnsList = removeAttributesFromFindingsRequest
                     .getFindingArns();
             if (findingArnsList != null) {
-                jsonWriter.key("findingArns");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("findingArns");
+                jsonGenerator.writeStartArray();
                 for (String findingArnsListValue : findingArnsList) {
                     if (findingArnsListValue != null) {
-                        jsonWriter.value(findingArnsListValue);
+                        jsonGenerator.writeValue(findingArnsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> attributeKeysList = removeAttributesFromFindingsRequest
                     .getAttributeKeys();
             if (attributeKeysList != null) {
-                jsonWriter.key("attributeKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("attributeKeys");
+                jsonGenerator.writeStartArray();
                 for (String attributeKeysListValue : attributeKeysList) {
                     if (attributeKeysListValue != null) {
-                        jsonWriter.value(attributeKeysListValue);
+                        jsonGenerator.writeValue(attributeKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

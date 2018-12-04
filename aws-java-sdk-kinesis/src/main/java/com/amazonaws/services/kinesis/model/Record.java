@@ -63,6 +63,7 @@ public class Record implements Serializable, Cloneable {
      * @param sequenceNumber
      *        The unique identifier of the record in the stream.
      */
+
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
@@ -74,6 +75,7 @@ public class Record implements Serializable, Cloneable {
      * 
      * @return The unique identifier of the record in the stream.
      */
+
     public String getSequenceNumber() {
         return this.sequenceNumber;
     }
@@ -88,6 +90,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withSequenceNumber(String sequenceNumber) {
         setSequenceNumber(sequenceNumber);
         return this;
@@ -101,6 +104,7 @@ public class Record implements Serializable, Cloneable {
      * @param approximateArrivalTimestamp
      *        The approximate time that the record was inserted into the stream.
      */
+
     public void setApproximateArrivalTimestamp(
             java.util.Date approximateArrivalTimestamp) {
         this.approximateArrivalTimestamp = approximateArrivalTimestamp;
@@ -114,6 +118,7 @@ public class Record implements Serializable, Cloneable {
      * @return The approximate time that the record was inserted into the
      *         stream.
      */
+
     public java.util.Date getApproximateArrivalTimestamp() {
         return this.approximateArrivalTimestamp;
     }
@@ -128,6 +133,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withApproximateArrivalTimestamp(
             java.util.Date approximateArrivalTimestamp) {
         setApproximateArrivalTimestamp(approximateArrivalTimestamp);
@@ -147,6 +153,14 @@ public class Record implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param data
      *        The data blob. The data in the blob is both opaque and immutable
@@ -156,6 +170,7 @@ public class Record implements Serializable, Cloneable {
      *        size, the total size must not exceed the maximum record size (1
      *        MB).
      */
+
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
@@ -186,6 +201,7 @@ public class Record implements Serializable, Cloneable {
      *         key size, the total size must not exceed the maximum record size
      *         (1 MB).
      */
+
     public java.nio.ByteBuffer getData() {
         return this.data;
     }
@@ -209,6 +225,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withData(java.nio.ByteBuffer data) {
         setData(data);
         return this;
@@ -223,6 +240,7 @@ public class Record implements Serializable, Cloneable {
      *        Identifies which shard in the stream the data record is assigned
      *        to.
      */
+
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
@@ -235,6 +253,7 @@ public class Record implements Serializable, Cloneable {
      * @return Identifies which shard in the stream the data record is assigned
      *         to.
      */
+
     public String getPartitionKey() {
         return this.partitionKey;
     }
@@ -250,6 +269,7 @@ public class Record implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Record withPartitionKey(String partitionKey) {
         setPartitionKey(partitionKey);
         return this;

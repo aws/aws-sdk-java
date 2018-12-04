@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CloneStackRequest Marshaller
  */
 public class CloneStackRequestMarshaller implements
         Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CloneStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CloneStackRequest> marshall(
             CloneStackRequest cloneStackRequest) {
@@ -63,117 +63,110 @@ public class CloneStackRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cloneStackRequest.getSourceStackId() != null) {
-                jsonWriter.key("SourceStackId").value(
+                jsonGenerator.writeFieldName("SourceStackId").writeValue(
                         cloneStackRequest.getSourceStackId());
             }
-
             if (cloneStackRequest.getName() != null) {
-                jsonWriter.key("Name").value(cloneStackRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        cloneStackRequest.getName());
             }
-
             if (cloneStackRequest.getRegion() != null) {
-                jsonWriter.key("Region").value(cloneStackRequest.getRegion());
+                jsonGenerator.writeFieldName("Region").writeValue(
+                        cloneStackRequest.getRegion());
             }
-
             if (cloneStackRequest.getVpcId() != null) {
-                jsonWriter.key("VpcId").value(cloneStackRequest.getVpcId());
+                jsonGenerator.writeFieldName("VpcId").writeValue(
+                        cloneStackRequest.getVpcId());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) cloneStackRequest
                     .getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonWriter.key("Attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (cloneStackRequest.getServiceRoleArn() != null) {
-                jsonWriter.key("ServiceRoleArn").value(
+                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(
                         cloneStackRequest.getServiceRoleArn());
             }
-
             if (cloneStackRequest.getDefaultInstanceProfileArn() != null) {
-                jsonWriter.key("DefaultInstanceProfileArn").value(
-                        cloneStackRequest.getDefaultInstanceProfileArn());
+                jsonGenerator.writeFieldName("DefaultInstanceProfileArn")
+                        .writeValue(
+                                cloneStackRequest
+                                        .getDefaultInstanceProfileArn());
             }
-
             if (cloneStackRequest.getDefaultOs() != null) {
-                jsonWriter.key("DefaultOs").value(
+                jsonGenerator.writeFieldName("DefaultOs").writeValue(
                         cloneStackRequest.getDefaultOs());
             }
-
             if (cloneStackRequest.getHostnameTheme() != null) {
-                jsonWriter.key("HostnameTheme").value(
+                jsonGenerator.writeFieldName("HostnameTheme").writeValue(
                         cloneStackRequest.getHostnameTheme());
             }
-
             if (cloneStackRequest.getDefaultAvailabilityZone() != null) {
-                jsonWriter.key("DefaultAvailabilityZone").value(
-                        cloneStackRequest.getDefaultAvailabilityZone());
+                jsonGenerator.writeFieldName("DefaultAvailabilityZone")
+                        .writeValue(
+                                cloneStackRequest.getDefaultAvailabilityZone());
             }
-
             if (cloneStackRequest.getDefaultSubnetId() != null) {
-                jsonWriter.key("DefaultSubnetId").value(
+                jsonGenerator.writeFieldName("DefaultSubnetId").writeValue(
                         cloneStackRequest.getDefaultSubnetId());
             }
-
             if (cloneStackRequest.getCustomJson() != null) {
-                jsonWriter.key("CustomJson").value(
+                jsonGenerator.writeFieldName("CustomJson").writeValue(
                         cloneStackRequest.getCustomJson());
             }
-
             if (cloneStackRequest.getConfigurationManager() != null) {
-                jsonWriter.key("ConfigurationManager");
-                StackConfigurationManagerJsonMarshaller.getInstance()
-                        .marshall(cloneStackRequest.getConfigurationManager(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("ConfigurationManager");
+                StackConfigurationManagerJsonMarshaller.getInstance().marshall(
+                        cloneStackRequest.getConfigurationManager(),
+                        jsonGenerator);
             }
-
             if (cloneStackRequest.getChefConfiguration() != null) {
-                jsonWriter.key("ChefConfiguration");
-                ChefConfigurationJsonMarshaller.getInstance().marshall(
-                        cloneStackRequest.getChefConfiguration(), jsonWriter);
+                jsonGenerator.writeFieldName("ChefConfiguration");
+                ChefConfigurationJsonMarshaller.getInstance()
+                        .marshall(cloneStackRequest.getChefConfiguration(),
+                                jsonGenerator);
             }
-
             if (cloneStackRequest.getUseCustomCookbooks() != null) {
-                jsonWriter.key("UseCustomCookbooks").value(
+                jsonGenerator.writeFieldName("UseCustomCookbooks").writeValue(
                         cloneStackRequest.getUseCustomCookbooks());
             }
-
             if (cloneStackRequest.getUseOpsworksSecurityGroups() != null) {
-                jsonWriter.key("UseOpsworksSecurityGroups").value(
-                        cloneStackRequest.getUseOpsworksSecurityGroups());
+                jsonGenerator.writeFieldName("UseOpsworksSecurityGroups")
+                        .writeValue(
+                                cloneStackRequest
+                                        .getUseOpsworksSecurityGroups());
             }
-
             if (cloneStackRequest.getCustomCookbooksSource() != null) {
-                jsonWriter.key("CustomCookbooksSource");
+                jsonGenerator.writeFieldName("CustomCookbooksSource");
                 SourceJsonMarshaller.getInstance().marshall(
                         cloneStackRequest.getCustomCookbooksSource(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (cloneStackRequest.getDefaultSshKeyName() != null) {
-                jsonWriter.key("DefaultSshKeyName").value(
+                jsonGenerator.writeFieldName("DefaultSshKeyName").writeValue(
                         cloneStackRequest.getDefaultSshKeyName());
             }
-
             if (cloneStackRequest.getClonePermissions() != null) {
-                jsonWriter.key("ClonePermissions").value(
+                jsonGenerator.writeFieldName("ClonePermissions").writeValue(
                         cloneStackRequest.getClonePermissions());
             }
 
@@ -181,34 +174,32 @@ public class CloneStackRequestMarshaller implements
                     .getCloneAppIds();
             if (!cloneAppIdsList.isEmpty()
                     || !cloneAppIdsList.isAutoConstruct()) {
-                jsonWriter.key("CloneAppIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CloneAppIds");
+                jsonGenerator.writeStartArray();
                 for (String cloneAppIdsListValue : cloneAppIdsList) {
                     if (cloneAppIdsListValue != null) {
-                        jsonWriter.value(cloneAppIdsListValue);
+                        jsonGenerator.writeValue(cloneAppIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (cloneStackRequest.getDefaultRootDeviceType() != null) {
-                jsonWriter.key("DefaultRootDeviceType").value(
-                        cloneStackRequest.getDefaultRootDeviceType());
+                jsonGenerator.writeFieldName("DefaultRootDeviceType")
+                        .writeValue(
+                                cloneStackRequest.getDefaultRootDeviceType());
             }
-
             if (cloneStackRequest.getAgentVersion() != null) {
-                jsonWriter.key("AgentVersion").value(
+                jsonGenerator.writeFieldName("AgentVersion").writeValue(
                         cloneStackRequest.getAgentVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

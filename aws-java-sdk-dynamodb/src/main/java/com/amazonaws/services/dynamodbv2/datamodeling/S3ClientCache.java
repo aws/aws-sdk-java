@@ -23,18 +23,19 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.regions.Regions;
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.transfer.TransferManager;
 
 /**
- * A smart Map for {@link AmazonS3Client} objects. {@link S3ClientCache} keeps the
+ * A smart Map for {@link AmazonS3} objects. {@link S3ClientCache} keeps the
  * clients organized by region, and if provided {@link AWSCredentials} will
  * create clients on the fly. Otherwise it just return clients given to it with
- * {@link #useClient(AmazonS3Client)}.
+ * {@link #useClient(AmazonS3)}.
  */
 public class S3ClientCache {
-    private final ConcurrentMap<Region, AmazonS3Client> clientsByRegion = new ConcurrentHashMap<Region, AmazonS3Client>();
+    private final ConcurrentMap<Region, AmazonS3> clientsByRegion = new ConcurrentHashMap<Region, AmazonS3>();
     private final Map<Region, TransferManager> transferManagersByRegion = new EnumMap<Region, TransferManager>(Region.class);
 
     private final AWSCredentialsProvider awscredentialsProvider;
@@ -52,7 +53,7 @@ public class S3ClientCache {
      *
      * @param awsCredentialsProvider
      *            The credentials provider to use when creating new
-     *            {@link AmazonS3Client}.
+     *            {@link AmazonS3}.
      */
     S3ClientCache(AWSCredentialsProvider awsCredentialsProvider) {
         this.awscredentialsProvider = awsCredentialsProvider;
@@ -70,10 +71,10 @@ public class S3ClientCache {
      * the {@link TransferManager#shutdownNow()} method.
      *
      * @param client
-     *            An {@link AmazonS3Client} to use in the cache. Its region will
+     *            An {@link AmazonS3} to use in the cache. Its region will
      *            be detected automatically.
      */
-    public void useClient(AmazonS3Client client) {
+    public void useClient(AmazonS3 client) {
         Region s3region = client.getRegion();
 
         synchronized (transferManagersByRegion) {
@@ -90,51 +91,63 @@ public class S3ClientCache {
      * unable.
      *
      * @param s3region
-     *            The region the returned {@link AmazonS3Client} will be
+     *            The region the returned {@link AmazonS3} will be
      *            configured to use.
      * @return A client for the given region from the cache, either instantiated
      *         automatically from the provided {@link AWSCredentials} or
-     *         provided with {@link #useClient(AmazonS3Client)}.
+     *         provided with {@link #useClient(AmazonS3)}.
      * @throws IllegalArgumentException
      *             When a region is requested that has not been provided to the
-     *             cache with {@link #useClient(AmazonS3Client)}, and the cache
+     *             cache with {@link #useClient(AmazonS3)}, and the cache
      *             has no {@link AWSCredentials} with which a client may be
      *             instantiated.
      */
-    public AmazonS3Client getClient(Region s3region) {
-        if ( s3region == null ) {
+    public AmazonS3 getClient(Region s3region) {
+        if (s3region == null) {
             throw new IllegalArgumentException("S3 region must be specified");
         }
-        AmazonS3Client client = clientsByRegion.get(s3region);
-        if (client != null) {
-            return client;
-        }
+        AmazonS3 client = clientsByRegion.get(s3region);
+        return client != null ? client : cacheClient(s3region);
+    }
+
+    /**
+     * Returns a new client with region configured to
+     * s3region.
+     * Also updates the clientsByRegion map by associating the
+     * new client with s3region.
+     *
+     * @param s3region
+     *            The region the returned {@link AmazonS3} will be
+     *            configured to use.
+     * @return A new {@link AmazonS3} client with region set to s3region.
+     */
+    private AmazonS3 cacheClient(Region s3region) {
         if (awscredentialsProvider == null) {
             throw new IllegalArgumentException("No credentials provider found to connect to S3");
         }
-        client = new AmazonS3Client(awscredentialsProvider);
+        AmazonS3 client = new AmazonS3Client(awscredentialsProvider);
         client.setRegion(s3region.toAWSRegion());
-        AmazonS3Client prev = clientsByRegion.putIfAbsent(s3region, client);
-        return prev == null ? client : prev;
+        clientsByRegion.put(s3region, client);
+        return client;
     }
 
     /**
      * Returns a {@link TransferManager} for the given region, or throws an
      * exception when unable. The returned {@link TransferManager} will always
-     * be instantiated from whatever {@link AmazonS3Client} is in the cache,
-     * whether provided with {@link #useClient(AmazonS3Client)} or instantiated
+     * be instantiated from whatever {@link AmazonS3} is in the cache,
+     * whether provided with {@link #useClient(AmazonS3)} or instantiated
      * automatically from {@link AWSCredentials}.
      *
      * Any {@link TransferManager} returned could be shut down if a new
-     * underlying {@link AmazonS3Client} is provided with
-     * {@link #useClient(AmazonS3Client)}.
+     * underlying {@link AmazonS3} is provided with
+     * {@link #useClient(AmazonS3)}.
      *
      * @param region
      *            The region the returned {@link TransferManager} will be
      *            configured to use.
      * @return A transfer manager for the given region from the cache, or one
      *         instantiated automatically from any existing
-     *         {@link AmazonS3Client},
+     *         {@link AmazonS3},
      */
     public TransferManager getTransferManager(Region region) {
         synchronized (transferManagersByRegion) {

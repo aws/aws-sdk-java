@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class DiagnosticsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("errorCode", targetDepth)) {
                     context.nextToken();
-                    diagnostics.setErrorCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    diagnostics.setErrorCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("scriptName", targetDepth)) {
                     context.nextToken();
-                    diagnostics.setScriptName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    diagnostics.setScriptName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    diagnostics.setMessage(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    diagnostics.setMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("logTail", targetDepth)) {
                     context.nextToken();
-                    diagnostics.setLogTail(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    diagnostics.setLogTail(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -48,6 +48,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -59,6 +60,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -73,6 +75,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -85,6 +88,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The keys of the tags to remove.
      */
+
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
             tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -100,6 +104,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @param tagKeys
      *        The keys of the tags to remove.
      */
+
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
@@ -126,6 +131,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
             setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -147,6 +153,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagKeys(java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);
         return this;

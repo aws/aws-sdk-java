@@ -152,6 +152,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The ID that is assigned to the <code>Evaluation</code> at
      *        creation.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -164,6 +165,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The ID that is assigned to the <code>Evaluation</code> at
      *         creation.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -179,6 +181,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;
@@ -193,6 +196,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The ID of the <code>MLModel</code> that is the focus of the
      *        evaluation.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -205,6 +209,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The ID of the <code>MLModel</code> that is the focus of the
      *         evaluation.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -220,6 +225,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -235,6 +241,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The ID of the <code>DataSource</code> that is used to evaluate the
      *        <code>MLModel</code>.
      */
+
     public void setEvaluationDataSourceId(String evaluationDataSourceId) {
         this.evaluationDataSourceId = evaluationDataSourceId;
     }
@@ -248,6 +255,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The ID of the <code>DataSource</code> that is used to evaluate
      *         the <code>MLModel</code>.
      */
+
     public String getEvaluationDataSourceId() {
         return this.evaluationDataSourceId;
     }
@@ -264,6 +272,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withEvaluationDataSourceId(String evaluationDataSourceId) {
         setEvaluationDataSourceId(evaluationDataSourceId);
         return this;
@@ -279,6 +288,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The location and name of the data in Amazon Simple Storage Server
      *        (Amazon S3) that is used in the evaluation.
      */
+
     public void setInputDataLocationS3(String inputDataLocationS3) {
         this.inputDataLocationS3 = inputDataLocationS3;
     }
@@ -292,6 +302,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The location and name of the data in Amazon Simple Storage Server
      *         (Amazon S3) that is used in the evaluation.
      */
+
     public String getInputDataLocationS3() {
         return this.inputDataLocationS3;
     }
@@ -308,6 +319,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withInputDataLocationS3(String inputDataLocationS3) {
         setInputDataLocationS3(inputDataLocationS3);
         return this;
@@ -325,6 +337,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        can be either an AWS root account or an AWS Identity and Access
      *        Management (IAM) user account.
      */
+
     public void setCreatedByIamUser(String createdByIamUser) {
         this.createdByIamUser = createdByIamUser;
     }
@@ -340,6 +353,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         type can be either an AWS root account or an AWS Identity and
      *         Access Management (IAM) user account.
      */
+
     public String getCreatedByIamUser() {
         return this.createdByIamUser;
     }
@@ -358,6 +372,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withCreatedByIamUser(String createdByIamUser) {
         setCreatedByIamUser(createdByIamUser);
         return this;
@@ -373,6 +388,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The time that the <code>Evaluation</code> was created. The time is
      *        expressed in epoch time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -386,6 +402,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The time that the <code>Evaluation</code> was created. The time
      *         is expressed in epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -402,6 +419,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -417,6 +435,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        The time of the most recent edit to the <code>Evaluation</code>.
      *        The time is expressed in epoch time.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -430,6 +449,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return The time of the most recent edit to the <code>Evaluation</code>.
      *         The time is expressed in epoch time.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -446,6 +466,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -460,6 +481,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        A user-supplied name or description of the <code>Evaluation</code>
      *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -472,6 +494,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return A user-supplied name or description of the
      *         <code>Evaluation</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -487,6 +510,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withName(String name) {
         setName(name);
         return this;
@@ -524,6 +548,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -560,6 +585,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         as deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -598,6 +624,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public Evaluation withStatus(String status) {
         setStatus(status);
         return this;
@@ -633,10 +660,9 @@ public class Evaluation implements Serializable, Cloneable {
      *        successfully.</li>
      *        <li> <code>DELETED</code> - The <code>Evaluation</code> is marked
      *        as deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
+
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -675,6 +701,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public Evaluation withStatus(EntityStatus status) {
         setStatus(status);
         return this;
@@ -746,6 +773,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      */
+
     public void setPerformanceMetrics(PerformanceMetrics performanceMetrics) {
         this.performanceMetrics = performanceMetrics;
     }
@@ -815,6 +843,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         ="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *         Machine Learning Developer Guide</a>.
      */
+
     public PerformanceMetrics getPerformanceMetrics() {
         return this.performanceMetrics;
     }
@@ -887,6 +916,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withPerformanceMetrics(
             PerformanceMetrics performanceMetrics) {
         setPerformanceMetrics(performanceMetrics);
@@ -903,6 +933,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        A description of the most recent details about evaluating the
      *        <code>MLModel</code>.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -916,6 +947,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return A description of the most recent details about evaluating the
      *         <code>MLModel</code>.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -932,6 +964,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withMessage(String message) {
         setMessage(message);
         return this;

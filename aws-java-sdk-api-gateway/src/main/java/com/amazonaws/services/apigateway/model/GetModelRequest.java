@@ -56,6 +56,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier under which the <a>Model</a> exists.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -68,6 +69,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return The <a>RestApi</a> identifier under which the <a>Model</a>
      *         exists.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -82,6 +84,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -95,6 +98,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @param modelName
      *        The name of the model as an identifier.
      */
+
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
@@ -106,6 +110,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the model as an identifier.
      */
+
     public String getModelName() {
         return this.modelName;
     }
@@ -120,6 +125,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelRequest withModelName(String modelName) {
         setModelName(modelName);
         return this;
@@ -135,6 +141,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      *        Resolves all external model references and returns a flattened
      *        model schema.
      */
+
     public void setFlatten(Boolean flatten) {
         this.flatten = flatten;
     }
@@ -148,6 +155,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return Resolves all external model references and returns a flattened
      *         model schema.
      */
+
     public Boolean getFlatten() {
         return this.flatten;
     }
@@ -164,6 +172,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelRequest withFlatten(Boolean flatten) {
         setFlatten(flatten);
         return this;
@@ -178,6 +187,7 @@ public class GetModelRequest extends AmazonWebServiceRequest implements
      * @return Resolves all external model references and returns a flattened
      *         model schema.
      */
+
     public Boolean isFlatten() {
         return this.flatten;
     }

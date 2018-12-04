@@ -17,6 +17,8 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.services.s3.model.*;
+
 import static com.amazonaws.util.StringUtils.UTF8;
 
 import java.io.BufferedReader;
@@ -29,7 +31,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
@@ -45,53 +46,20 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+import com.amazonaws.services.s3.internal.S3VersionResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.services.s3.internal.ServiceUtils;
-import com.amazonaws.services.s3.model.AccessControlList;
-import com.amazonaws.services.s3.model.AmazonS3Exception;
-import com.amazonaws.services.s3.model.Bucket;
-import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.NoncurrentVersionTransition;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
-import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
-import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
-import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
-import com.amazonaws.services.s3.model.CanonicalGrantee;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
-import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.DeleteObjectsResult.DeletedObject;
-import com.amazonaws.services.s3.model.EmailAddressGrantee;
-import com.amazonaws.services.s3.model.Grantee;
-import com.amazonaws.services.s3.model.GroupGrantee;
-import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
-import com.amazonaws.services.s3.model.MultipartUpload;
-import com.amazonaws.services.s3.model.MultipartUploadListing;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.Owner;
-import com.amazonaws.services.s3.model.PartListing;
-import com.amazonaws.services.s3.model.PartSummary;
-import com.amazonaws.services.s3.model.Permission;
-import com.amazonaws.services.s3.model.RedirectRule;
-import com.amazonaws.services.s3.model.ReplicationDestinationConfig;
-import com.amazonaws.services.s3.model.ReplicationRule;
-import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RequestPaymentConfiguration.Payer;
-import com.amazonaws.services.s3.model.RoutingRule;
-import com.amazonaws.services.s3.model.RoutingRuleCondition;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
-import com.amazonaws.services.s3.model.S3VersionSummary;
-import com.amazonaws.services.s3.model.StorageClass;
-import com.amazonaws.services.s3.model.TagSet;
-import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.util.StringUtils;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -305,6 +273,23 @@ public class XmlResponsesSaxParser {
     }
 
     /**
+     * Parses a ListBucketV2 response XML document from an input stream.
+     *
+     * @param inputStream
+     *            XML data input stream.
+     * @return the XML handler object populated with data parsed from the XML
+     *         stream.
+     * @throws AmazonClientException
+     */
+    public ListObjectsV2Handler parseListObjectsV2Response(InputStream inputStream, final boolean shouldSDKDecodeResponse)
+            throws IOException {
+        ListObjectsV2Handler handler = new ListObjectsV2Handler(shouldSDKDecodeResponse);
+        parseXmlInputStream(handler, sanitizeXmlDocument(handler, inputStream));
+
+        return handler;
+    }
+
+    /**
      * Parses a ListVersions response XML document from an input stream.
      *
      * @param inputStream
@@ -418,6 +403,13 @@ public class XmlResponsesSaxParser {
     public BucketTaggingConfigurationHandler parseTaggingConfigurationResponse(InputStream inputStream)
             throws IOException {
         BucketTaggingConfigurationHandler handler = new BucketTaggingConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public BucketAccelerateConfigurationHandler parseAccelerateConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        BucketAccelerateConfigurationHandler handler = new BucketAccelerateConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -589,7 +581,7 @@ public class XmlResponsesSaxParser {
                             null : checkForEmptyString(getText()));
                 } else if (name.equals("IsTruncated")) {
                     String isTruncatedStr =
-                        getText().toLowerCase(Locale.getDefault());
+                        StringUtils.lowerCase(getText());
 
                     if (isTruncatedStr.startsWith("false")) {
                         objectListing.setTruncated(false);
@@ -644,6 +636,172 @@ public class XmlResponsesSaxParser {
             else if (in("ListBucketResult", "CommonPrefixes")) {
                 if (name.equals("Prefix")) {
                     objectListing.getCommonPrefixes().add
+                            (decodeIfSpecified(getText(), shouldSDKDecodeResponse));
+                }
+            }
+        }
+    }
+
+    /**
+     * Handler for ListObjectsV2 response XML documents.
+     */
+    public static class ListObjectsV2Handler extends AbstractHandler {
+        private final ListObjectsV2Result result = new ListObjectsV2Result();
+        private final boolean shouldSDKDecodeResponse;
+
+        private S3ObjectSummary currentObject = null;
+        private Owner currentOwner = null;
+        private String lastKey = null;
+
+        public ListObjectsV2Handler(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
+
+        public ListObjectsV2Result getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListBucketResult")) {
+                if (name.equals("Contents")) {
+                    currentObject = new S3ObjectSummary();
+                    currentObject.setBucketName(result.getBucketName());
+                }
+            }
+
+            else if (in("ListBucketResult", "Contents")) {
+                if (name.equals("Owner")) {
+                    currentOwner = new Owner();
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (atTopLevel()) {
+                if (name.equals("ListBucketResult")) {
+                    /*
+                     * S3 only includes the NextContinuationToken XML element if the
+                     * request specified a delimiter, but for consistency we'd
+                     * like to always give easy access to the next token if
+                     * we're returning a list of results that's truncated.
+                     */
+                    if (result.isTruncated()
+                            && result.getNextContinuationToken() == null) {
+
+                        String nextContinuationToken = null;
+                        if (!result.getObjectSummaries().isEmpty()) {
+                            nextContinuationToken = result.getObjectSummaries()
+                                    .get(result.getObjectSummaries().size() - 1)
+                                    .getKey();
+
+                        } else {
+                            log.error("S3 response indicates truncated results, "
+                                    + "but contains no object summaries.");
+                        }
+
+                        result.setNextContinuationToken(nextContinuationToken);
+                    }
+                }
+            }
+
+            else if (in("ListBucketResult")) {
+                if (name.equals("Name")) {
+                    result.setBucketName(getText());
+                    if (log.isDebugEnabled()) {
+                        log.debug("Examining listing for bucket: "
+                                + result.getBucketName());
+                    }
+
+                } else if (name.equals("Prefix")) {
+                    result.setPrefix(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
+
+                } else if (name.equals("MaxKeys")) {
+                    result.setMaxKeys(parseInt(getText()));
+
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+
+                } else if (name.equals("StartAfter")) {
+                    result.setStartAfter(decodeIfSpecified
+                            (getText(), shouldSDKDecodeResponse));
+
+                } else if (name.equals("KeyCount")) {
+                    result.setKeyCount(parseInt(getText()));
+
+                } else if (name.equals("Delimiter")) {
+                    result.setDelimiter(decodeIfSpecified
+                            (checkForEmptyString(getText()), shouldSDKDecodeResponse));
+
+                } else if (name.equals("EncodingType")) {
+                    result.setEncodingType(checkForEmptyString(getText()));
+                } else if (name.equals("IsTruncated")) {
+                    String isTruncatedStr =
+                            StringUtils.lowerCase(getText());
+
+                    if (isTruncatedStr.startsWith("false")) {
+                        result.setTruncated(false);
+                    } else if (isTruncatedStr.startsWith("true")) {
+                        result.setTruncated(true);
+                    } else {
+                        throw new IllegalStateException(
+                                "Invalid value for IsTruncated field: "
+                                        + isTruncatedStr);
+                    }
+
+                } else if (name.equals("Contents")) {
+                    result.getObjectSummaries().add(currentObject);
+                    currentObject = null;
+                }
+            }
+
+            else if (in("ListBucketResult", "Contents")) {
+                if (name.equals("Key")) {
+                    lastKey = getText();
+                    currentObject.setKey(decodeIfSpecified
+                            (lastKey, shouldSDKDecodeResponse));
+                } else if (name.equals("LastModified")) {
+                    currentObject.setLastModified(
+                            ServiceUtils.parseIso8601Date(getText()));
+
+                } else if (name.equals("ETag")) {
+                    currentObject.setETag(
+                            ServiceUtils.removeQuotes(getText()));
+
+                } else if (name.equals("Size")) {
+                    currentObject.setSize(parseLong(getText()));
+
+                } else if (name.equals("StorageClass")) {
+                    currentObject.setStorageClass(getText());
+
+                } else if (name.equals("Owner")) {
+                    currentObject.setOwner(currentOwner);
+                    currentOwner = null;
+                }
+            }
+
+            else if (in("ListBucketResult", "Contents", "Owner")) {
+                if (name.equals("ID")) {
+                    currentOwner.setId(getText());
+
+                } else if (name.equals("DisplayName")) {
+                    currentOwner.setDisplayName(getText());
+                }
+            }
+
+            else if (in("ListBucketResult", "CommonPrefixes")) {
+                if (name.equals("Prefix")) {
+                    result.getCommonPrefixes().add
                             (decodeIfSpecified(getText(), shouldSDKDecodeResponse));
                 }
             }
@@ -910,7 +1068,8 @@ public class XmlResponsesSaxParser {
         }
     }
 
-    public static class CopyObjectResultHandler extends AbstractSSEHandler implements ObjectExpirationResult {
+    public static class CopyObjectResultHandler extends AbstractSSEHandler
+            implements ObjectExpirationResult, S3RequesterChargedResult, S3VersionResult {
 
         // Data items for successful copy
         private final CopyObjectResult result = new CopyObjectResult();
@@ -931,10 +1090,12 @@ public class XmlResponsesSaxParser {
             return result.getLastModifiedDate();
         }
 
+        @Override
         public String getVersionId() {
             return result.getVersionId();
         }
 
+        @Override
         public void setVersionId(String versionId) {
             result.setVersionId(versionId);
         }
@@ -982,6 +1143,15 @@ public class XmlResponsesSaxParser {
         public boolean isErrorResponse() {
             return receivedErrorResponse;
         }
+
+        public boolean isRequesterCharged() {
+            return result.isRequesterCharged();
+        }
+
+        public void setRequesterCharged(boolean isRequesterCharged) {
+            result.setRequesterCharged(isRequesterCharged);
+        }
+
 
         @Override
         protected void doStartElement(
@@ -1352,6 +1522,31 @@ public class XmlResponsesSaxParser {
         }
     }
 
+    public static class BucketAccelerateConfigurationHandler extends AbstractHandler {
+
+        private final BucketAccelerateConfiguration configuration = new BucketAccelerateConfiguration((String) null);
+
+        public BucketAccelerateConfiguration getConfiguration() { return configuration; }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("AccelerateConfiguration")) {
+                if (name.equals("Status")) {
+                    configuration.setStatus(getText());
+                }
+            }
+        }
+    }
+
     /*
      * <?xml version="1.0" encoding="UTF-8"?>
      * <CompleteMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
@@ -1372,7 +1567,7 @@ public class XmlResponsesSaxParser {
      * </Error>
      */
     public static class CompleteMultipartUploadHandler extends AbstractSSEHandler
-            implements ObjectExpirationResult {
+            implements ObjectExpirationResult, S3VersionResult, S3RequesterChargedResult {
         // Successful completion
         private CompleteMultipartUploadResult result;
 
@@ -1419,6 +1614,34 @@ public class XmlResponsesSaxParser {
         public void setExpirationTimeRuleId(String expirationTimeRuleId) {
             if (result != null) {
                 result.setExpirationTimeRuleId(expirationTimeRuleId);
+            }
+        }
+
+        @Override
+        public void setVersionId(String versionId) {
+            if (result != null) {
+                result.setVersionId(versionId);
+            }
+        }
+
+        @Override
+        public String getVersionId() {
+            return result == null ? null : result.getVersionId();
+        }
+
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#isRequesterCharged()
+         */
+        public boolean isRequesterCharged() {
+            return result == null ? false : result.isRequesterCharged();
+        }
+
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setRequesterCharged(boolean)
+         */
+        public void setRequesterCharged(boolean isRequesterCharged) {
+            if (result != null) {
+                result.setRequesterCharged(isRequesterCharged);
             }
         }
 
@@ -2113,6 +2336,9 @@ public class XmlResponsesSaxParser {
          <Expiration>
              <Date>2020-12-31T00:00:00.000Z</Date>
          </Expiration>
+        <AbortIncompleteMultipartUpload>
+            <DaysAfterInitiation>10</DaysAfterInitiation>
+        </AbortIncompleteMultipartUpload>
      </Rule>
   </LifecycleConfiguration>
      */
@@ -2124,6 +2350,7 @@ public class XmlResponsesSaxParser {
         private Rule currentRule;
         private Transition currentTransition;
         private NoncurrentVersionTransition currentNcvTransition;
+        private AbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
 
         public BucketLifecycleConfiguration getConfiguration() {
             return configuration;
@@ -2145,6 +2372,9 @@ public class XmlResponsesSaxParser {
                     currentTransition = new Transition();
                 } else if (name.equals("NoncurrentVersionTransition")) {
                     currentNcvTransition = new NoncurrentVersionTransition();
+                } else if (name.equals("AbortIncompleteMultipartUpload")) {
+                    abortIncompleteMultipartUpload = new
+                            AbortIncompleteMultipartUpload();
                 }
             }
         }
@@ -2176,16 +2406,21 @@ public class XmlResponsesSaxParser {
                     currentRule.addNoncurrentVersionTransition(
                             currentNcvTransition);
                     currentNcvTransition = null;
+                } else if (name.equals("AbortIncompleteMultipartUpload")) {
+                    currentRule.setAbortIncompleteMultipartUpload(abortIncompleteMultipartUpload);
+                    abortIncompleteMultipartUpload = null;
                 }
             }
 
             else if (in("LifecycleConfiguration", "Rule", "Expiration")) {
                 if (name.equals("Date")) {
-                    currentRule.setExpirationDate(
-                            ServiceUtils.parseIso8601Date(getText()));
+                    currentRule.setExpirationDate(ServiceUtils.parseIso8601Date(getText()));
                 } else if (name.equals("Days")) {
-                    currentRule.setExpirationInDays(
-                            Integer.parseInt(getText()));
+                    currentRule.setExpirationInDays(Integer.parseInt(getText()));
+                } else if (name.equals("ExpiredObjectDeleteMarker")) {
+                    if ("true".equals(getText())) {
+                        currentRule.setExpiredObjectDeleteMarker(true);
+                    }
                 }
             }
 
@@ -2213,6 +2448,13 @@ public class XmlResponsesSaxParser {
                     currentNcvTransition.setStorageClass(getText());
                 } else if (name.equals("NoncurrentDays")) {
                     currentNcvTransition.setDays(Integer.parseInt(getText()));
+                }
+            }
+
+            else if (in("LifecycleConfiguration", "Rule", "AbortIncompleteMultipartUpload")) {
+                if (name.equals("DaysAfterInitiation")) {
+                    abortIncompleteMultipartUpload.setDaysAfterInitiation
+                            (Integer.parseInt(getText()));
                 }
             }
         }

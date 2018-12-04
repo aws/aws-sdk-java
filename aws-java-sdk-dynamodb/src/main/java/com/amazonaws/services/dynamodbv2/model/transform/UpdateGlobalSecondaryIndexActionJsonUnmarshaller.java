@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class UpdateGlobalSecondaryIndexActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
-                    updateGlobalSecondaryIndexAction
-                            .setIndexName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateGlobalSecondaryIndexAction.setIndexName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("ProvisionedThroughput", targetDepth)) {

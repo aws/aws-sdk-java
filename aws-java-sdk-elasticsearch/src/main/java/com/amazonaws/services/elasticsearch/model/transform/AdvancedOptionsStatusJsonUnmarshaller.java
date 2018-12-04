@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,8 +57,8 @@ public class AdvancedOptionsStatusJsonUnmarshaller implements
                     context.nextToken();
                     advancedOptionsStatus
                             .setOptions(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {

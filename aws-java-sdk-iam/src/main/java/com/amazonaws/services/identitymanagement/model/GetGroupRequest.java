@@ -29,6 +29,12 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String groupName;
     /**
@@ -72,7 +78,12 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * members.
      * 
      * @param groupName
-     *        The name of the group.
+     *        The name of the group.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public GetGroupRequest(String groupName) {
         setGroupName(groupName);
@@ -82,10 +93,22 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
-     *        The name of the group.
+     *        The name of the group.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -94,9 +117,21 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the group.
+     * @return The name of the group.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -105,12 +140,24 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the group.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
-     *        The name of the group.
+     *        The name of the group.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -130,6 +177,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -148,6 +196,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -168,6 +217,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -203,6 +253,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -237,6 +288,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -273,6 +325,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

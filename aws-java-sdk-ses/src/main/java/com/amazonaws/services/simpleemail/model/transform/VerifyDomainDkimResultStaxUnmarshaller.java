@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class VerifyDomainDkimResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("DkimTokens/member", targetDepth)) {
-                    verifyDomainDkimResult.getDkimTokens().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    verifyDomainDkimResult
+                            .withDkimTokens(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

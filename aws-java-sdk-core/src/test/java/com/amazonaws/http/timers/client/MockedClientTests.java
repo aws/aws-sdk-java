@@ -31,7 +31,7 @@ import static org.mockito.Mockito.doReturn;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
-import org.apache.http.client.HttpClient;
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.protocol.HttpContext;
 import org.junit.BeforeClass;
@@ -64,7 +64,7 @@ public class MockedClientTests {
             throws Exception {
         ClientConfiguration config = new ClientConfiguration().withClientExecutionTimeout(CLIENT_EXECUTION_TIMEOUT)
                 .withMaxErrorRetry(0);
-        HttpClient rawHttpClient = createRawHttpClientSpy(config);
+        ConnectionManagerAwareHttpClient rawHttpClient = createRawHttpClientSpy(config);
 
         HttpResponseProxy responseProxy = createHttpResponseProxySpy();
         doReturn(responseProxy).when(rawHttpClient).execute(any(HttpRequestBase.class), any(HttpContext.class));
@@ -91,7 +91,7 @@ public class MockedClientTests {
     @Test
     public void clientExecutionTimeoutDisabled_RequestCompletesWithinTimeout_EntityNotBuffered() throws Exception {
         ClientConfiguration config = new ClientConfiguration().withClientExecutionTimeout(0);
-        HttpClient rawHttpClient = createRawHttpClientSpy(config);
+        ConnectionManagerAwareHttpClient rawHttpClient = createRawHttpClientSpy(config);
 
         HttpResponseProxy responseProxy = createHttpResponseProxySpy();
         doReturn(responseProxy).when(rawHttpClient).execute(any(HttpRequestBase.class), any(HttpContext.class));
@@ -111,7 +111,7 @@ public class MockedClientTests {
     public void clientExecutionTimeoutEnabled_RequestCompletesWithinTimeout_EntityNotBufferedForStreamedResponse()
             throws Exception {
         ClientConfiguration config = new ClientConfiguration().withClientExecutionTimeout(CLIENT_EXECUTION_TIMEOUT);
-        HttpClient rawHttpClient = createRawHttpClientSpy(config);
+        ConnectionManagerAwareHttpClient rawHttpClient = createRawHttpClientSpy(config);
 
         HttpResponseProxy responseProxy = createHttpResponseProxySpy();
         doReturn(responseProxy).when(rawHttpClient).execute(any(HttpRequestBase.class), any(HttpContext.class));

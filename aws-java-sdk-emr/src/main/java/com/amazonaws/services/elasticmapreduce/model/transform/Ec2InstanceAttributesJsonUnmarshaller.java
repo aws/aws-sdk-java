@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,53 +55,52 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes.setEc2KeyName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ec2InstanceAttributes.setEc2KeyName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2SubnetId", targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes.setEc2SubnetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ec2InstanceAttributes.setEc2SubnetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes
-                            .setEc2AvailabilityZone(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    ec2InstanceAttributes.setEc2AvailabilityZone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfile", targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes
-                            .setIamInstanceProfile(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    ec2InstanceAttributes.setIamInstanceProfile(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("EmrManagedMasterSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes
-                            .setEmrManagedMasterSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEmrManagedMasterSecurityGroup(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("EmrManagedSlaveSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes
-                            .setEmrManagedSlaveSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEmrManagedSlaveSecurityGroup(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("ServiceAccessSecurityGroup",
                         targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes
-                            .setServiceAccessSecurityGroup(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    ec2InstanceAttributes.setServiceAccessSecurityGroup(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AdditionalMasterSecurityGroups",
                         targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes
                             .setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSlaveSecurityGroups",
@@ -107,7 +108,7 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements
                     context.nextToken();
                     ec2InstanceAttributes
                             .setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ModifyMountTargetSecurityGroupsRequest Marshaller
@@ -47,7 +49,14 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
         implements
         Marshaller<Request<ModifyMountTargetSecurityGroupsRequest>, ModifyMountTargetSecurityGroupsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ModifyMountTargetSecurityGroupsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ModifyMountTargetSecurityGroupsRequest> marshall(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
@@ -69,37 +78,36 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller
                 .replace(
                         "{MountTargetId}",
                         (modifyMountTargetSecurityGroupsRequest
-                                .getMountTargetId() == null) ? ""
-                                : StringUtils
+                                .getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(modifyMountTargetSecurityGroupsRequest
-                                                .getMountTargetId()));
+                                                .getMountTargetId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyMountTargetSecurityGroupsRequest
                     .getSecurityGroups();
             if (!securityGroupsList.isEmpty()
                     || !securityGroupsList.isAutoConstruct()) {
-                jsonWriter.key("SecurityGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SecurityGroups");
+                jsonGenerator.writeStartArray();
                 for (String securityGroupsListValue : securityGroupsList) {
                     if (securityGroupsListValue != null) {
-                        jsonWriter.value(securityGroupsListValue);
+                        jsonGenerator.writeValue(securityGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeTapeRecoveryPointsResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeTapeRecoveryPointsResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TapeRecoveryPointInfos",
                         targetDepth)) {
@@ -67,9 +68,8 @@ public class DescribeTapeRecoveryPointsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeTapeRecoveryPointsResult
-                            .setMarker(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeTapeRecoveryPointsResult.setMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

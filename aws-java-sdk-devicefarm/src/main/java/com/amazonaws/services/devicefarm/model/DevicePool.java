@@ -80,6 +80,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @param arn
      *        The device pool's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -91,6 +92,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @return The device pool's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -105,6 +107,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePool withArn(String arn) {
         setArn(arn);
         return this;
@@ -118,6 +121,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @param name
      *        The device pool's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -129,6 +133,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @return The device pool's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -143,6 +148,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePool withName(String name) {
         setName(name);
         return this;
@@ -156,6 +162,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @param description
      *        The device pool's description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -167,6 +174,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @return The device pool's description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -181,6 +189,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePool withDescription(String description) {
         setDescription(description);
         return this;
@@ -227,6 +236,7 @@ public class DevicePool implements Serializable, Cloneable {
      *        </li>
      * @see DevicePoolType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -271,6 +281,7 @@ public class DevicePool implements Serializable, Cloneable {
      *         </li>
      * @see DevicePoolType
      */
+
     public String getType() {
         return this.type;
     }
@@ -318,6 +329,7 @@ public class DevicePool implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePoolType
      */
+
     public DevicePool withType(String type) {
         setType(type);
         return this;
@@ -362,10 +374,9 @@ public class DevicePool implements Serializable, Cloneable {
      *        pool developer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DevicePoolType
      */
+
     public void setType(DevicePoolType type) {
         this.type = type.toString();
     }
@@ -413,6 +424,7 @@ public class DevicePool implements Serializable, Cloneable {
      *         chained together.
      * @see DevicePoolType
      */
+
     public DevicePool withType(DevicePoolType type) {
         setType(type);
         return this;
@@ -425,6 +437,7 @@ public class DevicePool implements Serializable, Cloneable {
      * 
      * @return Information about the device pool's rules.
      */
+
     public java.util.List<Rule> getRules() {
         return rules;
     }
@@ -437,6 +450,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @param rules
      *        Information about the device pool's rules.
      */
+
     public void setRules(java.util.Collection<Rule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -462,6 +476,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePool withRules(Rule... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<Rule>(rules.length));
@@ -482,6 +497,7 @@ public class DevicePool implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DevicePool withRules(java.util.Collection<Rule> rules) {
         setRules(rules);
         return this;

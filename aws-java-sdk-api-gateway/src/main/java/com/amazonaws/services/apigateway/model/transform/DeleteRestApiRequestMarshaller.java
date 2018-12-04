@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteRestApiRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteRestApiRequestMarshaller implements
         Marshaller<Request<DeleteRestApiRequest>, DeleteRestApiRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteRestApiRequest> marshall(
             DeleteRestApiRequest deleteRestApiRequest) {
@@ -65,9 +73,9 @@ public class DeleteRestApiRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteRestApiRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteRestApiRequest
-                                .getRestApiId()));
+                (deleteRestApiRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteRestApiRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

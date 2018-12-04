@@ -29,11 +29,23 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role associated with the policy.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String roleName;
     /**
      * <p>
      * The name of the policy document to get.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -42,10 +54,22 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role associated with the policy.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role associated with the policy.
+     *        The name of the role associated with the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -54,9 +78,21 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role associated with the policy.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the role associated with the policy.
+     * @return The name of the role associated with the policy.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -65,12 +101,24 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role associated with the policy.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role associated with the policy.
+     *        The name of the role associated with the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRolePolicyRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;
@@ -80,10 +128,22 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document to get.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name of the policy document to get.
+     *        The name of the policy document to get.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -92,9 +152,21 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document to get.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the policy document to get.
+     * @return The name of the policy document to get.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -103,12 +175,24 @@ public class GetRolePolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document to get.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name of the policy document to get.
+     *        The name of the policy document to get.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRolePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

@@ -47,6 +47,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      * @param options
      *        Specifies the EBS options for the specified Elasticsearch domain.
      */
+
     public void setOptions(EBSOptions options) {
         this.options = options;
     }
@@ -58,6 +59,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      * 
      * @return Specifies the EBS options for the specified Elasticsearch domain.
      */
+
     public EBSOptions getOptions() {
         return this.options;
     }
@@ -72,6 +74,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EBSOptionsStatus withOptions(EBSOptions options) {
         setOptions(options);
         return this;
@@ -87,6 +90,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      *        Specifies the status of the EBS options for the specified
      *        Elasticsearch domain.
      */
+
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
@@ -100,6 +104,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      * @return Specifies the status of the EBS options for the specified
      *         Elasticsearch domain.
      */
+
     public OptionStatus getStatus() {
         return this.status;
     }
@@ -116,6 +121,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EBSOptionsStatus withStatus(OptionStatus status) {
         setStatus(status);
         return this;

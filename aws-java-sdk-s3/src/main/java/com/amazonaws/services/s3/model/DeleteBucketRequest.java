@@ -23,12 +23,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * when empty.
  * </p>
  * <p>
- * Note: When attempting to delete a bucket that does not exist, 
+ * Note: When attempting to delete a bucket that does not exist,
  * Amazon S3 returns
  * a success message, not an error message.
  * </p>
  */
-public class DeleteBucketRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteBucketRequest extends AmazonWebServiceRequest implements
+        Serializable, S3AccelerateUnsupported {
 
     /**
      * The name of the Amazon S3 bucket to delete.
@@ -36,24 +37,24 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest implements Seri
     private String bucketName;
 
     /**
-     * Constructs a new {@link DeleteBucketRequest}, 
+     * Constructs a new {@link DeleteBucketRequest},
      * ready to be executed to delete the
      * specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket to delete.
      */
     public DeleteBucketRequest(String bucketName) {
         setBucketName(bucketName);
     }
-    
+
     /**
      * Sets the name of the Amazon S3 bucket to delete.
-     * 
-     * @param bucketName 
+     *
+     * @param bucketName
      *            The name of the Amazon S3 bucket to delete.
-     *            
-     * @see DeleteBucketRequest#getBucketName()          
+     *
+     * @see DeleteBucketRequest#getBucketName()
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -61,12 +62,12 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Gets the name of the Amazon S3 bucket to delete.
-     * 
+     *
      * @return The name of the Amazon S3 bucket to delete.
-     * 
+     *
      * @see DeleteBucketRequest#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
-    }    
+    }
 }

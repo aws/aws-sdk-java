@@ -47,6 +47,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * 
      * @return A list of <a>EventDescription</a>.
      */
+
     public java.util.List<EventDescription> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<EventDescription>();
@@ -62,6 +63,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * @param events
      *        A list of <a>EventDescription</a>.
      */
+
     public void setEvents(java.util.Collection<EventDescription> events) {
         if (events == null) {
             this.events = null;
@@ -88,6 +90,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventsResult withEvents(EventDescription... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<EventDescription>(
@@ -109,6 +112,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventsResult withEvents(
             java.util.Collection<EventDescription> events) {
         setEvents(events);
@@ -127,6 +131,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      *        Use this token in the next <a>DescribeEvents</a> call to get the
      *        next batch of events.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -142,6 +147,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      *         obtain. Use this token in the next <a>DescribeEvents</a> call to
      *         get the next batch of events.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -160,6 +166,7 @@ public class DescribeEventsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEventsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

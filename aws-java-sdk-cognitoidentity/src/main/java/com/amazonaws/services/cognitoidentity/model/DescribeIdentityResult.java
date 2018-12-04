@@ -49,6 +49,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -58,6 +59,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -70,6 +72,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityResult withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -82,6 +85,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return A set of optional name-value pairs that map provider names to
      *         provider tokens.
      */
+
     public java.util.List<String> getLogins() {
         return logins;
     }
@@ -94,6 +98,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      *        A set of optional name-value pairs that map provider names to
      *        provider tokens.
      */
+
     public void setLogins(java.util.Collection<String> logins) {
         if (logins == null) {
             this.logins = null;
@@ -119,6 +124,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityResult withLogins(String... logins) {
         if (this.logins == null) {
             setLogins(new java.util.ArrayList<String>(logins.length));
@@ -139,6 +145,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityResult withLogins(java.util.Collection<String> logins) {
         setLogins(logins);
         return this;
@@ -152,6 +159,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @param creationDate
      *        Date on which the identity was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -163,6 +171,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * 
      * @return Date on which the identity was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -177,6 +186,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityResult withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -190,6 +200,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @param lastModifiedDate
      *        Date on which the identity was last modified.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -201,6 +212,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * 
      * @return Date on which the identity was last modified.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -215,6 +227,7 @@ public class DescribeIdentityResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityResult withLastModifiedDate(
             java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);

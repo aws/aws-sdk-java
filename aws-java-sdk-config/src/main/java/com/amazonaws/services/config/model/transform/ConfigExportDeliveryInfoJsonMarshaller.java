@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ConfigExportDeliveryInfoMarshaller
@@ -39,49 +34,45 @@ import com.amazonaws.util.json.*;
 public class ConfigExportDeliveryInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConfigExportDeliveryInfo configExportDeliveryInfo,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (configExportDeliveryInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configExportDeliveryInfo.getLastStatus() != null) {
-                jsonWriter.key("lastStatus").value(
+                jsonGenerator.writeFieldName("lastStatus").writeValue(
                         configExportDeliveryInfo.getLastStatus());
             }
-
             if (configExportDeliveryInfo.getLastErrorCode() != null) {
-                jsonWriter.key("lastErrorCode").value(
+                jsonGenerator.writeFieldName("lastErrorCode").writeValue(
                         configExportDeliveryInfo.getLastErrorCode());
             }
-
             if (configExportDeliveryInfo.getLastErrorMessage() != null) {
-                jsonWriter.key("lastErrorMessage").value(
+                jsonGenerator.writeFieldName("lastErrorMessage").writeValue(
                         configExportDeliveryInfo.getLastErrorMessage());
             }
-
             if (configExportDeliveryInfo.getLastAttemptTime() != null) {
-                jsonWriter.key("lastAttemptTime").value(
+                jsonGenerator.writeFieldName("lastAttemptTime").writeValue(
                         configExportDeliveryInfo.getLastAttemptTime());
             }
-
             if (configExportDeliveryInfo.getLastSuccessfulTime() != null) {
-                jsonWriter.key("lastSuccessfulTime").value(
+                jsonGenerator.writeFieldName("lastSuccessfulTime").writeValue(
                         configExportDeliveryInfo.getLastSuccessfulTime());
             }
-
             if (configExportDeliveryInfo.getNextDeliveryTime() != null) {
-                jsonWriter.key("nextDeliveryTime").value(
+                jsonGenerator.writeFieldName("nextDeliveryTime").writeValue(
                         configExportDeliveryInfo.getNextDeliveryTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

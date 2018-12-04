@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,91 +55,87 @@ public class ConfigurationItemJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setAccountId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setAccountId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationItemCaptureTime",
                         targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setConfigurationItemCaptureTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setConfigurationItemCaptureTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("configurationItemStatus",
                         targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setConfigurationItemStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setConfigurationItemStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationStateId", targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setConfigurationStateId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setConfigurationStateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("configurationItemMD5Hash",
                         targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setConfigurationItemMD5Hash(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setConfigurationItemMD5Hash(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setResourceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceName", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setResourceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setResourceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("awsRegion", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setAwsRegion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setAwsRegion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setAvailabilityZone(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setAvailabilityZone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceCreationTime", targetDepth)) {
                     context.nextToken();
-                    configurationItem
-                            .setResourceCreationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationItem.setResourceCreationTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     configurationItem
                             .setTags(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("relatedEvents", targetDepth)) {
                     context.nextToken();
                     configurationItem
                             .setRelatedEvents(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("relationships", targetDepth)) {
@@ -149,8 +147,8 @@ public class ConfigurationItemJsonUnmarshaller implements
                 }
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();
-                    configurationItem.setConfiguration(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationItem.setConfiguration(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

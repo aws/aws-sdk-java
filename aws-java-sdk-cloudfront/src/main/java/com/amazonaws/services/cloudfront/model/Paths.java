@@ -38,6 +38,7 @@ public class Paths implements Serializable, Cloneable {
      * @param quantity
      *        The number of objects that you want to invalidate.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -47,6 +48,7 @@ public class Paths implements Serializable, Cloneable {
      * 
      * @return The number of objects that you want to invalidate.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -59,6 +61,7 @@ public class Paths implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Paths withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -71,6 +74,7 @@ public class Paths implements Serializable, Cloneable {
      * @return A complex type that contains a list of the objects that you want
      *         to invalidate.
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -86,6 +90,7 @@ public class Paths implements Serializable, Cloneable {
      *        A complex type that contains a list of the objects that you want
      *        to invalidate.
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -111,6 +116,7 @@ public class Paths implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Paths withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -132,6 +138,7 @@ public class Paths implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Paths withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;

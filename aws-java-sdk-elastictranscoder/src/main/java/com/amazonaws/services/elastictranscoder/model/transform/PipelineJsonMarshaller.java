@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PipelineMarshaller
@@ -39,70 +34,67 @@ import com.amazonaws.util.json.*;
 public class PipelineJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Pipeline pipeline, JSONWriter jsonWriter) {
+    public void marshall(Pipeline pipeline,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (pipeline == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (pipeline.getId() != null) {
-                jsonWriter.key("Id").value(pipeline.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(pipeline.getId());
             }
-
             if (pipeline.getArn() != null) {
-                jsonWriter.key("Arn").value(pipeline.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(
+                        pipeline.getArn());
             }
-
             if (pipeline.getName() != null) {
-                jsonWriter.key("Name").value(pipeline.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        pipeline.getName());
             }
-
             if (pipeline.getStatus() != null) {
-                jsonWriter.key("Status").value(pipeline.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        pipeline.getStatus());
             }
-
             if (pipeline.getInputBucket() != null) {
-                jsonWriter.key("InputBucket").value(pipeline.getInputBucket());
+                jsonGenerator.writeFieldName("InputBucket").writeValue(
+                        pipeline.getInputBucket());
             }
-
             if (pipeline.getOutputBucket() != null) {
-                jsonWriter.key("OutputBucket")
-                        .value(pipeline.getOutputBucket());
+                jsonGenerator.writeFieldName("OutputBucket").writeValue(
+                        pipeline.getOutputBucket());
             }
-
             if (pipeline.getRole() != null) {
-                jsonWriter.key("Role").value(pipeline.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(
+                        pipeline.getRole());
             }
-
             if (pipeline.getAwsKmsKeyArn() != null) {
-                jsonWriter.key("AwsKmsKeyArn")
-                        .value(pipeline.getAwsKmsKeyArn());
+                jsonGenerator.writeFieldName("AwsKmsKeyArn").writeValue(
+                        pipeline.getAwsKmsKeyArn());
             }
-
             if (pipeline.getNotifications() != null) {
-                jsonWriter.key("Notifications");
+                jsonGenerator.writeFieldName("Notifications");
                 NotificationsJsonMarshaller.getInstance().marshall(
-                        pipeline.getNotifications(), jsonWriter);
+                        pipeline.getNotifications(), jsonGenerator);
             }
-
             if (pipeline.getContentConfig() != null) {
-                jsonWriter.key("ContentConfig");
+                jsonGenerator.writeFieldName("ContentConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        pipeline.getContentConfig(), jsonWriter);
+                        pipeline.getContentConfig(), jsonGenerator);
             }
-
             if (pipeline.getThumbnailConfig() != null) {
-                jsonWriter.key("ThumbnailConfig");
+                jsonGenerator.writeFieldName("ThumbnailConfig");
                 PipelineOutputConfigJsonMarshaller.getInstance().marshall(
-                        pipeline.getThumbnailConfig(), jsonWriter);
+                        pipeline.getThumbnailConfig(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -37,8 +37,10 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteThingShadowRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteThingShadowRequestMarshaller implements
         Marshaller<Request<DeleteThingShadowRequest>, DeleteThingShadowRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteThingShadowRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteThingShadowRequest> marshall(
             DeleteThingShadowRequest deleteThingShadowRequest) {
@@ -63,11 +72,13 @@ public class DeleteThingShadowRequestMarshaller implements
 
         String uriResourcePath = "/things/{thingName}/shadow";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (deleteThingShadowRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(deleteThingShadowRequest
-                                .getThingName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{thingName}",
+                        (deleteThingShadowRequest.getThingName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteThingShadowRequest
+                                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

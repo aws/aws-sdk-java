@@ -27,7 +27,13 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user name that the new key will belong to.
+     * The name of the IAM user that the new key will belong to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -46,7 +52,12 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param userName
-     *        The user name that the new key will belong to.
+     *        The name of the IAM user that the new key will belong to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public CreateAccessKeyRequest(String userName) {
         setUserName(userName);
@@ -54,37 +65,73 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The user name that the new key will belong to.
+     * The name of the IAM user that the new key will belong to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The user name that the new key will belong to.
+     *        The name of the IAM user that the new key will belong to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
     /**
      * <p>
-     * The user name that the new key will belong to.
+     * The name of the IAM user that the new key will belong to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The user name that the new key will belong to.
+     * @return The name of the IAM user that the new key will belong to.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
 
     /**
      * <p>
-     * The user name that the new key will belong to.
+     * The name of the IAM user that the new key will belong to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The user name that the new key will belong to.
+     *        The name of the IAM user that the new key will belong to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAccessKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;

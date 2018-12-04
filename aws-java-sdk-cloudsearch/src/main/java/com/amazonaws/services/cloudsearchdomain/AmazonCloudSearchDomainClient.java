@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.services.cloudsearchdomain.model.transform.*;
@@ -60,6 +62,7 @@ import com.amazonaws.services.cloudsearchdomain.model.transform.*;
  * CloudSearch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         implements AmazonCloudSearchDomain {
     /** Provider for AWS credentials. */
@@ -75,10 +78,25 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "cloudsearchdomain";
 
     /**
-     * List of exception unmarshallers for all Amazon CloudSearch Domain
-     * exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SearchException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudsearchdomain.model.SearchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch
@@ -98,8 +116,8 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudSearchDomainClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -141,8 +159,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonCloudSearchDomainClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -184,8 +201,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
      */
     public AmazonCloudSearchDomainClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -240,17 +256,6 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudsearchdomain.model.SearchException.class,
-                        "SearchException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException.class,
-                        "DocumentServiceException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -316,17 +321,19 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchRequestMarshaller().marshall(super
-                        .beforeMarshalling(searchRequest));
+                request = new SearchRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SearchResult> responseHandler = new JsonResponseHandler<SearchResult>(
-                    new SearchResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SearchResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SearchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -383,17 +390,19 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SuggestRequestMarshaller().marshall(super
-                        .beforeMarshalling(suggestRequest));
+                request = new SuggestRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(suggestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SuggestResult> responseHandler = new JsonResponseHandler<SuggestResult>(
-                    new SuggestResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SuggestResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SuggestResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -459,17 +468,20 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadDocumentsRequestMarshaller().marshall(super
-                        .beforeMarshalling(uploadDocumentsRequest));
+                request = new UploadDocumentsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(uploadDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UploadDocumentsResult> responseHandler = new JsonResponseHandler<UploadDocumentsResult>(
-                    new UploadDocumentsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UploadDocumentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UploadDocumentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -503,33 +515,48 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

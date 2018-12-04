@@ -73,6 +73,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @param bundleId
      *        The bundle identifier.
      */
+
     public void setBundleId(String bundleId) {
         this.bundleId = bundleId;
     }
@@ -84,6 +85,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @return The bundle identifier.
      */
+
     public String getBundleId() {
         return this.bundleId;
     }
@@ -98,6 +100,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withBundleId(String bundleId) {
         setBundleId(bundleId);
         return this;
@@ -111,6 +114,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @param name
      *        The name of the bundle.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -122,6 +126,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @return The name of the bundle.
      */
+
     public String getName() {
         return this.name;
     }
@@ -136,6 +141,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withName(String name) {
         setName(name);
         return this;
@@ -152,6 +158,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      *        identifier, or <code>AMAZON</code> if the bundle is provided by
      *        AWS.
      */
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -166,6 +173,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      *         identifier, or <code>AMAZON</code> if the bundle is provided by
      *         AWS.
      */
+
     public String getOwner() {
         return this.owner;
     }
@@ -183,6 +191,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withOwner(String owner) {
         setOwner(owner);
         return this;
@@ -196,6 +205,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @param description
      *        The bundle description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -207,6 +217,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * 
      * @return The bundle description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -221,6 +232,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withDescription(String description) {
         setDescription(description);
         return this;
@@ -236,6 +248,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      *        A <a>UserStorage</a> object that specifies the amount of user
      *        storage that the bundle contains.
      */
+
     public void setUserStorage(UserStorage userStorage) {
         this.userStorage = userStorage;
     }
@@ -249,6 +262,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return A <a>UserStorage</a> object that specifies the amount of user
      *         storage that the bundle contains.
      */
+
     public UserStorage getUserStorage() {
         return this.userStorage;
     }
@@ -265,6 +279,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withUserStorage(UserStorage userStorage) {
         setUserStorage(userStorage);
         return this;
@@ -280,6 +295,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      *        A <a>ComputeType</a> object that specifies the compute type for
      *        the bundle.
      */
+
     public void setComputeType(ComputeType computeType) {
         this.computeType = computeType;
     }
@@ -293,6 +309,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return A <a>ComputeType</a> object that specifies the compute type for
      *         the bundle.
      */
+
     public ComputeType getComputeType() {
         return this.computeType;
     }
@@ -309,6 +326,7 @@ public class WorkspaceBundle implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceBundle withComputeType(ComputeType computeType) {
         setComputeType(computeType);
         return this;

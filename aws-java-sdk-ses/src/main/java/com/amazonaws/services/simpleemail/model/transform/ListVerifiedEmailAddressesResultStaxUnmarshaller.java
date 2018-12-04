@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,8 @@ public class ListVerifiedEmailAddressesResultStaxUnmarshaller implements
                 if (context.testExpression("VerifiedEmailAddresses/member",
                         targetDepth)) {
                     listVerifiedEmailAddressesResult
-                            .getVerifiedEmailAddresses().add(
-                                    StringStaxUnmarshaller.getInstance()
-                                            .unmarshall(context));
+                            .withVerifiedEmailAddresses(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

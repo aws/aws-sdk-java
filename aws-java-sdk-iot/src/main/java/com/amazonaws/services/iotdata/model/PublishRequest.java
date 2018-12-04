@@ -54,6 +54,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param topic
      *        The name of the MQTT topic.
      */
+
     public void setTopic(String topic) {
         this.topic = topic;
     }
@@ -65,6 +66,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the MQTT topic.
      */
+
     public String getTopic() {
         return this.topic;
     }
@@ -79,6 +81,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withTopic(String topic) {
         setTopic(topic);
         return this;
@@ -92,6 +95,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @param qos
      *        The Quality of Service (QoS) level.
      */
+
     public void setQos(Integer qos) {
         this.qos = qos;
     }
@@ -103,6 +107,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Quality of Service (QoS) level.
      */
+
     public Integer getQos() {
         return this.qos;
     }
@@ -117,6 +122,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withQos(Integer qos) {
         setQos(qos);
         return this;
@@ -131,10 +137,19 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param payload
      *        The state information, in JSON format.
      */
+
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
@@ -156,6 +171,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * 
      * @return The state information, in JSON format.
      */
+
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
@@ -170,6 +186,7 @@ public class PublishRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishRequest withPayload(java.nio.ByteBuffer payload) {
         setPayload(payload);
         return this;

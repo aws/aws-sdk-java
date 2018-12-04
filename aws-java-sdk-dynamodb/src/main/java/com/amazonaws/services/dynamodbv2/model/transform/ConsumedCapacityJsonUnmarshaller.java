@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ConsumedCapacityJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    consumedCapacity.setTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    consumedCapacity.setTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CapacityUnits", targetDepth)) {
                     context.nextToken();
-                    consumedCapacity.setCapacityUnits(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    consumedCapacity.setCapacityUnits(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
                 if (context.testExpression("Table", targetDepth)) {
                     context.nextToken();
@@ -71,7 +73,7 @@ public class ConsumedCapacityJsonUnmarshaller implements
                     context.nextToken();
                     consumedCapacity
                             .setLocalSecondaryIndexes(new MapUnmarshaller<String, Capacity>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     CapacityJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }
@@ -80,7 +82,7 @@ public class ConsumedCapacityJsonUnmarshaller implements
                     context.nextToken();
                     consumedCapacity
                             .setGlobalSecondaryIndexes(new MapUnmarshaller<String, Capacity>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     CapacityJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }

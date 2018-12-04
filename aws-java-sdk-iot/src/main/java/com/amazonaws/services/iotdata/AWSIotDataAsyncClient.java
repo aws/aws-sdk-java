@@ -16,6 +16,7 @@
 package com.amazonaws.services.iotdata;
 
 import com.amazonaws.services.iotdata.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS IoT Data Plane asynchronously. Each asynchronous
@@ -23,10 +24,7 @@ import com.amazonaws.services.iotdata.model.*;
  * operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or
@@ -36,6 +34,7 @@ import com.amazonaws.services.iotdata.model.*;
  * things and their state in the AWS cloud.
  * </p>
  */
+@ThreadSafe
 public class AWSIotDataAsyncClient extends AWSIotDataClient implements
         AWSIotDataAsync {
 
@@ -135,8 +134,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -228,9 +226,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -339,25 +335,25 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(PublishRequest request) {
+    public java.util.concurrent.Future<PublishResult> publishAsync(
+            PublishRequest request) {
 
         return publishAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> publishAsync(
+    public java.util.concurrent.Future<PublishResult> publishAsync(
             final PublishRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PublishRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PublishResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PublishResult call() throws Exception {
+                        PublishResult result;
 
                         try {
-                            publish(request);
-                            result = null;
+                            result = publish(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

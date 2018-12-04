@@ -40,6 +40,7 @@ public class Instance implements Serializable, Cloneable {
      * @param id
      *        The ID of the Amazon EC2 instance.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -51,6 +52,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The ID of the Amazon EC2 instance.
      */
+
     public String getId() {
         return this.id;
     }
@@ -65,6 +67,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withId(String id) {
         setId(id);
         return this;

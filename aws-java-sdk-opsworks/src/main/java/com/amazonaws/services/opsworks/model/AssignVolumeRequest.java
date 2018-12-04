@@ -46,6 +46,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * @param volumeId
      *        The volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -57,6 +58,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -71,6 +73,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;
@@ -84,6 +87,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -95,6 +99,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -109,6 +114,7 @@ public class AssignVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignVolumeRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

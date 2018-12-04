@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,77 +55,76 @@ public class VideoParametersJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Codec", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setCodec(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setCodec(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CodecOptions", targetDepth)) {
                     context.nextToken();
                     videoParameters
                             .setCodecOptions(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("KeyframesMaxDist", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setKeyframesMaxDist(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setKeyframesMaxDist(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FixedGOP", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setFixedGOP(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setFixedGOP(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BitRate", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setBitRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setBitRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setFrameRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setFrameRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxFrameRate", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setMaxFrameRate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setMaxFrameRate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setResolution(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setResolution(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setAspectRatio(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setAspectRatio(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setMaxWidth(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setMaxWidth(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setMaxHeight(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setMaxHeight(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayAspectRatio", targetDepth)) {
                     context.nextToken();
-                    videoParameters
-                            .setDisplayAspectRatio(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    videoParameters.setDisplayAspectRatio(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setSizingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setSizingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
                     context.nextToken();
-                    videoParameters.setPaddingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    videoParameters.setPaddingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();

@@ -42,6 +42,7 @@ public class DeleteDirectoryRequest extends AmazonWebServiceRequest implements
      * @param directoryId
      *        The identifier of the directory to delete.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -53,6 +54,7 @@ public class DeleteDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the directory to delete.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -67,6 +69,7 @@ public class DeleteDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDirectoryRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;

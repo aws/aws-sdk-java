@@ -54,6 +54,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      *        Specifies whether to insert or delete a <a>ByteMatchTuple</a>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -66,6 +67,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      * @return Specifies whether to insert or delete a <a>ByteMatchTuple</a>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -81,6 +83,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public ByteMatchSetUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -93,10 +96,9 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      * 
      * @param action
      *        Specifies whether to insert or delete a <a>ByteMatchTuple</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -112,6 +114,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public ByteMatchSetUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -135,6 +138,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      *        exactly match the values in the <code>ByteMatchTuple</code> that
      *        you want to delete from the <code>ByteMatchSet</code>.
      */
+
     public void setByteMatchTuple(ByteMatchTuple byteMatchTuple) {
         this.byteMatchTuple = byteMatchTuple;
     }
@@ -156,6 +160,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      *         exactly match the values in the <code>ByteMatchTuple</code> that
      *         you want to delete from the <code>ByteMatchSet</code>.
      */
+
     public ByteMatchTuple getByteMatchTuple() {
         return this.byteMatchTuple;
     }
@@ -180,6 +185,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ByteMatchSetUpdate withByteMatchTuple(ByteMatchTuple byteMatchTuple) {
         setByteMatchTuple(byteMatchTuple);
         return this;

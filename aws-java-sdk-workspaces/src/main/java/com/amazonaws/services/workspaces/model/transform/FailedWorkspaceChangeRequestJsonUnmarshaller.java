@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class FailedWorkspaceChangeRequestJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("WorkspaceId", targetDepth)) {
                     context.nextToken();
-                    failedWorkspaceChangeRequest
-                            .setWorkspaceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    failedWorkspaceChangeRequest.setWorkspaceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    failedWorkspaceChangeRequest
-                            .setErrorCode(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    failedWorkspaceChangeRequest.setErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    failedWorkspaceChangeRequest
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    failedWorkspaceChangeRequest.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DevicePoolMarshaller
@@ -39,49 +34,51 @@ import com.amazonaws.util.json.*;
 public class DevicePoolJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DevicePool devicePool, JSONWriter jsonWriter) {
+    public void marshall(DevicePool devicePool,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (devicePool == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (devicePool.getArn() != null) {
-                jsonWriter.key("arn").value(devicePool.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        devicePool.getArn());
             }
-
             if (devicePool.getName() != null) {
-                jsonWriter.key("name").value(devicePool.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        devicePool.getName());
             }
-
             if (devicePool.getDescription() != null) {
-                jsonWriter.key("description")
-                        .value(devicePool.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        devicePool.getDescription());
             }
-
             if (devicePool.getType() != null) {
-                jsonWriter.key("type").value(devicePool.getType());
+                jsonGenerator.writeFieldName("type").writeValue(
+                        devicePool.getType());
             }
 
             java.util.List<Rule> rulesList = devicePool.getRules();
             if (rulesList != null) {
-                jsonWriter.key("rules");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("rules");
+                jsonGenerator.writeStartArray();
                 for (Rule rulesListValue : rulesList) {
                     if (rulesListValue != null) {
 
                         RuleJsonMarshaller.getInstance().marshall(
-                                rulesListValue, jsonWriter);
+                                rulesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

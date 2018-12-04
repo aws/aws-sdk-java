@@ -82,11 +82,11 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyState;
@@ -107,6 +107,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @param aWSAccountId
      *        The twelve-digit account ID of the AWS account that owns the key.
      */
+
     public void setAWSAccountId(String aWSAccountId) {
         this.aWSAccountId = aWSAccountId;
     }
@@ -118,6 +119,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * 
      * @return The twelve-digit account ID of the AWS account that owns the key.
      */
+
     public String getAWSAccountId() {
         return this.aWSAccountId;
     }
@@ -132,6 +134,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withAWSAccountId(String aWSAccountId) {
         setAWSAccountId(aWSAccountId);
         return this;
@@ -145,6 +148,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @param keyId
      *        The globally unique identifier for the key.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -156,6 +160,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * 
      * @return The globally unique identifier for the key.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -170,6 +175,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -190,6 +196,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        >AWS Key Management Service (AWS KMS)</a> in the Example ARNs
      *        section of the <i>AWS General Reference</i>.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -208,6 +215,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         >AWS Key Management Service (AWS KMS)</a> in the Example ARNs
      *         section of the <i>AWS General Reference</i>.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -229,6 +237,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withArn(String arn) {
         setArn(arn);
         return this;
@@ -242,6 +251,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time when the key was created.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -253,6 +263,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * 
      * @return The date and time when the key was created.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -267,6 +278,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -282,6 +294,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        Specifies whether the key is enabled. When <code>KeyState</code>
      *        is <code>Enabled</code> this value is true, otherwise it is false.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -296,6 +309,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         is <code>Enabled</code> this value is true, otherwise it is
      *         false.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -312,6 +326,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -327,6 +342,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         is <code>Enabled</code> this value is true, otherwise it is
      *         false.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -339,6 +355,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @param description
      *        The friendly description of the key.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -350,6 +367,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * 
      * @return The friendly description of the key.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -364,6 +382,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withDescription(String description) {
         setDescription(description);
         return this;
@@ -383,6 +402,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        <a>Decrypt</a> operations.
      * @see KeyUsageType
      */
+
     public void setKeyUsage(String keyUsage) {
         this.keyUsage = keyUsage;
     }
@@ -400,6 +420,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         <a>Decrypt</a> operations.
      * @see KeyUsageType
      */
+
     public String getKeyUsage() {
         return this.keyUsage;
     }
@@ -420,6 +441,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see KeyUsageType
      */
+
     public KeyMetadata withKeyUsage(String keyUsage) {
         setKeyUsage(keyUsage);
         return this;
@@ -437,10 +459,9 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        Currently the only allowed value is <code>ENCRYPT_DECRYPT</code>,
      *        which means you can use the key for the <a>Encrypt</a> and
      *        <a>Decrypt</a> operations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyUsageType
      */
+
     public void setKeyUsage(KeyUsageType keyUsage) {
         this.keyUsage = keyUsage.toString();
     }
@@ -461,6 +482,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see KeyUsageType
      */
+
     public KeyMetadata withKeyUsage(KeyUsageType keyUsage) {
         setKeyUsage(keyUsage);
         return this;
@@ -471,23 +493,24 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
+
     public void setKeyState(String keyState) {
         this.keyState = keyState;
     }
@@ -497,22 +520,23 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The state of the customer master key (CMK).</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         CMK, go to <a href=
+     *         CMK, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
+
     public String getKeyState() {
         return this.keyState;
     }
@@ -522,18 +546,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
@@ -541,6 +565,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see KeyState
      */
+
     public KeyMetadata withKeyState(String keyState) {
         setKeyState(keyState);
         return this;
@@ -551,25 +576,24 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyState
      */
+
     public void setKeyState(KeyState keyState) {
         this.keyState = keyState.toString();
     }
@@ -579,18 +603,18 @@ public class KeyMetadata implements Serializable, Cloneable {
      * The state of the customer master key (CMK).
      * </p>
      * <p>
-     * For more information about how key state affects the use of a CMK, go to
-     * <a href=
-     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-     * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-     * Management Service Developer Guide</i>.
+     * For more information about how key state affects the use of a CMK, see <a
+     * href
+     * ="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
+     * >How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
      *        The state of the customer master key (CMK).</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK,
-     *        go to <a href=
+     *        see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *        >How Key State Affects the Use of a Customer Master Key</a> in the
      *        <i>AWS Key Management Service Developer Guide</i>.
@@ -598,6 +622,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see KeyState
      */
+
     public KeyMetadata withKeyState(KeyState keyState) {
         setKeyState(keyState);
         return this;
@@ -615,6 +640,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *        key (CMK). This value is present only when <code>KeyState</code>
      *        is <code>PendingDeletion</code>, otherwise this value is null.
      */
+
     public void setDeletionDate(java.util.Date deletionDate) {
         this.deletionDate = deletionDate;
     }
@@ -630,6 +656,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      *         key (CMK). This value is present only when <code>KeyState</code>
      *         is <code>PendingDeletion</code>, otherwise this value is null.
      */
+
     public java.util.Date getDeletionDate() {
         return this.deletionDate;
     }
@@ -648,6 +675,7 @@ public class KeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyMetadata withDeletionDate(java.util.Date deletionDate) {
         setDeletionDate(deletionDate);
         return this;

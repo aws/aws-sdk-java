@@ -47,6 +47,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -58,6 +59,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -72,6 +74,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialsForIdentityResult withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -85,6 +88,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * @param credentials
      *        Credentials for the provided identity ID.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -96,6 +100,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * 
      * @return Credentials for the provided identity ID.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -110,6 +115,7 @@ public class GetCredentialsForIdentityResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialsForIdentityResult withCredentials(
             Credentials credentials) {
         setCredentials(credentials);

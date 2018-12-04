@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateHealthCheckRequest Marshaller
@@ -56,11 +59,14 @@ public class UpdateHealthCheckRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (updateHealthCheckRequest.getHealthCheckId() == null) ? ""
-                        : StringUtils.fromString(updateHealthCheckRequest
-                                .getHealthCheckId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{HealthCheckId}",
+                        (updateHealthCheckRequest.getHealthCheckId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateHealthCheckRequest
+                                                .getHealthCheckId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
@@ -144,6 +150,54 @@ public class UpdateHealthCheckRequestMarshaller implements
                         xmlWriter.endElement();
                     }
                     xmlWriter.endElement();
+                }
+
+                if (updateHealthCheckRequest.getEnableSNI() != null) {
+                    xmlWriter.startElement("EnableSNI")
+                            .value(updateHealthCheckRequest.getEnableSNI())
+                            .endElement();
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> updateHealthCheckRequestRegionsList = (com.amazonaws.internal.SdkInternalList<String>) updateHealthCheckRequest
+                        .getRegions();
+                if (!updateHealthCheckRequestRegionsList.isEmpty()
+                        || !updateHealthCheckRequestRegionsList
+                                .isAutoConstruct()) {
+                    xmlWriter.startElement("Regions");
+
+                    for (String updateHealthCheckRequestRegionsListValue : updateHealthCheckRequestRegionsList) {
+                        xmlWriter.startElement("Region");
+                        xmlWriter
+                                .value(updateHealthCheckRequestRegionsListValue);
+                        xmlWriter.endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                AlarmIdentifier alarmIdentifier = updateHealthCheckRequest
+                        .getAlarmIdentifier();
+                if (alarmIdentifier != null) {
+                    xmlWriter.startElement("AlarmIdentifier");
+
+                    if (alarmIdentifier.getRegion() != null) {
+                        xmlWriter.startElement("Region")
+                                .value(alarmIdentifier.getRegion())
+                                .endElement();
+                    }
+
+                    if (alarmIdentifier.getName() != null) {
+                        xmlWriter.startElement("Name")
+                                .value(alarmIdentifier.getName()).endElement();
+                    }
+                    xmlWriter.endElement();
+                }
+
+                if (updateHealthCheckRequest.getInsufficientDataHealthStatus() != null) {
+                    xmlWriter
+                            .startElement("InsufficientDataHealthStatus")
+                            .value(updateHealthCheckRequest
+                                    .getInsufficientDataHealthStatus())
+                            .endElement();
                 }
             }
             xmlWriter.endElement();

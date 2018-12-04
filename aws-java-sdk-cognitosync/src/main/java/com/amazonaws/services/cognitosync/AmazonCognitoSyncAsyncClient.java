@@ -16,6 +16,7 @@
 package com.amazonaws.services.cognitosync;
 
 import com.amazonaws.services.cognitosync.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Cognito Sync asynchronously. Each asynchronous
@@ -52,6 +53,7 @@ import com.amazonaws.services.cognitosync.model.*;
  * >Developer Guide for iOS</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
         implements AmazonCognitoSyncAsync {
 
@@ -151,8 +153,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -244,9 +245,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -707,26 +706,25 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    public java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             SetCognitoEventsRequest request) {
 
         return setCognitoEventsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setCognitoEventsAsync(
+    public java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(
             final SetCognitoEventsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetCognitoEventsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetCognitoEventsResult call() throws Exception {
+                        SetCognitoEventsResult result;
 
                         try {
-                            setCognitoEvents(request);
-                            result = null;
+                            result = setCognitoEvents(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

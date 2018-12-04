@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListTagsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ListTagsRequestMarshaller implements
         Marshaller<Request<ListTagsRequest>, ListTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListTagsRequest> marshall(ListTagsRequest listTagsRequest) {
 
@@ -64,10 +72,9 @@ public class ListTagsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String aRN = (listTagsRequest.getARN() == null) ? null : StringUtils
-                .fromString(listTagsRequest.getARN());
-        if (aRN != null) {
-            request.addParameter("arn", aRN);
+        if (listTagsRequest.getARN() != null) {
+            request.addParameter("arn",
+                    StringUtils.fromString(listTagsRequest.getARN()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

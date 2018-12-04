@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DirectoryLimitsMarshaller
@@ -39,63 +34,78 @@ import com.amazonaws.util.json.*;
 public class DirectoryLimitsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DirectoryLimits directoryLimits, JSONWriter jsonWriter) {
+    public void marshall(DirectoryLimits directoryLimits,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (directoryLimits == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (directoryLimits.getCloudOnlyDirectoriesLimit() != null) {
-                jsonWriter.key("CloudOnlyDirectoriesLimit").value(
-                        directoryLimits.getCloudOnlyDirectoriesLimit());
+                jsonGenerator.writeFieldName("CloudOnlyDirectoriesLimit")
+                        .writeValue(
+                                directoryLimits.getCloudOnlyDirectoriesLimit());
             }
-
             if (directoryLimits.getCloudOnlyDirectoriesCurrentCount() != null) {
-                jsonWriter.key("CloudOnlyDirectoriesCurrentCount").value(
-                        directoryLimits.getCloudOnlyDirectoriesCurrentCount());
+                jsonGenerator
+                        .writeFieldName("CloudOnlyDirectoriesCurrentCount")
+                        .writeValue(
+                                directoryLimits
+                                        .getCloudOnlyDirectoriesCurrentCount());
             }
-
             if (directoryLimits.getCloudOnlyDirectoriesLimitReached() != null) {
-                jsonWriter.key("CloudOnlyDirectoriesLimitReached").value(
-                        directoryLimits.getCloudOnlyDirectoriesLimitReached());
+                jsonGenerator
+                        .writeFieldName("CloudOnlyDirectoriesLimitReached")
+                        .writeValue(
+                                directoryLimits
+                                        .getCloudOnlyDirectoriesLimitReached());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADLimit() != null) {
-                jsonWriter.key("CloudOnlyMicrosoftADLimit").value(
-                        directoryLimits.getCloudOnlyMicrosoftADLimit());
+                jsonGenerator.writeFieldName("CloudOnlyMicrosoftADLimit")
+                        .writeValue(
+                                directoryLimits.getCloudOnlyMicrosoftADLimit());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADCurrentCount() != null) {
-                jsonWriter.key("CloudOnlyMicrosoftADCurrentCount").value(
-                        directoryLimits.getCloudOnlyMicrosoftADCurrentCount());
+                jsonGenerator
+                        .writeFieldName("CloudOnlyMicrosoftADCurrentCount")
+                        .writeValue(
+                                directoryLimits
+                                        .getCloudOnlyMicrosoftADCurrentCount());
             }
-
             if (directoryLimits.getCloudOnlyMicrosoftADLimitReached() != null) {
-                jsonWriter.key("CloudOnlyMicrosoftADLimitReached").value(
-                        directoryLimits.getCloudOnlyMicrosoftADLimitReached());
+                jsonGenerator
+                        .writeFieldName("CloudOnlyMicrosoftADLimitReached")
+                        .writeValue(
+                                directoryLimits
+                                        .getCloudOnlyMicrosoftADLimitReached());
             }
-
             if (directoryLimits.getConnectedDirectoriesLimit() != null) {
-                jsonWriter.key("ConnectedDirectoriesLimit").value(
-                        directoryLimits.getConnectedDirectoriesLimit());
+                jsonGenerator.writeFieldName("ConnectedDirectoriesLimit")
+                        .writeValue(
+                                directoryLimits.getConnectedDirectoriesLimit());
             }
-
             if (directoryLimits.getConnectedDirectoriesCurrentCount() != null) {
-                jsonWriter.key("ConnectedDirectoriesCurrentCount").value(
-                        directoryLimits.getConnectedDirectoriesCurrentCount());
+                jsonGenerator
+                        .writeFieldName("ConnectedDirectoriesCurrentCount")
+                        .writeValue(
+                                directoryLimits
+                                        .getConnectedDirectoriesCurrentCount());
             }
-
             if (directoryLimits.getConnectedDirectoriesLimitReached() != null) {
-                jsonWriter.key("ConnectedDirectoriesLimitReached").value(
-                        directoryLimits.getConnectedDirectoriesLimitReached());
+                jsonGenerator
+                        .writeFieldName("ConnectedDirectoriesLimitReached")
+                        .writeValue(
+                                directoryLimits
+                                        .getConnectedDirectoriesLimitReached());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

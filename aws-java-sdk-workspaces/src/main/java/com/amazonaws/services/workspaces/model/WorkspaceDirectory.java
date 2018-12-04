@@ -114,6 +114,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @param directoryId
      *        The directory identifier.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -125,6 +126,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @return The directory identifier.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -139,6 +141,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -152,6 +155,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @param alias
      *        The directory alias.
      */
+
     public void setAlias(String alias) {
         this.alias = alias;
     }
@@ -163,6 +167,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @return The directory alias.
      */
+
     public String getAlias() {
         return this.alias;
     }
@@ -177,6 +182,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withAlias(String alias) {
         setAlias(alias);
         return this;
@@ -190,6 +196,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @param directoryName
      *        The name of the directory.
      */
+
     public void setDirectoryName(String directoryName) {
         this.directoryName = directoryName;
     }
@@ -201,6 +208,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @return The name of the directory.
      */
+
     public String getDirectoryName() {
         return this.directoryName;
     }
@@ -215,6 +223,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withDirectoryName(String directoryName) {
         setDirectoryName(directoryName);
         return this;
@@ -232,6 +241,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        users enter in their Amazon WorkSpaces client application to
      *        connect to the directory.
      */
+
     public void setRegistrationCode(String registrationCode) {
         this.registrationCode = registrationCode;
     }
@@ -247,6 +257,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         users enter in their Amazon WorkSpaces client application to
      *         connect to the directory.
      */
+
     public String getRegistrationCode() {
         return this.registrationCode;
     }
@@ -265,6 +276,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withRegistrationCode(String registrationCode) {
         setRegistrationCode(registrationCode);
         return this;
@@ -279,6 +291,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return An array of strings that contains the identifiers of the subnets
      *         used with the directory.
      */
+
     public java.util.List<String> getSubnetIds() {
         if (subnetIds == null) {
             subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -296,6 +309,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        An array of strings that contains the identifiers of the subnets
      *        used with the directory.
      */
+
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
         if (subnetIds == null) {
             this.subnetIds = null;
@@ -324,6 +338,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withSubnetIds(String... subnetIds) {
         if (this.subnetIds == null) {
             setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -347,6 +362,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withSubnetIds(
             java.util.Collection<String> subnetIds) {
         setSubnetIds(subnetIds);
@@ -362,6 +378,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return An array of strings that contains the IP addresses of the DNS
      *         servers for the directory.
      */
+
     public java.util.List<String> getDnsIpAddresses() {
         if (dnsIpAddresses == null) {
             dnsIpAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -379,6 +396,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        An array of strings that contains the IP addresses of the DNS
      *        servers for the directory.
      */
+
     public void setDnsIpAddresses(java.util.Collection<String> dnsIpAddresses) {
         if (dnsIpAddresses == null) {
             this.dnsIpAddresses = null;
@@ -407,6 +425,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withDnsIpAddresses(String... dnsIpAddresses) {
         if (this.dnsIpAddresses == null) {
             setDnsIpAddresses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -430,6 +449,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withDnsIpAddresses(
             java.util.Collection<String> dnsIpAddresses) {
         setDnsIpAddresses(dnsIpAddresses);
@@ -444,6 +464,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @param customerUserName
      *        The user name for the service account.
      */
+
     public void setCustomerUserName(String customerUserName) {
         this.customerUserName = customerUserName;
     }
@@ -455,6 +476,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @return The user name for the service account.
      */
+
     public String getCustomerUserName() {
         return this.customerUserName;
     }
@@ -469,6 +491,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withCustomerUserName(String customerUserName) {
         setCustomerUserName(customerUserName);
         return this;
@@ -486,6 +509,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        Amazon WorkSpaces to make calls to other services, such as Amazon
      *        EC2, on your behalf.
      */
+
     public void setIamRoleId(String iamRoleId) {
         this.iamRoleId = iamRoleId;
     }
@@ -501,6 +525,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         Amazon WorkSpaces to make calls to other services, such as Amazon
      *         EC2, on your behalf.
      */
+
     public String getIamRoleId() {
         return this.iamRoleId;
     }
@@ -519,6 +544,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withIamRoleId(String iamRoleId) {
         setIamRoleId(iamRoleId);
         return this;
@@ -533,6 +559,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        The directory type.
      * @see WorkspaceDirectoryType
      */
+
     public void setDirectoryType(String directoryType) {
         this.directoryType = directoryType;
     }
@@ -545,6 +572,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return The directory type.
      * @see WorkspaceDirectoryType
      */
+
     public String getDirectoryType() {
         return this.directoryType;
     }
@@ -560,6 +588,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceDirectoryType
      */
+
     public WorkspaceDirectory withDirectoryType(String directoryType) {
         setDirectoryType(directoryType);
         return this;
@@ -572,10 +601,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param directoryType
      *        The directory type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WorkspaceDirectoryType
      */
+
     public void setDirectoryType(WorkspaceDirectoryType directoryType) {
         this.directoryType = directoryType.toString();
     }
@@ -591,6 +619,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceDirectoryType
      */
+
     public WorkspaceDirectory withDirectoryType(
             WorkspaceDirectoryType directoryType) {
         setDirectoryType(directoryType);
@@ -606,6 +635,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        The identifier of the security group that is assigned to new
      *        WorkSpaces.
      */
+
     public void setWorkspaceSecurityGroupId(String workspaceSecurityGroupId) {
         this.workspaceSecurityGroupId = workspaceSecurityGroupId;
     }
@@ -618,6 +648,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return The identifier of the security group that is assigned to new
      *         WorkSpaces.
      */
+
     public String getWorkspaceSecurityGroupId() {
         return this.workspaceSecurityGroupId;
     }
@@ -633,6 +664,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withWorkspaceSecurityGroupId(
             String workspaceSecurityGroupId) {
         setWorkspaceSecurityGroupId(workspaceSecurityGroupId);
@@ -648,6 +680,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        The state of the directory's registration with Amazon WorkSpaces
      * @see WorkspaceDirectoryState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -660,6 +693,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return The state of the directory's registration with Amazon WorkSpaces
      * @see WorkspaceDirectoryState
      */
+
     public String getState() {
         return this.state;
     }
@@ -675,6 +709,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceDirectoryState
      */
+
     public WorkspaceDirectory withState(String state) {
         setState(state);
         return this;
@@ -687,10 +722,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the directory's registration with Amazon WorkSpaces
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see WorkspaceDirectoryState
      */
+
     public void setState(WorkspaceDirectoryState state) {
         this.state = state.toString();
     }
@@ -706,6 +740,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *         chained together.
      * @see WorkspaceDirectoryState
      */
+
     public WorkspaceDirectory withState(WorkspaceDirectoryState state) {
         setState(state);
         return this;
@@ -721,6 +756,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      *        A structure that specifies the default creation properties for all
      *        WorkSpaces in the directory.
      */
+
     public void setWorkspaceCreationProperties(
             DefaultWorkspaceCreationProperties workspaceCreationProperties) {
         this.workspaceCreationProperties = workspaceCreationProperties;
@@ -735,6 +771,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return A structure that specifies the default creation properties for
      *         all WorkSpaces in the directory.
      */
+
     public DefaultWorkspaceCreationProperties getWorkspaceCreationProperties() {
         return this.workspaceCreationProperties;
     }
@@ -751,6 +788,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WorkspaceDirectory withWorkspaceCreationProperties(
             DefaultWorkspaceCreationProperties workspaceCreationProperties) {
         setWorkspaceCreationProperties(workspaceCreationProperties);

@@ -44,7 +44,9 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see CopyObjectResult
  */
 public class CopyObjectRequest extends AmazonWebServiceRequest implements
-    SSEAwsKeyManagementParamsProvider, Serializable {
+                                                               SSEAwsKeyManagementParamsProvider,
+                                                               Serializable,
+                                                               S3AccelerateUnsupported {
 
     /** The name of the bucket containing the object to be copied */
     private String sourceBucketName;
@@ -141,6 +143,12 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      * the the object on the server side.
      */
     private SSEAwsKeyManagementParams sseAwsKeyManagementParams;
+
+    /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
 
     /**
      * <p>
@@ -1101,6 +1109,70 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     public CopyObjectRequest withSSEAwsKeyManagementParams(
             SSEAwsKeyManagementParams sseAwsKeyManagementParams) {
         setSSEAwsKeyManagementParams(sseAwsKeyManagementParams);
+        return this;
+    }
+    /**
+     * Returns true if the user has enabled Requester Pays option when
+     * conducting this operation from Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket. It returns this
+     * updated CopyObjectRequest object so that additional method calls can be
+     * chained together.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     *
+     * @return The updated CopyObjectRequest object.
+     */
+    public CopyObjectRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
         return this;
     }
 }

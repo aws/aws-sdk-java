@@ -70,6 +70,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param directoryId
      *        The directory identifier.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -81,6 +82,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The directory identifier.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -95,6 +97,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -108,6 +111,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param snapshotId
      *        The snapshot identifier.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -119,6 +123,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The snapshot identifier.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -133,6 +138,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -147,6 +153,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        The snapshot type.
      * @see SnapshotType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -159,6 +166,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return The snapshot type.
      * @see SnapshotType
      */
+
     public String getType() {
         return this.type;
     }
@@ -174,6 +182,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotType
      */
+
     public Snapshot withType(String type) {
         setType(type);
         return this;
@@ -186,10 +195,9 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @param type
      *        The snapshot type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotType
      */
+
     public void setType(SnapshotType type) {
         this.type = type.toString();
     }
@@ -205,6 +213,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotType
      */
+
     public Snapshot withType(SnapshotType type) {
         setType(type);
         return this;
@@ -218,6 +227,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param name
      *        The descriptive name of the snapshot.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -229,6 +239,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The descriptive name of the snapshot.
      */
+
     public String getName() {
         return this.name;
     }
@@ -243,6 +254,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withName(String name) {
         setName(name);
         return this;
@@ -257,6 +269,7 @@ public class Snapshot implements Serializable, Cloneable {
      *        The snapshot status.
      * @see SnapshotStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -269,6 +282,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return The snapshot status.
      * @see SnapshotStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -284,6 +298,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotStatus
      */
+
     public Snapshot withStatus(String status) {
         setStatus(status);
         return this;
@@ -296,10 +311,9 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @param status
      *        The snapshot status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SnapshotStatus
      */
+
     public void setStatus(SnapshotStatus status) {
         this.status = status.toString();
     }
@@ -315,6 +329,7 @@ public class Snapshot implements Serializable, Cloneable {
      *         chained together.
      * @see SnapshotStatus
      */
+
     public Snapshot withStatus(SnapshotStatus status) {
         setStatus(status);
         return this;
@@ -328,6 +343,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @param startTime
      *        The date and time that the snapshot was taken.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -339,6 +355,7 @@ public class Snapshot implements Serializable, Cloneable {
      * 
      * @return The date and time that the snapshot was taken.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -353,6 +370,7 @@ public class Snapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Snapshot withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;

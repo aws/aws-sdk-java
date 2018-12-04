@@ -85,13 +85,11 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
 
     private final HttpResponse httpResponse;
 
+    private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallerMap;
 
-    public JsonUnmarshallerContextImpl(JsonParser jsonParser) {
-        this(jsonParser, null);
-    }
-
-    public JsonUnmarshallerContextImpl(JsonParser jsonParser, HttpResponse httpResponse) {
+    public JsonUnmarshallerContextImpl(JsonParser jsonParser, Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper, HttpResponse httpResponse) {
         this.jsonParser = jsonParser;
+        this.unmarshallerMap = mapper;
         this.httpResponse = httpResponse;
     }
 
@@ -224,6 +222,13 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     @Override
     public void setCurrentHeader(String currentHeader) {
         this.currentHeader = currentHeader;
+    }
+
+    @Override
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller
+            (Class<T> type) {
+        return (Unmarshaller<T, JsonUnmarshallerContext>) unmarshallerMap.get
+                (type);
     }
 
     @Override

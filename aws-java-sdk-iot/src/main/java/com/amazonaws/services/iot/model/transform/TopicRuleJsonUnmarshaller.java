@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class TopicRuleJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleName", targetDepth)) {
                     context.nextToken();
-                    topicRule.setRuleName(StringJsonUnmarshaller.getInstance()
+                    topicRule.setRuleName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("sql", targetDepth)) {
                     context.nextToken();
-                    topicRule.setSql(StringJsonUnmarshaller.getInstance()
+                    topicRule.setSql(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    topicRule.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRule.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    topicRule.setCreatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    topicRule.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
@@ -79,8 +81,13 @@ public class TopicRuleJsonUnmarshaller implements
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();
-                    topicRule.setRuleDisabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRule.setRuleDisabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("awsIotSqlVersion", targetDepth)) {
+                    context.nextToken();
+                    topicRule.setAwsIotSqlVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -77,6 +77,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Contains a list of lookup attributes. Currently the list can
      *         contain only one item.
      */
+
     public java.util.List<LookupAttribute> getLookupAttributes() {
         if (lookupAttributes == null) {
             lookupAttributes = new com.amazonaws.internal.SdkInternalList<LookupAttribute>();
@@ -94,6 +95,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *        Contains a list of lookup attributes. Currently the list can
      *        contain only one item.
      */
+
     public void setLookupAttributes(
             java.util.Collection<LookupAttribute> lookupAttributes) {
         if (lookupAttributes == null) {
@@ -123,6 +125,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withLookupAttributes(
             LookupAttribute... lookupAttributes) {
         if (this.lookupAttributes == null) {
@@ -147,6 +150,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withLookupAttributes(
             java.util.Collection<LookupAttribute> lookupAttributes) {
         setLookupAttributes(lookupAttributes);
@@ -165,6 +169,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *        time are returned. If the specified start time is after the
      *        specified end time, an error is returned.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -180,6 +185,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *         time are returned. If the specified start time is after the
      *         specified end time, an error is returned.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -198,6 +204,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -215,6 +222,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *        time are returned. If the specified end time is before the
      *        specified start time, an error is returned.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -230,6 +238,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *         time are returned. If the specified end time is before the
      *         specified start time, an error is returned.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -248,6 +257,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -263,6 +273,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *        The number of events to return. Possible values are 1 through 50.
      *        The default is 10.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -276,6 +287,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return The number of events to return. Possible values are 1 through 50.
      *         The default is 10.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -292,6 +304,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -314,6 +327,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *        of 'root', the call with NextToken should include those same
      *        parameters.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -334,6 +348,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      *         value of 'root', the call with NextToken should include those
      *         same parameters.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -357,6 +372,7 @@ public class LookupEventsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LookupEventsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -132,6 +132,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        <code>ClusterIdentifier</code> for an Amazon Redshift
      *        <code>DataSource</code>.
      */
+
     public void setDatabaseInformation(RedshiftDatabase databaseInformation) {
         this.databaseInformation = databaseInformation;
     }
@@ -147,6 +148,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *         <code>ClusterIdentifier</code> for an Amazon Redshift
      *         <code>DataSource</code>.
      */
+
     public RedshiftDatabase getDatabaseInformation() {
         return this.databaseInformation;
     }
@@ -165,6 +167,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withDatabaseInformation(
             RedshiftDatabase databaseInformation) {
         setDatabaseInformation(databaseInformation);
@@ -181,6 +184,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        Describes the SQL Query to execute on an Amazon Redshift database
      *        for an Amazon Redshift <code>DataSource</code>.
      */
+
     public void setSelectSqlQuery(String selectSqlQuery) {
         this.selectSqlQuery = selectSqlQuery;
     }
@@ -194,6 +198,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Describes the SQL Query to execute on an Amazon Redshift database
      *         for an Amazon Redshift <code>DataSource</code>.
      */
+
     public String getSelectSqlQuery() {
         return this.selectSqlQuery;
     }
@@ -210,6 +215,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withSelectSqlQuery(String selectSqlQuery) {
         setSelectSqlQuery(selectSqlQuery);
         return this;
@@ -225,6 +231,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        Describes AWS Identity and Access Management (IAM) credentials
      *        that are used connect to the Amazon Redshift database.
      */
+
     public void setDatabaseCredentials(
             RedshiftDatabaseCredentials databaseCredentials) {
         this.databaseCredentials = databaseCredentials;
@@ -239,6 +246,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Describes AWS Identity and Access Management (IAM) credentials
      *         that are used connect to the Amazon Redshift database.
      */
+
     public RedshiftDatabaseCredentials getDatabaseCredentials() {
         return this.databaseCredentials;
     }
@@ -255,6 +263,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withDatabaseCredentials(
             RedshiftDatabaseCredentials databaseCredentials) {
         setDatabaseCredentials(databaseCredentials);
@@ -271,6 +280,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        Describes an Amazon S3 location to store the result set of the
      *        <code>SelectSqlQuery</code> query.
      */
+
     public void setS3StagingLocation(String s3StagingLocation) {
         this.s3StagingLocation = s3StagingLocation;
     }
@@ -284,6 +294,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Describes an Amazon S3 location to store the result set of the
      *         <code>SelectSqlQuery</code> query.
      */
+
     public String getS3StagingLocation() {
         return this.s3StagingLocation;
     }
@@ -300,6 +311,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withS3StagingLocation(String s3StagingLocation) {
         setS3StagingLocation(s3StagingLocation);
         return this;
@@ -314,6 +326,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        Describes the splitting specifications for a
      *        <code>DataSource</code>.
      */
+
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
     }
@@ -326,6 +339,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Describes the splitting specifications for a
      *         <code>DataSource</code>.
      */
+
     public String getDataRearrangement() {
         return this.dataRearrangement;
     }
@@ -341,6 +355,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withDataRearrangement(String dataRearrangement) {
         setDataRearrangement(dataRearrangement);
         return this;
@@ -445,6 +460,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        <p>
      *        "excludedVariableNames": [ "F6" ] }
      */
+
     public void setDataSchema(String dataSchema) {
         this.dataSchema = dataSchema;
     }
@@ -547,6 +563,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *         <p>
      *         "excludedVariableNames": [ "F6" ] }
      */
+
     public String getDataSchema() {
         return this.dataSchema;
     }
@@ -652,6 +669,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withDataSchema(String dataSchema) {
         setDataSchema(dataSchema);
         return this;
@@ -667,6 +685,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      *        Describes the schema location for an Amazon Redshift
      *        <code>DataSource</code>.
      */
+
     public void setDataSchemaUri(String dataSchemaUri) {
         this.dataSchemaUri = dataSchemaUri;
     }
@@ -680,6 +699,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Describes the schema location for an Amazon Redshift
      *         <code>DataSource</code>.
      */
+
     public String getDataSchemaUri() {
         return this.dataSchemaUri;
     }
@@ -696,6 +716,7 @@ public class RedshiftDataSpec implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDataSpec withDataSchemaUri(String dataSchemaUri) {
         setDataSchemaUri(dataSchemaUri);
         return this;

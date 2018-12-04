@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class EncryptionKeyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    encryptionKey.setId(StringJsonUnmarshaller.getInstance()
+                    encryptionKey.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    encryptionKey.setType(StringJsonUnmarshaller.getInstance()
+                    encryptionKey.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

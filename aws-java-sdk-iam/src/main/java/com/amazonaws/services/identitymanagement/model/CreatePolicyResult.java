@@ -27,44 +27,47 @@ public class CreatePolicyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the new policy.
      * </p>
      */
     private Policy policy;
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the new policy.
      * </p>
      * 
      * @param policy
-     *        Information about the policy.
+     *        A structure containing details about the new policy.
      */
+
     public void setPolicy(Policy policy) {
         this.policy = policy;
     }
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the new policy.
      * </p>
      * 
-     * @return Information about the policy.
+     * @return A structure containing details about the new policy.
      */
+
     public Policy getPolicy() {
         return this.policy;
     }
 
     /**
      * <p>
-     * Information about the policy.
+     * A structure containing details about the new policy.
      * </p>
      * 
      * @param policy
-     *        Information about the policy.
+     *        A structure containing details about the new policy.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyResult withPolicy(Policy policy) {
         setPolicy(policy);
         return this;

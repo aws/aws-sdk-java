@@ -17,6 +17,7 @@ import java.io.Serializable;
 
 import java.security.Provider;
 
+import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.internal.crypto.CryptoRuntime;
 
@@ -28,6 +29,9 @@ import com.amazonaws.services.s3.internal.crypto.CryptoRuntime;
  * used during encryption and decryption.
  */
 public class CryptoConfiguration implements Cloneable,Serializable {
+
+    private static final long serialVersionUID = -8646831898339939580L;
+
     private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
@@ -43,7 +47,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * is internally instantiated instead of externally passed in by users; or
      * null if no explicit KMS region is specified.
      */
-    private Regions kmsRegion;
+    private transient com.amazonaws.regions.Region awskmsRegion;
 
     /**
      * Creates a new CryptoConfiguration object with default storage mode and
@@ -305,7 +309,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         that.storageMode = this.storageMode;
         that.cryptoProvider = this.cryptoProvider;
         that.ignoreMissingInstructionFile = this.ignoreMissingInstructionFile;
-        that.kmsRegion = this.kmsRegion;
+        that.awskmsRegion = this.awskmsRegion;
         return that;
     }
 
@@ -315,9 +319,68 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * region is specified. This KMS region parameter is ignored when the AWS
      * KMS client of the S3 encryption client is explicitly passed in by the
      * users, instead of being implicitly created.
+     *
+     * @Deprecated This method is not forward compatible. Throws
+     * IllegalArguementException when a new region is encountered.
+     *
+     * @use {@link #getAwsKmsRegion()} instead
      */
+    @Deprecated
     public Regions getKmsRegion() {
-        return kmsRegion;
+        if (awskmsRegion == null) return null;
+        return Regions.fromName(awskmsRegion.getName());
+    }
+
+    /**
+     * Sets the KMS region for the AWS KMS client when such client is internally
+     * instantiated instead of externally passed in by users; or null if no
+     * explicit KMS region is explicitly configured.This KMS region parameter is
+     * ignored when the AWS KMS client of the S3 encryption client is explicitly
+     * passed in by the users, instead of being implicitly created.
+     *
+     * @Deprecated This method is not forward compatible. Doesn't handle new
+     * regions.
+     *
+     * @use {@link #setAwsKmsRegion(com.amazonaws.regions.Region)} instead
+     */
+    @Deprecated
+    public void setKmsRegion(Regions kmsRegion) {
+        if (kmsRegion != null) {
+            setAwsKmsRegion(Region.getRegion(kmsRegion));
+        } else {
+            setAwsKmsRegion(null);
+        }
+    }
+
+    /**
+     * Fluent API for setting the KMS region for the AWS KMS client when such
+     * client is internally instantiated instead of externally passed in by
+     * users; or null if no explicit KMS region is explicitly configured.This
+     * KMS region parameter is ignored when the AWS KMS client of the S3
+     * encryption client is explicitly passed in by the users, instead of being
+     * implicitly created.
+     *
+     * @Deprecated This method is not forward compatible. Doesn't handle new
+     * regions.
+     *
+     * @use {@link #withAwsKmsRegion(com.amazonaws.regions.Region)} AwsKmsRegion}
+     * instead
+     */
+    @Deprecated
+    public CryptoConfiguration withKmsRegion(Regions kmsRegion) {
+        setKmsRegion(kmsRegion);
+        return this;
+    }
+
+    /**
+     * Returns the the KMS region explicitly specified for the AWS KMS client
+     * when such client is internally instantiated; or null if no explicit KMS
+     * region is specified. This KMS region parameter is ignored when the AWS
+     * KMS client of the S3 encryption client is explicitly passed in by the
+     * users, instead of being implicitly created.
+     */
+    public Region getAwsKmsRegion() {
+        return awskmsRegion;
     }
 
     /**
@@ -327,8 +390,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * ignored when the AWS KMS client of the S3 encryption client is explicitly
      * passed in by the users, instead of being implicitly created.
      */
-    public void setKmsRegion(Regions kmsRegion) {
-        this.kmsRegion = kmsRegion;
+    public void setAwsKmsRegion(Region awsKmsRegion) {
+        this.awskmsRegion = awsKmsRegion;
     }
 
     /**
@@ -339,8 +402,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      * encryption client is explicitly passed in by the users, instead of being
      * implicitly created.
      */
-    public CryptoConfiguration withKmsRegion(Regions kmsRegion) {
-        this.kmsRegion = kmsRegion;
+    public CryptoConfiguration withAwsKmsRegion(Region awsKmsRegion) {
+        this.awskmsRegion = awsKmsRegion;
         return this;
     }
 }

@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class ActionStateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("actionName", targetDepth)) {
                     context.nextToken();
-                    actionState.setActionName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionState.setActionName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("currentRevision", targetDepth)) {
                     context.nextToken();
@@ -70,13 +72,13 @@ public class ActionStateJsonUnmarshaller implements
                 }
                 if (context.testExpression("entityUrl", targetDepth)) {
                     context.nextToken();
-                    actionState.setEntityUrl(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionState.setEntityUrl(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("revisionUrl", targetDepth)) {
                     context.nextToken();
-                    actionState.setRevisionUrl(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionState.setRevisionUrl(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

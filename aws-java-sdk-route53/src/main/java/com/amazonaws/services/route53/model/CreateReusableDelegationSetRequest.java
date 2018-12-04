@@ -77,6 +77,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      *        XML 1.0 document. The UTF-8 encoding of the value must be less
      *        than 128 bytes.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -109,6 +110,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      *         XML 1.0 document. The UTF-8 encoding of the value must be less
      *         than 128 bytes.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -143,6 +145,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReusableDelegationSetRequest withCallerReference(
             String callerReference) {
         setCallerReference(callerReference);
@@ -159,6 +162,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      *        The ID of the hosted zone whose delegation set you want to mark as
      *        reusable. It is an optional parameter.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -172,6 +176,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return The ID of the hosted zone whose delegation set you want to mark
      *         as reusable. It is an optional parameter.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -188,6 +193,7 @@ public class CreateReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReusableDelegationSetRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);

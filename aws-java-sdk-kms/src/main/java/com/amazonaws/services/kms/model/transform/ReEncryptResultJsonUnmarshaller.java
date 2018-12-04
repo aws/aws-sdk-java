@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class ReEncryptResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CiphertextBlob", targetDepth)) {
                     context.nextToken();
-                    reEncryptResult
-                            .setCiphertextBlob(ByteBufferJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    reEncryptResult.setCiphertextBlob(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceKeyId", targetDepth)) {
                     context.nextToken();
-                    reEncryptResult.setSourceKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reEncryptResult.setSourceKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    reEncryptResult.setKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    reEncryptResult.setKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -64,9 +66,8 @@ public class GetHostedZoneResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("VPCs/VPC", targetDepth)) {
-                    getHostedZoneResult.getVPCs().add(
-                            VPCStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getHostedZoneResult.withVPCs(VPCStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

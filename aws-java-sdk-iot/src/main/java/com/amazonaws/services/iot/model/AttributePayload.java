@@ -20,75 +20,62 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The attribute payload, a JSON string containing up to three key-value pairs.
- * </p>
- * <p>
- * For example: {\"attributes\":{\"string1\":\"string2\"}}
+ * The attribute payload, a JSON string containing up to three key-value pairs
+ * (for example, {\"attributes\":{\"string1\":\"string2\"}}).
  * </p>
  */
 public class AttributePayload implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      */
     private java.util.Map<String, String> attributes;
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @return A JSON string containing up to three key-value pair in JSON
-     *         format.</p>
-     *         <p>
-     *         For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *         format (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public java.util.Map<String, String> getAttributes() {
         return attributes;
     }
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON
-     *        format.</p>
-     *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *        A JSON string containing up to three key-value pair in JSON format
+     *        (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes;
     }
 
     /**
      * <p>
-     * A JSON string containing up to three key-value pair in JSON format.
-     * </p>
-     * <p>
-     * For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * A JSON string containing up to three key-value pair in JSON format (for
+     * example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributes
-     *        A JSON string containing up to three key-value pair in JSON
-     *        format.</p>
-     *        <p>
-     *        For example: {\"attributes\":{\"string1\":\"string2\"}}
+     *        A JSON string containing up to three key-value pair in JSON format
+     *        (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributePayload withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -110,6 +97,7 @@ public class AttributePayload implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public AttributePayload clearAttributesEntries() {
         this.attributes = null;
         return this;

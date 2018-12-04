@@ -33,7 +33,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -113,6 +113,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     /**
      * @param fieldToMatch
      */
+
     public void setFieldToMatch(FieldToMatch fieldToMatch) {
         this.fieldToMatch = fieldToMatch;
     }
@@ -120,6 +121,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public FieldToMatch getFieldToMatch() {
         return this.fieldToMatch;
     }
@@ -129,6 +131,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchTuple withFieldToMatch(FieldToMatch fieldToMatch) {
         setFieldToMatch(fieldToMatch);
         return this;
@@ -139,7 +142,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -218,7 +221,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        Text transformations eliminate some of the unusual formatting that
      *        attackers use in web requests in an effort to bypass AWS WAF. If
      *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>TargetString</code> before inspecting a request for a
+     *        on <code>FieldToMatch</code> before inspecting a request for a
      *        match.</p>
      *        <p>
      *        <b>CMD_LINE</b>
@@ -297,6 +300,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        transformations.
      * @see TextTransformation
      */
+
     public void setTextTransformation(String textTransformation) {
         this.textTransformation = textTransformation;
     }
@@ -306,7 +310,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -384,7 +388,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * @return Text transformations eliminate some of the unusual formatting
      *         that attackers use in web requests in an effort to bypass AWS
      *         WAF. If you specify a transformation, AWS WAF performs the
-     *         transformation on <code>TargetString</code> before inspecting a
+     *         transformation on <code>FieldToMatch</code> before inspecting a
      *         request for a match.</p>
      *         <p>
      *         <b>CMD_LINE</b>
@@ -464,6 +468,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         transformations.
      * @see TextTransformation
      */
+
     public String getTextTransformation() {
         return this.textTransformation;
     }
@@ -473,7 +478,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -552,7 +557,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        Text transformations eliminate some of the unusual formatting that
      *        attackers use in web requests in an effort to bypass AWS WAF. If
      *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>TargetString</code> before inspecting a request for a
+     *        on <code>FieldToMatch</code> before inspecting a request for a
      *        match.</p>
      *        <p>
      *        <b>CMD_LINE</b>
@@ -633,6 +638,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SqlInjectionMatchTuple withTextTransformation(
             String textTransformation) {
         setTextTransformation(textTransformation);
@@ -644,7 +650,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -723,7 +729,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        Text transformations eliminate some of the unusual formatting that
      *        attackers use in web requests in an effort to bypass AWS WAF. If
      *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>TargetString</code> before inspecting a request for a
+     *        on <code>FieldToMatch</code> before inspecting a request for a
      *        match.</p>
      *        <p>
      *        <b>CMD_LINE</b>
@@ -800,10 +806,9 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        <p>
      *        Specify <code>NONE</code> if you don't want to perform any text
      *        transformations.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TextTransformation
      */
+
     public void setTextTransformation(TextTransformation textTransformation) {
         this.textTransformation = textTransformation.toString();
     }
@@ -813,7 +818,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      * Text transformations eliminate some of the unusual formatting that
      * attackers use in web requests in an effort to bypass AWS WAF. If you
      * specify a transformation, AWS WAF performs the transformation on
-     * <code>TargetString</code> before inspecting a request for a match.
+     * <code>FieldToMatch</code> before inspecting a request for a match.
      * </p>
      * <p>
      * <b>CMD_LINE</b>
@@ -892,7 +897,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *        Text transformations eliminate some of the unusual formatting that
      *        attackers use in web requests in an effort to bypass AWS WAF. If
      *        you specify a transformation, AWS WAF performs the transformation
-     *        on <code>TargetString</code> before inspecting a request for a
+     *        on <code>FieldToMatch</code> before inspecting a request for a
      *        match.</p>
      *        <p>
      *        <b>CMD_LINE</b>
@@ -973,6 +978,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
      *         chained together.
      * @see TextTransformation
      */
+
     public SqlInjectionMatchTuple withTextTransformation(
             TextTransformation textTransformation) {
         setTextTransformation(textTransformation);

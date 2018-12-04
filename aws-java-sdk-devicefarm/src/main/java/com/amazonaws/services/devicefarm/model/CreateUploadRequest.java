@@ -59,6 +59,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -75,22 +80,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -105,11 +95,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      */
     private String type;
@@ -128,6 +153,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @param projectArn
      *        The ARN of the project for the upload.
      */
+
     public void setProjectArn(String projectArn) {
         this.projectArn = projectArn;
     }
@@ -139,6 +165,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the project for the upload.
      */
+
     public String getProjectArn() {
         return this.projectArn;
     }
@@ -153,6 +180,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUploadRequest withProjectArn(String projectArn) {
         setProjectArn(projectArn);
         return this;
@@ -166,6 +194,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The upload's file name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -177,6 +206,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * 
      * @return The upload's file name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -191,6 +221,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUploadRequest withName(String name) {
         setName(name);
         return this;
@@ -216,6 +247,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -232,22 +268,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -262,11 +283,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      * 
      * @param type
@@ -283,6 +339,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
      *        </p>
      *        </li>
      *        <li>
@@ -304,22 +365,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -334,13 +380,50 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Note</b> If you call <code>CreateUpload</code> with
      *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <a>ArgumentException</a> error.
+     *        <code>ArgumentException</code> error.
      * @see UploadType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -365,6 +448,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -381,22 +469,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -411,11 +484,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      * 
      * @return The upload's upload type.</p>
@@ -431,6 +539,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         IOS_APP: An iOS upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WEB_APP: A web appliction upload.
      *         </p>
      *         </li>
      *         <li>
@@ -452,22 +565,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *         </p>
      *         </li>
      *         <li>
@@ -482,13 +580,50 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *         package upload.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *         upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>Note</b> If you call <code>CreateUpload</code> with
      *         <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *         <a>ArgumentException</a> error.
+     *         <code>ArgumentException</code> error.
      * @see UploadType
      */
+
     public String getType() {
         return this.type;
     }
@@ -513,6 +648,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -529,22 +669,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -559,11 +684,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      * 
      * @param type
@@ -580,6 +740,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
      *        </p>
      *        </li>
      *        <li>
@@ -601,22 +766,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -631,15 +781,52 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Note</b> If you call <code>CreateUpload</code> with
      *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <a>ArgumentException</a> error.
+     *        <code>ArgumentException</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
      */
+
     public CreateUploadRequest withType(String type) {
         setType(type);
         return this;
@@ -665,6 +852,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -681,22 +873,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -711,11 +888,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      * 
      * @param type
@@ -732,6 +944,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
      *        </p>
      *        </li>
      *        <li>
@@ -753,22 +970,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -783,15 +985,50 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Note</b> If you call <code>CreateUpload</code> with
      *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <a>ArgumentException</a> error.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <code>ArgumentException</code> error.
      * @see UploadType
      */
+
     public void setType(UploadType type) {
         this.type = type.toString();
     }
@@ -816,6 +1053,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * WEB_APP: A web appliction upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EXTERNAL_DATA: An external data upload.
      * </p>
      * </li>
@@ -832,22 +1074,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      * </p>
      * </li>
      * <li>
@@ -862,11 +1089,46 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * upload.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_TEST_PACKAGE: An XCode test package upload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>Note</b> If you call <code>CreateUpload</code> with
      * <code>WEB_APP</code> specified, AWS Device Farm throws an
-     * <a>ArgumentException</a> error.
+     * <code>ArgumentException</code> error.
      * </p>
      * 
      * @param type
@@ -883,6 +1145,11 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        IOS_APP: An iOS upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WEB_APP: A web appliction upload.
      *        </p>
      *        </li>
      *        <li>
@@ -904,22 +1171,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
      *        </p>
      *        </li>
      *        <li>
@@ -934,15 +1186,52 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        package upload.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package
+     *        upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CALABASH_TEST_PACKAGE: A Calabash test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_TEST_PACKAGE: An XCode test package upload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>Note</b> If you call <code>CreateUpload</code> with
      *        <code>WEB_APP</code> specified, AWS Device Farm throws an
-     *        <a>ArgumentException</a> error.
+     *        <code>ArgumentException</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see UploadType
      */
+
     public CreateUploadRequest withType(UploadType type) {
         setType(type);
         return this;
@@ -957,6 +1246,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      *        The upload's content type (for example,
      *        "application/octet-stream").
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -969,6 +1259,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @return The upload's content type (for example,
      *         "application/octet-stream").
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -984,6 +1275,7 @@ public class CreateUploadRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUploadRequest withContentType(String contentType) {
         setContentType(contentType);
         return this;

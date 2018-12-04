@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateRestApiRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateRestApiRequestMarshaller implements
         Marshaller<Request<CreateRestApiRequest>, CreateRestApiRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateRestApiRequest> marshall(
             CreateRestApiRequest createRestApiRequest) {
@@ -66,30 +74,27 @@ public class CreateRestApiRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createRestApiRequest.getName() != null) {
-                jsonWriter.key("name").value(createRestApiRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createRestApiRequest.getName());
             }
-
             if (createRestApiRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createRestApiRequest.getDescription());
             }
-
             if (createRestApiRequest.getCloneFrom() != null) {
-                jsonWriter.key("cloneFrom").value(
+                jsonGenerator.writeFieldName("cloneFrom").writeValue(
                         createRestApiRequest.getCloneFrom());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

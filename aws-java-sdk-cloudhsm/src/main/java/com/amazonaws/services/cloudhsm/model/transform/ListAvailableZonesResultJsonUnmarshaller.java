@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudhsm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,8 @@ public class ListAvailableZonesResultJsonUnmarshaller implements
                 if (context.testExpression("AZList", targetDepth)) {
                     context.nextToken();
                     listAvailableZonesResult
-                            .setAZList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setAZList(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

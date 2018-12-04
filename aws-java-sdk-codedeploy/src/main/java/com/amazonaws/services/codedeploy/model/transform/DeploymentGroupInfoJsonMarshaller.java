@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeploymentGroupInfoMarshaller
@@ -39,99 +34,112 @@ import com.amazonaws.util.json.*;
 public class DeploymentGroupInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeploymentGroupInfo deploymentGroupInfo,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (deploymentGroupInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deploymentGroupInfo.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         deploymentGroupInfo.getApplicationName());
             }
-
             if (deploymentGroupInfo.getDeploymentGroupId() != null) {
-                jsonWriter.key("deploymentGroupId").value(
+                jsonGenerator.writeFieldName("deploymentGroupId").writeValue(
                         deploymentGroupInfo.getDeploymentGroupId());
             }
-
             if (deploymentGroupInfo.getDeploymentGroupName() != null) {
-                jsonWriter.key("deploymentGroupName").value(
+                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(
                         deploymentGroupInfo.getDeploymentGroupName());
             }
-
             if (deploymentGroupInfo.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(
-                        deploymentGroupInfo.getDeploymentConfigName());
+                jsonGenerator.writeFieldName("deploymentConfigName")
+                        .writeValue(
+                                deploymentGroupInfo.getDeploymentConfigName());
             }
 
             com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFiltersList = (com.amazonaws.internal.SdkInternalList<EC2TagFilter>) deploymentGroupInfo
                     .getEc2TagFilters();
             if (!ec2TagFiltersList.isEmpty()
                     || !ec2TagFiltersList.isAutoConstruct()) {
-                jsonWriter.key("ec2TagFilters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ec2TagFilters");
+                jsonGenerator.writeStartArray();
                 for (EC2TagFilter ec2TagFiltersListValue : ec2TagFiltersList) {
                     if (ec2TagFiltersListValue != null) {
 
                         EC2TagFilterJsonMarshaller.getInstance().marshall(
-                                ec2TagFiltersListValue, jsonWriter);
+                                ec2TagFiltersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.SdkInternalList<TagFilter>) deploymentGroupInfo
                     .getOnPremisesInstanceTagFilters();
             if (!onPremisesInstanceTagFiltersList.isEmpty()
                     || !onPremisesInstanceTagFiltersList.isAutoConstruct()) {
-                jsonWriter.key("onPremisesInstanceTagFilters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("onPremisesInstanceTagFilters");
+                jsonGenerator.writeStartArray();
                 for (TagFilter onPremisesInstanceTagFiltersListValue : onPremisesInstanceTagFiltersList) {
                     if (onPremisesInstanceTagFiltersListValue != null) {
 
                         TagFilterJsonMarshaller.getInstance().marshall(
                                 onPremisesInstanceTagFiltersListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<AutoScalingGroup> autoScalingGroupsList = (com.amazonaws.internal.SdkInternalList<AutoScalingGroup>) deploymentGroupInfo
                     .getAutoScalingGroups();
             if (!autoScalingGroupsList.isEmpty()
                     || !autoScalingGroupsList.isAutoConstruct()) {
-                jsonWriter.key("autoScalingGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("autoScalingGroups");
+                jsonGenerator.writeStartArray();
                 for (AutoScalingGroup autoScalingGroupsListValue : autoScalingGroupsList) {
                     if (autoScalingGroupsListValue != null) {
 
                         AutoScalingGroupJsonMarshaller.getInstance().marshall(
-                                autoScalingGroupsListValue, jsonWriter);
+                                autoScalingGroupsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (deploymentGroupInfo.getServiceRoleArn() != null) {
-                jsonWriter.key("serviceRoleArn").value(
+                jsonGenerator.writeFieldName("serviceRoleArn").writeValue(
                         deploymentGroupInfo.getServiceRoleArn());
             }
-
             if (deploymentGroupInfo.getTargetRevision() != null) {
-                jsonWriter.key("targetRevision");
+                jsonGenerator.writeFieldName("targetRevision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
-                        deploymentGroupInfo.getTargetRevision(), jsonWriter);
+                        deploymentGroupInfo.getTargetRevision(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurationsList = (com.amazonaws.internal.SdkInternalList<TriggerConfig>) deploymentGroupInfo
+                    .getTriggerConfigurations();
+            if (!triggerConfigurationsList.isEmpty()
+                    || !triggerConfigurationsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("triggerConfigurations");
+                jsonGenerator.writeStartArray();
+                for (TriggerConfig triggerConfigurationsListValue : triggerConfigurationsList) {
+                    if (triggerConfigurationsListValue != null) {
+
+                        TriggerConfigJsonMarshaller.getInstance().marshall(
+                                triggerConfigurationsListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

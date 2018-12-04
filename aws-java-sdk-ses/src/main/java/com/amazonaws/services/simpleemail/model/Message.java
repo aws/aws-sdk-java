@@ -72,6 +72,7 @@ public class Message implements Serializable, Cloneable {
      *        The subject of the message: A short summary of the content, which
      *        will appear in the recipient's inbox.
      */
+
     public void setSubject(Content subject) {
         this.subject = subject;
     }
@@ -85,6 +86,7 @@ public class Message implements Serializable, Cloneable {
      * @return The subject of the message: A short summary of the content, which
      *         will appear in the recipient's inbox.
      */
+
     public Content getSubject() {
         return this.subject;
     }
@@ -101,6 +103,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withSubject(Content subject) {
         setSubject(subject);
         return this;
@@ -114,6 +117,7 @@ public class Message implements Serializable, Cloneable {
      * @param body
      *        The message body.
      */
+
     public void setBody(Body body) {
         this.body = body;
     }
@@ -125,6 +129,7 @@ public class Message implements Serializable, Cloneable {
      * 
      * @return The message body.
      */
+
     public Body getBody() {
         return this.body;
     }
@@ -139,6 +144,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withBody(Body body) {
         setBody(body);
         return this;

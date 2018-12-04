@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,23 +52,23 @@ public class ListEntitiesForPolicyResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("PolicyGroups/member", targetDepth)) {
-                    listEntitiesForPolicyResult.getPolicyGroups().add(
-                            PolicyGroupStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listEntitiesForPolicyResult
+                            .withPolicyGroups(PolicyGroupStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PolicyUsers/member", targetDepth)) {
-                    listEntitiesForPolicyResult.getPolicyUsers().add(
-                            PolicyUserStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listEntitiesForPolicyResult
+                            .withPolicyUsers(PolicyUserStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("PolicyRoles/member", targetDepth)) {
-                    listEntitiesForPolicyResult.getPolicyRoles().add(
-                            PolicyRoleStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    listEntitiesForPolicyResult
+                            .withPolicyRoles(PolicyRoleStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

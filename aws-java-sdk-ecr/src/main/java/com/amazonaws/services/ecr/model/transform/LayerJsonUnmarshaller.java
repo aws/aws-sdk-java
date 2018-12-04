@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class LayerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("layerDigest", targetDepth)) {
                     context.nextToken();
-                    layer.setLayerDigest(StringJsonUnmarshaller.getInstance()
+                    layer.setLayerDigest(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("layerAvailability", targetDepth)) {
                     context.nextToken();
-                    layer.setLayerAvailability(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setLayerAvailability(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("layerSize", targetDepth)) {
                     context.nextToken();
-                    layer.setLayerSize(LongJsonUnmarshaller.getInstance()
+                    layer.setLayerSize(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -28,8 +28,8 @@ import com.amazonaws.services.codepipeline.model.*;
  * This is the AWS CodePipeline API Reference. This guide provides descriptions
  * of the actions and data types for AWS CodePipeline. Some functionality for
  * your pipeline is only configurable through the API. For additional
- * information, see the <a
- * href="http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html">AWS
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
  * CodePipeline User Guide</a>.
  * </p>
  * <p>
@@ -56,6 +56,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to
  * the structure of the pipeline.</li>
  * </ul>
+ * </p>
  * <p>
  * Pipelines include <i>stages</i>, which are which are logical groupings of
  * gates and actions. Each stage contains one or more actions that must complete
@@ -66,8 +67,10 @@ import com.amazonaws.services.codepipeline.model.*;
  * You can call <a>GetPipelineState</a>, which displays the status of a
  * pipeline, including the status of stages in the pipeline, or
  * <a>GetPipeline</a>, which returns the entire structure of the pipeline,
- * including the stages of that pipeline.
- * </p>
+ * including the stages of that pipeline. For more information about the
+ * structure of stages and actions, also refer to the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html"
+ * >AWS CodePipeline Pipeline Structure Reference</a>.
  * </p>
  * <p>
  * Pipeline stages include <i>actions</i>, which are categorized into categories
@@ -110,6 +113,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <ul>
  * <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received
  * the specified job,</li>
+ * <li><a>GetJobDetails</a>, which returns the details of a job,</li>
  * <li><a>PollForJobs</a>, which determines whether there are any jobs to act
  * upon,</li>
  * <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li>
@@ -125,6 +129,8 @@ import com.amazonaws.services.codepipeline.model.*;
  * <ul>
  * <li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
  * received the specified job,</li>
+ * <li><a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
+ * partner action,</li>
  * <li><a>PollForThirdPartyJobs</a>, which determines whether there are any jobs
  * to act upon,</li>
  * <li><a>PutThirdPartyJobFailureResult</a>, which provides details of a job
@@ -142,6 +148,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Returns information about a specified job and whether that job has been
      * received by the job worker. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param acknowledgeJobRequest
      *        Represents the input of an acknowledge job action.
@@ -157,6 +164,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Returns information about a specified job and whether that job has been
      * received by the job worker. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param acknowledgeJobRequest
      *        Represents the input of an acknowledge job action.
@@ -214,6 +222,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Creates a new custom action that can be used in all pipelines associated
      * with the AWS account. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param createCustomActionTypeRequest
      *        Represents the input of a create custom action operation.
@@ -229,6 +238,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Creates a new custom action that can be used in all pipelines associated
      * with the AWS account. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param createCustomActionTypeRequest
      *        Represents the input of a create custom action operation.
@@ -249,6 +259,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Creates a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param createPipelineRequest
      *        Represents the input of a create pipeline action.
@@ -263,6 +274,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Creates a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param createPipelineRequest
      *        Represents the input of a create pipeline action.
@@ -290,14 +302,16 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * You cannot recreate a custom action after it has been deleted unless you
      * increase the version number of the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
      *        custom action will be marked as deleted.
+     * @return A Java Future containing the result of the DeleteCustomActionType
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DeleteCustomActionType
      */
-    java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest);
 
     /**
@@ -311,7 +325,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * You cannot recreate a custom action after it has been deleted unless you
      * increase the version number of the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
@@ -321,28 +335,34 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomActionType
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DeleteCustomActionType
      */
-    java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, DeleteCustomActionTypeResult> asyncHandler);
 
     /**
      * <p>
      * Deletes the specified pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest);
 
     /**
      * <p>
      * Deletes the specified pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
@@ -351,23 +371,28 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePipeline
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DeletePipeline
      */
-    java.util.concurrent.Future<Void> deletePipelineAsync(
+    java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest deletePipelineRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler);
 
     /**
      * <p>
      * Prevents artifacts in a pipeline from transitioning to the next stage in
      * the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
+     * @return A Java Future containing the result of the DisableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.DisableStageTransition
      */
-    java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest);
 
     /**
@@ -375,6 +400,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Prevents artifacts in a pipeline from transitioning to the next stage in
      * the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
@@ -383,28 +409,34 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.DisableStageTransition
      */
-    java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest disableStageTransitionRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, DisableStageTransitionResult> asyncHandler);
 
     /**
      * <p>
      * Enables artifacts in a pipeline to transition to a stage in a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
+     * @return A Java Future containing the result of the EnableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.EnableStageTransition
      */
-    java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest);
 
     /**
      * <p>
      * Enables artifacts in a pipeline to transition to a stage in a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
@@ -413,11 +445,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableStageTransition
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.EnableStageTransition
      */
-    java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest enableStageTransitionRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult> asyncHandler);
 
     /**
      * <p>
@@ -431,7 +465,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param getJobDetailsRequest
      *        Represents the input of a get job details action.
@@ -454,7 +488,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param getJobDetailsRequest
      *        Represents the input of a get job details action.
@@ -478,6 +512,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * which can then be modified and used to update the pipeline structure with
      * <a>UpdatePipeline</a>.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineRequest
      *        Represents the input of a get pipeline action.
@@ -495,6 +530,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * which can then be modified and used to update the pipeline structure with
      * <a>UpdatePipeline</a>.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineRequest
      *        Represents the input of a get pipeline action.
@@ -516,6 +552,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Returns information about the state of a pipeline, including the stages,
      * actions, and details about the last run of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a get pipeline state action.
@@ -531,6 +568,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Returns information about the state of a pipeline, including the stages,
      * actions, and details about the last run of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a get pipeline state action.
@@ -641,6 +679,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
+     * <examples></examples>
      * 
      * @param listPipelinesRequest
      *        Represents the input of a list pipelines action.
@@ -655,6 +694,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
+     * <examples></examples>
      * 
      * @param listPipelinesRequest
      *        Represents the input of a list pipelines action.
@@ -683,7 +723,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param pollForJobsRequest
      *        Represents the input of a poll for jobs action.
@@ -706,7 +746,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param pollForJobsRequest
      *        Represents the input of a poll for jobs action.
@@ -817,9 +857,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobFailureResultRequest
      *        Represents the input of a put job failure result action.
+     * @return A Java Future containing the result of the PutJobFailureResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobFailureResult
      */
-    java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest);
 
     /**
@@ -835,11 +877,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutJobFailureResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutJobFailureResult
      */
-    java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest putJobFailureResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, PutJobFailureResultResult> asyncHandler);
 
     /**
      * <p>
@@ -849,9 +893,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putJobSuccessResultRequest
      *        Represents the input of a put job success result action.
+     * @return A Java Future containing the result of the PutJobSuccessResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsync.PutJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest);
 
     /**
@@ -867,11 +913,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutJobSuccessResult
+     *         operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest putJobSuccessResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, PutJobSuccessResultResult> asyncHandler);
 
     /**
      * <p>
@@ -881,9 +929,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * 
      * @param putThirdPartyJobFailureResultRequest
      *        Represents the input of a third party job failure result action.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobFailureResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobFailureResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest);
 
     /**
@@ -899,11 +949,13 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobFailureResult operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobFailureResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, PutThirdPartyJobFailureResultResult> asyncHandler);
 
     /**
      * <p>
@@ -914,9 +966,11 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * @param putThirdPartyJobSuccessResultRequest
      *        Represents the input of a put third party job success result
      *        action.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobSuccessResult operation returned by the service.
      * @sample AWSCodePipelineAsync.PutThirdPartyJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest);
 
     /**
@@ -933,17 +987,20 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PutThirdPartyJobSuccessResult operation returned by the service.
      * @sample AWSCodePipelineAsyncHandler.PutThirdPartyJobSuccessResult
      */
-    java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult> asyncHandler);
 
     /**
      * <p>
      * Starts the specified pipeline. Specifically, it begins processing the
      * latest commit to the source location specified as part of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param startPipelineExecutionRequest
      *        Represents the input of a start pipeline execution action.
@@ -959,6 +1016,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * Starts the specified pipeline. Specifically, it begins processing the
      * latest commit to the source location specified as part of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param startPipelineExecutionRequest
      *        Represents the input of a start pipeline execution action.
@@ -982,6 +1040,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * UpdatePipeline to provide the full structure of the pipeline. Updating
      * the pipeline increases the version number of the pipeline by 1.
      * </p>
+     * <examples></examples>
      * 
      * @param updatePipelineRequest
      *        Represents the input of an update pipeline action.
@@ -999,6 +1058,7 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * UpdatePipeline to provide the full structure of the pipeline. Updating
      * the pipeline increases the version number of the pipeline by 1.
      * </p>
+     * <examples></examples>
      * 
      * @param updatePipelineRequest
      *        Represents the input of an update pipeline action.

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class VolumeFromJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceContainer", targetDepth)) {
                     context.nextToken();
-                    volumeFrom.setSourceContainer(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeFrom.setSourceContainer(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("readOnly", targetDepth)) {
                     context.nextToken();
-                    volumeFrom.setReadOnly(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeFrom.setReadOnly(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

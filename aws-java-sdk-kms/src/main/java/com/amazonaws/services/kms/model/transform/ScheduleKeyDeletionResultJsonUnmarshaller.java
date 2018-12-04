@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class ScheduleKeyDeletionResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    scheduleKeyDeletionResult.setKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scheduleKeyDeletionResult.setKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeletionDate", targetDepth)) {
                     context.nextToken();
-                    scheduleKeyDeletionResult
-                            .setDeletionDate(DateJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    scheduleKeyDeletionResult.setDeletionDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

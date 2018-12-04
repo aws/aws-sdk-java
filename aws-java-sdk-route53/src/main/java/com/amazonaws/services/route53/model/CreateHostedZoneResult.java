@@ -65,6 +65,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      *        A complex type that contains identifying information about the
      *        hosted zone.
      */
+
     public void setHostedZone(HostedZone hostedZone) {
         this.hostedZone = hostedZone;
     }
@@ -78,6 +79,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return A complex type that contains identifying information about the
      *         hosted zone.
      */
+
     public HostedZone getHostedZone() {
         return this.hostedZone;
     }
@@ -94,6 +96,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneResult withHostedZone(HostedZone hostedZone) {
         setHostedZone(hostedZone);
         return this;
@@ -112,6 +115,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      *        call the <a>GetChange</a> action to get the current status of the
      *        change request.
      */
+
     public void setChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
     }
@@ -128,6 +132,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      *         call the <a>GetChange</a> action to get the current status of the
      *         change request.
      */
+
     public ChangeInfo getChangeInfo() {
         return this.changeInfo;
     }
@@ -147,6 +152,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneResult withChangeInfo(ChangeInfo changeInfo) {
         setChangeInfo(changeInfo);
         return this;
@@ -160,6 +166,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @param delegationSet
      *        A complex type that contains name server information.
      */
+
     public void setDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;
     }
@@ -171,6 +178,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * 
      * @return A complex type that contains name server information.
      */
+
     public DelegationSet getDelegationSet() {
         return this.delegationSet;
     }
@@ -185,6 +193,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneResult withDelegationSet(DelegationSet delegationSet) {
         setDelegationSet(delegationSet);
         return this;
@@ -193,6 +202,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
     /**
      * @param vPC
      */
+
     public void setVPC(VPC vPC) {
         this.vPC = vPC;
     }
@@ -200,6 +210,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public VPC getVPC() {
         return this.vPC;
     }
@@ -209,6 +220,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneResult withVPC(VPC vPC) {
         setVPC(vPC);
         return this;
@@ -222,6 +234,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @param location
      *        The unique URL representing the new hosted zone.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -233,6 +246,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * 
      * @return The unique URL representing the new hosted zone.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -247,6 +261,7 @@ public class CreateHostedZoneResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateHostedZoneResult withLocation(String location) {
         setLocation(location);
         return this;

@@ -63,6 +63,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      *        The IP address that the container is bound to on the container
      *        instance.
      */
+
     public void setBindIP(String bindIP) {
         this.bindIP = bindIP;
     }
@@ -75,6 +76,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return The IP address that the container is bound to on the container
      *         instance.
      */
+
     public String getBindIP() {
         return this.bindIP;
     }
@@ -90,6 +92,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkBinding withBindIP(String bindIP) {
         setBindIP(bindIP);
         return this;
@@ -105,6 +108,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      *        The port number on the container that is be used with the network
      *        binding.
      */
+
     public void setContainerPort(Integer containerPort) {
         this.containerPort = containerPort;
     }
@@ -118,6 +122,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return The port number on the container that is be used with the network
      *         binding.
      */
+
     public Integer getContainerPort() {
         return this.containerPort;
     }
@@ -134,6 +139,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkBinding withContainerPort(Integer containerPort) {
         setContainerPort(containerPort);
         return this;
@@ -147,6 +153,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @param hostPort
      *        The port number on the host that is used with the network binding.
      */
+
     public void setHostPort(Integer hostPort) {
         this.hostPort = hostPort;
     }
@@ -159,6 +166,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return The port number on the host that is used with the network
      *         binding.
      */
+
     public Integer getHostPort() {
         return this.hostPort;
     }
@@ -173,6 +181,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public NetworkBinding withHostPort(Integer hostPort) {
         setHostPort(hostPort);
         return this;
@@ -187,6 +196,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      *        The protocol used for the network binding.
      * @see TransportProtocol
      */
+
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
@@ -199,6 +209,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      * @return The protocol used for the network binding.
      * @see TransportProtocol
      */
+
     public String getProtocol() {
         return this.protocol;
     }
@@ -214,6 +225,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      *         chained together.
      * @see TransportProtocol
      */
+
     public NetworkBinding withProtocol(String protocol) {
         setProtocol(protocol);
         return this;
@@ -226,10 +238,9 @@ public class NetworkBinding implements Serializable, Cloneable {
      * 
      * @param protocol
      *        The protocol used for the network binding.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TransportProtocol
      */
+
     public void setProtocol(TransportProtocol protocol) {
         this.protocol = protocol.toString();
     }
@@ -245,6 +256,7 @@ public class NetworkBinding implements Serializable, Cloneable {
      *         chained together.
      * @see TransportProtocol
      */
+
     public NetworkBinding withProtocol(TransportProtocol protocol) {
         setProtocol(protocol);
         return this;

@@ -31,12 +31,14 @@ import com.amazonaws.metrics.internal.ServiceMetricTypeGuesser;
 
 /**
  * Custom implementation of {@link RequestEntity} that delegates to an
- * {@link InputStreamRequestEntity}, with the one notable difference, that if
+ * {@link RepeatableInputStreamRequestEntity}, with the one notable difference, that if
  * the underlying InputStream supports being reset, this RequestEntity will
  * report that it is repeatable and will reset the stream on all subsequent
  * attempts to write out the request.
+ *
+ * TODO : Move this to apache specific package.
  */
-class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
+public class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
 
     /** True if the request entity hasn't been written out yet */
     private boolean firstAttempt = true;
@@ -69,7 +71,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      *            The details of the request being written out (content type,
      *            content length, and content).
      */
-    RepeatableInputStreamRequestEntity(final Request<?> request) {
+    public RepeatableInputStreamRequestEntity(final Request<?> request) {
         setChunked(false);
 
         /*

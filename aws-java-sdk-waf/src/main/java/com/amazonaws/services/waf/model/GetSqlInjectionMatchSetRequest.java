@@ -54,6 +54,7 @@ public class GetSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -73,6 +74,7 @@ public class GetSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -95,6 +97,7 @@ public class GetSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSqlInjectionMatchSetRequest withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);

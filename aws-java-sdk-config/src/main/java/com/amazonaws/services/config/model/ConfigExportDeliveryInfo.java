@@ -72,6 +72,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      *        Status of the last attempted delivery.
      * @see DeliveryStatus
      */
+
     public void setLastStatus(String lastStatus) {
         this.lastStatus = lastStatus;
     }
@@ -84,6 +85,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Status of the last attempted delivery.
      * @see DeliveryStatus
      */
+
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -99,6 +101,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStatus
      */
+
     public ConfigExportDeliveryInfo withLastStatus(String lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -111,10 +114,9 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @param lastStatus
      *        Status of the last attempted delivery.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeliveryStatus
      */
+
     public void setLastStatus(DeliveryStatus lastStatus) {
         this.lastStatus = lastStatus.toString();
     }
@@ -130,6 +132,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStatus
      */
+
     public ConfigExportDeliveryInfo withLastStatus(DeliveryStatus lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -143,6 +146,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @param lastErrorCode
      *        The error code from the last attempted delivery.
      */
+
     public void setLastErrorCode(String lastErrorCode) {
         this.lastErrorCode = lastErrorCode;
     }
@@ -154,6 +158,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The error code from the last attempted delivery.
      */
+
     public String getLastErrorCode() {
         return this.lastErrorCode;
     }
@@ -168,6 +173,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigExportDeliveryInfo withLastErrorCode(String lastErrorCode) {
         setLastErrorCode(lastErrorCode);
         return this;
@@ -181,6 +187,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @param lastErrorMessage
      *        The error message from the last attempted delivery.
      */
+
     public void setLastErrorMessage(String lastErrorMessage) {
         this.lastErrorMessage = lastErrorMessage;
     }
@@ -192,6 +199,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The error message from the last attempted delivery.
      */
+
     public String getLastErrorMessage() {
         return this.lastErrorMessage;
     }
@@ -206,6 +214,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigExportDeliveryInfo withLastErrorMessage(String lastErrorMessage) {
         setLastErrorMessage(lastErrorMessage);
         return this;
@@ -219,6 +228,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @param lastAttemptTime
      *        The time of the last attempted delivery.
      */
+
     public void setLastAttemptTime(java.util.Date lastAttemptTime) {
         this.lastAttemptTime = lastAttemptTime;
     }
@@ -230,6 +240,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The time of the last attempted delivery.
      */
+
     public java.util.Date getLastAttemptTime() {
         return this.lastAttemptTime;
     }
@@ -244,6 +255,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigExportDeliveryInfo withLastAttemptTime(
             java.util.Date lastAttemptTime) {
         setLastAttemptTime(lastAttemptTime);
@@ -258,6 +270,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @param lastSuccessfulTime
      *        The time of the last successful delivery.
      */
+
     public void setLastSuccessfulTime(java.util.Date lastSuccessfulTime) {
         this.lastSuccessfulTime = lastSuccessfulTime;
     }
@@ -269,6 +282,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The time of the last successful delivery.
      */
+
     public java.util.Date getLastSuccessfulTime() {
         return this.lastSuccessfulTime;
     }
@@ -283,6 +297,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigExportDeliveryInfo withLastSuccessfulTime(
             java.util.Date lastSuccessfulTime) {
         setLastSuccessfulTime(lastSuccessfulTime);
@@ -297,6 +312,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @param nextDeliveryTime
      *        The time that the next delivery occurs.
      */
+
     public void setNextDeliveryTime(java.util.Date nextDeliveryTime) {
         this.nextDeliveryTime = nextDeliveryTime;
     }
@@ -308,6 +324,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The time that the next delivery occurs.
      */
+
     public java.util.Date getNextDeliveryTime() {
         return this.nextDeliveryTime;
     }
@@ -322,6 +339,7 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigExportDeliveryInfo withNextDeliveryTime(
             java.util.Date nextDeliveryTime) {
         setNextDeliveryTime(nextDeliveryTime);

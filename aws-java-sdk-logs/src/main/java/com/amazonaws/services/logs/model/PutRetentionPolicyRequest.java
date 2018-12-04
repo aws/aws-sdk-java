@@ -65,6 +65,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
      * @param logGroupName
      *        The name of the log group to associate the retention policy with.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -76,6 +77,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the log group to associate the retention policy with.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -90,6 +92,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRetentionPolicyRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -98,6 +101,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
     /**
      * @param retentionInDays
      */
+
     public void setRetentionInDays(Integer retentionInDays) {
         this.retentionInDays = retentionInDays;
     }
@@ -105,6 +109,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public Integer getRetentionInDays() {
         return this.retentionInDays;
     }
@@ -114,6 +119,7 @@ public class PutRetentionPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRetentionPolicyRequest withRetentionInDays(Integer retentionInDays) {
         setRetentionInDays(retentionInDays);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class DeploymentConfigInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("deploymentConfigId", targetDepth)) {
                     context.nextToken();
-                    deploymentConfigInfo
-                            .setDeploymentConfigId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentConfigInfo.setDeploymentConfigId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfigName", targetDepth)) {
                     context.nextToken();
-                    deploymentConfigInfo
-                            .setDeploymentConfigName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentConfigInfo.setDeploymentConfigName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("minimumHealthyHosts", targetDepth)) {
                     context.nextToken();
@@ -71,8 +71,8 @@ public class DeploymentConfigInfoJsonUnmarshaller implements
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentConfigInfo.setCreateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentConfigInfo.setCreateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

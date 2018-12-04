@@ -40,9 +40,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      */
     private java.util.Map<String, AttributeValue> key;
@@ -440,6 +440,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      */
     private String returnValues;
 
@@ -475,7 +482,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -627,9 +634,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
     public DeleteItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key) {
@@ -649,9 +656,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
      *        they appeared before they were deleted. For <i>DeleteItem</i>, the
@@ -670,6 +677,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      */
     public DeleteItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key, String returnValues) {
@@ -690,9 +704,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
      *        they appeared before they were deleted. For <i>DeleteItem</i>, the
@@ -711,6 +725,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      */
     public DeleteItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key, ReturnValue returnValues) {
@@ -727,6 +748,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table from which to delete the item.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -738,6 +760,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table from which to delete the item.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -752,6 +775,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -764,19 +788,20 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @return A map of attribute names to <i>AttributeValue</i> objects,
      *         representing the primary key of the item to delete.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide values for both the partition key and the sort key.
      */
+
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
     }
@@ -788,9 +813,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -798,10 +823,11 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
+
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
     }
@@ -813,9 +839,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -823,12 +849,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        representing the primary key of the item to delete.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withKey(java.util.Map<String, AttributeValue> key) {
         setKey(key);
         return this;
@@ -849,6 +876,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Key. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public DeleteItemRequest clearKeyEntries() {
         this.key = null;
         return this;
@@ -1238,8 +1266,8 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         is greater than <code>B</code>. For a list of code values, see <a
      *         href
      *         ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a
-     *         >.
+     *         >http
+     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         </p>
      *         <p>
      *         For type Binary, DynamoDB treats each byte of the binary data as
@@ -1538,6 +1566,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         This parameter does not support attributes of type List or Map.
      *         </p>
      */
+
     public java.util.Map<String, ExpectedAttributeValue> getExpected() {
         return expected;
     }
@@ -2224,6 +2253,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        This parameter does not support attributes of type List or Map.
      *        </p>
      */
+
     public void setExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         this.expected = expected;
@@ -2913,6 +2943,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -2935,6 +2966,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Expected. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public DeleteItemRequest clearExpectedEntries() {
         this.expected = null;
         return this;
@@ -3020,6 +3052,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
@@ -3103,6 +3136,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see ConditionalOperator
      */
+
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -3189,6 +3223,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public DeleteItemRequest withConditionalOperator(String conditionalOperator) {
         setConditionalOperator(conditionalOperator);
         return this;
@@ -3272,10 +3307,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -3362,6 +3396,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public DeleteItemRequest withConditionalOperator(
             ConditionalOperator conditionalOperator) {
         setConditionalOperator(conditionalOperator);
@@ -3388,6 +3423,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3406,8 +3448,16 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @see ReturnValue
      */
+
     public void setReturnValues(String returnValues) {
         this.returnValues = returnValues;
     }
@@ -3432,6 +3482,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as
      *         they appeared before they were deleted. For <i>DeleteItem</i>,
@@ -3449,8 +3506,16 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         <code>ALL_OLD</code> - The content of the old item is returned.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *         operations; however, <i>DeleteItem</i> does not recognize any
+     *         values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *         </p>
      * @see ReturnValue
      */
+
     public String getReturnValues() {
         return this.returnValues;
     }
@@ -3475,6 +3540,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3493,10 +3565,18 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
      */
+
     public DeleteItemRequest withReturnValues(String returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -3522,6 +3602,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3540,10 +3627,16 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @see ReturnValue
      */
+
     public void setReturnValues(ReturnValue returnValues) {
         this.returnValues = returnValues.toString();
     }
@@ -3568,6 +3661,13 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <i>ReturnValues</i> parameter is used by several DynamoDB operations;
+     * however, <i>DeleteItem</i> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.
+     * </p>
+     * </note>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -3586,10 +3686,18 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <code>ALL_OLD</code> - The content of the old item is returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <i>ReturnValues</i> parameter is used by several DynamoDB
+     *        operations; however, <i>DeleteItem</i> does not recognize any
+     *        values other than <code>NONE</code> or <code>ALL_OLD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
      */
+
     public DeleteItemRequest withReturnValues(ReturnValue returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -3599,6 +3707,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -3607,6 +3716,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -3617,6 +3727,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public DeleteItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -3625,10 +3736,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -3640,6 +3750,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public DeleteItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -3663,6 +3774,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
@@ -3684,6 +3796,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -3707,6 +3820,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public DeleteItemRequest withReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -3728,10 +3842,9 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        collections, if any, that were modified during the operation are
      *        returned in the response. If set to <code>NONE</code> (the
      *        default), no statistics are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics
@@ -3757,6 +3870,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public DeleteItemRequest withReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -3784,7 +3898,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -3824,7 +3938,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -3845,6 +3959,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *        </p>
      */
+
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
     }
@@ -3870,7 +3985,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -3909,7 +4024,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         Comparison operators:
-     *         <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *         <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *         </p>
      *         </li>
      *         <li>
@@ -3930,6 +4045,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *         </p>
      */
+
     public String getConditionExpression() {
         return this.conditionExpression;
     }
@@ -3955,7 +4071,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -3995,7 +4111,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -4018,6 +4134,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withConditionExpression(String conditionExpression) {
         setConditionExpression(conditionExpression);
         return this;
@@ -4174,6 +4291,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -4330,6 +4448,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -4489,6 +4608,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -4512,6 +4632,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public DeleteItemRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;
@@ -4577,6 +4698,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
         return expressionAttributeValues;
     }
@@ -4642,6 +4764,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -4710,6 +4833,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemRequest withExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         setExpressionAttributeValues(expressionAttributeValues);
@@ -4733,6 +4857,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public DeleteItemRequest clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
         return this;

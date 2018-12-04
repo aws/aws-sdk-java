@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,23 +54,28 @@ public class RestApiJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    restApi.setId(StringJsonUnmarshaller.getInstance()
+                    restApi.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    restApi.setName(StringJsonUnmarshaller.getInstance()
+                    restApi.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    restApi.setDescription(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    restApi.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    restApi.setCreatedDate(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    restApi.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("warnings", targetDepth)) {
+                    context.nextToken();
+                    restApi.setWarnings(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

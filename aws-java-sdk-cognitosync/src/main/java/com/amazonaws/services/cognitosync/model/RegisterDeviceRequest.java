@@ -66,6 +66,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. Here, the ID of the pool that the identity belongs to.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -81,6 +82,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. Here, the ID of the pool that the identity belongs to.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -99,6 +101,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDeviceRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -112,6 +115,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @param identityId
      *        The unique ID for this identity.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -123,6 +127,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The unique ID for this identity.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -137,6 +142,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDeviceRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -151,6 +157,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      *        The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
      * @see Platform
      */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
@@ -163,6 +170,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @return The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
      * @see Platform
      */
+
     public String getPlatform() {
         return this.platform;
     }
@@ -178,6 +186,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Platform
      */
+
     public RegisterDeviceRequest withPlatform(String platform) {
         setPlatform(platform);
         return this;
@@ -190,10 +199,9 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @param platform
      *        The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Platform
      */
+
     public void setPlatform(Platform platform) {
         this.platform = platform.toString();
     }
@@ -209,6 +217,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Platform
      */
+
     public RegisterDeviceRequest withPlatform(Platform platform) {
         setPlatform(platform);
         return this;
@@ -222,6 +231,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @param token
      *        The push token.
      */
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -233,6 +243,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The push token.
      */
+
     public String getToken() {
         return this.token;
     }
@@ -247,6 +258,7 @@ public class RegisterDeviceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterDeviceRequest withToken(String token) {
         setToken(token);
         return this;

@@ -41,11 +41,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -94,11 +95,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -122,7 +124,8 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code>
      *        | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> |
      *        <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> |
+     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        |<code>ES_IDENTIFICATION</code> |
      *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
      *        <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
      *        <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
@@ -136,6 +139,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *        Required: Yes
      * @see ExtraParamName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -156,11 +160,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -184,6 +189,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      *         <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      *         <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
+     *         <code>CA_BUSINESS_ENTITY_TYPE</code> |
      *         <code>ES_IDENTIFICATION</code> |
      *         <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code>
      *         | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
@@ -198,6 +204,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         Required: Yes
      * @see ExtraParamName
      */
+
     public String getName() {
         return this.name;
     }
@@ -218,11 +225,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -246,7 +254,8 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code>
      *        | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> |
      *        <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> |
+     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        |<code>ES_IDENTIFICATION</code> |
      *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
      *        <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
      *        <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
@@ -262,6 +271,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         chained together.
      * @see ExtraParamName
      */
+
     public ExtraParam withName(String name) {
         setName(name);
         return this;
@@ -283,11 +293,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -311,7 +322,8 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code>
      *        | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> |
      *        <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> |
+     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        |<code>ES_IDENTIFICATION</code> |
      *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
      *        <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
      *        <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
@@ -323,10 +335,9 @@ public class ExtraParam implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExtraParamName
      */
+
     public void setName(ExtraParamName name) {
         this.name = name.toString();
     }
@@ -347,11 +358,12 @@ public class ExtraParam implements Serializable, Cloneable {
      * <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> |
      * <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> |
      * <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> |
-     * <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> |
-     * <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> |
-     * <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> |
-     * <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> |
-     * <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code>
+     * <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> |
+     * <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
+     * <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
+     * <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
+     * <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> |
+     * <code>VAT_NUMBER</code>
      * </p>
      * <p>
      * Parent: <code>ExtraParams</code>
@@ -375,7 +387,8 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code>
      *        | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> |
      *        <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> |
-     *        <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> |
+     *        <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        |<code>ES_IDENTIFICATION</code> |
      *        <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> |
      *        <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> |
      *        <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> |
@@ -391,6 +404,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         chained together.
      * @see ExtraParamName
      */
+
     public ExtraParam withName(ExtraParamName name) {
         setName(name);
         return this;
@@ -435,6 +449,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -477,6 +492,7 @@ public class ExtraParam implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getValue() {
         return this.value;
     }
@@ -522,6 +538,7 @@ public class ExtraParam implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExtraParam withValue(String value) {
         setValue(value);
         return this;

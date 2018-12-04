@@ -31,6 +31,7 @@ public enum ExtraParamName {
     AU_ID_NUMBER("AU_ID_NUMBER"),
     AU_ID_TYPE("AU_ID_TYPE"),
     CA_LEGAL_TYPE("CA_LEGAL_TYPE"),
+    CA_BUSINESS_ENTITY_TYPE("CA_BUSINESS_ENTITY_TYPE"),
     ES_IDENTIFICATION("ES_IDENTIFICATION"),
     ES_IDENTIFICATION_TYPE("ES_IDENTIFICATION_TYPE"),
     ES_LEGAL_FORM("ES_LEGAL_FORM"),
@@ -83,6 +84,8 @@ public enum ExtraParamName {
             return AU_ID_TYPE;
         } else if ("CA_LEGAL_TYPE".equals(value)) {
             return CA_LEGAL_TYPE;
+        } else if ("CA_BUSINESS_ENTITY_TYPE".equals(value)) {
+            return CA_BUSINESS_ENTITY_TYPE;
         } else if ("ES_IDENTIFICATION".equals(value)) {
             return ES_IDENTIFICATION;
         } else if ("ES_IDENTIFICATION_TYPE".equals(value)) {

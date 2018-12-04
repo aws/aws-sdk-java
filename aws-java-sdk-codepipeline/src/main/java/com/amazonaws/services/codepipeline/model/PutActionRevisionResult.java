@@ -49,6 +49,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      *        The new revision number or ID for the revision after the action
      *        completes.
      */
+
     public void setNewRevision(Boolean newRevision) {
         this.newRevision = newRevision;
     }
@@ -62,6 +63,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * @return The new revision number or ID for the revision after the action
      *         completes.
      */
+
     public Boolean getNewRevision() {
         return this.newRevision;
     }
@@ -78,6 +80,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionResult withNewRevision(Boolean newRevision) {
         setNewRevision(newRevision);
         return this;
@@ -92,6 +95,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * @return The new revision number or ID for the revision after the action
      *         completes.
      */
+
     public Boolean isNewRevision() {
         return this.newRevision;
     }
@@ -104,6 +108,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * @param pipelineExecutionId
      *        The ID of the current workflow state of the pipeline.
      */
+
     public void setPipelineExecutionId(String pipelineExecutionId) {
         this.pipelineExecutionId = pipelineExecutionId;
     }
@@ -115,6 +120,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * 
      * @return The ID of the current workflow state of the pipeline.
      */
+
     public String getPipelineExecutionId() {
         return this.pipelineExecutionId;
     }
@@ -129,6 +135,7 @@ public class PutActionRevisionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutActionRevisionResult withPipelineExecutionId(
             String pipelineExecutionId) {
         setPipelineExecutionId(pipelineExecutionId);

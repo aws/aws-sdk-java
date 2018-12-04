@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,23 @@ public class RepositoryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("repositoryArn", targetDepth)) {
                     context.nextToken();
-                    repository.setRepositoryArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repository.setRepositoryArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("registryId", targetDepth)) {
                     context.nextToken();
-                    repository.setRegistryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repository.setRegistryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    repository.setRepositoryName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repository.setRepositoryName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("repositoryUri", targetDepth)) {
+                    context.nextToken();
+                    repository.setRepositoryUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directconnect.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * NewPrivateVirtualInterfaceMarshaller
@@ -39,54 +34,51 @@ import com.amazonaws.util.json.*;
 public class NewPrivateVirtualInterfaceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(NewPrivateVirtualInterface newPrivateVirtualInterface,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (newPrivateVirtualInterface == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (newPrivateVirtualInterface.getVirtualInterfaceName() != null) {
-                jsonWriter.key("virtualInterfaceName").value(
-                        newPrivateVirtualInterface.getVirtualInterfaceName());
+                jsonGenerator.writeFieldName("virtualInterfaceName")
+                        .writeValue(
+                                newPrivateVirtualInterface
+                                        .getVirtualInterfaceName());
             }
-
             if (newPrivateVirtualInterface.getVlan() != null) {
-                jsonWriter.key("vlan").value(
+                jsonGenerator.writeFieldName("vlan").writeValue(
                         newPrivateVirtualInterface.getVlan());
             }
-
             if (newPrivateVirtualInterface.getAsn() != null) {
-                jsonWriter.key("asn")
-                        .value(newPrivateVirtualInterface.getAsn());
+                jsonGenerator.writeFieldName("asn").writeValue(
+                        newPrivateVirtualInterface.getAsn());
             }
-
             if (newPrivateVirtualInterface.getAuthKey() != null) {
-                jsonWriter.key("authKey").value(
+                jsonGenerator.writeFieldName("authKey").writeValue(
                         newPrivateVirtualInterface.getAuthKey());
             }
-
             if (newPrivateVirtualInterface.getAmazonAddress() != null) {
-                jsonWriter.key("amazonAddress").value(
+                jsonGenerator.writeFieldName("amazonAddress").writeValue(
                         newPrivateVirtualInterface.getAmazonAddress());
             }
-
             if (newPrivateVirtualInterface.getCustomerAddress() != null) {
-                jsonWriter.key("customerAddress").value(
+                jsonGenerator.writeFieldName("customerAddress").writeValue(
                         newPrivateVirtualInterface.getCustomerAddress());
             }
-
             if (newPrivateVirtualInterface.getVirtualGatewayId() != null) {
-                jsonWriter.key("virtualGatewayId").value(
+                jsonGenerator.writeFieldName("virtualGatewayId").writeValue(
                         newPrivateVirtualInterface.getVirtualGatewayId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

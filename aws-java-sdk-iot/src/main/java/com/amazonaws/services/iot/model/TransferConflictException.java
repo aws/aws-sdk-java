@@ -20,8 +20,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You can't transfer the the certificate because authorization policies are
- * still attached.
+ * You can't transfer the certificate because authorization policies are still
+ * attached.
  * </p>
  */
 public class TransferConflictException extends AmazonServiceException {

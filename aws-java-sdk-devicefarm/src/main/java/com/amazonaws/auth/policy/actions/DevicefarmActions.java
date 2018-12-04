@@ -51,6 +51,8 @@ public enum DevicefarmActions implements Action {
     GetDevicePoolCompatibility("devicefarm:GetDevicePoolCompatibility"),
     /** Action for the GetJob operation. */
     GetJob("devicefarm:GetJob"),
+    /** Action for the GetOfferingStatus operation. */
+    GetOfferingStatus("devicefarm:GetOfferingStatus"),
     /** Action for the GetProject operation. */
     GetProject("devicefarm:GetProject"),
     /** Action for the GetRun operation. */
@@ -69,6 +71,10 @@ public enum DevicefarmActions implements Action {
     ListDevices("devicefarm:ListDevices"),
     /** Action for the ListJobs operation. */
     ListJobs("devicefarm:ListJobs"),
+    /** Action for the ListOfferingTransactions operation. */
+    ListOfferingTransactions("devicefarm:ListOfferingTransactions"),
+    /** Action for the ListOfferings operation. */
+    ListOfferings("devicefarm:ListOfferings"),
     /** Action for the ListProjects operation. */
     ListProjects("devicefarm:ListProjects"),
     /** Action for the ListRuns operation. */
@@ -83,8 +89,14 @@ public enum DevicefarmActions implements Action {
     ListUniqueProblems("devicefarm:ListUniqueProblems"),
     /** Action for the ListUploads operation. */
     ListUploads("devicefarm:ListUploads"),
+    /** Action for the PurchaseOffering operation. */
+    PurchaseOffering("devicefarm:PurchaseOffering"),
+    /** Action for the RenewOffering operation. */
+    RenewOffering("devicefarm:RenewOffering"),
     /** Action for the ScheduleRun operation. */
     ScheduleRun("devicefarm:ScheduleRun"),
+    /** Action for the StopRun operation. */
+    StopRun("devicefarm:StopRun"),
     /** Action for the UpdateDevicePool operation. */
     UpdateDevicePool("devicefarm:UpdateDevicePool"),
     /** Action for the UpdateProject operation. */

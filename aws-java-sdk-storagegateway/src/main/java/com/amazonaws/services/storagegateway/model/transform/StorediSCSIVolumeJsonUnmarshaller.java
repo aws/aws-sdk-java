@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,51 +55,50 @@ public class StorediSCSIVolumeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeStatus", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeSizeInBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeProgress", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeProgress(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeProgress(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeDiskId", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume.setVolumeDiskId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeDiskId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceSnapshotId", targetDepth)) {
                     context.nextToken();
-                    storediSCSIVolume
-                            .setSourceSnapshotId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    storediSCSIVolume.setSourceSnapshotId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("PreservedExistingData", targetDepth)) {
                     context.nextToken();
                     storediSCSIVolume
-                            .setPreservedExistingData(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPreservedExistingData(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("VolumeiSCSIAttributes", targetDepth)) {

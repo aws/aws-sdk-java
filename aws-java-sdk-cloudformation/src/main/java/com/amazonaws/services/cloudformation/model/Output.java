@@ -52,6 +52,7 @@ public class Output implements Serializable, Cloneable {
      * @param outputKey
      *        The key associated with the output.
      */
+
     public void setOutputKey(String outputKey) {
         this.outputKey = outputKey;
     }
@@ -63,6 +64,7 @@ public class Output implements Serializable, Cloneable {
      * 
      * @return The key associated with the output.
      */
+
     public String getOutputKey() {
         return this.outputKey;
     }
@@ -77,6 +79,7 @@ public class Output implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Output withOutputKey(String outputKey) {
         setOutputKey(outputKey);
         return this;
@@ -90,6 +93,7 @@ public class Output implements Serializable, Cloneable {
      * @param outputValue
      *        The value associated with the output.
      */
+
     public void setOutputValue(String outputValue) {
         this.outputValue = outputValue;
     }
@@ -101,6 +105,7 @@ public class Output implements Serializable, Cloneable {
      * 
      * @return The value associated with the output.
      */
+
     public String getOutputValue() {
         return this.outputValue;
     }
@@ -115,6 +120,7 @@ public class Output implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Output withOutputValue(String outputValue) {
         setOutputValue(outputValue);
         return this;
@@ -128,6 +134,7 @@ public class Output implements Serializable, Cloneable {
      * @param description
      *        User defined description associated with the output.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -139,6 +146,7 @@ public class Output implements Serializable, Cloneable {
      * 
      * @return User defined description associated with the output.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -153,6 +161,7 @@ public class Output implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Output withDescription(String description) {
         setDescription(description);
         return this;

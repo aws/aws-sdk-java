@@ -60,6 +60,7 @@ public class Parameter implements Serializable, Cloneable {
      *        and value for a particular parameter, AWS CloudFormation uses the
      *        default value that is specified in your template.
      */
+
     public void setParameterKey(String parameterKey) {
         this.parameterKey = parameterKey;
     }
@@ -75,6 +76,7 @@ public class Parameter implements Serializable, Cloneable {
      *         and value for a particular parameter, AWS CloudFormation uses the
      *         default value that is specified in your template.
      */
+
     public String getParameterKey() {
         return this.parameterKey;
     }
@@ -93,6 +95,7 @@ public class Parameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Parameter withParameterKey(String parameterKey) {
         setParameterKey(parameterKey);
         return this;
@@ -106,6 +109,7 @@ public class Parameter implements Serializable, Cloneable {
      * @param parameterValue
      *        The value associated with the parameter.
      */
+
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
@@ -117,6 +121,7 @@ public class Parameter implements Serializable, Cloneable {
      * 
      * @return The value associated with the parameter.
      */
+
     public String getParameterValue() {
         return this.parameterValue;
     }
@@ -131,6 +136,7 @@ public class Parameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Parameter withParameterValue(String parameterValue) {
         setParameterValue(parameterValue);
         return this;
@@ -148,6 +154,7 @@ public class Parameter implements Serializable, Cloneable {
      *        stack is using for a given parameter key. If you specify
      *        <code>true</code>, do not specify a parameter value.
      */
+
     public void setUsePreviousValue(Boolean usePreviousValue) {
         this.usePreviousValue = usePreviousValue;
     }
@@ -163,6 +170,7 @@ public class Parameter implements Serializable, Cloneable {
      *         stack is using for a given parameter key. If you specify
      *         <code>true</code>, do not specify a parameter value.
      */
+
     public Boolean getUsePreviousValue() {
         return this.usePreviousValue;
     }
@@ -181,6 +189,7 @@ public class Parameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Parameter withUsePreviousValue(Boolean usePreviousValue) {
         setUsePreviousValue(usePreviousValue);
         return this;
@@ -197,6 +206,7 @@ public class Parameter implements Serializable, Cloneable {
      *         stack is using for a given parameter key. If you specify
      *         <code>true</code>, do not specify a parameter value.
      */
+
     public Boolean isUsePreviousValue() {
         return this.usePreviousValue;
     }

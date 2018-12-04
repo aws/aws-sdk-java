@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AttachThingPrincipalRequest Marshaller
@@ -47,7 +49,14 @@ public class AttachThingPrincipalRequestMarshaller
         implements
         Marshaller<Request<AttachThingPrincipalRequest>, AttachThingPrincipalRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AttachThingPrincipalRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AttachThingPrincipalRequest> marshall(
             AttachThingPrincipalRequest attachThingPrincipalRequest) {
@@ -69,11 +78,13 @@ public class AttachThingPrincipalRequestMarshaller
 
         String uriResourcePath = "/things/{thingName}/principals";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (attachThingPrincipalRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(attachThingPrincipalRequest
-                                .getThingName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{thingName}",
+                        (attachThingPrincipalRequest.getThingName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(attachThingPrincipalRequest
+                                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

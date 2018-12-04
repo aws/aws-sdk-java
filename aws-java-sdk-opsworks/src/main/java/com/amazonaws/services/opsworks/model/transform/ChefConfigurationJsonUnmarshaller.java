@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,13 @@ public class ChefConfigurationJsonUnmarshaller implements
                 if (context.testExpression("ManageBerkshelf", targetDepth)) {
                     context.nextToken();
                     chefConfiguration
-                            .setManageBerkshelf(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setManageBerkshelf(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BerkshelfVersion", targetDepth)) {
                     context.nextToken();
-                    chefConfiguration
-                            .setBerkshelfVersion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    chefConfiguration.setBerkshelfVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

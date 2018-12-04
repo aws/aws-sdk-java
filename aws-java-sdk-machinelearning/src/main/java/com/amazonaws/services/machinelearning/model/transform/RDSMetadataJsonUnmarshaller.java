@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,28 +60,28 @@ public class RDSMetadataJsonUnmarshaller implements
                 }
                 if (context.testExpression("DatabaseUserName", targetDepth)) {
                     context.nextToken();
-                    rDSMetadata.setDatabaseUserName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSMetadata.setDatabaseUserName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
                     context.nextToken();
-                    rDSMetadata.setSelectSqlQuery(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSMetadata.setSelectSqlQuery(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceRole", targetDepth)) {
                     context.nextToken();
-                    rDSMetadata.setResourceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSMetadata.setResourceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    rDSMetadata.setServiceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSMetadata.setServiceRole(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataPipelineId", targetDepth)) {
                     context.nextToken();
-                    rDSMetadata.setDataPipelineId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rDSMetadata.setDataPipelineId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -105,6 +105,7 @@ public class Source implements Serializable, Cloneable {
      *        The repository type.
      * @see SourceType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -117,6 +118,7 @@ public class Source implements Serializable, Cloneable {
      * @return The repository type.
      * @see SourceType
      */
+
     public String getType() {
         return this.type;
     }
@@ -132,6 +134,7 @@ public class Source implements Serializable, Cloneable {
      *         chained together.
      * @see SourceType
      */
+
     public Source withType(String type) {
         setType(type);
         return this;
@@ -144,10 +147,9 @@ public class Source implements Serializable, Cloneable {
      * 
      * @param type
      *        The repository type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SourceType
      */
+
     public void setType(SourceType type) {
         this.type = type.toString();
     }
@@ -163,6 +165,7 @@ public class Source implements Serializable, Cloneable {
      *         chained together.
      * @see SourceType
      */
+
     public Source withType(SourceType type) {
         setType(type);
         return this;
@@ -176,6 +179,7 @@ public class Source implements Serializable, Cloneable {
      * @param url
      *        The source URL.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -187,6 +191,7 @@ public class Source implements Serializable, Cloneable {
      * 
      * @return The source URL.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -201,6 +206,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withUrl(String url) {
         setUrl(url);
         return this;
@@ -225,6 +231,7 @@ public class Source implements Serializable, Cloneable {
      *        <li>For HTTP bundles, Git repositories, and Subversion
      *        repositories, set <code>Username</code> to the user name.</li>
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -247,6 +254,7 @@ public class Source implements Serializable, Cloneable {
      *         <li>For HTTP bundles, Git repositories, and Subversion
      *         repositories, set <code>Username</code> to the user name.</li>
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -272,6 +280,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withUsername(String username) {
         setUsername(username);
         return this;
@@ -317,6 +326,7 @@ public class Source implements Serializable, Cloneable {
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
      *        instead of the actual value.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -360,6 +370,7 @@ public class Source implements Serializable, Cloneable {
      *         In responses, AWS OpsWorks returns
      *         <code>*****FILTERED*****</code> instead of the actual value.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -406,6 +417,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withPassword(String password) {
         setPassword(password);
         return this;
@@ -426,6 +438,7 @@ public class Source implements Serializable, Cloneable {
      *        In responses, AWS OpsWorks returns <code>*****FILTERED*****</code>
      *        instead of the actual value.
      */
+
     public void setSshKey(String sshKey) {
         this.sshKey = sshKey;
     }
@@ -444,6 +457,7 @@ public class Source implements Serializable, Cloneable {
      *         In responses, AWS OpsWorks returns
      *         <code>*****FILTERED*****</code> instead of the actual value.
      */
+
     public String getSshKey() {
         return this.sshKey;
     }
@@ -465,6 +479,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withSshKey(String sshKey) {
         setSshKey(sshKey);
         return this;
@@ -485,6 +500,7 @@ public class Source implements Serializable, Cloneable {
      *        that represent different versions that can potentially be
      *        deployed.
      */
+
     public void setRevision(String revision) {
         this.revision = revision;
     }
@@ -503,6 +519,7 @@ public class Source implements Serializable, Cloneable {
      *         that represent different versions that can potentially be
      *         deployed.
      */
+
     public String getRevision() {
         return this.revision;
     }
@@ -524,6 +541,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withRevision(String revision) {
         setRevision(revision);
         return this;

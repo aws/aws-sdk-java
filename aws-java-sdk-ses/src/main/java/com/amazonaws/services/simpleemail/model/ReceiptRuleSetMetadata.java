@@ -72,6 +72,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *        <li>Start and end with a letter or number.</li>
      *        <li>Contain less than 64 characters.</li>
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -94,6 +95,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      *         <li>Start and end with a letter or number.</li>
      *         <li>Contain less than 64 characters.</li>
      */
+
     public String getName() {
         return this.name;
     }
@@ -119,6 +121,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRuleSetMetadata withName(String name) {
         setName(name);
         return this;
@@ -132,6 +135,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * @param createdTimestamp
      *        The date and time the receipt rule set was created.
      */
+
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
         this.createdTimestamp = createdTimestamp;
     }
@@ -143,6 +147,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * 
      * @return The date and time the receipt rule set was created.
      */
+
     public java.util.Date getCreatedTimestamp() {
         return this.createdTimestamp;
     }
@@ -157,6 +162,7 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiptRuleSetMetadata withCreatedTimestamp(
             java.util.Date createdTimestamp) {
         setCreatedTimestamp(createdTimestamp);

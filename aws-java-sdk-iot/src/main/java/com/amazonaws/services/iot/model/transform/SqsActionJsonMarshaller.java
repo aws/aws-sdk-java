@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SqsActionMarshaller
@@ -39,30 +34,33 @@ import com.amazonaws.util.json.*;
 public class SqsActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SqsAction sqsAction, JSONWriter jsonWriter) {
+    public void marshall(SqsAction sqsAction,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (sqsAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (sqsAction.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(sqsAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        sqsAction.getRoleArn());
             }
-
             if (sqsAction.getQueueUrl() != null) {
-                jsonWriter.key("queueUrl").value(sqsAction.getQueueUrl());
+                jsonGenerator.writeFieldName("queueUrl").writeValue(
+                        sqsAction.getQueueUrl());
             }
-
             if (sqsAction.getUseBase64() != null) {
-                jsonWriter.key("useBase64").value(sqsAction.getUseBase64());
+                jsonGenerator.writeFieldName("useBase64").writeValue(
+                        sqsAction.getUseBase64());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,18 +60,18 @@ public class SampledHTTPRequestJsonUnmarshaller implements
                 }
                 if (context.testExpression("Weight", targetDepth)) {
                     context.nextToken();
-                    sampledHTTPRequest.setWeight(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sampledHTTPRequest.setWeight(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Timestamp", targetDepth)) {
                     context.nextToken();
-                    sampledHTTPRequest.setTimestamp(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sampledHTTPRequest.setTimestamp(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Action", targetDepth)) {
                     context.nextToken();
-                    sampledHTTPRequest.setAction(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sampledHTTPRequest.setAction(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

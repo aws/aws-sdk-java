@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class AWSSessionCredentialsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accessKeyId", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials.setAccessKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    aWSSessionCredentials.setAccessKeyId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("secretAccessKey", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials
-                            .setSecretAccessKey(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    aWSSessionCredentials.setSecretAccessKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sessionToken", targetDepth)) {
                     context.nextToken();
-                    aWSSessionCredentials
-                            .setSessionToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    aWSSessionCredentials.setSessionToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

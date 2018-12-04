@@ -46,6 +46,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * 
      * @return The descriptions of the certificates.
      */
+
     public java.util.List<Certificate> getCertificates() {
         return certificates;
     }
@@ -58,6 +59,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @param certificates
      *        The descriptions of the certificates.
      */
+
     public void setCertificates(java.util.Collection<Certificate> certificates) {
         if (certificates == null) {
             this.certificates = null;
@@ -83,6 +85,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withCertificates(Certificate... certificates) {
         if (this.certificates == null) {
             setCertificates(new java.util.ArrayList<Certificate>(
@@ -104,6 +107,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withCertificates(
             java.util.Collection<Certificate> certificates) {
         setCertificates(certificates);
@@ -120,6 +124,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      *        The marker for the next set of results, or null if there are no
      *        additional results.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -133,6 +138,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return The marker for the next set of results, or null if there are no
      *         additional results.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -149,6 +155,7 @@ public class ListCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCertificatesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

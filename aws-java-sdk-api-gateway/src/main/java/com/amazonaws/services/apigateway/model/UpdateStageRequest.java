@@ -59,6 +59,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the <a>Stage</a>
      *        resource to change information about.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -72,6 +73,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the
      *         <a>Stage</a> resource to change information about.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -88,6 +90,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStageRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -101,6 +104,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @param stageName
      *        The name of the <a>Stage</a> resource to change information about.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -113,6 +117,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return The name of the <a>Stage</a> resource to change information
      *         about.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -127,6 +132,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStageRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -142,6 +148,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -157,6 +164,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -187,6 +195,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStageRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -212,6 +221,7 @@ public class UpdateStageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStageRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

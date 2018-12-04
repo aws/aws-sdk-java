@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,32 +55,33 @@ public class ContainerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerArn", targetDepth)) {
                     context.nextToken();
-                    container.setContainerArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    container.setContainerArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("taskArn", targetDepth)) {
                     context.nextToken();
-                    container.setTaskArn(StringJsonUnmarshaller.getInstance()
+                    container.setTaskArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    container.setName(StringJsonUnmarshaller.getInstance()
+                    container.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    container.setLastStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    container.setLastStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("exitCode", targetDepth)) {
                     context.nextToken();
-                    container.setExitCode(IntegerJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    container
+                            .setExitCode(context.getUnmarshaller(Integer.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("reason", targetDepth)) {
                     context.nextToken();
-                    container.setReason(StringJsonUnmarshaller.getInstance()
+                    container.setReason(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {

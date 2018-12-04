@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,6 +53,12 @@ public class PolicyRoleStaxUnmarshaller implements
 
                 if (context.testExpression("RoleName", targetDepth)) {
                     policyRole.setRoleName(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RoleId", targetDepth)) {
+                    policyRole.setRoleId(StringStaxUnmarshaller.getInstance()
                             .unmarshall(context));
                     continue;
                 }

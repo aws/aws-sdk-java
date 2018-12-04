@@ -40,6 +40,7 @@ public class GetApplicationResult implements Serializable, Cloneable {
      * @param application
      *        Information about the application.
      */
+
     public void setApplication(ApplicationInfo application) {
         this.application = application;
     }
@@ -51,6 +52,7 @@ public class GetApplicationResult implements Serializable, Cloneable {
      * 
      * @return Information about the application.
      */
+
     public ApplicationInfo getApplication() {
         return this.application;
     }
@@ -65,6 +67,7 @@ public class GetApplicationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationResult withApplication(ApplicationInfo application) {
         setApplication(application);
         return this;

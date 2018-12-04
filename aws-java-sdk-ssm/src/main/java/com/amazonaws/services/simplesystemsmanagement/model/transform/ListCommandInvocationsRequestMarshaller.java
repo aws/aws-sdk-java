@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListCommandInvocationsRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ListCommandInvocationsRequestMarshaller
         implements
         Marshaller<Request<ListCommandInvocationsRequest>, ListCommandInvocationsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListCommandInvocationsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListCommandInvocationsRequest> marshall(
             ListCommandInvocationsRequest listCommandInvocationsRequest) {
@@ -64,59 +65,54 @@ public class ListCommandInvocationsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listCommandInvocationsRequest.getCommandId() != null) {
-                jsonWriter.key("CommandId").value(
+                jsonGenerator.writeFieldName("CommandId").writeValue(
                         listCommandInvocationsRequest.getCommandId());
             }
-
             if (listCommandInvocationsRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         listCommandInvocationsRequest.getInstanceId());
             }
-
             if (listCommandInvocationsRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         listCommandInvocationsRequest.getMaxResults());
             }
-
             if (listCommandInvocationsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listCommandInvocationsRequest.getNextToken());
             }
 
             com.amazonaws.internal.SdkInternalList<CommandFilter> filtersList = (com.amazonaws.internal.SdkInternalList<CommandFilter>) listCommandInvocationsRequest
                     .getFilters();
             if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
-                jsonWriter.key("Filters");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Filters");
+                jsonGenerator.writeStartArray();
                 for (CommandFilter filtersListValue : filtersList) {
                     if (filtersListValue != null) {
 
                         CommandFilterJsonMarshaller.getInstance().marshall(
-                                filtersListValue, jsonWriter);
+                                filtersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (listCommandInvocationsRequest.getDetails() != null) {
-                jsonWriter.key("Details").value(
+                jsonGenerator.writeFieldName("Details").writeValue(
                         listCommandInvocationsRequest.getDetails());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

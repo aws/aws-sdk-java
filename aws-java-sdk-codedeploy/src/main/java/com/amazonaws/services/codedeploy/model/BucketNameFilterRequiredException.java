@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A bucket name is required but was not provided.
+ * A bucket name is required, but was not provided.
  * </p>
  */
 public class BucketNameFilterRequiredException extends AmazonServiceException {

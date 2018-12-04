@@ -69,6 +69,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        True if DKIM signing is enabled for email sent from the identity;
      *        false otherwise.
      */
+
     public void setDkimEnabled(Boolean dkimEnabled) {
         this.dkimEnabled = dkimEnabled;
     }
@@ -82,6 +83,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @return True if DKIM signing is enabled for email sent from the identity;
      *         false otherwise.
      */
+
     public Boolean getDkimEnabled() {
         return this.dkimEnabled;
     }
@@ -98,6 +100,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityDkimAttributes withDkimEnabled(Boolean dkimEnabled) {
         setDkimEnabled(dkimEnabled);
         return this;
@@ -112,6 +115,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @return True if DKIM signing is enabled for email sent from the identity;
      *         false otherwise.
      */
+
     public Boolean isDkimEnabled() {
         return this.dkimEnabled;
     }
@@ -129,6 +133,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        only applies to domain identities, not email address identities.)
      * @see VerificationStatus
      */
+
     public void setDkimVerificationStatus(String dkimVerificationStatus) {
         this.dkimVerificationStatus = dkimVerificationStatus;
     }
@@ -145,6 +150,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *         only applies to domain identities, not email address identities.)
      * @see VerificationStatus
      */
+
     public String getDkimVerificationStatus() {
         return this.dkimVerificationStatus;
     }
@@ -164,6 +170,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see VerificationStatus
      */
+
     public IdentityDkimAttributes withDkimVerificationStatus(
             String dkimVerificationStatus) {
         setDkimVerificationStatus(dkimVerificationStatus);
@@ -181,10 +188,9 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        Describes whether Amazon SES has successfully verified the DKIM
      *        DNS records (tokens) published in the domain name's DNS. (This
      *        only applies to domain identities, not email address identities.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VerificationStatus
      */
+
     public void setDkimVerificationStatus(
             VerificationStatus dkimVerificationStatus) {
         this.dkimVerificationStatus = dkimVerificationStatus.toString();
@@ -205,6 +211,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see VerificationStatus
      */
+
     public IdentityDkimAttributes withDkimVerificationStatus(
             VerificationStatus dkimVerificationStatus) {
         setDkimVerificationStatus(dkimVerificationStatus);
@@ -242,6 +249,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
      *         >Amazon SES Developer Guide</a>.
      */
+
     public java.util.List<String> getDkimTokens() {
         if (dkimTokens == null) {
             dkimTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -281,6 +289,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
      *        >Amazon SES Developer Guide</a>.
      */
+
     public void setDkimTokens(java.util.Collection<String> dkimTokens) {
         if (dkimTokens == null) {
             this.dkimTokens = null;
@@ -331,6 +340,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityDkimAttributes withDkimTokens(String... dkimTokens) {
         if (this.dkimTokens == null) {
             setDkimTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -376,6 +386,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityDkimAttributes withDkimTokens(
             java.util.Collection<String> dkimTokens) {
         setDkimTokens(dkimTokens);

@@ -46,6 +46,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -57,6 +58,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -71,6 +73,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoggingOptionsPayload withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -85,6 +88,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      *        The logging level.
      * @see LogLevel
      */
+
     public void setLogLevel(String logLevel) {
         this.logLevel = logLevel;
     }
@@ -97,6 +101,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * @return The logging level.
      * @see LogLevel
      */
+
     public String getLogLevel() {
         return this.logLevel;
     }
@@ -112,6 +117,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      *         chained together.
      * @see LogLevel
      */
+
     public LoggingOptionsPayload withLogLevel(String logLevel) {
         setLogLevel(logLevel);
         return this;
@@ -124,10 +130,9 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      * 
      * @param logLevel
      *        The logging level.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LogLevel
      */
+
     public void setLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel.toString();
     }
@@ -143,6 +148,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
      *         chained together.
      * @see LogLevel
      */
+
     public LoggingOptionsPayload withLogLevel(LogLevel logLevel) {
         setLogLevel(logLevel);
         return this;

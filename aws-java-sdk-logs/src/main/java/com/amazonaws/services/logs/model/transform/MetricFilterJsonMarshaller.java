@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MetricFilterMarshaller
@@ -39,24 +34,25 @@ import com.amazonaws.util.json.*;
 public class MetricFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MetricFilter metricFilter, JSONWriter jsonWriter) {
+    public void marshall(MetricFilter metricFilter,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (metricFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (metricFilter.getFilterName() != null) {
-                jsonWriter.key("filterName")
-                        .value(metricFilter.getFilterName());
+                jsonGenerator.writeFieldName("filterName").writeValue(
+                        metricFilter.getFilterName());
             }
-
             if (metricFilter.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         metricFilter.getFilterPattern());
             }
 
@@ -64,25 +60,24 @@ public class MetricFilterJsonMarshaller {
                     .getMetricTransformations();
             if (!metricTransformationsList.isEmpty()
                     || !metricTransformationsList.isAutoConstruct()) {
-                jsonWriter.key("metricTransformations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("metricTransformations");
+                jsonGenerator.writeStartArray();
                 for (MetricTransformation metricTransformationsListValue : metricTransformationsList) {
                     if (metricTransformationsListValue != null) {
 
                         MetricTransformationJsonMarshaller.getInstance()
                                 .marshall(metricTransformationsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (metricFilter.getCreationTime() != null) {
-                jsonWriter.key("creationTime").value(
+                jsonGenerator.writeFieldName("creationTime").writeValue(
                         metricFilter.getCreationTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

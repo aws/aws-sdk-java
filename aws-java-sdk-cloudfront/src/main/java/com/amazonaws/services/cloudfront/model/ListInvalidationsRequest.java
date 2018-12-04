@@ -68,6 +68,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @param distributionId
      *        The distribution's id.
      */
+
     public void setDistributionId(String distributionId) {
         this.distributionId = distributionId;
     }
@@ -77,6 +78,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The distribution's id.
      */
+
     public String getDistributionId() {
         return this.distributionId;
     }
@@ -89,6 +91,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInvalidationsRequest withDistributionId(String distributionId) {
         setDistributionId(distributionId);
         return this;
@@ -113,6 +116,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      *        current page's response. This value is the same as the ID of the
      *        last invalidation batch on that page.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -135,6 +139,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      *         current page's response. This value is the same as the ID of the
      *         last invalidation batch on that page.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -160,6 +165,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInvalidationsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -172,6 +178,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      *        The maximum number of invalidation batches you want in the
      *        response body.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -182,6 +189,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of invalidation batches you want in the
      *         response body.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -195,6 +203,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInvalidationsRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

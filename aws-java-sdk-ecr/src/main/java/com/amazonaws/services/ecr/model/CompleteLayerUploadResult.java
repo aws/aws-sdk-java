@@ -56,6 +56,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @param registryId
      *        The registry ID associated with the request.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -67,6 +68,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * 
      * @return The registry ID associated with the request.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -81,6 +83,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadResult withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -94,6 +97,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @param repositoryName
      *        The repository name associated with the request.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -105,6 +109,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * 
      * @return The repository name associated with the request.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -119,6 +124,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadResult withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -132,6 +138,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @param uploadId
      *        The upload ID associated with the layer.
      */
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -143,6 +150,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * 
      * @return The upload ID associated with the layer.
      */
+
     public String getUploadId() {
         return this.uploadId;
     }
@@ -157,6 +165,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadResult withUploadId(String uploadId) {
         setUploadId(uploadId);
         return this;
@@ -170,6 +179,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @param layerDigest
      *        The <code>sha256</code> digest of the image layer.
      */
+
     public void setLayerDigest(String layerDigest) {
         this.layerDigest = layerDigest;
     }
@@ -181,6 +191,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * 
      * @return The <code>sha256</code> digest of the image layer.
      */
+
     public String getLayerDigest() {
         return this.layerDigest;
     }
@@ -195,6 +206,7 @@ public class CompleteLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadResult withLayerDigest(String layerDigest) {
         setLayerDigest(layerDigest);
         return this;

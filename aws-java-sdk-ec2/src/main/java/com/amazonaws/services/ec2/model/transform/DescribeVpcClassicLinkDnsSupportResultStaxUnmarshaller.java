@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,28 +30,39 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Describe Vpc Classic Link Dns Support Result StAX Unmarshaller
+ * DescribeVpcClassicLinkDnsSupportResult StAX Unmarshaller
  */
-public class DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller implements Unmarshaller<DescribeVpcClassicLinkDnsSupportResult, StaxUnmarshallerContext> {
+public class DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller
+        implements
+        Unmarshaller<DescribeVpcClassicLinkDnsSupportResult, StaxUnmarshallerContext> {
 
-    public DescribeVpcClassicLinkDnsSupportResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DescribeVpcClassicLinkDnsSupportResult unmarshall(
+            StaxUnmarshallerContext context) throws Exception {
         DescribeVpcClassicLinkDnsSupportResult describeVpcClassicLinkDnsSupportResult = new DescribeVpcClassicLinkDnsSupportResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return describeVpcClassicLinkDnsSupportResult;
+            if (xmlEvent.isEndDocument())
+                return describeVpcClassicLinkDnsSupportResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("vpcs/item", targetDepth)) {
-                    describeVpcClassicLinkDnsSupportResult.getVpcs().add(ClassicLinkDnsSupportStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeVpcClassicLinkDnsSupportResult
+                            .withVpcs(ClassicLinkDnsSupportStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("nextToken", targetDepth)) {
-                    describeVpcClassicLinkDnsSupportResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    describeVpcClassicLinkDnsSupportResult
+                            .setNextToken(StringStaxUnmarshaller.getInstance()
+                                    .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -60,9 +74,10 @@ public class DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller implements U
     }
 
     private static DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller instance;
+
     public static DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller();
+        if (instance == null)
+            instance = new DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller();
         return instance;
     }
 }
-    

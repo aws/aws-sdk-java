@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,12 +54,12 @@ public class ClusterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    cluster.setId(StringJsonUnmarshaller.getInstance()
+                    cluster.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    cluster.setName(StringJsonUnmarshaller.getInstance()
+                    cluster.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
@@ -73,38 +75,38 @@ public class ClusterJsonUnmarshaller implements
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    cluster.setLogUri(StringJsonUnmarshaller.getInstance()
+                    cluster.setLogUri(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RequestedAmiVersion", targetDepth)) {
                     context.nextToken();
-                    cluster.setRequestedAmiVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setRequestedAmiVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RunningAmiVersion", targetDepth)) {
                     context.nextToken();
-                    cluster.setRunningAmiVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setRunningAmiVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReleaseLabel", targetDepth)) {
                     context.nextToken();
-                    cluster.setReleaseLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setReleaseLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoTerminate", targetDepth)) {
                     context.nextToken();
-                    cluster.setAutoTerminate(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setAutoTerminate(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("TerminationProtected", targetDepth)) {
                     context.nextToken();
-                    cluster.setTerminationProtected(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setTerminationProtected(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("VisibleToAllUsers", targetDepth)) {
                     context.nextToken();
-                    cluster.setVisibleToAllUsers(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setVisibleToAllUsers(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Applications", targetDepth)) {
                     context.nextToken();
@@ -120,19 +122,19 @@ public class ClusterJsonUnmarshaller implements
                 }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
-                    cluster.setServiceRole(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    cluster.setServiceRole(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("NormalizedInstanceHours",
                         targetDepth)) {
                     context.nextToken();
-                    cluster.setNormalizedInstanceHours(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setNormalizedInstanceHours(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterPublicDnsName", targetDepth)) {
                     context.nextToken();
-                    cluster.setMasterPublicDnsName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cluster.setMasterPublicDnsName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();

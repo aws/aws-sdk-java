@@ -20,9 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The Tag type is used by <code>CreateStack</code> in the <code>Tags</code>
- * parameter. It allows you to specify a key-value pair that can be used to
- * store information related to cost allocation for an AWS CloudFormation stack.
+ * The Tag type enables you to specify a key-value pair that can be used to
+ * store information about an AWS CloudFormation stack.
  * </p>
  */
 public class Tag implements Serializable, Cloneable {
@@ -51,10 +50,12 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * 
      * @param key
-     *        Required</i>. A string used to identify this tag. You can specify
-     *        a maximum of 128 characters for a tag key. Tags owned by Amazon
-     *        Web Services (AWS) have the reserved prefix: <code>aws:
+     *        <i>Required</i>. A string used to identify this tag. You can
+     *        specify a maximum of 128 characters for a tag key. Tags owned by
+     *        Amazon Web Services (AWS) have the reserved prefix:
+     *        <code>aws:</code>.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -66,10 +67,12 @@ public class Tag implements Serializable, Cloneable {
      * Services (AWS) have the reserved prefix: <code>aws:</code>.
      * </p>
      * 
-     * @return Required</i>. A string used to identify this tag. You can specify
-     *         a maximum of 128 characters for a tag key. Tags owned by Amazon
-     *         Web Services (AWS) have the reserved prefix: <code>aws:
+     * @return <i>Required</i>. A string used to identify this tag. You can
+     *         specify a maximum of 128 characters for a tag key. Tags owned by
+     *         Amazon Web Services (AWS) have the reserved prefix:
+     *         <code>aws:</code>.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -82,12 +85,14 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * 
      * @param key
-     *        Required</i>. A string used to identify this tag. You can specify
-     *        a maximum of 128 characters for a tag key. Tags owned by Amazon
-     *        Web Services (AWS) have the reserved prefix: <code>aws:
+     *        <i>Required</i>. A string used to identify this tag. You can
+     *        specify a maximum of 128 characters for a tag key. Tags owned by
+     *        Amazon Web Services (AWS) have the reserved prefix:
+     *        <code>aws:</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withKey(String key) {
         setKey(key);
         return this;
@@ -100,8 +105,10 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * 
      * @param value
-     *        Required
+     *        <i>Required</i>. A string containing the value for this tag. You
+     *        can specify a maximum of 256 characters for a tag value.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -112,8 +119,10 @@ public class Tag implements Serializable, Cloneable {
      * specify a maximum of 256 characters for a tag value.
      * </p>
      * 
-     * @return Required
+     * @return <i>Required</i>. A string containing the value for this tag. You
+     *         can specify a maximum of 256 characters for a tag value.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -125,10 +134,12 @@ public class Tag implements Serializable, Cloneable {
      * </p>
      * 
      * @param value
-     *        Required
+     *        <i>Required</i>. A string containing the value for this tag. You
+     *        can specify a maximum of 256 characters for a tag value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Tag withValue(String value) {
         setValue(value);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IndexName", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setIndexName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
@@ -72,15 +73,14 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("IndexStatus", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setIndexStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Backfilling", targetDepth)) {
                     context.nextToken();
                     globalSecondaryIndexDescription
-                            .setBackfilling(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setBackfilling(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("ProvisionedThroughput", targetDepth)) {
@@ -91,21 +91,18 @@ public class GlobalSecondaryIndexDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("IndexSizeBytes", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setIndexSizeBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexSizeBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setItemCount(LongJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    globalSecondaryIndexDescription.setItemCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("IndexArn", targetDepth)) {
                     context.nextToken();
-                    globalSecondaryIndexDescription
-                            .setIndexArn(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    globalSecondaryIndexDescription.setIndexArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

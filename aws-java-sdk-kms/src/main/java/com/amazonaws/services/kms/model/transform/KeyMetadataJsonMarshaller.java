@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kms.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * KeyMetadataMarshaller
@@ -39,58 +34,57 @@ import com.amazonaws.util.json.*;
 public class KeyMetadataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(KeyMetadata keyMetadata, JSONWriter jsonWriter) {
+    public void marshall(KeyMetadata keyMetadata,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (keyMetadata == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (keyMetadata.getAWSAccountId() != null) {
-                jsonWriter.key("AWSAccountId").value(
+                jsonGenerator.writeFieldName("AWSAccountId").writeValue(
                         keyMetadata.getAWSAccountId());
             }
-
             if (keyMetadata.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(keyMetadata.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(
+                        keyMetadata.getKeyId());
             }
-
             if (keyMetadata.getArn() != null) {
-                jsonWriter.key("Arn").value(keyMetadata.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(
+                        keyMetadata.getArn());
             }
-
             if (keyMetadata.getCreationDate() != null) {
-                jsonWriter.key("CreationDate").value(
+                jsonGenerator.writeFieldName("CreationDate").writeValue(
                         keyMetadata.getCreationDate());
             }
-
             if (keyMetadata.getEnabled() != null) {
-                jsonWriter.key("Enabled").value(keyMetadata.getEnabled());
+                jsonGenerator.writeFieldName("Enabled").writeValue(
+                        keyMetadata.getEnabled());
             }
-
             if (keyMetadata.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         keyMetadata.getDescription());
             }
-
             if (keyMetadata.getKeyUsage() != null) {
-                jsonWriter.key("KeyUsage").value(keyMetadata.getKeyUsage());
+                jsonGenerator.writeFieldName("KeyUsage").writeValue(
+                        keyMetadata.getKeyUsage());
             }
-
             if (keyMetadata.getKeyState() != null) {
-                jsonWriter.key("KeyState").value(keyMetadata.getKeyState());
+                jsonGenerator.writeFieldName("KeyState").writeValue(
+                        keyMetadata.getKeyState());
             }
-
             if (keyMetadata.getDeletionDate() != null) {
-                jsonWriter.key("DeletionDate").value(
+                jsonGenerator.writeFieldName("DeletionDate").writeValue(
                         keyMetadata.getDeletionDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

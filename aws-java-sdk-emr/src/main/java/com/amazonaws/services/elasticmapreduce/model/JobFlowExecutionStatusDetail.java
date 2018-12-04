@@ -112,6 +112,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      *        The state of the job flow.
      * @see JobFlowExecutionState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -124,6 +125,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return The state of the job flow.
      * @see JobFlowExecutionState
      */
+
     public String getState() {
         return this.state;
     }
@@ -139,6 +141,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      *         chained together.
      * @see JobFlowExecutionState
      */
+
     public JobFlowExecutionStatusDetail withState(String state) {
         setState(state);
         return this;
@@ -151,10 +154,9 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @param state
      *        The state of the job flow.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobFlowExecutionState
      */
+
     public void setState(JobFlowExecutionState state) {
         this.state = state.toString();
     }
@@ -170,6 +172,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      *         chained together.
      * @see JobFlowExecutionState
      */
+
     public JobFlowExecutionStatusDetail withState(JobFlowExecutionState state) {
         setState(state);
         return this;
@@ -183,6 +186,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @param creationDateTime
      *        The creation date and time of the job flow.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -194,6 +198,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The creation date and time of the job flow.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -208,6 +213,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowExecutionStatusDetail withCreationDateTime(
             java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
@@ -222,6 +228,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @param startDateTime
      *        The start date and time of the job flow.
      */
+
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
@@ -233,6 +240,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The start date and time of the job flow.
      */
+
     public java.util.Date getStartDateTime() {
         return this.startDateTime;
     }
@@ -247,6 +255,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowExecutionStatusDetail withStartDateTime(
             java.util.Date startDateTime) {
         setStartDateTime(startDateTime);
@@ -263,6 +272,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      *        The date and time when the job flow was ready to start running
      *        bootstrap actions.
      */
+
     public void setReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
     }
@@ -276,6 +286,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return The date and time when the job flow was ready to start running
      *         bootstrap actions.
      */
+
     public java.util.Date getReadyDateTime() {
         return this.readyDateTime;
     }
@@ -292,6 +303,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowExecutionStatusDetail withReadyDateTime(
             java.util.Date readyDateTime) {
         setReadyDateTime(readyDateTime);
@@ -306,6 +318,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @param endDateTime
      *        The completion date and time of the job flow.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -317,6 +330,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return The completion date and time of the job flow.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -331,6 +345,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowExecutionStatusDetail withEndDateTime(
             java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
@@ -345,6 +360,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @param lastStateChangeReason
      *        Description of the job flow last changed state.
      */
+
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
@@ -356,6 +372,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * 
      * @return Description of the job flow last changed state.
      */
+
     public String getLastStateChangeReason() {
         return this.lastStateChangeReason;
     }
@@ -370,6 +387,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobFlowExecutionStatusDetail withLastStateChangeReason(
             String lastStateChangeReason) {
         setLastStateChangeReason(lastStateChangeReason);

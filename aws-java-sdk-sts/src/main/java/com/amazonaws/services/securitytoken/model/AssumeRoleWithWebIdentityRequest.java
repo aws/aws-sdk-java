@@ -40,6 +40,12 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * included as part of the ARN and assumed role ID in the
      * <code>AssumedRoleUser</code> response element.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      */
     private String roleSessionName;
     /**
@@ -76,19 +82,31 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      */
     private String policy;
     /**
@@ -109,6 +127,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the role that the caller is
      *        assuming.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -121,6 +140,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -136,6 +156,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -150,6 +171,12 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * included as part of the ARN and assumed role ID in the
      * <code>AssumedRoleUser</code> response element.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param roleSessionName
      *        An identifier for the assumed role session. Typically, you pass
@@ -158,8 +185,14 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        credentials that your application will use are associated with
      *        that user. This session name is included as part of the ARN and
      *        assumed role ID in the <code>AssumedRoleUser</code> response
-     *        element.
+     *        element.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
+
     public void setRoleSessionName(String roleSessionName) {
         this.roleSessionName = roleSessionName;
     }
@@ -173,6 +206,12 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * included as part of the ARN and assumed role ID in the
      * <code>AssumedRoleUser</code> response element.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @return An identifier for the assumed role session. Typically, you pass
      *         the name or identifier that is associated with the user who is
@@ -180,8 +219,14 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         credentials that your application will use are associated with
      *         that user. This session name is included as part of the ARN and
      *         assumed role ID in the <code>AssumedRoleUser</code> response
-     *         element.
+     *         element.</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@-
      */
+
     public String getRoleSessionName() {
         return this.roleSessionName;
     }
@@ -195,6 +240,12 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * included as part of the ARN and assumed role ID in the
      * <code>AssumedRoleUser</code> response element.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param roleSessionName
      *        An identifier for the assumed role session. Typically, you pass
@@ -203,10 +254,16 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        credentials that your application will use are associated with
      *        that user. This session name is included as part of the ARN and
      *        assumed role ID in the <code>AssumedRoleUser</code> response
-     *        element.
+     *        element.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withRoleSessionName(
             String roleSessionName) {
         setRoleSessionName(roleSessionName);
@@ -229,6 +286,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        with a web identity provider before the application makes an
      *        <code>AssumeRoleWithWebIdentity</code> call.
      */
+
     public void setWebIdentityToken(String webIdentityToken) {
         this.webIdentityToken = webIdentityToken;
     }
@@ -248,6 +306,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         with a web identity provider before the application makes an
      *         <code>AssumeRoleWithWebIdentity</code> call.
      */
+
     public String getWebIdentityToken() {
         return this.webIdentityToken;
     }
@@ -270,6 +329,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withWebIdentityToken(
             String webIdentityToken) {
         setWebIdentityToken(webIdentityToken);
@@ -303,6 +363,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        <p>
      *        Do not specify this value for OpenID Connect ID tokens.
      */
+
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
@@ -333,6 +394,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         <p>
      *         Do not specify this value for OpenID Connect ID tokens.
      */
+
     public String getProviderId() {
         return this.providerId;
     }
@@ -366,6 +428,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withProviderId(String providerId) {
         setProviderId(providerId);
         return this;
@@ -379,19 +442,31 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -399,22 +474,34 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        The policy parameter is optional. If you pass a policy, the
      *        temporary security credentials that are returned by the operation
      *        have the permissions that are allowed by both the access policy of
-     *        the role that is being assumed, <i><b>and</b></i> the policy that
-     *        you pass. This gives you a way to further restrict the permissions
-     *        for the resulting temporary security credentials. You cannot use
-     *        the passed policy to grant permissions that are in excess of those
-     *        allowed by the access policy of the role that is being assumed.
-     *        For more information, see <a href=
+     *        the role that is being assumed, <i> <b>and</b> </i> the policy
+     *        that you pass. This gives you a way to further restrict the
+     *        permissions for the resulting temporary security credentials. You
+     *        cannot use the passed policy to grant permissions that are in
+     *        excess of those allowed by the access policy of the role that is
+     *        being assumed. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
-     *        IAM</i>.
+     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *        Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -427,42 +514,65 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @return An IAM policy in JSON format.</p>
      *         <p>
      *         The policy parameter is optional. If you pass a policy, the
      *         temporary security credentials that are returned by the operation
      *         have the permissions that are allowed by both the access policy
-     *         of the role that is being assumed, <i><b>and</b></i> the policy
+     *         of the role that is being assumed, <i> <b>and</b> </i> the policy
      *         that you pass. This gives you a way to further restrict the
      *         permissions for the resulting temporary security credentials. You
      *         cannot use the passed policy to grant permissions that are in
      *         excess of those allowed by the access policy of the role that is
      *         being assumed. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *         >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
-     *         IAM</i>.
+     *         >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *         Guide</i>.
      *         </p>
-     *         <note>The policy plain text must be 2048 bytes or shorter.
-     *         However, an internal conversion compresses it into a packed
-     *         binary format with a separate limit. The PackedPolicySize
-     *         response element indicates by percentage how close to the upper
-     *         size limit the policy is, with 100% equaling the maximum allowed
-     *         size.
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters up to 2048 characters in length. The
+     *         characters can be any ASCII character from the space character to
+     *         the end of the valid character list ( -\u00FF). It can also
+     *         include the tab ( ), linefeed ( ), and carriage return ( )
+     *         characters.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The policy plain text must be 2048 bytes or shorter. However, an
+     *         internal conversion compresses it into a packed binary format
+     *         with a separate limit. The PackedPolicySize response element
+     *         indicates by percentage how close to the upper size limit the
+     *         policy is, with 100% equaling the maximum allowed size.
+     *         </p>
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -475,19 +585,31 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -495,24 +617,36 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        The policy parameter is optional. If you pass a policy, the
      *        temporary security credentials that are returned by the operation
      *        have the permissions that are allowed by both the access policy of
-     *        the role that is being assumed, <i><b>and</b></i> the policy that
-     *        you pass. This gives you a way to further restrict the permissions
-     *        for the resulting temporary security credentials. You cannot use
-     *        the passed policy to grant permissions that are in excess of those
-     *        allowed by the access policy of the role that is being assumed.
-     *        For more information, see <a href=
+     *        the role that is being assumed, <i> <b>and</b> </i> the policy
+     *        that you pass. This gives you a way to further restrict the
+     *        permissions for the resulting temporary security credentials. You
+     *        cannot use the passed policy to grant permissions that are in
+     *        excess of those allowed by the access policy of the role that is
+     *        being assumed. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
-     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>Using
-     *        IAM</i>.
+     *        >Permissions for AssumeRoleWithWebIdentity</a> in the <i>IAM User
+     *        Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -530,6 +664,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *        from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *        default, the value is set to 3600 seconds.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -545,6 +680,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      *         range from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
      *         default, the value is set to 3600 seconds.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -563,6 +699,7 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithWebIdentityRequest withDurationSeconds(
             Integer durationSeconds) {
         setDurationSeconds(durationSeconds);

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RedshiftDestinationDescriptionMarshaller
@@ -39,52 +34,58 @@ import com.amazonaws.util.json.*;
 public class RedshiftDestinationDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             RedshiftDestinationDescription redshiftDestinationDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (redshiftDestinationDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (redshiftDestinationDescription.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
                         redshiftDestinationDescription.getRoleARN());
             }
-
             if (redshiftDestinationDescription.getClusterJDBCURL() != null) {
-                jsonWriter.key("ClusterJDBCURL").value(
+                jsonGenerator.writeFieldName("ClusterJDBCURL").writeValue(
                         redshiftDestinationDescription.getClusterJDBCURL());
             }
-
             if (redshiftDestinationDescription.getCopyCommand() != null) {
-                jsonWriter.key("CopyCommand");
+                jsonGenerator.writeFieldName("CopyCommand");
                 CopyCommandJsonMarshaller.getInstance().marshall(
                         redshiftDestinationDescription.getCopyCommand(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (redshiftDestinationDescription.getUsername() != null) {
-                jsonWriter.key("Username").value(
+                jsonGenerator.writeFieldName("Username").writeValue(
                         redshiftDestinationDescription.getUsername());
             }
-
             if (redshiftDestinationDescription.getS3DestinationDescription() != null) {
-                jsonWriter.key("S3DestinationDescription");
+                jsonGenerator.writeFieldName("S3DestinationDescription");
                 S3DestinationDescriptionJsonMarshaller
                         .getInstance()
                         .marshall(
                                 redshiftDestinationDescription
                                         .getS3DestinationDescription(),
-                                jsonWriter);
+                                jsonGenerator);
+            }
+            if (redshiftDestinationDescription.getCloudWatchLoggingOptions() != null) {
+                jsonGenerator.writeFieldName("CloudWatchLoggingOptions");
+                CloudWatchLoggingOptionsJsonMarshaller
+                        .getInstance()
+                        .marshall(
+                                redshiftDestinationDescription
+                                        .getCloudWatchLoggingOptions(),
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

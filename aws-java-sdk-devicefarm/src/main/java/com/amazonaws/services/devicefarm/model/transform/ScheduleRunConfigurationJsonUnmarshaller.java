@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("extraDataPackageArn", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration
-                            .setExtraDataPackageArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduleRunConfiguration.setExtraDataPackageArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("networkProfileArn", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration
-                            .setNetworkProfileArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduleRunConfiguration.setNetworkProfileArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("locale", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration.setLocale(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scheduleRunConfiguration.setLocale(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -83,14 +83,13 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements
                     context.nextToken();
                     scheduleRunConfiguration
                             .setAuxiliaryApps(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration
-                            .setBillingMethod(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    scheduleRunConfiguration.setBillingMethod(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

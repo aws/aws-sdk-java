@@ -25,6 +25,13 @@ import java.io.Serializable;
  * name, and region. This ARN is used to reference the gateway in other API
  * operations as well as resource-based authorization.
  * </p>
+ * <note>
+ * <p>
+ * For gateways activated prior to September 02, 2015 the gateway ARN contains
+ * the gateway name rather than the gateway id. Changing the name of the gateway
+ * has no effect on the gateway ARN.
+ * </p>
+ * </note>
  */
 public class ActivateGatewayResult implements Serializable, Cloneable {
 
@@ -33,6 +40,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -40,6 +48,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -49,6 +58,7 @@ public class ActivateGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

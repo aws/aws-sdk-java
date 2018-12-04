@@ -47,6 +47,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      * 
      * @return A list of subscriptions.
      */
+
     public java.util.List<Subscription> getSubscriptions() {
         if (subscriptions == null) {
             subscriptions = new com.amazonaws.internal.SdkInternalList<Subscription>();
@@ -62,6 +63,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      * @param subscriptions
      *        A list of subscriptions.
      */
+
     public void setSubscriptions(
             java.util.Collection<Subscription> subscriptions) {
         if (subscriptions == null) {
@@ -89,6 +91,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsByTopicResult withSubscriptions(
             Subscription... subscriptions) {
         if (this.subscriptions == null) {
@@ -111,6 +114,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsByTopicResult withSubscriptions(
             java.util.Collection<Subscription> subscriptions) {
         setSubscriptions(subscriptions);
@@ -129,6 +133,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      *        <code>ListSubscriptionsByTopic</code> request. This element is
      *        returned if there are more subscriptions to retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +149,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      *         <code>ListSubscriptionsByTopic</code> request. This element is
      *         returned if there are more subscriptions to retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -162,6 +168,7 @@ public class ListSubscriptionsByTopicResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsByTopicResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

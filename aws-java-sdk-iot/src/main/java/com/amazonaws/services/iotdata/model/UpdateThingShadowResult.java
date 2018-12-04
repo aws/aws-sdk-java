@@ -41,10 +41,19 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param payload
      *        The state information, in JSON format.
      */
+
     public void setPayload(java.nio.ByteBuffer payload) {
         this.payload = payload;
     }
@@ -66,6 +75,7 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * 
      * @return The state information, in JSON format.
      */
+
     public java.nio.ByteBuffer getPayload() {
         return this.payload;
     }
@@ -80,6 +90,7 @@ public class UpdateThingShadowResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateThingShadowResult withPayload(java.nio.ByteBuffer payload) {
         setPayload(payload);
         return this;

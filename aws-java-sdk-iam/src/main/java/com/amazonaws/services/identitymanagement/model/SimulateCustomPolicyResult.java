@@ -60,6 +60,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * 
      * @return The results of the simulation.
      */
+
     public java.util.List<EvaluationResult> getEvaluationResults() {
         if (evaluationResults == null) {
             evaluationResults = new com.amazonaws.internal.SdkInternalList<EvaluationResult>();
@@ -75,6 +76,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * @param evaluationResults
      *        The results of the simulation.
      */
+
     public void setEvaluationResults(
             java.util.Collection<EvaluationResult> evaluationResults) {
         if (evaluationResults == null) {
@@ -102,6 +104,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyResult withEvaluationResults(
             EvaluationResult... evaluationResults) {
         if (this.evaluationResults == null) {
@@ -124,6 +127,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyResult withEvaluationResults(
             java.util.Collection<EvaluationResult> evaluationResults) {
         setEvaluationResults(evaluationResults);
@@ -151,6 +155,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -175,6 +180,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -202,6 +208,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -227,6 +234,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -243,6 +251,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -258,6 +267,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -276,6 +286,7 @@ public class SimulateCustomPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SimulateCustomPolicyResult withMarker(String marker) {
         setMarker(marker);
         return this;

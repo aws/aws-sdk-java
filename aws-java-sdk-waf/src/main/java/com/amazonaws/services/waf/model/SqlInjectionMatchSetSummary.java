@@ -32,11 +32,11 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * <code>SqlInjectionMatchSetId</code> to get information about a
      * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
      * update a <code>SqlInjectionMatchSet</code> (see
-     * <a>UpdateSqlInjectionMatchSet</a>, insert a
+     * <a>UpdateSqlInjectionMatchSet</a>), insert a
      * <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
      * from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).
+     * <a>DeleteSqlInjectionMatchSet</a>).
      * </p>
      * <p>
      * <code>SqlInjectionMatchSetId</code> is returned by
@@ -59,11 +59,11 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * <code>SqlInjectionMatchSetId</code> to get information about a
      * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
      * update a <code>SqlInjectionMatchSet</code> (see
-     * <a>UpdateSqlInjectionMatchSet</a>, insert a
+     * <a>UpdateSqlInjectionMatchSet</a>), insert a
      * <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
      * from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).
+     * <a>DeleteSqlInjectionMatchSet</a>).
      * </p>
      * <p>
      * <code>SqlInjectionMatchSetId</code> is returned by
@@ -77,16 +77,17 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *        <code>SqlInjectionMatchSet</code> (see
      *        <a>GetSqlInjectionMatchSet</a>), update a
      *        <code>SqlInjectionMatchSet</code> (see
-     *        <a>UpdateSqlInjectionMatchSet</a>, insert a
+     *        <a>UpdateSqlInjectionMatchSet</a>), insert a
      *        <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or
      *        delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and
      *        delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     *        <a>DeleteByteMatchSet</a>).</p>
+     *        <a>DeleteSqlInjectionMatchSet</a>).</p>
      *        <p>
      *        <code>SqlInjectionMatchSetId</code> is returned by
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -97,11 +98,11 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * <code>SqlInjectionMatchSetId</code> to get information about a
      * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
      * update a <code>SqlInjectionMatchSet</code> (see
-     * <a>UpdateSqlInjectionMatchSet</a>, insert a
+     * <a>UpdateSqlInjectionMatchSet</a>), insert a
      * <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
      * from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).
+     * <a>DeleteSqlInjectionMatchSet</a>).
      * </p>
      * <p>
      * <code>SqlInjectionMatchSetId</code> is returned by
@@ -114,16 +115,17 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *         a <code>SqlInjectionMatchSet</code> (see
      *         <a>GetSqlInjectionMatchSet</a>), update a
      *         <code>SqlInjectionMatchSet</code> (see
-     *         <a>UpdateSqlInjectionMatchSet</a>, insert a
+     *         <a>UpdateSqlInjectionMatchSet</a>), insert a
      *         <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or
      *         delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and
      *         delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     *         <a>DeleteByteMatchSet</a>).</p>
+     *         <a>DeleteSqlInjectionMatchSet</a>).</p>
      *         <p>
      *         <code>SqlInjectionMatchSetId</code> is returned by
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -134,11 +136,11 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * <code>SqlInjectionMatchSetId</code> to get information about a
      * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
      * update a <code>SqlInjectionMatchSet</code> (see
-     * <a>UpdateSqlInjectionMatchSet</a>, insert a
+     * <a>UpdateSqlInjectionMatchSet</a>), insert a
      * <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
      * from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
      * <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     * <a>DeleteByteMatchSet</a>).
+     * <a>DeleteSqlInjectionMatchSet</a>).
      * </p>
      * <p>
      * <code>SqlInjectionMatchSetId</code> is returned by
@@ -152,11 +154,11 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *        <code>SqlInjectionMatchSet</code> (see
      *        <a>GetSqlInjectionMatchSet</a>), update a
      *        <code>SqlInjectionMatchSet</code> (see
-     *        <a>UpdateSqlInjectionMatchSet</a>, insert a
+     *        <a>UpdateSqlInjectionMatchSet</a>), insert a
      *        <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or
      *        delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and
      *        delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see
-     *        <a>DeleteByteMatchSet</a>).</p>
+     *        <a>DeleteSqlInjectionMatchSet</a>).</p>
      *        <p>
      *        <code>SqlInjectionMatchSetId</code> is returned by
      *        <a>CreateSqlInjectionMatchSet</a> and by
@@ -164,6 +166,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSetSummary withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);
@@ -180,6 +183,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      *        The name of the <code>SqlInjectionMatchSet</code>, if any,
      *        specified by <code>Id</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -193,6 +197,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return The name of the <code>SqlInjectionMatchSet</code>, if any,
      *         specified by <code>Id</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -209,6 +214,7 @@ public class SqlInjectionMatchSetSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqlInjectionMatchSetSummary withName(String name) {
         setName(name);
         return this;

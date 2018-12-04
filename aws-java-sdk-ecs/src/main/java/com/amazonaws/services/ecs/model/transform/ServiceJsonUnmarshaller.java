@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class ServiceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("serviceArn", targetDepth)) {
                     context.nextToken();
-                    service.setServiceArn(StringJsonUnmarshaller.getInstance()
+                    service.setServiceArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("serviceName", targetDepth)) {
                     context.nextToken();
-                    service.setServiceName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    service.setServiceName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
-                    service.setClusterArn(StringJsonUnmarshaller.getInstance()
+                    service.setClusterArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("loadBalancers", targetDepth)) {
@@ -73,28 +75,28 @@ public class ServiceJsonUnmarshaller implements
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    service.setStatus(StringJsonUnmarshaller.getInstance()
+                    service.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("desiredCount", targetDepth)) {
                     context.nextToken();
-                    service.setDesiredCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    service.setDesiredCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("runningCount", targetDepth)) {
                     context.nextToken();
-                    service.setRunningCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    service.setRunningCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingCount", targetDepth)) {
                     context.nextToken();
-                    service.setPendingCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    service.setPendingCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("taskDefinition", targetDepth)) {
                     context.nextToken();
-                    service.setTaskDefinition(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    service.setTaskDefinition(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfiguration",
                         targetDepth)) {
@@ -110,7 +112,7 @@ public class ServiceJsonUnmarshaller implements
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    service.setRoleArn(StringJsonUnmarshaller.getInstance()
+                    service.setRoleArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("events", targetDepth)) {
@@ -118,6 +120,11 @@ public class ServiceJsonUnmarshaller implements
                     service.setEvents(new ListUnmarshaller<ServiceEvent>(
                             ServiceEventJsonUnmarshaller.getInstance())
                             .unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    service.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

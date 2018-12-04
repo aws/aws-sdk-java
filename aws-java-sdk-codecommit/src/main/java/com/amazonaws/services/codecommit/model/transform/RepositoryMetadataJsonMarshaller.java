@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codecommit.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RepositoryMetadataMarshaller
@@ -39,68 +34,62 @@ import com.amazonaws.util.json.*;
 public class RepositoryMetadataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RepositoryMetadata repositoryMetadata,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (repositoryMetadata == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (repositoryMetadata.getAccountId() != null) {
-                jsonWriter.key("accountId").value(
+                jsonGenerator.writeFieldName("accountId").writeValue(
                         repositoryMetadata.getAccountId());
             }
-
             if (repositoryMetadata.getRepositoryId() != null) {
-                jsonWriter.key("repositoryId").value(
+                jsonGenerator.writeFieldName("repositoryId").writeValue(
                         repositoryMetadata.getRepositoryId());
             }
-
             if (repositoryMetadata.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         repositoryMetadata.getRepositoryName());
             }
-
             if (repositoryMetadata.getRepositoryDescription() != null) {
-                jsonWriter.key("repositoryDescription").value(
-                        repositoryMetadata.getRepositoryDescription());
+                jsonGenerator.writeFieldName("repositoryDescription")
+                        .writeValue(
+                                repositoryMetadata.getRepositoryDescription());
             }
-
             if (repositoryMetadata.getDefaultBranch() != null) {
-                jsonWriter.key("defaultBranch").value(
+                jsonGenerator.writeFieldName("defaultBranch").writeValue(
                         repositoryMetadata.getDefaultBranch());
             }
-
             if (repositoryMetadata.getLastModifiedDate() != null) {
-                jsonWriter.key("lastModifiedDate").value(
+                jsonGenerator.writeFieldName("lastModifiedDate").writeValue(
                         repositoryMetadata.getLastModifiedDate());
             }
-
             if (repositoryMetadata.getCreationDate() != null) {
-                jsonWriter.key("creationDate").value(
+                jsonGenerator.writeFieldName("creationDate").writeValue(
                         repositoryMetadata.getCreationDate());
             }
-
             if (repositoryMetadata.getCloneUrlHttp() != null) {
-                jsonWriter.key("cloneUrlHttp").value(
+                jsonGenerator.writeFieldName("cloneUrlHttp").writeValue(
                         repositoryMetadata.getCloneUrlHttp());
             }
-
             if (repositoryMetadata.getCloneUrlSsh() != null) {
-                jsonWriter.key("cloneUrlSsh").value(
+                jsonGenerator.writeFieldName("cloneUrlSsh").writeValue(
                         repositoryMetadata.getCloneUrlSsh());
             }
-
             if (repositoryMetadata.getArn() != null) {
-                jsonWriter.key("Arn").value(repositoryMetadata.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(
+                        repositoryMetadata.getArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

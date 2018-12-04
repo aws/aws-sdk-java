@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class TransitionStateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("enabled", targetDepth)) {
                     context.nextToken();
-                    transitionState.setEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    transitionState.setEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("lastChangedBy", targetDepth)) {
                     context.nextToken();
-                    transitionState.setLastChangedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    transitionState.setLastChangedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastChangedAt", targetDepth)) {
                     context.nextToken();
-                    transitionState.setLastChangedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    transitionState.setLastChangedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("disabledReason", targetDepth)) {
                     context.nextToken();
-                    transitionState.setDisabledReason(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    transitionState.setDisabledReason(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

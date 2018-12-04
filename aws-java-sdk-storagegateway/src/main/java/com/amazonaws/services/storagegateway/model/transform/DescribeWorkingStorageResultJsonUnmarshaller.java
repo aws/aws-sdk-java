@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,30 +55,31 @@ public class DescribeWorkingStorageResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeWorkingStorageResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeWorkingStorageResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
                     describeWorkingStorageResult
-                            .setDiskIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setDiskIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("WorkingStorageUsedInBytes",
                         targetDepth)) {
                     context.nextToken();
                     describeWorkingStorageResult
-                            .setWorkingStorageUsedInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setWorkingStorageUsedInBytes(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("WorkingStorageAllocatedInBytes",
                         targetDepth)) {
                     context.nextToken();
                     describeWorkingStorageResult
-                            .setWorkingStorageAllocatedInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setWorkingStorageAllocatedInBytes(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

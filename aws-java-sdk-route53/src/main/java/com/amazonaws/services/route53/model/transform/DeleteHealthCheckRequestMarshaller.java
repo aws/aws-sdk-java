@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteHealthCheckRequest Marshaller
@@ -56,11 +59,14 @@ public class DeleteHealthCheckRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (deleteHealthCheckRequest.getHealthCheckId() == null) ? ""
-                        : StringUtils.fromString(deleteHealthCheckRequest
-                                .getHealthCheckId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{HealthCheckId}",
+                        (deleteHealthCheckRequest.getHealthCheckId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteHealthCheckRequest
+                                                .getHealthCheckId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

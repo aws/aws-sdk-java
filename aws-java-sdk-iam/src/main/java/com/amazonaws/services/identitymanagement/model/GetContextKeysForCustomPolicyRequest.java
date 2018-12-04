@@ -27,25 +27,47 @@ public class GetContextKeysForCustomPolicyRequest extends
 
     /**
      * <p>
-     * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements. Each document is specified as a string
-     * containing the complete, valid JSON text of an IAM policy.
+     * A list of policies for which you want the list of context keys referenced
+     * in those policies. Each document is specified as a string containing the
+     * complete, valid JSON text of an IAM policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
 
     /**
      * <p>
-     * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements. Each document is specified as a string
-     * containing the complete, valid JSON text of an IAM policy.
+     * A list of policies for which you want the list of context keys referenced
+     * in those policies. Each document is specified as a string containing the
+     * complete, valid JSON text of an IAM policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
-     * @return A list of policies for which you want list of context keys used
-     *         in <code>Condition</code> elements. Each document is specified as
-     *         a string containing the complete, valid JSON text of an IAM
-     *         policy.
+     * @return A list of policies for which you want the list of context keys
+     *         referenced in those policies. Each document is specified as a
+     *         string containing the complete, valid JSON text of an IAM
+     *         policy.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public java.util.List<String> getPolicyInputList() {
         if (policyInputList == null) {
             policyInputList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -55,16 +77,32 @@ public class GetContextKeysForCustomPolicyRequest extends
 
     /**
      * <p>
-     * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements. Each document is specified as a string
-     * containing the complete, valid JSON text of an IAM policy.
+     * A list of policies for which you want the list of context keys referenced
+     * in those policies. Each document is specified as a string containing the
+     * complete, valid JSON text of an IAM policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
-     *        A list of policies for which you want list of context keys used in
-     *        <code>Condition</code> elements. Each document is specified as a
-     *        string containing the complete, valid JSON text of an IAM policy.
+     *        A list of policies for which you want the list of context keys
+     *        referenced in those policies. Each document is specified as a
+     *        string containing the complete, valid JSON text of an IAM
+     *        policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
         if (policyInputList == null) {
             this.policyInputList = null;
@@ -77,9 +115,16 @@ public class GetContextKeysForCustomPolicyRequest extends
 
     /**
      * <p>
-     * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements. Each document is specified as a string
-     * containing the complete, valid JSON text of an IAM policy.
+     * A list of policies for which you want the list of context keys referenced
+     * in those policies. Each document is specified as a string containing the
+     * complete, valid JSON text of an IAM policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -89,12 +134,21 @@ public class GetContextKeysForCustomPolicyRequest extends
      * </p>
      * 
      * @param policyInputList
-     *        A list of policies for which you want list of context keys used in
-     *        <code>Condition</code> elements. Each document is specified as a
-     *        string containing the complete, valid JSON text of an IAM policy.
+     *        A list of policies for which you want the list of context keys
+     *        referenced in those policies. Each document is specified as a
+     *        string containing the complete, valid JSON text of an IAM
+     *        policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyRequest withPolicyInputList(
             String... policyInputList) {
         if (this.policyInputList == null) {
@@ -109,18 +163,34 @@ public class GetContextKeysForCustomPolicyRequest extends
 
     /**
      * <p>
-     * A list of policies for which you want list of context keys used in
-     * <code>Condition</code> elements. Each document is specified as a string
-     * containing the complete, valid JSON text of an IAM policy.
+     * A list of policies for which you want the list of context keys referenced
+     * in those policies. Each document is specified as a string containing the
+     * complete, valid JSON text of an IAM policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyInputList
-     *        A list of policies for which you want list of context keys used in
-     *        <code>Condition</code> elements. Each document is specified as a
-     *        string containing the complete, valid JSON text of an IAM policy.
+     *        A list of policies for which you want the list of context keys
+     *        referenced in those policies. Each document is specified as a
+     *        string containing the complete, valid JSON text of an IAM
+     *        policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyRequest withPolicyInputList(
             java.util.Collection<String> policyInputList) {
         setPolicyInputList(policyInputList);

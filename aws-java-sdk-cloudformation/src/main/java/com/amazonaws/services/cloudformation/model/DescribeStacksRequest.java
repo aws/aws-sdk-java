@@ -33,9 +33,17 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -56,9 +64,17 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -68,13 +84,22 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -85,9 +110,17 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -96,13 +129,22 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * @return The name or the unique stack ID that is associated with the
      *         stack, which are not always interchangeable:</p>
      *         <ul>
-     *         <li>Running stacks: You can specify either the stack's name or
-     *         its unique stack ID.</li>
-     *         <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *         <li>
+     *         <p>
+     *         Running stacks: You can specify either the stack's name or its
+     *         unique stack ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Deleted stacks: You must specify the unique stack ID.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -113,9 +155,17 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -125,15 +175,24 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -149,6 +208,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      *        A string that identifies the next page of stacks that you want to
      *        retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -162,6 +222,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * @return A string that identifies the next page of stacks that you want to
      *         retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -178,6 +239,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

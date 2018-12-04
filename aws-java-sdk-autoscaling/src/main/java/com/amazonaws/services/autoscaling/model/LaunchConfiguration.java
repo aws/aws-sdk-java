@@ -68,9 +68,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise.
-     * For more information, see <a href=
+     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
+     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -165,6 +165,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param launchConfigurationName
      *        The name of the launch configuration.
      */
+
     public void setLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
     }
@@ -176,6 +177,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of the launch configuration.
      */
+
     public String getLaunchConfigurationName() {
         return this.launchConfigurationName;
     }
@@ -190,6 +192,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withLaunchConfigurationName(
             String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
@@ -204,6 +207,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param launchConfigurationARN
      *        The Amazon Resource Name (ARN) of the launch configuration.
      */
+
     public void setLaunchConfigurationARN(String launchConfigurationARN) {
         this.launchConfigurationARN = launchConfigurationARN;
     }
@@ -215,6 +219,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the launch configuration.
      */
+
     public String getLaunchConfigurationARN() {
         return this.launchConfigurationARN;
     }
@@ -229,6 +234,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withLaunchConfigurationARN(
             String launchConfigurationARN) {
         setLaunchConfigurationARN(launchConfigurationARN);
@@ -243,6 +249,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param imageId
      *        The ID of the Amazon Machine Image (AMI).
      */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
@@ -254,6 +261,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The ID of the Amazon Machine Image (AMI).
      */
+
     public String getImageId() {
         return this.imageId;
     }
@@ -268,6 +276,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withImageId(String imageId) {
         setImageId(imageId);
         return this;
@@ -281,6 +290,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param keyName
      *        The name of the key pair.
      */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
@@ -292,6 +302,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The name of the key pair.
      */
+
     public String getKeyName() {
         return this.keyName;
     }
@@ -306,6 +317,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withKeyName(String keyName) {
         setKeyName(keyName);
         return this;
@@ -318,6 +330,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The security groups to associate with the instances.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
             securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -333,6 +346,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param securityGroups
      *        The security groups to associate with the instances.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
@@ -359,6 +373,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withSecurityGroups(String... securityGroups) {
         if (this.securityGroups == null) {
             setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
@@ -380,6 +395,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withSecurityGroups(
             java.util.Collection<String> securityGroups) {
         setSecurityGroups(securityGroups);
@@ -403,6 +419,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
      */
+
     public void setClassicLinkVPCId(String classicLinkVPCId) {
         this.classicLinkVPCId = classicLinkVPCId;
     }
@@ -424,6 +441,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *         >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
      */
+
     public String getClassicLinkVPCId() {
         return this.classicLinkVPCId;
     }
@@ -447,6 +465,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withClassicLinkVPCId(String classicLinkVPCId) {
         setClassicLinkVPCId(classicLinkVPCId);
         return this;
@@ -455,21 +474,22 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise.
-     * For more information, see <a href=
+     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
+     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The IDs of one or more security groups for the VPC specified in
-     *         <code>ClassicLinkVPCId</code>. This parameter is required if
-     *         <code>ClassicLinkVPCId</code> is specified, and cannot be used
-     *         otherwise. For more information, see <a href=
+     *         <code>ClassicLinkVPCId</code>. This parameter is required if you
+     *         specify a ClassicLink-enabled VPC, and cannot be used otherwise.
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *         >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *         Guide</i>.
      */
+
     public java.util.List<String> getClassicLinkVPCSecurityGroups() {
         if (classicLinkVPCSecurityGroups == null) {
             classicLinkVPCSecurityGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -480,22 +500,23 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise.
-     * For more information, see <a href=
+     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
+     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
      *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and cannot be used
-     *        otherwise. For more information, see <a href=
+     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
+     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
      */
+
     public void setClassicLinkVPCSecurityGroups(
             java.util.Collection<String> classicLinkVPCSecurityGroups) {
         if (classicLinkVPCSecurityGroups == null) {
@@ -510,9 +531,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise.
-     * For more information, see <a href=
+     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
+     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -525,15 +546,16 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @param classicLinkVPCSecurityGroups
      *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and cannot be used
-     *        otherwise. For more information, see <a href=
+     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
+     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withClassicLinkVPCSecurityGroups(
             String... classicLinkVPCSecurityGroups) {
         if (this.classicLinkVPCSecurityGroups == null) {
@@ -549,24 +571,25 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     /**
      * <p>
      * The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. This parameter is required if
-     * <code>ClassicLinkVPCId</code> is specified, and cannot be used otherwise.
-     * For more information, see <a href=
+     * <code>ClassicLinkVPCId</code>. This parameter is required if you specify
+     * a ClassicLink-enabled VPC, and cannot be used otherwise. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      * >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
      *        The IDs of one or more security groups for the VPC specified in
-     *        <code>ClassicLinkVPCId</code>. This parameter is required if
-     *        <code>ClassicLinkVPCId</code> is specified, and cannot be used
-     *        otherwise. For more information, see <a href=
+     *        <code>ClassicLinkVPCId</code>. This parameter is required if you
+     *        specify a ClassicLink-enabled VPC, and cannot be used otherwise.
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html"
      *        >ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withClassicLinkVPCSecurityGroups(
             java.util.Collection<String> classicLinkVPCSecurityGroups) {
         setClassicLinkVPCSecurityGroups(classicLinkVPCSecurityGroups);
@@ -581,6 +604,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param userData
      *        The user data available to the instances.
      */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
@@ -592,6 +616,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The user data available to the instances.
      */
+
     public String getUserData() {
         return this.userData;
     }
@@ -606,6 +631,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withUserData(String userData) {
         setUserData(userData);
         return this;
@@ -619,6 +645,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param instanceType
      *        The instance type for the instances.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -630,6 +657,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The instance type for the instances.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -644,6 +672,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -657,6 +686,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param kernelId
      *        The ID of the kernel associated with the AMI.
      */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
@@ -668,6 +698,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The ID of the kernel associated with the AMI.
      */
+
     public String getKernelId() {
         return this.kernelId;
     }
@@ -682,6 +713,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withKernelId(String kernelId) {
         setKernelId(kernelId);
         return this;
@@ -695,6 +727,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param ramdiskId
      *        The ID of the RAM disk associated with the AMI.
      */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
@@ -706,6 +739,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The ID of the RAM disk associated with the AMI.
      */
+
     public String getRamdiskId() {
         return this.ramdiskId;
     }
@@ -720,6 +754,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withRamdiskId(String ramdiskId) {
         setRamdiskId(ramdiskId);
         return this;
@@ -734,6 +769,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return A block device mapping, which specifies the block devices for the
      *         instance.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -751,6 +787,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        A block device mapping, which specifies the block devices for the
      *        instance.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -780,6 +817,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -804,6 +842,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -820,6 +859,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        Controls whether instances in this group are launched with
      *        detailed monitoring.
      */
+
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
         this.instanceMonitoring = instanceMonitoring;
     }
@@ -833,6 +873,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Controls whether instances in this group are launched with
      *         detailed monitoring.
      */
+
     public InstanceMonitoring getInstanceMonitoring() {
         return this.instanceMonitoring;
     }
@@ -849,6 +890,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withInstanceMonitoring(
             InstanceMonitoring instanceMonitoring) {
         setInstanceMonitoring(instanceMonitoring);
@@ -863,6 +905,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param spotPrice
      *        The price to bid when launching Spot Instances.
      */
+
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
@@ -874,6 +917,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The price to bid when launching Spot Instances.
      */
+
     public String getSpotPrice() {
         return this.spotPrice;
     }
@@ -888,6 +932,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
         return this;
@@ -903,6 +948,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        The name or Amazon Resource Name (ARN) of the instance profile
      *        associated with the IAM role for the instance.
      */
+
     public void setIamInstanceProfile(String iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
@@ -916,6 +962,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return The name or Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance.
      */
+
     public String getIamInstanceProfile() {
         return this.iamInstanceProfile;
     }
@@ -932,6 +979,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withIamInstanceProfile(String iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
         return this;
@@ -945,6 +993,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @param createdTime
      *        The creation date and time for the launch configuration.
      */
+
     public void setCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
     }
@@ -956,6 +1005,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * 
      * @return The creation date and time for the launch configuration.
      */
+
     public java.util.Date getCreatedTime() {
         return this.createdTime;
     }
@@ -970,6 +1020,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withCreatedTime(java.util.Date createdTime) {
         setCreatedTime(createdTime);
         return this;
@@ -985,6 +1036,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        Controls whether the instance is optimized for EBS I/O (
      *        <code>true</code>) or not (<code>false</code>).
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -998,6 +1050,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Controls whether the instance is optimized for EBS I/O (
      *         <code>true</code>) or not (<code>false</code>).
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1014,6 +1067,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -1028,6 +1082,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Controls whether the instance is optimized for EBS I/O (
      *         <code>true</code>) or not (<code>false</code>).
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1042,6 +1097,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        [EC2-VPC] Indicates whether to assign a public IP address to each
      *        instance.
      */
+
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
         this.associatePublicIpAddress = associatePublicIpAddress;
     }
@@ -1055,6 +1111,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return [EC2-VPC] Indicates whether to assign a public IP address to each
      *         instance.
      */
+
     public Boolean getAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }
@@ -1071,6 +1128,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withAssociatePublicIpAddress(
             Boolean associatePublicIpAddress) {
         setAssociatePublicIpAddress(associatePublicIpAddress);
@@ -1086,6 +1144,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return [EC2-VPC] Indicates whether to assign a public IP address to each
      *         instance.
      */
+
     public Boolean isAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
     }
@@ -1104,6 +1163,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *        tenancy runs in an isolated, single-tenant hardware and can only
      *        be launched into a VPC.
      */
+
     public void setPlacementTenancy(String placementTenancy) {
         this.placementTenancy = placementTenancy;
     }
@@ -1121,6 +1181,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      *         tenancy runs in an isolated, single-tenant hardware and can only
      *         be launched into a VPC.
      */
+
     public String getPlacementTenancy() {
         return this.placementTenancy;
     }
@@ -1141,6 +1202,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LaunchConfiguration withPlacementTenancy(String placementTenancy) {
         setPlacementTenancy(placementTenancy);
         return this;

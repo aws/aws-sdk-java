@@ -59,6 +59,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      *        and specify the <code>NextMarker</code> value from the response in
      *        the <code>NextMarker</code> value in the next request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -81,6 +82,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      *         response in the <code>NextMarker</code> value in the next
      *         request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -105,6 +107,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -117,6 +120,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * 
      * @return An array of <a>RuleSummary</a> objects.
      */
+
     public java.util.List<RuleSummary> getRules() {
         return rules;
     }
@@ -129,6 +133,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @param rules
      *        An array of <a>RuleSummary</a> objects.
      */
+
     public void setRules(java.util.Collection<RuleSummary> rules) {
         if (rules == null) {
             this.rules = null;
@@ -154,6 +159,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withRules(RuleSummary... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<RuleSummary>(rules.length));
@@ -174,6 +180,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withRules(java.util.Collection<RuleSummary> rules) {
         setRules(rules);
         return this;

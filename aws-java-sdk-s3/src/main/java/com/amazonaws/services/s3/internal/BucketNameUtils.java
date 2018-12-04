@@ -91,14 +91,14 @@ public enum BucketNameUtils {
 
             return exception(
                 throwOnError,
-                "Bucket name must not be formatted as an IP Address"
+                "Bucket name should be between " + MIN_BUCKET_NAME_LENGTH + " and " + MAX_BUCKET_NAME_LENGTH +" characters long"
             );
         }
 
         if (ipAddressPattern.matcher(bucketName).matches()) {
             return exception(
                     throwOnError,
-                    "Bucket name should be between 3 and 63 characters long"
+                    "Bucket name must not be formatted as an IP Address"
             );
         }
 

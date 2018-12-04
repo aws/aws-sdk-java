@@ -32,9 +32,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      */
     private String stackName;
     /**
@@ -97,7 +101,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      */
@@ -105,10 +109,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -127,9 +132,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
@@ -140,10 +147,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -202,17 +209,25 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
-     *        <note>A stack name can contain only alphanumeric characters (case
+     *        <note>
+     *        <p>
+     *        A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
      *        and cannot be longer than 128 characters.
+     *        </p>
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -222,16 +237,24 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @return The name that is associated with the stack. The name must be
      *         unique in the region in which you are creating the stack.</p>
-     *         <note>A stack name can contain only alphanumeric characters (case
+     *         <note>
+     *         <p>
+     *         A stack name can contain only alphanumeric characters (case
      *         sensitive) and hyphens. It must start with an alphabetic
      *         character and cannot be longer than 128 characters.
+     *         </p>
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -241,19 +264,27 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * The name that is associated with the stack. The name must be unique in
      * the region in which you are creating the stack.
      * </p>
-     * <note>A stack name can contain only alphanumeric characters (case
-     * sensitive) and hyphens. It must start with an alphabetic character and
-     * cannot be longer than 128 characters.</note>
+     * <note>
+     * <p>
+     * A stack name can contain only alphanumeric characters (case sensitive)
+     * and hyphens. It must start with an alphabetic character and cannot be
+     * longer than 128 characters.
+     * </p>
+     * </note>
      * 
      * @param stackName
      *        The name that is associated with the stack. The name must be
      *        unique in the region in which you are creating the stack.</p>
-     *        <note>A stack name can contain only alphanumeric characters (case
+     *        <note>
+     *        <p>
+     *        A stack name can contain only alphanumeric characters (case
      *        sensitive) and hyphens. It must start with an alphabetic character
      *        and cannot be longer than 128 characters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -282,6 +313,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -309,6 +341,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -338,6 +371,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -366,6 +400,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Conditional: You must specify either the <code>TemplateBody</code>
      *        or the <code>TemplateURL</code> parameter, but not both.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -393,6 +428,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>TemplateBody</code> or the <code>TemplateURL</code>
      *         parameter, but not both.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -422,6 +458,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -440,6 +477,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *         >Parameter</a> data type.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -461,6 +499,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html"
      *        >Parameter</a> data type.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -493,6 +532,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -520,6 +560,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);
@@ -544,6 +585,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Default: <code>false</code>
      */
+
     public void setDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
     }
@@ -565,6 +607,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean getDisableRollback() {
         return this.disableRollback;
     }
@@ -589,6 +632,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withDisableRollback(Boolean disableRollback) {
         setDisableRollback(disableRollback);
         return this;
@@ -611,6 +655,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Default: <code>false</code>
      */
+
     public Boolean isDisableRollback() {
         return this.disableRollback;
     }
@@ -627,6 +672,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        CREATE_FAILED; if <code>DisableRollback</code> is not set or is
      *        set to <code>false</code>, the stack will be rolled back.
      */
+
     public void setTimeoutInMinutes(Integer timeoutInMinutes) {
         this.timeoutInMinutes = timeoutInMinutes;
     }
@@ -642,6 +688,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         CREATE_FAILED; if <code>DisableRollback</code> is not set or is
      *         set to <code>false</code>, the stack will be rolled back.
      */
+
     public Integer getTimeoutInMinutes() {
         return this.timeoutInMinutes;
     }
@@ -660,6 +707,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTimeoutInMinutes(Integer timeoutInMinutes) {
         setTimeoutInMinutes(timeoutInMinutes);
         return this;
@@ -669,15 +717,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @return The Simple Notification Service (SNS) topic ARNs to publish stack
      *         related events. You can find your SNS topic ARNs using the <a
-     *         href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *         href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *         Command Line Interface (CLI).
      */
+
     public java.util.List<String> getNotificationARNs() {
         if (notificationARNs == null) {
             notificationARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -689,16 +738,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      */
+
     public void setNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         if (notificationARNs == null) {
@@ -714,7 +764,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * <p>
@@ -727,11 +777,12 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
         if (this.notificationARNs == null) {
             setNotificationARNs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -747,18 +798,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related
      * events. You can find your SNS topic ARNs using the <a
-     * href="http://console.aws.amazon.com/sns">SNS console</a> or your Command
+     * href="https://console.aws.amazon.com/sns">SNS console</a> or your Command
      * Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack
      *        related events. You can find your SNS topic ARNs using the <a
-     *        href="http://console.aws.amazon.com/sns">SNS console</a> or your
+     *        href="https://console.aws.amazon.com/sns">SNS console</a> or your
      *        Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withNotificationARNs(
             java.util.Collection<String> notificationARNs) {
         setNotificationARNs(notificationARNs);
@@ -768,10 +820,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -790,15 +843,18 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @return A list of capabilities that you must specify before AWS
-     *         CloudFormation can create or update certain stacks. Some stack
-     *         templates might include resources that can affect permissions in
-     *         your AWS account. For those stacks, you must explicitly
+     *         CloudFormation can create certain stacks. Some stack templates
+     *         might include resources that can affect permissions in your AWS
+     *         account, for example, by creating new AWS Identity and Access
+     *         Management (IAM) users. For those stacks, you must explicitly
      *         acknowledge their capabilities by specifying this parameter.</p>
      *         <p>
      *         Currently, the only valid value is <code>CAPABILITY_IAM</code>,
@@ -817,12 +873,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         > AWS::IAM::User</a>, and <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *         > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *         contains these resources, we recommend that you review any
-     *         permissions associated with them. If you don't specify this
-     *         parameter, this action returns an
+     *         contains these resources, we recommend that you review all
+     *         permissions associated with them and edit their permissions if
+     *         necessary. If your template contains any of the listed resources
+     *         and you don't specify this parameter, this action returns an
      *         <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public java.util.List<String> getCapabilities() {
         if (capabilities == null) {
             capabilities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -833,10 +891,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -855,16 +914,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
+     *        CloudFormation can create certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
      *        acknowledge their capabilities by specifying this parameter.</p>
      *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
@@ -883,12 +945,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
      * @see Capability
      */
+
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
             this.capabilities = null;
@@ -902,10 +966,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -924,9 +989,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -937,9 +1004,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
+     *        CloudFormation can create certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
      *        acknowledge their capabilities by specifying this parameter.</p>
      *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
@@ -958,14 +1026,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(String... capabilities) {
         if (this.capabilities == null) {
             setCapabilities(new com.amazonaws.internal.SdkInternalList<String>(
@@ -980,10 +1050,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -1002,16 +1073,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
+     *        CloudFormation can create certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
      *        acknowledge their capabilities by specifying this parameter.</p>
      *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
@@ -1030,14 +1104,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(
             java.util.Collection<String> capabilities) {
         setCapabilities(capabilities);
@@ -1047,10 +1123,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of capabilities that you must specify before AWS CloudFormation
-     * can create or update certain stacks. Some stack templates might include
-     * resources that can affect permissions in your AWS account. For those
-     * stacks, you must explicitly acknowledge their capabilities by specifying
-     * this parameter.
+     * can create certain stacks. Some stack templates might include resources
+     * that can affect permissions in your AWS account, for example, by creating
+     * new AWS Identity and Access Management (IAM) users. For those stacks, you
+     * must explicitly acknowledge their capabilities by specifying this
+     * parameter.
      * </p>
      * <p>
      * Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is
@@ -1069,16 +1146,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * > AWS::IAM::User</a>, and <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      * > AWS::IAM::UserToGroupAddition</a>. If your stack template contains
-     * these resources, we recommend that you review any permissions associated
-     * with them. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * these resources, we recommend that you review all permissions associated
+     * with them and edit their permissions if necessary. If your template
+     * contains any of the listed resources and you don't specify this
+     * parameter, this action returns an <code>InsufficientCapabilities</code>
+     * error.
      * </p>
      * 
      * @param capabilities
      *        A list of capabilities that you must specify before AWS
-     *        CloudFormation can create or update certain stacks. Some stack
-     *        templates might include resources that can affect permissions in
-     *        your AWS account. For those stacks, you must explicitly
+     *        CloudFormation can create certain stacks. Some stack templates
+     *        might include resources that can affect permissions in your AWS
+     *        account, for example, by creating new AWS Identity and Access
+     *        Management (IAM) users. For those stacks, you must explicitly
      *        acknowledge their capabilities by specifying this parameter.</p>
      *        <p>
      *        Currently, the only valid value is <code>CAPABILITY_IAM</code>,
@@ -1097,14 +1177,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        > AWS::IAM::User</a>, and <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
      *        > AWS::IAM::UserToGroupAddition</a>. If your stack template
-     *        contains these resources, we recommend that you review any
-     *        permissions associated with them. If you don't specify this
-     *        parameter, this action returns an
+     *        contains these resources, we recommend that you review all
+     *        permissions associated with them and edit their permissions if
+     *        necessary. If your template contains any of the listed resources
+     *        and you don't specify this parameter, this action returns an
      *        <code>InsufficientCapabilities</code> error.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see Capability
      */
+
     public CreateStackRequest withCapabilities(Capability... capabilities) {
         com.amazonaws.internal.SdkInternalList<String> capabilitiesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 capabilities.length);
@@ -1126,10 +1208,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1148,10 +1230,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>Custom::MyCustomInstance</code>. Use the following syntax
      *         to describe template resource types: <code>AWS::*</code> (for all
      *         AWS resource), <code>Custom::*</code> (for all custom resources),
-     *         <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *         <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *         resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *         resources of a particular AWS service), and
-     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *         <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *         (for a specific AWS resource).</p>
      *         <p>
      *         If the list of resource types doesn't include a resource that
@@ -1163,6 +1245,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *         >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1177,10 +1260,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1200,10 +1283,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that
@@ -1215,6 +1298,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html"
      *        >Controlling Access with AWS Identity and Access Management</a>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -1232,10 +1316,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1261,10 +1345,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that
@@ -1278,6 +1362,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withResourceTypes(String... resourceTypes) {
         if (this.resourceTypes == null) {
             setResourceTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1296,10 +1381,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * <code>AWS::EC2::*</code>, or <code>Custom::MyCustomInstance</code>. Use
      * the following syntax to describe template resource types:
      * <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for
-     * all custom resources), <code>Custom::<i>logical_ID</i></code> (for a
+     * all custom resources), <code>Custom::<i>logical_ID</i> </code> (for a
      * specific custom resource), <code>AWS::<i>service_name</i>::*</code> (for
      * all resources of a particular AWS service), and
-     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code> (for a
+     * <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code> (for a
      * specific AWS resource).
      * </p>
      * <p>
@@ -1319,10 +1404,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>Custom::MyCustomInstance</code>. Use the following syntax to
      *        describe template resource types: <code>AWS::*</code> (for all AWS
      *        resource), <code>Custom::*</code> (for all custom resources),
-     *        <code>Custom::<i>logical_ID</i></code> (for a specific custom
+     *        <code>Custom::<i>logical_ID</i> </code> (for a specific custom
      *        resource), <code>AWS::<i>service_name</i>::*</code> (for all
      *        resources of a particular AWS service), and
-     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i></code>
+     *        <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i> </code>
      *        (for a specific AWS resource).</p>
      *        <p>
      *        If the list of resource types doesn't include a resource that
@@ -1336,6 +1421,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);
@@ -1361,6 +1447,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        Default: <code>ROLLBACK</code>
      * @see OnFailure
      */
+
     public void setOnFailure(String onFailure) {
         this.onFailure = onFailure;
     }
@@ -1383,6 +1470,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         Default: <code>ROLLBACK</code>
      * @see OnFailure
      */
+
     public String getOnFailure() {
         return this.onFailure;
     }
@@ -1408,6 +1496,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OnFailure
      */
+
     public CreateStackRequest withOnFailure(String onFailure) {
         setOnFailure(onFailure);
         return this;
@@ -1430,10 +1519,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        not both.</p>
      *        <p>
      *        Default: <code>ROLLBACK</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OnFailure
      */
+
     public void setOnFailure(OnFailure onFailure) {
         this.onFailure = onFailure.toString();
     }
@@ -1459,6 +1547,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see OnFailure
      */
+
     public CreateStackRequest withOnFailure(OnFailure onFailure) {
         setOnFailure(onFailure);
         return this;
@@ -1483,6 +1572,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyBody(String stackPolicyBody) {
         this.stackPolicyBody = stackPolicyBody;
     }
@@ -1505,6 +1595,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyBody() {
         return this.stackPolicyBody;
     }
@@ -1530,6 +1621,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackPolicyBody(String stackPolicyBody) {
         setStackPolicyBody(stackPolicyBody);
         return this;
@@ -1550,6 +1642,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *        parameter, but not both.
      */
+
     public void setStackPolicyURL(String stackPolicyURL) {
         this.stackPolicyURL = stackPolicyURL;
     }
@@ -1568,6 +1661,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
      *         parameter, but not both.
      */
+
     public String getStackPolicyURL() {
         return this.stackPolicyURL;
     }
@@ -1589,6 +1683,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withStackPolicyURL(String stackPolicyURL) {
         setStackPolicyURL(stackPolicyURL);
         return this;
@@ -1605,6 +1700,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *         also propagates these tags to the resources created in the stack.
      *         A maximum number of 10 tags can be specified.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -1624,6 +1720,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      *        also propagates these tags to the resources created in the stack.
      *        A maximum number of 10 tags can be specified.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -1653,6 +1750,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -1677,6 +1775,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStackRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

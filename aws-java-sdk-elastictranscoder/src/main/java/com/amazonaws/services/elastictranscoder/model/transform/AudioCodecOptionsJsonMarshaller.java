@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AudioCodecOptionsMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class AudioCodecOptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AudioCodecOptions audioCodecOptions,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (audioCodecOptions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (audioCodecOptions.getProfile() != null) {
-                jsonWriter.key("Profile").value(audioCodecOptions.getProfile());
+                jsonGenerator.writeFieldName("Profile").writeValue(
+                        audioCodecOptions.getProfile());
             }
-
             if (audioCodecOptions.getBitDepth() != null) {
-                jsonWriter.key("BitDepth").value(
+                jsonGenerator.writeFieldName("BitDepth").writeValue(
                         audioCodecOptions.getBitDepth());
             }
-
             if (audioCodecOptions.getBitOrder() != null) {
-                jsonWriter.key("BitOrder").value(
+                jsonGenerator.writeFieldName("BitOrder").writeValue(
                         audioCodecOptions.getBitOrder());
             }
-
             if (audioCodecOptions.getSigned() != null) {
-                jsonWriter.key("Signed").value(audioCodecOptions.getSigned());
+                jsonGenerator.writeFieldName("Signed").writeValue(
+                        audioCodecOptions.getSigned());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

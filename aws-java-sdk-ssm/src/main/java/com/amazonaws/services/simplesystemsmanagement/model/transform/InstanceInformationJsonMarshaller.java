@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * InstanceInformationMarshaller
@@ -39,59 +34,53 @@ import com.amazonaws.util.json.*;
 public class InstanceInformationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(InstanceInformation instanceInformation,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (instanceInformation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceInformation.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         instanceInformation.getInstanceId());
             }
-
             if (instanceInformation.getPingStatus() != null) {
-                jsonWriter.key("PingStatus").value(
+                jsonGenerator.writeFieldName("PingStatus").writeValue(
                         instanceInformation.getPingStatus());
             }
-
             if (instanceInformation.getLastPingDateTime() != null) {
-                jsonWriter.key("LastPingDateTime").value(
+                jsonGenerator.writeFieldName("LastPingDateTime").writeValue(
                         instanceInformation.getLastPingDateTime());
             }
-
             if (instanceInformation.getAgentVersion() != null) {
-                jsonWriter.key("AgentVersion").value(
+                jsonGenerator.writeFieldName("AgentVersion").writeValue(
                         instanceInformation.getAgentVersion());
             }
-
             if (instanceInformation.getIsLatestVersion() != null) {
-                jsonWriter.key("IsLatestVersion").value(
+                jsonGenerator.writeFieldName("IsLatestVersion").writeValue(
                         instanceInformation.getIsLatestVersion());
             }
-
             if (instanceInformation.getPlatformType() != null) {
-                jsonWriter.key("PlatformType").value(
+                jsonGenerator.writeFieldName("PlatformType").writeValue(
                         instanceInformation.getPlatformType());
             }
-
             if (instanceInformation.getPlatformName() != null) {
-                jsonWriter.key("PlatformName").value(
+                jsonGenerator.writeFieldName("PlatformName").writeValue(
                         instanceInformation.getPlatformName());
             }
-
             if (instanceInformation.getPlatformVersion() != null) {
-                jsonWriter.key("PlatformVersion").value(
+                jsonGenerator.writeFieldName("PlatformVersion").writeValue(
                         instanceInformation.getPlatformVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

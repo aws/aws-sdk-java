@@ -19,110 +19,151 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes the association of an SSM document and an instance.
+ * </p>
  */
 public class CreateAssociationBatchRequestEntry implements Serializable,
         Cloneable {
 
-    /** The name of the configuration document. */
+    /**
+     * <p>
+     * The name of the configuration document.
+     * </p>
+     */
     private String name;
-    /** The ID of the instance. */
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
     private String instanceId;
-    /** A description of the parameters for a document. */
+    /**
+     * <p>
+     * A description of the parameters for a document.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @param name
      *        The name of the configuration document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @return The name of the configuration document.
      */
+
     public String getName() {
         return this.name;
     }
 
     /**
+     * <p>
      * The name of the configuration document.
+     * </p>
      * 
      * @param name
      *        The name of the configuration document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withName(String name) {
         setName(name);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
+     * <p>
      * The ID of the instance.
+     * </p>
      * 
      * @param instanceId
      *        The ID of the instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @return A description of the parameters for a document.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
     }
 
     /**
+     * <p>
      * A description of the parameters for a document.
+     * </p>
      * 
      * @param parameters
      *        A description of the parameters for a document.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequestEntry withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -145,6 +186,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable,
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateAssociationBatchRequestEntry clearParametersEntries() {
         this.parameters = null;
         return this;

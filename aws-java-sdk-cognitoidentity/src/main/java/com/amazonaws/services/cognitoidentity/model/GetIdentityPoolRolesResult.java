@@ -48,6 +48,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -59,6 +60,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -73,6 +75,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolRolesResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -87,6 +90,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * @return The map of roles associated with this pool. Currently only
      *         authenticated and unauthenticated roles are supported.
      */
+
     public java.util.Map<String, String> getRoles() {
         return roles;
     }
@@ -101,6 +105,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      *        The map of roles associated with this pool. Currently only
      *        authenticated and unauthenticated roles are supported.
      */
+
     public void setRoles(java.util.Map<String, String> roles) {
         this.roles = roles;
     }
@@ -117,6 +122,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoolRolesResult withRoles(
             java.util.Map<String, String> roles) {
         setRoles(roles);
@@ -138,6 +144,7 @@ public class GetIdentityPoolRolesResult implements Serializable, Cloneable {
      * Removes all the entries added into Roles. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetIdentityPoolRolesResult clearRolesEntries() {
         this.roles = null;
         return this;

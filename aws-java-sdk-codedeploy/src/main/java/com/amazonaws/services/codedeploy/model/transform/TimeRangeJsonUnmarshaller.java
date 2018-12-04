@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class TimeRangeJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("start", targetDepth)) {
                     context.nextToken();
-                    timeRange.setStart(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    timeRange.setStart(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("end", targetDepth)) {
                     context.nextToken();
-                    timeRange.setEnd(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    timeRange.setEnd(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

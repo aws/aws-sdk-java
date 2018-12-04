@@ -76,6 +76,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the application associated with this release.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -87,6 +88,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @return The name of the application associated with this release.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -101,6 +103,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -115,6 +118,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @param description
      *        The description of this application version.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -126,6 +130,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @return The description of this application version.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -140,6 +145,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -154,6 +160,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      *        A label uniquely identifying the version for the associated
      *        application.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -166,6 +173,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return A label uniquely identifying the version for the associated
      *         application.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -181,6 +189,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -194,6 +203,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @param sourceBundle
      *        The location where the source bundle is located for this version.
      */
+
     public void setSourceBundle(S3Location sourceBundle) {
         this.sourceBundle = sourceBundle;
     }
@@ -205,6 +215,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @return The location where the source bundle is located for this version.
      */
+
     public S3Location getSourceBundle() {
         return this.sourceBundle;
     }
@@ -219,6 +230,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withSourceBundle(
             S3Location sourceBundle) {
         setSourceBundle(sourceBundle);
@@ -233,6 +245,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @param dateCreated
      *        The creation date of the application version.
      */
+
     public void setDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
     }
@@ -244,6 +257,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @return The creation date of the application version.
      */
+
     public java.util.Date getDateCreated() {
         return this.dateCreated;
     }
@@ -258,6 +272,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withDateCreated(
             java.util.Date dateCreated) {
         setDateCreated(dateCreated);
@@ -272,6 +287,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @param dateUpdated
      *        The last modified date of the application version.
      */
+
     public void setDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
@@ -283,6 +299,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @return The last modified date of the application version.
      */
+
     public java.util.Date getDateUpdated() {
         return this.dateUpdated;
     }
@@ -297,6 +314,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationVersionDescription withDateUpdated(
             java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
@@ -312,6 +330,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      *        The processing status of the application version.
      * @see ApplicationVersionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -324,6 +343,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * @return The processing status of the application version.
      * @see ApplicationVersionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -339,6 +359,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ApplicationVersionStatus
      */
+
     public ApplicationVersionDescription withStatus(String status) {
         setStatus(status);
         return this;
@@ -351,10 +372,9 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * 
      * @param status
      *        The processing status of the application version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ApplicationVersionStatus
      */
+
     public void setStatus(ApplicationVersionStatus status) {
         this.status = status.toString();
     }
@@ -370,6 +390,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      *         chained together.
      * @see ApplicationVersionStatus
      */
+
     public ApplicationVersionDescription withStatus(
             ApplicationVersionStatus status) {
         setStatus(status);

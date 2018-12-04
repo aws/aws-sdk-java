@@ -78,6 +78,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      *        Specify the value of <code>Id</code> of the traffic policy for
      *        which you want to list all versions.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -91,6 +92,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Specify the value of <code>Id</code> of the traffic policy for
      *         which you want to list all versions.
      */
+
     public String getId() {
         return this.id;
     }
@@ -107,6 +109,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyVersionsRequest withId(String id) {
         setId(id);
         return this;
@@ -149,6 +152,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Traffic policy versions are listed in sequential order.
      */
+
     public void setTrafficPolicyVersionMarker(String trafficPolicyVersionMarker) {
         this.trafficPolicyVersionMarker = trafficPolicyVersionMarker;
     }
@@ -189,6 +193,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      *         <p>
      *         Traffic policy versions are listed in sequential order.
      */
+
     public String getTrafficPolicyVersionMarker() {
         return this.trafficPolicyVersionMarker;
     }
@@ -232,6 +237,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyVersionsRequest withTrafficPolicyVersionMarker(
             String trafficPolicyVersionMarker) {
         setTrafficPolicyVersionMarker(trafficPolicyVersionMarker);
@@ -259,6 +265,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      *        first version in the next group of <code>MaxItems</code> traffic
      *        policy versions.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -284,6 +291,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      *         first version in the next group of <code>MaxItems</code> traffic
      *         policy versions.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -311,6 +319,7 @@ public class ListTrafficPolicyVersionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyVersionsRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

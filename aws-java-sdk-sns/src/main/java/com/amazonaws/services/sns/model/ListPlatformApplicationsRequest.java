@@ -48,6 +48,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
      *        action to retrieve additional records that are available after the
      *        first page results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -63,6 +64,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
      *         action to retrieve additional records that are available after
      *         the first page results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -81,6 +83,7 @@ public class ListPlatformApplicationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPlatformApplicationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

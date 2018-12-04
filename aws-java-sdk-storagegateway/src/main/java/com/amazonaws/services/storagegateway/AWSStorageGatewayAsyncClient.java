@@ -16,6 +16,7 @@
 package com.amazonaws.services.storagegateway;
 
 import com.amazonaws.services.storagegateway.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Storage Gateway asynchronously. Each asynchronous
@@ -36,29 +37,88 @@ import com.amazonaws.services.storagegateway.model.*;
  * Service API Reference</i>:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required
- * headers that you must send with every POST request to AWS Storage Gateway.</li>
- * <li><a href=
+ * headers that you must send with every POST request to AWS Storage Gateway.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate
- * every request you send; this topic describes how sign such a request.</li>
- * <li><a href=
+ * every request you send; this topic describes how sign such a request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html"
  * >Error Responses</a>: Provides reference information about AWS Storage
- * Gateway errors.</li>
- * <li><a href=
+ * Gateway errors.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"
  * >Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all
  * AWS Storage Gateway operations, their request parameters, response elements,
- * possible errors, and examples of requests and responses.</li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
- * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
- * regions and endpoints available for use with AWS Storage Gateway.</li>
+ * possible errors, and examples of requests and responses.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
+ * AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
+ * s and endpoints available for use with AWS Storage Gateway.
+ * </p>
+ * </li>
  * </ul>
+ * <note>
+ * <p>
+ * AWS Storage Gateway resource IDs are in uppercase. When you use these
+ * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
+ * You must change your resource ID to lowercase to use it with the EC2 API. For
+ * example, in Storage Gateway the ID for a volume might be
+ * <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must
+ * change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not
+ * behave as expected.
+ * </p>
+ * </note> <important>
+ * <p>
+ * IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway
+ * volumes are changing to a longer format. Starting in December 2016, all new
+ * volumes and snapshots will be created with a 17-character string. Starting in
+ * April 2016, you will be able to use these longer IDs so you can test your
+ * systems with the new format. For more information, see <a
+ * href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS
+ * Resource IDs</a>.
+ * </p>
+ * <p>
+ * For example, a volume ARN with the longer volume ID format will look like
+ * this:
+ * </p>
+ * <p>
+ * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>
+ * .
+ * </p>
+ * <p>
+ * A snapshot ID with the longer ID format will look like this:
+ * <code>snap-78e226633445566ee</code>.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
+ * Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in
+ * 2016</a>.
+ * </p>
+ * </important>
  */
+@ThreadSafe
 public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
         implements AWSStorageGatewayAsync {
 
@@ -158,8 +218,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -251,9 +310,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -664,6 +721,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
                         try {
                             result = createStorediSCSIVolume(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request) {
+
+        return createTapeWithBarcodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            final CreateTapeWithBarcodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateTapeWithBarcodeResult>() {
+                    @Override
+                    public CreateTapeWithBarcodeResult call() throws Exception {
+                        CreateTapeWithBarcodeResult result;
+
+                        try {
+                            result = createTapeWithBarcode(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1673,6 +1765,41 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
     }
 
     @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            ListTapesRequest request) {
+
+        return listTapesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            final ListTapesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTapesResult>() {
+                    @Override
+                    public ListTapesResult call() throws Exception {
+                        ListTapesResult result;
+
+                        try {
+                            result = listTapes(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(
             ListVolumeInitiatorsRequest request) {
 
@@ -1929,6 +2056,42 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
 
                         try {
                             result = retrieveTapeRecoveryPoint(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request) {
+
+        return setLocalConsolePasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            final SetLocalConsolePasswordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<SetLocalConsolePasswordResult>() {
+                    @Override
+                    public SetLocalConsolePasswordResult call()
+                            throws Exception {
+                        SetLocalConsolePasswordResult result;
+
+                        try {
+                            result = setLocalConsolePassword(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

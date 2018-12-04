@@ -31,6 +31,7 @@ public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
      * @param virtualInterfaceState
      * @see VirtualInterfaceState
      */
+
     public void setVirtualInterfaceState(String virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState;
     }
@@ -39,6 +40,7 @@ public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
      * @return
      * @see VirtualInterfaceState
      */
+
     public String getVirtualInterfaceState() {
         return this.virtualInterfaceState;
     }
@@ -49,6 +51,7 @@ public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualInterfaceState
      */
+
     public DeleteVirtualInterfaceResult withVirtualInterfaceState(
             String virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);
@@ -57,10 +60,9 @@ public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
 
     /**
      * @param virtualInterfaceState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VirtualInterfaceState
      */
+
     public void setVirtualInterfaceState(
             VirtualInterfaceState virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState.toString();
@@ -72,6 +74,7 @@ public class DeleteVirtualInterfaceResult implements Serializable, Cloneable {
      *         chained together.
      * @see VirtualInterfaceState
      */
+
     public DeleteVirtualInterfaceResult withVirtualInterfaceState(
             VirtualInterfaceState virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);

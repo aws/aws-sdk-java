@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ClusterMarshaller
@@ -39,50 +34,49 @@ import com.amazonaws.util.json.*;
 public class ClusterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Cluster cluster, JSONWriter jsonWriter) {
+    public void marshall(Cluster cluster, StructuredJsonGenerator jsonGenerator) {
+
         if (cluster == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cluster.getClusterArn() != null) {
-                jsonWriter.key("clusterArn").value(cluster.getClusterArn());
+                jsonGenerator.writeFieldName("clusterArn").writeValue(
+                        cluster.getClusterArn());
             }
-
             if (cluster.getClusterName() != null) {
-                jsonWriter.key("clusterName").value(cluster.getClusterName());
+                jsonGenerator.writeFieldName("clusterName").writeValue(
+                        cluster.getClusterName());
             }
-
             if (cluster.getStatus() != null) {
-                jsonWriter.key("status").value(cluster.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        cluster.getStatus());
             }
-
             if (cluster.getRegisteredContainerInstancesCount() != null) {
-                jsonWriter.key("registeredContainerInstancesCount").value(
+                jsonGenerator.writeFieldName(
+                        "registeredContainerInstancesCount").writeValue(
                         cluster.getRegisteredContainerInstancesCount());
             }
-
             if (cluster.getRunningTasksCount() != null) {
-                jsonWriter.key("runningTasksCount").value(
+                jsonGenerator.writeFieldName("runningTasksCount").writeValue(
                         cluster.getRunningTasksCount());
             }
-
             if (cluster.getPendingTasksCount() != null) {
-                jsonWriter.key("pendingTasksCount").value(
+                jsonGenerator.writeFieldName("pendingTasksCount").writeValue(
                         cluster.getPendingTasksCount());
             }
-
             if (cluster.getActiveServicesCount() != null) {
-                jsonWriter.key("activeServicesCount").value(
+                jsonGenerator.writeFieldName("activeServicesCount").writeValue(
                         cluster.getActiveServicesCount());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

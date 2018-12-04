@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeploymentMarshaller
@@ -39,64 +34,67 @@ import com.amazonaws.util.json.*;
 public class DeploymentJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Deployment deployment, JSONWriter jsonWriter) {
+    public void marshall(Deployment deployment,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (deployment == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deployment.getId() != null) {
-                jsonWriter.key("id").value(deployment.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        deployment.getId());
             }
-
             if (deployment.getDescription() != null) {
-                jsonWriter.key("description")
-                        .value(deployment.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        deployment.getDescription());
             }
-
             if (deployment.getCreatedDate() != null) {
-                jsonWriter.key("createdDate")
-                        .value(deployment.getCreatedDate());
+                jsonGenerator.writeFieldName("createdDate").writeValue(
+                        deployment.getCreatedDate());
             }
 
             java.util.Map<String, java.util.Map<String, MethodSnapshot>> apiSummaryMap = deployment
                     .getApiSummary();
             if (apiSummaryMap != null) {
-                jsonWriter.key("apiSummary");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("apiSummary");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.Map<String, MethodSnapshot>> apiSummaryMapValue : apiSummaryMap
                         .entrySet()) {
                     if (apiSummaryMapValue.getValue() != null) {
-                        jsonWriter.key(apiSummaryMapValue.getKey());
+                        jsonGenerator.writeFieldName(apiSummaryMapValue
+                                .getKey());
 
-                        jsonWriter.object();
+                        jsonGenerator.writeStartObject();
                         for (Map.Entry<String, MethodSnapshot> apiSummaryMapValueNestedMap : apiSummaryMapValue
                                 .getValue().entrySet()) {
                             if (apiSummaryMapValueNestedMap.getValue() != null) {
-                                jsonWriter.key(apiSummaryMapValueNestedMap
-                                        .getKey());
+                                jsonGenerator
+                                        .writeFieldName(apiSummaryMapValueNestedMap
+                                                .getKey());
 
                                 MethodSnapshotJsonMarshaller
                                         .getInstance()
                                         .marshall(
                                                 apiSummaryMapValueNestedMap
                                                         .getValue(),
-                                                jsonWriter);
+                                                jsonGenerator);
                             }
                         }
-                        jsonWriter.endObject();
+                        jsonGenerator.writeEndObject();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

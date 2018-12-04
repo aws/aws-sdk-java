@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.services.codepipeline.model.transform.*;
@@ -46,8 +48,8 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * This is the AWS CodePipeline API Reference. This guide provides descriptions
  * of the actions and data types for AWS CodePipeline. Some functionality for
  * your pipeline is only configurable through the API. For additional
- * information, see the <a
- * href="http://docs.aws.amazon.com/pipelines/latest/userguide/welcome.html">AWS
+ * information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS
  * CodePipeline User Guide</a>.
  * </p>
  * <p>
@@ -74,6 +76,7 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * <li><a>UpdatePipeline</a>, which updates a pipeline with edits or changes to
  * the structure of the pipeline.</li>
  * </ul>
+ * </p>
  * <p>
  * Pipelines include <i>stages</i>, which are which are logical groupings of
  * gates and actions. Each stage contains one or more actions that must complete
@@ -84,8 +87,10 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * You can call <a>GetPipelineState</a>, which displays the status of a
  * pipeline, including the status of stages in the pipeline, or
  * <a>GetPipeline</a>, which returns the entire structure of the pipeline,
- * including the stages of that pipeline.
- * </p>
+ * including the stages of that pipeline. For more information about the
+ * structure of stages and actions, also refer to the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html"
+ * >AWS CodePipeline Pipeline Structure Reference</a>.
  * </p>
  * <p>
  * Pipeline stages include <i>actions</i>, which are categorized into categories
@@ -128,6 +133,7 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * <ul>
  * <li><a>AcknowledgeJob</a>, which confirms whether a job worker has received
  * the specified job,</li>
+ * <li><a>GetJobDetails</a>, which returns the details of a job,</li>
  * <li><a>PollForJobs</a>, which determines whether there are any jobs to act
  * upon,</li>
  * <li><a>PutJobFailureResult</a>, which provides details of a job failure, and</li>
@@ -143,6 +149,8 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * <ul>
  * <li><a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has
  * received the specified job,</li>
+ * <li><a>GetThirdPartyJobDetails</a>, which requests the details of a job for a
+ * partner action,</li>
  * <li><a>PollForThirdPartyJobs</a>, which determines whether there are any jobs
  * to act upon,</li>
  * <li><a>PutThirdPartyJobFailureResult</a>, which provides details of a job
@@ -153,6 +161,7 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         AWSCodePipeline {
     /** Provider for AWS credentials. */
@@ -167,9 +176,111 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "codepipeline";
 
     /**
-     * List of exception unmarshallers for all CodePipeline exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ActionNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.ActionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("JobNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.JobNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("PipelineNameInUseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidBlockerDeclarationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidStructureException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidStructureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PipelineVersionNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidStageDeclarationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ValidationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ActionTypeNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("StageNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.StageNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidClientTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNonceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidNonceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("PipelineNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.PipelineNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidJobException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidJobException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidJobStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidJobStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidActionDeclarationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CodePipeline. A
@@ -189,8 +300,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCodePipelineClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -231,8 +342,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSCodePipelineClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -271,8 +381,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSCodePipelineClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -323,81 +432,6 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.ActionNotFoundException.class,
-                        "ActionNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.JobNotFoundException.class,
-                        "JobNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class,
-                        "PipelineNameInUseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class,
-                        "InvalidBlockerDeclarationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidStructureException.class,
-                        "InvalidStructureException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class,
-                        "PipelineVersionNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class,
-                        "InvalidStageDeclarationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.ValidationException.class,
-                        "ValidationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class,
-                        "ActionTypeNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.StageNotFoundException.class,
-                        "StageNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class,
-                        "InvalidClientTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidNonceException.class,
-                        "InvalidNonceException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidNextTokenException.class,
-                        "InvalidNextTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.PipelineNotFoundException.class,
-                        "PipelineNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidJobException.class,
-                        "InvalidJobException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidJobStateException.class,
-                        "InvalidJobStateException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class,
-                        "InvalidActionDeclarationException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -416,6 +450,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * Returns information about a specified job and whether that job has been
      * received by the job worker. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param acknowledgeJobRequest
      *        Represents the input of an acknowledge job action.
@@ -442,17 +477,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcknowledgeJobRequestMarshaller().marshall(super
-                        .beforeMarshalling(acknowledgeJobRequest));
+                request = new AcknowledgeJobRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(acknowledgeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AcknowledgeJobResult> responseHandler = new JsonResponseHandler<AcknowledgeJobResult>(
-                    new AcknowledgeJobResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AcknowledgeJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AcknowledgeJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -497,18 +535,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AcknowledgeThirdPartyJobRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(acknowledgeThirdPartyJobRequest));
+                request = new AcknowledgeThirdPartyJobRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(acknowledgeThirdPartyJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AcknowledgeThirdPartyJobResult> responseHandler = new JsonResponseHandler<AcknowledgeThirdPartyJobResult>(
-                    new AcknowledgeThirdPartyJobResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AcknowledgeThirdPartyJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new AcknowledgeThirdPartyJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -524,6 +564,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * Creates a new custom action that can be used in all pipelines associated
      * with the AWS account. Only used for custom actions.
      * </p>
+     * <examples></examples>
      * 
      * @param createCustomActionTypeRequest
      *        Represents the input of a create custom action operation.
@@ -549,18 +590,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCustomActionTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createCustomActionTypeRequest));
+                request = new CreateCustomActionTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCustomActionTypeResult> responseHandler = new JsonResponseHandler<CreateCustomActionTypeResult>(
-                    new CreateCustomActionTypeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCustomActionTypeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateCustomActionTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -575,6 +618,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param createPipelineRequest
      *        Represents the input of a create pipeline action.
@@ -590,8 +634,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified action declaration was specified in an invalid
      *         format.
      * @throws InvalidBlockerDeclarationException
-     *         The specified gate declaration was specified in an invalid
-     *         format.
+     *         Reserved for future use.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
      * @throws LimitExceededException
@@ -612,17 +655,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(createPipelineRequest));
+                request = new CreatePipelineRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(
-                    new CreatePipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -644,41 +690,47 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * You cannot recreate a custom action after it has been deleted unless you
      * increase the version number of the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param deleteCustomActionTypeRequest
      *        Represents the input of a delete custom action operation. The
      *        custom action will be marked as deleted.
+     * @return Result of the DeleteCustomActionType operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeleteCustomActionType
      */
     @Override
-    public void deleteCustomActionType(
+    public DeleteCustomActionTypeResult deleteCustomActionType(
             DeleteCustomActionTypeRequest deleteCustomActionTypeRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteCustomActionTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteCustomActionTypeRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteCustomActionTypeResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCustomActionTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteCustomActionTypeRequest));
+                request = new DeleteCustomActionTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCustomActionTypeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteCustomActionTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -690,37 +742,45 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes the specified pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param deletePipelineRequest
      *        Represents the input of a delete pipeline action.
+     * @return Result of the DeletePipeline operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @sample AWSCodePipeline.DeletePipeline
      */
     @Override
-    public void deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+    public DeletePipelineResult deletePipeline(
+            DeletePipelineRequest deletePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePipelineRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePipelineResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(deletePipelineRequest));
+                request = new DeletePipelineRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeletePipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -733,9 +793,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * Prevents artifacts in a pipeline from transitioning to the next stage in
      * the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param disableStageTransitionRequest
      *        Represents the input of a disable stage transition input action.
+     * @return Result of the DisableStageTransition operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws PipelineNotFoundException
@@ -747,31 +810,35 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.DisableStageTransition
      */
     @Override
-    public void disableStageTransition(
+    public DisableStageTransitionResult disableStageTransition(
             DisableStageTransitionRequest disableStageTransitionRequest) {
         ExecutionContext executionContext = createExecutionContext(disableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableStageTransitionRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableStageTransitionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableStageTransitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableStageTransitionRequest));
+                request = new DisableStageTransitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableStageTransitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableStageTransitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -783,9 +850,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * <p>
      * Enables artifacts in a pipeline to transition to a stage in a pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param enableStageTransitionRequest
      *        Represents the input of an enable stage transition action.
+     * @return Result of the EnableStageTransition operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws PipelineNotFoundException
@@ -797,31 +867,35 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.EnableStageTransition
      */
     @Override
-    public void enableStageTransition(
+    public EnableStageTransitionResult enableStageTransition(
             EnableStageTransitionRequest enableStageTransitionRequest) {
         ExecutionContext executionContext = createExecutionContext(enableStageTransitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableStageTransitionRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableStageTransitionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableStageTransitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableStageTransitionRequest));
+                request = new EnableStageTransitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableStageTransitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableStageTransitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -841,7 +915,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param getJobDetailsRequest
      *        Represents the input of a get job details action.
@@ -866,17 +940,19 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetJobDetailsRequestMarshaller().marshall(super
-                        .beforeMarshalling(getJobDetailsRequest));
+                request = new GetJobDetailsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetJobDetailsResult> responseHandler = new JsonResponseHandler<GetJobDetailsResult>(
-                    new GetJobDetailsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetJobDetailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetJobDetailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -894,6 +970,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * which can then be modified and used to update the pipeline structure with
      * <a>UpdatePipeline</a>.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineRequest
      *        Represents the input of a get pipeline action.
@@ -920,17 +997,19 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(getPipelineRequest));
+                request = new GetPipelineRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPipelineResult> responseHandler = new JsonResponseHandler<GetPipelineResult>(
-                    new GetPipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -946,6 +1025,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * Returns information about the state of a pipeline, including the stages,
      * actions, and details about the last run of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a get pipeline state action.
@@ -970,7 +1050,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPipelineStateRequestMarshaller()
+                request = new GetPipelineStateRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getPipelineStateRequest));
                 // Binds the request metrics to the current request.
@@ -979,9 +1059,11 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPipelineStateResult> responseHandler = new JsonResponseHandler<GetPipelineStateResult>(
-                    new GetPipelineStateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPipelineStateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPipelineStateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1036,18 +1118,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetThirdPartyJobDetailsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getThirdPartyJobDetailsRequest));
+                request = new GetThirdPartyJobDetailsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getThirdPartyJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetThirdPartyJobDetailsResult> responseHandler = new JsonResponseHandler<GetThirdPartyJobDetailsResult>(
-                    new GetThirdPartyJobDetailsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetThirdPartyJobDetailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetThirdPartyJobDetailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1088,17 +1172,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListActionTypesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listActionTypesRequest));
+                request = new ListActionTypesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listActionTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListActionTypesResult> responseHandler = new JsonResponseHandler<ListActionTypesResult>(
-                    new ListActionTypesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListActionTypesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListActionTypesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1113,6 +1200,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
+     * <examples></examples>
      * 
      * @param listPipelinesRequest
      *        Represents the input of a list pipelines action.
@@ -1136,17 +1224,19 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listPipelinesRequest));
+                request = new ListPipelinesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(
-                    new ListPipelinesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPipelinesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPipelinesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1169,7 +1259,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * artifacts. Additionally, this API returns any secret values defined for
      * the action.
      * </p>
-     * </important>
+     * </important> <examples></examples>
      * 
      * @param pollForJobsRequest
      *        Represents the input of a poll for jobs action.
@@ -1192,17 +1282,19 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForJobsRequestMarshaller().marshall(super
-                        .beforeMarshalling(pollForJobsRequest));
+                request = new PollForJobsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(pollForJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PollForJobsResult> responseHandler = new JsonResponseHandler<PollForJobsResult>(
-                    new PollForJobsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PollForJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PollForJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1250,18 +1342,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForThirdPartyJobsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(pollForThirdPartyJobsRequest));
+                request = new PollForThirdPartyJobsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(pollForThirdPartyJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PollForThirdPartyJobsResult> responseHandler = new JsonResponseHandler<PollForThirdPartyJobsResult>(
-                    new PollForThirdPartyJobsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PollForThirdPartyJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PollForThirdPartyJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1306,18 +1400,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutActionRevisionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putActionRevisionRequest));
+                request = new PutActionRevisionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putActionRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutActionRevisionResult> responseHandler = new JsonResponseHandler<PutActionRevisionResult>(
-                    new PutActionRevisionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutActionRevisionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutActionRevisionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1336,6 +1432,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * 
      * @param putJobFailureResultRequest
      *        Represents the input of a put job failure result action.
+     * @return Result of the PutJobFailureResult operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -1346,31 +1444,35 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.PutJobFailureResult
      */
     @Override
-    public void putJobFailureResult(
+    public PutJobFailureResultResult putJobFailureResult(
             PutJobFailureResultRequest putJobFailureResultRequest) {
         ExecutionContext executionContext = createExecutionContext(putJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutJobFailureResultRequest> request = null;
-        Response<Void> response = null;
+        Response<PutJobFailureResultResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutJobFailureResultRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putJobFailureResultRequest));
+                request = new PutJobFailureResultRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putJobFailureResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutJobFailureResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutJobFailureResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1386,6 +1488,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * 
      * @param putJobSuccessResultRequest
      *        Represents the input of a put job success result action.
+     * @return Result of the PutJobSuccessResult operation returned by the
+     *         service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -1396,31 +1500,35 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.PutJobSuccessResult
      */
     @Override
-    public void putJobSuccessResult(
+    public PutJobSuccessResultResult putJobSuccessResult(
             PutJobSuccessResultRequest putJobSuccessResultRequest) {
         ExecutionContext executionContext = createExecutionContext(putJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutJobSuccessResultRequest> request = null;
-        Response<Void> response = null;
+        Response<PutJobSuccessResultResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutJobSuccessResultRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putJobSuccessResultRequest));
+                request = new PutJobSuccessResultRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutJobSuccessResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutJobSuccessResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1436,6 +1544,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * 
      * @param putThirdPartyJobFailureResultRequest
      *        Represents the input of a third party job failure result action.
+     * @return Result of the PutThirdPartyJobFailureResult operation returned by
+     *         the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -1448,19 +1558,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.PutThirdPartyJobFailureResult
      */
     @Override
-    public void putThirdPartyJobFailureResult(
+    public PutThirdPartyJobFailureResultResult putThirdPartyJobFailureResult(
             PutThirdPartyJobFailureResultRequest putThirdPartyJobFailureResultRequest) {
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobFailureResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutThirdPartyJobFailureResultRequest> request = null;
-        Response<Void> response = null;
+        Response<PutThirdPartyJobFailureResultResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutThirdPartyJobFailureResultRequestMarshaller()
+                request = new PutThirdPartyJobFailureResultRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(putThirdPartyJobFailureResultRequest));
                 // Binds the request metrics to the current request.
@@ -1469,10 +1580,14 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutThirdPartyJobFailureResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new PutThirdPartyJobFailureResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1489,6 +1604,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @param putThirdPartyJobSuccessResultRequest
      *        Represents the input of a put third party job success result
      *        action.
+     * @return Result of the PutThirdPartyJobSuccessResult operation returned by
+     *         the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws JobNotFoundException
@@ -1501,19 +1618,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * @sample AWSCodePipeline.PutThirdPartyJobSuccessResult
      */
     @Override
-    public void putThirdPartyJobSuccessResult(
+    public PutThirdPartyJobSuccessResultResult putThirdPartyJobSuccessResult(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest) {
         ExecutionContext executionContext = createExecutionContext(putThirdPartyJobSuccessResultRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutThirdPartyJobSuccessResultRequest> request = null;
-        Response<Void> response = null;
+        Response<PutThirdPartyJobSuccessResultResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutThirdPartyJobSuccessResultRequestMarshaller()
+                request = new PutThirdPartyJobSuccessResultRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(putThirdPartyJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
@@ -1522,10 +1640,14 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutThirdPartyJobSuccessResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new PutThirdPartyJobSuccessResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1538,6 +1660,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * Starts the specified pipeline. Specifically, it begins processing the
      * latest commit to the source location specified as part of the pipeline.
      * </p>
+     * <examples></examples>
      * 
      * @param startPipelineExecutionRequest
      *        Represents the input of a start pipeline execution action.
@@ -1563,18 +1686,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartPipelineExecutionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(startPipelineExecutionRequest));
+                request = new StartPipelineExecutionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(startPipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartPipelineExecutionResult> responseHandler = new JsonResponseHandler<StartPipelineExecutionResult>(
-                    new StartPipelineExecutionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartPipelineExecutionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartPipelineExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1592,6 +1717,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      * UpdatePipeline to provide the full structure of the pipeline. Updating
      * the pipeline increases the version number of the pipeline by 1.
      * </p>
+     * <examples></examples>
      * 
      * @param updatePipelineRequest
      *        Represents the input of an update pipeline action.
@@ -1605,8 +1731,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
      *         The specified action declaration was specified in an invalid
      *         format.
      * @throws InvalidBlockerDeclarationException
-     *         The specified gate declaration was specified in an invalid
-     *         format.
+     *         Reserved for future use.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
      * @sample AWSCodePipeline.UpdatePipeline
@@ -1624,17 +1749,20 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(updatePipelineRequest));
+                request = new UpdatePipelineRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdatePipelineResult> responseHandler = new JsonResponseHandler<UpdatePipelineResult>(
-                    new UpdatePipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdatePipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1668,33 +1796,48 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -49,6 +49,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
      *         <code>ClosestToNextInstanceHour</code>, and <code>Default</code>
      *         ).
      */
+
     public java.util.List<String> getTerminationPolicyTypes() {
         if (terminationPolicyTypes == null) {
             terminationPolicyTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -71,6 +72,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
      *        <code>NewestInstance</code>,
      *        <code>ClosestToNextInstanceHour</code>, and <code>Default</code>).
      */
+
     public void setTerminationPolicyTypes(
             java.util.Collection<String> terminationPolicyTypes) {
         if (terminationPolicyTypes == null) {
@@ -105,6 +107,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(
             String... terminationPolicyTypes) {
         if (this.terminationPolicyTypes == null) {
@@ -134,6 +137,7 @@ public class DescribeTerminationPolicyTypesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTerminationPolicyTypesResult withTerminationPolicyTypes(
             java.util.Collection<String> terminationPolicyTypes) {
         setTerminationPolicyTypes(terminationPolicyTypes);

@@ -58,6 +58,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      * @param jobId
      *        The unique system-generated ID of the job.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -69,6 +70,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      * 
      * @return The unique system-generated ID of the job.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -83,6 +85,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcknowledgeThirdPartyJobRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -100,6 +103,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      *        ensure that the job is being worked on by only one job worker.
      *        This number must be returned in the response.
      */
+
     public void setNonce(String nonce) {
         this.nonce = nonce;
     }
@@ -115,6 +119,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      *         ensure that the job is being worked on by only one job worker.
      *         This number must be returned in the response.
      */
+
     public String getNonce() {
         return this.nonce;
     }
@@ -133,6 +138,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcknowledgeThirdPartyJobRequest withNonce(String nonce) {
         setNonce(nonce);
         return this;
@@ -150,6 +156,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      *        to verify that the calling entity is allowed access to the job and
      *        its details.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -165,6 +172,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      *         to verify that the calling entity is allowed access to the job
      *         and its details.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -183,6 +191,7 @@ public class AcknowledgeThirdPartyJobRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcknowledgeThirdPartyJobRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

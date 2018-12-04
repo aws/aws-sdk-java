@@ -19,7 +19,9 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * The specified filter value is not valid.
+ * </p>
  */
 public class InvalidInstanceInformationFilterValueException extends
         AmazonServiceException {

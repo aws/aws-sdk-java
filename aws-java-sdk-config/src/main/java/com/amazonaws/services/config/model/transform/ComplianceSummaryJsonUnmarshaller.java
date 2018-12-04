@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -68,9 +70,9 @@ public class ComplianceSummaryJsonUnmarshaller implements
                 if (context.testExpression("ComplianceSummaryTimestamp",
                         targetDepth)) {
                     context.nextToken();
-                    complianceSummary
-                            .setComplianceSummaryTimestamp(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    complianceSummary.setComplianceSummaryTimestamp(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

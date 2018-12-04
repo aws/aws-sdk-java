@@ -46,6 +46,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * @return One or more instance IDs. You must specify at least one instance
      *         ID.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -62,6 +63,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      *        One or more instance IDs. You must specify at least one instance
      *        ID.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -89,6 +91,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExitStandbyRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -111,6 +114,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExitStandbyRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -125,6 +129,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -136,6 +141,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -150,6 +156,7 @@ public class ExitStandbyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExitStandbyRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);

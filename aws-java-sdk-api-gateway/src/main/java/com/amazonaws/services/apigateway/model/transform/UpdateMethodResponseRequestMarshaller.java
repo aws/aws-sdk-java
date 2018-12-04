@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateMethodResponseRequest Marshaller
@@ -47,7 +49,14 @@ public class UpdateMethodResponseRequestMarshaller
         implements
         Marshaller<Request<UpdateMethodResponseRequest>, UpdateMethodResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateMethodResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateMethodResponseRequest> marshall(
             UpdateMethodResponseRequest updateMethodResponseRequest) {
@@ -64,54 +73,60 @@ public class UpdateMethodResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateMethodResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (updateMethodResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (updateMethodResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (updateMethodResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(updateMethodResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (updateMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (updateMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (updateMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getHttpMethod()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (updateMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateMethodResponseRequest
+                                                .getStatusCode()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateMethodResponseRequest
                     .getPatchOperations();
             if (patchOperationsList != null) {
-                jsonWriter.key("patchOperations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("patchOperations");
+                jsonGenerator.writeStartArray();
                 for (PatchOperation patchOperationsListValue : patchOperationsList) {
                     if (patchOperationsListValue != null) {
 
                         PatchOperationJsonMarshaller.getInstance().marshall(
-                                patchOperationsListValue, jsonWriter);
+                                patchOperationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

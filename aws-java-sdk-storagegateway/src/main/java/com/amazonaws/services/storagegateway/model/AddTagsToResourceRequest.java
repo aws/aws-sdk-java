@@ -57,6 +57,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the resource you want to add
      *        tags to.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -69,6 +70,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the resource you want to add
      *         tags to.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -84,6 +86,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToResourceRequest withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;
@@ -110,6 +113,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *         characters: + - = . _ : / @.
      *         </p>
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -139,6 +143,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      *        characters: + - = . _ : / @.
      *        </p>
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -178,6 +183,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToResourceRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -212,6 +218,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToResourceRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

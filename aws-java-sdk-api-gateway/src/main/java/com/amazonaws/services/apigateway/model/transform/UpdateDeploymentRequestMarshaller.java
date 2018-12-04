@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateDeploymentRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class UpdateDeploymentRequestMarshaller implements
         Marshaller<Request<UpdateDeploymentRequest>, UpdateDeploymentRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateDeploymentRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateDeploymentRequest> marshall(
             UpdateDeploymentRequest updateDeploymentRequest) {
@@ -65,42 +74,44 @@ public class UpdateDeploymentRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateDeploymentRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(updateDeploymentRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{deployment_id}",
-                (updateDeploymentRequest.getDeploymentId() == null) ? ""
-                        : StringUtils.fromString(updateDeploymentRequest
-                                .getDeploymentId()));
+                (updateDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(updateDeploymentRequest
+                                        .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{deployment_id}",
+                        (updateDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateDeploymentRequest
+                                                .getDeploymentId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateDeploymentRequest
                     .getPatchOperations();
             if (patchOperationsList != null) {
-                jsonWriter.key("patchOperations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("patchOperations");
+                jsonGenerator.writeStartArray();
                 for (PatchOperation patchOperationsListValue : patchOperationsList) {
                     if (patchOperationsListValue != null) {
 
                         PatchOperationJsonMarshaller.getInstance().marshall(
-                                patchOperationsListValue, jsonWriter);
+                                patchOperationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

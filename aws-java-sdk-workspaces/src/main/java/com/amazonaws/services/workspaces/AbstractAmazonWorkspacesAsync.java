@@ -30,6 +30,21 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
+            CreateTagsRequest request) {
+
+        return createTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
+            CreateTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(
             CreateWorkspacesRequest request) {
 
@@ -40,6 +55,36 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces
     public java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(
             CreateWorkspacesRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkspacesRequest, CreateWorkspacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest request) {
+
+        return deleteTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest request) {
+
+        return describeTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

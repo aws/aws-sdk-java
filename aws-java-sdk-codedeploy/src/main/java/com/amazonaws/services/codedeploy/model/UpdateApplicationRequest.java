@@ -29,50 +29,53 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The current name of the application that you want to change.
+     * The current name of the application you want to change.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The new name that you want to change the application to.
+     * The new name to give the application.
      * </p>
      */
     private String newApplicationName;
 
     /**
      * <p>
-     * The current name of the application that you want to change.
+     * The current name of the application you want to change.
      * </p>
      * 
      * @param applicationName
-     *        The current name of the application that you want to change.
+     *        The current name of the application you want to change.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
 
     /**
      * <p>
-     * The current name of the application that you want to change.
+     * The current name of the application you want to change.
      * </p>
      * 
-     * @return The current name of the application that you want to change.
+     * @return The current name of the application you want to change.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
 
     /**
      * <p>
-     * The current name of the application that you want to change.
+     * The current name of the application you want to change.
      * </p>
      * 
      * @param applicationName
-     *        The current name of the application that you want to change.
+     *        The current name of the application you want to change.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -80,37 +83,40 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The new name that you want to change the application to.
+     * The new name to give the application.
      * </p>
      * 
      * @param newApplicationName
-     *        The new name that you want to change the application to.
+     *        The new name to give the application.
      */
+
     public void setNewApplicationName(String newApplicationName) {
         this.newApplicationName = newApplicationName;
     }
 
     /**
      * <p>
-     * The new name that you want to change the application to.
+     * The new name to give the application.
      * </p>
      * 
-     * @return The new name that you want to change the application to.
+     * @return The new name to give the application.
      */
+
     public String getNewApplicationName() {
         return this.newApplicationName;
     }
 
     /**
      * <p>
-     * The new name that you want to change the application to.
+     * The new name to give the application.
      * </p>
      * 
      * @param newApplicationName
-     *        The new name that you want to change the application to.
+     *        The new name to give the application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withNewApplicationName(
             String newApplicationName) {
         setNewApplicationName(newApplicationName);

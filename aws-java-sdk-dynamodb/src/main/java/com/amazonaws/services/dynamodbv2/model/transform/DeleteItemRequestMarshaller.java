@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteItemRequest Marshaller
  */
 public class DeleteItemRequestMarshaller implements
         Marshaller<Request<DeleteItemRequest>, DeleteItemRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteItemRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteItemRequest> marshall(
             DeleteItemRequest deleteItemRequest) {
@@ -63,125 +63,125 @@ public class DeleteItemRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deleteItemRequest.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         deleteItemRequest.getTableName());
             }
 
             java.util.Map<String, AttributeValue> keyMap = deleteItemRequest
                     .getKey();
             if (keyMap != null) {
-                jsonWriter.key("Key");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Key");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> keyMapValue : keyMap
                         .entrySet()) {
                     if (keyMapValue.getValue() != null) {
-                        jsonWriter.key(keyMapValue.getKey());
+                        jsonGenerator.writeFieldName(keyMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                keyMapValue.getValue(), jsonWriter);
+                                keyMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, ExpectedAttributeValue> expectedMap = deleteItemRequest
                     .getExpected();
             if (expectedMap != null) {
-                jsonWriter.key("Expected");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Expected");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, ExpectedAttributeValue> expectedMapValue : expectedMap
                         .entrySet()) {
                     if (expectedMapValue.getValue() != null) {
-                        jsonWriter.key(expectedMapValue.getKey());
+                        jsonGenerator.writeFieldName(expectedMapValue.getKey());
 
                         ExpectedAttributeValueJsonMarshaller.getInstance()
                                 .marshall(expectedMapValue.getValue(),
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (deleteItemRequest.getConditionalOperator() != null) {
-                jsonWriter.key("ConditionalOperator").value(
+                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(
                         deleteItemRequest.getConditionalOperator());
             }
-
             if (deleteItemRequest.getReturnValues() != null) {
-                jsonWriter.key("ReturnValues").value(
+                jsonGenerator.writeFieldName("ReturnValues").writeValue(
                         deleteItemRequest.getReturnValues());
             }
-
             if (deleteItemRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(
-                        deleteItemRequest.getReturnConsumedCapacity());
+                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
+                        .writeValue(
+                                deleteItemRequest.getReturnConsumedCapacity());
             }
-
             if (deleteItemRequest.getReturnItemCollectionMetrics() != null) {
-                jsonWriter.key("ReturnItemCollectionMetrics").value(
-                        deleteItemRequest.getReturnItemCollectionMetrics());
+                jsonGenerator.writeFieldName("ReturnItemCollectionMetrics")
+                        .writeValue(
+                                deleteItemRequest
+                                        .getReturnItemCollectionMetrics());
             }
-
             if (deleteItemRequest.getConditionExpression() != null) {
-                jsonWriter.key("ConditionExpression").value(
+                jsonGenerator.writeFieldName("ConditionExpression").writeValue(
                         deleteItemRequest.getConditionExpression());
             }
 
             java.util.Map<String, String> expressionAttributeNamesMap = deleteItemRequest
                     .getExpressionAttributeNames();
             if (expressionAttributeNamesMap != null) {
-                jsonWriter.key("ExpressionAttributeNames");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeNames");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
                         .entrySet()) {
                     if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeNamesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeNamesMapValue
+                                        .getKey());
 
-                        jsonWriter.value(expressionAttributeNamesMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(expressionAttributeNamesMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, AttributeValue> expressionAttributeValuesMap = deleteItemRequest
                     .getExpressionAttributeValues();
             if (expressionAttributeValuesMap != null) {
-                jsonWriter.key("ExpressionAttributeValues");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeValues");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap
                         .entrySet()) {
                     if (expressionAttributeValuesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeValuesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeValuesMapValue
+                                        .getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
                                 expressionAttributeValuesMapValue.getValue(),
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

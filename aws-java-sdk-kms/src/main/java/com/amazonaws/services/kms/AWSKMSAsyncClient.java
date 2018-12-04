@@ -16,6 +16,7 @@
 package com.amazonaws.services.kms;
 
 import com.amazonaws.services.kms.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing KMS asynchronously. Each asynchronous method will
@@ -59,11 +60,11 @@ import com.amazonaws.services.kms.model.*;
  * </p>
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We
- * strongly recommend that you <i>do not</i> use your AWS account access key ID
- * and secret key for everyday work with AWS KMS. Instead, use the access key ID
- * and secret access key for an IAM user, or you can use the AWS Security Token
- * Service to generate temporary security credentials that you can use to sign
- * requests.
+ * strongly recommend that you <i>do not</i> use your AWS account (root) access
+ * key ID and secret key for everyday work with AWS KMS. Instead, use the access
+ * key ID and secret access key for an IAM user, or you can use the AWS Security
+ * Token Service to generate temporary security credentials that you can use to
+ * sign requests.
  * </p>
  * <p>
  * All AWS KMS operations require <a href=
@@ -91,17 +92,31 @@ import com.amazonaws.services.kms.model.*;
  * following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a> - This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security
- * Token Service</a> - This guide describes how to create and use temporary
- * security credentials.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * >Signing AWS API Requests</a> - This set of topics walks you through the
- * process of signing a request using an access key ID and a secret access key.</li>
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
+ * >Temporary Security Credentials</a> - This section of the <i>IAM User
+ * Guide</i> describes how to create and use temporary security credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
+ * >Signature Version 4 Signing Process</a> - This set of topics walks you
+ * through the process of signing a request using an access key ID and a secret
+ * access key.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Commonly Used APIs</b>
@@ -112,12 +127,29 @@ import com.amazonaws.services.kms.model.*;
  * as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
- * <li><a>Encrypt</a></li>
- * <li><a>Decrypt</a></li>
- * <li><a>GenerateDataKey</a></li>
- * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+ * <li>
+ * <p>
+ * <a>Encrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>Decrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKeyWithoutPlaintext</a>
+ * </p>
+ * </li>
  * </ul>
  */
+@ThreadSafe
 public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
     private static final int DEFAULT_THREAD_POOL_SIZE = 50;
@@ -213,8 +245,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     public AWSKMSAsyncClient(com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -305,9 +336,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -381,26 +410,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAliasAsync(
+    public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(
             CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAliasAsync(
+    public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(
             final CreateAliasRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateAliasRequest, CreateAliasResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateAliasResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateAliasResult call() throws Exception {
+                        CreateAliasResult result;
 
                         try {
-                            createAlias(request);
-                            result = null;
+                            result = createAlias(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -546,26 +574,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAliasAsync(
+    public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(
             final DeleteAliasRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAliasResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAliasResult call() throws Exception {
+                        DeleteAliasResult result;
 
                         try {
-                            deleteAlias(request);
-                            result = null;
+                            result = deleteAlias(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -617,26 +644,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableKeyAsync(
+    public java.util.concurrent.Future<DisableKeyResult> disableKeyAsync(
             DisableKeyRequest request) {
 
         return disableKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableKeyAsync(
+    public java.util.concurrent.Future<DisableKeyResult> disableKeyAsync(
             final DisableKeyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableKeyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableKeyRequest, DisableKeyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableKeyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableKeyResult call() throws Exception {
+                        DisableKeyResult result;
 
                         try {
-                            disableKey(request);
-                            result = null;
+                            result = disableKey(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -653,26 +679,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableKeyRotationAsync(
+    public java.util.concurrent.Future<DisableKeyRotationResult> disableKeyRotationAsync(
             DisableKeyRotationRequest request) {
 
         return disableKeyRotationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableKeyRotationAsync(
+    public java.util.concurrent.Future<DisableKeyRotationResult> disableKeyRotationAsync(
             final DisableKeyRotationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableKeyRotationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableKeyRotationRequest, DisableKeyRotationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableKeyRotationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableKeyRotationResult call() throws Exception {
+                        DisableKeyRotationResult result;
 
                         try {
-                            disableKeyRotation(request);
-                            result = null;
+                            result = disableKeyRotation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -689,26 +714,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableKeyAsync(
+    public java.util.concurrent.Future<EnableKeyResult> enableKeyAsync(
             EnableKeyRequest request) {
 
         return enableKeyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableKeyAsync(
+    public java.util.concurrent.Future<EnableKeyResult> enableKeyAsync(
             final EnableKeyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableKeyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableKeyRequest, EnableKeyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableKeyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableKeyResult call() throws Exception {
+                        EnableKeyResult result;
 
                         try {
-                            enableKey(request);
-                            result = null;
+                            result = enableKey(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -725,26 +749,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableKeyRotationAsync(
+    public java.util.concurrent.Future<EnableKeyRotationResult> enableKeyRotationAsync(
             EnableKeyRotationRequest request) {
 
         return enableKeyRotationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableKeyRotationAsync(
+    public java.util.concurrent.Future<EnableKeyRotationResult> enableKeyRotationAsync(
             final EnableKeyRotationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableKeyRotationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableKeyRotationRequest, EnableKeyRotationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableKeyRotationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableKeyRotationResult call() throws Exception {
+                        EnableKeyRotationResult result;
 
                         try {
-                            enableKeyRotation(request);
-                            result = null;
+                            result = enableKeyRotation(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1218,26 +1241,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putKeyPolicyAsync(
+    public java.util.concurrent.Future<PutKeyPolicyResult> putKeyPolicyAsync(
             PutKeyPolicyRequest request) {
 
         return putKeyPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putKeyPolicyAsync(
+    public java.util.concurrent.Future<PutKeyPolicyResult> putKeyPolicyAsync(
             final PutKeyPolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutKeyPolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutKeyPolicyRequest, PutKeyPolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutKeyPolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutKeyPolicyResult call() throws Exception {
+                        PutKeyPolicyResult result;
 
                         try {
-                            putKeyPolicy(request);
-                            result = null;
+                            result = putKeyPolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1289,26 +1311,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> retireGrantAsync(
+    public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
             RetireGrantRequest request) {
 
         return retireGrantAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> retireGrantAsync(
+    public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
             final RetireGrantRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RetireGrantResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RetireGrantResult call() throws Exception {
+                        RetireGrantResult result;
 
                         try {
-                            retireGrant(request);
-                            result = null;
+                            result = retireGrant(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1330,7 +1351,7 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      * @see #retireGrantAsync(RetireGrantRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> retireGrantAsync() {
+    public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync() {
 
         return retireGrantAsync(new RetireGrantRequest());
     }
@@ -1342,33 +1363,32 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
      * @see #retireGrantAsync(RetireGrantRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> retireGrantAsync(
-            com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, Void> asyncHandler) {
+    public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(
+            com.amazonaws.handlers.AsyncHandler<RetireGrantRequest, RetireGrantResult> asyncHandler) {
 
         return retireGrantAsync(new RetireGrantRequest(), asyncHandler);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeGrantAsync(
+    public java.util.concurrent.Future<RevokeGrantResult> revokeGrantAsync(
             RevokeGrantRequest request) {
 
         return revokeGrantAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> revokeGrantAsync(
+    public java.util.concurrent.Future<RevokeGrantResult> revokeGrantAsync(
             final RevokeGrantRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RevokeGrantRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RevokeGrantRequest, RevokeGrantResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RevokeGrantResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RevokeGrantResult call() throws Exception {
+                        RevokeGrantResult result;
 
                         try {
-                            revokeGrant(request);
-                            result = null;
+                            result = revokeGrant(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1420,26 +1440,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAliasAsync(
+    public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(
             UpdateAliasRequest request) {
 
         return updateAliasAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAliasAsync(
+    public java.util.concurrent.Future<UpdateAliasResult> updateAliasAsync(
             final UpdateAliasRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateAliasRequest, UpdateAliasResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateAliasResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateAliasResult call() throws Exception {
+                        UpdateAliasResult result;
 
                         try {
-                            updateAlias(request);
-                            result = null;
+                            result = updateAlias(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1456,26 +1475,25 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateKeyDescriptionAsync(
+    public java.util.concurrent.Future<UpdateKeyDescriptionResult> updateKeyDescriptionAsync(
             UpdateKeyDescriptionRequest request) {
 
         return updateKeyDescriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateKeyDescriptionAsync(
+    public java.util.concurrent.Future<UpdateKeyDescriptionResult> updateKeyDescriptionAsync(
             final UpdateKeyDescriptionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateKeyDescriptionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateKeyDescriptionRequest, UpdateKeyDescriptionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateKeyDescriptionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateKeyDescriptionResult call() throws Exception {
+                        UpdateKeyDescriptionResult result;
 
                         try {
-                            updateKeyDescription(request);
-                            result = null;
+                            result = updateKeyDescription(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

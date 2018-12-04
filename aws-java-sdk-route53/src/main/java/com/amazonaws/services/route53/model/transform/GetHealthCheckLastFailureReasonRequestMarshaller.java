@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetHealthCheckLastFailureReasonRequest Marshaller
@@ -61,10 +64,11 @@ public class GetHealthCheckLastFailureReasonRequestMarshaller
                 .replace(
                         "{HealthCheckId}",
                         (getHealthCheckLastFailureReasonRequest
-                                .getHealthCheckId() == null) ? ""
-                                : StringUtils
+                                .getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(getHealthCheckLastFailureReasonRequest
-                                                .getHealthCheckId()));
+                                                .getHealthCheckId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

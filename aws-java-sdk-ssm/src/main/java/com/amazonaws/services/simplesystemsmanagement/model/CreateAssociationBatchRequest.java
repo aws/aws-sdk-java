@@ -39,6 +39,7 @@ public class CreateAssociationBatchRequest extends AmazonWebServiceRequest
      * 
      * @return One or more associations.
      */
+
     public java.util.List<CreateAssociationBatchRequestEntry> getEntries() {
         if (entries == null) {
             entries = new com.amazonaws.internal.SdkInternalList<CreateAssociationBatchRequestEntry>();
@@ -54,6 +55,7 @@ public class CreateAssociationBatchRequest extends AmazonWebServiceRequest
      * @param entries
      *        One or more associations.
      */
+
     public void setEntries(
             java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
         if (entries == null) {
@@ -81,6 +83,7 @@ public class CreateAssociationBatchRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequest withEntries(
             CreateAssociationBatchRequestEntry... entries) {
         if (this.entries == null) {
@@ -103,6 +106,7 @@ public class CreateAssociationBatchRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationBatchRequest withEntries(
             java.util.Collection<CreateAssociationBatchRequestEntry> entries) {
         setEntries(entries);

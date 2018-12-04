@@ -65,6 +65,7 @@ public class Source implements Serializable, Cloneable {
      *        Config rule.
      * @see Owner
      */
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -79,6 +80,7 @@ public class Source implements Serializable, Cloneable {
      *         Config rule.
      * @see Owner
      */
+
     public String getOwner() {
         return this.owner;
     }
@@ -96,6 +98,7 @@ public class Source implements Serializable, Cloneable {
      *         chained together.
      * @see Owner
      */
+
     public Source withOwner(String owner) {
         setOwner(owner);
         return this;
@@ -110,10 +113,9 @@ public class Source implements Serializable, Cloneable {
      * @param owner
      *        Indicates whether AWS or the customer owns and manages the AWS
      *        Config rule.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Owner
      */
+
     public void setOwner(Owner owner) {
         this.owner = owner.toString();
     }
@@ -131,6 +133,7 @@ public class Source implements Serializable, Cloneable {
      *         chained together.
      * @see Owner
      */
+
     public Source withOwner(Owner owner) {
         setOwner(owner);
         return this;
@@ -157,6 +160,7 @@ public class Source implements Serializable, Cloneable {
      *        For customer managed Config rules, the identifier is the Amazon
      *        Resource Name (ARN) of the rule's AWS Lambda function.
      */
+
     public void setSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
     }
@@ -181,6 +185,7 @@ public class Source implements Serializable, Cloneable {
      *         For customer managed Config rules, the identifier is the Amazon
      *         Resource Name (ARN) of the rule's AWS Lambda function.
      */
+
     public String getSourceIdentifier() {
         return this.sourceIdentifier;
     }
@@ -208,6 +213,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withSourceIdentifier(String sourceIdentifier) {
         setSourceIdentifier(sourceIdentifier);
         return this;
@@ -222,6 +228,7 @@ public class Source implements Serializable, Cloneable {
      * @return Provides the source and type of the event that causes AWS Config
      *         to evaluate your AWS resources.
      */
+
     public java.util.List<SourceDetail> getSourceDetails() {
         if (sourceDetails == null) {
             sourceDetails = new com.amazonaws.internal.SdkInternalList<SourceDetail>();
@@ -239,6 +246,7 @@ public class Source implements Serializable, Cloneable {
      *        Provides the source and type of the event that causes AWS Config
      *        to evaluate your AWS resources.
      */
+
     public void setSourceDetails(
             java.util.Collection<SourceDetail> sourceDetails) {
         if (sourceDetails == null) {
@@ -268,6 +276,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withSourceDetails(SourceDetail... sourceDetails) {
         if (this.sourceDetails == null) {
             setSourceDetails(new com.amazonaws.internal.SdkInternalList<SourceDetail>(
@@ -291,6 +300,7 @@ public class Source implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Source withSourceDetails(
             java.util.Collection<SourceDetail> sourceDetails) {
         setSourceDetails(sourceDetails);

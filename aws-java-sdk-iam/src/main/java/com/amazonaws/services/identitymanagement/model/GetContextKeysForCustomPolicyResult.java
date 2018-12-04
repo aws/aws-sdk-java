@@ -29,21 +29,20 @@ public class GetContextKeysForCustomPolicyResult implements Serializable,
 
     /**
      * <p>
-     * The list of context keys that are used in the <code>Condition</code>
-     * elements of the input policies.
+     * The list of context keys that are referenced in the input policies.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> contextKeyNames;
 
     /**
      * <p>
-     * The list of context keys that are used in the <code>Condition</code>
-     * elements of the input policies.
+     * The list of context keys that are referenced in the input policies.
      * </p>
      * 
-     * @return The list of context keys that are used in the
-     *         <code>Condition</code> elements of the input policies.
+     * @return The list of context keys that are referenced in the input
+     *         policies.
      */
+
     public java.util.List<String> getContextKeyNames() {
         if (contextKeyNames == null) {
             contextKeyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -53,14 +52,14 @@ public class GetContextKeysForCustomPolicyResult implements Serializable,
 
     /**
      * <p>
-     * The list of context keys that are used in the <code>Condition</code>
-     * elements of the input policies.
+     * The list of context keys that are referenced in the input policies.
      * </p>
      * 
      * @param contextKeyNames
-     *        The list of context keys that are used in the
-     *        <code>Condition</code> elements of the input policies.
+     *        The list of context keys that are referenced in the input
+     *        policies.
      */
+
     public void setContextKeyNames(java.util.Collection<String> contextKeyNames) {
         if (contextKeyNames == null) {
             this.contextKeyNames = null;
@@ -73,8 +72,7 @@ public class GetContextKeysForCustomPolicyResult implements Serializable,
 
     /**
      * <p>
-     * The list of context keys that are used in the <code>Condition</code>
-     * elements of the input policies.
+     * The list of context keys that are referenced in the input policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -84,11 +82,12 @@ public class GetContextKeysForCustomPolicyResult implements Serializable,
      * </p>
      * 
      * @param contextKeyNames
-     *        The list of context keys that are used in the
-     *        <code>Condition</code> elements of the input policies.
+     *        The list of context keys that are referenced in the input
+     *        policies.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyResult withContextKeyNames(
             String... contextKeyNames) {
         if (this.contextKeyNames == null) {
@@ -103,16 +102,16 @@ public class GetContextKeysForCustomPolicyResult implements Serializable,
 
     /**
      * <p>
-     * The list of context keys that are used in the <code>Condition</code>
-     * elements of the input policies.
+     * The list of context keys that are referenced in the input policies.
      * </p>
      * 
      * @param contextKeyNames
-     *        The list of context keys that are used in the
-     *        <code>Condition</code> elements of the input policies.
+     *        The list of context keys that are referenced in the input
+     *        policies.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetContextKeysForCustomPolicyResult withContextKeyNames(
             java.util.Collection<String> contextKeyNames) {
         setContextKeyNames(contextKeyNames);

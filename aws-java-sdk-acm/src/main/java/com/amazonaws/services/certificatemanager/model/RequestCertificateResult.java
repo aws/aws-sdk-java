@@ -19,7 +19,7 @@ package com.amazonaws.services.certificatemanager.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p/>
  */
 public class RequestCertificateResult implements Serializable, Cloneable {
 
@@ -49,6 +49,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -67,6 +68,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -88,6 +90,7 @@ public class RequestCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateResult withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;

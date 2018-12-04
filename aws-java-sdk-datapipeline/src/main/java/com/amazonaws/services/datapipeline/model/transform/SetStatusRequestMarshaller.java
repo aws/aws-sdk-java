@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.datapipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetStatusRequest Marshaller
  */
 public class SetStatusRequestMarshaller implements
         Marshaller<Request<SetStatusRequest>, SetStatusRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetStatusRequest> marshall(SetStatusRequest setStatusRequest) {
 
@@ -62,41 +62,40 @@ public class SetStatusRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (setStatusRequest.getPipelineId() != null) {
-                jsonWriter.key("pipelineId").value(
+                jsonGenerator.writeFieldName("pipelineId").writeValue(
                         setStatusRequest.getPipelineId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> objectIdsList = (com.amazonaws.internal.SdkInternalList<String>) setStatusRequest
                     .getObjectIds();
             if (!objectIdsList.isEmpty() || !objectIdsList.isAutoConstruct()) {
-                jsonWriter.key("objectIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("objectIds");
+                jsonGenerator.writeStartArray();
                 for (String objectIdsListValue : objectIdsList) {
                     if (objectIdsListValue != null) {
-                        jsonWriter.value(objectIdsListValue);
+                        jsonGenerator.writeValue(objectIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (setStatusRequest.getStatus() != null) {
-                jsonWriter.key("status").value(setStatusRequest.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        setStatusRequest.getStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

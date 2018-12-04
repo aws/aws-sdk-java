@@ -47,6 +47,7 @@ public class DescribeDatasetResult implements Serializable, Cloneable {
      *        synced by dataset, and a dataset can hold up to 1MB of key-value
      *        pairs.
      */
+
     public void setDataset(Dataset dataset) {
         this.dataset = dataset;
     }
@@ -65,6 +66,7 @@ public class DescribeDatasetResult implements Serializable, Cloneable {
      *         exist. Data is synced by dataset, and a dataset can hold up to
      *         1MB of key-value pairs.
      */
+
     public Dataset getDataset() {
         return this.dataset;
     }
@@ -86,6 +88,7 @@ public class DescribeDatasetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDatasetResult withDataset(Dataset dataset) {
         setDataset(dataset);
         return this;

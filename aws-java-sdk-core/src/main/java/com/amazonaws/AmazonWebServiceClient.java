@@ -14,15 +14,7 @@
  */
 package com.amazonaws;
 
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-
-import java.net.URI;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
@@ -36,11 +28,20 @@ import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
-import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.RuntimeHttpUtils;
+import com.amazonaws.util.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.net.URI;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -132,9 +133,17 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
+        this(clientConfiguration, requestMetricCollector, false);
+    }
+
+    @SdkProtectedApi
+    protected AmazonWebServiceClient(ClientConfiguration clientConfiguration,
+                                     RequestMetricCollector requestMetricCollector,
+                                     boolean disableStrictHostNameVerification) {
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration, requestMetricCollector);
         requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
+        client = new AmazonHttpClient(clientConfiguration,
+                requestMetricCollector, disableStrictHostNameVerification);
     }
 
     /**
@@ -183,70 +192,8 @@ public abstract class AmazonWebServiceClient {
 
     /** Returns the endpoint as a URI. */
     private URI toURI(String endpoint) throws IllegalArgumentException {
-        return HttpUtils.toUri(endpoint, clientConfiguration);
+        return RuntimeHttpUtils.toUri(endpoint, clientConfiguration);
     }
-
-    /**
-     * An internal method that is not expected to be normally
-     * called except for AWS internal development purposes.
-     * <p>
-     * Overrides the default endpoint for this client
-     * ("http://dynamodb.us-east-1.amazonaws.com/") and explicitly provides an
-     * AWS region ID and AWS service name to use when the client calculates a
-     * signature for requests. In almost all cases, this region ID and service
-     * name are automatically determined from the endpoint, and callers should
-     * use the simpler one-argument form of setEndpoint instead of this method.
-     * <p>
-     * Callers can pass in just the endpoint (ex:
-     * "dynamodb.us-east-1.amazonaws.com/") or a full URL, including the
-     * protocol (ex: "http://dynamodb.us-east-1.amazonaws.com/"). If the
-     * protocol is not specified here, the default protocol from this client's
-     * {@link ClientConfiguration} will be used, which by default is HTTPS.
-     * <p>
-     * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: <a
-     * href=
-     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
-     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
-     * 3912</a>
-     *
-     * @param endpoint
-     *            The endpoint (ex: "dynamodb.us-east-1.amazonaws.com/") or a
-     *            full URL, including the protocol (ex:
-     *            "http://dynamodb.us-east-1.amazonaws.com/") of the region
-     *            specific AWS endpoint this client will communicate with.
-     * @param serviceName
-     *            This parameter is ignored.
-     * @param regionId
-     *            The ID of the region in which this service resides AND the
-     *            overriding region for signing purposes.
-     *
-     * @throws IllegalArgumentException
-     *             If any problems are detected with the specified endpoint.
-     * @deprecated
-     */
-    @Deprecated
-    public void setEndpoint(String endpoint, String serviceName, String regionId) {
-        URI uri = toURI(endpoint);
-        Signer signer = computeSignerByServiceRegion(serviceName, regionId,
-                regionId, true);
-        synchronized(this)  {
-            this.signer = signer;
-            this.endpoint = uri;
-            this.signerRegionOverride = regionId;
-        }
-    }
-
-    /**
-     * @deprecated this method is now a no-op, as overriding the signer from
-     *             sublcass is no longer supported.
-     */
-    @Deprecated protected void configSigner(URI uri) {}
-    /**
-     * @deprecated this method is now a no-op, as overriding the signer from
-     *             sublcass is no longer supported.
-     */
-    @Deprecated protected void configSigner(String serviceName, String regionId) {}
 
     /**
      * Returns the signer based on the given URI and the current AWS client
@@ -633,7 +580,7 @@ public abstract class AmazonWebServiceClient {
      *         otherwise it returns the same service name that is used for
      *         request signing.
      */
-    String getEndpointPrefix() {
+    public String getEndpointPrefix() {
 
         if (endpointPrefix != null) return endpointPrefix;
 
@@ -733,7 +680,7 @@ public abstract class AmazonWebServiceClient {
                     "Unrecognized AWS http client class name " + httpClientName);
         }
         String serviceName = httpClientName.substring(i + len, j);
-        return serviceName.toLowerCase();
+        return StringUtils.lowerCase(serviceName);
     }
 
     private String getHttpClientName() {

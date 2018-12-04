@@ -25,88 +25,92 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of ARNs specifying the findings returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      */
-    private java.util.List<String> findingArnList;
+    private java.util.List<String> findingArns;
     /**
      * <p>
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of ARNs specifying the findings returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
-     * @return A list of ARNs specifying the findings returned by the action.
+     * @return A list of ARNs that specifies the findings returned by the
+     *         action.
      */
-    public java.util.List<String> getFindingArnList() {
-        return findingArnList;
+
+    public java.util.List<String> getFindingArns() {
+        return findingArns;
     }
 
     /**
      * <p>
-     * A list of ARNs specifying the findings returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
-     * @param findingArnList
-     *        A list of ARNs specifying the findings returned by the action.
+     * @param findingArns
+     *        A list of ARNs that specifies the findings returned by the action.
      */
-    public void setFindingArnList(java.util.Collection<String> findingArnList) {
-        if (findingArnList == null) {
-            this.findingArnList = null;
+
+    public void setFindingArns(java.util.Collection<String> findingArns) {
+        if (findingArns == null) {
+            this.findingArns = null;
             return;
         }
 
-        this.findingArnList = new java.util.ArrayList<String>(findingArnList);
+        this.findingArns = new java.util.ArrayList<String>(findingArns);
     }
 
     /**
      * <p>
-     * A list of ARNs specifying the findings returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFindingArnList(java.util.Collection)} or
-     * {@link #withFindingArnList(java.util.Collection)} if you want to override
+     * any). Use {@link #setFindingArns(java.util.Collection)} or
+     * {@link #withFindingArns(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
-     * @param findingArnList
-     *        A list of ARNs specifying the findings returned by the action.
+     * @param findingArns
+     *        A list of ARNs that specifies the findings returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-    public ListFindingsResult withFindingArnList(String... findingArnList) {
-        if (this.findingArnList == null) {
-            setFindingArnList(new java.util.ArrayList<String>(
-                    findingArnList.length));
+
+    public ListFindingsResult withFindingArns(String... findingArns) {
+        if (this.findingArns == null) {
+            setFindingArns(new java.util.ArrayList<String>(findingArns.length));
         }
-        for (String ele : findingArnList) {
-            this.findingArnList.add(ele);
+        for (String ele : findingArns) {
+            this.findingArns.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * A list of ARNs specifying the findings returned by the action.
+     * A list of ARNs that specifies the findings returned by the action.
      * </p>
      * 
-     * @param findingArnList
-     *        A list of ARNs specifying the findings returned by the action.
+     * @param findingArns
+     *        A list of ARNs that specifies the findings returned by the action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-    public ListFindingsResult withFindingArnList(
-            java.util.Collection<String> findingArnList) {
-        setFindingArnList(findingArnList);
+
+    public ListFindingsResult withFindingArns(
+            java.util.Collection<String> findingArns) {
+        setFindingArns(findingArns);
         return this;
     }
 
@@ -115,7 +119,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -123,8 +127,9 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -134,15 +139,16 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @return When a response is generated, if there is more data to be listed,
      *         this parameter is present in the response and contains the value
      *         to use for the <b>nextToken</b> parameter in a subsequent
      *         pagination request. If there is no more data to be listed, this
-     *         parameter is set to 'null'.
+     *         parameter is set to null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -152,7 +158,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
      * When a response is generated, if there is more data to be listed, this
      * parameter is present in the response and contains the value to use for
      * the <b>nextToken</b> parameter in a subsequent pagination request. If
-     * there is no more data to be listed, this parameter is set to 'null'.
+     * there is no more data to be listed, this parameter is set to null.
      * </p>
      * 
      * @param nextToken
@@ -160,10 +166,11 @@ public class ListFindingsResult implements Serializable, Cloneable {
      *        this parameter is present in the response and contains the value
      *        to use for the <b>nextToken</b> parameter in a subsequent
      *        pagination request. If there is no more data to be listed, this
-     *        parameter is set to 'null'.
+     *        parameter is set to null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListFindingsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -181,8 +188,8 @@ public class ListFindingsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFindingArnList() != null)
-            sb.append("FindingArnList: " + getFindingArnList() + ",");
+        if (getFindingArns() != null)
+            sb.append("FindingArns: " + getFindingArns() + ",");
         if (getNextToken() != null)
             sb.append("NextToken: " + getNextToken());
         sb.append("}");
@@ -199,11 +206,10 @@ public class ListFindingsResult implements Serializable, Cloneable {
         if (obj instanceof ListFindingsResult == false)
             return false;
         ListFindingsResult other = (ListFindingsResult) obj;
-        if (other.getFindingArnList() == null
-                ^ this.getFindingArnList() == null)
+        if (other.getFindingArns() == null ^ this.getFindingArns() == null)
             return false;
-        if (other.getFindingArnList() != null
-                && other.getFindingArnList().equals(this.getFindingArnList()) == false)
+        if (other.getFindingArns() != null
+                && other.getFindingArns().equals(this.getFindingArns()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -220,8 +226,7 @@ public class ListFindingsResult implements Serializable, Cloneable {
 
         hashCode = prime
                 * hashCode
-                + ((getFindingArnList() == null) ? 0 : getFindingArnList()
-                        .hashCode());
+                + ((getFindingArns() == null) ? 0 : getFindingArns().hashCode());
         hashCode = prime * hashCode
                 + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

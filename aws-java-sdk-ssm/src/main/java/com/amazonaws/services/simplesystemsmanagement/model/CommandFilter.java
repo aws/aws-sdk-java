@@ -19,38 +19,56 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a command filter.
+ * </p>
  */
 public class CommandFilter implements Serializable, Cloneable {
 
-    /** The name of the filter. For example, requested date and time. */
+    /**
+     * <p>
+     * The name of the filter. For example, requested date and time.
+     * </p>
+     */
     private String key;
-    /** The filter value. For example: June 30, 2015. */
+    /**
+     * <p>
+     * The filter value. For example: June 30, 2015.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
      * @see CommandFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @return The name of the filter. For example, requested date and time.
      * @see CommandFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -58,26 +76,30 @@ public class CommandFilter implements Serializable, Cloneable {
      *         chained together.
      * @see CommandFilterKey
      */
+
     public CommandFilter withKey(String key) {
         setKey(key);
         return this;
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandFilterKey
      */
+
     public void setKey(CommandFilterKey key) {
         this.key = key.toString();
     }
 
     /**
+     * <p>
      * The name of the filter. For example, requested date and time.
+     * </p>
      * 
      * @param key
      *        The name of the filter. For example, requested date and time.
@@ -85,38 +107,48 @@ public class CommandFilter implements Serializable, Cloneable {
      *         chained together.
      * @see CommandFilterKey
      */
+
     public CommandFilter withKey(CommandFilterKey key) {
         setKey(key);
         return this;
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @param value
      *        The filter value. For example: June 30, 2015.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @return The filter value. For example: June 30, 2015.
      */
+
     public String getValue() {
         return this.value;
     }
 
     /**
+     * <p>
      * The filter value. For example: June 30, 2015.
+     * </p>
      * 
      * @param value
      *        The filter value. For example: June 30, 2015.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandFilter withValue(String value) {
         setValue(value);
         return this;

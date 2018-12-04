@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdatePipelineStatusRequest Marshaller
@@ -47,7 +49,14 @@ public class UpdatePipelineStatusRequestMarshaller
         implements
         Marshaller<Request<UpdatePipelineStatusRequest>, UpdatePipelineStatusRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdatePipelineStatusRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdatePipelineStatusRequest> marshall(
             UpdatePipelineStatusRequest updatePipelineStatusRequest) {
@@ -66,27 +75,27 @@ public class UpdatePipelineStatusRequestMarshaller
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (updatePipelineStatusRequest.getId() == null) ? ""
-                        : StringUtils.fromString(updatePipelineStatusRequest
-                                .getId()));
+                (updatePipelineStatusRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(
+                                StringUtils
+                                        .fromString(updatePipelineStatusRequest
+                                                .getId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (updatePipelineStatusRequest.getStatus() != null) {
-                jsonWriter.key("Status").value(
+                jsonGenerator.writeFieldName("Status").writeValue(
                         updatePipelineStatusRequest.getStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -44,6 +44,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *        The number of SSL/TLS protocols that you want to allow CloudFront
      *        to use when establishing an HTTPS connection with this origin.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -55,6 +56,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      * @return The number of SSL/TLS protocols that you want to allow CloudFront
      *         to use when establishing an HTTPS connection with this origin.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -69,6 +71,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OriginSslProtocols withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -84,6 +87,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *         establishing an HTTPS connection with this origin.
      * @see SslProtocol
      */
+
     public java.util.List<String> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<String>();
@@ -102,6 +106,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *        establishing an HTTPS connection with this origin.
      * @see SslProtocol
      */
+
     public void setItems(java.util.Collection<String> items) {
         if (items == null) {
             this.items = null;
@@ -130,6 +135,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *         chained together.
      * @see SslProtocol
      */
+
     public OriginSslProtocols withItems(String... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<String>(
@@ -154,6 +160,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *         chained together.
      * @see SslProtocol
      */
+
     public OriginSslProtocols withItems(java.util.Collection<String> items) {
         setItems(items);
         return this;
@@ -172,6 +179,7 @@ public class OriginSslProtocols implements Serializable, Cloneable {
      *         chained together.
      * @see SslProtocol
      */
+
     public OriginSslProtocols withItems(SslProtocol... items) {
         com.amazonaws.internal.SdkInternalList<String> itemsCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 items.length);

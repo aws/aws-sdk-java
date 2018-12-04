@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class LocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("latitude", targetDepth)) {
                     context.nextToken();
-                    location.setLatitude(DoubleJsonUnmarshaller.getInstance()
+                    location.setLatitude(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("longitude", targetDepth)) {
                     context.nextToken();
-                    location.setLongitude(DoubleJsonUnmarshaller.getInstance()
+                    location.setLongitude(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

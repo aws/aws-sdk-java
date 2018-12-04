@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ModifyHsmRequest Marshaller
  */
 public class ModifyHsmRequestMarshaller implements
         Marshaller<Request<ModifyHsmRequest>, ModifyHsmRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ModifyHsmRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ModifyHsmRequest> marshall(ModifyHsmRequest modifyHsmRequest) {
 
@@ -62,47 +62,43 @@ public class ModifyHsmRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (modifyHsmRequest.getHsmArn() != null) {
-                jsonWriter.key("HsmArn").value(modifyHsmRequest.getHsmArn());
+                jsonGenerator.writeFieldName("HsmArn").writeValue(
+                        modifyHsmRequest.getHsmArn());
             }
-
             if (modifyHsmRequest.getSubnetId() != null) {
-                jsonWriter.key("SubnetId")
-                        .value(modifyHsmRequest.getSubnetId());
+                jsonGenerator.writeFieldName("SubnetId").writeValue(
+                        modifyHsmRequest.getSubnetId());
             }
-
             if (modifyHsmRequest.getEniIp() != null) {
-                jsonWriter.key("EniIp").value(modifyHsmRequest.getEniIp());
+                jsonGenerator.writeFieldName("EniIp").writeValue(
+                        modifyHsmRequest.getEniIp());
             }
-
             if (modifyHsmRequest.getIamRoleArn() != null) {
-                jsonWriter.key("IamRoleArn").value(
+                jsonGenerator.writeFieldName("IamRoleArn").writeValue(
                         modifyHsmRequest.getIamRoleArn());
             }
-
             if (modifyHsmRequest.getExternalId() != null) {
-                jsonWriter.key("ExternalId").value(
+                jsonGenerator.writeFieldName("ExternalId").writeValue(
                         modifyHsmRequest.getExternalId());
             }
-
             if (modifyHsmRequest.getSyslogIp() != null) {
-                jsonWriter.key("SyslogIp")
-                        .value(modifyHsmRequest.getSyslogIp());
+                jsonGenerator.writeFieldName("SyslogIp").writeValue(
+                        modifyHsmRequest.getSyslogIp());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

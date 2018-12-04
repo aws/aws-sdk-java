@@ -44,6 +44,7 @@ public class DescribeElasticsearchDomainConfigRequest extends
      * @param domainName
      *        The Elasticsearch domain that you want to get information about.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -55,6 +56,7 @@ public class DescribeElasticsearchDomainConfigRequest extends
      * 
      * @return The Elasticsearch domain that you want to get information about.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -69,6 +71,7 @@ public class DescribeElasticsearchDomainConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainConfigRequest withDomainName(
             String domainName) {
         setDomainName(domainName);

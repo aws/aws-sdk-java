@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class ListImagesResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listImagesResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listImagesResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

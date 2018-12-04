@@ -16,6 +16,7 @@
 package com.amazonaws.services.sqs;
 
 import com.amazonaws.services.sqs.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon SQS asynchronously. Each asynchronous method
@@ -36,42 +37,75 @@ import com.amazonaws.services.sqs.model.*;
  * </p>
  * <p>
  * Helpful Links:
- * <ul>
- * <li><a
- * href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
- * WSDL (2012-11-05)</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"
- * >Making API Requests</a></li>
- * <li><a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"
- * >Using Amazon SQS Message Attributes</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
- * >Using Amazon SQS Dead Letter Queues</a></li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"
- * >Regions and Endpoints</a></li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
+ * WSDL (2012-11-05)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"
+ * >Making API Requests</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"
+ * >Using Amazon SQS Message Attributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+ * >Using Amazon SQS Dead Letter Queues</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">
+ * Regions and Endpoints</a>
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * We also provide SDKs that enable you to access Amazon SQS from your preferred
  * programming language. The SDKs contain functionality that automatically takes
  * care of tasks such as:
  * </p>
- * <p>
  * <ul>
- * <li>Cryptographically signing your service requests</li>
- * <li>Retrying requests</li>
- * <li>Handling error responses</li>
- * </ul>
+ * <li>
+ * <p>
+ * Cryptographically signing your service requests
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Retrying requests
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Handling error responses
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * For a list of available SDKs, go to <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSQSAsyncClient extends AmazonSQSClient implements
         AmazonSQSAsync {
 
@@ -169,8 +203,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -262,9 +295,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -303,26 +334,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest request) {
 
         return addPermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             final AddPermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AddPermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AddPermissionResult call() throws Exception {
+                        AddPermissionResult result;
 
                         try {
-                            addPermission(request);
-                            result = null;
+                            result = addPermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -344,7 +374,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #addPermissionAsync(AddPermissionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String queueUrl, String label,
             java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
 
@@ -360,12 +390,12 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #addPermissionAsync(AddPermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> addPermissionAsync(
+    public java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String queueUrl,
             String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actions,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler) {
 
         return addPermissionAsync(
                 new AddPermissionRequest().withQueueUrl(queueUrl)
@@ -374,26 +404,26 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             ChangeMessageVisibilityRequest request) {
 
         return changeMessageVisibilityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             final ChangeMessageVisibilityRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ChangeMessageVisibilityResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ChangeMessageVisibilityResult call()
+                            throws Exception {
+                        ChangeMessageVisibilityResult result;
 
                         try {
-                            changeMessageVisibility(request);
-                            result = null;
+                            result = changeMessageVisibility(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -416,7 +446,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #changeMessageVisibilityAsync(ChangeMessageVisibilityRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             String queueUrl, String receiptHandle, Integer visibilityTimeout) {
 
         return changeMessageVisibilityAsync(new ChangeMessageVisibilityRequest()
@@ -431,11 +461,11 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #changeMessageVisibilityAsync(ChangeMessageVisibilityRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> changeMessageVisibilityAsync(
+    public java.util.concurrent.Future<ChangeMessageVisibilityResult> changeMessageVisibilityAsync(
             String queueUrl,
             String receiptHandle,
             Integer visibilityTimeout,
-            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> asyncHandler) {
 
         return changeMessageVisibilityAsync(
                 new ChangeMessageVisibilityRequest().withQueueUrl(queueUrl)
@@ -576,26 +606,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMessageAsync(
+    public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             DeleteMessageRequest request) {
 
         return deleteMessageAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMessageAsync(
+    public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             final DeleteMessageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteMessageResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteMessageResult call() throws Exception {
+                        DeleteMessageResult result;
 
                         try {
-                            deleteMessage(request);
-                            result = null;
+                            result = deleteMessage(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -617,7 +646,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #deleteMessageAsync(DeleteMessageRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteMessageAsync(
+    public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             String queueUrl, String receiptHandle) {
 
         return deleteMessageAsync(new DeleteMessageRequest().withQueueUrl(
@@ -631,10 +660,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #deleteMessageAsync(DeleteMessageRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteMessageAsync(
+    public java.util.concurrent.Future<DeleteMessageResult> deleteMessageAsync(
             String queueUrl,
             String receiptHandle,
-            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteMessageRequest, DeleteMessageResult> asyncHandler) {
 
         return deleteMessageAsync(
                 new DeleteMessageRequest().withQueueUrl(queueUrl)
@@ -707,26 +736,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteQueueAsync(
+    public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             DeleteQueueRequest request) {
 
         return deleteQueueAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteQueueAsync(
+    public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             final DeleteQueueRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteQueueResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteQueueResult call() throws Exception {
+                        DeleteQueueResult result;
 
                         try {
-                            deleteQueue(request);
-                            result = null;
+                            result = deleteQueue(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -748,7 +776,8 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #deleteQueueAsync(DeleteQueueRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> deleteQueueAsync(String queueUrl) {
+    public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
+            String queueUrl) {
 
         return deleteQueueAsync(new DeleteQueueRequest().withQueueUrl(queueUrl));
     }
@@ -760,9 +789,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #deleteQueueAsync(DeleteQueueRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> deleteQueueAsync(
+    public java.util.concurrent.Future<DeleteQueueResult> deleteQueueAsync(
             String queueUrl,
-            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteQueueRequest, DeleteQueueResult> asyncHandler) {
 
         return deleteQueueAsync(
                 new DeleteQueueRequest().withQueueUrl(queueUrl), asyncHandler);
@@ -1021,26 +1050,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> purgeQueueAsync(
+    public java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(
             PurgeQueueRequest request) {
 
         return purgeQueueAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> purgeQueueAsync(
+    public java.util.concurrent.Future<PurgeQueueResult> purgeQueueAsync(
             final PurgeQueueRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PurgeQueueRequest, PurgeQueueResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PurgeQueueResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PurgeQueueResult call() throws Exception {
+                        PurgeQueueResult result;
 
                         try {
-                            purgeQueue(request);
-                            result = null;
+                            result = purgeQueue(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1121,26 +1149,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             final RemovePermissionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RemovePermissionResult call() throws Exception {
+                        RemovePermissionResult result;
 
                         try {
-                            removePermission(request);
-                            result = null;
+                            result = removePermission(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1162,7 +1189,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #removePermissionAsync(RemovePermissionRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String queueUrl, String label) {
 
         return removePermissionAsync(new RemovePermissionRequest()
@@ -1176,10 +1203,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #removePermissionAsync(RemovePermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> removePermissionAsync(
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String queueUrl,
             String label,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         return removePermissionAsync(new RemovePermissionRequest()
                 .withQueueUrl(queueUrl).withLabel(label), asyncHandler);
@@ -1315,26 +1342,25 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             SetQueueAttributesRequest request) {
 
         return setQueueAttributesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             final SetQueueAttributesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetQueueAttributesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetQueueAttributesResult call() throws Exception {
+                        SetQueueAttributesResult result;
 
                         try {
-                            setQueueAttributes(request);
-                            result = null;
+                            result = setQueueAttributes(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1356,7 +1382,7 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #setQueueAttributesAsync(SetQueueAttributesRequest)
      */
     @Override
-    public java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             String queueUrl, java.util.Map<String, String> attributes) {
 
         return setQueueAttributesAsync(new SetQueueAttributesRequest()
@@ -1370,10 +1396,10 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements
      * @see #setQueueAttributesAsync(SetQueueAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    public java.util.concurrent.Future<Void> setQueueAttributesAsync(
+    public java.util.concurrent.Future<SetQueueAttributesResult> setQueueAttributesAsync(
             String queueUrl,
             java.util.Map<String, String> attributes,
-            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler) {
 
         return setQueueAttributesAsync(new SetQueueAttributesRequest()
                 .withQueueUrl(queueUrl).withAttributes(attributes),

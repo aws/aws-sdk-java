@@ -26,7 +26,8 @@ public enum HealthCheckType {
     HTTP_STR_MATCH("HTTP_STR_MATCH"),
     HTTPS_STR_MATCH("HTTPS_STR_MATCH"),
     TCP("TCP"),
-    CALCULATED("CALCULATED");
+    CALCULATED("CALCULATED"),
+    CLOUDWATCH_METRIC("CLOUDWATCH_METRIC");
 
     private String value;
 
@@ -61,6 +62,8 @@ public enum HealthCheckType {
             return TCP;
         } else if ("CALCULATED".equals(value)) {
             return CALCULATED;
+        } else if ("CLOUDWATCH_METRIC".equals(value)) {
+            return CLOUDWATCH_METRIC;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

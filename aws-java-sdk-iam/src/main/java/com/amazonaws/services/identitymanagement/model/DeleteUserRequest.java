@@ -29,6 +29,12 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
 
@@ -46,7 +52,12 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * members.
      * 
      * @param userName
-     *        The name of the user to delete.
+     *        The name of the user to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public DeleteUserRequest(String userName) {
         setUserName(userName);
@@ -56,10 +67,22 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user to delete.
+     *        The name of the user to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -68,9 +91,21 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the user to delete.
+     * @return The name of the user to delete.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -79,12 +114,24 @@ public class DeleteUserRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user to delete.
+     *        The name of the user to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteUserRequest withUserName(String userName) {
         setUserName(userName);
         return this;

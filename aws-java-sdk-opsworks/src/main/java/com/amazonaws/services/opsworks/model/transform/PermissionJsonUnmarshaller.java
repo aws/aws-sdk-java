@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,27 @@ public class PermissionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    permission.setStackId(StringJsonUnmarshaller.getInstance()
+                    permission.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    permission.setIamUserArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    permission.setIamUserArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSsh", targetDepth)) {
                     context.nextToken();
-                    permission.setAllowSsh(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    permission.setAllowSsh(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AllowSudo", targetDepth)) {
                     context.nextToken();
-                    permission.setAllowSudo(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    permission.setAllowSudo(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Level", targetDepth)) {
                     context.nextToken();
-                    permission.setLevel(StringJsonUnmarshaller.getInstance()
+                    permission.setLevel(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

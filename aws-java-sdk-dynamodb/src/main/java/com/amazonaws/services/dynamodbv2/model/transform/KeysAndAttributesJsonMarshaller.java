@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * KeysAndAttributesMarshaller
@@ -39,85 +34,88 @@ import com.amazonaws.util.json.*;
 public class KeysAndAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(KeysAndAttributes keysAndAttributes,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (keysAndAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<java.util.Map<String, AttributeValue>> keysList = keysAndAttributes
                     .getKeys();
             if (keysList != null) {
-                jsonWriter.key("Keys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Keys");
+                jsonGenerator.writeStartArray();
                 for (java.util.Map<String, AttributeValue> keysListValue : keysList) {
                     if (keysListValue != null) {
 
-                        jsonWriter.object();
+                        jsonGenerator.writeStartObject();
                         for (Map.Entry<String, AttributeValue> KeysListMapEntry : keysListValue
                                 .entrySet()) {
                             if (KeysListMapEntry.getValue() != null) {
-                                jsonWriter.key(KeysListMapEntry.getKey());
+                                jsonGenerator.writeFieldName(KeysListMapEntry
+                                        .getKey());
                                 AttributeValueJsonMarshaller.getInstance()
                                         .marshall(KeysListMapEntry.getValue(),
-                                                jsonWriter);
+                                                jsonGenerator);
                             }
                         }
-                        jsonWriter.endObject();
+                        jsonGenerator.writeEndObject();
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<String> attributesToGetList = keysAndAttributes
                     .getAttributesToGet();
             if (attributesToGetList != null) {
-                jsonWriter.key("AttributesToGet");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributesToGet");
+                jsonGenerator.writeStartArray();
                 for (String attributesToGetListValue : attributesToGetList) {
                     if (attributesToGetListValue != null) {
-                        jsonWriter.value(attributesToGetListValue);
+                        jsonGenerator.writeValue(attributesToGetListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (keysAndAttributes.getConsistentRead() != null) {
-                jsonWriter.key("ConsistentRead").value(
+                jsonGenerator.writeFieldName("ConsistentRead").writeValue(
                         keysAndAttributes.getConsistentRead());
             }
-
             if (keysAndAttributes.getProjectionExpression() != null) {
-                jsonWriter.key("ProjectionExpression").value(
-                        keysAndAttributes.getProjectionExpression());
+                jsonGenerator
+                        .writeFieldName("ProjectionExpression")
+                        .writeValue(keysAndAttributes.getProjectionExpression());
             }
 
             java.util.Map<String, String> expressionAttributeNamesMap = keysAndAttributes
                     .getExpressionAttributeNames();
             if (expressionAttributeNamesMap != null) {
-                jsonWriter.key("ExpressionAttributeNames");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeNames");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
                         .entrySet()) {
                     if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeNamesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeNamesMapValue
+                                        .getKey());
 
-                        jsonWriter.value(expressionAttributeNamesMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(expressionAttributeNamesMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

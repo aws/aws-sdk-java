@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,21 +57,23 @@ public class CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller
                 if (context.testExpression("SnapshotId", targetDepth)) {
                     context.nextToken();
                     createSnapshotFromVolumeRecoveryPointResult
-                            .setSnapshotId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setSnapshotId(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
                     createSnapshotFromVolumeRecoveryPointResult
-                            .setVolumeARN(StringJsonUnmarshaller.getInstance()
+                            .setVolumeARN(context.getUnmarshaller(String.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("VolumeRecoveryPointTime",
                         targetDepth)) {
                     context.nextToken();
                     createSnapshotFromVolumeRecoveryPointResult
-                            .setVolumeRecoveryPointTime(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setVolumeRecoveryPointTime(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

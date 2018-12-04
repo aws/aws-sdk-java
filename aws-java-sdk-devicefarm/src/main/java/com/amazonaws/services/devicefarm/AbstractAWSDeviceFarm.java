@@ -103,6 +103,12 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public GetOfferingStatusResult getOfferingStatus(
+            GetOfferingStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProjectResult getProject(GetProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,6 +154,17 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListOfferingTransactionsResult listOfferingTransactions(
+            ListOfferingTransactionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProjectsResult listProjects(ListProjectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,7 +201,23 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public PurchaseOfferingResult purchaseOffering(
+            PurchaseOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RenewOfferingResult renewOffering(RenewOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ScheduleRunResult scheduleRun(ScheduleRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopRunResult stopRun(StopRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

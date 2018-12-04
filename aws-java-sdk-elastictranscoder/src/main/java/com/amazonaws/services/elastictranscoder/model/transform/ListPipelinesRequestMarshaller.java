@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListPipelinesRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ListPipelinesRequestMarshaller implements
         Marshaller<Request<ListPipelinesRequest>, ListPipelinesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListPipelinesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListPipelinesRequest> marshall(
             ListPipelinesRequest listPipelinesRequest) {
@@ -65,16 +73,14 @@ public class ListPipelinesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String ascending = (listPipelinesRequest.getAscending() == null) ? null
-                : StringUtils.fromString(listPipelinesRequest.getAscending());
-        if (ascending != null) {
-            request.addParameter("Ascending", ascending);
+        if (listPipelinesRequest.getAscending() != null) {
+            request.addParameter("Ascending",
+                    StringUtils.fromString(listPipelinesRequest.getAscending()));
         }
 
-        String pageToken = (listPipelinesRequest.getPageToken() == null) ? null
-                : StringUtils.fromString(listPipelinesRequest.getPageToken());
-        if (pageToken != null) {
-            request.addParameter("PageToken", pageToken);
+        if (listPipelinesRequest.getPageToken() != null) {
+            request.addParameter("PageToken",
+                    StringUtils.fromString(listPipelinesRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

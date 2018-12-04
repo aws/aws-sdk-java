@@ -92,6 +92,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @param streamArn
      *        The Amazon Resource Name (ARN) for the stream.
      */
+
     public void setStreamArn(String streamArn) {
         this.streamArn = streamArn;
     }
@@ -103,6 +104,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Amazon Resource Name (ARN) for the stream.
      */
+
     public String getStreamArn() {
         return this.streamArn;
     }
@@ -117,6 +119,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShardIteratorRequest withStreamArn(String streamArn) {
         setStreamArn(streamArn);
         return this;
@@ -132,6 +135,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *        The identifier of the shard. The iterator will be returned for
      *        this shard ID.
      */
+
     public void setShardId(String shardId) {
         this.shardId = shardId;
     }
@@ -145,6 +149,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the shard. The iterator will be returned for
      *         this shard ID.
      */
+
     public String getShardId() {
         return this.shardId;
     }
@@ -161,6 +166,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShardIteratorRequest withShardId(String shardId) {
         setShardId(shardId);
         return this;
@@ -235,6 +241,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *        </li>
      * @see ShardIteratorType
      */
+
     public void setShardIteratorType(String shardIteratorType) {
         this.shardIteratorType = shardIteratorType;
     }
@@ -307,6 +314,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *         </li>
      * @see ShardIteratorType
      */
+
     public String getShardIteratorType() {
         return this.shardIteratorType;
     }
@@ -382,6 +390,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ShardIteratorType
      */
+
     public GetShardIteratorRequest withShardIteratorType(
             String shardIteratorType) {
         setShardIteratorType(shardIteratorType);
@@ -455,10 +464,9 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *        recent data in the shard.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ShardIteratorType
      */
+
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
         this.shardIteratorType = shardIteratorType.toString();
     }
@@ -534,6 +542,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ShardIteratorType
      */
+
     public GetShardIteratorRequest withShardIteratorType(
             ShardIteratorType shardIteratorType) {
         setShardIteratorType(shardIteratorType);
@@ -550,6 +559,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      *        The sequence number of a stream record in the shard from which to
      *        start reading.
      */
+
     public void setSequenceNumber(String sequenceNumber) {
         this.sequenceNumber = sequenceNumber;
     }
@@ -563,6 +573,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @return The sequence number of a stream record in the shard from which to
      *         start reading.
      */
+
     public String getSequenceNumber() {
         return this.sequenceNumber;
     }
@@ -579,6 +590,7 @@ public class GetShardIteratorRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetShardIteratorRequest withSequenceNumber(String sequenceNumber) {
         setSequenceNumber(sequenceNumber);
         return this;

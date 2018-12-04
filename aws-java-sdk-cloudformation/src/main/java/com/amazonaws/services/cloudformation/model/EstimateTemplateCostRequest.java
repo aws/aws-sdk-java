@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * The input for an <a>EstimateTemplateCost</a> action.
+ * </p>
  */
 public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -88,6 +90,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      *        <code>TemplateURL</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
+
     public void setTemplateBody(String templateBody) {
         this.templateBody = templateBody;
     }
@@ -116,6 +119,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      *         <code>TemplateURL</code>. If both are passed, only
      *         <code>TemplateBody</code> is used.
      */
+
     public String getTemplateBody() {
         return this.templateBody;
     }
@@ -147,6 +151,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EstimateTemplateCostRequest withTemplateBody(String templateBody) {
         setTemplateBody(templateBody);
         return this;
@@ -177,6 +182,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      *        <code>TemplateBody</code>. If both are passed, only
      *        <code>TemplateBody</code> is used.
      */
+
     public void setTemplateURL(String templateURL) {
         this.templateURL = templateURL;
     }
@@ -205,6 +211,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      *         <code>TemplateBody</code>. If both are passed, only
      *         <code>TemplateBody</code> is used.
      */
+
     public String getTemplateURL() {
         return this.templateURL;
     }
@@ -236,6 +243,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EstimateTemplateCostRequest withTemplateURL(String templateURL) {
         setTemplateURL(templateURL);
         return this;
@@ -250,6 +258,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      * @return A list of <code>Parameter</code> structures that specify input
      *         parameters.
      */
+
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalList<Parameter>();
@@ -267,6 +276,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      *        A list of <code>Parameter</code> structures that specify input
      *        parameters.
      */
+
     public void setParameters(java.util.Collection<Parameter> parameters) {
         if (parameters == null) {
             this.parameters = null;
@@ -295,6 +305,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EstimateTemplateCostRequest withParameters(Parameter... parameters) {
         if (this.parameters == null) {
             setParameters(new com.amazonaws.internal.SdkInternalList<Parameter>(
@@ -318,6 +329,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EstimateTemplateCostRequest withParameters(
             java.util.Collection<Parameter> parameters) {
         setParameters(parameters);

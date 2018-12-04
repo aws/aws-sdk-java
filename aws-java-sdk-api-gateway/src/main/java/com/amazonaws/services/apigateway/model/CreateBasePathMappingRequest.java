@@ -65,6 +65,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @param domainName
      *        The domain name of the <a>BasePathMapping</a> resource to create.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -76,6 +77,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * 
      * @return The domain name of the <a>BasePathMapping</a> resource to create.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -90,6 +92,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBasePathMappingRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -110,6 +113,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      *        not want callers to specify a base path name after the domain
      *        name.
      */
+
     public void setBasePath(String basePath) {
         this.basePath = basePath;
     }
@@ -128,6 +132,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      *         do not want callers to specify a base path name after the domain
      *         name.
      */
+
     public String getBasePath() {
         return this.basePath;
     }
@@ -149,6 +154,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBasePathMappingRequest withBasePath(String basePath) {
         setBasePath(basePath);
         return this;
@@ -162,6 +168,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @param restApiId
      *        The name of the API that you want to apply this mapping to.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -173,6 +180,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the API that you want to apply this mapping to.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -187,6 +195,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBasePathMappingRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -204,6 +213,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      *        Leave this blank if you do not want callers to explicitly specify
      *        the stage name after any base path name.
      */
+
     public void setStage(String stage) {
         this.stage = stage;
     }
@@ -219,6 +229,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      *         mapping. Leave this blank if you do not want callers to
      *         explicitly specify the stage name after any base path name.
      */
+
     public String getStage() {
         return this.stage;
     }
@@ -237,6 +248,7 @@ public class CreateBasePathMappingRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateBasePathMappingRequest withStage(String stage) {
         setStage(stage);
         return this;

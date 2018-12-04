@@ -50,6 +50,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      * @param name
      *        The dimension name to be matched.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -61,6 +62,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      * 
      * @return The dimension name to be matched.
      */
+
     public String getName() {
         return this.name;
     }
@@ -75,6 +77,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DimensionFilter withName(String name) {
         setName(name);
         return this;
@@ -93,6 +96,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      *        <code>Name</code> without specifying a <code>Value</code> returns
      *        all values associated with that <code>Name</code>.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -109,6 +113,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      *         a <code>Name</code> without specifying a <code>Value</code>
      *         returns all values associated with that <code>Name</code>.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -128,6 +133,7 @@ public class DimensionFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DimensionFilter withValue(String value) {
         setValue(value);
         return this;

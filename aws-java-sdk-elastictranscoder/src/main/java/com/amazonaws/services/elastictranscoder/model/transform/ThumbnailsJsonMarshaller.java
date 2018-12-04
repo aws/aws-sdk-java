@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ThumbnailsMarshaller
@@ -39,53 +34,53 @@ import com.amazonaws.util.json.*;
 public class ThumbnailsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Thumbnails thumbnails, JSONWriter jsonWriter) {
+    public void marshall(Thumbnails thumbnails,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (thumbnails == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (thumbnails.getFormat() != null) {
-                jsonWriter.key("Format").value(thumbnails.getFormat());
+                jsonGenerator.writeFieldName("Format").writeValue(
+                        thumbnails.getFormat());
             }
-
             if (thumbnails.getInterval() != null) {
-                jsonWriter.key("Interval").value(thumbnails.getInterval());
+                jsonGenerator.writeFieldName("Interval").writeValue(
+                        thumbnails.getInterval());
             }
-
             if (thumbnails.getResolution() != null) {
-                jsonWriter.key("Resolution").value(thumbnails.getResolution());
+                jsonGenerator.writeFieldName("Resolution").writeValue(
+                        thumbnails.getResolution());
             }
-
             if (thumbnails.getAspectRatio() != null) {
-                jsonWriter.key("AspectRatio")
-                        .value(thumbnails.getAspectRatio());
+                jsonGenerator.writeFieldName("AspectRatio").writeValue(
+                        thumbnails.getAspectRatio());
             }
-
             if (thumbnails.getMaxWidth() != null) {
-                jsonWriter.key("MaxWidth").value(thumbnails.getMaxWidth());
+                jsonGenerator.writeFieldName("MaxWidth").writeValue(
+                        thumbnails.getMaxWidth());
             }
-
             if (thumbnails.getMaxHeight() != null) {
-                jsonWriter.key("MaxHeight").value(thumbnails.getMaxHeight());
+                jsonGenerator.writeFieldName("MaxHeight").writeValue(
+                        thumbnails.getMaxHeight());
             }
-
             if (thumbnails.getSizingPolicy() != null) {
-                jsonWriter.key("SizingPolicy").value(
+                jsonGenerator.writeFieldName("SizingPolicy").writeValue(
                         thumbnails.getSizingPolicy());
             }
-
             if (thumbnails.getPaddingPolicy() != null) {
-                jsonWriter.key("PaddingPolicy").value(
+                jsonGenerator.writeFieldName("PaddingPolicy").writeValue(
                         thumbnails.getPaddingPolicy());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

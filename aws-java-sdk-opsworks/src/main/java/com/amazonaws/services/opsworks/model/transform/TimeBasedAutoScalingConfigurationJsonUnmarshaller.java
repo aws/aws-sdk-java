@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,9 +56,8 @@ public class TimeBasedAutoScalingConfigurationJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    timeBasedAutoScalingConfiguration
-                            .setInstanceId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    timeBasedAutoScalingConfiguration.setInstanceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingSchedule", targetDepth)) {
                     context.nextToken();

@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CreateReceiptRuleRequest Marshaller
@@ -269,6 +270,13 @@ public class CreateReceiptRuleRequestMarshaller implements
                                     + actionsListIndex + ".SNSAction.TopicArn",
                                     StringUtils.fromString(sNSAction
                                             .getTopicArn()));
+                        }
+
+                        if (sNSAction.getEncoding() != null) {
+                            request.addParameter("Rule.Actions.member."
+                                    + actionsListIndex + ".SNSAction.Encoding",
+                                    StringUtils.fromString(sNSAction
+                                            .getEncoding()));
                         }
                     }
                     actionsListIndex++;

@@ -20,58 +20,60 @@ import java.io.Serializable;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * <a>PreviewAgentsForResourceGroup</a> action.
+ * Used as a response element in the <a>PreviewAgents</a> action.
  * </p>
  */
 public class AgentPreview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of the EC2 instance where the agent is intalled.
+     * The ID of the EC2 instance where the agent is installed.
      * </p>
      */
     private String agentId;
     /**
      * <p>
-     * The autoscaling group for the EC2 instance where the agent is installed.
+     * The Auto Scaling group for the EC2 instance where the agent is installed.
      * </p>
      */
     private String autoScalingGroup;
 
     /**
      * <p>
-     * The id of the EC2 instance where the agent is intalled.
+     * The ID of the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param agentId
-     *        The id of the EC2 instance where the agent is intalled.
+     *        The ID of the EC2 instance where the agent is installed.
      */
+
     public void setAgentId(String agentId) {
         this.agentId = agentId;
     }
 
     /**
      * <p>
-     * The id of the EC2 instance where the agent is intalled.
+     * The ID of the EC2 instance where the agent is installed.
      * </p>
      * 
-     * @return The id of the EC2 instance where the agent is intalled.
+     * @return The ID of the EC2 instance where the agent is installed.
      */
+
     public String getAgentId() {
         return this.agentId;
     }
 
     /**
      * <p>
-     * The id of the EC2 instance where the agent is intalled.
+     * The ID of the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param agentId
-     *        The id of the EC2 instance where the agent is intalled.
+     *        The ID of the EC2 instance where the agent is installed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentPreview withAgentId(String agentId) {
         setAgentId(agentId);
         return this;
@@ -79,40 +81,43 @@ public class AgentPreview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The autoscaling group for the EC2 instance where the agent is installed.
+     * The Auto Scaling group for the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The autoscaling group for the EC2 instance where the agent is
+     *        The Auto Scaling group for the EC2 instance where the agent is
      *        installed.
      */
+
     public void setAutoScalingGroup(String autoScalingGroup) {
         this.autoScalingGroup = autoScalingGroup;
     }
 
     /**
      * <p>
-     * The autoscaling group for the EC2 instance where the agent is installed.
+     * The Auto Scaling group for the EC2 instance where the agent is installed.
      * </p>
      * 
-     * @return The autoscaling group for the EC2 instance where the agent is
+     * @return The Auto Scaling group for the EC2 instance where the agent is
      *         installed.
      */
+
     public String getAutoScalingGroup() {
         return this.autoScalingGroup;
     }
 
     /**
      * <p>
-     * The autoscaling group for the EC2 instance where the agent is installed.
+     * The Auto Scaling group for the EC2 instance where the agent is installed.
      * </p>
      * 
      * @param autoScalingGroup
-     *        The autoscaling group for the EC2 instance where the agent is
+     *        The Auto Scaling group for the EC2 instance where the agent is
      *        installed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AgentPreview withAutoScalingGroup(String autoScalingGroup) {
         setAutoScalingGroup(autoScalingGroup);
         return this;

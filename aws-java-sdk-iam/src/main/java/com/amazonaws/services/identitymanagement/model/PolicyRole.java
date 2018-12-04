@@ -40,6 +40,15 @@ public class PolicyRole implements Serializable, Cloneable {
      * </p>
      */
     private String roleName;
+    /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private String roleId;
 
     /**
      * <p>
@@ -49,6 +58,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * @param roleName
      *        The name (friendly name, not ARN) identifying the role.
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -60,6 +70,7 @@ public class PolicyRole implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the role.
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -74,8 +85,68 @@ public class PolicyRole implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyRole withRoleName(String roleName) {
         setRoleName(roleName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param roleId
+     *        The stable and unique string identifying the role. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the role. For more
+     *         information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     */
+
+    public String getRoleId() {
+        return this.roleId;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the role. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param roleId
+     *        The stable and unique string identifying the role. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PolicyRole withRoleId(String roleId) {
+        setRoleId(roleId);
         return this;
     }
 
@@ -92,7 +163,9 @@ public class PolicyRole implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: " + getRoleName() + ",");
+        if (getRoleId() != null)
+            sb.append("RoleId: " + getRoleId());
         sb.append("}");
         return sb.toString();
     }
@@ -112,6 +185,11 @@ public class PolicyRole implements Serializable, Cloneable {
         if (other.getRoleName() != null
                 && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
+        if (other.getRoleId() == null ^ this.getRoleId() == null)
+            return false;
+        if (other.getRoleId() != null
+                && other.getRoleId().equals(this.getRoleId()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +200,8 @@ public class PolicyRole implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode
+                + ((getRoleId() == null) ? 0 : getRoleId().hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,27 +54,27 @@ public class ModelJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    model.setId(StringJsonUnmarshaller.getInstance()
+                    model.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    model.setName(StringJsonUnmarshaller.getInstance()
+                    model.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    model.setDescription(StringJsonUnmarshaller.getInstance()
+                    model.setDescription(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
                     context.nextToken();
-                    model.setSchema(StringJsonUnmarshaller.getInstance()
+                    model.setSchema(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
                     context.nextToken();
-                    model.setContentType(StringJsonUnmarshaller.getInstance()
+                    model.setContentType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

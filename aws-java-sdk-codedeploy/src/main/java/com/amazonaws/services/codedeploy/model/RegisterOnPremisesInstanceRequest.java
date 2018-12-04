@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of register on-premises instance operation.
+ * Represents the input of the register on-premises instance operation.
  * </p>
  */
 public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
@@ -48,6 +48,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @param instanceName
      *        The name of the on-premises instance to register.
      */
+
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
@@ -59,6 +60,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the on-premises instance to register.
      */
+
     public String getInstanceName() {
         return this.instanceName;
     }
@@ -73,6 +75,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterOnPremisesInstanceRequest withInstanceName(
             String instanceName) {
         setInstanceName(instanceName);
@@ -88,6 +91,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      *        The ARN of the IAM user to associate with the on-premises
      *        instance.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -100,6 +104,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @return The ARN of the IAM user to associate with the on-premises
      *         instance.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -115,6 +120,7 @@ public class RegisterOnPremisesInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterOnPremisesInstanceRequest withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.workspaces.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * WorkspaceRequestMarshaller
@@ -39,49 +34,64 @@ import com.amazonaws.util.json.*;
 public class WorkspaceRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(WorkspaceRequest workspaceRequest,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (workspaceRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (workspaceRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         workspaceRequest.getDirectoryId());
             }
-
             if (workspaceRequest.getUserName() != null) {
-                jsonWriter.key("UserName")
-                        .value(workspaceRequest.getUserName());
+                jsonGenerator.writeFieldName("UserName").writeValue(
+                        workspaceRequest.getUserName());
             }
-
             if (workspaceRequest.getBundleId() != null) {
-                jsonWriter.key("BundleId")
-                        .value(workspaceRequest.getBundleId());
+                jsonGenerator.writeFieldName("BundleId").writeValue(
+                        workspaceRequest.getBundleId());
             }
-
             if (workspaceRequest.getVolumeEncryptionKey() != null) {
-                jsonWriter.key("VolumeEncryptionKey").value(
+                jsonGenerator.writeFieldName("VolumeEncryptionKey").writeValue(
                         workspaceRequest.getVolumeEncryptionKey());
             }
-
             if (workspaceRequest.getUserVolumeEncryptionEnabled() != null) {
-                jsonWriter.key("UserVolumeEncryptionEnabled").value(
-                        workspaceRequest.getUserVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("UserVolumeEncryptionEnabled")
+                        .writeValue(
+                                workspaceRequest
+                                        .getUserVolumeEncryptionEnabled());
             }
-
             if (workspaceRequest.getRootVolumeEncryptionEnabled() != null) {
-                jsonWriter.key("RootVolumeEncryptionEnabled").value(
-                        workspaceRequest.getRootVolumeEncryptionEnabled());
+                jsonGenerator.writeFieldName("RootVolumeEncryptionEnabled")
+                        .writeValue(
+                                workspaceRequest
+                                        .getRootVolumeEncryptionEnabled());
             }
 
-            jsonWriter.endObject();
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) workspaceRequest
+                    .getTags();
+            if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
+                for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
+
+                        TagJsonMarshaller.getInstance().marshall(tagsListValue,
+                                jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

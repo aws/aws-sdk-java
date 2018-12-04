@@ -14,7 +14,7 @@
  */
 package com.amazonaws;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Extension of AmazonClientException that represents an error response returned
@@ -97,9 +97,9 @@ public class AmazonServiceException extends AmazonClientException {
     private String serviceName;
 
     /**
-     * The raw response content as a string
+     * The raw response payload.
      */
-    private String rawResponseContent;
+    private byte[] rawResponse;
 
     /**
      * Constructs a new AmazonServiceException with the specified message.
@@ -264,18 +264,31 @@ public class AmazonServiceException extends AmazonClientException {
      * Typically only useful for debugging purpose if for some reason the SDK cannot parse the HTTP
      * response from a service
      *
-     * @return The raw content of the HTTP response
+     * @return The raw content of the HTTP response as a String.
      */
     public String getRawResponseContent() {
-        return rawResponseContent;
+        return rawResponse == null ? null : new String(rawResponse, StringUtils.UTF8);
     }
 
     /**
-     * @param rawResponseContent
-     *            The raw content of the HTTP response
+     * Sets the raw response content.
      */
     public void setRawResponseContent(String rawResponseContent) {
-        this.rawResponseContent = rawResponseContent;
+        this.rawResponse = rawResponseContent == null ? null : rawResponseContent.getBytes
+                (StringUtils.UTF8);
     }
 
+    /**
+     * Returns the response payload as bytes.
+     */
+    public byte[] getRawResponse() {
+        return rawResponse == null ? null : rawResponse.clone();
+    }
+
+    /**
+     * Sets the raw response content.
+     */
+    public void setRawResponse(byte[] rawResponse) {
+        this.rawResponse = rawResponse == null ? null : rawResponse.clone();
+    }
 }

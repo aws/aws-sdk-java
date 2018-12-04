@@ -46,6 +46,7 @@ public class Association implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class Association implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class Association implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Association withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class Association implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -95,6 +99,7 @@ public class Association implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -109,6 +114,7 @@ public class Association implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Association withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,23 +54,23 @@ public class TaskJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskArn", targetDepth)) {
                     context.nextToken();
-                    task.setTaskArn(StringJsonUnmarshaller.getInstance()
+                    task.setTaskArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("clusterArn", targetDepth)) {
                     context.nextToken();
-                    task.setClusterArn(StringJsonUnmarshaller.getInstance()
+                    task.setClusterArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("taskDefinitionArn", targetDepth)) {
                     context.nextToken();
-                    task.setTaskDefinitionArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    task.setTaskDefinitionArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerInstanceArn", targetDepth)) {
                     context.nextToken();
-                    task.setContainerInstanceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    task.setContainerInstanceArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("overrides", targetDepth)) {
                     context.nextToken();
@@ -77,12 +79,12 @@ public class TaskJsonUnmarshaller implements
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    task.setLastStatus(StringJsonUnmarshaller.getInstance()
+                    task.setLastStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("desiredStatus", targetDepth)) {
                     context.nextToken();
-                    task.setDesiredStatus(StringJsonUnmarshaller.getInstance()
+                    task.setDesiredStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("containers", targetDepth)) {
@@ -93,28 +95,28 @@ public class TaskJsonUnmarshaller implements
                 }
                 if (context.testExpression("startedBy", targetDepth)) {
                     context.nextToken();
-                    task.setStartedBy(StringJsonUnmarshaller.getInstance()
+                    task.setStartedBy(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stoppedReason", targetDepth)) {
                     context.nextToken();
-                    task.setStoppedReason(StringJsonUnmarshaller.getInstance()
+                    task.setStoppedReason(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    task.setCreatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    task.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStartedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    task.setStartedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("stoppedAt", targetDepth)) {
                     context.nextToken();
-                    task.setStoppedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    task.setStoppedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

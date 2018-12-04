@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class ActionTypeIdJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("category", targetDepth)) {
                     context.nextToken();
-                    actionTypeId.setCategory(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionTypeId.setCategory(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("owner", targetDepth)) {
                     context.nextToken();
-                    actionTypeId.setOwner(StringJsonUnmarshaller.getInstance()
+                    actionTypeId.setOwner(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("provider", targetDepth)) {
                     context.nextToken();
-                    actionTypeId.setProvider(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionTypeId.setProvider(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    actionTypeId.setVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionTypeId.setVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

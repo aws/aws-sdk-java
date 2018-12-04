@@ -50,6 +50,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      * @param jobId
      *        The unique system-generated ID used for identifying the job.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -61,6 +62,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      * 
      * @return The unique system-generated ID used for identifying the job.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -75,6 +77,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetThirdPartyJobDetailsRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -92,6 +95,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      *        to verify that the calling entity is allowed access to the job and
      *        its details.
      */
+
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
@@ -107,6 +111,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      *         to verify that the calling entity is allowed access to the job
      *         and its details.
      */
+
     public String getClientToken() {
         return this.clientToken;
     }
@@ -125,6 +130,7 @@ public class GetThirdPartyJobDetailsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetThirdPartyJobDetailsRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
         return this;

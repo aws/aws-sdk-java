@@ -39,10 +39,9 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> deploymentGroups;
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment groups call to
+     * return the next set of deployment groups in the list.
      * </p>
      */
     private String nextToken;
@@ -55,6 +54,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * @param applicationName
      *        The application name.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -66,6 +66,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * 
      * @return The application name.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -80,6 +81,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsResult withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -92,6 +94,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * 
      * @return A list of corresponding deployment group names.
      */
+
     public java.util.List<String> getDeploymentGroups() {
         if (deploymentGroups == null) {
             deploymentGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -107,6 +110,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * @param deploymentGroups
      *        A list of corresponding deployment group names.
      */
+
     public void setDeploymentGroups(
             java.util.Collection<String> deploymentGroups) {
         if (deploymentGroups == null) {
@@ -134,6 +138,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsResult withDeploymentGroups(
             String... deploymentGroups) {
         if (this.deploymentGroups == null) {
@@ -156,6 +161,7 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsResult withDeploymentGroups(
             java.util.Collection<String> deploymentGroups) {
         setDeploymentGroups(deploymentGroups);
@@ -164,55 +170,55 @@ public class ListDeploymentGroupsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment groups call to
+     * return the next set of deployment groups in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list deployment groups call to return the next set of
-     *        deployment groups in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list deployment
+     *        groups call to return the next set of deployment groups in the
+     *        list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment groups call to
+     * return the next set of deployment groups in the list.
      * </p>
      * 
-     * @return If the amount of information that is returned is significantly
-     *         large, an identifier will also be returned, which can be used in
-     *         a subsequent list deployment groups call to return the next set
-     *         of deployment groups in the list.
+     * @return If a large amount of information is returned, an identifier is
+     *         also returned. It can be used in a subsequent list deployment
+     *         groups call to return the next set of deployment groups in the
+     *         list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * deployment groups call to return the next set of deployment groups in the
-     * list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list deployment groups call to
+     * return the next set of deployment groups in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list deployment groups call to return the next set of
-     *        deployment groups in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list deployment
+     *        groups call to return the next set of deployment groups in the
+     *        list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDeploymentGroupsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

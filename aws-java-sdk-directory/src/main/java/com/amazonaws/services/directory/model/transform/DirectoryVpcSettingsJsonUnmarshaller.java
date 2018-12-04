@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class DirectoryVpcSettingsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    directoryVpcSettings.setVpcId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    directoryVpcSettings.setVpcId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
                     directoryVpcSettings
-                            .setSubnetIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setSubnetIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -18,7 +18,8 @@ package com.amazonaws.services.apigateway.model;
 
 /**
  * <p>
- * The integration type. Possible values are HTTP, AWS, or Mock.
+ * The integration type. The valid value is <code>HTTP</code>, <code>AWS</code>,
+ * or <code>MOCK</code>.
  * </p>
  */
 public enum IntegrationType {

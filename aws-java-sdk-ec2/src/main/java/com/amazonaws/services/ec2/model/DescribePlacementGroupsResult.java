@@ -1,101 +1,115 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Contains the output of DescribePlacementGroups.
+ * </p>
  */
 public class DescribePlacementGroupsResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * One or more placement groups.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroups;
+    private com.amazonaws.internal.SdkInternalList<PlacementGroup> placementGroups;
 
     /**
+     * <p>
      * One or more placement groups.
-     *
+     * </p>
+     * 
      * @return One or more placement groups.
      */
+
     public java.util.List<PlacementGroup> getPlacementGroups() {
         if (placementGroups == null) {
-              placementGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>();
-              placementGroups.setAutoConstruct(true);
+            placementGroups = new com.amazonaws.internal.SdkInternalList<PlacementGroup>();
         }
         return placementGroups;
     }
-    
+
     /**
+     * <p>
      * One or more placement groups.
-     *
-     * @param placementGroups One or more placement groups.
+     * </p>
+     * 
+     * @param placementGroups
+     *        One or more placement groups.
      */
-    public void setPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {
+
+    public void setPlacementGroups(
+            java.util.Collection<PlacementGroup> placementGroups) {
         if (placementGroups == null) {
             this.placementGroups = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>(placementGroups.size());
-        placementGroupsCopy.addAll(placementGroups);
-        this.placementGroups = placementGroupsCopy;
+
+        this.placementGroups = new com.amazonaws.internal.SdkInternalList<PlacementGroup>(
+                placementGroups);
     }
-    
+
     /**
+     * <p>
      * One or more placement groups.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setPlacementGroups(java.util.Collection)} or {@link
-     * #withPlacementGroups(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param placementGroups One or more placement groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setPlacementGroups(java.util.Collection)} or
+     * {@link #withPlacementGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param placementGroups
+     *        One or more placement groups.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribePlacementGroupsResult withPlacementGroups(PlacementGroup... placementGroups) {
-        if (getPlacementGroups() == null) setPlacementGroups(new java.util.ArrayList<PlacementGroup>(placementGroups.length));
-        for (PlacementGroup value : placementGroups) {
-            getPlacementGroups().add(value);
+
+    public DescribePlacementGroupsResult withPlacementGroups(
+            PlacementGroup... placementGroups) {
+        if (this.placementGroups == null) {
+            setPlacementGroups(new com.amazonaws.internal.SdkInternalList<PlacementGroup>(
+                    placementGroups.length));
+        }
+        for (PlacementGroup ele : placementGroups) {
+            this.placementGroups.add(ele);
         }
         return this;
     }
-    
-    /**
-     * One or more placement groups.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param placementGroups One or more placement groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribePlacementGroupsResult withPlacementGroups(java.util.Collection<PlacementGroup> placementGroups) {
-        if (placementGroups == null) {
-            this.placementGroups = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>(placementGroups.size());
-            placementGroupsCopy.addAll(placementGroups);
-            this.placementGroups = placementGroupsCopy;
-        }
 
+    /**
+     * <p>
+     * One or more placement groups.
+     * </p>
+     * 
+     * @param placementGroups
+     *        One or more placement groups.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribePlacementGroupsResult withPlacementGroups(
+            java.util.Collection<PlacementGroup> placementGroups) {
+        setPlacementGroups(placementGroups);
         return this;
     }
 
@@ -111,46 +125,51 @@ public class DescribePlacementGroupsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPlacementGroups() != null) sb.append("PlacementGroups: " + getPlacementGroups() );
+        if (getPlacementGroups() != null)
+            sb.append("PlacementGroups: " + getPlacementGroups());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribePlacementGroupsResult == false)
+            return false;
+        DescribePlacementGroupsResult other = (DescribePlacementGroupsResult) obj;
+        if (other.getPlacementGroups() == null
+                ^ this.getPlacementGroups() == null)
+            return false;
+        if (other.getPlacementGroups() != null
+                && other.getPlacementGroups().equals(this.getPlacementGroups()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getPlacementGroups() == null) ? 0 : getPlacementGroups().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getPlacementGroups() == null) ? 0 : getPlacementGroups()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribePlacementGroupsResult == false) return false;
-        DescribePlacementGroupsResult other = (DescribePlacementGroupsResult)obj;
-        
-        if (other.getPlacementGroups() == null ^ this.getPlacementGroups() == null) return false;
-        if (other.getPlacementGroups() != null && other.getPlacementGroups().equals(this.getPlacementGroups()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribePlacementGroupsResult clone() {
         try {
             return (DescribePlacementGroupsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

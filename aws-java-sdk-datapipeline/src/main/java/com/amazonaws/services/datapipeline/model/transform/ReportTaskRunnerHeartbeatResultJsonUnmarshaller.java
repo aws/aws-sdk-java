@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,9 @@ public class ReportTaskRunnerHeartbeatResultJsonUnmarshaller implements
                 if (context.testExpression("terminate", targetDepth)) {
                     context.nextToken();
                     reportTaskRunnerHeartbeatResult
-                            .setTerminate(BooleanJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setTerminate(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

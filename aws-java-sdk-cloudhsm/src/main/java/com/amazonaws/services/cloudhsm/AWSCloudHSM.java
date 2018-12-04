@@ -87,6 +87,31 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
+     * Adds or overwrites one or more tags for the specified AWS CloudHSM
+     * resource.
+     * </p>
+     * <p>
+     * Each tag consists of a key and a value. Tag keys must be unique to each
+     * resource.
+     * </p>
+     * 
+     * @param addTagsToResourceRequest
+     * @return Result of the AddTagsToResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.AddTagsToResource
+     */
+    AddTagsToResourceResult addTagsToResource(
+            AddTagsToResourceRequest addTagsToResourceRequest);
+
+    /**
+     * <p>
      * Creates a high-availability partition group. A high-availability
      * partition group is a group of partitions that spans multiple physical
      * HSMs.
@@ -108,12 +133,28 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
-     * Creates an uninitialized HSM instance. Running this command provisions an
-     * HSM appliance and will result in charges to your AWS account for the HSM.
+     * Creates an uninitialized HSM instance.
      * </p>
+     * <p>
+     * There is an upfront fee charged for each HSM instance that you create
+     * with the <a>CreateHsm</a> operation. If you accidentally provision an HSM
+     * and want to request a refund, delete the instance using the
+     * <a>DeleteHsm</a> operation, go to the <a
+     * href="https://console.aws.amazon.com/support/home#/">AWS Support
+     * Center</a>, create a new case, and select <b>Account and Billing
+     * Support</b>.
+     * </p>
+     * <important>
+     * <p>
+     * It can take up to 20 minutes to create and provision an HSM. You can
+     * monitor the status of the HSM with the <a>DescribeHsm</a> operation. The
+     * HSM is ready to be initialized when the status changes to
+     * <code>RUNNING</code>.
+     * </p>
+     * </important>
      * 
      * @param createHsmRequest
-     *        Contains the inputs for the <a>CreateHsm</a> action.
+     *        Contains the inputs for the <a>CreateHsm</a> operation.
      * @return Result of the CreateHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -167,12 +208,12 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
-     * Deletes an HSM. Once complete, this operation cannot be undone and your
-     * key material cannot be recovered.
+     * Deletes an HSM. After completion, this operation cannot be undone and
+     * your key material cannot be recovered.
      * </p>
      * 
      * @param deleteHsmRequest
-     *        Contains the inputs for the <a>DeleteHsm</a> action.
+     *        Contains the inputs for the <a>DeleteHsm</a> operation.
      * @return Result of the DeleteHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -230,7 +271,7 @@ public interface AWSCloudHSM {
      * </p>
      * 
      * @param describeHsmRequest
-     *        Contains the inputs for the <a>DescribeHsm</a> action.
+     *        Contains the inputs for the <a>DescribeHsm</a> operation.
      * @return Result of the DescribeHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -421,6 +462,26 @@ public interface AWSCloudHSM {
 
     /**
      * <p>
+     * Returns a list of all tags for the specified AWS CloudHSM resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.ListTagsForResource
+     */
+    ListTagsForResourceResult listTagsForResource(
+            ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Modifies an existing high-availability partition group.
      * </p>
      * 
@@ -441,9 +502,18 @@ public interface AWSCloudHSM {
      * <p>
      * Modifies an HSM.
      * </p>
+     * <important>
+     * <p>
+     * This operation can result in the HSM being offline for up to 15 minutes
+     * while the AWS CloudHSM service is reconfigured. If you are modifying a
+     * production HSM, you should ensure that your AWS CloudHSM service is
+     * configured for high availability, and consider executing this operation
+     * during a maintenance window.
+     * </p>
+     * </important>
      * 
      * @param modifyHsmRequest
-     *        Contains the inputs for the <a>ModifyHsm</a> action.
+     *        Contains the inputs for the <a>ModifyHsm</a> operation.
      * @return Result of the ModifyHsm operation returned by the service.
      * @throws CloudHsmServiceException
      *         Indicates that an exception occurred in the AWS CloudHSM service.
@@ -473,6 +543,30 @@ public interface AWSCloudHSM {
      */
     ModifyLunaClientResult modifyLunaClient(
             ModifyLunaClientRequest modifyLunaClientRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified AWS CloudHSM resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify only the tag key to remove (not the value). To
+     * overwrite the value for an existing tag, use <a>AddTagsToResource</a>.
+     * </p>
+     * 
+     * @param removeTagsFromResourceRequest
+     * @return Result of the RemoveTagsFromResource operation returned by the
+     *         service.
+     * @throws CloudHsmServiceException
+     *         Indicates that an exception occurred in the AWS CloudHSM service.
+     * @throws CloudHsmInternalException
+     *         Indicates that an internal error occurred.
+     * @throws InvalidRequestException
+     *         Indicates that one or more of the request parameters are not
+     *         valid.
+     * @sample AWSCloudHSM.RemoveTagsFromResource
+     */
+    RemoveTagsFromResourceResult removeTagsFromResource(
+            RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,49 @@ public class InstanceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    instance.setId(StringJsonUnmarshaller.getInstance()
+                    instance.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
                     context.nextToken();
-                    instance.setEc2InstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setEc2InstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicDnsName", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicDnsName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setPublicDnsName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PublicIpAddress", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicIpAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setPublicIpAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateDnsName", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateDnsName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setPrivateDnsName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIpAddress", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateIpAddress(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setPrivateIpAddress(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     instance.setStatus(InstanceStatusJsonUnmarshaller
                             .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("InstanceGroupId", targetDepth)) {
+                    context.nextToken();
+                    instance.setInstanceGroupId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsVolumes", targetDepth)) {
+                    context.nextToken();
+                    instance.setEbsVolumes(new ListUnmarshaller<EbsVolume>(
+                            EbsVolumeJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

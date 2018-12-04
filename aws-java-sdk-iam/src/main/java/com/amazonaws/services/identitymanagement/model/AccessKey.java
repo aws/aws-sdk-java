@@ -26,10 +26,14 @@ import java.io.Serializable;
  * This data type is used as a response element in the <a>CreateAccessKey</a>
  * and <a>ListAccessKeys</a> actions.
  * </p>
- * <note>The <code>SecretAccessKey</code> value is returned only in response to
+ * <note>
+ * <p>
+ * The <code>SecretAccessKey</code> value is returned only in response to
  * <a>CreateAccessKey</a>. You can get a secret access key only when you first
  * create an access key; you cannot recover the secret access key later. If you
- * lose a secret access key, you must create a new access key. </note>
+ * lose a secret access key, you must create a new access key.
+ * </p>
+ * </note>
  */
 public class AccessKey implements Serializable, Cloneable {
 
@@ -127,6 +131,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param userName
      *        The name of the IAM user that the access key is associated with.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -138,6 +143,7 @@ public class AccessKey implements Serializable, Cloneable {
      * 
      * @return The name of the IAM user that the access key is associated with.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -152,6 +158,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKey withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -165,6 +172,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param accessKeyId
      *        The ID for this access key.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -176,6 +184,7 @@ public class AccessKey implements Serializable, Cloneable {
      * 
      * @return The ID for this access key.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -190,6 +199,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKey withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -206,6 +216,7 @@ public class AccessKey implements Serializable, Cloneable {
      *        valid for API calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -221,6 +232,7 @@ public class AccessKey implements Serializable, Cloneable {
      *         not.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -238,6 +250,7 @@ public class AccessKey implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public AccessKey withStatus(String status) {
         setStatus(status);
         return this;
@@ -252,10 +265,9 @@ public class AccessKey implements Serializable, Cloneable {
      * @param status
      *        The status of the access key. <code>Active</code> means the key is
      *        valid for API calls, while <code>Inactive</code> means it is not.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -273,6 +285,7 @@ public class AccessKey implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public AccessKey withStatus(StatusType status) {
         setStatus(status);
         return this;
@@ -286,6 +299,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param secretAccessKey
      *        The secret key used to sign requests.
      */
+
     public void setSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
     }
@@ -297,6 +311,7 @@ public class AccessKey implements Serializable, Cloneable {
      * 
      * @return The secret key used to sign requests.
      */
+
     public String getSecretAccessKey() {
         return this.secretAccessKey;
     }
@@ -311,6 +326,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKey withSecretAccessKey(String secretAccessKey) {
         setSecretAccessKey(secretAccessKey);
         return this;
@@ -324,6 +340,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param createDate
      *        The date when the access key was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -335,6 +352,7 @@ public class AccessKey implements Serializable, Cloneable {
      * 
      * @return The date when the access key was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -349,6 +367,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AccessKey withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

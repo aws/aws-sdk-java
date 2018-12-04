@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetBasePathMappingsRequest Marshaller
@@ -47,7 +49,14 @@ public class GetBasePathMappingsRequestMarshaller
         implements
         Marshaller<Request<GetBasePathMappingsRequest>, GetBasePathMappingsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetBasePathMappingsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetBasePathMappingsRequest> marshall(
             GetBasePathMappingsRequest getBasePathMappingsRequest) {
@@ -64,25 +73,23 @@ public class GetBasePathMappingsRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (getBasePathMappingsRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(getBasePathMappingsRequest
-                                .getDomainName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (getBasePathMappingsRequest.getDomainName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getBasePathMappingsRequest
+                                                .getDomainName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String position = (getBasePathMappingsRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getBasePathMappingsRequest
-                        .getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getBasePathMappingsRequest.getPosition() != null) {
+            request.addParameter("position", StringUtils
+                    .fromString(getBasePathMappingsRequest.getPosition()));
         }
 
-        String limit = (getBasePathMappingsRequest.getLimit() == null) ? null
-                : StringUtils
-                        .fromInteger(getBasePathMappingsRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getBasePathMappingsRequest.getLimit() != null) {
+            request.addParameter("limit", StringUtils
+                    .fromInteger(getBasePathMappingsRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

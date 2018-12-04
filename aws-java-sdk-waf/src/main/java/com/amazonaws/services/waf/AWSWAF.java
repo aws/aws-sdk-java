@@ -28,8 +28,8 @@ import com.amazonaws.services.waf.model.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
 public interface AWSWAF {
@@ -166,7 +166,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateByteMatchSet
      */
@@ -245,7 +245,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateIPSet
      */
@@ -336,11 +336,92 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateRule
      */
     CreateRuleResult createRule(CreateRuleRequest createRuleRequest);
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @return Result of the CreateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateSizeConstraintSet
+     */
+    CreateSizeConstraintSetResult createSizeConstraintSet(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
 
     /**
      * <p>
@@ -414,7 +495,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateSqlInjectionMatchSet
      */
@@ -506,11 +587,90 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateWebACL
      */
     CreateWebACLResult createWebACL(CreateWebACLRequest createWebACLRequest);
+
+    /**
+     * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @return Result of the CreateXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateXssMatchSet
+     */
+    CreateXssMatchSetResult createXssMatchSet(
+            CreateXssMatchSetRequest createXssMatchSetRequest);
 
     /**
      * <p>
@@ -705,6 +865,72 @@ public interface AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @return Result of the DeleteSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that
+     *         isn't empty. For example:</p>
+     *         <ul>
+     *         <li>You tried to delete a <code>WebACL</code> that still contains
+     *         one or more <code>Rule</code> objects.</li>
+     *         <li>You tried to delete a <code>Rule</code> that still contains
+     *         one or more <code>ByteMatchSet</code> objects or other
+     *         predicates.</li>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that contains
+     *         one or more <code>ByteMatchTuple</code> objects.</li>
+     *         <li>You tried to delete an <code>IPSet</code> that references one
+     *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteSizeConstraintSet
+     */
+    DeleteSizeConstraintSetResult deleteSizeConstraintSet(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
+
+    /**
+     * <p>
      * Permanently deletes a <a>SqlInjectionMatchSet</a>. You can't delete a
      * <code>SqlInjectionMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still contains any
@@ -826,6 +1052,72 @@ public interface AWSWAF {
      * @sample AWSWAF.DeleteWebACL
      */
     DeleteWebACLResult deleteWebACL(DeleteWebACLRequest deleteWebACLRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @return Result of the DeleteXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that
+     *         isn't empty. For example:</p>
+     *         <ul>
+     *         <li>You tried to delete a <code>WebACL</code> that still contains
+     *         one or more <code>Rule</code> objects.</li>
+     *         <li>You tried to delete a <code>Rule</code> that still contains
+     *         one or more <code>ByteMatchSet</code> objects or other
+     *         predicates.</li>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that contains
+     *         one or more <code>ByteMatchTuple</code> objects.</li>
+     *         <li>You tried to delete an <code>IPSet</code> that references one
+     *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteXssMatchSet
+     */
+    DeleteXssMatchSetResult deleteXssMatchSet(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest);
 
     /**
      * <p>
@@ -969,10 +1261,35 @@ public interface AWSWAF {
      *         service.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
      * @sample AWSWAF.GetSampledRequests
      */
     GetSampledRequestsResult getSampledRequests(
             GetSampledRequestsRequest getSampledRequestsRequest);
+
+    /**
+     * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @return Result of the GetSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSizeConstraintSet
+     */
+    GetSizeConstraintSetResult getSizeConstraintSet(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest);
 
     /**
      * <p>
@@ -1015,6 +1332,28 @@ public interface AWSWAF {
      * @sample AWSWAF.GetWebACL
      */
     GetWebACLResult getWebACL(GetWebACLRequest getWebACLRequest);
+
+    /**
+     * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @return Result of the GetXssMatchSet operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetXssMatchSet
+     */
+    GetXssMatchSetResult getXssMatchSet(
+            GetXssMatchSetRequest getXssMatchSetRequest);
 
     /**
      * <p>
@@ -1071,6 +1410,25 @@ public interface AWSWAF {
 
     /**
      * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @return Result of the ListSizeConstraintSets operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListSizeConstraintSets
+     */
+    ListSizeConstraintSetsResult listSizeConstraintSets(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
+
+    /**
+     * <p>
      * Returns an array of <a>SqlInjectionMatchSet</a> objects.
      * </p>
      * 
@@ -1106,6 +1464,26 @@ public interface AWSWAF {
      * @sample AWSWAF.ListWebACLs
      */
     ListWebACLsResult listWebACLs(ListWebACLsRequest listWebACLsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @return Result of the ListXssMatchSets operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListXssMatchSets
+     */
+    ListXssMatchSetsResult listXssMatchSets(
+            ListXssMatchSetsRequest listXssMatchSetsRequest);
 
     /**
      * <p>
@@ -1232,7 +1610,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateByteMatchSet
      */
@@ -1379,7 +1757,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateIPSet
      */
@@ -1520,11 +1898,156 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateRule
      */
     UpdateRuleResult updateRule(UpdateRuleRequest updateRuleRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @return Result of the UpdateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to remove a <code>Rule</code> from a
+     *         <code>WebACL</code>, but the <code>Rule</code> isn't in the
+     *         specified <code>WebACL</code>.</li>
+     *         <li>You tried to remove an IP address from an <code>IPSet</code>,
+     *         but the IP address isn't in the specified <code>IPSet</code>.</li>
+     *         <li>You tried to remove a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         isn't in the specified <code>WebACL</code>.</li>
+     *         <li>You tried to add a <code>Rule</code> to a <code>WebACL</code>
+     *         , but the <code>Rule</code> already exists in the specified
+     *         <code>WebACL</code>.</li>
+     *         <li>You tried to add an IP address to an <code>IPSet</code>, but
+     *         the IP address already exists in the specified <code>IPSet</code>
+     *         .</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         already exists in the specified <code>WebACL</code>.</li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or
+     *         delete an object from another object that doesn't exist. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to add a <code>Rule</code> to or delete a
+     *         <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchSet</code> to or delete a
+     *         <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't
+     *         exist.</li>
+     *         <li>You tried to add an IP address to or delete an IP address
+     *         from an <code>IPSet</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to or delete a
+     *         <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that
+     *         doesn't exist.</li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateSizeConstraintSet
+     */
+    UpdateSizeConstraintSetResult updateSizeConstraintSet(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
 
     /**
      * <p>
@@ -1648,7 +2171,7 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateSqlInjectionMatchSet
      */
@@ -1801,11 +2324,140 @@ public interface AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateWebACL
      */
     UpdateWebACLResult updateWebACL(UpdateWebACLRequest updateWebACLRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @return Result of the UpdateXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to remove a <code>Rule</code> from a
+     *         <code>WebACL</code>, but the <code>Rule</code> isn't in the
+     *         specified <code>WebACL</code>.</li>
+     *         <li>You tried to remove an IP address from an <code>IPSet</code>,
+     *         but the IP address isn't in the specified <code>IPSet</code>.</li>
+     *         <li>You tried to remove a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         isn't in the specified <code>WebACL</code>.</li>
+     *         <li>You tried to add a <code>Rule</code> to a <code>WebACL</code>
+     *         , but the <code>Rule</code> already exists in the specified
+     *         <code>WebACL</code>.</li>
+     *         <li>You tried to add an IP address to an <code>IPSet</code>, but
+     *         the IP address already exists in the specified <code>IPSet</code>
+     *         .</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         already exists in the specified <code>WebACL</code>.</li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or
+     *         delete an object from another object that doesn't exist. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to add a <code>Rule</code> to or delete a
+     *         <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchSet</code> to or delete a
+     *         <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't
+     *         exist.</li>
+     *         <li>You tried to add an IP address to or delete an IP address
+     *         from an <code>IPSet</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to or delete a
+     *         <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that
+     *         doesn't exist.</li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateXssMatchSet
+     */
+    UpdateXssMatchSetResult updateXssMatchSet(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held

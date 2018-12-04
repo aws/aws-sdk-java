@@ -40,6 +40,7 @@ public class SystemStatus implements Serializable, Cloneable {
     /**
      * @param cPUUtilization
      */
+
     public void setCPUUtilization(CPUUtilization cPUUtilization) {
         this.cPUUtilization = cPUUtilization;
     }
@@ -47,6 +48,7 @@ public class SystemStatus implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public CPUUtilization getCPUUtilization() {
         return this.cPUUtilization;
     }
@@ -56,6 +58,7 @@ public class SystemStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SystemStatus withCPUUtilization(CPUUtilization cPUUtilization) {
         setCPUUtilization(cPUUtilization);
         return this;
@@ -74,6 +77,7 @@ public class SystemStatus implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *         >Operating System Metrics</a>.
      */
+
     public java.util.List<Double> getLoadAverage() {
         if (loadAverage == null) {
             loadAverage = new com.amazonaws.internal.SdkInternalList<Double>();
@@ -95,6 +99,7 @@ public class SystemStatus implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os"
      *        >Operating System Metrics</a>.
      */
+
     public void setLoadAverage(java.util.Collection<Double> loadAverage) {
         if (loadAverage == null) {
             this.loadAverage = null;
@@ -127,6 +132,7 @@ public class SystemStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SystemStatus withLoadAverage(Double... loadAverage) {
         if (this.loadAverage == null) {
             setLoadAverage(new com.amazonaws.internal.SdkInternalList<Double>(
@@ -154,6 +160,7 @@ public class SystemStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SystemStatus withLoadAverage(java.util.Collection<Double> loadAverage) {
         setLoadAverage(loadAverage);
         return this;

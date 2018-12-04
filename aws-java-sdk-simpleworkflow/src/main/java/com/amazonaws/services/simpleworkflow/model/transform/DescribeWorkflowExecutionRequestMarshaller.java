@@ -1,28 +1,23 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -35,61 +30,71 @@ import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
- * Describe Workflow Execution Request Marshaller
+ * DescribeWorkflowExecutionRequest Marshaller
  */
-public class DescribeWorkflowExecutionRequestMarshaller implements Marshaller<Request<DescribeWorkflowExecutionRequest>, DescribeWorkflowExecutionRequest> {
+public class DescribeWorkflowExecutionRequestMarshaller
+        implements
+        Marshaller<Request<DescribeWorkflowExecutionRequest>, DescribeWorkflowExecutionRequest> {
 
-    public Request<DescribeWorkflowExecutionRequest> marshall(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeWorkflowExecutionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
+
+    public Request<DescribeWorkflowExecutionRequest> marshall(
+            DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) {
+
         if (describeWorkflowExecutionRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkflowExecutionRequest> request = new DefaultRequest<DescribeWorkflowExecutionRequest>(describeWorkflowExecutionRequest, "AmazonSimpleWorkflow");
-        String target = "SimpleWorkflowService.DescribeWorkflowExecution";
-        request.addHeader("X-Amz-Target", target);
+        Request<DescribeWorkflowExecutionRequest> request = new DefaultRequest<DescribeWorkflowExecutionRequest>(
+                describeWorkflowExecutionRequest, "AmazonSimpleWorkflow");
+        request.addHeader("X-Amz-Target",
+                "SimpleWorkflowService.DescribeWorkflowExecution");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-          jsonWriter.object();
-          
+            jsonGenerator.writeStartObject();
+
             if (describeWorkflowExecutionRequest.getDomain() != null) {
-                jsonWriter.key("domain").value(describeWorkflowExecutionRequest.getDomain());
+                jsonGenerator.writeFieldName("domain").writeValue(
+                        describeWorkflowExecutionRequest.getDomain());
             }
-            WorkflowExecution execution = describeWorkflowExecutionRequest.getExecution();
-            if (execution != null) {
-
-                jsonWriter.key("execution");
-                jsonWriter.object();
-
-                if (execution.getWorkflowId() != null) {
-                    jsonWriter.key("workflowId").value(execution.getWorkflowId());
-                }
-                if (execution.getRunId() != null) {
-                    jsonWriter.key("runId").value(execution.getRunId());
-                }
-                jsonWriter.endObject();
+            if (describeWorkflowExecutionRequest.getExecution() != null) {
+                jsonGenerator.writeFieldName("execution");
+                WorkflowExecutionJsonMarshaller.getInstance().marshall(
+                        describeWorkflowExecutionRequest.getExecution(),
+                        jsonGenerator);
             }
 
-          jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

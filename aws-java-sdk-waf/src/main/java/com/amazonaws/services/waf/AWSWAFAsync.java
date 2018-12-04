@@ -28,8 +28,8 @@ import com.amazonaws.services.waf.model.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
 public interface AWSWAFAsync extends AWSWAF {
@@ -330,6 +330,94 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         CreateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.CreateSizeConstraintSet
+     */
+    java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CreateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateSizeConstraintSet
+     */
+    java.util.concurrent.Future<CreateSizeConstraintSetResult> createSizeConstraintSetAsync(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSizeConstraintSetRequest, CreateSizeConstraintSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a <a>SqlInjectionMatchSet</a>, which you use to allow, block, or
      * count requests that contain snippets of SQL code in a specified part of
      * web requests. AWS WAF searches for character sequences that are likely to
@@ -523,6 +611,90 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(
             CreateWebACLRequest createWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the CreateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.CreateXssMatchSet
+     */
+    java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest createXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateXssMatchSet
+     */
+    java.util.concurrent.Future<CreateXssMatchSetResult> createXssMatchSetAsync(
+            CreateXssMatchSetRequest createXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateXssMatchSetRequest, CreateXssMatchSetResult> asyncHandler);
 
     /**
      * <p>
@@ -730,6 +902,76 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         DeleteSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.DeleteSizeConstraintSet
+     */
+    java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteSizeConstraintSet
+     */
+    java.util.concurrent.Future<DeleteSizeConstraintSetResult> deleteSizeConstraintSetAsync(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSizeConstraintSetRequest, DeleteSizeConstraintSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes a <a>SqlInjectionMatchSet</a>. You can't delete a
      * <code>SqlInjectionMatchSet</code> if it's still used in any
      * <code>Rules</code> or if it still contains any
@@ -855,6 +1097,76 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<DeleteWebACLResult> deleteWebACLAsync(
             DeleteWebACLRequest deleteWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWebACLRequest, DeleteWebACLResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @return A Java Future containing the result of the DeleteXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.DeleteXssMatchSet
+     */
+    java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteXssMatchSet
+     */
+    java.util.concurrent.Future<DeleteXssMatchSetResult> deleteXssMatchSetAsync(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteXssMatchSetRequest, DeleteXssMatchSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1132,6 +1444,40 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @return A Java Future containing the result of the GetSizeConstraintSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.GetSizeConstraintSet
+     */
+    java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSizeConstraintSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetSizeConstraintSet
+     */
+    java.util.concurrent.Future<GetSizeConstraintSetResult> getSizeConstraintSetAsync(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSizeConstraintSetRequest, GetSizeConstraintSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>SqlInjectionMatchSet</a> that is specified by
      * <code>SqlInjectionMatchSetId</code>.
      * </p>
@@ -1197,6 +1543,42 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<GetWebACLResult> getWebACLAsync(
             GetWebACLRequest getWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<GetWebACLRequest, GetWebACLResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the GetXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.GetXssMatchSet
+     */
+    java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest getXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetXssMatchSet
+     */
+    java.util.concurrent.Future<GetXssMatchSetResult> getXssMatchSetAsync(
+            GetXssMatchSetRequest getXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetXssMatchSetRequest, GetXssMatchSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1296,6 +1678,38 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @return A Java Future containing the result of the ListSizeConstraintSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.ListSizeConstraintSets
+     */
+    java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSizeConstraintSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListSizeConstraintSets
+     */
+    java.util.concurrent.Future<ListSizeConstraintSetsResult> listSizeConstraintSetsAsync(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSizeConstraintSetsRequest, ListSizeConstraintSetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <a>SqlInjectionMatchSet</a> objects.
      * </p>
      * 
@@ -1361,6 +1775,42 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<ListWebACLsResult> listWebACLsAsync(
             ListWebACLsRequest listWebACLsRequest,
             com.amazonaws.handlers.AsyncHandler<ListWebACLsRequest, ListWebACLsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @return A Java Future containing the result of the ListXssMatchSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.ListXssMatchSets
+     */
+    java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest listXssMatchSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListXssMatchSets
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListXssMatchSets
+     */
+    java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(
+            ListXssMatchSetsRequest listXssMatchSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -1736,6 +2186,132 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @return A Java Future containing the result of the
+     *         UpdateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsync.UpdateSizeConstraintSet
+     */
+    java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateSizeConstraintSet operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateSizeConstraintSet
+     */
+    java.util.concurrent.Future<UpdateSizeConstraintSetResult> updateSizeConstraintSetAsync(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSizeConstraintSetRequest, UpdateSizeConstraintSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a
      * <a>SqlInjectionMatchSet</a>. For each <code>SqlInjectionMatchTuple</code>
      * object, you specify the following values:
@@ -1989,5 +2565,117 @@ public interface AWSWAFAsync extends AWSWAF {
     java.util.concurrent.Future<UpdateWebACLResult> updateWebACLAsync(
             UpdateWebACLRequest updateWebACLRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWebACLRequest, UpdateWebACLResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @return A Java Future containing the result of the UpdateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsync.UpdateXssMatchSet
+     */
+    java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateXssMatchSet
+     *         operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateXssMatchSet
+     */
+    java.util.concurrent.Future<UpdateXssMatchSetResult> updateXssMatchSetAsync(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateXssMatchSetRequest, UpdateXssMatchSetResult> asyncHandler);
 
 }

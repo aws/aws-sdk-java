@@ -53,13 +53,18 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     private String type;
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      */
     private String integrationHttpMethod;
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      */
     private String uri;
@@ -85,12 +90,38 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     private java.util.Map<String, String> requestParameters;
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     */
+    private String passthroughBehavior;
     /**
      * <p>
      * Specifies a put integration input's cache namespace.
@@ -112,6 +143,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        Specifies a put integration request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -123,6 +155,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's API identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -137,6 +170,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -150,6 +184,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        Specifies a put integration request's resource ID.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -161,6 +196,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's resource ID.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -175,6 +211,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -188,6 +225,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        Specifies a put integration request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -199,6 +237,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -213,6 +252,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -227,6 +267,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        Specifies a put integration input's type.
      * @see IntegrationType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -239,6 +280,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Specifies a put integration input's type.
      * @see IntegrationType
      */
+
     public String getType() {
         return this.type;
     }
@@ -254,6 +296,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IntegrationType
      */
+
     public PutIntegrationRequest withType(String type) {
         setType(type);
         return this;
@@ -266,10 +309,9 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @param type
      *        Specifies a put integration input's type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IntegrationType
      */
+
     public void setType(IntegrationType type) {
         this.type = type.toString();
     }
@@ -285,6 +327,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IntegrationType
      */
+
     public PutIntegrationRequest withType(IntegrationType type) {
         setType(type);
         return this;
@@ -292,37 +335,46 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
      * @param integrationHttpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration HTTP method. When the integration type
+     *        is HTTP or AWS, this field is required.
      */
+
     public void setIntegrationHttpMethod(String integrationHttpMethod) {
         this.integrationHttpMethod = integrationHttpMethod;
     }
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
-     * @return Specifies a put integration HTTP method.
+     * @return Specifies a put integration HTTP method. When the integration
+     *         type is HTTP or AWS, this field is required.
      */
+
     public String getIntegrationHttpMethod() {
         return this.integrationHttpMethod;
     }
 
     /**
      * <p>
-     * Specifies a put integration HTTP method.
+     * Specifies a put integration HTTP method. When the integration type is
+     * HTTP or AWS, this field is required.
      * </p>
      * 
      * @param integrationHttpMethod
-     *        Specifies a put integration HTTP method.
+     *        Specifies a put integration HTTP method. When the integration type
+     *        is HTTP or AWS, this field is required.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withIntegrationHttpMethod(
             String integrationHttpMethod) {
         setIntegrationHttpMethod(integrationHttpMethod);
@@ -332,12 +384,21 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
-     *        (URI).
+     *        (URI). When the integration type is HTTP or AWS, this field is
+     *        required. For integration with Lambda as an AWS service proxy,
+     *        this value is of the
+     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *        format.
      */
+
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -345,11 +406,20 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @return Specifies a put integration input's Uniform Resource Identifier
-     *         (URI).
+     *         (URI). When the integration type is HTTP or AWS, this field is
+     *         required. For integration with Lambda as an AWS service proxy,
+     *         this value is of the
+     *         'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *         format.
      */
+
     public String getUri() {
         return this.uri;
     }
@@ -357,14 +427,23 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a put integration input's Uniform Resource Identifier (URI).
+     * When the integration type is HTTP or AWS, this field is required. For
+     * integration with Lambda as an AWS service proxy, this value is of the
+     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     * format.
      * </p>
      * 
      * @param uri
      *        Specifies a put integration input's Uniform Resource Identifier
-     *        (URI).
+     *        (URI). When the integration type is HTTP or AWS, this field is
+     *        required. For integration with Lambda as an AWS service proxy,
+     *        this value is of the
+     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
+     *        format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withUri(String uri) {
         setUri(uri);
         return this;
@@ -378,6 +457,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param credentials
      *        Specifies whether credentials are required for a put integration.
      */
+
     public void setCredentials(String credentials) {
         this.credentials = credentials;
     }
@@ -389,6 +469,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies whether credentials are required for a put integration.
      */
+
     public String getCredentials() {
         return this.credentials;
     }
@@ -403,6 +484,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCredentials(String credentials) {
         setCredentials(credentials);
         return this;
@@ -432,6 +514,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *         <code>location</code> is either querystring, path, or header.
      *         <code>name</code> must be a valid, unique parameter name.
      */
+
     public java.util.Map<String, String> getRequestParameters() {
         return requestParameters;
     }
@@ -461,6 +544,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      *        <code>location</code> is either querystring, path, or header.
      *        <code>name</code> must be a valid, unique parameter name.
      */
+
     public void setRequestParameters(
             java.util.Map<String, String> requestParameters) {
         this.requestParameters = requestParameters;
@@ -493,6 +577,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRequestParameters(
             java.util.Map<String, String> requestParameters) {
         setRequestParameters(requestParameters);
@@ -515,6 +600,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationRequest clearRequestParametersEntries() {
         this.requestParameters = null;
         return this;
@@ -522,31 +608,37 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
-     * @return Specifies the templates used to transform the method request
-     *         body. Request templates are represented as a key/value map, with
-     *         a content-type as the key and a template as the value.
+     * @return Represents a map of Velocity templates that are applied on the
+     *         request payload based on the value of the Content-Type header
+     *         sent by the client. The content type value is the key in this
+     *         map, and the template (as a String) is the value.
      */
+
     public java.util.Map<String, String> getRequestTemplates() {
         return requestTemplates;
     }
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the templates used to transform the method request body.
-     *        Request templates are represented as a key/value map, with a
-     *        content-type as the key and a template as the value.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      */
+
     public void setRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         this.requestTemplates = requestTemplates;
@@ -554,18 +646,21 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Specifies the templates used to transform the method request body.
-     * Request templates are represented as a key/value map, with a content-type
-     * as the key and a template as the value.
+     * Represents a map of Velocity templates that are applied on the request
+     * payload based on the value of the Content-Type header sent by the client.
+     * The content type value is the key in this map, and the template (as a
+     * String) is the value.
      * </p>
      * 
      * @param requestTemplates
-     *        Specifies the templates used to transform the method request body.
-     *        Request templates are represented as a key/value map, with a
-     *        content-type as the key and a template as the value.
+     *        Represents a map of Velocity templates that are applied on the
+     *        request payload based on the value of the Content-Type header sent
+     *        by the client. The content type value is the key in this map, and
+     *        the template (as a String) is the value.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withRequestTemplates(
             java.util.Map<String, String> requestTemplates) {
         setRequestTemplates(requestTemplates);
@@ -588,8 +683,165 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestTemplates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutIntegrationRequest clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     */
+
+    public void setPassthroughBehavior(String passthroughBehavior) {
+        this.passthroughBehavior = passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @return Specifies the pass-through behavior for incoming requests based
+     *         on the Content-Type header in the request, and the available
+     *         requestTemplates defined on the Integration. There are three
+     *         valid values: <code>WHEN_NO_MATCH</code>,
+     *         <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.</p>
+     *         <p/>
+     *         <p>
+     *         <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *         content types through to the Integration backend without
+     *         transformation.
+     *         </p>
+     *         <p>
+     *         <code>NEVER</code> rejects unmapped content types with an HTTP
+     *         415 'Unsupported Media Type' response.
+     *         </p>
+     *         <p>
+     *         <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *         Integration has NO content types mapped to templates. However if
+     *         there is at least one content type defined, unmapped content
+     *         types will be rejected with the same 415 response.
+     */
+
+    public String getPassthroughBehavior() {
+        return this.passthroughBehavior;
+    }
+
+    /**
+     * <p>
+     * Specifies the pass-through behavior for incoming requests based on the
+     * Content-Type header in the request, and the available requestTemplates
+     * defined on the Integration. There are three valid values:
+     * <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and
+     * <code>NEVER</code>.
+     * </p>
+     * <p/>
+     * <p>
+     * <code>WHEN_NO_MATCH</code> passes the request body for unmapped content
+     * types through to the Integration backend without transformation.
+     * </p>
+     * <p>
+     * <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     * 'Unsupported Media Type' response.
+     * </p>
+     * <p>
+     * <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     * Integration has NO content types mapped to templates. However if there is
+     * at least one content type defined, unmapped content types will be
+     * rejected with the same 415 response.
+     * </p>
+     * 
+     * @param passthroughBehavior
+     *        Specifies the pass-through behavior for incoming requests based on
+     *        the Content-Type header in the request, and the available
+     *        requestTemplates defined on the Integration. There are three valid
+     *        values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>
+     *        , and <code>NEVER</code>.</p>
+     *        <p/>
+     *        <p>
+     *        <code>WHEN_NO_MATCH</code> passes the request body for unmapped
+     *        content types through to the Integration backend without
+     *        transformation.
+     *        </p>
+     *        <p>
+     *        <code>NEVER</code> rejects unmapped content types with an HTTP 415
+     *        'Unsupported Media Type' response.
+     *        </p>
+     *        <p>
+     *        <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the
+     *        Integration has NO content types mapped to templates. However if
+     *        there is at least one content type defined, unmapped content types
+     *        will be rejected with the same 415 response.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PutIntegrationRequest withPassthroughBehavior(
+            String passthroughBehavior) {
+        setPassthroughBehavior(passthroughBehavior);
         return this;
     }
 
@@ -601,6 +853,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param cacheNamespace
      *        Specifies a put integration input's cache namespace.
      */
+
     public void setCacheNamespace(String cacheNamespace) {
         this.cacheNamespace = cacheNamespace;
     }
@@ -612,6 +865,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration input's cache namespace.
      */
+
     public String getCacheNamespace() {
         return this.cacheNamespace;
     }
@@ -626,6 +880,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheNamespace(String cacheNamespace) {
         setCacheNamespace(cacheNamespace);
         return this;
@@ -638,6 +893,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a put integration input's cache key parameters.
      */
+
     public java.util.List<String> getCacheKeyParameters() {
         return cacheKeyParameters;
     }
@@ -650,6 +906,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @param cacheKeyParameters
      *        Specifies a put integration input's cache key parameters.
      */
+
     public void setCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         if (cacheKeyParameters == null) {
@@ -677,6 +934,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheKeyParameters(
             String... cacheKeyParameters) {
         if (this.cacheKeyParameters == null) {
@@ -699,6 +957,7 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutIntegrationRequest withCacheKeyParameters(
             java.util.Collection<String> cacheKeyParameters) {
         setCacheKeyParameters(cacheKeyParameters);
@@ -736,6 +995,8 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
             sb.append("RequestParameters: " + getRequestParameters() + ",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+        if (getPassthroughBehavior() != null)
+            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
         if (getCacheNamespace() != null)
             sb.append("CacheNamespace: " + getCacheNamespace() + ",");
         if (getCacheKeyParameters() != null)
@@ -805,6 +1066,13 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
                 && other.getRequestTemplates().equals(
                         this.getRequestTemplates()) == false)
             return false;
+        if (other.getPassthroughBehavior() == null
+                ^ this.getPassthroughBehavior() == null)
+            return false;
+        if (other.getPassthroughBehavior() != null
+                && other.getPassthroughBehavior().equals(
+                        this.getPassthroughBehavior()) == false)
+            return false;
         if (other.getCacheNamespace() == null
                 ^ this.getCacheNamespace() == null)
             return false;
@@ -851,6 +1119,10 @@ public class PutIntegrationRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getRequestTemplates() == null) ? 0 : getRequestTemplates()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPassthroughBehavior() == null) ? 0
+                        : getPassthroughBehavior().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getCacheNamespace() == null) ? 0 : getCacheNamespace()

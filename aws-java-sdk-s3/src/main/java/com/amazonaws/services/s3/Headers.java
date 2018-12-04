@@ -30,10 +30,12 @@ public interface Headers {
     public static final String CONTENT_RANGE = "Content-Range";
     public static final String CONTENT_MD5 = "Content-MD5";
     public static final String CONTENT_TYPE = "Content-Type";
+    public static final String CONTENT_LANGUAGE = "Content-Language";
     public static final String DATE = "Date";
     public static final String ETAG = "ETag";
     public static final String LAST_MODIFIED = "Last-Modified";
     public static final String SERVER = "Server";
+    public static final String CONNECTION = "Connection";
 
     /*
      * Amazon HTTP Headers
@@ -62,6 +64,9 @@ public interface Headers {
 
     /** S3 response header for a request's extended debugging ID */
     public static final String EXTENDED_REQUEST_ID = "x-amz-id-2";
+
+    /** S3 response header in response from accelerate endpoint. */
+    public static final String CLOUD_FRONT_ID = "X-Amz-Cf-Id";
 
     /** S3 request header indicating how to handle metadata when copying an object */
     public static final String METADATA_DIRECTIVE = "x-amz-metadata-directive";
@@ -204,4 +209,14 @@ public interface Headers {
 
     /** Region where the bucket is located. This header is returned only in HEAD bucket and ListObjects response. */
     public static final String S3_BUCKET_REGION = "x-amz-bucket-region";
+
+    /** Date when multipart upload will become eligible for abort operation by lifecycle. */
+    public static final String ABORT_DATE = "x-amz-abort-date";
+
+    /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
+    public static final String ABORT_RULE_ID = "x-amz-abort-rule-id";
+
+    /** S3 response header for a multipart object containing the number of parts in the object. */
+    public static final String S3_PARTS_COUNT = "x-amz-mp-parts-count";
+
 }

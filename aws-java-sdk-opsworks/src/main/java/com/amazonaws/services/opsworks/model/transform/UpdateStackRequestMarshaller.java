@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateStackRequest Marshaller
  */
 public class UpdateStackRequestMarshaller implements
         Marshaller<Request<UpdateStackRequest>, UpdateStackRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateStackRequest> marshall(
             UpdateStackRequest updateStackRequest) {
@@ -63,125 +63,118 @@ public class UpdateStackRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateStackRequest.getStackId() != null) {
-                jsonWriter.key("StackId")
-                        .value(updateStackRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        updateStackRequest.getStackId());
             }
-
             if (updateStackRequest.getName() != null) {
-                jsonWriter.key("Name").value(updateStackRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        updateStackRequest.getName());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) updateStackRequest
                     .getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonWriter.key("Attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (updateStackRequest.getServiceRoleArn() != null) {
-                jsonWriter.key("ServiceRoleArn").value(
+                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(
                         updateStackRequest.getServiceRoleArn());
             }
-
             if (updateStackRequest.getDefaultInstanceProfileArn() != null) {
-                jsonWriter.key("DefaultInstanceProfileArn").value(
-                        updateStackRequest.getDefaultInstanceProfileArn());
+                jsonGenerator.writeFieldName("DefaultInstanceProfileArn")
+                        .writeValue(
+                                updateStackRequest
+                                        .getDefaultInstanceProfileArn());
             }
-
             if (updateStackRequest.getDefaultOs() != null) {
-                jsonWriter.key("DefaultOs").value(
+                jsonGenerator.writeFieldName("DefaultOs").writeValue(
                         updateStackRequest.getDefaultOs());
             }
-
             if (updateStackRequest.getHostnameTheme() != null) {
-                jsonWriter.key("HostnameTheme").value(
+                jsonGenerator.writeFieldName("HostnameTheme").writeValue(
                         updateStackRequest.getHostnameTheme());
             }
-
             if (updateStackRequest.getDefaultAvailabilityZone() != null) {
-                jsonWriter.key("DefaultAvailabilityZone").value(
-                        updateStackRequest.getDefaultAvailabilityZone());
+                jsonGenerator
+                        .writeFieldName("DefaultAvailabilityZone")
+                        .writeValue(
+                                updateStackRequest.getDefaultAvailabilityZone());
             }
-
             if (updateStackRequest.getDefaultSubnetId() != null) {
-                jsonWriter.key("DefaultSubnetId").value(
+                jsonGenerator.writeFieldName("DefaultSubnetId").writeValue(
                         updateStackRequest.getDefaultSubnetId());
             }
-
             if (updateStackRequest.getCustomJson() != null) {
-                jsonWriter.key("CustomJson").value(
+                jsonGenerator.writeFieldName("CustomJson").writeValue(
                         updateStackRequest.getCustomJson());
             }
-
             if (updateStackRequest.getConfigurationManager() != null) {
-                jsonWriter.key("ConfigurationManager");
+                jsonGenerator.writeFieldName("ConfigurationManager");
                 StackConfigurationManagerJsonMarshaller.getInstance().marshall(
                         updateStackRequest.getConfigurationManager(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (updateStackRequest.getChefConfiguration() != null) {
-                jsonWriter.key("ChefConfiguration");
+                jsonGenerator.writeFieldName("ChefConfiguration");
                 ChefConfigurationJsonMarshaller.getInstance().marshall(
-                        updateStackRequest.getChefConfiguration(), jsonWriter);
+                        updateStackRequest.getChefConfiguration(),
+                        jsonGenerator);
             }
-
             if (updateStackRequest.getUseCustomCookbooks() != null) {
-                jsonWriter.key("UseCustomCookbooks").value(
+                jsonGenerator.writeFieldName("UseCustomCookbooks").writeValue(
                         updateStackRequest.getUseCustomCookbooks());
             }
-
             if (updateStackRequest.getCustomCookbooksSource() != null) {
-                jsonWriter.key("CustomCookbooksSource");
+                jsonGenerator.writeFieldName("CustomCookbooksSource");
                 SourceJsonMarshaller.getInstance().marshall(
                         updateStackRequest.getCustomCookbooksSource(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (updateStackRequest.getDefaultSshKeyName() != null) {
-                jsonWriter.key("DefaultSshKeyName").value(
+                jsonGenerator.writeFieldName("DefaultSshKeyName").writeValue(
                         updateStackRequest.getDefaultSshKeyName());
             }
-
             if (updateStackRequest.getDefaultRootDeviceType() != null) {
-                jsonWriter.key("DefaultRootDeviceType").value(
-                        updateStackRequest.getDefaultRootDeviceType());
+                jsonGenerator.writeFieldName("DefaultRootDeviceType")
+                        .writeValue(
+                                updateStackRequest.getDefaultRootDeviceType());
             }
-
             if (updateStackRequest.getUseOpsworksSecurityGroups() != null) {
-                jsonWriter.key("UseOpsworksSecurityGroups").value(
-                        updateStackRequest.getUseOpsworksSecurityGroups());
+                jsonGenerator.writeFieldName("UseOpsworksSecurityGroups")
+                        .writeValue(
+                                updateStackRequest
+                                        .getUseOpsworksSecurityGroups());
             }
-
             if (updateStackRequest.getAgentVersion() != null) {
-                jsonWriter.key("AgentVersion").value(
+                jsonGenerator.writeFieldName("AgentVersion").writeValue(
                         updateStackRequest.getAgentVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

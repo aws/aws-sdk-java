@@ -44,6 +44,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * 
      * @return The names of the SSM documents.
      */
+
     public java.util.List<DocumentIdentifier> getDocumentIdentifiers() {
         if (documentIdentifiers == null) {
             documentIdentifiers = new com.amazonaws.internal.SdkInternalList<DocumentIdentifier>();
@@ -59,6 +60,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * @param documentIdentifiers
      *        The names of the SSM documents.
      */
+
     public void setDocumentIdentifiers(
             java.util.Collection<DocumentIdentifier> documentIdentifiers) {
         if (documentIdentifiers == null) {
@@ -86,6 +88,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsResult withDocumentIdentifiers(
             DocumentIdentifier... documentIdentifiers) {
         if (this.documentIdentifiers == null) {
@@ -108,6 +111,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsResult withDocumentIdentifiers(
             java.util.Collection<DocumentIdentifier> documentIdentifiers) {
         setDocumentIdentifiers(documentIdentifiers);
@@ -124,6 +128,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class ListDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDocumentsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

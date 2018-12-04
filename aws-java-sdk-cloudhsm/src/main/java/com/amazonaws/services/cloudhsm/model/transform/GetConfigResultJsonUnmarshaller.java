@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudhsm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class GetConfigResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigType", targetDepth)) {
                     context.nextToken();
-                    getConfigResult.setConfigType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getConfigResult.setConfigType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigFile", targetDepth)) {
                     context.nextToken();
-                    getConfigResult.setConfigFile(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getConfigResult.setConfigFile(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigCred", targetDepth)) {
                     context.nextToken();
-                    getConfigResult.setConfigCred(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getConfigResult.setConfigCred(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

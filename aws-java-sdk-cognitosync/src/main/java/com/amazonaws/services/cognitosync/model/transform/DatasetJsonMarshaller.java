@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cognitosync.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DatasetMarshaller
@@ -39,48 +34,48 @@ import com.amazonaws.util.json.*;
 public class DatasetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Dataset dataset, JSONWriter jsonWriter) {
+    public void marshall(Dataset dataset, StructuredJsonGenerator jsonGenerator) {
+
         if (dataset == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (dataset.getIdentityId() != null) {
-                jsonWriter.key("IdentityId").value(dataset.getIdentityId());
+                jsonGenerator.writeFieldName("IdentityId").writeValue(
+                        dataset.getIdentityId());
             }
-
             if (dataset.getDatasetName() != null) {
-                jsonWriter.key("DatasetName").value(dataset.getDatasetName());
+                jsonGenerator.writeFieldName("DatasetName").writeValue(
+                        dataset.getDatasetName());
             }
-
             if (dataset.getCreationDate() != null) {
-                jsonWriter.key("CreationDate").value(dataset.getCreationDate());
+                jsonGenerator.writeFieldName("CreationDate").writeValue(
+                        dataset.getCreationDate());
             }
-
             if (dataset.getLastModifiedDate() != null) {
-                jsonWriter.key("LastModifiedDate").value(
+                jsonGenerator.writeFieldName("LastModifiedDate").writeValue(
                         dataset.getLastModifiedDate());
             }
-
             if (dataset.getLastModifiedBy() != null) {
-                jsonWriter.key("LastModifiedBy").value(
+                jsonGenerator.writeFieldName("LastModifiedBy").writeValue(
                         dataset.getLastModifiedBy());
             }
-
             if (dataset.getDataStorage() != null) {
-                jsonWriter.key("DataStorage").value(dataset.getDataStorage());
+                jsonGenerator.writeFieldName("DataStorage").writeValue(
+                        dataset.getDataStorage());
             }
-
             if (dataset.getNumRecords() != null) {
-                jsonWriter.key("NumRecords").value(dataset.getNumRecords());
+                jsonGenerator.writeFieldName("NumRecords").writeValue(
+                        dataset.getNumRecords());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

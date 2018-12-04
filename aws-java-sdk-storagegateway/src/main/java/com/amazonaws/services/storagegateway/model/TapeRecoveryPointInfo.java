@@ -59,6 +59,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of the virtual tape.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -70,6 +71,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the virtual tape.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -84,6 +86,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeRecoveryPointInfo withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;
@@ -101,11 +104,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was
-     *        replicated for later recovery. </p>
+     *        replicated for later recovery.</p>
      *        <p>
      *        The string format of the tape recovery point time is in the
      *        ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
+
     public void setTapeRecoveryPointTime(java.util.Date tapeRecoveryPointTime) {
         this.tapeRecoveryPointTime = tapeRecoveryPointTime;
     }
@@ -121,11 +125,12 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @return The time when the point-in-time view of the virtual tape was
-     *         replicated for later recovery. </p>
+     *         replicated for later recovery.</p>
      *         <p>
      *         The string format of the tape recovery point time is in the
      *         ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
+
     public java.util.Date getTapeRecoveryPointTime() {
         return this.tapeRecoveryPointTime;
     }
@@ -142,13 +147,14 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was
-     *        replicated for later recovery. </p>
+     *        replicated for later recovery.</p>
      *        <p>
      *        The string format of the tape recovery point time is in the
      *        ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeRecoveryPointInfo withTapeRecoveryPointTime(
             java.util.Date tapeRecoveryPointTime) {
         setTapeRecoveryPointTime(tapeRecoveryPointTime);
@@ -163,6 +169,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * @param tapeSizeInBytes
      *        The size, in bytes, of the virtual tapes to recover.
      */
+
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
         this.tapeSizeInBytes = tapeSizeInBytes;
     }
@@ -174,6 +181,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * 
      * @return The size, in bytes, of the virtual tapes to recover.
      */
+
     public Long getTapeSizeInBytes() {
         return this.tapeSizeInBytes;
     }
@@ -188,6 +196,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeRecoveryPointInfo withTapeSizeInBytes(Long tapeSizeInBytes) {
         setTapeSizeInBytes(tapeSizeInBytes);
         return this;
@@ -196,6 +205,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @param tapeStatus
      */
+
     public void setTapeStatus(String tapeStatus) {
         this.tapeStatus = tapeStatus;
     }
@@ -203,6 +213,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTapeStatus() {
         return this.tapeStatus;
     }
@@ -212,6 +223,7 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TapeRecoveryPointInfo withTapeStatus(String tapeStatus) {
         setTapeStatus(tapeStatus);
         return this;

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateLayerRequest Marshaller
  */
 public class CreateLayerRequestMarshaller implements
         Marshaller<Request<CreateLayerRequest>, CreateLayerRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateLayerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateLayerRequest> marshall(
             CreateLayerRequest createLayerRequest) {
@@ -63,53 +63,53 @@ public class CreateLayerRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createLayerRequest.getStackId() != null) {
-                jsonWriter.key("StackId")
-                        .value(createLayerRequest.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        createLayerRequest.getStackId());
             }
-
             if (createLayerRequest.getType() != null) {
-                jsonWriter.key("Type").value(createLayerRequest.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        createLayerRequest.getType());
             }
-
             if (createLayerRequest.getName() != null) {
-                jsonWriter.key("Name").value(createLayerRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createLayerRequest.getName());
             }
-
             if (createLayerRequest.getShortname() != null) {
-                jsonWriter.key("Shortname").value(
+                jsonGenerator.writeFieldName("Shortname").writeValue(
                         createLayerRequest.getShortname());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) createLayerRequest
                     .getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonWriter.key("Attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (createLayerRequest.getCustomInstanceProfileArn() != null) {
-                jsonWriter.key("CustomInstanceProfileArn").value(
-                        createLayerRequest.getCustomInstanceProfileArn());
+                jsonGenerator.writeFieldName("CustomInstanceProfileArn")
+                        .writeValue(
+                                createLayerRequest
+                                        .getCustomInstanceProfileArn());
             }
-
             if (createLayerRequest.getCustomJson() != null) {
-                jsonWriter.key("CustomJson").value(
+                jsonGenerator.writeFieldName("CustomJson").writeValue(
                         createLayerRequest.getCustomJson());
             }
 
@@ -117,95 +117,92 @@ public class CreateLayerRequestMarshaller implements
                     .getCustomSecurityGroupIds();
             if (!customSecurityGroupIdsList.isEmpty()
                     || !customSecurityGroupIdsList.isAutoConstruct()) {
-                jsonWriter.key("CustomSecurityGroupIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CustomSecurityGroupIds");
+                jsonGenerator.writeStartArray();
                 for (String customSecurityGroupIdsListValue : customSecurityGroupIdsList) {
                     if (customSecurityGroupIdsListValue != null) {
-                        jsonWriter.value(customSecurityGroupIdsListValue);
+                        jsonGenerator
+                                .writeValue(customSecurityGroupIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> packagesList = (com.amazonaws.internal.SdkInternalList<String>) createLayerRequest
                     .getPackages();
             if (!packagesList.isEmpty() || !packagesList.isAutoConstruct()) {
-                jsonWriter.key("Packages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Packages");
+                jsonGenerator.writeStartArray();
                 for (String packagesListValue : packagesList) {
                     if (packagesListValue != null) {
-                        jsonWriter.value(packagesListValue);
+                        jsonGenerator.writeValue(packagesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<VolumeConfiguration> volumeConfigurationsList = (com.amazonaws.internal.SdkInternalList<VolumeConfiguration>) createLayerRequest
                     .getVolumeConfigurations();
             if (!volumeConfigurationsList.isEmpty()
                     || !volumeConfigurationsList.isAutoConstruct()) {
-                jsonWriter.key("VolumeConfigurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("VolumeConfigurations");
+                jsonGenerator.writeStartArray();
                 for (VolumeConfiguration volumeConfigurationsListValue : volumeConfigurationsList) {
                     if (volumeConfigurationsListValue != null) {
 
                         VolumeConfigurationJsonMarshaller.getInstance()
                                 .marshall(volumeConfigurationsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (createLayerRequest.getEnableAutoHealing() != null) {
-                jsonWriter.key("EnableAutoHealing").value(
+                jsonGenerator.writeFieldName("EnableAutoHealing").writeValue(
                         createLayerRequest.getEnableAutoHealing());
             }
-
             if (createLayerRequest.getAutoAssignElasticIps() != null) {
-                jsonWriter.key("AutoAssignElasticIps").value(
-                        createLayerRequest.getAutoAssignElasticIps());
+                jsonGenerator.writeFieldName("AutoAssignElasticIps")
+                        .writeValue(
+                                createLayerRequest.getAutoAssignElasticIps());
             }
-
             if (createLayerRequest.getAutoAssignPublicIps() != null) {
-                jsonWriter.key("AutoAssignPublicIps").value(
+                jsonGenerator.writeFieldName("AutoAssignPublicIps").writeValue(
                         createLayerRequest.getAutoAssignPublicIps());
             }
-
             if (createLayerRequest.getCustomRecipes() != null) {
-                jsonWriter.key("CustomRecipes");
+                jsonGenerator.writeFieldName("CustomRecipes");
                 RecipesJsonMarshaller.getInstance().marshall(
-                        createLayerRequest.getCustomRecipes(), jsonWriter);
+                        createLayerRequest.getCustomRecipes(), jsonGenerator);
             }
-
             if (createLayerRequest.getInstallUpdatesOnBoot() != null) {
-                jsonWriter.key("InstallUpdatesOnBoot").value(
-                        createLayerRequest.getInstallUpdatesOnBoot());
+                jsonGenerator.writeFieldName("InstallUpdatesOnBoot")
+                        .writeValue(
+                                createLayerRequest.getInstallUpdatesOnBoot());
             }
-
             if (createLayerRequest.getUseEbsOptimizedInstances() != null) {
-                jsonWriter.key("UseEbsOptimizedInstances").value(
-                        createLayerRequest.getUseEbsOptimizedInstances());
+                jsonGenerator.writeFieldName("UseEbsOptimizedInstances")
+                        .writeValue(
+                                createLayerRequest
+                                        .getUseEbsOptimizedInstances());
             }
-
             if (createLayerRequest.getLifecycleEventConfiguration() != null) {
-                jsonWriter.key("LifecycleEventConfiguration");
+                jsonGenerator.writeFieldName("LifecycleEventConfiguration");
                 LifecycleEventConfigurationJsonMarshaller
                         .getInstance()
                         .marshall(
                                 createLayerRequest
                                         .getLifecycleEventConfiguration(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

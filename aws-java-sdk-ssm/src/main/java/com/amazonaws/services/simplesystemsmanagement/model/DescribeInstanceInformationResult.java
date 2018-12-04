@@ -24,19 +24,28 @@ import java.io.Serializable;
 public class DescribeInstanceInformationResult implements Serializable,
         Cloneable {
 
-    /** The instance information list. */
+    /**
+     * <p>
+     * The instance information list.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<InstanceInformation> instanceInformationList;
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @return The instance information list.
      */
+
     public java.util.List<InstanceInformation> getInstanceInformationList() {
         if (instanceInformationList == null) {
             instanceInformationList = new com.amazonaws.internal.SdkInternalList<InstanceInformation>();
@@ -45,11 +54,14 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @param instanceInformationList
      *        The instance information list.
      */
+
     public void setInstanceInformationList(
             java.util.Collection<InstanceInformation> instanceInformationList) {
         if (instanceInformationList == null) {
@@ -62,7 +74,9 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceInformationList(java.util.Collection)} or
@@ -75,6 +89,7 @@ public class DescribeInstanceInformationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationResult withInstanceInformationList(
             InstanceInformation... instanceInformationList) {
         if (this.instanceInformationList == null) {
@@ -88,13 +103,16 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The instance information list.
+     * </p>
      * 
      * @param instanceInformationList
      *        The instance information list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationResult withInstanceInformationList(
             java.util.Collection<InstanceInformation> instanceInformationList) {
         setInstanceInformationList(instanceInformationList);
@@ -102,31 +120,39 @@ public class DescribeInstanceInformationResult implements Serializable,
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @param nextToken
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
+     * <p>
      * The token to use when requesting the next set of items. If there are no
      * additional items to return, the string is empty.
+     * </p>
      * 
      * @param nextToken
      *        The token to use when requesting the next set of items. If there
@@ -134,6 +160,7 @@ public class DescribeInstanceInformationResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstanceInformationResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

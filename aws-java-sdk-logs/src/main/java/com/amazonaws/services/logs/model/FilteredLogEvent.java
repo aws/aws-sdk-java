@@ -57,6 +57,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @param logStreamName
      *        The name of the log stream this event belongs to.
      */
+
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
@@ -68,6 +69,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * 
      * @return The name of the log stream this event belongs to.
      */
+
     public String getLogStreamName() {
         return this.logStreamName;
     }
@@ -82,6 +84,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilteredLogEvent withLogStreamName(String logStreamName) {
         setLogStreamName(logStreamName);
         return this;
@@ -90,6 +93,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     /**
      * @param timestamp
      */
+
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
@@ -97,6 +101,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getTimestamp() {
         return this.timestamp;
     }
@@ -106,6 +111,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilteredLogEvent withTimestamp(Long timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -119,6 +125,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @param message
      *        The data contained in the log event.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -130,6 +137,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * 
      * @return The data contained in the log event.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -144,6 +152,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilteredLogEvent withMessage(String message) {
         setMessage(message);
         return this;
@@ -152,6 +161,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     /**
      * @param ingestionTime
      */
+
     public void setIngestionTime(Long ingestionTime) {
         this.ingestionTime = ingestionTime;
     }
@@ -159,6 +169,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getIngestionTime() {
         return this.ingestionTime;
     }
@@ -168,6 +179,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilteredLogEvent withIngestionTime(Long ingestionTime) {
         setIngestionTime(ingestionTime);
         return this;
@@ -181,6 +193,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @param eventId
      *        A unique identifier for this event.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -192,6 +205,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * 
      * @return A unique identifier for this event.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -206,6 +220,7 @@ public class FilteredLogEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FilteredLogEvent withEventId(String eventId) {
         setEventId(eventId);
         return this;

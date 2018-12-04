@@ -72,6 +72,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @param deploymentId
      *        The deployment ID.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -83,6 +84,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * 
      * @return The deployment ID.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -97,6 +99,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceSummary withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -110,6 +113,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -121,6 +125,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -135,6 +140,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceSummary withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -164,6 +170,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      *        <li>Unknown: The deployment status is unknown for this instance.</li>
      * @see InstanceStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -192,6 +199,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      *         <li>Unknown: The deployment status is unknown for this instance.</li>
      * @see InstanceStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -222,6 +230,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStatus
      */
+
     public InstanceSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -249,10 +258,9 @@ public class InstanceSummary implements Serializable, Cloneable {
      *        <li>Failed: The deployment has failed for this instance.</li>
      *        <li>Skipped: The deployment has been skipped for this instance.</li>
      *        <li>Unknown: The deployment status is unknown for this instance.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceStatus
      */
+
     public void setStatus(InstanceStatus status) {
         this.status = status.toString();
     }
@@ -283,6 +291,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceStatus
      */
+
     public InstanceSummary withStatus(InstanceStatus status) {
         setStatus(status);
         return this;
@@ -297,6 +306,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      *        A timestamp indicating when the instance information was last
      *        updated.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -309,6 +319,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return A timestamp indicating when the instance information was last
      *         updated.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -324,6 +335,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceSummary withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -336,6 +348,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * 
      * @return A list of lifecycle events for this instance.
      */
+
     public java.util.List<LifecycleEvent> getLifecycleEvents() {
         if (lifecycleEvents == null) {
             lifecycleEvents = new com.amazonaws.internal.SdkInternalList<LifecycleEvent>();
@@ -351,6 +364,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @param lifecycleEvents
      *        A list of lifecycle events for this instance.
      */
+
     public void setLifecycleEvents(
             java.util.Collection<LifecycleEvent> lifecycleEvents) {
         if (lifecycleEvents == null) {
@@ -378,6 +392,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceSummary withLifecycleEvents(
             LifecycleEvent... lifecycleEvents) {
         if (this.lifecycleEvents == null) {
@@ -400,6 +415,7 @@ public class InstanceSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceSummary withLifecycleEvents(
             java.util.Collection<LifecycleEvent> lifecycleEvents) {
         setLifecycleEvents(lifecycleEvents);

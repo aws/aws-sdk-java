@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -24,130 +26,131 @@ import java.io.Serializable;
 public class LaunchPermission implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The AWS account ID.
+     * </p>
      */
     private String userId;
-
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
+     * The name of the group.
+     * </p>
      */
     private String group;
 
     /**
+     * <p>
      * The AWS account ID.
-     *
-     * @return The AWS account ID.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID.
      */
-    public String getUserId() {
-        return userId;
-    }
-    
-    /**
-     * The AWS account ID.
-     *
-     * @param userId The AWS account ID.
-     */
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    
+
     /**
-     * The AWS account ID.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param userId The AWS account ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The AWS account ID.
+     * </p>
+     * 
+     * @return The AWS account ID.
      */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * 
+     * @param userId
+     *        The AWS account ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LaunchPermission withUserId(String userId) {
-        this.userId = userId;
+        setUserId(userId);
         return this;
     }
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
-     *
-     * @return The name of the group.
-     *
+     * The name of the group.
+     * </p>
+     * 
+     * @param group
+     *        The name of the group.
      * @see PermissionGroup
      */
-    public String getGroup() {
-        return group;
-    }
-    
-    /**
-     * The name of the group.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
-     *
-     * @param group The name of the group.
-     *
-     * @see PermissionGroup
-     */
+
     public void setGroup(String group) {
         this.group = group;
     }
-    
+
     /**
+     * <p>
      * The name of the group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
-     *
-     * @param group The name of the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @return The name of the group.
      * @see PermissionGroup
      */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The name of the group.
+     * </p>
+     * 
+     * @param group
+     *        The name of the group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PermissionGroup
+     */
+
     public LaunchPermission withGroup(String group) {
-        this.group = group;
+        setGroup(group);
         return this;
     }
 
     /**
-     * The name of the group.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
-     *
-     * @param group The name of the group.
-     *
+     * The name of the group.
+     * </p>
+     * 
+     * @param group
+     *        The name of the group.
      * @see PermissionGroup
      */
+
     public void setGroup(PermissionGroup group) {
         this.group = group.toString();
     }
-    
+
     /**
+     * <p>
      * The name of the group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>all
-     *
-     * @param group The name of the group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param group
+     *        The name of the group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PermissionGroup
      */
+
     public LaunchPermission withGroup(PermissionGroup group) {
-        this.group = group.toString();
+        setGroup(group);
         return this;
     }
 
@@ -163,50 +166,57 @@ public class LaunchPermission implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUserId() != null) sb.append("UserId: " + getUserId() + ",");
-        if (getGroup() != null) sb.append("Group: " + getGroup() );
+        if (getUserId() != null)
+            sb.append("UserId: " + getUserId() + ",");
+        if (getGroup() != null)
+            sb.append("Group: " + getGroup());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof LaunchPermission == false)
+            return false;
+        LaunchPermission other = (LaunchPermission) obj;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null
+                && other.getUserId().equals(this.getUserId()) == false)
+            return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null
+                && other.getGroup().equals(this.getGroup()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode()); 
-        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode
+                + ((getGroup() == null) ? 0 : getGroup().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof LaunchPermission == false) return false;
-        LaunchPermission other = (LaunchPermission)obj;
-        
-        if (other.getUserId() == null ^ this.getUserId() == null) return false;
-        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false) return false; 
-        if (other.getGroup() == null ^ this.getGroup() == null) return false;
-        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public LaunchPermission clone() {
         try {
             return (LaunchPermission) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

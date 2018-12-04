@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -100,7 +102,7 @@ public class GetIdentityNotificationAttributesResultStaxUnmarshaller
                     Entry<String, IdentityNotificationAttributes> entry = NotificationAttributesMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
                     getIdentityNotificationAttributesResult
-                            .getNotificationAttributes().put(entry.getKey(),
+                            .addNotificationAttributesEntry(entry.getKey(),
                                     entry.getValue());
                     continue;
                 }

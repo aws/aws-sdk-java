@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListHealthChecksRequest Marshaller
@@ -58,16 +61,14 @@ public class ListHealthChecksRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listHealthChecksRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listHealthChecksRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listHealthChecksRequest.getMarker() != null) {
+            request.addParameter("marker",
+                    StringUtils.fromString(listHealthChecksRequest.getMarker()));
         }
 
-        String maxItems = (listHealthChecksRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listHealthChecksRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listHealthChecksRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listHealthChecksRequest.getMaxItems()));
         }
 
         return request;

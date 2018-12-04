@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -27,13 +27,13 @@ import com.amazonaws.services.s3.AmazonS3;
  * the object(s) was deleted.You may specify up to <a href=
  * "http://docs.aws.amazon.com/AmazonS3/latest/API/multiobjectdeleteapi.html"
  * >1000 keys</a>. </p>
- * 
+ *
  * @see AmazonS3#deleteObjects(DeleteObjectsRequest)
  */
 public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Serializable {
 
     /**
-     * The name of the Amazon S3 bucket containing the object(s) to delete. 
+     * The name of the Amazon S3 bucket containing the object(s) to delete.
      */
     private String bucketName;
 
@@ -42,7 +42,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * are reported. Defaults to false.
      */
     private boolean quiet;
- 
+
     /**
      * The optional Multi-Factor Authentication information to include with this
      * request. Multi-Factor Authentication is required when deleting a version
@@ -59,9 +59,15 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     private final List<KeyVersion> keys = new ArrayList<KeyVersion>();
 
     /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
+
+    /**
      * Constructs a new {@link DeleteObjectsRequest}, specifying the objects'
      * bucket name.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object(s) to
      *            delete.
@@ -72,7 +78,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Gets the name of the Amazon S3 bucket containing the object(s) to delete.
-     * 
+     *
      * @return The name of the Amazon S3 bucket containing the object(s) to
      *         delete.
      * @see DeleteObjectsRequest#setBucketName(String)
@@ -83,7 +89,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * Sets the name of the Amazon S3 bucket containing the object(s) to delete.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object(s) to
      *            delete.
@@ -97,7 +103,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * Sets the name of the Amazon S3 bucket containing the object(s) to delete
      * and returns this object, enabling additional method calls to be chained
      * together.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object(s) to
      *            delete.
@@ -123,7 +129,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
      * </p>
-     * 
+     *
      * @return The optional Multi-Factor Authentication information included
      *         with this request.
      */
@@ -145,7 +151,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
      * </p>
-     * 
+     *
      * @param mfa
      *            The optional Multi-Factor Authentication information to
      *            include with this request.
@@ -170,11 +176,11 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
      * </p>
-     * 
+     *
      * @param mfa
      *            The optional Multi-Factor Authentication information to
      *            include with this request.
-     * 
+     *
      * @return this, enabling additional method
      *         calls to be chained together.
      */
@@ -182,7 +188,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
         setMfa(mfa);
         return this;
     }
-    
+
     /**
      * Sets the quiet element for this request. When true, only errors will be
      * returned in the service response.
@@ -190,7 +196,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     public void setQuiet(boolean quiet) {
         this.quiet = quiet;
     }
-    
+
     /**
      * Returns the quiet element for this request. When true, only errors will be
      * returned in the service response.
@@ -198,22 +204,22 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     public boolean getQuiet() {
         return quiet;
     }
-    
+
     /**
      * Sets the quiet element for this request. When true, only errors will be
      * returned in the service response.
-     * 
+     *
      * @return this, to chain multiple calls together.
      */
     public DeleteObjectsRequest withQuiet(boolean quiet) {
         this.setQuiet(quiet);
         return this;
     }
-    
+
     /**
      * Sets the list of keys to delete from this bucket, clearing any existing
      * list of keys.
-     * 
+     *
      * @param keys
      *            The list of keys to delete from this bucket
      */
@@ -225,27 +231,27 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * Sets the list of keys to delete from this bucket, clearing any existing
      * list of keys.
-     * 
+     *
      * @param keys
      *            The list of keys to delete from this bucket
-     *            
+     *
      * @return this, to chain multiple calls togethers.
      */
     public DeleteObjectsRequest withKeys(List<KeyVersion> keys) {
         setKeys(keys);
         return this;
     }
-    
+
     /**
      * Returns the list of keys to delete from this bucket.
      */
     public List<KeyVersion> getKeys() {
         return keys;
     }
-    
+
     /**
      * Convenience method to specify a set of keys without versions.
-     * 
+     *
      * @see DeleteObjectsRequest#withKeys(List)
      */
     public DeleteObjectsRequest withKeys(String... keys) {
@@ -256,7 +262,72 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
         setKeys(keyVersions);
         return this;
     }
-    
+
+    /**
+     * Returns true if the user has enabled Requester Pays option when
+     * conducting this operation from Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket. It returns this
+     * updated DeleteObjectsRequest object so that additional method calls can be
+     * chained together.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     *
+     * @return The updated DeleteObjectsRequest object.
+     */
+    public DeleteObjectsRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
+        return this;
+    }
+
     /**
      * A key to delete, with an optional version attribute.
      */
@@ -279,11 +350,11 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
             this.key = key;
             this.version = version;
         }
-        
+
         public String getKey() {
-            return key;            
+            return key;
         }
-        
+
         public String getVersion() {
             return version;
         }

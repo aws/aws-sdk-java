@@ -53,6 +53,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      *        that hosts the container instances to describe. If you do not
      *        specify a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -68,6 +69,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      *         that hosts the container instances to describe. If you do not
      *         specify a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -86,6 +88,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -100,6 +103,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      * @return A space-separated list of container instance IDs or full Amazon
      *         Resource Name (ARN) entries.
      */
+
     public java.util.List<String> getContainerInstances() {
         if (containerInstances == null) {
             containerInstances = new com.amazonaws.internal.SdkInternalList<String>();
@@ -117,6 +121,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      *        A space-separated list of container instance IDs or full Amazon
      *        Resource Name (ARN) entries.
      */
+
     public void setContainerInstances(
             java.util.Collection<String> containerInstances) {
         if (containerInstances == null) {
@@ -146,6 +151,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesRequest withContainerInstances(
             String... containerInstances) {
         if (this.containerInstances == null) {
@@ -170,6 +176,7 @@ public class DescribeContainerInstancesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesRequest withContainerInstances(
             java.util.Collection<String> containerInstances) {
         setContainerInstances(containerInstances);

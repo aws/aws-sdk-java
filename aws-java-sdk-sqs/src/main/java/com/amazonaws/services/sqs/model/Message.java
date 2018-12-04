@@ -96,6 +96,7 @@ public class Message implements Serializable, Cloneable {
      *        A unique identifier for the message. Message IDs are considered
      *        unique across all AWS accounts for an extended period of time.
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -109,6 +110,7 @@ public class Message implements Serializable, Cloneable {
      * @return A unique identifier for the message. Message IDs are considered
      *         unique across all AWS accounts for an extended period of time.
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -125,6 +127,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withMessageId(String messageId) {
         setMessageId(messageId);
         return this;
@@ -144,6 +147,7 @@ public class Message implements Serializable, Cloneable {
      *        When deleting a message, you provide the last received receipt
      *        handle to delete the message.
      */
+
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
@@ -161,6 +165,7 @@ public class Message implements Serializable, Cloneable {
      *         When deleting a message, you provide the last received receipt
      *         handle to delete the message.
      */
+
     public String getReceiptHandle() {
         return this.receiptHandle;
     }
@@ -181,6 +186,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withReceiptHandle(String receiptHandle) {
         setReceiptHandle(receiptHandle);
         return this;
@@ -194,6 +200,7 @@ public class Message implements Serializable, Cloneable {
      * @param mD5OfBody
      *        An MD5 digest of the non-URL-encoded message body string.
      */
+
     public void setMD5OfBody(String mD5OfBody) {
         this.mD5OfBody = mD5OfBody;
     }
@@ -205,6 +212,7 @@ public class Message implements Serializable, Cloneable {
      * 
      * @return An MD5 digest of the non-URL-encoded message body string.
      */
+
     public String getMD5OfBody() {
         return this.mD5OfBody;
     }
@@ -219,6 +227,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withMD5OfBody(String mD5OfBody) {
         setMD5OfBody(mD5OfBody);
         return this;
@@ -232,6 +241,7 @@ public class Message implements Serializable, Cloneable {
      * @param body
      *        The message's contents (not URL-encoded).
      */
+
     public void setBody(String body) {
         this.body = body;
     }
@@ -243,6 +253,7 @@ public class Message implements Serializable, Cloneable {
      * 
      * @return The message's contents (not URL-encoded).
      */
+
     public String getBody() {
         return this.body;
     }
@@ -257,6 +268,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withBody(String body) {
         setBody(body);
         return this;
@@ -281,6 +293,7 @@ public class Message implements Serializable, Cloneable {
      *         as an integer representing the <a
      *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -308,6 +321,7 @@ public class Message implements Serializable, Cloneable {
      *        an integer representing the <a
      *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -336,6 +350,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
@@ -356,6 +371,7 @@ public class Message implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Message clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -379,6 +395,7 @@ public class Message implements Serializable, Cloneable {
      *        href="http://www.faqs.org/rfcs/rfc1321.html"
      *        >http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
+
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
         this.mD5OfMessageAttributes = mD5OfMessageAttributes;
     }
@@ -401,6 +418,7 @@ public class Message implements Serializable, Cloneable {
      *         "http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs
      *         /rfc1321.html</a>.
      */
+
     public String getMD5OfMessageAttributes() {
         return this.mD5OfMessageAttributes;
     }
@@ -425,6 +443,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withMD5OfMessageAttributes(String mD5OfMessageAttributes) {
         setMD5OfMessageAttributes(mD5OfMessageAttributes);
         return this;
@@ -443,6 +462,7 @@ public class Message implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *         >Message Attribute Items</a>.
      */
+
     public java.util.Map<String, MessageAttributeValue> getMessageAttributes() {
         if (messageAttributes == null) {
             messageAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue>();
@@ -464,6 +484,7 @@ public class Message implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV"
      *        >Message Attribute Items</a>.
      */
+
     public void setMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         this.messageAttributes = messageAttributes == null ? null
@@ -487,6 +508,7 @@ public class Message implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Message withMessageAttributes(
             java.util.Map<String, MessageAttributeValue> messageAttributes) {
         setMessageAttributes(messageAttributes);
@@ -509,6 +531,7 @@ public class Message implements Serializable, Cloneable {
      * Removes all the entries added into MessageAttributes. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Message clearMessageAttributesEntries() {
         this.messageAttributes = null;
         return this;

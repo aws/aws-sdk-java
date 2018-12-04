@@ -40,6 +40,15 @@ public class PolicyGroup implements Serializable, Cloneable {
      * </p>
      */
     private String groupName;
+    /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private String groupId;
 
     /**
      * <p>
@@ -49,6 +58,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * @param groupName
      *        The name (friendly name, not ARN) identifying the group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -60,6 +70,7 @@ public class PolicyGroup implements Serializable, Cloneable {
      * 
      * @return The name (friendly name, not ARN) identifying the group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -74,8 +85,68 @@ public class PolicyGroup implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyGroup withGroupName(String groupName) {
         setGroupName(groupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param groupId
+     *        The stable and unique string identifying the group. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The stable and unique string identifying the group. For more
+     *         information about IDs, see <a href=
+     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The stable and unique string identifying the group. For more information
+     * about IDs, see <a href=
+     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param groupId
+     *        The stable and unique string identifying the group. For more
+     *        information about IDs, see <a href=
+     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html"
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public PolicyGroup withGroupId(String groupId) {
+        setGroupId(groupId);
         return this;
     }
 
@@ -92,7 +163,9 @@ public class PolicyGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: " + getGroupName() + ",");
+        if (getGroupId() != null)
+            sb.append("GroupId: " + getGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -112,6 +185,11 @@ public class PolicyGroup implements Serializable, Cloneable {
         if (other.getGroupName() != null
                 && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getGroupId() == null ^ this.getGroupId() == null)
+            return false;
+        if (other.getGroupId() != null
+                && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +200,8 @@ public class PolicyGroup implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode
+                + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         return hashCode;
     }
 

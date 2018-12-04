@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateThingRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateThingRequestMarshaller implements
         Marshaller<Request<UpdateThingRequest>, UpdateThingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateThingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateThingRequest> marshall(
             UpdateThingRequest updateThingRequest) {
@@ -65,27 +73,27 @@ public class UpdateThingRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
-                (updateThingRequest.getThingName() == null) ? "" : StringUtils
-                        .fromString(updateThingRequest.getThingName()));
+                (updateThingRequest.getThingName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateThingRequest
+                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (updateThingRequest.getAttributePayload() != null) {
-                jsonWriter.key("attributePayload");
-                AttributePayloadJsonMarshaller.getInstance().marshall(
-                        updateThingRequest.getAttributePayload(), jsonWriter);
+                jsonGenerator.writeFieldName("attributePayload");
+                AttributePayloadJsonMarshaller.getInstance()
+                        .marshall(updateThingRequest.getAttributePayload(),
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class PipelineJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    pipeline.setId(StringJsonUnmarshaller.getInstance()
+                    pipeline.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    pipeline.setArn(StringJsonUnmarshaller.getInstance()
+                    pipeline.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    pipeline.setName(StringJsonUnmarshaller.getInstance()
+                    pipeline.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    pipeline.setStatus(StringJsonUnmarshaller.getInstance()
+                    pipeline.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InputBucket", targetDepth)) {
                     context.nextToken();
-                    pipeline.setInputBucket(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipeline.setInputBucket(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputBucket", targetDepth)) {
                     context.nextToken();
-                    pipeline.setOutputBucket(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipeline.setOutputBucket(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
-                    pipeline.setRole(StringJsonUnmarshaller.getInstance()
+                    pipeline.setRole(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("AwsKmsKeyArn", targetDepth)) {
                     context.nextToken();
-                    pipeline.setAwsKmsKeyArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    pipeline.setAwsKmsKeyArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();

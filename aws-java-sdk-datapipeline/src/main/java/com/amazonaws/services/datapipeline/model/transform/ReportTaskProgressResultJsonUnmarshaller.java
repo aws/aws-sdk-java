@@ -18,6 +18,8 @@ package com.amazonaws.services.datapipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,7 +56,7 @@ public class ReportTaskProgressResultJsonUnmarshaller implements
                 if (context.testExpression("canceled", targetDepth)) {
                     context.nextToken();
                     reportTaskProgressResult
-                            .setCanceled(BooleanJsonUnmarshaller.getInstance()
+                            .setCanceled(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

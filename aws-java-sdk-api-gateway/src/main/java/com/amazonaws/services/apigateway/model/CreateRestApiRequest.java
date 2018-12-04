@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to add a new <a>RestApi</a> resource to your collection.
+ * The POST Request to add a new <a>RestApi</a> resource to your collection.
  * </p>
  */
 public class CreateRestApiRequest extends AmazonWebServiceRequest implements
@@ -41,7 +41,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
     private String description;
     /**
      * <p>
-     * The name of the <a>RestApi</a> that you want to clone from.
+     * The Id of the <a>RestApi</a> that you want to clone from.
      * </p>
      */
     private String cloneFrom;
@@ -54,6 +54,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the <a>RestApi</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,6 +66,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>RestApi</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -79,6 +81,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiRequest withName(String name) {
         setName(name);
         return this;
@@ -92,6 +95,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description of the <a>RestApi</a>.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -103,6 +107,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description of the <a>RestApi</a>.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -117,6 +122,7 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -124,37 +130,40 @@ public class CreateRestApiRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the <a>RestApi</a> that you want to clone from.
+     * The Id of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
      * @param cloneFrom
-     *        The name of the <a>RestApi</a> that you want to clone from.
+     *        The Id of the <a>RestApi</a> that you want to clone from.
      */
+
     public void setCloneFrom(String cloneFrom) {
         this.cloneFrom = cloneFrom;
     }
 
     /**
      * <p>
-     * The name of the <a>RestApi</a> that you want to clone from.
+     * The Id of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
-     * @return The name of the <a>RestApi</a> that you want to clone from.
+     * @return The Id of the <a>RestApi</a> that you want to clone from.
      */
+
     public String getCloneFrom() {
         return this.cloneFrom;
     }
 
     /**
      * <p>
-     * The name of the <a>RestApi</a> that you want to clone from.
+     * The Id of the <a>RestApi</a> that you want to clone from.
      * </p>
      * 
      * @param cloneFrom
-     *        The name of the <a>RestApi</a> that you want to clone from.
+     *        The Id of the <a>RestApi</a> that you want to clone from.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRestApiRequest withCloneFrom(String cloneFrom) {
         setCloneFrom(cloneFrom);
         return this;

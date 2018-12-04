@@ -168,6 +168,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -179,6 +180,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -193,6 +195,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -206,6 +209,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The layer name, which is used by the console.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -217,6 +221,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The layer name, which is used by the console.
      */
+
     public String getName() {
         return this.name;
     }
@@ -231,6 +236,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withName(String name) {
         setName(name);
         return this;
@@ -264,6 +270,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
      *        >Layer Reference</a>
      */
+
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
@@ -295,6 +302,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
      *         >Layer Reference</a>
      */
+
     public String getShortname() {
         return this.shortname;
     }
@@ -329,6 +337,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withShortname(String shortname) {
         setShortname(shortname);
         return this;
@@ -343,6 +352,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return One or more user-defined key/value pairs to be added to the stack
      *         attributes.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -360,6 +370,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        One or more user-defined key/value pairs to be added to the stack
      *        attributes.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -378,6 +389,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -399,6 +411,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public UpdateLayerRequest clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -418,6 +431,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
     }
@@ -435,6 +449,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getCustomInstanceProfileArn() {
         return this.customInstanceProfileArn;
     }
@@ -455,6 +470,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withCustomInstanceProfileArn(
             String customInstanceProfileArn) {
         setCustomInstanceProfileArn(customInstanceProfileArn);
@@ -477,6 +493,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
      *        > Using Custom JSON</a>.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -496,6 +513,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"
      *         > Using Custom JSON</a>.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -518,6 +536,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -530,6 +549,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array containing the layer's custom security group IDs.
      */
+
     public java.util.List<String> getCustomSecurityGroupIds() {
         if (customSecurityGroupIds == null) {
             customSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -545,6 +565,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @param customSecurityGroupIds
      *        An array containing the layer's custom security group IDs.
      */
+
     public void setCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -572,6 +593,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withCustomSecurityGroupIds(
             String... customSecurityGroupIds) {
         if (this.customSecurityGroupIds == null) {
@@ -594,6 +616,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         setCustomSecurityGroupIds(customSecurityGroupIds);
@@ -609,6 +632,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return An array of <code>Package</code> objects that describe the
      *         layer's packages.
      */
+
     public java.util.List<String> getPackages() {
         if (packages == null) {
             packages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -626,6 +650,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        An array of <code>Package</code> objects that describe the layer's
      *        packages.
      */
+
     public void setPackages(java.util.Collection<String> packages) {
         if (packages == null) {
             this.packages = null;
@@ -654,6 +679,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withPackages(String... packages) {
         if (this.packages == null) {
             setPackages(new com.amazonaws.internal.SdkInternalList<String>(
@@ -677,6 +703,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withPackages(java.util.Collection<String> packages) {
         setPackages(packages);
         return this;
@@ -691,6 +718,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return A <code>VolumeConfigurations</code> object that describes the
      *         layer's Amazon EBS volumes.
      */
+
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
         if (volumeConfigurations == null) {
             volumeConfigurations = new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>();
@@ -708,6 +736,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        A <code>VolumeConfigurations</code> object that describes the
      *        layer's Amazon EBS volumes.
      */
+
     public void setVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -737,6 +766,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withVolumeConfigurations(
             VolumeConfiguration... volumeConfigurations) {
         if (this.volumeConfigurations == null) {
@@ -761,6 +791,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         setVolumeConfigurations(volumeConfigurations);
@@ -775,6 +806,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @param enableAutoHealing
      *        Whether to disable auto healing for the layer.
      */
+
     public void setEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
     }
@@ -786,6 +818,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to disable auto healing for the layer.
      */
+
     public Boolean getEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -800,6 +833,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
         setEnableAutoHealing(enableAutoHealing);
         return this;
@@ -812,6 +846,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to disable auto healing for the layer.
      */
+
     public Boolean isEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -834,6 +869,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
     }
@@ -855,6 +891,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -879,6 +916,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withAutoAssignElasticIps(
             Boolean autoAssignElasticIps) {
         setAutoAssignElasticIps(autoAssignElasticIps);
@@ -902,6 +940,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -922,6 +961,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignPublicIps(Boolean autoAssignPublicIps) {
         this.autoAssignPublicIps = autoAssignPublicIps;
     }
@@ -941,6 +981,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -963,6 +1004,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withAutoAssignPublicIps(
             Boolean autoAssignPublicIps) {
         setAutoAssignPublicIps(autoAssignPublicIps);
@@ -984,6 +1026,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -998,6 +1041,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        A <code>LayerCustomRecipes</code> object that specifies the
      *        layer's custom recipes.
      */
+
     public void setCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;
     }
@@ -1011,6 +1055,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return A <code>LayerCustomRecipes</code> object that specifies the
      *         layer's custom recipes.
      */
+
     public Recipes getCustomRecipes() {
         return this.customRecipes;
     }
@@ -1027,6 +1072,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withCustomRecipes(Recipes customRecipes) {
         setCustomRecipes(customRecipes);
         return this;
@@ -1063,6 +1109,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *        , to ensure that your instances have the latest security updates.
      *        </p>
      */
+
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
     }
@@ -1098,6 +1145,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean getInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1135,6 +1183,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withInstallUpdatesOnBoot(
             Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
@@ -1172,6 +1221,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean isInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1184,6 +1234,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @param useEbsOptimizedInstances
      *        Whether to use Amazon EBS-optimized instances.
      */
+
     public void setUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
         this.useEbsOptimizedInstances = useEbsOptimizedInstances;
     }
@@ -1195,6 +1246,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use Amazon EBS-optimized instances.
      */
+
     public Boolean getUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1209,6 +1261,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withUseEbsOptimizedInstances(
             Boolean useEbsOptimizedInstances) {
         setUseEbsOptimizedInstances(useEbsOptimizedInstances);
@@ -1222,6 +1275,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use Amazon EBS-optimized instances.
      */
+
     public Boolean isUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1231,6 +1285,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @param lifecycleEventConfiguration
      */
+
     public void setLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         this.lifecycleEventConfiguration = lifecycleEventConfiguration;
@@ -1241,6 +1296,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return
      */
+
     public LifecycleEventConfiguration getLifecycleEventConfiguration() {
         return this.lifecycleEventConfiguration;
     }
@@ -1252,6 +1308,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateLayerRequest withLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         setLifecycleEventConfiguration(lifecycleEventConfiguration);

@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class IPSetDescriptorJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    iPSetDescriptor.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    iPSetDescriptor.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    iPSetDescriptor.setValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    iPSetDescriptor.setValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

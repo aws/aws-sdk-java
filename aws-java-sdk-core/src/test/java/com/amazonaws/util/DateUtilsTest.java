@@ -23,19 +23,20 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.StringWriter;
+import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.SimpleTimeZone;
 
+import com.amazonaws.protocol.json.SdkJsonGenerator;
+import com.amazonaws.protocol.json.StructuredJsonGenerator;
+import com.fasterxml.jackson.core.JsonFactory;
+
 import org.joda.time.DateTime;
 import org.joda.time.IllegalFieldValueException;
 import org.junit.Test;
-
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONWriter;
 
 public class DateUtilsTest {
     private static final boolean DEBUG = false;
@@ -250,18 +251,16 @@ public class DateUtilsTest {
 
     // See https://forums.aws.amazon.com/thread.jspa?threadID=158756
     @Test
-    public void testNumericNoQuote() throws JSONException {
-        StringWriter w = new StringWriter();
-        JSONWriter jw = new JSONWriter(w);
-        jw.object();
-        jw.key("foo");
-        jw.value(new Date());
-        jw.endObject();
-        String s = w.toString();
+    public void testNumericNoQuote() {
+        StructuredJsonGenerator jw = new SdkJsonGenerator(new JsonFactory(), null);
+        jw.writeStartObject();
+        jw.writeFieldName("foo").writeValue(new Date());
+        jw.writeEndObject();
+        String s = new String(jw.getBytes(), Charset.forName("UTF-8"));
         // Something like: {"foo":1408378076.135}.
         // Note prior to the changes, it was {"foo":1408414571}
         // (with no decimal point nor places.)
-        System.out.println(w);
+        System.out.println(s);
         final String prefix = "{\"foo\":";
         assertTrue(s, s.startsWith(prefix));
         final int startPos = prefix.length();

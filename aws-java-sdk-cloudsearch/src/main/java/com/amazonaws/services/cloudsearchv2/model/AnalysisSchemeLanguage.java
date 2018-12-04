@@ -1,24 +1,29 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudsearchv2.model;
 
 /**
- * Analysis Scheme Language
+ * <p>
+ * An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC
+ * 4646</a> language code or <code>mul</code> for multiple languages.
+ * </p>
  */
 public enum AnalysisSchemeLanguage {
-    
+
     Ar("ar"),
     Bg("bg"),
     Ca("ca"),
@@ -70,86 +75,85 @@ public enum AnalysisSchemeLanguage {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return AnalysisSchemeLanguage corresponding to the value
      */
     public static AnalysisSchemeLanguage fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("ar".equals(value)) {
-            return AnalysisSchemeLanguage.Ar;
+            return Ar;
         } else if ("bg".equals(value)) {
-            return AnalysisSchemeLanguage.Bg;
+            return Bg;
         } else if ("ca".equals(value)) {
-            return AnalysisSchemeLanguage.Ca;
+            return Ca;
         } else if ("cs".equals(value)) {
-            return AnalysisSchemeLanguage.Cs;
+            return Cs;
         } else if ("da".equals(value)) {
-            return AnalysisSchemeLanguage.Da;
+            return Da;
         } else if ("de".equals(value)) {
-            return AnalysisSchemeLanguage.De;
+            return De;
         } else if ("el".equals(value)) {
-            return AnalysisSchemeLanguage.El;
+            return El;
         } else if ("en".equals(value)) {
-            return AnalysisSchemeLanguage.En;
+            return En;
         } else if ("es".equals(value)) {
-            return AnalysisSchemeLanguage.Es;
+            return Es;
         } else if ("eu".equals(value)) {
-            return AnalysisSchemeLanguage.Eu;
+            return Eu;
         } else if ("fa".equals(value)) {
-            return AnalysisSchemeLanguage.Fa;
+            return Fa;
         } else if ("fi".equals(value)) {
-            return AnalysisSchemeLanguage.Fi;
+            return Fi;
         } else if ("fr".equals(value)) {
-            return AnalysisSchemeLanguage.Fr;
+            return Fr;
         } else if ("ga".equals(value)) {
-            return AnalysisSchemeLanguage.Ga;
+            return Ga;
         } else if ("gl".equals(value)) {
-            return AnalysisSchemeLanguage.Gl;
+            return Gl;
         } else if ("he".equals(value)) {
-            return AnalysisSchemeLanguage.He;
+            return He;
         } else if ("hi".equals(value)) {
-            return AnalysisSchemeLanguage.Hi;
+            return Hi;
         } else if ("hu".equals(value)) {
-            return AnalysisSchemeLanguage.Hu;
+            return Hu;
         } else if ("hy".equals(value)) {
-            return AnalysisSchemeLanguage.Hy;
+            return Hy;
         } else if ("id".equals(value)) {
-            return AnalysisSchemeLanguage.Id;
+            return Id;
         } else if ("it".equals(value)) {
-            return AnalysisSchemeLanguage.It;
+            return It;
         } else if ("ja".equals(value)) {
-            return AnalysisSchemeLanguage.Ja;
+            return Ja;
         } else if ("ko".equals(value)) {
-            return AnalysisSchemeLanguage.Ko;
+            return Ko;
         } else if ("lv".equals(value)) {
-            return AnalysisSchemeLanguage.Lv;
+            return Lv;
         } else if ("mul".equals(value)) {
-            return AnalysisSchemeLanguage.Mul;
+            return Mul;
         } else if ("nl".equals(value)) {
-            return AnalysisSchemeLanguage.Nl;
+            return Nl;
         } else if ("no".equals(value)) {
-            return AnalysisSchemeLanguage.No;
+            return No;
         } else if ("pt".equals(value)) {
-            return AnalysisSchemeLanguage.Pt;
+            return Pt;
         } else if ("ro".equals(value)) {
-            return AnalysisSchemeLanguage.Ro;
+            return Ro;
         } else if ("ru".equals(value)) {
-            return AnalysisSchemeLanguage.Ru;
+            return Ru;
         } else if ("sv".equals(value)) {
-            return AnalysisSchemeLanguage.Sv;
+            return Sv;
         } else if ("th".equals(value)) {
-            return AnalysisSchemeLanguage.Th;
+            return Th;
         } else if ("tr".equals(value)) {
-            return AnalysisSchemeLanguage.Tr;
+            return Tr;
         } else if ("zh-Hans".equals(value)) {
-            return AnalysisSchemeLanguage.ZhHans;
+            return ZhHans;
         } else if ("zh-Hant".equals(value)) {
-            return AnalysisSchemeLanguage.ZhHant;
+            return ZhHant;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

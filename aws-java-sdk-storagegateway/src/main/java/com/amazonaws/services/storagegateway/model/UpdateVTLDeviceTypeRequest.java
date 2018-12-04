@@ -20,9 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * UpdateVTLDeviceTypeInput
- * </p>
+ * 
  */
 public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -38,7 +36,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      */
     private String deviceType;
@@ -52,6 +50,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the medium changer you want to
      *        select.
      */
+
     public void setVTLDeviceARN(String vTLDeviceARN) {
         this.vTLDeviceARN = vTLDeviceARN;
     }
@@ -64,6 +63,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the medium changer you want to
      *         select.
      */
+
     public String getVTLDeviceARN() {
         return this.vTLDeviceARN;
     }
@@ -79,6 +79,7 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVTLDeviceTypeRequest withVTLDeviceARN(String vTLDeviceARN) {
         setVTLDeviceARN(vTLDeviceARN);
         return this;
@@ -89,14 +90,15 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public void setDeviceType(String deviceType) {
         this.deviceType = deviceType;
     }
@@ -106,13 +108,14 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @return The type of medium changer you want to select.</p>
      *         <p>
-     *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public String getDeviceType() {
         return this.deviceType;
     }
@@ -122,16 +125,17 @@ public class UpdateVTLDeviceTypeRequest extends AmazonWebServiceRequest
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateVTLDeviceTypeRequest withDeviceType(String deviceType) {
         setDeviceType(deviceType);
         return this;

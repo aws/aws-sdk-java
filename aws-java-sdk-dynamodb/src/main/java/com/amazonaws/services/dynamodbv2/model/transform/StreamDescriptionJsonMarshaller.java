@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StreamDescriptionMarshaller
@@ -39,83 +34,80 @@ import com.amazonaws.util.json.*;
 public class StreamDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StreamDescription streamDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (streamDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (streamDescription.getStreamArn() != null) {
-                jsonWriter.key("StreamArn").value(
+                jsonGenerator.writeFieldName("StreamArn").writeValue(
                         streamDescription.getStreamArn());
             }
-
             if (streamDescription.getStreamLabel() != null) {
-                jsonWriter.key("StreamLabel").value(
+                jsonGenerator.writeFieldName("StreamLabel").writeValue(
                         streamDescription.getStreamLabel());
             }
-
             if (streamDescription.getStreamStatus() != null) {
-                jsonWriter.key("StreamStatus").value(
+                jsonGenerator.writeFieldName("StreamStatus").writeValue(
                         streamDescription.getStreamStatus());
             }
-
             if (streamDescription.getStreamViewType() != null) {
-                jsonWriter.key("StreamViewType").value(
+                jsonGenerator.writeFieldName("StreamViewType").writeValue(
                         streamDescription.getStreamViewType());
             }
-
             if (streamDescription.getCreationRequestDateTime() != null) {
-                jsonWriter.key("CreationRequestDateTime").value(
-                        streamDescription.getCreationRequestDateTime());
+                jsonGenerator.writeFieldName("CreationRequestDateTime")
+                        .writeValue(
+                                streamDescription.getCreationRequestDateTime());
             }
-
             if (streamDescription.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         streamDescription.getTableName());
             }
 
             java.util.List<KeySchemaElement> keySchemaList = streamDescription
                     .getKeySchema();
             if (keySchemaList != null) {
-                jsonWriter.key("KeySchema");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("KeySchema");
+                jsonGenerator.writeStartArray();
                 for (KeySchemaElement keySchemaListValue : keySchemaList) {
                     if (keySchemaListValue != null) {
 
                         KeySchemaElementJsonMarshaller.getInstance().marshall(
-                                keySchemaListValue, jsonWriter);
+                                keySchemaListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<Shard> shardsList = streamDescription.getShards();
             if (shardsList != null) {
-                jsonWriter.key("Shards");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Shards");
+                jsonGenerator.writeStartArray();
                 for (Shard shardsListValue : shardsList) {
                     if (shardsListValue != null) {
 
                         ShardJsonMarshaller.getInstance().marshall(
-                                shardsListValue, jsonWriter);
+                                shardsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (streamDescription.getLastEvaluatedShardId() != null) {
-                jsonWriter.key("LastEvaluatedShardId").value(
-                        streamDescription.getLastEvaluatedShardId());
+                jsonGenerator
+                        .writeFieldName("LastEvaluatedShardId")
+                        .writeValue(streamDescription.getLastEvaluatedShardId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

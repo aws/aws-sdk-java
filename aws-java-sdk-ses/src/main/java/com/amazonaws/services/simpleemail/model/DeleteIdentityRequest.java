@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to delete an identity from the
- * list of identities for the AWS Account.
- * </p>
+ * 
  */
 public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -46,6 +43,7 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
      *        The identity to be removed from the list of identities for the AWS
      *        Account.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -59,6 +57,7 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
      * @return The identity to be removed from the list of identities for the
      *         AWS Account.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -75,6 +74,7 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentityRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;

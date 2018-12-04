@@ -66,6 +66,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * @param userName
      *        The name of the IAM user associated with the SSH public key.
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -77,6 +78,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * 
      * @return The name of the IAM user associated with the SSH public key.
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -91,6 +93,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SSHPublicKeyMetadata withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -104,6 +107,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * @param sSHPublicKeyId
      *        The unique identifier for the SSH public key.
      */
+
     public void setSSHPublicKeyId(String sSHPublicKeyId) {
         this.sSHPublicKeyId = sSHPublicKeyId;
     }
@@ -115,6 +119,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the SSH public key.
      */
+
     public String getSSHPublicKeyId() {
         return this.sSHPublicKeyId;
     }
@@ -129,6 +134,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SSHPublicKeyMetadata withSSHPublicKeyId(String sSHPublicKeyId) {
         setSSHPublicKeyId(sSHPublicKeyId);
         return this;
@@ -147,6 +153,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *        repository. <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -163,6 +170,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *         repository. <code>Inactive</code> means the key cannot be used.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -182,6 +190,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public SSHPublicKeyMetadata withStatus(String status) {
         setStatus(status);
         return this;
@@ -198,10 +207,9 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *        The status of the SSH public key. <code>Active</code> means the
      *        key can be used for authentication with an AWS CodeCommit
      *        repository. <code>Inactive</code> means the key cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -221,6 +229,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *         chained together.
      * @see StatusType
      */
+
     public SSHPublicKeyMetadata withStatus(StatusType status) {
         setStatus(status);
         return this;
@@ -236,6 +245,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the SSH public key was uploaded.
      */
+
     public void setUploadDate(java.util.Date uploadDate) {
         this.uploadDate = uploadDate;
     }
@@ -250,6 +260,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the SSH public key was uploaded.
      */
+
     public java.util.Date getUploadDate() {
         return this.uploadDate;
     }
@@ -266,6 +277,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SSHPublicKeyMetadata withUploadDate(java.util.Date uploadDate) {
         setUploadDate(uploadDate);
         return this;

@@ -47,6 +47,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @param startingSequenceNumber
      *        The starting sequence number for the range.
      */
+
     public void setStartingSequenceNumber(String startingSequenceNumber) {
         this.startingSequenceNumber = startingSequenceNumber;
     }
@@ -58,6 +59,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * 
      * @return The starting sequence number for the range.
      */
+
     public String getStartingSequenceNumber() {
         return this.startingSequenceNumber;
     }
@@ -72,6 +74,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SequenceNumberRange withStartingSequenceNumber(
             String startingSequenceNumber) {
         setStartingSequenceNumber(startingSequenceNumber);
@@ -88,6 +91,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      *        The ending sequence number for the range. Shards that are in the
      *        OPEN state have an ending sequence number of <code>null</code>.
      */
+
     public void setEndingSequenceNumber(String endingSequenceNumber) {
         this.endingSequenceNumber = endingSequenceNumber;
     }
@@ -101,6 +105,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @return The ending sequence number for the range. Shards that are in the
      *         OPEN state have an ending sequence number of <code>null</code>.
      */
+
     public String getEndingSequenceNumber() {
         return this.endingSequenceNumber;
     }
@@ -117,6 +122,7 @@ public class SequenceNumberRange implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SequenceNumberRange withEndingSequenceNumber(
             String endingSequenceNumber) {
         setEndingSequenceNumber(endingSequenceNumber);

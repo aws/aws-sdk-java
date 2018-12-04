@@ -54,6 +54,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @param eventId
      *        The ID of the event submitted to Amazon CloudWatch Events.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -65,6 +66,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * 
      * @return The ID of the event submitted to Amazon CloudWatch Events.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -79,6 +81,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResultEntry withEventId(String eventId) {
         setEventId(eventId);
         return this;
@@ -94,6 +97,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      *        The error code representing why the event submission failed on
      *        this entry.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -107,6 +111,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @return The error code representing why the event submission failed on
      *         this entry.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -123,6 +128,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResultEntry withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -138,6 +144,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      *        The error message explaining why the event submission failed on
      *        this entry.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -151,6 +158,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @return The error message explaining why the event submission failed on
      *         this entry.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -167,6 +175,7 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutEventsResultEntry withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

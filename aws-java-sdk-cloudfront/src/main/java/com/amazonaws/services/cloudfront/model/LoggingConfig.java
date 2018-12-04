@@ -102,6 +102,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *        but you specify values for Bucket, prefix and IncludeCookies, the
      *        values are automatically deleted.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -123,6 +124,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *         Enabled but you specify values for Bucket, prefix and
      *         IncludeCookies, the values are automatically deleted.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -147,6 +149,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoggingConfig withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -169,6 +172,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *         Enabled but you specify values for Bucket, prefix and
      *         IncludeCookies, the values are automatically deleted.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -190,6 +194,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *        want to disable include cookies for an existing distribution,
      *        specify false for IncludeCookies.
      */
+
     public void setIncludeCookies(Boolean includeCookies) {
         this.includeCookies = includeCookies;
     }
@@ -210,6 +215,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *         distribution or if you want to disable include cookies for an
      *         existing distribution, specify false for IncludeCookies.
      */
+
     public Boolean getIncludeCookies() {
         return this.includeCookies;
     }
@@ -233,6 +239,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoggingConfig withIncludeCookies(Boolean includeCookies) {
         setIncludeCookies(includeCookies);
         return this;
@@ -254,6 +261,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *         distribution or if you want to disable include cookies for an
      *         existing distribution, specify false for IncludeCookies.
      */
+
     public Boolean isIncludeCookies() {
         return this.includeCookies;
     }
@@ -266,6 +274,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *        The Amazon S3 bucket to store the access logs in, for example,
      *        myawslogbucket.s3.amazonaws.com.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -277,6 +286,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      * @return The Amazon S3 bucket to store the access logs in, for example,
      *         myawslogbucket.s3.amazonaws.com.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -291,6 +301,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoggingConfig withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -309,6 +320,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *        specify a prefix, you still must include an empty Prefix element
      *        in the Logging element.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -325,6 +337,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      *         specify a prefix, you still must include an empty Prefix element
      *         in the Logging element.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -344,6 +357,7 @@ public class LoggingConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoggingConfig withPrefix(String prefix) {
         setPrefix(prefix);
         return this;

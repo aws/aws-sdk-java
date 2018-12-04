@@ -32,6 +32,12 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * you can reference the federated user name in a resource-based policy,
      * such as in an Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      */
     private String name;
     /**
@@ -54,11 +60,22 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * resource-based policy that specifically allows the federated user to
      * access the resource.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * <p>
      * For more information about how permissions work, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
@@ -96,7 +113,12 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        The name of the federated user. The name is used as an identifier
      *        for the temporary security credentials (such as <code>Bob</code>).
      *        For example, you can reference the federated user name in a
-     *        resource-based policy, such as in an Amazon S3 bucket policy.
+     *        resource-based policy, such as in an Amazon S3 bucket policy.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
     public GetFederationTokenRequest(String name) {
         setName(name);
@@ -109,13 +131,25 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * you can reference the federated user name in a resource-based policy,
      * such as in an Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param name
      *        The name of the federated user. The name is used as an identifier
      *        for the temporary security credentials (such as <code>Bob</code>).
      *        For example, you can reference the federated user name in a
-     *        resource-based policy, such as in an Amazon S3 bucket policy.
+     *        resource-based policy, such as in an Amazon S3 bucket policy.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -127,12 +161,24 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * you can reference the federated user name in a resource-based policy,
      * such as in an Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @return The name of the federated user. The name is used as an identifier
      *         for the temporary security credentials (such as <code>Bob</code>
      *         ). For example, you can reference the federated user name in a
-     *         resource-based policy, such as in an Amazon S3 bucket policy.
+     *         resource-based policy, such as in an Amazon S3 bucket policy.</p>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include any
+     *         of the following characters: =,.@-
      */
+
     public String getName() {
         return this.name;
     }
@@ -144,15 +190,27 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * you can reference the federated user name in a resource-based policy,
      * such as in an Amazon S3 bucket policy.
      * </p>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include any of the following
+     * characters: =,.@-
+     * </p>
      * 
      * @param name
      *        The name of the federated user. The name is used as an identifier
      *        for the temporary security credentials (such as <code>Bob</code>).
      *        For example, you can reference the federated user name in a
-     *        resource-based policy, such as in an Amazon S3 bucket policy.
+     *        resource-based policy, such as in an Amazon S3 bucket policy.</p>
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include any
+     *        of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withName(String name) {
         setName(name);
         return this;
@@ -178,11 +236,22 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * resource-based policy that specifically allows the federated user to
      * access the resource.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * <p>
      * For more information about how permissions work, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
@@ -208,17 +277,29 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        resource that has a resource-based policy that specifically allows
      *        the federated user to access the resource.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      *        </note>
      *        <p>
      *        For more information about how permissions work, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
      *        >Permissions for GetFederationToken</a>.
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -243,11 +324,22 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * resource-based policy that specifically allows the federated user to
      * access the resource.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * <p>
      * For more information about how permissions work, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
@@ -272,17 +364,29 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         resource that has a resource-based policy that specifically
      *         allows the federated user to access the resource.
      *         </p>
-     *         <note>The policy plain text must be 2048 bytes or shorter.
-     *         However, an internal conversion compresses it into a packed
-     *         binary format with a separate limit. The PackedPolicySize
-     *         response element indicates by percentage how close to the upper
-     *         size limit the policy is, with 100% equaling the maximum allowed
-     *         size. </note>
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters up to 2048 characters in length. The
+     *         characters can be any ASCII character from the space character to
+     *         the end of the valid character list ( -\u00FF). It can also
+     *         include the tab ( ), linefeed ( ), and carriage return ( )
+     *         characters.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The policy plain text must be 2048 bytes or shorter. However, an
+     *         internal conversion compresses it into a packed binary format
+     *         with a separate limit. The PackedPolicySize response element
+     *         indicates by percentage how close to the upper size limit the
+     *         policy is, with 100% equaling the maximum allowed size.
+     *         </p>
+     *         </note>
      *         <p>
      *         For more information about how permissions work, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
      *         >Permissions for GetFederationToken</a>.
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -307,11 +411,22 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * resource-based policy that specifically allows the federated user to
      * access the resource.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * <p>
      * For more information about how permissions work, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html"
@@ -337,11 +452,22 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        resource that has a resource-based policy that specifically allows
      *        the federated user to access the resource.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      *        </note>
      *        <p>
      *        For more information about how permissions work, see <a href=
@@ -350,6 +476,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -376,6 +503,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *        session obtained by using AWS account (root) credentials defaults
      *        to one hour.
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -400,6 +528,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      *         hour, the session obtained by using AWS account (root)
      *         credentials defaults to one hour.
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -427,6 +556,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetFederationTokenRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;

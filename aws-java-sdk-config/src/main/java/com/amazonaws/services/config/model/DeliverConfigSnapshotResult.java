@@ -40,6 +40,7 @@ public class DeliverConfigSnapshotResult implements Serializable, Cloneable {
      * @param configSnapshotId
      *        The ID of the snapshot that is being created.
      */
+
     public void setConfigSnapshotId(String configSnapshotId) {
         this.configSnapshotId = configSnapshotId;
     }
@@ -51,6 +52,7 @@ public class DeliverConfigSnapshotResult implements Serializable, Cloneable {
      * 
      * @return The ID of the snapshot that is being created.
      */
+
     public String getConfigSnapshotId() {
         return this.configSnapshotId;
     }
@@ -65,6 +67,7 @@ public class DeliverConfigSnapshotResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliverConfigSnapshotResult withConfigSnapshotId(
             String configSnapshotId) {
         setConfigSnapshotId(configSnapshotId);

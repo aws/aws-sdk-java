@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeMLModelsRequest Marshaller
  */
 public class DescribeMLModelsRequestMarshaller implements
         Marshaller<Request<DescribeMLModelsRequest>, DescribeMLModelsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeMLModelsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeMLModelsRequest> marshall(
             DescribeMLModelsRequest describeMLModelsRequest) {
@@ -63,68 +64,63 @@ public class DescribeMLModelsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeMLModelsRequest.getFilterVariable() != null) {
-                jsonWriter.key("FilterVariable").value(
+                jsonGenerator.writeFieldName("FilterVariable").writeValue(
                         describeMLModelsRequest.getFilterVariable());
             }
-
             if (describeMLModelsRequest.getEQ() != null) {
-                jsonWriter.key("EQ").value(describeMLModelsRequest.getEQ());
+                jsonGenerator.writeFieldName("EQ").writeValue(
+                        describeMLModelsRequest.getEQ());
             }
-
             if (describeMLModelsRequest.getGT() != null) {
-                jsonWriter.key("GT").value(describeMLModelsRequest.getGT());
+                jsonGenerator.writeFieldName("GT").writeValue(
+                        describeMLModelsRequest.getGT());
             }
-
             if (describeMLModelsRequest.getLT() != null) {
-                jsonWriter.key("LT").value(describeMLModelsRequest.getLT());
+                jsonGenerator.writeFieldName("LT").writeValue(
+                        describeMLModelsRequest.getLT());
             }
-
             if (describeMLModelsRequest.getGE() != null) {
-                jsonWriter.key("GE").value(describeMLModelsRequest.getGE());
+                jsonGenerator.writeFieldName("GE").writeValue(
+                        describeMLModelsRequest.getGE());
             }
-
             if (describeMLModelsRequest.getLE() != null) {
-                jsonWriter.key("LE").value(describeMLModelsRequest.getLE());
+                jsonGenerator.writeFieldName("LE").writeValue(
+                        describeMLModelsRequest.getLE());
             }
-
             if (describeMLModelsRequest.getNE() != null) {
-                jsonWriter.key("NE").value(describeMLModelsRequest.getNE());
+                jsonGenerator.writeFieldName("NE").writeValue(
+                        describeMLModelsRequest.getNE());
             }
-
             if (describeMLModelsRequest.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(
+                jsonGenerator.writeFieldName("Prefix").writeValue(
                         describeMLModelsRequest.getPrefix());
             }
-
             if (describeMLModelsRequest.getSortOrder() != null) {
-                jsonWriter.key("SortOrder").value(
+                jsonGenerator.writeFieldName("SortOrder").writeValue(
                         describeMLModelsRequest.getSortOrder());
             }
-
             if (describeMLModelsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeMLModelsRequest.getNextToken());
             }
-
             if (describeMLModelsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeMLModelsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

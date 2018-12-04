@@ -41,6 +41,7 @@ public class RecordPatch implements Serializable, Cloneable {
      *        An operation, either replace or remove.
      * @see Operation
      */
+
     public void setOp(String op) {
         this.op = op;
     }
@@ -51,6 +52,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return An operation, either replace or remove.
      * @see Operation
      */
+
     public String getOp() {
         return this.op;
     }
@@ -64,6 +66,7 @@ public class RecordPatch implements Serializable, Cloneable {
      *         chained together.
      * @see Operation
      */
+
     public RecordPatch withOp(String op) {
         setOp(op);
         return this;
@@ -74,10 +77,9 @@ public class RecordPatch implements Serializable, Cloneable {
      * 
      * @param op
      *        An operation, either replace or remove.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Operation
      */
+
     public void setOp(Operation op) {
         this.op = op.toString();
     }
@@ -91,6 +93,7 @@ public class RecordPatch implements Serializable, Cloneable {
      *         chained together.
      * @see Operation
      */
+
     public RecordPatch withOp(Operation op) {
         setOp(op);
         return this;
@@ -102,6 +105,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @param key
      *        The key associated with the record patch.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -111,6 +115,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * 
      * @return The key associated with the record patch.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -123,6 +128,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordPatch withKey(String key) {
         setKey(key);
         return this;
@@ -134,6 +140,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @param value
      *        The value associated with the record patch.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -143,6 +150,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * 
      * @return The value associated with the record patch.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -155,6 +163,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordPatch withValue(String value) {
         setValue(value);
         return this;
@@ -166,6 +175,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @param syncCount
      *        Last known server sync count for this record. Set to 0 if unknown.
      */
+
     public void setSyncCount(Long syncCount) {
         this.syncCount = syncCount;
     }
@@ -176,6 +186,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return Last known server sync count for this record. Set to 0 if
      *         unknown.
      */
+
     public Long getSyncCount() {
         return this.syncCount;
     }
@@ -188,6 +199,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordPatch withSyncCount(Long syncCount) {
         setSyncCount(syncCount);
         return this;
@@ -199,6 +211,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @param deviceLastModifiedDate
      *        The last modified date of the client device.
      */
+
     public void setDeviceLastModifiedDate(java.util.Date deviceLastModifiedDate) {
         this.deviceLastModifiedDate = deviceLastModifiedDate;
     }
@@ -208,6 +221,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * 
      * @return The last modified date of the client device.
      */
+
     public java.util.Date getDeviceLastModifiedDate() {
         return this.deviceLastModifiedDate;
     }
@@ -220,6 +234,7 @@ public class RecordPatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordPatch withDeviceLastModifiedDate(
             java.util.Date deviceLastModifiedDate) {
         setDeviceLastModifiedDate(deviceLastModifiedDate);

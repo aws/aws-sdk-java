@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListGeoLocationsRequest Marshaller
@@ -58,31 +61,26 @@ public class ListGeoLocationsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String startContinentCode = (listGeoLocationsRequest
-                .getStartContinentCode() == null) ? null : StringUtils
-                .fromString(listGeoLocationsRequest.getStartContinentCode());
-        if (startContinentCode != null) {
-            request.addParameter("startcontinentcode", startContinentCode);
+        if (listGeoLocationsRequest.getStartContinentCode() != null) {
+            request.addParameter("startcontinentcode",
+                    StringUtils.fromString(listGeoLocationsRequest
+                            .getStartContinentCode()));
         }
 
-        String startCountryCode = (listGeoLocationsRequest
-                .getStartCountryCode() == null) ? null : StringUtils
-                .fromString(listGeoLocationsRequest.getStartCountryCode());
-        if (startCountryCode != null) {
-            request.addParameter("startcountrycode", startCountryCode);
+        if (listGeoLocationsRequest.getStartCountryCode() != null) {
+            request.addParameter("startcountrycode", StringUtils
+                    .fromString(listGeoLocationsRequest.getStartCountryCode()));
         }
 
-        String startSubdivisionCode = (listGeoLocationsRequest
-                .getStartSubdivisionCode() == null) ? null : StringUtils
-                .fromString(listGeoLocationsRequest.getStartSubdivisionCode());
-        if (startSubdivisionCode != null) {
-            request.addParameter("startsubdivisioncode", startSubdivisionCode);
+        if (listGeoLocationsRequest.getStartSubdivisionCode() != null) {
+            request.addParameter("startsubdivisioncode", StringUtils
+                    .fromString(listGeoLocationsRequest
+                            .getStartSubdivisionCode()));
         }
 
-        String maxItems = (listGeoLocationsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listGeoLocationsRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listGeoLocationsRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listGeoLocationsRequest.getMaxItems()));
         }
 
         return request;

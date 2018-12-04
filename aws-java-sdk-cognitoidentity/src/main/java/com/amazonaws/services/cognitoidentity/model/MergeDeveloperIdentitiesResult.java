@@ -41,6 +41,7 @@ public class MergeDeveloperIdentitiesResult implements Serializable, Cloneable {
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -52,6 +53,7 @@ public class MergeDeveloperIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -66,6 +68,7 @@ public class MergeDeveloperIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MergeDeveloperIdentitiesResult withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;

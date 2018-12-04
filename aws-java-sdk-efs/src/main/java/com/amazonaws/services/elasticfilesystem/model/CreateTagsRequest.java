@@ -50,6 +50,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      *        String. The ID of the file system whose tags you want to modify.
      *        This operation modifies only the tags and not the file system.
      */
+
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
     }
@@ -63,6 +64,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return String. The ID of the file system whose tags you want to modify.
      *         This operation modifies only the tags and not the file system.
      */
+
     public String getFileSystemId() {
         return this.fileSystemId;
     }
@@ -79,6 +81,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withFileSystemId(String fileSystemId) {
         setFileSystemId(fileSystemId);
         return this;
@@ -93,6 +96,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return An array of <code>Tag</code> objects to add. Each
      *         <code>Tag</code> object is a key-value pair.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -110,6 +114,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      *        An array of <code>Tag</code> objects to add. Each <code>Tag</code>
      *        object is a key-value pair.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -137,6 +142,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -159,6 +165,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;

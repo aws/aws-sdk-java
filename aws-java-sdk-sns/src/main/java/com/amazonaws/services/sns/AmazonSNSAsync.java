@@ -53,9 +53,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param addPermissionRequest
+     * @return A Java Future containing the result of the AddPermission
+     *         operation returned by the service.
      * @sample AmazonSNSAsync.AddPermission
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest addPermissionRequest);
 
     /**
@@ -70,19 +72,22 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddPermission
+     *         operation returned by the service.
      * @sample AmazonSNSAsyncHandler.AddPermission
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             AddPermissionRequest addPermissionRequest,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the AddPermission operation.
      *
      * @see #addPermissionAsync(AddPermissionRequest)
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(String topicArn,
-            String label, java.util.List<String> aWSAccountIds,
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
+            String topicArn, String label,
+            java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames);
 
     /**
@@ -92,12 +97,12 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #addPermissionAsync(AddPermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> addPermissionAsync(
+    java.util.concurrent.Future<AddPermissionResult> addPermissionAsync(
             String topicArn,
             String label,
             java.util.List<String> aWSAccountIds,
             java.util.List<String> actionNames,
-            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AddPermissionRequest, AddPermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -392,9 +397,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param deleteEndpointRequest
      *        Input for DeleteEndpoint action.
+     * @return A Java Future containing the result of the DeleteEndpoint
+     *         operation returned by the service.
      * @sample AmazonSNSAsync.DeleteEndpoint
      */
-    java.util.concurrent.Future<Void> deleteEndpointAsync(
+    java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             DeleteEndpointRequest deleteEndpointRequest);
 
     /**
@@ -412,11 +419,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEndpoint
+     *         operation returned by the service.
      * @sample AmazonSNSAsyncHandler.DeleteEndpoint
      */
-    java.util.concurrent.Future<Void> deleteEndpointAsync(
+    java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(
             DeleteEndpointRequest deleteEndpointRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -428,9 +437,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param deletePlatformApplicationRequest
      *        Input for DeletePlatformApplication action.
+     * @return A Java Future containing the result of the
+     *         DeletePlatformApplication operation returned by the service.
      * @sample AmazonSNSAsync.DeletePlatformApplication
      */
-    java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+    java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(
             DeletePlatformApplicationRequest deletePlatformApplicationRequest);
 
     /**
@@ -448,11 +459,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeletePlatformApplication operation returned by the service.
      * @sample AmazonSNSAsyncHandler.DeletePlatformApplication
      */
-    java.util.concurrent.Future<Void> deletePlatformApplicationAsync(
+    java.util.concurrent.Future<DeletePlatformApplicationResult> deletePlatformApplicationAsync(
             DeletePlatformApplicationRequest deletePlatformApplicationRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePlatformApplicationRequest, DeletePlatformApplicationResult> asyncHandler);
 
     /**
      * <p>
@@ -463,9 +476,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * </p>
      * 
      * @param deleteTopicRequest
+     * @return A Java Future containing the result of the DeleteTopic operation
+     *         returned by the service.
      * @sample AmazonSNSAsync.DeleteTopic
      */
-    java.util.concurrent.Future<Void> deleteTopicAsync(
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             DeleteTopicRequest deleteTopicRequest);
 
     /**
@@ -482,18 +497,21 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopic operation
+     *         returned by the service.
      * @sample AmazonSNSAsyncHandler.DeleteTopic
      */
-    java.util.concurrent.Future<Void> deleteTopicAsync(
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             DeleteTopicRequest deleteTopicRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the DeleteTopic operation.
      *
      * @see #deleteTopicAsync(DeleteTopicRequest)
      */
-    java.util.concurrent.Future<Void> deleteTopicAsync(String topicArn);
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
+            String topicArn);
 
     /**
      * Simplified method form for invoking the DeleteTopic operation with an
@@ -502,9 +520,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #deleteTopicAsync(DeleteTopicRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> deleteTopicAsync(
+    java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(
             String topicArn,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler);
 
     /**
      * <p>
@@ -1166,9 +1184,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param removePermissionRequest
      *        Input for RemovePermission action.
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AmazonSNSAsync.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest);
 
     /**
@@ -1183,19 +1203,21 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemovePermission
+     *         operation returned by the service.
      * @sample AmazonSNSAsyncHandler.RemovePermission
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             RemovePermissionRequest removePermissionRequest,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the RemovePermission operation.
      *
      * @see #removePermissionAsync(RemovePermissionRequest)
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(String topicArn,
-            String label);
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
+            String topicArn, String label);
 
     /**
      * Simplified method form for invoking the RemovePermission operation with
@@ -1204,10 +1226,10 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #removePermissionAsync(RemovePermissionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> removePermissionAsync(
+    java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(
             String topicArn,
             String label,
-            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -1220,9 +1242,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param setEndpointAttributesRequest
      *        Input for SetEndpointAttributes action.
+     * @return A Java Future containing the result of the SetEndpointAttributes
+     *         operation returned by the service.
      * @sample AmazonSNSAsync.SetEndpointAttributes
      */
-    java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+    java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(
             SetEndpointAttributesRequest setEndpointAttributesRequest);
 
     /**
@@ -1241,11 +1265,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetEndpointAttributes
+     *         operation returned by the service.
      * @sample AmazonSNSAsyncHandler.SetEndpointAttributes
      */
-    java.util.concurrent.Future<Void> setEndpointAttributesAsync(
+    java.util.concurrent.Future<SetEndpointAttributesResult> setEndpointAttributesAsync(
             SetEndpointAttributesRequest setEndpointAttributesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetEndpointAttributesRequest, SetEndpointAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1258,9 +1284,12 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param setPlatformApplicationAttributesRequest
      *        Input for SetPlatformApplicationAttributes action.
+     * @return A Java Future containing the result of the
+     *         SetPlatformApplicationAttributes operation returned by the
+     *         service.
      * @sample AmazonSNSAsync.SetPlatformApplicationAttributes
      */
-    java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+    java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest);
 
     /**
@@ -1279,11 +1308,14 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetPlatformApplicationAttributes operation returned by the
+     *         service.
      * @sample AmazonSNSAsyncHandler.SetPlatformApplicationAttributes
      */
-    java.util.concurrent.Future<Void> setPlatformApplicationAttributesAsync(
+    java.util.concurrent.Future<SetPlatformApplicationAttributesResult> setPlatformApplicationAttributesAsync(
             SetPlatformApplicationAttributesRequest setPlatformApplicationAttributesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1293,9 +1325,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param setSubscriptionAttributesRequest
      *        Input for SetSubscriptionAttributes action.
+     * @return A Java Future containing the result of the
+     *         SetSubscriptionAttributes operation returned by the service.
      * @sample AmazonSNSAsync.SetSubscriptionAttributes
      */
-    java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             SetSubscriptionAttributesRequest setSubscriptionAttributesRequest);
 
     /**
@@ -1311,11 +1345,13 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetSubscriptionAttributes operation returned by the service.
      * @sample AmazonSNSAsyncHandler.SetSubscriptionAttributes
      */
-    java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             SetSubscriptionAttributesRequest setSubscriptionAttributesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the SetSubscriptionAttributes
@@ -1323,7 +1359,7 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest)
      */
-    java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             String subscriptionArn, String attributeName, String attributeValue);
 
     /**
@@ -1333,11 +1369,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #setSubscriptionAttributesAsync(SetSubscriptionAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> setSubscriptionAttributesAsync(
+    java.util.concurrent.Future<SetSubscriptionAttributesResult> setSubscriptionAttributesAsync(
             String subscriptionArn,
             String attributeName,
             String attributeValue,
-            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetSubscriptionAttributesRequest, SetSubscriptionAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1346,9 +1382,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param setTopicAttributesRequest
      *        Input for SetTopicAttributes action.
+     * @return A Java Future containing the result of the SetTopicAttributes
+     *         operation returned by the service.
      * @sample AmazonSNSAsync.SetTopicAttributes
      */
-    java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             SetTopicAttributesRequest setTopicAttributesRequest);
 
     /**
@@ -1363,19 +1401,21 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetTopicAttributes
+     *         operation returned by the service.
      * @sample AmazonSNSAsyncHandler.SetTopicAttributes
      */
-    java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             SetTopicAttributesRequest setTopicAttributesRequest,
-            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the SetTopicAttributes operation.
      *
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest)
      */
-    java.util.concurrent.Future<Void> setTopicAttributesAsync(String topicArn,
-            String attributeName, String attributeValue);
+    java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
+            String topicArn, String attributeName, String attributeValue);
 
     /**
      * Simplified method form for invoking the SetTopicAttributes operation with
@@ -1384,11 +1424,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #setTopicAttributesAsync(SetTopicAttributesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> setTopicAttributesAsync(
+    java.util.concurrent.Future<SetTopicAttributesResult> setTopicAttributesAsync(
             String topicArn,
             String attributeName,
             String attributeValue,
-            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetTopicAttributesRequest, SetTopicAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -1465,9 +1505,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * 
      * @param unsubscribeRequest
      *        Input for Unsubscribe action.
+     * @return A Java Future containing the result of the Unsubscribe operation
+     *         returned by the service.
      * @sample AmazonSNSAsync.Unsubscribe
      */
-    java.util.concurrent.Future<Void> unsubscribeAsync(
+    java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             UnsubscribeRequest unsubscribeRequest);
 
     /**
@@ -1489,18 +1531,21 @@ public interface AmazonSNSAsync extends AmazonSNS {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the Unsubscribe operation
+     *         returned by the service.
      * @sample AmazonSNSAsyncHandler.Unsubscribe
      */
-    java.util.concurrent.Future<Void> unsubscribeAsync(
+    java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             UnsubscribeRequest unsubscribeRequest,
-            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the Unsubscribe operation.
      *
      * @see #unsubscribeAsync(UnsubscribeRequest)
      */
-    java.util.concurrent.Future<Void> unsubscribeAsync(String subscriptionArn);
+    java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
+            String subscriptionArn);
 
     /**
      * Simplified method form for invoking the Unsubscribe operation with an
@@ -1509,8 +1554,8 @@ public interface AmazonSNSAsync extends AmazonSNS {
      * @see #unsubscribeAsync(UnsubscribeRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> unsubscribeAsync(
+    java.util.concurrent.Future<UnsubscribeResult> unsubscribeAsync(
             String subscriptionArn,
-            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeRequest, UnsubscribeResult> asyncHandler);
 
 }

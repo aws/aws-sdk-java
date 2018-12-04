@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * Ec2InstanceAttributesMarshaller
@@ -39,86 +34,85 @@ import com.amazonaws.util.json.*;
 public class Ec2InstanceAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(Ec2InstanceAttributes ec2InstanceAttributes,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (ec2InstanceAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ec2InstanceAttributes.getEc2KeyName() != null) {
-                jsonWriter.key("Ec2KeyName").value(
+                jsonGenerator.writeFieldName("Ec2KeyName").writeValue(
                         ec2InstanceAttributes.getEc2KeyName());
             }
-
             if (ec2InstanceAttributes.getEc2SubnetId() != null) {
-                jsonWriter.key("Ec2SubnetId").value(
+                jsonGenerator.writeFieldName("Ec2SubnetId").writeValue(
                         ec2InstanceAttributes.getEc2SubnetId());
             }
-
             if (ec2InstanceAttributes.getEc2AvailabilityZone() != null) {
-                jsonWriter.key("Ec2AvailabilityZone").value(
+                jsonGenerator.writeFieldName("Ec2AvailabilityZone").writeValue(
                         ec2InstanceAttributes.getEc2AvailabilityZone());
             }
-
             if (ec2InstanceAttributes.getIamInstanceProfile() != null) {
-                jsonWriter.key("IamInstanceProfile").value(
+                jsonGenerator.writeFieldName("IamInstanceProfile").writeValue(
                         ec2InstanceAttributes.getIamInstanceProfile());
             }
-
             if (ec2InstanceAttributes.getEmrManagedMasterSecurityGroup() != null) {
-                jsonWriter.key("EmrManagedMasterSecurityGroup").value(
-                        ec2InstanceAttributes
-                                .getEmrManagedMasterSecurityGroup());
+                jsonGenerator.writeFieldName("EmrManagedMasterSecurityGroup")
+                        .writeValue(
+                                ec2InstanceAttributes
+                                        .getEmrManagedMasterSecurityGroup());
             }
-
             if (ec2InstanceAttributes.getEmrManagedSlaveSecurityGroup() != null) {
-                jsonWriter.key("EmrManagedSlaveSecurityGroup")
-                        .value(ec2InstanceAttributes
-                                .getEmrManagedSlaveSecurityGroup());
+                jsonGenerator.writeFieldName("EmrManagedSlaveSecurityGroup")
+                        .writeValue(
+                                ec2InstanceAttributes
+                                        .getEmrManagedSlaveSecurityGroup());
             }
-
             if (ec2InstanceAttributes.getServiceAccessSecurityGroup() != null) {
-                jsonWriter.key("ServiceAccessSecurityGroup").value(
-                        ec2InstanceAttributes.getServiceAccessSecurityGroup());
+                jsonGenerator.writeFieldName("ServiceAccessSecurityGroup")
+                        .writeValue(
+                                ec2InstanceAttributes
+                                        .getServiceAccessSecurityGroup());
             }
 
             com.amazonaws.internal.SdkInternalList<String> additionalMasterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) ec2InstanceAttributes
                     .getAdditionalMasterSecurityGroups();
             if (!additionalMasterSecurityGroupsList.isEmpty()
                     || !additionalMasterSecurityGroupsList.isAutoConstruct()) {
-                jsonWriter.key("AdditionalMasterSecurityGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AdditionalMasterSecurityGroups");
+                jsonGenerator.writeStartArray();
                 for (String additionalMasterSecurityGroupsListValue : additionalMasterSecurityGroupsList) {
                     if (additionalMasterSecurityGroupsListValue != null) {
-                        jsonWriter
-                                .value(additionalMasterSecurityGroupsListValue);
+                        jsonGenerator
+                                .writeValue(additionalMasterSecurityGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> additionalSlaveSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) ec2InstanceAttributes
                     .getAdditionalSlaveSecurityGroups();
             if (!additionalSlaveSecurityGroupsList.isEmpty()
                     || !additionalSlaveSecurityGroupsList.isAutoConstruct()) {
-                jsonWriter.key("AdditionalSlaveSecurityGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AdditionalSlaveSecurityGroups");
+                jsonGenerator.writeStartArray();
                 for (String additionalSlaveSecurityGroupsListValue : additionalSlaveSecurityGroupsList) {
                     if (additionalSlaveSecurityGroupsListValue != null) {
-                        jsonWriter
-                                .value(additionalSlaveSecurityGroupsListValue);
+                        jsonGenerator
+                                .writeValue(additionalSlaveSecurityGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

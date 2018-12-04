@@ -47,6 +47,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * 
      * @return Information about the suites.
      */
+
     public java.util.List<Suite> getSuites() {
         return suites;
     }
@@ -59,6 +60,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * @param suites
      *        Information about the suites.
      */
+
     public void setSuites(java.util.Collection<Suite> suites) {
         if (suites == null) {
             this.suites = null;
@@ -84,6 +86,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSuitesResult withSuites(Suite... suites) {
         if (this.suites == null) {
             setSuites(new java.util.ArrayList<Suite>(suites.length));
@@ -104,6 +107,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSuitesResult withSuites(java.util.Collection<Suite> suites) {
         setSuites(suites);
         return this;
@@ -122,6 +126,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListSuitesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSuitesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,23 +56,23 @@ public class ScopeJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     scope.setComplianceResourceTypes(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("TagKey", targetDepth)) {
                     context.nextToken();
-                    scope.setTagKey(StringJsonUnmarshaller.getInstance()
+                    scope.setTagKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TagValue", targetDepth)) {
                     context.nextToken();
-                    scope.setTagValue(StringJsonUnmarshaller.getInstance()
+                    scope.setTagValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ComplianceResourceId", targetDepth)) {
                     context.nextToken();
-                    scope.setComplianceResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    scope.setComplianceResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

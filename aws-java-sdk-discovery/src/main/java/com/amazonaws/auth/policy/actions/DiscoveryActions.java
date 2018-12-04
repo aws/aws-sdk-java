@@ -1,0 +1,63 @@
+/*
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+package com.amazonaws.auth.policy.actions;
+
+import com.amazonaws.auth.policy.Action;
+
+/**
+ * The available AWS access control policy actions for AWS Application Discovery
+ * Service.
+ */
+
+public enum DiscoveryActions implements Action {
+
+    /** Represents any action executed on AWS Application Discovery Service. */
+    AllDiscoveryActions("discovery:*"),
+
+    /** Action for the CreateTags operation. */
+    CreateTags("discovery:CreateTags"),
+    /** Action for the DeleteTags operation. */
+    DeleteTags("discovery:DeleteTags"),
+    /** Action for the DescribeAgents operation. */
+    DescribeAgents("discovery:DescribeAgents"),
+    /** Action for the DescribeConfigurations operation. */
+    DescribeConfigurations("discovery:DescribeConfigurations"),
+    /** Action for the DescribeExportConfigurations operation. */
+    DescribeExportConfigurations("discovery:DescribeExportConfigurations"),
+    /** Action for the DescribeTags operation. */
+    DescribeTags("discovery:DescribeTags"),
+    /** Action for the ExportConfigurations operation. */
+    ExportConfigurations("discovery:ExportConfigurations"),
+    /** Action for the ListConfigurations operation. */
+    ListConfigurations("discovery:ListConfigurations"),
+    /** Action for the StartDataCollectionByAgentIds operation. */
+    StartDataCollectionByAgentIds("discovery:StartDataCollectionByAgentIds"),
+    /** Action for the StopDataCollectionByAgentIds operation. */
+    StopDataCollectionByAgentIds("discovery:StopDataCollectionByAgentIds"),
+
+    ;
+
+    private final String action;
+
+    private DiscoveryActions(String action) {
+        this.action = action;
+    }
+
+    public String getActionName() {
+        return this.action;
+    }
+}

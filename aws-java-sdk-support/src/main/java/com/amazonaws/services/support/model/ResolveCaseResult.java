@@ -48,6 +48,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      *        The status of the case when the <a>ResolveCase</a> request was
      *        sent.
      */
+
     public void setInitialCaseStatus(String initialCaseStatus) {
         this.initialCaseStatus = initialCaseStatus;
     }
@@ -60,6 +61,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      * @return The status of the case when the <a>ResolveCase</a> request was
      *         sent.
      */
+
     public String getInitialCaseStatus() {
         return this.initialCaseStatus;
     }
@@ -75,6 +77,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResolveCaseResult withInitialCaseStatus(String initialCaseStatus) {
         setInitialCaseStatus(initialCaseStatus);
         return this;
@@ -90,6 +93,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      *        The status of the case after the <a>ResolveCase</a> request was
      *        processed.
      */
+
     public void setFinalCaseStatus(String finalCaseStatus) {
         this.finalCaseStatus = finalCaseStatus;
     }
@@ -103,6 +107,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      * @return The status of the case after the <a>ResolveCase</a> request was
      *         processed.
      */
+
     public String getFinalCaseStatus() {
         return this.finalCaseStatus;
     }
@@ -119,6 +124,7 @@ public class ResolveCaseResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResolveCaseResult withFinalCaseStatus(String finalCaseStatus) {
         setFinalCaseStatus(finalCaseStatus);
         return this;

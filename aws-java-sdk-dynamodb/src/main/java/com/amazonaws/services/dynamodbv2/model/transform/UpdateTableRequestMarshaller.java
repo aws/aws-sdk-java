@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateTableRequest Marshaller
  */
 public class UpdateTableRequestMarshaller implements
         Marshaller<Request<UpdateTableRequest>, UpdateTableRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateTableRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateTableRequest> marshall(
             UpdateTableRequest updateTableRequest) {
@@ -63,70 +63,66 @@ public class UpdateTableRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.List<AttributeDefinition> attributeDefinitionsList = updateTableRequest
                     .getAttributeDefinitions();
             if (attributeDefinitionsList != null) {
-                jsonWriter.key("AttributeDefinitions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributeDefinitions");
+                jsonGenerator.writeStartArray();
                 for (AttributeDefinition attributeDefinitionsListValue : attributeDefinitionsList) {
                     if (attributeDefinitionsListValue != null) {
 
                         AttributeDefinitionJsonMarshaller.getInstance()
                                 .marshall(attributeDefinitionsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (updateTableRequest.getTableName() != null) {
-                jsonWriter.key("TableName").value(
+                jsonGenerator.writeFieldName("TableName").writeValue(
                         updateTableRequest.getTableName());
             }
-
             if (updateTableRequest.getProvisionedThroughput() != null) {
-                jsonWriter.key("ProvisionedThroughput");
+                jsonGenerator.writeFieldName("ProvisionedThroughput");
                 ProvisionedThroughputJsonMarshaller.getInstance().marshall(
                         updateTableRequest.getProvisionedThroughput(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
             java.util.List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesList = updateTableRequest
                     .getGlobalSecondaryIndexUpdates();
             if (globalSecondaryIndexUpdatesList != null) {
-                jsonWriter.key("GlobalSecondaryIndexUpdates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("GlobalSecondaryIndexUpdates");
+                jsonGenerator.writeStartArray();
                 for (GlobalSecondaryIndexUpdate globalSecondaryIndexUpdatesListValue : globalSecondaryIndexUpdatesList) {
                     if (globalSecondaryIndexUpdatesListValue != null) {
 
                         GlobalSecondaryIndexUpdateJsonMarshaller.getInstance()
                                 .marshall(globalSecondaryIndexUpdatesListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (updateTableRequest.getStreamSpecification() != null) {
-                jsonWriter.key("StreamSpecification");
-                StreamSpecificationJsonMarshaller.getInstance()
-                        .marshall(updateTableRequest.getStreamSpecification(),
-                                jsonWriter);
+                jsonGenerator.writeFieldName("StreamSpecification");
+                StreamSpecificationJsonMarshaller.getInstance().marshall(
+                        updateTableRequest.getStreamSpecification(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

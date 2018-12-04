@@ -39,11 +39,7 @@ public class PutScheduledUpdateGroupActionRequest extends
     private String scheduledActionName;
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      */
     private java.util.Date time;
@@ -110,6 +106,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param autoScalingGroupName
      *        The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -121,6 +118,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The name or Amazon Resource Name (ARN) of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -135,6 +133,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -149,6 +148,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param scheduledActionName
      *        The name of this scaling action.
      */
+
     public void setScheduledActionName(String scheduledActionName) {
         this.scheduledActionName = scheduledActionName;
     }
@@ -160,6 +160,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The name of this scaling action.
      */
+
     public String getScheduledActionName() {
         return this.scheduledActionName;
     }
@@ -174,6 +175,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withScheduledActionName(
             String scheduledActionName) {
         setScheduledActionName(scheduledActionName);
@@ -182,64 +184,40 @@ public class PutScheduledUpdateGroupActionRequest extends
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code>
-     *        instead.</p>
-     *        <p>
-     *        The time for this action to start. If both <code>Time</code> and
-     *        <code>StartTime</code> are specified, their values must be
-     *        identical.
+     *        This parameter is deprecated.
      */
+
     public void setTime(java.util.Date time) {
         this.time = time;
     }
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
-     * @return This parameter is deprecated; use <code>StartTime</code>
-     *         instead.</p>
-     *         <p>
-     *         The time for this action to start. If both <code>Time</code> and
-     *         <code>StartTime</code> are specified, their values must be
-     *         identical.
+     * @return This parameter is deprecated.
      */
+
     public java.util.Date getTime() {
         return this.time;
     }
 
     /**
      * <p>
-     * This parameter is deprecated; use <code>StartTime</code> instead.
-     * </p>
-     * <p>
-     * The time for this action to start. If both <code>Time</code> and
-     * <code>StartTime</code> are specified, their values must be identical.
+     * This parameter is deprecated.
      * </p>
      * 
      * @param time
-     *        This parameter is deprecated; use <code>StartTime</code>
-     *        instead.</p>
-     *        <p>
-     *        The time for this action to start. If both <code>Time</code> and
-     *        <code>StartTime</code> are specified, their values must be
-     *        identical.
+     *        This parameter is deprecated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withTime(java.util.Date time) {
         setTime(time);
         return this;
@@ -273,6 +251,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      *        with <code>Recurrence</code>, they form the boundaries of when the
      *        recurring action starts and stops.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -304,6 +283,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      *         specified with <code>Recurrence</code>, they form the boundaries
      *         of when the recurring action starts and stops.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -338,6 +318,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withStartTime(
             java.util.Date startTime) {
         setStartTime(startTime);
@@ -352,6 +333,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param endTime
      *        The time for this action to end.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -363,6 +345,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The time for this action to end.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -377,6 +360,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withEndTime(
             java.util.Date endTime) {
         setEndTime(endTime);
@@ -407,6 +391,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      *        with <code>Recurrence</code>, they form the boundaries of when the
      *        recurring action will start and stop.
      */
+
     public void setRecurrence(String recurrence) {
         this.recurrence = recurrence;
     }
@@ -434,6 +419,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      *         specified with <code>Recurrence</code>, they form the boundaries
      *         of when the recurring action will start and stop.
      */
+
     public String getRecurrence() {
         return this.recurrence;
     }
@@ -464,6 +450,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withRecurrence(String recurrence) {
         setRecurrence(recurrence);
         return this;
@@ -477,6 +464,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param minSize
      *        The minimum size for the Auto Scaling group.
      */
+
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
@@ -488,6 +476,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The minimum size for the Auto Scaling group.
      */
+
     public Integer getMinSize() {
         return this.minSize;
     }
@@ -502,6 +491,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withMinSize(Integer minSize) {
         setMinSize(minSize);
         return this;
@@ -515,6 +505,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param maxSize
      *        The maximum size for the Auto Scaling group.
      */
+
     public void setMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
     }
@@ -526,6 +517,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The maximum size for the Auto Scaling group.
      */
+
     public Integer getMaxSize() {
         return this.maxSize;
     }
@@ -540,6 +532,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withMaxSize(Integer maxSize) {
         setMaxSize(maxSize);
         return this;
@@ -553,6 +546,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group.
      */
+
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
@@ -564,6 +558,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * 
      * @return The number of EC2 instances that should be running in the group.
      */
+
     public Integer getDesiredCapacity() {
         return this.desiredCapacity;
     }
@@ -578,6 +573,7 @@ public class PutScheduledUpdateGroupActionRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutScheduledUpdateGroupActionRequest withDesiredCapacity(
             Integer desiredCapacity) {
         setDesiredCapacity(desiredCapacity);

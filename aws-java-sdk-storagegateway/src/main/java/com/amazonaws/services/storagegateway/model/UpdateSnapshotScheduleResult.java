@@ -25,27 +25,37 @@ import java.io.Serializable;
  */
 public class UpdateSnapshotScheduleResult implements Serializable, Cloneable {
 
+    /** <p/> */
     private String volumeARN;
 
     /**
+     * <p/>
+     * 
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
 
     /**
+     * <p/>
+     * 
      * @param volumeARN
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSnapshotScheduleResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;

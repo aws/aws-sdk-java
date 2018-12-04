@@ -59,11 +59,11 @@ import com.amazonaws.services.kms.model.*;
  * </p>
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We
- * strongly recommend that you <i>do not</i> use your AWS account access key ID
- * and secret key for everyday work with AWS KMS. Instead, use the access key ID
- * and secret access key for an IAM user, or you can use the AWS Security Token
- * Service to generate temporary security credentials that you can use to sign
- * requests.
+ * strongly recommend that you <i>do not</i> use your AWS account (root) access
+ * key ID and secret key for everyday work with AWS KMS. Instead, use the access
+ * key ID and secret access key for an IAM user, or you can use the AWS Security
+ * Token Service to generate temporary security credentials that you can use to
+ * sign requests.
  * </p>
  * <p>
  * All AWS KMS operations require <a href=
@@ -91,17 +91,31 @@ import com.amazonaws.services.kms.model.*;
  * following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a> - This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security
- * Token Service</a> - This guide describes how to create and use temporary
- * security credentials.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * >Signing AWS API Requests</a> - This set of topics walks you through the
- * process of signing a request using an access key ID and a secret access key.</li>
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
+ * >Temporary Security Credentials</a> - This section of the <i>IAM User
+ * Guide</i> describes how to create and use temporary security credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
+ * >Signature Version 4 Signing Process</a> - This set of topics walks you
+ * through the process of signing a request using an access key ID and a secret
+ * access key.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Commonly Used APIs</b>
@@ -112,10 +126,26 @@ import com.amazonaws.services.kms.model.*;
  * as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
- * <li><a>Encrypt</a></li>
- * <li><a>Decrypt</a></li>
- * <li><a>GenerateDataKey</a></li>
- * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+ * <li>
+ * <p>
+ * <a>Encrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>Decrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKeyWithoutPlaintext</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public interface AWSKMS {
@@ -185,8 +215,8 @@ public interface AWSKMS {
      * enable a CMK, use <a>EnableKey</a>.
      * </p>
      * <p>
-     * For more information about scheduling and canceling deletion of a CMK, go
-     * to <a href=
+     * For more information about scheduling and canceling deletion of a CMK,
+     * see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"
      * >Deleting Customer Master Keys</a> in the <i>AWS Key Management Service
      * Developer Guide</i>.
@@ -211,7 +241,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -239,6 +269,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param createAliasRequest
+     * @return Result of the CreateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -265,13 +296,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.CreateAlias
      */
-    void createAlias(CreateAliasRequest createAliasRequest);
+    CreateAliasResult createAlias(CreateAliasRequest createAliasRequest);
 
     /**
      * <p>
@@ -314,7 +345,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -324,12 +355,29 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Creates a customer master key. Customer master keys can be used to
-     * encrypt small amounts of data (less than 4K) directly, but they are most
-     * commonly used to encrypt or envelope data keys that are then used to
-     * encrypt customer data. For more information about data keys, see
-     * <a>GenerateDataKey</a> and <a>GenerateDataKeyWithoutPlaintext</a>.
+     * Creates a customer master key (CMK).
      * </p>
+     * <p>
+     * You can use a CMK to encrypt small amounts of data (4 KiB or less)
+     * directly, but CMKs are more commonly used to encrypt data encryption keys
+     * (DEKs), which are used to encrypt raw data. For more information about
+     * DEKs and the difference between CMKs and DEKs, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <a>GenerateDataKey</a> operation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * Key Management Service Concepts</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createKeyRequest
      * @return Result of the CreateKey operation returned by the service.
@@ -368,12 +416,24 @@ public interface AWSKMS {
      * <p>
      * Decrypts ciphertext. Ciphertext is plaintext that has been previously
      * encrypted by using any of the following functions:
-     * <ul>
-     * <li><a>GenerateDataKey</a></li>
-     * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
-     * <li><a>Encrypt</a></li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Note that if a caller has been granted access permissions to all keys
      * (through, for example, IAM user policies that grant <code>Decrypt</code>
@@ -414,7 +474,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -429,6 +489,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -443,13 +504,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DeleteAlias
      */
-    void deleteAlias(DeleteAliasRequest deleteAliasRequest);
+    DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest);
 
     /**
      * <p>
@@ -475,15 +536,16 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Sets the state of a master key to disabled, thereby preventing its use
-     * for cryptographic operations. For more information about how key state
-     * affects the use of a master key, go to <a href=
+     * Sets the state of a customer master key (CMK) to disabled, thereby
+     * preventing its use for cryptographic operations. For more information
+     * about how key state affects the use of a CMK, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.
      * </p>
      * 
      * @param disableKeyRequest
+     * @return Result of the DisableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -500,13 +562,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKey
      */
-    void disableKey(DisableKeyRequest disableKeyRequest);
+    DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest);
 
     /**
      * <p>
@@ -514,6 +576,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param disableKeyRotationRequest
+     * @return Result of the DisableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -533,13 +597,14 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKeyRotation
      */
-    void disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest);
+    DisableKeyRotationResult disableKeyRotation(
+            DisableKeyRotationRequest disableKeyRotationRequest);
 
     /**
      * <p>
@@ -547,6 +612,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param enableKeyRequest
+     * @return Result of the EnableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -569,13 +635,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKey
      */
-    void enableKey(EnableKeyRequest enableKeyRequest);
+    EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest);
 
     /**
      * <p>
@@ -583,6 +649,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param enableKeyRotationRequest
+     * @return Result of the EnableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -602,28 +670,37 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKeyRotation
      */
-    void enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest);
+    EnableKeyRotationResult enableKeyRotation(
+            EnableKeyRotationRequest enableKeyRotationRequest);
 
     /**
      * <p>
      * Encrypts plaintext into ciphertext by using a customer master key. The
      * <code>Encrypt</code> function has two primary use cases:
+     * </p>
      * <ul>
-     * <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a
-     * database password, or other sensitive customer information.</li>
-     * <li>If you are moving encrypted data from one region to another, you can
-     * use this API to encrypt in the new region the plaintext data key that was
+     * <li>
+     * <p>
+     * You can encrypt up to 4 KB of arbitrary data such as an RSA key, a
+     * database password, or other sensitive customer information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are moving encrypted data from one region to another, you can use
+     * this API to encrypt in the new region the plaintext data key that was
      * used to encrypt the data in the original region. This provides you with
      * an encrypted copy of the data key that can be decrypted in the new region
-     * and used there to decrypt the encrypted data.</li>
-     * </ul>
+     * and used there to decrypt the encrypted data.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * Unless you are moving encrypted data from one region to another, you
      * don't use this function to encrypt a generated data key within a region.
@@ -667,7 +744,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -692,10 +769,14 @@ public interface AWSKMS {
      * (contained in the <code>CiphertextBlob</code> field) alongside of the
      * locally encrypted data.
      * </p>
-     * <note>You should not call the <code>Encrypt</code> function to re-encrypt
-     * your data keys within a region. <code>GenerateDataKey</code> always
-     * returns the data key encrypted and tied to the customer master key that
-     * will be used to decrypt it. There is no need to decrypt it twice. </note>
+     * <note>
+     * <p>
+     * You should not call the <code>Encrypt</code> function to re-encrypt your
+     * data keys within a region. <code>GenerateDataKey</code> always returns
+     * the data key encrypted and tied to the customer master key that will be
+     * used to decrypt it. There is no need to decrypt it twice.
+     * </p>
+     * </note>
      * <p>
      * If you decide to use the optional <code>EncryptionContext</code>
      * parameter, you must also store the context in full or at least store
@@ -745,7 +826,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -792,7 +873,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -849,7 +930,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -882,7 +963,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -944,7 +1025,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -975,7 +1056,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1042,10 +1123,17 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Attaches a policy to the specified key.
+     * Attaches a key policy to the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * For more information about key policies, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"
+     * >Key Policies</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @param putKeyPolicyRequest
+     * @return Result of the PutKeyPolicy operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1057,8 +1145,6 @@ public interface AWSKMS {
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
-     * @throws InvalidArnException
-     *         The request was rejected because a specified ARN was not valid.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
      *         supported.
@@ -1076,13 +1162,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.PutKeyPolicy
      */
-    void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest);
+    PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest);
 
     /**
      * <p>
@@ -1133,7 +1219,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1147,12 +1233,26 @@ public interface AWSKMS {
      * clean up. You should revoke a grant when you intend to actively deny
      * operations that depend on it. The following are permitted to call this
      * API:
+     * </p>
      * <ul>
-     * <li>The account that created the grant</li>
-     * <li>The <code>RetiringPrincipal</code>, if present</li>
-     * <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a
-     * grantee operation</li>
+     * <li>
+     * <p>
+     * The account that created the grant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>RetiringPrincipal</code>, if present
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a
+     * grantee operation
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The grant to retire must be identified by its grant token or by a
      * combination of the key ARN and the grant ID. A grant token is a unique
      * variable-length base64-encoded string. A grant ID is a 64 character
@@ -1161,6 +1261,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param retireGrantRequest
+     * @return Result of the RetireGrant operation returned by the service.
      * @throws InvalidGrantTokenException
      *         The request was rejected because a grant token provided as part
      *         of the request is invalid.
@@ -1181,20 +1282,20 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RetireGrant
      */
-    void retireGrant(RetireGrantRequest retireGrantRequest);
+    RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest);
 
     /**
      * Simplified method form for invoking the RetireGrant operation.
      *
      * @see #retireGrant(RetireGrantRequest)
      */
-    void retireGrant();
+    RetireGrantResult retireGrant();
 
     /**
      * <p>
@@ -1203,6 +1304,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param revokeGrantRequest
+     * @return Result of the RevokeGrant operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1222,13 +1324,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RevokeGrant
      */
-    void revokeGrant(RevokeGrantRequest revokeGrantRequest);
+    RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest);
 
     /**
      * <p>
@@ -1250,7 +1352,7 @@ public interface AWSKMS {
      * </p>
      * </important>
      * <p>
-     * For more information about scheduling a CMK for deletion, go to <a href=
+     * For more information about scheduling a CMK for deletion, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"
      * >Deleting Customer Master Keys</a> in the <i>AWS Key Management Service
      * Developer Guide</i>.
@@ -1275,7 +1377,7 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1306,6 +1408,7 @@ public interface AWSKMS {
      * </p>
      * 
      * @param updateAliasRequest
+     * @return Result of the UpdateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -1320,13 +1423,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateAlias
      */
-    void updateAlias(UpdateAliasRequest updateAliasRequest);
+    UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest);
 
     /**
      * <p>
@@ -1334,6 +1437,8 @@ public interface AWSKMS {
      * </p>
      * 
      * @param updateKeyDescriptionRequest
+     * @return Result of the UpdateKeyDescription operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1350,13 +1455,13 @@ public interface AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateKeyDescription
      */
-    void updateKeyDescription(
+    UpdateKeyDescriptionResult updateKeyDescription(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest);
 
     /**

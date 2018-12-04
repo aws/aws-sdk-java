@@ -323,6 +323,21 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(
+            DescribeLimitsRequest request) {
+
+        return describeLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(
+            DescribeLimitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(
             DescribeTableRequest request) {
 

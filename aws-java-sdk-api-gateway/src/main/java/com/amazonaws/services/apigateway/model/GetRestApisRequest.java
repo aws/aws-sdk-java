@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request to list existing <a>RestApis</a> defined for your collection.
+ * The GET request to list existing <a>RestApis</a> defined for your collection.
  * </p>
  */
 public class GetRestApisRequest extends AmazonWebServiceRequest implements
@@ -53,6 +53,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      *        The position of the current <a>RestApis</a> resource in the
      *        collection to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -66,6 +67,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      * @return The position of the current <a>RestApis</a> resource in the
      *         collection to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -82,6 +84,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApisRequest withPosition(String position) {
         setPosition(position);
         return this;
@@ -99,6 +102,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      *        to get information about. The default limit is 25. It should be an
      *        integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -114,6 +118,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      *         to get information about. The default limit is 25. It should be
      *         an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -132,6 +137,7 @@ public class GetRestApisRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApisRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

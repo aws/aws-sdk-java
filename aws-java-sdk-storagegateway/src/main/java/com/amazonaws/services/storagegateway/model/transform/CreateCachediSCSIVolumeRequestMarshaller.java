@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateCachediSCSIVolumeRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateCachediSCSIVolumeRequestMarshaller
         implements
         Marshaller<Request<CreateCachediSCSIVolumeRequest>, CreateCachediSCSIVolumeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateCachediSCSIVolumeRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateCachediSCSIVolumeRequest> marshall(
             CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
@@ -65,49 +66,43 @@ public class CreateCachediSCSIVolumeRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createCachediSCSIVolumeRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
                         createCachediSCSIVolumeRequest.getGatewayARN());
             }
-
             if (createCachediSCSIVolumeRequest.getVolumeSizeInBytes() != null) {
-                jsonWriter.key("VolumeSizeInBytes").value(
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
                         createCachediSCSIVolumeRequest.getVolumeSizeInBytes());
             }
-
             if (createCachediSCSIVolumeRequest.getSnapshotId() != null) {
-                jsonWriter.key("SnapshotId").value(
+                jsonGenerator.writeFieldName("SnapshotId").writeValue(
                         createCachediSCSIVolumeRequest.getSnapshotId());
             }
-
             if (createCachediSCSIVolumeRequest.getTargetName() != null) {
-                jsonWriter.key("TargetName").value(
+                jsonGenerator.writeFieldName("TargetName").writeValue(
                         createCachediSCSIVolumeRequest.getTargetName());
             }
-
             if (createCachediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
                         createCachediSCSIVolumeRequest.getNetworkInterfaceId());
             }
-
             if (createCachediSCSIVolumeRequest.getClientToken() != null) {
-                jsonWriter.key("ClientToken").value(
+                jsonGenerator.writeFieldName("ClientToken").writeValue(
                         createCachediSCSIVolumeRequest.getClientToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

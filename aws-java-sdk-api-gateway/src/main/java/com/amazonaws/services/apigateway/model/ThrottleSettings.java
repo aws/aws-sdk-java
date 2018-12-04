@@ -46,6 +46,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * @param burstLimit
      *        Returns the burstLimit when <b>ThrottleSettings</b> is called.
      */
+
     public void setBurstLimit(Integer burstLimit) {
         this.burstLimit = burstLimit;
     }
@@ -57,6 +58,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * 
      * @return Returns the burstLimit when <b>ThrottleSettings</b> is called.
      */
+
     public Integer getBurstLimit() {
         return this.burstLimit;
     }
@@ -71,6 +73,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThrottleSettings withBurstLimit(Integer burstLimit) {
         setBurstLimit(burstLimit);
         return this;
@@ -84,6 +87,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * @param rateLimit
      *        Returns the rateLimit when <b>ThrottleSettings</b> is called.
      */
+
     public void setRateLimit(Double rateLimit) {
         this.rateLimit = rateLimit;
     }
@@ -95,6 +99,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * 
      * @return Returns the rateLimit when <b>ThrottleSettings</b> is called.
      */
+
     public Double getRateLimit() {
         return this.rateLimit;
     }
@@ -109,6 +114,7 @@ public class ThrottleSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ThrottleSettings withRateLimit(Double rateLimit) {
         setRateLimit(rateLimit);
         return this;

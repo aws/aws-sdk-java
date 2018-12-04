@@ -79,6 +79,7 @@ public class Rule implements Serializable, Cloneable {
      * @param name
      *        The rule's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -90,6 +91,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @return The rule's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -104,6 +106,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withName(String name) {
         setName(name);
         return this;
@@ -117,6 +120,7 @@ public class Rule implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the rule.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -128,6 +132,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the rule.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -142,6 +147,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withArn(String arn) {
         setArn(arn);
         return this;
@@ -155,6 +161,7 @@ public class Rule implements Serializable, Cloneable {
      * @param eventPattern
      *        The event pattern of the rule.
      */
+
     public void setEventPattern(String eventPattern) {
         this.eventPattern = eventPattern;
     }
@@ -166,6 +173,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @return The event pattern of the rule.
      */
+
     public String getEventPattern() {
         return this.eventPattern;
     }
@@ -180,6 +188,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withEventPattern(String eventPattern) {
         setEventPattern(eventPattern);
         return this;
@@ -194,6 +203,7 @@ public class Rule implements Serializable, Cloneable {
      *        The rule's state.
      * @see RuleState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -206,6 +216,7 @@ public class Rule implements Serializable, Cloneable {
      * @return The rule's state.
      * @see RuleState
      */
+
     public String getState() {
         return this.state;
     }
@@ -221,6 +232,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see RuleState
      */
+
     public Rule withState(String state) {
         setState(state);
         return this;
@@ -233,10 +245,9 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @param state
      *        The rule's state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RuleState
      */
+
     public void setState(RuleState state) {
         this.state = state.toString();
     }
@@ -252,6 +263,7 @@ public class Rule implements Serializable, Cloneable {
      *         chained together.
      * @see RuleState
      */
+
     public Rule withState(RuleState state) {
         setState(state);
         return this;
@@ -265,6 +277,7 @@ public class Rule implements Serializable, Cloneable {
      * @param description
      *        The description of the rule.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -276,6 +289,7 @@ public class Rule implements Serializable, Cloneable {
      * 
      * @return The description of the rule.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -290,6 +304,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withDescription(String description) {
         setDescription(description);
         return this;
@@ -305,6 +320,7 @@ public class Rule implements Serializable, Cloneable {
      *        The scheduling expression. For example, "cron(0 20 * * ? *)",
      *        "rate(5 minutes)".
      */
+
     public void setScheduleExpression(String scheduleExpression) {
         this.scheduleExpression = scheduleExpression;
     }
@@ -318,6 +334,7 @@ public class Rule implements Serializable, Cloneable {
      * @return The scheduling expression. For example, "cron(0 20 * * ? *)",
      *         "rate(5 minutes)".
      */
+
     public String getScheduleExpression() {
         return this.scheduleExpression;
     }
@@ -334,6 +351,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withScheduleExpression(String scheduleExpression) {
         setScheduleExpression(scheduleExpression);
         return this;
@@ -349,6 +367,7 @@ public class Rule implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) associated with the role that is
      *        used for target invocation.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -362,6 +381,7 @@ public class Rule implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) associated with the role that is
      *         used for target invocation.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -378,6 +398,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

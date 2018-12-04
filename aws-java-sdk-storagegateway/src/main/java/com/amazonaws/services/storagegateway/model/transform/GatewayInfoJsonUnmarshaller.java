@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -51,27 +53,31 @@ public class GatewayInfoJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("GatewayId", targetDepth)) {
+                    context.nextToken();
+                    gatewayInfo.setGatewayId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    gatewayInfo.setGatewayARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    gatewayInfo.setGatewayARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
                     context.nextToken();
-                    gatewayInfo.setGatewayType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    gatewayInfo.setGatewayType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayOperationalState",
                         targetDepth)) {
                     context.nextToken();
-                    gatewayInfo
-                            .setGatewayOperationalState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    gatewayInfo.setGatewayOperationalState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayName", targetDepth)) {
                     context.nextToken();
-                    gatewayInfo.setGatewayName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    gatewayInfo.setGatewayName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

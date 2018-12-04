@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class MetricTransformationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("metricName", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setMetricName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricTransformation.setMetricName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricNamespace", targetDepth)) {
                     context.nextToken();
-                    metricTransformation
-                            .setMetricNamespace(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    metricTransformation.setMetricNamespace(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("metricValue", targetDepth)) {
                     context.nextToken();
-                    metricTransformation.setMetricValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricTransformation.setMetricValue(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

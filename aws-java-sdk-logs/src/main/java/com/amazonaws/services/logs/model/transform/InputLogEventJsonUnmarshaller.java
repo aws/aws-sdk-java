@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class InputLogEventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    inputLogEvent.setTimestamp(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    inputLogEvent.setTimestamp(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    inputLogEvent.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    inputLogEvent.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

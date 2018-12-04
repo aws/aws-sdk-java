@@ -54,6 +54,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @param id
      *        The ID of the object.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -65,6 +66,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * 
      * @return The ID of the object.
      */
+
     public String getId() {
         return this.id;
     }
@@ -79,6 +81,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineObject withId(String id) {
         setId(id);
         return this;
@@ -92,6 +95,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @param name
      *        The name of the object.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -103,6 +107,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * 
      * @return The name of the object.
      */
+
     public String getName() {
         return this.name;
     }
@@ -117,6 +122,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineObject withName(String name) {
         setName(name);
         return this;
@@ -129,6 +135,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * 
      * @return Key-value pairs that define the properties of the object.
      */
+
     public java.util.List<Field> getFields() {
         if (fields == null) {
             fields = new com.amazonaws.internal.SdkInternalList<Field>();
@@ -144,6 +151,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @param fields
      *        Key-value pairs that define the properties of the object.
      */
+
     public void setFields(java.util.Collection<Field> fields) {
         if (fields == null) {
             this.fields = null;
@@ -169,6 +177,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineObject withFields(Field... fields) {
         if (this.fields == null) {
             setFields(new com.amazonaws.internal.SdkInternalList<Field>(
@@ -190,6 +199,7 @@ public class PipelineObject implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineObject withFields(java.util.Collection<Field> fields) {
         setFields(fields);
         return this;

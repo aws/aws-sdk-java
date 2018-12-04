@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.workspaces.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * WorkspaceDirectoryMarshaller
@@ -39,99 +34,95 @@ import com.amazonaws.util.json.*;
 public class WorkspaceDirectoryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(WorkspaceDirectory workspaceDirectory,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (workspaceDirectory == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (workspaceDirectory.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         workspaceDirectory.getDirectoryId());
             }
-
             if (workspaceDirectory.getAlias() != null) {
-                jsonWriter.key("Alias").value(workspaceDirectory.getAlias());
+                jsonGenerator.writeFieldName("Alias").writeValue(
+                        workspaceDirectory.getAlias());
             }
-
             if (workspaceDirectory.getDirectoryName() != null) {
-                jsonWriter.key("DirectoryName").value(
+                jsonGenerator.writeFieldName("DirectoryName").writeValue(
                         workspaceDirectory.getDirectoryName());
             }
-
             if (workspaceDirectory.getRegistrationCode() != null) {
-                jsonWriter.key("RegistrationCode").value(
+                jsonGenerator.writeFieldName("RegistrationCode").writeValue(
                         workspaceDirectory.getRegistrationCode());
             }
 
             com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) workspaceDirectory
                     .getSubnetIds();
             if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
-                jsonWriter.key("SubnetIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("SubnetIds");
+                jsonGenerator.writeStartArray();
                 for (String subnetIdsListValue : subnetIdsList) {
                     if (subnetIdsListValue != null) {
-                        jsonWriter.value(subnetIdsListValue);
+                        jsonGenerator.writeValue(subnetIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> dnsIpAddressesList = (com.amazonaws.internal.SdkInternalList<String>) workspaceDirectory
                     .getDnsIpAddresses();
             if (!dnsIpAddressesList.isEmpty()
                     || !dnsIpAddressesList.isAutoConstruct()) {
-                jsonWriter.key("DnsIpAddresses");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DnsIpAddresses");
+                jsonGenerator.writeStartArray();
                 for (String dnsIpAddressesListValue : dnsIpAddressesList) {
                     if (dnsIpAddressesListValue != null) {
-                        jsonWriter.value(dnsIpAddressesListValue);
+                        jsonGenerator.writeValue(dnsIpAddressesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (workspaceDirectory.getCustomerUserName() != null) {
-                jsonWriter.key("CustomerUserName").value(
+                jsonGenerator.writeFieldName("CustomerUserName").writeValue(
                         workspaceDirectory.getCustomerUserName());
             }
-
             if (workspaceDirectory.getIamRoleId() != null) {
-                jsonWriter.key("IamRoleId").value(
+                jsonGenerator.writeFieldName("IamRoleId").writeValue(
                         workspaceDirectory.getIamRoleId());
             }
-
             if (workspaceDirectory.getDirectoryType() != null) {
-                jsonWriter.key("DirectoryType").value(
+                jsonGenerator.writeFieldName("DirectoryType").writeValue(
                         workspaceDirectory.getDirectoryType());
             }
-
             if (workspaceDirectory.getWorkspaceSecurityGroupId() != null) {
-                jsonWriter.key("WorkspaceSecurityGroupId").value(
-                        workspaceDirectory.getWorkspaceSecurityGroupId());
+                jsonGenerator.writeFieldName("WorkspaceSecurityGroupId")
+                        .writeValue(
+                                workspaceDirectory
+                                        .getWorkspaceSecurityGroupId());
             }
-
             if (workspaceDirectory.getState() != null) {
-                jsonWriter.key("State").value(workspaceDirectory.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        workspaceDirectory.getState());
             }
-
             if (workspaceDirectory.getWorkspaceCreationProperties() != null) {
-                jsonWriter.key("WorkspaceCreationProperties");
+                jsonGenerator.writeFieldName("WorkspaceCreationProperties");
                 DefaultWorkspaceCreationPropertiesJsonMarshaller
                         .getInstance()
                         .marshall(
                                 workspaceDirectory
                                         .getWorkspaceCreationProperties(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

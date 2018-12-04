@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class ListTagsForResourceResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceARN", targetDepth)) {
                     context.nextToken();
-                    listTagsForResourceResult
-                            .setResourceARN(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listTagsForResourceResult.setResourceARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    listTagsForResourceResult.setMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listTagsForResourceResult.setMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

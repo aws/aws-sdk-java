@@ -36,25 +36,36 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key associated with the
      * grant. This value can be a globally unique identifier or a fully
      * specified ARN of the key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String keyId;
     /**
      * <p>
      * Unique identifier of the grant to be retired. The grant ID is returned by
      * the <code>CreateGrant</code> function.
-     * <ul>
-     * <li>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Grant ID Example -
+     * 0123456789012345678901234567890123456789012345678901234567890123
+     * </p>
+     * </li>
+     * </ul>
      */
     private String grantId;
 
@@ -66,6 +77,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @param grantToken
      *        Token that identifies the grant to be retired.
      */
+
     public void setGrantToken(String grantToken) {
         this.grantToken = grantToken;
     }
@@ -77,6 +89,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * 
      * @return Token that identifies the grant to be retired.
      */
+
     public String getGrantToken() {
         return this.grantToken;
     }
@@ -91,6 +104,7 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withGrantToken(String grantToken) {
         setGrantToken(grantToken);
         return this;
@@ -101,27 +115,42 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key associated with the
      * grant. This value can be a globally unique identifier or a fully
      * specified ARN of the key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
      *        A unique identifier for the customer master key associated with
      *        the grant. This value can be a globally unique identifier or a
-     *        fully specified ARN of the key.
+     *        fully specified ARN of the key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -131,26 +160,41 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key associated with the
      * grant. This value can be a globally unique identifier or a fully
      * specified ARN of the key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return A unique identifier for the customer master key associated with
      *         the grant. This value can be a globally unique identifier or a
-     *         fully specified ARN of the key.
+     *         fully specified ARN of the key.</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -160,29 +204,44 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key associated with the
      * grant. This value can be a globally unique identifier or a fully
      * specified ARN of the key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
      *        A unique identifier for the customer master key associated with
      *        the grant. This value can be a globally unique identifier or a
-     *        fully specified ARN of the key.
+     *        fully specified ARN of the key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -192,20 +251,28 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * Unique identifier of the grant to be retired. The grant ID is returned by
      * the <code>CreateGrant</code> function.
-     * <ul>
-     * <li>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Grant ID Example -
+     * 0123456789012345678901234567890123456789012345678901234567890123
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param grantId
      *        Unique identifier of the grant to be retired. The grant ID is
-     *        returned by the <code>CreateGrant</code> function.
+     *        returned by the <code>CreateGrant</code> function.</p>
      *        <ul>
-     *        <li>Grant ID Example -
-     *        0123456789012345678901234567890123456789012345678901234567890123</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Grant ID Example -
+     *        0123456789012345678901234567890123456789012345678901234567890123
+     *        </p>
+     *        </li>
      */
+
     public void setGrantId(String grantId) {
         this.grantId = grantId;
     }
@@ -214,19 +281,27 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * Unique identifier of the grant to be retired. The grant ID is returned by
      * the <code>CreateGrant</code> function.
-     * <ul>
-     * <li>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Grant ID Example -
+     * 0123456789012345678901234567890123456789012345678901234567890123
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Unique identifier of the grant to be retired. The grant ID is
-     *         returned by the <code>CreateGrant</code> function.
+     *         returned by the <code>CreateGrant</code> function.</p>
      *         <ul>
-     *         <li>Grant ID Example -
-     *         0123456789012345678901234567890123456789012345678901234567890123</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Grant ID Example -
+     *         0123456789012345678901234567890123456789012345678901234567890123
+     *         </p>
+     *         </li>
      */
+
     public String getGrantId() {
         return this.grantId;
     }
@@ -235,22 +310,30 @@ public class RetireGrantRequest extends AmazonWebServiceRequest implements
      * <p>
      * Unique identifier of the grant to be retired. The grant ID is returned by
      * the <code>CreateGrant</code> function.
-     * <ul>
-     * <li>Grant ID Example -
-     * 0123456789012345678901234567890123456789012345678901234567890123</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Grant ID Example -
+     * 0123456789012345678901234567890123456789012345678901234567890123
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param grantId
      *        Unique identifier of the grant to be retired. The grant ID is
-     *        returned by the <code>CreateGrant</code> function.
+     *        returned by the <code>CreateGrant</code> function.</p>
      *        <ul>
-     *        <li>Grant ID Example -
-     *        0123456789012345678901234567890123456789012345678901234567890123</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Grant ID Example -
+     *        0123456789012345678901234567890123456789012345678901234567890123
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RetireGrantRequest withGrantId(String grantId) {
         setGrantId(grantId);
         return this;

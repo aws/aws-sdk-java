@@ -42,6 +42,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements
      * @param id
      *        The identifier of the pipeline that you want to delete.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -53,6 +54,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the pipeline that you want to delete.
      */
+
     public String getId() {
         return this.id;
     }
@@ -67,6 +69,7 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeletePipelineRequest withId(String id) {
         setId(id);
         return this;

@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListHostedZonesByNameRequest Marshaller
@@ -59,25 +62,19 @@ public class ListHostedZonesByNameRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String dNSName = (listHostedZonesByNameRequest.getDNSName() == null) ? null
-                : StringUtils.fromString(listHostedZonesByNameRequest
-                        .getDNSName());
-        if (dNSName != null) {
-            request.addParameter("dnsname", dNSName);
+        if (listHostedZonesByNameRequest.getDNSName() != null) {
+            request.addParameter("dnsname", StringUtils
+                    .fromString(listHostedZonesByNameRequest.getDNSName()));
         }
 
-        String hostedZoneId = (listHostedZonesByNameRequest.getHostedZoneId() == null) ? null
-                : StringUtils.fromString(listHostedZonesByNameRequest
-                        .getHostedZoneId());
-        if (hostedZoneId != null) {
-            request.addParameter("hostedzoneid", hostedZoneId);
+        if (listHostedZonesByNameRequest.getHostedZoneId() != null) {
+            request.addParameter("hostedzoneid", StringUtils
+                    .fromString(listHostedZonesByNameRequest.getHostedZoneId()));
         }
 
-        String maxItems = (listHostedZonesByNameRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listHostedZonesByNameRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listHostedZonesByNameRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listHostedZonesByNameRequest.getMaxItems()));
         }
 
         return request;

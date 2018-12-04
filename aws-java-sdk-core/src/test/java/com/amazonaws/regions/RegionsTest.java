@@ -27,16 +27,17 @@ public class RegionsTest {
 
     @Test
     public void testDefaultDomain() {
-        Region region = new Region("region", null);
+        Region region = new Region(new InMemoryRegionImpl("region", null));
         Assert.assertEquals("amazonaws.com", region.getDomain());
     }
 
     @Test
     public void testSetEndpointByRegion() {
 
-        Region region = new Region("region", "example.com");
-        region.getServiceEndpoints().put("service",
-                                         "service-region.example.com");
+        InMemoryRegionImpl regionImpl = new InMemoryRegionImpl("region", "example.com");
+        regionImpl.addEndpoint("service",
+                "service-region.example.com");
+        Region region = new Region(regionImpl);
 
         // This should use the configured region.
         AmazonServiceClient service = new AmazonServiceClient();

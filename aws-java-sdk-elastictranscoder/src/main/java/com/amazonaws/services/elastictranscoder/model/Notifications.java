@@ -68,6 +68,7 @@ public class Notifications implements Serializable, Cloneable {
      *        want to notify when Elastic Transcoder has started to process the
      *        job.
      */
+
     public void setProgressing(String progressing) {
         this.progressing = progressing;
     }
@@ -82,6 +83,7 @@ public class Notifications implements Serializable, Cloneable {
      *         you want to notify when Elastic Transcoder has started to process
      *         the job.
      */
+
     public String getProgressing() {
         return this.progressing;
     }
@@ -99,6 +101,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Notifications withProgressing(String progressing) {
         setProgressing(progressing);
         return this;
@@ -114,6 +117,7 @@ public class Notifications implements Serializable, Cloneable {
      *        The Amazon SNS topic that you want to notify when Elastic
      *        Transcoder has finished processing the job.
      */
+
     public void setCompleted(String completed) {
         this.completed = completed;
     }
@@ -127,6 +131,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return The Amazon SNS topic that you want to notify when Elastic
      *         Transcoder has finished processing the job.
      */
+
     public String getCompleted() {
         return this.completed;
     }
@@ -143,6 +148,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Notifications withCompleted(String completed) {
         setCompleted(completed);
         return this;
@@ -158,6 +164,7 @@ public class Notifications implements Serializable, Cloneable {
      *        The Amazon SNS topic that you want to notify when Elastic
      *        Transcoder encounters a warning condition.
      */
+
     public void setWarning(String warning) {
         this.warning = warning;
     }
@@ -171,6 +178,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return The Amazon SNS topic that you want to notify when Elastic
      *         Transcoder encounters a warning condition.
      */
+
     public String getWarning() {
         return this.warning;
     }
@@ -187,6 +195,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Notifications withWarning(String warning) {
         setWarning(warning);
         return this;
@@ -202,6 +211,7 @@ public class Notifications implements Serializable, Cloneable {
      *        The Amazon SNS topic that you want to notify when Elastic
      *        Transcoder encounters an error condition.
      */
+
     public void setError(String error) {
         this.error = error;
     }
@@ -215,6 +225,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return The Amazon SNS topic that you want to notify when Elastic
      *         Transcoder encounters an error condition.
      */
+
     public String getError() {
         return this.error;
     }
@@ -231,6 +242,7 @@ public class Notifications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Notifications withError(String error) {
         setError(error);
         return this;

@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -28,6 +28,9 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The URL of the Amazon SQS queue to take action on.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -53,7 +56,9 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param label
      *        The identification of the permission to remove. This is the label
      *        added with the <a>AddPermission</a> action.
@@ -67,10 +72,16 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -79,9 +90,15 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -90,12 +107,18 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemovePermissionRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -111,6 +134,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      *        The identification of the permission to remove. This is the label
      *        added with the <a>AddPermission</a> action.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -124,6 +148,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * @return The identification of the permission to remove. This is the label
      *         added with the <a>AddPermission</a> action.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -140,6 +165,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemovePermissionRequest withLabel(String label) {
         setLabel(label);
         return this;

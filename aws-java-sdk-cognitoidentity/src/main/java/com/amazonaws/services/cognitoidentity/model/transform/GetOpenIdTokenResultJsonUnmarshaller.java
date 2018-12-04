@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class GetOpenIdTokenResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    getOpenIdTokenResult.setIdentityId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOpenIdTokenResult.setIdentityId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Token", targetDepth)) {
                     context.nextToken();
-                    getOpenIdTokenResult.setToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getOpenIdTokenResult.setToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

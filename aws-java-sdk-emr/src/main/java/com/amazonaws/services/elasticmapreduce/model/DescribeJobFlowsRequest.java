@@ -80,6 +80,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @param createdAfter
      *        Return only job flows created after this date and time.
      */
+
     public void setCreatedAfter(java.util.Date createdAfter) {
         this.createdAfter = createdAfter;
     }
@@ -91,6 +92,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Return only job flows created after this date and time.
      */
+
     public java.util.Date getCreatedAfter() {
         return this.createdAfter;
     }
@@ -105,6 +107,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsRequest withCreatedAfter(java.util.Date createdAfter) {
         setCreatedAfter(createdAfter);
         return this;
@@ -118,6 +121,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @param createdBefore
      *        Return only job flows created before this date and time.
      */
+
     public void setCreatedBefore(java.util.Date createdBefore) {
         this.createdBefore = createdBefore;
     }
@@ -129,6 +133,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Return only job flows created before this date and time.
      */
+
     public java.util.Date getCreatedBefore() {
         return this.createdBefore;
     }
@@ -143,6 +148,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsRequest withCreatedBefore(
             java.util.Date createdBefore) {
         setCreatedBefore(createdBefore);
@@ -157,6 +163,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Return only job flows whose job flow ID is contained in this
      *         list.
      */
+
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
             jobFlowIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -172,6 +179,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @param jobFlowIds
      *        Return only job flows whose job flow ID is contained in this list.
      */
+
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         if (jobFlowIds == null) {
             this.jobFlowIds = null;
@@ -198,6 +206,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
         if (this.jobFlowIds == null) {
             setJobFlowIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -219,6 +228,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeJobFlowsRequest withJobFlowIds(
             java.util.Collection<String> jobFlowIds) {
         setJobFlowIds(jobFlowIds);
@@ -233,6 +243,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      * @return Return only job flows whose state is contained in this list.
      * @see JobFlowExecutionState
      */
+
     public java.util.List<String> getJobFlowStates() {
         if (jobFlowStates == null) {
             jobFlowStates = new com.amazonaws.internal.SdkInternalList<String>();
@@ -249,6 +260,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      *        Return only job flows whose state is contained in this list.
      * @see JobFlowExecutionState
      */
+
     public void setJobFlowStates(java.util.Collection<String> jobFlowStates) {
         if (jobFlowStates == null) {
             this.jobFlowStates = null;
@@ -276,6 +288,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobFlowExecutionState
      */
+
     public DescribeJobFlowsRequest withJobFlowStates(String... jobFlowStates) {
         if (this.jobFlowStates == null) {
             setJobFlowStates(new com.amazonaws.internal.SdkInternalList<String>(
@@ -298,6 +311,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobFlowExecutionState
      */
+
     public DescribeJobFlowsRequest withJobFlowStates(
             java.util.Collection<String> jobFlowStates) {
         setJobFlowStates(jobFlowStates);
@@ -315,6 +329,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see JobFlowExecutionState
      */
+
     public DescribeJobFlowsRequest withJobFlowStates(
             JobFlowExecutionState... jobFlowStates) {
         com.amazonaws.internal.SdkInternalList<String> jobFlowStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(

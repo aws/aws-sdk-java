@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class ServiceErrorJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ServiceErrorId", targetDepth)) {
                     context.nextToken();
-                    serviceError.setServiceErrorId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceError.setServiceErrorId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    serviceError.setStackId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceError.setStackId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    serviceError.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceError.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    serviceError.setType(StringJsonUnmarshaller.getInstance()
+                    serviceError.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    serviceError.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceError.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    serviceError.setCreatedAt(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceError.setCreatedAt(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

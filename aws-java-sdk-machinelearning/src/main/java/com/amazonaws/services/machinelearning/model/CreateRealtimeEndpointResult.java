@@ -63,6 +63,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      *        <code>MLModel</code>. This value should be identical to the value
      *        of the <code>MLModelId</code> in the request.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -78,6 +79,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      *         <code>MLModel</code>. This value should be identical to the value
      *         of the <code>MLModelId</code> in the request.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -96,6 +98,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRealtimeEndpointResult withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -109,6 +112,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      * @param realtimeEndpointInfo
      *        The endpoint information of the <code>MLModel</code>
      */
+
     public void setRealtimeEndpointInfo(
             RealtimeEndpointInfo realtimeEndpointInfo) {
         this.realtimeEndpointInfo = realtimeEndpointInfo;
@@ -121,6 +125,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      * 
      * @return The endpoint information of the <code>MLModel</code>
      */
+
     public RealtimeEndpointInfo getRealtimeEndpointInfo() {
         return this.realtimeEndpointInfo;
     }
@@ -135,6 +140,7 @@ public class CreateRealtimeEndpointResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRealtimeEndpointResult withRealtimeEndpointInfo(
             RealtimeEndpointInfo realtimeEndpointInfo) {
         setRealtimeEndpointInfo(realtimeEndpointInfo);

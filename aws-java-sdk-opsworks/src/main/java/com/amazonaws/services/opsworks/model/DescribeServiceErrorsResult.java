@@ -42,6 +42,7 @@ public class DescribeServiceErrorsResult implements Serializable, Cloneable {
      * @return An array of <code>ServiceError</code> objects that describe the
      *         specified service errors.
      */
+
     public java.util.List<ServiceError> getServiceErrors() {
         if (serviceErrors == null) {
             serviceErrors = new com.amazonaws.internal.SdkInternalList<ServiceError>();
@@ -59,6 +60,7 @@ public class DescribeServiceErrorsResult implements Serializable, Cloneable {
      *        An array of <code>ServiceError</code> objects that describe the
      *        specified service errors.
      */
+
     public void setServiceErrors(
             java.util.Collection<ServiceError> serviceErrors) {
         if (serviceErrors == null) {
@@ -88,6 +90,7 @@ public class DescribeServiceErrorsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsResult withServiceErrors(
             ServiceError... serviceErrors) {
         if (this.serviceErrors == null) {
@@ -112,6 +115,7 @@ public class DescribeServiceErrorsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServiceErrorsResult withServiceErrors(
             java.util.Collection<ServiceError> serviceErrors) {
         setServiceErrors(serviceErrors);

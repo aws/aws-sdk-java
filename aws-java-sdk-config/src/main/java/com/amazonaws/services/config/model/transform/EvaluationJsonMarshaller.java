@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EvaluationMarshaller
@@ -39,42 +34,41 @@ import com.amazonaws.util.json.*;
 public class EvaluationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Evaluation evaluation, JSONWriter jsonWriter) {
+    public void marshall(Evaluation evaluation,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (evaluation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluation.getComplianceResourceType() != null) {
-                jsonWriter.key("ComplianceResourceType").value(
-                        evaluation.getComplianceResourceType());
+                jsonGenerator.writeFieldName("ComplianceResourceType")
+                        .writeValue(evaluation.getComplianceResourceType());
             }
-
             if (evaluation.getComplianceResourceId() != null) {
-                jsonWriter.key("ComplianceResourceId").value(
-                        evaluation.getComplianceResourceId());
+                jsonGenerator.writeFieldName("ComplianceResourceId")
+                        .writeValue(evaluation.getComplianceResourceId());
             }
-
             if (evaluation.getComplianceType() != null) {
-                jsonWriter.key("ComplianceType").value(
+                jsonGenerator.writeFieldName("ComplianceType").writeValue(
                         evaluation.getComplianceType());
             }
-
             if (evaluation.getAnnotation() != null) {
-                jsonWriter.key("Annotation").value(evaluation.getAnnotation());
+                jsonGenerator.writeFieldName("Annotation").writeValue(
+                        evaluation.getAnnotation());
             }
-
             if (evaluation.getOrderingTimestamp() != null) {
-                jsonWriter.key("OrderingTimestamp").value(
+                jsonGenerator.writeFieldName("OrderingTimestamp").writeValue(
                         evaluation.getOrderingTimestamp());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

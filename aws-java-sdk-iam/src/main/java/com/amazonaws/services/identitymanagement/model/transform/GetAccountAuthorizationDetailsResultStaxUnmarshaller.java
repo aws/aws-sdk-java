@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,32 +54,32 @@ public class GetAccountAuthorizationDetailsResultStaxUnmarshaller
 
                 if (context
                         .testExpression("UserDetailList/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult.getUserDetailList()
-                            .add(UserDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getAccountAuthorizationDetailsResult
+                            .withUserDetailList(UserDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("GroupDetailList/member",
                         targetDepth)) {
-                    getAccountAuthorizationDetailsResult.getGroupDetailList()
-                            .add(GroupDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getAccountAuthorizationDetailsResult
+                            .withGroupDetailList(GroupDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context
                         .testExpression("RoleDetailList/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult.getRoleDetailList()
-                            .add(RoleDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getAccountAuthorizationDetailsResult
+                            .withRoleDetailList(RoleDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Policies/member", targetDepth)) {
-                    getAccountAuthorizationDetailsResult.getPolicies().add(
-                            ManagedPolicyDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getAccountAuthorizationDetailsResult
+                            .withPolicies(ManagedPolicyDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -41,6 +41,7 @@ public class DeleteIdentitiesRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of 1-60 identities that you want to delete.
      */
+
     public java.util.List<String> getIdentityIdsToDelete() {
         return identityIdsToDelete;
     }
@@ -53,6 +54,7 @@ public class DeleteIdentitiesRequest extends AmazonWebServiceRequest implements
      * @param identityIdsToDelete
      *        A list of 1-60 identities that you want to delete.
      */
+
     public void setIdentityIdsToDelete(
             java.util.Collection<String> identityIdsToDelete) {
         if (identityIdsToDelete == null) {
@@ -80,6 +82,7 @@ public class DeleteIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentitiesRequest withIdentityIdsToDelete(
             String... identityIdsToDelete) {
         if (this.identityIdsToDelete == null) {
@@ -102,6 +105,7 @@ public class DeleteIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIdentitiesRequest withIdentityIdsToDelete(
             java.util.Collection<String> identityIdsToDelete) {
         setIdentityIdsToDelete(identityIdsToDelete);

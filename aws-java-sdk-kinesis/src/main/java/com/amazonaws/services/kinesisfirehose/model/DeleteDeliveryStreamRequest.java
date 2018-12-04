@@ -42,6 +42,7 @@ public class DeleteDeliveryStreamRequest extends AmazonWebServiceRequest
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -53,6 +54,7 @@ public class DeleteDeliveryStreamRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -67,6 +69,7 @@ public class DeleteDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeliveryStreamRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);

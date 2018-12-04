@@ -61,7 +61,7 @@ public class AbstractDataPipeline implements DataPipeline {
     }
 
     @Override
-    public void deletePipeline(DeletePipelineRequest request) {
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,7 +132,7 @@ public class AbstractDataPipeline implements DataPipeline {
     }
 
     @Override
-    public void setStatus(SetStatusRequest request) {
+    public SetStatusResult setStatus(SetStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

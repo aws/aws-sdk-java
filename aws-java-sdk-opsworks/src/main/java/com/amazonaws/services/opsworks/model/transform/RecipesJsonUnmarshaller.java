@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,33 +54,28 @@ public class RecipesJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Setup", targetDepth)) {
                     context.nextToken();
-                    recipes.setSetup(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    recipes.setSetup(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Configure", targetDepth)) {
                     context.nextToken();
-                    recipes.setConfigure(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    recipes.setConfigure(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Deploy", targetDepth)) {
                     context.nextToken();
-                    recipes.setDeploy(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    recipes.setDeploy(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Undeploy", targetDepth)) {
                     context.nextToken();
-                    recipes.setUndeploy(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    recipes.setUndeploy(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Shutdown", targetDepth)) {
                     context.nextToken();
-                    recipes.setShutdown(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    recipes.setShutdown(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

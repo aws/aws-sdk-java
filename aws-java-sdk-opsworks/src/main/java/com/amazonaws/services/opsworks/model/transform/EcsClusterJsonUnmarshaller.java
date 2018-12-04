@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class EcsClusterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EcsClusterArn", targetDepth)) {
                     context.nextToken();
-                    ecsCluster.setEcsClusterArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ecsCluster.setEcsClusterArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EcsClusterName", targetDepth)) {
                     context.nextToken();
-                    ecsCluster.setEcsClusterName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ecsCluster.setEcsClusterName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    ecsCluster.setStackId(StringJsonUnmarshaller.getInstance()
+                    ecsCluster.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RegisteredAt", targetDepth)) {
                     context.nextToken();
-                    ecsCluster.setRegisteredAt(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    ecsCluster.setRegisteredAt(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

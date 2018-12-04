@@ -24,51 +24,6 @@ import java.io.Serializable;
 public class SetTagsForResourceResult implements Serializable, Cloneable {
 
     /**
-     * <p>
-     * Confirmation details of the action performed.
-     * </p>
-     */
-    private String message;
-
-    /**
-     * <p>
-     * Confirmation details of the action performed.
-     * </p>
-     * 
-     * @param message
-     *        Confirmation details of the action performed.
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * <p>
-     * Confirmation details of the action performed.
-     * </p>
-     * 
-     * @return Confirmation details of the action performed.
-     */
-    public String getMessage() {
-        return this.message;
-    }
-
-    /**
-     * <p>
-     * Confirmation details of the action performed.
-     * </p>
-     * 
-     * @param message
-     *        Confirmation details of the action performed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
-     */
-    public SetTagsForResourceResult withMessage(String message) {
-        setMessage(message);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -80,8 +35,6 @@ public class SetTagsForResourceResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMessage() != null)
-            sb.append("Message: " + getMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -96,11 +49,6 @@ public class SetTagsForResourceResult implements Serializable, Cloneable {
         if (obj instanceof SetTagsForResourceResult == false)
             return false;
         SetTagsForResourceResult other = (SetTagsForResourceResult) obj;
-        if (other.getMessage() == null ^ this.getMessage() == null)
-            return false;
-        if (other.getMessage() != null
-                && other.getMessage().equals(this.getMessage()) == false)
-            return false;
         return true;
     }
 
@@ -109,8 +57,6 @@ public class SetTagsForResourceResult implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode
-                + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
 

@@ -42,6 +42,7 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
      * @param stackName
      *        The name or the unique stack ID that is associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -54,6 +55,7 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
      * @return The name or the unique stack ID that is associated with the
      *         stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -68,6 +70,7 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelUpdateStackRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;

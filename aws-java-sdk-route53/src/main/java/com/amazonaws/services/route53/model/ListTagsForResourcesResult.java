@@ -42,6 +42,7 @@ public class ListTagsForResourcesResult implements Serializable, Cloneable {
      * @return A list of <code>ResourceTagSet</code>s containing tags associated
      *         with the specified resources.
      */
+
     public java.util.List<ResourceTagSet> getResourceTagSets() {
         if (resourceTagSets == null) {
             resourceTagSets = new com.amazonaws.internal.SdkInternalList<ResourceTagSet>();
@@ -59,6 +60,7 @@ public class ListTagsForResourcesResult implements Serializable, Cloneable {
      *        A list of <code>ResourceTagSet</code>s containing tags associated
      *        with the specified resources.
      */
+
     public void setResourceTagSets(
             java.util.Collection<ResourceTagSet> resourceTagSets) {
         if (resourceTagSets == null) {
@@ -88,6 +90,7 @@ public class ListTagsForResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourcesResult withResourceTagSets(
             ResourceTagSet... resourceTagSets) {
         if (this.resourceTagSets == null) {
@@ -112,6 +115,7 @@ public class ListTagsForResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourcesResult withResourceTagSets(
             java.util.Collection<ResourceTagSet> resourceTagSets) {
         setResourceTagSets(resourceTagSets);

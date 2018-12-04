@@ -55,33 +55,36 @@ class DynamoDBTableSchemaParser {
      * @param config
      *            The DynamoDBMapperConfig which contains the TableNameOverrides
      *            parameter used to determine the table name.
-     * @param reflector
-     *            The DynamoDBReflector that provides all the relevant getters
+     * @param registry
+     *            The DynamoDBMappingsRegistry that provides all the relevant getters
      *            of the POJO.
      */
     CreateTableRequest parseTablePojoToCreateTableRequest(
             Class<?> clazz,
             DynamoDBMapperConfig config,
-            DynamoDBReflector reflector,
+            DynamoDBMappingsRegistry registry,
             ItemConverter converter) {
 
         CreateTableRequest createTableRequest = new CreateTableRequest();
         createTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
 
+        final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
         // Primary keys
-        Method pHashKeyGetter = reflector.getPrimaryHashKeyGetter(clazz);
+        Method pHashKeyGetter = mappings.getHashKey().getter();
         AttributeDefinition pHashAttrDefinition = getKeyAttributeDefinition(pHashKeyGetter, converter);
         createTableRequest.withKeySchema(new KeySchemaElement(pHashAttrDefinition.getAttributeName(), KeyType.HASH));
         // Primary range
-        Method pRangeKeyGetter = reflector.getPrimaryRangeKeyGetter(clazz);
+        Method pRangeKeyGetter = null;
         AttributeDefinition pRangeAttrDefinition = null;
-        if (pRangeKeyGetter != null) {
+        if (mappings.hasRangeKey()) {
+            pRangeKeyGetter = mappings.getRangeKey().getter();
             pRangeAttrDefinition = getKeyAttributeDefinition(pRangeKeyGetter, converter);
             createTableRequest.withKeySchema(new KeySchemaElement(pRangeAttrDefinition.getAttributeName(), KeyType.RANGE));
         }
 
         // Parse the index schema
-        TableIndexesInfo indexesInfo = parseTableIndexes(clazz, reflector);
+        TableIndexesInfo indexesInfo = parseTableIndexes(clazz, registry);
         if ( indexesInfo.getGlobalSecondaryIndexes().isEmpty() == false ) {
             createTableRequest.setGlobalSecondaryIndexes(indexesInfo.getGlobalSecondaryIndexes());
         }
@@ -107,118 +110,55 @@ class DynamoDBTableSchemaParser {
     }
 
     /**
-     * Parse the given POJO class and return the DeleteTableRequest for the
-     * DynamoDB table it represents.
+     * Parse the given POJO class and return the DeleteTableRequest for the DynamoDB table it
+     * represents.
      *
      * @param clazz
      *            The POJO class.
      * @param config
-     *            The DynamoDBMapperConfig which contains the TableNameOverrides
-     *            parameter used to determine the table name.
+     *            The DynamoDBMapperConfig which contains the TableNameOverrides parameter used to
+     *            determine the table name.
      */
-    DeleteTableRequest parseTablePojoToDeleteTableRequest(
-            Class<?> clazz,
-            DynamoDBMapperConfig config) {
-
+    DeleteTableRequest parseTablePojoToDeleteTableRequest(Class<?> clazz, DynamoDBMapperConfig config) {
         DeleteTableRequest deleteTableRequest = new DeleteTableRequest();
         deleteTableRequest.setTableName(DynamoDBMapper.internalGetTableName(clazz, null, config));
-
         return deleteTableRequest;
     }
 
-    TableIndexesInfo parseTableIndexes(final Class<?> clazz, final DynamoDBReflector reflector) {
+    TableIndexesInfo parseTableIndexes(final Class<?> clazz, final DynamoDBMappingsRegistry registry) {
         synchronized(tableIndexesInfoCache) {
             if ( !tableIndexesInfoCache.containsKey(clazz) ) {
+                final DynamoDBMappingsRegistry.Mappings mappings = registry.mappingsOf(clazz);
+
                 TableIndexesInfo tableIndexInfo = new TableIndexesInfo();
-                String pHashName = reflector.getPrimaryHashKeyName(clazz);
+                String pHashName = mappings.getHashKey().getAttributeName();
 
-                for (Method getter : reflector.getRelevantGetters(clazz)) {
-                    // Only consider 0-arg getters
-                    if (getter.getParameterTypes().length != 0) {
-                        continue;
+                for (final DynamoDBMappingsRegistry.Mapping mapping : mappings.getMappings()) {
+                    String attributeName = mapping.getAttributeName();
+
+                    if (mapping.isIndexHashKey()) {
+                        Collection<String> gsiNames = mapping.getGlobalSecondaryIndexNamesOfIndexHashKey();
+                        for (String gsi : gsiNames) {
+                            tableIndexInfo.addGsiKeys(gsi, attributeName, null);
+                        }
+                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
                     }
 
-                    String attributeName = reflector.getAttributeName(getter);
-
-                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexHashKey.class)) {
-                        DynamoDBIndexHashKey indexHashKeyAnnotation = ReflectionUtils
-                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexHashKey.class);
-                        String gsiName = indexHashKeyAnnotation.globalSecondaryIndexName();
-                        String[] gsiNames = indexHashKeyAnnotation.globalSecondaryIndexNames();
-
-                        boolean singleGsiName = gsiName != null &&
-                                                gsiName.length() != 0;
-                        boolean multipleGsiNames = gsiNames != null &&
-                                                   gsiNames.length != 0;
-
-                        if ( singleGsiName && multipleGsiNames) {
+                    if (mapping.isIndexRangeKey()) {
+                        Collection<String> gsiNames = mapping.getGlobalSecondaryIndexNamesOfIndexRangeKey();
+                        Collection<String> lsiNames = mapping.getLocalSecondaryIndexNamesOfIndexRangeKey();
+                        if (gsiNames.isEmpty() && lsiNames.isEmpty()) {
                             throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexHashKey annotation on getter " + getter +
-                                    " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
-                        } else if ( (!singleGsiName) && (!multipleGsiNames) ) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexHashKey annotation on getter " + getter +
+                                    "@DynamoDBIndexRangeKey annotation on getter " + mapping.getter() +
                                     " doesn't contain any index name.");
                         }
-
-                        if (singleGsiName) {
-                            tableIndexInfo.addGsiKeys(gsiName, attributeName, null);
-                        } else if (multipleGsiNames) {
-                            for (String gsi : gsiNames) {
-                                tableIndexInfo.addGsiKeys(gsi, attributeName, null);
-                            }
+                        for (String gsi : gsiNames) {
+                            tableIndexInfo.addGsiKeys(gsi, null, attributeName);
                         }
-                        tableIndexInfo.addIndexKeyGetter(getter);
-                    }
-
-                    if (ReflectionUtils.getterOrFieldHasAnnotation(getter, DynamoDBIndexRangeKey.class)) {
-                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = ReflectionUtils
-                                .getAnnotationFromGetterOrField(getter, DynamoDBIndexRangeKey.class);
-                        String gsiName = indexRangeKeyAnnotation.globalSecondaryIndexName();
-                        String[] gsiNames = indexRangeKeyAnnotation.globalSecondaryIndexNames();
-                        String lsiName = indexRangeKeyAnnotation.localSecondaryIndexName();
-                        String[] lsiNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
-
-                        boolean singleGsiName = gsiName != null &&
-                                                gsiName.length() != 0;
-                        boolean multipleGsiNames = gsiNames != null &&
-                                                   gsiNames.length != 0;
-                        boolean singleLsiName = lsiName != null &&
-                                                lsiName.length() != 0;
-                        boolean multipleLsiNames = lsiNames != null &&
-                                                   lsiNames.length != 0;
-
-                        if ( singleGsiName && multipleGsiNames ) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
-                                    " contains both globalSecondaryIndexName and globalSecondaryIndexNames.");
+                        for (String lsi : lsiNames) {
+                            tableIndexInfo.addLsiRangeKey(lsi, pHashName, attributeName);
                         }
-                        if ( singleLsiName && multipleLsiNames ) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
-                                    " contains both localSecondaryIndexName and localSecondaryIndexNames.");
-                        }
-                        if ( (!singleGsiName) && (!multipleGsiNames) && (!singleLsiName) && (!multipleLsiNames) ) {
-                            throw new DynamoDBMappingException(
-                                    "@DynamoDBIndexRangeKey annotation on getter " + getter +
-                                    " doesn't contain any index name.");
-                        }
-
-                        if (singleGsiName) {
-                            tableIndexInfo.addGsiKeys(gsiName, null, attributeName);
-                        } else if (multipleGsiNames) {
-                            for (String gsi : gsiNames) {
-                                tableIndexInfo.addGsiKeys(gsi, null, attributeName);
-                            }
-                        }
-                        if (singleLsiName) {
-                            tableIndexInfo.addLsiRangeKey(lsiName, pHashName, attributeName);
-                        } else if (multipleLsiNames) {
-                            for (String lsi : lsiNames) {
-                                tableIndexInfo.addLsiRangeKey(lsi, pHashName, attributeName);
-                            }
-                        }
-                        tableIndexInfo.addIndexKeyGetter(getter);
+                        tableIndexInfo.addIndexKeyGetter(mapping.getter());
                     }
                 } // end of for loop
                 tableIndexesInfoCache.put(clazz, tableIndexInfo);

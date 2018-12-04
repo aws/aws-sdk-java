@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,49 +54,54 @@ public class TrustJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    trust.setDirectoryId(StringJsonUnmarshaller.getInstance()
+                    trust.setDirectoryId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TrustId", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustId(StringJsonUnmarshaller.getInstance()
+                    trust.setTrustId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RemoteDomainName", targetDepth)) {
                     context.nextToken();
-                    trust.setRemoteDomainName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trust.setRemoteDomainName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustType", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustType(StringJsonUnmarshaller.getInstance()
+                    trust.setTrustType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("TrustDirection", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustDirection(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trust.setTrustDirection(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TrustState", targetDepth)) {
                     context.nextToken();
-                    trust.setTrustState(StringJsonUnmarshaller.getInstance()
+                    trust.setTrustState(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CreatedDateTime", targetDepth)) {
                     context.nextToken();
-                    trust.setCreatedDateTime(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    trust.setCreatedDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    trust.setLastUpdatedDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trust.setLastUpdatedDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("StateLastUpdatedDateTime",
                         targetDepth)) {
                     context.nextToken();
-                    trust.setStateLastUpdatedDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trust.setStateLastUpdatedDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("TrustStateReason", targetDepth)) {
+                    context.nextToken();
+                    trust.setTrustStateReason(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

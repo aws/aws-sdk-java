@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,52 +54,52 @@ public class CommandJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
                     context.nextToken();
-                    command.setCommandId(StringJsonUnmarshaller.getInstance()
+                    command.setCommandId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    command.setInstanceId(StringJsonUnmarshaller.getInstance()
+                    command.setInstanceId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DeploymentId", targetDepth)) {
                     context.nextToken();
-                    command.setDeploymentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setDeploymentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    command.setCreatedAt(StringJsonUnmarshaller.getInstance()
+                    command.setCreatedAt(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("AcknowledgedAt", targetDepth)) {
                     context.nextToken();
-                    command.setAcknowledgedAt(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setAcknowledgedAt(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CompletedAt", targetDepth)) {
                     context.nextToken();
-                    command.setCompletedAt(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    command.setCompletedAt(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    command.setStatus(StringJsonUnmarshaller.getInstance()
+                    command.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ExitCode", targetDepth)) {
                     context.nextToken();
-                    command.setExitCode(IntegerJsonUnmarshaller.getInstance()
+                    command.setExitCode(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LogUrl", targetDepth)) {
                     context.nextToken();
-                    command.setLogUrl(StringJsonUnmarshaller.getInstance()
+                    command.setLogUrl(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    command.setType(StringJsonUnmarshaller.getInstance()
+                    command.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

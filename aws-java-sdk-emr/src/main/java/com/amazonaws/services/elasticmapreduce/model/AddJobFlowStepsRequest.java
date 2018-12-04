@@ -94,6 +94,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      *        returned by <a>RunJobFlow</a> and can also be obtained from
      *        <a>ListClusters</a>.
      */
+
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
@@ -109,6 +110,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      *         is returned by <a>RunJobFlow</a> and can also be obtained from
      *         <a>ListClusters</a>.
      */
+
     public String getJobFlowId() {
         return this.jobFlowId;
     }
@@ -127,6 +129,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddJobFlowStepsRequest withJobFlowId(String jobFlowId) {
         setJobFlowId(jobFlowId);
         return this;
@@ -139,6 +142,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of <a>StepConfig</a> to be executed by the job flow.
      */
+
     public java.util.List<StepConfig> getSteps() {
         if (steps == null) {
             steps = new com.amazonaws.internal.SdkInternalList<StepConfig>();
@@ -154,6 +158,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      * @param steps
      *        A list of <a>StepConfig</a> to be executed by the job flow.
      */
+
     public void setSteps(java.util.Collection<StepConfig> steps) {
         if (steps == null) {
             this.steps = null;
@@ -180,6 +185,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
         if (this.steps == null) {
             setSteps(new com.amazonaws.internal.SdkInternalList<StepConfig>(
@@ -201,6 +207,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddJobFlowStepsRequest withSteps(
             java.util.Collection<StepConfig> steps) {
         setSteps(steps);

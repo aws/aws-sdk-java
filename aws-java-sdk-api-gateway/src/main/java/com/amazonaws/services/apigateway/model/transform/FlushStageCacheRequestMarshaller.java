@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FlushStageCacheRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class FlushStageCacheRequestMarshaller implements
         Marshaller<Request<FlushStageCacheRequest>, FlushStageCacheRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public FlushStageCacheRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<FlushStageCacheRequest> marshall(
             FlushStageCacheRequest flushStageCacheRequest) {
@@ -65,14 +74,16 @@ public class FlushStageCacheRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (flushStageCacheRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(flushStageCacheRequest
-                                .getRestApiId()));
+                (flushStageCacheRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(flushStageCacheRequest
+                                        .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{stage_name}",
-                (flushStageCacheRequest.getStageName() == null) ? ""
-                        : StringUtils.fromString(flushStageCacheRequest
-                                .getStageName()));
+                (flushStageCacheRequest.getStageName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(flushStageCacheRequest
+                                        .getStageName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

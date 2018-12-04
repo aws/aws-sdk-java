@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesis.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StreamDescriptionMarshaller
@@ -39,59 +34,73 @@ import com.amazonaws.util.json.*;
 public class StreamDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StreamDescription streamDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (streamDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (streamDescription.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         streamDescription.getStreamName());
             }
-
             if (streamDescription.getStreamARN() != null) {
-                jsonWriter.key("StreamARN").value(
+                jsonGenerator.writeFieldName("StreamARN").writeValue(
                         streamDescription.getStreamARN());
             }
-
             if (streamDescription.getStreamStatus() != null) {
-                jsonWriter.key("StreamStatus").value(
+                jsonGenerator.writeFieldName("StreamStatus").writeValue(
                         streamDescription.getStreamStatus());
             }
 
             com.amazonaws.internal.SdkInternalList<Shard> shardsList = (com.amazonaws.internal.SdkInternalList<Shard>) streamDescription
                     .getShards();
             if (!shardsList.isEmpty() || !shardsList.isAutoConstruct()) {
-                jsonWriter.key("Shards");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Shards");
+                jsonGenerator.writeStartArray();
                 for (Shard shardsListValue : shardsList) {
                     if (shardsListValue != null) {
 
                         ShardJsonMarshaller.getInstance().marshall(
-                                shardsListValue, jsonWriter);
+                                shardsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (streamDescription.getHasMoreShards() != null) {
-                jsonWriter.key("HasMoreShards").value(
+                jsonGenerator.writeFieldName("HasMoreShards").writeValue(
                         streamDescription.getHasMoreShards());
             }
-
             if (streamDescription.getRetentionPeriodHours() != null) {
-                jsonWriter.key("RetentionPeriodHours").value(
-                        streamDescription.getRetentionPeriodHours());
+                jsonGenerator
+                        .writeFieldName("RetentionPeriodHours")
+                        .writeValue(streamDescription.getRetentionPeriodHours());
             }
 
-            jsonWriter.endObject();
+            com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoringList = (com.amazonaws.internal.SdkInternalList<EnhancedMetrics>) streamDescription
+                    .getEnhancedMonitoring();
+            if (!enhancedMonitoringList.isEmpty()
+                    || !enhancedMonitoringList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("EnhancedMonitoring");
+                jsonGenerator.writeStartArray();
+                for (EnhancedMetrics enhancedMonitoringListValue : enhancedMonitoringList) {
+                    if (enhancedMonitoringListValue != null) {
+
+                        EnhancedMetricsJsonMarshaller.getInstance().marshall(
+                                enhancedMonitoringListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

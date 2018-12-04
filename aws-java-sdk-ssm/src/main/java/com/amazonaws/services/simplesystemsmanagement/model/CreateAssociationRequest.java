@@ -33,11 +33,15 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
     private String name;
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      */
     private String instanceId;
-    /** The parameters for the documents runtime configuration. */
+    /**
+     * <p>
+     * The parameters for the documents runtime configuration.
+     * </p>
+     */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
@@ -48,6 +52,7 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,6 +64,7 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -73,6 +79,7 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationRequest withName(String name) {
         setName(name);
         return this;
@@ -80,70 +87,82 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
-     * @return The Windows Server instance ID.
+     * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @return The parameters for the documents runtime configuration.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @param parameters
      *        The parameters for the documents runtime configuration.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
     }
 
     /**
+     * <p>
      * The parameters for the documents runtime configuration.
+     * </p>
      * 
      * @param parameters
      *        The parameters for the documents runtime configuration.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAssociationRequest withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -166,6 +185,7 @@ public class CreateAssociationRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateAssociationRequest clearParametersEntries() {
         this.parameters = null;
         return this;

@@ -594,9 +594,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param modifyInstanceGroupsRequest
      *        Change the size of some instance groups.
+     * @return A Java Future containing the result of the ModifyInstanceGroups
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsync.ModifyInstanceGroups
      */
-    java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
+    java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest);
 
     /**
@@ -614,18 +616,20 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceGroups
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsyncHandler.ModifyInstanceGroups
      */
-    java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
+    java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             ModifyInstanceGroupsRequest modifyInstanceGroupsRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler);
 
     /**
      * Simplified method form for invoking the ModifyInstanceGroups operation.
      *
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest)
      */
-    java.util.concurrent.Future<Void> modifyInstanceGroupsAsync();
+    java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync();
 
     /**
      * Simplified method form for invoking the ModifyInstanceGroups operation
@@ -634,8 +638,8 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
-    java.util.concurrent.Future<Void> modifyInstanceGroupsAsync(
-            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, Void> asyncHandler);
+    java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler);
 
     /**
      * <p>
@@ -815,9 +819,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param setTerminationProtectionRequest
      *        The input argument to the <a>TerminationProtection</a> operation.
+     * @return A Java Future containing the result of the
+     *         SetTerminationProtection operation returned by the service.
      * @sample AmazonElasticMapReduceAsync.SetTerminationProtection
      */
-    java.util.concurrent.Future<Void> setTerminationProtectionAsync(
+    java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(
             SetTerminationProtectionRequest setTerminationProtectionRequest);
 
     /**
@@ -855,11 +861,13 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetTerminationProtection operation returned by the service.
      * @sample AmazonElasticMapReduceAsyncHandler.SetTerminationProtection
      */
-    java.util.concurrent.Future<Void> setTerminationProtectionAsync(
+    java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(
             SetTerminationProtectionRequest setTerminationProtectionRequest,
-            com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, SetTerminationProtectionResult> asyncHandler);
 
     /**
      * <p>
@@ -874,9 +882,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param setVisibleToAllUsersRequest
      *        The input to the SetVisibleToAllUsers action.
+     * @return A Java Future containing the result of the SetVisibleToAllUsers
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsync.SetVisibleToAllUsers
      */
-    java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
+    java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
 
     /**
@@ -897,11 +907,13 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetVisibleToAllUsers
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsyncHandler.SetVisibleToAllUsers
      */
-    java.util.concurrent.Future<Void> setVisibleToAllUsersAsync(
+    java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(
             SetVisibleToAllUsersRequest setVisibleToAllUsersRequest,
-            com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, SetVisibleToAllUsersResult> asyncHandler);
 
     /**
      * <p>
@@ -920,9 +932,11 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 
      * @param terminateJobFlowsRequest
      *        Input to the <a>TerminateJobFlows</a> operation.
+     * @return A Java Future containing the result of the TerminateJobFlows
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsync.TerminateJobFlows
      */
-    java.util.concurrent.Future<Void> terminateJobFlowsAsync(
+    java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(
             TerminateJobFlowsRequest terminateJobFlowsRequest);
 
     /**
@@ -947,10 +961,12 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TerminateJobFlows
+     *         operation returned by the service.
      * @sample AmazonElasticMapReduceAsyncHandler.TerminateJobFlows
      */
-    java.util.concurrent.Future<Void> terminateJobFlowsAsync(
+    java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(
             TerminateJobFlowsRequest terminateJobFlowsRequest,
-            com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler);
 
 }

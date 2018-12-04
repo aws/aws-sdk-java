@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteIntegrationRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DeleteIntegrationRequestMarshaller implements
         Marshaller<Request<DeleteIntegrationRequest>, DeleteIntegrationRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteIntegrationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteIntegrationRequest> marshall(
             DeleteIntegrationRequest deleteIntegrationRequest) {
@@ -63,21 +72,27 @@ public class DeleteIntegrationRequestMarshaller implements
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteIntegrationRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteIntegrationRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteIntegrationRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(deleteIntegrationRequest
-                                .getHttpMethod()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (deleteIntegrationRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteIntegrationRequest
+                                                .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (deleteIntegrationRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteIntegrationRequest
+                                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (deleteIntegrationRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(deleteIntegrationRequest
+                                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

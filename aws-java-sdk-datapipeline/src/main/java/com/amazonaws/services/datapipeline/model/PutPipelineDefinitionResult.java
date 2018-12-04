@@ -58,6 +58,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return The validation errors that are associated with the objects
      *         defined in <code>pipelineObjects</code>.
      */
+
     public java.util.List<ValidationError> getValidationErrors() {
         if (validationErrors == null) {
             validationErrors = new com.amazonaws.internal.SdkInternalList<ValidationError>();
@@ -75,6 +76,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      *        The validation errors that are associated with the objects defined
      *        in <code>pipelineObjects</code>.
      */
+
     public void setValidationErrors(
             java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
@@ -104,6 +106,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionResult withValidationErrors(
             ValidationError... validationErrors) {
         if (this.validationErrors == null) {
@@ -128,6 +131,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionResult withValidationErrors(
             java.util.Collection<ValidationError> validationErrors) {
         setValidationErrors(validationErrors);
@@ -143,6 +147,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return The validation warnings that are associated with the objects
      *         defined in <code>pipelineObjects</code>.
      */
+
     public java.util.List<ValidationWarning> getValidationWarnings() {
         if (validationWarnings == null) {
             validationWarnings = new com.amazonaws.internal.SdkInternalList<ValidationWarning>();
@@ -160,6 +165,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      *        The validation warnings that are associated with the objects
      *        defined in <code>pipelineObjects</code>.
      */
+
     public void setValidationWarnings(
             java.util.Collection<ValidationWarning> validationWarnings) {
         if (validationWarnings == null) {
@@ -189,6 +195,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionResult withValidationWarnings(
             ValidationWarning... validationWarnings) {
         if (this.validationWarnings == null) {
@@ -213,6 +220,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionResult withValidationWarnings(
             java.util.Collection<ValidationWarning> validationWarnings) {
         setValidationWarnings(validationWarnings);
@@ -233,6 +241,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      *        pipeline and call <code>PutPipelineDefinition</code> to commit the
      *        corrected pipeline.
      */
+
     public void setErrored(Boolean errored) {
         this.errored = errored;
     }
@@ -250,6 +259,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      *         the pipeline and call <code>PutPipelineDefinition</code> to
      *         commit the corrected pipeline.
      */
+
     public Boolean getErrored() {
         return this.errored;
     }
@@ -270,6 +280,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutPipelineDefinitionResult withErrored(Boolean errored) {
         setErrored(errored);
         return this;
@@ -288,6 +299,7 @@ public class PutPipelineDefinitionResult implements Serializable, Cloneable {
      *         the pipeline and call <code>PutPipelineDefinition</code> to
      *         commit the corrected pipeline.
      */
+
     public Boolean isErrored() {
         return this.errored;
     }

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AssociationStatusMarshaller
@@ -39,36 +34,37 @@ import com.amazonaws.util.json.*;
 public class AssociationStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AssociationStatus associationStatus,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (associationStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (associationStatus.getDate() != null) {
-                jsonWriter.key("Date").value(associationStatus.getDate());
+                jsonGenerator.writeFieldName("Date").writeValue(
+                        associationStatus.getDate());
             }
-
             if (associationStatus.getName() != null) {
-                jsonWriter.key("Name").value(associationStatus.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        associationStatus.getName());
             }
-
             if (associationStatus.getMessage() != null) {
-                jsonWriter.key("Message").value(associationStatus.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        associationStatus.getMessage());
             }
-
             if (associationStatus.getAdditionalInfo() != null) {
-                jsonWriter.key("AdditionalInfo").value(
+                jsonGenerator.writeFieldName("AdditionalInfo").writeValue(
                         associationStatus.getAdditionalInfo());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

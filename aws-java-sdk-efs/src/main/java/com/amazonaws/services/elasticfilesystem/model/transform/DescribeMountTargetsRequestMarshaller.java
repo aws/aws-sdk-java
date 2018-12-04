@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeMountTargetsRequest Marshaller
@@ -47,7 +49,14 @@ public class DescribeMountTargetsRequestMarshaller
         implements
         Marshaller<Request<DescribeMountTargetsRequest>, DescribeMountTargetsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeMountTargetsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeMountTargetsRequest> marshall(
             DescribeMountTargetsRequest describeMountTargetsRequest) {
@@ -66,32 +75,24 @@ public class DescribeMountTargetsRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String maxItems = (describeMountTargetsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromInteger(describeMountTargetsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (describeMountTargetsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils
+                    .fromInteger(describeMountTargetsRequest.getMaxItems()));
         }
 
-        String marker = (describeMountTargetsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(describeMountTargetsRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (describeMountTargetsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(describeMountTargetsRequest.getMarker()));
         }
 
-        String fileSystemId = (describeMountTargetsRequest.getFileSystemId() == null) ? null
-                : StringUtils.fromString(describeMountTargetsRequest
-                        .getFileSystemId());
-        if (fileSystemId != null) {
-            request.addParameter("FileSystemId", fileSystemId);
+        if (describeMountTargetsRequest.getFileSystemId() != null) {
+            request.addParameter("FileSystemId", StringUtils
+                    .fromString(describeMountTargetsRequest.getFileSystemId()));
         }
 
-        String mountTargetId = (describeMountTargetsRequest.getMountTargetId() == null) ? null
-                : StringUtils.fromString(describeMountTargetsRequest
-                        .getMountTargetId());
-        if (mountTargetId != null) {
-            request.addParameter("MountTargetId", mountTargetId);
+        if (describeMountTargetsRequest.getMountTargetId() != null) {
+            request.addParameter("MountTargetId", StringUtils
+                    .fromString(describeMountTargetsRequest.getMountTargetId()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

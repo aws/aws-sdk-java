@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an adds tags to on-premises instance operation.
+ * Represents the input of, and adds tags to, an on-premises instance operation.
  * </p>
  */
 public class AddTagsToOnPremisesInstancesRequest extends
@@ -31,11 +31,15 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be null or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
@@ -44,9 +48,17 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be null or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
-     * @return The tag key-value pairs to add to the on-premises instances.
+     * @return The tag key-value pairs to add to the on-premises instances.</p>
+     *         <p>
+     *         Keys and values are both required. Keys cannot be null or empty
+     *         strings. Value-only tags are not allowed.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -58,10 +70,18 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be null or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be null or empty
+     *        strings. Value-only tags are not allowed.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -76,6 +96,10 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
      * <p>
+     * Keys and values are both required. Keys cannot be null or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setTags(java.util.Collection)} or
      * {@link #withTags(java.util.Collection)} if you want to override the
@@ -83,10 +107,14 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be null or empty
+     *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -101,12 +129,20 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * <p>
      * The tag key-value pairs to add to the on-premises instances.
      * </p>
+     * <p>
+     * Keys and values are both required. Keys cannot be null or empty strings.
+     * Value-only tags are not allowed.
+     * </p>
      * 
      * @param tags
-     *        The tag key-value pairs to add to the on-premises instances.
+     *        The tag key-value pairs to add to the on-premises instances.</p>
+     *        <p>
+     *        Keys and values are both required. Keys cannot be null or empty
+     *        strings. Value-only tags are not allowed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withTags(
             java.util.Collection<Tag> tags) {
         setTags(tags);
@@ -115,11 +151,12 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
-     * @return The names of the on-premises instances to add tags to.
+     * @return The names of the on-premises instances to which to add tags.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -129,12 +166,13 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -147,7 +185,7 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -157,10 +195,11 @@ public class AddTagsToOnPremisesInstancesRequest extends
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -175,14 +214,15 @@ public class AddTagsToOnPremisesInstancesRequest extends
 
     /**
      * <p>
-     * The names of the on-premises instances to add tags to.
+     * The names of the on-premises instances to which to add tags.
      * </p>
      * 
      * @param instanceNames
-     *        The names of the on-premises instances to add tags to.
+     *        The names of the on-premises instances to which to add tags.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToOnPremisesInstancesRequest withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitoidentity.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,21 @@ public class LookupDeveloperIdentityResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    lookupDeveloperIdentityResult
-                            .setIdentityId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    lookupDeveloperIdentityResult.setIdentityId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeveloperUserIdentifierList",
                         targetDepth)) {
                     context.nextToken();
                     lookupDeveloperIdentityResult
                             .setDeveloperUserIdentifierList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    lookupDeveloperIdentityResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    lookupDeveloperIdentityResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -52,6 +52,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * 
      * @return Any validation errors that were found.
      */
+
     public java.util.List<ValidationError> getValidationErrors() {
         if (validationErrors == null) {
             validationErrors = new com.amazonaws.internal.SdkInternalList<ValidationError>();
@@ -67,6 +68,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @param validationErrors
      *        Any validation errors that were found.
      */
+
     public void setValidationErrors(
             java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
@@ -94,6 +96,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidatePipelineDefinitionResult withValidationErrors(
             ValidationError... validationErrors) {
         if (this.validationErrors == null) {
@@ -116,6 +119,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidatePipelineDefinitionResult withValidationErrors(
             java.util.Collection<ValidationError> validationErrors) {
         setValidationErrors(validationErrors);
@@ -129,6 +133,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * 
      * @return Any validation warnings that were found.
      */
+
     public java.util.List<ValidationWarning> getValidationWarnings() {
         if (validationWarnings == null) {
             validationWarnings = new com.amazonaws.internal.SdkInternalList<ValidationWarning>();
@@ -144,6 +149,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @param validationWarnings
      *        Any validation warnings that were found.
      */
+
     public void setValidationWarnings(
             java.util.Collection<ValidationWarning> validationWarnings) {
         if (validationWarnings == null) {
@@ -171,6 +177,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidatePipelineDefinitionResult withValidationWarnings(
             ValidationWarning... validationWarnings) {
         if (this.validationWarnings == null) {
@@ -193,6 +200,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidatePipelineDefinitionResult withValidationWarnings(
             java.util.Collection<ValidationWarning> validationWarnings) {
         setValidationWarnings(validationWarnings);
@@ -207,6 +215,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @param errored
      *        Indicates whether there were validation errors.
      */
+
     public void setErrored(Boolean errored) {
         this.errored = errored;
     }
@@ -218,6 +227,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * 
      * @return Indicates whether there were validation errors.
      */
+
     public Boolean getErrored() {
         return this.errored;
     }
@@ -232,6 +242,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidatePipelineDefinitionResult withErrored(Boolean errored) {
         setErrored(errored);
         return this;
@@ -244,6 +255,7 @@ public class ValidatePipelineDefinitionResult implements Serializable,
      * 
      * @return Indicates whether there were validation errors.
      */
+
     public Boolean isErrored() {
         return this.errored;
     }

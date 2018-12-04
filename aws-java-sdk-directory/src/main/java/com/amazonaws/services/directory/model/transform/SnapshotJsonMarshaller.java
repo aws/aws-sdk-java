@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SnapshotMarshaller
@@ -39,42 +34,45 @@ import com.amazonaws.util.json.*;
 public class SnapshotJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Snapshot snapshot, JSONWriter jsonWriter) {
+    public void marshall(Snapshot snapshot,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (snapshot == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (snapshot.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(snapshot.getDirectoryId());
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
+                        snapshot.getDirectoryId());
             }
-
             if (snapshot.getSnapshotId() != null) {
-                jsonWriter.key("SnapshotId").value(snapshot.getSnapshotId());
+                jsonGenerator.writeFieldName("SnapshotId").writeValue(
+                        snapshot.getSnapshotId());
             }
-
             if (snapshot.getType() != null) {
-                jsonWriter.key("Type").value(snapshot.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        snapshot.getType());
             }
-
             if (snapshot.getName() != null) {
-                jsonWriter.key("Name").value(snapshot.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        snapshot.getName());
             }
-
             if (snapshot.getStatus() != null) {
-                jsonWriter.key("Status").value(snapshot.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        snapshot.getStatus());
             }
-
             if (snapshot.getStartTime() != null) {
-                jsonWriter.key("StartTime").value(snapshot.getStartTime());
+                jsonGenerator.writeFieldName("StartTime").writeValue(
+                        snapshot.getStartTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

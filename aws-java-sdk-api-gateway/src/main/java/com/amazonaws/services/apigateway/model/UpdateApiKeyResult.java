@@ -61,9 +61,9 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
     private java.util.List<String> stageKeys;
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
@@ -82,6 +82,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @param id
      *        The identifier of the API Key.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -93,6 +94,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the API Key.
      */
+
     public String getId() {
         return this.id;
     }
@@ -107,6 +109,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withId(String id) {
         setId(id);
         return this;
@@ -120,6 +123,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @param name
      *        The name of the API Key.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -131,6 +135,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return The name of the API Key.
      */
+
     public String getName() {
         return this.name;
     }
@@ -145,6 +150,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withName(String name) {
         setName(name);
         return this;
@@ -158,6 +164,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @param description
      *        The description of the API Key.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -169,6 +176,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return The description of the API Key.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -183,6 +191,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -196,6 +205,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @param enabled
      *        Specifies whether the API Key can be used by callers.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -207,6 +217,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the API Key can be used by callers.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -221,6 +232,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -233,6 +245,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether the API Key can be used by callers.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -246,6 +259,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return A list of <a>Stage</a> resources that are associated with the
      *         <a>ApiKey</a> resource.
      */
+
     public java.util.List<String> getStageKeys() {
         return stageKeys;
     }
@@ -260,6 +274,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      *        A list of <a>Stage</a> resources that are associated with the
      *        <a>ApiKey</a> resource.
      */
+
     public void setStageKeys(java.util.Collection<String> stageKeys) {
         if (stageKeys == null) {
             this.stageKeys = null;
@@ -287,6 +302,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withStageKeys(String... stageKeys) {
         if (this.stageKeys == null) {
             setStageKeys(new java.util.ArrayList<String>(stageKeys.length));
@@ -309,6 +325,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withStageKeys(
             java.util.Collection<String> stageKeys) {
         setStageKeys(stageKeys);
@@ -317,49 +334,52 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the API Key was created, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     * @return The date when the API Key was created, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
      * <p>
-     * The date when the API Key was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date when the API Key was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        The date when the API Key was created, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;
@@ -373,6 +393,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @param lastUpdatedDate
      *        When the API Key was last updated, in ISO 8601 format.
      */
+
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
@@ -384,6 +405,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * 
      * @return When the API Key was last updated, in ISO 8601 format.
      */
+
     public java.util.Date getLastUpdatedDate() {
         return this.lastUpdatedDate;
     }
@@ -398,6 +420,7 @@ public class UpdateApiKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApiKeyResult withLastUpdatedDate(java.util.Date lastUpdatedDate) {
         setLastUpdatedDate(lastUpdatedDate);
         return this;

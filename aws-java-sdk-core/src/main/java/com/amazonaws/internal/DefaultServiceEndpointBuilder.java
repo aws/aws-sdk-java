@@ -49,11 +49,10 @@ public class DefaultServiceEndpointBuilder extends ServiceEndpointBuilder {
 
     @Override
     public URI getServiceEndpoint() {
-        String serviceEndpoint;
+        String serviceEndpoint = region.getServiceEndpoint(serviceName);
 
-        if (region.isServiceSupported(serviceName)) {
-            serviceEndpoint = stripProtocol(region.getServiceEndpoint(serviceName));
-        } else {
+        if (serviceEndpoint == null) {
+
             serviceEndpoint = String.format("%s.%s.%s", serviceName, region.getName(), region.getDomain());
 
             log.info("{" + serviceName + ", " + region.getName() + "} was not "
@@ -61,7 +60,7 @@ public class DefaultServiceEndpointBuilder extends ServiceEndpointBuilder {
                     + "endpoint using the standard pattern for this region: '" + serviceEndpoint + "'.");
 
         }
-        return toURI(serviceEndpoint);
+        return toURI(stripProtocol(serviceEndpoint));
     }
 
     private String stripProtocol(final String endpoint) {

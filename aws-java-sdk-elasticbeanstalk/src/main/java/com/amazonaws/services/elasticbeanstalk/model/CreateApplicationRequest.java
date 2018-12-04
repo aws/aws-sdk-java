@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to create an application.
+ * </p>
  */
 public class CreateApplicationRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -84,6 +86,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      *        specified name already exists, the action returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -104,6 +107,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      *         specified name already exists, the action returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -127,6 +131,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -140,6 +145,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @param description
      *        Describes the application.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -151,6 +157,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Describes the application.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -165,6 +172,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationRequest withDescription(String description) {
         setDescription(description);
         return this;

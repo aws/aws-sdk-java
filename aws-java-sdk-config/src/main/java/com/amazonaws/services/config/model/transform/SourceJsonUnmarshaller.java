@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,13 +54,13 @@ public class SourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
-                    source.setOwner(StringJsonUnmarshaller.getInstance()
+                    source.setOwner(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SourceIdentifier", targetDepth)) {
                     context.nextToken();
-                    source.setSourceIdentifier(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    source.setSourceIdentifier(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SourceDetails", targetDepth)) {
                     context.nextToken();

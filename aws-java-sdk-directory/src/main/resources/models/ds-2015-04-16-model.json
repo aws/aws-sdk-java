@@ -64,6 +64,25 @@
       ],
       "documentation":"<p>Creates a computer account in the specified directory, and joins the computer to the directory.</p>"
     },
+    "CreateConditionalForwarder":{
+      "name":"CreateConditionalForwarder",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateConditionalForwarderRequest"},
+      "output":{"shape":"CreateConditionalForwarderResult"},
+      "errors":[
+        {"shape":"EntityAlreadyExistsException"},
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Creates a conditional forwarder associated with your AWS directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain.</p>"
+    },
     "CreateDirectory":{
       "name":"CreateDirectory",
       "http":{
@@ -132,6 +151,24 @@
       ],
       "documentation":"<p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p><p>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>"
     },
+    "DeleteConditionalForwarder":{
+      "name":"DeleteConditionalForwarder",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteConditionalForwarderRequest"},
+      "output":{"shape":"DeleteConditionalForwarderResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Deletes a conditional forwarder that has been set up for your AWS directory.</p>"
+    },
     "DeleteDirectory":{
       "name":"DeleteDirectory",
       "http":{
@@ -180,6 +217,40 @@
       ],
       "documentation":"Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain."
     },
+    "DeregisterEventTopic":{
+      "name":"DeregisterEventTopic",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeregisterEventTopicRequest"},
+      "output":{"shape":"DeregisterEventTopicResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Removes the specified directory as a publisher to the specified SNS topic.</p>"
+    },
+    "DescribeConditionalForwarders":{
+      "name":"DescribeConditionalForwarders",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeConditionalForwardersRequest"},
+      "output":{"shape":"DescribeConditionalForwardersResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Obtains information about the conditional forwarders for this account.</p> <p>If no input parameters are provided for RemoteDomainNames, this request describes all conditional forwarders for the specified directory ID.</p>"
+    },
     "DescribeDirectories":{
       "name":"DescribeDirectories",
       "http":{
@@ -196,6 +267,22 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Obtains information about the directories that belong to this account.</p> <p>You can retrieve information about specific directories by passing the directory identifiers in the <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the current account are returned.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more results are available, the <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in the next call to <a>DescribeDirectories</a> to retrieve the next set of items.</p> <p>You can also specify a maximum number of return results with the <i>Limit</i> parameter.</p>"
+    },
+    "DescribeEventTopics":{
+      "name":"DescribeEventTopics",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEventTopicsRequest"},
+      "output":{"shape":"DescribeEventTopicsResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Obtains information about which SNS topics receive status messages from the specified directory.</p> <p>If no input parameters are provided, such as DirectoryId or TopicName, this request describes all of the associations in the account.</p>"
     },
     "DescribeSnapshots":{
       "name":"DescribeSnapshots",
@@ -328,6 +415,22 @@
       ],
       "documentation":"<p>Obtains the manual snapshot limits for a directory.</p>"
     },
+    "RegisterEventTopic":{
+      "name":"RegisterEventTopic",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RegisterEventTopicRequest"},
+      "output":{"shape":"RegisterEventTopicResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Associates a directory with an SNS topic. This establishes the directory as a publisher to the specified SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status. </p>"
+    },
     "RestoreFromSnapshot":{
       "name":"RestoreFromSnapshot",
       "http":{
@@ -343,6 +446,24 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Restores a directory using an existing directory snapshot.</p> <p>When you restore a directory from a snapshot, any changes made to the directory after the snapshot date are overwritten.</p> <p>This action returns as soon as the restore operation is initiated. You can monitor the progress of the restore operation by calling the <a>DescribeDirectories</a> operation with the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes to <code>Active</code>, the restore operation is complete.</p>"
+    },
+    "UpdateConditionalForwarder":{
+      "name":"UpdateConditionalForwarder",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateConditionalForwarderRequest"},
+      "output":{"shape":"UpdateConditionalForwarderResult"},
+      "errors":[
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Updates a conditional forwarder that has been set up for your AWS directory.</p>"
     },
     "UpdateRadius":{
       "name":"UpdateRadius",
@@ -473,6 +594,28 @@
       "pattern":"[\\u0020-\\u00FF]+",
       "sensitive":true
     },
+    "ConditionalForwarder":{
+      "type":"structure",
+      "members":{
+        "RemoteDomainName":{
+          "shape":"RemoteDomainName",
+          "documentation":"<p>The fully qualified domain name (FQDN) of the remote domains pointed to by the conditional forwarder.</p>"
+        },
+        "DnsIpAddrs":{
+          "shape":"DnsIpAddrs",
+          "documentation":"<p>The IP addresses of the remote DNS server associated with RemoteDomainName. This is the IP address of the DNS server that your conditional forwarder points to.</p>"
+        },
+        "ReplicationScope":{
+          "shape":"ReplicationScope",
+          "documentation":"<p>The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>, which will replicate the conditional forwarder to all of the domain controllers for your AWS directory.</p>"
+        }
+      },
+      "documentation":"<p>Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>"
+    },
+    "ConditionalForwarders":{
+      "type":"list",
+      "member":{"shape":"ConditionalForwarder"}
+    },
     "ConnectDirectoryRequest":{
       "type":"structure",
       "required":[
@@ -598,6 +741,34 @@
         }
       },
       "documentation":"<p>Contains the results for the <a>CreateComputer</a> operation.</p>"
+    },
+    "CreateConditionalForwarderRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "RemoteDomainName",
+        "DnsIpAddrs"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The directory ID of the AWS directory for which you are creating the conditional forwarder.</p>"
+        },
+        "RemoteDomainName":{
+          "shape":"RemoteDomainName",
+          "documentation":"<p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>"
+        },
+        "DnsIpAddrs":{
+          "shape":"DnsIpAddrs",
+          "documentation":"<p>The IP addresses of the remote DNS server associated with RemoteDomainName.</p>"
+        }
+      },
+      "documentation":"<p>Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.</p>"
+    },
+    "CreateConditionalForwarderResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "CreateDirectoryRequest":{
       "type":"structure",
@@ -734,7 +905,8 @@
         "TrustType":{
           "shape":"TrustType",
           "documentation":"The trust relationship type."
-        }
+        },
+        "ConditionalForwarderIpAddrs":{"shape":"DnsIpAddrs"}
       },
       "documentation":"<p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p><p>This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain.</p>"
     },
@@ -748,6 +920,29 @@
       }
     },
     "CreatedDateTime":{"type":"timestamp"},
+    "DeleteAssociatedConditionalForwarder":{"type":"boolean"},
+    "DeleteConditionalForwarderRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "RemoteDomainName"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The directory ID for which you are deleting the conditional forwarder.</p>"
+        },
+        "RemoteDomainName":{
+          "shape":"RemoteDomainName",
+          "documentation":"<p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>"
+        }
+      }
+    },
+    "DeleteConditionalForwarderResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteDirectoryRequest":{
       "type":"structure",
       "required":["DirectoryId"],
@@ -797,7 +992,8 @@
         "TrustId":{
           "shape":"TrustId",
           "documentation":"The Trust ID of the trust relationship to be deleted."
-        }
+        },
+        "DeleteAssociatedConditionalForwarder":{"shape":"DeleteAssociatedConditionalForwarder"}
       },
       "documentation":"Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the external domain."
     },
@@ -807,6 +1003,52 @@
         "TrustId":{
           "shape":"TrustId",
           "documentation":"The Trust ID of the trust relationship that was deleted."
+        }
+      }
+    },
+    "DeregisterEventTopicRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "TopicName"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>"
+        },
+        "TopicName":{
+          "shape":"TopicName",
+          "documentation":"<p>The name of the SNS topic from which to remove the directory as a publisher.</p>"
+        }
+      },
+      "documentation":"<p>Removes the specified directory as a publisher to the specified SNS topic.</p>"
+    },
+    "DeregisterEventTopicResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DescribeConditionalForwardersRequest":{
+      "type":"structure",
+      "required":["DirectoryId"],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The directory ID for which to get the list of associated conditional forwarders.</p>"
+        },
+        "RemoteDomainNames":{
+          "shape":"RemoteDomainNames",
+          "documentation":"<p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>"
+        }
+      }
+    },
+    "DescribeConditionalForwardersResult":{
+      "type":"structure",
+      "members":{
+        "ConditionalForwarders":{
+          "shape":"ConditionalForwarders",
+          "documentation":"<p>The list of conditional forwarders that have been created.</p>"
         }
       }
     },
@@ -841,6 +1083,28 @@
         }
       },
       "documentation":"<p>Contains the results of the <a>DescribeDirectories</a> operation.</p>"
+    },
+    "DescribeEventTopicsRequest":{
+      "type":"structure",
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>"
+        },
+        "TopicNames":{
+          "shape":"TopicNames",
+          "documentation":"<p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p> <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>"
+        }
+      }
+    },
+    "DescribeEventTopicsResult":{
+      "type":"structure",
+      "members":{
+        "EventTopics":{
+          "shape":"EventTopics",
+          "documentation":"<p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>"
+        }
+      }
     },
     "DescribeSnapshotsRequest":{
       "type":"structure",
@@ -1321,6 +1585,36 @@
       "documentation":"<p>The specified entity could not be found.</p>",
       "exception":true
     },
+    "EventTopic":{
+      "type":"structure",
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The Directory ID of an AWS Directory Service directory that will publish status messages to an SNS topic.</p>"
+        },
+        "TopicName":{
+          "shape":"TopicName",
+          "documentation":"<p>The name of an AWS SNS topic the receives status messages from the directory.</p>"
+        },
+        "TopicArn":{
+          "shape":"TopicArn",
+          "documentation":"<p>The SNS topic ARN (Amazon Resource Name).</p>"
+        },
+        "CreatedDateTime":{
+          "shape":"CreatedDateTime",
+          "documentation":"<p>The date and time of when you associated your directory with the SNS topic.</p>"
+        },
+        "Status":{
+          "shape":"TopicStatus",
+          "documentation":"<p>The topic registration status.</p>"
+        }
+      },
+      "documentation":"<p>Information about SNS topic and AWS Directory Service directory associations.</p>"
+    },
+    "EventTopics":{
+      "type":"list",
+      "member":{"shape":"EventTopic"}
+    },
     "ExceptionMessage":{
       "type":"string",
       "documentation":"<p>The descriptive message for the exception.</p>"
@@ -1496,9 +1790,39 @@
       "max":20,
       "min":1
     },
+    "RegisterEventTopicRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "TopicName"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The Directory ID that will publish status messages to the SNS topic.</p>"
+        },
+        "TopicName":{
+          "shape":"TopicName",
+          "documentation":"<p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>"
+        }
+      }
+    },
+    "RegisterEventTopicResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "RemoteDomainName":{
       "type":"string",
       "pattern":"^([a-zA-Z0-9]+[\\\\.-])+([a-zA-Z0-9])+[.]?$"
+    },
+    "RemoteDomainNames":{
+      "type":"list",
+      "member":{"shape":"RemoteDomainName"}
+    },
+    "ReplicationScope":{
+      "type":"string",
+      "enum":["Domain"]
     },
     "RequestId":{
       "type":"string",
@@ -1655,6 +1979,26 @@
       "type":"list",
       "member":{"shape":"SubnetId"}
     },
+    "TopicArn":{"type":"string"},
+    "TopicName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
+    },
+    "TopicNames":{
+      "type":"list",
+      "member":{"shape":"TopicName"}
+    },
+    "TopicStatus":{
+      "type":"string",
+      "enum":[
+        "Registered",
+        "Topic not found",
+        "Failed",
+        "Deleted"
+      ]
+    },
     "Trust":{
       "type":"structure",
       "members":{
@@ -1693,6 +2037,10 @@
         "StateLastUpdatedDateTime":{
           "shape":"StateLastUpdatedDateTime",
           "documentation":"The date and time that the TrustState was last updated."
+        },
+        "TrustStateReason":{
+          "shape":"TrustStateReason",
+          "documentation":"<p>The reason for the TrustState.</p>"
         }
       },
       "documentation":"Describes a trust relationship between an Microsoft AD in the AWS cloud and an external domain."
@@ -1732,6 +2080,7 @@
         "Failed"
       ]
     },
+    "TrustStateReason":{"type":"string"},
     "TrustType":{
       "type":"string",
       "enum":["Forest"]
@@ -1748,6 +2097,33 @@
       },
       "documentation":"<p>The operation is not supported.</p>",
       "exception":true
+    },
+    "UpdateConditionalForwarderRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "RemoteDomainName",
+        "DnsIpAddrs"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The directory ID of the AWS directory for which to update the conditional forwarder.</p>"
+        },
+        "RemoteDomainName":{
+          "shape":"RemoteDomainName",
+          "documentation":"<p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>"
+        },
+        "DnsIpAddrs":{
+          "shape":"DnsIpAddrs",
+          "documentation":"<p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>"
+        }
+      }
+    },
+    "UpdateConditionalForwarderResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "UpdateRadiusRequest":{
       "type":"structure",

@@ -64,6 +64,7 @@ public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest
      *        The name of the log group that is associated with the retention
      *        policy to delete.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -77,6 +78,7 @@ public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest
      * @return The name of the log group that is associated with the retention
      *         policy to delete.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -93,6 +95,7 @@ public class DeleteRetentionPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRetentionPolicyRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;

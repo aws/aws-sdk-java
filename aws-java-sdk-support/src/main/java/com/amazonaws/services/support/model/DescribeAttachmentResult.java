@@ -41,6 +41,7 @@ public class DescribeAttachmentResult implements Serializable, Cloneable {
      * @param attachment
      *        The attachment content and file name.
      */
+
     public void setAttachment(Attachment attachment) {
         this.attachment = attachment;
     }
@@ -52,6 +53,7 @@ public class DescribeAttachmentResult implements Serializable, Cloneable {
      * 
      * @return The attachment content and file name.
      */
+
     public Attachment getAttachment() {
         return this.attachment;
     }
@@ -66,6 +68,7 @@ public class DescribeAttachmentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAttachmentResult withAttachment(Attachment attachment) {
         setAttachment(attachment);
         return this;

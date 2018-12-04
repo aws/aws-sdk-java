@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ComputerMarshaller
@@ -39,43 +34,45 @@ import com.amazonaws.util.json.*;
 public class ComputerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Computer computer, JSONWriter jsonWriter) {
+    public void marshall(Computer computer,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (computer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (computer.getComputerId() != null) {
-                jsonWriter.key("ComputerId").value(computer.getComputerId());
+                jsonGenerator.writeFieldName("ComputerId").writeValue(
+                        computer.getComputerId());
             }
-
             if (computer.getComputerName() != null) {
-                jsonWriter.key("ComputerName")
-                        .value(computer.getComputerName());
+                jsonGenerator.writeFieldName("ComputerName").writeValue(
+                        computer.getComputerName());
             }
 
             com.amazonaws.internal.SdkInternalList<Attribute> computerAttributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) computer
                     .getComputerAttributes();
             if (!computerAttributesList.isEmpty()
                     || !computerAttributesList.isAutoConstruct()) {
-                jsonWriter.key("ComputerAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComputerAttributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute computerAttributesListValue : computerAttributesList) {
                     if (computerAttributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                computerAttributesListValue, jsonWriter);
+                                computerAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

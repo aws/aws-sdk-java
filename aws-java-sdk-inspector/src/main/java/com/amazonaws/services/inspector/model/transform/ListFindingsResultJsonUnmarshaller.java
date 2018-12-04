@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -51,17 +53,17 @@ public class ListFindingsResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("findingArnList", targetDepth)) {
+                if (context.testExpression("findingArns", targetDepth)) {
                     context.nextToken();
                     listFindingsResult
-                            .setFindingArnList(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setFindingArns(new ListUnmarshaller<String>(
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listFindingsResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listFindingsResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

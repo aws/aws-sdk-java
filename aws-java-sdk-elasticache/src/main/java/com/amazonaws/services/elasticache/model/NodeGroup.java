@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
@@ -24,224 +26,235 @@ import java.io.Serializable;
 public class NodeGroup implements Serializable, Cloneable {
 
     /**
-     * The identifier for the node group. A replication group contains only
-     * one node group; therefore, the node group ID is 0001.
+     * <p>
+     * The identifier for the node group. A replication group contains only one
+     * node group; therefore, the node group ID is 0001.
+     * </p>
      */
     private String nodeGroupId;
-
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
+     * </p>
      */
     private String status;
 
-    /**
-     * Represents the information required for client programs to connect to
-     * a cache node.
-     */
     private Endpoint primaryEndpoint;
-
     /**
+     * <p>
      * A list containing information about individual nodes within the node
      * group.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember> nodeGroupMembers;
+    private com.amazonaws.internal.SdkInternalList<NodeGroupMember> nodeGroupMembers;
 
     /**
-     * The identifier for the node group. A replication group contains only
-     * one node group; therefore, the node group ID is 0001.
-     *
-     * @return The identifier for the node group. A replication group contains only
-     *         one node group; therefore, the node group ID is 0001.
+     * <p>
+     * The identifier for the node group. A replication group contains only one
+     * node group; therefore, the node group ID is 0001.
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        The identifier for the node group. A replication group contains
+     *        only one node group; therefore, the node group ID is 0001.
      */
-    public String getNodeGroupId() {
-        return nodeGroupId;
-    }
-    
-    /**
-     * The identifier for the node group. A replication group contains only
-     * one node group; therefore, the node group ID is 0001.
-     *
-     * @param nodeGroupId The identifier for the node group. A replication group contains only
-     *         one node group; therefore, the node group ID is 0001.
-     */
+
     public void setNodeGroupId(String nodeGroupId) {
         this.nodeGroupId = nodeGroupId;
     }
-    
+
     /**
-     * The identifier for the node group. A replication group contains only
-     * one node group; therefore, the node group ID is 0001.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nodeGroupId The identifier for the node group. A replication group contains only
-     *         one node group; therefore, the node group ID is 0001.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier for the node group. A replication group contains only one
+     * node group; therefore, the node group ID is 0001.
+     * </p>
+     * 
+     * @return The identifier for the node group. A replication group contains
+     *         only one node group; therefore, the node group ID is 0001.
      */
+
+    public String getNodeGroupId() {
+        return this.nodeGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the node group. A replication group contains only one
+     * node group; therefore, the node group ID is 0001.
+     * </p>
+     * 
+     * @param nodeGroupId
+     *        The identifier for the node group. A replication group contains
+     *        only one node group; therefore, the node group ID is 0001.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public NodeGroup withNodeGroupId(String nodeGroupId) {
-        this.nodeGroupId = nodeGroupId;
+        setNodeGroupId(nodeGroupId);
         return this;
     }
 
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
-     *
-     * @return The current state of this replication group - <i>creating</i>,
-     *         <i>available</i>, etc.
+     * </p>
+     * 
+     * @param status
+     *        The current state of this replication group - <i>creating</i>,
+     *        <i>available</i>, etc.
      */
-    public String getStatus() {
-        return status;
-    }
-    
-    /**
-     * The current state of this replication group - <i>creating</i>,
-     * <i>available</i>, etc.
-     *
-     * @param status The current state of this replication group - <i>creating</i>,
-     *         <i>available</i>, etc.
-     */
+
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     /**
+     * <p>
      * The current state of this replication group - <i>creating</i>,
      * <i>available</i>, etc.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param status The current state of this replication group - <i>creating</i>,
+     * </p>
+     * 
+     * @return The current state of this replication group - <i>creating</i>,
      *         <i>available</i>, etc.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current state of this replication group - <i>creating</i>,
+     * <i>available</i>, etc.
+     * </p>
+     * 
+     * @param status
+     *        The current state of this replication group - <i>creating</i>,
+     *        <i>available</i>, etc.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public NodeGroup withStatus(String status) {
-        this.status = status;
+        setStatus(status);
         return this;
     }
 
     /**
-     * Represents the information required for client programs to connect to
-     * a cache node.
-     *
-     * @return Represents the information required for client programs to connect to
-     *         a cache node.
+     * @param primaryEndpoint
      */
-    public Endpoint getPrimaryEndpoint() {
-        return primaryEndpoint;
-    }
-    
-    /**
-     * Represents the information required for client programs to connect to
-     * a cache node.
-     *
-     * @param primaryEndpoint Represents the information required for client programs to connect to
-     *         a cache node.
-     */
+
     public void setPrimaryEndpoint(Endpoint primaryEndpoint) {
         this.primaryEndpoint = primaryEndpoint;
     }
-    
+
     /**
-     * Represents the information required for client programs to connect to
-     * a cache node.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param primaryEndpoint Represents the information required for client programs to connect to
-     *         a cache node.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public Endpoint getPrimaryEndpoint() {
+        return this.primaryEndpoint;
+    }
+
+    /**
+     * @param primaryEndpoint
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public NodeGroup withPrimaryEndpoint(Endpoint primaryEndpoint) {
-        this.primaryEndpoint = primaryEndpoint;
+        setPrimaryEndpoint(primaryEndpoint);
         return this;
     }
 
     /**
+     * <p>
      * A list containing information about individual nodes within the node
      * group.
-     *
-     * @return A list containing information about individual nodes within the node
-     *         group.
+     * </p>
+     * 
+     * @return A list containing information about individual nodes within the
+     *         node group.
      */
+
     public java.util.List<NodeGroupMember> getNodeGroupMembers() {
         if (nodeGroupMembers == null) {
-              nodeGroupMembers = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember>();
-              nodeGroupMembers.setAutoConstruct(true);
+            nodeGroupMembers = new com.amazonaws.internal.SdkInternalList<NodeGroupMember>();
         }
         return nodeGroupMembers;
     }
-    
+
     /**
+     * <p>
      * A list containing information about individual nodes within the node
      * group.
-     *
-     * @param nodeGroupMembers A list containing information about individual nodes within the node
-     *         group.
+     * </p>
+     * 
+     * @param nodeGroupMembers
+     *        A list containing information about individual nodes within the
+     *        node group.
      */
-    public void setNodeGroupMembers(java.util.Collection<NodeGroupMember> nodeGroupMembers) {
+
+    public void setNodeGroupMembers(
+            java.util.Collection<NodeGroupMember> nodeGroupMembers) {
         if (nodeGroupMembers == null) {
             this.nodeGroupMembers = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember> nodeGroupMembersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember>(nodeGroupMembers.size());
-        nodeGroupMembersCopy.addAll(nodeGroupMembers);
-        this.nodeGroupMembers = nodeGroupMembersCopy;
+
+        this.nodeGroupMembers = new com.amazonaws.internal.SdkInternalList<NodeGroupMember>(
+                nodeGroupMembers);
     }
-    
+
     /**
+     * <p>
      * A list containing information about individual nodes within the node
      * group.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setNodeGroupMembers(java.util.Collection)} or {@link
-     * #withNodeGroupMembers(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nodeGroupMembers A list containing information about individual nodes within the node
-     *         group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setNodeGroupMembers(java.util.Collection)} or
+     * {@link #withNodeGroupMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param nodeGroupMembers
+     *        A list containing information about individual nodes within the
+     *        node group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public NodeGroup withNodeGroupMembers(NodeGroupMember... nodeGroupMembers) {
-        if (getNodeGroupMembers() == null) setNodeGroupMembers(new java.util.ArrayList<NodeGroupMember>(nodeGroupMembers.length));
-        for (NodeGroupMember value : nodeGroupMembers) {
-            getNodeGroupMembers().add(value);
+        if (this.nodeGroupMembers == null) {
+            setNodeGroupMembers(new com.amazonaws.internal.SdkInternalList<NodeGroupMember>(
+                    nodeGroupMembers.length));
+        }
+        for (NodeGroupMember ele : nodeGroupMembers) {
+            this.nodeGroupMembers.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * A list containing information about individual nodes within the node
      * group.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nodeGroupMembers A list containing information about individual nodes within the node
-     *         group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param nodeGroupMembers
+     *        A list containing information about individual nodes within the
+     *        node group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public NodeGroup withNodeGroupMembers(java.util.Collection<NodeGroupMember> nodeGroupMembers) {
-        if (nodeGroupMembers == null) {
-            this.nodeGroupMembers = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember> nodeGroupMembersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NodeGroupMember>(nodeGroupMembers.size());
-            nodeGroupMembersCopy.addAll(nodeGroupMembers);
-            this.nodeGroupMembers = nodeGroupMembersCopy;
-        }
 
+    public NodeGroup withNodeGroupMembers(
+            java.util.Collection<NodeGroupMember> nodeGroupMembers) {
+        setNodeGroupMembers(nodeGroupMembers);
         return this;
     }
 
@@ -257,58 +270,83 @@ public class NodeGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNodeGroupId() != null) sb.append("NodeGroupId: " + getNodeGroupId() + ",");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
-        if (getPrimaryEndpoint() != null) sb.append("PrimaryEndpoint: " + getPrimaryEndpoint() + ",");
-        if (getNodeGroupMembers() != null) sb.append("NodeGroupMembers: " + getNodeGroupMembers() );
+        if (getNodeGroupId() != null)
+            sb.append("NodeGroupId: " + getNodeGroupId() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getPrimaryEndpoint() != null)
+            sb.append("PrimaryEndpoint: " + getPrimaryEndpoint() + ",");
+        if (getNodeGroupMembers() != null)
+            sb.append("NodeGroupMembers: " + getNodeGroupMembers());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof NodeGroup == false)
+            return false;
+        NodeGroup other = (NodeGroup) obj;
+        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
+            return false;
+        if (other.getNodeGroupId() != null
+                && other.getNodeGroupId().equals(this.getNodeGroupId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null
+                && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getPrimaryEndpoint() == null
+                ^ this.getPrimaryEndpoint() == null)
+            return false;
+        if (other.getPrimaryEndpoint() != null
+                && other.getPrimaryEndpoint().equals(this.getPrimaryEndpoint()) == false)
+            return false;
+        if (other.getNodeGroupMembers() == null
+                ^ this.getNodeGroupMembers() == null)
+            return false;
+        if (other.getNodeGroupMembers() != null
+                && other.getNodeGroupMembers().equals(
+                        this.getNodeGroupMembers()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode()); 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getPrimaryEndpoint() == null) ? 0 : getPrimaryEndpoint().hashCode()); 
-        hashCode = prime * hashCode + ((getNodeGroupMembers() == null) ? 0 : getNodeGroupMembers().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
+        hashCode = prime * hashCode
+                + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getPrimaryEndpoint() == null) ? 0 : getPrimaryEndpoint()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNodeGroupMembers() == null) ? 0 : getNodeGroupMembers()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof NodeGroup == false) return false;
-        NodeGroup other = (NodeGroup)obj;
-        
-        if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null) return false;
-        if (other.getNodeGroupId() != null && other.getNodeGroupId().equals(this.getNodeGroupId()) == false) return false; 
-        if (other.getStatus() == null ^ this.getStatus() == null) return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
-        if (other.getPrimaryEndpoint() == null ^ this.getPrimaryEndpoint() == null) return false;
-        if (other.getPrimaryEndpoint() != null && other.getPrimaryEndpoint().equals(this.getPrimaryEndpoint()) == false) return false; 
-        if (other.getNodeGroupMembers() == null ^ this.getNodeGroupMembers() == null) return false;
-        if (other.getNodeGroupMembers() != null && other.getNodeGroupMembers().equals(this.getNodeGroupMembers()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public NodeGroup clone() {
         try {
             return (NodeGroup) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -100,6 +100,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        The ID of the hosted zone for which you want to list traffic
      *        policy instances.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -113,6 +114,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      * @return The ID of the hosted zone for which you want to list traffic
      *         policy instances.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -129,6 +131,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -176,6 +179,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        If the value of <code>IsTruncated</code> in the previous response
      *        was <code>false</code>, omit this value.
      */
+
     public void setTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         this.trafficPolicyInstanceNameMarker = trafficPolicyInstanceNameMarker;
@@ -221,6 +225,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *         If the value of <code>IsTruncated</code> in the previous response
      *         was <code>false</code>, omit this value.
      */
+
     public String getTrafficPolicyInstanceNameMarker() {
         return this.trafficPolicyInstanceNameMarker;
     }
@@ -268,6 +273,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneRequest withTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         setTrafficPolicyInstanceNameMarker(trafficPolicyInstanceNameMarker);
@@ -308,6 +314,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        to get for this hosted zone.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker;
@@ -346,6 +353,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *         instances to get for this hosted zone.
      * @see RRType
      */
+
     public String getTrafficPolicyInstanceTypeMarker() {
         return this.trafficPolicyInstanceTypeMarker;
     }
@@ -386,6 +394,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesByHostedZoneRequest withTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -424,10 +433,9 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        If the value of <code>IsTruncated</code> in the previous response
      *        was <code>false</code>, there are no more traffic policy instances
      *        to get for this hosted zone.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker
@@ -470,6 +478,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesByHostedZoneRequest withTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -501,6 +510,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *        traffic policy instance in the next group of <code>MaxItems</code>
      *        traffic policy instances.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -529,6 +539,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      *         traffic policy instance in the next group of
      *         <code>MaxItems</code> traffic policy instances.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -560,6 +571,7 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesByHostedZoneRequest withMaxItems(
             String maxItems) {
         setMaxItems(maxItems);

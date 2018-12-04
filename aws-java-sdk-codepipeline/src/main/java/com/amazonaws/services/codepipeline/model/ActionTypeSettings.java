@@ -71,6 +71,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *        service and perform initial configuration of the action provided
      *        by that service.
      */
+
     public void setThirdPartyConfigurationUrl(String thirdPartyConfigurationUrl) {
         this.thirdPartyConfigurationUrl = thirdPartyConfigurationUrl;
     }
@@ -85,6 +86,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *         service and perform initial configuration of the action provided
      *         by that service.
      */
+
     public String getThirdPartyConfigurationUrl() {
         return this.thirdPartyConfigurationUrl;
     }
@@ -102,6 +104,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeSettings withThirdPartyConfigurationUrl(
             String thirdPartyConfigurationUrl) {
         setThirdPartyConfigurationUrl(thirdPartyConfigurationUrl);
@@ -123,6 +126,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *        link is provided as part of the action display within the
      *        pipeline.
      */
+
     public void setEntityUrlTemplate(String entityUrlTemplate) {
         this.entityUrlTemplate = entityUrlTemplate;
     }
@@ -141,6 +145,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *         link is provided as part of the action display within the
      *         pipeline.
      */
+
     public String getEntityUrlTemplate() {
         return this.entityUrlTemplate;
     }
@@ -162,6 +167,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeSettings withEntityUrlTemplate(String entityUrlTemplate) {
         setEntityUrlTemplate(entityUrlTemplate);
         return this;
@@ -183,6 +189,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *        pipeline view page in the AWS CodePipeline console and provides a
      *        link to the execution entity of the external action.
      */
+
     public void setExecutionUrlTemplate(String executionUrlTemplate) {
         this.executionUrlTemplate = executionUrlTemplate;
     }
@@ -202,6 +209,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *         pipeline view page in the AWS CodePipeline console and provides a
      *         link to the execution entity of the external action.
      */
+
     public String getExecutionUrlTemplate() {
         return this.executionUrlTemplate;
     }
@@ -224,6 +232,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeSettings withExecutionUrlTemplate(
             String executionUrlTemplate) {
         setExecutionUrlTemplate(executionUrlTemplate);
@@ -242,6 +251,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *        link to the page where customers can update or change the
      *        configuration of the external action.
      */
+
     public void setRevisionUrlTemplate(String revisionUrlTemplate) {
         this.revisionUrlTemplate = revisionUrlTemplate;
     }
@@ -257,6 +267,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      *         link to the page where customers can update or change the
      *         configuration of the external action.
      */
+
     public String getRevisionUrlTemplate() {
         return this.revisionUrlTemplate;
     }
@@ -275,6 +286,7 @@ public class ActionTypeSettings implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeSettings withRevisionUrlTemplate(String revisionUrlTemplate) {
         setRevisionUrlTemplate(revisionUrlTemplate);
         return this;

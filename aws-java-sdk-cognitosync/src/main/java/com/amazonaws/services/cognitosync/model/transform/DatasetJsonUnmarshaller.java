@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,37 +54,37 @@ public class DatasetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    dataset.setIdentityId(StringJsonUnmarshaller.getInstance()
+                    dataset.setIdentityId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DatasetName", targetDepth)) {
                     context.nextToken();
-                    dataset.setDatasetName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dataset.setDatasetName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    dataset.setCreationDate(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    dataset.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    dataset.setLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dataset.setLastModifiedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
                     context.nextToken();
-                    dataset.setLastModifiedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    dataset.setLastModifiedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStorage", targetDepth)) {
                     context.nextToken();
-                    dataset.setDataStorage(LongJsonUnmarshaller.getInstance()
+                    dataset.setDataStorage(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("NumRecords", targetDepth)) {
                     context.nextToken();
-                    dataset.setNumRecords(LongJsonUnmarshaller.getInstance()
+                    dataset.setNumRecords(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

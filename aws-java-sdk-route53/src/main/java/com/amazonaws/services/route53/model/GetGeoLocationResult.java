@@ -43,6 +43,7 @@ public class GetGeoLocationResult implements Serializable, Cloneable {
      *        A complex type that contains the information about the specified
      *        geo location.
      */
+
     public void setGeoLocationDetails(GeoLocationDetails geoLocationDetails) {
         this.geoLocationDetails = geoLocationDetails;
     }
@@ -56,6 +57,7 @@ public class GetGeoLocationResult implements Serializable, Cloneable {
      * @return A complex type that contains the information about the specified
      *         geo location.
      */
+
     public GeoLocationDetails getGeoLocationDetails() {
         return this.geoLocationDetails;
     }
@@ -72,6 +74,7 @@ public class GetGeoLocationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGeoLocationResult withGeoLocationDetails(
             GeoLocationDetails geoLocationDetails) {
         setGeoLocationDetails(geoLocationDetails);

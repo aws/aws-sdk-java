@@ -96,6 +96,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         element for each traffic policy instance that matches the
      *         elements in the request.
      */
+
     public java.util.List<TrafficPolicyInstance> getTrafficPolicyInstances() {
         if (trafficPolicyInstances == null) {
             trafficPolicyInstances = new com.amazonaws.internal.SdkInternalList<TrafficPolicyInstance>();
@@ -114,6 +115,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        element for each traffic policy instance that matches the elements
      *        in the request.
      */
+
     public void setTrafficPolicyInstances(
             java.util.Collection<TrafficPolicyInstance> trafficPolicyInstances) {
         if (trafficPolicyInstances == null) {
@@ -144,6 +146,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstances(
             TrafficPolicyInstance... trafficPolicyInstances) {
         if (this.trafficPolicyInstances == null) {
@@ -169,6 +172,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstances(
             java.util.Collection<TrafficPolicyInstance> trafficPolicyInstances) {
         setTrafficPolicyInstances(trafficPolicyInstances);
@@ -189,6 +193,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        the first traffic policy instance in the next group of
      *        <code>MaxItems</code> traffic policy instances.
      */
+
     public void setHostedZoneIdMarker(String hostedZoneIdMarker) {
         this.hostedZoneIdMarker = hostedZoneIdMarker;
     }
@@ -206,6 +211,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         the first traffic policy instance in the next group of
      *         <code>MaxItems</code> traffic policy instances.
      */
+
     public String getHostedZoneIdMarker() {
         return this.hostedZoneIdMarker;
     }
@@ -226,6 +232,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withHostedZoneIdMarker(
             String hostedZoneIdMarker) {
         setHostedZoneIdMarker(hostedZoneIdMarker);
@@ -246,6 +253,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        first traffic policy instance in the next group of
      *        <code>MaxItems</code> traffic policy instances.
      */
+
     public void setTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         this.trafficPolicyInstanceNameMarker = trafficPolicyInstanceNameMarker;
@@ -264,6 +272,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         first traffic policy instance in the next group of
      *         <code>MaxItems</code> traffic policy instances.
      */
+
     public String getTrafficPolicyInstanceNameMarker() {
         return this.trafficPolicyInstanceNameMarker;
     }
@@ -284,6 +293,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstanceNameMarker(
             String trafficPolicyInstanceNameMarker) {
         setTrafficPolicyInstanceNameMarker(trafficPolicyInstanceNameMarker);
@@ -307,6 +317,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        traffic policy instances.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker;
@@ -328,6 +339,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         <code>MaxItems</code> traffic policy instances.
      * @see RRType
      */
+
     public String getTrafficPolicyInstanceTypeMarker() {
         return this.trafficPolicyInstanceTypeMarker;
     }
@@ -351,6 +363,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstanceTypeMarker(
             String trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -372,10 +385,9 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        the resource record sets that are associated with the first
      *        traffic policy instance in the next group of <code>MaxItems</code>
      *        traffic policy instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
+
     public void setTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker
@@ -401,6 +413,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         chained together.
      * @see RRType
      */
+
     public ListTrafficPolicyInstancesResult withTrafficPolicyInstanceTypeMarker(
             RRType trafficPolicyInstanceTypeMarker) {
         setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
@@ -434,6 +447,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -465,6 +479,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -498,6 +513,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -530,6 +546,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -546,6 +563,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *        parameter in the call to <code>ListTrafficPolicyInstances</code>
      *        that produced the current response.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -561,6 +579,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      *         parameter in the call to <code>ListTrafficPolicyInstances</code>
      *         that produced the current response.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -579,6 +598,7 @@ public class ListTrafficPolicyInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPolicyInstancesResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

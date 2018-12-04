@@ -44,6 +44,7 @@ public class DescribeElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        The name of the Elasticsearch domain for which you want
      *        information.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -56,6 +57,7 @@ public class DescribeElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return The name of the Elasticsearch domain for which you want
      *         information.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -71,6 +73,7 @@ public class DescribeElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

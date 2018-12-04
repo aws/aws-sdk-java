@@ -49,6 +49,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      * @param arn
      *        The uploads' ARNs.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -60,6 +61,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The uploads' ARNs.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -74,6 +76,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUploadsRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -90,6 +93,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      *        operation, which can be used to return the next set of items in
      *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -104,6 +108,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      *         operation, which can be used to return the next set of items in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -121,6 +126,7 @@ public class ListUploadsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUploadsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

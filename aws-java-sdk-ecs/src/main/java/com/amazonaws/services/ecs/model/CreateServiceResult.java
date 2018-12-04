@@ -38,6 +38,7 @@ public class CreateServiceResult implements Serializable, Cloneable {
      * @param service
      *        The full description of your service following the create call.
      */
+
     public void setService(Service service) {
         this.service = service;
     }
@@ -49,6 +50,7 @@ public class CreateServiceResult implements Serializable, Cloneable {
      * 
      * @return The full description of your service following the create call.
      */
+
     public Service getService() {
         return this.service;
     }
@@ -63,6 +65,7 @@ public class CreateServiceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateServiceResult withService(Service service) {
         setService(service);
         return this;

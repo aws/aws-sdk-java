@@ -48,6 +48,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * @param rule
      *        The name of the rule you want to remove targets from.
      */
+
     public void setRule(String rule) {
         this.rule = rule;
     }
@@ -59,6 +60,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the rule you want to remove targets from.
      */
+
     public String getRule() {
         return this.rule;
     }
@@ -73,6 +75,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsRequest withRule(String rule) {
         setRule(rule);
         return this;
@@ -85,6 +88,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The list of target IDs to remove from the rule.
      */
+
     public java.util.List<String> getIds() {
         return ids;
     }
@@ -97,6 +101,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * @param ids
      *        The list of target IDs to remove from the rule.
      */
+
     public void setIds(java.util.Collection<String> ids) {
         if (ids == null) {
             this.ids = null;
@@ -122,6 +127,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsRequest withIds(String... ids) {
         if (this.ids == null) {
             setIds(new java.util.ArrayList<String>(ids.length));
@@ -142,6 +148,7 @@ public class RemoveTargetsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTargetsRequest withIds(java.util.Collection<String> ids) {
         setIds(ids);
         return this;

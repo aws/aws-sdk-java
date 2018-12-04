@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.simpleemail.model.*;
 import com.amazonaws.services.simpleemail.model.transform.*;
@@ -53,6 +55,7 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * ="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html">Regions
  * and Amazon SES</a> in the Amazon SES Developer Guide. </note>
  */
+@ThreadSafe
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
         implements AmazonSimpleEmailService {
     /** Provider for AWS credentials. */
@@ -68,7 +71,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "email";
 
     /**
-     * List of exception unmarshallers for all Amazon SES exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -90,8 +99,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSimpleEmailServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -133,8 +142,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonSimpleEmailServiceClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -174,8 +182,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      */
     public AmazonSimpleEmailServiceClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -241,6 +248,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
         exceptionUnmarshallers.add(new MessageRejectedExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new RuleSetDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers
+                .add(new MailFromDomainNotVerifiedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -535,8 +544,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteIdentityRequest
-     *        Represents a request instructing the service to delete an identity
-     *        from the list of identities for the AWS Account.
      * @return Result of the DeleteIdentity operation returned by the service.
      * @sample AmazonSimpleEmailService.DeleteIdentity
      */
@@ -593,11 +600,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
-     *        Represents a request instructing the service to delete an
-     *        authorization policy applying to an identity.</p>
-     *        <p>
-     *        This request succeeds regardless of whether the specified policy
-     *        exists.
      * @return Result of the DeleteIdentityPolicy operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.DeleteIdentityPolicy
@@ -810,19 +812,19 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
-     *        Represents a request instructing the service to delete an address
-     *        from the list of verified email addresses.
+     * @return Result of the DeleteVerifiedEmailAddress operation returned by
+     *         the service.
      * @sample AmazonSimpleEmailService.DeleteVerifiedEmailAddress
      */
     @Override
-    public void deleteVerifiedEmailAddress(
+    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteVerifiedEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteVerifiedEmailAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteVerifiedEmailAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -836,9 +838,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteVerifiedEmailAddressResult> responseHandler = new StaxResponseHandler<DeleteVerifiedEmailAddressResult>(
+                    new DeleteVerifiedEmailAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1040,13 +1044,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
-     *        Given a list of verified identities, describes their DKIM
-     *        attributes. The DKIM attributes of an email address identity
-     *        includes whether DKIM signing is individually enabled or disabled
-     *        for that address. The DKIM attributes of a domain name identity
-     *        includes whether DKIM signing is enabled, as well as the DNS
-     *        records (tokens) that must remain published in the domain name's
-     *        DNS.
      * @return Result of the GetIdentityDkimAttributes operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.GetIdentityDkimAttributes
@@ -1075,6 +1072,55 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
 
             StaxResponseHandler<GetIdentityDkimAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityDkimAttributesResult>(
                     new GetIdentityDkimAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @return Result of the GetIdentityMailFromDomainAttributes operation
+     *         returned by the service.
+     * @sample AmazonSimpleEmailService.GetIdentityMailFromDomainAttributes
+     */
+    @Override
+    public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest) {
+        ExecutionContext executionContext = createExecutionContext(getIdentityMailFromDomainAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetIdentityMailFromDomainAttributesRequest> request = null;
+        Response<GetIdentityMailFromDomainAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetIdentityMailFromDomainAttributesRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(getIdentityMailFromDomainAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetIdentityMailFromDomainAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityMailFromDomainAttributesResult>(
+                    new GetIdentityMailFromDomainAttributesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1161,8 +1207,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param getIdentityPoliciesRequest
-     *        Represents a request instructing the service to retrieve the text
-     *        of a list of authorization policies applying to an identity.
      * @return Result of the GetIdentityPolicies operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.GetIdentityPolicies
@@ -1213,8 +1257,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
-     *        Represents a request instructing the service to provide the
-     *        verification attributes for a list of identities.
      * @return Result of the GetIdentityVerificationAttributes operation
      *         returned by the service.
      * @sample AmazonSimpleEmailService.GetIdentityVerificationAttributes
@@ -1369,8 +1411,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param listIdentitiesRequest
-     *        Represents a request instructing the service to list all
-     *        identities for the AWS Account.
      * @return Result of the ListIdentities operation returned by the service.
      * @sample AmazonSimpleEmailService.ListIdentities
      */
@@ -1433,8 +1473,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param listIdentityPoliciesRequest
-     *        Represents a request instructing the service to list all
-     *        authorization policies, by name, applying to an identity.
      * @return Result of the ListIdentityPolicies operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.ListIdentityPolicies
@@ -1655,8 +1693,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param putIdentityPolicyRequest
-     *        Represents a request instructing the service to apply an
-     *        authorization policy to an identity.
      * @return Result of the PutIdentityPolicy operation returned by the
      *         service.
      * @throws InvalidPolicyException
@@ -1704,7 +1740,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn’t explicitly position all of the rules.</note>
+     * doesn't explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1776,9 +1812,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param sendBounceRequest
-     *        Request object for sending a simple/complex bounce. It contains
-     *        all of the information needed to generate a basic DSN or a
-     *        fully-customized DSN.
      * @return Result of the SendBounce operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
@@ -1850,18 +1883,18 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </ul>
      * 
      * @param sendEmailRequest
-     *        Represents a request instructing the service to send a single
-     *        email message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, message, reply-to, and
-     *        return-path parts. This object can then be sent using the
-     *        <code>SendEmail</code> action.
      * @return Result of the SendEmail operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
      *         sent. Check the error stack for more information about what
      *         caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES
+     *         could not read the MX record required to use the specified MAIL
+     *         FROM domain. For information about editing the custom MAIL FROM
+     *         domain settings for an identity, see the <a href=
+     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html"
+     *         >Amazon SES Developer Guide</a>.
      * @sample AmazonSimpleEmailService.SendEmail
      */
     @Override
@@ -1958,18 +1991,18 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </ul>
      * 
      * @param sendRawEmailRequest
-     *        Represents a request instructing the service to send a raw email
-     *        message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, and raw message text. This
-     *        object can then be sent using the <code>SendRawEmail</code>
-     *        action.
      * @return Result of the SendRawEmail operation returned by the service.
      * @throws MessageRejectedException
      *         Indicates that the action failed, and the message could not be
      *         sent. Check the error stack for more information about what
      *         caused the error.
+     * @throws MailFromDomainNotVerifiedException
+     *         Indicates that the message could not be sent because Amazon SES
+     *         could not read the MX record required to use the specified MAIL
+     *         FROM domain. For information about editing the custom MAIL FROM
+     *         domain settings for an identity, see the <a href=
+     *         "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-edit.html"
+     *         >Amazon SES Developer Guide</a>.
      * @sample AmazonSimpleEmailService.SendRawEmail
      */
     @Override
@@ -2089,8 +2122,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
-     *        Represents a request instructing the service to enable or disable
-     *        DKIM signing for an identity.
      * @return Result of the SetIdentityDkimEnabled operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.SetIdentityDkimEnabled
@@ -2189,6 +2220,60 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @return Result of the SetIdentityMailFromDomain operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailService.SetIdentityMailFromDomain
+     */
+    @Override
+    public SetIdentityMailFromDomainResult setIdentityMailFromDomain(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest) {
+        ExecutionContext executionContext = createExecutionContext(setIdentityMailFromDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetIdentityMailFromDomainRequest> request = null;
+        Response<SetIdentityMailFromDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetIdentityMailFromDomainRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(setIdentityMailFromDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SetIdentityMailFromDomainResult> responseHandler = new StaxResponseHandler<SetIdentityMailFromDomainResult>(
+                    new SetIdentityMailFromDomainResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Given an identity (email address or domain), sets the Amazon Simple
      * Notification Service (Amazon SNS) topic to which Amazon SES will publish
      * bounce, complaint, and/or delivery notifications for emails sent with
@@ -2207,8 +2292,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
-     *        Represents a request to set or clear an identity's notification
-     *        topic.
      * @return Result of the SetIdentityNotificationTopic operation returned by
      *         the service.
      * @sample AmazonSimpleEmailService.SetIdentityNotificationTopic
@@ -2410,8 +2493,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param verifyDomainDkimRequest
-     *        Represents a request instructing the service to begin DKIM
-     *        verification for a domain.
      * @return Result of the VerifyDomainDkim operation returned by the service.
      * @sample AmazonSimpleEmailService.VerifyDomainDkim
      */
@@ -2458,8 +2539,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param verifyDomainIdentityRequest
-     *        Represents a request instructing the service to begin domain
-     *        verification.
      * @return Result of the VerifyDomainIdentity operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.VerifyDomainIdentity
@@ -2511,19 +2590,19 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param verifyEmailAddressRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
+     * @return Result of the VerifyEmailAddress operation returned by the
+     *         service.
      * @sample AmazonSimpleEmailService.VerifyEmailAddress
      */
     @Override
-    public void verifyEmailAddress(
+    public VerifyEmailAddressResult verifyEmailAddress(
             VerifyEmailAddressRequest verifyEmailAddressRequest) {
         ExecutionContext executionContext = createExecutionContext(verifyEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<VerifyEmailAddressRequest> request = null;
-        Response<Void> response = null;
+        Response<VerifyEmailAddressResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -2537,9 +2616,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<VerifyEmailAddressResult> responseHandler = new StaxResponseHandler<VerifyEmailAddressResult>(
+                    new VerifyEmailAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2557,8 +2638,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param verifyEmailIdentityRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @return Result of the VerifyEmailIdentity operation returned by the
      *         service.
      * @sample AmazonSimpleEmailService.VerifyEmailIdentity
@@ -2620,30 +2699,45 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

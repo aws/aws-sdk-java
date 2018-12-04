@@ -23,7 +23,7 @@ import java.io.Serializable;
  * A link to another environment, defined in the environment's manifest. Links
  * provide connection information in system properties that can be used to
  * connect to another environment in the same group. See <a href=
- * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+ * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
  * >Environment Manifest (env.yaml)</a> for details.
  * </p>
  */
@@ -50,6 +50,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * @param linkName
      *        The name of the link.
      */
+
     public void setLinkName(String linkName) {
         this.linkName = linkName;
     }
@@ -61,6 +62,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * 
      * @return The name of the link.
      */
+
     public String getLinkName() {
         return this.linkName;
     }
@@ -75,6 +77,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentLink withLinkName(String linkName) {
         setLinkName(linkName);
         return this;
@@ -88,6 +91,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * @param environmentName
      *        The name of the linked environment (the dependency).
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -99,6 +103,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * 
      * @return The name of the linked environment (the dependency).
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -113,6 +118,7 @@ public class EnvironmentLink implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentLink withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;

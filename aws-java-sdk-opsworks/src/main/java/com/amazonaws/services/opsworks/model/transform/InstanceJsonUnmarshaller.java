@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class InstanceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AgentVersion", targetDepth)) {
                     context.nextToken();
-                    instance.setAgentVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setAgentVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AmiId", targetDepth)) {
                     context.nextToken();
-                    instance.setAmiId(StringJsonUnmarshaller.getInstance()
+                    instance.setAmiId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Architecture", targetDepth)) {
                     context.nextToken();
-                    instance.setArchitecture(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setArchitecture(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoScalingType", targetDepth)) {
                     context.nextToken();
-                    instance.setAutoScalingType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setAutoScalingType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();
-                    instance.setAvailabilityZone(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setAvailabilityZone(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BlockDeviceMappings", targetDepth)) {
                     context.nextToken();
@@ -84,115 +86,114 @@ public class InstanceJsonUnmarshaller implements
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    instance.setCreatedAt(StringJsonUnmarshaller.getInstance()
+                    instance.setCreatedAt(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("EbsOptimized", targetDepth)) {
                     context.nextToken();
-                    instance.setEbsOptimized(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setEbsOptimized(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("Ec2InstanceId", targetDepth)) {
                     context.nextToken();
-                    instance.setEc2InstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setEc2InstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EcsClusterArn", targetDepth)) {
                     context.nextToken();
-                    instance.setEcsClusterArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setEcsClusterArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EcsContainerInstanceArn",
                         targetDepth)) {
                     context.nextToken();
-                    instance.setEcsContainerInstanceArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setEcsContainerInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticIp", targetDepth)) {
                     context.nextToken();
-                    instance.setElasticIp(StringJsonUnmarshaller.getInstance()
+                    instance.setElasticIp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Hostname", targetDepth)) {
                     context.nextToken();
-                    instance.setHostname(StringJsonUnmarshaller.getInstance()
+                    instance.setHostname(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InfrastructureClass", targetDepth)) {
                     context.nextToken();
-                    instance.setInfrastructureClass(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setInfrastructureClass(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
                     context.nextToken();
-                    instance.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setInstallUpdatesOnBoot(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    instance.setInstanceId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    instance.setInstanceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceProfileArn", targetDepth)) {
                     context.nextToken();
-                    instance.setInstanceProfileArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setInstanceProfileArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    instance.setInstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setInstanceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastServiceErrorId", targetDepth)) {
                     context.nextToken();
-                    instance.setLastServiceErrorId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setLastServiceErrorId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LayerIds", targetDepth)) {
                     context.nextToken();
-                    instance.setLayerIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    instance.setLayerIds(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("Os", targetDepth)) {
                     context.nextToken();
-                    instance.setOs(StringJsonUnmarshaller.getInstance()
+                    instance.setOs(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Platform", targetDepth)) {
                     context.nextToken();
-                    instance.setPlatform(StringJsonUnmarshaller.getInstance()
+                    instance.setPlatform(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PrivateDns", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateDns(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    instance.setPrivateDns(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PrivateIp", targetDepth)) {
                     context.nextToken();
-                    instance.setPrivateIp(StringJsonUnmarshaller.getInstance()
+                    instance.setPrivateIp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PublicDns", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicDns(StringJsonUnmarshaller.getInstance()
+                    instance.setPublicDns(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PublicIp", targetDepth)) {
                     context.nextToken();
-                    instance.setPublicIp(StringJsonUnmarshaller.getInstance()
+                    instance.setPublicIp(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("RegisteredBy", targetDepth)) {
                     context.nextToken();
-                    instance.setRegisteredBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setRegisteredBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportedAgentVersion", targetDepth)) {
                     context.nextToken();
-                    instance.setReportedAgentVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setReportedAgentVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ReportedOs", targetDepth)) {
                     context.nextToken();
@@ -201,56 +202,61 @@ public class InstanceJsonUnmarshaller implements
                 }
                 if (context.testExpression("RootDeviceType", targetDepth)) {
                     context.nextToken();
-                    instance.setRootDeviceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setRootDeviceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RootDeviceVolumeId", targetDepth)) {
                     context.nextToken();
-                    instance.setRootDeviceVolumeId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setRootDeviceVolumeId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupIds", targetDepth)) {
                     context.nextToken();
                     instance.setSecurityGroupIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("SshHostDsaKeyFingerprint",
                         targetDepth)) {
                     context.nextToken();
-                    instance.setSshHostDsaKeyFingerprint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setSshHostDsaKeyFingerprint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshHostRsaKeyFingerprint",
                         targetDepth)) {
                     context.nextToken();
-                    instance.setSshHostRsaKeyFingerprint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setSshHostRsaKeyFingerprint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshKeyName", targetDepth)) {
                     context.nextToken();
-                    instance.setSshKeyName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    instance.setSshKeyName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    instance.setStackId(StringJsonUnmarshaller.getInstance()
+                    instance.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    instance.setStatus(StringJsonUnmarshaller.getInstance()
+                    instance.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SubnetId", targetDepth)) {
                     context.nextToken();
-                    instance.setSubnetId(StringJsonUnmarshaller.getInstance()
+                    instance.setSubnetId(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
+                if (context.testExpression("Tenancy", targetDepth)) {
+                    context.nextToken();
+                    instance.setTenancy(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("VirtualizationType", targetDepth)) {
                     context.nextToken();
-                    instance.setVirtualizationType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instance.setVirtualizationType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

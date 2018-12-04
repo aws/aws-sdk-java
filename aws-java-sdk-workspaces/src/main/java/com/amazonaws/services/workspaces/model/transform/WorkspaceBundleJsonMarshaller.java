@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.workspaces.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * WorkspaceBundleMarshaller
@@ -39,47 +34,47 @@ import com.amazonaws.util.json.*;
 public class WorkspaceBundleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WorkspaceBundle workspaceBundle, JSONWriter jsonWriter) {
+    public void marshall(WorkspaceBundle workspaceBundle,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (workspaceBundle == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (workspaceBundle.getBundleId() != null) {
-                jsonWriter.key("BundleId").value(workspaceBundle.getBundleId());
+                jsonGenerator.writeFieldName("BundleId").writeValue(
+                        workspaceBundle.getBundleId());
             }
-
             if (workspaceBundle.getName() != null) {
-                jsonWriter.key("Name").value(workspaceBundle.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        workspaceBundle.getName());
             }
-
             if (workspaceBundle.getOwner() != null) {
-                jsonWriter.key("Owner").value(workspaceBundle.getOwner());
+                jsonGenerator.writeFieldName("Owner").writeValue(
+                        workspaceBundle.getOwner());
             }
-
             if (workspaceBundle.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         workspaceBundle.getDescription());
             }
-
             if (workspaceBundle.getUserStorage() != null) {
-                jsonWriter.key("UserStorage");
+                jsonGenerator.writeFieldName("UserStorage");
                 UserStorageJsonMarshaller.getInstance().marshall(
-                        workspaceBundle.getUserStorage(), jsonWriter);
+                        workspaceBundle.getUserStorage(), jsonGenerator);
             }
-
             if (workspaceBundle.getComputeType() != null) {
-                jsonWriter.key("ComputeType");
+                jsonGenerator.writeFieldName("ComputeType");
                 ComputeTypeJsonMarshaller.getInstance().marshall(
-                        workspaceBundle.getComputeType(), jsonWriter);
+                        workspaceBundle.getComputeType(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

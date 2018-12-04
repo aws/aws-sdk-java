@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,24 @@ public class TrustedAdvisorCheckSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checkId", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckSummary
-                            .setCheckId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckSummary.setCheckId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckSummary
-                            .setTimestamp(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckSummary.setTimestamp(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckSummary.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    trustedAdvisorCheckSummary.setStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hasFlaggedResources", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCheckSummary
-                            .setHasFlaggedResources(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setHasFlaggedResources(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("resourcesSummary", targetDepth)) {
                     context.nextToken();

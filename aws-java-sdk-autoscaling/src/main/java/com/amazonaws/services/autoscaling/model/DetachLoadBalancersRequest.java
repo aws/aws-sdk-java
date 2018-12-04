@@ -46,6 +46,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -57,6 +58,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -71,6 +73,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancersRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -84,6 +87,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * 
      * @return One or more load balancer names.
      */
+
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
             loadBalancerNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +103,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * @param loadBalancerNames
      *        One or more load balancer names.
      */
+
     public void setLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         if (loadBalancerNames == null) {
@@ -126,6 +131,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancersRequest withLoadBalancerNames(
             String... loadBalancerNames) {
         if (this.loadBalancerNames == null) {
@@ -148,6 +154,7 @@ public class DetachLoadBalancersRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachLoadBalancersRequest withLoadBalancerNames(
             java.util.Collection<String> loadBalancerNames) {
         setLoadBalancerNames(loadBalancerNames);

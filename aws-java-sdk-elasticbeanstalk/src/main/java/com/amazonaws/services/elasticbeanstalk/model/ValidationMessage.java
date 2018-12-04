@@ -56,6 +56,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @param message
      *        A message describing the error or warning.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -67,6 +68,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * 
      * @return A message describing the error or warning.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -81,6 +83,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationMessage withMessage(String message) {
         setMessage(message);
         return this;
@@ -106,6 +109,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      *        you should take into account.</li>
      * @see ValidationSeverity
      */
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
@@ -129,6 +133,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      *         you should take into account.</li>
      * @see ValidationSeverity
      */
+
     public String getSeverity() {
         return this.severity;
     }
@@ -155,6 +160,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      *         chained together.
      * @see ValidationSeverity
      */
+
     public ValidationMessage withSeverity(String severity) {
         setSeverity(severity);
         return this;
@@ -178,10 +184,9 @@ public class ValidationMessage implements Serializable, Cloneable {
      *        valid setting for an option.</li>
      *        <li> <code>warning</code>: This message is providing information
      *        you should take into account.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ValidationSeverity
      */
+
     public void setSeverity(ValidationSeverity severity) {
         this.severity = severity.toString();
     }
@@ -208,6 +213,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      *         chained together.
      * @see ValidationSeverity
      */
+
     public ValidationMessage withSeverity(ValidationSeverity severity) {
         setSeverity(severity);
         return this;
@@ -218,6 +224,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * 
      * @param namespace
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -227,6 +234,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * 
      * @return
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -238,6 +246,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationMessage withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -248,6 +257,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * 
      * @param optionName
      */
+
     public void setOptionName(String optionName) {
         this.optionName = optionName;
     }
@@ -257,6 +267,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * 
      * @return
      */
+
     public String getOptionName() {
         return this.optionName;
     }
@@ -268,6 +279,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ValidationMessage withOptionName(String optionName) {
         setOptionName(optionName);
         return this;

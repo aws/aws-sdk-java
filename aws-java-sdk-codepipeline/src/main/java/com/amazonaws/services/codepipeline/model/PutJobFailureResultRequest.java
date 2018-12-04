@@ -51,6 +51,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      *        The unique system-generated ID of the job that failed. This is the
      *        same ID returned from PollForJobs.
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -64,6 +65,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * @return The unique system-generated ID of the job that failed. This is
      *         the same ID returned from PollForJobs.
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -80,6 +82,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobFailureResultRequest withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -93,6 +96,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * @param failureDetails
      *        The details about the failure of a job.
      */
+
     public void setFailureDetails(FailureDetails failureDetails) {
         this.failureDetails = failureDetails;
     }
@@ -104,6 +108,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * 
      * @return The details about the failure of a job.
      */
+
     public FailureDetails getFailureDetails() {
         return this.failureDetails;
     }
@@ -118,6 +123,7 @@ public class PutJobFailureResultRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutJobFailureResultRequest withFailureDetails(
             FailureDetails failureDetails) {
         setFailureDetails(failureDetails);

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateIdentityPoolRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateIdentityPoolRequestMarshaller
         implements
         Marshaller<Request<CreateIdentityPoolRequest>, CreateIdentityPoolRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateIdentityPoolRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateIdentityPoolRequest> marshall(
             CreateIdentityPoolRequest createIdentityPoolRequest) {
@@ -65,67 +66,86 @@ public class CreateIdentityPoolRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createIdentityPoolRequest.getIdentityPoolName() != null) {
-                jsonWriter.key("IdentityPoolName").value(
+                jsonGenerator.writeFieldName("IdentityPoolName").writeValue(
                         createIdentityPoolRequest.getIdentityPoolName());
             }
-
             if (createIdentityPoolRequest.getAllowUnauthenticatedIdentities() != null) {
-                jsonWriter.key("AllowUnauthenticatedIdentities").value(
-                        createIdentityPoolRequest
-                                .getAllowUnauthenticatedIdentities());
+                jsonGenerator.writeFieldName("AllowUnauthenticatedIdentities")
+                        .writeValue(
+                                createIdentityPoolRequest
+                                        .getAllowUnauthenticatedIdentities());
             }
 
             java.util.Map<String, String> supportedLoginProvidersMap = createIdentityPoolRequest
                     .getSupportedLoginProviders();
             if (supportedLoginProvidersMap != null) {
-                jsonWriter.key("SupportedLoginProviders");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("SupportedLoginProviders");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> supportedLoginProvidersMapValue : supportedLoginProvidersMap
                         .entrySet()) {
                     if (supportedLoginProvidersMapValue.getValue() != null) {
-                        jsonWriter
-                                .key(supportedLoginProvidersMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(supportedLoginProvidersMapValue
+                                        .getKey());
 
-                        jsonWriter.value(supportedLoginProvidersMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(supportedLoginProvidersMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (createIdentityPoolRequest.getDeveloperProviderName() != null) {
-                jsonWriter.key("DeveloperProviderName").value(
-                        createIdentityPoolRequest.getDeveloperProviderName());
+                jsonGenerator.writeFieldName("DeveloperProviderName")
+                        .writeValue(
+                                createIdentityPoolRequest
+                                        .getDeveloperProviderName());
             }
 
             java.util.List<String> openIdConnectProviderARNsList = createIdentityPoolRequest
                     .getOpenIdConnectProviderARNs();
             if (openIdConnectProviderARNsList != null) {
-                jsonWriter.key("OpenIdConnectProviderARNs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("OpenIdConnectProviderARNs");
+                jsonGenerator.writeStartArray();
                 for (String openIdConnectProviderARNsListValue : openIdConnectProviderARNsList) {
                     if (openIdConnectProviderARNsListValue != null) {
-                        jsonWriter.value(openIdConnectProviderARNsListValue);
+                        jsonGenerator
+                                .writeValue(openIdConnectProviderARNsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            java.util.List<CognitoIdentityProvider> cognitoIdentityProvidersList = createIdentityPoolRequest
+                    .getCognitoIdentityProviders();
+            if (cognitoIdentityProvidersList != null) {
+                jsonGenerator.writeFieldName("CognitoIdentityProviders");
+                jsonGenerator.writeStartArray();
+                for (CognitoIdentityProvider cognitoIdentityProvidersListValue : cognitoIdentityProvidersList) {
+                    if (cognitoIdentityProvidersListValue != null) {
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+                        CognitoIdentityProviderJsonMarshaller.getInstance()
+                                .marshall(cognitoIdentityProvidersListValue,
+                                        jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

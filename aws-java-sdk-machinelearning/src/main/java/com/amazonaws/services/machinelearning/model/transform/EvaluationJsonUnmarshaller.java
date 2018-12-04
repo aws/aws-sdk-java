@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,48 +55,48 @@ public class EvaluationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EvaluationId", targetDepth)) {
                     context.nextToken();
-                    evaluation.setEvaluationId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setEvaluationId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
                     context.nextToken();
-                    evaluation.setMLModelId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setMLModelId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("EvaluationDataSourceId",
                         targetDepth)) {
                     context.nextToken();
-                    evaluation.setEvaluationDataSourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setEvaluationDataSourceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
                     context.nextToken();
-                    evaluation.setInputDataLocationS3(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setInputDataLocationS3(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    evaluation.setCreatedByIamUser(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setCreatedByIamUser(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    evaluation.setCreatedAt(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    evaluation.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    evaluation.setLastUpdatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    evaluation.setLastUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    evaluation.setName(StringJsonUnmarshaller.getInstance()
+                    evaluation.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    evaluation.setStatus(StringJsonUnmarshaller.getInstance()
+                    evaluation.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PerformanceMetrics", targetDepth)) {
@@ -105,7 +107,7 @@ public class EvaluationJsonUnmarshaller implements
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    evaluation.setMessage(StringJsonUnmarshaller.getInstance()
+                    evaluation.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -21,32 +21,13 @@ import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import com.amazonaws.util.StringUtils;
+
 /**
  * Utilities for reflecting field or method annotations in a DynamoDB table
  * POJO.
  */
 class ReflectionUtils {
-
-    static Object safeInvoke(
-            Method method,
-            Object object,
-            Object... arguments) {
-
-        try {
-
-            return method.invoke(object, arguments);
-
-        } catch (IllegalAccessException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        } catch (IllegalArgumentException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        } catch (InvocationTargetException e) {
-            throw new DynamoDBMappingException(
-                    "Couldn't invoke " + method, e);
-        }
-    }
 
     /**
      * Returns the field name that corresponds to the given getter method,
@@ -75,11 +56,25 @@ class ReflectionUtils {
 
         if (forceCamelCase) {
             // Lowercase the first letter of the name
-            return fieldNameWithUpperCamelCase.substring(0, 1).toLowerCase() + fieldNameWithUpperCamelCase.substring(1);
+            return StringUtils.lowerCase(fieldNameWithUpperCamelCase.substring(0, 1)) + fieldNameWithUpperCamelCase.substring(1);
         } else {
             return fieldNameWithUpperCamelCase;
         }
 
+    }
+
+    /**
+     * Returns the declared setter method that corresponds to the given method.
+     * @param getter The getter method.
+     * @return The method.
+     */
+    static final Method getDeclaredSetterByGetter(final Method getter) {
+        final String setterName = "set" + getFieldNameByGetter(getter, false);
+        try {
+            return getter.getDeclaringClass().getMethod(setterName, getter.getReturnType());
+        } catch (final Exception e) {
+            return null;
+        }
     }
 
     /**

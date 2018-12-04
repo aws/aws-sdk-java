@@ -46,6 +46,7 @@ public class GetRuleRequest extends AmazonWebServiceRequest implements
      *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *        <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -61,6 +62,7 @@ public class GetRuleRequest extends AmazonWebServiceRequest implements
      *         <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *         <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -79,6 +81,7 @@ public class GetRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRuleRequest withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;

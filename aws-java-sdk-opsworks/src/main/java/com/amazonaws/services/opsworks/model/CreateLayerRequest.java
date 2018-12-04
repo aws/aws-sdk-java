@@ -186,6 +186,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The layer stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -197,6 +198,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The layer stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -211,6 +213,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -227,6 +230,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        of the same type. It can have any number of custom layers.
      * @see LayerType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -241,6 +245,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         of the same type. It can have any number of custom layers.
      * @see LayerType
      */
+
     public String getType() {
         return this.type;
     }
@@ -258,6 +263,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see LayerType
      */
+
     public CreateLayerRequest withType(String type) {
         setType(type);
         return this;
@@ -272,10 +278,9 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param type
      *        The layer type. A stack cannot have more than one built-in layer
      *        of the same type. It can have any number of custom layers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerType
      */
+
     public void setType(LayerType type) {
         this.type = type.toString();
     }
@@ -293,6 +298,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see LayerType
      */
+
     public CreateLayerRequest withType(LayerType type) {
         setType(type);
         return this;
@@ -306,6 +312,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The layer name, which is used by the console.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -317,6 +324,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return The layer name, which is used by the console.
      */
+
     public String getName() {
         return this.name;
     }
@@ -331,6 +339,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withName(String name) {
         setName(name);
         return this;
@@ -364,6 +373,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
      *        >Layer Reference</a>.
      */
+
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
@@ -395,6 +405,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html"
      *         >Layer Reference</a>.
      */
+
     public String getShortname() {
         return this.shortname;
     }
@@ -429,6 +440,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withShortname(String shortname) {
         setShortname(shortname);
         return this;
@@ -450,6 +462,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         To create a cluster layer, set the <code>EcsClusterArn</code>
      *         attribute to the cluster's ARN.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -474,6 +487,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        To create a cluster layer, set the <code>EcsClusterArn</code>
      *        attribute to the cluster's ARN.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -499,6 +513,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -520,6 +535,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateLayerRequest clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -539,6 +555,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
     }
@@ -556,6 +573,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getCustomInstanceProfileArn() {
         return this.customInstanceProfileArn;
     }
@@ -576,6 +594,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withCustomInstanceProfileArn(
             String customInstanceProfileArn) {
         setCustomInstanceProfileArn(customInstanceProfileArn);
@@ -600,6 +619,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        > Using Custom JSON</a>. This feature is supported as of version
      *        1.7.42 of the AWS CLI.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -621,6 +641,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         > Using Custom JSON</a>. This feature is supported as of version
      *         1.7.42 of the AWS CLI.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -645,6 +666,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -657,6 +679,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array containing the layer custom security group IDs.
      */
+
     public java.util.List<String> getCustomSecurityGroupIds() {
         if (customSecurityGroupIds == null) {
             customSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -672,6 +695,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param customSecurityGroupIds
      *        An array containing the layer custom security group IDs.
      */
+
     public void setCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -699,6 +723,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withCustomSecurityGroupIds(
             String... customSecurityGroupIds) {
         if (this.customSecurityGroupIds == null) {
@@ -721,6 +746,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         setCustomSecurityGroupIds(customSecurityGroupIds);
@@ -736,6 +762,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return An array of <code>Package</code> objects that describes the layer
      *         packages.
      */
+
     public java.util.List<String> getPackages() {
         if (packages == null) {
             packages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -753,6 +780,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        An array of <code>Package</code> objects that describes the layer
      *        packages.
      */
+
     public void setPackages(java.util.Collection<String> packages) {
         if (packages == null) {
             this.packages = null;
@@ -781,6 +809,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withPackages(String... packages) {
         if (this.packages == null) {
             setPackages(new com.amazonaws.internal.SdkInternalList<String>(
@@ -804,6 +833,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withPackages(java.util.Collection<String> packages) {
         setPackages(packages);
         return this;
@@ -818,6 +848,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return A <code>VolumeConfigurations</code> object that describes the
      *         layer's Amazon EBS volumes.
      */
+
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
         if (volumeConfigurations == null) {
             volumeConfigurations = new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>();
@@ -835,6 +866,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        A <code>VolumeConfigurations</code> object that describes the
      *        layer's Amazon EBS volumes.
      */
+
     public void setVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -864,6 +896,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withVolumeConfigurations(
             VolumeConfiguration... volumeConfigurations) {
         if (this.volumeConfigurations == null) {
@@ -888,6 +921,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         setVolumeConfigurations(volumeConfigurations);
@@ -902,6 +936,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param enableAutoHealing
      *        Whether to disable auto healing for the layer.
      */
+
     public void setEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
     }
@@ -913,6 +948,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to disable auto healing for the layer.
      */
+
     public Boolean getEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -927,6 +963,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withEnableAutoHealing(Boolean enableAutoHealing) {
         setEnableAutoHealing(enableAutoHealing);
         return this;
@@ -939,6 +976,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to disable auto healing for the layer.
      */
+
     public Boolean isEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -961,6 +999,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
     }
@@ -982,6 +1021,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -1006,6 +1046,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withAutoAssignElasticIps(
             Boolean autoAssignElasticIps) {
         setAutoAssignElasticIps(autoAssignElasticIps);
@@ -1029,6 +1070,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -1049,6 +1091,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignPublicIps(Boolean autoAssignPublicIps) {
         this.autoAssignPublicIps = autoAssignPublicIps;
     }
@@ -1068,6 +1111,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -1090,6 +1134,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withAutoAssignPublicIps(
             Boolean autoAssignPublicIps) {
         setAutoAssignPublicIps(autoAssignPublicIps);
@@ -1111,6 +1156,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -1125,6 +1171,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        A <code>LayerCustomRecipes</code> object that specifies the layer
      *        custom recipes.
      */
+
     public void setCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;
     }
@@ -1138,6 +1185,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return A <code>LayerCustomRecipes</code> object that specifies the layer
      *         custom recipes.
      */
+
     public Recipes getCustomRecipes() {
         return this.customRecipes;
     }
@@ -1154,6 +1202,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withCustomRecipes(Recipes customRecipes) {
         setCustomRecipes(customRecipes);
         return this;
@@ -1190,6 +1239,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        strongly recommend using the default value of <code>true</code>.
      *        </p>
      */
+
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
     }
@@ -1225,6 +1275,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         <code>true</code>.
      *         </p>
      */
+
     public Boolean getInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1262,6 +1313,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withInstallUpdatesOnBoot(
             Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
@@ -1299,6 +1351,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         <code>true</code>.
      *         </p>
      */
+
     public Boolean isInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1311,6 +1364,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @param useEbsOptimizedInstances
      *        Whether to use Amazon EBS-optimized instances.
      */
+
     public void setUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
         this.useEbsOptimizedInstances = useEbsOptimizedInstances;
     }
@@ -1322,6 +1376,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use Amazon EBS-optimized instances.
      */
+
     public Boolean getUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1336,6 +1391,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withUseEbsOptimizedInstances(
             Boolean useEbsOptimizedInstances) {
         setUseEbsOptimizedInstances(useEbsOptimizedInstances);
@@ -1349,6 +1405,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to use Amazon EBS-optimized instances.
      */
+
     public Boolean isUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1365,6 +1422,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *        to configure the Shutdown event to specify an execution timeout
      *        and enable or disable Elastic Load Balancer connection draining.
      */
+
     public void setLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         this.lifecycleEventConfiguration = lifecycleEventConfiguration;
@@ -1382,6 +1440,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      *         timeout and enable or disable Elastic Load Balancer connection
      *         draining.
      */
+
     public LifecycleEventConfiguration getLifecycleEventConfiguration() {
         return this.lifecycleEventConfiguration;
     }
@@ -1400,6 +1459,7 @@ public class CreateLayerRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLayerRequest withLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         setLifecycleEventConfiguration(lifecycleEventConfiguration);

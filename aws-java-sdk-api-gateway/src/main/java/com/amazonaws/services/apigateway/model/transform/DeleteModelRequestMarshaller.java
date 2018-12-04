@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteModelRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteModelRequestMarshaller implements
         Marshaller<Request<DeleteModelRequest>, DeleteModelRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteModelRequest> marshall(
             DeleteModelRequest deleteModelRequest) {
@@ -65,12 +73,14 @@ public class DeleteModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (deleteModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(deleteModelRequest.getRestApiId()));
+                (deleteModelRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteModelRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (deleteModelRequest.getModelName() == null) ? "" : StringUtils
-                        .fromString(deleteModelRequest.getModelName()));
+                (deleteModelRequest.getModelName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteModelRequest
+                                .getModelName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

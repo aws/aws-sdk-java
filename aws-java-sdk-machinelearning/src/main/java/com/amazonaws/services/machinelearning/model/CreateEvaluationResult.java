@@ -52,6 +52,7 @@ public class CreateEvaluationResult implements Serializable, Cloneable {
      *        <code>Evaluation</code>. This value should be identical to the
      *        value of the <code>EvaluationId</code> in the request.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -67,6 +68,7 @@ public class CreateEvaluationResult implements Serializable, Cloneable {
      *         <code>Evaluation</code>. This value should be identical to the
      *         value of the <code>EvaluationId</code> in the request.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -85,6 +87,7 @@ public class CreateEvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEvaluationResult withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;

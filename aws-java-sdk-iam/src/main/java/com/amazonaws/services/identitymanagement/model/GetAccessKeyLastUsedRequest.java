@@ -29,6 +29,11 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier of an access key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      */
     private String accessKeyId;
 
@@ -36,10 +41,20 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier of an access key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param accessKeyId
-     *        The identifier of an access key.
+     *        The identifier of an access key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -48,9 +63,19 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier of an access key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
-     * @return The identifier of an access key.
+     * @return The identifier of an access key.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters that can consist of
+     *         any upper or lowercased letter or digit.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -59,12 +84,22 @@ public class GetAccessKeyLastUsedRequest extends AmazonWebServiceRequest
      * <p>
      * The identifier of an access key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param accessKeyId
-     *        The identifier of an access key.
+     *        The identifier of an access key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccessKeyLastUsedRequest withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;

@@ -39,6 +39,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
      * 
      * @return The IDs of the Trusted Advisor checks.
      */
+
     public java.util.List<String> getCheckIds() {
         if (checkIds == null) {
             checkIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,6 +55,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
      * @param checkIds
      *        The IDs of the Trusted Advisor checks.
      */
+
     public void setCheckIds(java.util.Collection<String> checkIds) {
         if (checkIds == null) {
             this.checkIds = null;
@@ -80,6 +82,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(
             String... checkIds) {
         if (this.checkIds == null) {
@@ -102,6 +105,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest withCheckIds(
             java.util.Collection<String> checkIds) {
         setCheckIds(checkIds);

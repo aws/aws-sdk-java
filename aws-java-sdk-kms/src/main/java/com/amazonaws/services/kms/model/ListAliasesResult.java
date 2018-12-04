@@ -53,6 +53,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * 
      * @return A list of key aliases in the user's account.
      */
+
     public java.util.List<AliasListEntry> getAliases() {
         if (aliases == null) {
             aliases = new com.amazonaws.internal.SdkInternalList<AliasListEntry>();
@@ -68,6 +69,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @param aliases
      *        A list of key aliases in the user's account.
      */
+
     public void setAliases(java.util.Collection<AliasListEntry> aliases) {
         if (aliases == null) {
             this.aliases = null;
@@ -94,6 +96,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(AliasListEntry... aliases) {
         if (this.aliases == null) {
             setAliases(new com.amazonaws.internal.SdkInternalList<AliasListEntry>(
@@ -115,6 +118,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withAliases(
             java.util.Collection<AliasListEntry> aliases) {
         setAliases(aliases);
@@ -133,6 +137,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *        contains the value to use for the <code>Marker</code> parameter in
      *        a subsequent pagination request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -148,6 +153,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *         contains the value to use for the <code>Marker</code> parameter
      *         in a subsequent pagination request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -166,6 +172,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -184,6 +191,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *        parameter to make a subsequent pagination request to retrieve more
      *        items in the list.
      */
+
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
     }
@@ -200,6 +208,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean getTruncated() {
         return this.truncated;
     }
@@ -219,6 +228,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListAliasesResult withTruncated(Boolean truncated) {
         setTruncated(truncated);
         return this;
@@ -236,6 +246,7 @@ public class ListAliasesResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean isTruncated() {
         return this.truncated;
     }

@@ -141,6 +141,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        A user-supplied ID that uniquely identifies the
      *        <code>DataSource</code>.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -153,6 +154,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return A user-supplied ID that uniquely identifies the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -168,6 +170,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRedshiftRequest withDataSourceId(
             String dataSourceId) {
         setDataSourceId(dataSourceId);
@@ -183,6 +186,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        A user-supplied name or description of the <code>DataSource</code>
      *        .
      */
+
     public void setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
     }
@@ -195,6 +199,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return A user-supplied name or description of the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceName() {
         return this.dataSourceName;
     }
@@ -210,6 +215,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRedshiftRequest withDataSourceName(
             String dataSourceName) {
         setDataSourceName(dataSourceName);
@@ -334,6 +340,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        </p>
      *        </li>
      */
+
     public void setDataSpec(RedshiftDataSpec dataSpec) {
         this.dataSpec = dataSpec;
     }
@@ -456,6 +463,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         </p>
      *         </li>
      */
+
     public RedshiftDataSpec getDataSpec() {
         return this.dataSpec;
     }
@@ -580,6 +588,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRedshiftRequest withDataSpec(
             RedshiftDataSpec dataSpec) {
         setDataSpec(dataSpec);
@@ -628,6 +637,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        </li>
      *        </ul>
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -673,6 +683,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         </li>
      *         </ul>
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -721,6 +732,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRedshiftRequest withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -744,6 +756,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *        to <code>true</code> if the <code></code>DataSource<code></code>
      *        needs to be used for <code>MLModel</code> training
      */
+
     public void setComputeStatistics(Boolean computeStatistics) {
         this.computeStatistics = computeStatistics;
     }
@@ -765,6 +778,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         must be set to <code>true</code> if the <code></code>DataSource
      *         <code></code> needs to be used for <code>MLModel</code> training
      */
+
     public Boolean getComputeStatistics() {
         return this.computeStatistics;
     }
@@ -789,6 +803,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRedshiftRequest withComputeStatistics(
             Boolean computeStatistics) {
         setComputeStatistics(computeStatistics);
@@ -812,6 +827,7 @@ public class CreateDataSourceFromRedshiftRequest extends
      *         must be set to <code>true</code> if the <code></code>DataSource
      *         <code></code> needs to be used for <code>MLModel</code> training
      */
+
     public Boolean isComputeStatistics() {
         return this.computeStatistics;
     }

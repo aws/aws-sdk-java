@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * LoadBalancerMarshaller
@@ -39,33 +34,33 @@ import com.amazonaws.util.json.*;
 public class LoadBalancerJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LoadBalancer loadBalancer, JSONWriter jsonWriter) {
+    public void marshall(LoadBalancer loadBalancer,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (loadBalancer == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (loadBalancer.getLoadBalancerName() != null) {
-                jsonWriter.key("loadBalancerName").value(
+                jsonGenerator.writeFieldName("loadBalancerName").writeValue(
                         loadBalancer.getLoadBalancerName());
             }
-
             if (loadBalancer.getContainerName() != null) {
-                jsonWriter.key("containerName").value(
+                jsonGenerator.writeFieldName("containerName").writeValue(
                         loadBalancer.getContainerName());
             }
-
             if (loadBalancer.getContainerPort() != null) {
-                jsonWriter.key("containerPort").value(
+                jsonGenerator.writeFieldName("containerPort").writeValue(
                         loadBalancer.getContainerPort());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

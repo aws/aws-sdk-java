@@ -66,6 +66,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *        task definition. Up to 255 letters (uppercase and lowercase),
      *        numbers, hyphens, and underscores are allowed.
      */
+
     public void setFamily(String family) {
         this.family = family;
     }
@@ -85,6 +86,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *         task definition. Up to 255 letters (uppercase and lowercase),
      *         numbers, hyphens, and underscores are allowed.
      */
+
     public String getFamily() {
         return this.family;
     }
@@ -107,6 +109,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionRequest withFamily(String family) {
         setFamily(family);
         return this;
@@ -121,6 +124,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return A list of container definitions in JSON format that describe the
      *         different containers that make up your task.
      */
+
     public java.util.List<ContainerDefinition> getContainerDefinitions() {
         if (containerDefinitions == null) {
             containerDefinitions = new com.amazonaws.internal.SdkInternalList<ContainerDefinition>();
@@ -138,6 +142,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *        A list of container definitions in JSON format that describe the
      *        different containers that make up your task.
      */
+
     public void setContainerDefinitions(
             java.util.Collection<ContainerDefinition> containerDefinitions) {
         if (containerDefinitions == null) {
@@ -167,6 +172,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionRequest withContainerDefinitions(
             ContainerDefinition... containerDefinitions) {
         if (this.containerDefinitions == null) {
@@ -191,6 +197,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionRequest withContainerDefinitions(
             java.util.Collection<ContainerDefinition> containerDefinitions) {
         setContainerDefinitions(containerDefinitions);
@@ -206,6 +213,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return A list of volume definitions in JSON format that containers in
      *         your task may use.
      */
+
     public java.util.List<Volume> getVolumes() {
         if (volumes == null) {
             volumes = new com.amazonaws.internal.SdkInternalList<Volume>();
@@ -223,6 +231,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      *        A list of volume definitions in JSON format that containers in
      *        your task may use.
      */
+
     public void setVolumes(java.util.Collection<Volume> volumes) {
         if (volumes == null) {
             this.volumes = null;
@@ -251,6 +260,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionRequest withVolumes(Volume... volumes) {
         if (this.volumes == null) {
             setVolumes(new com.amazonaws.internal.SdkInternalList<Volume>(
@@ -274,6 +284,7 @@ public class RegisterTaskDefinitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterTaskDefinitionRequest withVolumes(
             java.util.Collection<Volume> volumes) {
         setVolumes(volumes);

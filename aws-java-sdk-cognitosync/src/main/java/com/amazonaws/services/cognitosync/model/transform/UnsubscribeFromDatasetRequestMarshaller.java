@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UnsubscribeFromDatasetRequest Marshaller
@@ -48,6 +50,13 @@ public class UnsubscribeFromDatasetRequestMarshaller
         Marshaller<Request<UnsubscribeFromDatasetRequest>, UnsubscribeFromDatasetRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UnsubscribeFromDatasetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UnsubscribeFromDatasetRequest> marshall(
             UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
@@ -67,25 +76,35 @@ public class UnsubscribeFromDatasetRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (unsubscribeFromDatasetRequest.getIdentityPoolId() == null) ? ""
-                                : StringUtils
+                        (unsubscribeFromDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(unsubscribeFromDatasetRequest
-                                                .getIdentityPoolId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (unsubscribeFromDatasetRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(unsubscribeFromDatasetRequest
-                                .getIdentityId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (unsubscribeFromDatasetRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(unsubscribeFromDatasetRequest
-                                .getDatasetName()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DeviceId}",
-                (unsubscribeFromDatasetRequest.getDeviceId() == null) ? ""
-                        : StringUtils.fromString(unsubscribeFromDatasetRequest
-                                .getDeviceId()));
+                                                .getIdentityPoolId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityId}",
+                        (unsubscribeFromDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(unsubscribeFromDatasetRequest
+                                                .getIdentityId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DatasetName}",
+                        (unsubscribeFromDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(unsubscribeFromDatasetRequest
+                                                .getDatasetName()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DeviceId}",
+                        (unsubscribeFromDatasetRequest.getDeviceId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(unsubscribeFromDatasetRequest
+                                                .getDeviceId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

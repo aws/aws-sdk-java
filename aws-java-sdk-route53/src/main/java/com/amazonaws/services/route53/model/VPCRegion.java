@@ -29,6 +29,7 @@ public enum VPCRegion {
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
     ApNortheast1("ap-northeast-1"),
+    ApNortheast2("ap-northeast-2"),
     SaEast1("sa-east-1"),
     CnNorth1("cn-north-1");
 
@@ -69,6 +70,8 @@ public enum VPCRegion {
             return ApSoutheast2;
         } else if ("ap-northeast-1".equals(value)) {
             return ApNortheast1;
+        } else if ("ap-northeast-2".equals(value)) {
+            return ApNortheast2;
         } else if ("sa-east-1".equals(value)) {
             return SaEast1;
         } else if ("cn-north-1".equals(value)) {

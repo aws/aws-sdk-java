@@ -54,6 +54,7 @@ public class MountPoint implements Serializable, Cloneable {
      * @param sourceVolume
      *        The name of the volume to mount.
      */
+
     public void setSourceVolume(String sourceVolume) {
         this.sourceVolume = sourceVolume;
     }
@@ -65,6 +66,7 @@ public class MountPoint implements Serializable, Cloneable {
      * 
      * @return The name of the volume to mount.
      */
+
     public String getSourceVolume() {
         return this.sourceVolume;
     }
@@ -79,6 +81,7 @@ public class MountPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MountPoint withSourceVolume(String sourceVolume) {
         setSourceVolume(sourceVolume);
         return this;
@@ -92,6 +95,7 @@ public class MountPoint implements Serializable, Cloneable {
      * @param containerPath
      *        The path on the container to mount the host volume at.
      */
+
     public void setContainerPath(String containerPath) {
         this.containerPath = containerPath;
     }
@@ -103,6 +107,7 @@ public class MountPoint implements Serializable, Cloneable {
      * 
      * @return The path on the container to mount the host volume at.
      */
+
     public String getContainerPath() {
         return this.containerPath;
     }
@@ -117,6 +122,7 @@ public class MountPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MountPoint withContainerPath(String containerPath) {
         setContainerPath(containerPath);
         return this;
@@ -135,6 +141,7 @@ public class MountPoint implements Serializable, Cloneable {
      *        the container can write to the volume. The default value is
      *        <code>false</code>.
      */
+
     public void setReadOnly(Boolean readOnly) {
         this.readOnly = readOnly;
     }
@@ -151,6 +158,7 @@ public class MountPoint implements Serializable, Cloneable {
      *         the container can write to the volume. The default value is
      *         <code>false</code>.
      */
+
     public Boolean getReadOnly() {
         return this.readOnly;
     }
@@ -170,6 +178,7 @@ public class MountPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MountPoint withReadOnly(Boolean readOnly) {
         setReadOnly(readOnly);
         return this;
@@ -187,6 +196,7 @@ public class MountPoint implements Serializable, Cloneable {
      *         the container can write to the volume. The default value is
      *         <code>false</code>.
      */
+
     public Boolean isReadOnly() {
         return this.readOnly;
     }

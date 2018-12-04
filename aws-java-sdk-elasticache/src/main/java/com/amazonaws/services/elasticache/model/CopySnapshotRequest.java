@@ -1,106 +1,124 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#copySnapshot(CopySnapshotRequest) CopySnapshot operation}.
  * <p>
- * The <i>CopySnapshot</i> action makes a copy of an existing snapshot.
+ * Represents the input of a <i>CopySnapshotMessage</i> action.
  * </p>
- *
- * @see com.amazonaws.services.elasticache.AmazonElastiCache#copySnapshot(CopySnapshotRequest)
  */
-public class CopySnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CopySnapshotRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of an existing snapshot from which to copy.
+     * </p>
      */
     private String sourceSnapshotName;
-
     /**
+     * <p>
      * A name for the copied snapshot.
+     * </p>
      */
     private String targetSnapshotName;
 
     /**
+     * <p>
      * The name of an existing snapshot from which to copy.
-     *
-     * @return The name of an existing snapshot from which to copy.
+     * </p>
+     * 
+     * @param sourceSnapshotName
+     *        The name of an existing snapshot from which to copy.
      */
-    public String getSourceSnapshotName() {
-        return sourceSnapshotName;
-    }
-    
-    /**
-     * The name of an existing snapshot from which to copy.
-     *
-     * @param sourceSnapshotName The name of an existing snapshot from which to copy.
-     */
+
     public void setSourceSnapshotName(String sourceSnapshotName) {
         this.sourceSnapshotName = sourceSnapshotName;
     }
-    
+
     /**
-     * The name of an existing snapshot from which to copy.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceSnapshotName The name of an existing snapshot from which to copy.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of an existing snapshot from which to copy.
+     * </p>
+     * 
+     * @return The name of an existing snapshot from which to copy.
      */
+
+    public String getSourceSnapshotName() {
+        return this.sourceSnapshotName;
+    }
+
+    /**
+     * <p>
+     * The name of an existing snapshot from which to copy.
+     * </p>
+     * 
+     * @param sourceSnapshotName
+     *        The name of an existing snapshot from which to copy.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CopySnapshotRequest withSourceSnapshotName(String sourceSnapshotName) {
-        this.sourceSnapshotName = sourceSnapshotName;
+        setSourceSnapshotName(sourceSnapshotName);
         return this;
     }
 
     /**
+     * <p>
      * A name for the copied snapshot.
-     *
-     * @return A name for the copied snapshot.
+     * </p>
+     * 
+     * @param targetSnapshotName
+     *        A name for the copied snapshot.
      */
-    public String getTargetSnapshotName() {
-        return targetSnapshotName;
-    }
-    
-    /**
-     * A name for the copied snapshot.
-     *
-     * @param targetSnapshotName A name for the copied snapshot.
-     */
+
     public void setTargetSnapshotName(String targetSnapshotName) {
         this.targetSnapshotName = targetSnapshotName;
     }
-    
+
     /**
-     * A name for the copied snapshot.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param targetSnapshotName A name for the copied snapshot.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A name for the copied snapshot.
+     * </p>
+     * 
+     * @return A name for the copied snapshot.
      */
+
+    public String getTargetSnapshotName() {
+        return this.targetSnapshotName;
+    }
+
+    /**
+     * <p>
+     * A name for the copied snapshot.
+     * </p>
+     * 
+     * @param targetSnapshotName
+     *        A name for the copied snapshot.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CopySnapshotRequest withTargetSnapshotName(String targetSnapshotName) {
-        this.targetSnapshotName = targetSnapshotName;
+        setTargetSnapshotName(targetSnapshotName);
         return this;
     }
 
@@ -116,42 +134,59 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSourceSnapshotName() != null) sb.append("SourceSnapshotName: " + getSourceSnapshotName() + ",");
-        if (getTargetSnapshotName() != null) sb.append("TargetSnapshotName: " + getTargetSnapshotName() );
+        if (getSourceSnapshotName() != null)
+            sb.append("SourceSnapshotName: " + getSourceSnapshotName() + ",");
+        if (getTargetSnapshotName() != null)
+            sb.append("TargetSnapshotName: " + getTargetSnapshotName());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CopySnapshotRequest == false)
+            return false;
+        CopySnapshotRequest other = (CopySnapshotRequest) obj;
+        if (other.getSourceSnapshotName() == null
+                ^ this.getSourceSnapshotName() == null)
+            return false;
+        if (other.getSourceSnapshotName() != null
+                && other.getSourceSnapshotName().equals(
+                        this.getSourceSnapshotName()) == false)
+            return false;
+        if (other.getTargetSnapshotName() == null
+                ^ this.getTargetSnapshotName() == null)
+            return false;
+        if (other.getTargetSnapshotName() != null
+                && other.getTargetSnapshotName().equals(
+                        this.getTargetSnapshotName()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSourceSnapshotName() == null) ? 0 : getSourceSnapshotName().hashCode()); 
-        hashCode = prime * hashCode + ((getTargetSnapshotName() == null) ? 0 : getTargetSnapshotName().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getSourceSnapshotName() == null) ? 0
+                        : getSourceSnapshotName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTargetSnapshotName() == null) ? 0
+                        : getTargetSnapshotName().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CopySnapshotRequest == false) return false;
-        CopySnapshotRequest other = (CopySnapshotRequest)obj;
-        
-        if (other.getSourceSnapshotName() == null ^ this.getSourceSnapshotName() == null) return false;
-        if (other.getSourceSnapshotName() != null && other.getSourceSnapshotName().equals(this.getSourceSnapshotName()) == false) return false; 
-        if (other.getTargetSnapshotName() == null ^ this.getTargetSnapshotName() == null) return false;
-        if (other.getTargetSnapshotName() != null && other.getTargetSnapshotName().equals(this.getTargetSnapshotName()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CopySnapshotRequest clone() {
-        
-            return (CopySnapshotRequest) super.clone();
+        return (CopySnapshotRequest) super.clone();
     }
-
 }
-    

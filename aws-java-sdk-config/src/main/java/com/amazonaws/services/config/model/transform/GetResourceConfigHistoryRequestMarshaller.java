@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetResourceConfigHistoryRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class GetResourceConfigHistoryRequestMarshaller
         implements
         Marshaller<Request<GetResourceConfigHistoryRequest>, GetResourceConfigHistoryRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetResourceConfigHistoryRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetResourceConfigHistoryRequest> marshall(
             GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
@@ -65,55 +66,49 @@ public class GetResourceConfigHistoryRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getResourceConfigHistoryRequest.getResourceType() != null) {
-                jsonWriter.key("resourceType").value(
+                jsonGenerator.writeFieldName("resourceType").writeValue(
                         getResourceConfigHistoryRequest.getResourceType());
             }
-
             if (getResourceConfigHistoryRequest.getResourceId() != null) {
-                jsonWriter.key("resourceId").value(
+                jsonGenerator.writeFieldName("resourceId").writeValue(
                         getResourceConfigHistoryRequest.getResourceId());
             }
-
             if (getResourceConfigHistoryRequest.getLaterTime() != null) {
-                jsonWriter.key("laterTime").value(
+                jsonGenerator.writeFieldName("laterTime").writeValue(
                         getResourceConfigHistoryRequest.getLaterTime());
             }
-
             if (getResourceConfigHistoryRequest.getEarlierTime() != null) {
-                jsonWriter.key("earlierTime").value(
+                jsonGenerator.writeFieldName("earlierTime").writeValue(
                         getResourceConfigHistoryRequest.getEarlierTime());
             }
-
             if (getResourceConfigHistoryRequest.getChronologicalOrder() != null) {
-                jsonWriter.key("chronologicalOrder")
-                        .value(getResourceConfigHistoryRequest
-                                .getChronologicalOrder());
+                jsonGenerator.writeFieldName("chronologicalOrder")
+                        .writeValue(
+                                getResourceConfigHistoryRequest
+                                        .getChronologicalOrder());
             }
-
             if (getResourceConfigHistoryRequest.getLimit() != null) {
-                jsonWriter.key("limit").value(
+                jsonGenerator.writeFieldName("limit").writeValue(
                         getResourceConfigHistoryRequest.getLimit());
             }
-
             if (getResourceConfigHistoryRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         getResourceConfigHistoryRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

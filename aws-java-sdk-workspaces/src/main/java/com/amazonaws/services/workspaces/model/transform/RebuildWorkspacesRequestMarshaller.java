@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.workspaces.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RebuildWorkspacesRequest Marshaller
  */
 public class RebuildWorkspacesRequestMarshaller implements
         Marshaller<Request<RebuildWorkspacesRequest>, RebuildWorkspacesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RebuildWorkspacesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RebuildWorkspacesRequest> marshall(
             RebuildWorkspacesRequest rebuildWorkspacesRequest) {
@@ -63,35 +64,35 @@ public class RebuildWorkspacesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<RebuildRequest> rebuildWorkspaceRequestsList = (com.amazonaws.internal.SdkInternalList<RebuildRequest>) rebuildWorkspacesRequest
                     .getRebuildWorkspaceRequests();
             if (!rebuildWorkspaceRequestsList.isEmpty()
                     || !rebuildWorkspaceRequestsList.isAutoConstruct()) {
-                jsonWriter.key("RebuildWorkspaceRequests");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("RebuildWorkspaceRequests");
+                jsonGenerator.writeStartArray();
                 for (RebuildRequest rebuildWorkspaceRequestsListValue : rebuildWorkspaceRequestsList) {
                     if (rebuildWorkspaceRequestsListValue != null) {
 
                         RebuildRequestJsonMarshaller.getInstance().marshall(
-                                rebuildWorkspaceRequestsListValue, jsonWriter);
+                                rebuildWorkspaceRequestsListValue,
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

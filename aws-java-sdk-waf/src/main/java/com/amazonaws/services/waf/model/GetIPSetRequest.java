@@ -46,6 +46,7 @@ public class GetIPSetRequest extends AmazonWebServiceRequest implements
      *        <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      *        <a>ListIPSets</a>.
      */
+
     public void setIPSetId(String iPSetId) {
         this.iPSetId = iPSetId;
     }
@@ -61,6 +62,7 @@ public class GetIPSetRequest extends AmazonWebServiceRequest implements
      *         get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and
      *         by <a>ListIPSets</a>.
      */
+
     public String getIPSetId() {
         return this.iPSetId;
     }
@@ -79,6 +81,7 @@ public class GetIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIPSetRequest withIPSetId(String iPSetId) {
         setIPSetId(iPSetId);
         return this;

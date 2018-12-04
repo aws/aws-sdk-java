@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * WebACLMarshaller
@@ -39,50 +34,51 @@ import com.amazonaws.util.json.*;
 public class WebACLJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(WebACL webACL, JSONWriter jsonWriter) {
+    public void marshall(WebACL webACL, StructuredJsonGenerator jsonGenerator) {
+
         if (webACL == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (webACL.getWebACLId() != null) {
-                jsonWriter.key("WebACLId").value(webACL.getWebACLId());
+                jsonGenerator.writeFieldName("WebACLId").writeValue(
+                        webACL.getWebACLId());
             }
-
             if (webACL.getName() != null) {
-                jsonWriter.key("Name").value(webACL.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        webACL.getName());
             }
-
             if (webACL.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(webACL.getMetricName());
+                jsonGenerator.writeFieldName("MetricName").writeValue(
+                        webACL.getMetricName());
             }
-
             if (webACL.getDefaultAction() != null) {
-                jsonWriter.key("DefaultAction");
+                jsonGenerator.writeFieldName("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(
-                        webACL.getDefaultAction(), jsonWriter);
+                        webACL.getDefaultAction(), jsonGenerator);
             }
 
             java.util.List<ActivatedRule> rulesList = webACL.getRules();
             if (rulesList != null) {
-                jsonWriter.key("Rules");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Rules");
+                jsonGenerator.writeStartArray();
                 for (ActivatedRule rulesListValue : rulesList) {
                     if (rulesListValue != null) {
 
                         ActivatedRuleJsonMarshaller.getInstance().marshall(
-                                rulesListValue, jsonWriter);
+                                rulesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

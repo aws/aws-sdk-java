@@ -50,6 +50,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return The list of full Amazon Resource Name (ARN) entries for each
      *         cluster associated with your account.
      */
+
     public java.util.List<String> getClusterArns() {
         if (clusterArns == null) {
             clusterArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      *        The list of full Amazon Resource Name (ARN) entries for each
      *        cluster associated with your account.
      */
+
     public void setClusterArns(java.util.Collection<String> clusterArns) {
         if (clusterArns == null) {
             this.clusterArns = null;
@@ -95,6 +97,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withClusterArns(String... clusterArns) {
         if (this.clusterArns == null) {
             setClusterArns(new com.amazonaws.internal.SdkInternalList<String>(
@@ -118,6 +121,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withClusterArns(
             java.util.Collection<String> clusterArns) {
         setClusterArns(clusterArns);
@@ -141,6 +145,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      *        value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -161,6 +166,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      *         value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -184,6 +190,7 @@ public class ListClustersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListClustersResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

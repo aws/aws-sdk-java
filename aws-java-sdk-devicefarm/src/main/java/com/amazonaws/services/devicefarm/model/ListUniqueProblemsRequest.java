@@ -49,6 +49,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      * @param arn
      *        The unique problems' ARNs.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -60,6 +61,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      * 
      * @return The unique problems' ARNs.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -74,6 +76,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUniqueProblemsRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -90,6 +93,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      *        operation, which can be used to return the next set of items in
      *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -104,6 +108,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      *         operation, which can be used to return the next set of items in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -121,6 +126,7 @@ public class ListUniqueProblemsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUniqueProblemsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -71,6 +71,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @param parameterKey
      *        The name that is associated with the parameter.
      */
+
     public void setParameterKey(String parameterKey) {
         this.parameterKey = parameterKey;
     }
@@ -82,6 +83,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * 
      * @return The name that is associated with the parameter.
      */
+
     public String getParameterKey() {
         return this.parameterKey;
     }
@@ -96,6 +98,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withParameterKey(String parameterKey) {
         setParameterKey(parameterKey);
         return this;
@@ -109,6 +112,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @param defaultValue
      *        The default value of the parameter.
      */
+
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
@@ -120,6 +124,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * 
      * @return The default value of the parameter.
      */
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -134,6 +139,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withDefaultValue(String defaultValue) {
         setDefaultValue(defaultValue);
         return this;
@@ -147,6 +153,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @param parameterType
      *        The type of parameter.
      */
+
     public void setParameterType(String parameterType) {
         this.parameterType = parameterType;
     }
@@ -158,6 +165,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * 
      * @return The type of parameter.
      */
+
     public String getParameterType() {
         return this.parameterType;
     }
@@ -172,6 +180,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withParameterType(String parameterType) {
         setParameterType(parameterType);
         return this;
@@ -187,6 +196,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      *        Flag that indicates whether the parameter value is shown as plain
      *        text in logs and in the AWS Management Console.
      */
+
     public void setNoEcho(Boolean noEcho) {
         this.noEcho = noEcho;
     }
@@ -200,6 +210,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Flag that indicates whether the parameter value is shown as plain
      *         text in logs and in the AWS Management Console.
      */
+
     public Boolean getNoEcho() {
         return this.noEcho;
     }
@@ -216,6 +227,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withNoEcho(Boolean noEcho) {
         setNoEcho(noEcho);
         return this;
@@ -230,6 +242,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Flag that indicates whether the parameter value is shown as plain
      *         text in logs and in the AWS Management Console.
      */
+
     public Boolean isNoEcho() {
         return this.noEcho;
     }
@@ -242,6 +255,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @param description
      *        The description that is associate with the parameter.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -253,6 +267,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * 
      * @return The description that is associate with the parameter.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -267,6 +282,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withDescription(String description) {
         setDescription(description);
         return this;
@@ -281,6 +297,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      *        The criteria that AWS CloudFormation uses to validate parameter
      *        values.
      */
+
     public void setParameterConstraints(
             ParameterConstraints parameterConstraints) {
         this.parameterConstraints = parameterConstraints;
@@ -294,6 +311,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return The criteria that AWS CloudFormation uses to validate parameter
      *         values.
      */
+
     public ParameterConstraints getParameterConstraints() {
         return this.parameterConstraints;
     }
@@ -309,6 +327,7 @@ public class ParameterDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterDeclaration withParameterConstraints(
             ParameterConstraints parameterConstraints) {
         setParameterConstraints(parameterConstraints);

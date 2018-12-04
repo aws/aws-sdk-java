@@ -33,8 +33,11 @@ public class DescribeComplianceByConfigRuleRequest extends
     private com.amazonaws.internal.SdkInternalList<String> configRuleNames;
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
@@ -54,6 +57,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      * @return Specify one or more AWS Config rule names to filter the results
      *         by rule.
      */
+
     public java.util.List<String> getConfigRuleNames() {
         if (configRuleNames == null) {
             configRuleNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -70,6 +74,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      *        Specify one or more AWS Config rule names to filter the results by
      *        rule.
      */
+
     public void setConfigRuleNames(java.util.Collection<String> configRuleNames) {
         if (configRuleNames == null) {
             this.configRuleNames = null;
@@ -97,6 +102,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByConfigRuleRequest withConfigRuleNames(
             String... configRuleNames) {
         if (this.configRuleNames == null) {
@@ -120,6 +126,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByConfigRuleRequest withConfigRuleNames(
             java.util.Collection<String> configRuleNames) {
         setConfigRuleNames(configRuleNames);
@@ -128,14 +135,20 @@ public class DescribeComplianceByConfigRuleRequest extends
 
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
-     * @return Filters the results by compliance. The valid values are
-     *         <code>Compliant</code> and <code>NonCompliant</code>.
+     * @return Filters the results by compliance.</p>
+     *         <p>
+     *         The allowed values are <code>COMPLIANT</code>,
+     *         <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
+
     public java.util.List<String> getComplianceTypes() {
         if (complianceTypes == null) {
             complianceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -145,15 +158,21 @@ public class DescribeComplianceByConfigRuleRequest extends
 
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance. The valid values are
-     *        <code>Compliant</code> and <code>NonCompliant</code>.
+     *        Filters the results by compliance.</p>
+     *        <p>
+     *        The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
+
     public void setComplianceTypes(java.util.Collection<String> complianceTypes) {
         if (complianceTypes == null) {
             this.complianceTypes = null;
@@ -166,8 +185,11 @@ public class DescribeComplianceByConfigRuleRequest extends
 
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -177,12 +199,15 @@ public class DescribeComplianceByConfigRuleRequest extends
      * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance. The valid values are
-     *        <code>Compliant</code> and <code>NonCompliant</code>.
+     *        Filters the results by compliance.</p>
+     *        <p>
+     *        The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public DescribeComplianceByConfigRuleRequest withComplianceTypes(
             String... complianceTypes) {
         if (this.complianceTypes == null) {
@@ -197,17 +222,23 @@ public class DescribeComplianceByConfigRuleRequest extends
 
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance. The valid values are
-     *        <code>Compliant</code> and <code>NonCompliant</code>.
+     *        Filters the results by compliance.</p>
+     *        <p>
+     *        The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public DescribeComplianceByConfigRuleRequest withComplianceTypes(
             java.util.Collection<String> complianceTypes) {
         setComplianceTypes(complianceTypes);
@@ -216,17 +247,23 @@ public class DescribeComplianceByConfigRuleRequest extends
 
     /**
      * <p>
-     * Filters the results by compliance. The valid values are
-     * <code>Compliant</code> and <code>NonCompliant</code>.
+     * Filters the results by compliance.
+     * </p>
+     * <p>
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>
+     * , and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
-     *        Filters the results by compliance. The valid values are
-     *        <code>Compliant</code> and <code>NonCompliant</code>.
+     *        Filters the results by compliance.</p>
+     *        <p>
+     *        The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public DescribeComplianceByConfigRuleRequest withComplianceTypes(
             ComplianceType... complianceTypes) {
         com.amazonaws.internal.SdkInternalList<String> complianceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -252,6 +289,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      *        The <code>nextToken</code> string returned on a previous page that
      *        you use to get the next page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -266,6 +304,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      *         that you use to get the next page of results in a paginated
      *         response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -282,6 +321,7 @@ public class DescribeComplianceByConfigRuleRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeComplianceByConfigRuleRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

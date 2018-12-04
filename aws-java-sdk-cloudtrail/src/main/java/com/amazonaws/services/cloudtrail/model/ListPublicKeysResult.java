@@ -19,8 +19,10 @@ package com.amazonaws.services.cloudtrail.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Returns the objects or data listed below if successful. Otherwise, returns an
  * error.
+ * </p>
  */
 public class ListPublicKeysResult implements Serializable, Cloneable {
 
@@ -28,8 +30,11 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * <p>
      * Contains an array of PublicKey objects.
      * </p>
-     * <note>The returned public keys may have validity time ranges that
-     * overlap.</note>
+     * <note>
+     * <p>
+     * The returned public keys may have validity time ranges that overlap.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<PublicKey> publicKeyList;
     /**
@@ -43,12 +48,19 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * <p>
      * Contains an array of PublicKey objects.
      * </p>
-     * <note>The returned public keys may have validity time ranges that
-     * overlap.</note>
+     * <note>
+     * <p>
+     * The returned public keys may have validity time ranges that overlap.
+     * </p>
+     * </note>
      * 
-     * @return Contains an array of PublicKey objects.</p> <note>The returned
-     *         public keys may have validity time ranges that overlap.
+     * @return Contains an array of PublicKey objects.</p> <note>
+     *         <p>
+     *         The returned public keys may have validity time ranges that
+     *         overlap.
+     *         </p>
      */
+
     public java.util.List<PublicKey> getPublicKeyList() {
         if (publicKeyList == null) {
             publicKeyList = new com.amazonaws.internal.SdkInternalList<PublicKey>();
@@ -60,13 +72,20 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * <p>
      * Contains an array of PublicKey objects.
      * </p>
-     * <note>The returned public keys may have validity time ranges that
-     * overlap.</note>
+     * <note>
+     * <p>
+     * The returned public keys may have validity time ranges that overlap.
+     * </p>
+     * </note>
      * 
      * @param publicKeyList
-     *        Contains an array of PublicKey objects.</p> <note>The returned
-     *        public keys may have validity time ranges that overlap.
+     *        Contains an array of PublicKey objects.</p> <note>
+     *        <p>
+     *        The returned public keys may have validity time ranges that
+     *        overlap.
+     *        </p>
      */
+
     public void setPublicKeyList(java.util.Collection<PublicKey> publicKeyList) {
         if (publicKeyList == null) {
             this.publicKeyList = null;
@@ -81,8 +100,11 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * <p>
      * Contains an array of PublicKey objects.
      * </p>
-     * <note>The returned public keys may have validity time ranges that
-     * overlap.</note>
+     * <note>
+     * <p>
+     * The returned public keys may have validity time ranges that overlap.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPublicKeyList(java.util.Collection)} or
@@ -91,11 +113,15 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicKeyList
-     *        Contains an array of PublicKey objects.</p> <note>The returned
-     *        public keys may have validity time ranges that overlap.
+     *        Contains an array of PublicKey objects.</p> <note>
+     *        <p>
+     *        The returned public keys may have validity time ranges that
+     *        overlap.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysResult withPublicKeyList(PublicKey... publicKeyList) {
         if (this.publicKeyList == null) {
             setPublicKeyList(new com.amazonaws.internal.SdkInternalList<PublicKey>(
@@ -111,15 +137,22 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * <p>
      * Contains an array of PublicKey objects.
      * </p>
-     * <note>The returned public keys may have validity time ranges that
-     * overlap.</note>
+     * <note>
+     * <p>
+     * The returned public keys may have validity time ranges that overlap.
+     * </p>
+     * </note>
      * 
      * @param publicKeyList
-     *        Contains an array of PublicKey objects.</p> <note>The returned
-     *        public keys may have validity time ranges that overlap.
+     *        Contains an array of PublicKey objects.</p> <note>
+     *        <p>
+     *        The returned public keys may have validity time ranges that
+     *        overlap.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysResult withPublicKeyList(
             java.util.Collection<PublicKey> publicKeyList) {
         setPublicKeyList(publicKeyList);
@@ -134,6 +167,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * @param nextToken
      *        Reserved for future use.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -145,6 +179,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * 
      * @return Reserved for future use.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -159,6 +194,7 @@ public class ListPublicKeysResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPublicKeysResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListTasksRequest Marshaller
  */
 public class ListTasksRequestMarshaller implements
         Marshaller<Request<ListTasksRequest>, ListTasksRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListTasksRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListTasksRequest> marshall(ListTasksRequest listTasksRequest) {
 
@@ -63,57 +63,51 @@ public class ListTasksRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listTasksRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(listTasksRequest.getCluster());
+                jsonGenerator.writeFieldName("cluster").writeValue(
+                        listTasksRequest.getCluster());
             }
-
             if (listTasksRequest.getContainerInstance() != null) {
-                jsonWriter.key("containerInstance").value(
+                jsonGenerator.writeFieldName("containerInstance").writeValue(
                         listTasksRequest.getContainerInstance());
             }
-
             if (listTasksRequest.getFamily() != null) {
-                jsonWriter.key("family").value(listTasksRequest.getFamily());
+                jsonGenerator.writeFieldName("family").writeValue(
+                        listTasksRequest.getFamily());
             }
-
             if (listTasksRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listTasksRequest.getNextToken());
             }
-
             if (listTasksRequest.getMaxResults() != null) {
-                jsonWriter.key("maxResults").value(
+                jsonGenerator.writeFieldName("maxResults").writeValue(
                         listTasksRequest.getMaxResults());
             }
-
             if (listTasksRequest.getStartedBy() != null) {
-                jsonWriter.key("startedBy").value(
+                jsonGenerator.writeFieldName("startedBy").writeValue(
                         listTasksRequest.getStartedBy());
             }
-
             if (listTasksRequest.getServiceName() != null) {
-                jsonWriter.key("serviceName").value(
+                jsonGenerator.writeFieldName("serviceName").writeValue(
                         listTasksRequest.getServiceName());
             }
-
             if (listTasksRequest.getDesiredStatus() != null) {
-                jsonWriter.key("desiredStatus").value(
+                jsonGenerator.writeFieldName("desiredStatus").writeValue(
                         listTasksRequest.getDesiredStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

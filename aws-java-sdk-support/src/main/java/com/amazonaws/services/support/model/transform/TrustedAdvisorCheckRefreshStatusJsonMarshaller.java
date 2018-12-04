@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TrustedAdvisorCheckRefreshStatusMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorCheckRefreshStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorCheckRefreshStatus trustedAdvisorCheckRefreshStatus,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (trustedAdvisorCheckRefreshStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorCheckRefreshStatus.getCheckId() != null) {
-                jsonWriter.key("checkId").value(
+                jsonGenerator.writeFieldName("checkId").writeValue(
                         trustedAdvisorCheckRefreshStatus.getCheckId());
             }
-
             if (trustedAdvisorCheckRefreshStatus.getStatus() != null) {
-                jsonWriter.key("status").value(
+                jsonGenerator.writeFieldName("status").writeValue(
                         trustedAdvisorCheckRefreshStatus.getStatus());
             }
-
             if (trustedAdvisorCheckRefreshStatus
                     .getMillisUntilNextRefreshable() != null) {
-                jsonWriter.key("millisUntilNextRefreshable").value(
-                        trustedAdvisorCheckRefreshStatus
-                                .getMillisUntilNextRefreshable());
+                jsonGenerator.writeFieldName("millisUntilNextRefreshable")
+                        .writeValue(
+                                trustedAdvisorCheckRefreshStatus
+                                        .getMillisUntilNextRefreshable());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

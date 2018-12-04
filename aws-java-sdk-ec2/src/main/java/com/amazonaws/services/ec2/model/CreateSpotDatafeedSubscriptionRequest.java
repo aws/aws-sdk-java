@@ -1,145 +1,167 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateSpotDatafeedSubscriptionRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest) CreateSpotDatafeedSubscription operation}.
  * <p>
- * Creates a data feed for Spot instances, enabling you to view Spot
- * instance usage logs. You can create one data feed per AWS account. For
- * more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html"> Spot Instance Data Feed </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * Contains the parameters for CreateSpotDatafeedSubscription.
  * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)
  */
-public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSpotDatafeedSubscriptionRequest> {
+public class CreateSpotDatafeedSubscriptionRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable,
+        DryRunSupportedRequest<CreateSpotDatafeedSubscriptionRequest> {
 
     /**
+     * <p>
      * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * </p>
      */
     private String bucket;
-
     /**
+     * <p>
      * A prefix for the data feed file names.
+     * </p>
      */
     private String prefix;
 
     /**
-     * Default constructor for a new CreateSpotDatafeedSubscriptionRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public CreateSpotDatafeedSubscriptionRequest() {}
-    
-    /**
-     * Constructs a new CreateSpotDatafeedSubscriptionRequest object.
+     * Default constructor for CreateSpotDatafeedSubscriptionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * initialize the object after creating it.
+     */
+    public CreateSpotDatafeedSubscriptionRequest() {
+    }
+
+    /**
+     * Constructs a new CreateSpotDatafeedSubscriptionRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
      * 
-     * @param bucket The Amazon S3 bucket in which to store the Spot instance
-     * data feed.
+     * @param bucket
+     *        The Amazon S3 bucket in which to store the Spot instance data
+     *        feed.
      */
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
         setBucket(bucket);
     }
 
     /**
+     * <p>
      * The Amazon S3 bucket in which to store the Spot instance data feed.
-     *
-     * @return The Amazon S3 bucket in which to store the Spot instance data feed.
+     * </p>
+     * 
+     * @param bucket
+     *        The Amazon S3 bucket in which to store the Spot instance data
+     *        feed.
      */
-    public String getBucket() {
-        return bucket;
-    }
-    
-    /**
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
-     *
-     * @param bucket The Amazon S3 bucket in which to store the Spot instance data feed.
-     */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
-    
+
     /**
-     * The Amazon S3 bucket in which to store the Spot instance data feed.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param bucket The Amazon S3 bucket in which to store the Spot instance data feed.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * </p>
+     * 
+     * @return The Amazon S3 bucket in which to store the Spot instance data
+     *         feed.
      */
+
+    public String getBucket() {
+        return this.bucket;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 bucket in which to store the Spot instance data feed.
+     * </p>
+     * 
+     * @param bucket
+     *        The Amazon S3 bucket in which to store the Spot instance data
+     *        feed.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateSpotDatafeedSubscriptionRequest withBucket(String bucket) {
-        this.bucket = bucket;
+        setBucket(bucket);
         return this;
     }
 
     /**
+     * <p>
      * A prefix for the data feed file names.
-     *
-     * @return A prefix for the data feed file names.
+     * </p>
+     * 
+     * @param prefix
+     *        A prefix for the data feed file names.
      */
-    public String getPrefix() {
-        return prefix;
-    }
-    
-    /**
-     * A prefix for the data feed file names.
-     *
-     * @param prefix A prefix for the data feed file names.
-     */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
-    
+
     /**
-     * A prefix for the data feed file names.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param prefix A prefix for the data feed file names.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A prefix for the data feed file names.
+     * </p>
+     * 
+     * @return A prefix for the data feed file names.
      */
+
+    public String getPrefix() {
+        return this.prefix;
+    }
+
+    /**
+     * <p>
+     * A prefix for the data feed file names.
+     * </p>
+     * 
+     * @param prefix
+     *        A prefix for the data feed file names.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CreateSpotDatafeedSubscriptionRequest withPrefix(String prefix) {
-        this.prefix = prefix;
+        setPrefix(prefix);
         return this;
     }
 
     /**
-     * This method is intended for internal use only.
-     * Returns the marshaled request configured with additional parameters to
-     * enable operation dry-run.
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
      */
     @Override
     public Request<CreateSpotDatafeedSubscriptionRequest> getDryRunRequest() {
-        Request<CreateSpotDatafeedSubscriptionRequest> request = new CreateSpotDatafeedSubscriptionRequestMarshaller().marshall(this);
+        Request<CreateSpotDatafeedSubscriptionRequest> request = new CreateSpotDatafeedSubscriptionRequestMarshaller()
+                .marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -152,42 +174,51 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
-        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() );
+        if (getBucket() != null)
+            sb.append("Bucket: " + getBucket() + ",");
+        if (getPrefix() != null)
+            sb.append("Prefix: " + getPrefix());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateSpotDatafeedSubscriptionRequest == false)
+            return false;
+        CreateSpotDatafeedSubscriptionRequest other = (CreateSpotDatafeedSubscriptionRequest) obj;
+        if (other.getBucket() == null ^ this.getBucket() == null)
+            return false;
+        if (other.getBucket() != null
+                && other.getBucket().equals(this.getBucket()) == false)
+            return false;
+        if (other.getPrefix() == null ^ this.getPrefix() == null)
+            return false;
+        if (other.getPrefix() != null
+                && other.getPrefix().equals(this.getPrefix()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode()); 
-        hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime * hashCode
+                + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateSpotDatafeedSubscriptionRequest == false) return false;
-        CreateSpotDatafeedSubscriptionRequest other = (CreateSpotDatafeedSubscriptionRequest)obj;
-        
-        if (other.getBucket() == null ^ this.getBucket() == null) return false;
-        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false) return false; 
-        if (other.getPrefix() == null ^ this.getPrefix() == null) return false;
-        if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateSpotDatafeedSubscriptionRequest clone() {
-        
-            return (CreateSpotDatafeedSubscriptionRequest) super.clone();
+        return (CreateSpotDatafeedSubscriptionRequest) super.clone();
     }
-
 }
-    

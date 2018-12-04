@@ -40,6 +40,7 @@ public class DisableGatewayResult implements Serializable, Cloneable {
      * @param gatewayARN
      *        The unique Amazon Resource Name of the disabled gateway.
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -51,6 +52,7 @@ public class DisableGatewayResult implements Serializable, Cloneable {
      * 
      * @return The unique Amazon Resource Name of the disabled gateway.
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -65,6 +67,7 @@ public class DisableGatewayResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableGatewayResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;

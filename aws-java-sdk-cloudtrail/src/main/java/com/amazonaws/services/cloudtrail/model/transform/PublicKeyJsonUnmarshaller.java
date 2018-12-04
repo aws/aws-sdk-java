@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class PublicKeyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    publicKey.setValue(ByteBufferJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    publicKey.setValue(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidityStartTime", targetDepth)) {
                     context.nextToken();
-                    publicKey.setValidityStartTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    publicKey.setValidityStartTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("ValidityEndTime", targetDepth)) {
                     context.nextToken();
-                    publicKey.setValidityEndTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    publicKey.setValidityEndTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Fingerprint", targetDepth)) {
                     context.nextToken();
-                    publicKey.setFingerprint(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    publicKey.setFingerprint(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

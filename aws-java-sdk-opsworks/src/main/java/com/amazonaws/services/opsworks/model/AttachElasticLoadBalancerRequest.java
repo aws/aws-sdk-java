@@ -47,6 +47,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      * @param elasticLoadBalancerName
      *        The Elastic Load Balancing instance's name.
      */
+
     public void setElasticLoadBalancerName(String elasticLoadBalancerName) {
         this.elasticLoadBalancerName = elasticLoadBalancerName;
     }
@@ -58,6 +59,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      * 
      * @return The Elastic Load Balancing instance's name.
      */
+
     public String getElasticLoadBalancerName() {
         return this.elasticLoadBalancerName;
     }
@@ -72,6 +74,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachElasticLoadBalancerRequest withElasticLoadBalancerName(
             String elasticLoadBalancerName) {
         setElasticLoadBalancerName(elasticLoadBalancerName);
@@ -88,6 +91,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      *        The ID of the layer that the Elastic Load Balancing instance is to
      *        be attached to.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -101,6 +105,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      * @return The ID of the layer that the Elastic Load Balancing instance is
      *         to be attached to.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -117,6 +122,7 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachElasticLoadBalancerRequest withLayerId(String layerId) {
         setLayerId(layerId);
         return this;

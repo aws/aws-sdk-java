@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,13 +54,13 @@ public class ImageJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
                     context.nextToken();
-                    image.setRegistryId(StringJsonUnmarshaller.getInstance()
+                    image.setRegistryId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    image.setRepositoryName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    image.setRepositoryName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("imageId", targetDepth)) {
                     context.nextToken();
@@ -67,8 +69,8 @@ public class ImageJsonUnmarshaller implements
                 }
                 if (context.testExpression("imageManifest", targetDepth)) {
                     context.nextToken();
-                    image.setImageManifest(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    image.setImageManifest(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -54,6 +54,7 @@ public class Artifact implements Serializable, Cloneable {
      * @param name
      *        The artifact's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -65,6 +66,7 @@ public class Artifact implements Serializable, Cloneable {
      * 
      * @return The artifact's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -79,6 +81,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Artifact withName(String name) {
         setName(name);
         return this;
@@ -94,6 +97,7 @@ public class Artifact implements Serializable, Cloneable {
      *        The artifact's revision ID. Depending on the type of object, this
      *        could be a commit ID (GitHub) or a revision ID (Amazon S3).
      */
+
     public void setRevision(String revision) {
         this.revision = revision;
     }
@@ -107,6 +111,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return The artifact's revision ID. Depending on the type of object, this
      *         could be a commit ID (GitHub) or a revision ID (Amazon S3).
      */
+
     public String getRevision() {
         return this.revision;
     }
@@ -123,6 +128,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Artifact withRevision(String revision) {
         setRevision(revision);
         return this;
@@ -136,6 +142,7 @@ public class Artifact implements Serializable, Cloneable {
      * @param location
      *        The location of an artifact.
      */
+
     public void setLocation(ArtifactLocation location) {
         this.location = location;
     }
@@ -147,6 +154,7 @@ public class Artifact implements Serializable, Cloneable {
      * 
      * @return The location of an artifact.
      */
+
     public ArtifactLocation getLocation() {
         return this.location;
     }
@@ -161,6 +169,7 @@ public class Artifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Artifact withLocation(ArtifactLocation location) {
         setLocation(location);
         return this;

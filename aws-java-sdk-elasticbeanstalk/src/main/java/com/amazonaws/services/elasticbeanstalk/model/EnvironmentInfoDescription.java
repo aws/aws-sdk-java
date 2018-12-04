@@ -59,6 +59,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      *        The type of information retrieved.
      * @see EnvironmentInfoType
      */
+
     public void setInfoType(String infoType) {
         this.infoType = infoType;
     }
@@ -71,6 +72,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @return The type of information retrieved.
      * @see EnvironmentInfoType
      */
+
     public String getInfoType() {
         return this.infoType;
     }
@@ -86,6 +88,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentInfoType
      */
+
     public EnvironmentInfoDescription withInfoType(String infoType) {
         setInfoType(infoType);
         return this;
@@ -98,10 +101,9 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @param infoType
      *        The type of information retrieved.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentInfoType
      */
+
     public void setInfoType(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }
@@ -117,6 +119,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      *         chained together.
      * @see EnvironmentInfoType
      */
+
     public EnvironmentInfoDescription withInfoType(EnvironmentInfoType infoType) {
         setInfoType(infoType);
         return this;
@@ -130,6 +133,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @param ec2InstanceId
      *        The Amazon EC2 Instance ID for this information.
      */
+
     public void setEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
     }
@@ -141,6 +145,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon EC2 Instance ID for this information.
      */
+
     public String getEc2InstanceId() {
         return this.ec2InstanceId;
     }
@@ -155,6 +160,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentInfoDescription withEc2InstanceId(String ec2InstanceId) {
         setEc2InstanceId(ec2InstanceId);
         return this;
@@ -168,6 +174,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @param sampleTimestamp
      *        The time stamp when this information was retrieved.
      */
+
     public void setSampleTimestamp(java.util.Date sampleTimestamp) {
         this.sampleTimestamp = sampleTimestamp;
     }
@@ -179,6 +186,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @return The time stamp when this information was retrieved.
      */
+
     public java.util.Date getSampleTimestamp() {
         return this.sampleTimestamp;
     }
@@ -193,6 +201,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentInfoDescription withSampleTimestamp(
             java.util.Date sampleTimestamp) {
         setSampleTimestamp(sampleTimestamp);
@@ -207,6 +216,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @param message
      *        The retrieved information.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -218,6 +228,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * 
      * @return The retrieved information.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -232,6 +243,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentInfoDescription withMessage(String message) {
         setMessage(message);
         return this;

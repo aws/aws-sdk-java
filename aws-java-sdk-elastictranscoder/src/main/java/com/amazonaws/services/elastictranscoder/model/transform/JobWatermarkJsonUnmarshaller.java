@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class JobWatermarkJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("PresetWatermarkId", targetDepth)) {
                     context.nextToken();
-                    jobWatermark.setPresetWatermarkId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobWatermark.setPresetWatermarkId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputKey", targetDepth)) {
                     context.nextToken();
-                    jobWatermark.setInputKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobWatermark.setInputKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {
                     context.nextToken();

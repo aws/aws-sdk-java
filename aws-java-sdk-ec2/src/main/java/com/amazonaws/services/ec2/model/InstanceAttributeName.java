@@ -1,24 +1,26 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 /**
- * Instance Attribute Name
+ * 
  */
 public enum InstanceAttributeName {
-    
+
     InstanceType("instanceType"),
     Kernel("kernel"),
     Ramdisk("ramdisk"),
@@ -48,42 +50,41 @@ public enum InstanceAttributeName {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return InstanceAttributeName corresponding to the value
      */
     public static InstanceAttributeName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("instanceType".equals(value)) {
-            return InstanceAttributeName.InstanceType;
+            return InstanceType;
         } else if ("kernel".equals(value)) {
-            return InstanceAttributeName.Kernel;
+            return Kernel;
         } else if ("ramdisk".equals(value)) {
-            return InstanceAttributeName.Ramdisk;
+            return Ramdisk;
         } else if ("userData".equals(value)) {
-            return InstanceAttributeName.UserData;
+            return UserData;
         } else if ("disableApiTermination".equals(value)) {
-            return InstanceAttributeName.DisableApiTermination;
+            return DisableApiTermination;
         } else if ("instanceInitiatedShutdownBehavior".equals(value)) {
-            return InstanceAttributeName.InstanceInitiatedShutdownBehavior;
+            return InstanceInitiatedShutdownBehavior;
         } else if ("rootDeviceName".equals(value)) {
-            return InstanceAttributeName.RootDeviceName;
+            return RootDeviceName;
         } else if ("blockDeviceMapping".equals(value)) {
-            return InstanceAttributeName.BlockDeviceMapping;
+            return BlockDeviceMapping;
         } else if ("productCodes".equals(value)) {
-            return InstanceAttributeName.ProductCodes;
+            return ProductCodes;
         } else if ("sourceDestCheck".equals(value)) {
-            return InstanceAttributeName.SourceDestCheck;
+            return SourceDestCheck;
         } else if ("groupSet".equals(value)) {
-            return InstanceAttributeName.GroupSet;
+            return GroupSet;
         } else if ("ebsOptimized".equals(value)) {
-            return InstanceAttributeName.EbsOptimized;
+            return EbsOptimized;
         } else if ("sriovNetSupport".equals(value)) {
-            return InstanceAttributeName.SriovNetSupport;
+            return SriovNetSupport;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

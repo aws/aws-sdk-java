@@ -42,6 +42,7 @@ public class DeleteDomainNameRequest extends AmazonWebServiceRequest implements
      * @param domainName
      *        The name of the <a>DomainName</a> resource to be deleted.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -53,6 +54,7 @@ public class DeleteDomainNameRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>DomainName</a> resource to be deleted.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -67,6 +69,7 @@ public class DeleteDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDomainNameRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

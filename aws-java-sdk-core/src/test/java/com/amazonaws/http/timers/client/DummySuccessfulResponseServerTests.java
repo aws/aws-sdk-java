@@ -14,6 +14,31 @@
  */
 package com.amazonaws.http.timers.client;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.TestPreConditions;
+import com.amazonaws.handlers.RequestHandler2;
+import com.amazonaws.http.AmazonHttpClient;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.MockServerTestBase;
+import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.apache.client.impl.SdkHttpClient;
+import com.amazonaws.http.request.RequestHandlerTestUtils;
+import com.amazonaws.http.request.SlowRequestHandler;
+import com.amazonaws.http.response.DummyResponseHandler;
+import com.amazonaws.http.response.NullErrorResponseHandler;
+import com.amazonaws.http.response.UnresponsiveResponseHandler;
+import com.amazonaws.http.server.MockServer;
+import com.amazonaws.http.settings.HttpClientSettings;
+import org.apache.http.client.HttpClient;
+import org.apache.http.pool.ConnPoolControl;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.util.List;
+
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.interruptCurrentThreadAfterDelay;
 import static com.amazonaws.http.timers.TimeoutTestConstants.CLIENT_EXECUTION_TIMEOUT;
 import static com.amazonaws.http.timers.TimeoutTestConstants.SLOW_REQUEST_HANDLER_TIMEOUT;
@@ -22,29 +47,6 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
-
-import java.io.IOException;
-import java.util.List;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.pool.ConnPoolControl;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.TestPreConditions;
-import com.amazonaws.handlers.RequestHandler2;
-import com.amazonaws.http.AmazonHttpClient;
-import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.http.HttpClientFactory;
-import com.amazonaws.http.MockServerTestBase;
-import com.amazonaws.http.request.RequestHandlerTestUtils;
-import com.amazonaws.http.request.SlowRequestHandler;
-import com.amazonaws.http.response.DummyResponseHandler;
-import com.amazonaws.http.response.NullErrorResponseHandler;
-import com.amazonaws.http.response.UnresponsiveResponseHandler;
-import com.amazonaws.http.server.MockServer;
 
 public class DummySuccessfulResponseServerTests extends MockServerTestBase {
 
@@ -99,15 +101,15 @@ public class DummySuccessfulResponseServerTests extends MockServerTestBase {
     }
 
     /**
-     * Tests that a streaming operation has it's request properly cleaned up if the client is
-     * interrupted after the response is received.
-     * 
+     * Tests that a streaming operation has it's request properly cleaned up if the client is interrupted after the
+     * response is received.
+     *
      * @see TT0070103230
      */
     @Test
     public void clientInterruptedDuringResponseHandlers_DoesNotLeakConnection() throws IOException {
         ClientConfiguration config = new ClientConfiguration();
-        HttpClient rawHttpClient = new HttpClientFactory().createHttpClient(config);
+        ConnectionManagerAwareHttpClient rawHttpClient = new ApacheHttpClientFactory().create(HttpClientSettings.adapt(config));
 
         httpClient = new AmazonHttpClient(config, rawHttpClient, null);
 
@@ -123,7 +125,7 @@ public class DummySuccessfulResponseServerTests extends MockServerTestBase {
         }
 
         @SuppressWarnings("deprecation")
-        int leasedConnections = ((ConnPoolControl<?>) rawHttpClient.getConnectionManager()).getTotalStats().getLeased();
+        int leasedConnections = ((ConnPoolControl<?>) ((SdkHttpClient)rawHttpClient).getHttpClientConnectionManager()).getTotalStats().getLeased();
         assertEquals(0, leasedConnections);
     }
 

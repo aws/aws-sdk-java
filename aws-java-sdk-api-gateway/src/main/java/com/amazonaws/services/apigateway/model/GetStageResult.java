@@ -77,25 +77,24 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      */
     private java.util.Map<String, String> variables;
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -108,6 +107,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @param deploymentId
      *        The identifier of the <a>Deployment</a> that the stage points to.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -119,6 +119,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @return The identifier of the <a>Deployment</a> that the stage points to.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -133,6 +134,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -141,6 +143,7 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * @param clientCertificateId
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
@@ -148,6 +151,7 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
@@ -157,6 +161,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withClientCertificateId(String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
         return this;
@@ -172,6 +177,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *        The name of the stage is the first path segment in the Uniform
      *        Resource Identifier (URI) of a call to Amazon API Gateway.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -185,6 +191,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return The name of the stage is the first path segment in the Uniform
      *         Resource Identifier (URI) of a call to Amazon API Gateway.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -201,6 +208,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -214,6 +222,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @param description
      *        The stage's description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -225,6 +234,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @return The stage's description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -239,6 +249,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -252,6 +263,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @param cacheClusterEnabled
      *        Specifies whether a cache cluster is enabled for the stage.
      */
+
     public void setCacheClusterEnabled(Boolean cacheClusterEnabled) {
         this.cacheClusterEnabled = cacheClusterEnabled;
     }
@@ -263,6 +275,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether a cache cluster is enabled for the stage.
      */
+
     public Boolean getCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -277,6 +290,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withCacheClusterEnabled(Boolean cacheClusterEnabled) {
         setCacheClusterEnabled(cacheClusterEnabled);
         return this;
@@ -289,6 +303,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @return Specifies whether a cache cluster is enabled for the stage.
      */
+
     public Boolean isCacheClusterEnabled() {
         return this.cacheClusterEnabled;
     }
@@ -301,6 +316,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @param cacheClusterSize
      *        The size of the cache cluster for the stage, if enabled.
      */
+
     public void setCacheClusterSize(String cacheClusterSize) {
         this.cacheClusterSize = cacheClusterSize;
     }
@@ -312,6 +328,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @return The size of the cache cluster for the stage, if enabled.
      */
+
     public String getCacheClusterSize() {
         return this.cacheClusterSize;
     }
@@ -326,6 +343,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withCacheClusterSize(String cacheClusterSize) {
         setCacheClusterSize(cacheClusterSize);
         return this;
@@ -340,6 +358,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *        The status of the cache cluster for the stage, if enabled.
      * @see CacheClusterStatus
      */
+
     public void setCacheClusterStatus(String cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus;
     }
@@ -352,6 +371,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return The status of the cache cluster for the stage, if enabled.
      * @see CacheClusterStatus
      */
+
     public String getCacheClusterStatus() {
         return this.cacheClusterStatus;
     }
@@ -367,6 +387,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *         chained together.
      * @see CacheClusterStatus
      */
+
     public GetStageResult withCacheClusterStatus(String cacheClusterStatus) {
         setCacheClusterStatus(cacheClusterStatus);
         return this;
@@ -379,10 +400,9 @@ public class GetStageResult implements Serializable, Cloneable {
      * 
      * @param cacheClusterStatus
      *        The status of the cache cluster for the stage, if enabled.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CacheClusterStatus
      */
+
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
         this.cacheClusterStatus = cacheClusterStatus.toString();
     }
@@ -398,6 +418,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *         chained together.
      * @see CacheClusterStatus
      */
+
     public GetStageResult withCacheClusterStatus(
             CacheClusterStatus cacheClusterStatus) {
         setCacheClusterStatus(cacheClusterStatus);
@@ -418,6 +439,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *         method override, or <code>\*&#47;\*</code> for the settings
      *         applied to all methods in the stage.
      */
+
     public java.util.Map<String, MethodSetting> getMethodSettings() {
         return methodSettings;
     }
@@ -437,6 +459,7 @@ public class GetStageResult implements Serializable, Cloneable {
      *        method override, or <code>\*&#47;\*</code> for the settings
      *        applied to all methods in the stage.
      */
+
     public void setMethodSettings(
             java.util.Map<String, MethodSetting> methodSettings) {
         this.methodSettings = methodSettings;
@@ -459,6 +482,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withMethodSettings(
             java.util.Map<String, MethodSetting> methodSettings) {
         setMethodSettings(methodSettings);
@@ -480,6 +504,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * Removes all the entries added into MethodSettings. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetStageResult clearMethodSettingsEntries() {
         this.methodSettings = null;
         return this;
@@ -488,14 +513,15 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @return A map that defines the stage variables for a <a>Stage</a>
-     *         resource. Variable names can have alphabetic characters, and the
-     *         values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *         resource. Variable names can have alphanumeric characters, and
+     *         the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public java.util.Map<String, String> getVariables() {
         return variables;
     }
@@ -503,15 +529,16 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphabetic characters, and the
-     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *        resource. Variable names can have alphanumeric characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      */
+
     public void setVariables(java.util.Map<String, String> variables) {
         this.variables = variables;
     }
@@ -519,17 +546,18 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * A map that defines the stage variables for a <a>Stage</a> resource.
-     * Variable names can have alphabetic characters, and the values must match
-     * [A-Za-z0-9-._~:/?#&amp;=,]+
+     * Variable names can have alphanumeric characters, and the values must
+     * match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * </p>
      * 
      * @param variables
      *        A map that defines the stage variables for a <a>Stage</a>
-     *        resource. Variable names can have alphabetic characters, and the
-     *        values must match [A-Za-z0-9-._~:/?#&amp;=,]+
+     *        resource. Variable names can have alphanumeric characters, and the
+     *        values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withVariables(java.util.Map<String, String> variables) {
         setVariables(variables);
         return this;
@@ -550,6 +578,7 @@ public class GetStageResult implements Serializable, Cloneable {
      * Removes all the entries added into Variables. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetStageResult clearVariablesEntries() {
         this.variables = null;
         return this;
@@ -557,52 +586,52 @@ public class GetStageResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setCreatedDate(java.util.Date createdDate) {
         this.createdDate = createdDate;
     }
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date and time that the stage was created, in <a
-     *         target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * The date and time that the stage was created, in <a
+     * href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param createdDate
      *        The date and time that the stage was created, in <a
-     *        target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withCreatedDate(java.util.Date createdDate) {
         setCreatedDate(createdDate);
         return this;
@@ -611,17 +640,17 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
      *        The date and time that information about the stage was last
-     *        updated, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      */
+
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
         this.lastUpdatedDate = lastUpdatedDate;
     }
@@ -629,16 +658,16 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @return The date and time that information about the stage was last
-     *         updated, in <a target="_blank"
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *         format</a>.
+     *         updated, in <a
+     *         href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *         target="_blank">ISO 8601 format</a>.
      */
+
     public java.util.Date getLastUpdatedDate() {
         return this.lastUpdatedDate;
     }
@@ -646,19 +675,19 @@ public class GetStageResult implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time that information about the stage was last updated, in
-     * <a target="_blank"
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     * format</a>.
+     * <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     * target="_blank">ISO 8601 format</a>.
      * </p>
      * 
      * @param lastUpdatedDate
      *        The date and time that information about the stage was last
-     *        updated, in <a target="_blank"
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601
-     *        format</a>.
+     *        updated, in <a
+     *        href="http://www.iso.org/iso/home/standards/iso8601.htm"
+     *        target="_blank">ISO 8601 format</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStageResult withLastUpdatedDate(java.util.Date lastUpdatedDate) {
         setLastUpdatedDate(lastUpdatedDate);
         return this;

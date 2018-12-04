@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -20,7 +20,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
  * <p>
- * Provides options for deleting a specified object in a specified bucket. 
+ * Provides options for deleting a specified object in a specified bucket.
  * Once deleted, the object
  * can only be restored if versioning was enabled when the object was deleted.
  * </p>
@@ -44,12 +44,18 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
      */
     private String key;
 
+    /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
+
 
     /**
-     * Constructs a new 
-     * {@link DeleteObjectRequest}, 
+     * Constructs a new
+     * {@link DeleteObjectRequest},
      * specifying the object's bucket name and key.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
      *            delete.
@@ -65,11 +71,11 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Gets the name of the Amazon S3 bucket containing the object to
      * delete.
-     * 
+     *
      * @return The name of the Amazon S3 bucket containing the object to
      *         delete.
-     *         
-     * @see DeleteObjectRequest#setBucketName(String)       
+     *
+     * @see DeleteObjectRequest#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -77,11 +83,11 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Sets the name of the Amazon S3 bucket containing the object to delete.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
      *            delete.
-     * @see DeleteObjectRequest#getBucketName()               
+     * @see DeleteObjectRequest#getBucketName()
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -91,12 +97,12 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
      * Sets the name of the Amazon S3 bucket containing the object to delete
      * and returns this object, enabling additional method calls to be chained
      * together.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
      *            delete.
-     * 
-     * @return The updated {@link DeleteObjectRequest} 
+     *
+     * @return The updated {@link DeleteObjectRequest}
      *         object, enabling additional method
      *         calls to be chained together.
      */
@@ -107,9 +113,9 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Gets the key of the object to delete.
-     * 
+     *
      * @return The key of the object to delete.
-     * 
+     *
      * @see DeleteObjectRequest#setKey(String)
      */
     public String getKey() {
@@ -118,11 +124,11 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * Sets the key of the object to delete.
-     * 
+     *
      * @param key
      *            The key of the object to delete.
-     *            
-     * @see DeleteObjectRequest#getKey()           
+     *
+     * @see DeleteObjectRequest#getKey()
      */
     public void setKey(String key) {
         this.key = key;
@@ -131,10 +137,10 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
     /**
      * Sets the key of the object to delete and returns this object, enabling
      * additional method calls to be chained together.
-     * 
+     *
      * @param key
      *            The key of the object to delete.
-     * 
+     *
      * @return The updated {@link DeleteObjectRequest} object, enabling additional method
      *         calls to chained together.
      */
@@ -142,5 +148,70 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
         setKey(key);
         return this;
     }
-    
+
+    /**
+     * Returns true if the user has enabled Requester Pays option when
+     * conducting this operation from Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket. It returns this
+     * updated DeleteObjectRequest object so that additional method calls can be
+     * chained together.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     *
+     * @return The updated DeleteObjectRequest object.
+     */
+    public DeleteObjectRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
+        return this;
+    }
+
 }

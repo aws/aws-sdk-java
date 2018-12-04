@@ -48,6 +48,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      *        The unique identifier of the customer master key (CMK) for which
      *        deletion is scheduled.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -61,6 +62,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      * @return The unique identifier of the customer master key (CMK) for which
      *         deletion is scheduled.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -77,6 +79,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleKeyDeletionResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -92,6 +95,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      *        The date and time after which AWS KMS deletes the customer master
      *        key (CMK).
      */
+
     public void setDeletionDate(java.util.Date deletionDate) {
         this.deletionDate = deletionDate;
     }
@@ -105,6 +109,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      * @return The date and time after which AWS KMS deletes the customer master
      *         key (CMK).
      */
+
     public java.util.Date getDeletionDate() {
         return this.deletionDate;
     }
@@ -121,6 +126,7 @@ public class ScheduleKeyDeletionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScheduleKeyDeletionResult withDeletionDate(
             java.util.Date deletionDate) {
         setDeletionDate(deletionDate);

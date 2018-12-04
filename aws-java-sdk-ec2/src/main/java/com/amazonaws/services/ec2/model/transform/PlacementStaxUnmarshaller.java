@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -29,38 +32,52 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 /**
  * Placement StAX Unmarshaller
  */
-public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUnmarshallerContext> {
+public class PlacementStaxUnmarshaller implements
+        Unmarshaller<Placement, StaxUnmarshallerContext> {
 
-    public Placement unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public Placement unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         Placement placement = new Placement();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return placement;
+            if (xmlEvent.isEndDocument())
+                return placement;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("availabilityZone", targetDepth)) {
-                    placement.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    placement.setAvailabilityZone(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupName", targetDepth)) {
-                    placement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    placement.setGroupName(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("tenancy", targetDepth)) {
-                    placement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    placement.setTenancy(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("hostId", targetDepth)) {
-                    placement.setHostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    placement.setHostId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("affinity", targetDepth)) {
-                    placement.setAffinity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    placement.setAffinity(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -72,9 +89,10 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
     }
 
     private static PlacementStaxUnmarshaller instance;
+
     public static PlacementStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new PlacementStaxUnmarshaller();
+        if (instance == null)
+            instance = new PlacementStaxUnmarshaller();
         return instance;
     }
 }
-    

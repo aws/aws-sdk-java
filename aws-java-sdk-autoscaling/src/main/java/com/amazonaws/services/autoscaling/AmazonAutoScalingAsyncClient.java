@@ -16,6 +16,7 @@
 package com.amazonaws.services.autoscaling;
 
 import com.amazonaws.services.autoscaling.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Auto Scaling asynchronously. Each asynchronous method
@@ -31,6 +32,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * services.
  * </p>
  */
+@ThreadSafe
 public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         implements AmazonAutoScalingAsync {
 
@@ -129,8 +131,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -222,9 +223,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -263,26 +262,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInstancesAsync(
+    public java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(
             AttachInstancesRequest request) {
 
         return attachInstancesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachInstancesAsync(
+    public java.util.concurrent.Future<AttachInstancesResult> attachInstancesAsync(
             final AttachInstancesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AttachInstancesRequest, AttachInstancesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AttachInstancesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AttachInstancesResult call() throws Exception {
+                        AttachInstancesResult result;
 
                         try {
-                            attachInstances(request);
-                            result = null;
+                            result = attachInstances(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -395,26 +393,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAutoScalingGroupAsync(
+    public java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(
             CreateAutoScalingGroupRequest request) {
 
         return createAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createAutoScalingGroupAsync(
+    public java.util.concurrent.Future<CreateAutoScalingGroupResult> createAutoScalingGroupAsync(
             final CreateAutoScalingGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateAutoScalingGroupRequest, CreateAutoScalingGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateAutoScalingGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateAutoScalingGroupResult call() throws Exception {
+                        CreateAutoScalingGroupResult result;
 
                         try {
-                            createAutoScalingGroup(request);
-                            result = null;
+                            result = createAutoScalingGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -431,26 +428,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLaunchConfigurationAsync(
+    public java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             CreateLaunchConfigurationRequest request) {
 
         return createLaunchConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLaunchConfigurationAsync(
+    public java.util.concurrent.Future<CreateLaunchConfigurationResult> createLaunchConfigurationAsync(
             final CreateLaunchConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateLaunchConfigurationRequest, CreateLaunchConfigurationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateLaunchConfigurationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateLaunchConfigurationResult call()
+                            throws Exception {
+                        CreateLaunchConfigurationResult result;
 
                         try {
-                            createLaunchConfiguration(request);
-                            result = null;
+                            result = createLaunchConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -467,26 +464,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createOrUpdateTagsAsync(
+    public java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(
             CreateOrUpdateTagsRequest request) {
 
         return createOrUpdateTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createOrUpdateTagsAsync(
+    public java.util.concurrent.Future<CreateOrUpdateTagsResult> createOrUpdateTagsAsync(
             final CreateOrUpdateTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<CreateOrUpdateTagsRequest, CreateOrUpdateTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<CreateOrUpdateTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public CreateOrUpdateTagsResult call() throws Exception {
+                        CreateOrUpdateTagsResult result;
 
                         try {
-                            createOrUpdateTags(request);
-                            result = null;
+                            result = createOrUpdateTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -503,26 +499,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAutoScalingGroupAsync(
+    public java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(
             DeleteAutoScalingGroupRequest request) {
 
         return deleteAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAutoScalingGroupAsync(
+    public java.util.concurrent.Future<DeleteAutoScalingGroupResult> deleteAutoScalingGroupAsync(
             final DeleteAutoScalingGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAutoScalingGroupRequest, DeleteAutoScalingGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAutoScalingGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAutoScalingGroupResult call() throws Exception {
+                        DeleteAutoScalingGroupResult result;
 
                         try {
-                            deleteAutoScalingGroup(request);
-                            result = null;
+                            result = deleteAutoScalingGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -539,26 +534,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLaunchConfigurationAsync(
+    public java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             DeleteLaunchConfigurationRequest request) {
 
         return deleteLaunchConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLaunchConfigurationAsync(
+    public java.util.concurrent.Future<DeleteLaunchConfigurationResult> deleteLaunchConfigurationAsync(
             final DeleteLaunchConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteLaunchConfigurationRequest, DeleteLaunchConfigurationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteLaunchConfigurationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteLaunchConfigurationResult call()
+                            throws Exception {
+                        DeleteLaunchConfigurationResult result;
 
                         try {
-                            deleteLaunchConfiguration(request);
-                            result = null;
+                            result = deleteLaunchConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -610,26 +605,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNotificationConfigurationAsync(
+    public java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             DeleteNotificationConfigurationRequest request) {
 
         return deleteNotificationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteNotificationConfigurationAsync(
+    public java.util.concurrent.Future<DeleteNotificationConfigurationResult> deleteNotificationConfigurationAsync(
             final DeleteNotificationConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteNotificationConfigurationRequest, DeleteNotificationConfigurationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteNotificationConfigurationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteNotificationConfigurationResult call()
+                            throws Exception {
+                        DeleteNotificationConfigurationResult result;
 
                         try {
-                            deleteNotificationConfiguration(request);
-                            result = null;
+                            result = deleteNotificationConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -646,26 +641,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request) {
 
         return deletePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             final DeletePolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeletePolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeletePolicyResult call() throws Exception {
+                        DeletePolicyResult result;
 
                         try {
-                            deletePolicy(request);
-                            result = null;
+                            result = deletePolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -682,26 +676,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScheduledActionAsync(
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(
             DeleteScheduledActionRequest request) {
 
         return deleteScheduledActionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteScheduledActionAsync(
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(
             final DeleteScheduledActionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteScheduledActionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteScheduledActionResult call() throws Exception {
+                        DeleteScheduledActionResult result;
 
                         try {
-                            deleteScheduledAction(request);
-                            result = null;
+                            result = deleteScheduledAction(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -718,26 +711,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTagsAsync(
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
             final DeleteTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteTagsResult call() throws Exception {
+                        DeleteTagsResult result;
 
                         try {
-                            deleteTags(request);
-                            result = null;
+                            result = deleteTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1842,26 +1834,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableMetricsCollectionAsync(
+    public java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(
             DisableMetricsCollectionRequest request) {
 
         return disableMetricsCollectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableMetricsCollectionAsync(
+    public java.util.concurrent.Future<DisableMetricsCollectionResult> disableMetricsCollectionAsync(
             final DisableMetricsCollectionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableMetricsCollectionRequest, DisableMetricsCollectionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableMetricsCollectionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableMetricsCollectionResult call()
+                            throws Exception {
+                        DisableMetricsCollectionResult result;
 
                         try {
-                            disableMetricsCollection(request);
-                            result = null;
+                            result = disableMetricsCollection(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1878,26 +1870,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMetricsCollectionAsync(
+    public java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(
             EnableMetricsCollectionRequest request) {
 
         return enableMetricsCollectionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableMetricsCollectionAsync(
+    public java.util.concurrent.Future<EnableMetricsCollectionResult> enableMetricsCollectionAsync(
             final EnableMetricsCollectionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableMetricsCollectionRequest, EnableMetricsCollectionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableMetricsCollectionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableMetricsCollectionResult call()
+                            throws Exception {
+                        EnableMetricsCollectionResult result;
 
                         try {
-                            enableMetricsCollection(request);
-                            result = null;
+                            result = enableMetricsCollection(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1949,26 +1941,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> executePolicyAsync(
+    public java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(
             ExecutePolicyRequest request) {
 
         return executePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> executePolicyAsync(
+    public java.util.concurrent.Future<ExecutePolicyResult> executePolicyAsync(
             final ExecutePolicyRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ExecutePolicyRequest, ExecutePolicyResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ExecutePolicyResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ExecutePolicyResult call() throws Exception {
+                        ExecutePolicyResult result;
 
                         try {
-                            executePolicy(request);
-                            result = null;
+                            result = executePolicy(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2055,26 +2046,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putNotificationConfigurationAsync(
+    public java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             PutNotificationConfigurationRequest request) {
 
         return putNotificationConfigurationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putNotificationConfigurationAsync(
+    public java.util.concurrent.Future<PutNotificationConfigurationResult> putNotificationConfigurationAsync(
             final PutNotificationConfigurationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutNotificationConfigurationRequest, PutNotificationConfigurationResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutNotificationConfigurationResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutNotificationConfigurationResult call()
+                            throws Exception {
+                        PutNotificationConfigurationResult result;
 
                         try {
-                            putNotificationConfiguration(request);
-                            result = null;
+                            result = putNotificationConfiguration(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2126,26 +2117,26 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putScheduledUpdateGroupActionAsync(
+    public java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             PutScheduledUpdateGroupActionRequest request) {
 
         return putScheduledUpdateGroupActionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putScheduledUpdateGroupActionAsync(
+    public java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(
             final PutScheduledUpdateGroupActionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutScheduledUpdateGroupActionResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutScheduledUpdateGroupActionResult call()
+                            throws Exception {
+                        PutScheduledUpdateGroupActionResult result;
 
                         try {
-                            putScheduledUpdateGroupAction(request);
-                            result = null;
+                            result = putScheduledUpdateGroupAction(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2198,26 +2189,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resumeProcessesAsync(
+    public java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(
             ResumeProcessesRequest request) {
 
         return resumeProcessesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resumeProcessesAsync(
+    public java.util.concurrent.Future<ResumeProcessesResult> resumeProcessesAsync(
             final ResumeProcessesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResumeProcessesRequest, ResumeProcessesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResumeProcessesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResumeProcessesResult call() throws Exception {
+                        ResumeProcessesResult result;
 
                         try {
-                            resumeProcesses(request);
-                            result = null;
+                            result = resumeProcesses(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2234,26 +2224,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDesiredCapacityAsync(
+    public java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(
             SetDesiredCapacityRequest request) {
 
         return setDesiredCapacityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDesiredCapacityAsync(
+    public java.util.concurrent.Future<SetDesiredCapacityResult> setDesiredCapacityAsync(
             final SetDesiredCapacityRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetDesiredCapacityRequest, SetDesiredCapacityResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetDesiredCapacityResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetDesiredCapacityResult call() throws Exception {
+                        SetDesiredCapacityResult result;
 
                         try {
-                            setDesiredCapacity(request);
-                            result = null;
+                            result = setDesiredCapacity(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2270,26 +2259,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setInstanceHealthAsync(
+    public java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(
             SetInstanceHealthRequest request) {
 
         return setInstanceHealthAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setInstanceHealthAsync(
+    public java.util.concurrent.Future<SetInstanceHealthResult> setInstanceHealthAsync(
             final SetInstanceHealthRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetInstanceHealthRequest, SetInstanceHealthResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetInstanceHealthResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetInstanceHealthResult call() throws Exception {
+                        SetInstanceHealthResult result;
 
                         try {
-                            setInstanceHealth(request);
-                            result = null;
+                            result = setInstanceHealth(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2341,26 +2329,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> suspendProcessesAsync(
+    public java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(
             SuspendProcessesRequest request) {
 
         return suspendProcessesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> suspendProcessesAsync(
+    public java.util.concurrent.Future<SuspendProcessesResult> suspendProcessesAsync(
             final SuspendProcessesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SuspendProcessesRequest, SuspendProcessesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SuspendProcessesResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SuspendProcessesResult call() throws Exception {
+                        SuspendProcessesResult result;
 
                         try {
-                            suspendProcesses(request);
-                            result = null;
+                            result = suspendProcesses(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -2413,26 +2400,25 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAutoScalingGroupAsync(
+    public java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(
             UpdateAutoScalingGroupRequest request) {
 
         return updateAutoScalingGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAutoScalingGroupAsync(
+    public java.util.concurrent.Future<UpdateAutoScalingGroupResult> updateAutoScalingGroupAsync(
             final UpdateAutoScalingGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<UpdateAutoScalingGroupRequest, UpdateAutoScalingGroupResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<UpdateAutoScalingGroupResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public UpdateAutoScalingGroupResult call() throws Exception {
+                        UpdateAutoScalingGroupResult result;
 
                         try {
-                            updateAutoScalingGroup(request);
-                            result = null;
+                            result = updateAutoScalingGroup(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

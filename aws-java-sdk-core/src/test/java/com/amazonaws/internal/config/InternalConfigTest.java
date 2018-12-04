@@ -1,25 +1,22 @@
 package com.amazonaws.internal.config;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.ClassLoaderHelper;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 
 public class InternalConfigTest {
 
@@ -82,20 +79,9 @@ public class InternalConfigTest {
     @Test
     public void testS3Signers() {
         final String serviceName = "s3";
-        final String signerType = "S3SignerType";
-        final List<Regions> sigV2AllowedRegions = Arrays.asList(Regions
-                .US_EAST_1,
-                Regions.US_WEST_1, Regions.US_WEST_2, Regions.EU_WEST_1,
-                Regions.AP_SOUTHEAST_1, Regions.AP_SOUTHEAST_2, Regions
-                        .AP_NORTHEAST_1, Regions.SA_EAST_1, Regions.GovCloud);
-
         assertSignerType(S3V4_SIGNER_TYPE, serviceName, null);
 
         for (Regions region : Regions.values()) {
-            if (sigV2AllowedRegions.contains(region)) {
-                assertSignerType(signerType, serviceName, region.getName());
-                continue;
-            }
             assertSignerType(S3V4_SIGNER_TYPE, serviceName,
                     region.getName());
         }

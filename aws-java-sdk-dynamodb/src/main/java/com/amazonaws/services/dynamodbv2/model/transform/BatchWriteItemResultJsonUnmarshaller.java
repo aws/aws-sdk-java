@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class BatchWriteItemResultJsonUnmarshaller implements
                     context.nextToken();
                     batchWriteItemResult
                             .setUnprocessedItems(new MapUnmarshaller<String, java.util.List<WriteRequest>>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     new ListUnmarshaller<WriteRequest>(
                                             WriteRequestJsonUnmarshaller
                                                     .getInstance()))
@@ -66,7 +68,7 @@ public class BatchWriteItemResultJsonUnmarshaller implements
                     context.nextToken();
                     batchWriteItemResult
                             .setItemCollectionMetrics(new MapUnmarshaller<String, java.util.List<ItemCollectionMetrics>>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     new ListUnmarshaller<ItemCollectionMetrics>(
                                             ItemCollectionMetricsJsonUnmarshaller
                                                     .getInstance()))

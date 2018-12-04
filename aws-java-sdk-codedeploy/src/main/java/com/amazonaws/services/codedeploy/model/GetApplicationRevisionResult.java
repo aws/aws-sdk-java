@@ -33,8 +33,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
     private String applicationName;
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      */
     private RevisionLocation revision;
@@ -53,6 +52,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the application that corresponds to the revision.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -64,6 +64,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * 
      * @return The name of the application that corresponds to the revision.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -78,6 +79,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionResult withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -86,43 +88,43 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
      * @param revision
-     *        Additional information about the revision, including the
-     *        revision's type and its location.
+     *        Additional information about the revision, including type and
+     *        location.
      */
+
     public void setRevision(RevisionLocation revision) {
         this.revision = revision;
     }
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
-     * @return Additional information about the revision, including the
-     *         revision's type and its location.
+     * @return Additional information about the revision, including type and
+     *         location.
      */
+
     public RevisionLocation getRevision() {
         return this.revision;
     }
 
     /**
      * <p>
-     * Additional information about the revision, including the revision's type
-     * and its location.
+     * Additional information about the revision, including type and location.
      * </p>
      * 
      * @param revision
-     *        Additional information about the revision, including the
-     *        revision's type and its location.
+     *        Additional information about the revision, including type and
+     *        location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionResult withRevision(RevisionLocation revision) {
         setRevision(revision);
         return this;
@@ -136,6 +138,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * @param revisionInfo
      *        General information about the revision.
      */
+
     public void setRevisionInfo(GenericRevisionInfo revisionInfo) {
         this.revisionInfo = revisionInfo;
     }
@@ -147,6 +150,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * 
      * @return General information about the revision.
      */
+
     public GenericRevisionInfo getRevisionInfo() {
         return this.revisionInfo;
     }
@@ -161,6 +165,7 @@ public class GetApplicationRevisionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionResult withRevisionInfo(
             GenericRevisionInfo revisionInfo) {
         setRevisionInfo(revisionInfo);

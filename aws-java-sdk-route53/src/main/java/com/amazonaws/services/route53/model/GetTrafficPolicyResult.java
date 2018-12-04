@@ -41,6 +41,7 @@ public class GetTrafficPolicyResult implements Serializable, Cloneable {
      *        A complex type that contains settings for the specified traffic
      *        policy.
      */
+
     public void setTrafficPolicy(TrafficPolicy trafficPolicy) {
         this.trafficPolicy = trafficPolicy;
     }
@@ -53,6 +54,7 @@ public class GetTrafficPolicyResult implements Serializable, Cloneable {
      * @return A complex type that contains settings for the specified traffic
      *         policy.
      */
+
     public TrafficPolicy getTrafficPolicy() {
         return this.trafficPolicy;
     }
@@ -68,6 +70,7 @@ public class GetTrafficPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyResult withTrafficPolicy(TrafficPolicy trafficPolicy) {
         setTrafficPolicy(trafficPolicy);
         return this;

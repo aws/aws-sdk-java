@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateBasePathMappingRequest Marshaller
@@ -47,7 +49,14 @@ public class CreateBasePathMappingRequestMarshaller
         implements
         Marshaller<Request<CreateBasePathMappingRequest>, CreateBasePathMappingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateBasePathMappingRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateBasePathMappingRequest> marshall(
             CreateBasePathMappingRequest createBasePathMappingRequest) {
@@ -64,39 +73,38 @@ public class CreateBasePathMappingRequestMarshaller
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (createBasePathMappingRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(createBasePathMappingRequest
-                                .getDomainName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{domain_name}",
+                        (createBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(createBasePathMappingRequest
+                                                .getDomainName()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createBasePathMappingRequest.getBasePath() != null) {
-                jsonWriter.key("basePath").value(
+                jsonGenerator.writeFieldName("basePath").writeValue(
                         createBasePathMappingRequest.getBasePath());
             }
-
             if (createBasePathMappingRequest.getRestApiId() != null) {
-                jsonWriter.key("restApiId").value(
+                jsonGenerator.writeFieldName("restApiId").writeValue(
                         createBasePathMappingRequest.getRestApiId());
             }
-
             if (createBasePathMappingRequest.getStage() != null) {
-                jsonWriter.key("stage").value(
+                jsonGenerator.writeFieldName("stage").writeValue(
                         createBasePathMappingRequest.getStage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

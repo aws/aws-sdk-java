@@ -27,44 +27,47 @@ public class CreatePolicyVersionResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the policy version.
+     * A structure containing details about the new policy version.
      * </p>
      */
     private PolicyVersion policyVersion;
 
     /**
      * <p>
-     * Information about the policy version.
+     * A structure containing details about the new policy version.
      * </p>
      * 
      * @param policyVersion
-     *        Information about the policy version.
+     *        A structure containing details about the new policy version.
      */
+
     public void setPolicyVersion(PolicyVersion policyVersion) {
         this.policyVersion = policyVersion;
     }
 
     /**
      * <p>
-     * Information about the policy version.
+     * A structure containing details about the new policy version.
      * </p>
      * 
-     * @return Information about the policy version.
+     * @return A structure containing details about the new policy version.
      */
+
     public PolicyVersion getPolicyVersion() {
         return this.policyVersion;
     }
 
     /**
      * <p>
-     * Information about the policy version.
+     * A structure containing details about the new policy version.
      * </p>
      * 
      * @param policyVersion
-     *        Information about the policy version.
+     *        A structure containing details about the new policy version.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionResult withPolicyVersion(
             PolicyVersion policyVersion) {
         setPolicyVersion(policyVersion);

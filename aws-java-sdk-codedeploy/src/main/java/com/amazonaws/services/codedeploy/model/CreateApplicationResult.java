@@ -40,6 +40,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * @param applicationId
      *        A unique application ID.
      */
+
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
@@ -51,6 +52,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * 
      * @return A unique application ID.
      */
+
     public String getApplicationId() {
         return this.applicationId;
     }
@@ -65,6 +67,7 @@ public class CreateApplicationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateApplicationResult withApplicationId(String applicationId) {
         setApplicationId(applicationId);
         return this;

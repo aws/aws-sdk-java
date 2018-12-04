@@ -47,6 +47,7 @@ public class DeleteNotificationConfigurationRequest extends
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -58,6 +59,7 @@ public class DeleteNotificationConfigurationRequest extends
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -72,6 +74,7 @@ public class DeleteNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNotificationConfigurationRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -88,6 +91,7 @@ public class DeleteNotificationConfigurationRequest extends
      *        The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *        Service (SNS) topic.
      */
+
     public void setTopicARN(String topicARN) {
         this.topicARN = topicARN;
     }
@@ -101,6 +105,7 @@ public class DeleteNotificationConfigurationRequest extends
      * @return The Amazon Resource Name (ARN) of the Amazon Simple Notification
      *         Service (SNS) topic.
      */
+
     public String getTopicARN() {
         return this.topicARN;
     }
@@ -117,6 +122,7 @@ public class DeleteNotificationConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteNotificationConfigurationRequest withTopicARN(String topicARN) {
         setTopicARN(topicARN);
         return this;

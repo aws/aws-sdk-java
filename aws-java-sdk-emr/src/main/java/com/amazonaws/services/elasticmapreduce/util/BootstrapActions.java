@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.amazonaws.services.elasticmapreduce.model.BootstrapActionConfig;
 import com.amazonaws.services.elasticmapreduce.model.ScriptBootstrapActionConfig;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Class that provides helper methods for constructing predefined bootstrap actions.
@@ -221,7 +222,7 @@ public class BootstrapActions {
      *         together.
      */
     public ConfigureDaemons withHeapSize(Daemon daemon, int megabytes) {
-      args.add("--" + daemon.name().toLowerCase() + "-heap-size=" + megabytes);
+      args.add("--" + StringUtils.lowerCase(daemon.name()) + "-heap-size=" + megabytes);
       return this;
     }
 
@@ -233,7 +234,7 @@ public class BootstrapActions {
      *         together.
      */
     public ConfigureDaemons withOpts(Daemon daemon, String opts) {
-      args.add("--" + daemon.name().toLowerCase() + "-opts=\"" + opts + "\"");
+      args.add("--" + StringUtils.lowerCase(daemon.name()) + "-opts=\"" + opts + "\"");
       return this;
     }
 

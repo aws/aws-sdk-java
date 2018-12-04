@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class PolicyVersionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("versionId", targetDepth)) {
                     context.nextToken();
-                    policyVersion.setVersionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    policyVersion.setVersionId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("isDefaultVersion", targetDepth)) {
                     context.nextToken();
-                    policyVersion.setIsDefaultVersion(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    policyVersion.setIsDefaultVersion(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("createDate", targetDepth)) {
                     context.nextToken();
-                    policyVersion.setCreateDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    policyVersion.setCreateDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

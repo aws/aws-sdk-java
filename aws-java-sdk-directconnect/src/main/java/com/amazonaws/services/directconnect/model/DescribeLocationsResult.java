@@ -46,6 +46,7 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
      * @return A list of colocation hubs where network providers have equipment.
      *         Most regions have multiple locations available.
      */
+
     public java.util.List<Location> getLocations() {
         if (locations == null) {
             locations = new com.amazonaws.internal.SdkInternalList<Location>();
@@ -63,6 +64,7 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
      *        A list of colocation hubs where network providers have equipment.
      *        Most regions have multiple locations available.
      */
+
     public void setLocations(java.util.Collection<Location> locations) {
         if (locations == null) {
             this.locations = null;
@@ -91,6 +93,7 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLocationsResult withLocations(Location... locations) {
         if (this.locations == null) {
             setLocations(new com.amazonaws.internal.SdkInternalList<Location>(
@@ -114,6 +117,7 @@ public class DescribeLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLocationsResult withLocations(
             java.util.Collection<Location> locations) {
         setLocations(locations);

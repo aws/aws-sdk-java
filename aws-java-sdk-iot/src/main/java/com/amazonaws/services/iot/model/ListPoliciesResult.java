@@ -46,6 +46,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * 
      * @return The descriptions of the policies.
      */
+
     public java.util.List<Policy> getPolicies() {
         return policies;
     }
@@ -58,6 +59,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @param policies
      *        The descriptions of the policies.
      */
+
     public void setPolicies(java.util.Collection<Policy> policies) {
         if (policies == null) {
             this.policies = null;
@@ -83,6 +85,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withPolicies(Policy... policies) {
         if (this.policies == null) {
             setPolicies(new java.util.ArrayList<Policy>(policies.length));
@@ -103,6 +106,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withPolicies(java.util.Collection<Policy> policies) {
         setPolicies(policies);
         return this;
@@ -118,6 +122,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *        The marker for the next set of results, or null if there are no
      *        additional results.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -131,6 +136,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return The marker for the next set of results, or null if there are no
      *         additional results.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -147,6 +153,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

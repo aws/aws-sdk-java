@@ -46,6 +46,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -57,6 +58,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -71,6 +73,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLifecycleHookRequest withLifecycleHookName(
             String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
@@ -85,6 +88,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group for the lifecycle hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -96,6 +100,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the Auto Scaling group for the lifecycle hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -110,6 +115,7 @@ public class DeleteLifecycleHookRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLifecycleHookRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);

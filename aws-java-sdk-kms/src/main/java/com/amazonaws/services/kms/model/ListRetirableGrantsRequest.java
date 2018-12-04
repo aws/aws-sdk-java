@@ -40,9 +40,8 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      */
     private String marker;
@@ -55,8 +54,8 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      * >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals
      * include AWS accounts (root), IAM users, federated users, and assumed role
-     * users. For examples of the ARN syntax for specifying a principal, go to
-     * <a href=
+     * users. For examples of the ARN syntax for specifying a principal, see <a
+     * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      * >AWS Identity and Access Management (IAM)</a> in the Example ARNs section
      * of the <i>Amazon Web Services General Reference</i>.
@@ -85,6 +84,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        1 and 100, inclusive. If you do not include a value, it defaults
      *        to 50.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -109,6 +109,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *         between 1 and 100, inclusive. If you do not include a value, it
      *         defaults to 50.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -136,6 +137,7 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -144,17 +146,17 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -162,16 +164,16 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @return Use this parameter only when paginating results and only in a
-     *         subsequent request after you've received a response with
-     *         truncated results. Set it to the value of <code>NextMarker</code>
-     *         from the response you just received.
+     *         subsequent request after you receive a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -179,19 +181,19 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -206,8 +208,8 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      * >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals
      * include AWS accounts (root), IAM users, federated users, and assumed role
-     * users. For examples of the ARN syntax for specifying a principal, go to
-     * <a href=
+     * users. For examples of the ARN syntax for specifying a principal, see <a
+     * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      * >AWS Identity and Access Management (IAM)</a> in the Example ARNs section
      * of the <i>Amazon Web Services General Reference</i>.
@@ -221,11 +223,12 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS
      *        principals include AWS accounts (root), IAM users, federated
      *        users, and assumed role users. For examples of the ARN syntax for
-     *        specifying a principal, go to <a href=
+     *        specifying a principal, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      *        >AWS Identity and Access Management (IAM)</a> in the Example ARNs
      *        section of the <i>Amazon Web Services General Reference</i>.
      */
+
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
@@ -239,8 +242,8 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      * >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals
      * include AWS accounts (root), IAM users, federated users, and assumed role
-     * users. For examples of the ARN syntax for specifying a principal, go to
-     * <a href=
+     * users. For examples of the ARN syntax for specifying a principal, see <a
+     * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      * >AWS Identity and Access Management (IAM)</a> in the Example ARNs section
      * of the <i>Amazon Web Services General Reference</i>.
@@ -253,11 +256,12 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *         >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS
      *         principals include AWS accounts (root), IAM users, federated
      *         users, and assumed role users. For examples of the ARN syntax for
-     *         specifying a principal, go to <a href=
+     *         specifying a principal, see <a href=
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      *         >AWS Identity and Access Management (IAM)</a> in the Example ARNs
      *         section of the <i>Amazon Web Services General Reference</i>.
      */
+
     public String getRetiringPrincipal() {
         return this.retiringPrincipal;
     }
@@ -271,8 +275,8 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      * >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS principals
      * include AWS accounts (root), IAM users, federated users, and assumed role
-     * users. For examples of the ARN syntax for specifying a principal, go to
-     * <a href=
+     * users. For examples of the ARN syntax for specifying a principal, see <a
+     * href=
      * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      * >AWS Identity and Access Management (IAM)</a> in the Example ARNs section
      * of the <i>Amazon Web Services General Reference</i>.
@@ -286,13 +290,14 @@ public class ListRetirableGrantsRequest extends AmazonWebServiceRequest
      *        >Amazon Resource Name (ARN)</a> of an AWS principal. Valid AWS
      *        principals include AWS accounts (root), IAM users, federated
      *        users, and assumed role users. For examples of the ARN syntax for
-     *        specifying a principal, go to <a href=
+     *        specifying a principal, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam"
      *        >AWS Identity and Access Management (IAM)</a> in the Example ARNs
      *        section of the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRetirableGrantsRequest withRetiringPrincipal(
             String retiringPrincipal) {
         setRetiringPrincipal(retiringPrincipal);

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ServiceErrorMarshaller
@@ -39,44 +34,45 @@ import com.amazonaws.util.json.*;
 public class ServiceErrorJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ServiceError serviceError, JSONWriter jsonWriter) {
+    public void marshall(ServiceError serviceError,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (serviceError == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (serviceError.getServiceErrorId() != null) {
-                jsonWriter.key("ServiceErrorId").value(
+                jsonGenerator.writeFieldName("ServiceErrorId").writeValue(
                         serviceError.getServiceErrorId());
             }
-
             if (serviceError.getStackId() != null) {
-                jsonWriter.key("StackId").value(serviceError.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        serviceError.getStackId());
             }
-
             if (serviceError.getInstanceId() != null) {
-                jsonWriter.key("InstanceId")
-                        .value(serviceError.getInstanceId());
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
+                        serviceError.getInstanceId());
             }
-
             if (serviceError.getType() != null) {
-                jsonWriter.key("Type").value(serviceError.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        serviceError.getType());
             }
-
             if (serviceError.getMessage() != null) {
-                jsonWriter.key("Message").value(serviceError.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        serviceError.getMessage());
             }
-
             if (serviceError.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(serviceError.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        serviceError.getCreatedAt());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

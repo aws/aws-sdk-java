@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateAppRequest Marshaller
  */
 public class UpdateAppRequestMarshaller implements
         Marshaller<Request<UpdateAppRequest>, UpdateAppRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateAppRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateAppRequest> marshall(UpdateAppRequest updateAppRequest) {
 
@@ -62,21 +62,21 @@ public class UpdateAppRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateAppRequest.getAppId() != null) {
-                jsonWriter.key("AppId").value(updateAppRequest.getAppId());
+                jsonGenerator.writeFieldName("AppId").writeValue(
+                        updateAppRequest.getAppId());
             }
-
             if (updateAppRequest.getName() != null) {
-                jsonWriter.key("Name").value(updateAppRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        updateAppRequest.getName());
             }
-
             if (updateAppRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         updateAppRequest.getDescription());
             }
 
@@ -84,93 +84,90 @@ public class UpdateAppRequestMarshaller implements
                     .getDataSources();
             if (!dataSourcesList.isEmpty()
                     || !dataSourcesList.isAutoConstruct()) {
-                jsonWriter.key("DataSources");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DataSources");
+                jsonGenerator.writeStartArray();
                 for (DataSource dataSourcesListValue : dataSourcesList) {
                     if (dataSourcesListValue != null) {
 
                         DataSourceJsonMarshaller.getInstance().marshall(
-                                dataSourcesListValue, jsonWriter);
+                                dataSourcesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (updateAppRequest.getType() != null) {
-                jsonWriter.key("Type").value(updateAppRequest.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        updateAppRequest.getType());
             }
-
             if (updateAppRequest.getAppSource() != null) {
-                jsonWriter.key("AppSource");
+                jsonGenerator.writeFieldName("AppSource");
                 SourceJsonMarshaller.getInstance().marshall(
-                        updateAppRequest.getAppSource(), jsonWriter);
+                        updateAppRequest.getAppSource(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<String> domainsList = (com.amazonaws.internal.SdkInternalList<String>) updateAppRequest
                     .getDomains();
             if (!domainsList.isEmpty() || !domainsList.isAutoConstruct()) {
-                jsonWriter.key("Domains");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Domains");
+                jsonGenerator.writeStartArray();
                 for (String domainsListValue : domainsList) {
                     if (domainsListValue != null) {
-                        jsonWriter.value(domainsListValue);
+                        jsonGenerator.writeValue(domainsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (updateAppRequest.getEnableSsl() != null) {
-                jsonWriter.key("EnableSsl").value(
+                jsonGenerator.writeFieldName("EnableSsl").writeValue(
                         updateAppRequest.getEnableSsl());
             }
-
             if (updateAppRequest.getSslConfiguration() != null) {
-                jsonWriter.key("SslConfiguration");
+                jsonGenerator.writeFieldName("SslConfiguration");
                 SslConfigurationJsonMarshaller.getInstance().marshall(
-                        updateAppRequest.getSslConfiguration(), jsonWriter);
+                        updateAppRequest.getSslConfiguration(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) updateAppRequest
                     .getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonWriter.key("Attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalList<EnvironmentVariable> environmentList = (com.amazonaws.internal.SdkInternalList<EnvironmentVariable>) updateAppRequest
                     .getEnvironment();
             if (!environmentList.isEmpty()
                     || !environmentList.isAutoConstruct()) {
-                jsonWriter.key("Environment");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Environment");
+                jsonGenerator.writeStartArray();
                 for (EnvironmentVariable environmentListValue : environmentList) {
                     if (environmentListValue != null) {
 
                         EnvironmentVariableJsonMarshaller.getInstance()
-                                .marshall(environmentListValue, jsonWriter);
+                                .marshall(environmentListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

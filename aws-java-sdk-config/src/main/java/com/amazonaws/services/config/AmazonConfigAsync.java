@@ -68,8 +68,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * AWS Config sets the state of a rule to <code>DELETING</code> until the
      * deletion is complete. You cannot update a rule while it is in this state.
-     * If you make a <code>PutConfigRule</code> request for the rule, you will
-     * receive a <code>ResourceInUseException</code>.
+     * If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code>
+     * request for the rule, you will receive a
+     * <code>ResourceInUseException</code>.
      * </p>
      * <p>
      * You can check the state of a rule by using the
@@ -77,9 +78,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * 
      * @param deleteConfigRuleRequest
+     * @return A Java Future containing the result of the DeleteConfigRule
+     *         operation returned by the service.
      * @sample AmazonConfigAsync.DeleteConfigRule
      */
-    java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             DeleteConfigRuleRequest deleteConfigRuleRequest);
 
     /**
@@ -89,8 +92,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * AWS Config sets the state of a rule to <code>DELETING</code> until the
      * deletion is complete. You cannot update a rule while it is in this state.
-     * If you make a <code>PutConfigRule</code> request for the rule, you will
-     * receive a <code>ResourceInUseException</code>.
+     * If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code>
+     * request for the rule, you will receive a
+     * <code>ResourceInUseException</code>.
      * </p>
      * <p>
      * You can check the state of a rule by using the
@@ -103,11 +107,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConfigRule
+     *         operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteConfigRule
      */
-    java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             DeleteConfigRuleRequest deleteConfigRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -123,9 +129,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * @param deleteDeliveryChannelRequest
      *        The input for the <a>DeleteDeliveryChannel</a> action. The action
      *        accepts the following data in JSON format.
+     * @return A Java Future containing the result of the DeleteDeliveryChannel
+     *         operation returned by the service.
      * @sample AmazonConfigAsync.DeleteDeliveryChannel
      */
-    java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
 
     /**
@@ -147,11 +155,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDeliveryChannel
+     *         operation returned by the service.
      * @sample AmazonConfigAsyncHandler.DeleteDeliveryChannel
      */
-    java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult> asyncHandler);
 
     /**
      * <p>
@@ -219,7 +229,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the rule, it returns
-     * <code>InsufficientData</code>. This result might indicate one of the
+     * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -258,7 +268,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the rule, it returns
-     * <code>InsufficientData</code>. This result might indicate one of the
+     * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -322,7 +332,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the resource, it
-     * returns <code>InsufficientData</code>. This result might indicate one of
+     * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -362,7 +372,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the resource, it
-     * returns <code>InsufficientData</code>. This result might indicate one of
+     * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -1151,9 +1161,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p/>
      * 
      * @param putConfigRuleRequest
+     * @return A Java Future containing the result of the PutConfigRule
+     *         operation returned by the service.
      * @sample AmazonConfigAsync.PutConfigRule
      */
-    java.util.concurrent.Future<Void> putConfigRuleAsync(
+    java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             PutConfigRuleRequest putConfigRuleRequest);
 
     /**
@@ -1214,11 +1226,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConfigRule
+     *         operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutConfigRule
      */
-    java.util.concurrent.Future<Void> putConfigRuleAsync(
+    java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             PutConfigRuleRequest putConfigRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -1244,9 +1258,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param putConfigurationRecorderRequest
      *        The input for the <a>PutConfigurationRecorder</a> action.
+     * @return A Java Future containing the result of the
+     *         PutConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.PutConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest);
 
     /**
@@ -1278,11 +1294,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         PutConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest,
-            com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult> asyncHandler);
 
     /**
      * <p>
@@ -1305,9 +1323,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param putDeliveryChannelRequest
      *        The input for the <a>PutDeliveryChannel</a> action.
+     * @return A Java Future containing the result of the PutDeliveryChannel
+     *         operation returned by the service.
      * @sample AmazonConfigAsync.PutDeliveryChannel
      */
-    java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             PutDeliveryChannelRequest putDeliveryChannelRequest);
 
     /**
@@ -1336,11 +1356,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDeliveryChannel
+     *         operation returned by the service.
      * @sample AmazonConfigAsyncHandler.PutDeliveryChannel
      */
-    java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             PutDeliveryChannelRequest putDeliveryChannelRequest,
-            com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult> asyncHandler);
 
     /**
      * <p>
@@ -1390,9 +1412,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * 
      * @param startConfigurationRecorderRequest
      *        The input for the <a>StartConfigurationRecorder</a> action.
+     * @return A Java Future containing the result of the
+     *         StartConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.StartConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest);
 
     /**
@@ -1412,11 +1436,13 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         StartConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.StartConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest,
-            com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult> asyncHandler);
 
     /**
      * <p>
@@ -1428,9 +1454,11 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
      *        </p>
+     * @return A Java Future containing the result of the
+     *         StopConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsync.StopConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest);
 
     /**
@@ -1448,10 +1476,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         StopConfigurationRecorder operation returned by the service.
      * @sample AmazonConfigAsyncHandler.StopConfigurationRecorder
      */
-    java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest,
-            com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult> asyncHandler);
 
 }

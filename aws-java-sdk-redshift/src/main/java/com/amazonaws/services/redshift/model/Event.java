@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
@@ -24,369 +26,445 @@ import java.io.Serializable;
 public class Event implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier for the source of the event.
+     * </p>
      */
     private String sourceIdentifier;
-
     /**
-     * The source type for this event.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
+     * The source type for this event.
+     * </p>
      */
     private String sourceType;
-
     /**
+     * <p>
      * The text of this event.
+     * </p>
      */
     private String message;
-
     /**
-     * A list of the event categories. <p>Values: Configuration, Management,
-     * Monitoring, Security
+     * <p>
+     * A list of the event categories.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategories;
-
+    private com.amazonaws.internal.SdkInternalList<String> eventCategories;
     /**
-     * The severity of the event. <p>Values: ERROR, INFO
+     * <p>
+     * The severity of the event.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
      */
     private String severity;
-
     /**
+     * <p>
      * The date and time of the event.
+     * </p>
      */
-    private java.util.Date date;
-
+    private java.util.Date dateValue;
     /**
+     * <p>
      * The identifier of the event.
+     * </p>
      */
     private String eventId;
 
     /**
+     * <p>
      * The identifier for the source of the event.
-     *
-     * @return The identifier for the source of the event.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        The identifier for the source of the event.
      */
-    public String getSourceIdentifier() {
-        return sourceIdentifier;
-    }
-    
-    /**
-     * The identifier for the source of the event.
-     *
-     * @param sourceIdentifier The identifier for the source of the event.
-     */
+
     public void setSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
     }
-    
+
     /**
-     * The identifier for the source of the event.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceIdentifier The identifier for the source of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier for the source of the event.
+     * </p>
+     * 
+     * @return The identifier for the source of the event.
      */
+
+    public String getSourceIdentifier() {
+        return this.sourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the source of the event.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        The identifier for the source of the event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public Event withSourceIdentifier(String sourceIdentifier) {
-        this.sourceIdentifier = sourceIdentifier;
+        setSourceIdentifier(sourceIdentifier);
         return this;
     }
 
     /**
-     * The source type for this event.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
-     *
-     * @return The source type for this event.
-     *
+     * The source type for this event.
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type for this event.
      * @see SourceType
      */
-    public String getSourceType() {
-        return sourceType;
-    }
-    
-    /**
-     * The source type for this event.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
-     *
-     * @param sourceType The source type for this event.
-     *
-     * @see SourceType
-     */
+
     public void setSourceType(String sourceType) {
         this.sourceType = sourceType;
     }
-    
+
     /**
+     * <p>
      * The source type for this event.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
-     *
-     * @param sourceType The source type for this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @return The source type for this event.
      * @see SourceType
      */
+
+    public String getSourceType() {
+        return this.sourceType;
+    }
+
+    /**
+     * <p>
+     * The source type for this event.
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type for this event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see SourceType
+     */
+
     public Event withSourceType(String sourceType) {
-        this.sourceType = sourceType;
+        setSourceType(sourceType);
         return this;
     }
 
     /**
-     * The source type for this event.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
-     *
-     * @param sourceType The source type for this event.
-     *
+     * The source type for this event.
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type for this event.
      * @see SourceType
      */
+
     public void setSourceType(SourceType sourceType) {
         this.sourceType = sourceType.toString();
     }
-    
+
     /**
+     * <p>
      * The source type for this event.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot
-     *
-     * @param sourceType The source type for this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param sourceType
+     *        The source type for this event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see SourceType
      */
+
     public Event withSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        setSourceType(sourceType);
         return this;
     }
 
     /**
+     * <p>
      * The text of this event.
-     *
-     * @return The text of this event.
+     * </p>
+     * 
+     * @param message
+     *        The text of this event.
      */
-    public String getMessage() {
-        return message;
-    }
-    
-    /**
-     * The text of this event.
-     *
-     * @param message The text of this event.
-     */
+
     public void setMessage(String message) {
         this.message = message;
     }
-    
+
     /**
-     * The text of this event.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param message The text of this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The text of this event.
+     * </p>
+     * 
+     * @return The text of this event.
      */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * The text of this event.
+     * </p>
+     * 
+     * @param message
+     *        The text of this event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public Event withMessage(String message) {
-        this.message = message;
+        setMessage(message);
         return this;
     }
 
     /**
-     * A list of the event categories. <p>Values: Configuration, Management,
-     * Monitoring, Security
-     *
-     * @return A list of the event categories. <p>Values: Configuration, Management,
-     *         Monitoring, Security
+     * <p>
+     * A list of the event categories.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @return A list of the event categories. </p>
+     *         <p>
+     *         Values: Configuration, Management, Monitoring, Security
      */
+
     public java.util.List<String> getEventCategories() {
         if (eventCategories == null) {
-              eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              eventCategories.setAutoConstruct(true);
+            eventCategories = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return eventCategories;
     }
-    
+
     /**
-     * A list of the event categories. <p>Values: Configuration, Management,
-     * Monitoring, Security
-     *
-     * @param eventCategories A list of the event categories. <p>Values: Configuration, Management,
-     *         Monitoring, Security
+     * <p>
+     * A list of the event categories.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of the event categories. </p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
      */
+
     public void setEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
             this.eventCategories = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
-        eventCategoriesCopy.addAll(eventCategories);
-        this.eventCategories = eventCategoriesCopy;
+
+        this.eventCategories = new com.amazonaws.internal.SdkInternalList<String>(
+                eventCategories);
     }
-    
+
     /**
-     * A list of the event categories. <p>Values: Configuration, Management,
-     * Monitoring, Security
+     * <p>
+     * A list of the event categories.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setEventCategories(java.util.Collection)} or {@link
-     * #withEventCategories(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategories A list of the event categories. <p>Values: Configuration, Management,
-     *         Monitoring, Security
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setEventCategories(java.util.Collection)} or
+     * {@link #withEventCategories(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of the event categories. </p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public Event withEventCategories(String... eventCategories) {
-        if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
-        for (String value : eventCategories) {
-            getEventCategories().add(value);
+        if (this.eventCategories == null) {
+            setEventCategories(new com.amazonaws.internal.SdkInternalList<String>(
+                    eventCategories.length));
+        }
+        for (String ele : eventCategories) {
+            this.eventCategories.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * A list of the event categories. <p>Values: Configuration, Management,
-     * Monitoring, Security
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventCategories A list of the event categories. <p>Values: Configuration, Management,
-     *         Monitoring, Security
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A list of the event categories.
+     * </p>
+     * <p>
+     * Values: Configuration, Management, Monitoring, Security
+     * </p>
+     * 
+     * @param eventCategories
+     *        A list of the event categories. </p>
+     *        <p>
+     *        Values: Configuration, Management, Monitoring, Security
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Event withEventCategories(java.util.Collection<String> eventCategories) {
-        if (eventCategories == null) {
-            this.eventCategories = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
-            eventCategoriesCopy.addAll(eventCategories);
-            this.eventCategories = eventCategoriesCopy;
-        }
 
+    public Event withEventCategories(
+            java.util.Collection<String> eventCategories) {
+        setEventCategories(eventCategories);
         return this;
     }
 
     /**
-     * The severity of the event. <p>Values: ERROR, INFO
-     *
-     * @return The severity of the event. <p>Values: ERROR, INFO
+     * <p>
+     * The severity of the event.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the event.</p>
+     *        <p>
+     *        Values: ERROR, INFO
      */
-    public String getSeverity() {
-        return severity;
-    }
-    
-    /**
-     * The severity of the event. <p>Values: ERROR, INFO
-     *
-     * @param severity The severity of the event. <p>Values: ERROR, INFO
-     */
+
     public void setSeverity(String severity) {
         this.severity = severity;
     }
-    
+
     /**
-     * The severity of the event. <p>Values: ERROR, INFO
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param severity The severity of the event. <p>Values: ERROR, INFO
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The severity of the event.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @return The severity of the event.</p>
+     *         <p>
+     *         Values: ERROR, INFO
      */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the event.
+     * </p>
+     * <p>
+     * Values: ERROR, INFO
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the event.</p>
+     *        <p>
+     *        Values: ERROR, INFO
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public Event withSeverity(String severity) {
-        this.severity = severity;
+        setSeverity(severity);
         return this;
     }
 
     /**
+     * <p>
      * The date and time of the event.
-     *
+     * </p>
+     * 
+     * @param dateValue
+     *        The date and time of the event.
+     */
+
+    public void setDate(java.util.Date dateValue) {
+        this.dateValue = dateValue;
+    }
+
+    /**
+     * <p>
+     * The date and time of the event.
+     * </p>
+     * 
      * @return The date and time of the event.
      */
+
     public java.util.Date getDate() {
-        return date;
+        return this.dateValue;
     }
-    
+
     /**
-     * The date and time of the event.
-     *
-     * @param date The date and time of the event.
-     */
-    public void setDate(java.util.Date date) {
-        this.date = date;
-    }
-    
-    /**
-     * The date and time of the event.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param date The date and time of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time of the event.
+     * </p>
+     * 
+     * @param dateValue
+     *        The date and time of the event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Event withDate(java.util.Date date) {
-        this.date = date;
+
+    public Event withDate(java.util.Date dateValue) {
+        setDate(dateValue);
         return this;
     }
 
     /**
+     * <p>
      * The identifier of the event.
-     *
-     * @return The identifier of the event.
+     * </p>
+     * 
+     * @param eventId
+     *        The identifier of the event.
      */
-    public String getEventId() {
-        return eventId;
-    }
-    
-    /**
-     * The identifier of the event.
-     *
-     * @param eventId The identifier of the event.
-     */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
-    
+
     /**
-     * The identifier of the event.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventId The identifier of the event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the event.
+     * </p>
+     * 
+     * @return The identifier of the event.
      */
+
+    public String getEventId() {
+        return this.eventId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the event.
+     * </p>
+     * 
+     * @param eventId
+     *        The identifier of the event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public Event withEventId(String eventId) {
-        this.eventId = eventId;
+        setEventId(eventId);
         return this;
     }
 
@@ -402,70 +480,109 @@ public class Event implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
-        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");
-        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");
-        if (getDate() != null) sb.append("Date: " + getDate() + ",");
-        if (getEventId() != null) sb.append("EventId: " + getEventId() );
+        if (getSourceIdentifier() != null)
+            sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
+        if (getSourceType() != null)
+            sb.append("SourceType: " + getSourceType() + ",");
+        if (getMessage() != null)
+            sb.append("Message: " + getMessage() + ",");
+        if (getEventCategories() != null)
+            sb.append("EventCategories: " + getEventCategories() + ",");
+        if (getSeverity() != null)
+            sb.append("Severity: " + getSeverity() + ",");
+        if (getDate() != null)
+            sb.append("Date: " + getDate() + ",");
+        if (getEventId() != null)
+            sb.append("EventId: " + getEventId());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Event == false)
+            return false;
+        Event other = (Event) obj;
+        if (other.getSourceIdentifier() == null
+                ^ this.getSourceIdentifier() == null)
+            return false;
+        if (other.getSourceIdentifier() != null
+                && other.getSourceIdentifier().equals(
+                        this.getSourceIdentifier()) == false)
+            return false;
+        if (other.getSourceType() == null ^ this.getSourceType() == null)
+            return false;
+        if (other.getSourceType() != null
+                && other.getSourceType().equals(this.getSourceType()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null
+                && other.getMessage().equals(this.getMessage()) == false)
+            return false;
+        if (other.getEventCategories() == null
+                ^ this.getEventCategories() == null)
+            return false;
+        if (other.getEventCategories() != null
+                && other.getEventCategories().equals(this.getEventCategories()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null
+                && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getDate() == null ^ this.getDate() == null)
+            return false;
+        if (other.getDate() != null
+                && other.getDate().equals(this.getDate()) == false)
+            return false;
+        if (other.getEventId() == null ^ this.getEventId() == null)
+            return false;
+        if (other.getEventId() != null
+                && other.getEventId().equals(this.getEventId()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
-        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
-        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode()); 
-        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
-        hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode()); 
-        hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
+        hashCode = prime * hashCode
+                + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEventCategories() == null) ? 0 : getEventCategories()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode
+                + ((getDate() == null) ? 0 : getDate().hashCode());
+        hashCode = prime * hashCode
+                + ((getEventId() == null) ? 0 : getEventId().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof Event == false) return false;
-        Event other = (Event)obj;
-        
-        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null) return false;
-        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false) return false; 
-        if (other.getSourceType() == null ^ this.getSourceType() == null) return false;
-        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
-        if (other.getMessage() == null ^ this.getMessage() == null) return false;
-        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
-        if (other.getEventCategories() == null ^ this.getEventCategories() == null) return false;
-        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false) return false; 
-        if (other.getSeverity() == null ^ this.getSeverity() == null) return false;
-        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
-        if (other.getDate() == null ^ this.getDate() == null) return false;
-        if (other.getDate() != null && other.getDate().equals(this.getDate()) == false) return false; 
-        if (other.getEventId() == null ^ this.getEventId() == null) return false;
-        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public Event clone() {
         try {
             return (Event) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

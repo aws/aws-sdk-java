@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CredentialsMarshaller
@@ -39,36 +34,37 @@ import com.amazonaws.util.json.*;
 public class CredentialsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Credentials credentials, JSONWriter jsonWriter) {
+    public void marshall(Credentials credentials,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (credentials == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (credentials.getAccessKeyId() != null) {
-                jsonWriter.key("AccessKeyId").value(
+                jsonGenerator.writeFieldName("AccessKeyId").writeValue(
                         credentials.getAccessKeyId());
             }
-
             if (credentials.getSecretKey() != null) {
-                jsonWriter.key("SecretKey").value(credentials.getSecretKey());
+                jsonGenerator.writeFieldName("SecretKey").writeValue(
+                        credentials.getSecretKey());
             }
-
             if (credentials.getSessionToken() != null) {
-                jsonWriter.key("SessionToken").value(
+                jsonGenerator.writeFieldName("SessionToken").writeValue(
                         credentials.getSessionToken());
             }
-
             if (credentials.getExpiration() != null) {
-                jsonWriter.key("Expiration").value(credentials.getExpiration());
+                jsonGenerator.writeFieldName("Expiration").writeValue(
+                        credentials.getExpiration());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

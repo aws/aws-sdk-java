@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListTopicRulesRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class ListTopicRulesRequestMarshaller implements
         Marshaller<Request<ListTopicRulesRequest>, ListTopicRulesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListTopicRulesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListTopicRulesRequest> marshall(
             ListTopicRulesRequest listTopicRulesRequest) {
@@ -65,30 +74,24 @@ public class ListTopicRulesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String topic = (listTopicRulesRequest.getTopic() == null) ? null
-                : StringUtils.fromString(listTopicRulesRequest.getTopic());
-        if (topic != null) {
-            request.addParameter("topic", topic);
+        if (listTopicRulesRequest.getTopic() != null) {
+            request.addParameter("topic",
+                    StringUtils.fromString(listTopicRulesRequest.getTopic()));
         }
 
-        String maxResults = (listTopicRulesRequest.getMaxResults() == null) ? null
-                : StringUtils
-                        .fromInteger(listTopicRulesRequest.getMaxResults());
-        if (maxResults != null) {
-            request.addParameter("maxResults", maxResults);
+        if (listTopicRulesRequest.getMaxResults() != null) {
+            request.addParameter("maxResults", StringUtils
+                    .fromInteger(listTopicRulesRequest.getMaxResults()));
         }
 
-        String nextToken = (listTopicRulesRequest.getNextToken() == null) ? null
-                : StringUtils.fromString(listTopicRulesRequest.getNextToken());
-        if (nextToken != null) {
-            request.addParameter("nextToken", nextToken);
+        if (listTopicRulesRequest.getNextToken() != null) {
+            request.addParameter("nextToken", StringUtils
+                    .fromString(listTopicRulesRequest.getNextToken()));
         }
 
-        String ruleDisabled = (listTopicRulesRequest.getRuleDisabled() == null) ? null
-                : StringUtils.fromBoolean(listTopicRulesRequest
-                        .getRuleDisabled());
-        if (ruleDisabled != null) {
-            request.addParameter("ruleDisabled", ruleDisabled);
+        if (listTopicRulesRequest.getRuleDisabled() != null) {
+            request.addParameter("ruleDisabled", StringUtils
+                    .fromBoolean(listTopicRulesRequest.getRuleDisabled()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

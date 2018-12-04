@@ -47,7 +47,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * The image used to start a container. This string is passed directly to
      * the Docker daemon. Images in the Docker Hub registry are available by
      * default. Other repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
@@ -58,12 +58,24 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <ul>
-     * <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     * <li>Images in other repositories on Docker Hub are qualified with an
-     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
-     * <li>Images in other online repositories are qualified further by a domain
-     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * <li>
+     * <p>
+     * Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).
+     * </p>
+     * </li>
      * </ul>
      */
     private String image;
@@ -112,12 +124,20 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * based on your Amazon ECS container agent version:
      * </p>
      * <ul>
-     * <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
+     * <li>
+     * <p>
+     * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
      * values are passed to Docker as 0, which Docker then converts to 1,024 CPU
      * shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.</li>
-     * <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and
-     * CPU values of 1 are passed to Docker as 2.</li>
+     * converts to 2 CPU shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU
+     * values of 1 are passed to Docker as 2.
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer cpu;
@@ -154,7 +174,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">
-     * <code>docker run</code></a>.
+     * <code>docker run</code> </a>.
      * </p>
      * <important>
      * <p>
@@ -192,17 +212,23 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * <p>
      * If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
+     * <code>true</code>, and that container fails or stops for any reason, all
+     * other containers that are part of the task are stopped. If the
      * <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure does not affect the rest of the
      * containers in a task. If this parameter is omitted, a container is
      * assumed to be essential.
      * </p>
-     * <note>
      * <p>
-     * All tasks must have at least one essential container.
+     * All tasks must have at least one essential container. If you have an
+     * application that is composed of multiple containers, you should group
+     * containers that are used for a common purpose into components, and
+     * separate the different components into multiple task definitions. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     * >Application Architecture</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
      * </p>
-     * </note>
      */
     private Boolean essential;
     /**
@@ -413,7 +439,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -464,7 +490,25 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
-     * Valid log drivers are displayed in the <a>LogConfiguration</a> data type.
+     * By default, containers use the same logging driver that the Docker daemon
+     * uses; however the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the
+     * container definition. To use a different logging driver for a container,
+     * the log system must be configured properly on the container instance (or
+     * on a different log server for remote logging options). For more
+     * information on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     * logging drivers</a> in the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon ECS currently supports a subset of the logging drivers available
+     * to the Docker daemon (shown in the <a>LogConfiguration</a> data type).
+     * Currently unsupported log drivers may be available in future releases of
+     * the Amazon ECS container agent.
+     * </p>
+     * </note>
+     * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater
      * on your container instance. To check the Docker Remote API version on
      * your container instance, log into your container instance and run the
@@ -478,7 +522,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration
      * options. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -515,6 +559,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -547,6 +592,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -582,6 +628,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withName(String name) {
         setName(name);
         return this;
@@ -592,7 +639,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * The image used to start a container. This string is passed directly to
      * the Docker daemon. Images in the Docker Hub registry are available by
      * default. Other repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
@@ -603,20 +650,32 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <ul>
-     * <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     * <li>Images in other repositories on Docker Hub are qualified with an
-     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
-     * <li>Images in other online repositories are qualified further by a domain
-     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * <li>
+     * <p>
+     * Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param image
      *        The image used to start a container. This string is passed
      *        directly to the Docker daemon. Images in the Docker Hub registry
      *        are available by default. Other repositories are specified with
-     *        <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to
-     *        255 letters (uppercase and lowercase), numbers, hyphens,
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
+     *        to 255 letters (uppercase and lowercase), numbers, hyphens,
      *        underscores, colons, periods, forward slashes, and number signs
      *        are allowed. This parameter maps to <code>Image</code> in the <a
      *        href=
@@ -627,15 +686,28 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p>
      *        <ul>
-     *        <li>Images in official repositories on Docker Hub use a single
-     *        name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     *        <li>Images in other repositories on Docker Hub are qualified with
-     *        an organization name (for example,
-     *        <code>amazon/amazon-ecs-agent</code>).</li>
-     *        <li>Images in other online repositories are qualified further by a
+     *        <li>
+     *        <p>
+     *        Images in official repositories on Docker Hub use a single name
+     *        (for example, <code>ubuntu</code> or <code>mongo</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Images in other repositories on Docker Hub are qualified with an
+     *        organization name (for example,
+     *        <code>amazon/amazon-ecs-agent</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Images in other online repositories are qualified further by a
      *        domain name (for example, <code>quay.io/assemblyline/ubuntu</code>
-     *        ).</li>
+     *        ).
+     *        </p>
+     *        </li>
      */
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -645,7 +717,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * The image used to start a container. This string is passed directly to
      * the Docker daemon. Images in the Docker Hub registry are available by
      * default. Other repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
@@ -656,19 +728,31 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <ul>
-     * <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     * <li>Images in other repositories on Docker Hub are qualified with an
-     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
-     * <li>Images in other online repositories are qualified further by a domain
-     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * <li>
+     * <p>
+     * Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The image used to start a container. This string is passed
      *         directly to the Docker daemon. Images in the Docker Hub registry
      *         are available by default. Other repositories are specified with
-     *         <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to
-     *         255 letters (uppercase and lowercase), numbers, hyphens,
+     *         <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
+     *         to 255 letters (uppercase and lowercase), numbers, hyphens,
      *         underscores, colons, periods, forward slashes, and number signs
      *         are allowed. This parameter maps to <code>Image</code> in the <a
      *         href=
@@ -679,15 +763,28 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.</p>
      *         <ul>
-     *         <li>Images in official repositories on Docker Hub use a single
-     *         name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     *         <li>Images in other repositories on Docker Hub are qualified with
-     *         an organization name (for example,
-     *         <code>amazon/amazon-ecs-agent</code>).</li>
-     *         <li>Images in other online repositories are qualified further by
-     *         a domain name (for example,
-     *         <code>quay.io/assemblyline/ubuntu</code>).</li>
+     *         <li>
+     *         <p>
+     *         Images in official repositories on Docker Hub use a single name
+     *         (for example, <code>ubuntu</code> or <code>mongo</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Images in other repositories on Docker Hub are qualified with an
+     *         organization name (for example,
+     *         <code>amazon/amazon-ecs-agent</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Images in other online repositories are qualified further by a
+     *         domain name (for example,
+     *         <code>quay.io/assemblyline/ubuntu</code>).
+     *         </p>
+     *         </li>
      */
+
     public String getImage() {
         return this.image;
     }
@@ -697,7 +794,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * The image used to start a container. This string is passed directly to
      * the Docker daemon. Images in the Docker Hub registry are available by
      * default. Other repositories are specified with
-     * <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to 255
+     * <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255
      * letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
      * periods, forward slashes, and number signs are allowed. This parameter
      * maps to <code>Image</code> in the <a href=
@@ -708,20 +805,32 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
      * </p>
      * <ul>
-     * <li>Images in official repositories on Docker Hub use a single name (for
-     * example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     * <li>Images in other repositories on Docker Hub are qualified with an
-     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).</li>
-     * <li>Images in other online repositories are qualified further by a domain
-     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).</li>
+     * <li>
+     * <p>
+     * Images in official repositories on Docker Hub use a single name (for
+     * example, <code>ubuntu</code> or <code>mongo</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other repositories on Docker Hub are qualified with an
+     * organization name (for example, <code>amazon/amazon-ecs-agent</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Images in other online repositories are qualified further by a domain
+     * name (for example, <code>quay.io/assemblyline/ubuntu</code>).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param image
      *        The image used to start a container. This string is passed
      *        directly to the Docker daemon. Images in the Docker Hub registry
      *        are available by default. Other repositories are specified with
-     *        <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. Up to
-     *        255 letters (uppercase and lowercase), numbers, hyphens,
+     *        <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up
+     *        to 255 letters (uppercase and lowercase), numbers, hyphens,
      *        underscores, colons, periods, forward slashes, and number signs
      *        are allowed. This parameter maps to <code>Image</code> in the <a
      *        href=
@@ -732,17 +841,30 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.</p>
      *        <ul>
-     *        <li>Images in official repositories on Docker Hub use a single
-     *        name (for example, <code>ubuntu</code> or <code>mongo</code>).</li>
-     *        <li>Images in other repositories on Docker Hub are qualified with
-     *        an organization name (for example,
-     *        <code>amazon/amazon-ecs-agent</code>).</li>
-     *        <li>Images in other online repositories are qualified further by a
+     *        <li>
+     *        <p>
+     *        Images in official repositories on Docker Hub use a single name
+     *        (for example, <code>ubuntu</code> or <code>mongo</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Images in other repositories on Docker Hub are qualified with an
+     *        organization name (for example,
+     *        <code>amazon/amazon-ecs-agent</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Images in other online repositories are qualified further by a
      *        domain name (for example, <code>quay.io/assemblyline/ubuntu</code>
-     *        ).</li>
+     *        ).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withImage(String image) {
         setImage(image);
         return this;
@@ -793,12 +915,20 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * based on your Amazon ECS container agent version:
      * </p>
      * <ul>
-     * <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
+     * <li>
+     * <p>
+     * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
      * values are passed to Docker as 0, which Docker then converts to 1,024 CPU
      * shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.</li>
-     * <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and
-     * CPU values of 1 are passed to Docker as 2.</li>
+     * converts to 2 CPU shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU
+     * values of 1 are passed to Docker as 2.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cpu
@@ -849,13 +979,22 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container agent version:
      *        </p>
      *        <ul>
-     *        <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
-     *        zero CPU values are passed to Docker as 0, which Docker then
-     *        converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
-     *        as 1, which the Linux kernel converts to 2 CPU shares.</li>
-     *        <li><b>Agent versions greater than or equal to 1.2.0:</b> Null,
-     *        zero, and CPU values of 1 are passed to Docker as 2.</li>
+     *        <li>
+     *        <p>
+     *        <b>Agent versions less than or equal to 1.1.0:</b> Null and zero
+     *        CPU values are passed to Docker as 0, which Docker then converts
+     *        to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1,
+     *        which the Linux kernel converts to 2 CPU shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero,
+     *        and CPU values of 1 are passed to Docker as 2.
+     *        </p>
+     *        </li>
      */
+
     public void setCpu(Integer cpu) {
         this.cpu = cpu;
     }
@@ -905,12 +1044,20 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * based on your Amazon ECS container agent version:
      * </p>
      * <ul>
-     * <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
+     * <li>
+     * <p>
+     * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
      * values are passed to Docker as 0, which Docker then converts to 1,024 CPU
      * shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.</li>
-     * <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and
-     * CPU values of 1 are passed to Docker as 2.</li>
+     * converts to 2 CPU shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU
+     * values of 1 are passed to Docker as 2.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The number of <code>cpu</code> units reserved for the container.
@@ -959,13 +1106,22 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         container agent version:
      *         </p>
      *         <ul>
-     *         <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
-     *         zero CPU values are passed to Docker as 0, which Docker then
-     *         converts to 1,024 CPU shares. CPU values of 1 are passed to
-     *         Docker as 1, which the Linux kernel converts to 2 CPU shares.</li>
-     *         <li><b>Agent versions greater than or equal to 1.2.0:</b> Null,
-     *         zero, and CPU values of 1 are passed to Docker as 2.</li>
+     *         <li>
+     *         <p>
+     *         <b>Agent versions less than or equal to 1.1.0:</b> Null and zero
+     *         CPU values are passed to Docker as 0, which Docker then converts
+     *         to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1,
+     *         which the Linux kernel converts to 2 CPU shares.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero,
+     *         and CPU values of 1 are passed to Docker as 2.
+     *         </p>
+     *         </li>
      */
+
     public Integer getCpu() {
         return this.cpu;
     }
@@ -1015,12 +1171,20 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * based on your Amazon ECS container agent version:
      * </p>
      * <ul>
-     * <li><b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
+     * <li>
+     * <p>
+     * <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU
      * values are passed to Docker as 0, which Docker then converts to 1,024 CPU
      * shares. CPU values of 1 are passed to Docker as 1, which the Linux kernel
-     * converts to 2 CPU shares.</li>
-     * <li><b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and
-     * CPU values of 1 are passed to Docker as 2.</li>
+     * converts to 2 CPU shares.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU
+     * values of 1 are passed to Docker as 2.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cpu
@@ -1071,15 +1235,24 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container agent version:
      *        </p>
      *        <ul>
-     *        <li><b>Agent versions less than or equal to 1.1.0:</b> Null and
-     *        zero CPU values are passed to Docker as 0, which Docker then
-     *        converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
-     *        as 1, which the Linux kernel converts to 2 CPU shares.</li>
-     *        <li><b>Agent versions greater than or equal to 1.2.0:</b> Null,
-     *        zero, and CPU values of 1 are passed to Docker as 2.</li>
+     *        <li>
+     *        <p>
+     *        <b>Agent versions less than or equal to 1.1.0:</b> Null and zero
+     *        CPU values are passed to Docker as 0, which Docker then converts
+     *        to 1,024 CPU shares. CPU values of 1 are passed to Docker as 1,
+     *        which the Linux kernel converts to 2 CPU shares.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero,
+     *        and CPU values of 1 are passed to Docker as 2.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withCpu(Integer cpu) {
         setCpu(cpu);
         return this;
@@ -1115,6 +1288,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setMemory(Integer memory) {
         this.memory = memory;
     }
@@ -1148,6 +1322,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
      */
+
     public Integer getMemory() {
         return this.memory;
     }
@@ -1184,6 +1359,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withMemory(Integer memory) {
         setMemory(memory);
         return this;
@@ -1206,7 +1382,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">
-     * <code>docker run</code></a>.
+     * <code>docker run</code> </a>.
      * </p>
      * <important>
      * <p>
@@ -1233,7 +1409,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>--link</code> option to <a
      *         href="https://docs.docker.com/reference/commandline/run/">
-     *         <code>docker run</code></a>.</p> <important>
+     *         <code>docker run</code> </a>.</p> <important>
      *         <p>
      *         Containers that are collocated on a single container instance may
      *         be able to communicate with each other without requiring links or
@@ -1241,6 +1417,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         container instance using security groups and VPC settings.
      *         </p>
      */
+
     public java.util.List<String> getLinks() {
         if (links == null) {
             links = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1265,7 +1442,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">
-     * <code>docker run</code></a>.
+     * <code>docker run</code> </a>.
      * </p>
      * <important>
      * <p>
@@ -1293,7 +1470,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">
-     *        <code>docker run</code></a>.</p> <important>
+     *        <code>docker run</code> </a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or
@@ -1301,6 +1478,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        instance using security groups and VPC settings.
      *        </p>
      */
+
     public void setLinks(java.util.Collection<String> links) {
         if (links == null) {
             this.links = null;
@@ -1327,7 +1505,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">
-     * <code>docker run</code></a>.
+     * <code>docker run</code> </a>.
      * </p>
      * <important>
      * <p>
@@ -1361,7 +1539,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">
-     *        <code>docker run</code></a>.</p> <important>
+     *        <code>docker run</code> </a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or
@@ -1371,6 +1549,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withLinks(String... links) {
         if (this.links == null) {
             setLinks(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1399,7 +1578,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--link</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">
-     * <code>docker run</code></a>.
+     * <code>docker run</code> </a>.
      * </p>
      * <important>
      * <p>
@@ -1427,7 +1606,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a> and the <code>--link</code> option to <a
      *        href="https://docs.docker.com/reference/commandline/run/">
-     *        <code>docker run</code></a>.</p> <important>
+     *        <code>docker run</code> </a>.</p> <important>
      *        <p>
      *        Containers that are collocated on a single container instance may
      *        be able to communicate with each other without requiring links or
@@ -1437,6 +1616,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withLinks(java.util.Collection<String> links) {
         setLinks(links);
         return this;
@@ -1483,6 +1663,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         responses.
      *         </p>
      */
+
     public java.util.List<PortMapping> getPortMappings() {
         if (portMappings == null) {
             portMappings = new com.amazonaws.internal.SdkInternalList<PortMapping>();
@@ -1532,6 +1713,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        responses.
      *        </p>
      */
+
     public void setPortMappings(java.util.Collection<PortMapping> portMappings) {
         if (portMappings == null) {
             this.portMappings = null;
@@ -1592,6 +1774,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withPortMappings(PortMapping... portMappings) {
         if (this.portMappings == null) {
             setPortMappings(new com.amazonaws.internal.SdkInternalList<PortMapping>(
@@ -1647,6 +1830,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withPortMappings(
             java.util.Collection<PortMapping> portMappings) {
         setPortMappings(portMappings);
@@ -1656,29 +1840,43 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * <p>
      * If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
+     * <code>true</code>, and that container fails or stops for any reason, all
+     * other containers that are part of the task are stopped. If the
      * <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure does not affect the rest of the
      * containers in a task. If this parameter is omitted, a container is
      * assumed to be essential.
      * </p>
-     * <note>
      * <p>
-     * All tasks must have at least one essential container.
+     * All tasks must have at least one essential container. If you have an
+     * application that is composed of multiple containers, you should group
+     * containers that are used for a common purpose into components, and
+     * separate the different components into multiple task definitions. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     * >Application Architecture</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param essential
      *        If the <code>essential</code> parameter of a container is marked
-     *        as <code>true</code>, the failure of that container stops the
-     *        task. If the <code>essential</code> parameter of a container is
+     *        as <code>true</code>, and that container fails or stops for any
+     *        reason, all other containers that are part of the task are
+     *        stopped. If the <code>essential</code> parameter of a container is
      *        marked as <code>false</code>, then its failure does not affect the
      *        rest of the containers in a task. If this parameter is omitted, a
-     *        container is assumed to be essential.</p> <note>
+     *        container is assumed to be essential.</p>
      *        <p>
-     *        All tasks must have at least one essential container.
-     *        </p>
+     *        All tasks must have at least one essential container. If you have
+     *        an application that is composed of multiple containers, you should
+     *        group containers that are used for a common purpose into
+     *        components, and separate the different components into multiple
+     *        task definitions. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     *        >Application Architecture</a> in the <i>Amazon EC2 Container
+     *        Service Developer Guide</i>.
      */
+
     public void setEssential(Boolean essential) {
         this.essential = essential;
     }
@@ -1686,28 +1884,42 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * <p>
      * If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
+     * <code>true</code>, and that container fails or stops for any reason, all
+     * other containers that are part of the task are stopped. If the
      * <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure does not affect the rest of the
      * containers in a task. If this parameter is omitted, a container is
      * assumed to be essential.
      * </p>
-     * <note>
      * <p>
-     * All tasks must have at least one essential container.
+     * All tasks must have at least one essential container. If you have an
+     * application that is composed of multiple containers, you should group
+     * containers that are used for a common purpose into components, and
+     * separate the different components into multiple task definitions. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     * >Application Architecture</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @return If the <code>essential</code> parameter of a container is marked
-     *         as <code>true</code>, the failure of that container stops the
-     *         task. If the <code>essential</code> parameter of a container is
-     *         marked as <code>false</code>, then its failure does not affect
+     *         as <code>true</code>, and that container fails or stops for any
+     *         reason, all other containers that are part of the task are
+     *         stopped. If the <code>essential</code> parameter of a container
+     *         is marked as <code>false</code>, then its failure does not affect
      *         the rest of the containers in a task. If this parameter is
-     *         omitted, a container is assumed to be essential.</p> <note>
+     *         omitted, a container is assumed to be essential.</p>
      *         <p>
-     *         All tasks must have at least one essential container.
-     *         </p>
+     *         All tasks must have at least one essential container. If you have
+     *         an application that is composed of multiple containers, you
+     *         should group containers that are used for a common purpose into
+     *         components, and separate the different components into multiple
+     *         task definitions. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     *         >Application Architecture</a> in the <i>Amazon EC2 Container
+     *         Service Developer Guide</i>.
      */
+
     public Boolean getEssential() {
         return this.essential;
     }
@@ -1715,31 +1927,45 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * <p>
      * If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
+     * <code>true</code>, and that container fails or stops for any reason, all
+     * other containers that are part of the task are stopped. If the
      * <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure does not affect the rest of the
      * containers in a task. If this parameter is omitted, a container is
      * assumed to be essential.
      * </p>
-     * <note>
      * <p>
-     * All tasks must have at least one essential container.
+     * All tasks must have at least one essential container. If you have an
+     * application that is composed of multiple containers, you should group
+     * containers that are used for a common purpose into components, and
+     * separate the different components into multiple task definitions. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     * >Application Architecture</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param essential
      *        If the <code>essential</code> parameter of a container is marked
-     *        as <code>true</code>, the failure of that container stops the
-     *        task. If the <code>essential</code> parameter of a container is
+     *        as <code>true</code>, and that container fails or stops for any
+     *        reason, all other containers that are part of the task are
+     *        stopped. If the <code>essential</code> parameter of a container is
      *        marked as <code>false</code>, then its failure does not affect the
      *        rest of the containers in a task. If this parameter is omitted, a
-     *        container is assumed to be essential.</p> <note>
+     *        container is assumed to be essential.</p>
      *        <p>
-     *        All tasks must have at least one essential container.
-     *        </p>
+     *        All tasks must have at least one essential container. If you have
+     *        an application that is composed of multiple containers, you should
+     *        group containers that are used for a common purpose into
+     *        components, and separate the different components into multiple
+     *        task definitions. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     *        >Application Architecture</a> in the <i>Amazon EC2 Container
+     *        Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withEssential(Boolean essential) {
         setEssential(essential);
         return this;
@@ -1748,28 +1974,42 @@ public class ContainerDefinition implements Serializable, Cloneable {
     /**
      * <p>
      * If the <code>essential</code> parameter of a container is marked as
-     * <code>true</code>, the failure of that container stops the task. If the
+     * <code>true</code>, and that container fails or stops for any reason, all
+     * other containers that are part of the task are stopped. If the
      * <code>essential</code> parameter of a container is marked as
      * <code>false</code>, then its failure does not affect the rest of the
      * containers in a task. If this parameter is omitted, a container is
      * assumed to be essential.
      * </p>
-     * <note>
      * <p>
-     * All tasks must have at least one essential container.
+     * All tasks must have at least one essential container. If you have an
+     * application that is composed of multiple containers, you should group
+     * containers that are used for a common purpose into components, and
+     * separate the different components into multiple task definitions. For
+     * more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     * >Application Architecture</a> in the <i>Amazon EC2 Container Service
+     * Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @return If the <code>essential</code> parameter of a container is marked
-     *         as <code>true</code>, the failure of that container stops the
-     *         task. If the <code>essential</code> parameter of a container is
-     *         marked as <code>false</code>, then its failure does not affect
+     *         as <code>true</code>, and that container fails or stops for any
+     *         reason, all other containers that are part of the task are
+     *         stopped. If the <code>essential</code> parameter of a container
+     *         is marked as <code>false</code>, then its failure does not affect
      *         the rest of the containers in a task. If this parameter is
-     *         omitted, a container is assumed to be essential.</p> <note>
+     *         omitted, a container is assumed to be essential.</p>
      *         <p>
-     *         All tasks must have at least one essential container.
-     *         </p>
+     *         All tasks must have at least one essential container. If you have
+     *         an application that is composed of multiple containers, you
+     *         should group containers that are used for a common purpose into
+     *         components, and separate the different components into multiple
+     *         task definitions. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html"
+     *         >Application Architecture</a> in the <i>Amazon EC2 Container
+     *         Service Developer Guide</i>.
      */
+
     public Boolean isEssential() {
         return this.essential;
     }
@@ -1816,6 +2056,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/builder/#entrypoint"
      *         >https://docs.docker.com/reference/builder/#entrypoint</a>.
      */
+
     public java.util.List<String> getEntryPoint() {
         if (entryPoint == null) {
             entryPoint = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1867,6 +2108,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/builder/#entrypoint"
      *        >https://docs.docker.com/reference/builder/#entrypoint</a>.
      */
+
     public void setEntryPoint(java.util.Collection<String> entryPoint) {
         if (entryPoint == null) {
             this.entryPoint = null;
@@ -1929,6 +2171,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withEntryPoint(String... entryPoint) {
         if (this.entryPoint == null) {
             setEntryPoint(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1986,6 +2229,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withEntryPoint(
             java.util.Collection<String> entryPoint) {
         setEntryPoint(entryPoint);
@@ -2017,6 +2261,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/builder/#cmd"
      *         >https://docs.docker.com/reference/builder/#cmd</a>.
      */
+
     public java.util.List<String> getCommand() {
         if (command == null) {
             command = new com.amazonaws.internal.SdkInternalList<String>();
@@ -2051,6 +2296,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/builder/#cmd"
      *        >https://docs.docker.com/reference/builder/#cmd</a>.
      */
+
     public void setCommand(java.util.Collection<String> command) {
         if (command == null) {
             this.command = null;
@@ -2096,6 +2342,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withCommand(String... command) {
         if (this.command == null) {
             setCommand(new com.amazonaws.internal.SdkInternalList<String>(
@@ -2136,6 +2383,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withCommand(java.util.Collection<String> command) {
         setCommand(command);
         return this;
@@ -2171,6 +2419,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         sensitive information, such as credential data.
      *         </p>
      */
+
     public java.util.List<KeyValuePair> getEnvironment() {
         if (environment == null) {
             environment = new com.amazonaws.internal.SdkInternalList<KeyValuePair>();
@@ -2209,6 +2458,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        sensitive information, such as credential data.
      *        </p>
      */
+
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
         if (environment == null) {
             this.environment = null;
@@ -2258,6 +2508,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withEnvironment(KeyValuePair... environment) {
         if (this.environment == null) {
             setEnvironment(new com.amazonaws.internal.SdkInternalList<KeyValuePair>(
@@ -2302,6 +2553,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withEnvironment(
             java.util.Collection<KeyValuePair> environment) {
         setEnvironment(environment);
@@ -2328,6 +2580,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
      */
+
     public java.util.List<MountPoint> getMountPoints() {
         if (mountPoints == null) {
             mountPoints = new com.amazonaws.internal.SdkInternalList<MountPoint>();
@@ -2356,6 +2609,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setMountPoints(java.util.Collection<MountPoint> mountPoints) {
         if (mountPoints == null) {
             this.mountPoints = null;
@@ -2395,6 +2649,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withMountPoints(MountPoint... mountPoints) {
         if (this.mountPoints == null) {
             setMountPoints(new com.amazonaws.internal.SdkInternalList<MountPoint>(
@@ -2429,6 +2684,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withMountPoints(
             java.util.Collection<MountPoint> mountPoints) {
         setMountPoints(mountPoints);
@@ -2455,6 +2711,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public java.util.List<VolumeFrom> getVolumesFrom() {
         if (volumesFrom == null) {
             volumesFrom = new com.amazonaws.internal.SdkInternalList<VolumeFrom>();
@@ -2484,6 +2741,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setVolumesFrom(java.util.Collection<VolumeFrom> volumesFrom) {
         if (volumesFrom == null) {
             this.volumesFrom = null;
@@ -2524,6 +2782,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withVolumesFrom(VolumeFrom... volumesFrom) {
         if (this.volumesFrom == null) {
             setVolumesFrom(new com.amazonaws.internal.SdkInternalList<VolumeFrom>(
@@ -2559,6 +2818,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withVolumesFrom(
             java.util.Collection<VolumeFrom> volumesFrom) {
         setVolumesFrom(volumesFrom);
@@ -2587,6 +2847,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -2611,6 +2872,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -2639,6 +2901,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -2665,6 +2928,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setUser(String user) {
         this.user = user;
     }
@@ -2689,6 +2953,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
      */
+
     public String getUser() {
         return this.user;
     }
@@ -2716,6 +2981,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withUser(String user) {
         setUser(user);
         return this;
@@ -2743,6 +3009,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setWorkingDirectory(String workingDirectory) {
         this.workingDirectory = workingDirectory;
     }
@@ -2768,6 +3035,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public String getWorkingDirectory() {
         return this.workingDirectory;
     }
@@ -2796,6 +3064,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withWorkingDirectory(String workingDirectory) {
         setWorkingDirectory(workingDirectory);
         return this;
@@ -2820,6 +3089,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *        >Docker Remote API</a>.
      */
+
     public void setDisableNetworking(Boolean disableNetworking) {
         this.disableNetworking = disableNetworking;
     }
@@ -2842,6 +3112,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a>.
      */
+
     public Boolean getDisableNetworking() {
         return this.disableNetworking;
     }
@@ -2867,6 +3138,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDisableNetworking(Boolean disableNetworking) {
         setDisableNetworking(disableNetworking);
         return this;
@@ -2890,6 +3162,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a>.
      */
+
     public Boolean isDisableNetworking() {
         return this.disableNetworking;
     }
@@ -2919,6 +3192,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setPrivileged(Boolean privileged) {
         this.privileged = privileged;
     }
@@ -2946,6 +3220,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public Boolean getPrivileged() {
         return this.privileged;
     }
@@ -2977,6 +3252,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withPrivileged(Boolean privileged) {
         setPrivileged(privileged);
         return this;
@@ -3005,6 +3281,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public Boolean isPrivileged() {
         return this.privileged;
     }
@@ -3031,6 +3308,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Docker Remote API</a> and the <code>--read-only</code> option to
      *        <code>docker run</code>.
      */
+
     public void setReadonlyRootFilesystem(Boolean readonlyRootFilesystem) {
         this.readonlyRootFilesystem = readonlyRootFilesystem;
     }
@@ -3056,6 +3334,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         >Docker Remote API</a> and the <code>--read-only</code> option to
      *         <code>docker run</code>.
      */
+
     public Boolean getReadonlyRootFilesystem() {
         return this.readonlyRootFilesystem;
     }
@@ -3084,6 +3363,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withReadonlyRootFilesystem(
             Boolean readonlyRootFilesystem) {
         setReadonlyRootFilesystem(readonlyRootFilesystem);
@@ -3111,6 +3391,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         >Docker Remote API</a> and the <code>--read-only</code> option to
      *         <code>docker run</code>.
      */
+
     public Boolean isReadonlyRootFilesystem() {
         return this.readonlyRootFilesystem;
     }
@@ -3135,6 +3416,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         href="https://docs.docker.com/reference/commandline/run/">docker
      *         run</a>.
      */
+
     public java.util.List<String> getDnsServers() {
         if (dnsServers == null) {
             dnsServers = new com.amazonaws.internal.SdkInternalList<String>();
@@ -3163,6 +3445,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setDnsServers(java.util.Collection<String> dnsServers) {
         if (dnsServers == null) {
             this.dnsServers = null;
@@ -3202,6 +3485,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDnsServers(String... dnsServers) {
         if (this.dnsServers == null) {
             setDnsServers(new com.amazonaws.internal.SdkInternalList<String>(
@@ -3236,6 +3520,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDnsServers(
             java.util.Collection<String> dnsServers) {
         setDnsServers(dnsServers);
@@ -3262,6 +3547,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public java.util.List<String> getDnsSearchDomains() {
         if (dnsSearchDomains == null) {
             dnsSearchDomains = new com.amazonaws.internal.SdkInternalList<String>();
@@ -3291,6 +3577,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setDnsSearchDomains(
             java.util.Collection<String> dnsSearchDomains) {
         if (dnsSearchDomains == null) {
@@ -3332,6 +3619,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDnsSearchDomains(String... dnsSearchDomains) {
         if (this.dnsSearchDomains == null) {
             setDnsSearchDomains(new com.amazonaws.internal.SdkInternalList<String>(
@@ -3367,6 +3655,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDnsSearchDomains(
             java.util.Collection<String> dnsSearchDomains) {
         setDnsSearchDomains(dnsSearchDomains);
@@ -3395,6 +3684,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <a href="https://docs.docker.com/reference/commandline/run/">
      *         docker run</a>.
      */
+
     public java.util.List<HostEntry> getExtraHosts() {
         if (extraHosts == null) {
             extraHosts = new com.amazonaws.internal.SdkInternalList<HostEntry>();
@@ -3426,6 +3716,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        href="https://docs.docker.com/reference/commandline/run/">docker
      *        run</a>.
      */
+
     public void setExtraHosts(java.util.Collection<HostEntry> extraHosts) {
         if (extraHosts == null) {
             this.extraHosts = null;
@@ -3468,6 +3759,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withExtraHosts(HostEntry... extraHosts) {
         if (this.extraHosts == null) {
             setExtraHosts(new com.amazonaws.internal.SdkInternalList<HostEntry>(
@@ -3505,6 +3797,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withExtraHosts(
             java.util.Collection<HostEntry> extraHosts) {
         setExtraHosts(extraHosts);
@@ -3529,7 +3822,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -3550,11 +3843,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *         before containers placed on that instance can use these security
      *         options. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *         >Amazon ECS Container Agent Configuration</a> in the <i>Amazon
      *         EC2 Container Service Developer Guide</i>.
      *         </p>
      */
+
     public java.util.List<String> getDockerSecurityOptions() {
         if (dockerSecurityOptions == null) {
             dockerSecurityOptions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -3580,7 +3874,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -3603,11 +3897,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security
      *        options. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *        >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      *        Container Service Developer Guide</i>.
      *        </p>
      */
+
     public void setDockerSecurityOptions(
             java.util.Collection<String> dockerSecurityOptions) {
         if (dockerSecurityOptions == null) {
@@ -3637,7 +3932,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -3666,13 +3961,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security
      *        options. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *        >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      *        Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDockerSecurityOptions(
             String... dockerSecurityOptions) {
         if (this.dockerSecurityOptions == null) {
@@ -3703,7 +3999,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before
      * containers placed on that instance can use these security options. For
      * more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -3726,13 +4022,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        <code>ECS_APPARMOR_CAPABLE=true</code> environment variables
      *        before containers placed on that instance can use these security
      *        options. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *        >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      *        Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDockerSecurityOptions(
             java.util.Collection<String> dockerSecurityOptions) {
         setDockerSecurityOptions(dockerSecurityOptions);
@@ -3768,6 +4065,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
+
     public java.util.Map<String, String> getDockerLabels() {
         return dockerLabels;
     }
@@ -3802,6 +4100,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
+
     public void setDockerLabels(java.util.Map<String, String> dockerLabels) {
         this.dockerLabels = dockerLabels;
     }
@@ -3838,6 +4137,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withDockerLabels(
             java.util.Map<String, String> dockerLabels) {
         setDockerLabels(dockerLabels);
@@ -3859,6 +4159,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * Removes all the entries added into DockerLabels. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ContainerDefinition clearDockerLabelsEntries() {
         this.dockerLabels = null;
         return this;
@@ -3895,6 +4196,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         your container instance and run the following command:
      *         <code>sudo docker version | grep "Server API version"</code>
      */
+
     public java.util.List<Ulimit> getUlimits() {
         if (ulimits == null) {
             ulimits = new com.amazonaws.internal.SdkInternalList<Ulimit>();
@@ -3934,6 +4236,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        your container instance and run the following command:
      *        <code>sudo docker version | grep "Server API version"</code>
      */
+
     public void setUlimits(java.util.Collection<Ulimit> ulimits) {
         if (ulimits == null) {
             this.ulimits = null;
@@ -3984,6 +4287,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withUlimits(Ulimit... ulimits) {
         if (this.ulimits == null) {
             setUlimits(new com.amazonaws.internal.SdkInternalList<Ulimit>(
@@ -4029,6 +4333,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withUlimits(java.util.Collection<Ulimit> ulimits) {
         setUlimits(ulimits);
         return this;
@@ -4043,7 +4348,25 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
-     * Valid log drivers are displayed in the <a>LogConfiguration</a> data type.
+     * By default, containers use the same logging driver that the Docker daemon
+     * uses; however the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the
+     * container definition. To use a different logging driver for a container,
+     * the log system must be configured properly on the container instance (or
+     * on a different log server for remote logging options). For more
+     * information on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     * logging drivers</a> in the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon ECS currently supports a subset of the logging drivers available
+     * to the Docker daemon (shown in the <a>LogConfiguration</a> data type).
+     * Currently unsupported log drivers may be available in future releases of
+     * the Amazon ECS container agent.
+     * </p>
+     * </note>
+     * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater
      * on your container instance. To check the Docker Remote API version on
      * your container instance, log into your container instance and run the
@@ -4057,7 +4380,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration
      * options. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -4072,13 +4395,32 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Docker Remote API</a> and the <code>--log-driver</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>. Valid log drivers are displayed in the
-     *        <a>LogConfiguration</a> data type. This parameter requires version
-     *        1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
-     *        <code>sudo docker version | grep "Server API version"</code></p>
+     *        run</a>. By default, containers use the same logging driver that
+     *        the Docker daemon uses; however the container may use a different
+     *        logging driver than the Docker daemon by specifying a log driver
+     *        with this parameter in the container definition. To use a
+     *        different logging driver for a container, the log system must be
+     *        configured properly on the container instance (or on a different
+     *        log server for remote logging options). For more information on
+     *        the options for different supported log drivers, see <a
+     *        href="https://docs.docker.com/engine/admin/logging/overview/"
+     *        >Configure logging drivers</a> in the Docker documentation.</p>
+     *        <note>
+     *        <p>
+     *        Amazon ECS currently supports a subset of the logging drivers
+     *        available to the Docker daemon (shown in the
+     *        <a>LogConfiguration</a> data type). Currently unsupported log
+     *        drivers may be available in future releases of the Amazon ECS
+     *        container agent.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
+     *        <code>sudo docker version | grep "Server API version"</code>
+     *        </p>
      *        <note>
      *        <p>
      *        The Amazon ECS container agent running on a container instance
@@ -4086,11 +4428,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
      *        variable before containers placed on that instance can use these
      *        log configuration options. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *        >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      *        Container Service Developer Guide</i>.
      *        </p>
      */
+
     public void setLogConfiguration(LogConfiguration logConfiguration) {
         this.logConfiguration = logConfiguration;
     }
@@ -4104,7 +4447,25 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
-     * Valid log drivers are displayed in the <a>LogConfiguration</a> data type.
+     * By default, containers use the same logging driver that the Docker daemon
+     * uses; however the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the
+     * container definition. To use a different logging driver for a container,
+     * the log system must be configured properly on the container instance (or
+     * on a different log server for remote logging options). For more
+     * information on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     * logging drivers</a> in the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon ECS currently supports a subset of the logging drivers available
+     * to the Docker daemon (shown in the <a>LogConfiguration</a> data type).
+     * Currently unsupported log drivers may be available in future releases of
+     * the Amazon ECS container agent.
+     * </p>
+     * </note>
+     * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater
      * on your container instance. To check the Docker Remote API version on
      * your container instance, log into your container instance and run the
@@ -4118,7 +4479,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration
      * options. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -4131,13 +4492,33 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         "https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      *         >Docker Remote API</a> and the <code>--log-driver</code> option
      *         to <a href="https://docs.docker.com/reference/commandline/run/">
-     *         docker run</a>. Valid log drivers are displayed in the
-     *         <a>LogConfiguration</a> data type. This parameter requires
-     *         version 1.18 of the Docker Remote API or greater on your
-     *         container instance. To check the Docker Remote API version on
-     *         your container instance, log into your container instance and run
-     *         the following command:
-     *         <code>sudo docker version | grep "Server API version"</code></p>
+     *         docker run</a>. By default, containers use the same logging
+     *         driver that the Docker daemon uses; however the container may use
+     *         a different logging driver than the Docker daemon by specifying a
+     *         log driver with this parameter in the container definition. To
+     *         use a different logging driver for a container, the log system
+     *         must be configured properly on the container instance (or on a
+     *         different log server for remote logging options). For more
+     *         information on the options for different supported log drivers,
+     *         see <a
+     *         href="https://docs.docker.com/engine/admin/logging/overview/"
+     *         >Configure logging drivers</a> in the Docker documentation.</p>
+     *         <note>
+     *         <p>
+     *         Amazon ECS currently supports a subset of the logging drivers
+     *         available to the Docker daemon (shown in the
+     *         <a>LogConfiguration</a> data type). Currently unsupported log
+     *         drivers may be available in future releases of the Amazon ECS
+     *         container agent.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         This parameter requires version 1.18 of the Docker Remote API or
+     *         greater on your container instance. To check the Docker Remote
+     *         API version on your container instance, log into your container
+     *         instance and run the following command:
+     *         <code>sudo docker version | grep "Server API version"</code>
+     *         </p>
      *         <note>
      *         <p>
      *         The Amazon ECS container agent running on a container instance
@@ -4145,11 +4526,12 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *         the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
      *         variable before containers placed on that instance can use these
      *         log configuration options. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *         "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *         >Amazon ECS Container Agent Configuration</a> in the <i>Amazon
      *         EC2 Container Service Developer Guide</i>.
      *         </p>
      */
+
     public LogConfiguration getLogConfiguration() {
         return this.logConfiguration;
     }
@@ -4163,7 +4545,25 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * href="https://docs.docker.com/reference/api/docker_remote_api_v1.19/"
      * >Docker Remote API</a> and the <code>--log-driver</code> option to <a
      * href="https://docs.docker.com/reference/commandline/run/">docker run</a>.
-     * Valid log drivers are displayed in the <a>LogConfiguration</a> data type.
+     * By default, containers use the same logging driver that the Docker daemon
+     * uses; however the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the
+     * container definition. To use a different logging driver for a container,
+     * the log system must be configured properly on the container instance (or
+     * on a different log server for remote logging options). For more
+     * information on the options for different supported log drivers, see <a
+     * href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+     * logging drivers</a> in the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon ECS currently supports a subset of the logging drivers available
+     * to the Docker daemon (shown in the <a>LogConfiguration</a> data type).
+     * Currently unsupported log drivers may be available in future releases of
+     * the Amazon ECS container agent.
+     * </p>
+     * </note>
+     * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater
      * on your container instance. To check the Docker Remote API version on
      * your container instance, log into your container instance and run the
@@ -4177,7 +4577,7 @@ public class ContainerDefinition implements Serializable, Cloneable {
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration
      * options. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     * "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      * >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      * Container Service Developer Guide</i>.
      * </p>
@@ -4192,13 +4592,32 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        >Docker Remote API</a> and the <code>--log-driver</code> option to
      *        <a
      *        href="https://docs.docker.com/reference/commandline/run/">docker
-     *        run</a>. Valid log drivers are displayed in the
-     *        <a>LogConfiguration</a> data type. This parameter requires version
-     *        1.18 of the Docker Remote API or greater on your container
-     *        instance. To check the Docker Remote API version on your container
-     *        instance, log into your container instance and run the following
-     *        command:
-     *        <code>sudo docker version | grep "Server API version"</code></p>
+     *        run</a>. By default, containers use the same logging driver that
+     *        the Docker daemon uses; however the container may use a different
+     *        logging driver than the Docker daemon by specifying a log driver
+     *        with this parameter in the container definition. To use a
+     *        different logging driver for a container, the log system must be
+     *        configured properly on the container instance (or on a different
+     *        log server for remote logging options). For more information on
+     *        the options for different supported log drivers, see <a
+     *        href="https://docs.docker.com/engine/admin/logging/overview/"
+     *        >Configure logging drivers</a> in the Docker documentation.</p>
+     *        <note>
+     *        <p>
+     *        Amazon ECS currently supports a subset of the logging drivers
+     *        available to the Docker daemon (shown in the
+     *        <a>LogConfiguration</a> data type). Currently unsupported log
+     *        drivers may be available in future releases of the Amazon ECS
+     *        container agent.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or
+     *        greater on your container instance. To check the Docker Remote API
+     *        version on your container instance, log into your container
+     *        instance and run the following command:
+     *        <code>sudo docker version | grep "Server API version"</code>
+     *        </p>
      *        <note>
      *        <p>
      *        The Amazon ECS container agent running on a container instance
@@ -4206,13 +4625,14 @@ public class ContainerDefinition implements Serializable, Cloneable {
      *        the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
      *        variable before containers placed on that instance can use these
      *        log configuration options. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/developerguide/ecs-agent-config.html"
+     *        "http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html"
      *        >Amazon ECS Container Agent Configuration</a> in the <i>Amazon EC2
      *        Container Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContainerDefinition withLogConfiguration(
             LogConfiguration logConfiguration) {
         setLogConfiguration(logConfiguration);

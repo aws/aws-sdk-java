@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeCasesRequest Marshaller
  */
 public class DescribeCasesRequestMarshaller implements
         Marshaller<Request<DescribeCasesRequest>, DescribeCasesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeCasesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeCasesRequest> marshall(
             DescribeCasesRequest describeCasesRequest) {
@@ -63,72 +63,66 @@ public class DescribeCasesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> caseIdListList = (com.amazonaws.internal.SdkInternalList<String>) describeCasesRequest
                     .getCaseIdList();
             if (!caseIdListList.isEmpty() || !caseIdListList.isAutoConstruct()) {
-                jsonWriter.key("caseIdList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("caseIdList");
+                jsonGenerator.writeStartArray();
                 for (String caseIdListListValue : caseIdListList) {
                     if (caseIdListListValue != null) {
-                        jsonWriter.value(caseIdListListValue);
+                        jsonGenerator.writeValue(caseIdListListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (describeCasesRequest.getDisplayId() != null) {
-                jsonWriter.key("displayId").value(
+                jsonGenerator.writeFieldName("displayId").writeValue(
                         describeCasesRequest.getDisplayId());
             }
-
             if (describeCasesRequest.getAfterTime() != null) {
-                jsonWriter.key("afterTime").value(
+                jsonGenerator.writeFieldName("afterTime").writeValue(
                         describeCasesRequest.getAfterTime());
             }
-
             if (describeCasesRequest.getBeforeTime() != null) {
-                jsonWriter.key("beforeTime").value(
+                jsonGenerator.writeFieldName("beforeTime").writeValue(
                         describeCasesRequest.getBeforeTime());
             }
-
             if (describeCasesRequest.getIncludeResolvedCases() != null) {
-                jsonWriter.key("includeResolvedCases").value(
-                        describeCasesRequest.getIncludeResolvedCases());
+                jsonGenerator.writeFieldName("includeResolvedCases")
+                        .writeValue(
+                                describeCasesRequest.getIncludeResolvedCases());
             }
-
             if (describeCasesRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         describeCasesRequest.getNextToken());
             }
-
             if (describeCasesRequest.getMaxResults() != null) {
-                jsonWriter.key("maxResults").value(
+                jsonGenerator.writeFieldName("maxResults").writeValue(
                         describeCasesRequest.getMaxResults());
             }
-
             if (describeCasesRequest.getLanguage() != null) {
-                jsonWriter.key("language").value(
+                jsonGenerator.writeFieldName("language").writeValue(
                         describeCasesRequest.getLanguage());
             }
-
             if (describeCasesRequest.getIncludeCommunications() != null) {
-                jsonWriter.key("includeCommunications").value(
-                        describeCasesRequest.getIncludeCommunications());
+                jsonGenerator
+                        .writeFieldName("includeCommunications")
+                        .writeValue(
+                                describeCasesRequest.getIncludeCommunications());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

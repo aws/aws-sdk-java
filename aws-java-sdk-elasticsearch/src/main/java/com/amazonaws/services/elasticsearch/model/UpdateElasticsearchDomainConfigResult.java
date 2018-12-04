@@ -42,6 +42,7 @@ public class UpdateElasticsearchDomainConfigResult implements Serializable,
      * @param domainConfig
      *        The status of the updated Elasticsearch domain.
      */
+
     public void setDomainConfig(ElasticsearchDomainConfig domainConfig) {
         this.domainConfig = domainConfig;
     }
@@ -53,6 +54,7 @@ public class UpdateElasticsearchDomainConfigResult implements Serializable,
      * 
      * @return The status of the updated Elasticsearch domain.
      */
+
     public ElasticsearchDomainConfig getDomainConfig() {
         return this.domainConfig;
     }
@@ -67,6 +69,7 @@ public class UpdateElasticsearchDomainConfigResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateElasticsearchDomainConfigResult withDomainConfig(
             ElasticsearchDomainConfig domainConfig) {
         setDomainConfig(domainConfig);

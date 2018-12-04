@@ -52,6 +52,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the resource you want to remove
      *        the tags from.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -65,6 +66,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the resource you want to remove
      *         the tags from.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -81,6 +83,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromResourceRequest withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;
@@ -95,6 +98,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      * @return The keys of the tags you want to remove from the specified
      *         resource. A tag is composed of a key/value pair.
      */
+
     public java.util.List<String> getTagKeys() {
         if (tagKeys == null) {
             tagKeys = new com.amazonaws.internal.SdkInternalList<String>();
@@ -112,6 +116,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      *        The keys of the tags you want to remove from the specified
      *        resource. A tag is composed of a key/value pair.
      */
+
     public void setTagKeys(java.util.Collection<String> tagKeys) {
         if (tagKeys == null) {
             this.tagKeys = null;
@@ -140,6 +145,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromResourceRequest withTagKeys(String... tagKeys) {
         if (this.tagKeys == null) {
             setTagKeys(new com.amazonaws.internal.SdkInternalList<String>(
@@ -163,6 +169,7 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsFromResourceRequest withTagKeys(
             java.util.Collection<String> tagKeys) {
         setTagKeys(tagKeys);

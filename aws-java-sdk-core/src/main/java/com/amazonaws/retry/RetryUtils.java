@@ -14,62 +14,101 @@
  */
 package com.amazonaws.retry;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import org.apache.http.HttpStatus;
 
 import com.amazonaws.AmazonServiceException;
 
+import java.util.Random;
+import java.util.HashSet;
+import java.util.Set;
+
 public class RetryUtils {
+
+    private static final Set<String> THROTTLING_ERROR_CODES = new HashSet<String>(9);
+    private static final Set<String> CLOCK_SKEW_ERROR_CODES = new HashSet<String>(6);
+
+    static {
+        THROTTLING_ERROR_CODES.add("Throttling");
+        THROTTLING_ERROR_CODES.add("ThrottlingException");
+        THROTTLING_ERROR_CODES.add("ProvisionedThroughputExceededException");
+        THROTTLING_ERROR_CODES.add("SlowDown");
+        THROTTLING_ERROR_CODES.add("TooManyRequestsException");
+        THROTTLING_ERROR_CODES.add("LimitExceededException");
+        THROTTLING_ERROR_CODES.add("RequestLimitExceeded");
+        THROTTLING_ERROR_CODES.add("BandwidthLimitExceeded");
+        THROTTLING_ERROR_CODES.add("RequestThrottled");
+
+        CLOCK_SKEW_ERROR_CODES.add("RequestTimeTooSkewed");
+        CLOCK_SKEW_ERROR_CODES.add("RequestExpired");
+        CLOCK_SKEW_ERROR_CODES.add("InvalidSignatureException");
+        CLOCK_SKEW_ERROR_CODES.add("SignatureDoesNotMatch");
+        CLOCK_SKEW_ERROR_CODES.add("AuthFailure");
+        CLOCK_SKEW_ERROR_CODES.add("RequestInTheFuture");
+    }
+
+    /**
+     * Returns true if the specified exception is a retryable service side exception.
+     *
+     * @param ase The exception to test.
+     * @return True if the exception resulted from a retryable service error, otherwise false.
+     */
+    public static boolean isRetryableServiceException(AmazonServiceException ase) {
+        if (ase == null) {
+            return false;
+        }
+        final int statusCode = ase.getStatusCode();
+        return statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR ||
+               statusCode == HttpStatus.SC_BAD_GATEWAY ||
+               statusCode == HttpStatus.SC_SERVICE_UNAVAILABLE ||
+               statusCode == HttpStatus.SC_GATEWAY_TIMEOUT;
+    }
 
     /**
      * Returns true if the specified exception is a throttling error.
      *
-     * @param ase
-     *            The exception to test.
-     *
-     * @return True if the exception resulted from a throttling error message
-     *         from a service, otherwise false.
+     * @param ase The exception to test.
+     * @return True if the exception resulted from a throttling error message from a service,
+     * otherwise false.
      */
     public static boolean isThrottlingException(AmazonServiceException ase) {
-        if (ase == null) return false;
-
-        String errorCode = ase.getErrorCode();
-        return "Throttling".equals(errorCode)
-            || "ThrottlingException".equals(errorCode)
-            || "ProvisionedThroughputExceededException".equals(errorCode);
+        if (ase == null) {
+            return false;
+        }
+        return THROTTLING_ERROR_CODES.contains(ase.getErrorCode());
     }
 
     /**
-     * Returns true if the specified exception is a request entity too large
-     * error.
+     * Returns true if the specified exception is a request entity too large error.
      *
-     * @param ase
-     *            The exception to test.
-     *
-     * @return True if the exception resulted from a request entity too large
-     *         error message from a service, otherwise false.
+     * @param ase The exception to test.
+     * @return True if the exception resulted from a request entity too large error message from a
+     * service, otherwise false.
      */
     public static boolean isRequestEntityTooLargeException(AmazonServiceException ase) {
-        return ase != null
-            && ase.getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
+        return ase != null && ase.getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
     }
 
     /**
      * Returns true if the specified exception is a clock skew error.
      *
-     * @param ase
-     *            The exception to test.
-     *
-     * @return True if the exception resulted from a clock skews error message
-     *         from a service, otherwise false.
+     * @param ase The exception to test.
+     * @return True if the exception resulted from a clock skews error message from a service,
+     * otherwise false.
      */
     public static boolean isClockSkewError(AmazonServiceException ase) {
-        if (ase == null) return false;
+        if (ase == null) {
+            return false;
+        }
+        return CLOCK_SKEW_ERROR_CODES.contains(ase.getErrorCode());
+    }
 
-        String errorCode = ase.getErrorCode();
-        return "RequestTimeTooSkewed".equals(errorCode)
-                || "RequestExpired".equals(errorCode)
-                || "InvalidSignatureException".equals(errorCode)
-                || "SignatureDoesNotMatch".equals(errorCode)
-                || "AuthFailure".equals(errorCode);
+    @SdkInternalApi
+    static int calculateFullJitterBackoff(int retriesAttempted,
+                                          int baseDelay,
+                                          int maxBackoffTime,
+                                          Random random) {
+        int delayUpperBound = Math.min(baseDelay * (1 << retriesAttempted), maxBackoffTime);
+        return random.nextInt(delayUpperBound + 1);
     }
 }

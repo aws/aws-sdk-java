@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,19 +55,18 @@ public class PlaylistJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    playlist.setName(StringJsonUnmarshaller.getInstance()
+                    playlist.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    playlist.setFormat(StringJsonUnmarshaller.getInstance()
+                    playlist.setFormat(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("OutputKeys", targetDepth)) {
                     context.nextToken();
-                    playlist.setOutputKeys(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    playlist.setOutputKeys(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("HlsContentProtection", targetDepth)) {
                     context.nextToken();
@@ -79,13 +80,13 @@ public class PlaylistJsonUnmarshaller implements
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatus(StringJsonUnmarshaller.getInstance()
+                    playlist.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
                     context.nextToken();
-                    playlist.setStatusDetail(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    playlist.setStatusDetail(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -54,6 +54,7 @@ public class ActionType implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(ActionTypeId id) {
         this.id = id;
     }
@@ -61,6 +62,7 @@ public class ActionType implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionTypeId getId() {
         return this.id;
     }
@@ -70,6 +72,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withId(ActionTypeId id) {
         setId(id);
         return this;
@@ -83,6 +86,7 @@ public class ActionType implements Serializable, Cloneable {
      * @param settings
      *        The settings for the action type.
      */
+
     public void setSettings(ActionTypeSettings settings) {
         this.settings = settings;
     }
@@ -94,6 +98,7 @@ public class ActionType implements Serializable, Cloneable {
      * 
      * @return The settings for the action type.
      */
+
     public ActionTypeSettings getSettings() {
         return this.settings;
     }
@@ -108,6 +113,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withSettings(ActionTypeSettings settings) {
         setSettings(settings);
         return this;
@@ -120,6 +126,7 @@ public class ActionType implements Serializable, Cloneable {
      * 
      * @return The configuration properties for the action type.
      */
+
     public java.util.List<ActionConfigurationProperty> getActionConfigurationProperties() {
         return actionConfigurationProperties;
     }
@@ -132,6 +139,7 @@ public class ActionType implements Serializable, Cloneable {
      * @param actionConfigurationProperties
      *        The configuration properties for the action type.
      */
+
     public void setActionConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> actionConfigurationProperties) {
         if (actionConfigurationProperties == null) {
@@ -159,6 +167,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withActionConfigurationProperties(
             ActionConfigurationProperty... actionConfigurationProperties) {
         if (this.actionConfigurationProperties == null) {
@@ -181,6 +190,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withActionConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> actionConfigurationProperties) {
         setActionConfigurationProperties(actionConfigurationProperties);
@@ -196,6 +206,7 @@ public class ActionType implements Serializable, Cloneable {
      *        The details of the input artifact for the action, such as its
      *        commit ID.
      */
+
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
         this.inputArtifactDetails = inputArtifactDetails;
     }
@@ -208,6 +219,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return The details of the input artifact for the action, such as its
      *         commit ID.
      */
+
     public ArtifactDetails getInputArtifactDetails() {
         return this.inputArtifactDetails;
     }
@@ -223,6 +235,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withInputArtifactDetails(
             ArtifactDetails inputArtifactDetails) {
         setInputArtifactDetails(inputArtifactDetails);
@@ -238,6 +251,7 @@ public class ActionType implements Serializable, Cloneable {
      *        The details of the output artifact of the action, such as its
      *        commit ID.
      */
+
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
         this.outputArtifactDetails = outputArtifactDetails;
     }
@@ -250,6 +264,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return The details of the output artifact of the action, such as its
      *         commit ID.
      */
+
     public ArtifactDetails getOutputArtifactDetails() {
         return this.outputArtifactDetails;
     }
@@ -265,6 +280,7 @@ public class ActionType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionType withOutputArtifactDetails(
             ArtifactDetails outputArtifactDetails) {
         setOutputArtifactDetails(outputArtifactDetails);

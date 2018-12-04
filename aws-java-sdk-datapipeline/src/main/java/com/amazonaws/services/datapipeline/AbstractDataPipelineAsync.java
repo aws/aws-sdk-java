@@ -89,16 +89,16 @@ public class AbstractDataPipelineAsync extends AbstractDataPipeline implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request) {
 
         return deletePipelineAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -293,16 +293,16 @@ public class AbstractDataPipelineAsync extends AbstractDataPipeline implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStatusAsync(
+    public java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             SetStatusRequest request) {
 
         return setStatusAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStatusAsync(
+    public java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             SetStatusRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetStatusRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetStatusRequest, SetStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

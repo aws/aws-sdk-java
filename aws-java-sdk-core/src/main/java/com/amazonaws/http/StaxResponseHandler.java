@@ -30,6 +30,7 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -49,7 +50,6 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
     /** Shared factory for creating XML event readers */
     private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-
 
     /**
      * Constructs a new response handler that will use the specified StAX
@@ -82,7 +82,9 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
         InputStream content = response.getContent();
-        if (content == null) content = new ByteArrayInputStream("<eof/>".getBytes());
+        if (content == null) {
+            content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
+        }
 
         XMLEventReader eventReader;
         synchronized (xmlInputFactory) {
@@ -125,7 +127,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * from service responses.
      *
      * @param unmarshallerContext
-     *            The unmarshaller context used to process a service's response
+     *            The unmarshaller context used to configure a service's response
      *            data.
      */
     protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {}

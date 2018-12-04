@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ScheduleRunConfigurationMarshaller
@@ -39,64 +34,60 @@ import com.amazonaws.util.json.*;
 public class ScheduleRunConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ScheduleRunConfiguration scheduleRunConfiguration,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (scheduleRunConfiguration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scheduleRunConfiguration.getExtraDataPackageArn() != null) {
-                jsonWriter.key("extraDataPackageArn").value(
+                jsonGenerator.writeFieldName("extraDataPackageArn").writeValue(
                         scheduleRunConfiguration.getExtraDataPackageArn());
             }
-
             if (scheduleRunConfiguration.getNetworkProfileArn() != null) {
-                jsonWriter.key("networkProfileArn").value(
+                jsonGenerator.writeFieldName("networkProfileArn").writeValue(
                         scheduleRunConfiguration.getNetworkProfileArn());
             }
-
             if (scheduleRunConfiguration.getLocale() != null) {
-                jsonWriter.key("locale").value(
+                jsonGenerator.writeFieldName("locale").writeValue(
                         scheduleRunConfiguration.getLocale());
             }
-
             if (scheduleRunConfiguration.getLocation() != null) {
-                jsonWriter.key("location");
+                jsonGenerator.writeFieldName("location");
                 LocationJsonMarshaller.getInstance().marshall(
-                        scheduleRunConfiguration.getLocation(), jsonWriter);
+                        scheduleRunConfiguration.getLocation(), jsonGenerator);
             }
-
             if (scheduleRunConfiguration.getRadios() != null) {
-                jsonWriter.key("radios");
+                jsonGenerator.writeFieldName("radios");
                 RadiosJsonMarshaller.getInstance().marshall(
-                        scheduleRunConfiguration.getRadios(), jsonWriter);
+                        scheduleRunConfiguration.getRadios(), jsonGenerator);
             }
 
             java.util.List<String> auxiliaryAppsList = scheduleRunConfiguration
                     .getAuxiliaryApps();
             if (auxiliaryAppsList != null) {
-                jsonWriter.key("auxiliaryApps");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("auxiliaryApps");
+                jsonGenerator.writeStartArray();
                 for (String auxiliaryAppsListValue : auxiliaryAppsList) {
                     if (auxiliaryAppsListValue != null) {
-                        jsonWriter.value(auxiliaryAppsListValue);
+                        jsonGenerator.writeValue(auxiliaryAppsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (scheduleRunConfiguration.getBillingMethod() != null) {
-                jsonWriter.key("billingMethod").value(
+                jsonGenerator.writeFieldName("billingMethod").writeValue(
                         scheduleRunConfiguration.getBillingMethod());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

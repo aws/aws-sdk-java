@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.services.directory.model.transform.*;
@@ -48,6 +50,7 @@ import com.amazonaws.services.directory.model.transform.*;
  * parameters, and errors.
  * </p>
  */
+@ThreadSafe
 public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         AWSDirectoryService {
     /** Provider for AWS credentials. */
@@ -62,9 +65,83 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "ds";
 
     /**
-     * List of exception unmarshallers for all Directory Service exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.ServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EntityAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "SnapshotLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.SnapshotLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "EntityDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.EntityDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientPermissionsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ClientException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.ClientException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DirectoryLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.DirectoryLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "AuthenticationFailedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.AuthenticationFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DirectoryUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.directory.model.DirectoryUnavailableException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Directory Service. A
@@ -84,8 +161,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSDirectoryServiceClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -127,8 +204,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSDirectoryServiceClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -170,8 +246,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      */
     public AWSDirectoryServiceClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -226,55 +301,6 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.InvalidNextTokenException.class,
-                        "InvalidNextTokenException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.directory.model.ServiceException.class,
-                "ServiceException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.InvalidParameterException.class,
-                        "InvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.EntityAlreadyExistsException.class,
-                        "EntityAlreadyExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.SnapshotLimitExceededException.class,
-                        "SnapshotLimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.UnsupportedOperationException.class,
-                        "UnsupportedOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.EntityDoesNotExistException.class,
-                        "EntityDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.InsufficientPermissionsException.class,
-                        "InsufficientPermissionsException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.directory.model.ClientException.class,
-                "ClientException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.DirectoryLimitExceededException.class,
-                        "DirectoryLimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.AuthenticationFailedException.class,
-                        "AuthenticationFailedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.directory.model.DirectoryUnavailableException.class,
-                        "DirectoryUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -321,7 +347,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConnectDirectoryRequestMarshaller()
+                request = new ConnectDirectoryRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(connectDirectoryRequest));
                 // Binds the request metrics to the current request.
@@ -330,9 +356,11 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ConnectDirectoryResult> responseHandler = new JsonResponseHandler<ConnectDirectoryResult>(
-                    new ConnectDirectoryResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ConnectDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ConnectDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -384,17 +412,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAliasResult> responseHandler = new JsonResponseHandler<CreateAliasResult>(
-                    new CreateAliasResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -445,17 +475,88 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateComputerRequestMarshaller().marshall(super
-                        .beforeMarshalling(createComputerRequest));
+                request = new CreateComputerRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createComputerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateComputerResult> responseHandler = new JsonResponseHandler<CreateComputerResult>(
-                    new CreateComputerResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateComputerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateComputerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a conditional forwarder associated with your AWS directory.
+     * Conditional forwarders are required in order to set up a trust
+     * relationship with another domain. The conditional forwarder points to the
+     * trusted domain.
+     * </p>
+     * 
+     * @param createConditionalForwarderRequest
+     *        Initiates the creation of a conditional forwarder for your AWS
+     *        Directory Service for Microsoft Active Directory. Conditional
+     *        forwarders are required in order to set up a trust relationship
+     *        with another domain.
+     * @return Result of the CreateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateConditionalForwarder
+     */
+    @Override
+    public CreateConditionalForwarderResult createConditionalForwarder(
+            CreateConditionalForwarderRequest createConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(createConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConditionalForwarderRequest> request = null;
+        Response<CreateConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConditionalForwarderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConditionalForwarderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateConditionalForwarderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -499,17 +600,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDirectoryRequestMarshaller().marshall(super
-                        .beforeMarshalling(createDirectoryRequest));
+                request = new CreateDirectoryRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDirectoryResult> responseHandler = new JsonResponseHandler<CreateDirectoryResult>(
-                    new CreateDirectoryResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -554,18 +658,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMicrosoftADRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createMicrosoftADRequest));
+                request = new CreateMicrosoftADRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createMicrosoftADRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateMicrosoftADResult> responseHandler = new JsonResponseHandler<CreateMicrosoftADResult>(
-                    new CreateMicrosoftADResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMicrosoftADResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateMicrosoftADResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -617,17 +723,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller().marshall(super
-                        .beforeMarshalling(createSnapshotRequest));
+                request = new CreateSnapshotRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotResult> responseHandler = new JsonResponseHandler<CreateSnapshotResult>(
-                    new CreateSnapshotResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSnapshotResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -691,17 +800,79 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTrustRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTrustRequest));
+                request = new CreateTrustRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTrustResult> responseHandler = new JsonResponseHandler<CreateTrustResult>(
-                    new CreateTrustResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTrustResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTrustResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param deleteConditionalForwarderRequest
+     * @return Result of the DeleteConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteConditionalForwarder
+     */
+    @Override
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(
+            DeleteConditionalForwarderRequest deleteConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConditionalForwarderRequest> request = null;
+        Response<DeleteConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConditionalForwarderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConditionalForwarderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteConditionalForwarderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -741,17 +912,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDirectoryRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteDirectoryRequest));
+                request = new DeleteDirectoryRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDirectoryResult> responseHandler = new JsonResponseHandler<DeleteDirectoryResult>(
-                    new DeleteDirectoryResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -793,17 +967,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteSnapshotRequest));
+                request = new DeleteSnapshotRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSnapshotResult> responseHandler = new JsonResponseHandler<DeleteSnapshotResult>(
-                    new DeleteSnapshotResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSnapshotResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -846,17 +1023,141 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTrustRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTrustRequest));
+                request = new DeleteTrustRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTrustResult> responseHandler = new JsonResponseHandler<DeleteTrustResult>(
-                    new DeleteTrustResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTrustResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTrustResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified directory as a publisher to the specified SNS
+     * topic.
+     * </p>
+     * 
+     * @param deregisterEventTopicRequest
+     *        Removes the specified directory as a publisher to the specified
+     *        SNS topic.
+     * @return Result of the DeregisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterEventTopic
+     */
+    @Override
+    public DeregisterEventTopicResult deregisterEventTopic(
+            DeregisterEventTopicRequest deregisterEventTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(deregisterEventTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterEventTopicRequest> request = null;
+        Response<DeregisterEventTopicResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterEventTopicRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterEventTopicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterEventTopicResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeregisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Obtains information about the conditional forwarders for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided for RemoteDomainNames, this request
+     * describes all conditional forwarders for the specified directory ID.
+     * </p>
+     * 
+     * @param describeConditionalForwardersRequest
+     * @return Result of the DescribeConditionalForwarders operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeConditionalForwarders
+     */
+    @Override
+    public DescribeConditionalForwardersResult describeConditionalForwarders(
+            DescribeConditionalForwardersRequest describeConditionalForwardersRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeConditionalForwardersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConditionalForwardersRequest> request = null;
+        Response<DescribeConditionalForwardersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConditionalForwardersRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeConditionalForwardersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConditionalForwardersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeConditionalForwardersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -917,18 +1218,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDirectoriesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeDirectoriesRequest));
+                request = new DescribeDirectoriesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDirectoriesResult> responseHandler = new JsonResponseHandler<DescribeDirectoriesResult>(
-                    new DescribeDirectoriesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDirectoriesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeDirectoriesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -942,6 +1245,66 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     @Override
     public DescribeDirectoriesResult describeDirectories() {
         return describeDirectories(new DescribeDirectoriesRequest());
+    }
+
+    /**
+     * <p>
+     * Obtains information about which SNS topics receive status messages from
+     * the specified directory.
+     * </p>
+     * <p>
+     * If no input parameters are provided, such as DirectoryId or TopicName,
+     * this request describes all of the associations in the account.
+     * </p>
+     * 
+     * @param describeEventTopicsRequest
+     * @return Result of the DescribeEventTopics operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeEventTopics
+     */
+    @Override
+    public DescribeEventTopicsResult describeEventTopics(
+            DescribeEventTopicsRequest describeEventTopicsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEventTopicsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventTopicsRequest> request = null;
+        Response<DescribeEventTopicsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventTopicsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventTopicsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEventTopicsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeEventTopicsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -990,18 +1353,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeSnapshotsRequest));
+                request = new DescribeSnapshotsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSnapshotsResult> responseHandler = new JsonResponseHandler<DescribeSnapshotsResult>(
-                    new DescribeSnapshotsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSnapshotsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeSnapshotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1060,17 +1425,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTrustsRequest));
+                request = new DescribeTrustsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeTrustsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustsResult> responseHandler = new JsonResponseHandler<DescribeTrustsResult>(
-                    new DescribeTrustsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTrustsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1111,17 +1479,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableRadiusRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableRadiusRequest));
+                request = new DisableRadiusRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(disableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableRadiusResult> responseHandler = new JsonResponseHandler<DisableRadiusResult>(
-                    new DisableRadiusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableRadiusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableRadiusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1165,17 +1535,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableSsoRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableSsoRequest));
+                request = new DisableSsoRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(disableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableSsoResult> responseHandler = new JsonResponseHandler<DisableSsoResult>(
-                    new DisableSsoResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableSsoResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableSsoResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1220,17 +1592,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableRadiusRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableRadiusRequest));
+                request = new EnableRadiusRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(enableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableRadiusResult> responseHandler = new JsonResponseHandler<EnableRadiusResult>(
-                    new EnableRadiusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableRadiusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableRadiusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1274,17 +1648,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableSsoRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableSsoRequest));
+                request = new EnableSsoRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(enableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableSsoResult> responseHandler = new JsonResponseHandler<EnableSsoResult>(
-                    new EnableSsoResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableSsoResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableSsoResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1325,18 +1701,20 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDirectoryLimitsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getDirectoryLimitsRequest));
+                request = new GetDirectoryLimitsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getDirectoryLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDirectoryLimitsResult> responseHandler = new JsonResponseHandler<GetDirectoryLimitsResult>(
-                    new GetDirectoryLimitsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDirectoryLimitsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDirectoryLimitsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1382,18 +1760,80 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSnapshotLimitsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getSnapshotLimitsRequest));
+                request = new GetSnapshotLimitsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getSnapshotLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSnapshotLimitsResult> responseHandler = new JsonResponseHandler<GetSnapshotLimitsResult>(
-                    new GetSnapshotLimitsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetSnapshotLimitsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetSnapshotLimitsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a directory with an SNS topic. This establishes the directory
+     * as a publisher to the specified SNS topic. You can then receive email or
+     * text (SMS) messages when the status of your directory changes. You get
+     * notified if your directory goes from an Active status to an Impaired or
+     * Inoperable status. You also receive a notification when the directory
+     * returns to an Active status.
+     * </p>
+     * 
+     * @param registerEventTopicRequest
+     * @return Result of the RegisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterEventTopic
+     */
+    @Override
+    public RegisterEventTopicResult registerEventTopic(
+            RegisterEventTopicRequest registerEventTopicRequest) {
+        ExecutionContext executionContext = createExecutionContext(registerEventTopicRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterEventTopicRequest> request = null;
+        Response<RegisterEventTopicResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterEventTopicRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerEventTopicRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterEventTopicResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterEventTopicResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1448,18 +1888,80 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreFromSnapshotRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(restoreFromSnapshotRequest));
+                request = new RestoreFromSnapshotRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(restoreFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RestoreFromSnapshotResult> responseHandler = new JsonResponseHandler<RestoreFromSnapshotResult>(
-                    new RestoreFromSnapshotResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreFromSnapshotResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RestoreFromSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param updateConditionalForwarderRequest
+     * @return Result of the UpdateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateConditionalForwarder
+     */
+    @Override
+    public UpdateConditionalForwarderResult updateConditionalForwarder(
+            UpdateConditionalForwarderRequest updateConditionalForwarderRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateConditionalForwarderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConditionalForwarderRequest> request = null;
+        Response<UpdateConditionalForwarderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConditionalForwarderRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateConditionalForwarderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConditionalForwarderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateConditionalForwarderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1502,17 +2004,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRadiusRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateRadiusRequest));
+                request = new UpdateRadiusRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRadiusResult> responseHandler = new JsonResponseHandler<UpdateRadiusResult>(
-                    new UpdateRadiusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRadiusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRadiusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1561,17 +2065,19 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyTrustRequestMarshaller().marshall(super
-                        .beforeMarshalling(verifyTrustRequest));
+                request = new VerifyTrustRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(verifyTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<VerifyTrustResult> responseHandler = new JsonResponseHandler<VerifyTrustResult>(
-                    new VerifyTrustResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<VerifyTrustResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new VerifyTrustResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1605,33 +2111,48 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

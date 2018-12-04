@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListStepsRequest Marshaller
  */
 public class ListStepsRequestMarshaller implements
         Marshaller<Request<ListStepsRequest>, ListStepsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListStepsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListStepsRequest> marshall(ListStepsRequest listStepsRequest) {
 
@@ -62,54 +62,53 @@ public class ListStepsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listStepsRequest.getClusterId() != null) {
-                jsonWriter.key("ClusterId").value(
+                jsonGenerator.writeFieldName("ClusterId").writeValue(
                         listStepsRequest.getClusterId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> stepStatesList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
                     .getStepStates();
             if (!stepStatesList.isEmpty() || !stepStatesList.isAutoConstruct()) {
-                jsonWriter.key("StepStates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("StepStates");
+                jsonGenerator.writeStartArray();
                 for (String stepStatesListValue : stepStatesList) {
                     if (stepStatesListValue != null) {
-                        jsonWriter.value(stepStatesListValue);
+                        jsonGenerator.writeValue(stepStatesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<String> stepIdsList = (com.amazonaws.internal.SdkInternalList<String>) listStepsRequest
                     .getStepIds();
             if (!stepIdsList.isEmpty() || !stepIdsList.isAutoConstruct()) {
-                jsonWriter.key("StepIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("StepIds");
+                jsonGenerator.writeStartArray();
                 for (String stepIdsListValue : stepIdsList) {
                     if (stepIdsListValue != null) {
-                        jsonWriter.value(stepIdsListValue);
+                        jsonGenerator.writeValue(stepIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (listStepsRequest.getMarker() != null) {
-                jsonWriter.key("Marker").value(listStepsRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        listStepsRequest.getMarker());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

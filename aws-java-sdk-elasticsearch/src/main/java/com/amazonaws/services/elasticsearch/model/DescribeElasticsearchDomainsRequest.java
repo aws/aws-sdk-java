@@ -43,6 +43,7 @@ public class DescribeElasticsearchDomainsRequest extends
      * 
      * @return The Elasticsearch domains for which you want information.
      */
+
     public java.util.List<String> getDomainNames() {
         return domainNames;
     }
@@ -55,6 +56,7 @@ public class DescribeElasticsearchDomainsRequest extends
      * @param domainNames
      *        The Elasticsearch domains for which you want information.
      */
+
     public void setDomainNames(java.util.Collection<String> domainNames) {
         if (domainNames == null) {
             this.domainNames = null;
@@ -80,6 +82,7 @@ public class DescribeElasticsearchDomainsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainsRequest withDomainNames(
             String... domainNames) {
         if (this.domainNames == null) {
@@ -101,6 +104,7 @@ public class DescribeElasticsearchDomainsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainsRequest withDomainNames(
             java.util.Collection<String> domainNames) {
         setDomainNames(domainNames);

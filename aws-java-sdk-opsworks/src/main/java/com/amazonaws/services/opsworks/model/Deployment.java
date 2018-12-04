@@ -118,6 +118,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param deploymentId
      *        The deployment ID.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -129,6 +130,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The deployment ID.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -143,6 +145,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -156,6 +159,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -167,6 +171,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -181,6 +186,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -194,6 +200,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param appId
      *        The app ID.
      */
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -205,6 +212,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The app ID.
      */
+
     public String getAppId() {
         return this.appId;
     }
@@ -219,6 +227,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withAppId(String appId) {
         setAppId(appId);
         return this;
@@ -232,6 +241,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param createdAt
      *        Date when the deployment was created.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -243,6 +253,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return Date when the deployment was created.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -257,6 +268,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -270,6 +282,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param completedAt
      *        Date when the deployment completed.
      */
+
     public void setCompletedAt(String completedAt) {
         this.completedAt = completedAt;
     }
@@ -281,6 +294,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return Date when the deployment completed.
      */
+
     public String getCompletedAt() {
         return this.completedAt;
     }
@@ -295,6 +309,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCompletedAt(String completedAt) {
         setCompletedAt(completedAt);
         return this;
@@ -308,6 +323,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param duration
      *        The deployment duration.
      */
+
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
@@ -319,6 +335,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The deployment duration.
      */
+
     public Integer getDuration() {
         return this.duration;
     }
@@ -333,6 +350,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withDuration(Integer duration) {
         setDuration(duration);
         return this;
@@ -346,6 +364,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param iamUserArn
      *        The user's IAM ARN.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -357,6 +376,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The user's IAM ARN.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -371,6 +391,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -384,6 +405,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param comment
      *        A user-defined comment.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -395,6 +417,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return A user-defined comment.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -409,6 +432,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withComment(String comment) {
         setComment(comment);
         return this;
@@ -417,6 +441,7 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * @param command
      */
+
     public void setCommand(DeploymentCommand command) {
         this.command = command;
     }
@@ -424,6 +449,7 @@ public class Deployment implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public DeploymentCommand getCommand() {
         return this.command;
     }
@@ -433,6 +459,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCommand(DeploymentCommand command) {
         setCommand(command);
         return this;
@@ -455,6 +482,7 @@ public class Deployment implements Serializable, Cloneable {
      *        <li>successful</li>
      *        <li>failed</li>
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -475,6 +503,7 @@ public class Deployment implements Serializable, Cloneable {
      *         <li>successful</li>
      *         <li>failed</li>
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -498,6 +527,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withStatus(String status) {
         setStatus(status);
         return this;
@@ -533,6 +563,7 @@ public class Deployment implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"
      *        >Use Custom JSON to Modify the Stack Configuration Attributes</a>.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -567,6 +598,7 @@ public class Deployment implements Serializable, Cloneable {
      *         >Use Custom JSON to Modify the Stack Configuration
      *         Attributes</a>.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -603,6 +635,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -615,6 +648,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The IDs of the target instances.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -630,6 +664,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param instanceIds
      *        The IDs of the target instances.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -656,6 +691,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -677,6 +713,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;

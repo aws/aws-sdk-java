@@ -89,6 +89,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name or Amazon Resource Name (ARN) of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -100,6 +101,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * 
      * @return The name or Amazon Resource Name (ARN) of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -114,6 +116,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableMetricsCollectionRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -212,6 +215,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public java.util.List<String> getMetrics() {
         if (metrics == null) {
             metrics = new com.amazonaws.internal.SdkInternalList<String>();
@@ -312,6 +316,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setMetrics(java.util.Collection<String> metrics) {
         if (metrics == null) {
             this.metrics = null;
@@ -423,6 +428,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableMetricsCollectionRequest withMetrics(String... metrics) {
         if (this.metrics == null) {
             setMetrics(new com.amazonaws.internal.SdkInternalList<String>(
@@ -529,6 +535,7 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableMetricsCollectionRequest withMetrics(
             java.util.Collection<String> metrics) {
         setMetrics(metrics);

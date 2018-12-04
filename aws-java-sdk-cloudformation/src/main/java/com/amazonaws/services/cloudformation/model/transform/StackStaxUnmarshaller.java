@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -67,9 +69,8 @@ public class StackStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Parameters/member", targetDepth)) {
-                    stack.getParameters().add(
-                            ParameterStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    stack.withParameters(ParameterStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,9 +106,8 @@ public class StackStaxUnmarshaller implements
 
                 if (context.testExpression("NotificationARNs/member",
                         targetDepth)) {
-                    stack.getNotificationARNs().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    stack.withNotificationARNs(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -118,23 +118,20 @@ public class StackStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Capabilities/member", targetDepth)) {
-                    stack.getCapabilities().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    stack.withCapabilities(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Outputs/member", targetDepth)) {
-                    stack.getOutputs().add(
-                            OutputStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    stack.withOutputs(OutputStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("Tags/member", targetDepth)) {
-                    stack.getTags().add(
-                            TagStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    stack.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

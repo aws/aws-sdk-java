@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.services.sqs.model.transform.*;
@@ -54,42 +56,75 @@ import com.amazonaws.services.sqs.model.transform.*;
  * </p>
  * <p>
  * Helpful Links:
- * <ul>
- * <li><a
- * href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
- * WSDL (2012-11-05)</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"
- * >Making API Requests</a></li>
- * <li><a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"
- * >Using Amazon SQS Message Attributes</a></li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
- * >Using Amazon SQS Dead Letter Queues</a></li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region"
- * >Regions and Endpoints</a></li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current
+ * WSDL (2012-11-05)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html"
+ * >Making API Requests</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html"
+ * >Using Amazon SQS Message Attributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
+ * >Using Amazon SQS Dead Letter Queues</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">
+ * Regions and Endpoints</a>
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * We also provide SDKs that enable you to access Amazon SQS from your preferred
  * programming language. The SDKs contain functionality that automatically takes
  * care of tasks such as:
  * </p>
- * <p>
  * <ul>
- * <li>Cryptographically signing your service requests</li>
- * <li>Retrying requests</li>
- * <li>Handling error responses</li>
- * </ul>
+ * <li>
+ * <p>
+ * Cryptographically signing your service requests
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Retrying requests
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Handling error responses
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * For a list of available SDKs, go to <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonSQSClient extends AmazonWebServiceClient implements
         AmazonSQS {
     /** Provider for AWS credentials. */
@@ -104,7 +139,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "sqs";
 
     /**
-     * List of exception unmarshallers for all Amazon SQS exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory configFactory = new com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory();
+
+    /**
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -126,8 +167,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonSQSClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -168,8 +209,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonSQSClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -208,8 +248,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonSQSClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -274,9 +313,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 .add(new TooManyEntriesInBatchRequestExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new QueueDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new InvalidMessageContentsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new QueueDeletedRecentlyExceptionUnmarshaller());
         exceptionUnmarshallers
@@ -327,10 +366,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * >Using The Access Policy Language</a> in the <i>Amazon SQS Developer
      * Guide</i>.
      * </p>
-     * </note> <note>Some API actions take lists of parameters. These lists are
-     * specified using the <code>param.n</code> notation. Values of
-     * <code>n</code> are integers starting from 1. For example, a parameter
-     * list with two elements looks like this: </note>
+     * </note> <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -339,6 +382,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws OverLimitException
      *         The action that you requested would violate a limit. For example,
      *         ReceiveMessage returns this error if the maximum number of
@@ -348,13 +392,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.AddPermission
      */
     @Override
-    public void addPermission(AddPermissionRequest addPermissionRequest) {
+    public AddPermissionResult addPermission(
+            AddPermissionRequest addPermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddPermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<AddPermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -367,9 +412,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(
+                    new AddPermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -378,9 +425,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void addPermission(String queueUrl, String label,
+    public AddPermissionResult addPermission(String queueUrl, String label,
             java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
-        addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
+        return addPermission(new AddPermissionRequest().withQueueUrl(queueUrl)
                 .withLabel(label).withAWSAccountIds(aWSAccountIds)
                 .withActions(actions));
     }
@@ -416,18 +463,27 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * messages from the queue after they have been processed. You can also
      * increase the number of queues you use to process the messages.
      * </p>
-     * </note> <important>If you attempt to set the
-     * <code>VisibilityTimeout</code> to an amount more than the maximum time
-     * left, Amazon SQS returns an error. It will not automatically recalculate
-     * and increase the timeout to the maximum time remaining.</important>
-     * <important>Unlike with a queue, when you change the visibility timeout
-     * for a specific message, that timeout value is applied immediately but is
-     * not saved in memory for that message. If you don't delete a message after
-     * it is received, the visibility timeout for the message the next time it
-     * is received reverts to the original timeout value, not the value you set
-     * with the <code>ChangeMessageVisibility</code> action.</important>
+     * </note> <important>
+     * <p>
+     * If you attempt to set the <code>VisibilityTimeout</code> to an amount
+     * more than the maximum time left, Amazon SQS returns an error. It will not
+     * automatically recalculate and increase the timeout to the maximum time
+     * remaining.
+     * </p>
+     * </important> <important>
+     * <p>
+     * Unlike with a queue, when you change the visibility timeout for a
+     * specific message, that timeout value is applied immediately but is not
+     * saved in memory for that message. If you don't delete a message after it
+     * is received, the visibility timeout for the message the next time it is
+     * received reverts to the original timeout value, not the value you set
+     * with the <code>ChangeMessageVisibility</code> action.
+     * </p>
+     * </important>
      * 
      * @param changeMessageVisibilityRequest
+     * @return Result of the ChangeMessageVisibility operation returned by the
+     *         service.
      * @throws MessageNotInflightException
      *         The message referred to is not in flight.
      * @throws ReceiptHandleIsInvalidException
@@ -435,14 +491,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.ChangeMessageVisibility
      */
     @Override
-    public void changeMessageVisibility(
+    public ChangeMessageVisibilityResult changeMessageVisibility(
             ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
         ExecutionContext executionContext = createExecutionContext(changeMessageVisibilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ChangeMessageVisibilityRequest> request = null;
-        Response<Void> response = null;
+        Response<ChangeMessageVisibilityResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -456,9 +512,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<ChangeMessageVisibilityResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityResult>(
+                    new ChangeMessageVisibilityResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -467,9 +525,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void changeMessageVisibility(String queueUrl, String receiptHandle,
-            Integer visibilityTimeout) {
-        changeMessageVisibility(new ChangeMessageVisibilityRequest()
+    public ChangeMessageVisibilityResult changeMessageVisibility(
+            String queueUrl, String receiptHandle, Integer visibilityTimeout) {
+        return changeMessageVisibility(new ChangeMessageVisibilityRequest()
                 .withQueueUrl(queueUrl).withReceiptHandle(receiptHandle)
                 .withVisibilityTimeout(visibilityTimeout));
     }
@@ -482,13 +540,20 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * 10 <a>ChangeMessageVisibility</a> requests with each
      * <code>ChangeMessageVisibilityBatch</code> action.
      * </p>
-     * <important>Because the batch request can result in a combination of
-     * successful and unsuccessful actions, you should check for batch errors
-     * even when the call returns an HTTP status code of 200.</important>
-     * <note>Some API actions take lists of parameters. These lists are
-     * specified using the <code>param.n</code> notation. Values of
-     * <code>n</code> are integers starting from 1. For example, a parameter
-     * list with two elements looks like this: </note>
+     * <important>
+     * <p>
+     * Because the batch request can result in a combination of successful and
+     * unsuccessful actions, you should check for batch errors even when the
+     * call returns an HTTP status code of 200.
+     * </p>
+     * </important> <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -569,8 +634,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * <p>
      * You may pass one or more attributes in the request. If you do not provide
      * a value for any attribute, the queue will have the default value for that
-     * attribute. Permitted attributes are the same that can be set using
-     * <a>SetQueueAttributes</a>.
+     * attribute.
      * </p>
      * <note>
      * <p>
@@ -585,10 +649,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * attribute names, or attribute values do not match an existing queue,
      * <code>CreateQueue</code> returns an error.
      * </p>
-     * <note>Some API actions take lists of parameters. These lists are
-     * specified using the <code>param.n</code> notation. Values of
-     * <code>n</code> are integers starting from 1. For example, a parameter
-     * list with two elements looks like this: </note>
+     * <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -676,6 +744,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </important>
      * 
      * @param deleteMessageRequest
+     * @return Result of the DeleteMessage operation returned by the service.
      * @throws InvalidIdFormatException
      *         The receipt handle is not valid for the current version.
      * @throws ReceiptHandleIsInvalidException
@@ -683,13 +752,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.DeleteMessage
      */
     @Override
-    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) {
+    public DeleteMessageResult deleteMessage(
+            DeleteMessageRequest deleteMessageRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMessageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMessageRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMessageResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -702,9 +772,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteMessageResult> responseHandler = new StaxResponseHandler<DeleteMessageResult>(
+                    new DeleteMessageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -713,8 +785,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteMessage(String queueUrl, String receiptHandle) {
-        deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
+    public DeleteMessageResult deleteMessage(String queueUrl,
+            String receiptHandle) {
+        return deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
                 .withReceiptHandle(receiptHandle));
     }
 
@@ -730,10 +803,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * unsuccessful actions, you should check for batch errors even when the
      * call returns an HTTP status code of 200.
      * </p>
-     * </important> <note>Some API actions take lists of parameters. These lists
-     * are specified using the <code>param.n</code> notation. Values of
-     * <code>n</code> are integers starting from 1. For example, a parameter
-     * list with two elements looks like this: </note>
+     * </important> <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -825,16 +902,17 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteQueueRequest
+     * @return Result of the DeleteQueue operation returned by the service.
      * @sample AmazonSQS.DeleteQueue
      */
     @Override
-    public void deleteQueue(DeleteQueueRequest deleteQueueRequest) {
+    public DeleteQueueResult deleteQueue(DeleteQueueRequest deleteQueueRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteQueueRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteQueueResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -847,9 +925,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteQueueResult> responseHandler = new StaxResponseHandler<DeleteQueueResult>(
+                    new DeleteQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -858,64 +938,22 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void deleteQueue(String queueUrl) {
-        deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
+    public DeleteQueueResult deleteQueue(String queueUrl) {
+        return deleteQueue(new DeleteQueueRequest().withQueueUrl(queueUrl));
     }
 
     /**
      * <p>
-     * Gets attributes for the specified queue. The following attributes are
-     * supported:
-     * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateNumberOfMessages</code> - returns the approximate
-     * number of visible messages in a queue. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS
-     * Developer Guide</i>.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html"
-     * >Resources Required to Process Messages</a> in the <i>Amazon SQS
-     * Developer Guide</i>.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout for
-     * the queue. For more information about visibility timeout, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"
-     * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue was
-     * created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the queue
-     * was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many bytes
-     * a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of seconds
-     * Amazon SQS retains a message.</li>
-     * <li><code>QueueArn</code> - returns the queue's Amazon resource name
-     * (ARN).</li>
-     * <li><code>ApproximateNumberOfMessagesDelayed</code> - returns the
-     * approximate number of messages that are pending to be added to the queue.
-     * </li>
-     * <li><code>DelaySeconds</code> - returns the default delay on the queue in
-     * seconds.</li>
-     * <li><code>ReceiveMessageWaitTimeSeconds</code> - returns the time for
-     * which a ReceiveMessage call will wait for a message to arrive.</li>
-     * <li><code>RedrivePolicy</code> - returns the parameters for dead letter
-     * queue functionality of the source queue. For more information about
-     * RedrivePolicy and dead letter queues, see <a href=
-     * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html"
-     * >Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer
-     * Guide</i>.</li>
-     * </ul>
+     * Gets attributes for the specified queue.
      * </p>
-     * <note>Going forward, new attributes might be added. If you are writing
-     * code that calls this action, we recommend that you structure your code so
-     * that it can handle new attributes gracefully.</note> <note>Some API
-     * actions take lists of parameters. These lists are specified using the
-     * <code>param.n</code> notation. Values of <code>n</code> are integers
-     * starting from 1. For example, a parameter list with two elements looks
-     * like this: </note>
+     * <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -1140,8 +1178,12 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * <p>
      * Deletes the messages in a queue specified by the <b>queue URL</b>.
      * </p>
-     * <important>When you use the <code>PurgeQueue</code> API, the deleted
-     * messages in the queue cannot be retrieved.</important>
+     * <important>
+     * <p>
+     * When you use the <code>PurgeQueue</code> API, the deleted messages in the
+     * queue cannot be retrieved.
+     * </p>
+     * </important>
      * <p>
      * When you purge a queue, the message deletion process takes up to 60
      * seconds. All messages sent to the queue before calling
@@ -1152,6 +1194,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param purgeQueueRequest
+     * @return Result of the PurgeQueue operation returned by the service.
      * @throws QueueDoesNotExistException
      *         The queue referred to does not exist.
      * @throws PurgeQueueInProgressException
@@ -1161,13 +1204,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * @sample AmazonSQS.PurgeQueue
      */
     @Override
-    public void purgeQueue(PurgeQueueRequest purgeQueueRequest) {
+    public PurgeQueueResult purgeQueue(PurgeQueueRequest purgeQueueRequest) {
         ExecutionContext executionContext = createExecutionContext(purgeQueueRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PurgeQueueRequest> request = null;
-        Response<Void> response = null;
+        Response<PurgeQueueResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1180,9 +1223,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PurgeQueueResult> responseHandler = new StaxResponseHandler<PurgeQueueResult>(
+                    new PurgeQueueResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1328,16 +1373,18 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
      * @sample AmazonSQS.RemovePermission
      */
     @Override
-    public void removePermission(RemovePermissionRequest removePermissionRequest) {
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RemovePermissionRequest> request = null;
-        Response<Void> response = null;
+        Response<RemovePermissionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1351,9 +1398,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
+                    new RemovePermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1362,9 +1411,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void removePermission(String queueUrl, String label) {
-        removePermission(new RemovePermissionRequest().withQueueUrl(queueUrl)
-                .withLabel(label));
+    public RemovePermissionResult removePermission(String queueUrl, String label) {
+        return removePermission(new RemovePermissionRequest().withQueueUrl(
+                queueUrl).withLabel(label));
     }
 
     /**
@@ -1451,23 +1500,33 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * If the <code>DelaySeconds</code> parameter is not specified for an entry,
      * the default for the queue is used.
      * </p>
-     * <important>The following list shows the characters (in Unicode) that are
-     * allowed in your message, according to the W3C XML specification. For more
+     * <important>
+     * <p>
+     * The following list shows the characters (in Unicode) that are allowed in
+     * your message, according to the W3C XML specification. For more
      * information, go to <a
      * href="http://www.faqs.org/rfcs/rfc1321.html">http://
      * www.faqs.org/rfcs/rfc1321.html</a>. If you send any characters that are
      * not included in the list, your request will be rejected.
+     * </p>
      * <p>
      * #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to
      * #x10FFFF]
      * </p>
-     * </important> <important> Because the batch request can result in a
-     * combination of successful and unsuccessful actions, you should check for
-     * batch errors even when the call returns an HTTP status code of 200.
-     * </important> <note>Some API actions take lists of parameters. These lists
-     * are specified using the <code>param.n</code> notation. Values of
-     * <code>n</code> are integers starting from 1. For example, a parameter
-     * list with two elements looks like this: </note>
+     * </important> <important>
+     * <p>
+     * Because the batch request can result in a combination of successful and
+     * unsuccessful actions, you should check for batch errors even when the
+     * call returns an HTTP status code of 200.
+     * </p>
+     * </important> <note>
+     * <p>
+     * Some API actions take lists of parameters. These lists are specified
+     * using the <code>param.n</code> notation. Values of <code>n</code> are
+     * integers starting from 1. For example, a parameter list with two elements
+     * looks like this:
+     * </p>
+     * </note>
      * <p>
      * <code><![CDATA[&amp;Attribute.1=this]]></code>
      * </p>
@@ -1542,24 +1601,30 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
      * attributes to propagate throughout the SQS system. Changes made to the
      * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.
      * </p>
-     * <note>Going forward, new attributes might be added. If you are writing
-     * code that calls this action, we recommend that you structure your code so
-     * that it can handle new attributes gracefully.</note>
+     * <note>
+     * <p>
+     * Going forward, new attributes might be added. If you are writing code
+     * that calls this action, we recommend that you structure your code so that
+     * it can handle new attributes gracefully.
+     * </p>
+     * </note>
      * 
      * @param setQueueAttributesRequest
+     * @return Result of the SetQueueAttributes operation returned by the
+     *         service.
      * @throws InvalidAttributeNameException
      *         The attribute referred to does not exist.
      * @sample AmazonSQS.SetQueueAttributes
      */
     @Override
-    public void setQueueAttributes(
+    public SetQueueAttributesResult setQueueAttributes(
             SetQueueAttributesRequest setQueueAttributesRequest) {
         ExecutionContext executionContext = createExecutionContext(setQueueAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetQueueAttributesRequest> request = null;
-        Response<Void> response = null;
+        Response<SetQueueAttributesResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1573,9 +1638,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetQueueAttributesResult> responseHandler = new StaxResponseHandler<SetQueueAttributesResult>(
+                    new SetQueueAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1584,9 +1651,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void setQueueAttributes(String queueUrl,
+    public SetQueueAttributesResult setQueueAttributes(String queueUrl,
             java.util.Map<String, String> attributes) {
-        setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
+        return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(
                 queueUrl).withAttributes(attributes));
     }
 
@@ -1613,30 +1680,45 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

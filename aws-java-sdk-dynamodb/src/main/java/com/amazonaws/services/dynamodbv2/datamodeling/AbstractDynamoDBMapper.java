@@ -1,16 +1,16 @@
-/*   
- * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.   
- *   
- * Licensed under the Apache License, Version 2.0 (the "License");   
- * you may not use this file except in compliance with the License.   
- * You may obtain a copy of the License at:   
- *   
- *    http://aws.amazon.com/apache2.0   
- *   
- * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES   
- * OR CONDITIONS OF ANY KIND, either express or implied. See the   
- * License for the specific language governing permissions and   
- * limitations under the License.   
+/*
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at:
+ *
+ *    http://aws.amazon.com/apache2.0
+ *
+ * This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+ * OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
@@ -114,22 +114,12 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
-    public List<FailedBatch> batchDelete(List<? extends Object> objectsToDelete) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public List<FailedBatch> batchDelete(Iterable<? extends Object> objectsToDelete) {
         throw new UnsupportedOperationException();
     }
 
     @Override
     public List<FailedBatch> batchDelete(Object... objectsToDelete) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public List<FailedBatch> batchSave(List<? extends Object> objectsToSave) {
         throw new UnsupportedOperationException();
     }
 
@@ -144,20 +134,8 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
-    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public List<FailedBatch> batchWrite(Iterable<? extends Object> objectsToWrite,
                                         Iterable<? extends Object> objectsToDelete) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public List<FailedBatch> batchWrite(List<? extends Object> objectsToWrite,
-                                        List<? extends Object> objectsToDelete,
-                                        DynamoDBMapperConfig config) {
         throw new UnsupportedOperationException();
     }
 
@@ -169,17 +147,7 @@ public class AbstractDynamoDBMapper implements IDynamoDBMapper {
     }
 
     @Override
-    public Map<String, List<Object>> batchLoad(List<Object> itemsToGet) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public Map<String, List<Object>> batchLoad(Iterable<? extends Object> itemsToGet) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public Map<String, List<Object>> batchLoad(List<Object> itemsToGet, DynamoDBMapperConfig config) {
         throw new UnsupportedOperationException();
     }
 

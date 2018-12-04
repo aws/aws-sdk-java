@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AppMarshaller
@@ -39,124 +34,123 @@ import com.amazonaws.util.json.*;
 public class AppJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(App app, JSONWriter jsonWriter) {
+    public void marshall(App app, StructuredJsonGenerator jsonGenerator) {
+
         if (app == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (app.getAppId() != null) {
-                jsonWriter.key("AppId").value(app.getAppId());
+                jsonGenerator.writeFieldName("AppId")
+                        .writeValue(app.getAppId());
             }
-
             if (app.getStackId() != null) {
-                jsonWriter.key("StackId").value(app.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        app.getStackId());
             }
-
             if (app.getShortname() != null) {
-                jsonWriter.key("Shortname").value(app.getShortname());
+                jsonGenerator.writeFieldName("Shortname").writeValue(
+                        app.getShortname());
             }
-
             if (app.getName() != null) {
-                jsonWriter.key("Name").value(app.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(app.getName());
             }
-
             if (app.getDescription() != null) {
-                jsonWriter.key("Description").value(app.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        app.getDescription());
             }
 
             com.amazonaws.internal.SdkInternalList<DataSource> dataSourcesList = (com.amazonaws.internal.SdkInternalList<DataSource>) app
                     .getDataSources();
             if (!dataSourcesList.isEmpty()
                     || !dataSourcesList.isAutoConstruct()) {
-                jsonWriter.key("DataSources");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DataSources");
+                jsonGenerator.writeStartArray();
                 for (DataSource dataSourcesListValue : dataSourcesList) {
                     if (dataSourcesListValue != null) {
 
                         DataSourceJsonMarshaller.getInstance().marshall(
-                                dataSourcesListValue, jsonWriter);
+                                dataSourcesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (app.getType() != null) {
-                jsonWriter.key("Type").value(app.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(app.getType());
             }
-
             if (app.getAppSource() != null) {
-                jsonWriter.key("AppSource");
+                jsonGenerator.writeFieldName("AppSource");
                 SourceJsonMarshaller.getInstance().marshall(app.getAppSource(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<String> domainsList = (com.amazonaws.internal.SdkInternalList<String>) app
                     .getDomains();
             if (!domainsList.isEmpty() || !domainsList.isAutoConstruct()) {
-                jsonWriter.key("Domains");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Domains");
+                jsonGenerator.writeStartArray();
                 for (String domainsListValue : domainsList) {
                     if (domainsListValue != null) {
-                        jsonWriter.value(domainsListValue);
+                        jsonGenerator.writeValue(domainsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (app.getEnableSsl() != null) {
-                jsonWriter.key("EnableSsl").value(app.getEnableSsl());
+                jsonGenerator.writeFieldName("EnableSsl").writeValue(
+                        app.getEnableSsl());
             }
-
             if (app.getSslConfiguration() != null) {
-                jsonWriter.key("SslConfiguration");
+                jsonGenerator.writeFieldName("SslConfiguration");
                 SslConfigurationJsonMarshaller.getInstance().marshall(
-                        app.getSslConfiguration(), jsonWriter);
+                        app.getSslConfiguration(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> attributesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) app
                     .getAttributes();
             if (!attributesMap.isEmpty() || !attributesMap.isAutoConstruct()) {
-                jsonWriter.key("Attributes");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Attributes");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> attributesMapValue : attributesMap
                         .entrySet()) {
                     if (attributesMapValue.getValue() != null) {
-                        jsonWriter.key(attributesMapValue.getKey());
+                        jsonGenerator.writeFieldName(attributesMapValue
+                                .getKey());
 
-                        jsonWriter.value(attributesMapValue.getValue());
+                        jsonGenerator.writeValue(attributesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (app.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(app.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        app.getCreatedAt());
             }
 
             com.amazonaws.internal.SdkInternalList<EnvironmentVariable> environmentList = (com.amazonaws.internal.SdkInternalList<EnvironmentVariable>) app
                     .getEnvironment();
             if (!environmentList.isEmpty()
                     || !environmentList.isAutoConstruct()) {
-                jsonWriter.key("Environment");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Environment");
+                jsonGenerator.writeStartArray();
                 for (EnvironmentVariable environmentListValue : environmentList) {
                     if (environmentListValue != null) {
 
                         EnvironmentVariableJsonMarshaller.getInstance()
-                                .marshall(environmentListValue, jsonWriter);
+                                .marshall(environmentListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

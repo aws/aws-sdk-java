@@ -23,19 +23,28 @@ import java.io.Serializable;
  */
 public class ListCommandsResult implements Serializable, Cloneable {
 
-    /** (Optional) The list of commands requested by the user. */
+    /**
+     * <p>
+     * (Optional) The list of commands requested by the user.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Command> commands;
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * (Optional) The list of commands requested by the user.
+     * </p>
      * 
      * @return (Optional) The list of commands requested by the user.
      */
+
     public java.util.List<Command> getCommands() {
         if (commands == null) {
             commands = new com.amazonaws.internal.SdkInternalList<Command>();
@@ -44,11 +53,14 @@ public class ListCommandsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) The list of commands requested by the user.
+     * </p>
      * 
      * @param commands
      *        (Optional) The list of commands requested by the user.
      */
+
     public void setCommands(java.util.Collection<Command> commands) {
         if (commands == null) {
             this.commands = null;
@@ -60,7 +72,9 @@ public class ListCommandsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) The list of commands requested by the user.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setCommands(java.util.Collection)} or
@@ -73,6 +87,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withCommands(Command... commands) {
         if (this.commands == null) {
             setCommands(new com.amazonaws.internal.SdkInternalList<Command>(
@@ -85,13 +100,16 @@ public class ListCommandsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) The list of commands requested by the user.
+     * </p>
      * 
      * @param commands
      *        (Optional) The list of commands requested by the user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withCommands(
             java.util.Collection<Command> commands) {
         setCommands(commands);
@@ -99,31 +117,39 @@ public class ListCommandsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
      *        received this token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -131,6 +157,7 @@ public class ListCommandsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

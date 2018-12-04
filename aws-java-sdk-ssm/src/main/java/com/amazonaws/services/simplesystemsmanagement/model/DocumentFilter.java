@@ -47,6 +47,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      *        The name of the filter.
      * @see DocumentFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -59,6 +60,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      * @return The name of the filter.
      * @see DocumentFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
@@ -74,6 +76,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentFilterKey
      */
+
     public DocumentFilter withKey(String key) {
         setKey(key);
         return this;
@@ -86,10 +89,9 @@ public class DocumentFilter implements Serializable, Cloneable {
      * 
      * @param key
      *        The name of the filter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DocumentFilterKey
      */
+
     public void setKey(DocumentFilterKey key) {
         this.key = key.toString();
     }
@@ -105,6 +107,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentFilterKey
      */
+
     public DocumentFilter withKey(DocumentFilterKey key) {
         setKey(key);
         return this;
@@ -118,6 +121,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      * @param value
      *        The value of the filter.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -129,6 +133,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      * 
      * @return The value of the filter.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -143,6 +148,7 @@ public class DocumentFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentFilter withValue(String value) {
         setValue(value);
         return this;

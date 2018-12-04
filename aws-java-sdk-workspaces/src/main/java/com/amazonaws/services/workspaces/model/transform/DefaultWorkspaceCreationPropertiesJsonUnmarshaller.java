@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,34 +57,34 @@ public class DefaultWorkspaceCreationPropertiesJsonUnmarshaller
                 if (context.testExpression("EnableWorkDocs", targetDepth)) {
                     context.nextToken();
                     defaultWorkspaceCreationProperties
-                            .setEnableWorkDocs(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEnableWorkDocs(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("EnableInternetAccess", targetDepth)) {
                     context.nextToken();
                     defaultWorkspaceCreationProperties
-                            .setEnableInternetAccess(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setEnableInternetAccess(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultOu", targetDepth)) {
                     context.nextToken();
-                    defaultWorkspaceCreationProperties
-                            .setDefaultOu(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    defaultWorkspaceCreationProperties.setDefaultOu(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("CustomSecurityGroupId", targetDepth)) {
                     context.nextToken();
                     defaultWorkspaceCreationProperties
-                            .setCustomSecurityGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCustomSecurityGroupId(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserEnabledAsLocalAdministrator",
                         targetDepth)) {
                     context.nextToken();
                     defaultWorkspaceCreationProperties
-                            .setUserEnabledAsLocalAdministrator(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setUserEnabledAsLocalAdministrator(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

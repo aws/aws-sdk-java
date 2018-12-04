@@ -30,16 +30,16 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    public java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             DeleteAlarmsRequest request) {
 
         return deleteAlarmsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    public java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             DeleteAlarmsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, DeleteAlarmsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,31 +139,31 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             DisableAlarmActionsRequest request) {
 
         return disableAlarmActionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             DisableAlarmActionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    public java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             EnableAlarmActionsRequest request) {
 
         return enableAlarmActionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    public java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             EnableAlarmActionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,46 +223,46 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    public java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             PutMetricAlarmRequest request) {
 
         return putMetricAlarmAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    public java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             PutMetricAlarmRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, PutMetricAlarmResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricDataAsync(
+    public java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             PutMetricDataRequest request) {
 
         return putMetricDataAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricDataAsync(
+    public java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             PutMetricDataRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, PutMetricDataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setAlarmStateAsync(
+    public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             SetAlarmStateRequest request) {
 
         return setAlarmStateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setAlarmStateAsync(
+    public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             SetAlarmStateRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

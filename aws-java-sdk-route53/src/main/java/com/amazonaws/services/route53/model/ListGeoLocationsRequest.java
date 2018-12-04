@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a ListGeoLocations request.
+ * The input for a <code>ListGeoLocations</code> request.
  * </p>
  */
 public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
@@ -103,6 +103,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        <code>CountryCode</code> or <code>SubdivisionCode</code> returns
      *        an <a>InvalidInput</a> error.
      */
+
     public void setStartContinentCode(String startContinentCode) {
         this.startContinentCode = startContinentCode;
     }
@@ -137,6 +138,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *         <code>CountryCode</code> or <code>SubdivisionCode</code> returns
      *         an <a>InvalidInput</a> error.
      */
+
     public String getStartContinentCode() {
         return this.startContinentCode;
     }
@@ -173,6 +175,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsRequest withStartContinentCode(
             String startContinentCode) {
         setStartContinentCode(startContinentCode);
@@ -198,6 +201,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        code. All other country codes follow the ISO 3166 two-character
      *        code.
      */
+
     public void setStartCountryCode(String startCountryCode) {
         this.startCountryCode = startCountryCode;
     }
@@ -220,6 +224,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *         code. All other country codes follow the ISO 3166 two-character
      *         code.
      */
+
     public String getStartCountryCode() {
         return this.startCountryCode;
     }
@@ -245,6 +250,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsRequest withStartCountryCode(String startCountryCode) {
         setStartCountryCode(startCountryCode);
         return this;
@@ -268,6 +274,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *        Constraint: Specifying <code>SubdivisionCode</code> without
      *        <code>CountryCode</code> returns an <a>InvalidInput</a> error.
      */
+
     public void setStartSubdivisionCode(String startSubdivisionCode) {
         this.startSubdivisionCode = startSubdivisionCode;
     }
@@ -289,6 +296,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      *         Constraint: Specifying <code>SubdivisionCode</code> without
      *         <code>CountryCode</code> returns an <a>InvalidInput</a> error.
      */
+
     public String getStartSubdivisionCode() {
         return this.startSubdivisionCode;
     }
@@ -313,6 +321,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsRequest withStartSubdivisionCode(
             String startSubdivisionCode) {
         setStartSubdivisionCode(startSubdivisionCode);
@@ -327,6 +336,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @param maxItems
      *        The maximum number of geo locations you want in the response body.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -339,6 +349,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of geo locations you want in the response
      *         body.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -353,6 +364,7 @@ public class ListGeoLocationsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

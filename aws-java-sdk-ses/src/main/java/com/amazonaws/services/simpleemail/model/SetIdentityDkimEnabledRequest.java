@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to enable or disable DKIM
- * signing for an identity.
- * </p>
+ * 
  */
 public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -51,6 +48,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      * @param identity
      *        The identity for which DKIM signing should be enabled or disabled.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -63,6 +61,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      * @return The identity for which DKIM signing should be enabled or
      *         disabled.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -77,6 +76,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityDkimEnabledRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;
@@ -94,6 +94,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      *        <code>true</code> to enable DKIM signing for this identity;
      *        <code>false</code> to disable it.
      */
+
     public void setDkimEnabled(Boolean dkimEnabled) {
         this.dkimEnabled = dkimEnabled;
     }
@@ -109,6 +110,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      *         <code>true</code> to enable DKIM signing for this identity;
      *         <code>false</code> to disable it.
      */
+
     public Boolean getDkimEnabled() {
         return this.dkimEnabled;
     }
@@ -127,6 +129,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityDkimEnabledRequest withDkimEnabled(Boolean dkimEnabled) {
         setDkimEnabled(dkimEnabled);
         return this;
@@ -143,6 +146,7 @@ public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest
      *         <code>true</code> to enable DKIM signing for this identity;
      *         <code>false</code> to disable it.
      */
+
     public Boolean isDkimEnabled() {
         return this.dkimEnabled;
     }

@@ -53,6 +53,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @param directoryId
      *        The identifier of the directory for which to create the alias.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -64,6 +65,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the directory for which to create the alias.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -78,6 +80,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -100,6 +103,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *        operation throws an <code>EntityAlreadyExistsException</code>
      *        error if the alias already exists.
      */
+
     public void setAlias(String alias) {
         this.alias = alias;
     }
@@ -120,6 +124,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *         operation throws an <code>EntityAlreadyExistsException</code>
      *         error if the alias already exists.
      */
+
     public String getAlias() {
         return this.alias;
     }
@@ -143,6 +148,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withAlias(String alias) {
         setAlias(alias);
         return this;

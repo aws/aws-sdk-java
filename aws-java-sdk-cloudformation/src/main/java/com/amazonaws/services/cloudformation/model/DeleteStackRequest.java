@@ -33,6 +33,19 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String stackName;
+    /**
+     * <p>
+     * For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain.
+     * During deletion, AWS CloudFormation deletes the stack but does not delete
+     * the retained resources.
+     * </p>
+     * <p>
+     * Retaining resources is useful when you cannot delete a resource, such as
+     * a non-empty S3 bucket, but you want to delete the stack.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> retainResources;
 
     /**
      * <p>
@@ -42,6 +55,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @param stackName
      *        The name or the unique stack ID that is associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -54,6 +68,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return The name or the unique stack ID that is associated with the
      *         stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -68,8 +83,140 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStackRequest withStackName(String stackName) {
         setStackName(stackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain.
+     * During deletion, AWS CloudFormation deletes the stack but does not delete
+     * the retained resources.
+     * </p>
+     * <p>
+     * Retaining resources is useful when you cannot delete a resource, such as
+     * a non-empty S3 bucket, but you want to delete the stack.
+     * </p>
+     * 
+     * @return For stacks in the <code>DELETE_FAILED</code> state, a list of
+     *         resource logical IDs that are associated with the resources you
+     *         want to retain. During deletion, AWS CloudFormation deletes the
+     *         stack but does not delete the retained resources.</p>
+     *         <p>
+     *         Retaining resources is useful when you cannot delete a resource,
+     *         such as a non-empty S3 bucket, but you want to delete the stack.
+     */
+
+    public java.util.List<String> getRetainResources() {
+        if (retainResources == null) {
+            retainResources = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return retainResources;
+    }
+
+    /**
+     * <p>
+     * For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain.
+     * During deletion, AWS CloudFormation deletes the stack but does not delete
+     * the retained resources.
+     * </p>
+     * <p>
+     * Retaining resources is useful when you cannot delete a resource, such as
+     * a non-empty S3 bucket, but you want to delete the stack.
+     * </p>
+     * 
+     * @param retainResources
+     *        For stacks in the <code>DELETE_FAILED</code> state, a list of
+     *        resource logical IDs that are associated with the resources you
+     *        want to retain. During deletion, AWS CloudFormation deletes the
+     *        stack but does not delete the retained resources.</p>
+     *        <p>
+     *        Retaining resources is useful when you cannot delete a resource,
+     *        such as a non-empty S3 bucket, but you want to delete the stack.
+     */
+
+    public void setRetainResources(java.util.Collection<String> retainResources) {
+        if (retainResources == null) {
+            this.retainResources = null;
+            return;
+        }
+
+        this.retainResources = new com.amazonaws.internal.SdkInternalList<String>(
+                retainResources);
+    }
+
+    /**
+     * <p>
+     * For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain.
+     * During deletion, AWS CloudFormation deletes the stack but does not delete
+     * the retained resources.
+     * </p>
+     * <p>
+     * Retaining resources is useful when you cannot delete a resource, such as
+     * a non-empty S3 bucket, but you want to delete the stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRetainResources(java.util.Collection)} or
+     * {@link #withRetainResources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param retainResources
+     *        For stacks in the <code>DELETE_FAILED</code> state, a list of
+     *        resource logical IDs that are associated with the resources you
+     *        want to retain. During deletion, AWS CloudFormation deletes the
+     *        stack but does not delete the retained resources.</p>
+     *        <p>
+     *        Retaining resources is useful when you cannot delete a resource,
+     *        such as a non-empty S3 bucket, but you want to delete the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeleteStackRequest withRetainResources(String... retainResources) {
+        if (this.retainResources == null) {
+            setRetainResources(new com.amazonaws.internal.SdkInternalList<String>(
+                    retainResources.length));
+        }
+        for (String ele : retainResources) {
+            this.retainResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * For stacks in the <code>DELETE_FAILED</code> state, a list of resource
+     * logical IDs that are associated with the resources you want to retain.
+     * During deletion, AWS CloudFormation deletes the stack but does not delete
+     * the retained resources.
+     * </p>
+     * <p>
+     * Retaining resources is useful when you cannot delete a resource, such as
+     * a non-empty S3 bucket, but you want to delete the stack.
+     * </p>
+     * 
+     * @param retainResources
+     *        For stacks in the <code>DELETE_FAILED</code> state, a list of
+     *        resource logical IDs that are associated with the resources you
+     *        want to retain. During deletion, AWS CloudFormation deletes the
+     *        stack but does not delete the retained resources.</p>
+     *        <p>
+     *        Retaining resources is useful when you cannot delete a resource,
+     *        such as a non-empty S3 bucket, but you want to delete the stack.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeleteStackRequest withRetainResources(
+            java.util.Collection<String> retainResources) {
+        setRetainResources(retainResources);
         return this;
     }
 
@@ -86,7 +233,9 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: " + getStackName() + ",");
+        if (getRetainResources() != null)
+            sb.append("RetainResources: " + getRetainResources());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +255,12 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
         if (other.getStackName() != null
                 && other.getStackName().equals(this.getStackName()) == false)
             return false;
+        if (other.getRetainResources() == null
+                ^ this.getRetainResources() == null)
+            return false;
+        if (other.getRetainResources() != null
+                && other.getRetainResources().equals(this.getRetainResources()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +271,10 @@ public class DeleteStackRequest extends AmazonWebServiceRequest implements
 
         hashCode = prime * hashCode
                 + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRetainResources() == null) ? 0 : getRetainResources()
+                        .hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,32 +55,32 @@ public class LogGroupJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logGroupName", targetDepth)) {
                     context.nextToken();
-                    logGroup.setLogGroupName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logGroup.setLogGroupName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    logGroup.setCreationTime(LongJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    logGroup.setCreationTime(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("retentionInDays", targetDepth)) {
                     context.nextToken();
-                    logGroup.setRetentionInDays(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logGroup.setRetentionInDays(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("metricFilterCount", targetDepth)) {
                     context.nextToken();
-                    logGroup.setMetricFilterCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    logGroup.setMetricFilterCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    logGroup.setArn(StringJsonUnmarshaller.getInstance()
+                    logGroup.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("storedBytes", targetDepth)) {
                     context.nextToken();
-                    logGroup.setStoredBytes(LongJsonUnmarshaller.getInstance()
+                    logGroup.setStoredBytes(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

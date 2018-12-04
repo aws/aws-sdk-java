@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UlimitMarshaller
@@ -39,30 +34,32 @@ import com.amazonaws.util.json.*;
 public class UlimitJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Ulimit ulimit, JSONWriter jsonWriter) {
+    public void marshall(Ulimit ulimit, StructuredJsonGenerator jsonGenerator) {
+
         if (ulimit == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (ulimit.getName() != null) {
-                jsonWriter.key("name").value(ulimit.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        ulimit.getName());
             }
-
             if (ulimit.getSoftLimit() != null) {
-                jsonWriter.key("softLimit").value(ulimit.getSoftLimit());
+                jsonGenerator.writeFieldName("softLimit").writeValue(
+                        ulimit.getSoftLimit());
             }
-
             if (ulimit.getHardLimit() != null) {
-                jsonWriter.key("hardLimit").value(ulimit.getHardLimit());
+                jsonGenerator.writeFieldName("hardLimit").writeValue(
+                        ulimit.getHardLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

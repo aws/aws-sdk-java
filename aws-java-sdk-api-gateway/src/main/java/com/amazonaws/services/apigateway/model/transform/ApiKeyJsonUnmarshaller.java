@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,39 +54,38 @@ public class ApiKeyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    apiKey.setId(StringJsonUnmarshaller.getInstance()
+                    apiKey.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    apiKey.setName(StringJsonUnmarshaller.getInstance()
+                    apiKey.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    apiKey.setDescription(StringJsonUnmarshaller.getInstance()
+                    apiKey.setDescription(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("enabled", targetDepth)) {
                     context.nextToken();
-                    apiKey.setEnabled(BooleanJsonUnmarshaller.getInstance()
+                    apiKey.setEnabled(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("stageKeys", targetDepth)) {
                     context.nextToken();
-                    apiKey.setStageKeys(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    apiKey.setStageKeys(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    apiKey.setCreatedDate(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    apiKey.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    apiKey.setLastUpdatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    apiKey.setLastUpdatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

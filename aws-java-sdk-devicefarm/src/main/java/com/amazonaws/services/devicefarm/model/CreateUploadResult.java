@@ -40,6 +40,7 @@ public class CreateUploadResult implements Serializable, Cloneable {
      * @param upload
      *        The newly created upload.
      */
+
     public void setUpload(Upload upload) {
         this.upload = upload;
     }
@@ -51,6 +52,7 @@ public class CreateUploadResult implements Serializable, Cloneable {
      * 
      * @return The newly created upload.
      */
+
     public Upload getUpload() {
         return this.upload;
     }
@@ -65,6 +67,7 @@ public class CreateUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateUploadResult withUpload(Upload upload) {
         setUpload(upload);
         return this;

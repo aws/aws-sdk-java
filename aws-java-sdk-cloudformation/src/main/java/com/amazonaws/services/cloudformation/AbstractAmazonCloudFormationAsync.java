@@ -30,16 +30,16 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    public java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             CancelUpdateStackRequest request) {
 
         return cancelUpdateStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    public java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             CancelUpdateStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, CancelUpdateStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,6 +60,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest request) {
+
+        return createChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(
             CreateStackRequest request) {
 
@@ -75,16 +90,31 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest request) {
+
+        return deleteChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request) {
 
         return deleteStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +130,21 @@ public class AbstractAmazonCloudFormationAsync extends
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(
             DescribeAccountLimitsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest request) {
+
+        return describeChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +274,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest request) {
+
+        return executeChangeSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStackPolicyResult> getStackPolicyAsync(
             GetStackPolicyRequest request) {
 
@@ -299,6 +359,21 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest request) {
+
+        return listChangeSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStackResourcesResult> listStackResourcesAsync(
             ListStackResourcesRequest request) {
 
@@ -353,31 +428,31 @@ public class AbstractAmazonCloudFormationAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStackPolicyAsync(
+    public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             SetStackPolicyRequest request) {
 
         return setStackPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStackPolicyAsync(
+    public java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             SetStackPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> signalResourceAsync(
+    public java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             SignalResourceRequest request) {
 
         return signalResourceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> signalResourceAsync(
+    public java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             SignalResourceRequest request,
-            com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, SignalResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

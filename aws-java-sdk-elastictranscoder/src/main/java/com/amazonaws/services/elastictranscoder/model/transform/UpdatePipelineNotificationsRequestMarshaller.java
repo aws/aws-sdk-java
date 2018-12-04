@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdatePipelineNotificationsRequest Marshaller
@@ -47,7 +49,14 @@ public class UpdatePipelineNotificationsRequestMarshaller
         implements
         Marshaller<Request<UpdatePipelineNotificationsRequest>, UpdatePipelineNotificationsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdatePipelineNotificationsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdatePipelineNotificationsRequest> marshall(
             UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
@@ -64,32 +73,32 @@ public class UpdatePipelineNotificationsRequestMarshaller
 
         String uriResourcePath = "/2012-09-25/pipelines/{Id}/notifications";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updatePipelineNotificationsRequest.getId() == null) ? ""
-                        : StringUtils
-                                .fromString(updatePipelineNotificationsRequest
-                                        .getId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (updatePipelineNotificationsRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(updatePipelineNotificationsRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (updatePipelineNotificationsRequest.getNotifications() != null) {
-                jsonWriter.key("Notifications");
+                jsonGenerator.writeFieldName("Notifications");
                 NotificationsJsonMarshaller.getInstance().marshall(
                         updatePipelineNotificationsRequest.getNotifications(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

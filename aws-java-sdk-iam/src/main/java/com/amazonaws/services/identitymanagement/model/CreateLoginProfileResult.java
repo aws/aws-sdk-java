@@ -27,44 +27,47 @@ public class CreateLoginProfileResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user name and password create date.
+     * A structure containing the user name and password create date.
      * </p>
      */
     private LoginProfile loginProfile;
 
     /**
      * <p>
-     * The user name and password create date.
+     * A structure containing the user name and password create date.
      * </p>
      * 
      * @param loginProfile
-     *        The user name and password create date.
+     *        A structure containing the user name and password create date.
      */
+
     public void setLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;
     }
 
     /**
      * <p>
-     * The user name and password create date.
+     * A structure containing the user name and password create date.
      * </p>
      * 
-     * @return The user name and password create date.
+     * @return A structure containing the user name and password create date.
      */
+
     public LoginProfile getLoginProfile() {
         return this.loginProfile;
     }
 
     /**
      * <p>
-     * The user name and password create date.
+     * A structure containing the user name and password create date.
      * </p>
      * 
      * @param loginProfile
-     *        The user name and password create date.
+     *        A structure containing the user name and password create date.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoginProfileResult withLoginProfile(LoginProfile loginProfile) {
         setLoginProfile(loginProfile);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class PutRecordsRequestEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Data", targetDepth)) {
                     context.nextToken();
-                    putRecordsRequestEntry.setData(ByteBufferJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putRecordsRequestEntry.setData(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("ExplicitHashKey", targetDepth)) {
                     context.nextToken();
-                    putRecordsRequestEntry
-                            .setExplicitHashKey(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putRecordsRequestEntry.setExplicitHashKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PartitionKey", targetDepth)) {
                     context.nextToken();
-                    putRecordsRequestEntry
-                            .setPartitionKey(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putRecordsRequestEntry.setPartitionKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

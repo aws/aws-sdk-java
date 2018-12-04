@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * WeeklyAutoScalingScheduleMarshaller
@@ -39,138 +34,140 @@ import com.amazonaws.util.json.*;
 public class WeeklyAutoScalingScheduleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(WeeklyAutoScalingSchedule weeklyAutoScalingSchedule,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (weeklyAutoScalingSchedule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> mondayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getMonday();
             if (!mondayMap.isEmpty() || !mondayMap.isAutoConstruct()) {
-                jsonWriter.key("Monday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Monday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> mondayMapValue : mondayMap
                         .entrySet()) {
                     if (mondayMapValue.getValue() != null) {
-                        jsonWriter.key(mondayMapValue.getKey());
+                        jsonGenerator.writeFieldName(mondayMapValue.getKey());
 
-                        jsonWriter.value(mondayMapValue.getValue());
+                        jsonGenerator.writeValue(mondayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> tuesdayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getTuesday();
             if (!tuesdayMap.isEmpty() || !tuesdayMap.isAutoConstruct()) {
-                jsonWriter.key("Tuesday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Tuesday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> tuesdayMapValue : tuesdayMap
                         .entrySet()) {
                     if (tuesdayMapValue.getValue() != null) {
-                        jsonWriter.key(tuesdayMapValue.getKey());
+                        jsonGenerator.writeFieldName(tuesdayMapValue.getKey());
 
-                        jsonWriter.value(tuesdayMapValue.getValue());
+                        jsonGenerator.writeValue(tuesdayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> wednesdayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getWednesday();
             if (!wednesdayMap.isEmpty() || !wednesdayMap.isAutoConstruct()) {
-                jsonWriter.key("Wednesday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Wednesday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> wednesdayMapValue : wednesdayMap
                         .entrySet()) {
                     if (wednesdayMapValue.getValue() != null) {
-                        jsonWriter.key(wednesdayMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(wednesdayMapValue.getKey());
 
-                        jsonWriter.value(wednesdayMapValue.getValue());
+                        jsonGenerator.writeValue(wednesdayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> thursdayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getThursday();
             if (!thursdayMap.isEmpty() || !thursdayMap.isAutoConstruct()) {
-                jsonWriter.key("Thursday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Thursday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> thursdayMapValue : thursdayMap
                         .entrySet()) {
                     if (thursdayMapValue.getValue() != null) {
-                        jsonWriter.key(thursdayMapValue.getKey());
+                        jsonGenerator.writeFieldName(thursdayMapValue.getKey());
 
-                        jsonWriter.value(thursdayMapValue.getValue());
+                        jsonGenerator.writeValue(thursdayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> fridayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getFriday();
             if (!fridayMap.isEmpty() || !fridayMap.isAutoConstruct()) {
-                jsonWriter.key("Friday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Friday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> fridayMapValue : fridayMap
                         .entrySet()) {
                     if (fridayMapValue.getValue() != null) {
-                        jsonWriter.key(fridayMapValue.getKey());
+                        jsonGenerator.writeFieldName(fridayMapValue.getKey());
 
-                        jsonWriter.value(fridayMapValue.getValue());
+                        jsonGenerator.writeValue(fridayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> saturdayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getSaturday();
             if (!saturdayMap.isEmpty() || !saturdayMap.isAutoConstruct()) {
-                jsonWriter.key("Saturday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Saturday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> saturdayMapValue : saturdayMap
                         .entrySet()) {
                     if (saturdayMapValue.getValue() != null) {
-                        jsonWriter.key(saturdayMapValue.getKey());
+                        jsonGenerator.writeFieldName(saturdayMapValue.getKey());
 
-                        jsonWriter.value(saturdayMapValue.getValue());
+                        jsonGenerator.writeValue(saturdayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> sundayMap = (com.amazonaws.internal.SdkInternalMap<String, String>) weeklyAutoScalingSchedule
                     .getSunday();
             if (!sundayMap.isEmpty() || !sundayMap.isAutoConstruct()) {
-                jsonWriter.key("Sunday");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Sunday");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> sundayMapValue : sundayMap
                         .entrySet()) {
                     if (sundayMapValue.getValue() != null) {
-                        jsonWriter.key(sundayMapValue.getKey());
+                        jsonGenerator.writeFieldName(sundayMapValue.getKey());
 
-                        jsonWriter.value(sundayMapValue.getValue());
+                        jsonGenerator.writeValue(sundayMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

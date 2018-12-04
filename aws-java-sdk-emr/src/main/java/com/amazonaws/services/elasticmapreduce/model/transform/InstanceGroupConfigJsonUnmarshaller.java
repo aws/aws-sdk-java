@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,34 +55,34 @@ public class InstanceGroupConfigJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupConfig.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Market", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setMarket(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupConfig.setMarket(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceRole", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setInstanceRole(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupConfig.setInstanceRole(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BidPrice", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setBidPrice(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupConfig.setBidPrice(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
-                    instanceGroupConfig.setInstanceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    instanceGroupConfig.setInstanceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceCount", targetDepth)) {
                     context.nextToken();
                     instanceGroupConfig
-                            .setInstanceCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setInstanceCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Configurations", targetDepth)) {
                     context.nextToken();
@@ -88,6 +90,12 @@ public class InstanceGroupConfigJsonUnmarshaller implements
                             .setConfigurations(new ListUnmarshaller<Configuration>(
                                     ConfigurationJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
+                }
+                if (context.testExpression("EbsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    instanceGroupConfig
+                            .setEbsConfiguration(EbsConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

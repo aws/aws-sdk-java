@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Parameters/member", targetDepth)) {
-                    getTemplateSummaryResult.getParameters().add(
-                            ParameterDeclarationStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getTemplateSummaryResult
+                            .withParameters(ParameterDeclarationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -64,9 +66,9 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Capabilities/member", targetDepth)) {
-                    getTemplateSummaryResult.getCapabilities().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getTemplateSummaryResult
+                            .withCapabilities(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -78,9 +80,9 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("ResourceTypes/member", targetDepth)) {
-                    getTemplateSummaryResult.getResourceTypes().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getTemplateSummaryResult
+                            .withResourceTypes(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

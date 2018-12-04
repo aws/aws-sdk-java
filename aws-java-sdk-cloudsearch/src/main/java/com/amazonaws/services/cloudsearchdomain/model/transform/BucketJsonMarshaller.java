@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cloudsearchdomain.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BucketMarshaller
@@ -39,26 +34,28 @@ import com.amazonaws.util.json.*;
 public class BucketJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Bucket bucket, JSONWriter jsonWriter) {
+    public void marshall(Bucket bucket, StructuredJsonGenerator jsonGenerator) {
+
         if (bucket == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (bucket.getValue() != null) {
-                jsonWriter.key("value").value(bucket.getValue());
+                jsonGenerator.writeFieldName("value").writeValue(
+                        bucket.getValue());
             }
-
             if (bucket.getCount() != null) {
-                jsonWriter.key("count").value(bucket.getCount());
+                jsonGenerator.writeFieldName("count").writeValue(
+                        bucket.getCount());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

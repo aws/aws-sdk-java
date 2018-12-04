@@ -60,6 +60,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *         about the pipelines, you can use these identifiers to call
      *         <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
+
     public java.util.List<PipelineIdName> getPipelineIdList() {
         if (pipelineIdList == null) {
             pipelineIdList = new com.amazonaws.internal.SdkInternalList<PipelineIdName>();
@@ -79,6 +80,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *        about the pipelines, you can use these identifiers to call
      *        <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
+
     public void setPipelineIdList(
             java.util.Collection<PipelineIdName> pipelineIdList) {
         if (pipelineIdList == null) {
@@ -110,6 +112,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withPipelineIdList(
             PipelineIdName... pipelineIdList) {
         if (this.pipelineIdList == null) {
@@ -136,6 +139,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withPipelineIdList(
             java.util.Collection<PipelineIdName> pipelineIdList) {
         setPipelineIdList(pipelineIdList);
@@ -155,6 +159,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *        this marker value. If the value is null, there are no more
      *        results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -171,6 +176,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *         this marker value. If the value is null, there are no more
      *         results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -190,6 +196,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -205,6 +212,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      *        Indicates whether there are more results that can be obtained by a
      *        subsequent call.
      */
+
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
     }
@@ -218,6 +226,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Indicates whether there are more results that can be obtained by
      *         a subsequent call.
      */
+
     public Boolean getHasMoreResults() {
         return this.hasMoreResults;
     }
@@ -234,6 +243,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPipelinesResult withHasMoreResults(Boolean hasMoreResults) {
         setHasMoreResults(hasMoreResults);
         return this;
@@ -248,6 +258,7 @@ public class ListPipelinesResult implements Serializable, Cloneable {
      * @return Indicates whether there are more results that can be obtained by
      *         a subsequent call.
      */
+
     public Boolean isHasMoreResults() {
         return this.hasMoreResults;
     }

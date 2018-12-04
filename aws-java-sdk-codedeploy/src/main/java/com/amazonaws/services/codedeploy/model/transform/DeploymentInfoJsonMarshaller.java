@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeploymentInfoMarshaller
@@ -39,89 +34,82 @@ import com.amazonaws.util.json.*;
 public class DeploymentInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DeploymentInfo deploymentInfo, JSONWriter jsonWriter) {
+    public void marshall(DeploymentInfo deploymentInfo,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (deploymentInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deploymentInfo.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         deploymentInfo.getApplicationName());
             }
-
             if (deploymentInfo.getDeploymentGroupName() != null) {
-                jsonWriter.key("deploymentGroupName").value(
+                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(
                         deploymentInfo.getDeploymentGroupName());
             }
-
             if (deploymentInfo.getDeploymentConfigName() != null) {
-                jsonWriter.key("deploymentConfigName").value(
-                        deploymentInfo.getDeploymentConfigName());
+                jsonGenerator.writeFieldName("deploymentConfigName")
+                        .writeValue(deploymentInfo.getDeploymentConfigName());
             }
-
             if (deploymentInfo.getDeploymentId() != null) {
-                jsonWriter.key("deploymentId").value(
+                jsonGenerator.writeFieldName("deploymentId").writeValue(
                         deploymentInfo.getDeploymentId());
             }
-
             if (deploymentInfo.getRevision() != null) {
-                jsonWriter.key("revision");
+                jsonGenerator.writeFieldName("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
-                        deploymentInfo.getRevision(), jsonWriter);
+                        deploymentInfo.getRevision(), jsonGenerator);
             }
-
             if (deploymentInfo.getStatus() != null) {
-                jsonWriter.key("status").value(deploymentInfo.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        deploymentInfo.getStatus());
             }
-
             if (deploymentInfo.getErrorInformation() != null) {
-                jsonWriter.key("errorInformation");
+                jsonGenerator.writeFieldName("errorInformation");
                 ErrorInformationJsonMarshaller.getInstance().marshall(
-                        deploymentInfo.getErrorInformation(), jsonWriter);
+                        deploymentInfo.getErrorInformation(), jsonGenerator);
             }
-
             if (deploymentInfo.getCreateTime() != null) {
-                jsonWriter.key("createTime").value(
+                jsonGenerator.writeFieldName("createTime").writeValue(
                         deploymentInfo.getCreateTime());
             }
-
             if (deploymentInfo.getStartTime() != null) {
-                jsonWriter.key("startTime")
-                        .value(deploymentInfo.getStartTime());
+                jsonGenerator.writeFieldName("startTime").writeValue(
+                        deploymentInfo.getStartTime());
             }
-
             if (deploymentInfo.getCompleteTime() != null) {
-                jsonWriter.key("completeTime").value(
+                jsonGenerator.writeFieldName("completeTime").writeValue(
                         deploymentInfo.getCompleteTime());
             }
-
             if (deploymentInfo.getDeploymentOverview() != null) {
-                jsonWriter.key("deploymentOverview");
+                jsonGenerator.writeFieldName("deploymentOverview");
                 DeploymentOverviewJsonMarshaller.getInstance().marshall(
-                        deploymentInfo.getDeploymentOverview(), jsonWriter);
+                        deploymentInfo.getDeploymentOverview(), jsonGenerator);
             }
-
             if (deploymentInfo.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         deploymentInfo.getDescription());
             }
-
             if (deploymentInfo.getCreator() != null) {
-                jsonWriter.key("creator").value(deploymentInfo.getCreator());
+                jsonGenerator.writeFieldName("creator").writeValue(
+                        deploymentInfo.getCreator());
             }
-
             if (deploymentInfo.getIgnoreApplicationStopFailures() != null) {
-                jsonWriter.key("ignoreApplicationStopFailures").value(
-                        deploymentInfo.getIgnoreApplicationStopFailures());
+                jsonGenerator.writeFieldName("ignoreApplicationStopFailures")
+                        .writeValue(
+                                deploymentInfo
+                                        .getIgnoreApplicationStopFailures());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

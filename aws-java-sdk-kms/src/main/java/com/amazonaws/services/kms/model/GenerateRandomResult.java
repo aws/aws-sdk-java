@@ -39,10 +39,19 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param plaintext
      *        Plaintext that contains the unpredictable byte string.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -64,6 +73,7 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * 
      * @return Plaintext that contains the unpredictable byte string.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -78,6 +88,7 @@ public class GenerateRandomResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateRandomResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;

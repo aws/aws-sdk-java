@@ -16,6 +16,7 @@
 package com.amazonaws.services.route53domains;
 
 import com.amazonaws.services.route53domains.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Route 53 Domains asynchronously. Each
@@ -23,6 +24,7 @@ import com.amazonaws.services.route53domains.model.*;
  * asynchronous operation; overloads which accept an {@code AsyncHandler} can be
  * used to receive notification when an asynchronous operation completes.
  */
+@ThreadSafe
 public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
         implements AmazonRoute53DomainsAsync {
 
@@ -122,8 +124,7 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -215,9 +216,7 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -453,6 +452,42 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
 
                         try {
                             result = enableDomainTransferLock(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest request) {
+
+        return getContactReachabilityStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            final GetContactReachabilityStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<GetContactReachabilityStatusResult>() {
+                    @Override
+                    public GetContactReachabilityStatusResult call()
+                            throws Exception {
+                        GetContactReachabilityStatusResult result;
+
+                        try {
+                            result = getContactReachabilityStatus(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -711,6 +746,42 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient
 
                         try {
                             result = registerDomain(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest request) {
+
+        return resendContactReachabilityEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            final ResendContactReachabilityEmailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ResendContactReachabilityEmailResult>() {
+                    @Override
+                    public ResendContactReachabilityEmailResult call()
+                            throws Exception {
+                        ResendContactReachabilityEmailResult result;
+
+                        try {
+                            result = resendContactReachabilityEmail(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

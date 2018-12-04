@@ -52,6 +52,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @param creationDateTime
      *        The date and time when the cluster step was created.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -63,6 +64,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * 
      * @return The date and time when the cluster step was created.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -77,6 +79,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepTimeline withCreationDateTime(java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
         return this;
@@ -90,6 +93,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @param startDateTime
      *        The date and time when the cluster step execution started.
      */
+
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
@@ -101,6 +105,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * 
      * @return The date and time when the cluster step execution started.
      */
+
     public java.util.Date getStartDateTime() {
         return this.startDateTime;
     }
@@ -115,6 +120,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepTimeline withStartDateTime(java.util.Date startDateTime) {
         setStartDateTime(startDateTime);
         return this;
@@ -129,6 +135,7 @@ public class StepTimeline implements Serializable, Cloneable {
      *        The date and time when the cluster step execution completed or
      *        failed.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -141,6 +148,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @return The date and time when the cluster step execution completed or
      *         failed.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -156,6 +164,7 @@ public class StepTimeline implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepTimeline withEndDateTime(java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
         return this;

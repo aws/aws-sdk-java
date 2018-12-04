@@ -46,6 +46,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * @param targetARN
      *        The Amazon Resource Name (ARN) of the target.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -57,6 +58,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the target.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -71,6 +73,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteChapCredentialsResult withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -84,6 +87,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * @param initiatorName
      *        The iSCSI initiator that connects to the target.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -95,6 +99,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * 
      * @return The iSCSI initiator that connects to the target.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -109,6 +114,7 @@ public class DeleteChapCredentialsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteChapCredentialsResult withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;

@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DeleteReusableDelegationSetRequest Marshaller
@@ -57,12 +60,14 @@ public class DeleteReusableDelegationSetRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/delegationset/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteReusableDelegationSetRequest.getId() == null) ? ""
-                        : StringUtils
-                                .fromString(deleteReusableDelegationSetRequest
-                                        .getId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (deleteReusableDelegationSetRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteReusableDelegationSetRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

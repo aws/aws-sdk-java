@@ -40,8 +40,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -97,6 +97,7 @@ public class QueryResult implements Serializable, Cloneable {
      *         element in this array consists of an attribute name and the value
      *         for that attribute.
      */
+
     public java.util.List<java.util.Map<String, AttributeValue>> getItems() {
         return items;
     }
@@ -113,6 +114,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        element in this array consists of an attribute name and the value
      *        for that attribute.
      */
+
     public void setItems(
             java.util.Collection<java.util.Map<String, AttributeValue>> items) {
         if (items == null) {
@@ -144,6 +146,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withItems(java.util.Map<String, AttributeValue>... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<java.util.Map<String, AttributeValue>>(
@@ -169,6 +172,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withItems(
             java.util.Collection<java.util.Map<String, AttributeValue>> items) {
         setItems(items);
@@ -182,8 +186,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -195,13 +199,14 @@ public class QueryResult implements Serializable, Cloneable {
      *        <p>
      *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
      *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before> the
+     *        <i>ScannedCount</i> is the number of matching items before the
      *        filter was applied.
      *        </p>
      *        <p>
      *        If you did not use a filter in the request, then <i>Count</i> and
      *        <i>ScannedCount</i> are the same.
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -213,8 +218,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -226,12 +231,13 @@ public class QueryResult implements Serializable, Cloneable {
      *         If you used a <i>QueryFilter</i> in the request, then
      *         <i>Count</i> is the number of items returned after the filter was
      *         applied, and <i>ScannedCount</i> is the number of matching items
-     *         before> the filter was applied.
+     *         before the filter was applied.
      *         </p>
      *         <p>
      *         If you did not use a filter in the request, then <i>Count</i> and
      *         <i>ScannedCount</i> are the same.
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -243,8 +249,8 @@ public class QueryResult implements Serializable, Cloneable {
      * <p>
      * If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the
      * number of items returned after the filter was applied, and
-     * <i>ScannedCount</i> is the number of matching items before> the filter
-     * was applied.
+     * <i>ScannedCount</i> is the number of matching items before the filter was
+     * applied.
      * </p>
      * <p>
      * If you did not use a filter in the request, then <i>Count</i> and
@@ -256,7 +262,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        <p>
      *        If you used a <i>QueryFilter</i> in the request, then <i>Count</i>
      *        is the number of items returned after the filter was applied, and
-     *        <i>ScannedCount</i> is the number of matching items before> the
+     *        <i>ScannedCount</i> is the number of matching items before the
      *        filter was applied.
      *        </p>
      *        <p>
@@ -265,6 +271,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withCount(Integer count) {
         setCount(count);
         return this;
@@ -297,6 +304,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        If you did not use a filter in the request, then
      *        <i>ScannedCount</i> is the same as <i>Count</i>.
      */
+
     public void setScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
     }
@@ -327,6 +335,7 @@ public class QueryResult implements Serializable, Cloneable {
      *         If you did not use a filter in the request, then
      *         <i>ScannedCount</i> is the same as <i>Count</i>.
      */
+
     public Integer getScannedCount() {
         return this.scannedCount;
     }
@@ -360,6 +369,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withScannedCount(Integer scannedCount) {
         setScannedCount(scannedCount);
         return this;
@@ -396,6 +406,7 @@ public class QueryResult implements Serializable, Cloneable {
      *         know when you have reached the end of the result set is when
      *         <i>LastEvaluatedKey</i> is empty.
      */
+
     public java.util.Map<String, AttributeValue> getLastEvaluatedKey() {
         return lastEvaluatedKey;
     }
@@ -432,6 +443,7 @@ public class QueryResult implements Serializable, Cloneable {
      *        know when you have reached the end of the result set is when
      *        <i>LastEvaluatedKey</i> is empty.
      */
+
     public void setLastEvaluatedKey(
             java.util.Map<String, AttributeValue> lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
@@ -471,6 +483,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withLastEvaluatedKey(
             java.util.Map<String, AttributeValue> lastEvaluatedKey) {
         setLastEvaluatedKey(lastEvaluatedKey);
@@ -492,6 +505,7 @@ public class QueryResult implements Serializable, Cloneable {
      * Removes all the entries added into LastEvaluatedKey. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public QueryResult clearLastEvaluatedKeyEntries() {
         this.lastEvaluatedKey = null;
         return this;
@@ -500,6 +514,7 @@ public class QueryResult implements Serializable, Cloneable {
     /**
      * @param consumedCapacity
      */
+
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
     }
@@ -507,6 +522,7 @@ public class QueryResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ConsumedCapacity getConsumedCapacity() {
         return this.consumedCapacity;
     }
@@ -516,6 +532,7 @@ public class QueryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryResult withConsumedCapacity(ConsumedCapacity consumedCapacity) {
         setConsumedCapacity(consumedCapacity);
         return this;

@@ -36,18 +36,28 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon S3. This value must be specified if
-     * <code>RedshiftDestinationConfiguration</code> is specified (see
-     * restrictions listed above).
+     * <b>ElasticsearchDestinationConfiguration</b> or
+     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions
+     * listed above).
      * </p>
      */
     private S3DestinationConfiguration s3DestinationConfiguration;
     /**
      * <p>
      * The destination in Amazon Redshift. This value cannot be specified if
-     * Amazon S3 is the desired destination (see restrictions listed above).
+     * Amazon S3 or Amazon Elasticsearch is the desired destination (see
+     * restrictions listed above).
      * </p>
      */
     private RedshiftDestinationConfiguration redshiftDestinationConfiguration;
+    /**
+     * <p>
+     * The destination in Amazon ES. This value cannot be specified if Amazon S3
+     * or Amazon Redshift is the desired destination (see restrictions listed
+     * above).
+     * </p>
+     */
+    private ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration;
 
     /**
      * <p>
@@ -57,6 +67,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -68,6 +79,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -82,6 +94,7 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -91,15 +104,18 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon S3. This value must be specified if
-     * <code>RedshiftDestinationConfiguration</code> is specified (see
-     * restrictions listed above).
+     * <b>ElasticsearchDestinationConfiguration</b> or
+     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions
+     * listed above).
      * </p>
      * 
      * @param s3DestinationConfiguration
      *        The destination in Amazon S3. This value must be specified if
-     *        <code>RedshiftDestinationConfiguration</code> is specified (see
+     *        <b>ElasticsearchDestinationConfiguration</b> or
+     *        <b>RedshiftDestinationConfiguration</b> is specified (see
      *        restrictions listed above).
      */
+
     public void setS3DestinationConfiguration(
             S3DestinationConfiguration s3DestinationConfiguration) {
         this.s3DestinationConfiguration = s3DestinationConfiguration;
@@ -108,14 +124,17 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon S3. This value must be specified if
-     * <code>RedshiftDestinationConfiguration</code> is specified (see
-     * restrictions listed above).
+     * <b>ElasticsearchDestinationConfiguration</b> or
+     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions
+     * listed above).
      * </p>
      * 
      * @return The destination in Amazon S3. This value must be specified if
-     *         <code>RedshiftDestinationConfiguration</code> is specified (see
+     *         <b>ElasticsearchDestinationConfiguration</b> or
+     *         <b>RedshiftDestinationConfiguration</b> is specified (see
      *         restrictions listed above).
      */
+
     public S3DestinationConfiguration getS3DestinationConfiguration() {
         return this.s3DestinationConfiguration;
     }
@@ -123,17 +142,20 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon S3. This value must be specified if
-     * <code>RedshiftDestinationConfiguration</code> is specified (see
-     * restrictions listed above).
+     * <b>ElasticsearchDestinationConfiguration</b> or
+     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions
+     * listed above).
      * </p>
      * 
      * @param s3DestinationConfiguration
      *        The destination in Amazon S3. This value must be specified if
-     *        <code>RedshiftDestinationConfiguration</code> is specified (see
+     *        <b>ElasticsearchDestinationConfiguration</b> or
+     *        <b>RedshiftDestinationConfiguration</b> is specified (see
      *        restrictions listed above).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withS3DestinationConfiguration(
             S3DestinationConfiguration s3DestinationConfiguration) {
         setS3DestinationConfiguration(s3DestinationConfiguration);
@@ -143,14 +165,16 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon Redshift. This value cannot be specified if
-     * Amazon S3 is the desired destination (see restrictions listed above).
+     * Amazon S3 or Amazon Elasticsearch is the desired destination (see
+     * restrictions listed above).
      * </p>
      * 
      * @param redshiftDestinationConfiguration
      *        The destination in Amazon Redshift. This value cannot be specified
-     *        if Amazon S3 is the desired destination (see restrictions listed
-     *        above).
+     *        if Amazon S3 or Amazon Elasticsearch is the desired destination
+     *        (see restrictions listed above).
      */
+
     public void setRedshiftDestinationConfiguration(
             RedshiftDestinationConfiguration redshiftDestinationConfiguration) {
         this.redshiftDestinationConfiguration = redshiftDestinationConfiguration;
@@ -159,13 +183,15 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon Redshift. This value cannot be specified if
-     * Amazon S3 is the desired destination (see restrictions listed above).
+     * Amazon S3 or Amazon Elasticsearch is the desired destination (see
+     * restrictions listed above).
      * </p>
      * 
      * @return The destination in Amazon Redshift. This value cannot be
-     *         specified if Amazon S3 is the desired destination (see
-     *         restrictions listed above).
+     *         specified if Amazon S3 or Amazon Elasticsearch is the desired
+     *         destination (see restrictions listed above).
      */
+
     public RedshiftDestinationConfiguration getRedshiftDestinationConfiguration() {
         return this.redshiftDestinationConfiguration;
     }
@@ -173,19 +199,76 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The destination in Amazon Redshift. This value cannot be specified if
-     * Amazon S3 is the desired destination (see restrictions listed above).
+     * Amazon S3 or Amazon Elasticsearch is the desired destination (see
+     * restrictions listed above).
      * </p>
      * 
      * @param redshiftDestinationConfiguration
      *        The destination in Amazon Redshift. This value cannot be specified
-     *        if Amazon S3 is the desired destination (see restrictions listed
-     *        above).
+     *        if Amazon S3 or Amazon Elasticsearch is the desired destination
+     *        (see restrictions listed above).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeliveryStreamRequest withRedshiftDestinationConfiguration(
             RedshiftDestinationConfiguration redshiftDestinationConfiguration) {
         setRedshiftDestinationConfiguration(redshiftDestinationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon ES. This value cannot be specified if Amazon S3
+     * or Amazon Redshift is the desired destination (see restrictions listed
+     * above).
+     * </p>
+     * 
+     * @param elasticsearchDestinationConfiguration
+     *        The destination in Amazon ES. This value cannot be specified if
+     *        Amazon S3 or Amazon Redshift is the desired destination (see
+     *        restrictions listed above).
+     */
+
+    public void setElasticsearchDestinationConfiguration(
+            ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration) {
+        this.elasticsearchDestinationConfiguration = elasticsearchDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon ES. This value cannot be specified if Amazon S3
+     * or Amazon Redshift is the desired destination (see restrictions listed
+     * above).
+     * </p>
+     * 
+     * @return The destination in Amazon ES. This value cannot be specified if
+     *         Amazon S3 or Amazon Redshift is the desired destination (see
+     *         restrictions listed above).
+     */
+
+    public ElasticsearchDestinationConfiguration getElasticsearchDestinationConfiguration() {
+        return this.elasticsearchDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon ES. This value cannot be specified if Amazon S3
+     * or Amazon Redshift is the desired destination (see restrictions listed
+     * above).
+     * </p>
+     * 
+     * @param elasticsearchDestinationConfiguration
+     *        The destination in Amazon ES. This value cannot be specified if
+     *        Amazon S3 or Amazon Redshift is the desired destination (see
+     *        restrictions listed above).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeliveryStreamRequest withElasticsearchDestinationConfiguration(
+            ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration) {
+        setElasticsearchDestinationConfiguration(elasticsearchDestinationConfiguration);
         return this;
     }
 
@@ -208,7 +291,10 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
                     + getS3DestinationConfiguration() + ",");
         if (getRedshiftDestinationConfiguration() != null)
             sb.append("RedshiftDestinationConfiguration: "
-                    + getRedshiftDestinationConfiguration());
+                    + getRedshiftDestinationConfiguration() + ",");
+        if (getElasticsearchDestinationConfiguration() != null)
+            sb.append("ElasticsearchDestinationConfiguration: "
+                    + getElasticsearchDestinationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -244,6 +330,13 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
                 && other.getRedshiftDestinationConfiguration().equals(
                         this.getRedshiftDestinationConfiguration()) == false)
             return false;
+        if (other.getElasticsearchDestinationConfiguration() == null
+                ^ this.getElasticsearchDestinationConfiguration() == null)
+            return false;
+        if (other.getElasticsearchDestinationConfiguration() != null
+                && other.getElasticsearchDestinationConfiguration().equals(
+                        this.getElasticsearchDestinationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -264,6 +357,10 @@ public class CreateDeliveryStreamRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getRedshiftDestinationConfiguration() == null) ? 0
                         : getRedshiftDestinationConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getElasticsearchDestinationConfiguration() == null) ? 0
+                        : getElasticsearchDestinationConfiguration().hashCode());
         return hashCode;
     }
 

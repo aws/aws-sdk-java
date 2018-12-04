@@ -30,7 +30,6 @@ import com.amazonaws.auth.policy.conditions.IpAddressCondition;
 import com.amazonaws.auth.policy.conditions.IpAddressCondition.IpAddressComparisonType;
 import com.amazonaws.auth.policy.conditions.StringCondition;
 import com.amazonaws.auth.policy.conditions.StringCondition.StringComparisonType;
-import com.amazonaws.util.json.JSONException;
 
 
 /**
@@ -41,7 +40,7 @@ public class PolicyReaderTest {
     final String POLICY_VERSION = "2012-10-17";
 
     @Test
-    public void testPrincipals() throws JSONException {
+    public void testPrincipals() {
         Policy policy = new Policy();
         policy.withStatements(new Statement(Effect.Allow)
           .withResources(new Resource("resource"))

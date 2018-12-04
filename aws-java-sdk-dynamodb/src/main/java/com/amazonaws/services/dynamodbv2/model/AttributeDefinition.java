@@ -34,8 +34,25 @@ public class AttributeDefinition implements Serializable, Cloneable {
     private String attributeName;
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      */
     private String attributeType;
 
@@ -55,7 +72,23 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @param attributeName
      *        A name for the attribute.
      * @param attributeType
-     *        The data type for the attribute.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      */
     public AttributeDefinition(String attributeName, String attributeType) {
         setAttributeName(attributeName);
@@ -70,7 +103,23 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @param attributeName
      *        A name for the attribute.
      * @param attributeType
-     *        The data type for the attribute.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      */
     public AttributeDefinition(String attributeName,
             ScalarAttributeType attributeType) {
@@ -86,6 +135,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @param attributeName
      *        A name for the attribute.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -97,6 +147,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * 
      * @return A name for the attribute.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -111,6 +162,7 @@ public class AttributeDefinition implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttributeDefinition withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -118,40 +170,142 @@ public class AttributeDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The data type for the attribute.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      * @see ScalarAttributeType
      */
+
     public void setAttributeType(String attributeType) {
         this.attributeType = attributeType;
     }
 
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The data type for the attribute.
+     * @return The data type for the attribute, where:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>S</code> - the attribute is of type String
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>N</code> - the attribute is of type Number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>B</code> - the attribute is of type Binary
+     *         </p>
+     *         </li>
      * @see ScalarAttributeType
      */
+
     public String getAttributeType() {
         return this.attributeType;
     }
 
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The data type for the attribute.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalarAttributeType
      */
+
     public AttributeDefinition withAttributeType(String attributeType) {
         setAttributeType(attributeType);
         return this;
@@ -159,30 +313,96 @@ public class AttributeDefinition implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The data type for the attribute.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      * @see ScalarAttributeType
      */
+
     public void setAttributeType(ScalarAttributeType attributeType) {
         this.attributeType = attributeType.toString();
     }
 
     /**
      * <p>
-     * The data type for the attribute.
+     * The data type for the attribute, where:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>S</code> - the attribute is of type String
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>N</code> - the attribute is of type Number
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>B</code> - the attribute is of type Binary
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeType
-     *        The data type for the attribute.
+     *        The data type for the attribute, where:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>S</code> - the attribute is of type String
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>N</code> - the attribute is of type Number
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>B</code> - the attribute is of type Binary
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ScalarAttributeType
      */
+
     public AttributeDefinition withAttributeType(
             ScalarAttributeType attributeType) {
         setAttributeType(attributeType);

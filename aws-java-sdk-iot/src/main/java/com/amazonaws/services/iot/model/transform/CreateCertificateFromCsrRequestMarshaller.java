@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateCertificateFromCsrRequest Marshaller
@@ -47,7 +49,14 @@ public class CreateCertificateFromCsrRequestMarshaller
         implements
         Marshaller<Request<CreateCertificateFromCsrRequest>, CreateCertificateFromCsrRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateCertificateFromCsrRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateCertificateFromCsrRequest> marshall(
             CreateCertificateFromCsrRequest createCertificateFromCsrRequest) {
@@ -66,30 +75,28 @@ public class CreateCertificateFromCsrRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String setAsActive = (createCertificateFromCsrRequest.getSetAsActive() == null) ? null
-                : StringUtils.fromBoolean(createCertificateFromCsrRequest
-                        .getSetAsActive());
-        if (setAsActive != null) {
-            request.addParameter("setAsActive", setAsActive);
+        if (createCertificateFromCsrRequest.getSetAsActive() != null) {
+            request.addParameter("setAsActive", StringUtils
+                    .fromBoolean(createCertificateFromCsrRequest
+                            .getSetAsActive()));
         }
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createCertificateFromCsrRequest.getCertificateSigningRequest() != null) {
-                jsonWriter.key("certificateSigningRequest").value(
-                        createCertificateFromCsrRequest
-                                .getCertificateSigningRequest());
+                jsonGenerator.writeFieldName("certificateSigningRequest")
+                        .writeValue(
+                                createCertificateFromCsrRequest
+                                        .getCertificateSigningRequest());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

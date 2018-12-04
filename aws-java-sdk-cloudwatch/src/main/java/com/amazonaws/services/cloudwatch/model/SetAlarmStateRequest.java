@@ -64,6 +64,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *        within the user's AWS account. The maximum length is 255
      *        characters.
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -78,6 +79,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *         within the user's AWS account. The maximum length is 255
      *         characters.
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -95,6 +97,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetAlarmStateRequest withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -109,6 +112,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *        The value of the state.
      * @see StateValue
      */
+
     public void setStateValue(String stateValue) {
         this.stateValue = stateValue;
     }
@@ -121,6 +125,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return The value of the state.
      * @see StateValue
      */
+
     public String getStateValue() {
         return this.stateValue;
     }
@@ -136,6 +141,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StateValue
      */
+
     public SetAlarmStateRequest withStateValue(String stateValue) {
         setStateValue(stateValue);
         return this;
@@ -148,10 +154,9 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * 
      * @param stateValue
      *        The value of the state.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StateValue
      */
+
     public void setStateValue(StateValue stateValue) {
         this.stateValue = stateValue.toString();
     }
@@ -167,6 +172,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StateValue
      */
+
     public SetAlarmStateRequest withStateValue(StateValue stateValue) {
         setStateValue(stateValue);
         return this;
@@ -182,6 +188,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *        The reason that this alarm is set to this specific state (in
      *        human-readable text format)
      */
+
     public void setStateReason(String stateReason) {
         this.stateReason = stateReason;
     }
@@ -195,6 +202,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return The reason that this alarm is set to this specific state (in
      *         human-readable text format)
      */
+
     public String getStateReason() {
         return this.stateReason;
     }
@@ -211,6 +219,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetAlarmStateRequest withStateReason(String stateReason) {
         setStateReason(stateReason);
         return this;
@@ -226,6 +235,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      *        The reason that this alarm is set to this specific state (in
      *        machine-readable JSON format)
      */
+
     public void setStateReasonData(String stateReasonData) {
         this.stateReasonData = stateReasonData;
     }
@@ -239,6 +249,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return The reason that this alarm is set to this specific state (in
      *         machine-readable JSON format)
      */
+
     public String getStateReasonData() {
         return this.stateReasonData;
     }
@@ -255,6 +266,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetAlarmStateRequest withStateReasonData(String stateReasonData) {
         setStateReasonData(stateReasonData);
         return this;

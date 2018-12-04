@@ -20,32 +20,60 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to get information about the current <a>ClientCertificate</a>
+ * resource.
+ * </p>
  */
 public class GetClientCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * </p>
+     */
     private String clientCertificateId;
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        described.
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * </p>
+     * 
+     * @return The identifier of the <a>ClientCertificate</a> resource to be
+     *         described.
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        described.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificateRequest withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);

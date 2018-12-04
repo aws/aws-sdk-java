@@ -195,6 +195,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request) {
+
+        return createTapeWithBarcodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(
+            CreateTapeWithBarcodeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTapesResult> createTapesAsync(
             CreateTapesRequest request) {
 
@@ -659,6 +674,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     }
 
     @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            ListTapesRequest request) {
+
+        return listTapesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapesResult> listTapesAsync(
+            ListTapesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(
             ListVolumeInitiatorsRequest request) {
 
@@ -784,6 +814,21 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway
     public java.util.concurrent.Future<RetrieveTapeRecoveryPointResult> retrieveTapeRecoveryPointAsync(
             RetrieveTapeRecoveryPointRequest request,
             com.amazonaws.handlers.AsyncHandler<RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request) {
+
+        return setLocalConsolePasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(
+            SetLocalConsolePasswordRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

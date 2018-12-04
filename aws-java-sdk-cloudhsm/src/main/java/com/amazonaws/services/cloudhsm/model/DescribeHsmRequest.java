@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>DescribeHsm</a> action.
+ * Contains the inputs for the <a>DescribeHsm</a> operation.
  * </p>
  */
 public class DescribeHsmRequest extends AmazonWebServiceRequest implements
@@ -52,6 +52,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      *        The ARN of the HSM. Either the <i>HsmArn</i> or the
      *        <i>SerialNumber</i> parameter must be specified.
      */
+
     public void setHsmArn(String hsmArn) {
         this.hsmArn = hsmArn;
     }
@@ -65,6 +66,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      * @return The ARN of the HSM. Either the <i>HsmArn</i> or the
      *         <i>SerialNumber</i> parameter must be specified.
      */
+
     public String getHsmArn() {
         return this.hsmArn;
     }
@@ -81,6 +83,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmRequest withHsmArn(String hsmArn) {
         setHsmArn(hsmArn);
         return this;
@@ -96,6 +99,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      *        The serial number of the HSM. Either the <i>HsmArn</i> or the
      *        <i>HsmSerialNumber</i> parameter must be specified.
      */
+
     public void setHsmSerialNumber(String hsmSerialNumber) {
         this.hsmSerialNumber = hsmSerialNumber;
     }
@@ -109,6 +113,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      * @return The serial number of the HSM. Either the <i>HsmArn</i> or the
      *         <i>HsmSerialNumber</i> parameter must be specified.
      */
+
     public String getHsmSerialNumber() {
         return this.hsmSerialNumber;
     }
@@ -125,6 +130,7 @@ public class DescribeHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeHsmRequest withHsmSerialNumber(String hsmSerialNumber) {
         setHsmSerialNumber(hsmSerialNumber);
         return this;

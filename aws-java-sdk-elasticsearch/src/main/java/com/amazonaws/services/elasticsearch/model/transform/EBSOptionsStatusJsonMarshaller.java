@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EBSOptionsStatusMarshaller
@@ -39,31 +34,31 @@ import com.amazonaws.util.json.*;
 public class EBSOptionsStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EBSOptionsStatus eBSOptionsStatus,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (eBSOptionsStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (eBSOptionsStatus.getOptions() != null) {
-                jsonWriter.key("Options");
+                jsonGenerator.writeFieldName("Options");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
-                        eBSOptionsStatus.getOptions(), jsonWriter);
+                        eBSOptionsStatus.getOptions(), jsonGenerator);
             }
-
             if (eBSOptionsStatus.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 OptionStatusJsonMarshaller.getInstance().marshall(
-                        eBSOptionsStatus.getStatus(), jsonWriter);
+                        eBSOptionsStatus.getStatus(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -29,6 +29,21 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements
     }
 
     @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request) {
+
+        return addTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(
+            AddTagsToResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(
             CreateHapgRequest request) {
 
@@ -384,6 +399,21 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(
             ModifyHapgRequest request) {
 
@@ -424,6 +454,21 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements
     public java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(
             ModifyLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request) {
+
+        return removeTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
+            RemoveTagsFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -27,13 +27,24 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
     /**
      * <p>
      * The ID of the signing certificate you want to update.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
      * </p>
      */
     private String certificateId;
@@ -60,7 +71,11 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate.
      *        <code>Active</code> means the certificate can be used for API
@@ -78,7 +93,11 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate.
      *        <code>Active</code> means the certificate can be used for API
@@ -93,37 +112,73 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user the signing certificate belongs to.
+     *        The name of the IAM user the signing certificate belongs to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name of the user the signing certificate belongs to.
+     * @return The name of the IAM user the signing certificate belongs to.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
 
     /**
      * <p>
-     * The name of the user the signing certificate belongs to.
+     * The name of the IAM user the signing certificate belongs to.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user the signing certificate belongs to.
+     *        The name of the IAM user the signing certificate belongs to.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSigningCertificateRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -133,10 +188,20 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -145,9 +210,19 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
-     * @return The ID of the signing certificate you want to update.
+     * @return The ID of the signing certificate you want to update.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters that can consist of
+     *         any upper or lowercased letter or digit.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -156,12 +231,22 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The ID of the signing certificate you want to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param certificateId
-     *        The ID of the signing certificate you want to update.
+     *        The ID of the signing certificate you want to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSigningCertificateRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);
@@ -182,6 +267,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *        cannot be used.
      * @see StatusType
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -199,6 +285,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         cannot be used.
      * @see StatusType
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -219,6 +306,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StatusType
      */
+
     public UpdateSigningCertificateRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -236,10 +324,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *        <code>Active</code> means the certificate can be used for API
      *        calls to AWS, while <code>Inactive</code> means the certificate
      *        cannot be used.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StatusType
      */
+
     public void setStatus(StatusType status) {
         this.status = status.toString();
     }
@@ -260,6 +347,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StatusType
      */
+
     public UpdateSigningCertificateRequest withStatus(StatusType status) {
         setStatus(status);
         return this;

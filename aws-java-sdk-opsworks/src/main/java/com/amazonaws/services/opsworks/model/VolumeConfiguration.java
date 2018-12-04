@@ -76,6 +76,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @param mountPoint
      *        The volume mount point. For example "/dev/sdh".
      */
+
     public void setMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
     }
@@ -87,6 +88,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @return The volume mount point. For example "/dev/sdh".
      */
+
     public String getMountPoint() {
         return this.mountPoint;
     }
@@ -101,6 +103,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withMountPoint(String mountPoint) {
         setMountPoint(mountPoint);
         return this;
@@ -117,6 +120,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      *        href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *        level</a>.
      */
+
     public void setRaidLevel(Integer raidLevel) {
         this.raidLevel = raidLevel;
     }
@@ -131,6 +135,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      *         href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID
      *         level</a>.
      */
+
     public Integer getRaidLevel() {
         return this.raidLevel;
     }
@@ -148,6 +153,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withRaidLevel(Integer raidLevel) {
         setRaidLevel(raidLevel);
         return this;
@@ -161,6 +167,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @param numberOfDisks
      *        The number of disks in the volume.
      */
+
     public void setNumberOfDisks(Integer numberOfDisks) {
         this.numberOfDisks = numberOfDisks;
     }
@@ -172,6 +179,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @return The number of disks in the volume.
      */
+
     public Integer getNumberOfDisks() {
         return this.numberOfDisks;
     }
@@ -186,6 +194,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withNumberOfDisks(Integer numberOfDisks) {
         setNumberOfDisks(numberOfDisks);
         return this;
@@ -199,6 +208,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @param size
      *        The volume size.
      */
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -210,6 +220,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @return The volume size.
      */
+
     public Integer getSize() {
         return this.size;
     }
@@ -224,6 +235,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withSize(Integer size) {
         setSize(size);
         return this;
@@ -246,6 +258,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      *        <li><code>io1</code> - Provisioned IOPS (SSD)</li>
      *        <li><code>gp2</code> - General Purpose (SSD)</li>
      */
+
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
     }
@@ -266,6 +279,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      *         <li><code>io1</code> - Provisioned IOPS (SSD)</li>
      *         <li><code>gp2</code> - General Purpose (SSD)</li>
      */
+
     public String getVolumeType() {
         return this.volumeType;
     }
@@ -289,6 +303,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withVolumeType(String volumeType) {
         setVolumeType(volumeType);
         return this;
@@ -302,6 +317,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @param iops
      *        For PIOPS volumes, the IOPS per disk.
      */
+
     public void setIops(Integer iops) {
         this.iops = iops;
     }
@@ -313,6 +329,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * 
      * @return For PIOPS volumes, the IOPS per disk.
      */
+
     public Integer getIops() {
         return this.iops;
     }
@@ -327,6 +344,7 @@ public class VolumeConfiguration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeConfiguration withIops(Integer iops) {
         setIops(iops);
         return this;

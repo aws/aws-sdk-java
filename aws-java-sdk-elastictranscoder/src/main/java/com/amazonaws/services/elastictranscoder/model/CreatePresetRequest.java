@@ -80,6 +80,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      *        The name of the preset. We recommend that the name be unique
      *        within the AWS account, but uniqueness is not enforced.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -93,6 +94,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return The name of the preset. We recommend that the name be unique
      *         within the AWS account, but uniqueness is not enforced.
      */
+
     public String getName() {
         return this.name;
     }
@@ -109,6 +111,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withName(String name) {
         setName(name);
         return this;
@@ -122,6 +125,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A description of the preset.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -133,6 +137,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * 
      * @return A description of the preset.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -147,6 +152,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -168,6 +174,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      *        <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
      *        <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
+
     public void setContainer(String container) {
         this.container = container;
     }
@@ -187,6 +194,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      *         <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
      *         <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
      */
+
     public String getContainer() {
         return this.container;
     }
@@ -209,6 +217,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withContainer(String container) {
         setContainer(container);
         return this;
@@ -222,6 +231,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @param video
      *        A section of the request body that specifies the video parameters.
      */
+
     public void setVideo(VideoParameters video) {
         this.video = video;
     }
@@ -234,6 +244,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return A section of the request body that specifies the video
      *         parameters.
      */
+
     public VideoParameters getVideo() {
         return this.video;
     }
@@ -248,6 +259,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withVideo(VideoParameters video) {
         setVideo(video);
         return this;
@@ -261,6 +273,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @param audio
      *        A section of the request body that specifies the audio parameters.
      */
+
     public void setAudio(AudioParameters audio) {
         this.audio = audio;
     }
@@ -273,6 +286,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return A section of the request body that specifies the audio
      *         parameters.
      */
+
     public AudioParameters getAudio() {
         return this.audio;
     }
@@ -287,6 +301,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withAudio(AudioParameters audio) {
         setAudio(audio);
         return this;
@@ -302,6 +317,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      *        A section of the request body that specifies the thumbnail
      *        parameters, if any.
      */
+
     public void setThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;
     }
@@ -315,6 +331,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return A section of the request body that specifies the thumbnail
      *         parameters, if any.
      */
+
     public Thumbnails getThumbnails() {
         return this.thumbnails;
     }
@@ -331,6 +348,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePresetRequest withThumbnails(Thumbnails thumbnails) {
         setThumbnails(thumbnails);
         return this;

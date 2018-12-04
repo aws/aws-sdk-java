@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
@@ -24,956 +26,1137 @@ import java.io.Serializable;
 public class LoadBalancerDescription implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the load balancer.
+     * </p>
      */
     private String loadBalancerName;
-
     /**
+     * <p>
      * The external DNS name of the load balancer.
+     * </p>
      */
     private String dNSName;
-
     /**
+     * <p>
      * The Amazon Route 53 hosted zone associated with the load balancer.
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
+     * Load Balancing Developer Guide</i>.
+     * </p>
      */
     private String canonicalHostedZoneName;
-
     /**
-     * The ID of the Amazon Route 53 hosted zone name associated with the
-     * load balancer.
+     * <p>
+     * The ID of the Amazon Route 53 hosted zone name associated with the load
+     * balancer.
+     * </p>
      */
     private String canonicalHostedZoneNameID;
-
     /**
+     * <p>
      * The listeners for the load balancer.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptions;
-
+    private com.amazonaws.internal.SdkInternalList<ListenerDescription> listenerDescriptions;
     /**
+     * <p>
      * The policies defined for the load balancer.
+     * </p>
      */
     private Policies policies;
-
     /**
+     * <p>
      * Information about the back-end servers.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptions;
-
+    private com.amazonaws.internal.SdkInternalList<BackendServerDescription> backendServerDescriptions;
     /**
+     * <p>
      * The Availability Zones for the load balancer.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
-
+    private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
+     * <p>
      * The IDs of the subnets for the load balancer.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
-
+    private com.amazonaws.internal.SdkInternalList<String> subnets;
     /**
+     * <p>
      * The ID of the VPC for the load balancer.
+     * </p>
      */
     private String vPCId;
-
     /**
+     * <p>
      * The IDs of the instances for the load balancer.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
-
+    private com.amazonaws.internal.SdkInternalList<Instance> instances;
     /**
+     * <p>
      * Information about the health checks conducted on the load balancer.
+     * </p>
      */
     private HealthCheck healthCheck;
-
     /**
+     * <p>
      * The security group that you can use as part of your inbound rules for
      * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back
-     * end instance that specifies this source security group as the inbound
-     * source.
+     * traffic from load balancers, add a security group rule to your back end
+     * instance that specifies this source security group as the inbound source.
+     * </p>
      */
     private SourceSecurityGroup sourceSecurityGroup;
-
     /**
-     * The security groups for the load balancer. Valid only for load
-     * balancers in a VPC.
+     * <p>
+     * The security groups for the load balancer. Valid only for load balancers
+     * in a VPC.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
-
+    private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
+     * <p>
      * The date and time the load balancer was created.
+     * </p>
      */
     private java.util.Date createdTime;
-
     /**
+     * <p>
      * The type of load balancer. Valid only for load balancers in a VPC.
-     * <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     * balancer has a public DNS name that resolves to a public IP address.
-     * <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     * has a public DNS name that resolves to a private IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
+     * has a public DNS name that resolves to a public IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internal</code>, the load balancer has a
+     * public DNS name that resolves to a private IP address.
+     * </p>
      */
     private String scheme;
 
     /**
-     * Default constructor for a new LoadBalancerDescription object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public LoadBalancerDescription() {}
-    
-    /**
+     * <p>
      * The name of the load balancer.
-     *
-     * @return The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
      */
-    public String getLoadBalancerName() {
-        return loadBalancerName;
-    }
-    
-    /**
-     * The name of the load balancer.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     */
+
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
-    
+
     /**
-     * The name of the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @return The name of the load balancer.
      */
+
+    public String getLoadBalancerName() {
+        return this.loadBalancerName;
+    }
+
+    /**
+     * <p>
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withLoadBalancerName(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+        setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
+     * <p>
      * The external DNS name of the load balancer.
-     *
-     * @return The external DNS name of the load balancer.
+     * </p>
+     * 
+     * @param dNSName
+     *        The external DNS name of the load balancer.
      */
-    public String getDNSName() {
-        return dNSName;
-    }
-    
-    /**
-     * The external DNS name of the load balancer.
-     *
-     * @param dNSName The external DNS name of the load balancer.
-     */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
-    
+
     /**
-     * The external DNS name of the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dNSName The external DNS name of the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The external DNS name of the load balancer.
+     * </p>
+     * 
+     * @return The external DNS name of the load balancer.
      */
+
+    public String getDNSName() {
+        return this.dNSName;
+    }
+
+    /**
+     * <p>
+     * The external DNS name of the load balancer.
+     * </p>
+     * 
+     * @param dNSName
+     *        The external DNS name of the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withDNSName(String dNSName) {
-        this.dNSName = dNSName;
+        setDNSName(dNSName);
         return this;
     }
 
     /**
+     * <p>
      * The Amazon Route 53 hosted zone associated with the load balancer.
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
-     *
-     * @return The Amazon Route 53 hosted zone associated with the load balancer.
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
+     * Load Balancing Developer Guide</i>.
+     * </p>
+     * 
+     * @param canonicalHostedZoneName
+     *        The Amazon Route 53 hosted zone associated with the load
+     *        balancer.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     *        >Using Domain Names With Elastic Load Balancing</a> in the
+     *        <i>Elastic Load Balancing Developer Guide</i>.
      */
-    public String getCanonicalHostedZoneName() {
-        return canonicalHostedZoneName;
-    }
-    
-    /**
-     * The Amazon Route 53 hosted zone associated with the load balancer.
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
-     *
-     * @param canonicalHostedZoneName The Amazon Route 53 hosted zone associated with the load balancer.
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
-     */
+
     public void setCanonicalHostedZoneName(String canonicalHostedZoneName) {
         this.canonicalHostedZoneName = canonicalHostedZoneName;
     }
-    
+
     /**
-     * The Amazon Route 53 hosted zone associated with the load balancer.
-     * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     * Balancing Developer Guide</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param canonicalHostedZoneName The Amazon Route 53 hosted zone associated with the load balancer.
-     *         <p>For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
-     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
-     *         Balancing Developer Guide</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
+     * Load Balancing Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Route 53 hosted zone associated with the load
+     *         balancer.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     *         >Using Domain Names With Elastic Load Balancing</a> in the
+     *         <i>Elastic Load Balancing Developer Guide</i>.
      */
-    public LoadBalancerDescription withCanonicalHostedZoneName(String canonicalHostedZoneName) {
-        this.canonicalHostedZoneName = canonicalHostedZoneName;
+
+    public String getCanonicalHostedZoneName() {
+        return this.canonicalHostedZoneName;
+    }
+
+    /**
+     * <p>
+     * The Amazon Route 53 hosted zone associated with the load balancer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     * >Using Domain Names With Elastic Load Balancing</a> in the <i>Elastic
+     * Load Balancing Developer Guide</i>.
+     * </p>
+     * 
+     * @param canonicalHostedZoneName
+     *        The Amazon Route 53 hosted zone associated with the load
+     *        balancer.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html"
+     *        >Using Domain Names With Elastic Load Balancing</a> in the
+     *        <i>Elastic Load Balancing Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LoadBalancerDescription withCanonicalHostedZoneName(
+            String canonicalHostedZoneName) {
+        setCanonicalHostedZoneName(canonicalHostedZoneName);
         return this;
     }
 
     /**
-     * The ID of the Amazon Route 53 hosted zone name associated with the
-     * load balancer.
-     *
-     * @return The ID of the Amazon Route 53 hosted zone name associated with the
-     *         load balancer.
+     * <p>
+     * The ID of the Amazon Route 53 hosted zone name associated with the load
+     * balancer.
+     * </p>
+     * 
+     * @param canonicalHostedZoneNameID
+     *        The ID of the Amazon Route 53 hosted zone name associated with the
+     *        load balancer.
      */
-    public String getCanonicalHostedZoneNameID() {
-        return canonicalHostedZoneNameID;
-    }
-    
-    /**
-     * The ID of the Amazon Route 53 hosted zone name associated with the
-     * load balancer.
-     *
-     * @param canonicalHostedZoneNameID The ID of the Amazon Route 53 hosted zone name associated with the
-     *         load balancer.
-     */
+
     public void setCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
         this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
     }
-    
+
     /**
-     * The ID of the Amazon Route 53 hosted zone name associated with the
-     * load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param canonicalHostedZoneNameID The ID of the Amazon Route 53 hosted zone name associated with the
-     *         load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the Amazon Route 53 hosted zone name associated with the load
+     * balancer.
+     * </p>
+     * 
+     * @return The ID of the Amazon Route 53 hosted zone name associated with
+     *         the load balancer.
      */
-    public LoadBalancerDescription withCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
-        this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
+
+    public String getCanonicalHostedZoneNameID() {
+        return this.canonicalHostedZoneNameID;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Route 53 hosted zone name associated with the load
+     * balancer.
+     * </p>
+     * 
+     * @param canonicalHostedZoneNameID
+     *        The ID of the Amazon Route 53 hosted zone name associated with the
+     *        load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LoadBalancerDescription withCanonicalHostedZoneNameID(
+            String canonicalHostedZoneNameID) {
+        setCanonicalHostedZoneNameID(canonicalHostedZoneNameID);
         return this;
     }
 
     /**
+     * <p>
      * The listeners for the load balancer.
-     *
+     * </p>
+     * 
      * @return The listeners for the load balancer.
      */
+
     public java.util.List<ListenerDescription> getListenerDescriptions() {
         if (listenerDescriptions == null) {
-              listenerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>();
-              listenerDescriptions.setAutoConstruct(true);
+            listenerDescriptions = new com.amazonaws.internal.SdkInternalList<ListenerDescription>();
         }
         return listenerDescriptions;
     }
-    
+
     /**
+     * <p>
      * The listeners for the load balancer.
-     *
-     * @param listenerDescriptions The listeners for the load balancer.
+     * </p>
+     * 
+     * @param listenerDescriptions
+     *        The listeners for the load balancer.
      */
-    public void setListenerDescriptions(java.util.Collection<ListenerDescription> listenerDescriptions) {
+
+    public void setListenerDescriptions(
+            java.util.Collection<ListenerDescription> listenerDescriptions) {
         if (listenerDescriptions == null) {
             this.listenerDescriptions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>(listenerDescriptions.size());
-        listenerDescriptionsCopy.addAll(listenerDescriptions);
-        this.listenerDescriptions = listenerDescriptionsCopy;
+
+        this.listenerDescriptions = new com.amazonaws.internal.SdkInternalList<ListenerDescription>(
+                listenerDescriptions);
     }
-    
+
     /**
+     * <p>
      * The listeners for the load balancer.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setListenerDescriptions(java.util.Collection)} or
      * {@link #withListenerDescriptions(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param listenerDescriptions The listeners for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param listenerDescriptions
+     *        The listeners for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withListenerDescriptions(ListenerDescription... listenerDescriptions) {
-        if (getListenerDescriptions() == null) setListenerDescriptions(new java.util.ArrayList<ListenerDescription>(listenerDescriptions.length));
-        for (ListenerDescription value : listenerDescriptions) {
-            getListenerDescriptions().add(value);
+
+    public LoadBalancerDescription withListenerDescriptions(
+            ListenerDescription... listenerDescriptions) {
+        if (this.listenerDescriptions == null) {
+            setListenerDescriptions(new com.amazonaws.internal.SdkInternalList<ListenerDescription>(
+                    listenerDescriptions.length));
+        }
+        for (ListenerDescription ele : listenerDescriptions) {
+            this.listenerDescriptions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The listeners for the load balancer.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param listenerDescriptions The listeners for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param listenerDescriptions
+     *        The listeners for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withListenerDescriptions(java.util.Collection<ListenerDescription> listenerDescriptions) {
-        if (listenerDescriptions == null) {
-            this.listenerDescriptions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>(listenerDescriptions.size());
-            listenerDescriptionsCopy.addAll(listenerDescriptions);
-            this.listenerDescriptions = listenerDescriptionsCopy;
-        }
 
+    public LoadBalancerDescription withListenerDescriptions(
+            java.util.Collection<ListenerDescription> listenerDescriptions) {
+        setListenerDescriptions(listenerDescriptions);
         return this;
     }
 
     /**
+     * <p>
      * The policies defined for the load balancer.
-     *
-     * @return The policies defined for the load balancer.
+     * </p>
+     * 
+     * @param policies
+     *        The policies defined for the load balancer.
      */
-    public Policies getPolicies() {
-        return policies;
-    }
-    
-    /**
-     * The policies defined for the load balancer.
-     *
-     * @param policies The policies defined for the load balancer.
-     */
+
     public void setPolicies(Policies policies) {
         this.policies = policies;
     }
-    
+
     /**
-     * The policies defined for the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param policies The policies defined for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The policies defined for the load balancer.
+     * </p>
+     * 
+     * @return The policies defined for the load balancer.
      */
+
+    public Policies getPolicies() {
+        return this.policies;
+    }
+
+    /**
+     * <p>
+     * The policies defined for the load balancer.
+     * </p>
+     * 
+     * @param policies
+     *        The policies defined for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withPolicies(Policies policies) {
-        this.policies = policies;
+        setPolicies(policies);
         return this;
     }
 
     /**
+     * <p>
      * Information about the back-end servers.
-     *
+     * </p>
+     * 
      * @return Information about the back-end servers.
      */
+
     public java.util.List<BackendServerDescription> getBackendServerDescriptions() {
         if (backendServerDescriptions == null) {
-              backendServerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>();
-              backendServerDescriptions.setAutoConstruct(true);
+            backendServerDescriptions = new com.amazonaws.internal.SdkInternalList<BackendServerDescription>();
         }
         return backendServerDescriptions;
     }
-    
+
     /**
+     * <p>
      * Information about the back-end servers.
-     *
-     * @param backendServerDescriptions Information about the back-end servers.
+     * </p>
+     * 
+     * @param backendServerDescriptions
+     *        Information about the back-end servers.
      */
-    public void setBackendServerDescriptions(java.util.Collection<BackendServerDescription> backendServerDescriptions) {
+
+    public void setBackendServerDescriptions(
+            java.util.Collection<BackendServerDescription> backendServerDescriptions) {
         if (backendServerDescriptions == null) {
             this.backendServerDescriptions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>(backendServerDescriptions.size());
-        backendServerDescriptionsCopy.addAll(backendServerDescriptions);
-        this.backendServerDescriptions = backendServerDescriptionsCopy;
+
+        this.backendServerDescriptions = new com.amazonaws.internal.SdkInternalList<BackendServerDescription>(
+                backendServerDescriptions);
     }
-    
+
     /**
+     * <p>
      * Information about the back-end servers.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setBackendServerDescriptions(java.util.Collection)}
-     * or {@link #withBackendServerDescriptions(java.util.Collection)} if you
-     * want to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param backendServerDescriptions Information about the back-end servers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setBackendServerDescriptions(java.util.Collection)} or
+     * {@link #withBackendServerDescriptions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param backendServerDescriptions
+     *        Information about the back-end servers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withBackendServerDescriptions(BackendServerDescription... backendServerDescriptions) {
-        if (getBackendServerDescriptions() == null) setBackendServerDescriptions(new java.util.ArrayList<BackendServerDescription>(backendServerDescriptions.length));
-        for (BackendServerDescription value : backendServerDescriptions) {
-            getBackendServerDescriptions().add(value);
+
+    public LoadBalancerDescription withBackendServerDescriptions(
+            BackendServerDescription... backendServerDescriptions) {
+        if (this.backendServerDescriptions == null) {
+            setBackendServerDescriptions(new com.amazonaws.internal.SdkInternalList<BackendServerDescription>(
+                    backendServerDescriptions.length));
+        }
+        for (BackendServerDescription ele : backendServerDescriptions) {
+            this.backendServerDescriptions.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * Information about the back-end servers.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param backendServerDescriptions Information about the back-end servers.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param backendServerDescriptions
+     *        Information about the back-end servers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withBackendServerDescriptions(java.util.Collection<BackendServerDescription> backendServerDescriptions) {
-        if (backendServerDescriptions == null) {
-            this.backendServerDescriptions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>(backendServerDescriptions.size());
-            backendServerDescriptionsCopy.addAll(backendServerDescriptions);
-            this.backendServerDescriptions = backendServerDescriptionsCopy;
-        }
 
+    public LoadBalancerDescription withBackendServerDescriptions(
+            java.util.Collection<BackendServerDescription> backendServerDescriptions) {
+        setBackendServerDescriptions(backendServerDescriptions);
         return this;
     }
 
     /**
+     * <p>
      * The Availability Zones for the load balancer.
-     *
+     * </p>
+     * 
      * @return The Availability Zones for the load balancer.
      */
+
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
-              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              availabilityZones.setAutoConstruct(true);
+            availabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return availabilityZones;
     }
-    
+
     /**
+     * <p>
      * The Availability Zones for the load balancer.
-     *
-     * @param availabilityZones The Availability Zones for the load balancer.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones for the load balancer.
      */
-    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
+
+    public void setAvailabilityZones(
+            java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
             this.availabilityZones = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
-        availabilityZonesCopy.addAll(availabilityZones);
-        this.availabilityZones = availabilityZonesCopy;
+
+        this.availabilityZones = new com.amazonaws.internal.SdkInternalList<String>(
+                availabilityZones);
     }
-    
+
     /**
+     * <p>
      * The Availability Zones for the load balancer.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAvailabilityZones(java.util.Collection)} or
      * {@link #withAvailabilityZones(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param availabilityZones The Availability Zones for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withAvailabilityZones(String... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
-        for (String value : availabilityZones) {
-            getAvailabilityZones().add(value);
+
+    public LoadBalancerDescription withAvailabilityZones(
+            String... availabilityZones) {
+        if (this.availabilityZones == null) {
+            setAvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(
+                    availabilityZones.length));
+        }
+        for (String ele : availabilityZones) {
+            this.availabilityZones.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The Availability Zones for the load balancer.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param availabilityZones The Availability Zones for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        The Availability Zones for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        if (availabilityZones == null) {
-            this.availabilityZones = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
-            availabilityZonesCopy.addAll(availabilityZones);
-            this.availabilityZones = availabilityZonesCopy;
-        }
 
+    public LoadBalancerDescription withAvailabilityZones(
+            java.util.Collection<String> availabilityZones) {
+        setAvailabilityZones(availabilityZones);
         return this;
     }
 
     /**
+     * <p>
      * The IDs of the subnets for the load balancer.
-     *
+     * </p>
+     * 
      * @return The IDs of the subnets for the load balancer.
      */
+
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
-              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              subnets.setAutoConstruct(true);
+            subnets = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return subnets;
     }
-    
+
     /**
+     * <p>
      * The IDs of the subnets for the load balancer.
-     *
-     * @param subnets The IDs of the subnets for the load balancer.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets for the load balancer.
      */
+
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
             this.subnets = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
-        subnetsCopy.addAll(subnets);
-        this.subnets = subnetsCopy;
+
+        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(
+                subnets);
     }
-    
+
     /**
+     * <p>
      * The IDs of the subnets for the load balancer.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or {@link
-     * #withSubnets(java.util.Collection)} if you want to override the
+     * any). Use {@link #setSubnets(java.util.Collection)} or
+     * {@link #withSubnets(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subnets The IDs of the subnets for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public LoadBalancerDescription withSubnets(String... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
-        for (String value : subnets) {
-            getSubnets().add(value);
+        if (this.subnets == null) {
+            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
+                    subnets.length));
+        }
+        for (String ele : subnets) {
+            this.subnets.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The IDs of the subnets for the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subnets The IDs of the subnets for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The IDs of the subnets for the load balancer.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withSubnets(java.util.Collection<String> subnets) {
-        if (subnets == null) {
-            this.subnets = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
-            subnetsCopy.addAll(subnets);
-            this.subnets = subnetsCopy;
-        }
 
+    public LoadBalancerDescription withSubnets(
+            java.util.Collection<String> subnets) {
+        setSubnets(subnets);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the VPC for the load balancer.
-     *
-     * @return The ID of the VPC for the load balancer.
+     * </p>
+     * 
+     * @param vPCId
+     *        The ID of the VPC for the load balancer.
      */
-    public String getVPCId() {
-        return vPCId;
-    }
-    
-    /**
-     * The ID of the VPC for the load balancer.
-     *
-     * @param vPCId The ID of the VPC for the load balancer.
-     */
+
     public void setVPCId(String vPCId) {
         this.vPCId = vPCId;
     }
-    
+
     /**
-     * The ID of the VPC for the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param vPCId The ID of the VPC for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the VPC for the load balancer.
+     * </p>
+     * 
+     * @return The ID of the VPC for the load balancer.
      */
+
+    public String getVPCId() {
+        return this.vPCId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for the load balancer.
+     * </p>
+     * 
+     * @param vPCId
+     *        The ID of the VPC for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withVPCId(String vPCId) {
-        this.vPCId = vPCId;
+        setVPCId(vPCId);
         return this;
     }
 
     /**
+     * <p>
      * The IDs of the instances for the load balancer.
-     *
+     * </p>
+     * 
      * @return The IDs of the instances for the load balancer.
      */
+
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
-              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
-              instances.setAutoConstruct(true);
+            instances = new com.amazonaws.internal.SdkInternalList<Instance>();
         }
         return instances;
     }
-    
+
     /**
+     * <p>
      * The IDs of the instances for the load balancer.
-     *
-     * @param instances The IDs of the instances for the load balancer.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances for the load balancer.
      */
+
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
             this.instances = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
-        instancesCopy.addAll(instances);
-        this.instances = instancesCopy;
+
+        this.instances = new com.amazonaws.internal.SdkInternalList<Instance>(
+                instances);
     }
-    
+
     /**
+     * <p>
      * The IDs of the instances for the load balancer.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setInstances(java.util.Collection)} or {@link
-     * #withInstances(java.util.Collection)} if you want to override the
+     * any). Use {@link #setInstances(java.util.Collection)} or
+     * {@link #withInstances(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instances The IDs of the instances for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public LoadBalancerDescription withInstances(Instance... instances) {
-        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
-        for (Instance value : instances) {
-            getInstances().add(value);
+        if (this.instances == null) {
+            setInstances(new com.amazonaws.internal.SdkInternalList<Instance>(
+                    instances.length));
+        }
+        for (Instance ele : instances) {
+            this.instances.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The IDs of the instances for the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instances The IDs of the instances for the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The IDs of the instances for the load balancer.
+     * </p>
+     * 
+     * @param instances
+     *        The IDs of the instances for the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withInstances(java.util.Collection<Instance> instances) {
-        if (instances == null) {
-            this.instances = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
-            instancesCopy.addAll(instances);
-            this.instances = instancesCopy;
-        }
 
+    public LoadBalancerDescription withInstances(
+            java.util.Collection<Instance> instances) {
+        setInstances(instances);
         return this;
     }
 
     /**
+     * <p>
      * Information about the health checks conducted on the load balancer.
-     *
-     * @return Information about the health checks conducted on the load balancer.
+     * </p>
+     * 
+     * @param healthCheck
+     *        Information about the health checks conducted on the load
+     *        balancer.
      */
-    public HealthCheck getHealthCheck() {
-        return healthCheck;
-    }
-    
-    /**
-     * Information about the health checks conducted on the load balancer.
-     *
-     * @param healthCheck Information about the health checks conducted on the load balancer.
-     */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
-    
+
     /**
-     * Information about the health checks conducted on the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param healthCheck Information about the health checks conducted on the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Information about the health checks conducted on the load balancer.
+     * </p>
+     * 
+     * @return Information about the health checks conducted on the load
+     *         balancer.
      */
+
+    public HealthCheck getHealthCheck() {
+        return this.healthCheck;
+    }
+
+    /**
+     * <p>
+     * Information about the health checks conducted on the load balancer.
+     * </p>
+     * 
+     * @param healthCheck
+     *        Information about the health checks conducted on the load
+     *        balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withHealthCheck(HealthCheck healthCheck) {
-        this.healthCheck = healthCheck;
+        setHealthCheck(healthCheck);
         return this;
     }
 
     /**
+     * <p>
      * The security group that you can use as part of your inbound rules for
      * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back
-     * end instance that specifies this source security group as the inbound
-     * source.
-     *
-     * @return The security group that you can use as part of your inbound rules for
-     *         your load balancer's back-end application instances. To only allow
-     *         traffic from load balancers, add a security group rule to your back
-     *         end instance that specifies this source security group as the inbound
-     *         source.
+     * traffic from load balancers, add a security group rule to your back end
+     * instance that specifies this source security group as the inbound source.
+     * </p>
+     * 
+     * @param sourceSecurityGroup
+     *        The security group that you can use as part of your inbound rules
+     *        for your load balancer's back-end application instances. To only
+     *        allow traffic from load balancers, add a security group rule to
+     *        your back end instance that specifies this source security group
+     *        as the inbound source.
      */
-    public SourceSecurityGroup getSourceSecurityGroup() {
-        return sourceSecurityGroup;
-    }
-    
-    /**
-     * The security group that you can use as part of your inbound rules for
-     * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back
-     * end instance that specifies this source security group as the inbound
-     * source.
-     *
-     * @param sourceSecurityGroup The security group that you can use as part of your inbound rules for
-     *         your load balancer's back-end application instances. To only allow
-     *         traffic from load balancers, add a security group rule to your back
-     *         end instance that specifies this source security group as the inbound
-     *         source.
-     */
+
     public void setSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
         this.sourceSecurityGroup = sourceSecurityGroup;
     }
-    
+
     /**
+     * <p>
      * The security group that you can use as part of your inbound rules for
      * your load balancer's back-end application instances. To only allow
-     * traffic from load balancers, add a security group rule to your back
-     * end instance that specifies this source security group as the inbound
-     * source.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param sourceSecurityGroup The security group that you can use as part of your inbound rules for
-     *         your load balancer's back-end application instances. To only allow
-     *         traffic from load balancers, add a security group rule to your back
-     *         end instance that specifies this source security group as the inbound
-     *         source.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * traffic from load balancers, add a security group rule to your back end
+     * instance that specifies this source security group as the inbound source.
+     * </p>
+     * 
+     * @return The security group that you can use as part of your inbound rules
+     *         for your load balancer's back-end application instances. To only
+     *         allow traffic from load balancers, add a security group rule to
+     *         your back end instance that specifies this source security group
+     *         as the inbound source.
      */
-    public LoadBalancerDescription withSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
-        this.sourceSecurityGroup = sourceSecurityGroup;
+
+    public SourceSecurityGroup getSourceSecurityGroup() {
+        return this.sourceSecurityGroup;
+    }
+
+    /**
+     * <p>
+     * The security group that you can use as part of your inbound rules for
+     * your load balancer's back-end application instances. To only allow
+     * traffic from load balancers, add a security group rule to your back end
+     * instance that specifies this source security group as the inbound source.
+     * </p>
+     * 
+     * @param sourceSecurityGroup
+     *        The security group that you can use as part of your inbound rules
+     *        for your load balancer's back-end application instances. To only
+     *        allow traffic from load balancers, add a security group rule to
+     *        your back end instance that specifies this source security group
+     *        as the inbound source.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public LoadBalancerDescription withSourceSecurityGroup(
+            SourceSecurityGroup sourceSecurityGroup) {
+        setSourceSecurityGroup(sourceSecurityGroup);
         return this;
     }
 
     /**
-     * The security groups for the load balancer. Valid only for load
-     * balancers in a VPC.
-     *
+     * <p>
+     * The security groups for the load balancer. Valid only for load balancers
+     * in a VPC.
+     * </p>
+     * 
      * @return The security groups for the load balancer. Valid only for load
      *         balancers in a VPC.
      */
+
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
-              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              securityGroups.setAutoConstruct(true);
+            securityGroups = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return securityGroups;
     }
-    
+
     /**
-     * The security groups for the load balancer. Valid only for load
-     * balancers in a VPC.
-     *
-     * @param securityGroups The security groups for the load balancer. Valid only for load
-     *         balancers in a VPC.
+     * <p>
+     * The security groups for the load balancer. Valid only for load balancers
+     * in a VPC.
+     * </p>
+     * 
+     * @param securityGroups
+     *        The security groups for the load balancer. Valid only for load
+     *        balancers in a VPC.
      */
+
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         if (securityGroups == null) {
             this.securityGroups = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
-        securityGroupsCopy.addAll(securityGroups);
-        this.securityGroups = securityGroupsCopy;
+
+        this.securityGroups = new com.amazonaws.internal.SdkInternalList<String>(
+                securityGroups);
     }
-    
+
     /**
-     * The security groups for the load balancer. Valid only for load
-     * balancers in a VPC.
+     * <p>
+     * The security groups for the load balancer. Valid only for load balancers
+     * in a VPC.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link
-     * #withSecurityGroups(java.util.Collection)} if you want to override the
-     * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroups The security groups for the load balancer. Valid only for load
-     *         balancers in a VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setSecurityGroups(java.util.Collection)} or
+     * {@link #withSecurityGroups(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param securityGroups
+     *        The security groups for the load balancer. Valid only for load
+     *        balancers in a VPC.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public LoadBalancerDescription withSecurityGroups(String... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
-        for (String value : securityGroups) {
-            getSecurityGroups().add(value);
+        if (this.securityGroups == null) {
+            setSecurityGroups(new com.amazonaws.internal.SdkInternalList<String>(
+                    securityGroups.length));
+        }
+        for (String ele : securityGroups) {
+            this.securityGroups.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The security groups for the load balancer. Valid only for load
-     * balancers in a VPC.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroups The security groups for the load balancer. Valid only for load
-     *         balancers in a VPC.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The security groups for the load balancer. Valid only for load balancers
+     * in a VPC.
+     * </p>
+     * 
+     * @param securityGroups
+     *        The security groups for the load balancer. Valid only for load
+     *        balancers in a VPC.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public LoadBalancerDescription withSecurityGroups(java.util.Collection<String> securityGroups) {
-        if (securityGroups == null) {
-            this.securityGroups = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
-            securityGroupsCopy.addAll(securityGroups);
-            this.securityGroups = securityGroupsCopy;
-        }
 
+    public LoadBalancerDescription withSecurityGroups(
+            java.util.Collection<String> securityGroups) {
+        setSecurityGroups(securityGroups);
         return this;
     }
 
     /**
+     * <p>
      * The date and time the load balancer was created.
-     *
-     * @return The date and time the load balancer was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The date and time the load balancer was created.
      */
-    public java.util.Date getCreatedTime() {
-        return createdTime;
-    }
-    
-    /**
-     * The date and time the load balancer was created.
-     *
-     * @param createdTime The date and time the load balancer was created.
-     */
+
     public void setCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
     }
-    
+
     /**
-     * The date and time the load balancer was created.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param createdTime The date and time the load balancer was created.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The date and time the load balancer was created.
+     * </p>
+     * 
+     * @return The date and time the load balancer was created.
      */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the load balancer was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The date and time the load balancer was created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withCreatedTime(java.util.Date createdTime) {
-        this.createdTime = createdTime;
+        setCreatedTime(createdTime);
         return this;
     }
 
     /**
+     * <p>
      * The type of load balancer. Valid only for load balancers in a VPC.
-     * <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     * balancer has a public DNS name that resolves to a public IP address.
-     * <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     * has a public DNS name that resolves to a private IP address.
-     *
-     * @return The type of load balancer. Valid only for load balancers in a VPC.
-     *         <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     *         balancer has a public DNS name that resolves to a public IP address.
-     *         <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     *         has a public DNS name that resolves to a private IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
+     * has a public DNS name that resolves to a public IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internal</code>, the load balancer has a
+     * public DNS name that resolves to a private IP address.
+     * </p>
+     * 
+     * @param scheme
+     *        The type of load balancer. Valid only for load balancers in a
+     *        VPC.</p>
+     *        <p>
+     *        If <code>Scheme</code> is <code>internet-facing</code>, the load
+     *        balancer has a public DNS name that resolves to a public IP
+     *        address.
+     *        </p>
+     *        <p>
+     *        If <code>Scheme</code> is <code>internal</code>, the load balancer
+     *        has a public DNS name that resolves to a private IP address.
      */
-    public String getScheme() {
-        return scheme;
-    }
-    
-    /**
-     * The type of load balancer. Valid only for load balancers in a VPC.
-     * <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     * balancer has a public DNS name that resolves to a public IP address.
-     * <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     * has a public DNS name that resolves to a private IP address.
-     *
-     * @param scheme The type of load balancer. Valid only for load balancers in a VPC.
-     *         <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     *         balancer has a public DNS name that resolves to a public IP address.
-     *         <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     *         has a public DNS name that resolves to a private IP address.
-     */
+
     public void setScheme(String scheme) {
         this.scheme = scheme;
     }
-    
+
     /**
-     * The type of load balancer. Valid only for load balancers in a VPC.
-     * <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     * balancer has a public DNS name that resolves to a public IP address.
-     * <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     * has a public DNS name that resolves to a private IP address.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param scheme The type of load balancer. Valid only for load balancers in a VPC.
-     *         <p>If <code>Scheme</code> is <code>internet-facing</code>, the load
-     *         balancer has a public DNS name that resolves to a public IP address.
-     *         <p>If <code>Scheme</code> is <code>internal</code>, the load balancer
-     *         has a public DNS name that resolves to a private IP address.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The type of load balancer. Valid only for load balancers in a VPC.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
+     * has a public DNS name that resolves to a public IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internal</code>, the load balancer has a
+     * public DNS name that resolves to a private IP address.
+     * </p>
+     * 
+     * @return The type of load balancer. Valid only for load balancers in a
+     *         VPC.</p>
+     *         <p>
+     *         If <code>Scheme</code> is <code>internet-facing</code>, the load
+     *         balancer has a public DNS name that resolves to a public IP
+     *         address.
+     *         </p>
+     *         <p>
+     *         If <code>Scheme</code> is <code>internal</code>, the load
+     *         balancer has a public DNS name that resolves to a private IP
+     *         address.
      */
+
+    public String getScheme() {
+        return this.scheme;
+    }
+
+    /**
+     * <p>
+     * The type of load balancer. Valid only for load balancers in a VPC.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internet-facing</code>, the load balancer
+     * has a public DNS name that resolves to a public IP address.
+     * </p>
+     * <p>
+     * If <code>Scheme</code> is <code>internal</code>, the load balancer has a
+     * public DNS name that resolves to a private IP address.
+     * </p>
+     * 
+     * @param scheme
+     *        The type of load balancer. Valid only for load balancers in a
+     *        VPC.</p>
+     *        <p>
+     *        If <code>Scheme</code> is <code>internet-facing</code>, the load
+     *        balancer has a public DNS name that resolves to a public IP
+     *        address.
+     *        </p>
+     *        <p>
+     *        If <code>Scheme</code> is <code>internal</code>, the load balancer
+     *        has a public DNS name that resolves to a private IP address.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public LoadBalancerDescription withScheme(String scheme) {
-        this.scheme = scheme;
+        setScheme(scheme);
         return this;
     }
 
@@ -989,106 +1172,220 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
-        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");
-        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ",");
-        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ",");
-        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ",");
-        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ",");
-        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ",");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");
-        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ",");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
-        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");
-        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");
-        if (getScheme() != null) sb.append("Scheme: " + getScheme() );
+        if (getLoadBalancerName() != null)
+            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getDNSName() != null)
+            sb.append("DNSName: " + getDNSName() + ",");
+        if (getCanonicalHostedZoneName() != null)
+            sb.append("CanonicalHostedZoneName: "
+                    + getCanonicalHostedZoneName() + ",");
+        if (getCanonicalHostedZoneNameID() != null)
+            sb.append("CanonicalHostedZoneNameID: "
+                    + getCanonicalHostedZoneNameID() + ",");
+        if (getListenerDescriptions() != null)
+            sb.append("ListenerDescriptions: " + getListenerDescriptions()
+                    + ",");
+        if (getPolicies() != null)
+            sb.append("Policies: " + getPolicies() + ",");
+        if (getBackendServerDescriptions() != null)
+            sb.append("BackendServerDescriptions: "
+                    + getBackendServerDescriptions() + ",");
+        if (getAvailabilityZones() != null)
+            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+        if (getSubnets() != null)
+            sb.append("Subnets: " + getSubnets() + ",");
+        if (getVPCId() != null)
+            sb.append("VPCId: " + getVPCId() + ",");
+        if (getInstances() != null)
+            sb.append("Instances: " + getInstances() + ",");
+        if (getHealthCheck() != null)
+            sb.append("HealthCheck: " + getHealthCheck() + ",");
+        if (getSourceSecurityGroup() != null)
+            sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");
+        if (getSecurityGroups() != null)
+            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: " + getCreatedTime() + ",");
+        if (getScheme() != null)
+            sb.append("Scheme: " + getScheme());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof LoadBalancerDescription == false)
+            return false;
+        LoadBalancerDescription other = (LoadBalancerDescription) obj;
+        if (other.getLoadBalancerName() == null
+                ^ this.getLoadBalancerName() == null)
+            return false;
+        if (other.getLoadBalancerName() != null
+                && other.getLoadBalancerName().equals(
+                        this.getLoadBalancerName()) == false)
+            return false;
+        if (other.getDNSName() == null ^ this.getDNSName() == null)
+            return false;
+        if (other.getDNSName() != null
+                && other.getDNSName().equals(this.getDNSName()) == false)
+            return false;
+        if (other.getCanonicalHostedZoneName() == null
+                ^ this.getCanonicalHostedZoneName() == null)
+            return false;
+        if (other.getCanonicalHostedZoneName() != null
+                && other.getCanonicalHostedZoneName().equals(
+                        this.getCanonicalHostedZoneName()) == false)
+            return false;
+        if (other.getCanonicalHostedZoneNameID() == null
+                ^ this.getCanonicalHostedZoneNameID() == null)
+            return false;
+        if (other.getCanonicalHostedZoneNameID() != null
+                && other.getCanonicalHostedZoneNameID().equals(
+                        this.getCanonicalHostedZoneNameID()) == false)
+            return false;
+        if (other.getListenerDescriptions() == null
+                ^ this.getListenerDescriptions() == null)
+            return false;
+        if (other.getListenerDescriptions() != null
+                && other.getListenerDescriptions().equals(
+                        this.getListenerDescriptions()) == false)
+            return false;
+        if (other.getPolicies() == null ^ this.getPolicies() == null)
+            return false;
+        if (other.getPolicies() != null
+                && other.getPolicies().equals(this.getPolicies()) == false)
+            return false;
+        if (other.getBackendServerDescriptions() == null
+                ^ this.getBackendServerDescriptions() == null)
+            return false;
+        if (other.getBackendServerDescriptions() != null
+                && other.getBackendServerDescriptions().equals(
+                        this.getBackendServerDescriptions()) == false)
+            return false;
+        if (other.getAvailabilityZones() == null
+                ^ this.getAvailabilityZones() == null)
+            return false;
+        if (other.getAvailabilityZones() != null
+                && other.getAvailabilityZones().equals(
+                        this.getAvailabilityZones()) == false)
+            return false;
+        if (other.getSubnets() == null ^ this.getSubnets() == null)
+            return false;
+        if (other.getSubnets() != null
+                && other.getSubnets().equals(this.getSubnets()) == false)
+            return false;
+        if (other.getVPCId() == null ^ this.getVPCId() == null)
+            return false;
+        if (other.getVPCId() != null
+                && other.getVPCId().equals(this.getVPCId()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null
+                && other.getInstances().equals(this.getInstances()) == false)
+            return false;
+        if (other.getHealthCheck() == null ^ this.getHealthCheck() == null)
+            return false;
+        if (other.getHealthCheck() != null
+                && other.getHealthCheck().equals(this.getHealthCheck()) == false)
+            return false;
+        if (other.getSourceSecurityGroup() == null
+                ^ this.getSourceSecurityGroup() == null)
+            return false;
+        if (other.getSourceSecurityGroup() != null
+                && other.getSourceSecurityGroup().equals(
+                        this.getSourceSecurityGroup()) == false)
+            return false;
+        if (other.getSecurityGroups() == null
+                ^ this.getSecurityGroups() == null)
+            return false;
+        if (other.getSecurityGroups() != null
+                && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+            return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null
+                && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getScheme() == null ^ this.getScheme() == null)
+            return false;
+        if (other.getScheme() != null
+                && other.getScheme().equals(this.getScheme()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
-        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode()); 
-        hashCode = prime * hashCode + ((getCanonicalHostedZoneName() == null) ? 0 : getCanonicalHostedZoneName().hashCode()); 
-        hashCode = prime * hashCode + ((getCanonicalHostedZoneNameID() == null) ? 0 : getCanonicalHostedZoneNameID().hashCode()); 
-        hashCode = prime * hashCode + ((getListenerDescriptions() == null) ? 0 : getListenerDescriptions().hashCode()); 
-        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode()); 
-        hashCode = prime * hashCode + ((getBackendServerDescriptions() == null) ? 0 : getBackendServerDescriptions().hashCode()); 
-        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
-        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
-        hashCode = prime * hashCode + ((getVPCId() == null) ? 0 : getVPCId().hashCode()); 
-        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
-        hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceSecurityGroup() == null) ? 0 : getSourceSecurityGroup().hashCode()); 
-        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
-        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
-        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getDNSName() == null) ? 0 : getDNSName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCanonicalHostedZoneName() == null) ? 0
+                        : getCanonicalHostedZoneName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCanonicalHostedZoneNameID() == null) ? 0
+                        : getCanonicalHostedZoneNameID().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getListenerDescriptions() == null) ? 0
+                        : getListenerDescriptions().hashCode());
+        hashCode = prime * hashCode
+                + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBackendServerDescriptions() == null) ? 0
+                        : getBackendServerDescriptions().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAvailabilityZones() == null) ? 0
+                        : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode
+                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode
+                + ((getVPCId() == null) ? 0 : getVPCId().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSourceSecurityGroup() == null) ? 0
+                        : getSourceSecurityGroup().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSecurityGroups() == null) ? 0 : getSecurityGroups()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode
+                + ((getScheme() == null) ? 0 : getScheme().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof LoadBalancerDescription == false) return false;
-        LoadBalancerDescription other = (LoadBalancerDescription)obj;
-        
-        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
-        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
-        if (other.getDNSName() == null ^ this.getDNSName() == null) return false;
-        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false) return false; 
-        if (other.getCanonicalHostedZoneName() == null ^ this.getCanonicalHostedZoneName() == null) return false;
-        if (other.getCanonicalHostedZoneName() != null && other.getCanonicalHostedZoneName().equals(this.getCanonicalHostedZoneName()) == false) return false; 
-        if (other.getCanonicalHostedZoneNameID() == null ^ this.getCanonicalHostedZoneNameID() == null) return false;
-        if (other.getCanonicalHostedZoneNameID() != null && other.getCanonicalHostedZoneNameID().equals(this.getCanonicalHostedZoneNameID()) == false) return false; 
-        if (other.getListenerDescriptions() == null ^ this.getListenerDescriptions() == null) return false;
-        if (other.getListenerDescriptions() != null && other.getListenerDescriptions().equals(this.getListenerDescriptions()) == false) return false; 
-        if (other.getPolicies() == null ^ this.getPolicies() == null) return false;
-        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false) return false; 
-        if (other.getBackendServerDescriptions() == null ^ this.getBackendServerDescriptions() == null) return false;
-        if (other.getBackendServerDescriptions() != null && other.getBackendServerDescriptions().equals(this.getBackendServerDescriptions()) == false) return false; 
-        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
-        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
-        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
-        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
-        if (other.getVPCId() == null ^ this.getVPCId() == null) return false;
-        if (other.getVPCId() != null && other.getVPCId().equals(this.getVPCId()) == false) return false; 
-        if (other.getInstances() == null ^ this.getInstances() == null) return false;
-        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
-        if (other.getHealthCheck() == null ^ this.getHealthCheck() == null) return false;
-        if (other.getHealthCheck() != null && other.getHealthCheck().equals(this.getHealthCheck()) == false) return false; 
-        if (other.getSourceSecurityGroup() == null ^ this.getSourceSecurityGroup() == null) return false;
-        if (other.getSourceSecurityGroup() != null && other.getSourceSecurityGroup().equals(this.getSourceSecurityGroup()) == false) return false; 
-        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
-        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
-        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null) return false;
-        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
-        if (other.getScheme() == null ^ this.getScheme() == null) return false;
-        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public LoadBalancerDescription clone() {
         try {
             return (LoadBalancerDescription) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

@@ -137,6 +137,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The ID that is assigned to the <code>DataSource</code> during
      *        creation.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -149,6 +150,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The ID that is assigned to the <code>DataSource</code> during
      *         creation.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -164,6 +166,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -179,6 +182,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The location and name of the data in Amazon Simple Storage Service
      *        (Amazon S3) that is used by a <code>DataSource</code>.
      */
+
     public void setDataLocationS3(String dataLocationS3) {
         this.dataLocationS3 = dataLocationS3;
     }
@@ -192,6 +196,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The location and name of the data in Amazon Simple Storage
      *         Service (Amazon S3) that is used by a <code>DataSource</code>.
      */
+
     public String getDataLocationS3() {
         return this.dataLocationS3;
     }
@@ -208,6 +213,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withDataLocationS3(String dataLocationS3) {
         setDataLocationS3(dataLocationS3);
         return this;
@@ -223,6 +229,7 @@ public class DataSource implements Serializable, Cloneable {
      *        A JSON string that represents the splitting requirement of a
      *        <code>Datasource</code>.
      */
+
     public void setDataRearrangement(String dataRearrangement) {
         this.dataRearrangement = dataRearrangement;
     }
@@ -236,6 +243,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return A JSON string that represents the splitting requirement of a
      *         <code>Datasource</code>.
      */
+
     public String getDataRearrangement() {
         return this.dataRearrangement;
     }
@@ -252,6 +260,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withDataRearrangement(String dataRearrangement) {
         setDataRearrangement(dataRearrangement);
         return this;
@@ -269,6 +278,7 @@ public class DataSource implements Serializable, Cloneable {
      *        created. The account type can be either an AWS root account or an
      *        AWS Identity and Access Management (IAM) user account.
      */
+
     public void setCreatedByIamUser(String createdByIamUser) {
         this.createdByIamUser = createdByIamUser;
     }
@@ -284,6 +294,7 @@ public class DataSource implements Serializable, Cloneable {
      *         created. The account type can be either an AWS root account or an
      *         AWS Identity and Access Management (IAM) user account.
      */
+
     public String getCreatedByIamUser() {
         return this.createdByIamUser;
     }
@@ -302,6 +313,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withCreatedByIamUser(String createdByIamUser) {
         setCreatedByIamUser(createdByIamUser);
         return this;
@@ -317,6 +329,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The time that the <code>DataSource</code> was created. The time is
      *        expressed in epoch time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -330,6 +343,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The time that the <code>DataSource</code> was created. The time
      *         is expressed in epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -346,6 +360,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -361,6 +376,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The time of the most recent edit to the
      *        <code>BatchPrediction</code>. The time is expressed in epoch time.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -375,6 +391,7 @@ public class DataSource implements Serializable, Cloneable {
      *         <code>BatchPrediction</code>. The time is expressed in epoch
      *         time.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -391,6 +408,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -406,6 +424,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The total number of observations contained in the data files that
      *        the <code>DataSource</code> references.
      */
+
     public void setDataSizeInBytes(Long dataSizeInBytes) {
         this.dataSizeInBytes = dataSizeInBytes;
     }
@@ -419,6 +438,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The total number of observations contained in the data files that
      *         the <code>DataSource</code> references.
      */
+
     public Long getDataSizeInBytes() {
         return this.dataSizeInBytes;
     }
@@ -435,6 +455,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withDataSizeInBytes(Long dataSizeInBytes) {
         setDataSizeInBytes(dataSizeInBytes);
         return this;
@@ -449,6 +470,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The number of data files referenced by the <code>DataSource</code>
      *        .
      */
+
     public void setNumberOfFiles(Long numberOfFiles) {
         this.numberOfFiles = numberOfFiles;
     }
@@ -461,6 +483,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The number of data files referenced by the
      *         <code>DataSource</code>.
      */
+
     public Long getNumberOfFiles() {
         return this.numberOfFiles;
     }
@@ -476,6 +499,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withNumberOfFiles(Long numberOfFiles) {
         setNumberOfFiles(numberOfFiles);
         return this;
@@ -490,6 +514,7 @@ public class DataSource implements Serializable, Cloneable {
      *        A user-supplied name or description of the <code>DataSource</code>
      *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -502,6 +527,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return A user-supplied name or description of the
      *         <code>DataSource</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -517,6 +543,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withName(String name) {
         setName(name);
         return this;
@@ -552,6 +579,7 @@ public class DataSource implements Serializable, Cloneable {
      *        is not usable.</li>
      * @see EntityStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -585,6 +613,7 @@ public class DataSource implements Serializable, Cloneable {
      *         It is not usable.</li>
      * @see EntityStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -621,6 +650,7 @@ public class DataSource implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public DataSource withStatus(String status) {
         setStatus(status);
         return this;
@@ -654,10 +684,9 @@ public class DataSource implements Serializable, Cloneable {
      *        <li>COMPLETED - The creation process completed successfully.</li>
      *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It
      *        is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
+
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -694,6 +723,7 @@ public class DataSource implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public DataSource withStatus(EntityStatus status) {
         setStatus(status);
         return this;
@@ -709,6 +739,7 @@ public class DataSource implements Serializable, Cloneable {
      *        A description of the most recent details about creating the
      *        <code>DataSource</code>.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -722,6 +753,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return A description of the most recent details about creating the
      *         <code>DataSource</code>.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -738,6 +770,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withMessage(String message) {
         setMessage(message);
         return this;
@@ -746,6 +779,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @param redshiftMetadata
      */
+
     public void setRedshiftMetadata(RedshiftMetadata redshiftMetadata) {
         this.redshiftMetadata = redshiftMetadata;
     }
@@ -753,6 +787,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RedshiftMetadata getRedshiftMetadata() {
         return this.redshiftMetadata;
     }
@@ -762,6 +797,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withRedshiftMetadata(RedshiftMetadata redshiftMetadata) {
         setRedshiftMetadata(redshiftMetadata);
         return this;
@@ -770,6 +806,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @param rDSMetadata
      */
+
     public void setRDSMetadata(RDSMetadata rDSMetadata) {
         this.rDSMetadata = rDSMetadata;
     }
@@ -777,6 +814,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RDSMetadata getRDSMetadata() {
         return this.rDSMetadata;
     }
@@ -786,6 +824,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withRDSMetadata(RDSMetadata rDSMetadata) {
         setRDSMetadata(rDSMetadata);
         return this;
@@ -794,6 +833,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @param roleARN
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -801,6 +841,7 @@ public class DataSource implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -810,6 +851,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -825,6 +867,7 @@ public class DataSource implements Serializable, Cloneable {
      *        The parameter is <code>true</code> if statistics need to be
      *        generated from the observation data.
      */
+
     public void setComputeStatistics(Boolean computeStatistics) {
         this.computeStatistics = computeStatistics;
     }
@@ -838,6 +881,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The parameter is <code>true</code> if statistics need to be
      *         generated from the observation data.
      */
+
     public Boolean getComputeStatistics() {
         return this.computeStatistics;
     }
@@ -854,6 +898,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DataSource withComputeStatistics(Boolean computeStatistics) {
         setComputeStatistics(computeStatistics);
         return this;
@@ -868,6 +913,7 @@ public class DataSource implements Serializable, Cloneable {
      * @return The parameter is <code>true</code> if statistics need to be
      *         generated from the observation data.
      */
+
     public Boolean isComputeStatistics() {
         return this.computeStatistics;
     }

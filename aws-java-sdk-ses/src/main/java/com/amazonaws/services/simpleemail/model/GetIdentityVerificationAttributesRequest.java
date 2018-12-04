@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to provide the verification
- * attributes for a list of identities.
- * </p>
+ * 
  */
 public class GetIdentityVerificationAttributesRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -42,6 +39,7 @@ public class GetIdentityVerificationAttributesRequest extends
      * 
      * @return A list of identities.
      */
+
     public java.util.List<String> getIdentities() {
         if (identities == null) {
             identities = new com.amazonaws.internal.SdkInternalList<String>();
@@ -57,6 +55,7 @@ public class GetIdentityVerificationAttributesRequest extends
      * @param identities
      *        A list of identities.
      */
+
     public void setIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
             this.identities = null;
@@ -83,6 +82,7 @@ public class GetIdentityVerificationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityVerificationAttributesRequest withIdentities(
             String... identities) {
         if (this.identities == null) {
@@ -105,6 +105,7 @@ public class GetIdentityVerificationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityVerificationAttributesRequest withIdentities(
             java.util.Collection<String> identities) {
         setIdentities(identities);

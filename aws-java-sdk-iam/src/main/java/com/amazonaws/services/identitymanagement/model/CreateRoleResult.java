@@ -27,44 +27,47 @@ public class CreateRoleResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the new role.
      * </p>
      */
     private Role role;
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the new role.
      * </p>
      * 
      * @param role
-     *        Information about the role.
+     *        A structure containing details about the new role.
      */
+
     public void setRole(Role role) {
         this.role = role;
     }
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the new role.
      * </p>
      * 
-     * @return Information about the role.
+     * @return A structure containing details about the new role.
      */
+
     public Role getRole() {
         return this.role;
     }
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the new role.
      * </p>
      * 
      * @param role
-     *        Information about the role.
+     *        A structure containing details about the new role.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateRoleResult withRole(Role role) {
         setRole(role);
         return this;

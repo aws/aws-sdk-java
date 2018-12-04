@@ -51,8 +51,8 @@ public class CreateResourceResult implements Serializable, Cloneable {
     private String path;
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      */
     private java.util.Map<String, Method> resourceMethods;
@@ -65,6 +65,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @param id
      *        The resource's identifier.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -76,6 +77,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * 
      * @return The resource's identifier.
      */
+
     public String getId() {
         return this.id;
     }
@@ -90,6 +92,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceResult withId(String id) {
         setId(id);
         return this;
@@ -103,6 +106,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @param parentId
      *        The parent resource's identifier.
      */
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -114,6 +118,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * 
      * @return The parent resource's identifier.
      */
+
     public String getParentId() {
         return this.parentId;
     }
@@ -128,6 +133,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceResult withParentId(String parentId) {
         setParentId(parentId);
         return this;
@@ -141,6 +147,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @param pathPart
      *        The last path segment for this resource.
      */
+
     public void setPathPart(String pathPart) {
         this.pathPart = pathPart;
     }
@@ -152,6 +159,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * 
      * @return The last path segment for this resource.
      */
+
     public String getPathPart() {
         return this.pathPart;
     }
@@ -166,6 +174,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceResult withPathPart(String pathPart) {
         setPathPart(pathPart);
         return this;
@@ -179,6 +188,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @param path
      *        The full path for this resource.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -190,6 +200,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * 
      * @return The full path for this resource.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -204,6 +215,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceResult withPath(String path) {
         setPath(path);
         return this;
@@ -211,43 +223,46 @@ public class CreateResourceResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
-     * @return Map of methods for this resource, which is included only if
-     *         requested using the <b>embed</b> option.
+     * @return Map of methods for this resource, which is included only if the
+     *         request uses the <b>embed</b> query option.
      */
+
     public java.util.Map<String, Method> getResourceMethods() {
         return resourceMethods;
     }
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
      * @param resourceMethods
-     *        Map of methods for this resource, which is included only if
-     *        requested using the <b>embed</b> option.
+     *        Map of methods for this resource, which is included only if the
+     *        request uses the <b>embed</b> query option.
      */
+
     public void setResourceMethods(java.util.Map<String, Method> resourceMethods) {
         this.resourceMethods = resourceMethods;
     }
 
     /**
      * <p>
-     * Map of methods for this resource, which is included only if requested
-     * using the <b>embed</b> option.
+     * Map of methods for this resource, which is included only if the request
+     * uses the <b>embed</b> query option.
      * </p>
      * 
      * @param resourceMethods
-     *        Map of methods for this resource, which is included only if
-     *        requested using the <b>embed</b> option.
+     *        Map of methods for this resource, which is included only if the
+     *        request uses the <b>embed</b> query option.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceResult withResourceMethods(
             java.util.Map<String, Method> resourceMethods) {
         setResourceMethods(resourceMethods);
@@ -269,6 +284,7 @@ public class CreateResourceResult implements Serializable, Cloneable {
      * Removes all the entries added into ResourceMethods. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public CreateResourceResult clearResourceMethodsEntries() {
         this.resourceMethods = null;
         return this;

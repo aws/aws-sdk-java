@@ -27,13 +27,13 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      */
     private String streamName;
@@ -46,37 +46,43 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access to the Kinesis stream.
+     *        The ARN of the IAM role that grants access to the Amazon Kinesis
+     *        stream.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
-     * @return The ARN of the IAM role that grants access to the Kinesis stream.
+     * @return The ARN of the IAM role that grants access to the Amazon Kinesis
+     *         stream.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
 
     /**
      * <p>
-     * The ARN of the IAM role that grants access to the Kinesis stream.
+     * The ARN of the IAM role that grants access to the Amazon Kinesis stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that grants access to the Kinesis stream.
+     *        The ARN of the IAM role that grants access to the Amazon Kinesis
+     *        stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -84,37 +90,40 @@ public class KinesisAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Amazon Kinesis stream.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
-     * @return The name of the Kinesis stream.
+     * @return The name of the Amazon Kinesis stream.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Amazon Kinesis stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Amazon Kinesis stream.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -128,6 +137,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @param partitionKey
      *        The partition key.
      */
+
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
@@ -139,6 +149,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * 
      * @return The partition key.
      */
+
     public String getPartitionKey() {
         return this.partitionKey;
     }
@@ -153,6 +164,7 @@ public class KinesisAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KinesisAction withPartitionKey(String partitionKey) {
         setPartitionKey(partitionKey);
         return this;

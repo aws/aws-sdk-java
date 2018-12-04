@@ -69,6 +69,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        The name of the pipeline in which you want to disable the flow of
      *        artifacts from one stage to another.
      */
+
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
@@ -82,6 +83,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      * @return The name of the pipeline in which you want to disable the flow of
      *         artifacts from one stage to another.
      */
+
     public String getPipelineName() {
         return this.pipelineName;
     }
@@ -98,6 +100,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableStageTransitionRequest withPipelineName(String pipelineName) {
         setPipelineName(pipelineName);
         return this;
@@ -113,6 +116,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        The name of the stage where you want to disable the inbound or
      *        outbound transition of artifacts.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -126,6 +130,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      * @return The name of the stage where you want to disable the inbound or
      *         outbound transition of artifacts.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -142,6 +147,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableStageTransitionRequest withStageName(String stageName) {
         setStageName(stageName);
         return this;
@@ -162,6 +168,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        they have been processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
+
     public void setTransitionType(String transitionType) {
         this.transitionType = transitionType;
     }
@@ -180,6 +187,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *         they have been processed by the actions in that stage (outbound).
      * @see StageTransitionType
      */
+
     public String getTransitionType() {
         return this.transitionType;
     }
@@ -201,6 +209,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StageTransitionType
      */
+
     public DisableStageTransitionRequest withTransitionType(
             String transitionType) {
         setTransitionType(transitionType);
@@ -220,10 +229,9 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        into the stage and being processed by the actions in that stage
      *        (inbound), or prevented from transitioning from the stage after
      *        they have been processed by the actions in that stage (outbound).
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StageTransitionType
      */
+
     public void setTransitionType(StageTransitionType transitionType) {
         this.transitionType = transitionType.toString();
     }
@@ -245,6 +253,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see StageTransitionType
      */
+
     public DisableStageTransitionRequest withTransitionType(
             StageTransitionType transitionType) {
         setTransitionType(transitionType);
@@ -263,6 +272,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *        waiting for manual approval or manual tests. This message is
      *        displayed in the pipeline console UI.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -278,6 +288,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      *         waiting for manual approval or manual tests. This message is
      *         displayed in the pipeline console UI.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -296,6 +307,7 @@ public class DisableStageTransitionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisableStageTransitionRequest withReason(String reason) {
         setReason(reason);
         return this;

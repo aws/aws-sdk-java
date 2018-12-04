@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.services.storagegateway.model.transform.*;
@@ -54,29 +56,88 @@ import com.amazonaws.services.storagegateway.model.transform.*;
  * Service API Reference</i>:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required
- * headers that you must send with every POST request to AWS Storage Gateway.</li>
- * <li><a href=
+ * headers that you must send with every POST request to AWS Storage Gateway.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate
- * every request you send; this topic describes how sign such a request.</li>
- * <li><a href=
+ * every request you send; this topic describes how sign such a request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html"
  * >Error Responses</a>: Provides reference information about AWS Storage
- * Gateway errors.</li>
- * <li><a href=
+ * Gateway errors.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"
  * >Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all
  * AWS Storage Gateway operations, their request parameters, response elements,
- * possible errors, and examples of requests and responses.</li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS
- * Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
- * regions and endpoints available for use with AWS Storage Gateway.</li>
+ * possible errors, and examples of requests and responses.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">
+ * AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the
+ * s and endpoints available for use with AWS Storage Gateway.
+ * </p>
+ * </li>
  * </ul>
+ * <note>
+ * <p>
+ * AWS Storage Gateway resource IDs are in uppercase. When you use these
+ * resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase.
+ * You must change your resource ID to lowercase to use it with the EC2 API. For
+ * example, in Storage Gateway the ID for a volume might be
+ * <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must
+ * change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not
+ * behave as expected.
+ * </p>
+ * </note> <important>
+ * <p>
+ * IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway
+ * volumes are changing to a longer format. Starting in December 2016, all new
+ * volumes and snapshots will be created with a 17-character string. Starting in
+ * April 2016, you will be able to use these longer IDs so you can test your
+ * systems with the new format. For more information, see <a
+ * href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS
+ * Resource IDs</a>.
+ * </p>
+ * <p>
+ * For example, a volume ARN with the longer volume ID format will look like
+ * this:
+ * </p>
+ * <p>
+ * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>
+ * .
+ * </p>
+ * <p>
+ * A snapshot ID with the longer ID format will look like this:
+ * <code>snap-78e226633445566ee</code>.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement:
+ * Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in
+ * 2016</a>.
+ * </p>
+ * </important>
  */
+@ThreadSafe
 public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         AWSStorageGateway {
     /** Provider for AWS credentials. */
@@ -91,9 +152,26 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "storagegateway";
 
     /**
-     * List of exception unmarshallers for all AWS Storage Gateway exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidGatewayRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.storagegateway.model.InternalServerErrorException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway.
@@ -113,8 +191,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSStorageGatewayClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -156,8 +234,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSStorageGatewayClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -198,8 +275,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSStorageGatewayClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -254,17 +330,6 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class,
-                        "InvalidGatewayRequestException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.storagegateway.model.InternalServerErrorException.class,
-                        "InternalServerError"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -280,37 +345,68 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation activates the gateway you previously deployed on your
-     * host. For more information, see <a href=
+     * Activates the gateway you previously deployed on your host. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html"
      * > Activate the AWS Storage Gateway</a>. In the activation process, you
-     * specify information such as the region you want to use for storing
-     * snapshots, the time zone for scheduled snapshots the gateway snapshot
-     * schedule window, an activation key, and a name for your gateway. The
-     * activation process also associates your gateway with your account; for
-     * more information, see <a>UpdateGatewayInformation</a>.
+     * specify information such as the you want to use for storing snapshots,
+     * the time zone for scheduled snapshots the gateway snapshot schedule
+     * window, an activation key, and a name for your gateway. The activation
+     * process also associates your gateway with your account; for more
+     * information, see <a>UpdateGatewayInformation</a>.
      * </p>
-     * <note>You must turn on the gateway VM before you can activate your
-     * gateway.</note>
+     * <note>
+     * <p>
+     * You must turn on the gateway VM before you can activate your gateway.
+     * </p>
+     * </note>
      * 
      * @param activateGatewayRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>ActivateGatewayInput$ActivationKey</a></li>
-     *        <li><a>GatewayName</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayRegion</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
-     *        <li><a>ActivateGatewayInput$GatewayType</a></li>
-     *        <li><a>ActivateGatewayInput$TapeDriveType</a></li>
-     *        <li><a>ActivateGatewayInput$MediumChangerType</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$ActivationKey</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayRegion</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayTimezone</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$GatewayType</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$TapeDriveType</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ActivateGatewayInput$MediumChangerType</a>
+     *        </p>
+     *        </li>
      * @return Result of the ActivateGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ActivateGateway
      */
     @Override
@@ -326,17 +422,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivateGatewayRequestMarshaller().marshall(super
-                        .beforeMarshalling(activateGatewayRequest));
+                request = new ActivateGatewayRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(activateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivateGatewayResult> responseHandler = new JsonResponseHandler<ActivateGatewayResult>(
-                    new ActivateGatewayResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivateGatewayResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivateGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -349,9 +448,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation configures one or more gateway local disks as cache for a
-     * cached-volume gateway. This operation is supported only for the
-     * gateway-cached volume architecture (see <a href=
+     * Configures one or more gateway local disks as cache for a cached-volume
+     * gateway. This operation is supported only for the gateway-cached volume
+     * architecture (see <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html"
      * >Storage Gateway Concepts</a>).
      * </p>
@@ -365,11 +464,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the AddCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddCache
      */
     @Override
@@ -384,17 +483,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCacheRequestMarshaller().marshall(super
-                        .beforeMarshalling(addCacheRequest));
+                request = new AddCacheRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddCacheResult> responseHandler = new JsonResponseHandler<AddCacheResult>(
-                    new AddCacheResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -407,11 +508,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation adds one or more tags to the specified resource. You use
-     * tags to add metadata to resources, which you can use to categorize these
-     * resources. For example, you can categorize resources by purpose, owner,
-     * environment, or team. Each tag consists of a key and a value, which you
-     * define. You can add tags to the following AWS Storage Gateway resources:
+     * Adds one or more tags to the specified resource. You use tags to add
+     * metadata to resources, which you can use to categorize these resources.
+     * For example, you can categorize resources by purpose, owner, environment,
+     * or team. Each tag consists of a key and a value, which you define. You
+     * can add tags to the following AWS Storage Gateway resources:
      * </p>
      * <ul>
      * <li>
@@ -445,11 +546,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddTagsToResource
      */
     @Override
@@ -465,18 +566,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToResourceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addTagsToResourceRequest));
+                request = new AddTagsToResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsToResourceResult> responseHandler = new JsonResponseHandler<AddTagsToResourceResult>(
-                    new AddTagsToResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -489,8 +592,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation configures one or more gateway local disks as upload
-     * buffer for a specified gateway. This operation is supported for both the
+     * Configures one or more gateway local disks as upload buffer for a
+     * specified gateway. This operation is supported for both the
      * gateway-stored and gateway-cached volume architectures.
      * </p>
      * <p>
@@ -503,11 +606,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the AddUploadBuffer operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddUploadBuffer
      */
     @Override
@@ -523,17 +626,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddUploadBufferRequestMarshaller().marshall(super
-                        .beforeMarshalling(addUploadBufferRequest));
+                request = new AddUploadBufferRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(addUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddUploadBufferResult> responseHandler = new JsonResponseHandler<AddUploadBufferResult>(
-                    new AddUploadBufferResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddUploadBufferResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddUploadBufferResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -546,10 +652,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation configures one or more gateway local disks as working
-     * storage for a gateway. This operation is supported only for the
-     * gateway-stored volume architecture. This operation is deprecated method
-     * in cached-volumes API version (20120630). Use AddUploadBuffer instead.
+     * Configures one or more gateway local disks as working storage for a
+     * gateway. This operation is supported only for the gateway-stored volume
+     * architecture. This operation is deprecated in cached-volumes API version
+     * 20120630. Use <a>AddUploadBuffer</a> instead.
      * </p>
      * <note>
      * <p>
@@ -567,16 +673,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param addWorkingStorageRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>AddWorkingStorageInput$DiskIds</a></li>
+     *        <li>
+     *        <p>
+     *        <a>AddWorkingStorageInput$DiskIds</a>
+     *        </p>
+     *        </li>
      * @return Result of the AddWorkingStorage operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.AddWorkingStorage
      */
     @Override
@@ -592,18 +702,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddWorkingStorageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addWorkingStorageRequest));
+                request = new AddWorkingStorageRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddWorkingStorageResult> responseHandler = new JsonResponseHandler<AddWorkingStorageResult>(
-                    new AddWorkingStorageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddWorkingStorageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddWorkingStorageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -625,11 +737,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the CancelArchival operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CancelArchival
      */
     @Override
@@ -645,17 +757,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelArchivalRequestMarshaller().marshall(super
-                        .beforeMarshalling(cancelArchivalRequest));
+                request = new CancelArchivalRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(cancelArchivalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelArchivalResult> responseHandler = new JsonResponseHandler<CancelArchivalResult>(
-                    new CancelArchivalResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelArchivalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelArchivalResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -678,11 +793,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the CancelRetrieval operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CancelRetrieval
      */
     @Override
@@ -698,17 +813,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelRetrievalRequestMarshaller().marshall(super
-                        .beforeMarshalling(cancelRetrievalRequest));
+                request = new CancelRetrievalRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(cancelRetrievalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelRetrievalResult> responseHandler = new JsonResponseHandler<CancelRetrievalResult>(
-                    new CancelRetrievalResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelRetrievalResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelRetrievalResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -721,13 +839,16 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation creates a cached volume on a specified cached gateway.
-     * This operation is supported only for the gateway-cached volume
-     * architecture.
+     * Creates a cached volume on a specified cached gateway. This operation is
+     * supported only for the gateway-cached volume architecture.
      * </p>
-     * <note>Cache storage must be allocated to the gateway before you can
-     * create a cached volume. Use the <a>AddCache</a> operation to add cache
-     * storage to a gateway. </note>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create a
+     * cached volume. Use the <a>AddCache</a> operation to add cache storage to
+     * a gateway.
+     * </p>
+     * </note>
      * <p>
      * In the request, you must specify the gateway, size of the volume in
      * bytes, the iSCSI target name, an IP address on which to expose the
@@ -742,11 +863,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateCachediSCSIVolume
      */
     @Override
@@ -762,18 +883,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCachediSCSIVolumeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createCachediSCSIVolumeRequest));
+                request = new CreateCachediSCSIVolumeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createCachediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCachediSCSIVolumeResult> responseHandler = new JsonResponseHandler<CreateCachediSCSIVolumeResult>(
-                    new CreateCachediSCSIVolumeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCachediSCSIVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateCachediSCSIVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -786,7 +909,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation initiates a snapshot of a volume.
+     * Initiates a snapshot of a volume.
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time
@@ -807,24 +930,43 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * can use this snapshot ID to check the snapshot progress or later use it
      * when you want to create a volume from a snapshot.
      * </p>
-     * <note>To list or delete a snapshot, you must use the Amazon EC2 API. For
-     * more information, see DescribeSnapshots or DeleteSnapshot in the <a href=
+     * <note>
+     * <p>
+     * To list or delete a snapshot, you must use the Amazon EC2 API. For more
+     * information, see DescribeSnapshots or DeleteSnapshot in the <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html"
-     * >EC2 API reference</a>.</note>
+     * >EC2 API reference</a>.
+     * </p>
+     * </note> <important>
+     * <p>
+     * Volume and snapshot IDs are changing to a longer length ID format. For
+     * more information, see the important note on the <a href=
+     * "http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html"
+     * >Welcome</a> page.
+     * </p>
+     * </important>
      * 
      * @param createSnapshotRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>CreateSnapshotInput$SnapshotDescription</a></li>
-     *        <li><a>CreateSnapshotInput$VolumeARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>CreateSnapshotInput$SnapshotDescription</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateSnapshotInput$VolumeARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the CreateSnapshot operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateSnapshot
      */
     @Override
@@ -840,17 +982,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller().marshall(super
-                        .beforeMarshalling(createSnapshotRequest));
+                request = new CreateSnapshotRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotResult> responseHandler = new JsonResponseHandler<CreateSnapshotResult>(
-                    new CreateSnapshotResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSnapshotResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -863,9 +1008,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation initiates a snapshot of a gateway from a volume recovery
-     * point. This operation is supported only for the gateway-cached volume
-     * architecture (see ).
+     * Initiates a snapshot of a gateway from a volume recovery point. This
+     * operation is supported only for the gateway-cached volume architecture.
      * </p>
      * <p>
      * A volume recovery point is a point in time at which all data of the
@@ -895,11 +1039,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      */
     @Override
@@ -915,7 +1059,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller()
+                request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createSnapshotFromVolumeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
@@ -924,9 +1069,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult> responseHandler = new JsonResponseHandler<CreateSnapshotFromVolumeRecoveryPointResult>(
-                    new CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSnapshotFromVolumeRecoveryPointResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateSnapshotFromVolumeRecoveryPointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -939,8 +1086,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation creates a volume on a specified gateway. This operation is
-     * supported only for the gateway-stored volume architecture.
+     * Creates a volume on a specified gateway. This operation is supported only
+     * for the gateway-stored volume architecture.
      * </p>
      * <p>
      * The size of the volume to create is inferred from the disk size. You can
@@ -959,20 +1106,40 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param createStorediSCSIVolumeRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>CreateStorediSCSIVolumeInput$DiskId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$PreserveExistingData</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$SnapshotId</a></li>
-     *        <li><a>CreateStorediSCSIVolumeInput$TargetName</a></li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$DiskId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$SnapshotId</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>CreateStorediSCSIVolumeInput$TargetName</a>
+     *        </p>
+     *        </li>
      * @return Result of the CreateStorediSCSIVolume operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateStorediSCSIVolume
      */
     @Override
@@ -988,18 +1155,83 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStorediSCSIVolumeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createStorediSCSIVolumeRequest));
+                request = new CreateStorediSCSIVolumeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createStorediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateStorediSCSIVolumeResult> responseHandler = new JsonResponseHandler<CreateStorediSCSIVolumeResult>(
-                    new CreateStorediSCSIVolumeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStorediSCSIVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateStorediSCSIVolumeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a virtual tape by using your own barcode. You write data to the
+     * virtual tape and then archive the tape.
+     * </p>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create a
+     * virtual tape. Use the <a>AddCache</a> operation to add cache storage to a
+     * gateway.
+     * </p>
+     * </note>
+     * 
+     * @param createTapeWithBarcodeRequest
+     *        CreateTapeWithBarcodeInput
+     * @return Result of the CreateTapeWithBarcode operation returned by the
+     *         service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was
+     *         issued to the service. For more information, see the error and
+     *         message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
+     * @sample AWSStorageGateway.CreateTapeWithBarcode
+     */
+    @Override
+    public CreateTapeWithBarcodeResult createTapeWithBarcode(
+            CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
+        ExecutionContext executionContext = createExecutionContext(createTapeWithBarcodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTapeWithBarcodeRequest> request = null;
+        Response<CreateTapeWithBarcodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTapeWithBarcodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createTapeWithBarcodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTapeWithBarcodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTapeWithBarcodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1015,20 +1247,24 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * Creates one or more virtual tapes. You write data to the virtual tapes
      * and then archive the tapes.
      * </p>
-     * <note>Cache storage must be allocated to the gateway before you can
-     * create virtual tapes. Use the <a>AddCache</a> operation to add cache
-     * storage to a gateway. </note>
+     * <note>
+     * <p>
+     * Cache storage must be allocated to the gateway before you can create
+     * virtual tapes. Use the <a>AddCache</a> operation to add cache storage to
+     * a gateway.
+     * </p>
+     * </note>
      * 
      * @param createTapesRequest
      *        CreateTapesInput
      * @return Result of the CreateTapes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.CreateTapes
      */
     @Override
@@ -1043,17 +1279,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTapesRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTapesRequest));
+                request = new CreateTapesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTapesResult> responseHandler = new JsonResponseHandler<CreateTapesResult>(
-                    new CreateTapesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTapesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTapesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1066,11 +1304,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation deletes the bandwidth rate limits of a gateway. You can
-     * delete either the upload and download bandwidth rate limit, or you can
-     * delete both. If you delete only one of the limits, the other limit
-     * remains unchanged. To specify which gateway to work with, use the Amazon
-     * Resource Name (ARN) of the gateway in your request.
+     * Deletes the bandwidth rate limits of a gateway. You can delete either the
+     * upload and download bandwidth rate limit, or you can delete both. If you
+     * delete only one of the limits, the other limit remains unchanged. To
+     * specify which gateway to work with, use the Amazon Resource Name (ARN) of
+     * the gateway in your request.
      * </p>
      * 
      * @param deleteBandwidthRateLimitRequest
@@ -1078,11 +1316,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteBandwidthRateLimit
      */
     @Override
@@ -1098,18 +1336,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBandwidthRateLimitRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteBandwidthRateLimitRequest));
+                request = new DeleteBandwidthRateLimitRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<DeleteBandwidthRateLimitResult>(
-                    new DeleteBandwidthRateLimitResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBandwidthRateLimitResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteBandwidthRateLimitResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1122,24 +1362,32 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation deletes Challenge-Handshake Authentication Protocol (CHAP)
-     * credentials for a specified iSCSI target and initiator pair.
+     * Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials
+     * for a specified iSCSI target and initiator pair.
      * </p>
      * 
      * @param deleteChapCredentialsRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>DeleteChapCredentialsInput$InitiatorName</a></li>
-     *        <li><a>DeleteChapCredentialsInput$TargetARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteChapCredentialsInput$InitiatorName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>DeleteChapCredentialsInput$TargetARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the DeleteChapCredentials operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteChapCredentials
      */
     @Override
@@ -1155,18 +1403,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteChapCredentialsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteChapCredentialsRequest));
+                request = new DeleteChapCredentialsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteChapCredentialsResult> responseHandler = new JsonResponseHandler<DeleteChapCredentialsResult>(
-                    new DeleteChapCredentialsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChapCredentialsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteChapCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1179,10 +1429,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation deletes a gateway. To specify which gateway to delete, use
-     * the Amazon Resource Name (ARN) of the gateway in your request. The
-     * operation deletes the gateway; however, it does not delete the gateway
-     * virtual machine (VM) from your host computer.
+     * Deletes a gateway. To specify which gateway to delete, use the Amazon
+     * Resource Name (ARN) of the gateway in your request. The operation deletes
+     * the gateway; however, it does not delete the gateway virtual machine (VM)
+     * from your host computer.
      * </p>
      * <p>
      * After you delete a gateway, you cannot reactivate it. Completed snapshots
@@ -1208,11 +1458,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the DeleteGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteGateway
      */
     @Override
@@ -1228,17 +1478,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGatewayRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteGatewayRequest));
+                request = new DeleteGatewayRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteGatewayResult> responseHandler = new JsonResponseHandler<DeleteGatewayResult>(
-                    new DeleteGatewayResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGatewayResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1251,12 +1503,12 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation deletes a snapshot of a volume.
+     * Deletes a snapshot of a volume.
      * </p>
      * <p>
-     * You can take snapshots of your gateway volumes on a scheduled or ad-hoc
-     * basis. This API enables you to delete a snapshot schedule for a volume.
-     * For more information, see <a href=
+     * You can take snapshots of your gateway volumes on a scheduled or ad hoc
+     * basis. This API action enables you to delete a snapshot schedule for a
+     * volume. For more information, see <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html"
      * >Working with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code>
      * request, you identify the volume by providing its Amazon Resource Name
@@ -1274,11 +1526,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteSnapshotSchedule
      */
     @Override
@@ -1294,18 +1546,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotScheduleRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteSnapshotScheduleRequest));
+                request = new DeleteSnapshotScheduleRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSnapshotScheduleResult> responseHandler = new JsonResponseHandler<DeleteSnapshotScheduleResult>(
-                    new DeleteSnapshotScheduleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSnapshotScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteSnapshotScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1326,11 +1580,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the DeleteTape operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteTape
      */
     @Override
@@ -1345,17 +1599,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTapeRequest));
+                request = new DeleteTapeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteTapeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTapeResult> responseHandler = new JsonResponseHandler<DeleteTapeResult>(
-                    new DeleteTapeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTapeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTapeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1377,11 +1633,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteTapeArchive
      */
     @Override
@@ -1397,18 +1653,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeArchiveRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteTapeArchiveRequest));
+                request = new DeleteTapeArchiveRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTapeArchiveResult> responseHandler = new JsonResponseHandler<DeleteTapeArchiveResult>(
-                    new DeleteTapeArchiveResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTapeArchiveResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTapeArchiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1421,11 +1679,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation deletes the specified gateway volume that you previously
-     * created using the <a>CreateCachediSCSIVolume</a> or
-     * <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local
-     * disk that was configured as the storage volume is not deleted. You can
-     * reuse the local disk to create another storage volume.
+     * Deletes the specified gateway volume that you previously created using
+     * the <a>CreateCachediSCSIVolume</a> or <a>CreateStorediSCSIVolume</a> API.
+     * For gateway-stored volumes, the local disk that was configured as the
+     * storage volume is not deleted. You can reuse the local disk to create
+     * another storage volume.
      * </p>
      * <p>
      * Before you delete a gateway volume, make sure there are no iSCSI
@@ -1448,11 +1706,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the DeleteVolume operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DeleteVolume
      */
     @Override
@@ -1468,17 +1726,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVolumeRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteVolumeRequest));
+                request = new DeleteVolumeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteVolumeResult> responseHandler = new JsonResponseHandler<DeleteVolumeResult>(
-                    new DeleteVolumeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVolumeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteVolumeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1491,9 +1751,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns the bandwidth rate limits of a gateway. By
-     * default, these limits are not set, which means no bandwidth rate limiting
-     * is in effect.
+     * Returns the bandwidth rate limits of a gateway. By default, these limits
+     * are not set, which means no bandwidth rate limiting is in effect.
      * </p>
      * <p>
      * This operation only returns a value for a bandwidth rate limit only if
@@ -1509,11 +1768,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeBandwidthRateLimit
      */
     @Override
@@ -1529,18 +1788,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBandwidthRateLimitRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeBandwidthRateLimitRequest));
+                request = new DescribeBandwidthRateLimitRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<DescribeBandwidthRateLimitResult>(
-                    new DescribeBandwidthRateLimitResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBandwidthRateLimitResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeBandwidthRateLimitResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1553,8 +1814,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns information about the cache of a gateway. This
-     * operation is supported only for the gateway-cached volume architecture.
+     * Returns information about the cache of a gateway. This operation is
+     * supported only for the gateway-cached volume architecture.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as cache, and it
@@ -1565,11 +1826,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeCache
      */
     @Override
@@ -1585,17 +1846,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCacheRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeCacheRequest));
+                request = new DescribeCacheRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCacheResult> responseHandler = new JsonResponseHandler<DescribeCacheResult>(
-                    new DescribeCacheResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1608,9 +1871,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns a description of the gateway volumes specified in
-     * the request. This operation is supported only for the gateway-cached
-     * volume architecture.
+     * Returns a description of the gateway volumes specified in the request.
+     * This operation is supported only for the gateway-cached volume
+     * architecture.
      * </p>
      * <p>
      * The list of gateway volumes in the request must be from one gateway. In
@@ -1623,11 +1886,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeCachediSCSIVolumes
      */
     @Override
@@ -1643,18 +1906,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCachediSCSIVolumesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeCachediSCSIVolumesRequest));
+                request = new DescribeCachediSCSIVolumesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCachediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCachediSCSIVolumesResult> responseHandler = new JsonResponseHandler<DescribeCachediSCSIVolumesResult>(
-                    new DescribeCachediSCSIVolumesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCachediSCSIVolumesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeCachediSCSIVolumesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1667,9 +1932,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns an array of Challenge-Handshake Authentication
-     * Protocol (CHAP) credentials information for a specified iSCSI target, one
-     * for each target-initiator pair.
+     * Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
+     * credentials information for a specified iSCSI target, one for each
+     * target-initiator pair.
      * </p>
      * 
      * @param describeChapCredentialsRequest
@@ -1679,11 +1944,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeChapCredentials
      */
     @Override
@@ -1699,18 +1964,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeChapCredentialsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeChapCredentialsRequest));
+                request = new DescribeChapCredentialsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeChapCredentialsResult> responseHandler = new JsonResponseHandler<DescribeChapCredentialsResult>(
-                    new DescribeChapCredentialsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChapCredentialsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeChapCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1723,10 +1990,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns metadata about a gateway such as its name, network
-     * interfaces, configured time zone, and the state (whether the gateway is
-     * running or not). To specify which gateway to describe, use the Amazon
-     * Resource Name (ARN) of the gateway in your request.
+     * Returns metadata about a gateway such as its name, network interfaces,
+     * configured time zone, and the state (whether the gateway is running or
+     * not). To specify which gateway to describe, use the Amazon Resource Name
+     * (ARN) of the gateway in your request.
      * </p>
      * 
      * @param describeGatewayInformationRequest
@@ -1735,11 +2002,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeGatewayInformation
      */
     @Override
@@ -1755,18 +2022,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGatewayInformationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeGatewayInformationRequest));
+                request = new DescribeGatewayInformationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeGatewayInformationResult> responseHandler = new JsonResponseHandler<DescribeGatewayInformationResult>(
-                    new DescribeGatewayInformationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGatewayInformationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeGatewayInformationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1779,9 +2048,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns your gateway's weekly maintenance start time
-     * including the day and time of the week. Note that values are in terms of
-     * the gateway's time zone.
+     * Returns your gateway's weekly maintenance start time including the day
+     * and time of the week. Note that values are in terms of the gateway's time
+     * zone.
      * </p>
      * 
      * @param describeMaintenanceStartTimeRequest
@@ -1790,11 +2059,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeMaintenanceStartTime
      */
     @Override
@@ -1810,7 +2079,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceStartTimeRequestMarshaller()
+                request = new DescribeMaintenanceStartTimeRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
@@ -1819,9 +2089,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMaintenanceStartTimeResult> responseHandler = new JsonResponseHandler<DescribeMaintenanceStartTimeResult>(
-                    new DescribeMaintenanceStartTimeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMaintenanceStartTimeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeMaintenanceStartTimeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1834,9 +2106,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation describes the snapshot schedule for the specified gateway
-     * volume. The snapshot schedule information includes intervals at which
-     * snapshots are automatically initiated on the volume.
+     * Describes the snapshot schedule for the specified gateway volume. The
+     * snapshot schedule information includes intervals at which snapshots are
+     * automatically initiated on the volume.
      * </p>
      * 
      * @param describeSnapshotScheduleRequest
@@ -1846,11 +2118,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeSnapshotSchedule
      */
     @Override
@@ -1866,18 +2138,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotScheduleRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeSnapshotScheduleRequest));
+                request = new DescribeSnapshotScheduleRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSnapshotScheduleResult> responseHandler = new JsonResponseHandler<DescribeSnapshotScheduleResult>(
-                    new DescribeSnapshotScheduleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSnapshotScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeSnapshotScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1890,24 +2164,24 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns the description of the gateway volumes specified
-     * in the request. The list of gateway volumes in the request must be from
-     * one gateway. In the response Amazon Storage Gateway returns volume
-     * information sorted by volume ARNs.
+     * Returns the description of the gateway volumes specified in the request.
+     * The list of gateway volumes in the request must be from one gateway. In
+     * the response Amazon Storage Gateway returns volume information sorted by
+     * volume ARNs.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
-     *        A JSON Object containing a list of
+     *        A JSON object containing a list of
      *        <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
      * @return Result of the DescribeStorediSCSIVolumes operation returned by
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeStorediSCSIVolumes
      */
     @Override
@@ -1923,18 +2197,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStorediSCSIVolumesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeStorediSCSIVolumesRequest));
+                request = new DescribeStorediSCSIVolumesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeStorediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeStorediSCSIVolumesResult> responseHandler = new JsonResponseHandler<DescribeStorediSCSIVolumesResult>(
-                    new DescribeStorediSCSIVolumesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeStorediSCSIVolumesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeStorediSCSIVolumesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1962,11 +2238,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapeArchives
      */
     @Override
@@ -1982,18 +2258,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeArchivesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeTapeArchivesRequest));
+                request = new DescribeTapeArchivesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeTapeArchivesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapeArchivesResult> responseHandler = new JsonResponseHandler<DescribeTapeArchivesResult>(
-                    new DescribeTapeArchivesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTapeArchivesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTapeArchivesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2015,7 +2293,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * specified gateway-VTL.
      * </p>
      * <p>
-     * A recovery point is a point in time view of a virtual tape at which all
+     * A recovery point is a point-in-time view of a virtual tape at which all
      * the data on the virtual tape is consistent. If your gateway crashes,
      * virtual tapes that have recovery points can be recovered to a new
      * gateway.
@@ -2027,11 +2305,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapeRecoveryPoints
      */
     @Override
@@ -2047,18 +2325,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeRecoveryPointsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeTapeRecoveryPointsRequest));
+                request = new DescribeTapeRecoveryPointsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeTapeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapeRecoveryPointsResult> responseHandler = new JsonResponseHandler<DescribeTapeRecoveryPointsResult>(
-                    new DescribeTapeRecoveryPointsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTapeRecoveryPointsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTapeRecoveryPointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2081,11 +2361,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the DescribeTapes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeTapes
      */
     @Override
@@ -2101,17 +2381,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapesRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTapesRequest));
+                request = new DescribeTapesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTapesResult> responseHandler = new JsonResponseHandler<DescribeTapesResult>(
-                    new DescribeTapesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTapesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTapesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2124,9 +2406,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns information about the upload buffer of a gateway.
-     * This operation is supported for both the gateway-stored and
-     * gateway-cached volume architectures.
+     * Returns information about the upload buffer of a gateway. This operation
+     * is supported for both the gateway-stored and gateway-cached volume
+     * architectures.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer
@@ -2139,11 +2421,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeUploadBuffer
      */
     @Override
@@ -2159,18 +2441,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUploadBufferRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeUploadBufferRequest));
+                request = new DescribeUploadBufferRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeUploadBufferResult> responseHandler = new JsonResponseHandler<DescribeUploadBufferResult>(
-                    new DescribeUploadBufferResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUploadBufferResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeUploadBufferResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2197,11 +2481,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeVTLDevices
      */
     @Override
@@ -2217,18 +2501,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVTLDevicesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeVTLDevicesRequest));
+                request = new DescribeVTLDevicesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeVTLDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeVTLDevicesResult> responseHandler = new JsonResponseHandler<DescribeVTLDevicesResult>(
-                    new DescribeVTLDevicesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVTLDevicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeVTLDevicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2241,10 +2527,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns information about the working storage of a
-     * gateway. This operation is supported only for the gateway-stored volume
-     * architecture. This operation is deprecated in cached-volumes API version
-     * (20120630). Use DescribeUploadBuffer instead.
+     * Returns information about the working storage of a gateway. This
+     * operation is supported only for the gateway-stored volume architecture.
+     * This operation is deprecated in cached-volumes API version (20120630).
+     * Use DescribeUploadBuffer instead.
      * </p>
      * <note>
      * <p>
@@ -2264,11 +2550,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DescribeWorkingStorage
      */
     @Override
@@ -2284,18 +2570,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkingStorageRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeWorkingStorageRequest));
+                request = new DescribeWorkingStorageRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeWorkingStorageResult> responseHandler = new JsonResponseHandler<DescribeWorkingStorageResult>(
-                    new DescribeWorkingStorageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkingStorageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeWorkingStorageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2316,18 +2604,22 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * Use this operation for a gateway-VTL that is not reachable or not
      * functioning.
      * </p>
-     * <important>Once a gateway is disabled it cannot be enabled.</important>
+     * <important>
+     * <p>
+     * Once a gateway is disabled it cannot be enabled.
+     * </p>
+     * </important>
      * 
      * @param disableGatewayRequest
      *        DisableGatewayInput
      * @return Result of the DisableGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.DisableGateway
      */
     @Override
@@ -2343,17 +2635,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableGatewayRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableGatewayRequest));
+                request = new DisableGatewayRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(disableGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableGatewayResult> responseHandler = new JsonResponseHandler<DisableGatewayResult>(
-                    new DisableGatewayResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableGatewayResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2366,9 +2661,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation lists gateways owned by an AWS account in a region
-     * specified in the request. The returned list is ordered by gateway Amazon
-     * Resource Name (ARN).
+     * Lists gateways owned by an AWS account in a region specified in the
+     * request. The returned list is ordered by gateway Amazon Resource Name
+     * (ARN).
      * </p>
      * <p>
      * By default, the operation returns a maximum of 100 gateways. This
@@ -2376,8 +2671,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * number of gateways returned in a response.
      * </p>
      * <p>
-     * If you have more gateways than are returned in a response-that is, the
-     * response returns only a truncated list of your gateways-the response
+     * If you have more gateways than are returned in a response (that is, the
+     * response returns only a truncated list of your gateways), the response
      * contains a marker that you can specify in your next request to fetch the
      * next page of gateways.
      * </p>
@@ -2385,16 +2680,24 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param listGatewaysRequest
      *        A JSON object containing zero or more of the following fields:</p>
      *        <ul>
-     *        <li><a>ListGatewaysInput$Limit</a></li>
-     *        <li><a>ListGatewaysInput$Marker</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ListGatewaysInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListGatewaysInput$Marker</a>
+     *        </p>
+     *        </li>
      * @return Result of the ListGateways operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListGateways
      */
     @Override
@@ -2410,17 +2713,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGatewaysRequestMarshaller().marshall(super
-                        .beforeMarshalling(listGatewaysRequest));
+                request = new ListGatewaysRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListGatewaysResult> responseHandler = new JsonResponseHandler<ListGatewaysResult>(
-                    new ListGatewaysResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListGatewaysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListGatewaysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2438,9 +2743,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation returns a list of the gateway's local disks. To specify
-     * which gateway to describe, you use the Amazon Resource Name (ARN) of the
-     * gateway in the body of the request.
+     * Returns a list of the gateway's local disks. To specify which gateway to
+     * describe, you use the Amazon Resource Name (ARN) of the gateway in the
+     * body of the request.
      * </p>
      * <p>
      * The request returns a list of all disks, specifying which are configured
@@ -2457,11 +2762,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the ListLocalDisks operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListLocalDisks
      */
     @Override
@@ -2477,17 +2782,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLocalDisksRequestMarshaller().marshall(super
-                        .beforeMarshalling(listLocalDisksRequest));
+                request = new ListLocalDisksRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listLocalDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListLocalDisksResult> responseHandler = new JsonResponseHandler<ListLocalDisksResult>(
-                    new ListLocalDisksResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListLocalDisksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListLocalDisksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2500,8 +2808,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation lists the tags that have been added to the specified
-     * resource.
+     * Lists the tags that have been added to the specified resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2510,11 +2817,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListTagsForResource
      */
     @Override
@@ -2530,18 +2837,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForResourceResult> responseHandler = new JsonResponseHandler<ListTagsForResourceResult>(
-                    new ListTagsForResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2559,9 +2868,88 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation lists iSCSI initiators that are connected to a volume. You
-     * can use this operation to determine whether a volume is being used or
-     * not.
+     * Lists virtual tapes in your virtual tape library (VTL) and your virtual
+     * tape shelf (VTS). You specify the tapes to list by specifying one or more
+     * tape Amazon Resource Names (ARNs). If you don't specify a tape ARN, the
+     * operation lists all virtual tapes in both your VTL and VTS.
+     * </p>
+     * <p>
+     * This operation supports pagination. By default, the operation returns a
+     * maximum of up to 100 tapes. You can optionally specify the
+     * <code>Limit</code> parameter in the body to limit the number of tapes in
+     * the response. If the number of tapes returned in the response is
+     * truncated, the response includes a <code>Marker</code> element that you
+     * can use in your subsequent request to retrieve the next set of tapes.
+     * </p>
+     * 
+     * @param listTapesRequest
+     *        A JSON object that contains one or more of the following
+     *        fields:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$Marker</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListTapesInput$TapeARNs</a>
+     *        </p>
+     *        </li>
+     * @return Result of the ListTapes operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was
+     *         issued to the service. For more information, see the error and
+     *         message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
+     * @sample AWSStorageGateway.ListTapes
+     */
+    @Override
+    public ListTapesResult listTapes(ListTapesRequest listTapesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTapesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTapesRequest> request = null;
+        Response<ListTapesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTapesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listTapesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTapesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTapesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists iSCSI initiators that are connected to a volume. You can use this
+     * operation to determine whether a volume is being used or not.
      * </p>
      * 
      * @param listVolumeInitiatorsRequest
@@ -2570,11 +2958,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumeInitiators
      */
     @Override
@@ -2590,18 +2978,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumeInitiatorsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listVolumeInitiatorsRequest));
+                request = new ListVolumeInitiatorsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listVolumeInitiatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumeInitiatorsResult> responseHandler = new JsonResponseHandler<ListVolumeInitiatorsResult>(
-                    new ListVolumeInitiatorsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListVolumeInitiatorsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListVolumeInitiatorsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2614,8 +3004,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation lists the recovery points for a specified gateway. This
-     * operation is supported only for the gateway-cached volume architecture.
+     * Lists the recovery points for a specified gateway. This operation is
+     * supported only for the gateway-cached volume architecture.
      * </p>
      * <p>
      * Each gateway-cached volume has one recovery point. A volume recovery
@@ -2630,11 +3020,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumeRecoveryPoints
      */
     @Override
@@ -2650,18 +3040,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumeRecoveryPointsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listVolumeRecoveryPointsRequest));
+                request = new ListVolumeRecoveryPointsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listVolumeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumeRecoveryPointsResult> responseHandler = new JsonResponseHandler<ListVolumeRecoveryPointsResult>(
-                    new ListVolumeRecoveryPointsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListVolumeRecoveryPointsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListVolumeRecoveryPointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2674,10 +3066,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation lists the iSCSI stored volumes of a gateway. Results are
-     * sorted by volume ARN. The response includes only the volume ARNs. If you
-     * want additional volume information, use the
-     * <a>DescribeStorediSCSIVolumes</a> API.
+     * Lists the iSCSI stored volumes of a gateway. Results are sorted by volume
+     * ARN. The response includes only the volume ARNs. If you want additional
+     * volume information, use the <a>DescribeStorediSCSIVolumes</a> API.
      * </p>
      * <p>
      * The operation supports pagination. By default, the operation returns a
@@ -2692,16 +3083,24 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *        A JSON object that contains one or more of the following
      *        fields:</p>
      *        <ul>
-     *        <li><a>ListVolumesInput$Limit</a></li>
-     *        <li><a>ListVolumesInput$Marker</a></li>
+     *        <li>
+     *        <p>
+     *        <a>ListVolumesInput$Limit</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>ListVolumesInput$Marker</a>
+     *        </p>
+     *        </li>
      * @return Result of the ListVolumes operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ListVolumes
      */
     @Override
@@ -2716,17 +3115,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listVolumesRequest));
+                request = new ListVolumesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListVolumesResult> responseHandler = new JsonResponseHandler<ListVolumesResult>(
-                    new ListVolumesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListVolumesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListVolumesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2739,7 +3140,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation removes one or more tags from the specified resource.
+     * Removes one or more tags from the specified resource.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -2748,11 +3149,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RemoveTagsFromResource
      */
     @Override
@@ -2768,18 +3169,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromResourceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(removeTagsFromResourceRequest));
+                request = new RemoveTagsFromResourceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsFromResourceResult> responseHandler = new JsonResponseHandler<RemoveTagsFromResourceResult>(
-                    new RemoveTagsFromResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2797,13 +3200,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation resets all cache disks that have encountered a error and
-     * makes the disks available for reconfiguration as cache storage. If your
-     * cache disk encounters a error, the gateway prevents read and write
-     * operations on virtual tapes in the gateway. For example, an error can
-     * occur when a disk is corrupted or removed from the gateway. When a cache
-     * is reset, the gateway loses its cache storage. At this point you can
-     * reconfigure the disks as cache disks.
+     * Resets all cache disks that have encountered a error and makes the disks
+     * available for reconfiguration as cache storage. If your cache disk
+     * encounters a error, the gateway prevents read and write operations on
+     * virtual tapes in the gateway. For example, an error can occur when a disk
+     * is corrupted or removed from the gateway. When a cache is reset, the
+     * gateway loses its cache storage. At this point you can reconfigure the
+     * disks as cache disks.
      * </p>
      * <important>
      * <p>
@@ -2819,11 +3222,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the ResetCache operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ResetCache
      */
     @Override
@@ -2838,17 +3241,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetCacheRequestMarshaller().marshall(super
-                        .beforeMarshalling(resetCacheRequest));
+                request = new ResetCacheRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(resetCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResetCacheResult> responseHandler = new JsonResponseHandler<ResetCacheResult>(
-                    new ResetCacheResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ResetCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ResetCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2878,11 +3283,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RetrieveTapeArchive
      */
     @Override
@@ -2898,18 +3303,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeArchiveRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(retrieveTapeArchiveRequest));
+                request = new RetrieveTapeArchiveRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(retrieveTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveTapeArchiveResult> responseHandler = new JsonResponseHandler<RetrieveTapeArchiveResult>(
-                    new RetrieveTapeArchiveResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RetrieveTapeArchiveResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RetrieveTapeArchiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2929,9 +3336,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * the data on the tape is consistent. If your gateway crashes, virtual
      * tapes that have recovery points can be recovered to a new gateway.
      * </p>
-     * <note>The virtual tape can be retrieved to only one gateway. The
-     * retrieved tape is read-only. The virtual tape can be retrieved to only a
-     * gateway-VTL. There is no charge for retrieving recovery points.</note>
+     * <note>
+     * <p>
+     * The virtual tape can be retrieved to only one gateway. The retrieved tape
+     * is read-only. The virtual tape can be retrieved to only a gateway-VTL.
+     * There is no charge for retrieving recovery points.
+     * </p>
+     * </note>
      * 
      * @param retrieveTapeRecoveryPointRequest
      *        RetrieveTapeRecoveryPointInput
@@ -2939,11 +3350,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.RetrieveTapeRecoveryPoint
      */
     @Override
@@ -2959,18 +3370,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeRecoveryPointRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(retrieveTapeRecoveryPointRequest));
+                request = new RetrieveTapeRecoveryPointRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(retrieveTapeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveTapeRecoveryPointResult> responseHandler = new JsonResponseHandler<RetrieveTapeRecoveryPointResult>(
-                    new RetrieveTapeRecoveryPointResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RetrieveTapeRecoveryPointResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RetrieveTapeRecoveryPointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2983,17 +3396,77 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation shuts down a gateway. To specify which gateway to shut
-     * down, use the Amazon Resource Name (ARN) of the gateway in the body of
-     * your request.
+     * Sets the password for your VM local console. When you log in to the local
+     * console for the first time, you log in to the VM with the default
+     * credentials. We recommend that you set a new password. You don't need to
+     * know the default password to set a new password.
+     * </p>
+     * 
+     * @param setLocalConsolePasswordRequest
+     *        SetLocalConsolePasswordInput
+     * @return Result of the SetLocalConsolePassword operation returned by the
+     *         service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was
+     *         issued to the service. For more information, see the error and
+     *         message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
+     * @sample AWSStorageGateway.SetLocalConsolePassword
+     */
+    @Override
+    public SetLocalConsolePasswordResult setLocalConsolePassword(
+            SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
+        ExecutionContext executionContext = createExecutionContext(setLocalConsolePasswordRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetLocalConsolePasswordRequest> request = null;
+        Response<SetLocalConsolePasswordResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetLocalConsolePasswordRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(setLocalConsolePasswordRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetLocalConsolePasswordResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetLocalConsolePasswordResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Shuts down a gateway. To specify which gateway to shut down, use the
+     * Amazon Resource Name (ARN) of the gateway in the body of your request.
      * </p>
      * <p>
      * The operation shuts down the gateway service component running in the
      * storage gateway's virtual machine (VM) and not the VM.
      * </p>
-     * <note>If you want to shut down the VM, it is recommended that you first
-     * shut down the gateway component in the VM to avoid unpredictable
-     * conditions.</note>
+     * <note>
+     * <p>
+     * If you want to shut down the VM, it is recommended that you first shut
+     * down the gateway component in the VM to avoid unpredictable conditions.
+     * </p>
+     * </note>
      * <p>
      * After the gateway is shutdown, you cannot call any other API except
      * <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and
@@ -3001,11 +3474,15 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * Your applications cannot read from or write to the gateway's storage
      * volumes, and there are no snapshots taken.
      * </p>
-     * <note>When you make a shutdown request, you will get a
-     * <code>200 OK</code> success response immediately. However, it might take
-     * some time for the gateway to shut down. You can call the
-     * <a>DescribeGatewayInformation</a> API to check the status. For more
-     * information, see <a>ActivateGateway</a>.</note>
+     * <note>
+     * <p>
+     * When you make a shutdown request, you will get a <code>200 OK</code>
+     * success response immediately. However, it might take some time for the
+     * gateway to shut down. You can call the <a>DescribeGatewayInformation</a>
+     * API to check the status. For more information, see
+     * <a>ActivateGateway</a>.
+     * </p>
+     * </note>
      * <p>
      * If do not intend to use the gateway again, you must delete the gateway
      * (using <a>DeleteGateway</a>) to no longer pay software charges associated
@@ -3017,11 +3494,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the ShutdownGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.ShutdownGateway
      */
     @Override
@@ -3037,17 +3514,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ShutdownGatewayRequestMarshaller().marshall(super
-                        .beforeMarshalling(shutdownGatewayRequest));
+                request = new ShutdownGatewayRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(shutdownGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ShutdownGatewayResult> responseHandler = new JsonResponseHandler<ShutdownGatewayResult>(
-                    new ShutdownGatewayResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ShutdownGatewayResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ShutdownGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3060,16 +3540,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation starts a gateway that you previously shut down (see
+     * Starts a gateway that you previously shut down (see
      * <a>ShutdownGateway</a>). After the gateway starts, you can then make
      * other API calls, your applications can read from or write to the
      * gateway's storage volumes and you will be able to take snapshot backups.
      * </p>
-     * <note>When you make a request, you will get a 200 OK success response
+     * <note>
+     * <p>
+     * When you make a request, you will get a 200 OK success response
      * immediately. However, it might take some time for the gateway to be
      * ready. You should call <a>DescribeGatewayInformation</a> and check the
      * status before making any additional API calls. For more information, see
-     * <a>ActivateGateway</a>.</note>
+     * <a>ActivateGateway</a>.
+     * </p>
+     * </note>
      * <p>
      * To specify which gateway to start, use the Amazon Resource Name (ARN) of
      * the gateway in your request.
@@ -3080,11 +3564,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the StartGateway operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.StartGateway
      */
     @Override
@@ -3100,17 +3584,19 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartGatewayRequestMarshaller().marshall(super
-                        .beforeMarshalling(startGatewayRequest));
+                request = new StartGatewayRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartGatewayResult> responseHandler = new JsonResponseHandler<StartGatewayResult>(
-                    new StartGatewayResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartGatewayResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3123,10 +3609,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates the bandwidth rate limits of a gateway. You can
-     * update both the upload and download bandwidth rate limit or specify only
-     * one of the two. If you don't set a bandwidth rate limit, the existing
-     * rate limit remains.
+     * Updates the bandwidth rate limits of a gateway. You can update both the
+     * upload and download bandwidth rate limit or specify only one of the two.
+     * If you don't set a bandwidth rate limit, the existing rate limit remains.
      * </p>
      * <p>
      * By default, a gateway's bandwidth rate limits are not set. If you don't
@@ -3142,20 +3627,28 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
      *        <li>
-     *        <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec
-     *        </a></li>
+     *        <p>
+     *        <a>
+     *        UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec
+     *        </a>
+     *        </p>
+     *        </li>
      *        <li>
-     *        <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec
-     *        </a></li>
+     *        <p>
+     *        <a>
+     *        UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec
+     *        </a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateBandwidthRateLimit operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateBandwidthRateLimit
      */
     @Override
@@ -3171,18 +3664,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBandwidthRateLimitRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateBandwidthRateLimitRequest));
+                request = new UpdateBandwidthRateLimitRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBandwidthRateLimitResult> responseHandler = new JsonResponseHandler<UpdateBandwidthRateLimitResult>(
-                    new UpdateBandwidthRateLimitResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBandwidthRateLimitResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateBandwidthRateLimitResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3195,10 +3690,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates the Challenge-Handshake Authentication Protocol
-     * (CHAP) credentials for a specified iSCSI target. By default, a gateway
-     * does not have CHAP enabled; however, for added security, you might use
-     * it.
+     * Updates the Challenge-Handshake Authentication Protocol (CHAP)
+     * credentials for a specified iSCSI target. By default, a gateway does not
+     * have CHAP enabled; however, for added security, you might use it.
      * </p>
      * <important>
      * <p>
@@ -3210,20 +3704,35 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param updateChapCredentialsRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateChapCredentialsInput$InitiatorName</a></li>
      *        <li>
-     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a></li>
-     *        <li><a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a></li>
-     *        <li><a>UpdateChapCredentialsInput$TargetARN</a></li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$InitiatorName</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateChapCredentialsInput$TargetARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateChapCredentials operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateChapCredentials
      */
     @Override
@@ -3239,18 +3748,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateChapCredentialsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateChapCredentialsRequest));
+                request = new UpdateChapCredentialsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateChapCredentialsResult> responseHandler = new JsonResponseHandler<UpdateChapCredentialsResult>(
-                    new UpdateChapCredentialsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChapCredentialsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateChapCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3263,21 +3774,28 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates a gateway's metadata, which includes the gateway's
-     * name and time zone. To specify which gateway to update, use the Amazon
-     * Resource Name (ARN) of the gateway in your request.
+     * Updates a gateway's metadata, which includes the gateway's name and time
+     * zone. To specify which gateway to update, use the Amazon Resource Name
+     * (ARN) of the gateway in your request.
      * </p>
+     * <note>
+     * <p>
+     * For Gateways activated after September 2, 2015, the gateway's ARN
+     * contains the gateway ID rather than the gateway name. However, changing
+     * the name of the gateway has no effect on the gateway's ARN.
+     * </p>
+     * </note>
      * 
      * @param updateGatewayInformationRequest
      * @return Result of the UpdateGatewayInformation operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateGatewayInformation
      */
     @Override
@@ -3293,18 +3811,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewayInformationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateGatewayInformationRequest));
+                request = new UpdateGatewayInformationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGatewayInformationResult> responseHandler = new JsonResponseHandler<UpdateGatewayInformationResult>(
-                    new UpdateGatewayInformationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayInformationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateGatewayInformationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3317,21 +3837,28 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates the gateway virtual machine (VM) software. The
-     * request immediately triggers the software update.
+     * Updates the gateway virtual machine (VM) software. The request
+     * immediately triggers the software update.
      * </p>
-     * <note>When you make this request, you get a <code>200 OK</code> success
+     * <note>
+     * <p>
+     * When you make this request, you get a <code>200 OK</code> success
      * response immediately. However, it might take some time for the update to
      * complete. You can call <a>DescribeGatewayInformation</a> to verify the
-     * gateway is in the <code>STATE_RUNNING</code> state.</note> <important>A
-     * software update forces a system restart of your gateway. You can minimize
-     * the chance of any disruption to your applications by increasing your
-     * iSCSI Initiators' timeouts. For more information about increasing iSCSI
-     * Initiator timeouts for Windows and Linux, see <a href=
+     * gateway is in the <code>STATE_RUNNING</code> state.
+     * </p>
+     * </note> <important>
+     * <p>
+     * A software update forces a system restart of your gateway. You can
+     * minimize the chance of any disruption to your applications by increasing
+     * your iSCSI Initiators' timeouts. For more information about increasing
+     * iSCSI Initiator timeouts for Windows and Linux, see <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
      * >Customizing Your Windows iSCSI Settings</a> and <a href=
      * "http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
-     * >Customizing Your Linux iSCSI Settings</a>, respectively.</important>
+     * >Customizing Your Linux iSCSI Settings</a>, respectively.
+     * </p>
+     * </important>
      * 
      * @param updateGatewaySoftwareNowRequest
      *        A JSON object containing the of the gateway to update.
@@ -3339,11 +3866,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateGatewaySoftwareNow
      */
     @Override
@@ -3359,18 +3886,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewaySoftwareNowRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateGatewaySoftwareNowRequest));
+                request = new UpdateGatewaySoftwareNowRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateGatewaySoftwareNowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateGatewaySoftwareNowResult> responseHandler = new JsonResponseHandler<UpdateGatewaySoftwareNowResult>(
-                    new UpdateGatewaySoftwareNowResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewaySoftwareNowResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateGatewaySoftwareNowResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3383,26 +3912,38 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates a gateway's weekly maintenance start time
-     * information, including day and time of the week. The maintenance time is
-     * the time in your gateway's time zone.
+     * Updates a gateway's weekly maintenance start time information, including
+     * day and time of the week. The maintenance time is the time in your
+     * gateway's time zone.
      * </p>
      * 
      * @param updateMaintenanceStartTimeRequest
      *        A JSON object containing the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateMaintenanceStartTimeInput$DayOfWeek</a></li>
-     *        <li><a>UpdateMaintenanceStartTimeInput$HourOfDay</a></li>
-     *        <li><a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a></li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$HourOfDay</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateMaintenanceStartTime operation returned by
      *         the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateMaintenanceStartTime
      */
     @Override
@@ -3418,18 +3959,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMaintenanceStartTimeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateMaintenanceStartTimeRequest));
+                request = new UpdateMaintenanceStartTimeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMaintenanceStartTimeResult> responseHandler = new JsonResponseHandler<UpdateMaintenanceStartTimeResult>(
-                    new UpdateMaintenanceStartTimeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMaintenanceStartTimeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateMaintenanceStartTimeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3442,8 +3985,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates a snapshot schedule configured for a gateway
-     * volume.
+     * Updates a snapshot schedule configured for a gateway volume.
      * </p>
      * <p>
      * The default snapshot schedule for volume is once every 24 hours, starting
@@ -3460,19 +4002,35 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
      * @param updateSnapshotScheduleRequest
      *        A JSON object containing one or more of the following fields:</p>
      *        <ul>
-     *        <li><a>UpdateSnapshotScheduleInput$Description</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$RecurrenceInHours</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$StartAt</a></li>
-     *        <li><a>UpdateSnapshotScheduleInput$VolumeARN</a></li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$Description</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$StartAt</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a>UpdateSnapshotScheduleInput$VolumeARN</a>
+     *        </p>
+     *        </li>
      * @return Result of the UpdateSnapshotSchedule operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateSnapshotSchedule
      */
     @Override
@@ -3488,18 +4046,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSnapshotScheduleRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateSnapshotScheduleRequest));
+                request = new UpdateSnapshotScheduleRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateSnapshotScheduleResult> responseHandler = new JsonResponseHandler<UpdateSnapshotScheduleResult>(
-                    new UpdateSnapshotScheduleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSnapshotScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateSnapshotScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3512,23 +4072,22 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * This operation updates the type of medium changer in a gateway-VTL. When
-     * you activate a gateway-VTL, you select a medium changer type for the
-     * gateway-VTL. This operation enables you to select a different type of
-     * medium changer after a gateway-VTL is activated.
+     * Updates the type of medium changer in a gateway-VTL. When you activate a
+     * gateway-VTL, you select a medium changer type for the gateway-VTL. This
+     * operation enables you to select a different type of medium changer after
+     * a gateway-VTL is activated.
      * </p>
      * 
      * @param updateVTLDeviceTypeRequest
-     *        UpdateVTLDeviceTypeInput
      * @return Result of the UpdateVTLDeviceType operation returned by the
      *         service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was
-     *         issued to the service. See the error and message fields for more
-     *         information.
+     *         issued to the service. For more information, see the error and
+     *         message fields.
      * @throws InternalServerErrorException
-     *         An internal server error has occurred during the request. See the
-     *         error and message fields for more information.
+     *         An internal server error has occurred during the request. For
+     *         more information, see the error and message fields.
      * @sample AWSStorageGateway.UpdateVTLDeviceType
      */
     @Override
@@ -3544,18 +4103,20 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVTLDeviceTypeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateVTLDeviceTypeRequest));
+                request = new UpdateVTLDeviceTypeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateVTLDeviceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateVTLDeviceTypeResult> responseHandler = new JsonResponseHandler<UpdateVTLDeviceTypeResult>(
-                    new UpdateVTLDeviceTypeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVTLDeviceTypeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateVTLDeviceTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3589,33 +4150,48 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

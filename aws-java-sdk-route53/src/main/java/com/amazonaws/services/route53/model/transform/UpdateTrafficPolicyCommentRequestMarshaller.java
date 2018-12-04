@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * UpdateTrafficPolicyCommentRequest Marshaller
@@ -57,18 +60,22 @@ public class UpdateTrafficPolicyCommentRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateTrafficPolicyCommentRequest.getId() == null) ? ""
-                        : StringUtils
-                                .fromString(updateTrafficPolicyCommentRequest
-                                        .getId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{Version}",
-                (updateTrafficPolicyCommentRequest.getVersion() == null) ? ""
-                        : StringUtils
-                                .fromInteger(updateTrafficPolicyCommentRequest
-                                        .getVersion()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (updateTrafficPolicyCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(updateTrafficPolicyCommentRequest
+                                                .getId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Version}",
+                        (updateTrafficPolicyCommentRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromInteger(updateTrafficPolicyCommentRequest
+                                                .getVersion()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

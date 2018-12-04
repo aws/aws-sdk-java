@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.HashMap;
@@ -21,80 +23,131 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
-import com.amazonaws.internal.ListWithAutoConstructFlag;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ec2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
- * Create Image Request Marshaller
+ * CreateImageRequest Marshaller
  */
-public class CreateImageRequestMarshaller implements Marshaller<Request<CreateImageRequest>, CreateImageRequest> {
 
-    public Request<CreateImageRequest> marshall(CreateImageRequest createImageRequest) {
+public class CreateImageRequestMarshaller implements
+        Marshaller<Request<CreateImageRequest>, CreateImageRequest> {
+
+    public Request<CreateImageRequest> marshall(
+            CreateImageRequest createImageRequest) {
 
         if (createImageRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
+        Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(
+                createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
         request.addParameter("Version", "2015-10-01");
+        request.setHttpMethod(HttpMethodName.POST);
 
         if (createImageRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
+            request.addParameter("InstanceId",
+                    StringUtils.fromString(createImageRequest.getInstanceId()));
         }
+
         if (createImageRequest.getName() != null) {
-            request.addParameter("Name", StringUtils.fromString(createImageRequest.getName()));
+            request.addParameter("Name",
+                    StringUtils.fromString(createImageRequest.getName()));
         }
+
         if (createImageRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(createImageRequest.getDescription()));
-        }
-        if (createImageRequest.isNoReboot() != null) {
-            request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.isNoReboot()));
+            request.addParameter("Description",
+                    StringUtils.fromString(createImageRequest.getDescription()));
         }
 
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createImageRequest.getBlockDeviceMappings();
-        int blockDeviceMappingsListIndex = 1;
+        if (createImageRequest.getNoReboot() != null) {
+            request.addParameter("NoReboot",
+                    StringUtils.fromBoolean(createImageRequest.getNoReboot()));
+        }
 
-        for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
-            BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
-            if (blockDeviceMappingMember != null) {
-                if (blockDeviceMappingMember.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingMember.getVirtualName()));
+        com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createImageRequest
+                .getBlockDeviceMappings();
+        if (!blockDeviceMappingsList.isEmpty()
+                || !blockDeviceMappingsList.isAutoConstruct()) {
+            int blockDeviceMappingsListIndex = 1;
+
+            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+
+                if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                    request.addParameter("BlockDeviceMapping."
+                            + blockDeviceMappingsListIndex + ".VirtualName",
+                            StringUtils.fromString(blockDeviceMappingsListValue
+                                    .getVirtualName()));
                 }
-                if (blockDeviceMappingMember.getDeviceName() != null) {
-                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingMember.getDeviceName()));
+
+                if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                    request.addParameter("BlockDeviceMapping."
+                            + blockDeviceMappingsListIndex + ".DeviceName",
+                            StringUtils.fromString(blockDeviceMappingsListValue
+                                    .getDeviceName()));
                 }
-                EbsBlockDevice ebsBlockDeviceEbs = blockDeviceMappingMember.getEbs();
-                if (ebsBlockDeviceEbs != null) {
-                    if (ebsBlockDeviceEbs.getSnapshotId() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.fromString(ebsBlockDeviceEbs.getSnapshotId()));
+
+                EbsBlockDevice ebs = blockDeviceMappingsListValue.getEbs();
+                if (ebs != null) {
+
+                    if (ebs.getSnapshotId() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex
+                                + ".Ebs.SnapshotId",
+                                StringUtils.fromString(ebs.getSnapshotId()));
                     }
-                    if (ebsBlockDeviceEbs.getVolumeSize() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebsBlockDeviceEbs.getVolumeSize()));
+
+                    if (ebs.getVolumeSize() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex
+                                + ".Ebs.VolumeSize",
+                                StringUtils.fromInteger(ebs.getVolumeSize()));
                     }
-                    if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
+
+                    if (ebs.getDeleteOnTermination() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex
+                                + ".Ebs.DeleteOnTermination", StringUtils
+                                .fromBoolean(ebs.getDeleteOnTermination()));
                     }
-                    if (ebsBlockDeviceEbs.getVolumeType() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+
+                    if (ebs.getVolumeType() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex
+                                + ".Ebs.VolumeType",
+                                StringUtils.fromString(ebs.getVolumeType()));
                     }
-                    if (ebsBlockDeviceEbs.getIops() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
+
+                    if (ebs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex + ".Ebs.Iops",
+                                StringUtils.fromInteger(ebs.getIops()));
                     }
-                    if (ebsBlockDeviceEbs.isEncrypted() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted", StringUtils.fromBoolean(ebsBlockDeviceEbs.isEncrypted()));
+
+                    if (ebs.getEncrypted() != null) {
+                        request.addParameter("BlockDeviceMapping."
+                                + blockDeviceMappingsListIndex
+                                + ".Ebs.Encrypted",
+                                StringUtils.fromBoolean(ebs.getEncrypted()));
                     }
                 }
-                if (blockDeviceMappingMember.getNoDevice() != null) {
-                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.fromString(blockDeviceMappingMember.getNoDevice()));
+
+                if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                    request.addParameter("BlockDeviceMapping."
+                            + blockDeviceMappingsListIndex + ".NoDevice",
+                            StringUtils.fromString(blockDeviceMappingsListValue
+                                    .getNoDevice()));
                 }
+                blockDeviceMappingsListIndex++;
             }
-
-            blockDeviceMappingsListIndex++;
         }
 
         return request;
     }
+
 }

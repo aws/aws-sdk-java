@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CopyCommandMarshaller
@@ -39,33 +34,33 @@ import com.amazonaws.util.json.*;
 public class CopyCommandJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CopyCommand copyCommand, JSONWriter jsonWriter) {
+    public void marshall(CopyCommand copyCommand,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (copyCommand == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (copyCommand.getDataTableName() != null) {
-                jsonWriter.key("DataTableName").value(
+                jsonGenerator.writeFieldName("DataTableName").writeValue(
                         copyCommand.getDataTableName());
             }
-
             if (copyCommand.getDataTableColumns() != null) {
-                jsonWriter.key("DataTableColumns").value(
+                jsonGenerator.writeFieldName("DataTableColumns").writeValue(
                         copyCommand.getDataTableColumns());
             }
-
             if (copyCommand.getCopyOptions() != null) {
-                jsonWriter.key("CopyOptions").value(
+                jsonGenerator.writeFieldName("CopyOptions").writeValue(
                         copyCommand.getCopyOptions());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

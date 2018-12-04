@@ -21,8 +21,10 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * This exception is thrown when an operation is called with an invalid trail
- * ARN. The format of a trail ARN is
- * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+ * ARN. The format of a trail ARN is:
+ * </p>
+ * <p>
+ * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
  * </p>
  */
 public class CloudTrailARNInvalidException extends AmazonServiceException {

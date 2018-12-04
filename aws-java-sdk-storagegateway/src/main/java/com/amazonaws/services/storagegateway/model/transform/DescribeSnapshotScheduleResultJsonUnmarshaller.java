@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,30 @@ public class DescribeSnapshotScheduleResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    describeSnapshotScheduleResult
-                            .setVolumeARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeSnapshotScheduleResult.setVolumeARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StartAt", targetDepth)) {
                     context.nextToken();
                     describeSnapshotScheduleResult
-                            .setStartAt(IntegerJsonUnmarshaller.getInstance()
+                            .setStartAt(context.getUnmarshaller(Integer.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("RecurrenceInHours", targetDepth)) {
                     context.nextToken();
                     describeSnapshotScheduleResult
-                            .setRecurrenceInHours(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRecurrenceInHours(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    describeSnapshotScheduleResult
-                            .setDescription(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeSnapshotScheduleResult.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
                     context.nextToken();
-                    describeSnapshotScheduleResult
-                            .setTimezone(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeSnapshotScheduleResult.setTimezone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

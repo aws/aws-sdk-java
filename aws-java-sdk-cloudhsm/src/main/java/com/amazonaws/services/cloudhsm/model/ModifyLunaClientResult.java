@@ -38,6 +38,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
      * @param clientArn
      *        The ARN of the client.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -49,6 +50,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the client.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -63,6 +65,7 @@ public class ModifyLunaClientResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyLunaClientResult withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;

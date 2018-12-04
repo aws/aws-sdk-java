@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.datapipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ReportTaskProgressRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ReportTaskProgressRequestMarshaller
         implements
         Marshaller<Request<ReportTaskProgressRequest>, ReportTaskProgressRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ReportTaskProgressRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ReportTaskProgressRequest> marshall(
             ReportTaskProgressRequest reportTaskProgressRequest) {
@@ -64,39 +65,38 @@ public class ReportTaskProgressRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (reportTaskProgressRequest.getTaskId() != null) {
-                jsonWriter.key("taskId").value(
+                jsonGenerator.writeFieldName("taskId").writeValue(
                         reportTaskProgressRequest.getTaskId());
             }
 
             com.amazonaws.internal.SdkInternalList<Field> fieldsList = (com.amazonaws.internal.SdkInternalList<Field>) reportTaskProgressRequest
                     .getFields();
             if (!fieldsList.isEmpty() || !fieldsList.isAutoConstruct()) {
-                jsonWriter.key("fields");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("fields");
+                jsonGenerator.writeStartArray();
                 for (Field fieldsListValue : fieldsList) {
                     if (fieldsListValue != null) {
 
                         FieldJsonMarshaller.getInstance().marshall(
-                                fieldsListValue, jsonWriter);
+                                fieldsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

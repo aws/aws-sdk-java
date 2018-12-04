@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GenericRevisionInfoMarshaller
@@ -39,20 +34,21 @@ import com.amazonaws.util.json.*;
 public class GenericRevisionInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(GenericRevisionInfo genericRevisionInfo,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (genericRevisionInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (genericRevisionInfo.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         genericRevisionInfo.getDescription());
             }
 
@@ -60,32 +56,29 @@ public class GenericRevisionInfoJsonMarshaller {
                     .getDeploymentGroups();
             if (!deploymentGroupsList.isEmpty()
                     || !deploymentGroupsList.isAutoConstruct()) {
-                jsonWriter.key("deploymentGroups");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("deploymentGroups");
+                jsonGenerator.writeStartArray();
                 for (String deploymentGroupsListValue : deploymentGroupsList) {
                     if (deploymentGroupsListValue != null) {
-                        jsonWriter.value(deploymentGroupsListValue);
+                        jsonGenerator.writeValue(deploymentGroupsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (genericRevisionInfo.getFirstUsedTime() != null) {
-                jsonWriter.key("firstUsedTime").value(
+                jsonGenerator.writeFieldName("firstUsedTime").writeValue(
                         genericRevisionInfo.getFirstUsedTime());
             }
-
             if (genericRevisionInfo.getLastUsedTime() != null) {
-                jsonWriter.key("lastUsedTime").value(
+                jsonGenerator.writeFieldName("lastUsedTime").writeValue(
                         genericRevisionInfo.getLastUsedTime());
             }
-
             if (genericRevisionInfo.getRegisterTime() != null) {
-                jsonWriter.key("registerTime").value(
+                jsonGenerator.writeFieldName("registerTime").writeValue(
                         genericRevisionInfo.getRegisterTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

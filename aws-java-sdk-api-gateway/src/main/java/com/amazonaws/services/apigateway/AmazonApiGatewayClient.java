@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.services.apigateway.model.transform.*;
@@ -50,6 +52,7 @@ import com.amazonaws.services.apigateway.model.transform.*;
  * outside of AWS.
  * </p>
  */
+@ThreadSafe
 public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         AmazonApiGateway {
     /** Provider for AWS credentials. */
@@ -64,9 +67,51 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "apigateway";
 
     /**
-     * List of exception unmarshallers for all Amazon API Gateway exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnauthorizedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("BadRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.BadRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyRequestsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.apigateway.model.ServiceUnavailableException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon API Gateway.
@@ -86,8 +131,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonApiGatewayClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -129,8 +174,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonApiGatewayClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -171,8 +215,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonApiGatewayClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -227,37 +270,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.UnauthorizedException.class,
-                        "UnauthorizedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.BadRequestException.class,
-                        "BadRequestException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.ConflictException.class,
-                        "ConflictException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.NotFoundException.class,
-                        "NotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.TooManyRequestsException.class,
-                        "TooManyRequestsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.apigateway.model.ServiceUnavailableException.class,
-                        "ServiceUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -272,7 +284,12 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Create an <a>ApiKey</a> resource.
+     * </p>
+     * 
      * @param createApiKeyRequest
+     *        Request to create an <a>ApiKey</a> resource.
      * @return Result of the CreateApiKey operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -294,17 +311,73 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApiKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(createApiKeyRequest));
+                request = new CreateApiKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateApiKeyResult> responseHandler = new JsonResponseHandler<CreateApiKeyResult>(
-                    new CreateApiKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApiKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateApiKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
+     * resource.
+     * </p>
+     * 
+     * @param createAuthorizerRequest
+     *        Request to add a new <a>Authorizer</a> to an existing
+     *        <a>RestApi</a> resource.
+     * @return Result of the CreateAuthorizer operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateAuthorizer
+     */
+    @Override
+    public CreateAuthorizerResult createAuthorizer(
+            CreateAuthorizerRequest createAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAuthorizerRequest> request = null;
+        Response<CreateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAuthorizerRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAuthorizerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -345,18 +418,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBasePathMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createBasePathMappingRequest));
+                request = new CreateBasePathMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateBasePathMappingResult> responseHandler = new JsonResponseHandler<CreateBasePathMappingResult>(
-                    new CreateBasePathMappingResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBasePathMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateBasePathMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -399,7 +474,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller()
+                request = new CreateDeploymentRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
@@ -408,9 +483,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDeploymentResult> responseHandler = new JsonResponseHandler<CreateDeploymentResult>(
-                    new CreateDeploymentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDeploymentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -431,6 +508,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the CreateDomainName operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.CreateDomainName
      */
@@ -447,7 +525,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDomainNameRequestMarshaller()
+                request = new CreateDomainNameRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createDomainNameRequest));
                 // Binds the request metrics to the current request.
@@ -456,9 +534,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDomainNameResult> responseHandler = new JsonResponseHandler<CreateDomainNameResult>(
-                    new CreateDomainNameResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDomainNameResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateDomainNameResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -498,17 +578,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateModelRequestMarshaller().marshall(super
-                        .beforeMarshalling(createModelRequest));
+                request = new CreateModelRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateModelResult> responseHandler = new JsonResponseHandler<CreateModelResult>(
-                    new CreateModelResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateModelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -548,17 +630,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateResourceRequestMarshaller().marshall(super
-                        .beforeMarshalling(createResourceRequest));
+                request = new CreateResourceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateResourceResult> responseHandler = new JsonResponseHandler<CreateResourceResult>(
-                    new CreateResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -575,7 +660,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createRestApiRequest
-     *        Request to add a new <a>RestApi</a> resource to your collection.
+     *        The POST Request to add a new <a>RestApi</a> resource to your
+     *        collection.
      * @return Result of the CreateRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws LimitExceededException
@@ -596,17 +682,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRestApiRequestMarshaller().marshall(super
-                        .beforeMarshalling(createRestApiRequest));
+                request = new CreateRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRestApiResult> responseHandler = new JsonResponseHandler<CreateRestApiResult>(
-                    new CreateRestApiResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateRestApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -619,7 +707,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a <a>Stage</a> resource.
+     * Creates a new <a>Stage</a> resource that references a pre-existing
+     * <a>Deployment</a> for the API.
      * </p>
      * 
      * @param createStageRequest
@@ -645,17 +734,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStageRequestMarshaller().marshall(super
-                        .beforeMarshalling(createStageRequest));
+                request = new CreateStageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateStageResult> responseHandler = new JsonResponseHandler<CreateStageResult>(
-                    new CreateStageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateStageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateStageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -673,35 +764,93 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteApiKeyRequest
      *        A request to delete the <a>ApiKey</a> resource.
+     * @return Result of the DeleteApiKey operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteApiKey
      */
     @Override
-    public void deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest) {
+    public DeleteApiKeyResult deleteApiKey(
+            DeleteApiKeyRequest deleteApiKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteApiKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteApiKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteApiKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApiKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteApiKeyRequest));
+                request = new DeleteApiKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApiKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteApiKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param deleteAuthorizerRequest
+     *        Request to delete an existing <a>Authorizer</a> resource.
+     * @return Result of the DeleteAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteAuthorizer
+     */
+    @Override
+    public DeleteAuthorizerResult deleteAuthorizer(
+            DeleteAuthorizerRequest deleteAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAuthorizerRequest> request = null;
+        Response<DeleteAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAuthorizerRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAuthorizerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -716,37 +865,43 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteBasePathMappingRequest
      *        A request to delete the <a>BasePathMapping</a> resource.
+     * @return Result of the DeleteBasePathMapping operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteBasePathMapping
      */
     @Override
-    public void deleteBasePathMapping(
+    public DeleteBasePathMappingResult deleteBasePathMapping(
             DeleteBasePathMappingRequest deleteBasePathMappingRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteBasePathMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteBasePathMappingRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteBasePathMappingResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBasePathMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteBasePathMappingRequest));
+                request = new DeleteBasePathMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBasePathMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteBasePathMappingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -755,7 +910,14 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Deletes the <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param deleteClientCertificateRequest
+     *        A request to delete the <a>ClientCertificate</a> resource.
+     * @return Result of the DeleteClientCertificate operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws BadRequestException
@@ -763,31 +925,35 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @sample AmazonApiGateway.DeleteClientCertificate
      */
     @Override
-    public void deleteClientCertificate(
+    public DeleteClientCertificateResult deleteClientCertificate(
             DeleteClientCertificateRequest deleteClientCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteClientCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteClientCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClientCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteClientCertificateRequest));
+                request = new DeleteClientCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteClientCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteClientCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -804,6 +970,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param deleteDeploymentRequest
      *        Requests Amazon API Gateway to delete a <a>Deployment</a>
      *        resource.
+     * @return Result of the DeleteDeployment operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
@@ -811,18 +978,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @sample AmazonApiGateway.DeleteDeployment
      */
     @Override
-    public void deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest) {
+    public DeleteDeploymentResult deleteDeployment(
+            DeleteDeploymentRequest deleteDeploymentRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDeploymentRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDeploymentResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeploymentRequestMarshaller()
+                request = new DeleteDeploymentRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteDeploymentRequest));
                 // Binds the request metrics to the current request.
@@ -831,10 +999,14 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDeploymentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -849,24 +1021,26 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteDomainNameRequest
      *        A request to delete the <a>DomainName</a> resource.
+     * @return Result of the DeleteDomainName operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteDomainName
      */
     @Override
-    public void deleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest) {
+    public DeleteDomainNameResult deleteDomainName(
+            DeleteDomainNameRequest deleteDomainNameRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDomainNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDomainNameRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDomainNameResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDomainNameRequestMarshaller()
+                request = new DeleteDomainNameRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteDomainNameRequest));
                 // Binds the request metrics to the current request.
@@ -875,10 +1049,14 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDomainNameResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDomainNameResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -893,37 +1071,43 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteIntegrationRequest
      *        Represents a delete integration request.
+     * @return Result of the DeleteIntegration operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteIntegration
      */
     @Override
-    public void deleteIntegration(
+    public DeleteIntegrationResult deleteIntegration(
             DeleteIntegrationRequest deleteIntegrationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteIntegrationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteIntegrationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteIntegrationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIntegrationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteIntegrationRequest));
+                request = new DeleteIntegrationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIntegrationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteIntegrationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -938,37 +1122,43 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteIntegrationResponseRequest
      *        Represents a delete integration response request.
+     * @return Result of the DeleteIntegrationResponse operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteIntegrationResponse
      */
     @Override
-    public void deleteIntegrationResponse(
+    public DeleteIntegrationResponseResult deleteIntegrationResponse(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteIntegrationResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteIntegrationResponseRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteIntegrationResponseResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIntegrationResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteIntegrationResponseRequest));
+                request = new DeleteIntegrationResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIntegrationResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteIntegrationResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -983,35 +1173,41 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteMethodRequest
      *        Request to delete an existing <a>Method</a> resource.
+     * @return Result of the DeleteMethod operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteMethod
      */
     @Override
-    public void deleteMethod(DeleteMethodRequest deleteMethodRequest) {
+    public DeleteMethodResult deleteMethod(
+            DeleteMethodRequest deleteMethodRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMethodRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMethodResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMethodRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteMethodRequest));
+                request = new DeleteMethodRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMethodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteMethodResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1026,37 +1222,43 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteMethodResponseRequest
      *        A request to delete an existing <a>MethodResponse</a> resource.
+     * @return Result of the DeleteMethodResponse operation returned by the
+     *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteMethodResponse
      */
     @Override
-    public void deleteMethodResponse(
+    public DeleteMethodResponseResult deleteMethodResponse(
             DeleteMethodResponseRequest deleteMethodResponseRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMethodResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMethodResponseRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMethodResponseResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMethodResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteMethodResponseRequest));
+                request = new DeleteMethodResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMethodResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteMethodResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1072,6 +1274,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param deleteModelRequest
      *        Request to delete an existing model in an existing <a>RestApi</a>
      *        resource.
+     * @return Result of the DeleteModel operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -1080,29 +1283,33 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @sample AmazonApiGateway.DeleteModel
      */
     @Override
-    public void deleteModel(DeleteModelRequest deleteModelRequest) {
+    public DeleteModelResult deleteModel(DeleteModelRequest deleteModelRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteModelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteModelRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteModelResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteModelRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteModelRequest));
+                request = new DeleteModelRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1117,36 +1324,44 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteResourceRequest
      *        Request to delete a <a>Resource</a>.
+     * @return Result of the DeleteResource operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.DeleteResource
      */
     @Override
-    public void deleteResource(DeleteResourceRequest deleteResourceRequest) {
+    public DeleteResourceResult deleteResource(
+            DeleteResourceRequest deleteResourceRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteResourceRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteResourceResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteResourceRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteResourceRequest));
+                request = new DeleteResourceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1161,35 +1376,42 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteRestApiRequest
      *        Request to delete the specified API from your collection.
+     * @return Result of the DeleteRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteRestApi
      */
     @Override
-    public void deleteRestApi(DeleteRestApiRequest deleteRestApiRequest) {
+    public DeleteRestApiResult deleteRestApi(
+            DeleteRestApiRequest deleteRestApiRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRestApiRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRestApiRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRestApiResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRestApiRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteRestApiRequest));
+                request = new DeleteRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRestApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1204,35 +1426,93 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param deleteStageRequest
      *        Requests Amazon API Gateway to delete a <a>Stage</a> resource.
+     * @return Result of the DeleteStage operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
+     * @throws BadRequestException
      * @sample AmazonApiGateway.DeleteStage
      */
     @Override
-    public void deleteStage(DeleteStageRequest deleteStageRequest) {
+    public DeleteStageResult deleteStage(DeleteStageRequest deleteStageRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteStageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteStageRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteStageResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStageRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteStageRequest));
+                request = new DeleteStageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Flushes all authorizer cache entries on a stage.
+     * </p>
+     * 
+     * @param flushStageAuthorizersCacheRequest
+     *        Request to flush authorizer cache entries on a specified stage.
+     * @return Result of the FlushStageAuthorizersCache operation returned by
+     *         the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.FlushStageAuthorizersCache
+     */
+    @Override
+    public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(
+            FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
+        ExecutionContext executionContext = createExecutionContext(flushStageAuthorizersCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FlushStageAuthorizersCacheRequest> request = null;
+        Response<FlushStageAuthorizersCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FlushStageAuthorizersCacheRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(flushStageAuthorizersCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<FlushStageAuthorizersCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new FlushStageAuthorizersCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1247,6 +1527,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * 
      * @param flushStageCacheRequest
      *        Requests Amazon API Gateway to flush a stage's cache.
+     * @return Result of the FlushStageCache operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
@@ -1254,29 +1535,35 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @sample AmazonApiGateway.FlushStageCache
      */
     @Override
-    public void flushStageCache(FlushStageCacheRequest flushStageCacheRequest) {
+    public FlushStageCacheResult flushStageCache(
+            FlushStageCacheRequest flushStageCacheRequest) {
         ExecutionContext executionContext = createExecutionContext(flushStageCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<FlushStageCacheRequest> request = null;
-        Response<Void> response = null;
+        Response<FlushStageCacheResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new FlushStageCacheRequestMarshaller().marshall(super
-                        .beforeMarshalling(flushStageCacheRequest));
+                request = new FlushStageCacheRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(flushStageCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<FlushStageCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new FlushStageCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1285,7 +1572,12 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Generates a <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param generateClientCertificateRequest
+     *        A request to generate a <a>ClientCertificate</a> resource.
      * @return Result of the GenerateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -1306,18 +1598,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateClientCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(generateClientCertificateRequest));
+                request = new GenerateClientCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(generateClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateClientCertificateResult> responseHandler = new JsonResponseHandler<GenerateClientCertificateResult>(
-                    new GenerateClientCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateClientCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GenerateClientCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1354,17 +1648,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAccountRequestMarshaller().marshall(super
-                        .beforeMarshalling(getAccountRequest));
+                request = new GetAccountRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetAccountResult> responseHandler = new JsonResponseHandler<GetAccountResult>(
-                    new GetAccountResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccountResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1401,17 +1697,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApiKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(getApiKeyRequest));
+                request = new GetApiKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApiKeyResult> responseHandler = new JsonResponseHandler<GetApiKeyResult>(
-                    new GetApiKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetApiKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetApiKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1431,6 +1729,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        A request to get information about the current <a>ApiKeys</a>
      *        resource.
      * @return Result of the GetApiKeys operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetApiKeys
@@ -1447,17 +1746,119 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApiKeysRequestMarshaller().marshall(super
-                        .beforeMarshalling(getApiKeysRequest));
+                request = new GetApiKeysRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getApiKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetApiKeysResult> responseHandler = new JsonResponseHandler<GetApiKeysResult>(
-                    new GetApiKeysResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetApiKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetApiKeysResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizerRequest
+     *        Request to describe an existing <a>Authorizer</a> resource.
+     * @return Result of the GetAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizer
+     */
+    @Override
+    public GetAuthorizerResult getAuthorizer(
+            GetAuthorizerRequest getAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAuthorizerRequest> request = null;
+        Response<GetAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAuthorizerRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAuthorizerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe an existing <a>Authorizers</a> resource.
+     * </p>
+     * 
+     * @param getAuthorizersRequest
+     *        Request to describe an existing <a>Authorizers</a> resource.
+     * @return Result of the GetAuthorizers operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetAuthorizers
+     */
+    @Override
+    public GetAuthorizersResult getAuthorizers(
+            GetAuthorizersRequest getAuthorizersRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAuthorizersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAuthorizersRequest> request = null;
+        Response<GetAuthorizersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAuthorizersRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getAuthorizersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAuthorizersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetAuthorizersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1495,18 +1896,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBasePathMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getBasePathMappingRequest));
+                request = new GetBasePathMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBasePathMappingResult> responseHandler = new JsonResponseHandler<GetBasePathMappingResult>(
-                    new GetBasePathMappingResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetBasePathMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetBasePathMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1545,18 +1948,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetBasePathMappingsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getBasePathMappingsRequest));
+                request = new GetBasePathMappingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getBasePathMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetBasePathMappingsResult> responseHandler = new JsonResponseHandler<GetBasePathMappingsResult>(
-                    new GetBasePathMappingsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetBasePathMappingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetBasePathMappingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1568,7 +1973,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Gets information about the current <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param getClientCertificateRequest
+     *        A request to get information about the current
+     *        <a>ClientCertificate</a> resource.
      * @return Result of the GetClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -1589,18 +2000,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetClientCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getClientCertificateRequest));
+                request = new GetClientCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetClientCertificateResult> responseHandler = new JsonResponseHandler<GetClientCertificateResult>(
-                    new GetClientCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetClientCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetClientCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1612,9 +2025,16 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Gets a collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param getClientCertificatesRequest
+     *        A request to get information about a collection of
+     *        <a>ClientCertificate</a> resources.
      * @return Result of the GetClientCertificates operation returned by the
      *         service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetClientCertificates
@@ -1632,18 +2052,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetClientCertificatesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getClientCertificatesRequest));
+                request = new GetClientCertificatesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getClientCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetClientCertificatesResult> responseHandler = new JsonResponseHandler<GetClientCertificatesResult>(
-                    new GetClientCertificatesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetClientCertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetClientCertificatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1682,17 +2104,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDeploymentRequest));
+                request = new GetDeploymentRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentResult> responseHandler = new JsonResponseHandler<GetDeploymentResult>(
-                    new GetDeploymentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1712,6 +2136,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        Requests Amazon API Gateway to get information about a
      *        <a>Deployments</a> collection.
      * @return Result of the GetDeployments operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @throws ServiceUnavailableException
@@ -1730,17 +2155,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeploymentsRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDeploymentsRequest));
+                request = new GetDeploymentsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDeploymentsResult> responseHandler = new JsonResponseHandler<GetDeploymentsResult>(
-                    new GetDeploymentsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeploymentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDeploymentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1779,17 +2207,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainNameRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDomainNameRequest));
+                request = new GetDomainNameRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getDomainNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainNameResult> responseHandler = new JsonResponseHandler<GetDomainNameResult>(
-                    new GetDomainNameResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainNameResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDomainNameResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1808,6 +2238,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param getDomainNamesRequest
      *        Request to describe a collection of <a>DomainName</a> resources.
      * @return Result of the GetDomainNames operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetDomainNames
@@ -1825,17 +2256,70 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainNamesRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDomainNamesRequest));
+                request = new GetDomainNamesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainNamesResult> responseHandler = new JsonResponseHandler<GetDomainNamesResult>(
-                    new GetDomainNamesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainNamesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDomainNamesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Exports a deployed version of a <a>RestApi</a> in a specified format.
+     * </p>
+     * 
+     * @param getExportRequest
+     *        Request a new export of a <a>RestApi</a> for a particular
+     *        <a>Stage</a>.
+     * @return Result of the GetExport operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetExport
+     */
+    @Override
+    public GetExportResult getExport(GetExportRequest getExportRequest) {
+        ExecutionContext executionContext = createExecutionContext(getExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportRequest> request = null;
+        Response<GetExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExportResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetExportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1872,17 +2356,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIntegrationRequestMarshaller().marshall(super
-                        .beforeMarshalling(getIntegrationRequest));
+                request = new GetIntegrationRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIntegrationResult> responseHandler = new JsonResponseHandler<GetIntegrationResult>(
-                    new GetIntegrationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetIntegrationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetIntegrationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1920,18 +2407,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIntegrationResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getIntegrationResponseRequest));
+                request = new GetIntegrationResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIntegrationResponseResult> responseHandler = new JsonResponseHandler<GetIntegrationResponseResult>(
-                    new GetIntegrationResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetIntegrationResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetIntegrationResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1967,17 +2456,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMethodRequestMarshaller().marshall(super
-                        .beforeMarshalling(getMethodRequest));
+                request = new GetMethodRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetMethodResult> responseHandler = new JsonResponseHandler<GetMethodResult>(
-                    new GetMethodResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetMethodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetMethodResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2015,18 +2506,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMethodResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getMethodResponseRequest));
+                request = new GetMethodResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetMethodResponseResult> responseHandler = new JsonResponseHandler<GetMethodResponseResult>(
-                    new GetMethodResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetMethodResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetMethodResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2063,17 +2556,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelRequestMarshaller().marshall(super
-                        .beforeMarshalling(getModelRequest));
+                request = new GetModelRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelResult> responseHandler = new JsonResponseHandler<GetModelResult>(
-                    new GetModelResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetModelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetModelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2113,7 +2608,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelTemplateRequestMarshaller()
+                request = new GetModelTemplateRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(getModelTemplateRequest));
                 // Binds the request metrics to the current request.
@@ -2122,9 +2617,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelTemplateResult> responseHandler = new JsonResponseHandler<GetModelTemplateResult>(
-                    new GetModelTemplateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetModelTemplateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetModelTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2144,6 +2641,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *        Request to list existing <a>Models</a> defined for a
      *        <a>RestApi</a> resource.
      * @return Result of the GetModels operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -2161,17 +2659,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetModelsRequestMarshaller().marshall(super
-                        .beforeMarshalling(getModelsRequest));
+                request = new GetModelsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetModelsResult> responseHandler = new JsonResponseHandler<GetModelsResult>(
-                    new GetModelsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetModelsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetModelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2207,17 +2707,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourceRequestMarshaller().marshall(super
-                        .beforeMarshalling(getResourceRequest));
+                request = new GetResourceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetResourceResult> responseHandler = new JsonResponseHandler<GetResourceResult>(
-                    new GetResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2236,6 +2738,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @param getResourcesRequest
      *        Request to list information about a collection of resources.
      * @return Result of the GetResources operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws TooManyRequestsException
@@ -2254,17 +2757,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourcesRequestMarshaller().marshall(super
-                        .beforeMarshalling(getResourcesRequest));
+                request = new GetResourcesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetResourcesResult> responseHandler = new JsonResponseHandler<GetResourcesResult>(
-                    new GetResourcesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2281,8 +2786,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getRestApiRequest
-     *        Request to list an existing <a>RestApi</a> defined for your
-     *        collection.
+     *        The GET request to list an existing <a>RestApi</a> defined for
+     *        your collection.
      * @return Result of the GetRestApi operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -2301,17 +2806,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRestApiRequestMarshaller().marshall(super
-                        .beforeMarshalling(getRestApiRequest));
+                request = new GetRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRestApiResult> responseHandler = new JsonResponseHandler<GetRestApiResult>(
-                    new GetRestApiResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRestApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2328,9 +2835,10 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param getRestApisRequest
-     *        Request to list existing <a>RestApis</a> defined for your
+     *        The GET request to list existing <a>RestApis</a> defined for your
      *        collection.
      * @return Result of the GetRestApis operation returned by the service.
+     * @throws BadRequestException
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetRestApis
@@ -2347,17 +2855,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRestApisRequestMarshaller().marshall(super
-                        .beforeMarshalling(getRestApisRequest));
+                request = new GetRestApisRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getRestApisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRestApisResult> responseHandler = new JsonResponseHandler<GetRestApisResult>(
-                    new GetRestApisResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRestApisResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRestApisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2369,7 +2879,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.
+     * </p>
+     * 
      * @param getSdkRequest
+     *        Request a new generated client SDK for a <a>RestApi</a> and
+     *        <a>Stage</a>.
      * @return Result of the GetSdk operation returned by the service.
      * @throws UnauthorizedException
      * @throws NotFoundException
@@ -2389,17 +2905,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSdkRequestMarshaller().marshall(super
-                        .beforeMarshalling(getSdkRequest));
+                request = new GetSdkRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getSdkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSdkResult> responseHandler = new JsonResponseHandler<GetSdkResult>(
-                    new GetSdkResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(false);
+            HttpResponseHandler<AmazonWebServiceResponse<GetSdkResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetSdkResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2436,17 +2954,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStageRequestMarshaller().marshall(super
-                        .beforeMarshalling(getStageRequest));
+                request = new GetStageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetStageResult> responseHandler = new JsonResponseHandler<GetStageResult>(
-                    new GetStageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetStageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetStageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2483,17 +3003,71 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetStagesRequestMarshaller().marshall(super
-                        .beforeMarshalling(getStagesRequest));
+                request = new GetStagesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getStagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetStagesResult> responseHandler = new JsonResponseHandler<GetStagesResult>(
-                    new GetStagesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetStagesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetStagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A feature of the Amazon API Gateway control service for creating a new
+     * API from an external API definition file.
+     * </p>
+     * 
+     * @param importRestApiRequest
+     *        A POST request to import an API to Amazon API Gateway using an
+     *        input of an API definition file.
+     * @return Result of the ImportRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.ImportRestApi
+     */
+    @Override
+    public ImportRestApiResult importRestApi(
+            ImportRestApiRequest importRestApiRequest) {
+        ExecutionContext executionContext = createExecutionContext(importRestApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportRestApiRequest> request = null;
+        Response<ImportRestApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(importRestApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ImportRestApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2514,6 +3088,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @return Result of the PutIntegration operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws NotFoundException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.PutIntegration
@@ -2531,17 +3106,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutIntegrationRequestMarshaller().marshall(super
-                        .beforeMarshalling(putIntegrationRequest));
+                request = new PutIntegrationRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(putIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutIntegrationResult> responseHandler = new JsonResponseHandler<PutIntegrationResult>(
-                    new PutIntegrationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutIntegrationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutIntegrationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2566,6 +3144,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws LimitExceededException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.PutIntegrationResponse
      */
     @Override
@@ -2581,18 +3160,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutIntegrationResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putIntegrationResponseRequest));
+                request = new PutIntegrationResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutIntegrationResponseResult> responseHandler = new JsonResponseHandler<PutIntegrationResponseResult>(
-                    new PutIntegrationResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutIntegrationResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutIntegrationResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2631,17 +3212,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMethodRequestMarshaller().marshall(super
-                        .beforeMarshalling(putMethodRequest));
+                request = new PutMethodRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutMethodResult> responseHandler = new JsonResponseHandler<PutMethodResult>(
-                    new PutMethodResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutMethodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutMethodResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2683,18 +3266,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMethodResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putMethodResponseRequest));
+                request = new PutMethodResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutMethodResponseResult> responseHandler = new JsonResponseHandler<PutMethodResponseResult>(
-                    new PutMethodResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutMethodResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutMethodResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2706,7 +3291,120 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * A feature of the Amazon API Gateway control service for updating an
+     * existing API with an input of external API definitions. The update can
+     * take the form of merging the supplied definition into the existing API or
+     * overwriting the existing API.
+     * </p>
+     * 
+     * @param putRestApiRequest
+     *        A PUT request to update an existing API, with external API
+     *        definitions specified as the request body.
+     * @return Result of the PutRestApi operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws LimitExceededException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutRestApi
+     */
+    @Override
+    public PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest) {
+        ExecutionContext executionContext = createExecutionContext(putRestApiRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRestApiRequest> request = null;
+        Response<PutRestApiResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putRestApiRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRestApiResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a>
+     * with headers, parameters, and an incoming request body.
+     * </p>
+     * 
+     * @param testInvokeAuthorizerRequest
+     *        Make a request to simulate the execution of an <a>Authorizer</a>.
+     * @return Result of the TestInvokeAuthorizer operation returned by the
+     *         service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.TestInvokeAuthorizer
+     */
+    @Override
+    public TestInvokeAuthorizerResult testInvokeAuthorizer(
+            TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(testInvokeAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestInvokeAuthorizerRequest> request = null;
+        Response<TestInvokeAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestInvokeAuthorizerRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(testInvokeAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TestInvokeAuthorizerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TestInvokeAuthorizerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
+     * headers, parameters, and an incoming request body.
+     * </p>
+     * 
      * @param testInvokeMethodRequest
+     *        Make a request to simulate the execution of a <a>Method</a>.
      * @return Result of the TestInvokeMethod operation returned by the service.
      * @throws BadRequestException
      * @throws UnauthorizedException
@@ -2727,7 +3425,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestInvokeMethodRequestMarshaller()
+                request = new TestInvokeMethodRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(testInvokeMethodRequest));
                 // Binds the request metrics to the current request.
@@ -2736,9 +3434,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestInvokeMethodResult> responseHandler = new JsonResponseHandler<TestInvokeMethodResult>(
-                    new TestInvokeMethodResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TestInvokeMethodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TestInvokeMethodResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2777,17 +3477,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAccountRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAccountRequest));
+                request = new UpdateAccountRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAccountResult> responseHandler = new JsonResponseHandler<UpdateAccountResult>(
-                    new UpdateAccountResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2825,17 +3527,70 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApiKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateApiKeyRequest));
+                request = new UpdateApiKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateApiKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateApiKeyResult> responseHandler = new JsonResponseHandler<UpdateApiKeyResult>(
-                    new UpdateApiKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApiKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateApiKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing <a>Authorizer</a> resource.
+     * </p>
+     * 
+     * @param updateAuthorizerRequest
+     *        Request to update an existing <a>Authorizer</a> resource.
+     * @return Result of the UpdateAuthorizer operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateAuthorizer
+     */
+    @Override
+    public UpdateAuthorizerResult updateAuthorizer(
+            UpdateAuthorizerRequest updateAuthorizerRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAuthorizerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAuthorizerRequest> request = null;
+        Response<UpdateAuthorizerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAuthorizerRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateAuthorizerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAuthorizerResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAuthorizerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2876,18 +3631,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBasePathMappingRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateBasePathMappingRequest));
+                request = new UpdateBasePathMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateBasePathMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateBasePathMappingResult> responseHandler = new JsonResponseHandler<UpdateBasePathMappingResult>(
-                    new UpdateBasePathMappingResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBasePathMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateBasePathMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2899,7 +3656,13 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <p>
+     * Changes information about an <a>ClientCertificate</a> resource.
+     * </p>
+     * 
      * @param updateClientCertificateRequest
+     *        A request to change information about an <a>ClientCertificate</a>
+     *        resource.
      * @return Result of the UpdateClientCertificate operation returned by the
      *         service.
      * @throws UnauthorizedException
@@ -2921,18 +3684,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateClientCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateClientCertificateRequest));
+                request = new UpdateClientCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateClientCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateClientCertificateResult> responseHandler = new JsonResponseHandler<UpdateClientCertificateResult>(
-                    new UpdateClientCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClientCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateClientCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2972,7 +3737,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDeploymentRequestMarshaller()
+                request = new UpdateDeploymentRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(updateDeploymentRequest));
                 // Binds the request metrics to the current request.
@@ -2981,9 +3746,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDeploymentResult> responseHandler = new JsonResponseHandler<UpdateDeploymentResult>(
-                    new UpdateDeploymentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDeploymentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3006,6 +3773,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateDomainName
      */
@@ -3022,7 +3790,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainNameRequestMarshaller()
+                request = new UpdateDomainNameRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(updateDomainNameRequest));
                 // Binds the request metrics to the current request.
@@ -3031,9 +3799,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainNameResult> responseHandler = new JsonResponseHandler<UpdateDomainNameResult>(
-                    new UpdateDomainNameResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainNameResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDomainNameResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3057,6 +3827,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws NotFoundException
      * @throws BadRequestException
      * @throws TooManyRequestsException
+     * @throws ConflictException
      * @sample AmazonApiGateway.UpdateIntegration
      */
     @Override
@@ -3072,18 +3843,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIntegrationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateIntegrationRequest));
+                request = new UpdateIntegrationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateIntegrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIntegrationResult> responseHandler = new JsonResponseHandler<UpdateIntegrationResult>(
-                    new UpdateIntegrationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIntegrationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateIntegrationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3105,6 +3878,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      *         service.
      * @throws UnauthorizedException
      * @throws NotFoundException
+     * @throws ConflictException
      * @throws BadRequestException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateIntegrationResponse
@@ -3122,18 +3896,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIntegrationResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateIntegrationResponseRequest));
+                request = new UpdateIntegrationResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateIntegrationResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIntegrationResponseResult> responseHandler = new JsonResponseHandler<UpdateIntegrationResponseResult>(
-                    new UpdateIntegrationResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIntegrationResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateIntegrationResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3155,6 +3931,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateMethod
      */
@@ -3171,17 +3948,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMethodRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateMethodRequest));
+                request = new UpdateMethodRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMethodResult> responseHandler = new JsonResponseHandler<UpdateMethodResult>(
-                    new UpdateMethodResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMethodResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateMethodResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3222,18 +4001,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMethodResponseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateMethodResponseRequest));
+                request = new UpdateMethodResponseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateMethodResponseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateMethodResponseResult> responseHandler = new JsonResponseHandler<UpdateMethodResponseResult>(
-                    new UpdateMethodResponseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMethodResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateMethodResponseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3256,6 +4037,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.UpdateModel
      */
@@ -3271,17 +4053,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateModelRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateModelRequest));
+                request = new UpdateModelRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateModelResult> responseHandler = new JsonResponseHandler<UpdateModelResult>(
-                    new UpdateModelResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateModelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateModelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3320,17 +4104,20 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateResourceRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateResourceRequest));
+                request = new UpdateResourceRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(updateResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateResourceResult> responseHandler = new JsonResponseHandler<UpdateResourceResult>(
-                    new UpdateResourceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3370,17 +4157,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRestApiRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateRestApiRequest));
+                request = new UpdateRestApiRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateRestApiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRestApiResult> responseHandler = new JsonResponseHandler<UpdateRestApiResult>(
-                    new UpdateRestApiResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRestApiResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRestApiResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3419,17 +4208,19 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStageRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateStageRequest));
+                request = new UpdateStageRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateStageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateStageResult> responseHandler = new JsonResponseHandler<UpdateStageResult>(
-                    new UpdateStageResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateStageResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateStageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3463,33 +4254,48 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

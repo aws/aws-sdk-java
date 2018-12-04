@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.services.support.model.transform.*;
@@ -103,6 +105,7 @@ import com.amazonaws.services.support.model.transform.*;
  * how to call Trusted Advisor for results of checks on your resources.
  * </p>
  */
+@ThreadSafe
 public class AWSSupportClient extends AmazonWebServiceClient implements
         AWSSupport {
     /** Provider for AWS credentials. */
@@ -117,9 +120,62 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "support";
 
     /**
-     * List of exception unmarshallers for all AWS Support exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AttachmentSetIdNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AttachmentIdNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.AttachmentIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DescribeAttachmentLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AttachmentSetExpired")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.AttachmentSetExpiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AttachmentLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.AttachmentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CaseIdNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.CaseIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("CaseCreationLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "AttachmentSetSizeLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Support. A
@@ -139,8 +195,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSupportClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -181,8 +237,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSSupportClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -221,8 +276,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSSupportClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -273,45 +327,6 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class,
-                        "AttachmentSetIdNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.AttachmentIdNotFoundException.class,
-                        "AttachmentIdNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.InternalServerErrorException.class,
-                        "InternalServerError"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class,
-                        "DescribeAttachmentLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.AttachmentSetExpiredException.class,
-                        "AttachmentSetExpired"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.AttachmentLimitExceededException.class,
-                        "AttachmentLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.CaseIdNotFoundException.class,
-                        "CaseIdNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.CaseCreationLimitExceededException.class,
-                        "CaseCreationLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class,
-                        "AttachmentSetSizeLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -372,18 +387,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttachmentsToSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addAttachmentsToSetRequest));
+                request = new AddAttachmentsToSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addAttachmentsToSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddAttachmentsToSetResult> responseHandler = new JsonResponseHandler<AddAttachmentsToSetResult>(
-                    new AddAttachmentsToSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddAttachmentsToSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddAttachmentsToSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -439,18 +456,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCommunicationToCaseRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(addCommunicationToCaseRequest));
+                request = new AddCommunicationToCaseRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addCommunicationToCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddCommunicationToCaseResult> responseHandler = new JsonResponseHandler<AddCommunicationToCaseResult>(
-                    new AddCommunicationToCaseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddCommunicationToCaseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddCommunicationToCaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -540,17 +559,19 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCaseRequestMarshaller().marshall(super
-                        .beforeMarshalling(createCaseRequest));
+                request = new CreateCaseRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateCaseResult> responseHandler = new JsonResponseHandler<CreateCaseResult>(
-                    new CreateCaseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCaseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateCaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -595,18 +616,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAttachmentRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAttachmentRequest));
+                request = new DescribeAttachmentRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAttachmentResult> responseHandler = new JsonResponseHandler<DescribeAttachmentResult>(
-                    new DescribeAttachmentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAttachmentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAttachmentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -661,17 +684,19 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCasesRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeCasesRequest));
+                request = new DescribeCasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCasesResult> responseHandler = new JsonResponseHandler<DescribeCasesResult>(
-                    new DescribeCasesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -728,18 +753,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommunicationsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeCommunicationsRequest));
+                request = new DescribeCommunicationsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCommunicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCommunicationsResult> responseHandler = new JsonResponseHandler<DescribeCommunicationsResult>(
-                    new DescribeCommunicationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCommunicationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCommunicationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -788,7 +815,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServicesRequestMarshaller()
+                request = new DescribeServicesRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
@@ -797,9 +824,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeServicesResult> responseHandler = new JsonResponseHandler<DescribeServicesResult>(
-                    new DescribeServicesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeServicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeServicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -842,18 +871,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSeverityLevelsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeSeverityLevelsRequest));
+                request = new DescribeSeverityLevelsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeSeverityLevelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSeverityLevelsResult> responseHandler = new JsonResponseHandler<DescribeSeverityLevelsResult>(
-                    new DescribeSeverityLevelsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSeverityLevelsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeSeverityLevelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -896,7 +927,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller()
+                request = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeTrustedAdvisorCheckRefreshStatusesRequest));
                 // Binds the request metrics to the current request.
@@ -905,9 +937,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckRefreshStatusesResult>(
-                    new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustedAdvisorCheckRefreshStatusesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTrustedAdvisorCheckRefreshStatusesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -963,7 +997,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckResultRequestMarshaller()
+                request = new DescribeTrustedAdvisorCheckResultRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeTrustedAdvisorCheckResultRequest));
                 // Binds the request metrics to the current request.
@@ -972,9 +1007,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckResultResult>(
-                    new DescribeTrustedAdvisorCheckResultResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustedAdvisorCheckResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTrustedAdvisorCheckResultResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1016,7 +1053,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller()
+                request = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeTrustedAdvisorCheckSummariesRequest));
                 // Binds the request metrics to the current request.
@@ -1025,9 +1063,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorCheckSummariesResult>(
-                    new DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustedAdvisorCheckSummariesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTrustedAdvisorCheckSummariesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1067,7 +1107,8 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustedAdvisorChecksRequestMarshaller()
+                request = new DescribeTrustedAdvisorChecksRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeTrustedAdvisorChecksRequest));
                 // Binds the request metrics to the current request.
@@ -1076,9 +1117,11 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrustedAdvisorChecksResult> responseHandler = new JsonResponseHandler<DescribeTrustedAdvisorChecksResult>(
-                    new DescribeTrustedAdvisorChecksResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrustedAdvisorChecksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeTrustedAdvisorChecksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1127,18 +1170,20 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RefreshTrustedAdvisorCheckRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(refreshTrustedAdvisorCheckRequest));
+                request = new RefreshTrustedAdvisorCheckRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(refreshTrustedAdvisorCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RefreshTrustedAdvisorCheckResult> responseHandler = new JsonResponseHandler<RefreshTrustedAdvisorCheckResult>(
-                    new RefreshTrustedAdvisorCheckResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RefreshTrustedAdvisorCheckResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RefreshTrustedAdvisorCheckResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1176,17 +1221,19 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveCaseRequestMarshaller().marshall(super
-                        .beforeMarshalling(resolveCaseRequest));
+                request = new ResolveCaseRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(resolveCaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ResolveCaseResult> responseHandler = new JsonResponseHandler<ResolveCaseResult>(
-                    new ResolveCaseResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ResolveCaseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ResolveCaseResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1225,33 +1272,48 @@ public class AWSSupportClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to create or update a group of environments.
+ * </p>
  */
 public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -36,7 +38,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target
      * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -61,6 +63,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *        The name of the application to which the specified source bundles
      *        belong.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -73,6 +76,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return The name of the application to which the specified source bundles
      *         belong.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -88,6 +92,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -98,7 +103,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target
      * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -107,9 +112,10 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *        Specify a group name only if the environment name defined in each
      *        target environment's manifest ends with a + (plus) character. See
      *        <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -119,7 +125,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target
      * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -127,9 +133,10 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *         Specify a group name only if the environment name defined in each
      *         target environment's manifest ends with a + (plus) character. See
      *         <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *         >Environment Manifest (env.yaml)</a> for details.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -139,7 +146,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target
      * environment's manifest ends with a + (plus) character. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -148,11 +155,12 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *        Specify a group name only if the environment name defined in each
      *        target environment's manifest ends with a + (plus) character. See
      *        <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -173,6 +181,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *         name of the environment and the name of the solution stack to
      *         use, and optionally can specify environment links to create.
      */
+
     public java.util.List<String> getVersionLabels() {
         if (versionLabels == null) {
             versionLabels = new com.amazonaws.internal.SdkInternalList<String>();
@@ -196,6 +205,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      *        name of the environment and the name of the solution stack to use,
      *        and optionally can specify environment links to create.
      */
+
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
         if (versionLabels == null) {
             this.versionLabels = null;
@@ -230,6 +240,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsRequest withVersionLabels(String... versionLabels) {
         if (this.versionLabels == null) {
             setVersionLabels(new com.amazonaws.internal.SdkInternalList<String>(
@@ -259,6 +270,7 @@ public class ComposeEnvironmentsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsRequest withVersionLabels(
             java.util.Collection<String> versionLabels) {
         setVersionLabels(versionLabels);

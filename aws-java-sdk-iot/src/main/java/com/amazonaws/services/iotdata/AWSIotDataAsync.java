@@ -23,10 +23,7 @@ import com.amazonaws.services.iotdata.model.*;
  * operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or
@@ -138,9 +135,12 @@ public interface AWSIotDataAsync extends AWSIotData {
      * 
      * @param publishRequest
      *        The input for the Publish operation.
+     * @return A Java Future containing the result of the Publish operation
+     *         returned by the service.
      * @sample AWSIotDataAsync.Publish
      */
-    java.util.concurrent.Future<Void> publishAsync(PublishRequest publishRequest);
+    java.util.concurrent.Future<PublishResult> publishAsync(
+            PublishRequest publishRequest);
 
     /**
      * <p>
@@ -159,11 +159,13 @@ public interface AWSIotDataAsync extends AWSIotData {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the Publish operation
+     *         returned by the service.
      * @sample AWSIotDataAsyncHandler.Publish
      */
-    java.util.concurrent.Future<Void> publishAsync(
+    java.util.concurrent.Future<PublishResult> publishAsync(
             PublishRequest publishRequest,
-            com.amazonaws.handlers.AsyncHandler<PublishRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler);
 
     /**
      * <p>

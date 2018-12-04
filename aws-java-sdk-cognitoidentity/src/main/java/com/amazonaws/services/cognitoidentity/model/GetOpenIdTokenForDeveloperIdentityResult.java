@@ -48,6 +48,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -59,6 +60,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -73,6 +75,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityResult withIdentityId(
             String identityId) {
         setIdentityId(identityId);
@@ -87,6 +90,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * @param token
      *        An OpenID token.
      */
+
     public void setToken(String token) {
         this.token = token;
     }
@@ -98,6 +102,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * 
      * @return An OpenID token.
      */
+
     public String getToken() {
         return this.token;
     }
@@ -112,6 +117,7 @@ public class GetOpenIdTokenForDeveloperIdentityResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetOpenIdTokenForDeveloperIdentityResult withToken(String token) {
         setToken(token);
         return this;

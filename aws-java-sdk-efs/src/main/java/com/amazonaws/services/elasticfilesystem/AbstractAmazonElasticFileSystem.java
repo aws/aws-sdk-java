@@ -51,22 +51,24 @@ public class AbstractAmazonElasticFileSystem implements AmazonElasticFileSystem 
     }
 
     @Override
-    public void createTags(CreateTagsRequest request) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteFileSystem(DeleteFileSystemRequest request) {
+    public DeleteFileSystemResult deleteFileSystem(
+            DeleteFileSystemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMountTarget(DeleteMountTargetRequest request) {
+    public DeleteMountTargetResult deleteMountTarget(
+            DeleteMountTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteTags(DeleteTagsRequest request) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +101,7 @@ public class AbstractAmazonElasticFileSystem implements AmazonElasticFileSystem 
     }
 
     @Override
-    public void modifyMountTargetSecurityGroups(
+    public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(
             ModifyMountTargetSecurityGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

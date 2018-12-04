@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutMethodResponseRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class PutMethodResponseRequestMarshaller implements
         Marshaller<Request<PutMethodResponseRequest>, PutMethodResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutMethodResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutMethodResponseRequest> marshall(
             PutMethodResponseRequest putMethodResponseRequest) {
@@ -63,73 +72,83 @@ public class PutMethodResponseRequestMarshaller implements
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putMethodResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(putMethodResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putMethodResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(putMethodResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putMethodResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(putMethodResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (putMethodResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(putMethodResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (putMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (putMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (putMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getHttpMethod()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (putMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(putMethodResponseRequest
+                                                .getStatusCode()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, Boolean> responseParametersMap = putMethodResponseRequest
                     .getResponseParameters();
             if (responseParametersMap != null) {
-                jsonWriter.key("responseParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Boolean> responseParametersMapValue : responseParametersMap
                         .entrySet()) {
                     if (responseParametersMapValue.getValue() != null) {
-                        jsonWriter.key(responseParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseParametersMapValue.getValue());
+                        jsonGenerator.writeValue(responseParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> responseModelsMap = putMethodResponseRequest
                     .getResponseModels();
             if (responseModelsMap != null) {
-                jsonWriter.key("responseModels");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseModels");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseModelsMapValue : responseModelsMap
                         .entrySet()) {
                     if (responseModelsMapValue.getValue() != null) {
-                        jsonWriter.key(responseModelsMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseModelsMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseModelsMapValue.getValue());
+                        jsonGenerator.writeValue(responseModelsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

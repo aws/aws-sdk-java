@@ -14,15 +14,6 @@
  */
 package com.amazonaws.services.s3;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
@@ -32,7 +23,6 @@ import com.amazonaws.auth.AnonymousAWSCredentials;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.Region;
-import com.amazonaws.regions.Regions;
 import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.PartCreationEvent;
@@ -68,6 +58,15 @@ import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.util.VersionInfoUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 /**
  * Used to perform client-side encryption for storing data securely in S3. Data
@@ -157,8 +156,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
 
         this(new StaticCredentialsProvider(new AnonymousAWSCredentials()),
                 encryptionMaterialsProvider,
-                new ClientConfiguration(),
-                new CryptoConfiguration());
+                configFactory.getConfig(), new CryptoConfiguration());
     }
 
 
@@ -238,8 +236,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
 
         this(new StaticCredentialsProvider(new AnonymousAWSCredentials()),
                 encryptionMaterialsProvider,
-                new ClientConfiguration(),
-                cryptoConfig);
+                configFactory.getConfig(), cryptoConfig);
     }
 
     /**
@@ -277,7 +274,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     public AmazonS3EncryptionClient(AWSCredentials credentials,
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
         this(credentials, encryptionMaterialsProvider,
-                new ClientConfiguration(), new CryptoConfiguration());
+                configFactory.getConfig(), new CryptoConfiguration());
     }
 
     /**
@@ -297,7 +294,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             AWSCredentialsProvider credentialsProvider,
             EncryptionMaterialsProvider encryptionMaterialsProvider) {
         this(credentialsProvider, encryptionMaterialsProvider,
-                new ClientConfiguration(), new CryptoConfiguration());
+                configFactory.getConfig(), new CryptoConfiguration());
     }
 
     /**
@@ -343,7 +340,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
         this(credentials, encryptionMaterialsProvider,
-                new ClientConfiguration(), cryptoConfig);
+                configFactory.getConfig(), cryptoConfig);
     }
 
     /**
@@ -367,7 +364,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
             EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
         this(credentialsProvider, encryptionMaterialsProvider,
-                new ClientConfiguration(), cryptoConfig);
+                configFactory.getConfig(), cryptoConfig);
     }
 
     /**
@@ -459,9 +456,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     ) {
         final AWSKMSClient kmsClient = new AWSKMSClient(
             credentialsProvider, clientConfig, requestMetricCollector);
-        final Regions kmsRegion = cryptoConfig.getKmsRegion();
+        final Region kmsRegion = cryptoConfig.getAwsKmsRegion();
         if (kmsRegion != null)
-            kmsClient.setRegion(Region.getRegion(kmsRegion));
+            kmsClient.setRegion(kmsRegion);
         return kmsClient;
     }
 

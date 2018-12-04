@@ -68,6 +68,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      *        The <a>RestApi</a> identifier for the <a>MethodResponse</a>
      *        resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -80,6 +81,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return The <a>RestApi</a> identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -95,6 +97,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -109,6 +112,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      *        The <a>Resource</a> identifier for the <a>MethodResponse</a>
      *        resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -121,6 +125,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return The <a>Resource</a> identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -136,6 +141,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -149,6 +155,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @param httpMethod
      *        The HTTP verb identifier for the parent <a>Method</a> resource.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -160,6 +167,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * 
      * @return The HTTP verb identifier for the parent <a>Method</a> resource.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -174,6 +182,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -187,6 +196,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @param statusCode
      *        The status code identifier for the <a>MethodResponse</a> resource.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -199,6 +209,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return The status code identifier for the <a>MethodResponse</a>
      *         resource.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -213,6 +224,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -228,6 +240,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -243,6 +256,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -273,6 +287,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -298,6 +313,7 @@ public class UpdateMethodResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodResponseRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

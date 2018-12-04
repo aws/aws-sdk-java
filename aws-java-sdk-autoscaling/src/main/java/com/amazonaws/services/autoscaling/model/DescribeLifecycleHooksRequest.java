@@ -46,6 +46,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -57,6 +58,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -71,6 +73,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHooksRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -84,6 +87,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * 
      * @return The names of one or more lifecycle hooks.
      */
+
     public java.util.List<String> getLifecycleHookNames() {
         if (lifecycleHookNames == null) {
             lifecycleHookNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +103,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * @param lifecycleHookNames
      *        The names of one or more lifecycle hooks.
      */
+
     public void setLifecycleHookNames(
             java.util.Collection<String> lifecycleHookNames) {
         if (lifecycleHookNames == null) {
@@ -126,6 +131,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHooksRequest withLifecycleHookNames(
             String... lifecycleHookNames) {
         if (this.lifecycleHookNames == null) {
@@ -148,6 +154,7 @@ public class DescribeLifecycleHooksRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLifecycleHooksRequest withLifecycleHookNames(
             java.util.Collection<String> lifecycleHookNames) {
         setLifecycleHookNames(lifecycleHookNames);

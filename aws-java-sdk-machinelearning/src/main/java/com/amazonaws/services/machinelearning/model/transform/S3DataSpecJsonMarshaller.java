@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * S3DataSpecMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class S3DataSpecJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(S3DataSpec s3DataSpec, JSONWriter jsonWriter) {
+    public void marshall(S3DataSpec s3DataSpec,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (s3DataSpec == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (s3DataSpec.getDataLocationS3() != null) {
-                jsonWriter.key("DataLocationS3").value(
+                jsonGenerator.writeFieldName("DataLocationS3").writeValue(
                         s3DataSpec.getDataLocationS3());
             }
-
             if (s3DataSpec.getDataRearrangement() != null) {
-                jsonWriter.key("DataRearrangement").value(
+                jsonGenerator.writeFieldName("DataRearrangement").writeValue(
                         s3DataSpec.getDataRearrangement());
             }
-
             if (s3DataSpec.getDataSchema() != null) {
-                jsonWriter.key("DataSchema").value(s3DataSpec.getDataSchema());
+                jsonGenerator.writeFieldName("DataSchema").writeValue(
+                        s3DataSpec.getDataSchema());
             }
-
             if (s3DataSpec.getDataSchemaLocationS3() != null) {
-                jsonWriter.key("DataSchemaLocationS3").value(
-                        s3DataSpec.getDataSchemaLocationS3());
+                jsonGenerator.writeFieldName("DataSchemaLocationS3")
+                        .writeValue(s3DataSpec.getDataSchemaLocationS3());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

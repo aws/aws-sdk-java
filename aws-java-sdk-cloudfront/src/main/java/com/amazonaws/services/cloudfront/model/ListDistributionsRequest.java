@@ -54,6 +54,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *        specify the value of NextMarker from the last response. (For the
      *        first request, omit Marker.)
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -72,6 +73,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *         specify the value of NextMarker from the last response. (For the
      *         first request, omit Marker.)
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -93,6 +95,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -107,6 +110,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *        return in the response body. The maximum and default values are
      *        both 100.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -119,6 +123,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      *         return in the response body. The maximum and default values are
      *         both 100.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -134,6 +139,7 @@ public class ListDistributionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDistributionsRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

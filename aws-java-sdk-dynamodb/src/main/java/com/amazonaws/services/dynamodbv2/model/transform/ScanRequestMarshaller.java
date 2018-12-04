@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ScanRequest Marshaller
  */
 public class ScanRequestMarshaller implements
         Marshaller<Request<ScanRequest>, ScanRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ScanRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ScanRequest> marshall(ScanRequest scanRequest) {
 
@@ -62,158 +62,157 @@ public class ScanRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scanRequest.getTableName() != null) {
-                jsonWriter.key("TableName").value(scanRequest.getTableName());
+                jsonGenerator.writeFieldName("TableName").writeValue(
+                        scanRequest.getTableName());
             }
-
             if (scanRequest.getIndexName() != null) {
-                jsonWriter.key("IndexName").value(scanRequest.getIndexName());
+                jsonGenerator.writeFieldName("IndexName").writeValue(
+                        scanRequest.getIndexName());
             }
 
             java.util.List<String> attributesToGetList = scanRequest
                     .getAttributesToGet();
             if (attributesToGetList != null) {
-                jsonWriter.key("AttributesToGet");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributesToGet");
+                jsonGenerator.writeStartArray();
                 for (String attributesToGetListValue : attributesToGetList) {
                     if (attributesToGetListValue != null) {
-                        jsonWriter.value(attributesToGetListValue);
+                        jsonGenerator.writeValue(attributesToGetListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (scanRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(scanRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        scanRequest.getLimit());
             }
-
             if (scanRequest.getSelect() != null) {
-                jsonWriter.key("Select").value(scanRequest.getSelect());
+                jsonGenerator.writeFieldName("Select").writeValue(
+                        scanRequest.getSelect());
             }
 
             java.util.Map<String, Condition> scanFilterMap = scanRequest
                     .getScanFilter();
             if (scanFilterMap != null) {
-                jsonWriter.key("ScanFilter");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ScanFilter");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Condition> scanFilterMapValue : scanFilterMap
                         .entrySet()) {
                     if (scanFilterMapValue.getValue() != null) {
-                        jsonWriter.key(scanFilterMapValue.getKey());
+                        jsonGenerator.writeFieldName(scanFilterMapValue
+                                .getKey());
 
                         ConditionJsonMarshaller.getInstance().marshall(
-                                scanFilterMapValue.getValue(), jsonWriter);
+                                scanFilterMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (scanRequest.getConditionalOperator() != null) {
-                jsonWriter.key("ConditionalOperator").value(
+                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(
                         scanRequest.getConditionalOperator());
             }
 
             java.util.Map<String, AttributeValue> exclusiveStartKeyMap = scanRequest
                     .getExclusiveStartKey();
             if (exclusiveStartKeyMap != null) {
-                jsonWriter.key("ExclusiveStartKey");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExclusiveStartKey");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> exclusiveStartKeyMapValue : exclusiveStartKeyMap
                         .entrySet()) {
                     if (exclusiveStartKeyMapValue.getValue() != null) {
-                        jsonWriter.key(exclusiveStartKeyMapValue.getKey());
+                        jsonGenerator.writeFieldName(exclusiveStartKeyMapValue
+                                .getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
                                 exclusiveStartKeyMapValue.getValue(),
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (scanRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(
-                        scanRequest.getReturnConsumedCapacity());
+                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
+                        .writeValue(scanRequest.getReturnConsumedCapacity());
             }
-
             if (scanRequest.getTotalSegments() != null) {
-                jsonWriter.key("TotalSegments").value(
+                jsonGenerator.writeFieldName("TotalSegments").writeValue(
                         scanRequest.getTotalSegments());
             }
-
             if (scanRequest.getSegment() != null) {
-                jsonWriter.key("Segment").value(scanRequest.getSegment());
+                jsonGenerator.writeFieldName("Segment").writeValue(
+                        scanRequest.getSegment());
             }
-
             if (scanRequest.getProjectionExpression() != null) {
-                jsonWriter.key("ProjectionExpression").value(
-                        scanRequest.getProjectionExpression());
+                jsonGenerator.writeFieldName("ProjectionExpression")
+                        .writeValue(scanRequest.getProjectionExpression());
             }
-
             if (scanRequest.getFilterExpression() != null) {
-                jsonWriter.key("FilterExpression").value(
+                jsonGenerator.writeFieldName("FilterExpression").writeValue(
                         scanRequest.getFilterExpression());
             }
 
             java.util.Map<String, String> expressionAttributeNamesMap = scanRequest
                     .getExpressionAttributeNames();
             if (expressionAttributeNamesMap != null) {
-                jsonWriter.key("ExpressionAttributeNames");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeNames");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
                         .entrySet()) {
                     if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeNamesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeNamesMapValue
+                                        .getKey());
 
-                        jsonWriter.value(expressionAttributeNamesMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(expressionAttributeNamesMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, AttributeValue> expressionAttributeValuesMap = scanRequest
                     .getExpressionAttributeValues();
             if (expressionAttributeValuesMap != null) {
-                jsonWriter.key("ExpressionAttributeValues");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeValues");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap
                         .entrySet()) {
                     if (expressionAttributeValuesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeValuesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeValuesMapValue
+                                        .getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
                                 expressionAttributeValuesMapValue.getValue(),
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (scanRequest.getConsistentRead() != null) {
-                jsonWriter.key("ConsistentRead").value(
+                jsonGenerator.writeFieldName("ConsistentRead").writeValue(
                         scanRequest.getConsistentRead());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

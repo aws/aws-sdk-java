@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeviceMarshaller
@@ -39,78 +34,76 @@ import com.amazonaws.util.json.*;
 public class DeviceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Device device, JSONWriter jsonWriter) {
+    public void marshall(Device device, StructuredJsonGenerator jsonGenerator) {
+
         if (device == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (device.getArn() != null) {
-                jsonWriter.key("arn").value(device.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(device.getArn());
             }
-
             if (device.getName() != null) {
-                jsonWriter.key("name").value(device.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        device.getName());
             }
-
             if (device.getManufacturer() != null) {
-                jsonWriter.key("manufacturer").value(device.getManufacturer());
+                jsonGenerator.writeFieldName("manufacturer").writeValue(
+                        device.getManufacturer());
             }
-
             if (device.getModel() != null) {
-                jsonWriter.key("model").value(device.getModel());
+                jsonGenerator.writeFieldName("model").writeValue(
+                        device.getModel());
             }
-
             if (device.getFormFactor() != null) {
-                jsonWriter.key("formFactor").value(device.getFormFactor());
+                jsonGenerator.writeFieldName("formFactor").writeValue(
+                        device.getFormFactor());
             }
-
             if (device.getPlatform() != null) {
-                jsonWriter.key("platform").value(device.getPlatform());
+                jsonGenerator.writeFieldName("platform").writeValue(
+                        device.getPlatform());
             }
-
             if (device.getOs() != null) {
-                jsonWriter.key("os").value(device.getOs());
+                jsonGenerator.writeFieldName("os").writeValue(device.getOs());
             }
-
             if (device.getCpu() != null) {
-                jsonWriter.key("cpu");
+                jsonGenerator.writeFieldName("cpu");
                 CPUJsonMarshaller.getInstance().marshall(device.getCpu(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (device.getResolution() != null) {
-                jsonWriter.key("resolution");
+                jsonGenerator.writeFieldName("resolution");
                 ResolutionJsonMarshaller.getInstance().marshall(
-                        device.getResolution(), jsonWriter);
+                        device.getResolution(), jsonGenerator);
             }
-
             if (device.getHeapSize() != null) {
-                jsonWriter.key("heapSize").value(device.getHeapSize());
+                jsonGenerator.writeFieldName("heapSize").writeValue(
+                        device.getHeapSize());
             }
-
             if (device.getMemory() != null) {
-                jsonWriter.key("memory").value(device.getMemory());
+                jsonGenerator.writeFieldName("memory").writeValue(
+                        device.getMemory());
             }
-
             if (device.getImage() != null) {
-                jsonWriter.key("image").value(device.getImage());
+                jsonGenerator.writeFieldName("image").writeValue(
+                        device.getImage());
             }
-
             if (device.getCarrier() != null) {
-                jsonWriter.key("carrier").value(device.getCarrier());
+                jsonGenerator.writeFieldName("carrier").writeValue(
+                        device.getCarrier());
             }
-
             if (device.getRadio() != null) {
-                jsonWriter.key("radio").value(device.getRadio());
+                jsonGenerator.writeFieldName("radio").writeValue(
+                        device.getRadio());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

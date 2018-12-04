@@ -69,6 +69,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        The stack name or unique stack ID that includes the resource that
      *        you want to signal.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -82,6 +83,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      * @return The stack name or unique stack ID that includes the resource that
      *         you want to signal.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -98,6 +100,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SignalResourceRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -113,6 +116,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        The logical ID of the resource that you want to signal. The
      *        logical ID is the name of the resource that given in the template.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -127,6 +131,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *         logical ID is the name of the resource that given in the
      *         template.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -143,6 +148,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SignalResourceRequest withLogicalResourceId(String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
         return this;
@@ -163,6 +169,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        single resource (such as signaling a wait condition), each signal
      *        requires a different unique ID.
      */
+
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
     }
@@ -181,6 +188,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *         single resource (such as signaling a wait condition), each signal
      *         requires a different unique ID.
      */
+
     public String getUniqueId() {
         return this.uniqueId;
     }
@@ -202,6 +210,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SignalResourceRequest withUniqueId(String uniqueId) {
         setUniqueId(uniqueId);
         return this;
@@ -220,6 +229,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        stack creation or update.
      * @see ResourceSignalStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -236,6 +246,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *         stack creation or update.
      * @see ResourceSignalStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -255,6 +266,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ResourceSignalStatus
      */
+
     public SignalResourceRequest withStatus(String status) {
         setStatus(status);
         return this;
@@ -271,10 +283,9 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *        The status of the signal, which is either success or failure. A
      *        failure signal causes AWS CloudFormation to immediately fail the
      *        stack creation or update.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceSignalStatus
      */
+
     public void setStatus(ResourceSignalStatus status) {
         this.status = status.toString();
     }
@@ -294,6 +305,7 @@ public class SignalResourceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ResourceSignalStatus
      */
+
     public SignalResourceRequest withStatus(ResourceSignalStatus status) {
         setStatus(status);
         return this;

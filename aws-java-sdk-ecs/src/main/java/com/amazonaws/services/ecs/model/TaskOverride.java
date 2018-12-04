@@ -39,6 +39,7 @@ public class TaskOverride implements Serializable, Cloneable {
      * 
      * @return One or more container overrides sent to a task.
      */
+
     public java.util.List<ContainerOverride> getContainerOverrides() {
         if (containerOverrides == null) {
             containerOverrides = new com.amazonaws.internal.SdkInternalList<ContainerOverride>();
@@ -54,6 +55,7 @@ public class TaskOverride implements Serializable, Cloneable {
      * @param containerOverrides
      *        One or more container overrides sent to a task.
      */
+
     public void setContainerOverrides(
             java.util.Collection<ContainerOverride> containerOverrides) {
         if (containerOverrides == null) {
@@ -81,6 +83,7 @@ public class TaskOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskOverride withContainerOverrides(
             ContainerOverride... containerOverrides) {
         if (this.containerOverrides == null) {
@@ -103,6 +106,7 @@ public class TaskOverride implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TaskOverride withContainerOverrides(
             java.util.Collection<ContainerOverride> containerOverrides) {
         setContainerOverrides(containerOverrides);

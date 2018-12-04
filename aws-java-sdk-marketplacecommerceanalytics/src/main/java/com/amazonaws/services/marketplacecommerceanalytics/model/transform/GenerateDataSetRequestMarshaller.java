@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.marketplacecommerceanalytics.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GenerateDataSetRequest Marshaller
  */
 public class GenerateDataSetRequestMarshaller implements
         Marshaller<Request<GenerateDataSetRequest>, GenerateDataSetRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GenerateDataSetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GenerateDataSetRequest> marshall(
             GenerateDataSetRequest generateDataSetRequest) {
@@ -64,49 +65,67 @@ public class GenerateDataSetRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (generateDataSetRequest.getDataSetType() != null) {
-                jsonWriter.key("dataSetType").value(
+                jsonGenerator.writeFieldName("dataSetType").writeValue(
                         generateDataSetRequest.getDataSetType());
             }
-
             if (generateDataSetRequest.getDataSetPublicationDate() != null) {
-                jsonWriter.key("dataSetPublicationDate").value(
-                        generateDataSetRequest.getDataSetPublicationDate());
+                jsonGenerator.writeFieldName("dataSetPublicationDate")
+                        .writeValue(
+                                generateDataSetRequest
+                                        .getDataSetPublicationDate());
             }
-
             if (generateDataSetRequest.getRoleNameArn() != null) {
-                jsonWriter.key("roleNameArn").value(
+                jsonGenerator.writeFieldName("roleNameArn").writeValue(
                         generateDataSetRequest.getRoleNameArn());
             }
-
             if (generateDataSetRequest.getDestinationS3BucketName() != null) {
-                jsonWriter.key("destinationS3BucketName").value(
-                        generateDataSetRequest.getDestinationS3BucketName());
+                jsonGenerator.writeFieldName("destinationS3BucketName")
+                        .writeValue(
+                                generateDataSetRequest
+                                        .getDestinationS3BucketName());
             }
-
             if (generateDataSetRequest.getDestinationS3Prefix() != null) {
-                jsonWriter.key("destinationS3Prefix").value(
+                jsonGenerator.writeFieldName("destinationS3Prefix").writeValue(
                         generateDataSetRequest.getDestinationS3Prefix());
             }
-
             if (generateDataSetRequest.getSnsTopicArn() != null) {
-                jsonWriter.key("snsTopicArn").value(
+                jsonGenerator.writeFieldName("snsTopicArn").writeValue(
                         generateDataSetRequest.getSnsTopicArn());
             }
 
-            jsonWriter.endObject();
+            java.util.Map<String, String> customerDefinedValuesMap = generateDataSetRequest
+                    .getCustomerDefinedValues();
+            if (customerDefinedValuesMap != null) {
+                jsonGenerator.writeFieldName("customerDefinedValues");
+                jsonGenerator.writeStartObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+                for (Map.Entry<String, String> customerDefinedValuesMapValue : customerDefinedValuesMap
+                        .entrySet()) {
+                    if (customerDefinedValuesMapValue.getValue() != null) {
+                        jsonGenerator
+                                .writeFieldName(customerDefinedValuesMapValue
+                                        .getKey());
+
+                        jsonGenerator.writeValue(customerDefinedValuesMapValue
+                                .getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

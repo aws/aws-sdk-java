@@ -81,6 +81,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @param environmentName
      *        The AWS Elastic Beanstalk environment name.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -92,6 +93,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * 
      * @return The AWS Elastic Beanstalk environment name.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -106,6 +108,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -122,6 +125,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *        Contains the response body with information about the health of
      *        the environment.
      */
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -135,6 +139,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Contains the response body with information about the health of
      *         the environment.
      */
+
     public String getHealthStatus() {
         return this.healthStatus;
     }
@@ -151,6 +156,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withHealthStatus(String healthStatus) {
         setHealthStatus(healthStatus);
         return this;
@@ -171,6 +177,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *        >Health Colors and Statuses</a>.
      * @see EnvironmentHealth
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -189,6 +196,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *         >Health Colors and Statuses</a>.
      * @see EnvironmentHealth
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -210,6 +218,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *         chained together.
      * @see EnvironmentHealth
      */
+
     public DescribeEnvironmentHealthResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -228,10 +237,9 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *        information, see <a href=
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
      *        >Health Colors and Statuses</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentHealth
      */
+
     public void setStatus(EnvironmentHealth status) {
         this.status = status.toString();
     }
@@ -253,6 +261,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *         chained together.
      * @see EnvironmentHealth
      */
+
     public DescribeEnvironmentHealthResult withStatus(EnvironmentHealth status) {
         setStatus(status);
         return this;
@@ -272,6 +281,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
      *        >Health Colors and Statuses</a>.
      */
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -289,6 +299,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html"
      *         >Health Colors and Statuses</a>.
      */
+
     public String getColor() {
         return this.color;
     }
@@ -309,6 +320,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withColor(String color) {
         setColor(color);
         return this;
@@ -321,6 +333,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * 
      * @return Returns potential causes for the reported status.
      */
+
     public java.util.List<String> getCauses() {
         if (causes == null) {
             causes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -336,6 +349,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @param causes
      *        Returns potential causes for the reported status.
      */
+
     public void setCauses(java.util.Collection<String> causes) {
         if (causes == null) {
             this.causes = null;
@@ -361,6 +375,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withCauses(String... causes) {
         if (this.causes == null) {
             setCauses(new com.amazonaws.internal.SdkInternalList<String>(
@@ -382,6 +397,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withCauses(
             java.util.Collection<String> causes) {
         setCauses(causes);
@@ -391,6 +407,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
     /**
      * @param applicationMetrics
      */
+
     public void setApplicationMetrics(ApplicationMetrics applicationMetrics) {
         this.applicationMetrics = applicationMetrics;
     }
@@ -398,6 +415,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
     /**
      * @return
      */
+
     public ApplicationMetrics getApplicationMetrics() {
         return this.applicationMetrics;
     }
@@ -407,6 +425,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withApplicationMetrics(
             ApplicationMetrics applicationMetrics) {
         setApplicationMetrics(applicationMetrics);
@@ -416,6 +435,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
     /**
      * @param instancesHealth
      */
+
     public void setInstancesHealth(InstanceHealthSummary instancesHealth) {
         this.instancesHealth = instancesHealth;
     }
@@ -423,6 +443,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
     /**
      * @return
      */
+
     public InstanceHealthSummary getInstancesHealth() {
         return this.instancesHealth;
     }
@@ -432,6 +453,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withInstancesHealth(
             InstanceHealthSummary instancesHealth) {
         setInstancesHealth(instancesHealth);
@@ -446,6 +468,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @param refreshedAt
      *        The date and time the information was last refreshed.
      */
+
     public void setRefreshedAt(java.util.Date refreshedAt) {
         this.refreshedAt = refreshedAt;
     }
@@ -457,6 +480,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * 
      * @return The date and time the information was last refreshed.
      */
+
     public java.util.Date getRefreshedAt() {
         return this.refreshedAt;
     }
@@ -471,6 +495,7 @@ public class DescribeEnvironmentHealthResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeEnvironmentHealthResult withRefreshedAt(
             java.util.Date refreshedAt) {
         setRefreshedAt(refreshedAt);

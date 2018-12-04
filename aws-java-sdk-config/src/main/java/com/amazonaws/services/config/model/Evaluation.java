@@ -43,6 +43,19 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      */
     private String complianceType;
     /**
@@ -71,6 +84,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @param complianceResourceType
      *        The type of AWS resource that was evaluated.
      */
+
     public void setComplianceResourceType(String complianceResourceType) {
         this.complianceResourceType = complianceResourceType;
     }
@@ -82,6 +96,7 @@ public class Evaluation implements Serializable, Cloneable {
      * 
      * @return The type of AWS resource that was evaluated.
      */
+
     public String getComplianceResourceType() {
         return this.complianceResourceType;
     }
@@ -96,6 +111,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withComplianceResourceType(String complianceResourceType) {
         setComplianceResourceType(complianceResourceType);
         return this;
@@ -109,6 +125,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @param complianceResourceId
      *        The ID of the AWS resource that was evaluated.
      */
+
     public void setComplianceResourceId(String complianceResourceId) {
         this.complianceResourceId = complianceResourceId;
     }
@@ -120,6 +137,7 @@ public class Evaluation implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS resource that was evaluated.
      */
+
     public String getComplianceResourceId() {
         return this.complianceResourceId;
     }
@@ -134,6 +152,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withComplianceResourceId(String complianceResourceId) {
         setComplianceResourceId(complianceResourceId);
         return this;
@@ -144,12 +163,39 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that it was evaluated against.
+     *        rule that it was evaluated against.</p>
+     *        <p>
+     *        For the <code>Evaluation</code> data type, AWS Config supports
+     *        only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>NOT_APPLICABLE</code> values. AWS Config does not support
+     *        the <code>INSUFFICIENT_DATA</code> value for this data type.
+     *        </p>
+     *        <p>
+     *        Similarly, AWS Config does not accept
+     *        <code>INSUFFICIENT_DATA</code> as the value for
+     *        <code>ComplianceType</code> from a <code>PutEvaluations</code>
+     *        request. For example, an AWS Lambda function for a custom Config
+     *        rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
+     *        Config.
      * @see ComplianceType
      */
+
     public void setComplianceType(String complianceType) {
         this.complianceType = complianceType;
     }
@@ -159,11 +205,38 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      * 
      * @return Indicates whether the AWS resource complies with the AWS Config
-     *         rule that it was evaluated against.
+     *         rule that it was evaluated against.</p>
+     *         <p>
+     *         For the <code>Evaluation</code> data type, AWS Config supports
+     *         only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>NOT_APPLICABLE</code> values. AWS Config does not support
+     *         the <code>INSUFFICIENT_DATA</code> value for this data type.
+     *         </p>
+     *         <p>
+     *         Similarly, AWS Config does not accept
+     *         <code>INSUFFICIENT_DATA</code> as the value for
+     *         <code>ComplianceType</code> from a <code>PutEvaluations</code>
+     *         request. For example, an AWS Lambda function for a custom Config
+     *         rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
+     *         Config.
      * @see ComplianceType
      */
+
     public String getComplianceType() {
         return this.complianceType;
     }
@@ -173,14 +246,41 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that it was evaluated against.
+     *        rule that it was evaluated against.</p>
+     *        <p>
+     *        For the <code>Evaluation</code> data type, AWS Config supports
+     *        only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>NOT_APPLICABLE</code> values. AWS Config does not support
+     *        the <code>INSUFFICIENT_DATA</code> value for this data type.
+     *        </p>
+     *        <p>
+     *        Similarly, AWS Config does not accept
+     *        <code>INSUFFICIENT_DATA</code> as the value for
+     *        <code>ComplianceType</code> from a <code>PutEvaluations</code>
+     *        request. For example, an AWS Lambda function for a custom Config
+     *        rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
+     *        Config.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public Evaluation withComplianceType(String complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -191,14 +291,39 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that it was evaluated against.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        rule that it was evaluated against.</p>
+     *        <p>
+     *        For the <code>Evaluation</code> data type, AWS Config supports
+     *        only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>NOT_APPLICABLE</code> values. AWS Config does not support
+     *        the <code>INSUFFICIENT_DATA</code> value for this data type.
+     *        </p>
+     *        <p>
+     *        Similarly, AWS Config does not accept
+     *        <code>INSUFFICIENT_DATA</code> as the value for
+     *        <code>ComplianceType</code> from a <code>PutEvaluations</code>
+     *        request. For example, an AWS Lambda function for a custom Config
+     *        rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
+     *        Config.
      * @see ComplianceType
      */
+
     public void setComplianceType(ComplianceType complianceType) {
         this.complianceType = complianceType.toString();
     }
@@ -208,14 +333,41 @@ public class Evaluation implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * it was evaluated against.
      * </p>
+     * <p>
+     * For the <code>Evaluation</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for this data type.
+     * </p>
+     * <p>
+     * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as
+     * the value for <code>ComplianceType</code> from a
+     * <code>PutEvaluations</code> request. For example, an AWS Lambda function
+     * for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code>
+     * value to AWS Config.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that it was evaluated against.
+     *        rule that it was evaluated against.</p>
+     *        <p>
+     *        For the <code>Evaluation</code> data type, AWS Config supports
+     *        only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>NOT_APPLICABLE</code> values. AWS Config does not support
+     *        the <code>INSUFFICIENT_DATA</code> value for this data type.
+     *        </p>
+     *        <p>
+     *        Similarly, AWS Config does not accept
+     *        <code>INSUFFICIENT_DATA</code> as the value for
+     *        <code>ComplianceType</code> from a <code>PutEvaluations</code>
+     *        request. For example, an AWS Lambda function for a custom Config
+     *        rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS
+     *        Config.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public Evaluation withComplianceType(ComplianceType complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -231,6 +383,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        Supplementary information about how the evaluation determined the
      *        compliance.
      */
+
     public void setAnnotation(String annotation) {
         this.annotation = annotation;
     }
@@ -244,6 +397,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Supplementary information about how the evaluation determined the
      *         compliance.
      */
+
     public String getAnnotation() {
         return this.annotation;
     }
@@ -260,6 +414,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withAnnotation(String annotation) {
         setAnnotation(annotation);
         return this;
@@ -281,6 +436,7 @@ public class Evaluation implements Serializable, Cloneable {
      *        periodic evaluations, the time indicates when AWS Config delivered
      *        the configuration snapshot that triggered the evaluation.
      */
+
     public void setOrderingTimestamp(java.util.Date orderingTimestamp) {
         this.orderingTimestamp = orderingTimestamp;
     }
@@ -301,6 +457,7 @@ public class Evaluation implements Serializable, Cloneable {
      *         Config delivered the configuration snapshot that triggered the
      *         evaluation.
      */
+
     public java.util.Date getOrderingTimestamp() {
         return this.orderingTimestamp;
     }
@@ -323,6 +480,7 @@ public class Evaluation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Evaluation withOrderingTimestamp(java.util.Date orderingTimestamp) {
         setOrderingTimestamp(orderingTimestamp);
         return this;

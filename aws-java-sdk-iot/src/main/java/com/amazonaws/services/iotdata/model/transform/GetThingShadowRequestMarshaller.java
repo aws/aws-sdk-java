@@ -37,8 +37,10 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetThingShadowRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetThingShadowRequestMarshaller implements
         Marshaller<Request<GetThingShadowRequest>, GetThingShadowRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetThingShadowRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetThingShadowRequest> marshall(
             GetThingShadowRequest getThingShadowRequest) {
@@ -65,9 +74,9 @@ public class GetThingShadowRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
-                (getThingShadowRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(getThingShadowRequest
-                                .getThingName()));
+                (getThingShadowRequest.getThingName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getThingShadowRequest
+                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

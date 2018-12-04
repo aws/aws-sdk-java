@@ -61,6 +61,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      *        Specifies the unique Amazon Resource Name(ARN) that encodes the
      *        iSCSI qualified name(iqn) of a tape drive or media changer target.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -75,6 +76,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      *         iSCSI qualified name(iqn) of a tape drive or media changer
      *         target.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -91,6 +93,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceiSCSIAttributes withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -104,6 +107,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @param networkInterfaceId
      *        The network interface identifier of the VTL device.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -115,6 +119,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The network interface identifier of the VTL device.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -129,6 +134,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceiSCSIAttributes withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
@@ -143,6 +149,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @param networkInterfacePort
      *        The port used to communicate with iSCSI VTL device targets.
      */
+
     public void setNetworkInterfacePort(Integer networkInterfacePort) {
         this.networkInterfacePort = networkInterfacePort;
     }
@@ -154,6 +161,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return The port used to communicate with iSCSI VTL device targets.
      */
+
     public Integer getNetworkInterfacePort() {
         return this.networkInterfacePort;
     }
@@ -168,6 +176,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceiSCSIAttributes withNetworkInterfacePort(
             Integer networkInterfacePort) {
         setNetworkInterfacePort(networkInterfacePort);
@@ -182,6 +191,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @param chapEnabled
      *        Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public void setChapEnabled(Boolean chapEnabled) {
         this.chapEnabled = chapEnabled;
     }
@@ -193,6 +203,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public Boolean getChapEnabled() {
         return this.chapEnabled;
     }
@@ -207,6 +218,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeviceiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
         setChapEnabled(chapEnabled);
         return this;
@@ -219,6 +231,7 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
      * 
      * @return Indicates whether mutual CHAP is enabled for the iSCSI target.
      */
+
     public Boolean isChapEnabled() {
         return this.chapEnabled;
     }

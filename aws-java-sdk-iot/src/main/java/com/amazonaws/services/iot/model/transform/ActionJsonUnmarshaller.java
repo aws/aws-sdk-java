@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -88,6 +90,21 @@ public class ActionJsonUnmarshaller implements
                 if (context.testExpression("firehose", targetDepth)) {
                     context.nextToken();
                     action.setFirehose(FirehoseActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("cloudwatchMetric", targetDepth)) {
+                    context.nextToken();
+                    action.setCloudwatchMetric(CloudwatchMetricActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("cloudwatchAlarm", targetDepth)) {
+                    context.nextToken();
+                    action.setCloudwatchAlarm(CloudwatchAlarmActionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("elasticsearch", targetDepth)) {
+                    context.nextToken();
+                    action.setElasticsearch(ElasticsearchActionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

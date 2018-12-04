@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,18 +54,18 @@ public class TimingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SubmitTimeMillis", targetDepth)) {
                     context.nextToken();
-                    timing.setSubmitTimeMillis(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    timing.setSubmitTimeMillis(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("StartTimeMillis", targetDepth)) {
                     context.nextToken();
-                    timing.setStartTimeMillis(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    timing.setStartTimeMillis(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FinishTimeMillis", targetDepth)) {
                     context.nextToken();
-                    timing.setFinishTimeMillis(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    timing.setFinishTimeMillis(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

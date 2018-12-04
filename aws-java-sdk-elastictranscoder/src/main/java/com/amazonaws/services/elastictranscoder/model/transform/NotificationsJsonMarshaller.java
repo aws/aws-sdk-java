@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * NotificationsMarshaller
@@ -39,35 +34,37 @@ import com.amazonaws.util.json.*;
 public class NotificationsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Notifications notifications, JSONWriter jsonWriter) {
+    public void marshall(Notifications notifications,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (notifications == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (notifications.getProgressing() != null) {
-                jsonWriter.key("Progressing").value(
+                jsonGenerator.writeFieldName("Progressing").writeValue(
                         notifications.getProgressing());
             }
-
             if (notifications.getCompleted() != null) {
-                jsonWriter.key("Completed").value(notifications.getCompleted());
+                jsonGenerator.writeFieldName("Completed").writeValue(
+                        notifications.getCompleted());
             }
-
             if (notifications.getWarning() != null) {
-                jsonWriter.key("Warning").value(notifications.getWarning());
+                jsonGenerator.writeFieldName("Warning").writeValue(
+                        notifications.getWarning());
             }
-
             if (notifications.getError() != null) {
-                jsonWriter.key("Error").value(notifications.getError());
+                jsonGenerator.writeFieldName("Error").writeValue(
+                        notifications.getError());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

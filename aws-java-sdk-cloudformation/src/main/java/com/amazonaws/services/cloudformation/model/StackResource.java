@@ -91,6 +91,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param stackName
      *        The name associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -102,6 +103,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return The name associated with the stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -116,6 +118,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -129,6 +132,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param stackId
      *        Unique identifier of the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -140,6 +144,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -154,6 +159,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -167,6 +173,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param logicalResourceId
      *        The logical name of the resource specified in the template.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -178,6 +185,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return The logical name of the resource specified in the template.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -192,6 +200,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withLogicalResourceId(String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
         return this;
@@ -207,6 +216,7 @@ public class StackResource implements Serializable, Cloneable {
      *        The name or unique identifier that corresponds to a physical
      *        instance ID of a resource supported by AWS CloudFormation.
      */
+
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
@@ -220,6 +230,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return The name or unique identifier that corresponds to a physical
      *         instance ID of a resource supported by AWS CloudFormation.
      */
+
     public String getPhysicalResourceId() {
         return this.physicalResourceId;
     }
@@ -236,6 +247,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withPhysicalResourceId(String physicalResourceId) {
         setPhysicalResourceId(physicalResourceId);
         return this;
@@ -254,6 +266,7 @@ public class StackResource implements Serializable, Cloneable {
      *        > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *        Guide.)
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -270,6 +283,7 @@ public class StackResource implements Serializable, Cloneable {
      *         > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *         Guide.)
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -289,6 +303,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -302,6 +317,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param timestamp
      *        Time the status was updated.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -313,6 +329,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return Time the status was updated.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -327,6 +344,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -341,6 +359,7 @@ public class StackResource implements Serializable, Cloneable {
      *        Current status of the resource.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
     }
@@ -353,6 +372,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Current status of the resource.
      * @see ResourceStatus
      */
+
     public String getResourceStatus() {
         return this.resourceStatus;
     }
@@ -368,6 +388,7 @@ public class StackResource implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResource withResourceStatus(String resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -380,10 +401,9 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @param resourceStatus
      *        Current status of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(ResourceStatus resourceStatus) {
         this.resourceStatus = resourceStatus.toString();
     }
@@ -399,6 +419,7 @@ public class StackResource implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResource withResourceStatus(ResourceStatus resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -412,6 +433,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param resourceStatusReason
      *        Success/failure message associated with the resource.
      */
+
     public void setResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
     }
@@ -423,6 +445,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return Success/failure message associated with the resource.
      */
+
     public String getResourceStatusReason() {
         return this.resourceStatusReason;
     }
@@ -437,6 +460,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withResourceStatusReason(String resourceStatusReason) {
         setResourceStatusReason(resourceStatusReason);
         return this;
@@ -450,6 +474,7 @@ public class StackResource implements Serializable, Cloneable {
      * @param description
      *        User defined description associated with the resource.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -461,6 +486,7 @@ public class StackResource implements Serializable, Cloneable {
      * 
      * @return User defined description associated with the resource.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -475,6 +501,7 @@ public class StackResource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResource withDescription(String description) {
         setDescription(description);
         return this;

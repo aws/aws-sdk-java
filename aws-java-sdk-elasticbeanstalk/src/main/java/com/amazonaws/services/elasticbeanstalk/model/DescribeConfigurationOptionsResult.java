@@ -48,6 +48,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      *        The name of the solution stack these configuration options belong
      *        to.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -60,6 +61,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * @return The name of the solution stack these configuration options belong
      *         to.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -75,6 +77,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsResult withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -88,6 +91,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * 
      * @return A list of <a>ConfigurationOptionDescription</a>.
      */
+
     public java.util.List<ConfigurationOptionDescription> getOptions() {
         if (options == null) {
             options = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionDescription>();
@@ -103,6 +107,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * @param options
      *        A list of <a>ConfigurationOptionDescription</a>.
      */
+
     public void setOptions(
             java.util.Collection<ConfigurationOptionDescription> options) {
         if (options == null) {
@@ -130,6 +135,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsResult withOptions(
             ConfigurationOptionDescription... options) {
         if (this.options == null) {
@@ -152,6 +158,7 @@ public class DescribeConfigurationOptionsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationOptionsResult withOptions(
             java.util.Collection<ConfigurationOptionDescription> options) {
         setOptions(options);

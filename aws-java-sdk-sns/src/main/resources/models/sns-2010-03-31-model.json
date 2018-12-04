@@ -1,14 +1,14 @@
 {
-  "version":"2.0",
   "metadata":{
     "apiVersion":"2010-03-31",
     "endpointPrefix":"sns",
-    "protocol":"query",
     "serviceAbbreviation":"Amazon SNS",
     "serviceFullName":"Amazon Simple Notification Service",
     "signatureVersion":"v4",
-    "xmlNamespace":"http://sns.amazonaws.com/doc/2010-03-31/"
+    "xmlNamespace":"http://sns.amazonaws.com/doc/2010-03-31/",
+    "protocol":"query"
   },
+  "documentation":"<fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see <a href=\"http://aws.amazon.com/sns/\">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/\">Amazon SNS Developer Guide</a>. </p> <p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>. </p>",
   "operations":{
     "AddPermission":{
       "name":"AddPermission",
@@ -18,10 +18,46 @@
       },
       "input":{"shape":"AddPermissionInput"},
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Adds a statement to a topic's access control policy, granting access for the specified AWS accounts to the specified actions.</p>"
     },
@@ -31,17 +67,66 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"ConfirmSubscriptionInput"},
+      "input":{
+        "shape":"ConfirmSubscriptionInput",
+        "documentation":"Input for ConfirmSubscription action."
+      },
       "output":{
         "shape":"ConfirmSubscriptionResponse",
+        "documentation":"Response for ConfirmSubscriptions action.",
         "resultWrapper":"ConfirmSubscriptionResult"
       },
       "errors":[
-        {"shape":"SubscriptionLimitExceededException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"NotFoundException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"SubscriptionLimitExceededException",
+          "error":{
+            "code":"SubscriptionLimitExceeded",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>"
+        },
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is set to \"true\".</p>"
     },
@@ -51,15 +136,46 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreatePlatformApplicationInput"},
+      "input":{
+        "shape":"CreatePlatformApplicationInput",
+        "documentation":"<p>Input for CreatePlatformApplication action.</p>"
+      },
       "output":{
         "shape":"CreatePlatformApplicationResponse",
+        "documentation":"<p>Response from CreatePlatformApplication action.</p>",
         "resultWrapper":"CreatePlatformApplicationResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Creates a platform application object for one of the supported push notification services, such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is \"SSL certificate\". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is \"client id\". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is \"private key\". For GCM, PlatformCredential is \"API key\". For ADM, PlatformCredential is \"client secret\". The PlatformApplicationArn that is returned when using <code>CreatePlatformApplication</code> is then used as an attribute for the <code>CreatePlatformEndpoint</code> action. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -69,16 +185,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreatePlatformEndpointInput"},
+      "input":{
+        "shape":"CreatePlatformEndpointInput",
+        "documentation":"<p>Input for CreatePlatformEndpoint action.</p>"
+      },
       "output":{
         "shape":"CreateEndpointResponse",
+        "documentation":"<p>Response from CreateEndpoint action.</p>",
         "resultWrapper":"CreatePlatformEndpointResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn that is returned from <code>CreatePlatformApplication</code>. The EndpointArn that is returned when using <code>CreatePlatformEndpoint</code> can then be used by the <code>Publish</code> action to send a message to a mobile app or by the <code>Subscribe</code> action for subscription to a topic. The <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p> <p>When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId. The token field must also contain the ChannelId. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html\">Creating an Amazon SNS Endpoint for Baidu</a>. </p>"
     },
@@ -88,16 +244,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"CreateTopicInput"},
+      "input":{
+        "shape":"CreateTopicInput",
+        "documentation":"<p>Input for CreateTopic action.</p>"
+      },
       "output":{
         "shape":"CreateTopicResponse",
+        "documentation":"<p>Response from CreateTopic action.</p>",
         "resultWrapper":"CreateTopicResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"TopicLimitExceededException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"TopicLimitExceededException",
+          "error":{
+            "code":"TopicLimitExceeded",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the customer already owns the maximum allowed number of topics.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Creates a topic to which notifications can be published. Users can create at most 3000 topics. For more information, see <a href=\"http://aws.amazon.com/sns/\">http://aws.amazon.com/sns</a>. This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.</p>"
     },
@@ -107,11 +303,41 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DeleteEndpointInput"},
+      "input":{
+        "shape":"DeleteEndpointInput",
+        "documentation":"<p>Input for DeleteEndpoint action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Deletes the endpoint from Amazon SNS. This action is idempotent. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -121,11 +347,41 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"DeletePlatformApplicationInput"},
+      "input":{
+        "shape":"DeletePlatformApplicationInput",
+        "documentation":"<p>Input for DeletePlatformApplication action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Deletes a platform application object for one of the supported push notification services, such as APNS and GCM. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -137,10 +393,46 @@
       },
       "input":{"shape":"DeleteTopicInput"},
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>"
     },
@@ -150,16 +442,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"GetEndpointAttributesInput"},
+      "input":{
+        "shape":"GetEndpointAttributesInput",
+        "documentation":"<p>Input for GetEndpointAttributes action.</p>"
+      },
       "output":{
         "shape":"GetEndpointAttributesResponse",
+        "documentation":"<p>Response from GetEndpointAttributes of the EndpointArn.</p>",
         "resultWrapper":"GetEndpointAttributesResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -169,16 +501,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"GetPlatformApplicationAttributesInput"},
+      "input":{
+        "shape":"GetPlatformApplicationAttributesInput",
+        "documentation":"<p>Input for GetPlatformApplicationAttributes action.</p>"
+      },
       "output":{
         "shape":"GetPlatformApplicationAttributesResponse",
+        "documentation":"<p>Response for GetPlatformApplicationAttributes action.</p>",
         "resultWrapper":"GetPlatformApplicationAttributesResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Retrieves the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -188,16 +560,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"GetSubscriptionAttributesInput"},
+      "input":{
+        "shape":"GetSubscriptionAttributesInput",
+        "documentation":"<p>Input for GetSubscriptionAttributes.</p>"
+      },
       "output":{
         "shape":"GetSubscriptionAttributesResponse",
+        "documentation":"<p>Response for GetSubscriptionAttributes action.</p>",
         "resultWrapper":"GetSubscriptionAttributesResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Returns all of the properties of a subscription.</p>"
     },
@@ -207,16 +619,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"GetTopicAttributesInput"},
+      "input":{
+        "shape":"GetTopicAttributesInput",
+        "documentation":"<p>Input for GetTopicAttributes action.</p>"
+      },
       "output":{
         "shape":"GetTopicAttributesResponse",
+        "documentation":"<p>Response for GetTopicAttributes action.</p>",
         "resultWrapper":"GetTopicAttributesResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user. </p>"
     },
@@ -226,16 +678,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"ListEndpointsByPlatformApplicationInput"},
+      "input":{
+        "shape":"ListEndpointsByPlatformApplicationInput",
+        "documentation":"<p>Input for ListEndpointsByPlatformApplication action.</p>"
+      },
       "output":{
         "shape":"ListEndpointsByPlatformApplicationResponse",
+        "documentation":"<p>Response for ListEndpointsByPlatformApplication action.</p>",
         "resultWrapper":"ListEndpointsByPlatformApplicationResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM and APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -245,15 +737,46 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"ListPlatformApplicationsInput"},
+      "input":{
+        "shape":"ListPlatformApplicationsInput",
+        "documentation":"<p>Input for ListPlatformApplications action.</p>"
+      },
       "output":{
         "shape":"ListPlatformApplicationsResponse",
+        "documentation":"<p>Response for ListPlatformApplications action.</p>",
         "resultWrapper":"ListPlatformApplicationsResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Lists the platform application objects for the supported push notification services, such as APNS and GCM. The results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -263,15 +786,46 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"ListSubscriptionsInput"},
+      "input":{
+        "shape":"ListSubscriptionsInput",
+        "documentation":"Input for ListSubscriptions action."
+      },
       "output":{
         "shape":"ListSubscriptionsResponse",
+        "documentation":"<p>Response for ListSubscriptions action</p>",
         "resultWrapper":"ListSubscriptionsResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code> call to get further results.</p>"
     },
@@ -281,16 +835,56 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"ListSubscriptionsByTopicInput"},
+      "input":{
+        "shape":"ListSubscriptionsByTopicInput",
+        "documentation":"<p>Input for ListSubscriptionsByTopic action.</p>"
+      },
       "output":{
         "shape":"ListSubscriptionsByTopicResponse",
+        "documentation":"<p>Response for ListSubscriptionsByTopic action.</p>",
         "resultWrapper":"ListSubscriptionsByTopicResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>"
     },
@@ -303,12 +897,40 @@
       "input":{"shape":"ListTopicsInput"},
       "output":{
         "shape":"ListTopicsResponse",
+        "documentation":"<p>Response for ListTopics action.</p>",
         "resultWrapper":"ListTopicsResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListTopics</code> call to get further results.</p>"
     },
@@ -318,19 +940,86 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"PublishInput"},
+      "input":{
+        "shape":"PublishInput",
+        "documentation":"<p>Input for Publish action.</p>"
+      },
       "output":{
         "shape":"PublishResponse",
+        "documentation":"<p>Response for Publish action.</p>",
         "resultWrapper":"PublishResult"
       },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InvalidParameterValueException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"EndpointDisabledException"},
-        {"shape":"PlatformApplicationDisabledException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InvalidParameterValueException",
+          "error":{
+            "code":"ParameterValueInvalid",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"EndpointDisabledException",
+          "error":{
+            "code":"EndpointDisabled",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Exception error indicating endpoint disabled.</p>"
+        },
+        {
+          "shape":"PlatformApplicationDisabledException",
+          "error":{
+            "code":"PlatformApplicationDisabled",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Exception error indicating platform application disabled.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the notification protocol selected.</p> <p>To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn. The EndpointArn is returned when making a call with the <code>CreatePlatformEndpoint</code> action. The second example below shows a request and response for publishing to a mobile endpoint. </p>"
     },
@@ -340,12 +1029,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"RemovePermissionInput"},
+      "input":{
+        "shape":"RemovePermissionInput",
+        "documentation":"<p>Input for RemovePermission action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Removes a statement from a topic's access control policy.</p>"
     },
@@ -355,12 +1083,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"SetEndpointAttributesInput"},
+      "input":{
+        "shape":"SetEndpointAttributesInput",
+        "documentation":"<p>Input for SetEndpointAttributes action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM and APNS. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -370,12 +1137,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"SetPlatformApplicationAttributesInput"},
+      "input":{
+        "shape":"SetPlatformApplicationAttributesInput",
+        "documentation":"<p>Input for SetPlatformApplicationAttributes action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Sets the attributes of the platform application object for the supported push notification services, such as APNS and GCM. For more information, see <a href=\"http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html\">Using Amazon SNS Mobile Push Notifications</a>. </p>"
     },
@@ -385,12 +1191,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"SetSubscriptionAttributesInput"},
+      "input":{
+        "shape":"SetSubscriptionAttributesInput",
+        "documentation":"<p>Input for SetSubscriptionAttributes action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Allows a subscription owner to set an attribute of the topic to a new value.</p>"
     },
@@ -400,12 +1245,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"SetTopicAttributesInput"},
+      "input":{
+        "shape":"SetTopicAttributesInput",
+        "documentation":"<p>Input for SetTopicAttributes action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Allows a topic owner to set an attribute of the topic to a new value.</p>"
     },
@@ -415,17 +1299,66 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"SubscribeInput"},
+      "input":{
+        "shape":"SubscribeInput",
+        "documentation":"Input for Subscribe action."
+      },
       "output":{
         "shape":"SubscribeResponse",
+        "documentation":"Response for Subscribe action.",
         "resultWrapper":"SubscribeResult"
       },
       "errors":[
-        {"shape":"SubscriptionLimitExceededException"},
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"NotFoundException"},
-        {"shape":"AuthorizationErrorException"}
+        {
+          "shape":"SubscriptionLimitExceededException",
+          "error":{
+            "code":"SubscriptionLimitExceeded",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>"
+        },
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        }
       ],
       "documentation":"<p>Prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the confirmation message. Confirmation tokens are valid for three days.</p>"
     },
@@ -435,12 +1368,51 @@
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"UnsubscribeInput"},
+      "input":{
+        "shape":"UnsubscribeInput",
+        "documentation":"<p>Input for Unsubscribe action.</p>"
+      },
       "errors":[
-        {"shape":"InvalidParameterException"},
-        {"shape":"InternalErrorException"},
-        {"shape":"AuthorizationErrorException"},
-        {"shape":"NotFoundException"}
+        {
+          "shape":"InvalidParameterException",
+          "error":{
+            "code":"InvalidParameter",
+            "httpStatusCode":400,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
+        },
+        {
+          "shape":"InternalErrorException",
+          "error":{
+            "code":"InternalError",
+            "httpStatusCode":500
+          },
+          "exception":true,
+          "fault":true,
+          "documentation":"<p>Indicates an internal service error.</p>"
+        },
+        {
+          "shape":"AuthorizationErrorException",
+          "error":{
+            "code":"AuthorizationError",
+            "httpStatusCode":403,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
+        },
+        {
+          "shape":"NotFoundException",
+          "error":{
+            "code":"NotFound",
+            "httpStatusCode":404,
+            "senderFault":true
+          },
+          "exception":true,
+          "documentation":"<p>Indicates that the requested resource does not exist.</p>"
+        }
       ],
       "documentation":"<p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p>"
     }
@@ -482,13 +1454,13 @@
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>",
       "error":{
         "code":"AuthorizationError",
         "httpStatusCode":403,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that the user has been denied access to the requested resource.</p>"
     },
     "Binary":{"type":"blob"},
     "ConfirmSubscriptionInput":{
@@ -671,13 +1643,13 @@
           "documentation":"<p>Message for endpoint disabled.</p>"
         }
       },
-      "documentation":"<p>Exception error indicating endpoint disabled.</p>",
       "error":{
         "code":"EndpointDisabled",
         "httpStatusCode":400,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Exception error indicating endpoint disabled.</p>"
     },
     "GetEndpointAttributesInput":{
       "type":"structure",
@@ -695,7 +1667,7 @@
       "members":{
         "Attributes":{
           "shape":"MapStringToString",
-          "documentation":"<p>Attributes include the following:</p> <ul> <li><code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li><code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li><code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>"
+          "documentation":"<p>Attributes include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>"
         }
       },
       "documentation":"<p>Response from GetEndpointAttributes of the EndpointArn.</p>"
@@ -716,7 +1688,7 @@
       "members":{
         "Attributes":{
           "shape":"MapStringToString",
-          "documentation":"<p>Attributes include the following:</p> <ul> <li><code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.</li> <li><code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li><code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <li><code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</li> </ul>"
+          "documentation":"<p>Attributes include the following:</p> <ul> <li> <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li> <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</li> </ul>"
         }
       },
       "documentation":"<p>Response for GetPlatformApplicationAttributes action.</p>"
@@ -737,7 +1709,7 @@
       "members":{
         "Attributes":{
           "shape":"SubscriptionAttributesMap",
-          "documentation":"<p>A map of the subscription's attributes. Attributes in this map include the following:</p> <ul> <li><code>SubscriptionArn</code> -- the subscription's ARN</li> <li><code>TopicArn</code> -- the topic ARN that the subscription is associated with</li> <li><code>Owner</code> -- the AWS account ID of the subscription's owner</li> <li><code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation request was authenticated</li> <li><code>DeliveryPolicy</code> -- the JSON serialization of the subscription's delivery policy</li> <li><code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults</li> </ul>"
+          "documentation":"<p>A map of the subscription's attributes. Attributes in this map include the following:</p> <ul> <li> <code>SubscriptionArn</code> -- the subscription's ARN</li> <li> <code>TopicArn</code> -- the topic ARN that the subscription is associated with</li> <li> <code>Owner</code> -- the AWS account ID of the subscription's owner</li> <li> <code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation request was authenticated</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into account the topic delivery policy and account system defaults</li> </ul>"
         }
       },
       "documentation":"<p>Response for GetSubscriptionAttributes action.</p>"
@@ -758,7 +1730,7 @@
       "members":{
         "Attributes":{
           "shape":"TopicAttributesMap",
-          "documentation":"<p>A map of the topic's attributes. Attributes in this map include the following:</p> <ul> <li><code>TopicArn</code> -- the topic's ARN</li> <li><code>Owner</code> -- the AWS account ID of the topic's owner</li> <li><code>Policy</code> -- the JSON serialization of the topic's access control policy</li> <li><code>DisplayName</code> -- the human-readable name used in the \"From\" field for notifications to email and email-json endpoints</li> <li><code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic</li> <li><code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic</li> <li><code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic</li> <li><code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy</li> <li><code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into account system defaults</li> </ul>"
+          "documentation":"<p>A map of the topic's attributes. Attributes in this map include the following:</p> <ul> <li> <code>TopicArn</code> -- the topic's ARN</li> <li> <code>Owner</code> -- the AWS account ID of the topic's owner</li> <li> <code>Policy</code> -- the JSON serialization of the topic's access control policy</li> <li> <code>DisplayName</code> -- the human-readable name used in the \"From\" field for notifications to email and email-json endpoints</li> <li> <code>SubscriptionsPending</code> -- the number of subscriptions pending confirmation on this topic</li> <li> <code>SubscriptionsConfirmed</code> -- the number of confirmed subscriptions on this topic</li> <li> <code>SubscriptionsDeleted</code> -- the number of deleted subscriptions on this topic</li> <li> <code>DeliveryPolicy</code> -- the JSON serialization of the topic's delivery policy</li> <li> <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery policy that takes into account system defaults</li> </ul>"
         }
       },
       "documentation":"<p>Response for GetTopicAttributes action.</p>"
@@ -768,39 +1740,39 @@
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates an internal service error.</p>",
       "error":{
         "code":"InternalError",
         "httpStatusCode":500
       },
       "exception":true,
-      "fault":true
+      "fault":true,
+      "documentation":"<p>Indicates an internal service error.</p>"
     },
     "InvalidParameterException":{
       "type":"structure",
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>",
       "error":{
         "code":"InvalidParameter",
         "httpStatusCode":400,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
     },
     "InvalidParameterValueException":{
       "type":"structure",
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>",
       "error":{
         "code":"ParameterValueInvalid",
         "httpStatusCode":400,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that a request parameter does not comply with the associated constraints.</p>"
     },
     "ListEndpointsByPlatformApplicationInput":{
       "type":"structure",
@@ -979,13 +1951,13 @@
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that the requested resource does not exist.</p>",
       "error":{
         "code":"NotFound",
         "httpStatusCode":404,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that the requested resource does not exist.</p>"
     },
     "PlatformApplication":{
       "type":"structure",
@@ -1009,13 +1981,13 @@
           "documentation":"<p>Message for platform application disabled.</p>"
         }
       },
-      "documentation":"<p>Exception error indicating platform application disabled.</p>",
       "error":{
         "code":"PlatformApplicationDisabled",
         "httpStatusCode":400,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Exception error indicating platform application disabled.</p>"
     },
     "PublishInput":{
       "type":"structure",
@@ -1089,7 +2061,7 @@
         },
         "Attributes":{
           "shape":"MapStringToString",
-          "documentation":"<p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li><code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li><code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li><code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>"
+          "documentation":"<p>A map of the endpoint attributes. Attributes in this map include the following:</p> <ul> <li> <code>CustomUserData</code> -- arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</li> <li> <code>Enabled</code> -- flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</li> <li> <code>Token</code> -- device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</li> </ul>"
         }
       },
       "documentation":"<p>Input for SetEndpointAttributes action.</p>"
@@ -1107,7 +2079,7 @@
         },
         "Attributes":{
           "shape":"MapStringToString",
-          "documentation":"<p>A map of the platform application attributes. Attributes in this map include the following:</p> <ul> <li><code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is \"private key\". For GCM, PlatformCredential is \"API key\". For ADM, PlatformCredential is \"client secret\".</li> <li><code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is \"SSL certificate\". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is \"client id\".</li> <li><code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.</li> <li><code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li><code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <li><code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</li> </ul>"
+          "documentation":"<p>A map of the platform application attributes. Attributes in this map include the following:</p> <ul> <li> <code>PlatformCredential</code> -- The credential received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is \"private key\". For GCM, PlatformCredential is \"API key\". For ADM, PlatformCredential is \"client secret\".</li> <li> <code>PlatformPrincipal</code> -- The principal received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is \"SSL certificate\". For GCM, PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is \"client id\".</li> <li> <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications should be sent.</li> <li> <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li> <li> <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <li> <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's endpoints.</li> </ul>"
         }
       },
       "documentation":"<p>Input for SetPlatformApplicationAttributes action.</p>"
@@ -1170,7 +2142,7 @@
         },
         "Protocol":{
           "shape":"protocol",
-          "documentation":"<p>The protocol you want to use. Supported protocols include:</p> <ul> <li><code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li><code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li><code>email</code> -- delivery of message via SMTP</li> <li><code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li><code>sms</code> -- delivery of message via SMS</li> <li><code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li><code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul>"
+          "documentation":"<p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <code>http</code> -- delivery of JSON-encoded message via HTTP POST</li> <li> <code>https</code> -- delivery of JSON-encoded message via HTTPS POST</li> <li> <code>email</code> -- delivery of message via SMTP</li> <li> <code>email-json</code> -- delivery of JSON-encoded message via SMTP</li> <li> <code>sms</code> -- delivery of message via SMS</li> <li> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon SQS queue</li> <li> <code>application</code> -- delivery of JSON-encoded message to an EndpointArn for a mobile app and device.</li> </ul>"
         },
         "Endpoint":{
           "shape":"endpoint",
@@ -1225,13 +2197,13 @@
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>",
       "error":{
         "code":"SubscriptionLimitExceeded",
         "httpStatusCode":403,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>"
     },
     "SubscriptionsList":{
       "type":"list",
@@ -1257,13 +2229,13 @@
       "members":{
         "message":{"shape":"string"}
       },
-      "documentation":"<p>Indicates that the customer already owns the maximum allowed number of topics.</p>",
       "error":{
         "code":"TopicLimitExceeded",
         "httpStatusCode":403,
         "senderFault":true
       },
-      "exception":true
+      "exception":true,
+      "documentation":"<p>Indicates that the customer already owns the maximum allowed number of topics.</p>"
     },
     "TopicsList":{
       "type":"list",
@@ -1299,6 +2271,5 @@
     "token":{"type":"string"},
     "topicARN":{"type":"string"},
     "topicName":{"type":"string"}
-  },
-  "documentation":"<fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see <a href=\"http://aws.amazon.com/sns/\">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/\">Amazon SNS Developer Guide</a>. </p> <p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>. </p>"
+  }
 }

@@ -46,8 +46,7 @@ import com.amazonaws.services.cloudformation.model.*;
  * Amazon CloudFormation makes use of other AWS products. If you need additional
  * technical information about a specific AWS product, you can find the
  * product's technical documentation at <a
- * href="http://docs.aws.amazon.com/documentation/"
- * >http://docs.aws.amazon.com/documentation/</a>.
+ * href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
  * </p>
  */
 public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
@@ -58,14 +57,19 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * successfully, the stack rolls back the update and reverts to the previous
      * stack configuration.
      * </p>
-     * <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS
-     * state.</note>
+     * <note>
+     * <p>
+     * You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+     * </p>
+     * </note>
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
+     * @return A Java Future containing the result of the CancelUpdateStack
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsync.CancelUpdateStack
      */
-    java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             CancelUpdateStackRequest cancelUpdateStackRequest);
 
     /**
@@ -74,8 +78,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * successfully, the stack rolls back the update and reverts to the previous
      * stack configuration.
      * </p>
-     * <note>You can cancel only stacks that are in the UPDATE_IN_PROGRESS
-     * state.</note>
+     * <note>
+     * <p>
+     * You can cancel only stacks that are in the UPDATE_IN_PROGRESS state.
+     * </p>
+     * </note>
      * 
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
@@ -84,11 +91,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelUpdateStack
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsyncHandler.CancelUpdateStack
      */
-    java.util.concurrent.Future<Void> cancelUpdateStackAsync(
+    java.util.concurrent.Future<CancelUpdateStackResult> cancelUpdateStackAsync(
             CancelUpdateStackRequest cancelUpdateStackRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelUpdateStackRequest, CancelUpdateStackResult> asyncHandler);
 
     /**
      * <p>
@@ -99,8 +108,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > fix the error</a> and continue the rollback. By continuing the
      * rollback, you can return your stack to a working state (the
-     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), return the stack to its
-     * original settings, and then try to update the stack again.
+     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the
+     * stack again.
      * </p>
      * <p>
      * A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS
@@ -130,8 +139,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"
      * > fix the error</a> and continue the rollback. By continuing the
      * rollback, you can return your stack to a working state (the
-     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), return the stack to its
-     * original settings, and then try to update the stack again.
+     * <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the
+     * stack again.
      * </p>
      * <p>
      * A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when AWS
@@ -157,6 +166,70 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     java.util.concurrent.Future<ContinueUpdateRollbackResult> continueUpdateRollbackAsync(
             ContinueUpdateRollbackRequest continueUpdateRollbackRequest,
             com.amazonaws.handlers.AsyncHandler<ContinueUpdateRollbackRequest, ContinueUpdateRollbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a list of changes for a stack. AWS CloudFormation generates the
+     * change set by comparing the stack's information with the information that
+     * you submit. A change set can help you understand which resources AWS
+     * CloudFormation will change and how it will change them before you update
+     * your stack. Change sets allow you to check before you make a change so
+     * that you don't delete or replace critical resources.
+     * </p>
+     * <p>
+     * AWS CloudFormation doesn't make any changes to the stack when you create
+     * a change set. To make the specified changes, you must execute the change
+     * set by using the <a>ExecuteChangeSet</a> action.
+     * </p>
+     * <p>
+     * After the call successfully completes, AWS CloudFormation starts creating
+     * the change set. To check the status of the change set, use the
+     * <a>DescribeChangeSet</a> action.
+     * </p>
+     * 
+     * @param createChangeSetRequest
+     *        The input for the <a>CreateChangeSet</a> action.
+     * @return A Java Future containing the result of the CreateChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.CreateChangeSet
+     */
+    java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest createChangeSetRequest);
+
+    /**
+     * <p>
+     * Creates a list of changes for a stack. AWS CloudFormation generates the
+     * change set by comparing the stack's information with the information that
+     * you submit. A change set can help you understand which resources AWS
+     * CloudFormation will change and how it will change them before you update
+     * your stack. Change sets allow you to check before you make a change so
+     * that you don't delete or replace critical resources.
+     * </p>
+     * <p>
+     * AWS CloudFormation doesn't make any changes to the stack when you create
+     * a change set. To make the specified changes, you must execute the change
+     * set by using the <a>ExecuteChangeSet</a> action.
+     * </p>
+     * <p>
+     * After the call successfully completes, AWS CloudFormation starts creating
+     * the change set. To check the status of the change set, use the
+     * <a>DescribeChangeSet</a> action.
+     * </p>
+     * 
+     * @param createChangeSetRequest
+     *        The input for the <a>CreateChangeSet</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.CreateChangeSet
+     */
+    java.util.concurrent.Future<CreateChangeSetResult> createChangeSetAsync(
+            CreateChangeSetRequest createChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChangeSetRequest, CreateChangeSetResult> asyncHandler);
 
     /**
      * <p>
@@ -198,6 +271,50 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Deletes the specified change set. Deleting change sets ensures that no
+     * one executes the wrong change set.
+     * </p>
+     * <p>
+     * If the call successfully completes, AWS CloudFormation successfully
+     * deleted the change set.
+     * </p>
+     * 
+     * @param deleteChangeSetRequest
+     *        The input for the <a>DeleteChangeSet</a> action.
+     * @return A Java Future containing the result of the DeleteChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DeleteChangeSet
+     */
+    java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest deleteChangeSetRequest);
+
+    /**
+     * <p>
+     * Deletes the specified change set. Deleting change sets ensures that no
+     * one executes the wrong change set.
+     * </p>
+     * <p>
+     * If the call successfully completes, AWS CloudFormation successfully
+     * deleted the change set.
+     * </p>
+     * 
+     * @param deleteChangeSetRequest
+     *        The input for the <a>DeleteChangeSet</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DeleteChangeSet
+     */
+    java.util.concurrent.Future<DeleteChangeSetResult> deleteChangeSetAsync(
+            DeleteChangeSetRequest deleteChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChangeSetRequest, DeleteChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a specified stack. Once the call completes successfully, stack
      * deletion starts. Deleted stacks do not show up in the
      * <a>DescribeStacks</a> API if the deletion has been completed
@@ -206,9 +323,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
+     * @return A Java Future containing the result of the DeleteStack operation
+     *         returned by the service.
      * @sample AmazonCloudFormationAsync.DeleteStack
      */
-    java.util.concurrent.Future<Void> deleteStackAsync(
+    java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest deleteStackRequest);
 
     /**
@@ -226,11 +345,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStack operation
+     *         returned by the service.
      * @sample AmazonCloudFormationAsyncHandler.DeleteStack
      */
-    java.util.concurrent.Future<Void> deleteStackAsync(
+    java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest deleteStackRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler);
 
     /**
      * <p>
@@ -270,13 +391,62 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to <a href=
+     * Returns the inputs for the change set and a list of changes that AWS
+     * CloudFormation will make if you execute the change set. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
+     * >Updating Stacks Using Change Sets</a> in the AWS CloudFormation User
+     * Guide.
+     * </p>
+     * 
+     * @param describeChangeSetRequest
+     *        The input for the <a>DescribeChangeSet</a> action.
+     * @return A Java Future containing the result of the DescribeChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribeChangeSet
+     */
+    java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest describeChangeSetRequest);
+
+    /**
+     * <p>
+     * Returns the inputs for the change set and a list of changes that AWS
+     * CloudFormation will make if you execute the change set. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html"
+     * >Updating Stacks Using Change Sets</a> in the AWS CloudFormation User
+     * Guide.
+     * </p>
+     * 
+     * @param describeChangeSetRequest
+     *        The input for the <a>DescribeChangeSet</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribeChangeSet
+     */
+    java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(
+            DescribeChangeSetRequest describeChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns all stack related events for a specified stack in reverse
+     * chronological order. For more information about a stack's event history,
+     * go to <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html"
      * >Stacks</a> in the AWS CloudFormation User Guide.
      * </p>
-     * <note>You can list events for stacks that have failed to create or have
-     * been deleted by specifying the unique stack identifier (stack ID).</note>
+     * <note>
+     * <p>
+     * You can list events for stacks that have failed to create or have been
+     * deleted by specifying the unique stack identifier (stack ID).
+     * </p>
+     * </note>
      * 
      * @param describeStackEventsRequest
      *        The input for <a>DescribeStackEvents</a> action.
@@ -289,13 +459,18 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns all stack related events for a specified stack. For more
-     * information about a stack's event history, go to <a href=
+     * Returns all stack related events for a specified stack in reverse
+     * chronological order. For more information about a stack's event history,
+     * go to <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html"
      * >Stacks</a> in the AWS CloudFormation User Guide.
      * </p>
-     * <note>You can list events for stacks that have failed to create or have
-     * been deleted by specifying the unique stack identifier (stack ID).</note>
+     * <note>
+     * <p>
+     * You can list events for stacks that have failed to create or have been
+     * deleted by specifying the unique stack identifier (stack ID).
+     * </p>
+     * </note>
      * 
      * @param describeStackEventsRequest
      *        The input for <a>DescribeStackEvents</a> action.
@@ -362,9 +537,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * specified, the associated resources of the stack that the resource
      * belongs to are returned.
      * </p>
-     * <note>Only the first 100 resources will be returned. If your stack has
-     * more resources than this, you should use <code>ListStackResources</code>
-     * instead.</note>
+     * <note>
+     * <p>
+     * Only the first 100 resources will be returned. If your stack has more
+     * resources than this, you should use <code>ListStackResources</code>
+     * instead.
+     * </p>
+     * </note>
      * <p>
      * For deleted stacks, <code>DescribeStackResources</code> returns resource
      * information for up to 90 days after the stack has been deleted.
@@ -378,9 +557,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.
      * </p>
-     * <note>A <code>ValidationError</code> is returned if you specify both
+     * <note>
+     * <p>
+     * A <code>ValidationError</code> is returned if you specify both
      * <code>StackName</code> and <code>PhysicalResourceId</code> in the same
-     * request.</note>
+     * request.
+     * </p>
+     * </note>
      * 
      * @param describeStackResourcesRequest
      *        The input for <a>DescribeStackResources</a> action.
@@ -399,9 +582,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * specified, the associated resources of the stack that the resource
      * belongs to are returned.
      * </p>
-     * <note>Only the first 100 resources will be returned. If your stack has
-     * more resources than this, you should use <code>ListStackResources</code>
-     * instead.</note>
+     * <note>
+     * <p>
+     * Only the first 100 resources will be returned. If your stack has more
+     * resources than this, you should use <code>ListStackResources</code>
+     * instead.
+     * </p>
+     * </note>
      * <p>
      * For deleted stacks, <code>DescribeStackResources</code> returns resource
      * information for up to 90 days after the stack has been deleted.
@@ -415,9 +602,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.
      * </p>
-     * <note>A <code>ValidationError</code> is returned if you specify both
+     * <note>
+     * <p>
+     * A <code>ValidationError</code> is returned if you specify both
      * <code>StackName</code> and <code>PhysicalResourceId</code> in the same
-     * request.</note>
+     * request.
+     * </p>
+     * </note>
      * 
      * @param describeStackResourcesRequest
      *        The input for <a>DescribeStackResources</a> action.
@@ -495,6 +686,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * 
      * @param estimateTemplateCostRequest
+     *        The input for an <a>EstimateTemplateCost</a> action.
      * @return A Java Future containing the result of the EstimateTemplateCost
      *         operation returned by the service.
      * @sample AmazonCloudFormationAsync.EstimateTemplateCost
@@ -510,6 +702,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * 
      * @param estimateTemplateCostRequest
+     *        The input for an <a>EstimateTemplateCost</a> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -539,6 +732,66 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a stack using the input information that was provided when the
+     * specified change set was created. After the call successfully completes,
+     * AWS CloudFormation starts updating the stack. Use the
+     * <a>DescribeStacks</a> action to view the status of the update.
+     * </p>
+     * <p>
+     * When you execute a change set, AWS CloudFormation deletes all other
+     * change sets associated with the stack because they aren't valid for the
+     * updated stack.
+     * </p>
+     * <p>
+     * If a stack policy is associated with the stack, AWS CloudFormation
+     * enforces the policy during the update. You can't specify a temporary
+     * stack policy that overrides the current policy.
+     * </p>
+     * 
+     * @param executeChangeSetRequest
+     *        The input for the <a>ExecuteChangeSet</a> action.
+     * @return A Java Future containing the result of the ExecuteChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ExecuteChangeSet
+     */
+    java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest executeChangeSetRequest);
+
+    /**
+     * <p>
+     * Updates a stack using the input information that was provided when the
+     * specified change set was created. After the call successfully completes,
+     * AWS CloudFormation starts updating the stack. Use the
+     * <a>DescribeStacks</a> action to view the status of the update.
+     * </p>
+     * <p>
+     * When you execute a change set, AWS CloudFormation deletes all other
+     * change sets associated with the stack because they aren't valid for the
+     * updated stack.
+     * </p>
+     * <p>
+     * If a stack policy is associated with the stack, AWS CloudFormation
+     * enforces the policy during the update. You can't specify a temporary
+     * stack policy that overrides the current policy.
+     * </p>
+     * 
+     * @param executeChangeSetRequest
+     *        The input for the <a>ExecuteChangeSet</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteChangeSet
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ExecuteChangeSet
+     */
+    java.util.concurrent.Future<ExecuteChangeSetResult> executeChangeSetAsync(
+            ExecuteChangeSetRequest executeChangeSetRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteChangeSetRequest, ExecuteChangeSetResult> asyncHandler);
 
     /**
      * <p>
@@ -585,8 +838,12 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * For deleted stacks, GetTemplate returns the template for up to 90 days
      * after the stack has been deleted.
      * </p>
-     * <note> If the template does not exist, a <code>ValidationError</code> is
-     * returned. </note>
+     * <note>
+     * <p>
+     * If the template does not exist, a <code>ValidationError</code> is
+     * returned.
+     * </p>
+     * </note>
      * 
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
@@ -606,8 +863,12 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * For deleted stacks, GetTemplate returns the template for up to 90 days
      * after the stack has been deleted.
      * </p>
-     * <note> If the template does not exist, a <code>ValidationError</code> is
-     * returned. </note>
+     * <note>
+     * <p>
+     * If the template does not exist, a <code>ValidationError</code> is
+     * returned.
+     * </p>
+     * </note>
      * 
      * @param getTemplateRequest
      *        The input for a <a>GetTemplate</a> action.
@@ -700,6 +961,44 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the ID and status of each active change set for a stack. For
+     * example, AWS CloudFormation lists change sets that are in the
+     * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.
+     * </p>
+     * 
+     * @param listChangeSetsRequest
+     *        The input for the <a>ListChangeSets</a> action.
+     * @return A Java Future containing the result of the ListChangeSets
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ListChangeSets
+     */
+    java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest listChangeSetsRequest);
+
+    /**
+     * <p>
+     * Returns the ID and status of each active change set for a stack. For
+     * example, AWS CloudFormation lists change sets that are in the
+     * <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.
+     * </p>
+     * 
+     * @param listChangeSetsRequest
+     *        The input for the <a>ListChangeSets</a> action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChangeSets
+     *         operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ListChangeSets
+     */
+    java.util.concurrent.Future<ListChangeSetsResult> listChangeSetsAsync(
+            ListChangeSetsRequest listChangeSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChangeSetsRequest, ListChangeSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -809,9 +1108,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param setStackPolicyRequest
      *        The input for the <a>SetStackPolicy</a> action.
+     * @return A Java Future containing the result of the SetStackPolicy
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsync.SetStackPolicy
      */
-    java.util.concurrent.Future<Void> setStackPolicyAsync(
+    java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             SetStackPolicyRequest setStackPolicyRequest);
 
     /**
@@ -826,11 +1127,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetStackPolicy
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsyncHandler.SetStackPolicy
      */
-    java.util.concurrent.Future<Void> setStackPolicyAsync(
+    java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(
             SetStackPolicyRequest setStackPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -845,9 +1148,11 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * 
      * @param signalResourceRequest
      *        The input for the <a>SignalResource</a> action.
+     * @return A Java Future containing the result of the SignalResource
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsync.SignalResource
      */
-    java.util.concurrent.Future<Void> signalResourceAsync(
+    java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             SignalResourceRequest signalResourceRequest);
 
     /**
@@ -868,11 +1173,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SignalResource
+     *         operation returned by the service.
      * @sample AmazonCloudFormationAsyncHandler.SignalResource
      */
-    java.util.concurrent.Future<Void> signalResourceAsync(
+    java.util.concurrent.Future<SignalResourceResult> signalResourceAsync(
             SignalResourceRequest signalResourceRequest,
-            com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SignalResourceRequest, SignalResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -885,10 +1192,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <a>GetTemplate</a> action.
      * </p>
      * <p>
-     * Tags that were associated with this stack during creation time will still
-     * be associated with the stack after an <code>UpdateStack</code> operation.
-     * </p>
-     * <p>
      * For more information about creating an update template, updating a stack,
      * and monitoring the progress of the update, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"
@@ -896,7 +1199,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * 
      * @param updateStackRequest
-     *        The input for <a>UpdateStack</a> action.
+     *        The input for an <a>UpdateStack</a> action.
      * @return A Java Future containing the result of the UpdateStack operation
      *         returned by the service.
      * @sample AmazonCloudFormationAsync.UpdateStack
@@ -915,10 +1218,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <a>GetTemplate</a> action.
      * </p>
      * <p>
-     * Tags that were associated with this stack during creation time will still
-     * be associated with the stack after an <code>UpdateStack</code> operation.
-     * </p>
-     * <p>
      * For more information about creating an update template, updating a stack,
      * and monitoring the progress of the update, see <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"
@@ -926,7 +1225,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * </p>
      * 
      * @param updateStackRequest
-     *        The input for <a>UpdateStack</a> action.
+     *        The input for an <a>UpdateStack</a> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

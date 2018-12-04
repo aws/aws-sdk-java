@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,9 +62,8 @@ public class GetSampledRequestsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("PopulationSize", targetDepth)) {
                     context.nextToken();
-                    getSampledRequestsResult
-                            .setPopulationSize(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getSampledRequestsResult.setPopulationSize(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TimeWindow", targetDepth)) {
                     context.nextToken();

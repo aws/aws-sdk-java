@@ -90,61 +90,61 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    public java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest request) {
 
         return deleteCustomActionTypeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCustomActionTypeAsync(
+    public java.util.concurrent.Future<DeleteCustomActionTypeResult> deleteCustomActionTypeAsync(
             DeleteCustomActionTypeRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomActionTypeRequest, DeleteCustomActionTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request) {
 
         return deletePipelineAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    public java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest request) {
 
         return disableStageTransitionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableStageTransitionAsync(
+    public java.util.concurrent.Future<DisableStageTransitionResult> disableStageTransitionAsync(
             DisableStageTransitionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableStageTransitionRequest, DisableStageTransitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    public java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest request) {
 
         return enableStageTransitionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableStageTransitionAsync(
+    public java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(
             EnableStageTransitionRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -285,61 +285,61 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest request) {
 
         return putJobFailureResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobFailureResultAsync(
+    public java.util.concurrent.Future<PutJobFailureResultResult> putJobFailureResultAsync(
             PutJobFailureResultRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutJobFailureResultRequest, PutJobFailureResultResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest request) {
 
         return putJobSuccessResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutJobSuccessResultResult> putJobSuccessResultAsync(
             PutJobSuccessResultRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutJobSuccessResultRequest, PutJobSuccessResultResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest request) {
 
         return putThirdPartyJobFailureResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobFailureResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobFailureResultResult> putThirdPartyJobFailureResultAsync(
             PutThirdPartyJobFailureResultRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobFailureResultRequest, PutThirdPartyJobFailureResultResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest request) {
 
         return putThirdPartyJobSuccessResultAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putThirdPartyJobSuccessResultAsync(
+    public java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

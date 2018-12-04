@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ComplianceByResourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
-                    complianceByResource.setResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    complianceByResource.setResourceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
-                    complianceByResource.setResourceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    complianceByResource.setResourceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Compliance", targetDepth)) {
                     context.nextToken();

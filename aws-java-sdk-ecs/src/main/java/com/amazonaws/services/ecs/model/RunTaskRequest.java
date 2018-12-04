@@ -102,6 +102,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        on which to run your task. If you do not specify a cluster, the
      *        default cluster is assumed..
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -117,6 +118,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         on which to run your task. If you do not specify a cluster, the
      *         default cluster is assumed..
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -135,6 +137,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunTaskRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -154,6 +157,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        of the task definition to run. If a <code>revision</code> is not
      *        specified, the latest <code>ACTIVE</code> revision is used.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -171,6 +175,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         of the task definition to run. If a <code>revision</code> is not
      *         specified, the latest <code>ACTIVE</code> revision is used.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -191,6 +196,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunTaskRequest withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -229,6 +235,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        includes the JSON formatting characters of the override structure.
      *        </p>
      */
+
     public void setOverrides(TaskOverride overrides) {
         this.overrides = overrides;
     }
@@ -266,6 +273,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         structure.
      *         </p>
      */
+
     public TaskOverride getOverrides() {
         return this.overrides;
     }
@@ -305,6 +313,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunTaskRequest withOverrides(TaskOverride overrides) {
         setOverrides(overrides);
         return this;
@@ -328,6 +337,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        The <code>count</code> parameter is limited to 10 tasks per call.
      *        </p>
      */
+
     public void setCount(Integer count) {
         this.count = count;
     }
@@ -349,6 +359,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         The <code>count</code> parameter is limited to 10 tasks per call.
      *         </p>
      */
+
     public Integer getCount() {
         return this.count;
     }
@@ -373,6 +384,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunTaskRequest withCount(Integer count) {
         setCount(count);
         return this;
@@ -405,6 +417,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *        <code>startedBy</code> parameter contains the deployment ID of the
      *        service that starts it.
      */
+
     public void setStartedBy(String startedBy) {
         this.startedBy = startedBy;
     }
@@ -435,6 +448,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      *         <code>startedBy</code> parameter contains the deployment ID of
      *         the service that starts it.
      */
+
     public String getStartedBy() {
         return this.startedBy;
     }
@@ -468,6 +482,7 @@ public class RunTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RunTaskRequest withStartedBy(String startedBy) {
         setStartedBy(startedBy);
         return this;

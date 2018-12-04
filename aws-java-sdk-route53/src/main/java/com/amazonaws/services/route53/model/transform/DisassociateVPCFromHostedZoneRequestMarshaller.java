@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * DisassociateVPCFromHostedZoneRequest Marshaller
@@ -60,10 +63,11 @@ public class DisassociateVPCFromHostedZoneRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (disassociateVPCFromHostedZoneRequest.getHostedZoneId() == null) ? ""
-                                : StringUtils
+                        (disassociateVPCFromHostedZoneRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(disassociateVPCFromHostedZoneRequest
-                                                .getHostedZoneId()));
+                                                .getHostedZoneId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

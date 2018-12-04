@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetItemRequest Marshaller
  */
 public class GetItemRequestMarshaller implements
         Marshaller<Request<GetItemRequest>, GetItemRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetItemRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetItemRequest> marshall(GetItemRequest getItemRequest) {
 
@@ -62,89 +62,87 @@ public class GetItemRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getItemRequest.getTableName() != null) {
-                jsonWriter.key("TableName")
-                        .value(getItemRequest.getTableName());
+                jsonGenerator.writeFieldName("TableName").writeValue(
+                        getItemRequest.getTableName());
             }
 
             java.util.Map<String, AttributeValue> keyMap = getItemRequest
                     .getKey();
             if (keyMap != null) {
-                jsonWriter.key("Key");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Key");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> keyMapValue : keyMap
                         .entrySet()) {
                     if (keyMapValue.getValue() != null) {
-                        jsonWriter.key(keyMapValue.getKey());
+                        jsonGenerator.writeFieldName(keyMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                keyMapValue.getValue(), jsonWriter);
+                                keyMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.List<String> attributesToGetList = getItemRequest
                     .getAttributesToGet();
             if (attributesToGetList != null) {
-                jsonWriter.key("AttributesToGet");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributesToGet");
+                jsonGenerator.writeStartArray();
                 for (String attributesToGetListValue : attributesToGetList) {
                     if (attributesToGetListValue != null) {
-                        jsonWriter.value(attributesToGetListValue);
+                        jsonGenerator.writeValue(attributesToGetListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (getItemRequest.getConsistentRead() != null) {
-                jsonWriter.key("ConsistentRead").value(
+                jsonGenerator.writeFieldName("ConsistentRead").writeValue(
                         getItemRequest.getConsistentRead());
             }
-
             if (getItemRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(
-                        getItemRequest.getReturnConsumedCapacity());
+                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
+                        .writeValue(getItemRequest.getReturnConsumedCapacity());
             }
-
             if (getItemRequest.getProjectionExpression() != null) {
-                jsonWriter.key("ProjectionExpression").value(
-                        getItemRequest.getProjectionExpression());
+                jsonGenerator.writeFieldName("ProjectionExpression")
+                        .writeValue(getItemRequest.getProjectionExpression());
             }
 
             java.util.Map<String, String> expressionAttributeNamesMap = getItemRequest
                     .getExpressionAttributeNames();
             if (expressionAttributeNamesMap != null) {
-                jsonWriter.key("ExpressionAttributeNames");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("ExpressionAttributeNames");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap
                         .entrySet()) {
                     if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonWriter.key(expressionAttributeNamesMapValue
-                                .getKey());
+                        jsonGenerator
+                                .writeFieldName(expressionAttributeNamesMapValue
+                                        .getKey());
 
-                        jsonWriter.value(expressionAttributeNamesMapValue
-                                .getValue());
+                        jsonGenerator
+                                .writeValue(expressionAttributeNamesMapValue
+                                        .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -45,6 +45,12 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * </p>
      */
     private String lifecycleActionToken;
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * <p>
@@ -54,6 +60,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -65,6 +72,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -79,6 +87,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withLifecycleHookName(
             String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
@@ -93,6 +102,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group for the hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -104,6 +114,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * 
      * @return The name of the Auto Scaling group for the hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -118,6 +129,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -137,6 +149,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      *        notification target you specified when you created the lifecycle
      *        hook.
      */
+
     public void setLifecycleActionToken(String lifecycleActionToken) {
         this.lifecycleActionToken = lifecycleActionToken;
     }
@@ -153,6 +166,7 @@ public class RecordLifecycleActionHeartbeatRequest extends
      *         notification target you specified when you created the lifecycle
      *         hook.
      */
+
     public String getLifecycleActionToken() {
         return this.lifecycleActionToken;
     }
@@ -172,9 +186,52 @@ public class RecordLifecycleActionHeartbeatRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecordLifecycleActionHeartbeatRequest withLifecycleActionToken(
             String lifecycleActionToken) {
         setLifecycleActionToken(lifecycleActionToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RecordLifecycleActionHeartbeatRequest withInstanceId(
+            String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -196,7 +253,10 @@ public class RecordLifecycleActionHeartbeatRequest extends
             sb.append("AutoScalingGroupName: " + getAutoScalingGroupName()
                     + ",");
         if (getLifecycleActionToken() != null)
-            sb.append("LifecycleActionToken: " + getLifecycleActionToken());
+            sb.append("LifecycleActionToken: " + getLifecycleActionToken()
+                    + ",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: " + getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +292,11 @@ public class RecordLifecycleActionHeartbeatRequest extends
                 && other.getLifecycleActionToken().equals(
                         this.getLifecycleActionToken()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null
+                && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -252,6 +317,8 @@ public class RecordLifecycleActionHeartbeatRequest extends
                 * hashCode
                 + ((getLifecycleActionToken() == null) ? 0
                         : getLifecycleActionToken().hashCode());
+        hashCode = prime * hashCode
+                + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

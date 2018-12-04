@@ -49,6 +49,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      *        The name of the cluster that hosts the service to describe. If you
      *        do not specify a cluster, the default cluster is assumed.
      */
+
     public void setCluster(String cluster) {
         this.cluster = cluster;
     }
@@ -62,6 +63,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return The name of the cluster that hosts the service to describe. If
      *         you do not specify a cluster, the default cluster is assumed.
      */
+
     public String getCluster() {
         return this.cluster;
     }
@@ -78,6 +80,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withCluster(String cluster) {
         setCluster(cluster);
         return this;
@@ -90,6 +93,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of services to describe.
      */
+
     public java.util.List<String> getServices() {
         if (services == null) {
             services = new com.amazonaws.internal.SdkInternalList<String>();
@@ -105,6 +109,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @param services
      *        A list of services to describe.
      */
+
     public void setServices(java.util.Collection<String> services) {
         if (services == null) {
             this.services = null;
@@ -131,6 +136,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withServices(String... services) {
         if (this.services == null) {
             setServices(new com.amazonaws.internal.SdkInternalList<String>(
@@ -152,6 +158,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeServicesRequest withServices(
             java.util.Collection<String> services) {
         setServices(services);

@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AddTagsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class AddTagsRequestMarshaller implements
         Marshaller<Request<AddTagsRequest>, AddTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AddTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AddTagsRequest> marshall(AddTagsRequest addTagsRequest) {
 
@@ -65,34 +73,33 @@ public class AddTagsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (addTagsRequest.getARN() != null) {
-                jsonWriter.key("ARN").value(addTagsRequest.getARN());
+                jsonGenerator.writeFieldName("ARN").writeValue(
+                        addTagsRequest.getARN());
             }
 
             java.util.List<Tag> tagListList = addTagsRequest.getTagList();
             if (tagListList != null) {
-                jsonWriter.key("TagList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagList");
+                jsonGenerator.writeStartArray();
                 for (Tag tagListListValue : tagListList) {
                     if (tagListListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(
-                                tagListListValue, jsonWriter);
+                                tagListListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

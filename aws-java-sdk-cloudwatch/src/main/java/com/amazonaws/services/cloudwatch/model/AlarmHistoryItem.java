@@ -23,7 +23,7 @@ import java.io.Serializable;
  * The <code>AlarmHistoryItem</code> data type contains descriptive information
  * about the history of a specific alarm. If you call
  * <a>DescribeAlarmHistory</a>, Amazon CloudWatch returns this data type as part
- * of the <a>DescribeAlarmHistoryResult</a> data type.
+ * of the DescribeAlarmHistoryResult data type.
  * </p>
  */
 public class AlarmHistoryItem implements Serializable, Cloneable {
@@ -67,6 +67,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @param alarmName
      *        The descriptive name for the alarm.
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -78,6 +79,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @return The descriptive name for the alarm.
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -92,6 +94,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AlarmHistoryItem withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -105,6 +108,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @param timestamp
      *        The time stamp for the alarm history item.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -116,6 +120,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @return The time stamp for the alarm history item.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -130,6 +135,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AlarmHistoryItem withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -144,6 +150,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      *        The type of alarm history item.
      * @see HistoryItemType
      */
+
     public void setHistoryItemType(String historyItemType) {
         this.historyItemType = historyItemType;
     }
@@ -156,6 +163,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @return The type of alarm history item.
      * @see HistoryItemType
      */
+
     public String getHistoryItemType() {
         return this.historyItemType;
     }
@@ -171,6 +179,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      *         chained together.
      * @see HistoryItemType
      */
+
     public AlarmHistoryItem withHistoryItemType(String historyItemType) {
         setHistoryItemType(historyItemType);
         return this;
@@ -183,10 +192,9 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @param historyItemType
      *        The type of alarm history item.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HistoryItemType
      */
+
     public void setHistoryItemType(HistoryItemType historyItemType) {
         this.historyItemType = historyItemType.toString();
     }
@@ -202,6 +210,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      *         chained together.
      * @see HistoryItemType
      */
+
     public AlarmHistoryItem withHistoryItemType(HistoryItemType historyItemType) {
         setHistoryItemType(historyItemType);
         return this;
@@ -215,6 +224,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @param historySummary
      *        A human-readable summary of the alarm history.
      */
+
     public void setHistorySummary(String historySummary) {
         this.historySummary = historySummary;
     }
@@ -226,6 +236,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @return A human-readable summary of the alarm history.
      */
+
     public String getHistorySummary() {
         return this.historySummary;
     }
@@ -240,6 +251,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AlarmHistoryItem withHistorySummary(String historySummary) {
         setHistorySummary(historySummary);
         return this;
@@ -253,6 +265,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @param historyData
      *        Machine-readable data about the alarm in JSON format.
      */
+
     public void setHistoryData(String historyData) {
         this.historyData = historyData;
     }
@@ -264,6 +277,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * 
      * @return Machine-readable data about the alarm in JSON format.
      */
+
     public String getHistoryData() {
         return this.historyData;
     }
@@ -278,6 +292,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AlarmHistoryItem withHistoryData(String historyData) {
         setHistoryData(historyData);
         return this;

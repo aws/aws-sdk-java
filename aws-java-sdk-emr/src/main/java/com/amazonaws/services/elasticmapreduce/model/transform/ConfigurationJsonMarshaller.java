@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ConfigurationMarshaller
@@ -39,19 +34,21 @@ import com.amazonaws.util.json.*;
 public class ConfigurationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Configuration configuration, JSONWriter jsonWriter) {
+    public void marshall(Configuration configuration,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (configuration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configuration.getClassification() != null) {
-                jsonWriter.key("Classification").value(
+                jsonGenerator.writeFieldName("Classification").writeValue(
                         configuration.getClassification());
             }
 
@@ -59,36 +56,37 @@ public class ConfigurationJsonMarshaller {
                     .getConfigurations();
             if (!configurationsList.isEmpty()
                     || !configurationsList.isAutoConstruct()) {
-                jsonWriter.key("Configurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configurations");
+                jsonGenerator.writeStartArray();
                 for (Configuration configurationsListValue : configurationsList) {
                     if (configurationsListValue != null) {
 
                         ConfigurationJsonMarshaller.getInstance().marshall(
-                                configurationsListValue, jsonWriter);
+                                configurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> propertiesMap = (com.amazonaws.internal.SdkInternalMap<String, String>) configuration
                     .getProperties();
             if (!propertiesMap.isEmpty() || !propertiesMap.isAutoConstruct()) {
-                jsonWriter.key("Properties");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Properties");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> propertiesMapValue : propertiesMap
                         .entrySet()) {
                     if (propertiesMapValue.getValue() != null) {
-                        jsonWriter.key(propertiesMapValue.getKey());
+                        jsonGenerator.writeFieldName(propertiesMapValue
+                                .getKey());
 
-                        jsonWriter.value(propertiesMapValue.getValue());
+                        jsonGenerator.writeValue(propertiesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

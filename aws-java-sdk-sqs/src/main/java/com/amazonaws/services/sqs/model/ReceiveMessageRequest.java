@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -29,28 +29,59 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      */
     private String queueUrl;
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
     /**
@@ -67,8 +98,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute
      * names to receive, or you can return all of the attributes by specifying
-     * "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.
+     * "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> messageAttributeNames;
@@ -114,7 +145,9 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
     public ReceiveMessageRequest(String queueUrl) {
         setQueueUrl(queueUrl);
@@ -124,10 +157,16 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -136,9 +175,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -147,12 +192,18 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -161,44 +212,100 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      * 
      * @return A list of attributes that need to be returned along with each
-     *         message. </p>
-     *         <p>
-     *         The following lists the names and descriptions of the attributes
-     *         that can be returned:
-     *         </p>
+     *         message. These attributes include:</p>
      *         <ul>
-     *         <li><code>All</code> - returns all values.</li>
-     *         <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
-     *         time when the message was first received from the queue (epoch
-     *         time in milliseconds).</li>
-     *         <li><code>ApproximateReceiveCount</code> - returns the number of
-     *         times a message has been received from the queue but not deleted.
+     *         <li>
+     *         <p>
+     *         <code>All</code> - returns all values.
+     *         </p>
      *         </li>
-     *         <li><code>SenderId</code> - returns the AWS account number (or
-     *         the IP address, if anonymous access is allowed) of the sender.</li>
-     *         <li><code>SentTimestamp</code> - returns the time when the
-     *         message was sent to the queue (epoch time in milliseconds).</li>
+     *         <li>
+     *         <p>
+     *         <code>ApproximateFirstReceiveTimestamp</code> - returns the time
+     *         when the message was first received from the queue (epoch time in
+     *         milliseconds).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ApproximateReceiveCount</code> - returns the number of
+     *         times a message has been received from the queue but not deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SenderId</code> - returns the AWS account number (or the IP
+     *         address, if anonymous access is allowed) of the sender.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SentTimestamp</code> - returns the time when the message
+     *         was sent to the queue (epoch time in milliseconds).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Any other valid special request parameters that are specified
+     *         (such as <code>ApproximateNumberOfMessages</code>,
+     *         <code>ApproximateNumberOfMessagesDelayed</code>,
+     *         <code>ApproximateNumberOfMessagesNotVisible</code>,
+     *         <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     *         <code>LastModifiedTimestamp</code>,
+     *         <code>MaximumMessageSize</code>,
+     *         <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     *         <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>, <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>)
+     *         will be ignored.
      * @see QueueAttributeName
      */
+
     public java.util.List<String> getAttributeNames() {
         if (attributeNames == null) {
             attributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -209,44 +316,102 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      * 
      * @param attributeNames
      *        A list of attributes that need to be returned along with each
-     *        message. </p>
-     *        <p>
-     *        The following lists the names and descriptions of the attributes
-     *        that can be returned:
-     *        </p>
+     *        message. These attributes include:</p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
-     *        time when the message was first received from the queue (epoch
-     *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
-     *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
-     *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
-     *        was sent to the queue (epoch time in milliseconds).</li>
+     *        <li>
+     *        <p>
+     *        <code>All</code> - returns all values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateFirstReceiveTimestamp</code> - returns the time
+     *        when the message was first received from the queue (epoch time in
+     *        milliseconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateReceiveCount</code> - returns the number of times
+     *        a message has been received from the queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SenderId</code> - returns the AWS account number (or the IP
+     *        address, if anonymous access is allowed) of the sender.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SentTimestamp</code> - returns the time when the message was
+     *        sent to the queue (epoch time in milliseconds).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Any other valid special request parameters that are specified
+     *        (such as <code>ApproximateNumberOfMessages</code>,
+     *        <code>ApproximateNumberOfMessagesDelayed</code>,
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>,
+     *        <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     *        <code>LastModifiedTimestamp</code>,
+     *        <code>MaximumMessageSize</code>,
+     *        <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     *        <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     *        <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>)
+     *        will be ignored.
      * @see QueueAttributeName
      */
+
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
             this.attributeNames = null;
@@ -260,23 +425,51 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setAttributeNames(java.util.Collection)} or
@@ -286,26 +479,56 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @param attributeNames
      *        A list of attributes that need to be returned along with each
-     *        message. </p>
-     *        <p>
-     *        The following lists the names and descriptions of the attributes
-     *        that can be returned:
-     *        </p>
+     *        message. These attributes include:</p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
-     *        time when the message was first received from the queue (epoch
-     *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
-     *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
-     *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
-     *        was sent to the queue (epoch time in milliseconds).</li>
+     *        <li>
+     *        <p>
+     *        <code>All</code> - returns all values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateFirstReceiveTimestamp</code> - returns the time
+     *        when the message was first received from the queue (epoch time in
+     *        milliseconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateReceiveCount</code> - returns the number of times
+     *        a message has been received from the queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SenderId</code> - returns the AWS account number (or the IP
+     *        address, if anonymous access is allowed) of the sender.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SentTimestamp</code> - returns the time when the message was
+     *        sent to the queue (epoch time in milliseconds).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Any other valid special request parameters that are specified
+     *        (such as <code>ApproximateNumberOfMessages</code>,
+     *        <code>ApproximateNumberOfMessagesDelayed</code>,
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>,
+     *        <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     *        <code>LastModifiedTimestamp</code>,
+     *        <code>MaximumMessageSize</code>,
+     *        <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     *        <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     *        <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>)
+     *        will be ignored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
         if (this.attributeNames == null) {
             setAttributeNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -320,46 +543,104 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      * 
      * @param attributeNames
      *        A list of attributes that need to be returned along with each
-     *        message. </p>
-     *        <p>
-     *        The following lists the names and descriptions of the attributes
-     *        that can be returned:
-     *        </p>
+     *        message. These attributes include:</p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
-     *        time when the message was first received from the queue (epoch
-     *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
-     *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
-     *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
-     *        was sent to the queue (epoch time in milliseconds).</li>
+     *        <li>
+     *        <p>
+     *        <code>All</code> - returns all values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateFirstReceiveTimestamp</code> - returns the time
+     *        when the message was first received from the queue (epoch time in
+     *        milliseconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateReceiveCount</code> - returns the number of times
+     *        a message has been received from the queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SenderId</code> - returns the AWS account number (or the IP
+     *        address, if anonymous access is allowed) of the sender.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SentTimestamp</code> - returns the time when the message was
+     *        sent to the queue (epoch time in milliseconds).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Any other valid special request parameters that are specified
+     *        (such as <code>ApproximateNumberOfMessages</code>,
+     *        <code>ApproximateNumberOfMessagesDelayed</code>,
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>,
+     *        <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     *        <code>LastModifiedTimestamp</code>,
+     *        <code>MaximumMessageSize</code>,
+     *        <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     *        <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     *        <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>)
+     *        will be ignored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(
             java.util.Collection<String> attributeNames) {
         setAttributeNames(attributeNames);
@@ -369,46 +650,104 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * A list of attributes that need to be returned along with each message.
-     * </p>
-     * <p>
-     * The following lists the names and descriptions of the attributes that can
-     * be returned:
+     * These attributes include:
      * </p>
      * <ul>
-     * <li><code>All</code> - returns all values.</li>
-     * <li><code>ApproximateFirstReceiveTimestamp</code> - returns the time when
-     * the message was first received from the queue (epoch time in
-     * milliseconds).</li>
-     * <li><code>ApproximateReceiveCount</code> - returns the number of times a
-     * message has been received from the queue but not deleted.</li>
-     * <li><code>SenderId</code> - returns the AWS account number (or the IP
-     * address, if anonymous access is allowed) of the sender.</li>
-     * <li><code>SentTimestamp</code> - returns the time when the message was
-     * sent to the queue (epoch time in milliseconds).</li>
+     * <li>
+     * <p>
+     * <code>All</code> - returns all values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> - returns the time when the
+     * message was first received from the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateReceiveCount</code> - returns the number of times a
+     * message has been received from the queue but not deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SenderId</code> - returns the AWS account number (or the IP
+     * address, if anonymous access is allowed) of the sender.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SentTimestamp</code> - returns the time when the message was sent
+     * to the queue (epoch time in milliseconds).
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * Any other valid special request parameters that are specified (such as
+     * <code>ApproximateNumberOfMessages</code>,
+     * <code>ApproximateNumberOfMessagesDelayed</code>,
+     * <code>ApproximateNumberOfMessagesNotVisible</code>,
+     * <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     * <code>LastModifiedTimestamp</code>, <code>MaximumMessageSize</code>,
+     * <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     * <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     * <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>) will be
+     * ignored.
+     * </p>
      * 
      * @param attributeNames
      *        A list of attributes that need to be returned along with each
-     *        message. </p>
-     *        <p>
-     *        The following lists the names and descriptions of the attributes
-     *        that can be returned:
-     *        </p>
+     *        message. These attributes include:</p>
      *        <ul>
-     *        <li><code>All</code> - returns all values.</li>
-     *        <li><code>ApproximateFirstReceiveTimestamp</code> - returns the
-     *        time when the message was first received from the queue (epoch
-     *        time in milliseconds).</li>
-     *        <li><code>ApproximateReceiveCount</code> - returns the number of
-     *        times a message has been received from the queue but not deleted.</li>
-     *        <li><code>SenderId</code> - returns the AWS account number (or the
-     *        IP address, if anonymous access is allowed) of the sender.</li>
-     *        <li><code>SentTimestamp</code> - returns the time when the message
-     *        was sent to the queue (epoch time in milliseconds).</li>
+     *        <li>
+     *        <p>
+     *        <code>All</code> - returns all values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateFirstReceiveTimestamp</code> - returns the time
+     *        when the message was first received from the queue (epoch time in
+     *        milliseconds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateReceiveCount</code> - returns the number of times
+     *        a message has been received from the queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SenderId</code> - returns the AWS account number (or the IP
+     *        address, if anonymous access is allowed) of the sender.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SentTimestamp</code> - returns the time when the message was
+     *        sent to the queue (epoch time in milliseconds).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Any other valid special request parameters that are specified
+     *        (such as <code>ApproximateNumberOfMessages</code>,
+     *        <code>ApproximateNumberOfMessagesDelayed</code>,
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>,
+     *        <code>CreatedTimestamp</code>, <code>DelaySeconds</code>,
+     *        <code>LastModifiedTimestamp</code>,
+     *        <code>MaximumMessageSize</code>,
+     *        <code>MessageRetentionPeriod</code>, <code>Policy</code>,
+     *        <code>QueueArn</code>, <code>ReceiveMessageWaitTimeSeconds</code>,
+     *        <code>RedrivePolicy</code>, and <code>VisibilityTimeout</code>)
+     *        will be ignored.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see QueueAttributeName
      */
+
     public ReceiveMessageRequest withAttributeNames(
             QueueAttributeName... attributeNames) {
         com.amazonaws.internal.SdkInternalList<String> attributeNamesCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -438,8 +777,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute
      * names to receive, or you can return all of the attributes by specifying
-     * "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.
+     * "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.
      * </p>
      * 
      * @return The name of the message attribute, where <i>N</i> is the index.
@@ -455,9 +794,10 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         When using <code>ReceiveMessage</code>, you can send a list of
      *         attribute names to receive, or you can return all of the
      *         attributes by specifying "All" or ".*" in your request. You can
-     *         also use "foo.*" to return all message attributes starting with
-     *         the "foo" prefix.
+     *         also use "bar.*" to return all message attributes starting with
+     *         the "bar" prefix.
      */
+
     public java.util.List<String> getMessageAttributeNames() {
         if (messageAttributeNames == null) {
             messageAttributeNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -479,8 +819,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute
      * names to receive, or you can return all of the attributes by specifying
-     * "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.
+     * "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.
      * </p>
      * 
      * @param messageAttributeNames
@@ -497,9 +837,10 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        When using <code>ReceiveMessage</code>, you can send a list of
      *        attribute names to receive, or you can return all of the
      *        attributes by specifying "All" or ".*" in your request. You can
-     *        also use "foo.*" to return all message attributes starting with
-     *        the "foo" prefix.
+     *        also use "bar.*" to return all message attributes starting with
+     *        the "bar" prefix.
      */
+
     public void setMessageAttributeNames(
             java.util.Collection<String> messageAttributeNames) {
         if (messageAttributeNames == null) {
@@ -525,8 +866,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute
      * names to receive, or you can return all of the attributes by specifying
-     * "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.
+     * "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -549,11 +890,12 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        When using <code>ReceiveMessage</code>, you can send a list of
      *        attribute names to receive, or you can return all of the
      *        attributes by specifying "All" or ".*" in your request. You can
-     *        also use "foo.*" to return all message attributes starting with
-     *        the "foo" prefix.
+     *        also use "bar.*" to return all message attributes starting with
+     *        the "bar" prefix.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMessageAttributeNames(
             String... messageAttributeNames) {
         if (this.messageAttributeNames == null) {
@@ -580,8 +922,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute
      * names to receive, or you can return all of the attributes by specifying
-     * "All" or ".*" in your request. You can also use "foo.*" to return all
-     * message attributes starting with the "foo" prefix.
+     * "All" or ".*" in your request. You can also use "bar.*" to return all
+     * message attributes starting with the "bar" prefix.
      * </p>
      * 
      * @param messageAttributeNames
@@ -598,11 +940,12 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        When using <code>ReceiveMessage</code>, you can send a list of
      *        attribute names to receive, or you can return all of the
      *        attributes by specifying "All" or ".*" in your request. You can
-     *        also use "foo.*" to return all message attributes starting with
-     *        the "foo" prefix.
+     *        also use "bar.*" to return all message attributes starting with
+     *        the "bar" prefix.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMessageAttributeNames(
             java.util.Collection<String> messageAttributeNames) {
         setMessageAttributeNames(messageAttributeNames);
@@ -626,6 +969,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        All of the messages are not necessarily returned.
      */
+
     public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
         this.maxNumberOfMessages = maxNumberOfMessages;
     }
@@ -646,6 +990,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         All of the messages are not necessarily returned.
      */
+
     public Integer getMaxNumberOfMessages() {
         return this.maxNumberOfMessages;
     }
@@ -669,6 +1014,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withMaxNumberOfMessages(
             Integer maxNumberOfMessages) {
         setMaxNumberOfMessages(maxNumberOfMessages);
@@ -687,6 +1033,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        from subsequent retrieve requests after being retrieved by a
      *        <code>ReceiveMessage</code> request.
      */
+
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
@@ -702,6 +1049,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         from subsequent retrieve requests after being retrieved by a
      *         <code>ReceiveMessage</code> request.
      */
+
     public Integer getVisibilityTimeout() {
         return this.visibilityTimeout;
     }
@@ -720,6 +1068,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withVisibilityTimeout(Integer visibilityTimeout) {
         setVisibilityTimeout(visibilityTimeout);
         return this;
@@ -737,6 +1086,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *        message to arrive in the queue before returning. If a message is
      *        available, the call will return sooner than WaitTimeSeconds.
      */
+
     public void setWaitTimeSeconds(Integer waitTimeSeconds) {
         this.waitTimeSeconds = waitTimeSeconds;
     }
@@ -752,6 +1102,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      *         message to arrive in the queue before returning. If a message is
      *         available, the call will return sooner than WaitTimeSeconds.
      */
+
     public Integer getWaitTimeSeconds() {
         return this.waitTimeSeconds;
     }
@@ -770,6 +1121,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {
         setWaitTimeSeconds(waitTimeSeconds);
         return this;

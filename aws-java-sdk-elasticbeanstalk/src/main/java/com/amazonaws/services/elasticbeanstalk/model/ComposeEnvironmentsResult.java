@@ -39,6 +39,7 @@ public class ComposeEnvironmentsResult implements Serializable, Cloneable {
      * 
      * @return Returns an <a>EnvironmentDescription</a> list.
      */
+
     public java.util.List<EnvironmentDescription> getEnvironments() {
         if (environments == null) {
             environments = new com.amazonaws.internal.SdkInternalList<EnvironmentDescription>();
@@ -54,6 +55,7 @@ public class ComposeEnvironmentsResult implements Serializable, Cloneable {
      * @param environments
      *        Returns an <a>EnvironmentDescription</a> list.
      */
+
     public void setEnvironments(
             java.util.Collection<EnvironmentDescription> environments) {
         if (environments == null) {
@@ -81,6 +83,7 @@ public class ComposeEnvironmentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsResult withEnvironments(
             EnvironmentDescription... environments) {
         if (this.environments == null) {
@@ -103,6 +106,7 @@ public class ComposeEnvironmentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComposeEnvironmentsResult withEnvironments(
             java.util.Collection<EnvironmentDescription> environments) {
         setEnvironments(environments);

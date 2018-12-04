@@ -35,14 +35,17 @@ import com.amazonaws.services.cloudtrail.model.*;
  * source IP address, the request parameters, and the response elements returned
  * by the service.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
- * convenient way to create programmatic access to AWSCloudTrail. For example,
- * the SDKs take care of cryptographically signing requests, managing errors,
- * and retrying requests automatically. For information about the AWS SDKs,
- * including how to download and install them, see the <a
- * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * <note>
+ * <p>
+ * As an alternative to the API, you can use one of the AWS SDKs, which consist
+ * of libraries and sample code for various programming languages and platforms
+ * (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to
+ * create programmatic access to AWSCloudTrail. For example, the SDKs take care
+ * of cryptographically signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to download
+ * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
+ * Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * See the CloudTrail User Guide for information about the data that is included
@@ -275,10 +278,14 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * validate digest files that were signed with its corresponding private
      * key.
      * </p>
-     * <note>CloudTrail uses different private/public key pairs per region. Each
+     * <note>
+     * <p>
+     * CloudTrail uses different private/public key pairs per region. Each
      * digest file is signed with a private key unique to its region. Therefore,
      * when you validate a digest file from a particular region, you must look
-     * in the same region for its corresponding public key.</note>
+     * in the same region for its corresponding public key.
+     * </p>
+     * </note>
      * 
      * @param listPublicKeysRequest
      *        Requests the public keys for a specified time range.
@@ -296,10 +303,14 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * validate digest files that were signed with its corresponding private
      * key.
      * </p>
-     * <note>CloudTrail uses different private/public key pairs per region. Each
+     * <note>
+     * <p>
+     * CloudTrail uses different private/public key pairs per region. Each
      * digest file is signed with a private key unique to its region. Therefore,
      * when you validate a digest file from a particular region, you must look
-     * in the same region for its corresponding public key.</note>
+     * in the same region for its corresponding public key.
+     * </p>
+     * </note>
      * 
      * @param listPublicKeysRequest
      *        Requests the public keys for a specified time range.
@@ -335,9 +346,6 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
 
     /**
      * <p>
-     * Lists the tags for the specified trail or trails in the current region.
-     * </p>
-     * <p>
      * Lists the tags for the trail in the current region.
      * </p>
      * 
@@ -351,9 +359,6 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
             ListTagsRequest listTagsRequest);
 
     /**
-     * <p>
-     * Lists the tags for the specified trail or trails in the current region.
-     * </p>
      * <p>
      * Lists the tags for the trail in the current region.
      * </p>
@@ -386,11 +391,18 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * results returned is 10, with a maximum of 50 possible. The response
      * includes a token that you can use to get the next page of results.
      * </p>
-     * <important>The rate of lookup requests is limited to one per second per
-     * account. If this limit is exceeded, a throttling error occurs.
-     * </important> <important>Events that occurred during the selected time
-     * range will not be available for lookup if CloudTrail logging was not
-     * enabled when the events occurred.</important>
+     * <important>
+     * <p>
+     * The rate of lookup requests is limited to one per second per account. If
+     * this limit is exceeded, a throttling error occurs.
+     * </p>
+     * </important> <important>
+     * <p>
+     * Events that occurred during the selected time range will not be available
+     * for lookup if CloudTrail logging was not enabled when the events
+     * occurred.
+     * </p>
+     * </important>
      * 
      * @param lookupEventsRequest
      *        Contains a request for LookupEvents.
@@ -414,11 +426,18 @@ public interface AWSCloudTrailAsync extends AWSCloudTrail {
      * results returned is 10, with a maximum of 50 possible. The response
      * includes a token that you can use to get the next page of results.
      * </p>
-     * <important>The rate of lookup requests is limited to one per second per
-     * account. If this limit is exceeded, a throttling error occurs.
-     * </important> <important>Events that occurred during the selected time
-     * range will not be available for lookup if CloudTrail logging was not
-     * enabled when the events occurred.</important>
+     * <important>
+     * <p>
+     * The rate of lookup requests is limited to one per second per account. If
+     * this limit is exceeded, a throttling error occurs.
+     * </p>
+     * </important> <important>
+     * <p>
+     * Events that occurred during the selected time range will not be available
+     * for lookup if CloudTrail logging was not enabled when the events
+     * occurred.
+     * </p>
+     * </important>
      * 
      * @param lookupEventsRequest
      *        Contains a request for LookupEvents.

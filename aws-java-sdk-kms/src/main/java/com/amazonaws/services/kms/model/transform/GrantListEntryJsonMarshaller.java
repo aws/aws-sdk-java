@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kms.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GrantListEntryMarshaller
@@ -39,69 +34,67 @@ import com.amazonaws.util.json.*;
 public class GrantListEntryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(GrantListEntry grantListEntry, JSONWriter jsonWriter) {
+    public void marshall(GrantListEntry grantListEntry,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (grantListEntry == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (grantListEntry.getKeyId() != null) {
-                jsonWriter.key("KeyId").value(grantListEntry.getKeyId());
+                jsonGenerator.writeFieldName("KeyId").writeValue(
+                        grantListEntry.getKeyId());
             }
-
             if (grantListEntry.getGrantId() != null) {
-                jsonWriter.key("GrantId").value(grantListEntry.getGrantId());
+                jsonGenerator.writeFieldName("GrantId").writeValue(
+                        grantListEntry.getGrantId());
             }
-
             if (grantListEntry.getName() != null) {
-                jsonWriter.key("Name").value(grantListEntry.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        grantListEntry.getName());
             }
-
             if (grantListEntry.getCreationDate() != null) {
-                jsonWriter.key("CreationDate").value(
+                jsonGenerator.writeFieldName("CreationDate").writeValue(
                         grantListEntry.getCreationDate());
             }
-
             if (grantListEntry.getGranteePrincipal() != null) {
-                jsonWriter.key("GranteePrincipal").value(
+                jsonGenerator.writeFieldName("GranteePrincipal").writeValue(
                         grantListEntry.getGranteePrincipal());
             }
-
             if (grantListEntry.getRetiringPrincipal() != null) {
-                jsonWriter.key("RetiringPrincipal").value(
+                jsonGenerator.writeFieldName("RetiringPrincipal").writeValue(
                         grantListEntry.getRetiringPrincipal());
             }
-
             if (grantListEntry.getIssuingAccount() != null) {
-                jsonWriter.key("IssuingAccount").value(
+                jsonGenerator.writeFieldName("IssuingAccount").writeValue(
                         grantListEntry.getIssuingAccount());
             }
 
             com.amazonaws.internal.SdkInternalList<String> operationsList = (com.amazonaws.internal.SdkInternalList<String>) grantListEntry
                     .getOperations();
             if (!operationsList.isEmpty() || !operationsList.isAutoConstruct()) {
-                jsonWriter.key("Operations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Operations");
+                jsonGenerator.writeStartArray();
                 for (String operationsListValue : operationsList) {
                     if (operationsListValue != null) {
-                        jsonWriter.value(operationsListValue);
+                        jsonGenerator.writeValue(operationsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (grantListEntry.getConstraints() != null) {
-                jsonWriter.key("Constraints");
+                jsonGenerator.writeFieldName("Constraints");
                 GrantConstraintsJsonMarshaller.getInstance().marshall(
-                        grantListEntry.getConstraints(), jsonWriter);
+                        grantListEntry.getConstraints(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -159,6 +159,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *        <code>DataSource</code>. Typically, an Amazon Resource Number
      *        (ARN) becomes the ID for a <code>DataSource</code>.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -174,6 +175,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *         <code>DataSource</code>. Typically, an Amazon Resource Number
      *         (ARN) becomes the ID for a <code>DataSource</code>.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -192,6 +194,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRDSRequest withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -206,6 +209,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *        A user-supplied name or description of the <code>DataSource</code>
      *        .
      */
+
     public void setDataSourceName(String dataSourceName) {
         this.dataSourceName = dataSourceName;
     }
@@ -218,6 +222,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return A user-supplied name or description of the
      *         <code>DataSource</code>.
      */
+
     public String getDataSourceName() {
         return this.dataSourceName;
     }
@@ -233,6 +238,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRDSRequest withDataSourceName(
             String dataSourceName) {
         setDataSourceName(dataSourceName);
@@ -410,6 +416,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setRDSData(RDSDataSpec rDSData) {
         this.rDSData = rDSData;
     }
@@ -586,6 +593,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public RDSDataSpec getRDSData() {
         return this.rDSData;
     }
@@ -763,6 +771,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRDSRequest withRDSData(RDSDataSpec rDSData) {
         setRDSData(rDSData);
         return this;
@@ -784,6 +793,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *        Amazon S3.</p>
      *        <p>
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -803,6 +813,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *         Amazon S3.</p>
      *         <p>
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -825,6 +836,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRDSRequest withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -848,6 +860,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *        set to <code>true</code> if the <code></code>DataSource
      *        <code></code> needs to be used for <code>MLModel</code> training.
      */
+
     public void setComputeStatistics(Boolean computeStatistics) {
         this.computeStatistics = computeStatistics;
     }
@@ -870,6 +883,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *         DataSource<code></code> needs to be used for <code>MLModel</code>
      *         training.
      */
+
     public Boolean getComputeStatistics() {
         return this.computeStatistics;
     }
@@ -894,6 +908,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromRDSRequest withComputeStatistics(
             Boolean computeStatistics) {
         setComputeStatistics(computeStatistics);
@@ -918,6 +933,7 @@ public class CreateDataSourceFromRDSRequest extends AmazonWebServiceRequest
      *         DataSource<code></code> needs to be used for <code>MLModel</code>
      *         training.
      */
+
     public Boolean isComputeStatistics() {
         return this.computeStatistics;
     }

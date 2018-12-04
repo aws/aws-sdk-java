@@ -79,6 +79,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *        The date and time of the last provisioned throughput increase for
      *        this table.
      */
+
     public void setLastIncreaseDateTime(java.util.Date lastIncreaseDateTime) {
         this.lastIncreaseDateTime = lastIncreaseDateTime;
     }
@@ -92,6 +93,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return The date and time of the last provisioned throughput increase for
      *         this table.
      */
+
     public java.util.Date getLastIncreaseDateTime() {
         return this.lastIncreaseDateTime;
     }
@@ -108,6 +110,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughputDescription withLastIncreaseDateTime(
             java.util.Date lastIncreaseDateTime) {
         setLastIncreaseDateTime(lastIncreaseDateTime);
@@ -124,6 +127,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *        The date and time of the last provisioned throughput decrease for
      *        this table.
      */
+
     public void setLastDecreaseDateTime(java.util.Date lastDecreaseDateTime) {
         this.lastDecreaseDateTime = lastDecreaseDateTime;
     }
@@ -137,6 +141,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return The date and time of the last provisioned throughput decrease for
      *         this table.
      */
+
     public java.util.Date getLastDecreaseDateTime() {
         return this.lastDecreaseDateTime;
     }
@@ -153,6 +158,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughputDescription withLastDecreaseDateTime(
             java.util.Date lastDecreaseDateTime) {
         setLastDecreaseDateTime(lastDecreaseDateTime);
@@ -175,6 +181,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"
      *        >Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public void setNumberOfDecreasesToday(Long numberOfDecreasesToday) {
         this.numberOfDecreasesToday = numberOfDecreasesToday;
     }
@@ -194,6 +201,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"
      *         >Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public Long getNumberOfDecreasesToday() {
         return this.numberOfDecreasesToday;
     }
@@ -216,6 +224,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughputDescription withNumberOfDecreasesToday(
             Long numberOfDecreasesToday) {
         setNumberOfDecreasesToday(numberOfDecreasesToday);
@@ -239,6 +248,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *        second provides 100 eventually consistent <i>ReadCapacityUnits</i>
      *        per second.
      */
+
     public void setReadCapacityUnits(Long readCapacityUnits) {
         this.readCapacityUnits = readCapacityUnits;
     }
@@ -259,6 +269,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *         second provides 100 eventually consistent
      *         <i>ReadCapacityUnits</i> per second.
      */
+
     public Long getReadCapacityUnits() {
         return this.readCapacityUnits;
     }
@@ -282,6 +293,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughputDescription withReadCapacityUnits(
             Long readCapacityUnits) {
         setReadCapacityUnits(readCapacityUnits);
@@ -298,6 +310,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      *        The maximum number of writes consumed per second before DynamoDB
      *        returns a <i>ThrottlingException</i>.
      */
+
     public void setWriteCapacityUnits(Long writeCapacityUnits) {
         this.writeCapacityUnits = writeCapacityUnits;
     }
@@ -311,6 +324,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return The maximum number of writes consumed per second before DynamoDB
      *         returns a <i>ThrottlingException</i>.
      */
+
     public Long getWriteCapacityUnits() {
         return this.writeCapacityUnits;
     }
@@ -327,6 +341,7 @@ public class ProvisionedThroughputDescription implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ProvisionedThroughputDescription withWriteCapacityUnits(
             Long writeCapacityUnits) {
         setWriteCapacityUnits(writeCapacityUnits);

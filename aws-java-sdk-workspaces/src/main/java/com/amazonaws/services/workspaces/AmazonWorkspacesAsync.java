@@ -34,6 +34,40 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates tags for a WorkSpace.
+     * </p>
+     * 
+     * @param createTagsRequest
+     *        The request of the create tags action.
+     * @return A Java Future containing the result of the CreateTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateTags
+     */
+    java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
+            CreateTagsRequest createTagsRequest);
+
+    /**
+     * <p>
+     * Creates tags for a WorkSpace.
+     * </p>
+     * 
+     * @param createTagsRequest
+     *        The request of the create tags action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateTags
+     */
+    java.util.concurrent.Future<CreateTagsResult> createTagsAsync(
+            CreateTagsRequest createTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <note>
@@ -77,6 +111,74 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
     java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(
             CreateWorkspacesRequest createWorkspacesRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkspacesRequest, CreateWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes tags from a WorkSpace.
+     * </p>
+     * 
+     * @param deleteTagsRequest
+     *        The request of the delete tags action.
+     * @return A Java Future containing the result of the DeleteTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsync.DeleteTags
+     */
+    java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Deletes tags from a WorkSpace.
+     * </p>
+     * 
+     * @param deleteTagsRequest
+     *        The request of the delete tags action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DeleteTags
+     */
+    java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(
+            DeleteTagsRequest deleteTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes tags for a WorkSpace.
+     * </p>
+     * 
+     * @param describeTagsRequest
+     *        The request of the describe tags action.
+     * @return A Java Future containing the result of the DescribeTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeTags
+     */
+    java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest describeTagsRequest);
+
+    /**
+     * <p>
+     * Describes tags for a WorkSpace.
+     * </p>
+     * 
+     * @param describeTagsRequest
+     *        The request of the describe tags action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTags operation
+     *         returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeTags
+     */
+    java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
+            DescribeTagsRequest describeTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler);
 
     /**
      * <p>

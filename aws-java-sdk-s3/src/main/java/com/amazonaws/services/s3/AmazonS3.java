@@ -27,91 +27,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
-import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
-import com.amazonaws.services.s3.model.AccessControlList;
-import com.amazonaws.services.s3.model.Bucket;
-import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
-import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketPolicy;
-import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
-import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
-import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
-import com.amazonaws.services.s3.model.CopyObjectRequest;
-import com.amazonaws.services.s3.model.CopyObjectResult;
-import com.amazonaws.services.s3.model.CopyPartRequest;
-import com.amazonaws.services.s3.model.CopyPartResult;
-import com.amazonaws.services.s3.model.CreateBucketRequest;
-import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
-import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketRequest;
-import com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteObjectRequest;
-import com.amazonaws.services.s3.model.DeleteObjectsRequest;
-import com.amazonaws.services.s3.model.DeleteObjectsResult;
-import com.amazonaws.services.s3.model.DeleteVersionRequest;
-import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
-import com.amazonaws.services.s3.model.GetBucketAclRequest;
-import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketLocationRequest;
-import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
-import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
-import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
-import com.amazonaws.services.s3.model.GetObjectRequest;
-import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
-import com.amazonaws.services.s3.model.GroupGrantee;
-import com.amazonaws.services.s3.model.HeadBucketRequest;
-import com.amazonaws.services.s3.model.HeadBucketResult;
-import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
-import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
-import com.amazonaws.services.s3.model.ListBucketsRequest;
-import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
-import com.amazonaws.services.s3.model.ListNextBatchOfObjectsRequest;
-import com.amazonaws.services.s3.model.ListNextBatchOfVersionsRequest;
-import com.amazonaws.services.s3.model.ListObjectsRequest;
-import com.amazonaws.services.s3.model.ListPartsRequest;
-import com.amazonaws.services.s3.model.ListVersionsRequest;
-import com.amazonaws.services.s3.model.MultiObjectDeleteException;
-import com.amazonaws.services.s3.model.MultipartUploadListing;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.services.s3.model.Owner;
-import com.amazonaws.services.s3.model.PartListing;
-import com.amazonaws.services.s3.model.Permission;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.PutObjectResult;
-import com.amazonaws.services.s3.model.Region;
-import com.amazonaws.services.s3.model.RestoreObjectRequest;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.SetBucketAclRequest;
-import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
-import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
-import com.amazonaws.services.s3.model.SetObjectAclRequest;
-import com.amazonaws.services.s3.model.StorageClass;
-import com.amazonaws.services.s3.model.UploadPartRequest;
-import com.amazonaws.services.s3.model.UploadPartResult;
-import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.*;
 
 /**
  * <p>
@@ -433,6 +349,15 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
             throws AmazonClientException, AmazonServiceException;
+
+    public ListObjectsV2Result listObjectsV2(String bucketName) throws AmazonClientException,
+            AmazonServiceException;
+
+    public ListObjectsV2Result listObjectsV2(String bucketName, String prefix) throws AmazonClientException,
+            AmazonServiceException;
+
+    public ListObjectsV2Result listObjectsV2(ListObjectsV2Request listObjectsV2Request) throws AmazonClientException,
+            AmazonServiceException;
 
     /**
      * <p>
@@ -1485,6 +1410,37 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
+     * Gets the {@link AccessControlList} (ACL) for the specified object in Amazon S3.
+     * </p>
+     * <p>
+     * Each bucket and object in Amazon S3 has an ACL that defines its access
+     * control policy. When a request is made, Amazon S3 authenticates the
+     * request using its standard authentication procedure and then checks the
+     * ACL to verify the sender was granted access to the bucket or object. If
+     * the sender is approved, the request proceeds. Otherwise, Amazon S3
+     * returns an error.
+     * </p>
+     *
+     * @param getObjectRequest
+     *            the request object containing all the information needed for retrieving
+     *            the object ACL.
+     *
+     * @return The <code>AccessControlList</code> for the specified Amazon S3 object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#getObjectAcl(String, String, String)
+     */
+    public AccessControlList getObjectAcl(GetObjectAclRequest getObjectAclRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
      * Sets the {@link AccessControlList} for the specified object in Amazon S3.
      * </p>
      * <p>
@@ -2373,10 +2329,11 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * Content length <b>must</b> be specified before data can be uploaded to
-     * Amazon S3. If the caller doesn't provide it, the library will <b>have
-     * to</b> buffer the contents of the input stream in order to calculate it
-     * because Amazon S3 explicitly requires that the content length be sent in
-     * the request headers before any of the data is sent.
+     * Amazon S3. If the caller doesn't provide it, the library will make a best
+     * effort to compute the content length by buffer the contents of the input
+     * stream into the memory because Amazon S3 explicitly requires that the
+     * content length be sent in the request headers before any of the data is
+     * sent. Please note that this operation is not guaranteed to succeed.
      * </p>
      * <p>
      * When using an {@link java.io.BufferedInputStream} as data source,
@@ -4490,14 +4447,13 @@ public interface AmazonS3 extends S3DirectSpi {
     void deleteBucketReplicationConfiguration
     (DeleteBucketReplicationConfigurationRequest request)
             throws AmazonServiceException, AmazonClientException;
+
     /**
      * @param bucketName
-     *              name of bucket that presumably contains object
+     *            Name of bucket that presumably contains object
      * @param objectName
-     *              name of object that has to be checked
-     * @return
-     *              result of the search
-     *
+     *            Name of object that has to be checked
+     * @return result of the search
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
@@ -4508,4 +4464,90 @@ public interface AmazonS3 extends S3DirectSpi {
     boolean doesObjectExist(String bucketName, String objectName)
             throws AmazonServiceException, AmazonClientException;
 
+    /**
+     * Retrieves the accelerate configuration for the given bucket.
+     *
+     * @param bucketName
+     *            The name of the bucket whose accelerate configuration is being
+     *            fetched.
+     * @return the accelerate configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     */
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            String bucket) throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Retrieves the accelerate configuration for the given bucket.
+     *
+     * @param getBucketAccelerateConfigurationRequest
+     *            The request object for retrieving the bucket accelerate
+     *            configuration.
+     * @return the accelerate configuration of the bucket.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     */
+    public BucketAccelerateConfiguration getBucketAccelerateConfiguration(
+            GetBucketAccelerateConfigurationRequest getBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets the accelerate configuration for the specified bucket. *
+     *
+     * @param bucketName
+     *            The name of the bucket whose accelerate configuration is being
+     *            set.
+     * @param accelerateConfiguration
+     *            The new accelerate configuration for this bucket, which
+     *            completely replaces any existing configuration.
+     */
+    public void setBucketAccelerateConfiguration(String bucketName,
+            BucketAccelerateConfiguration accelerateConfiguration)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Sets the accelerate configuration for the specified bucket.
+     *
+     * @param setBucketAccelerateConfigurationRequest
+     *            The request object containing all options for setting the
+     *            bucket accelerate configuration.
+     */
+    public void setBucketAccelerateConfiguration(
+            SetBucketAccelerateConfigurationRequest setBucketAccelerateConfigurationRequest)
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * Returns the region with which the client is configured.
+     *
+     * @return The region this client will communicate with.
+     */
+    Region getRegion();
+
+    /**
+     * Returns an URL for the object stored in the specified bucket and
+     * key.
+     * <p>
+     * If the object identified by the given bucket and key has public read
+     * permissions (ex: {@link CannedAccessControlList#PublicRead}), then this
+     * URL can be directly accessed to retrieve the object's data.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the object whose URL is
+     *            being requested.
+     * @param key
+     *            The key under which the object whose URL is being requested is
+     *            stored.
+     *
+     * @return A unique URL for the object stored in the specified bucket and
+     *         key.
+     */
+    URL getUrl(String bucketName, String key);
 }

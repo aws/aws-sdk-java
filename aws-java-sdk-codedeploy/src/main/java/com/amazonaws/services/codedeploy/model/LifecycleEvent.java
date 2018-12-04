@@ -57,7 +57,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -75,6 +75,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        The deployment lifecycle event name, such as ApplicationStop,
      *        BeforeInstall, AfterInstall, ApplicationStart, or ValidateService.
      */
+
     public void setLifecycleEventName(String lifecycleEventName) {
         this.lifecycleEventName = lifecycleEventName;
     }
@@ -89,6 +90,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *         BeforeInstall, AfterInstall, ApplicationStart, or
      *         ValidateService.
      */
+
     public String getLifecycleEventName() {
         return this.lifecycleEventName;
     }
@@ -105,6 +107,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleEvent withLifecycleEventName(String lifecycleEventName) {
         setLifecycleEventName(lifecycleEventName);
         return this;
@@ -118,6 +121,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @param diagnostics
      *        Diagnostic information about the deployment lifecycle event.
      */
+
     public void setDiagnostics(Diagnostics diagnostics) {
         this.diagnostics = diagnostics;
     }
@@ -129,6 +133,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * 
      * @return Diagnostic information about the deployment lifecycle event.
      */
+
     public Diagnostics getDiagnostics() {
         return this.diagnostics;
     }
@@ -143,6 +148,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleEvent withDiagnostics(Diagnostics diagnostics) {
         setDiagnostics(diagnostics);
         return this;
@@ -157,6 +163,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        A timestamp indicating when the deployment lifecycle event
      *        started.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -169,6 +176,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @return A timestamp indicating when the deployment lifecycle event
      *         started.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -184,6 +192,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleEvent withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -197,6 +206,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @param endTime
      *        A timestamp indicating when the deployment lifecycle event ended.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -208,6 +218,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * 
      * @return A timestamp indicating when the deployment lifecycle event ended.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -222,6 +233,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleEvent withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -234,7 +246,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -245,12 +257,13 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        <ul>
      *        <li>Pending: The deployment lifecycle event is pending.</li>
      *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      *        <li>Failed: The deployment lifecycle event has failed.</li>
      *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *        <li>Unknown: The deployment lifecycle event is unknown.</li>
      * @see LifecycleEventStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -262,7 +275,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -272,12 +285,13 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *         <ul>
      *         <li>Pending: The deployment lifecycle event is pending.</li>
      *         <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *         <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     *         <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      *         <li>Failed: The deployment lifecycle event has failed.</li>
      *         <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *         <li>Unknown: The deployment lifecycle event is unknown.</li>
      * @see LifecycleEventStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -289,7 +303,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -300,7 +314,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        <ul>
      *        <li>Pending: The deployment lifecycle event is pending.</li>
      *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      *        <li>Failed: The deployment lifecycle event has failed.</li>
      *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *        <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -308,6 +322,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleEventStatus
      */
+
     public LifecycleEvent withStatus(String status) {
         setStatus(status);
         return this;
@@ -320,7 +335,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -331,14 +346,13 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        <ul>
      *        <li>Pending: The deployment lifecycle event is pending.</li>
      *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      *        <li>Failed: The deployment lifecycle event has failed.</li>
      *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *        <li>Unknown: The deployment lifecycle event is unknown.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifecycleEventStatus
      */
+
     public void setStatus(LifecycleEventStatus status) {
         this.status = status.toString();
     }
@@ -350,7 +364,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      * <ul>
      * <li>Pending: The deployment lifecycle event is pending.</li>
      * <li>InProgress: The deployment lifecycle event is in progress.</li>
-     * <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     * <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      * <li>Failed: The deployment lifecycle event has failed.</li>
      * <li>Skipped: The deployment lifecycle event has been skipped.</li>
      * <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -361,7 +375,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *        <ul>
      *        <li>Pending: The deployment lifecycle event is pending.</li>
      *        <li>InProgress: The deployment lifecycle event is in progress.</li>
-     *        <li>Succeeded: The deployment lifecycle event has succeeded.</li>
+     *        <li>Succeeded: The deployment lifecycle event ran successfully.</li>
      *        <li>Failed: The deployment lifecycle event has failed.</li>
      *        <li>Skipped: The deployment lifecycle event has been skipped.</li>
      *        <li>Unknown: The deployment lifecycle event is unknown.</li>
@@ -369,6 +383,7 @@ public class LifecycleEvent implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleEventStatus
      */
+
     public LifecycleEvent withStatus(LifecycleEventStatus status) {
         setStatus(status);
         return this;

@@ -174,6 +174,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamArn
      *        The Amazon Resource Name (ARN) for the stream.
      */
+
     public void setStreamArn(String streamArn) {
         this.streamArn = streamArn;
     }
@@ -185,6 +186,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the stream.
      */
+
     public String getStreamArn() {
         return this.streamArn;
     }
@@ -199,6 +201,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamArn(String streamArn) {
         setStreamArn(streamArn);
         return this;
@@ -257,6 +260,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setStreamLabel(String streamLabel) {
         this.streamLabel = streamLabel;
     }
@@ -313,6 +317,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public String getStreamLabel() {
         return this.streamLabel;
     }
@@ -372,6 +377,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamLabel(String streamLabel) {
         setStreamLabel(streamLabel);
         return this;
@@ -433,6 +439,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      * @see StreamStatus
      */
+
     public void setStreamStatus(String streamStatus) {
         this.streamStatus = streamStatus;
     }
@@ -492,6 +499,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </li>
      * @see StreamStatus
      */
+
     public String getStreamStatus() {
         return this.streamStatus;
     }
@@ -554,6 +562,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(String streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -613,10 +622,9 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <code>DISABLED</code> - the stream is disabled.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamStatus
      */
+
     public void setStreamStatus(StreamStatus streamStatus) {
         this.streamStatus = streamStatus.toString();
     }
@@ -679,6 +687,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -744,6 +753,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        </li>
      * @see StreamViewType
      */
+
     public void setStreamViewType(String streamViewType) {
         this.streamViewType = streamViewType;
     }
@@ -807,6 +817,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         </li>
      * @see StreamViewType
      */
+
     public String getStreamViewType() {
         return this.streamViewType;
     }
@@ -873,6 +884,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamDescription withStreamViewType(String streamViewType) {
         setStreamViewType(streamViewType);
         return this;
@@ -936,10 +948,9 @@ public class StreamDescription implements Serializable, Cloneable {
      *        of the items from the table.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
+
     public void setStreamViewType(StreamViewType streamViewType) {
         this.streamViewType = streamViewType.toString();
     }
@@ -1006,6 +1017,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamDescription withStreamViewType(StreamViewType streamViewType) {
         setStreamViewType(streamViewType);
         return this;
@@ -1020,6 +1032,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        The date and time when the request to create this stream was
      *        issued.
      */
+
     public void setCreationRequestDateTime(
             java.util.Date creationRequestDateTime) {
         this.creationRequestDateTime = creationRequestDateTime;
@@ -1033,6 +1046,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return The date and time when the request to create this stream was
      *         issued.
      */
+
     public java.util.Date getCreationRequestDateTime() {
         return this.creationRequestDateTime;
     }
@@ -1048,6 +1062,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withCreationRequestDateTime(
             java.util.Date creationRequestDateTime) {
         setCreationRequestDateTime(creationRequestDateTime);
@@ -1062,6 +1077,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param tableName
      *        The DynamoDB table with which the stream is associated.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -1073,6 +1089,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The DynamoDB table with which the stream is associated.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -1087,6 +1104,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -1099,6 +1117,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The key attribute(s) of the stream's DynamoDB table.
      */
+
     public java.util.List<KeySchemaElement> getKeySchema() {
         return keySchema;
     }
@@ -1111,6 +1130,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param keySchema
      *        The key attribute(s) of the stream's DynamoDB table.
      */
+
     public void setKeySchema(java.util.Collection<KeySchemaElement> keySchema) {
         if (keySchema == null) {
             this.keySchema = null;
@@ -1136,6 +1156,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withKeySchema(KeySchemaElement... keySchema) {
         if (this.keySchema == null) {
             setKeySchema(new java.util.ArrayList<KeySchemaElement>(
@@ -1157,6 +1178,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withKeySchema(
             java.util.Collection<KeySchemaElement> keySchema) {
         setKeySchema(keySchema);
@@ -1170,6 +1192,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The shards that comprise the stream.
      */
+
     public java.util.List<Shard> getShards() {
         return shards;
     }
@@ -1182,6 +1205,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param shards
      *        The shards that comprise the stream.
      */
+
     public void setShards(java.util.Collection<Shard> shards) {
         if (shards == null) {
             this.shards = null;
@@ -1207,6 +1231,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(Shard... shards) {
         if (this.shards == null) {
             setShards(new java.util.ArrayList<Shard>(shards.length));
@@ -1227,6 +1252,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(java.util.Collection<Shard> shards) {
         setShards(shards);
         return this;
@@ -1265,6 +1291,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        only way to know when you have reached the end of the result set
      *        is when <code>LastEvaluatedShardId</code> is empty.
      */
+
     public void setLastEvaluatedShardId(String lastEvaluatedShardId) {
         this.lastEvaluatedShardId = lastEvaluatedShardId;
     }
@@ -1301,6 +1328,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         only way to know when you have reached the end of the result set
      *         is when <code>LastEvaluatedShardId</code> is empty.
      */
+
     public String getLastEvaluatedShardId() {
         return this.lastEvaluatedShardId;
     }
@@ -1340,6 +1368,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withLastEvaluatedShardId(
             String lastEvaluatedShardId) {
         setLastEvaluatedShardId(lastEvaluatedShardId);

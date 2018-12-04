@@ -57,6 +57,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      *        <code>AttachmentSetId</code> was specified, the attachments are
      *        added to the specified set, if it exists.
      */
+
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
@@ -75,6 +76,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      *         <code>AttachmentSetId</code> was specified, the attachments are
      *         added to the specified set, if it exists.
      */
+
     public String getAttachmentSetId() {
         return this.attachmentSetId;
     }
@@ -96,6 +98,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttachmentsToSetResult withAttachmentSetId(String attachmentSetId) {
         setAttachmentSetId(attachmentSetId);
         return this;
@@ -109,6 +112,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      * @param expiryTime
      *        The time and date when the attachment set expires.
      */
+
     public void setExpiryTime(String expiryTime) {
         this.expiryTime = expiryTime;
     }
@@ -120,6 +124,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      * 
      * @return The time and date when the attachment set expires.
      */
+
     public String getExpiryTime() {
         return this.expiryTime;
     }
@@ -134,6 +139,7 @@ public class AddAttachmentsToSetResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddAttachmentsToSetResult withExpiryTime(String expiryTime) {
         setExpiryTime(expiryTime);
         return this;

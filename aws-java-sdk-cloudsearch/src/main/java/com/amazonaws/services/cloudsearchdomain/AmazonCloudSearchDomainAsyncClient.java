@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudsearchdomain;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon CloudSearch Domain asynchronously. Each
@@ -41,6 +42,7 @@ import com.amazonaws.services.cloudsearchdomain.model.*;
  * CloudSearch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudSearchDomainAsyncClient extends
         AmazonCloudSearchDomainClient implements AmazonCloudSearchDomainAsync {
 
@@ -140,8 +142,7 @@ public class AmazonCloudSearchDomainAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -233,9 +234,7 @@ public class AmazonCloudSearchDomainAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

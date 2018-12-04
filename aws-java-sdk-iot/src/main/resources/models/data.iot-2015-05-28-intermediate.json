@@ -4,7 +4,7 @@
     "exceptionUnmarshallerImpl" : null,
     "protocol" : "rest-json",
     "checksumFormat" : null,
-    "documentation" : "<fullname>AWS IoT (Beta)</fullname> <p><b>AWS IoT is considered a beta service as defined in the Service Terms</b></p> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
+    "documentation" : "<fullname>AWS IoT</fullname> <p>AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.</p>",
     "defaultEndpoint" : "https://data.iot.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "data.iot.us-east-1.amazonaws.com",
     "syncInterface" : "AWSIotData",
@@ -16,11 +16,14 @@
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS IoT Data Plane",
     "hasApiWithStreamInput" : false,
-    "jsonContentVersion" : null,
+    "jsonContentVersion" : "application/x-amz-json-1.1",
+    "jsonVersion" : "1.1",
     "endpointPrefix" : "data.iot",
     "signingName" : "iotdata",
-    "serviceName" : "AWS IoT Data Plane",
+    "xmlProtocol" : false,
     "jsonProtocol" : true,
+    "serviceName" : "AWS IoT Data Plane",
+    "cborProtocol" : false,
     "unmarshallerContextClassName" : "JsonUnmarshallerContext",
     "unmarshallerClassSuffix" : "JsonUnmarshaller",
     "protocolDefaultExceptionUnmarshallerType" : "JsonErrorUnmarshaller"
@@ -74,6 +77,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<DeleteThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "deleteThingShadow"
     },
     "GetThingShadow" : {
@@ -124,6 +128,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<GetThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<GetThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "getThingShadow"
     },
     "Publish" : {
@@ -139,7 +144,10 @@
         "variableSetterType" : "PublishRequest"
       },
       "inputStreamPropertyName" : null,
-      "returnType" : null,
+      "returnType" : {
+        "returnType" : "PublishResult",
+        "documentation" : null
+      },
       "exceptions" : [ {
         "exceptionName" : "InternalFailureException",
         "documentation" : "<p>An unexpected error has occurred.</p>"
@@ -154,11 +162,12 @@
         "documentation" : "<p>The specified combination of HTTP verb and URI is not supported.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
-      "syncReturnType" : "void",
-      "asyncReturnType" : "Void",
-      "asyncFutureType" : "java.util.concurrent.Future<Void>",
-      "asyncCallableType" : "java.util.concurrent.Callable<Void>",
-      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, Void>",
+      "syncReturnType" : "PublishResult",
+      "asyncReturnType" : "PublishResult",
+      "asyncFutureType" : "java.util.concurrent.Future<PublishResult>",
+      "asyncCallableType" : "java.util.concurrent.Callable<PublishResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult>",
+      "authenticated" : true,
       "methodName" : "publish"
     },
     "UpdateThingShadow" : {
@@ -212,6 +221,7 @@
       "asyncFutureType" : "java.util.concurrent.Future<UpdateThingShadowResult>",
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateThingShadowResult>",
       "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult>",
+      "authenticated" : true,
       "methodName" : "updateThingShadow"
     }
   },
@@ -226,6 +236,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the MQTT topic.</p>",
         "name" : "Topic",
@@ -270,8 +281,9 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
         "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
@@ -321,8 +333,9 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
         "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
@@ -372,10 +385,11 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -450,8 +464,9 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@param qos The Quality of Service (QoS) level.*/",
           "getterDocumentation" : "/**<p>The Quality of Service (QoS) level.</p>\n@return The Quality of Service (QoS) level.*/",
@@ -502,10 +517,11 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -554,8 +570,9 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@param topic The name of the MQTT topic.*/",
           "getterDocumentation" : "/**<p>The name of the MQTT topic.</p>\n@return The name of the MQTT topic.*/",
@@ -574,6 +591,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -605,6 +623,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -636,6 +655,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -667,6 +687,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -698,6 +719,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
@@ -742,8 +764,9 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -820,8 +843,9 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -840,6 +864,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
@@ -884,10 +909,11 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -958,10 +984,11 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -978,6 +1005,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1009,6 +1037,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1040,6 +1069,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1071,6 +1101,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1102,6 +1133,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1133,6 +1165,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ ],
       "enums" : null,
       "variable" : {
@@ -1164,6 +1197,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
@@ -1208,10 +1242,11 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1282,10 +1317,11 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1302,6 +1338,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The state information, in JSON format.</p>",
         "name" : "Payload",
@@ -1346,10 +1383,11 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1420,10 +1458,11 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1440,6 +1479,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
@@ -1484,8 +1524,9 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -1535,10 +1576,11 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
-        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+        "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
         "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
         "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1613,10 +1655,11 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
-          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n\n@param payload The state information, in JSON format.*/",
+          "setterDocumentation" : "/**<p>The state information, in JSON format.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param payload The state information, in JSON format.*/",
           "getterDocumentation" : "/**<p>The state information, in JSON format.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The state information, in JSON format.*/",
           "fluentSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "varargSetterDocumentation" : "/**<p>The state information, in JSON format.</p>\n@param payload The state information, in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/"
@@ -1665,8 +1708,9 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -1674,6 +1718,41 @@
           "varargSetterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.\n@return Returns a reference to this object so that method calls can be chained together.*/"
         }
       }
+    },
+    "PublishResult" : {
+      "c2jName" : "PublishResult",
+      "documentation" : null,
+      "shapeName" : "PublishResult",
+      "deprecated" : false,
+      "required" : null,
+      "hasPayloadMember" : false,
+      "hasHeaderMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "wrapper" : false,
+      "members" : null,
+      "enums" : null,
+      "variable" : {
+        "variableName" : "publishResult",
+        "variableType" : "PublishResult",
+        "variableDeclarationType" : "PublishResult",
+        "documentation" : null,
+        "simpleType" : "PublishResult",
+        "variableSetterType" : "PublishResult"
+      },
+      "marshaller" : null,
+      "unmarshaller" : {
+        "resultWrapper" : null,
+        "flattened" : false
+      },
+      "errorCode" : null,
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "membersAsMap" : { }
     },
     "DeleteThingShadowRequest" : {
       "c2jName" : "DeleteThingShadowRequest",
@@ -1685,6 +1764,7 @@
       "hasHeaderMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
+      "wrapper" : false,
       "members" : [ {
         "documentation" : "<p>The name of the thing.</p>",
         "name" : "ThingName",
@@ -1729,8 +1809,9 @@
         "mapModel" : null,
         "enumType" : null,
         "xmlNameSpaceUri" : null,
-        "list" : false,
+        "idempotencyToken" : false,
         "simple" : true,
+        "list" : false,
         "map" : false,
         "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
         "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -1807,8 +1888,9 @@
           "mapModel" : null,
           "enumType" : null,
           "xmlNameSpaceUri" : null,
-          "list" : false,
+          "idempotencyToken" : false,
           "simple" : true,
+          "list" : false,
           "map" : false,
           "setterDocumentation" : "/**<p>The name of the thing.</p>\n@param thingName The name of the thing.*/",
           "getterDocumentation" : "/**<p>The name of the thing.</p>\n@return The name of the thing.*/",
@@ -1825,7 +1907,7 @@
     "serviceClientHoldInputStream" : false,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "customExceptionUnmarshallerImpl" : null,
-    "customClientConfiguration" : null,
+    "customClientConfigFactory" : null,
     "customResponseMetadataClassName" : null,
     "skipInterfaceAdditions" : false,
     "customServiceNameForRequest" : null,
@@ -1839,14 +1921,17 @@
       "actionPrefix" : null,
       "fileNamePrefix" : null
     },
+    "customServiceMetadata" : null,
     "customCodeTemplates" : null,
     "operationModifiers" : null,
     "shapeSubstitutions" : null,
-    "shapeModifiers" : null
+    "shapeModifiers" : null,
+    "customErrorCodeFieldName" : null,
+    "convenienceTypeOverloads" : [ ]
   },
   "examples" : {
     "version" : "1.0",
     "operationExamples" : { }
   },
-  "defaultClientConfiguration" : "com.amazonaws.PredefinedClientConfigurations.defaultConfig()"
+  "clientConfigFactory" : "ClientConfigurationFactory"
 }

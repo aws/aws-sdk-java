@@ -53,6 +53,7 @@ public class StepStatus implements Serializable, Cloneable {
      *        The execution state of the cluster step.
      * @see StepState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -65,6 +66,7 @@ public class StepStatus implements Serializable, Cloneable {
      * @return The execution state of the cluster step.
      * @see StepState
      */
+
     public String getState() {
         return this.state;
     }
@@ -80,6 +82,7 @@ public class StepStatus implements Serializable, Cloneable {
      *         chained together.
      * @see StepState
      */
+
     public StepStatus withState(String state) {
         setState(state);
         return this;
@@ -92,10 +95,9 @@ public class StepStatus implements Serializable, Cloneable {
      * 
      * @param state
      *        The execution state of the cluster step.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepState
      */
+
     public void setState(StepState state) {
         this.state = state.toString();
     }
@@ -111,6 +113,7 @@ public class StepStatus implements Serializable, Cloneable {
      *         chained together.
      * @see StepState
      */
+
     public StepStatus withState(StepState state) {
         setState(state);
         return this;
@@ -124,6 +127,7 @@ public class StepStatus implements Serializable, Cloneable {
      * @param stateChangeReason
      *        The reason for the step execution status change.
      */
+
     public void setStateChangeReason(StepStateChangeReason stateChangeReason) {
         this.stateChangeReason = stateChangeReason;
     }
@@ -135,6 +139,7 @@ public class StepStatus implements Serializable, Cloneable {
      * 
      * @return The reason for the step execution status change.
      */
+
     public StepStateChangeReason getStateChangeReason() {
         return this.stateChangeReason;
     }
@@ -149,6 +154,7 @@ public class StepStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepStatus withStateChangeReason(
             StepStateChangeReason stateChangeReason) {
         setStateChangeReason(stateChangeReason);
@@ -163,6 +169,7 @@ public class StepStatus implements Serializable, Cloneable {
      * @param timeline
      *        The timeline of the cluster step status over time.
      */
+
     public void setTimeline(StepTimeline timeline) {
         this.timeline = timeline;
     }
@@ -174,6 +181,7 @@ public class StepStatus implements Serializable, Cloneable {
      * 
      * @return The timeline of the cluster step status over time.
      */
+
     public StepTimeline getTimeline() {
         return this.timeline;
     }
@@ -188,6 +196,7 @@ public class StepStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepStatus withTimeline(StepTimeline timeline) {
         setTimeline(timeline);
         return this;

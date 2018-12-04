@@ -29,11 +29,22 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user associated with the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
      * The unique identifier for the SSH public key.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
      * </p>
      */
     private String sSHPublicKeyId;
@@ -42,10 +53,22 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user associated with the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the IAM user associated with the SSH public key.
+     *        The name of the IAM user associated with the SSH public key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -54,9 +77,21 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user associated with the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the IAM user associated with the SSH public key.
+     * @return The name of the IAM user associated with the SSH public key.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -65,12 +100,24 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the IAM user associated with the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the IAM user associated with the SSH public key.
+     *        The name of the IAM user associated with the SSH public key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSSHPublicKeyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -80,10 +127,20 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The unique identifier for the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param sSHPublicKeyId
-     *        The unique identifier for the SSH public key.
+     *        The unique identifier for the SSH public key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      */
+
     public void setSSHPublicKeyId(String sSHPublicKeyId) {
         this.sSHPublicKeyId = sSHPublicKeyId;
     }
@@ -92,9 +149,19 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The unique identifier for the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
-     * @return The unique identifier for the SSH public key.
+     * @return The unique identifier for the SSH public key.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters that can consist of
+     *         any upper or lowercased letter or digit.
      */
+
     public String getSSHPublicKeyId() {
         return this.sSHPublicKeyId;
     }
@@ -103,12 +170,22 @@ public class DeleteSSHPublicKeyRequest extends AmazonWebServiceRequest
      * <p>
      * The unique identifier for the SSH public key.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters that can consist of any upper or
+     * lowercased letter or digit.
+     * </p>
      * 
      * @param sSHPublicKeyId
-     *        The unique identifier for the SSH public key.
+     *        The unique identifier for the SSH public key.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters that can consist of
+     *        any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSSHPublicKeyRequest withSSHPublicKeyId(String sSHPublicKeyId) {
         setSSHPublicKeyId(sSHPublicKeyId);
         return this;

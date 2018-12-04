@@ -189,6 +189,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param instanceGroupId
      *        Unique identifier for the instance group.
      */
+
     public void setInstanceGroupId(String instanceGroupId) {
         this.instanceGroupId = instanceGroupId;
     }
@@ -200,6 +201,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Unique identifier for the instance group.
      */
+
     public String getInstanceGroupId() {
         return this.instanceGroupId;
     }
@@ -214,6 +216,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withInstanceGroupId(String instanceGroupId) {
         setInstanceGroupId(instanceGroupId);
         return this;
@@ -227,6 +230,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param name
      *        Friendly name for the instance group.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -238,6 +242,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Friendly name for the instance group.
      */
+
     public String getName() {
         return this.name;
     }
@@ -252,6 +257,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withName(String name) {
         setName(name);
         return this;
@@ -267,6 +273,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *        node.
      * @see MarketType
      */
+
     public void setMarket(String market) {
         this.market = market;
     }
@@ -280,6 +287,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         node.
      * @see MarketType
      */
+
     public String getMarket() {
         return this.market;
     }
@@ -296,6 +304,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see MarketType
      */
+
     public InstanceGroupDetail withMarket(String market) {
         setMarket(market);
         return this;
@@ -309,10 +318,9 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param market
      *        Market type of the Amazon EC2 instances used to create a cluster
      *        node.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MarketType
      */
+
     public void setMarket(MarketType market) {
         this.market = market.toString();
     }
@@ -329,6 +337,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see MarketType
      */
+
     public InstanceGroupDetail withMarket(MarketType market) {
         setMarket(market);
         return this;
@@ -343,6 +352,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *        Instance group role in the cluster
      * @see InstanceRoleType
      */
+
     public void setInstanceRole(String instanceRole) {
         this.instanceRole = instanceRole;
     }
@@ -355,6 +365,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Instance group role in the cluster
      * @see InstanceRoleType
      */
+
     public String getInstanceRole() {
         return this.instanceRole;
     }
@@ -370,6 +381,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceRoleType
      */
+
     public InstanceGroupDetail withInstanceRole(String instanceRole) {
         setInstanceRole(instanceRole);
         return this;
@@ -382,10 +394,9 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @param instanceRole
      *        Instance group role in the cluster
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceRoleType
      */
+
     public void setInstanceRole(InstanceRoleType instanceRole) {
         this.instanceRole = instanceRole.toString();
     }
@@ -401,6 +412,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceRoleType
      */
+
     public InstanceGroupDetail withInstanceRole(InstanceRoleType instanceRole) {
         setInstanceRole(instanceRole);
         return this;
@@ -416,6 +428,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *        Bid price for EC2 Instances when launching nodes as Spot
      *        Instances, expressed in USD.
      */
+
     public void setBidPrice(String bidPrice) {
         this.bidPrice = bidPrice;
     }
@@ -429,6 +442,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Bid price for EC2 Instances when launching nodes as Spot
      *         Instances, expressed in USD.
      */
+
     public String getBidPrice() {
         return this.bidPrice;
     }
@@ -445,6 +459,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withBidPrice(String bidPrice) {
         setBidPrice(bidPrice);
         return this;
@@ -458,6 +473,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param instanceType
      *        Amazon EC2 Instance type.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -469,6 +485,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Amazon EC2 Instance type.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -483,6 +500,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -496,6 +514,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param instanceRequestCount
      *        Target number of instances to run in the instance group.
      */
+
     public void setInstanceRequestCount(Integer instanceRequestCount) {
         this.instanceRequestCount = instanceRequestCount;
     }
@@ -507,6 +526,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Target number of instances to run in the instance group.
      */
+
     public Integer getInstanceRequestCount() {
         return this.instanceRequestCount;
     }
@@ -521,6 +541,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withInstanceRequestCount(
             Integer instanceRequestCount) {
         setInstanceRequestCount(instanceRequestCount);
@@ -535,6 +556,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param instanceRunningCount
      *        Actual count of running instances.
      */
+
     public void setInstanceRunningCount(Integer instanceRunningCount) {
         this.instanceRunningCount = instanceRunningCount;
     }
@@ -546,6 +568,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Actual count of running instances.
      */
+
     public Integer getInstanceRunningCount() {
         return this.instanceRunningCount;
     }
@@ -560,6 +583,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withInstanceRunningCount(
             Integer instanceRunningCount) {
         setInstanceRunningCount(instanceRunningCount);
@@ -577,6 +601,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *        STARTING, TERMINATED, and FAILED.
      * @see InstanceGroupState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -591,6 +616,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         STARTING, TERMINATED, and FAILED.
      * @see InstanceGroupState
      */
+
     public String getState() {
         return this.state;
     }
@@ -608,6 +634,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupState
      */
+
     public InstanceGroupDetail withState(String state) {
         setState(state);
         return this;
@@ -622,10 +649,9 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param state
      *        State of instance group. The following values are deprecated:
      *        STARTING, TERMINATED, and FAILED.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceGroupState
      */
+
     public void setState(InstanceGroupState state) {
         this.state = state.toString();
     }
@@ -643,6 +669,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceGroupState
      */
+
     public InstanceGroupDetail withState(InstanceGroupState state) {
         setState(state);
         return this;
@@ -656,6 +683,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param lastStateChangeReason
      *        Details regarding the state of the instance group.
      */
+
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
@@ -667,6 +695,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return Details regarding the state of the instance group.
      */
+
     public String getLastStateChangeReason() {
         return this.lastStateChangeReason;
     }
@@ -681,6 +710,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withLastStateChangeReason(
             String lastStateChangeReason) {
         setLastStateChangeReason(lastStateChangeReason);
@@ -695,6 +725,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param creationDateTime
      *        The date/time the instance group was created.
      */
+
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
@@ -706,6 +737,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return The date/time the instance group was created.
      */
+
     public java.util.Date getCreationDateTime() {
         return this.creationDateTime;
     }
@@ -720,6 +752,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withCreationDateTime(
             java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
@@ -734,6 +767,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param startDateTime
      *        The date/time the instance group was started.
      */
+
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
@@ -745,6 +779,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return The date/time the instance group was started.
      */
+
     public java.util.Date getStartDateTime() {
         return this.startDateTime;
     }
@@ -759,6 +794,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withStartDateTime(java.util.Date startDateTime) {
         setStartDateTime(startDateTime);
         return this;
@@ -772,6 +808,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param readyDateTime
      *        The date/time the instance group was available to the cluster.
      */
+
     public void setReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
     }
@@ -783,6 +820,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return The date/time the instance group was available to the cluster.
      */
+
     public java.util.Date getReadyDateTime() {
         return this.readyDateTime;
     }
@@ -797,6 +835,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withReadyDateTime(java.util.Date readyDateTime) {
         setReadyDateTime(readyDateTime);
         return this;
@@ -810,6 +849,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @param endDateTime
      *        The date/time the instance group was terminated.
      */
+
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
@@ -821,6 +861,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * 
      * @return The date/time the instance group was terminated.
      */
+
     public java.util.Date getEndDateTime() {
         return this.endDateTime;
     }
@@ -835,6 +876,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceGroupDetail withEndDateTime(java.util.Date endDateTime) {
         setEndDateTime(endDateTime);
         return this;

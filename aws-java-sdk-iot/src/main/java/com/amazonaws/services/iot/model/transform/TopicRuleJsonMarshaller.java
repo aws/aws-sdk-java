@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TopicRuleMarshaller
@@ -39,53 +34,59 @@ import com.amazonaws.util.json.*;
 public class TopicRuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TopicRule topicRule, JSONWriter jsonWriter) {
+    public void marshall(TopicRule topicRule,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (topicRule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (topicRule.getRuleName() != null) {
-                jsonWriter.key("ruleName").value(topicRule.getRuleName());
+                jsonGenerator.writeFieldName("ruleName").writeValue(
+                        topicRule.getRuleName());
             }
-
             if (topicRule.getSql() != null) {
-                jsonWriter.key("sql").value(topicRule.getSql());
+                jsonGenerator.writeFieldName("sql").writeValue(
+                        topicRule.getSql());
             }
-
             if (topicRule.getDescription() != null) {
-                jsonWriter.key("description").value(topicRule.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        topicRule.getDescription());
             }
-
             if (topicRule.getCreatedAt() != null) {
-                jsonWriter.key("createdAt").value(topicRule.getCreatedAt());
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        topicRule.getCreatedAt());
             }
 
             java.util.List<Action> actionsList = topicRule.getActions();
             if (actionsList != null) {
-                jsonWriter.key("actions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("actions");
+                jsonGenerator.writeStartArray();
                 for (Action actionsListValue : actionsList) {
                     if (actionsListValue != null) {
 
                         ActionJsonMarshaller.getInstance().marshall(
-                                actionsListValue, jsonWriter);
+                                actionsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (topicRule.getRuleDisabled() != null) {
-                jsonWriter.key("ruleDisabled").value(
+                jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                         topicRule.getRuleDisabled());
             }
+            if (topicRule.getAwsIotSqlVersion() != null) {
+                jsonGenerator.writeFieldName("awsIotSqlVersion").writeValue(
+                        topicRule.getAwsIotSqlVersion());
+            }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

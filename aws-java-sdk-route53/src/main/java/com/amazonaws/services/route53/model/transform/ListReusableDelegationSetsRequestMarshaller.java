@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListReusableDelegationSetsRequest Marshaller
@@ -59,18 +62,15 @@ public class ListReusableDelegationSetsRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listReusableDelegationSetsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listReusableDelegationSetsRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listReusableDelegationSetsRequest.getMarker() != null) {
+            request.addParameter("marker", StringUtils
+                    .fromString(listReusableDelegationSetsRequest.getMarker()));
         }
 
-        String maxItems = (listReusableDelegationSetsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listReusableDelegationSetsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listReusableDelegationSetsRequest.getMaxItems() != null) {
+            request.addParameter("maxitems",
+                    StringUtils.fromString(listReusableDelegationSetsRequest
+                            .getMaxItems()));
         }
 
         return request;

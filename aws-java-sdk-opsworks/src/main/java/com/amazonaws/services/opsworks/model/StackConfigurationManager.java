@@ -48,6 +48,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      * @param name
      *        The name. This parameter must be set to "Chef".
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,6 +60,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      * 
      * @return The name. This parameter must be set to "Chef".
      */
+
     public String getName() {
         return this.name;
     }
@@ -73,6 +75,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackConfigurationManager withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      *        for Linux stacks, and to 12.2 for Windows stacks. The default
      *        value for Linux stacks is 11.4.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -105,6 +109,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      *         11.4 for Linux stacks, and to 12.2 for Windows stacks. The
      *         default value for Linux stacks is 11.4.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -123,6 +128,7 @@ public class StackConfigurationManager implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackConfigurationManager withVersion(String version) {
         setVersion(version);
         return this;

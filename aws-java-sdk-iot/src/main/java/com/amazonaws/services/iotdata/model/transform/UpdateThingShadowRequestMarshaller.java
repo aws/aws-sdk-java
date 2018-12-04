@@ -37,8 +37,10 @@ import com.amazonaws.services.iotdata.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateThingShadowRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class UpdateThingShadowRequestMarshaller implements
         Marshaller<Request<UpdateThingShadowRequest>, UpdateThingShadowRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateThingShadowRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateThingShadowRequest> marshall(
             UpdateThingShadowRequest updateThingShadowRequest) {
@@ -63,11 +72,13 @@ public class UpdateThingShadowRequestMarshaller implements
 
         String uriResourcePath = "/things/{thingName}/shadow";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (updateThingShadowRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(updateThingShadowRequest
-                                .getThingName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{thingName}",
+                        (updateThingShadowRequest.getThingName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(updateThingShadowRequest
+                                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(BinaryUtils.toStream(updateThingShadowRequest

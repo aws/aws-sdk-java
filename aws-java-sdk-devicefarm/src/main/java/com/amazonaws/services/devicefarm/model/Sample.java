@@ -148,6 +148,7 @@ public class Sample implements Serializable, Cloneable {
      * @param arn
      *        The sample's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -159,6 +160,7 @@ public class Sample implements Serializable, Cloneable {
      * 
      * @return The sample's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -173,6 +175,7 @@ public class Sample implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Sample withArn(String arn) {
         setArn(arn);
         return this;
@@ -377,6 +380,7 @@ public class Sample implements Serializable, Cloneable {
      *        </li>
      * @see SampleType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -579,6 +583,7 @@ public class Sample implements Serializable, Cloneable {
      *         </li>
      * @see SampleType
      */
+
     public String getType() {
         return this.type;
     }
@@ -784,6 +789,7 @@ public class Sample implements Serializable, Cloneable {
      *         chained together.
      * @see SampleType
      */
+
     public Sample withType(String type) {
         setType(type);
         return this;
@@ -986,10 +992,9 @@ public class Sample implements Serializable, Cloneable {
      *        are received, by app process.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SampleType
      */
+
     public void setType(SampleType type) {
         this.type = type.toString();
     }
@@ -1195,6 +1200,7 @@ public class Sample implements Serializable, Cloneable {
      *         chained together.
      * @see SampleType
      */
+
     public Sample withType(SampleType type) {
         setType(type);
         return this;
@@ -1210,6 +1216,7 @@ public class Sample implements Serializable, Cloneable {
      *        The pre-signed Amazon S3 URL that can be used with a corresponding
      *        GET request to download the sample's file.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -1223,6 +1230,7 @@ public class Sample implements Serializable, Cloneable {
      * @return The pre-signed Amazon S3 URL that can be used with a
      *         corresponding GET request to download the sample's file.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -1239,6 +1247,7 @@ public class Sample implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Sample withUrl(String url) {
         setUrl(url);
         return this;

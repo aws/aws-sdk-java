@@ -50,6 +50,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * @param layerDigest
      *        The layer digest associated with the failure.
      */
+
     public void setLayerDigest(String layerDigest) {
         this.layerDigest = layerDigest;
     }
@@ -61,6 +62,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * 
      * @return The layer digest associated with the failure.
      */
+
     public String getLayerDigest() {
         return this.layerDigest;
     }
@@ -75,6 +77,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LayerFailure withLayerDigest(String layerDigest) {
         setLayerDigest(layerDigest);
         return this;
@@ -89,6 +92,7 @@ public class LayerFailure implements Serializable, Cloneable {
      *        The failure code associated with the failure.
      * @see LayerFailureCode
      */
+
     public void setFailureCode(String failureCode) {
         this.failureCode = failureCode;
     }
@@ -101,6 +105,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * @return The failure code associated with the failure.
      * @see LayerFailureCode
      */
+
     public String getFailureCode() {
         return this.failureCode;
     }
@@ -116,6 +121,7 @@ public class LayerFailure implements Serializable, Cloneable {
      *         chained together.
      * @see LayerFailureCode
      */
+
     public LayerFailure withFailureCode(String failureCode) {
         setFailureCode(failureCode);
         return this;
@@ -128,10 +134,9 @@ public class LayerFailure implements Serializable, Cloneable {
      * 
      * @param failureCode
      *        The failure code associated with the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerFailureCode
      */
+
     public void setFailureCode(LayerFailureCode failureCode) {
         this.failureCode = failureCode.toString();
     }
@@ -147,6 +152,7 @@ public class LayerFailure implements Serializable, Cloneable {
      *         chained together.
      * @see LayerFailureCode
      */
+
     public LayerFailure withFailureCode(LayerFailureCode failureCode) {
         setFailureCode(failureCode);
         return this;
@@ -160,6 +166,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * @param failureReason
      *        The reason for the failure.
      */
+
     public void setFailureReason(String failureReason) {
         this.failureReason = failureReason;
     }
@@ -171,6 +178,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * 
      * @return The reason for the failure.
      */
+
     public String getFailureReason() {
         return this.failureReason;
     }
@@ -185,6 +193,7 @@ public class LayerFailure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LayerFailure withFailureReason(String failureReason) {
         setFailureReason(failureReason);
         return this;

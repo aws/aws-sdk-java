@@ -178,6 +178,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -189,6 +190,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -203,6 +205,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -215,6 +218,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's layer IDs.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -230,6 +234,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param layerIds
      *        The instance's layer IDs.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -256,6 +261,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -277,6 +283,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);
@@ -306,6 +313,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        use to specify the various types are in the <b>API Name</b> column
      *        of the <b>Available Instance Types</b> table.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -332,6 +340,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         use to specify the various types are in the <b>API Name</b>
      *         column of the <b>Available Instance Types</b> table.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -361,6 +370,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -377,6 +387,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        can use only time-based instances.
      * @see AutoScalingType
      */
+
     public void setAutoScalingType(String autoScalingType) {
         this.autoScalingType = autoScalingType;
     }
@@ -391,6 +402,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         can use only time-based instances.
      * @see AutoScalingType
      */
+
     public String getAutoScalingType() {
         return this.autoScalingType;
     }
@@ -408,6 +420,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoScalingType
      */
+
     public UpdateInstanceRequest withAutoScalingType(String autoScalingType) {
         setAutoScalingType(autoScalingType);
         return this;
@@ -422,10 +435,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param autoScalingType
      *        For load-based or time-based instances, the type. Windows stacks
      *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoScalingType
      */
+
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         this.autoScalingType = autoScalingType.toString();
     }
@@ -443,6 +455,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoScalingType
      */
+
     public UpdateInstanceRequest withAutoScalingType(
             AutoScalingType autoScalingType) {
         setAutoScalingType(autoScalingType);
@@ -457,6 +470,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param hostname
      *        The instance host name.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -468,6 +482,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance host name.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -482,6 +497,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -552,6 +568,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        updated stack, but you cannot change from Linux to Windows or
      *        Windows to Linux.
      */
+
     public void setOs(String os) {
         this.os = os;
     }
@@ -620,6 +637,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         updated stack, but you cannot change from Linux to Windows or
      *         Windows to Linux.
      */
+
     public String getOs() {
         return this.os;
     }
@@ -691,6 +709,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withOs(String os) {
         setOs(os);
         return this;
@@ -715,6 +734,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Instances</a></p> <note>If you specify a custom AMI, you must set
      *        <code>Os</code> to <code>Custom</code>.
      */
+
     public void setAmiId(String amiId) {
         this.amiId = amiId;
     }
@@ -737,6 +757,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Instances</a></p> <note>If you specify a custom AMI, you must
      *         set <code>Os</code> to <code>Custom</code>.
      */
+
     public String getAmiId() {
         return this.amiId;
     }
@@ -762,6 +783,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withAmiId(String amiId) {
         setAmiId(amiId);
         return this;
@@ -775,6 +797,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param sshKeyName
      *        The instance's Amazon EC2 key name.
      */
+
     public void setSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
     }
@@ -786,6 +809,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's Amazon EC2 key name.
      */
+
     public String getSshKeyName() {
         return this.sshKeyName;
     }
@@ -800,6 +824,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withSshKeyName(String sshKeyName) {
         setSshKeyName(sshKeyName);
         return this;
@@ -822,6 +847,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Instance Families and Types</a>.
      * @see Architecture
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -842,6 +868,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Instance Families and Types</a>.
      * @see Architecture
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -865,6 +892,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Architecture
      */
+
     public UpdateInstanceRequest withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -885,10 +913,9 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        are supported by the different instance types, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
      *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Architecture
      */
+
     public void setArchitecture(Architecture architecture) {
         this.architecture = architecture.toString();
     }
@@ -912,6 +939,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Architecture
      */
+
     public UpdateInstanceRequest withArchitecture(Architecture architecture) {
         setArchitecture(architecture);
         return this;
@@ -948,6 +976,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        , to ensure that your instances have the latest security updates.
      *        </p>
      */
+
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
     }
@@ -983,6 +1012,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean getInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1020,6 +1050,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withInstallUpdatesOnBoot(
             Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
@@ -1057,6 +1088,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean isInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1069,6 +1101,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @param ebsOptimized
      *        This property cannot be updated.
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -1080,6 +1113,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return This property cannot be updated.
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1094,6 +1128,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -1106,6 +1141,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return This property cannot be updated.
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1147,6 +1183,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -1187,6 +1224,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      *         abbreviated number shown on the console. For a list of available
      *         agent version numbers, call <a>DescribeAgentVersions</a>.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -1230,6 +1268,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateInstanceRequest withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
         return this;

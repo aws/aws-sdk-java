@@ -49,8 +49,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item
+     * itself.
      * </p>
      * </li>
      * <li>
@@ -85,6 +86,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *         <i>ReturnValues</i> was specified as <code>ALL_OLD</code> in the
      *         request.
      */
+
     public java.util.Map<String, AttributeValue> getAttributes() {
         return attributes;
     }
@@ -104,6 +106,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *        <i>ReturnValues</i> was specified as <code>ALL_OLD</code> in the
      *        request.
      */
+
     public void setAttributes(java.util.Map<String, AttributeValue> attributes) {
         this.attributes = attributes;
     }
@@ -125,6 +128,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemResult withAttributes(
             java.util.Map<String, AttributeValue> attributes) {
         setAttributes(attributes);
@@ -146,6 +150,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public DeleteItemResult clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -154,6 +159,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
     /**
      * @param consumedCapacity
      */
+
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
     }
@@ -161,6 +167,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ConsumedCapacity getConsumedCapacity() {
         return this.consumedCapacity;
     }
@@ -170,6 +177,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemResult withConsumedCapacity(
             ConsumedCapacity consumedCapacity) {
         setConsumedCapacity(consumedCapacity);
@@ -189,8 +197,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item
+     * itself.
      * </p>
      * </li>
      * <li>
@@ -221,8 +230,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The hash key value of the item
-     *        collection. This is the same as the hash key of the item.
+     *        <i>ItemCollectionKey</i> - The partition key value of the item
+     *        collection. This is the same as the partition key value of the
+     *        item itself.
      *        </p>
      *        </li>
      *        <li>
@@ -241,6 +251,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setItemCollectionMetrics(
             ItemCollectionMetrics itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;
@@ -259,8 +270,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item
+     * itself.
      * </p>
      * </li>
      * <li>
@@ -290,8 +302,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>ItemCollectionKey</i> - The hash key value of the item
-     *         collection. This is the same as the hash key of the item.
+     *         <i>ItemCollectionKey</i> - The partition key value of the item
+     *         collection. This is the same as the partition key value of the
+     *         item itself.
      *         </p>
      *         </li>
      *         <li>
@@ -310,6 +323,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public ItemCollectionMetrics getItemCollectionMetrics() {
         return this.itemCollectionMetrics;
     }
@@ -327,8 +341,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ItemCollectionKey</i> - The hash key value of the item collection.
-     * This is the same as the hash key of the item.
+     * <i>ItemCollectionKey</i> - The partition key value of the item
+     * collection. This is the same as the partition key value of the item
+     * itself.
      * </p>
      * </li>
      * <li>
@@ -359,8 +374,9 @@ public class DeleteItemResult implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ItemCollectionKey</i> - The hash key value of the item
-     *        collection. This is the same as the hash key of the item.
+     *        <i>ItemCollectionKey</i> - The partition key value of the item
+     *        collection. This is the same as the partition key value of the
+     *        item itself.
      *        </p>
      *        </li>
      *        <li>
@@ -381,6 +397,7 @@ public class DeleteItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteItemResult withItemCollectionMetrics(
             ItemCollectionMetrics itemCollectionMetrics) {
         setItemCollectionMetrics(itemCollectionMetrics);

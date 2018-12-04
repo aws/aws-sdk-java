@@ -22,9 +22,13 @@ import java.util.Date;
 import java.util.TreeMap;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ObjectRestoreResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
@@ -32,7 +36,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata implements ServerSideEncryptionResult,
+public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterChargedResult,
         ObjectExpirationResult, ObjectRestoreResult, Cloneable, Serializable
 {
     /*
@@ -401,6 +405,48 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
      */
     public void setContentType(String contentType) {
         metadata.put(Headers.CONTENT_TYPE, contentType);
+    }
+
+    /**
+     * <p>
+     * Gets the Content-Language HTTP header, which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     * </p>
+     * <p>
+     * For more information on the Content-Type header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
+     *
+     * @return The HTTP Content-Language header, which describes the natural language(s) of the
+     * intended audience for the enclosed entity. Returns <code>null</code>
+     *         if it hasn't been set.
+     *
+     * @see ObjectMetadata#setContentLanguage(String)
+     */
+    public String getContentLanguage() {
+        return (String)metadata.get(Headers.CONTENT_LANGUAGE);
+    }
+
+    /**
+     * <p>
+     * Sets the Content-Language HTTP header which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     * </p>
+     * <p>
+     * For more information on the Content-Type header, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
+     *
+     * @param contentLanguage
+     *            The HTTP Content-Language header which describes the natural language(s) of the
+     * intended audience for the enclosed entity.
+     *
+     * @see ObjectMetadata#getContentLanguage()
+     */
+    public void setContentLanguage(String contentLanguage) {
+        metadata.put(Headers.CONTENT_LANGUAGE, contentLanguage);
     }
 
     /**
@@ -840,5 +886,63 @@ public class ObjectMetadata implements ServerSideEncryptionResult,
     public String getSSEAwsKmsKeyId() {
         return (String) metadata
                 .get(Headers.SERVER_SIDE_ENCRYPTION_AWS_KMS_KEYID);
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return metadata.get(Headers.REQUESTER_CHARGED_HEADER) != null;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        if (isRequesterCharged) {
+            metadata.put(Headers.REQUESTER_CHARGED_HEADER, Constants.REQUESTER_PAYS);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the value of x-amz-mp-parts-count header.
+     * </p>
+     * <p>
+     * The x-amz-mp-parts-count header is returned in the response only when
+     * a valid partNumber is specified in the request and the object has more than 1 part.
+     * </p>
+     * <p>
+     * To find the part count of an object, set the partNumber to 1 in GetObjectRequest.
+     * If the object has more than 1 part then part count will be returned,
+     * otherwise null is returned.
+     * </p>
+     */
+    public Integer getPartCount() {
+        return (Integer) metadata.get(Headers.S3_PARTS_COUNT);
+    }
+
+    /**
+     * <p>
+     * Returns the content range of the object if response contains the Content-Range header.
+     * </p>
+     * <p>
+     * If the request specifies a range or part number, then response returns the Content-Range range header.
+     * Otherwise, the response does not return Content-Range header.
+     * </p>
+     * @return
+     * 		Returns content range if the object is requested with specific range or part number,
+     * 		null otherwise.
+     */
+    public Long[] getContentRange() {
+        String contentRange = (String) metadata.get(Headers.CONTENT_RANGE);
+        Long[] range = null;
+        if (contentRange != null) {
+            String[] tokens = contentRange.split("[ -/]+");
+            try {
+                range = new Long[] { Long.parseLong(tokens[1]), Long.parseLong(tokens[2]) };
+            } catch (NumberFormatException nfe) {
+                throw new AmazonClientException(
+                        "Unable to parse content range. Header 'Content-Range' has corrupted data" + nfe.getMessage(),
+                        nfe);
+            }
+        }
+        return range;
     }
 }

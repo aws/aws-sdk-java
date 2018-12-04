@@ -14,10 +14,17 @@
  */
 package com.amazonaws.regions;
 
+import com.amazonaws.AmazonWebServiceClient;
+
 /**
  * Abbreviations for looking up information about a specific service. Used in
  * {@link Region#getServiceEndpoint(String)} and related methods.
+ *
+ * @deprecated use {@link AmazonWebServiceClient#getEndpointPrefix()} instead for retrieving
+ *             the specific service abbreviation.
  */
+
+@Deprecated
 public final class ServiceAbbreviations {
     public static final String Autoscaling = "autoscaling";
     public static final String CloudFormation = "cloudformation";
@@ -31,12 +38,14 @@ public final class ServiceAbbreviations {
     public static final String CodeCommit = "codecommit";
     public static final String CodePipeline = "codepipeline";
     public static final String CognitoIdentity = "cognito-identity";
+    public static final String CognitoIdentityProvider = "cognito-idp";
     public static final String CognitoSync = "cognito-sync";
     public static final String Config = "config";
     public static final String DeviceFarm = "devicefarm";
     public static final String DataPipeline = "datapipeline";
     public static final String DirectConnect = "directconnect";
     public static final String Directory = "ds";
+    public static final String DMS = "dms";
     public static final String Dynamodb = "dynamodb";
     public static final String DynamodbStreams = "streams.dynamodb";
     public static final String EC2 = "ec2";
@@ -49,10 +58,11 @@ public final class ServiceAbbreviations {
     public static final String ElasticMapReduce = "elasticmapreduce";
     public static final String ElasticTranscoder = "elastictranscoder";
     public static final String Email = "email";
+    public static final String GameLift = "gamelift";
     public static final String Glacier = "glacier";
     public static final String IAM = "iam";
     public static final String IoT = "iot";
-    public static final String IoTData = "iotdata";
+    public static final String IoTData = "data.iot";
     public static final String ImportExport = "importexport";
     public static final String KeyManagementService = "kms";
     public static final String Kinesis = "kinesis";

@@ -86,6 +86,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return A complex type that contains information about the resource
      *         record sets that are returned by the request.
      */
+
     public java.util.List<ResourceRecordSet> getResourceRecordSets() {
         if (resourceRecordSets == null) {
             resourceRecordSets = new com.amazonaws.internal.SdkInternalList<ResourceRecordSet>();
@@ -103,6 +104,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        A complex type that contains information about the resource record
      *        sets that are returned by the request.
      */
+
     public void setResourceRecordSets(
             java.util.Collection<ResourceRecordSet> resourceRecordSets) {
         if (resourceRecordSets == null) {
@@ -132,6 +134,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withResourceRecordSets(
             ResourceRecordSet... resourceRecordSets) {
         if (this.resourceRecordSets == null) {
@@ -156,6 +159,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withResourceRecordSets(
             java.util.Collection<ResourceRecordSet> resourceRecordSets) {
         setResourceRecordSets(resourceRecordSets);
@@ -181,6 +185,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -203,6 +208,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -228,6 +234,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -251,6 +258,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -267,6 +275,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        list. This element is present only if
      *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
      */
+
     public void setNextRecordName(String nextRecordName) {
         this.nextRecordName = nextRecordName;
     }
@@ -282,6 +291,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         list. This element is present only if
      *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
      */
+
     public String getNextRecordName() {
         return this.nextRecordName;
     }
@@ -300,6 +310,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withNextRecordName(String nextRecordName) {
         setNextRecordName(nextRecordName);
         return this;
@@ -318,6 +329,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
      * @see RRType
      */
+
     public void setNextRecordType(String nextRecordType) {
         this.nextRecordType = nextRecordType;
     }
@@ -334,6 +346,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
      * @see RRType
      */
+
     public String getNextRecordType() {
         return this.nextRecordType;
     }
@@ -353,6 +366,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public ListResourceRecordSetsResult withNextRecordType(String nextRecordType) {
         setNextRecordType(nextRecordType);
         return this;
@@ -369,10 +383,9 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        If the results were truncated, the type of the next record in the
      *        list. This element is present only if
      *        <a>ListResourceRecordSetsResponse$IsTruncated</a> is true.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
+
     public void setNextRecordType(RRType nextRecordType) {
         this.nextRecordType = nextRecordType.toString();
     }
@@ -392,6 +405,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public ListResourceRecordSetsResult withNextRecordType(RRType nextRecordType) {
         setNextRecordType(nextRecordType);
         return this;
@@ -408,6 +422,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        Weighted resource record sets only:</i> If results were truncated
      *        for a given DNS name and type, the value of <code>SetIdentifier
      */
+
     public void setNextRecordIdentifier(String nextRecordIdentifier) {
         this.nextRecordIdentifier = nextRecordIdentifier;
     }
@@ -422,6 +437,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Weighted resource record sets only:</i> If results were truncated
      *         for a given DNS name and type, the value of <code>SetIdentifier
      */
+
     public String getNextRecordIdentifier() {
         return this.nextRecordIdentifier;
     }
@@ -439,6 +455,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withNextRecordIdentifier(
             String nextRecordIdentifier) {
         setNextRecordIdentifier(nextRecordIdentifier);
@@ -455,6 +472,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      *        The maximum number of records you requested. The maximum value of
      *        <code>MaxItems</code> is 100.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -468,6 +486,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return The maximum number of records you requested. The maximum value of
      *         <code>MaxItems</code> is 100.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -484,6 +503,7 @@ public class ListResourceRecordSetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListResourceRecordSetsResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

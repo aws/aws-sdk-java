@@ -386,6 +386,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -428,6 +429,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getFirstName() {
         return this.firstName;
     }
@@ -472,6 +474,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withFirstName(String firstName) {
         setFirstName(firstName);
         return this;
@@ -515,6 +518,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -557,6 +561,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getLastName() {
         return this.lastName;
     }
@@ -601,6 +606,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withLastName(String lastName) {
         setLastName(lastName);
         return this;
@@ -659,6 +665,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Required: Yes
      * @see ContactType
      */
+
     public void setContactType(String contactType) {
         this.contactType = contactType;
     }
@@ -716,6 +723,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Required: Yes
      * @see ContactType
      */
+
     public String getContactType() {
         return this.contactType;
     }
@@ -775,6 +783,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         chained together.
      * @see ContactType
      */
+
     public ContactDetail withContactType(String contactType) {
         setContactType(contactType);
         return this;
@@ -831,10 +840,9 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ContactType
      */
+
     public void setContactType(ContactType contactType) {
         this.contactType = contactType.toString();
     }
@@ -894,6 +902,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         chained together.
      * @see ContactType
      */
+
     public ContactDetail withContactType(ContactType contactType) {
         setContactType(contactType);
         return this;
@@ -941,6 +950,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setOrganizationName(String organizationName) {
         this.organizationName = organizationName;
     }
@@ -987,6 +997,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public String getOrganizationName() {
         return this.organizationName;
     }
@@ -1035,6 +1046,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withOrganizationName(String organizationName) {
         setOrganizationName(organizationName);
         return this;
@@ -1078,6 +1090,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setAddressLine1(String addressLine1) {
         this.addressLine1 = addressLine1;
     }
@@ -1120,6 +1133,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getAddressLine1() {
         return this.addressLine1;
     }
@@ -1164,6 +1178,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withAddressLine1(String addressLine1) {
         setAddressLine1(addressLine1);
         return this;
@@ -1207,6 +1222,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setAddressLine2(String addressLine2) {
         this.addressLine2 = addressLine2;
     }
@@ -1249,6 +1265,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public String getAddressLine2() {
         return this.addressLine2;
     }
@@ -1293,6 +1310,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withAddressLine2(String addressLine2) {
         setAddressLine2(addressLine2);
         return this;
@@ -1336,6 +1354,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -1378,6 +1397,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getCity() {
         return this.city;
     }
@@ -1422,6 +1442,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withCity(String city) {
         setCity(city);
         return this;
@@ -1465,6 +1486,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -1507,6 +1529,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public String getState() {
         return this.state;
     }
@@ -1551,6 +1574,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withState(String state) {
         setState(state);
         return this;
@@ -1595,6 +1619,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        Required: Yes
      * @see CountryCode
      */
+
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
@@ -1638,6 +1663,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         Required: Yes
      * @see CountryCode
      */
+
     public String getCountryCode() {
         return this.countryCode;
     }
@@ -1683,6 +1709,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         chained together.
      * @see CountryCode
      */
+
     public ContactDetail withCountryCode(String countryCode) {
         setCountryCode(countryCode);
         return this;
@@ -1725,10 +1752,9 @@ public class ContactDetail implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        Required: Yes
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CountryCode
      */
+
     public void setCountryCode(CountryCode countryCode) {
         this.countryCode = countryCode.toString();
     }
@@ -1774,6 +1800,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         chained together.
      * @see CountryCode
      */
+
     public ContactDetail withCountryCode(CountryCode countryCode) {
         setCountryCode(countryCode);
         return this;
@@ -1817,6 +1844,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
@@ -1859,6 +1887,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public String getZipCode() {
         return this.zipCode;
     }
@@ -1903,6 +1932,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withZipCode(String zipCode) {
         setZipCode(zipCode);
         return this;
@@ -1951,6 +1981,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -1998,6 +2029,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
@@ -2047,6 +2079,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withPhoneNumber(String phoneNumber) {
         setPhoneNumber(phoneNumber);
         return this;
@@ -2090,6 +2123,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: Yes
      */
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -2132,6 +2166,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: Yes
      */
+
     public String getEmail() {
         return this.email;
     }
@@ -2176,6 +2211,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withEmail(String email) {
         setEmail(email);
         return this;
@@ -2224,6 +2260,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setFax(String fax) {
         this.fax = fax;
     }
@@ -2271,6 +2308,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public String getFax() {
         return this.fax;
     }
@@ -2320,6 +2358,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withFax(String fax) {
         setFax(fax);
         return this;
@@ -2365,6 +2404,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *         <p>
      *         Required: No
      */
+
     public java.util.List<ExtraParam> getExtraParams() {
         if (extraParams == null) {
             extraParams = new com.amazonaws.internal.SdkInternalList<ExtraParam>();
@@ -2412,6 +2452,7 @@ public class ContactDetail implements Serializable, Cloneable {
      *        <p>
      *        Required: No
      */
+
     public void setExtraParams(java.util.Collection<ExtraParam> extraParams) {
         if (extraParams == null) {
             this.extraParams = null;
@@ -2470,6 +2511,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withExtraParams(ExtraParam... extraParams) {
         if (this.extraParams == null) {
             setExtraParams(new com.amazonaws.internal.SdkInternalList<ExtraParam>(
@@ -2523,6 +2565,7 @@ public class ContactDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ContactDetail withExtraParams(
             java.util.Collection<ExtraParam> extraParams) {
         setExtraParams(extraParams);

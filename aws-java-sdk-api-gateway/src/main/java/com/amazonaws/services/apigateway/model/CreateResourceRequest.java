@@ -54,6 +54,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The identifier of the <a>RestApi</a> for the resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -65,6 +66,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>RestApi</a> for the resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -79,6 +81,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -92,6 +95,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @param parentId
      *        The parent resource's identifier.
      */
+
     public void setParentId(String parentId) {
         this.parentId = parentId;
     }
@@ -103,6 +107,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The parent resource's identifier.
      */
+
     public String getParentId() {
         return this.parentId;
     }
@@ -117,6 +122,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceRequest withParentId(String parentId) {
         setParentId(parentId);
         return this;
@@ -130,6 +136,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @param pathPart
      *        The last path segment for this resource.
      */
+
     public void setPathPart(String pathPart) {
         this.pathPart = pathPart;
     }
@@ -141,6 +148,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The last path segment for this resource.
      */
+
     public String getPathPart() {
         return this.pathPart;
     }
@@ -155,6 +163,7 @@ public class CreateResourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateResourceRequest withPathPart(String pathPart) {
         setPathPart(pathPart);
         return this;

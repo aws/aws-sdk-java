@@ -17,18 +17,44 @@
 package com.amazonaws.services.directconnect.model;
 
 /**
+ * <p>
  * State of the interconnect.
+ * </p>
  * <ul>
- * <li><b>Requested</b>: The initial state of an interconnect. The interconnect
+ * <li>
+ * <p>
+ * <b>Requested</b>: The initial state of an interconnect. The interconnect
  * stays in the requested state until the Letter of Authorization (LOA) is sent
- * to the customer.</li>
- * <li><b>Pending</b>: The interconnect has been approved, and is being
- * initialized.</li>
- * <li><b>Available</b>: The network link is up, and the interconnect is ready
- * for use.</li>
- * <li><b>Down</b>: The network link is down.</li>
- * <li><b>Deleting</b>: The interconnect is in the process of being deleted.</li>
- * <li><b>Deleted</b>: The interconnect has been deleted.</li>
+ * to the customer.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Pending</b>&gt;: The interconnect has been approved, and is being
+ * initialized.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Available</b>: The network link is up, and the interconnect is ready for
+ * use.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Down</b>: The network link is down.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Deleting</b>: The interconnect is in the process of being deleted.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Deleted</b>: The interconnect has been deleted.
+ * </p>
+ * </li>
  * </ul>
  */
 public enum InterconnectState {

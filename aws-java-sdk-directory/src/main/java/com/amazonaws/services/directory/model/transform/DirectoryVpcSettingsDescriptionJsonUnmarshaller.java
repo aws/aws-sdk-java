@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,26 @@ public class DirectoryVpcSettingsDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    directoryVpcSettingsDescription
-                            .setVpcId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    directoryVpcSettingsDescription.setVpcId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
                     directoryVpcSettingsDescription
-                            .setSubnetIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setSubnetIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupId", targetDepth)) {
                     context.nextToken();
-                    directoryVpcSettingsDescription
-                            .setSecurityGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    directoryVpcSettingsDescription.setSecurityGroupId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     directoryVpcSettingsDescription
                             .setAvailabilityZones(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

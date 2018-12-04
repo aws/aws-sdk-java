@@ -68,6 +68,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *        - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -92,6 +93,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *         - The resource type for hosted zones is <code>hostedzone</code>.
      * @see TagResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -118,6 +120,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ListTagsForResourcesRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -141,10 +144,9 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *        </p>
      *        <p>
      *        - The resource type for hosted zones is <code>hostedzone</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TagResourceType
      */
+
     public void setResourceType(TagResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -171,6 +173,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see TagResourceType
      */
+
     public ListTagsForResourcesRequest withResourceType(
             TagResourceType resourceType) {
         setResourceType(resourceType);
@@ -186,6 +189,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * @return A complex type that contains the ResourceId element for each
      *         resource for which you want to get a list of tags.
      */
+
     public java.util.List<String> getResourceIds() {
         if (resourceIds == null) {
             resourceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -203,6 +207,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      *        A complex type that contains the ResourceId element for each
      *        resource for which you want to get a list of tags.
      */
+
     public void setResourceIds(java.util.Collection<String> resourceIds) {
         if (resourceIds == null) {
             this.resourceIds = null;
@@ -231,6 +236,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourcesRequest withResourceIds(String... resourceIds) {
         if (this.resourceIds == null) {
             setResourceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -254,6 +260,7 @@ public class ListTagsForResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourcesRequest withResourceIds(
             java.util.Collection<String> resourceIds) {
         setResourceIds(resourceIds);

@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListIdentityPoolUsageRequest Marshaller
@@ -48,6 +50,13 @@ public class ListIdentityPoolUsageRequestMarshaller
         Marshaller<Request<ListIdentityPoolUsageRequest>, ListIdentityPoolUsageRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListIdentityPoolUsageRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListIdentityPoolUsageRequest> marshall(
             ListIdentityPoolUsageRequest listIdentityPoolUsageRequest) {
@@ -66,18 +75,14 @@ public class ListIdentityPoolUsageRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String nextToken = (listIdentityPoolUsageRequest.getNextToken() == null) ? null
-                : StringUtils.fromString(listIdentityPoolUsageRequest
-                        .getNextToken());
-        if (nextToken != null) {
-            request.addParameter("nextToken", nextToken);
+        if (listIdentityPoolUsageRequest.getNextToken() != null) {
+            request.addParameter("nextToken", StringUtils
+                    .fromString(listIdentityPoolUsageRequest.getNextToken()));
         }
 
-        String maxResults = (listIdentityPoolUsageRequest.getMaxResults() == null) ? null
-                : StringUtils.fromInteger(listIdentityPoolUsageRequest
-                        .getMaxResults());
-        if (maxResults != null) {
-            request.addParameter("maxResults", maxResults);
+        if (listIdentityPoolUsageRequest.getMaxResults() != null) {
+            request.addParameter("maxResults", StringUtils
+                    .fromInteger(listIdentityPoolUsageRequest.getMaxResults()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

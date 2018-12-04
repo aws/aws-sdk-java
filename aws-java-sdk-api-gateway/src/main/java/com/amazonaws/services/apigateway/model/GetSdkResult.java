@@ -19,59 +19,109 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * The binary blob response to <a>GetSdk</a>, which contains the generated SDK.
+ * </p>
  */
 public class GetSdkResult implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The content-type header value in the HTTP response.
+     * </p>
+     */
     private String contentType;
-
+    /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     */
     private String contentDisposition;
-
+    /**
+     * <p>
+     * The binary blob response to <a>GetSdk</a>, which contains the generated
+     * SDK.
+     * </p>
+     */
     private java.nio.ByteBuffer body;
 
     /**
+     * <p>
+     * The content-type header value in the HTTP response.
+     * </p>
+     * 
      * @param contentType
+     *        The content-type header value in the HTTP response.
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
     /**
-     * @return
+     * <p>
+     * The content-type header value in the HTTP response.
+     * </p>
+     * 
+     * @return The content-type header value in the HTTP response.
      */
+
     public String getContentType() {
         return this.contentType;
     }
 
     /**
+     * <p>
+     * The content-type header value in the HTTP response.
+     * </p>
+     * 
      * @param contentType
+     *        The content-type header value in the HTTP response.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withContentType(String contentType) {
         setContentType(contentType);
         return this;
     }
 
     /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
      * @param contentDisposition
+     *        The content-disposition header value in the HTTP reseponse.
      */
+
     public void setContentDisposition(String contentDisposition) {
         this.contentDisposition = contentDisposition;
     }
 
     /**
-     * @return
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
+     * @return The content-disposition header value in the HTTP reseponse.
      */
+
     public String getContentDisposition() {
         return this.contentDisposition;
     }
 
     /**
+     * <p>
+     * The content-disposition header value in the HTTP reseponse.
+     * </p>
+     * 
      * @param contentDisposition
+     *        The content-disposition header value in the HTTP reseponse.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withContentDisposition(String contentDisposition) {
         setContentDisposition(contentDisposition);
         return this;
@@ -79,18 +129,37 @@ public class GetSdkResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The binary blob response to <a>GetSdk</a>, which contains the generated
+     * SDK.
+     * </p>
+     * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param body
+     *        The binary blob response to <a>GetSdk</a>, which contains the
+     *        generated SDK.
      */
+
     public void setBody(java.nio.ByteBuffer body) {
         this.body = body;
     }
 
     /**
+     * <p>
+     * The binary blob response to <a>GetSdk</a>, which contains the generated
+     * SDK.
+     * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods
      * changes their {@code position}. We recommend using
@@ -98,21 +167,31 @@ public class GetSdkResult implements Serializable, Cloneable {
      * of the buffer with an independent {@code position}, and calling
      * {@code get} methods on this rather than directly on the returned
      * {@code ByteBuffer}. Doing so will ensure that anyone else using the
-     * {@code ByteBuffer} will not be affected by changes to the
-     * {@code position}.
+     * {@code ByteBuffer} will not be affected by changes to the {@code position}
+     * .
      * </p>
      * 
-     * @return
+     * @return The binary blob response to <a>GetSdk</a>, which contains the
+     *         generated SDK.
      */
+
     public java.nio.ByteBuffer getBody() {
         return this.body;
     }
 
     /**
+     * <p>
+     * The binary blob response to <a>GetSdk</a>, which contains the generated
+     * SDK.
+     * </p>
+     * 
      * @param body
+     *        The binary blob response to <a>GetSdk</a>, which contains the
+     *        generated SDK.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSdkResult withBody(java.nio.ByteBuffer body) {
         setBody(body);
         return this;

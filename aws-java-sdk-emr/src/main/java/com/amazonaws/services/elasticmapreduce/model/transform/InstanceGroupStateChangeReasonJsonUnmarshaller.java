@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class InstanceGroupStateChangeReasonJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Code", targetDepth)) {
                     context.nextToken();
-                    instanceGroupStateChangeReason
-                            .setCode(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceGroupStateChangeReason.setCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    instanceGroupStateChangeReason
-                            .setMessage(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    instanceGroupStateChangeReason.setMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

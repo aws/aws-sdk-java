@@ -32,6 +32,8 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      */
     private String category;
     /**
@@ -45,8 +47,6 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      */
     private String version;
 
@@ -55,6 +55,12 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      */
     private java.util.List<ActionConfigurationProperty> configurationProperties;
 
@@ -67,12 +73,17 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @see ActionCategory
      */
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -82,11 +93,16 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @return The category of the custom action, such as a source action or a
-     *         build action.
+     *         build action.</p> <note>Although Source is listed as a valid
+     *         value, it is not currently functional. This value is reserved for
+     *         future use.
      * @see ActionCategory
      */
+
     public String getCategory() {
         return this.category;
     }
@@ -96,14 +112,19 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ActionCategory
      */
+
     public CreateCustomActionTypeRequest withCategory(String category) {
         setCategory(category);
         return this;
@@ -114,14 +135,17 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @see ActionCategory
      */
+
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }
@@ -131,14 +155,19 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * The category of the custom action, such as a source action or a build
      * action.
      * </p>
+     * <note>Although Source is listed as a valid value, it is not currently
+     * functional. This value is reserved for future use.</note>
      * 
      * @param category
      *        The category of the custom action, such as a source action or a
-     *        build action.
+     *        build action.</p> <note>Although Source is listed as a valid
+     *        value, it is not currently functional. This value is reserved for
+     *        future use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ActionCategory
      */
+
     public CreateCustomActionTypeRequest withCategory(ActionCategory category) {
         setCategory(category);
         return this;
@@ -154,6 +183,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      *        The provider of the service used in the custom action, such as AWS
      *        CodeDeploy.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -167,6 +197,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return The provider of the service used in the custom action, such as
      *         AWS CodeDeploy.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -183,6 +214,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -192,14 +224,11 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
      * @param version
-     *        The version number of the custom action. </p> <note>A
-     *        newly-created custom action is always assigned a version number of
-     *        <code>1</code>. This is required.
+     *        The version number of the custom action.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -208,13 +237,10 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
-     * @return The version number of the custom action. </p> <note>A
-     *         newly-created custom action is always assigned a version number
-     *         of <code>1</code>. This is required.
+     * @return The version number of the custom action.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -223,16 +249,13 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The version number of the custom action.
      * </p>
-     * <note>A newly-created custom action is always assigned a version number
-     * of <code>1</code>. This is required.</note>
      * 
      * @param version
-     *        The version number of the custom action. </p> <note>A
-     *        newly-created custom action is always assigned a version number of
-     *        <code>1</code>. This is required.
+     *        The version number of the custom action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withVersion(String version) {
         setVersion(version);
         return this;
@@ -241,6 +264,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param settings
      */
+
     public void setSettings(ActionTypeSettings settings) {
         this.settings = settings;
     }
@@ -248,6 +272,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ActionTypeSettings getSettings() {
         return this.settings;
     }
@@ -257,6 +282,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withSettings(
             ActionTypeSettings settings) {
         setSettings(settings);
@@ -267,9 +293,22 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
-     * @return The configuration properties for the custom action.
+     * @return The configuration properties for the custom action.</p> <note>You
+     *         can refer to a name in the configuration properties of the custom
+     *         action within the URL templates by following the format of
+     *         {Config:<i>name</i>}, as long as the configuration property is
+     *         both required and not secret. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *         >Create a Custom Action for a Pipeline</a>.
      */
+
     public java.util.List<ActionConfigurationProperty> getConfigurationProperties() {
         return configurationProperties;
     }
@@ -278,10 +317,23 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      */
+
     public void setConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> configurationProperties) {
         if (configurationProperties == null) {
@@ -297,6 +349,12 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setConfigurationProperties(java.util.Collection)} or
@@ -305,10 +363,17 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withConfigurationProperties(
             ActionConfigurationProperty... configurationProperties) {
         if (this.configurationProperties == null) {
@@ -325,12 +390,25 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * <p>
      * The configuration properties for the custom action.
      * </p>
+     * <note>You can refer to a name in the configuration properties of the
+     * custom action within the URL templates by following the format of
+     * {Config:<i>name</i>}, as long as the configuration property is both
+     * required and not secret. For more information, see <a href=
+     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     * >Create a Custom Action for a Pipeline</a>.</note>
      * 
      * @param configurationProperties
-     *        The configuration properties for the custom action.
+     *        The configuration properties for the custom action.</p> <note>You
+     *        can refer to a name in the configuration properties of the custom
+     *        action within the URL templates by following the format of
+     *        {Config:<i>name</i>}, as long as the configuration property is
+     *        both required and not secret. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html"
+     *        >Create a Custom Action for a Pipeline</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withConfigurationProperties(
             java.util.Collection<ActionConfigurationProperty> configurationProperties) {
         setConfigurationProperties(configurationProperties);
@@ -340,6 +418,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param inputArtifactDetails
      */
+
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
         this.inputArtifactDetails = inputArtifactDetails;
     }
@@ -347,6 +426,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ArtifactDetails getInputArtifactDetails() {
         return this.inputArtifactDetails;
     }
@@ -356,6 +436,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withInputArtifactDetails(
             ArtifactDetails inputArtifactDetails) {
         setInputArtifactDetails(inputArtifactDetails);
@@ -365,6 +446,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @param outputArtifactDetails
      */
+
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
         this.outputArtifactDetails = outputArtifactDetails;
     }
@@ -372,6 +454,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public ArtifactDetails getOutputArtifactDetails() {
         return this.outputArtifactDetails;
     }
@@ -381,6 +464,7 @@ public class CreateCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCustomActionTypeRequest withOutputArtifactDetails(
             ArtifactDetails outputArtifactDetails) {
         setOutputArtifactDetails(outputArtifactDetails);

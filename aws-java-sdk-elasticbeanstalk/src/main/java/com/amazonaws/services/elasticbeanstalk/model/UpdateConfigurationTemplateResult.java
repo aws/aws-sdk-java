@@ -105,6 +105,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @param solutionStackName
      *        The name of the solution stack this configuration set uses.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -116,6 +117,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * 
      * @return The name of the solution stack this configuration set uses.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -130,6 +132,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -145,6 +148,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        The name of the application associated with this configuration
      *        set.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -157,6 +161,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return The name of the application associated with this configuration
      *         set.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -172,6 +177,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -188,6 +194,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        If not <code>null</code>, the name of the configuration template
      *        for this configuration set.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -201,6 +208,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return If not <code>null</code>, the name of the configuration template
      *         for this configuration set.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -217,6 +225,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -231,6 +240,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @param description
      *        Describes this configuration set.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -242,6 +252,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * 
      * @return Describes this configuration set.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -256,6 +267,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withDescription(String description) {
         setDescription(description);
         return this;
@@ -271,6 +283,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        If not <code>null</code>, the name of the environment for this
      *        configuration set.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -284,6 +297,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return If not <code>null</code>, the name of the environment for this
      *         configuration set.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -300,6 +314,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -340,6 +355,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        to successfully deploy.</li>
      * @see ConfigurationDeploymentStatus
      */
+
     public void setDeploymentStatus(String deploymentStatus) {
         this.deploymentStatus = deploymentStatus;
     }
@@ -377,6 +393,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *         failed to successfully deploy.</li>
      * @see ConfigurationDeploymentStatus
      */
+
     public String getDeploymentStatus() {
         return this.deploymentStatus;
     }
@@ -417,6 +434,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *         chained together.
      * @see ConfigurationDeploymentStatus
      */
+
     public UpdateConfigurationTemplateResult withDeploymentStatus(
             String deploymentStatus) {
         setDeploymentStatus(deploymentStatus);
@@ -455,10 +473,9 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        currently deployed to the associated running environment.</li>
      *        <li> <code>failed</code>: This is a draft configuration that failed
      *        to successfully deploy.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigurationDeploymentStatus
      */
+
     public void setDeploymentStatus(
             ConfigurationDeploymentStatus deploymentStatus) {
         this.deploymentStatus = deploymentStatus.toString();
@@ -500,6 +517,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *         chained together.
      * @see ConfigurationDeploymentStatus
      */
+
     public UpdateConfigurationTemplateResult withDeploymentStatus(
             ConfigurationDeploymentStatus deploymentStatus) {
         setDeploymentStatus(deploymentStatus);
@@ -514,6 +532,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @param dateCreated
      *        The date (in UTC time) when this configuration set was created.
      */
+
     public void setDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
     }
@@ -525,6 +544,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * 
      * @return The date (in UTC time) when this configuration set was created.
      */
+
     public java.util.Date getDateCreated() {
         return this.dateCreated;
     }
@@ -539,6 +559,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withDateCreated(
             java.util.Date dateCreated) {
         setDateCreated(dateCreated);
@@ -554,6 +575,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        The date (in UTC time) when this configuration set was last
      *        modified.
      */
+
     public void setDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
@@ -566,6 +588,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return The date (in UTC time) when this configuration set was last
      *         modified.
      */
+
     public java.util.Date getDateUpdated() {
         return this.dateUpdated;
     }
@@ -581,6 +604,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withDateUpdated(
             java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
@@ -596,6 +620,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return A list of the configuration options and their values in this
      *         configuration set.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -613,6 +638,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      *        A list of the configuration options and their values in this
      *        configuration set.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -642,6 +668,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -666,6 +693,7 @@ public class UpdateConfigurationTemplateResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateResult withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);

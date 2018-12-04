@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.services.waf.model.transform.*;
@@ -46,10 +48,11 @@ import com.amazonaws.services.waf.model.transform.*;
  * need detailed information about the AWS WAF API actions, data types, and
  * errors. For detailed information about AWS WAF features and an overview of
  * how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/dev/">AWS WAF Developer
- * Guide</a>.
+ * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+ * Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
@@ -63,9 +66,74 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     private static final String DEFAULT_ENDPOINT_PREFIX = "waf";
 
     /**
-     * List of exception unmarshallers for all WAF exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFInternalErrorException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFInternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFReferencedItemException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFReferencedItemException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFInvalidAccountException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFStaleDataException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFStaleDataException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WAFNonexistentContainerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFLimitsExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WAFInvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFNonEmptyEntityException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("WAFDisallowedNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFDisallowedNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WAFInvalidOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFInvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "WAFNonexistentItemException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.waf.model.WAFNonexistentItemException.class)));
 
     /**
      * Constructs a new client to invoke service methods on WAF. A credentials
@@ -84,8 +152,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSWAFClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -125,8 +193,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *        authenticating with AWS services.
      */
     public AWSWAFClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -165,8 +232,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *        authenticate requests with AWS services.
      */
     public AWSWAFClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -217,52 +283,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFInternalErrorException.class,
-                        "WAFInternalErrorException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFReferencedItemException.class,
-                        "WAFReferencedItemException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFInvalidAccountException.class,
-                        "WAFInvalidAccountException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.waf.model.WAFStaleDataException.class,
-                "WAFStaleDataException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFNonexistentContainerException.class,
-                        "WAFNonexistentContainerException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFLimitsExceededException.class,
-                        "WAFLimitsExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFInvalidParameterException.class,
-                        "WAFInvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class,
-                        "WAFNonEmptyEntityException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFDisallowedNameException.class,
-                        "WAFDisallowedNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFInvalidOperationException.class,
-                        "WAFInvalidOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.waf.model.WAFNonexistentItemException.class,
-                        "WAFNonexistentItemException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -351,7 +371,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateByteMatchSet
      */
@@ -368,18 +388,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateByteMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createByteMatchSetRequest));
+                request = new CreateByteMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateByteMatchSetResult> responseHandler = new JsonResponseHandler<CreateByteMatchSetResult>(
-                    new CreateByteMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateByteMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateByteMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -462,7 +484,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateIPSet
      */
@@ -478,17 +500,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateIPSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(createIPSetRequest));
+                request = new CreateIPSetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateIPSetResult> responseHandler = new JsonResponseHandler<CreateIPSetResult>(
-                    new CreateIPSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateIPSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateIPSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -584,7 +608,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateRule
      */
@@ -600,17 +624,134 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(createRuleRequest));
+                request = new CreateRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateRuleResult> responseHandler = new JsonResponseHandler<CreateRuleResult>(
-                    new CreateRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a <code>SizeConstraintSet</code>. You then use
+     * <a>UpdateSizeConstraintSet</a> to identify the part of a web request that
+     * you want AWS WAF to check for length, such as the length of the
+     * <code>User-Agent</code> header or the length of the query string. For
+     * example, you can create a <code>SizeConstraintSet</code> that matches any
+     * requests that have a query string that is longer than 100 bytes. You can
+     * then configure AWS WAF to reject those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>CreateSizeConstraintSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <a>UpdateSizeConstraintSet</a> request to specify the part
+     * of the request that you want AWS WAF to inspect (for example, the header
+     * or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createSizeConstraintSetRequest
+     * @return Result of the CreateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateSizeConstraintSet
+     */
+    @Override
+    public CreateSizeConstraintSetResult createSizeConstraintSet(
+            CreateSizeConstraintSetRequest createSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSizeConstraintSetRequest> request = null;
+        Response<CreateSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSizeConstraintSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSizeConstraintSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateSizeConstraintSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -693,7 +834,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateSqlInjectionMatchSet
      */
@@ -710,18 +851,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSqlInjectionMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createSqlInjectionMatchSetRequest));
+                request = new CreateSqlInjectionMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<CreateSqlInjectionMatchSetResult>(
-                    new CreateSqlInjectionMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSqlInjectionMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateSqlInjectionMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -817,7 +960,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.CreateWebACL
      */
@@ -834,17 +977,132 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateWebACLRequestMarshaller().marshall(super
-                        .beforeMarshalling(createWebACLRequest));
+                request = new CreateWebACLRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateWebACLResult> responseHandler = new JsonResponseHandler<CreateWebACLResult>(
-                    new CreateWebACLResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWebACLResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateWebACLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an <a>XssMatchSet</a>, which you use to allow, block, or count
+     * requests that contain cross-site scripting attacks in the specified part
+     * of web requests. AWS WAF searches for character sequences that are likely
+     * to be malicious strings.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>CreateXssMatchSet</code> request.</li>
+     * <li>Submit a <code>CreateXssMatchSet</code> request.</li>
+     * <li>Use <code>GetChangeToken</code> to get the change token that you
+     * provide in the <code>ChangeToken</code> parameter of an
+     * <a>UpdateXssMatchSet</a> request.</li>
+     * <li>Submit an <a>UpdateXssMatchSet</a> request to specify the parts of
+     * web requests in which you want to allow, block, or count cross-site
+     * scripting attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param createXssMatchSetRequest
+     *        A request to create an <a>XssMatchSet</a>.
+     * @return Result of the CreateXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.CreateXssMatchSet
+     */
+    @Override
+    public CreateXssMatchSetResult createXssMatchSet(
+            CreateXssMatchSetRequest createXssMatchSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(createXssMatchSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateXssMatchSetRequest> request = null;
+        Response<CreateXssMatchSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateXssMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createXssMatchSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateXssMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateXssMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -930,18 +1188,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteByteMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteByteMatchSetRequest));
+                request = new DeleteByteMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteByteMatchSetResult> responseHandler = new JsonResponseHandler<DeleteByteMatchSetResult>(
-                    new DeleteByteMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteByteMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteByteMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1025,17 +1285,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteIPSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteIPSetRequest));
+                request = new DeleteIPSetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteIPSetResult> responseHandler = new JsonResponseHandler<DeleteIPSetResult>(
-                    new DeleteIPSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIPSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteIPSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1119,17 +1381,119 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteRuleRequest));
+                request = new DeleteRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteRuleResult> responseHandler = new JsonResponseHandler<DeleteRuleResult>(
-                    new DeleteRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes a <a>SizeConstraintSet</a>. You can't delete a
+     * <code>SizeConstraintSet</code> if it's still used in any
+     * <code>Rules</code> or if it still includes any <a>SizeConstraint</a>
+     * objects (any filters).
+     * </p>
+     * <p>
+     * If you just want to remove a <code>SizeConstraintSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>SizeConstraintSet</code> to remove filters, if any.
+     * For more information, see <a>UpdateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteSizeConstraintSet</code> request.</li>
+     * <li>Submit a <code>DeleteSizeConstraintSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteSizeConstraintSetRequest
+     * @return Result of the DeleteSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that
+     *         isn't empty. For example:</p>
+     *         <ul>
+     *         <li>You tried to delete a <code>WebACL</code> that still contains
+     *         one or more <code>Rule</code> objects.</li>
+     *         <li>You tried to delete a <code>Rule</code> that still contains
+     *         one or more <code>ByteMatchSet</code> objects or other
+     *         predicates.</li>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that contains
+     *         one or more <code>ByteMatchTuple</code> objects.</li>
+     *         <li>You tried to delete an <code>IPSet</code> that references one
+     *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteSizeConstraintSet
+     */
+    @Override
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(
+            DeleteSizeConstraintSetRequest deleteSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSizeConstraintSetRequest> request = null;
+        Response<DeleteSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSizeConstraintSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSizeConstraintSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteSizeConstraintSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1217,18 +1581,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSqlInjectionMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteSqlInjectionMatchSetRequest));
+                request = new DeleteSqlInjectionMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<DeleteSqlInjectionMatchSetResult>(
-                    new DeleteSqlInjectionMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSqlInjectionMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteSqlInjectionMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1307,17 +1673,119 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteWebACLRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteWebACLRequest));
+                request = new DeleteWebACLRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteWebACLResult> responseHandler = new JsonResponseHandler<DeleteWebACLResult>(
-                    new DeleteWebACLResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWebACLResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteWebACLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes an <a>XssMatchSet</a>. You can't delete an
+     * <code>XssMatchSet</code> if it's still used in any <code>Rules</code> or
+     * if it still contains any <a>XssMatchTuple</a> objects.
+     * </p>
+     * <p>
+     * If you just want to remove an <code>XssMatchSet</code> from a
+     * <code>Rule</code>, use <a>UpdateRule</a>.
+     * </p>
+     * <p>
+     * To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform
+     * the following steps:
+     * </p>
+     * <ol>
+     * <li>Update the <code>XssMatchSet</code> to remove filters, if any. For
+     * more information, see <a>UpdateXssMatchSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of a
+     * <code>DeleteXssMatchSet</code> request.</li>
+     * <li>Submit a <code>DeleteXssMatchSet</code> request.</li>
+     * </ol>
+     * 
+     * @param deleteXssMatchSetRequest
+     *        A request to delete an <a>XssMatchSet</a> from AWS WAF.
+     * @return Result of the DeleteXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that
+     *         isn't empty. For example:</p>
+     *         <ul>
+     *         <li>You tried to delete a <code>WebACL</code> that still contains
+     *         one or more <code>Rule</code> objects.</li>
+     *         <li>You tried to delete a <code>Rule</code> that still contains
+     *         one or more <code>ByteMatchSet</code> objects or other
+     *         predicates.</li>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that contains
+     *         one or more <code>ByteMatchTuple</code> objects.</li>
+     *         <li>You tried to delete an <code>IPSet</code> that references one
+     *         or more IP addresses.</li>
+     * @sample AWSWAF.DeleteXssMatchSet
+     */
+    @Override
+    public DeleteXssMatchSetResult deleteXssMatchSet(
+            DeleteXssMatchSetRequest deleteXssMatchSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteXssMatchSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteXssMatchSetRequest> request = null;
+        Response<DeleteXssMatchSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteXssMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteXssMatchSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteXssMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteXssMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1358,17 +1826,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetByteMatchSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(getByteMatchSetRequest));
+                request = new GetByteMatchSetRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetByteMatchSetResult> responseHandler = new JsonResponseHandler<GetByteMatchSetResult>(
-                    new GetByteMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetByteMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetByteMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1422,17 +1893,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetChangeTokenRequestMarshaller().marshall(super
-                        .beforeMarshalling(getChangeTokenRequest));
+                request = new GetChangeTokenRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getChangeTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetChangeTokenResult> responseHandler = new JsonResponseHandler<GetChangeTokenResult>(
-                    new GetChangeTokenResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetChangeTokenResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetChangeTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1481,18 +1955,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetChangeTokenStatusRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getChangeTokenStatusRequest));
+                request = new GetChangeTokenStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getChangeTokenStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetChangeTokenStatusResult> responseHandler = new JsonResponseHandler<GetChangeTokenStatusResult>(
-                    new GetChangeTokenStatusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetChangeTokenStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetChangeTokenStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1532,17 +2008,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetIPSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(getIPSetRequest));
+                request = new GetIPSetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetIPSetResult> responseHandler = new JsonResponseHandler<GetIPSetResult>(
-                    new GetIPSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetIPSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetIPSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1583,17 +2061,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(getRuleRequest));
+                request = new GetRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetRuleResult> responseHandler = new JsonResponseHandler<GetRuleResult>(
-                    new GetRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1626,6 +2106,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         service.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
      * @sample AWSWAF.GetSampledRequests
      */
     @Override
@@ -1641,18 +2124,76 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSampledRequestsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getSampledRequestsRequest));
+                request = new GetSampledRequestsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getSampledRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSampledRequestsResult> responseHandler = new JsonResponseHandler<GetSampledRequestsResult>(
-                    new GetSampledRequestsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetSampledRequestsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetSampledRequestsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <a>SizeConstraintSet</a> specified by
+     * <code>SizeConstraintSetId</code>.
+     * </p>
+     * 
+     * @param getSizeConstraintSetRequest
+     * @return Result of the GetSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetSizeConstraintSet
+     */
+    @Override
+    public GetSizeConstraintSetResult getSizeConstraintSet(
+            GetSizeConstraintSetRequest getSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(getSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSizeConstraintSetRequest> request = null;
+        Response<GetSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSizeConstraintSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSizeConstraintSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetSizeConstraintSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1696,18 +2237,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSqlInjectionMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getSqlInjectionMatchSetRequest));
+                request = new GetSqlInjectionMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<GetSqlInjectionMatchSetResult>(
-                    new GetSqlInjectionMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetSqlInjectionMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetSqlInjectionMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1747,17 +2290,75 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetWebACLRequestMarshaller().marshall(super
-                        .beforeMarshalling(getWebACLRequest));
+                request = new GetWebACLRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetWebACLResult> responseHandler = new JsonResponseHandler<GetWebACLResult>(
-                    new GetWebACLResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetWebACLResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetWebACLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <a>XssMatchSet</a> that is specified by
+     * <code>XssMatchSetId</code>.
+     * </p>
+     * 
+     * @param getXssMatchSetRequest
+     *        A request to get an <a>XssMatchSet</a>.
+     * @return Result of the GetXssMatchSet operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetXssMatchSet
+     */
+    @Override
+    public GetXssMatchSetResult getXssMatchSet(
+            GetXssMatchSetRequest getXssMatchSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(getXssMatchSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetXssMatchSetRequest> request = null;
+        Response<GetXssMatchSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetXssMatchSetRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getXssMatchSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetXssMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetXssMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1797,18 +2398,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListByteMatchSetsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listByteMatchSetsRequest));
+                request = new ListByteMatchSetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listByteMatchSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListByteMatchSetsResult> responseHandler = new JsonResponseHandler<ListByteMatchSetsResult>(
-                    new ListByteMatchSetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListByteMatchSetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListByteMatchSetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1846,17 +2449,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIPSetsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listIPSetsRequest));
+                request = new ListIPSetsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listIPSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListIPSetsResult> responseHandler = new JsonResponseHandler<ListIPSetsResult>(
-                    new ListIPSetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListIPSetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListIPSetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1894,17 +2499,72 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listRulesRequest));
+                request = new ListRulesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRulesResult> responseHandler = new JsonResponseHandler<ListRulesResult>(
-                    new ListRulesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRulesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <a>SizeConstraintSetSummary</a> objects.
+     * </p>
+     * 
+     * @param listSizeConstraintSetsRequest
+     * @return Result of the ListSizeConstraintSets operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListSizeConstraintSets
+     */
+    @Override
+    public ListSizeConstraintSetsResult listSizeConstraintSets(
+            ListSizeConstraintSetsRequest listSizeConstraintSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listSizeConstraintSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSizeConstraintSetsRequest> request = null;
+        Response<ListSizeConstraintSetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSizeConstraintSetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listSizeConstraintSetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSizeConstraintSetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListSizeConstraintSetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1946,18 +2606,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSqlInjectionMatchSetsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listSqlInjectionMatchSetsRequest));
+                request = new ListSqlInjectionMatchSetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listSqlInjectionMatchSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListSqlInjectionMatchSetsResult> responseHandler = new JsonResponseHandler<ListSqlInjectionMatchSetsResult>(
-                    new ListSqlInjectionMatchSetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListSqlInjectionMatchSetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListSqlInjectionMatchSetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1995,17 +2657,73 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListWebACLsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listWebACLsRequest));
+                request = new ListWebACLsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listWebACLsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListWebACLsResult> responseHandler = new JsonResponseHandler<ListWebACLsResult>(
-                    new ListWebACLsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListWebACLsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListWebACLsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <a>XssMatchSet</a> objects.
+     * </p>
+     * 
+     * @param listXssMatchSetsRequest
+     *        A request to list the <a>XssMatchSet</a> objects created by the
+     *        current AWS account.
+     * @return Result of the ListXssMatchSets operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @sample AWSWAF.ListXssMatchSets
+     */
+    @Override
+    public ListXssMatchSetsResult listXssMatchSets(
+            ListXssMatchSetsRequest listXssMatchSetsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listXssMatchSetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListXssMatchSetsRequest> request = null;
+        Response<ListXssMatchSetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListXssMatchSetsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listXssMatchSetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListXssMatchSetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListXssMatchSetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2141,7 +2859,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateByteMatchSet
      */
@@ -2158,18 +2876,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateByteMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateByteMatchSetRequest));
+                request = new UpdateByteMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateByteMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateByteMatchSetResult> responseHandler = new JsonResponseHandler<UpdateByteMatchSetResult>(
-                    new UpdateByteMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateByteMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateByteMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2320,7 +3040,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateIPSet
      */
@@ -2336,17 +3056,19 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateIPSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateIPSetRequest));
+                request = new UpdateIPSetRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateIPSetResult> responseHandler = new JsonResponseHandler<UpdateIPSetResult>(
-                    new UpdateIPSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIPSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateIPSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2492,7 +3214,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateRule
      */
@@ -2508,17 +3230,198 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateRuleRequest));
+                request = new UpdateRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateRuleResult> responseHandler = new JsonResponseHandler<UpdateRuleResult>(
-                    new UpdateRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inserts or deletes <a>SizeConstraint</a> objects (filters) in a
+     * <a>SizeConstraintSet</a>. For each <code>SizeConstraint</code> object,
+     * you specify the following values:
+     * </p>
+     * <ul>
+     * <li>Whether to insert or delete the object from the array. If you want to
+     * change a <code>SizeConstraintSetUpdate</code> object, you delete the
+     * existing object and add a new one.</li>
+     * <li>The part of a web request that you want AWS WAF to evaluate, such as
+     * the length of a query string or the length of the <code>User-Agent</code>
+     * header.</li>
+     * <li>Whether to perform any transformations on the request, such as
+     * converting it to lowercase, before checking its length. Note that
+     * transformations of the request body are not supported because the AWS
+     * resource forwards only the first <code>8192</code> bytes of your request
+     * to AWS WAF.</li>
+     * <li>A <code>ComparisonOperator</code> used for evaluating the selected
+     * part of the request against the specified <code>Size</code>, such as
+     * equals, greater than, less than, and so on.</li>
+     * <li>The length, in bytes, that you want AWS WAF to watch for in selected
+     * part of the request. The length is computed after applying the
+     * transformation.</li>
+     * </ul>
+     * <p>
+     * For example, you can add a <code>SizeConstraintSetUpdate</code> object
+     * that matches web requests in which the length of the
+     * <code>User-Agent</code> header is greater than 100 bytes. You can then
+     * configure AWS WAF to block those requests.
+     * </p>
+     * <p>
+     * To create and configure a <code>SizeConstraintSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Create a <code>SizeConstraintSet.</code> For more information, see
+     * <a>CreateSizeConstraintSet</a>.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an
+     * <code>UpdateSizeConstraintSet</code> request.</li>
+     * <li>Submit an <code>UpdateSizeConstraintSet</code> request to specify the
+     * part of the request that you want AWS WAF to inspect (for example, the
+     * header or the URI) and the value that you want AWS WAF to watch for.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateSizeConstraintSetRequest
+     * @return Result of the UpdateSizeConstraintSet operation returned by the
+     *         service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to remove a <code>Rule</code> from a
+     *         <code>WebACL</code>, but the <code>Rule</code> isn't in the
+     *         specified <code>WebACL</code>.</li>
+     *         <li>You tried to remove an IP address from an <code>IPSet</code>,
+     *         but the IP address isn't in the specified <code>IPSet</code>.</li>
+     *         <li>You tried to remove a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         isn't in the specified <code>WebACL</code>.</li>
+     *         <li>You tried to add a <code>Rule</code> to a <code>WebACL</code>
+     *         , but the <code>Rule</code> already exists in the specified
+     *         <code>WebACL</code>.</li>
+     *         <li>You tried to add an IP address to an <code>IPSet</code>, but
+     *         the IP address already exists in the specified <code>IPSet</code>
+     *         .</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         already exists in the specified <code>WebACL</code>.</li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or
+     *         delete an object from another object that doesn't exist. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to add a <code>Rule</code> to or delete a
+     *         <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchSet</code> to or delete a
+     *         <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't
+     *         exist.</li>
+     *         <li>You tried to add an IP address to or delete an IP address
+     *         from an <code>IPSet</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to or delete a
+     *         <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that
+     *         doesn't exist.</li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that
+     *         is still in use. For example:
+     *         <ul>
+     *         <li>You tried to delete a <code>ByteMatchSet</code> that is still
+     *         referenced by a <code>Rule</code>.</li>
+     *         <li>You tried to delete a <code>Rule</code> that is still
+     *         referenced by a <code>WebACL</code>.</li>
+     *         </ul>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateSizeConstraintSet
+     */
+    @Override
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(
+            UpdateSizeConstraintSetRequest updateSizeConstraintSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateSizeConstraintSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSizeConstraintSetRequest> request = null;
+        Response<UpdateSizeConstraintSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSizeConstraintSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateSizeConstraintSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSizeConstraintSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateSizeConstraintSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2651,7 +3554,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateSqlInjectionMatchSet
      */
@@ -2668,18 +3571,20 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSqlInjectionMatchSetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateSqlInjectionMatchSetRequest));
+                request = new UpdateSqlInjectionMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateSqlInjectionMatchSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateSqlInjectionMatchSetResult> responseHandler = new JsonResponseHandler<UpdateSqlInjectionMatchSetResult>(
-                    new UpdateSqlInjectionMatchSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSqlInjectionMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateSqlInjectionMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2836,7 +3741,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         The operation exceeds a resource limit, for example, the maximum
      *         number of <code>WebACL</code> objects that you can create for an
      *         AWS account. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/waf/latest/DeveloperGuide/limits.html"
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
      *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSWAF.UpdateWebACL
      */
@@ -2853,17 +3758,182 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateWebACLRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateWebACLRequest));
+                request = new UpdateWebACLRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateWebACLResult> responseHandler = new JsonResponseHandler<UpdateWebACLResult>(
-                    new UpdateWebACLResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWebACLResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateWebACLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an
+     * <a>XssMatchSet</a>. For each <code>XssMatchTuple</code> object, you
+     * specify the following values:
+     * </p>
+     * <ul>
+     * <li><code>Action</code>: Whether to insert the object into or delete the
+     * object from the array. To change a <code>XssMatchTuple</code>, you delete
+     * the existing object and add a new one.</li>
+     * <li><code>FieldToMatch</code>: The part of web requests that you want AWS
+     * WAF to inspect and, if you want AWS WAF to inspect a header, the name of
+     * the header.</li>
+     * <li><code>TextTransformation</code>: Which text transformation, if any,
+     * to perform on the web request before inspecting the request for
+     * cross-site scripting attacks.</li>
+     * </ul>
+     * <p>
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront
+     * requests you want to allow, block, or count. For example, if you're
+     * receiving requests that contain cross-site scripting attacks in the
+     * request body and you want to block the requests, you can create an
+     * <code>XssMatchSet</code> with the applicable settings, and then configure
+     * AWS WAF to block the requests.
+     * </p>
+     * <p>
+     * To create and configure an <code>XssMatchSet</code>, perform the
+     * following steps:
+     * </p>
+     * <ol>
+     * <li>Submit a <a>CreateXssMatchSet</a> request.</li>
+     * <li>Use <a>GetChangeToken</a> to get the change token that you provide in
+     * the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</li>
+     * <li>Submit an <code>UpdateXssMatchSet</code> request to specify the parts
+     * of web requests that you want AWS WAF to inspect for cross-site scripting
+     * attacks.</li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block
+     * HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+     * Developer Guide</a>.
+     * </p>
+     * 
+     * @param updateXssMatchSetRequest
+     *        A request to update an <a>XssMatchSet</a>.
+     * @return Result of the UpdateXssMatchSet operation returned by the
+     *         service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the
+     *         request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using an invalid account identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to remove a <code>Rule</code> from a
+     *         <code>WebACL</code>, but the <code>Rule</code> isn't in the
+     *         specified <code>WebACL</code>.</li>
+     *         <li>You tried to remove an IP address from an <code>IPSet</code>,
+     *         but the IP address isn't in the specified <code>IPSet</code>.</li>
+     *         <li>You tried to remove a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         isn't in the specified <code>WebACL</code>.</li>
+     *         <li>You tried to add a <code>Rule</code> to a <code>WebACL</code>
+     *         , but the <code>Rule</code> already exists in the specified
+     *         <code>WebACL</code>.</li>
+     *         <li>You tried to add an IP address to an <code>IPSet</code>, but
+     *         the IP address already exists in the specified <code>IPSet</code>
+     *         .</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to a
+     *         <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code>
+     *         already exists in the specified <code>WebACL</code>.</li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter
+     *         in the request. For example:</p>
+     *         <ul>
+     *         <li>You specified an invalid parameter name.</li>
+     *         <li>You specified an invalid value.</li>
+     *         <li>You tried to update an object (<code>ByteMatchSet</code>,
+     *         <code>IPSet</code>, <code>Rule</code>, or <code>WebACL</code>)
+     *         using an action other than <code>INSERT</code> or
+     *         <code>DELETE</code>.</li>
+     *         <li>You tried to create a <code>WebACL</code> with a
+     *         <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>WebACL</code> with a
+     *         <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>FieldToMatch</code> <code>Type</code> other than HEADER,
+     *         QUERY_STRING, or URI.</li>
+     *         <li>You tried to update a <code>ByteMatchSet</code> with a
+     *         <code>Field</code> of <code>HEADER</code> but no value for
+     *         <code>Data</code>.</li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or
+     *         delete an object from another object that doesn't exist. For
+     *         example:</p>
+     *         <ul>
+     *         <li>You tried to add a <code>Rule</code> to or delete a
+     *         <code>Rule</code> from a <code>WebACL</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchSet</code> to or delete a
+     *         <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't
+     *         exist.</li>
+     *         <li>You tried to add an IP address to or delete an IP address
+     *         from an <code>IPSet</code> that doesn't exist.</li>
+     *         <li>You tried to add a <code>ByteMatchTuple</code> to or delete a
+     *         <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that
+     *         doesn't exist.</li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or
+     *         delete an object by using a change token that has already been
+     *         used.
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an
+     *         AWS account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/waf/latest/developerguide/limits.html"
+     *         >Limits</a> in the <i>AWS WAF Developer Guide</i>.
+     * @sample AWSWAF.UpdateXssMatchSet
+     */
+    @Override
+    public UpdateXssMatchSetResult updateXssMatchSet(
+            UpdateXssMatchSetRequest updateXssMatchSetRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateXssMatchSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateXssMatchSetRequest> request = null;
+        Response<UpdateXssMatchSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateXssMatchSetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateXssMatchSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateXssMatchSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateXssMatchSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2897,33 +3967,48 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

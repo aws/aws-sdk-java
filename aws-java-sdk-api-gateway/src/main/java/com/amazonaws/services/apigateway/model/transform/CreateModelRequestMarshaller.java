@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateModelRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateModelRequestMarshaller implements
         Marshaller<Request<CreateModelRequest>, CreateModelRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateModelRequest> marshall(
             CreateModelRequest createModelRequest) {
@@ -65,39 +73,37 @@ public class CreateModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(createModelRequest.getRestApiId()));
+                (createModelRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createModelRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createModelRequest.getName() != null) {
-                jsonWriter.key("name").value(createModelRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        createModelRequest.getName());
             }
-
             if (createModelRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createModelRequest.getDescription());
             }
-
             if (createModelRequest.getSchema() != null) {
-                jsonWriter.key("schema").value(createModelRequest.getSchema());
+                jsonGenerator.writeFieldName("schema").writeValue(
+                        createModelRequest.getSchema());
             }
-
             if (createModelRequest.getContentType() != null) {
-                jsonWriter.key("contentType").value(
+                jsonGenerator.writeFieldName("contentType").writeValue(
                         createModelRequest.getContentType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

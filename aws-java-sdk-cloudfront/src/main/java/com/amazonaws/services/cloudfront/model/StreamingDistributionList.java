@@ -57,6 +57,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @param marker
      *        The value you provided for the Marker request parameter.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -66,6 +67,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * 
      * @return The value you provided for the Marker request parameter.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -78,6 +80,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -93,6 +96,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *        value you can use for the Marker request parameter to continue
      *        listing your streaming distributions where they left off.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -106,6 +110,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *         value you can use for the Marker request parameter to continue
      *         listing your streaming distributions where they left off.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -122,6 +127,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -133,6 +139,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @param maxItems
      *        The value you provided for the MaxItems request parameter.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -142,6 +149,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * 
      * @return The value you provided for the MaxItems request parameter.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -154,6 +162,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -171,6 +180,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *        follow-up pagination request using the Marker request parameter to
      *        retrieve more distributions in the list.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -186,6 +196,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *         follow-up pagination request using the Marker request parameter
      *         to retrieve more distributions in the list.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -204,6 +215,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -220,6 +232,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *         follow-up pagination request using the Marker request parameter
      *         to retrieve more distributions in the list.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -232,6 +245,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *        The number of streaming distributions that were created by the
      *        current AWS account.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -243,6 +257,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return The number of streaming distributions that were created by the
      *         current AWS account.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -257,6 +272,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -270,6 +286,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *         element for each distribution that was created by the current AWS
      *         account.
      */
+
     public java.util.List<StreamingDistributionSummary> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<StreamingDistributionSummary>();
@@ -286,6 +303,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      *        element for each distribution that was created by the current AWS
      *        account.
      */
+
     public void setItems(
             java.util.Collection<StreamingDistributionSummary> items) {
         if (items == null) {
@@ -314,6 +332,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withItems(
             StreamingDistributionSummary... items) {
         if (this.items == null) {
@@ -337,6 +356,7 @@ public class StreamingDistributionList implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamingDistributionList withItems(
             java.util.Collection<StreamingDistributionSummary> items) {
         setItems(items);

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,13 +57,13 @@ public class ListClustersResultJsonUnmarshaller implements
                     context.nextToken();
                     listClustersResult
                             .setClusterArns(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listClustersResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listClustersResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

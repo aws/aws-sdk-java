@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.cloudsearchv2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,44 +30,60 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Date Options StAX Unmarshaller
+ * DateOptions StAX Unmarshaller
  */
-public class DateOptionsStaxUnmarshaller implements Unmarshaller<DateOptions, StaxUnmarshallerContext> {
+public class DateOptionsStaxUnmarshaller implements
+        Unmarshaller<DateOptions, StaxUnmarshallerContext> {
 
-    public DateOptions unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public DateOptions unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         DateOptions dateOptions = new DateOptions();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return dateOptions;
+            if (xmlEvent.isEndDocument())
+                return dateOptions;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("DefaultValue", targetDepth)) {
-                    dateOptions.setDefaultValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setDefaultValue(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SourceField", targetDepth)) {
-                    dateOptions.setSourceField(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setSourceField(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("FacetEnabled", targetDepth)) {
-                    dateOptions.setFacetEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setFacetEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SearchEnabled", targetDepth)) {
-                    dateOptions.setSearchEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setSearchEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ReturnEnabled", targetDepth)) {
-                    dateOptions.setReturnEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setReturnEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SortEnabled", targetDepth)) {
-                    dateOptions.setSortEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    dateOptions.setSortEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -76,9 +95,10 @@ public class DateOptionsStaxUnmarshaller implements Unmarshaller<DateOptions, St
     }
 
     private static DateOptionsStaxUnmarshaller instance;
+
     public static DateOptionsStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new DateOptionsStaxUnmarshaller();
+        if (instance == null)
+            instance = new DateOptionsStaxUnmarshaller();
         return instance;
     }
 }
-    

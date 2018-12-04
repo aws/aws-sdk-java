@@ -48,6 +48,7 @@ public class Restrictions implements Serializable, Cloneable {
     /**
      * @param geoRestriction
      */
+
     public void setGeoRestriction(GeoRestriction geoRestriction) {
         this.geoRestriction = geoRestriction;
     }
@@ -55,6 +56,7 @@ public class Restrictions implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public GeoRestriction getGeoRestriction() {
         return this.geoRestriction;
     }
@@ -64,6 +66,7 @@ public class Restrictions implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Restrictions withGeoRestriction(GeoRestriction geoRestriction) {
         setGeoRestriction(geoRestriction);
         return this;

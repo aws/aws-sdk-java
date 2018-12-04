@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,15 @@ public class NameserverJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    nameserver.setName(StringJsonUnmarshaller.getInstance()
+                    nameserver.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("GlueIps", targetDepth)) {
                     context.nextToken();
-                    nameserver.setGlueIps(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    nameserver
+                            .setGlueIps(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

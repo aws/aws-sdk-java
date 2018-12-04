@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RadiusSettingsMarshaller
@@ -39,67 +34,62 @@ import com.amazonaws.util.json.*;
 public class RadiusSettingsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RadiusSettings radiusSettings, JSONWriter jsonWriter) {
+    public void marshall(RadiusSettings radiusSettings,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (radiusSettings == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> radiusServersList = (com.amazonaws.internal.SdkInternalList<String>) radiusSettings
                     .getRadiusServers();
             if (!radiusServersList.isEmpty()
                     || !radiusServersList.isAutoConstruct()) {
-                jsonWriter.key("RadiusServers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("RadiusServers");
+                jsonGenerator.writeStartArray();
                 for (String radiusServersListValue : radiusServersList) {
                     if (radiusServersListValue != null) {
-                        jsonWriter.value(radiusServersListValue);
+                        jsonGenerator.writeValue(radiusServersListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (radiusSettings.getRadiusPort() != null) {
-                jsonWriter.key("RadiusPort").value(
+                jsonGenerator.writeFieldName("RadiusPort").writeValue(
                         radiusSettings.getRadiusPort());
             }
-
             if (radiusSettings.getRadiusTimeout() != null) {
-                jsonWriter.key("RadiusTimeout").value(
+                jsonGenerator.writeFieldName("RadiusTimeout").writeValue(
                         radiusSettings.getRadiusTimeout());
             }
-
             if (radiusSettings.getRadiusRetries() != null) {
-                jsonWriter.key("RadiusRetries").value(
+                jsonGenerator.writeFieldName("RadiusRetries").writeValue(
                         radiusSettings.getRadiusRetries());
             }
-
             if (radiusSettings.getSharedSecret() != null) {
-                jsonWriter.key("SharedSecret").value(
+                jsonGenerator.writeFieldName("SharedSecret").writeValue(
                         radiusSettings.getSharedSecret());
             }
-
             if (radiusSettings.getAuthenticationProtocol() != null) {
-                jsonWriter.key("AuthenticationProtocol").value(
-                        radiusSettings.getAuthenticationProtocol());
+                jsonGenerator.writeFieldName("AuthenticationProtocol")
+                        .writeValue(radiusSettings.getAuthenticationProtocol());
             }
-
             if (radiusSettings.getDisplayLabel() != null) {
-                jsonWriter.key("DisplayLabel").value(
+                jsonGenerator.writeFieldName("DisplayLabel").writeValue(
                         radiusSettings.getDisplayLabel());
             }
-
             if (radiusSettings.getUseSameUsername() != null) {
-                jsonWriter.key("UseSameUsername").value(
+                jsonGenerator.writeFieldName("UseSameUsername").writeValue(
                         radiusSettings.getUseSameUsername());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

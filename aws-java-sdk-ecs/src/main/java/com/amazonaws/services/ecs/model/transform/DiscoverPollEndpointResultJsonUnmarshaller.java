@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class DiscoverPollEndpointResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("endpoint", targetDepth)) {
                     context.nextToken();
-                    discoverPollEndpointResult
-                            .setEndpoint(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    discoverPollEndpointResult.setEndpoint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("telemetryEndpoint", targetDepth)) {
                     context.nextToken();
-                    discoverPollEndpointResult
-                            .setTelemetryEndpoint(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    discoverPollEndpointResult.setTelemetryEndpoint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

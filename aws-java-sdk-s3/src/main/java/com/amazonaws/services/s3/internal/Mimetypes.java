@@ -123,9 +123,9 @@ public class Mimetypes {
                     String mimetype = st.nextToken();
                     while (st.hasMoreTokens()) {
                         String extension = st.nextToken();
-                        extensionToMimetypeMap.put(extension.toLowerCase(), mimetype);
+                        extensionToMimetypeMap.put(StringUtils.lowerCase(extension), mimetype);
                         if (log.isDebugEnabled()) {
-                            log.debug("Setting mime type for extension '" + extension.toLowerCase() + "' to '" + mimetype + "'");
+                            log.debug("Setting mime type for extension '" + StringUtils.lowerCase(extension) + "' to '" + mimetype + "'");
                         }
                     }
                 } else {
@@ -159,7 +159,7 @@ public class Mimetypes {
     public String getMimetype(String fileName) {
         int lastPeriodIndex = fileName.lastIndexOf(".");
         if (lastPeriodIndex > 0 && lastPeriodIndex + 1 < fileName.length()) {
-            String ext = fileName.substring(lastPeriodIndex + 1).toLowerCase();
+            String ext = StringUtils.lowerCase(fileName.substring(lastPeriodIndex + 1));
             if (extensionToMimetypeMap.keySet().contains(ext)) {
                 String mimetype = (String) extensionToMimetypeMap.get(ext);
                 if (log.isDebugEnabled()) {

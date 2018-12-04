@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PredictRequest Marshaller
  */
 public class PredictRequestMarshaller implements
         Marshaller<Request<PredictRequest>, PredictRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PredictRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PredictRequest> marshall(PredictRequest predictRequest) {
 
@@ -62,46 +62,44 @@ public class PredictRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (predictRequest.getMLModelId() != null) {
-                jsonWriter.key("MLModelId")
-                        .value(predictRequest.getMLModelId());
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
+                        predictRequest.getMLModelId());
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> recordMap = (com.amazonaws.internal.SdkInternalMap<String, String>) predictRequest
                     .getRecord();
             if (!recordMap.isEmpty() || !recordMap.isAutoConstruct()) {
-                jsonWriter.key("Record");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Record");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> recordMapValue : recordMap
                         .entrySet()) {
                     if (recordMapValue.getValue() != null) {
-                        jsonWriter.key(recordMapValue.getKey());
+                        jsonGenerator.writeFieldName(recordMapValue.getKey());
 
-                        jsonWriter.value(recordMapValue.getValue());
+                        jsonGenerator.writeValue(recordMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (predictRequest.getPredictEndpoint() != null) {
-                jsonWriter.key("PredictEndpoint").value(
+                jsonGenerator.writeFieldName("PredictEndpoint").writeValue(
                         predictRequest.getPredictEndpoint());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

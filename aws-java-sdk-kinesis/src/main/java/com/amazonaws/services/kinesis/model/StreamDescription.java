@@ -39,10 +39,8 @@ public class StreamDescription implements Serializable, Cloneable {
     private String streamARN;
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -79,6 +77,12 @@ public class StreamDescription implements Serializable, Cloneable {
      * </p>
      */
     private Integer retentionPeriodHours;
+    /**
+     * <p>
+     * Represents the current enhanced monitoring settings of the stream.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoring;
 
     /**
      * <p>
@@ -88,6 +92,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamName
      *        The name of the stream being described.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -99,6 +104,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The name of the stream being described.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -113,6 +119,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -126,6 +133,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param streamARN
      *        The Amazon Resource Name (ARN) for the stream being described.
      */
+
     public void setStreamARN(String streamARN) {
         this.streamARN = streamARN;
     }
@@ -137,6 +145,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) for the stream being described.
      */
+
     public String getStreamARN() {
         return this.streamARN;
     }
@@ -151,6 +160,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withStreamARN(String streamARN) {
         setStreamARN(streamARN);
         return this;
@@ -158,10 +168,8 @@ public class StreamDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -179,10 +187,8 @@ public class StreamDescription implements Serializable, Cloneable {
      * </ul>
      * 
      * @param streamStatus
-     *        The current status of the stream being described.</p>
-     *        <p>
-     *        The stream status is one of the following states:
-     *        </p>
+     *        The current status of the stream being described. The stream
+     *        status is one of the following states:</p>
      *        <ul>
      *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
@@ -198,16 +204,15 @@ public class StreamDescription implements Serializable, Cloneable {
      *        stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
      */
+
     public void setStreamStatus(String streamStatus) {
         this.streamStatus = streamStatus;
     }
 
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -224,10 +229,8 @@ public class StreamDescription implements Serializable, Cloneable {
      * the <code>UPDATING</code> state.</li>
      * </ul>
      * 
-     * @return The current status of the stream being described.</p>
-     *         <p>
-     *         The stream status is one of the following states:
-     *         </p>
+     * @return The current status of the stream being described. The stream
+     *         status is one of the following states:</p>
      *         <ul>
      *         <li><code>CREATING</code> - The stream is being created. Amazon
      *         Kinesis immediately returns and sets <code>StreamStatus</code> to
@@ -243,16 +246,15 @@ public class StreamDescription implements Serializable, Cloneable {
      *         stream is in the <code>UPDATING</code> state.</li>
      * @see StreamStatus
      */
+
     public String getStreamStatus() {
         return this.streamStatus;
     }
 
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -270,10 +272,8 @@ public class StreamDescription implements Serializable, Cloneable {
      * </ul>
      * 
      * @param streamStatus
-     *        The current status of the stream being described.</p>
-     *        <p>
-     *        The stream status is one of the following states:
-     *        </p>
+     *        The current status of the stream being described. The stream
+     *        status is one of the following states:</p>
      *        <ul>
      *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
@@ -291,6 +291,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(String streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -298,10 +299,8 @@ public class StreamDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -319,10 +318,8 @@ public class StreamDescription implements Serializable, Cloneable {
      * </ul>
      * 
      * @param streamStatus
-     *        The current status of the stream being described.</p>
-     *        <p>
-     *        The stream status is one of the following states:
-     *        </p>
+     *        The current status of the stream being described. The stream
+     *        status is one of the following states:</p>
      *        <ul>
      *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
@@ -336,20 +333,17 @@ public class StreamDescription implements Serializable, Cloneable {
      *        <li><code>UPDATING</code> - Shards in the stream are being merged
      *        or split. Read and write operations continue to work while the
      *        stream is in the <code>UPDATING</code> state.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamStatus
      */
+
     public void setStreamStatus(StreamStatus streamStatus) {
         this.streamStatus = streamStatus.toString();
     }
 
     /**
      * <p>
-     * The current status of the stream being described.
-     * </p>
-     * <p>
-     * The stream status is one of the following states:
+     * The current status of the stream being described. The stream status is
+     * one of the following states:
      * </p>
      * <ul>
      * <li><code>CREATING</code> - The stream is being created. Amazon Kinesis
@@ -367,10 +361,8 @@ public class StreamDescription implements Serializable, Cloneable {
      * </ul>
      * 
      * @param streamStatus
-     *        The current status of the stream being described.</p>
-     *        <p>
-     *        The stream status is one of the following states:
-     *        </p>
+     *        The current status of the stream being described. The stream
+     *        status is one of the following states:</p>
      *        <ul>
      *        <li><code>CREATING</code> - The stream is being created. Amazon
      *        Kinesis immediately returns and sets <code>StreamStatus</code> to
@@ -388,6 +380,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see StreamStatus
      */
+
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
         setStreamStatus(streamStatus);
         return this;
@@ -400,6 +393,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The shards that comprise the stream.
      */
+
     public java.util.List<Shard> getShards() {
         if (shards == null) {
             shards = new com.amazonaws.internal.SdkInternalList<Shard>();
@@ -415,6 +409,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param shards
      *        The shards that comprise the stream.
      */
+
     public void setShards(java.util.Collection<Shard> shards) {
         if (shards == null) {
             this.shards = null;
@@ -440,6 +435,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(Shard... shards) {
         if (this.shards == null) {
             setShards(new com.amazonaws.internal.SdkInternalList<Shard>(
@@ -461,6 +457,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withShards(java.util.Collection<Shard> shards) {
         setShards(shards);
         return this;
@@ -476,6 +473,7 @@ public class StreamDescription implements Serializable, Cloneable {
      *        If set to <code>true</code>, more shards in the stream are
      *        available to describe.
      */
+
     public void setHasMoreShards(Boolean hasMoreShards) {
         this.hasMoreShards = hasMoreShards;
     }
@@ -489,6 +487,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return If set to <code>true</code>, more shards in the stream are
      *         available to describe.
      */
+
     public Boolean getHasMoreShards() {
         return this.hasMoreShards;
     }
@@ -505,6 +504,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withHasMoreShards(Boolean hasMoreShards) {
         setHasMoreShards(hasMoreShards);
         return this;
@@ -519,6 +519,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return If set to <code>true</code>, more shards in the stream are
      *         available to describe.
      */
+
     public Boolean isHasMoreShards() {
         return this.hasMoreShards;
     }
@@ -531,6 +532,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * @param retentionPeriodHours
      *        The current retention period, in hours.
      */
+
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
         this.retentionPeriodHours = retentionPeriodHours;
     }
@@ -542,6 +544,7 @@ public class StreamDescription implements Serializable, Cloneable {
      * 
      * @return The current retention period, in hours.
      */
+
     public Integer getRetentionPeriodHours() {
         return this.retentionPeriodHours;
     }
@@ -556,9 +559,92 @@ public class StreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamDescription withRetentionPeriodHours(
             Integer retentionPeriodHours) {
         setRetentionPeriodHours(retentionPeriodHours);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the current enhanced monitoring settings of the stream.
+     * </p>
+     * 
+     * @return Represents the current enhanced monitoring settings of the
+     *         stream.
+     */
+
+    public java.util.List<EnhancedMetrics> getEnhancedMonitoring() {
+        if (enhancedMonitoring == null) {
+            enhancedMonitoring = new com.amazonaws.internal.SdkInternalList<EnhancedMetrics>();
+        }
+        return enhancedMonitoring;
+    }
+
+    /**
+     * <p>
+     * Represents the current enhanced monitoring settings of the stream.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        Represents the current enhanced monitoring settings of the stream.
+     */
+
+    public void setEnhancedMonitoring(
+            java.util.Collection<EnhancedMetrics> enhancedMonitoring) {
+        if (enhancedMonitoring == null) {
+            this.enhancedMonitoring = null;
+            return;
+        }
+
+        this.enhancedMonitoring = new com.amazonaws.internal.SdkInternalList<EnhancedMetrics>(
+                enhancedMonitoring);
+    }
+
+    /**
+     * <p>
+     * Represents the current enhanced monitoring settings of the stream.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEnhancedMonitoring(java.util.Collection)} or
+     * {@link #withEnhancedMonitoring(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        Represents the current enhanced monitoring settings of the stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StreamDescription withEnhancedMonitoring(
+            EnhancedMetrics... enhancedMonitoring) {
+        if (this.enhancedMonitoring == null) {
+            setEnhancedMonitoring(new com.amazonaws.internal.SdkInternalList<EnhancedMetrics>(
+                    enhancedMonitoring.length));
+        }
+        for (EnhancedMetrics ele : enhancedMonitoring) {
+            this.enhancedMonitoring.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the current enhanced monitoring settings of the stream.
+     * </p>
+     * 
+     * @param enhancedMonitoring
+     *        Represents the current enhanced monitoring settings of the stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public StreamDescription withEnhancedMonitoring(
+            java.util.Collection<EnhancedMetrics> enhancedMonitoring) {
+        setEnhancedMonitoring(enhancedMonitoring);
         return this;
     }
 
@@ -585,7 +671,10 @@ public class StreamDescription implements Serializable, Cloneable {
         if (getHasMoreShards() != null)
             sb.append("HasMoreShards: " + getHasMoreShards() + ",");
         if (getRetentionPeriodHours() != null)
-            sb.append("RetentionPeriodHours: " + getRetentionPeriodHours());
+            sb.append("RetentionPeriodHours: " + getRetentionPeriodHours()
+                    + ",");
+        if (getEnhancedMonitoring() != null)
+            sb.append("EnhancedMonitoring: " + getEnhancedMonitoring());
         sb.append("}");
         return sb.toString();
     }
@@ -632,6 +721,13 @@ public class StreamDescription implements Serializable, Cloneable {
                 && other.getRetentionPeriodHours().equals(
                         this.getRetentionPeriodHours()) == false)
             return false;
+        if (other.getEnhancedMonitoring() == null
+                ^ this.getEnhancedMonitoring() == null)
+            return false;
+        if (other.getEnhancedMonitoring() != null
+                && other.getEnhancedMonitoring().equals(
+                        this.getEnhancedMonitoring()) == false)
+            return false;
         return true;
     }
 
@@ -658,6 +754,10 @@ public class StreamDescription implements Serializable, Cloneable {
                 * hashCode
                 + ((getRetentionPeriodHours() == null) ? 0
                         : getRetentionPeriodHours().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnhancedMonitoring() == null) ? 0
+                        : getEnhancedMonitoring().hashCode());
         return hashCode;
     }
 

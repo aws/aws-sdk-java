@@ -77,6 +77,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *        repository to list images in. If you do not specify a registry,
      *        the default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -92,6 +93,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *         repository to list images in. If you do not specify a registry,
      *         the default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -110,6 +112,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -123,6 +126,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The repository whose image IDs are to be listed.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -134,6 +138,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The repository whose image IDs are to be listed.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -148,6 +153,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -172,6 +178,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *        This value is <code>null</code> when there are no more results to
      *        return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -194,6 +201,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *         This value is <code>null</code> when there are no more results to
      *         return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -219,6 +227,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -250,6 +259,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *        returns up to 100 results and a <code>nextToken</code> value, if
      *        applicable.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -279,6 +289,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      *         returns up to 100 results and a <code>nextToken</code> value, if
      *         applicable.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -311,6 +322,7 @@ public class ListImagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListImagesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

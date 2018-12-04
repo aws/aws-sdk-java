@@ -25,7 +25,9 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityRequest;
+import com.amazonaws.services.sqs.model.ChangeMessageVisibilityResult;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
+import com.amazonaws.services.sqs.model.DeleteMessageResult;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.ReceiveMessageResult;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
@@ -71,7 +73,7 @@ class QueueBuffer {
 
     /**
      * asynchronously enqueues a message to SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is completed; never null
      */
     public Future<SendMessageResult> sendMessage(SendMessageRequest request,
@@ -87,7 +89,7 @@ class QueueBuffer {
 
     /**
      * Sends a message to SQS and returns the SQS reply.
-     * 
+     *
      * @return never null
      */
     public SendMessageResult sendMessageSync(SendMessageRequest request) {
@@ -97,46 +99,47 @@ class QueueBuffer {
 
     /**
      * Asynchronously deletes a message from SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is completed; never null
      */
 
-    public Future<Void> deleteMessage(DeleteMessageRequest request, AsyncHandler<DeleteMessageRequest, Void> handler) {
-        QueueBufferCallback<DeleteMessageRequest, Void> callback = null;
+    public Future<DeleteMessageResult> deleteMessage(DeleteMessageRequest request,
+            AsyncHandler<DeleteMessageRequest, DeleteMessageResult> handler) {
+        QueueBufferCallback<DeleteMessageRequest, DeleteMessageResult> callback = null;
         if (handler != null) {
-            callback = new QueueBufferCallback<DeleteMessageRequest, Void>(handler, request);
+            callback = new QueueBufferCallback<DeleteMessageRequest, DeleteMessageResult>(handler, request);
         }
 
-        QueueBufferFuture<DeleteMessageRequest, Void> future = sendBuffer.deleteMessage(request, callback);
+        QueueBufferFuture<DeleteMessageRequest, DeleteMessageResult> future = sendBuffer.deleteMessage(request, callback);
         future.setBuffer(this);
         return future;
     }
 
     /**
      * Deletes a message from SQS. Does not return until a confirmation from SQS has been received
-     * 
+     *
      * @return never null
      */
-    public void deleteMessageSync(DeleteMessageRequest request) {
-        Future<Void> future = deleteMessage(request, null);
-        waitForFuture(future);
+    public DeleteMessageResult deleteMessageSync(DeleteMessageRequest request) {
+        Future<DeleteMessageResult> future = deleteMessage(request, null);
+        return waitForFuture(future);
     }
 
     /**
      * asynchronously adjust a message's visibility timeout to SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is completed; never null
      */
 
-    public Future<Void> changeMessageVisibility(ChangeMessageVisibilityRequest request,
-                                                AsyncHandler<ChangeMessageVisibilityRequest, Void> handler) {
-        QueueBufferCallback<ChangeMessageVisibilityRequest, Void> callback = null;
+    public Future<ChangeMessageVisibilityResult> changeMessageVisibility(ChangeMessageVisibilityRequest request,
+                                                AsyncHandler<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> handler) {
+        QueueBufferCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> callback = null;
         if (handler != null) {
-            callback = new QueueBufferCallback<ChangeMessageVisibilityRequest, Void>(handler, request);
+            callback = new QueueBufferCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult>(handler, request);
         }
 
-        QueueBufferFuture<ChangeMessageVisibilityRequest, Void> future = sendBuffer.changeMessageVisibility(request,
-                callback);
+        QueueBufferFuture<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResult> future =
+                sendBuffer.changeMessageVisibility(request, callback);
         future.setBuffer(this);
         return future;
     }
@@ -144,15 +147,16 @@ class QueueBuffer {
     /**
      * Changes visibility of a message in SQS. Does not return until a confirmation from SQS has
      * been received.
+     * @return
      */
-    public void changeMessageVisibilitySync(ChangeMessageVisibilityRequest request) {
-        Future<Void> future = sendBuffer.changeMessageVisibility(request, null);
-        waitForFuture(future);
+    public ChangeMessageVisibilityResult changeMessageVisibilitySync(ChangeMessageVisibilityRequest request) {
+        Future<ChangeMessageVisibilityResult> future = sendBuffer.changeMessageVisibility(request, null);
+        return waitForFuture(future);
     }
 
     /**
      * Submits a request to receive some messages from SQS.
-     * 
+     *
      * @return a Future object that will be notified when the operation is completed; never null;
      */
 
@@ -177,7 +181,7 @@ class QueueBuffer {
 
     /**
      * Retrieves messages from an SQS queue.
-     * 
+     *
      * @return never null
      */
     public ReceiveMessageResult receiveMessageSync(ReceiveMessageRequest rq) {
@@ -201,7 +205,7 @@ class QueueBuffer {
      * deviates from the basic request we can't fulfill the request directly from the buffer, we
      * have to hit SQS directly (Note that when going to SQS directly messages currently in the
      * buffer may be unavailable due to the visibility timeout).
-     * 
+     *
      * @return True if the request can be fulfilled directly from the buffer, false if we have to go
      *         back to the service to fetch the results
      */

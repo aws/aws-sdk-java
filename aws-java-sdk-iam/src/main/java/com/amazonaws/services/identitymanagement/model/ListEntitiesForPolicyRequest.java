@@ -25,6 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
     /**
      * <p>
@@ -34,7 +46,8 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      */
     private String entityFilter;
@@ -42,6 +55,14 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all entities.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String pathPrefix;
@@ -73,24 +94,80 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
     private Integer maxItems;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you
+     *        want the versions.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy for which you
+     *         want the versions.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy for which you want the
+     * versions.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy for which you
+     *        want the versions.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -104,18 +181,22 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      * 
      * @param entityFilter
-     *        The entity type to use for filtering the results. </p>
+     *        The entity type to use for filtering the results.</p>
      *        <p>
      *        For example, when <code>EntityFilter</code> is <code>Role</code>,
      *        only the roles that are attached to the specified policy are
      *        returned. This parameter is optional. If it is not included, all
-     *        attached entities (users, groups, and roles) are returned.
+     *        attached entities (users, groups, and roles) are returned. The
+     *        argument for this parameter must be one of the valid values listed
+     *        below.
      * @see EntityType
      */
+
     public void setEntityFilter(String entityFilter) {
         this.entityFilter = entityFilter;
     }
@@ -128,17 +209,21 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      * 
-     * @return The entity type to use for filtering the results. </p>
+     * @return The entity type to use for filtering the results.</p>
      *         <p>
      *         For example, when <code>EntityFilter</code> is <code>Role</code>,
      *         only the roles that are attached to the specified policy are
      *         returned. This parameter is optional. If it is not included, all
-     *         attached entities (users, groups, and roles) are returned.
+     *         attached entities (users, groups, and roles) are returned. The
+     *         argument for this parameter must be one of the valid values
+     *         listed below.
      * @see EntityType
      */
+
     public String getEntityFilter() {
         return this.entityFilter;
     }
@@ -151,20 +236,24 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      * 
      * @param entityFilter
-     *        The entity type to use for filtering the results. </p>
+     *        The entity type to use for filtering the results.</p>
      *        <p>
      *        For example, when <code>EntityFilter</code> is <code>Role</code>,
      *        only the roles that are attached to the specified policy are
      *        returned. This parameter is optional. If it is not included, all
-     *        attached entities (users, groups, and roles) are returned.
+     *        attached entities (users, groups, and roles) are returned. The
+     *        argument for this parameter must be one of the valid values listed
+     *        below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
      */
+
     public ListEntitiesForPolicyRequest withEntityFilter(String entityFilter) {
         setEntityFilter(entityFilter);
         return this;
@@ -178,20 +267,22 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      * 
      * @param entityFilter
-     *        The entity type to use for filtering the results. </p>
+     *        The entity type to use for filtering the results.</p>
      *        <p>
      *        For example, when <code>EntityFilter</code> is <code>Role</code>,
      *        only the roles that are attached to the specified policy are
      *        returned. This parameter is optional. If it is not included, all
-     *        attached entities (users, groups, and roles) are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        attached entities (users, groups, and roles) are returned. The
+     *        argument for this parameter must be one of the valid values listed
+     *        below.
      * @see EntityType
      */
+
     public void setEntityFilter(EntityType entityFilter) {
         this.entityFilter = entityFilter.toString();
     }
@@ -204,20 +295,24 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * For example, when <code>EntityFilter</code> is <code>Role</code>, only
      * the roles that are attached to the specified policy are returned. This
      * parameter is optional. If it is not included, all attached entities
-     * (users, groups, and roles) are returned.
+     * (users, groups, and roles) are returned. The argument for this parameter
+     * must be one of the valid values listed below.
      * </p>
      * 
      * @param entityFilter
-     *        The entity type to use for filtering the results. </p>
+     *        The entity type to use for filtering the results.</p>
      *        <p>
      *        For example, when <code>EntityFilter</code> is <code>Role</code>,
      *        only the roles that are attached to the specified policy are
      *        returned. This parameter is optional. If it is not included, all
-     *        attached entities (users, groups, and roles) are returned.
+     *        attached entities (users, groups, and roles) are returned. The
+     *        argument for this parameter must be one of the valid values listed
+     *        below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
      */
+
     public ListEntitiesForPolicyRequest withEntityFilter(EntityType entityFilter) {
         setEntityFilter(entityFilter);
         return this;
@@ -228,12 +323,28 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all entities.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all entities.
+     *        listing all entities.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -243,11 +354,27 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all entities.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @return The path prefix for filtering the results. This parameter is
      *         optional. If it is not included, it defaults to a slash (/),
-     *         listing all entities.
+     *         listing all entities.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -257,14 +384,30 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * The path prefix for filtering the results. This parameter is optional. If
      * it is not included, it defaults to a slash (/), listing all entities.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is
      *        optional. If it is not included, it defaults to a slash (/),
-     *        listing all entities.
+     *        listing all entities.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -284,6 +427,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -302,6 +446,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -322,6 +467,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -357,6 +503,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -391,6 +538,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -427,6 +575,7 @@ public class ListEntitiesForPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListEntitiesForPolicyRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

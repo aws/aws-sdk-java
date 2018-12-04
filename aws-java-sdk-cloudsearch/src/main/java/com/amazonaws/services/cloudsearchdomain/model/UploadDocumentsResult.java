@@ -59,6 +59,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @param status
      *        The status of an <code>UploadDocumentsRequest</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -70,6 +71,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * 
      * @return The status of an <code>UploadDocumentsRequest</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -84,6 +86,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -97,6 +100,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @param adds
      *        The number of documents that were added to the search domain.
      */
+
     public void setAdds(Long adds) {
         this.adds = adds;
     }
@@ -108,6 +112,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * 
      * @return The number of documents that were added to the search domain.
      */
+
     public Long getAdds() {
         return this.adds;
     }
@@ -122,6 +127,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsResult withAdds(Long adds) {
         setAdds(adds);
         return this;
@@ -135,6 +141,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @param deletes
      *        The number of documents that were deleted from the search domain.
      */
+
     public void setDeletes(Long deletes) {
         this.deletes = deletes;
     }
@@ -146,6 +153,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * 
      * @return The number of documents that were deleted from the search domain.
      */
+
     public Long getDeletes() {
         return this.deletes;
     }
@@ -160,6 +168,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsResult withDeletes(Long deletes) {
         setDeletes(deletes);
         return this;
@@ -174,6 +183,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Any warnings returned by the document service about the documents
      *         being uploaded.
      */
+
     public java.util.List<DocumentServiceWarning> getWarnings() {
         if (warnings == null) {
             warnings = new com.amazonaws.internal.SdkInternalList<DocumentServiceWarning>();
@@ -191,6 +201,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      *        Any warnings returned by the document service about the documents
      *        being uploaded.
      */
+
     public void setWarnings(
             java.util.Collection<DocumentServiceWarning> warnings) {
         if (warnings == null) {
@@ -220,6 +231,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsResult withWarnings(
             DocumentServiceWarning... warnings) {
         if (this.warnings == null) {
@@ -244,6 +256,7 @@ public class UploadDocumentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadDocumentsResult withWarnings(
             java.util.Collection<DocumentServiceWarning> warnings) {
         setWarnings(warnings);

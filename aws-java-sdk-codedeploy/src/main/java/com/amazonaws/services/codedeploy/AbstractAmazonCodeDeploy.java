@@ -39,8 +39,14 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
-    public void addTagsToOnPremisesInstances(
+    public AddTagsToOnPremisesInstancesResult addTagsToOnPremisesInstances(
             AddTagsToOnPremisesInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetApplicationRevisionsResult batchGetApplicationRevisions(
+            BatchGetApplicationRevisionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,6 +59,18 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     @Override
     public BatchGetApplicationsResult batchGetApplications() {
         return batchGetApplications(new BatchGetApplicationsRequest());
+    }
+
+    @Override
+    public BatchGetDeploymentGroupsResult batchGetDeploymentGroups(
+            BatchGetDeploymentGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetDeploymentInstancesResult batchGetDeploymentInstances(
+            BatchGetDeploymentInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -102,12 +120,14 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
-    public void deleteApplication(DeleteApplicationRequest request) {
+    public DeleteApplicationResult deleteApplication(
+            DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDeploymentConfig(DeleteDeploymentConfigRequest request) {
+    public DeleteDeploymentConfigResult deleteDeploymentConfig(
+            DeleteDeploymentConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,7 +138,7 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
-    public void deregisterOnPremisesInstance(
+    public DeregisterOnPremisesInstanceResult deregisterOnPremisesInstance(
             DeregisterOnPremisesInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -225,19 +245,19 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
-    public void registerApplicationRevision(
+    public RegisterApplicationRevisionResult registerApplicationRevision(
             RegisterApplicationRevisionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void registerOnPremisesInstance(
+    public RegisterOnPremisesInstanceResult registerOnPremisesInstance(
             RegisterOnPremisesInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removeTagsFromOnPremisesInstances(
+    public RemoveTagsFromOnPremisesInstancesResult removeTagsFromOnPremisesInstances(
             RemoveTagsFromOnPremisesInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -248,13 +268,14 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
-    public void updateApplication(UpdateApplicationRequest request) {
+    public UpdateApplicationResult updateApplication(
+            UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateApplication() {
-        updateApplication(new UpdateApplicationRequest());
+    public UpdateApplicationResult updateApplication() {
+        return updateApplication(new UpdateApplicationRequest());
     }
 
     @Override

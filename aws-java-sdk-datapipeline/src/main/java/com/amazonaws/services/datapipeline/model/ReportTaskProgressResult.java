@@ -46,6 +46,7 @@ public class ReportTaskProgressResult implements Serializable, Cloneable {
      *        task. The task runner does not need to call <a>SetTaskStatus</a>
      *        for canceled tasks.
      */
+
     public void setCanceled(Boolean canceled) {
         this.canceled = canceled;
     }
@@ -61,6 +62,7 @@ public class ReportTaskProgressResult implements Serializable, Cloneable {
      *         task. The task runner does not need to call <a>SetTaskStatus</a>
      *         for canceled tasks.
      */
+
     public Boolean getCanceled() {
         return this.canceled;
     }
@@ -79,6 +81,7 @@ public class ReportTaskProgressResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReportTaskProgressResult withCanceled(Boolean canceled) {
         setCanceled(canceled);
         return this;
@@ -95,6 +98,7 @@ public class ReportTaskProgressResult implements Serializable, Cloneable {
      *         task. The task runner does not need to call <a>SetTaskStatus</a>
      *         for canceled tasks.
      */
+
     public Boolean isCanceled() {
         return this.canceled;
     }

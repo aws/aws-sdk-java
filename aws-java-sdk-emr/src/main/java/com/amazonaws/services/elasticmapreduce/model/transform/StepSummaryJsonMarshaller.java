@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StepSummaryMarshaller
@@ -39,43 +34,43 @@ import com.amazonaws.util.json.*;
 public class StepSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StepSummary stepSummary, JSONWriter jsonWriter) {
+    public void marshall(StepSummary stepSummary,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (stepSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stepSummary.getId() != null) {
-                jsonWriter.key("Id").value(stepSummary.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(
+                        stepSummary.getId());
             }
-
             if (stepSummary.getName() != null) {
-                jsonWriter.key("Name").value(stepSummary.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        stepSummary.getName());
             }
-
             if (stepSummary.getConfig() != null) {
-                jsonWriter.key("Config");
+                jsonGenerator.writeFieldName("Config");
                 HadoopStepConfigJsonMarshaller.getInstance().marshall(
-                        stepSummary.getConfig(), jsonWriter);
+                        stepSummary.getConfig(), jsonGenerator);
             }
-
             if (stepSummary.getActionOnFailure() != null) {
-                jsonWriter.key("ActionOnFailure").value(
+                jsonGenerator.writeFieldName("ActionOnFailure").writeValue(
                         stepSummary.getActionOnFailure());
             }
-
             if (stepSummary.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 StepStatusJsonMarshaller.getInstance().marshall(
-                        stepSummary.getStatus(), jsonWriter);
+                        stepSummary.getStatus(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

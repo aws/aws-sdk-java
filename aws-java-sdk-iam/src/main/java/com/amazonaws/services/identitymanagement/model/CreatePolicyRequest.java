@@ -27,7 +27,13 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the policy document.
+     * The friendly name of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -44,11 +50,27 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      */
     private String path;
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for the new
+     * policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String policyDocument;
@@ -69,37 +91,73 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the policy document.
+     * The friendly name of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param policyName
-     *        The name of the policy document.
+     *        The friendly name of the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
 
     /**
      * <p>
-     * The name of the policy document.
+     * The friendly name of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name of the policy document.
+     * @return The friendly name of the policy.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
 
     /**
      * <p>
-     * The name of the policy document.
+     * The friendly name of the policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param policyName
-     *        The name of the policy document.
+     *        The friendly name of the policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -118,9 +176,17 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param path
-     *        The path for the policy. </p>
+     *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -129,7 +195,16 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -147,8 +222,16 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
-     * @return The path for the policy. </p>
+     * @return The path for the policy.</p>
      *         <p>
      *         For more information about paths, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -157,7 +240,16 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
+     *         </p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -175,9 +267,17 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @param path
-     *        The path for the policy. </p>
+     *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
@@ -186,9 +286,18 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPath(String path) {
         setPath(path);
         return this;
@@ -196,37 +305,88 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for the new
+     * policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The JSON policy document that you want to use as the content for
+     *        the new policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for the new
+     * policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
-     * @return The policy document.
+     * @return The JSON policy document that you want to use as the content for
+     *         the new policy.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
 
     /**
      * <p>
-     * The policy document.
+     * The JSON policy document that you want to use as the content for the new
+     * policy.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The JSON policy document that you want to use as the content for
+     *        the new policy.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -246,7 +406,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param description
-     *        A friendly description of the policy. </p>
+     *        A friendly description of the policy.</p>
      *        <p>
      *        Typically used to store information about the permissions defined
      *        in the policy. For example,
@@ -256,6 +416,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *        The policy description is immutable. After a value is assigned, it
      *        cannot be changed.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -273,7 +434,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * be changed.
      * </p>
      * 
-     * @return A friendly description of the policy. </p>
+     * @return A friendly description of the policy.</p>
      *         <p>
      *         Typically used to store information about the permissions defined
      *         in the policy. For example,
@@ -283,6 +444,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      *         The policy description is immutable. After a value is assigned,
      *         it cannot be changed.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -301,7 +463,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param description
-     *        A friendly description of the policy. </p>
+     *        A friendly description of the policy.</p>
      *        <p>
      *        Typically used to store information about the permissions defined
      *        in the policy. For example,
@@ -313,6 +475,7 @@ public class CreatePolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyRequest withDescription(String description) {
         setDescription(description);
         return this;

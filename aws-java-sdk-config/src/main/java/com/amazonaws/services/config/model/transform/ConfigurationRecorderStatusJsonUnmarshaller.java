@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,50 +55,48 @@ public class ConfigurationRecorderStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    configurationRecorderStatus.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStartTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastStartTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationRecorderStatus.setLastStartTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("lastStopTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastStopTime(DateJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationRecorderStatus.setLastStopTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("recording", targetDepth)) {
                     context.nextToken();
                     configurationRecorderStatus
-                            .setRecording(BooleanJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setRecording(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastStatus(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configurationRecorderStatus.setLastStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastErrorCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationRecorderStatus.setLastErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationRecorderStatus.setLastErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
                     context.nextToken();
-                    configurationRecorderStatus
-                            .setLastStatusChangeTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configurationRecorderStatus.setLastStatusChangeTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

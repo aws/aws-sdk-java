@@ -16,6 +16,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon DynamoDB Streams asynchronously. Each
@@ -80,6 +81,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * </li>
  * </ul>
  */
+@ThreadSafe
 public class AmazonDynamoDBStreamsAsyncClient extends
         AmazonDynamoDBStreamsClient implements AmazonDynamoDBStreamsAsync {
 
@@ -179,8 +181,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -272,9 +273,7 @@ public class AmazonDynamoDBStreamsAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

@@ -31,6 +31,7 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      */
     private String userName;
     /**
@@ -44,10 +45,13 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @param userName
      *        The name of the AWS IAM user that owns this access key.
+     *        </p>
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -56,9 +60,12 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @return The name of the AWS IAM user that owns this access key.
+     *         </p>
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -67,12 +74,15 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * <p>
      * The name of the AWS IAM user that owns this access key.
      * </p>
+     * <p/>
      * 
      * @param userName
      *        The name of the AWS IAM user that owns this access key.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccessKeyLastUsedResult withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -86,6 +96,7 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * @param accessKeyLastUsed
      *        Contains information about the last time the access key was used.
      */
+
     public void setAccessKeyLastUsed(AccessKeyLastUsed accessKeyLastUsed) {
         this.accessKeyLastUsed = accessKeyLastUsed;
     }
@@ -97,6 +108,7 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * 
      * @return Contains information about the last time the access key was used.
      */
+
     public AccessKeyLastUsed getAccessKeyLastUsed() {
         return this.accessKeyLastUsed;
     }
@@ -111,6 +123,7 @@ public class GetAccessKeyLastUsedResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccessKeyLastUsedResult withAccessKeyLastUsed(
             AccessKeyLastUsed accessKeyLastUsed) {
         setAccessKeyLastUsed(accessKeyLastUsed);

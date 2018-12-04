@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
@@ -42,14 +44,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * blocking, and will not return until the service call completes.
  * <p>
  * <p>
- * Simple Systems Manager (SSM) enables you to remotely manage the configuration
- * of your Amazon EC2 instance. Using SSM, you can run scripts or commands using
- * either EC2 Run Command or SSM Config. (SSM Config is currently available only
- * for Windows instances.)
+ * This is the Amazon Simple Systems Manager (SSM) API Reference. SSM enables
+ * you to remotely manage the configuration of your Amazon EC2 instance using
+ * scripts or commands with either an on-demand solution called <i>SSM Run
+ * Command</i> or a lightweight instance configuration solution called <i>SSM
+ * Config</i>.
  * </p>
  * <p>
+ * This references is intended to be used with the SSM User Guide for <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html"
+ * >Linux</a> or <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html"
+ * >Windows</a>.
  * </p>
+ * <p>
  * <b>Run Command</b>
+ * </p>
  * <p>
  * Run Command provides an on-demand experience for executing commands. You can
  * use pre-defined Amazon SSM documents to perform the actions listed later in
@@ -58,9 +68,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * <b>Commands</b> page in the <a
  * href="http://console.aws.amazon.com/ec2/">Amazon EC2 console</a>, <a href=
  * "http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html"
- * >AWS Tools for Windows PowerShell</a>, or the <a
+ * >AWS Tools for Windows PowerShell</a>, the <a
  * href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
- * CLI</a>.
+ * CLI</a>, or AWS SDKs.
  * </p>
  * <p>
  * Run Command reports the status of the command execution for each instance
@@ -75,9 +85,10 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html"
  * >Windows</a>).
  * </p>
+ * <p/>
  * <p>
- * </p>
  * <b>SSM Config</b>
+ * </p>
  * <p>
  * SSM Config is a lightweight instance configuration solution. SSM Config is
  * currently only available for Windows instances. With SSM Config, you can
@@ -98,140 +109,134 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * >Managing Windows Instance Configuration</a>.
  * </p>
  * <p>
- * SSM Config and Run Command include the following pre-defined documents.
+ * SSM Config and SSM Run Command include the following pre-defined documents.
  * </p>
- * <table>
- * <title>Amazon Pre-defined SSM Documents</title> <tgroup cols="3"> <colspec
- * colnum="1" colname="col1" colwidth="1*"></colspec> <colspec colnum="2"
- * colname="col2" colwidth="1*"></colspec> <colspec colnum="3" colname="col3"
- * colwidth="1*"></colspec> <thead> <row> <entry>Name</entry>
- * <entry>Description</entry> <entry>Platform</entry> </row> </thead> <tbody>
- * <row> <entry>
  * <p>
- * AWS-RunShellScript
+ * <b>Linux</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Run shell scripts
+ * <b>AWS-RunShellScript</b> to run shell scripts
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <p/>
  * <p>
- * AWS-UpdateSSMAgent
+ * <b>Windows</b>
  * </p>
- * </entry> <entry>
+ * <ul>
+ * <li>
  * <p>
- * Update the Amazon SSM agent
+ * <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Linux
+ * <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-JoinDirectoryServiceDomain
+ * <b>AWS-UpdateEC2Config</b> to update the EC2Config service
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Join an AWS Directory
+ * <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallApplication</b> to install, repair, or uninstall software using
+ * an MSI package
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-RunPowerShellScript
+ * <b>AWS-InstallPowerShellModule</b> to install PowerShell modules
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Run PowerShell commands or scripts
+ * <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor
+ * applications and systems
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance
+ * running in Windows.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * <li>
  * <p>
- * AWS-UpdateEC2Config
+ * <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which
+ * updates are missing.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Update the EC2Config service
+ * <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your
+ * EC2 instance.
  * </p>
- * </entry> <entry>
+ * </li>
+ * <li>
  * <p>
- * Windows
+ * <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific
+ * updates.
  * </p>
- * </entry> </row> <row> <entry>
+ * </li>
+ * </ul>
+ * <important>
  * <p>
- * AWS-ConfigureWindowsUpdate
+ * The commands or scripts specified in SSM documents run with administrative
+ * privilege on your instances because the Amazon SSM agent runs as root on
+ * Linux and the EC2Config service runs in the Local System account on Windows.
+ * If a user has permission to execute any of the pre-defined SSM documents (any
+ * document that begins with AWS-*) then that user also has administrator access
+ * to the instance. Delegate access to SSM and Run Command judiciously. This
+ * becomes extremely important if you create your own SSM documents. Amazon Web
+ * Services does not provide guidance about how to create secure SSM documents.
+ * You create SSM documents and delegate access to Run Command at your own risk.
+ * As a security best practice, we recommend that you assign access to "AWS-*"
+ * documents, especially the AWS-RunShellScript document on Linux and the
+ * AWS-RunPowerShellScript document on Windows, to trusted administrators only.
+ * You can create SSM documents for specific tasks and delegate access to
+ * non-administrators.
  * </p>
- * </entry> <entry>
- * <p>
- * Configure Windows Update settings
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallApplication
- * </p>
- * </entry> <entry>
- * <p>
- * Install, repair, or uninstall software using an MSI package
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-InstallPowerShellModule
- * </p>
- * </entry> <entry>
- * <p>
- * Install PowerShell modules
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> <row> <entry>
- * <p>
- * AWS-ConfigureCloudWatch
- * </p>
- * </entry> <entry>
- * <p>
- * Configure Amazon CloudWatch Logs to monitor applications and systems
- * </p>
- * </entry> <entry>
- * <p>
- * Windows
- * </p>
- * </entry> </row> </tbody> </tgroup>
- * </table>
- * <important> <simpara>The commands or scripts specified in SSM documents run
- * with administrative privilege on your instances because the Amazon SSM agent
- * runs as root on Linux and the EC2Config service runs in the Local System
- * account on Windows. If a user has permission to execute any of the
- * pre-defined SSM documents (any document that begins with AWS-*) then that
- * user also has administrator access to the instance. Delegate access to SSM
- * and Run Command judiciously. This becomes extremely important if you create
- * your own SSM documents. Amazon Web Services does not provide guidance about
- * how to create secure SSM documents. You create SSM documents and delegate
- * access to Run Command at your own risk. As a security best practice, we
- * recommend that you assign access to "AWS-*" documents, especially the
- * AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript document
- * on Windows, to trusted administrators only. You can create SSM documents for
- * specific tasks and delegate access to non-administrators.</simpara>
  * </important>
+ * <p>
+ * For information about creating and sharing SSM documents, see the following
+ * topics in the SSM User Guide:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a
+ * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Linux)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html"
+ * >Creating SSM Documents</a> and <a href=
+ * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html"
+ * >Sharing SSM Documents</a> (Windows)
+ * </p>
+ * </li>
+ * </ul>
  */
+@ThreadSafe
 public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         implements AWSSimpleSystemsManagement {
     /** Provider for AWS credentials. */
@@ -247,9 +252,136 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "ssm";
 
     /**
-     * List of exception unmarshallers for all Amazon SSM exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidInstanceInformationFilterValue")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextToken")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociatedInstances")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DuplicateInstanceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidFilterKey")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameters")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationAlreadyExists")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCommandId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidDocument")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidDocumentContent")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AssociationDoesNotExist")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyUpdates")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentPermissionLimit")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MaxDocumentSizeExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnsupportedPlatformType")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidInstanceId")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentAlreadyExists")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidPermissionType")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidDocumentOperation")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DocumentLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("StatusUnchanged")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOutputFolder")
+                                    .withModeledClass(
+                                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A
@@ -269,8 +401,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSSimpleSystemsManagementClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -312,8 +444,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AWSSimpleSystemsManagementClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -353,8 +484,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      */
     public AWSSimpleSystemsManagementClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -407,93 +537,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class,
-                        "InvalidInstanceInformationFilterValue"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class,
-                        "InvalidNextToken"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class,
-                        "AssociatedInstances"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class,
-                        "AssociationLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class,
-                        "DuplicateInstanceId"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class,
-                        "InvalidFilterKey"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class,
-                        "InvalidParameters"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class,
-                        "AssociationAlreadyExists"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class,
-                        "InvalidCommandId"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class,
-                        "InvalidDocument"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class,
-                        "InvalidDocumentContent"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class,
-                        "AssociationDoesNotExist"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class,
-                        "TooManyUpdates"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class,
-                        "InternalServerError"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class,
-                        "MaxDocumentSizeExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class,
-                        "UnsupportedPlatformType"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class,
-                        "InvalidInstanceId"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class,
-                        "DocumentAlreadyExists"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class,
-                        "DocumentLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class,
-                        "StatusUnchanged"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class,
-                        "InvalidOutputFolder"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -516,6 +559,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * 
      * @param cancelCommandRequest
      * @return Result of the CancelCommand operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
      *         The instance is not in valid state. Valid states are: Running,
@@ -538,17 +583,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelCommandRequestMarshaller().marshall(super
-                        .beforeMarshalling(cancelCommandRequest));
+                request = new CancelCommandRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(cancelCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelCommandResult> responseHandler = new JsonResponseHandler<CancelCommandResult>(
-                    new CancelCommandResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelCommandResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelCommandResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -591,7 +638,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         Terminated.
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
-     *         instance ID(s).
+     *         instance ID(s). For example, you sent an SSM document for a
+     *         Windows instance to a Linux instance.
      * @throws InvalidParametersException
      *         You must specify values for all required parameters in the SSM
      *         document. You can only supply values to parameters defined in the
@@ -611,18 +659,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createAssociationRequest));
+                request = new CreateAssociationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssociationResult> responseHandler = new JsonResponseHandler<CreateAssociationResult>(
-                    new CreateAssociationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -669,7 +719,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         You can have at most 2,000 active associations.
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
-     *         instance ID(s).
+     *         instance ID(s). For example, you sent an SSM document for a
+     *         Windows instance to a Linux instance.
      * @sample AWSSimpleSystemsManagement.CreateAssociationBatch
      */
     @Override
@@ -685,18 +736,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationBatchRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createAssociationBatchRequest));
+                request = new CreateAssociationBatchRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createAssociationBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateAssociationBatchResult> responseHandler = new JsonResponseHandler<CreateAssociationBatchResult>(
-                    new CreateAssociationBatchResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAssociationBatchResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAssociationBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -712,7 +765,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * Creates an SSM document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use <a>CreateAssociation</a> to
+     * After you create an SSM document, you can use CreateAssociation to
      * associate it with one or more running instances.
      * </p>
      * 
@@ -743,17 +796,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentRequestMarshaller().marshall(super
-                        .beforeMarshalling(createDocumentRequest));
+                request = new CreateDocumentRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateDocumentResult> responseHandler = new JsonResponseHandler<CreateDocumentResult>(
-                    new CreateDocumentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDocumentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -807,18 +863,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssociationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteAssociationRequest));
+                request = new DeleteAssociationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteAssociationResult> responseHandler = new JsonResponseHandler<DeleteAssociationResult>(
-                    new DeleteAssociationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -845,6 +903,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You
+     *         must stop sharing the document before you can delete it.
      * @throws AssociatedInstancesException
      *         You must disassociate an SSM document from all instances before
      *         you can delete it.
@@ -863,17 +924,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteDocumentRequest));
+                request = new DeleteDocumentRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteDocumentResult> responseHandler = new JsonResponseHandler<DeleteDocumentResult>(
-                    new DeleteDocumentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -917,18 +981,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssociationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeAssociationRequest));
+                request = new DescribeAssociationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeAssociationResult> responseHandler = new JsonResponseHandler<DescribeAssociationResult>(
-                    new DescribeAssociationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -965,7 +1031,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDocumentRequestMarshaller()
+                request = new DescribeDocumentRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeDocumentRequest));
                 // Binds the request metrics to the current request.
@@ -974,9 +1040,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDocumentResult> responseHandler = new JsonResponseHandler<DescribeDocumentResult>(
-                    new DescribeDocumentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -988,6 +1056,64 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * <p>
+     * Describes the permissions for an SSM document. If you created the
+     * document, you are the owner. If a document is shared, it can either be
+     * shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
+     * </p>
+     * 
+     * @param describeDocumentPermissionRequest
+     * @return Result of the DescribeDocumentPermission operation returned by
+     *         the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidPermissionTypeException
+     *         The permission type is not supported. <i>Share</i> is the only
+     *         supported permission type.
+     * @sample AWSSimpleSystemsManagement.DescribeDocumentPermission
+     */
+    @Override
+    public DescribeDocumentPermissionResult describeDocumentPermission(
+            DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeDocumentPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDocumentPermissionRequest> request = null;
+        Response<DescribeDocumentPermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDocumentPermissionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeDocumentPermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentPermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeDocumentPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of your instances. You can use this to get
      * information about instances like the operating system platform, the SSM
      * agent version, status etc. If you specify one or more instance IDs, it
@@ -995,6 +1121,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * IDs, it returns information for all your instances. If you specify an
      * instance ID that is not valid or an instance that you do not own, you
      * receive an error.
+     * </p>
      * 
      * @param describeInstanceInformationRequest
      * @return Result of the DescribeInstanceInformation operation returned by
@@ -1026,18 +1153,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstanceInformationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeInstanceInformationRequest));
+                request = new DescribeInstanceInformationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstanceInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeInstanceInformationResult> responseHandler = new JsonResponseHandler<DescribeInstanceInformationResult>(
-                    new DescribeInstanceInformationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceInformationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeInstanceInformationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1073,17 +1202,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDocumentRequest));
+                request = new GetDocumentRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDocumentResult> responseHandler = new JsonResponseHandler<GetDocumentResult>(
-                    new GetDocumentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDocumentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1120,7 +1251,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociationsRequestMarshaller()
+                request = new ListAssociationsRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(listAssociationsRequest));
                 // Binds the request metrics to the current request.
@@ -1129,9 +1260,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAssociationsResult> responseHandler = new JsonResponseHandler<ListAssociationsResult>(
-                    new ListAssociationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssociationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1143,16 +1276,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * <p>
      * An invocation is copy of a command sent to a specific instance. A command
      * can apply to one or more instances. A command invocation applies to one
      * instance. For example, if a user executes SendCommand against three
      * instances, then a command invocation is created for each requested
      * instance ID. ListCommandInvocations provide status about command
      * execution.
+     * </p>
      * 
      * @param listCommandInvocationsRequest
      * @return Result of the ListCommandInvocations operation returned by the
      *         service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
      *         The instance is not in valid state. Valid states are: Running,
@@ -1177,18 +1314,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCommandInvocationsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listCommandInvocationsRequest));
+                request = new ListCommandInvocationsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listCommandInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCommandInvocationsResult> responseHandler = new JsonResponseHandler<ListCommandInvocationsResult>(
-                    new ListCommandInvocationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCommandInvocationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCommandInvocationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1206,6 +1345,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      * 
      * @param listCommandsRequest
      * @return Result of the ListCommands operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
      * @throws InvalidCommandIdException
      * @throws InvalidInstanceIdException
      *         The instance is not in valid state. Valid states are: Running,
@@ -1230,17 +1371,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCommandsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listCommandsRequest));
+                request = new ListCommandsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCommandsResult> responseHandler = new JsonResponseHandler<ListCommandsResult>(
-                    new ListCommandsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCommandsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCommandsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1279,17 +1422,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDocumentsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listDocumentsRequest));
+                request = new ListDocumentsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDocumentsResult> responseHandler = new JsonResponseHandler<ListDocumentsResult>(
-                    new ListDocumentsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListDocumentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDocumentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1306,12 +1451,80 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
     }
 
     /**
+     * <p>
+     * Share a document publicly or privately. If you share a document
+     * privately, you must specify the AWS user account IDs for those people who
+     * can use the document. If you share a document publicly, you must specify
+     * <i>All</i> as the account ID.
+     * </p>
+     * 
+     * @param modifyDocumentPermissionRequest
+     * @return Result of the ModifyDocumentPermission operation returned by the
+     *         service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidPermissionTypeException
+     *         The permission type is not supported. <i>Share</i> is the only
+     *         supported permission type.
+     * @throws DocumentPermissionLimitException
+     *         The document cannot be shared with more AWS user accounts. You
+     *         can share a document with a maximum of 20 accounts. You can
+     *         publicly share up to five documents. If you need to increase this
+     *         limit, contact AWS Support.
+     * @throws DocumentLimitExceededException
+     *         You can have at most 100 active SSM documents.
+     * @sample AWSSimpleSystemsManagement.ModifyDocumentPermission
+     */
+    @Override
+    public ModifyDocumentPermissionResult modifyDocumentPermission(
+            ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(modifyDocumentPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDocumentPermissionRequest> request = null;
+        Response<ModifyDocumentPermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDocumentPermissionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(modifyDocumentPermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyDocumentPermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ModifyDocumentPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Executes commands on one or more remote instances.
+     * </p>
      * 
      * @param sendCommandRequest
      * @return Result of the SendCommand operation returned by the service.
      * @throws DuplicateInstanceIdException
      *         You cannot specify an instance ID in more than one association.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
      * @throws InvalidInstanceIdException
      *         The instance is not in valid state. Valid states are: Running,
      *         Pending, Stopped, Stopping. Invalid states are: Shutting-down and
@@ -1326,7 +1539,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
      *         SSM document.
      * @throws UnsupportedPlatformTypeException
      *         The document does not support the platform type of the given
-     *         instance ID(s).
+     *         instance ID(s). For example, you sent an SSM document for a
+     *         Windows instance to a Linux instance.
+     * @throws MaxDocumentSizeExceededException
+     *         The size limit of an SSM document is 64 KB.
      * @sample AWSSimpleSystemsManagement.SendCommand
      */
     @Override
@@ -1341,17 +1557,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendCommandRequestMarshaller().marshall(super
-                        .beforeMarshalling(sendCommandRequest));
+                request = new SendCommandRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SendCommandResult> responseHandler = new JsonResponseHandler<SendCommandResult>(
-                    new SendCommandResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SendCommandResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SendCommandResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1401,18 +1619,20 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssociationStatusRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateAssociationStatusRequest));
+                request = new UpdateAssociationStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateAssociationStatusResult> responseHandler = new JsonResponseHandler<UpdateAssociationStatusResult>(
-                    new UpdateAssociationStatusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAssociationStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAssociationStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1446,33 +1666,48 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

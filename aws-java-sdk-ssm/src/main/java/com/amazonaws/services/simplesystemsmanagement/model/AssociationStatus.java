@@ -58,6 +58,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @param dateValue
      *        The date when the status changed.
      */
+
     public void setDate(java.util.Date dateValue) {
         this.dateValue = dateValue;
     }
@@ -69,6 +70,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * 
      * @return The date when the status changed.
      */
+
     public java.util.Date getDate() {
         return this.dateValue;
     }
@@ -83,6 +85,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationStatus withDate(java.util.Date dateValue) {
         setDate(dateValue);
         return this;
@@ -97,6 +100,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      *        The status.
      * @see AssociationStatusName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -109,6 +113,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @return The status.
      * @see AssociationStatusName
      */
+
     public String getName() {
         return this.name;
     }
@@ -124,6 +129,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      *         chained together.
      * @see AssociationStatusName
      */
+
     public AssociationStatus withName(String name) {
         setName(name);
         return this;
@@ -136,10 +142,9 @@ public class AssociationStatus implements Serializable, Cloneable {
      * 
      * @param name
      *        The status.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AssociationStatusName
      */
+
     public void setName(AssociationStatusName name) {
         this.name = name.toString();
     }
@@ -155,6 +160,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      *         chained together.
      * @see AssociationStatusName
      */
+
     public AssociationStatus withName(AssociationStatusName name) {
         setName(name);
         return this;
@@ -168,6 +174,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @param message
      *        The reason for the status.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -179,6 +186,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * 
      * @return The reason for the status.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -193,6 +201,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationStatus withMessage(String message) {
         setMessage(message);
         return this;
@@ -206,6 +215,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @param additionalInfo
      *        A user-defined string.
      */
+
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
@@ -217,6 +227,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * 
      * @return A user-defined string.
      */
+
     public String getAdditionalInfo() {
         return this.additionalInfo;
     }
@@ -231,6 +242,7 @@ public class AssociationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociationStatus withAdditionalInfo(String additionalInfo) {
         setAdditionalInfo(additionalInfo);
         return this;

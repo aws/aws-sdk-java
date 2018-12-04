@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TrustedAdvisorResourceDetailMarshaller
@@ -39,53 +34,51 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorResourceDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorResourceDetail trustedAdvisorResourceDetail,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (trustedAdvisorResourceDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorResourceDetail.getStatus() != null) {
-                jsonWriter.key("status").value(
+                jsonGenerator.writeFieldName("status").writeValue(
                         trustedAdvisorResourceDetail.getStatus());
             }
-
             if (trustedAdvisorResourceDetail.getRegion() != null) {
-                jsonWriter.key("region").value(
+                jsonGenerator.writeFieldName("region").writeValue(
                         trustedAdvisorResourceDetail.getRegion());
             }
-
             if (trustedAdvisorResourceDetail.getResourceId() != null) {
-                jsonWriter.key("resourceId").value(
+                jsonGenerator.writeFieldName("resourceId").writeValue(
                         trustedAdvisorResourceDetail.getResourceId());
             }
-
             if (trustedAdvisorResourceDetail.getIsSuppressed() != null) {
-                jsonWriter.key("isSuppressed").value(
+                jsonGenerator.writeFieldName("isSuppressed").writeValue(
                         trustedAdvisorResourceDetail.getIsSuppressed());
             }
 
             com.amazonaws.internal.SdkInternalList<String> metadataList = (com.amazonaws.internal.SdkInternalList<String>) trustedAdvisorResourceDetail
                     .getMetadata();
             if (!metadataList.isEmpty() || !metadataList.isAutoConstruct()) {
-                jsonWriter.key("metadata");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("metadata");
+                jsonGenerator.writeStartArray();
                 for (String metadataListValue : metadataList) {
                     if (metadataListValue != null) {
-                        jsonWriter.value(metadataListValue);
+                        jsonGenerator.writeValue(metadataListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

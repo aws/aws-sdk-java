@@ -19,10 +19,20 @@ package com.amazonaws.services.inspector.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * Internal server error.
+ * </p>
  */
 public class InternalException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("canRetry")
+    private Boolean canRetry;
 
     /**
      * Constructs a new InternalException with the specified error message.
@@ -32,6 +42,59 @@ public class InternalException extends AmazonServiceException {
      */
     public InternalException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @param canRetry
+     *        You can immediately retry your request.
+     */
+
+    public void setCanRetry(Boolean canRetry) {
+        this.canRetry = canRetry;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @return You can immediately retry your request.
+     */
+
+    public Boolean getCanRetry() {
+        return this.canRetry;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @param canRetry
+     *        You can immediately retry your request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public InternalException withCanRetry(Boolean canRetry) {
+        setCanRetry(canRetry);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can immediately retry your request.
+     * </p>
+     * 
+     * @return You can immediately retry your request.
+     */
+
+    public Boolean isCanRetry() {
+        return this.canRetry;
     }
 
 }

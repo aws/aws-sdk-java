@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class NetworkBindingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("bindIP", targetDepth)) {
                     context.nextToken();
-                    networkBinding.setBindIP(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkBinding.setBindIP(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPort", targetDepth)) {
                     context.nextToken();
-                    networkBinding.setContainerPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkBinding.setContainerPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("hostPort", targetDepth)) {
                     context.nextToken();
-                    networkBinding.setHostPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkBinding.setHostPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("protocol", targetDepth)) {
                     context.nextToken();
-                    networkBinding.setProtocol(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    networkBinding.setProtocol(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

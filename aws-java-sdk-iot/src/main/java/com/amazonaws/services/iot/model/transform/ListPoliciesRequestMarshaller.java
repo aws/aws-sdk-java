@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListPoliciesRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ListPoliciesRequestMarshaller implements
         Marshaller<Request<ListPoliciesRequest>, ListPoliciesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListPoliciesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListPoliciesRequest> marshall(
             ListPoliciesRequest listPoliciesRequest) {
@@ -65,23 +73,19 @@ public class ListPoliciesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listPoliciesRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listPoliciesRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listPoliciesRequest.getMarker() != null) {
+            request.addParameter("marker",
+                    StringUtils.fromString(listPoliciesRequest.getMarker()));
         }
 
-        String pageSize = (listPoliciesRequest.getPageSize() == null) ? null
-                : StringUtils.fromInteger(listPoliciesRequest.getPageSize());
-        if (pageSize != null) {
-            request.addParameter("pageSize", pageSize);
+        if (listPoliciesRequest.getPageSize() != null) {
+            request.addParameter("pageSize",
+                    StringUtils.fromInteger(listPoliciesRequest.getPageSize()));
         }
 
-        String ascendingOrder = (listPoliciesRequest.getAscendingOrder() == null) ? null
-                : StringUtils.fromBoolean(listPoliciesRequest
-                        .getAscendingOrder());
-        if (ascendingOrder != null) {
-            request.addParameter("isAscendingOrder", ascendingOrder);
+        if (listPoliciesRequest.getAscendingOrder() != null) {
+            request.addParameter("isAscendingOrder", StringUtils
+                    .fromBoolean(listPoliciesRequest.getAscendingOrder()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

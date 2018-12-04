@@ -46,6 +46,7 @@ public class GetChangeResult implements Serializable, Cloneable {
      *        change batch, including the change batch ID, the status of the
      *        change, and the date and time of the request.
      */
+
     public void setChangeInfo(ChangeInfo changeInfo) {
         this.changeInfo = changeInfo;
     }
@@ -61,6 +62,7 @@ public class GetChangeResult implements Serializable, Cloneable {
      *         change batch, including the change batch ID, the status of the
      *         change, and the date and time of the request.
      */
+
     public ChangeInfo getChangeInfo() {
         return this.changeInfo;
     }
@@ -79,6 +81,7 @@ public class GetChangeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetChangeResult withChangeInfo(ChangeInfo changeInfo) {
         setChangeInfo(changeInfo);
         return this;

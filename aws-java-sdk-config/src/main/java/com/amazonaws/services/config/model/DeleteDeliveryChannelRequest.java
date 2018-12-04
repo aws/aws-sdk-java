@@ -43,6 +43,7 @@ public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest
      * @param deliveryChannelName
      *        The name of the delivery channel to delete.
      */
+
     public void setDeliveryChannelName(String deliveryChannelName) {
         this.deliveryChannelName = deliveryChannelName;
     }
@@ -54,6 +55,7 @@ public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the delivery channel to delete.
      */
+
     public String getDeliveryChannelName() {
         return this.deliveryChannelName;
     }
@@ -68,6 +70,7 @@ public class DeleteDeliveryChannelRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeliveryChannelRequest withDeliveryChannelName(
             String deliveryChannelName) {
         setDeliveryChannelName(deliveryChannelName);

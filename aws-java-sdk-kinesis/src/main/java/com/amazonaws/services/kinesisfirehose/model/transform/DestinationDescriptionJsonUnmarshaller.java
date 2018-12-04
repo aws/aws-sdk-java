@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class DestinationDescriptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DestinationId", targetDepth)) {
                     context.nextToken();
-                    destinationDescription
-                            .setDestinationId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    destinationDescription.setDestinationId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3DestinationDescription",
                         targetDepth)) {
@@ -69,6 +70,13 @@ public class DestinationDescriptionJsonUnmarshaller implements
                     context.nextToken();
                     destinationDescription
                             .setRedshiftDestinationDescription(RedshiftDestinationDescriptionJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression(
+                        "ElasticsearchDestinationDescription", targetDepth)) {
+                    context.nextToken();
+                    destinationDescription
+                            .setElasticsearchDestinationDescription(ElasticsearchDestinationDescriptionJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

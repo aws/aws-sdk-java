@@ -45,6 +45,12 @@ public class SearchResult implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, BucketInfo> facets;
+    /**
+     * <p>
+     * The requested field statistics information.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, FieldStats> stats;
 
     /**
      * <p>
@@ -54,6 +60,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @param status
      *        The status information returned for the search request.
      */
+
     public void setStatus(SearchStatus status) {
         this.status = status;
     }
@@ -65,6 +72,7 @@ public class SearchResult implements Serializable, Cloneable {
      * 
      * @return The status information returned for the search request.
      */
+
     public SearchStatus getStatus() {
         return this.status;
     }
@@ -79,6 +87,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchResult withStatus(SearchStatus status) {
         setStatus(status);
         return this;
@@ -92,6 +101,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @param hits
      *        The documents that match the search criteria.
      */
+
     public void setHits(Hits hits) {
         this.hits = hits;
     }
@@ -103,6 +113,7 @@ public class SearchResult implements Serializable, Cloneable {
      * 
      * @return The documents that match the search criteria.
      */
+
     public Hits getHits() {
         return this.hits;
     }
@@ -117,6 +128,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchResult withHits(Hits hits) {
         setHits(hits);
         return this;
@@ -129,6 +141,7 @@ public class SearchResult implements Serializable, Cloneable {
      * 
      * @return The requested facet information.
      */
+
     public java.util.Map<String, BucketInfo> getFacets() {
         if (facets == null) {
             facets = new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>();
@@ -144,6 +157,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @param facets
      *        The requested facet information.
      */
+
     public void setFacets(java.util.Map<String, BucketInfo> facets) {
         this.facets = facets == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, BucketInfo>(
@@ -160,6 +174,7 @@ public class SearchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SearchResult withFacets(java.util.Map<String, BucketInfo> facets) {
         setFacets(facets);
         return this;
@@ -180,8 +195,76 @@ public class SearchResult implements Serializable, Cloneable {
      * Removes all the entries added into Facets. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public SearchResult clearFacetsEntries() {
         this.facets = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The requested field statistics information.
+     * </p>
+     * 
+     * @return The requested field statistics information.
+     */
+
+    public java.util.Map<String, FieldStats> getStats() {
+        if (stats == null) {
+            stats = new com.amazonaws.internal.SdkInternalMap<String, FieldStats>();
+        }
+        return stats;
+    }
+
+    /**
+     * <p>
+     * The requested field statistics information.
+     * </p>
+     * 
+     * @param stats
+     *        The requested field statistics information.
+     */
+
+    public void setStats(java.util.Map<String, FieldStats> stats) {
+        this.stats = stats == null ? null
+                : new com.amazonaws.internal.SdkInternalMap<String, FieldStats>(
+                        stats);
+    }
+
+    /**
+     * <p>
+     * The requested field statistics information.
+     * </p>
+     * 
+     * @param stats
+     *        The requested field statistics information.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public SearchResult withStats(java.util.Map<String, FieldStats> stats) {
+        setStats(stats);
+        return this;
+    }
+
+    public SearchResult addStatsEntry(String key, FieldStats value) {
+        if (null == this.stats) {
+            this.stats = new com.amazonaws.internal.SdkInternalMap<String, FieldStats>();
+        }
+        if (this.stats.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys ("
+                    + key.toString() + ") are provided.");
+        this.stats.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Stats. &lt;p> Returns a reference to
+     * this object so that method calls can be chained together.
+     */
+
+    public SearchResult clearStatsEntries() {
+        this.stats = null;
         return this;
     }
 
@@ -202,7 +285,9 @@ public class SearchResult implements Serializable, Cloneable {
         if (getHits() != null)
             sb.append("Hits: " + getHits() + ",");
         if (getFacets() != null)
-            sb.append("Facets: " + getFacets());
+            sb.append("Facets: " + getFacets() + ",");
+        if (getStats() != null)
+            sb.append("Stats: " + getStats());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +317,11 @@ public class SearchResult implements Serializable, Cloneable {
         if (other.getFacets() != null
                 && other.getFacets().equals(this.getFacets()) == false)
             return false;
+        if (other.getStats() == null ^ this.getStats() == null)
+            return false;
+        if (other.getStats() != null
+                && other.getStats().equals(this.getStats()) == false)
+            return false;
         return true;
     }
 
@@ -246,6 +336,8 @@ public class SearchResult implements Serializable, Cloneable {
                 + ((getHits() == null) ? 0 : getHits().hashCode());
         hashCode = prime * hashCode
                 + ((getFacets() == null) ? 0 : getFacets().hashCode());
+        hashCode = prime * hashCode
+                + ((getStats() == null) ? 0 : getStats().hashCode());
         return hashCode;
     }
 

@@ -41,6 +41,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
     /**
      * @param retryAfterSeconds
      */
+
     public void setRetryAfterSeconds(String retryAfterSeconds) {
         this.retryAfterSeconds = retryAfterSeconds;
     }
@@ -48,6 +49,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getRetryAfterSeconds() {
         return this.retryAfterSeconds;
     }
@@ -57,6 +59,7 @@ public class ServiceUnavailableException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ServiceUnavailableException withRetryAfterSeconds(
             String retryAfterSeconds) {
         setRetryAfterSeconds(retryAfterSeconds);

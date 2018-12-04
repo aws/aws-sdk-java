@@ -25,7 +25,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used by the <code>MatchedStatements</code> member of the
- * <code><a>EvaluationResult</a></code> type.
+ * <code> <a>EvaluationResult</a> </code> type.
  * </p>
  */
 public class Statement implements Serializable, Cloneable {
@@ -65,6 +65,7 @@ public class Statement implements Serializable, Cloneable {
      * @param sourcePolicyId
      *        The identifier of the policy that was provided as an input.
      */
+
     public void setSourcePolicyId(String sourcePolicyId) {
         this.sourcePolicyId = sourcePolicyId;
     }
@@ -76,6 +77,7 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @return The identifier of the policy that was provided as an input.
      */
+
     public String getSourcePolicyId() {
         return this.sourcePolicyId;
     }
@@ -90,6 +92,7 @@ public class Statement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Statement withSourcePolicyId(String sourcePolicyId) {
         setSourcePolicyId(sourcePolicyId);
         return this;
@@ -104,6 +107,7 @@ public class Statement implements Serializable, Cloneable {
      *        The type of the policy.
      * @see PolicySourceType
      */
+
     public void setSourcePolicyType(String sourcePolicyType) {
         this.sourcePolicyType = sourcePolicyType;
     }
@@ -116,6 +120,7 @@ public class Statement implements Serializable, Cloneable {
      * @return The type of the policy.
      * @see PolicySourceType
      */
+
     public String getSourcePolicyType() {
         return this.sourcePolicyType;
     }
@@ -131,6 +136,7 @@ public class Statement implements Serializable, Cloneable {
      *         chained together.
      * @see PolicySourceType
      */
+
     public Statement withSourcePolicyType(String sourcePolicyType) {
         setSourcePolicyType(sourcePolicyType);
         return this;
@@ -143,10 +149,9 @@ public class Statement implements Serializable, Cloneable {
      * 
      * @param sourcePolicyType
      *        The type of the policy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicySourceType
      */
+
     public void setSourcePolicyType(PolicySourceType sourcePolicyType) {
         this.sourcePolicyType = sourcePolicyType.toString();
     }
@@ -162,6 +167,7 @@ public class Statement implements Serializable, Cloneable {
      *         chained together.
      * @see PolicySourceType
      */
+
     public Statement withSourcePolicyType(PolicySourceType sourcePolicyType) {
         setSourcePolicyType(sourcePolicyType);
         return this;
@@ -177,6 +183,7 @@ public class Statement implements Serializable, Cloneable {
      *        The row and column of the beginning of the <code>Statement</code>
      *        in an IAM policy.
      */
+
     public void setStartPosition(Position startPosition) {
         this.startPosition = startPosition;
     }
@@ -190,6 +197,7 @@ public class Statement implements Serializable, Cloneable {
      * @return The row and column of the beginning of the <code>Statement</code>
      *         in an IAM policy.
      */
+
     public Position getStartPosition() {
         return this.startPosition;
     }
@@ -206,6 +214,7 @@ public class Statement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Statement withStartPosition(Position startPosition) {
         setStartPosition(startPosition);
         return this;
@@ -221,6 +230,7 @@ public class Statement implements Serializable, Cloneable {
      *        The row and column of the end of a <code>Statement</code> in an
      *        IAM policy.
      */
+
     public void setEndPosition(Position endPosition) {
         this.endPosition = endPosition;
     }
@@ -234,6 +244,7 @@ public class Statement implements Serializable, Cloneable {
      * @return The row and column of the end of a <code>Statement</code> in an
      *         IAM policy.
      */
+
     public Position getEndPosition() {
         return this.endPosition;
     }
@@ -250,6 +261,7 @@ public class Statement implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Statement withEndPosition(Position endPosition) {
         setEndPosition(endPosition);
         return this;

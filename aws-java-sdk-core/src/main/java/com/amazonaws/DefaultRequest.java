@@ -14,6 +14,14 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.event.ProgressInputStream;
+import com.amazonaws.handlers.HandlerContextKey;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.json.Jackson;
+
+import org.apache.http.annotation.NotThreadSafe;
+
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
@@ -21,15 +29,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
-
-import com.amazonaws.handlers.HandlerContextKey;
-import org.apache.http.annotation.NotThreadSafe;
-
-import com.amazonaws.event.ProgressInputStream;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.util.AWSRequestMetrics;
-import com.amazonaws.util.json.Jackson;
 
 /**
  * Default implementation of the {@linkplain com.amazonaws.Request} interface.
@@ -49,6 +48,9 @@ public class DefaultRequest<T> implements Request<T> {
      * Note that a LinkedHashMap is used, since we want to preserve the
      * insertion order so that members of a list parameter will still be ordered
      * by their indices when they are marshalled into the query string.
+     *
+     * Lists values in this Map must use an implementation that allows
+     * null values to be present.
      */
     private Map<String, List<String>> parameters = new LinkedHashMap<String, List<String>>();
 
@@ -164,6 +166,17 @@ public class DefaultRequest<T> implements Request<T> {
             parameters.put(name, paramList);
         }
         paramList.add(value);
+    }
+
+    /**
+     *
+     * @see com.amazonaws.Request#addParameters(java.lang.String, java.util.List)
+     */
+    public void addParameters(String name, List<String> values) {
+        if (values == null) return;
+        for (String value : values) {
+            addParameter(name, value);
+        }
     }
 
     /**

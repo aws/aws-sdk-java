@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CancelJobRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CancelJobRequestMarshaller implements
         Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CancelJobRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CancelJobRequest> marshall(CancelJobRequest cancelJobRequest) {
 
@@ -62,10 +70,13 @@ public class CancelJobRequestMarshaller implements
 
         String uriResourcePath = "/2012-09-25/jobs/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (cancelJobRequest.getId() == null) ? "" : StringUtils
-                        .fromString(cancelJobRequest.getId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (cancelJobRequest.getId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(cancelJobRequest.getId()),
+                                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

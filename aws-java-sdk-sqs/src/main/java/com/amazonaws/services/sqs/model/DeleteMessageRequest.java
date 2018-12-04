@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class DeleteMessageRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -28,6 +28,9 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The URL of the Amazon SQS queue to take action on.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -52,7 +55,9 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param receiptHandle
      *        The receipt handle associated with the message to delete.
      */
@@ -65,10 +70,16 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -77,9 +88,15 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -88,12 +105,18 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -107,6 +130,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @param receiptHandle
      *        The receipt handle associated with the message to delete.
      */
+
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
@@ -118,6 +142,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The receipt handle associated with the message to delete.
      */
+
     public String getReceiptHandle() {
         return this.receiptHandle;
     }
@@ -132,6 +157,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageRequest withReceiptHandle(String receiptHandle) {
         setReceiptHandle(receiptHandle);
         return this;

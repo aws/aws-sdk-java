@@ -44,6 +44,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * 
      * @return The list of container instances.
      */
+
     public java.util.List<ContainerInstance> getContainerInstances() {
         if (containerInstances == null) {
             containerInstances = new com.amazonaws.internal.SdkInternalList<ContainerInstance>();
@@ -59,6 +60,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @param containerInstances
      *        The list of container instances.
      */
+
     public void setContainerInstances(
             java.util.Collection<ContainerInstance> containerInstances) {
         if (containerInstances == null) {
@@ -86,6 +88,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesResult withContainerInstances(
             ContainerInstance... containerInstances) {
         if (this.containerInstances == null) {
@@ -108,6 +111,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesResult withContainerInstances(
             java.util.Collection<ContainerInstance> containerInstances) {
         setContainerInstances(containerInstances);
@@ -121,6 +125,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * 
      * @return Any failures associated with the call.
      */
+
     public java.util.List<Failure> getFailures() {
         if (failures == null) {
             failures = new com.amazonaws.internal.SdkInternalList<Failure>();
@@ -136,6 +141,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @param failures
      *        Any failures associated with the call.
      */
+
     public void setFailures(java.util.Collection<Failure> failures) {
         if (failures == null) {
             this.failures = null;
@@ -162,6 +168,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesResult withFailures(Failure... failures) {
         if (this.failures == null) {
             setFailures(new com.amazonaws.internal.SdkInternalList<Failure>(
@@ -183,6 +190,7 @@ public class DescribeContainerInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeContainerInstancesResult withFailures(
             java.util.Collection<Failure> failures) {
         setFailures(failures);

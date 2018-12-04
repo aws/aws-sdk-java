@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateFileSystemRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class CreateFileSystemRequestMarshaller implements
         Marshaller<Request<CreateFileSystemRequest>, CreateFileSystemRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateFileSystemRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateFileSystemRequest> marshall(
             CreateFileSystemRequest createFileSystemRequest) {
@@ -66,21 +75,19 @@ public class CreateFileSystemRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createFileSystemRequest.getCreationToken() != null) {
-                jsonWriter.key("CreationToken").value(
+                jsonGenerator.writeFieldName("CreationToken").writeValue(
                         createFileSystemRequest.getCreationToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

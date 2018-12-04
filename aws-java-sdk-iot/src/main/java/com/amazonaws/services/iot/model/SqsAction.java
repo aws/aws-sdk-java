@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes an action to publish data to an SQS queue.
+ * Describes an action to publish data to an Amazon SQS queue.
  * </p>
  */
 public class SqsAction implements Serializable, Cloneable {
@@ -52,6 +52,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -63,6 +64,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -77,6 +79,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqsAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -90,6 +93,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @param queueUrl
      *        The URL of the Amazon SQS queue.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -101,6 +105,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @return The URL of the Amazon SQS queue.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -115,6 +120,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqsAction withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -128,6 +134,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @param useBase64
      *        Specifies whether to use Base64 encoding.
      */
+
     public void setUseBase64(Boolean useBase64) {
         this.useBase64 = useBase64;
     }
@@ -139,6 +146,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @return Specifies whether to use Base64 encoding.
      */
+
     public Boolean getUseBase64() {
         return this.useBase64;
     }
@@ -153,6 +161,7 @@ public class SqsAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SqsAction withUseBase64(Boolean useBase64) {
         setUseBase64(useBase64);
         return this;
@@ -165,6 +174,7 @@ public class SqsAction implements Serializable, Cloneable {
      * 
      * @return Specifies whether to use Base64 encoding.
      */
+
     public Boolean isUseBase64() {
         return this.useBase64;
     }

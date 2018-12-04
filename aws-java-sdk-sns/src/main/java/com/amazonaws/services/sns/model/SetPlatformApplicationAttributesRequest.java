@@ -39,21 +39,21 @@ public class SetPlatformApplicationAttributesRequest extends
      * include the following:
      * </p>
      * <ul>
-     * <li><code>PlatformCredential</code> -- The credential received from the
+     * <li> <code>PlatformCredential</code> -- The credential received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformCredential is
      * "private key". For GCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret".</li>
-     * <li><code>PlatformPrincipal</code> -- The principal received from the
+     * <li> <code>PlatformPrincipal</code> -- The principal received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is
      * "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
      * PlatformPrincipal is "client id".</li>
-     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      * EndpointCreated event notifications should be sent.</li>
-     * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
-     * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      * EndpointUpdate event notifications should be sent.</li>
-     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      * DeliveryFailure event notifications should be sent upon Direct Publish
      * delivery failure (permanent) to one of the application's endpoints.</li>
      * </ul>
@@ -69,6 +69,7 @@ public class SetPlatformApplicationAttributesRequest extends
      *        PlatformApplicationArn for SetPlatformApplicationAttributes
      *        action.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -81,6 +82,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return PlatformApplicationArn for SetPlatformApplicationAttributes
      *         action.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -96,6 +98,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPlatformApplicationAttributesRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);
@@ -108,21 +111,21 @@ public class SetPlatformApplicationAttributesRequest extends
      * include the following:
      * </p>
      * <ul>
-     * <li><code>PlatformCredential</code> -- The credential received from the
+     * <li> <code>PlatformCredential</code> -- The credential received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformCredential is
      * "private key". For GCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret".</li>
-     * <li><code>PlatformPrincipal</code> -- The principal received from the
+     * <li> <code>PlatformPrincipal</code> -- The principal received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is
      * "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
      * PlatformPrincipal is "client id".</li>
-     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      * EndpointCreated event notifications should be sent.</li>
-     * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
-     * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      * EndpointUpdate event notifications should be sent.</li>
-     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      * DeliveryFailure event notifications should be sent upon Direct Publish
      * delivery failure (permanent) to one of the application's endpoints.</li>
      * </ul>
@@ -130,26 +133,27 @@ public class SetPlatformApplicationAttributesRequest extends
      * @return A map of the platform application attributes. Attributes in this
      *         map include the following:</p>
      *         <ul>
-     *         <li><code>PlatformCredential</code> -- The credential received
+     *         <li> <code>PlatformCredential</code> -- The credential received
      *         from the notification service. For APNS/APNS_SANDBOX,
      *         PlatformCredential is "private key". For GCM, PlatformCredential
      *         is "API key". For ADM, PlatformCredential is "client secret".</li>
-     *         <li><code>PlatformPrincipal</code> -- The principal received from
+     *         <li> <code>PlatformPrincipal</code> -- The principal received from
      *         the notification service. For APNS/APNS_SANDBOX,
      *         PlatformPrincipal is "SSL certificate". For GCM,
      *         PlatformPrincipal is not applicable. For ADM, PlatformPrincipal
      *         is "client id".</li>
-     *         <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *         <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      *         EndpointCreated event notifications should be sent.</li>
-     *         <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     *         <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      *         EndpointDeleted event notifications should be sent.</li>
-     *         <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     *         <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      *         EndpointUpdate event notifications should be sent.</li>
-     *         <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *         <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      *         DeliveryFailure event notifications should be sent upon Direct
      *         Publish delivery failure (permanent) to one of the application's
      *         endpoints.</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -163,21 +167,21 @@ public class SetPlatformApplicationAttributesRequest extends
      * include the following:
      * </p>
      * <ul>
-     * <li><code>PlatformCredential</code> -- The credential received from the
+     * <li> <code>PlatformCredential</code> -- The credential received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformCredential is
      * "private key". For GCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret".</li>
-     * <li><code>PlatformPrincipal</code> -- The principal received from the
+     * <li> <code>PlatformPrincipal</code> -- The principal received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is
      * "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
      * PlatformPrincipal is "client id".</li>
-     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      * EndpointCreated event notifications should be sent.</li>
-     * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
-     * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      * EndpointUpdate event notifications should be sent.</li>
-     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      * DeliveryFailure event notifications should be sent upon Direct Publish
      * delivery failure (permanent) to one of the application's endpoints.</li>
      * </ul>
@@ -186,25 +190,26 @@ public class SetPlatformApplicationAttributesRequest extends
      *        A map of the platform application attributes. Attributes in this
      *        map include the following:</p>
      *        <ul>
-     *        <li><code>PlatformCredential</code> -- The credential received
+     *        <li> <code>PlatformCredential</code> -- The credential received
      *        from the notification service. For APNS/APNS_SANDBOX,
      *        PlatformCredential is "private key". For GCM, PlatformCredential
      *        is "API key". For ADM, PlatformCredential is "client secret".</li>
-     *        <li><code>PlatformPrincipal</code> -- The principal received from
+     *        <li> <code>PlatformPrincipal</code> -- The principal received from
      *        the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal
      *        is "SSL certificate". For GCM, PlatformPrincipal is not
      *        applicable. For ADM, PlatformPrincipal is "client id".</li>
-     *        <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      *        EndpointCreated event notifications should be sent.</li>
-     *        <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      *        EndpointDeleted event notifications should be sent.</li>
-     *        <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      *        EndpointUpdate event notifications should be sent.</li>
-     *        <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *        <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      *        DeliveryFailure event notifications should be sent upon Direct
      *        Publish delivery failure (permanent) to one of the application's
      *        endpoints.</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -217,21 +222,21 @@ public class SetPlatformApplicationAttributesRequest extends
      * include the following:
      * </p>
      * <ul>
-     * <li><code>PlatformCredential</code> -- The credential received from the
+     * <li> <code>PlatformCredential</code> -- The credential received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformCredential is
      * "private key". For GCM, PlatformCredential is "API key". For ADM,
      * PlatformCredential is "client secret".</li>
-     * <li><code>PlatformPrincipal</code> -- The principal received from the
+     * <li> <code>PlatformPrincipal</code> -- The principal received from the
      * notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is
      * "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
      * PlatformPrincipal is "client id".</li>
-     * <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      * EndpointCreated event notifications should be sent.</li>
-     * <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     * <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      * EndpointDeleted event notifications should be sent.</li>
-     * <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     * <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      * EndpointUpdate event notifications should be sent.</li>
-     * <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     * <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      * DeliveryFailure event notifications should be sent upon Direct Publish
      * delivery failure (permanent) to one of the application's endpoints.</li>
      * </ul>
@@ -240,27 +245,28 @@ public class SetPlatformApplicationAttributesRequest extends
      *        A map of the platform application attributes. Attributes in this
      *        map include the following:</p>
      *        <ul>
-     *        <li><code>PlatformCredential</code> -- The credential received
+     *        <li> <code>PlatformCredential</code> -- The credential received
      *        from the notification service. For APNS/APNS_SANDBOX,
      *        PlatformCredential is "private key". For GCM, PlatformCredential
      *        is "API key". For ADM, PlatformCredential is "client secret".</li>
-     *        <li><code>PlatformPrincipal</code> -- The principal received from
+     *        <li> <code>PlatformPrincipal</code> -- The principal received from
      *        the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal
      *        is "SSL certificate". For GCM, PlatformPrincipal is not
      *        applicable. For ADM, PlatformPrincipal is "client id".</li>
-     *        <li><code>EventEndpointCreated</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointCreated</code> -- Topic ARN to which
      *        EndpointCreated event notifications should be sent.</li>
-     *        <li><code>EventEndpointDeleted</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointDeleted</code> -- Topic ARN to which
      *        EndpointDeleted event notifications should be sent.</li>
-     *        <li><code>EventEndpointUpdated</code> -- Topic ARN to which
+     *        <li> <code>EventEndpointUpdated</code> -- Topic ARN to which
      *        EndpointUpdate event notifications should be sent.</li>
-     *        <li><code>EventDeliveryFailure</code> -- Topic ARN to which
+     *        <li> <code>EventDeliveryFailure</code> -- Topic ARN to which
      *        DeliveryFailure event notifications should be sent upon Direct
      *        Publish delivery failure (permanent) to one of the application's
      *        endpoints.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetPlatformApplicationAttributesRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -283,6 +289,7 @@ public class SetPlatformApplicationAttributesRequest extends
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public SetPlatformApplicationAttributesRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

@@ -32,8 +32,8 @@ public class Md5UtilsTest {
     @Test
     public void testBytes() {
         byte[] md5 = Md5Utils.computeMD5Hash("Testing MD5".getBytes(StringUtils.UTF8));
-        assertEquals("0b4f503b8eb7714ce12402406895cf68", Base16.encodeAsString(md5).toLowerCase());
-     
+        assertEquals("0b4f503b8eb7714ce12402406895cf68", StringUtils.lowerCase(Base16.encodeAsString(md5)));
+
         String b64 = Md5Utils.md5AsBase64("Testing MD5".getBytes(StringUtils.UTF8));
         assertEquals("C09QO463cUzhJAJAaJXPaA==", b64);
     }
@@ -41,19 +41,19 @@ public class Md5UtilsTest {
     @Test
     public void testStream() throws IOException {
         byte[] md5 = Md5Utils.computeMD5Hash(new ByteArrayInputStream("Testing MD5".getBytes(StringUtils.UTF8)));
-        assertEquals("0b4f503b8eb7714ce12402406895cf68", Base16.encodeAsString(md5).toLowerCase());
+        assertEquals("0b4f503b8eb7714ce12402406895cf68", StringUtils.lowerCase(Base16.encodeAsString(md5)));
 
         String b64 = Md5Utils.md5AsBase64(new ByteArrayInputStream("Testing MD5".getBytes(StringUtils.UTF8)));
         assertEquals("C09QO463cUzhJAJAaJXPaA==", b64);
     }
-    
+
     @Test
     public void testFile() throws Exception {
         File f = File.createTempFile("Md5UtilsTest-", "txt");
         f.deleteOnExit();
         FileUtils.writeStringToFile(f, "Testing MD5");
         byte[] md5 = Md5Utils.computeMD5Hash(f);
-        assertEquals("0b4f503b8eb7714ce12402406895cf68", Base16.encodeAsString(md5).toLowerCase());
+        assertEquals("0b4f503b8eb7714ce12402406895cf68", StringUtils.lowerCase(Base16.encodeAsString(md5)));
 
         String b64 = Md5Utils.md5AsBase64(f);
         assertEquals("C09QO463cUzhJAJAaJXPaA==", b64);

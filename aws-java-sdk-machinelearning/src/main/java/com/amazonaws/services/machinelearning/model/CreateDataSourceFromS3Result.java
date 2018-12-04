@@ -52,6 +52,7 @@ public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
      *        value should be identical to the value of the
      *        <code>DataSourceID</code> in the request.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -67,6 +68,7 @@ public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
      *         value should be identical to the value of the
      *         <code>DataSourceID</code> in the request.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -85,6 +87,7 @@ public class CreateDataSourceFromS3Result implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDataSourceFromS3Result withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;

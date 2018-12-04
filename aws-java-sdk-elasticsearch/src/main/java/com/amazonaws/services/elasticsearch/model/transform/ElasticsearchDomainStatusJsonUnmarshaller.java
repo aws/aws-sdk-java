@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,44 +55,41 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DomainId", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setDomainId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setDomainId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setDomainName(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setDomainName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ARN", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus.setARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    elasticsearchDomainStatus.setARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Created", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus
-                            .setCreated(BooleanJsonUnmarshaller.getInstance()
+                            .setCreated(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Deleted", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus
-                            .setDeleted(BooleanJsonUnmarshaller.getInstance()
+                            .setDeleted(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("Endpoint", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setEndpoint(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    elasticsearchDomainStatus.setEndpoint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Processing", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus
-                            .setProcessing(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setProcessing(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ElasticsearchClusterConfig",
                         targetDepth)) {
@@ -107,9 +106,8 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements
                 }
                 if (context.testExpression("AccessPolicies", targetDepth)) {
                     context.nextToken();
-                    elasticsearchDomainStatus
-                            .setAccessPolicies(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    elasticsearchDomainStatus.setAccessPolicies(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
@@ -121,8 +119,8 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements
                     context.nextToken();
                     elasticsearchDomainStatus
                             .setAdvancedOptions(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

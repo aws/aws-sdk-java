@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RDSMetadataMarshaller
@@ -39,49 +34,46 @@ import com.amazonaws.util.json.*;
 public class RDSMetadataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RDSMetadata rDSMetadata, JSONWriter jsonWriter) {
+    public void marshall(RDSMetadata rDSMetadata,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (rDSMetadata == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rDSMetadata.getDatabase() != null) {
-                jsonWriter.key("Database");
+                jsonGenerator.writeFieldName("Database");
                 RDSDatabaseJsonMarshaller.getInstance().marshall(
-                        rDSMetadata.getDatabase(), jsonWriter);
+                        rDSMetadata.getDatabase(), jsonGenerator);
             }
-
             if (rDSMetadata.getDatabaseUserName() != null) {
-                jsonWriter.key("DatabaseUserName").value(
+                jsonGenerator.writeFieldName("DatabaseUserName").writeValue(
                         rDSMetadata.getDatabaseUserName());
             }
-
             if (rDSMetadata.getSelectSqlQuery() != null) {
-                jsonWriter.key("SelectSqlQuery").value(
+                jsonGenerator.writeFieldName("SelectSqlQuery").writeValue(
                         rDSMetadata.getSelectSqlQuery());
             }
-
             if (rDSMetadata.getResourceRole() != null) {
-                jsonWriter.key("ResourceRole").value(
+                jsonGenerator.writeFieldName("ResourceRole").writeValue(
                         rDSMetadata.getResourceRole());
             }
-
             if (rDSMetadata.getServiceRole() != null) {
-                jsonWriter.key("ServiceRole").value(
+                jsonGenerator.writeFieldName("ServiceRole").writeValue(
                         rDSMetadata.getServiceRole());
             }
-
             if (rDSMetadata.getDataPipelineId() != null) {
-                jsonWriter.key("DataPipelineId").value(
+                jsonGenerator.writeFieldName("DataPipelineId").writeValue(
                         rDSMetadata.getDataPipelineId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

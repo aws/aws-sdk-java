@@ -38,8 +38,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -77,8 +78,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -89,12 +91,13 @@ public class WebACL implements Serializable, Cloneable {
      *        A unique identifier for a <code>WebACL</code>. You use
      *        <code>WebACLId</code> to get information about a
      *        <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *        <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *        <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *        <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *        <p>
      *        <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      *        <a>ListWebACLs</a>.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -103,8 +106,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -114,12 +118,13 @@ public class WebACL implements Serializable, Cloneable {
      * @return A unique identifier for a <code>WebACL</code>. You use
      *         <code>WebACLId</code> to get information about a
      *         <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *         <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *         <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *         <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *         <p>
      *         <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
      *         <a>ListWebACLs</a>.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -128,8 +133,9 @@ public class WebACL implements Serializable, Cloneable {
      * <p>
      * A unique identifier for a <code>WebACL</code>. You use
      * <code>WebACLId</code> to get information about a <code>WebACL</code> (see
-     * <a>GetWebACL</a>), update a <code>WebACL</code> (see <a>UpdateWebACL</a>,
-     * and delete a <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).
+     * <a>GetWebACL</a>), update a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), and delete a <code>WebACL</code> from AWS WAF (see
+     * <a>DeleteWebACL</a>).
      * </p>
      * <p>
      * <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -140,7 +146,7 @@ public class WebACL implements Serializable, Cloneable {
      *        A unique identifier for a <code>WebACL</code>. You use
      *        <code>WebACLId</code> to get information about a
      *        <code>WebACL</code> (see <a>GetWebACL</a>), update a
-     *        <code>WebACL</code> (see <a>UpdateWebACL</a>, and delete a
+     *        <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a
      *        <code>WebACL</code> from AWS WAF (see <a>DeleteWebACL</a>).</p>
      *        <p>
      *        <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
@@ -148,6 +154,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;
@@ -164,6 +171,7 @@ public class WebACL implements Serializable, Cloneable {
      *        can't change the name of a <code>WebACL</code> after you create
      *        it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -178,6 +186,7 @@ public class WebACL implements Serializable, Cloneable {
      *         can't change the name of a <code>WebACL</code> after you create
      *         it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -195,6 +204,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withName(String name) {
         setName(name);
         return this;
@@ -203,6 +213,7 @@ public class WebACL implements Serializable, Cloneable {
     /**
      * @param metricName
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -210,6 +221,7 @@ public class WebACL implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -219,6 +231,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -236,6 +249,7 @@ public class WebACL implements Serializable, Cloneable {
      *        in the <code>WebACL</code> match. The action is specified by the
      *        <a>WafAction</a> object.
      */
+
     public void setDefaultAction(WafAction defaultAction) {
         this.defaultAction = defaultAction;
     }
@@ -251,6 +265,7 @@ public class WebACL implements Serializable, Cloneable {
      *         in the <code>WebACL</code> match. The action is specified by the
      *         <a>WafAction</a> object.
      */
+
     public WafAction getDefaultAction() {
         return this.defaultAction;
     }
@@ -269,6 +284,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withDefaultAction(WafAction defaultAction) {
         setDefaultAction(defaultAction);
         return this;
@@ -285,6 +301,7 @@ public class WebACL implements Serializable, Cloneable {
      *         <code>WebACL</code>, the priority of the <code>Rule</code>, and
      *         the ID of the <code>Rule</code>.
      */
+
     public java.util.List<ActivatedRule> getRules() {
         return rules;
     }
@@ -301,6 +318,7 @@ public class WebACL implements Serializable, Cloneable {
      *        <code>WebACL</code>, the priority of the <code>Rule</code>, and
      *        the ID of the <code>Rule</code>.
      */
+
     public void setRules(java.util.Collection<ActivatedRule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -330,6 +348,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withRules(ActivatedRule... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<ActivatedRule>(rules.length));
@@ -354,6 +373,7 @@ public class WebACL implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACL withRules(java.util.Collection<ActivatedRule> rules) {
         setRules(rules);
         return this;

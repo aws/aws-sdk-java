@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * HTTPRequestMarshaller
@@ -39,53 +34,55 @@ import com.amazonaws.util.json.*;
 public class HTTPRequestJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(HTTPRequest hTTPRequest, JSONWriter jsonWriter) {
+    public void marshall(HTTPRequest hTTPRequest,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (hTTPRequest == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (hTTPRequest.getClientIP() != null) {
-                jsonWriter.key("ClientIP").value(hTTPRequest.getClientIP());
+                jsonGenerator.writeFieldName("ClientIP").writeValue(
+                        hTTPRequest.getClientIP());
             }
-
             if (hTTPRequest.getCountry() != null) {
-                jsonWriter.key("Country").value(hTTPRequest.getCountry());
+                jsonGenerator.writeFieldName("Country").writeValue(
+                        hTTPRequest.getCountry());
             }
-
             if (hTTPRequest.getURI() != null) {
-                jsonWriter.key("URI").value(hTTPRequest.getURI());
+                jsonGenerator.writeFieldName("URI").writeValue(
+                        hTTPRequest.getURI());
             }
-
             if (hTTPRequest.getMethod() != null) {
-                jsonWriter.key("Method").value(hTTPRequest.getMethod());
+                jsonGenerator.writeFieldName("Method").writeValue(
+                        hTTPRequest.getMethod());
             }
-
             if (hTTPRequest.getHTTPVersion() != null) {
-                jsonWriter.key("HTTPVersion").value(
+                jsonGenerator.writeFieldName("HTTPVersion").writeValue(
                         hTTPRequest.getHTTPVersion());
             }
 
             java.util.List<HTTPHeader> headersList = hTTPRequest.getHeaders();
             if (headersList != null) {
-                jsonWriter.key("Headers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Headers");
+                jsonGenerator.writeStartArray();
                 for (HTTPHeader headersListValue : headersList) {
                     if (headersListValue != null) {
 
                         HTTPHeaderJsonMarshaller.getInstance().marshall(
-                                headersListValue, jsonWriter);
+                                headersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

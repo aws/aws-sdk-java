@@ -54,6 +54,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      *        NextMarker from the current page's response (which is also the ID
      *        of the last distribution on that page).
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -72,6 +73,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      *         NextMarker from the current page's response (which is also the ID
      *         of the last distribution on that page).
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -93,6 +95,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamingDistributionsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -106,6 +109,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      *        The maximum number of streaming distributions you want in the
      *        response body.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -117,6 +121,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      * @return The maximum number of streaming distributions you want in the
      *         response body.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -131,6 +136,7 @@ public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamingDistributionsRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

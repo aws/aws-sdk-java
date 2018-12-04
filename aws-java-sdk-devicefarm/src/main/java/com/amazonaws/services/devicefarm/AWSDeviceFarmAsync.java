@@ -290,6 +290,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * </p>
      * 
      * @param getAccountSettingsRequest
+     *        Represents the request sent to retrieve the account settings.
      * @return A Java Future containing the result of the GetAccountSettings
      *         operation returned by the service.
      * @sample AWSDeviceFarmAsync.GetAccountSettings
@@ -304,6 +305,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      * </p>
      * 
      * @param getAccountSettingsRequest
+     *        Represents the request sent to retrieve the account settings.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -454,6 +456,56 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<GetJobResult> getJobAsync(
             GetJobRequest getJobRequest,
             com.amazonaws.handlers.AsyncHandler<GetJobRequest, GetJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current status and future status of all offerings purchased by
+     * an AWS account. The response indicates how many offerings are currently
+     * available and the offerings that will be available in the next period.
+     * The API returns a <code>NotEligible</code> error if the user is not
+     * permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param getOfferingStatusRequest
+     *        Represents the request to retrieve the offering status for the
+     *        specified customer or account.
+     * @return A Java Future containing the result of the GetOfferingStatus
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetOfferingStatus
+     */
+    java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            GetOfferingStatusRequest getOfferingStatusRequest);
+
+    /**
+     * <p>
+     * Gets the current status and future status of all offerings purchased by
+     * an AWS account. The response indicates how many offerings are currently
+     * available and the offerings that will be available in the next period.
+     * The API returns a <code>NotEligible</code> error if the user is not
+     * permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param getOfferingStatusRequest
+     *        Represents the request to retrieve the offering status for the
+     *        specified customer or account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOfferingStatus
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetOfferingStatus
+     */
+    java.util.concurrent.Future<GetOfferingStatusResult> getOfferingStatusAsync(
+            GetOfferingStatusRequest getOfferingStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOfferingStatusRequest, GetOfferingStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -763,6 +815,102 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns a list of all historical purchases, renewals, and system renewal
+     * transactions for an AWS account. The list is paginated and ordered by a
+     * descending timestamp (most recent transactions are first). The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingTransactionsRequest
+     *        Represents the request to list the offering transaction history.
+     * @return A Java Future containing the result of the
+     *         ListOfferingTransactions operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListOfferingTransactions
+     */
+    java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            ListOfferingTransactionsRequest listOfferingTransactionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all historical purchases, renewals, and system renewal
+     * transactions for an AWS account. The list is paginated and ordered by a
+     * descending timestamp (most recent transactions are first). The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingTransactionsRequest
+     *        Represents the request to list the offering transaction history.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ListOfferingTransactions operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListOfferingTransactions
+     */
+    java.util.concurrent.Future<ListOfferingTransactionsResult> listOfferingTransactionsAsync(
+            ListOfferingTransactionsRequest listOfferingTransactionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingTransactionsRequest, ListOfferingTransactionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of products or offerings that the user can manage through
+     * the API. Each offering record indicates the recurring price per unit and
+     * the frequency for that offering. The API returns a
+     * <code>NotEligible</code> error if the user is not permitted to invoke the
+     * operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingsRequest
+     *        Represents the request to list all offerings.
+     * @return A Java Future containing the result of the ListOfferings
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListOfferings
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns a list of products or offerings that the user can manage through
+     * the API. Each offering record indicates the recurring price per unit and
+     * the frequency for that offering. The API returns a
+     * <code>NotEligible</code> error if the user is not permitted to invoke the
+     * operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingsRequest
+     *        Represents the request to list all offerings.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOfferings
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListOfferings
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(
+            ListOfferingsRequest listOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about projects.
      * </p>
      * 
@@ -1001,6 +1149,98 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Immediately purchases offerings for an AWS account. Offerings renew with
+     * the latest total purchased quantity for an offering, unless the renewal
+     * was overridden. The API returns a <code>NotEligible</code> error if the
+     * user is not permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param purchaseOfferingRequest
+     *        Represents a request for a purchase offering.
+     * @return A Java Future containing the result of the PurchaseOffering
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.PurchaseOffering
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
+     * <p>
+     * Immediately purchases offerings for an AWS account. Offerings renew with
+     * the latest total purchased quantity for an offering, unless the renewal
+     * was overridden. The API returns a <code>NotEligible</code> error if the
+     * user is not permitted to invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param purchaseOfferingRequest
+     *        Represents a request for a purchase offering.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseOffering
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.PurchaseOffering
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(
+            PurchaseOfferingRequest purchaseOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Explicitly sets the quantity of devices to renew for an offering,
+     * starting from the <code>effectiveDate</code> of the next period. The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param renewOfferingRequest
+     *        A request representing an offering renewal.
+     * @return A Java Future containing the result of the RenewOffering
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsync.RenewOffering
+     */
+    java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            RenewOfferingRequest renewOfferingRequest);
+
+    /**
+     * <p>
+     * Explicitly sets the quantity of devices to renew for an offering,
+     * starting from the <code>effectiveDate</code> of the next period. The API
+     * returns a <code>NotEligible</code> error if the user is not permitted to
+     * invoke the operation. Please contact <a
+     * href="mailto:aws-devicefarm-support@amazon.com"
+     * >aws-devicefarm-support@amazon.com</a> if you believe that you should be
+     * able to invoke this operation.
+     * </p>
+     * 
+     * @param renewOfferingRequest
+     *        A request representing an offering renewal.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RenewOffering
+     *         operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.RenewOffering
+     */
+    java.util.concurrent.Future<RenewOfferingResult> renewOfferingAsync(
+            RenewOfferingRequest renewOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<RenewOfferingRequest, RenewOfferingResult> asyncHandler);
+
+    /**
+     * <p>
      * Schedules a run.
      * </p>
      * 
@@ -1032,6 +1272,52 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
     java.util.concurrent.Future<ScheduleRunResult> scheduleRunAsync(
             ScheduleRunRequest scheduleRunRequest,
             com.amazonaws.handlers.AsyncHandler<ScheduleRunRequest, ScheduleRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates a stop request for the current test run. AWS Device Farm will
+     * immediately stop the run on devices where tests have not started
+     * executing, and you will not be billed for these devices. On devices where
+     * tests have started executing, Setup Suite and Teardown Suite tests will
+     * run to completion before stopping execution on those devices. You will be
+     * billed for Setup, Teardown, and any tests that were in progress or
+     * already completed.
+     * </p>
+     * 
+     * @param stopRunRequest
+     *        Represents the request to stop a specific run.
+     * @return A Java Future containing the result of the StopRun operation
+     *         returned by the service.
+     * @sample AWSDeviceFarmAsync.StopRun
+     */
+    java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            StopRunRequest stopRunRequest);
+
+    /**
+     * <p>
+     * Initiates a stop request for the current test run. AWS Device Farm will
+     * immediately stop the run on devices where tests have not started
+     * executing, and you will not be billed for these devices. On devices where
+     * tests have started executing, Setup Suite and Teardown Suite tests will
+     * run to completion before stopping execution on those devices. You will be
+     * billed for Setup, Teardown, and any tests that were in progress or
+     * already completed.
+     * </p>
+     * 
+     * @param stopRunRequest
+     *        Represents the request to stop a specific run.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopRun operation
+     *         returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.StopRun
+     */
+    java.util.concurrent.Future<StopRunResult> stopRunAsync(
+            StopRunRequest stopRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRunRequest, StopRunResult> asyncHandler);
 
     /**
      * <p>

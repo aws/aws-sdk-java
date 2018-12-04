@@ -56,6 +56,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      *        <code>Predicate</code> from a <code>Rule</code>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -72,6 +73,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      *         <code>Predicate</code> from a <code>Rule</code>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -91,6 +93,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public RuleUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -107,10 +110,9 @@ public class RuleUpdate implements Serializable, Cloneable {
      *        Specify <code>INSERT</code> to add a <code>Predicate</code> to a
      *        <code>Rule</code>. Use <code>DELETE</code> to remove a
      *        <code>Predicate</code> from a <code>Rule</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -130,6 +132,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public RuleUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -145,6 +148,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      *        The ID of the <code>Predicate</code> (such as an
      *        <code>IPSet</code>) that you want to add to a <code>Rule</code>.
      */
+
     public void setPredicate(Predicate predicate) {
         this.predicate = predicate;
     }
@@ -158,6 +162,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      * @return The ID of the <code>Predicate</code> (such as an
      *         <code>IPSet</code>) that you want to add to a <code>Rule</code>.
      */
+
     public Predicate getPredicate() {
         return this.predicate;
     }
@@ -174,6 +179,7 @@ public class RuleUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RuleUpdate withPredicate(Predicate predicate) {
         setPredicate(predicate);
         return this;

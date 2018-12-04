@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,20 @@ public class MetricFilterMatchRecordJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventNumber", targetDepth)) {
                     context.nextToken();
-                    metricFilterMatchRecord.setEventNumber(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricFilterMatchRecord.setEventNumber(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("eventMessage", targetDepth)) {
                     context.nextToken();
-                    metricFilterMatchRecord
-                            .setEventMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    metricFilterMatchRecord.setEventMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("extractedValues", targetDepth)) {
                     context.nextToken();
                     metricFilterMatchRecord
                             .setExtractedValues(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * InstanceStatusMarshaller
@@ -39,34 +34,35 @@ import com.amazonaws.util.json.*;
 public class InstanceStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(InstanceStatus instanceStatus, JSONWriter jsonWriter) {
+    public void marshall(InstanceStatus instanceStatus,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (instanceStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceStatus.getState() != null) {
-                jsonWriter.key("State").value(instanceStatus.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        instanceStatus.getState());
             }
-
             if (instanceStatus.getStateChangeReason() != null) {
-                jsonWriter.key("StateChangeReason");
+                jsonGenerator.writeFieldName("StateChangeReason");
                 InstanceStateChangeReasonJsonMarshaller.getInstance().marshall(
-                        instanceStatus.getStateChangeReason(), jsonWriter);
+                        instanceStatus.getStateChangeReason(), jsonGenerator);
             }
-
             if (instanceStatus.getTimeline() != null) {
-                jsonWriter.key("Timeline");
+                jsonGenerator.writeFieldName("Timeline");
                 InstanceTimelineJsonMarshaller.getInstance().marshall(
-                        instanceStatus.getTimeline(), jsonWriter);
+                        instanceStatus.getTimeline(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

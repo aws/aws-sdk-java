@@ -48,6 +48,7 @@ public class JobDetails implements Serializable, Cloneable {
      * @param id
      *        The unique system-generated ID of the job.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -59,6 +60,7 @@ public class JobDetails implements Serializable, Cloneable {
      * 
      * @return The unique system-generated ID of the job.
      */
+
     public String getId() {
         return this.id;
     }
@@ -73,6 +75,7 @@ public class JobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobDetails withId(String id) {
         setId(id);
         return this;
@@ -81,6 +84,7 @@ public class JobDetails implements Serializable, Cloneable {
     /**
      * @param data
      */
+
     public void setData(JobData data) {
         this.data = data;
     }
@@ -88,6 +92,7 @@ public class JobDetails implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public JobData getData() {
         return this.data;
     }
@@ -97,6 +102,7 @@ public class JobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobDetails withData(JobData data) {
         setData(data);
         return this;
@@ -110,6 +116,7 @@ public class JobDetails implements Serializable, Cloneable {
      * @param accountId
      *        The AWS account ID associated with the job.
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -121,6 +128,7 @@ public class JobDetails implements Serializable, Cloneable {
      * 
      * @return The AWS account ID associated with the job.
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -135,6 +143,7 @@ public class JobDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public JobDetails withAccountId(String accountId) {
         setAccountId(accountId);
         return this;

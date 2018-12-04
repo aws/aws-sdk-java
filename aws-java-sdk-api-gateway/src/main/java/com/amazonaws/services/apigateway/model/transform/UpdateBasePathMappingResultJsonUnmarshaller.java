@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class UpdateBasePathMappingResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("basePath", targetDepth)) {
                     context.nextToken();
-                    updateBasePathMappingResult
-                            .setBasePath(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateBasePathMappingResult.setBasePath(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("restApiId", targetDepth)) {
                     context.nextToken();
-                    updateBasePathMappingResult
-                            .setRestApiId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateBasePathMappingResult.setRestApiId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("stage", targetDepth)) {
                     context.nextToken();
-                    updateBasePathMappingResult.setStage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateBasePathMappingResult.setStage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

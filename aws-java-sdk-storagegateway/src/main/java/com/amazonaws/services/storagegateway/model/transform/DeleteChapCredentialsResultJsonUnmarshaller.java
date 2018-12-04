@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class DeleteChapCredentialsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    deleteChapCredentialsResult
-                            .setTargetARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deleteChapCredentialsResult.setTargetARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InitiatorName", targetDepth)) {
                     context.nextToken();
-                    deleteChapCredentialsResult
-                            .setInitiatorName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteChapCredentialsResult.setInitiatorName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

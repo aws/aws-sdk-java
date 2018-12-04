@@ -72,6 +72,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -99,6 +100,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -129,6 +131,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateSummary withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -144,6 +147,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      *        Fully qualified domain name (FQDN), such as www.example.com or
      *        example.com, for the certificate.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -157,6 +161,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * @return Fully qualified domain name (FQDN), such as www.example.com or
      *         example.com, for the certificate.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -173,6 +178,7 @@ public class CertificateSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateSummary withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

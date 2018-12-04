@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to list all authorization
- * policies, by name, applying to an identity.
- * </p>
+ * 
  */
 public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -64,6 +61,7 @@ public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
      *        <p>
      *        To successfully call this API, you must own the identity.
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -89,6 +87,7 @@ public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
      *         <p>
      *         To successfully call this API, you must own the identity.
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -117,6 +116,7 @@ public class ListIdentityPoliciesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoliciesRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;

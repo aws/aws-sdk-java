@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <a>The request that specifies the name of a trail to delete.</a>
+ * <p>
+ * The request that specifies the name of a trail to delete.
+ * </p>
  */
 public class DeleteTrailRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -28,8 +30,10 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String name;
@@ -37,16 +41,19 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
      *        Specifies the name or the CloudTrail ARN of the trail to be
-     *        deleted. The format of a trail ARN is
+     *        deleted. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -54,15 +61,18 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name or the CloudTrail ARN of the trail to be
-     *         deleted. The format of a trail ARN is
+     *         deleted. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      */
+
     public String getName() {
         return this.name;
     }
@@ -70,18 +80,21 @@ public class DeleteTrailRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
      *        Specifies the name or the CloudTrail ARN of the trail to be
-     *        deleted. The format of a trail ARN is
+     *        deleted. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrailRequest withName(String name) {
         setName(name);
         return this;

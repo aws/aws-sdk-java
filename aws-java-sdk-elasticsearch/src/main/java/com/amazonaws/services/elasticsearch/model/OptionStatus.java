@@ -64,6 +64,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param creationDate
      *        Timestamp which tells the creation date for the entity.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -75,6 +76,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * 
      * @return Timestamp which tells the creation date for the entity.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -89,6 +91,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionStatus withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -102,6 +105,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param updateDate
      *        Timestamp which tells the last updated time for the entity.
      */
+
     public void setUpdateDate(java.util.Date updateDate) {
         this.updateDate = updateDate;
     }
@@ -113,6 +117,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * 
      * @return Timestamp which tells the last updated time for the entity.
      */
+
     public java.util.Date getUpdateDate() {
         return this.updateDate;
     }
@@ -127,6 +132,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionStatus withUpdateDate(java.util.Date updateDate) {
         setUpdateDate(updateDate);
         return this;
@@ -140,6 +146,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param updateVersion
      *        Specifies the latest version for the entity.
      */
+
     public void setUpdateVersion(Integer updateVersion) {
         this.updateVersion = updateVersion;
     }
@@ -151,6 +158,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * 
      * @return Specifies the latest version for the entity.
      */
+
     public Integer getUpdateVersion() {
         return this.updateVersion;
     }
@@ -165,6 +173,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionStatus withUpdateVersion(Integer updateVersion) {
         setUpdateVersion(updateVersion);
         return this;
@@ -180,6 +189,7 @@ public class OptionStatus implements Serializable, Cloneable {
      *        domain.
      * @see OptionState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -193,6 +203,7 @@ public class OptionStatus implements Serializable, Cloneable {
      *         domain.
      * @see OptionState
      */
+
     public String getState() {
         return this.state;
     }
@@ -209,6 +220,7 @@ public class OptionStatus implements Serializable, Cloneable {
      *         chained together.
      * @see OptionState
      */
+
     public OptionStatus withState(String state) {
         setState(state);
         return this;
@@ -222,10 +234,9 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param state
      *        Provides the <code>OptionState</code> for the Elasticsearch
      *        domain.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see OptionState
      */
+
     public void setState(OptionState state) {
         this.state = state.toString();
     }
@@ -242,6 +253,7 @@ public class OptionStatus implements Serializable, Cloneable {
      *         chained together.
      * @see OptionState
      */
+
     public OptionStatus withState(OptionState state) {
         setState(state);
         return this;
@@ -255,6 +267,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @param pendingDeletion
      *        Indicates whether the Elasticsearch domain is being deleted.
      */
+
     public void setPendingDeletion(Boolean pendingDeletion) {
         this.pendingDeletion = pendingDeletion;
     }
@@ -266,6 +279,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * 
      * @return Indicates whether the Elasticsearch domain is being deleted.
      */
+
     public Boolean getPendingDeletion() {
         return this.pendingDeletion;
     }
@@ -280,6 +294,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OptionStatus withPendingDeletion(Boolean pendingDeletion) {
         setPendingDeletion(pendingDeletion);
         return this;
@@ -292,6 +307,7 @@ public class OptionStatus implements Serializable, Cloneable {
      * 
      * @return Indicates whether the Elasticsearch domain is being deleted.
      */
+
     public Boolean isPendingDeletion() {
         return this.pendingDeletion;
     }

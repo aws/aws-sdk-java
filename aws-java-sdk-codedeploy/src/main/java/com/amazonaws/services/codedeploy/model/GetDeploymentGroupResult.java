@@ -40,6 +40,7 @@ public class GetDeploymentGroupResult implements Serializable, Cloneable {
      * @param deploymentGroupInfo
      *        Information about the deployment group.
      */
+
     public void setDeploymentGroupInfo(DeploymentGroupInfo deploymentGroupInfo) {
         this.deploymentGroupInfo = deploymentGroupInfo;
     }
@@ -51,6 +52,7 @@ public class GetDeploymentGroupResult implements Serializable, Cloneable {
      * 
      * @return Information about the deployment group.
      */
+
     public DeploymentGroupInfo getDeploymentGroupInfo() {
         return this.deploymentGroupInfo;
     }
@@ -65,6 +67,7 @@ public class GetDeploymentGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentGroupResult withDeploymentGroupInfo(
             DeploymentGroupInfo deploymentGroupInfo) {
         setDeploymentGroupInfo(deploymentGroupInfo);

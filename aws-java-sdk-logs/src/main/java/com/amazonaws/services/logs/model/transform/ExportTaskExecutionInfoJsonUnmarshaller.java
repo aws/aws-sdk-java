@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class ExportTaskExecutionInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    exportTaskExecutionInfo
-                            .setCreationTime(LongJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    exportTaskExecutionInfo.setCreationTime(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("completionTime", targetDepth)) {
                     context.nextToken();
-                    exportTaskExecutionInfo
-                            .setCompletionTime(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    exportTaskExecutionInfo.setCompletionTime(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

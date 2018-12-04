@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * LocalSecondaryIndexMarshaller
@@ -39,45 +34,45 @@ import com.amazonaws.util.json.*;
 public class LocalSecondaryIndexJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(LocalSecondaryIndex localSecondaryIndex,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (localSecondaryIndex == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (localSecondaryIndex.getIndexName() != null) {
-                jsonWriter.key("IndexName").value(
+                jsonGenerator.writeFieldName("IndexName").writeValue(
                         localSecondaryIndex.getIndexName());
             }
 
             java.util.List<KeySchemaElement> keySchemaList = localSecondaryIndex
                     .getKeySchema();
             if (keySchemaList != null) {
-                jsonWriter.key("KeySchema");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("KeySchema");
+                jsonGenerator.writeStartArray();
                 for (KeySchemaElement keySchemaListValue : keySchemaList) {
                     if (keySchemaListValue != null) {
 
                         KeySchemaElementJsonMarshaller.getInstance().marshall(
-                                keySchemaListValue, jsonWriter);
+                                keySchemaListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (localSecondaryIndex.getProjection() != null) {
-                jsonWriter.key("Projection");
+                jsonGenerator.writeFieldName("Projection");
                 ProjectionJsonMarshaller.getInstance().marshall(
-                        localSecondaryIndex.getProjection(), jsonWriter);
+                        localSecondaryIndex.getProjection(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

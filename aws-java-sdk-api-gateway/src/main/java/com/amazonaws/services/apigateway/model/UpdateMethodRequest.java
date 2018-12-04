@@ -61,6 +61,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -72,6 +73,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -86,6 +88,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -99,6 +102,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -110,6 +114,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -124,6 +129,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -137,6 +143,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        The HTTP verb that identifies the <a>Method</a> resource.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -148,6 +155,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * 
      * @return The HTTP verb that identifies the <a>Method</a> resource.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -162,6 +170,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -177,6 +186,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -192,6 +202,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -222,6 +233,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -247,6 +259,7 @@ public class UpdateMethodRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMethodRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

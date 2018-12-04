@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class PredicateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Negated", targetDepth)) {
                     context.nextToken();
-                    predicate.setNegated(BooleanJsonUnmarshaller.getInstance()
+                    predicate.setNegated(context.getUnmarshaller(Boolean.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    predicate.setType(StringJsonUnmarshaller.getInstance()
+                    predicate.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DataId", targetDepth)) {
                     context.nextToken();
-                    predicate.setDataId(StringJsonUnmarshaller.getInstance()
+                    predicate.setDataId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

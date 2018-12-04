@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,96 +14,56 @@
  */
 package com.amazonaws.transform;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.util.json.JSONException;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.ThreadSafe;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy.PascalCaseStrategy;
 
 /**
  * Unmarshaller for JSON error responses from AWS services.
  */
-public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject> {
+@SdkInternalApi
+@ThreadSafe
+public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
 
-    public JsonErrorUnmarshaller() {}
+    public static final JsonErrorUnmarshaller DEFAULT_UNMARSHALLER = new JsonErrorUnmarshaller(
+            AmazonServiceException.class, null);
 
-    protected JsonErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
+    private static final ObjectMapper MAPPER = new ObjectMapper().configure(
+            DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).setPropertyNamingStrategy(
+            new PascalCaseStrategy());
+
+    private final String handledErrorCode;
+
+    /**
+     * @param exceptionClass
+     *            Exception class this unmarshaller will attempt to deserialize error response into
+     * @param handledErrorCode
+     *            AWS error code that this unmarshaller handles. Pass null to handle all exceptions
+     */
+    public JsonErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass, String handledErrorCode) {
         super(exceptionClass);
+        this.handledErrorCode = handledErrorCode;
+    }
+
+    @Override
+    public AmazonServiceException unmarshall(JsonNode jsonContent) throws Exception {
+        return MAPPER.treeToValue(jsonContent, exceptionClass);
     }
 
     /**
-     * Subclass should override the match(String, JSONObject) method to indicate
-     * whether it represents the given error type, and unmarshall(JSONObject)
-     * should never return null.
+     * @param actualErrorCode
+     *            Actual AWS error code found in the error response.
+     * @return True if the actualErrorCode can be handled by this unmarshaller, false otherwise
      */
-    public AmazonServiceException unmarshall(JSONObject json) throws Exception {
-        String message = parseMessage(json);
-        String errorCode = parseErrorCode(json);
-
-        if ((null == message || message.isEmpty()) && (null == errorCode || errorCode.isEmpty())) {
-            /**
-             * Trigger the catch block in AmazonHttpClient.handleErrorResponse to handle 413 and 503 errors
-             */
-            throw new AmazonClientException("Neither error message nor error code is found in the error response payload.");
-        } else {
-            AmazonServiceException ase = newException(message);
-            ase.setErrorCode(errorCode);
-            return ase;
+    public boolean matchErrorCode(String actualErrorCode) {
+        if (handledErrorCode == null) {
+            return true;
         }
+        return handledErrorCode.equals(actualErrorCode);
     }
 
-    public String parseMessage(JSONObject json) throws Exception {
-        return parseMember("message", json);
-    }
-
-    public String parseMember(String key, JSONObject json) throws JSONException {
-        if (key == null || key.length() == 0) {
-            return null;
-        }
-
-        String firstLetterUppercaseKey;
-        String firstLetterLowercaseKey;
-
-        firstLetterLowercaseKey = key.substring(0, 1).toLowerCase()
-                + key.substring(1);
-
-        firstLetterUppercaseKey = key.substring(0, 1).toUpperCase()
-                + key.substring(1);
-
-         String value = "";
-         if (json.has(firstLetterUppercaseKey)) {
-             value = json.getString(firstLetterUppercaseKey);
-         } else if (json.has(firstLetterLowercaseKey)) {
-             value = json.getString(firstLetterLowercaseKey);
-         }
-
-         return value;
-    }
-
-    public String parseErrorCode(JSONObject json) throws Exception {
-        if (json.has("__type")) {
-            String type = json.getString("__type");
-            int separator = type.lastIndexOf("#");
-            return type.substring(separator + 1);
-        }
-
-        return null;
-    }
-
-    /**
-     * Any subclass that is specific to a error type should only return true
-     * when the response matches, either by matching the error type parsed from
-     * header or from the JSON content.
-     * 
-     * @param errorTypeFromHeader
-     *            The error type parsed from the response headers, or null if
-     *            such information is not available in the headers.
-     * 
-     * @param json
-     *            The JSON content of the response. Subclass should check for
-     *            the error type information from this JSONObject if
-     *            errorTypeFromHeader is null.
-     */
-    public boolean match(String errorTypeFromHeader, JSONObject json) throws Exception {
-        return true;
-    }
 }

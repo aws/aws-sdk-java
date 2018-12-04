@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteIntegrationResponseRequest Marshaller
@@ -47,7 +49,14 @@ public class DeleteIntegrationResponseRequestMarshaller
         implements
         Marshaller<Request<DeleteIntegrationResponseRequest>, DeleteIntegrationResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteIntegrationResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteIntegrationResponseRequest> marshall(
             DeleteIntegrationResponseRequest deleteIntegrationResponseRequest) {
@@ -64,30 +73,38 @@ public class DeleteIntegrationResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteIntegrationResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils
-                                .fromString(deleteIntegrationResponseRequest
-                                        .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteIntegrationResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils
-                                .fromString(deleteIntegrationResponseRequest
-                                        .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteIntegrationResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils
-                                .fromString(deleteIntegrationResponseRequest
-                                        .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (deleteIntegrationResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils
-                                .fromString(deleteIntegrationResponseRequest
-                                        .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (deleteIntegrationResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteIntegrationResponseRequest
+                                                .getRestApiId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (deleteIntegrationResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteIntegrationResponseRequest
+                                                .getResourceId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (deleteIntegrationResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteIntegrationResponseRequest
+                                                .getHttpMethod()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (deleteIntegrationResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(deleteIntegrationResponseRequest
+                                                .getStatusCode()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

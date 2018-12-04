@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * LifecycleEventMarshaller
@@ -39,42 +34,42 @@ import com.amazonaws.util.json.*;
 public class LifecycleEventJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LifecycleEvent lifecycleEvent, JSONWriter jsonWriter) {
+    public void marshall(LifecycleEvent lifecycleEvent,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (lifecycleEvent == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (lifecycleEvent.getLifecycleEventName() != null) {
-                jsonWriter.key("lifecycleEventName").value(
+                jsonGenerator.writeFieldName("lifecycleEventName").writeValue(
                         lifecycleEvent.getLifecycleEventName());
             }
-
             if (lifecycleEvent.getDiagnostics() != null) {
-                jsonWriter.key("diagnostics");
+                jsonGenerator.writeFieldName("diagnostics");
                 DiagnosticsJsonMarshaller.getInstance().marshall(
-                        lifecycleEvent.getDiagnostics(), jsonWriter);
+                        lifecycleEvent.getDiagnostics(), jsonGenerator);
             }
-
             if (lifecycleEvent.getStartTime() != null) {
-                jsonWriter.key("startTime")
-                        .value(lifecycleEvent.getStartTime());
+                jsonGenerator.writeFieldName("startTime").writeValue(
+                        lifecycleEvent.getStartTime());
             }
-
             if (lifecycleEvent.getEndTime() != null) {
-                jsonWriter.key("endTime").value(lifecycleEvent.getEndTime());
+                jsonGenerator.writeFieldName("endTime").writeValue(
+                        lifecycleEvent.getEndTime());
             }
-
             if (lifecycleEvent.getStatus() != null) {
-                jsonWriter.key("status").value(lifecycleEvent.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        lifecycleEvent.getStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

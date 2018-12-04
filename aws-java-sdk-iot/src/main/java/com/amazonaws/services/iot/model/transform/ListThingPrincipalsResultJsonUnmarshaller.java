@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,8 @@ public class ListThingPrincipalsResultJsonUnmarshaller implements
                 if (context.testExpression("principals", targetDepth)) {
                     context.nextToken();
                     listThingPrincipalsResult
-                            .setPrincipals(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setPrincipals(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

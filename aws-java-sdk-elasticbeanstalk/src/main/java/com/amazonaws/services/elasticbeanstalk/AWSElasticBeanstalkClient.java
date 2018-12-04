@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.services.elasticbeanstalk.model.transform.*;
@@ -43,14 +45,9 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -74,6 +71,7 @@ import com.amazonaws.services.elasticbeanstalk.model.transform.*;
  * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
  * </p>
  */
+@ThreadSafe
 public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         AWSElasticBeanstalk {
     /** Provider for AWS credentials. */
@@ -88,7 +86,13 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "elasticbeanstalk";
 
     /**
-     * List of exception unmarshallers for all Elastic Beanstalk exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -110,8 +114,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSElasticBeanstalkClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -153,8 +157,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSElasticBeanstalkClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -196,8 +199,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      */
     public AWSElasticBeanstalkClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -259,6 +261,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers
                 .add(new ElasticBeanstalkServiceExceptionUnmarshaller());
         exceptionUnmarshallers
+                .add(new ManagedActionInvalidStateExceptionUnmarshaller());
+        exceptionUnmarshallers
                 .add(new S3LocationNotInServiceRegionExceptionUnmarshaller());
         exceptionUnmarshallers
                 .add(new TooManyApplicationsExceptionUnmarshaller());
@@ -296,20 +300,22 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param abortEnvironmentUpdateRequest
+     * @return Result of the AbortEnvironmentUpdate operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
      */
     @Override
-    public void abortEnvironmentUpdate(
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest) {
         ExecutionContext executionContext = createExecutionContext(abortEnvironmentUpdateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AbortEnvironmentUpdateRequest> request = null;
-        Response<Void> response = null;
+        Response<AbortEnvironmentUpdateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -323,9 +329,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<AbortEnvironmentUpdateResult> responseHandler = new StaxResponseHandler<AbortEnvironmentUpdateResult>(
+                    new AbortEnvironmentUpdateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -334,8 +342,60 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void abortEnvironmentUpdate() {
-        abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate() {
+        return abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
+    }
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @return Result of the ApplyEnvironmentManagedAction operation returned by
+     *         the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws ManagedActionInvalidStateException
+     *         Cannot modify the managed action in its current state.
+     * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
+     */
+    @Override
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest) {
+        ExecutionContext executionContext = createExecutionContext(applyEnvironmentManagedActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApplyEnvironmentManagedActionRequest> request = null;
+        Response<ApplyEnvironmentManagedActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApplyEnvironmentManagedActionRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(applyEnvironmentManagedActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ApplyEnvironmentManagedActionResult> responseHandler = new StaxResponseHandler<ApplyEnvironmentManagedActionResult>(
+                    new ApplyEnvironmentManagedActionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -396,6 +456,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param composeEnvironmentsRequest
+     *        Request to create or update a group of environments.
      * @return Result of the ComposeEnvironments operation returned by the
      *         service.
      * @throws TooManyEnvironmentsException
@@ -446,6 +507,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createApplicationRequest
+     *        Request to create an application.
      * @return Result of the CreateApplication operation returned by the
      *         service.
      * @throws TooManyApplicationsException
@@ -561,11 +623,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param createConfigurationTemplateRequest
+     *        Request to create a configuration template.
      * @return Result of the CreateConfigurationTemplate operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration
      *         templates.
@@ -724,6 +789,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </note>
      * 
      * @param deleteApplicationRequest
+     *        Request to delete an application.
+     * @return Result of the DeleteApplication operation returned by the
+     *         service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
@@ -731,14 +799,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @sample AWSElasticBeanstalk.DeleteApplication
      */
     @Override
-    public void deleteApplication(
+    public DeleteApplicationResult deleteApplication(
             DeleteApplicationRequest deleteApplicationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteApplicationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteApplicationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -752,9 +820,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteApplicationResult> responseHandler = new StaxResponseHandler<DeleteApplicationResult>(
+                    new DeleteApplicationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -770,6 +840,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * running environment.</note>
      * 
      * @param deleteApplicationVersionRequest
+     *        Request to delete an application version.
+     * @return Result of the DeleteApplicationVersion operation returned by the
+     *         service.
      * @throws SourceBundleDeletionException
      *         Unable to delete the Amazon S3 source bundle associated with the
      *         application version. The application version was deleted
@@ -787,14 +860,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
      */
     @Override
-    public void deleteApplicationVersion(
+    public DeleteApplicationVersionResult deleteApplicationVersion(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteApplicationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteApplicationVersionRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteApplicationVersionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -808,9 +881,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteApplicationVersionResult> responseHandler = new StaxResponseHandler<DeleteApplicationVersionResult>(
+                    new DeleteApplicationVersionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -828,6 +903,9 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * environment.</note>
      * 
      * @param deleteConfigurationTemplateRequest
+     *        Request to delete a configuration template.
+     * @return Result of the DeleteConfigurationTemplate operation returned by
+     *         the service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
@@ -835,14 +913,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
      */
     @Override
-    public void deleteConfigurationTemplate(
+    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteConfigurationTemplateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteConfigurationTemplateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -856,9 +934,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteConfigurationTemplateResult> responseHandler = new StaxResponseHandler<DeleteConfigurationTemplateResult>(
+                    new DeleteConfigurationTemplateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -881,17 +961,20 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
+     *        Request to delete a draft environment configuration.
+     * @return Result of the DeleteEnvironmentConfiguration operation returned
+     *         by the service.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
      */
     @Override
-    public void deleteEnvironmentConfiguration(
+    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteEnvironmentConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteEnvironmentConfigurationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteEnvironmentConfigurationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -905,9 +988,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteEnvironmentConfigurationResult> responseHandler = new StaxResponseHandler<DeleteEnvironmentConfigurationResult>(
+                    new DeleteEnvironmentConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -972,6 +1057,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeApplicationsRequest
+     *        Request to describe one or more applications.
      * @return Result of the DescribeApplications operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeApplications
@@ -1029,6 +1115,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
      */
     @Override
@@ -1090,6 +1178,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *        specified solution stack or configuration template.
      * @return Result of the DescribeConfigurationSettings operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
      */
     @Override
@@ -1180,10 +1270,106 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @return Result of the DescribeEnvironmentManagedActionHistory operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
+     */
+    @Override
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEnvironmentManagedActionHistoryRequest> request = null;
+        Response<DescribeEnvironmentManagedActionHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEnvironmentManagedActionHistoryRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeEnvironmentManagedActionHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionHistoryResult>(
+                    new DescribeEnvironmentManagedActionHistoryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @return Result of the DescribeEnvironmentManagedActions operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
+     */
+    @Override
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(describeEnvironmentManagedActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEnvironmentManagedActionsRequest> request = null;
+        Response<DescribeEnvironmentManagedActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEnvironmentManagedActionsRequestMarshaller()
+                        .marshall(super
+                                .beforeMarshalling(describeEnvironmentManagedActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeEnvironmentManagedActionsResult> responseHandler = new StaxResponseHandler<DescribeEnvironmentManagedActionsResult>(
+                    new DescribeEnvironmentManagedActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns AWS resources for this environment.
      * </p>
      * 
      * @param describeEnvironmentResourcesRequest
+     *        Request to describe the resources in an environment.
      * @return Result of the DescribeEnvironmentResources operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
@@ -1231,6 +1417,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeEnvironmentsRequest
+     *        Request to describe one or more environments.
      * @return Result of the DescribeEnvironments operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeEnvironments
@@ -1279,10 +1466,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * Returns list of event descriptions matching criteria up to the last 6
      * weeks.
      * </p>
-     * <note> This action returns the most recent 1,000 events from the
-     * specified <code>NextToken</code>. </note>
+     * <note>This action returns the most recent 1,000 events from the specified
+     * <code>NextToken</code>.</note>
      * 
      * @param describeEventsRequest
+     *        Request to retrieve a list of events for an environment.
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEvents
      */
@@ -1434,20 +1622,22 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param rebuildEnvironmentRequest
+     * @return Result of the RebuildEnvironment operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
      */
     @Override
-    public void rebuildEnvironment(
+    public RebuildEnvironmentResult rebuildEnvironment(
             RebuildEnvironmentRequest rebuildEnvironmentRequest) {
         ExecutionContext executionContext = createExecutionContext(rebuildEnvironmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RebuildEnvironmentRequest> request = null;
-        Response<Void> response = null;
+        Response<RebuildEnvironmentResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1461,9 +1651,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RebuildEnvironmentResult> responseHandler = new StaxResponseHandler<RebuildEnvironmentResult>(
+                    new RebuildEnvironmentResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1498,17 +1690,21 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
+     *        Request to retrieve logs from an environment and store them in
+     *        your Elastic Beanstalk storage bucket.
+     * @return Result of the RequestEnvironmentInfo operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
      */
     @Override
-    public void requestEnvironmentInfo(
+    public RequestEnvironmentInfoResult requestEnvironmentInfo(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
         ExecutionContext executionContext = createExecutionContext(requestEnvironmentInfoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RequestEnvironmentInfoRequest> request = null;
-        Response<Void> response = null;
+        Response<RequestEnvironmentInfoResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1522,9 +1718,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RequestEnvironmentInfoResult> responseHandler = new StaxResponseHandler<RequestEnvironmentInfoResult>(
+                    new RequestEnvironmentInfoResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1539,16 +1737,18 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param restartAppServerRequest
+     * @return Result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalk.RestartAppServer
      */
     @Override
-    public void restartAppServer(RestartAppServerRequest restartAppServerRequest) {
+    public RestartAppServerResult restartAppServer(
+            RestartAppServerRequest restartAppServerRequest) {
         ExecutionContext executionContext = createExecutionContext(restartAppServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RestartAppServerRequest> request = null;
-        Response<Void> response = null;
+        Response<RestartAppServerResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1562,9 +1762,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<RestartAppServerResult> responseHandler = new StaxResponseHandler<RestartAppServerResult>(
+                    new RestartAppServerResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1585,6 +1787,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </ul>
      * 
      * @param retrieveEnvironmentInfoRequest
+     *        Request to download logs retrieved with
+     *        <a>RequestEnvironmentInfo</a>.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
@@ -1630,17 +1834,19 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * 
      * @param swapEnvironmentCNAMEsRequest
      *        Swaps the CNAMEs of two environments.
+     * @return Result of the SwapEnvironmentCNAMEs operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
      */
     @Override
-    public void swapEnvironmentCNAMEs(
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
         ExecutionContext executionContext = createExecutionContext(swapEnvironmentCNAMEsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SwapEnvironmentCNAMEsRequest> request = null;
-        Response<Void> response = null;
+        Response<SwapEnvironmentCNAMEsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -1654,9 +1860,11 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SwapEnvironmentCNAMEsResult> responseHandler = new StaxResponseHandler<SwapEnvironmentCNAMEsResult>(
+                    new SwapEnvironmentCNAMEsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1665,8 +1873,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     }
 
     @Override
-    public void swapEnvironmentCNAMEs() {
-        swapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest());
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs() {
+        return swapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest());
     }
 
     /**
@@ -1675,6 +1883,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param terminateEnvironmentRequest
+     *        Request to terminate an environment.
      * @return Result of the TerminateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
@@ -1725,6 +1934,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * an empty string. </note>
      * 
      * @param updateApplicationRequest
+     *        Request to update an application.
      * @return Result of the UpdateApplication operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.UpdateApplication
@@ -1834,6 +2044,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
      */
     @Override
@@ -1890,11 +2102,14 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param updateEnvironmentRequest
+     *        Request to update an environment.
      * @return Result of the UpdateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
      */
     @Override
@@ -1949,6 +2164,8 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
      */
     @Override
@@ -2008,30 +2225,45 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

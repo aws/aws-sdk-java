@@ -210,6 +210,25 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String agentVersion;
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     */
+    private String tenancy;
 
     /**
      * <p>
@@ -219,6 +238,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -230,6 +250,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -244,6 +265,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -256,6 +278,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array that contains the instance's layer IDs.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -271,6 +294,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param layerIds
      *        An array that contains the instance's layer IDs.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -297,6 +321,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -318,6 +343,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);
@@ -347,6 +373,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        use to specify the various types are in the <b>API Name</b> column
      *        of the <b>Available Instance Types</b> table.
      */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
@@ -373,6 +400,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         use to specify the various types are in the <b>API Name</b>
      *         column of the <b>Available Instance Types</b> table.
      */
+
     public String getInstanceType() {
         return this.instanceType;
     }
@@ -402,6 +430,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withInstanceType(String instanceType) {
         setInstanceType(instanceType);
         return this;
@@ -418,6 +447,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        can use only time-based instances.
      * @see AutoScalingType
      */
+
     public void setAutoScalingType(String autoScalingType) {
         this.autoScalingType = autoScalingType;
     }
@@ -432,6 +462,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         can use only time-based instances.
      * @see AutoScalingType
      */
+
     public String getAutoScalingType() {
         return this.autoScalingType;
     }
@@ -449,6 +480,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoScalingType
      */
+
     public CreateInstanceRequest withAutoScalingType(String autoScalingType) {
         setAutoScalingType(autoScalingType);
         return this;
@@ -463,10 +495,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param autoScalingType
      *        For load-based or time-based instances, the type. Windows stacks
      *        can use only time-based instances.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see AutoScalingType
      */
+
     public void setAutoScalingType(AutoScalingType autoScalingType) {
         this.autoScalingType = autoScalingType.toString();
     }
@@ -484,6 +515,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see AutoScalingType
      */
+
     public CreateInstanceRequest withAutoScalingType(
             AutoScalingType autoScalingType) {
         setAutoScalingType(autoScalingType);
@@ -498,6 +530,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param hostname
      *        The instance host name.
      */
+
     public void setHostname(String hostname) {
         this.hostname = hostname;
     }
@@ -509,6 +542,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance host name.
      */
+
     public String getHostname() {
         return this.hostname;
     }
@@ -523,6 +557,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withHostname(String hostname) {
         setHostname(hostname);
         return this;
@@ -590,6 +625,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *        >Using Custom AMIs</a>.
      */
+
     public void setOs(String os) {
         this.os = os;
     }
@@ -655,6 +691,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html"
      *         >Using Custom AMIs</a>.
      */
+
     public String getOs() {
         return this.os;
     }
@@ -723,6 +760,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withOs(String os) {
         setOs(os);
         return this;
@@ -747,6 +785,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Using Custom AMIs</a>.</p> <note>If you specify a custom AMI, you
      *        must set <code>Os</code> to <code>Custom</code>.
      */
+
     public void setAmiId(String amiId) {
         this.amiId = amiId;
     }
@@ -769,6 +808,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Using Custom AMIs</a>.</p> <note>If you specify a custom AMI,
      *         you must set <code>Os</code> to <code>Custom</code>.
      */
+
     public String getAmiId() {
         return this.amiId;
     }
@@ -794,6 +834,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withAmiId(String amiId) {
         setAmiId(amiId);
         return this;
@@ -807,6 +848,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param sshKeyName
      *        The instance's Amazon EC2 key-pair name.
      */
+
     public void setSshKeyName(String sshKeyName) {
         this.sshKeyName = sshKeyName;
     }
@@ -818,6 +860,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's Amazon EC2 key-pair name.
      */
+
     public String getSshKeyName() {
         return this.sshKeyName;
     }
@@ -832,6 +875,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withSshKeyName(String sshKeyName) {
         setSshKeyName(sshKeyName);
         return this;
@@ -849,6 +893,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html"
      *        >Regions and Endpoints</a>.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -864,6 +909,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">
      *         Regions and Endpoints</a>.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -882,6 +928,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;
@@ -897,6 +944,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The instance's virtualization type, <code>paravirtual</code> or
      *        <code>hvm</code>.
      */
+
     public void setVirtualizationType(String virtualizationType) {
         this.virtualizationType = virtualizationType;
     }
@@ -910,6 +958,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return The instance's virtualization type, <code>paravirtual</code> or
      *         <code>hvm</code>.
      */
+
     public String getVirtualizationType() {
         return this.virtualizationType;
     }
@@ -926,6 +975,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withVirtualizationType(
             String virtualizationType) {
         setVirtualizationType(virtualizationType);
@@ -945,6 +995,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        ID value and direct AWS OpsWorks to launch the instance in a
      *        different subnet.
      */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
@@ -961,6 +1012,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         subnet ID value and direct AWS OpsWorks to launch the instance in
      *         a different subnet.
      */
+
     public String getSubnetId() {
         return this.subnetId;
     }
@@ -980,6 +1032,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withSubnetId(String subnetId) {
         setSubnetId(subnetId);
         return this;
@@ -1004,6 +1057,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Instance Families and Types</a>.
      * @see Architecture
      */
+
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
@@ -1026,6 +1080,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Instance Families and Types</a>.
      * @see Architecture
      */
+
     public String getArchitecture() {
         return this.architecture;
     }
@@ -1051,6 +1106,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Architecture
      */
+
     public CreateInstanceRequest withArchitecture(String architecture) {
         setArchitecture(architecture);
         return this;
@@ -1073,10 +1129,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        supported by the different instance types, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html"
      *        >Instance Families and Types</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Architecture
      */
+
     public void setArchitecture(Architecture architecture) {
         this.architecture = architecture.toString();
     }
@@ -1102,6 +1157,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Architecture
      */
+
     public CreateInstanceRequest withArchitecture(Architecture architecture) {
         setArchitecture(architecture);
         return this;
@@ -1120,6 +1176,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public void setRootDeviceType(String rootDeviceType) {
         this.rootDeviceType = rootDeviceType;
     }
@@ -1136,6 +1193,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Storage for the Root Device</a>.
      * @see RootDeviceType
      */
+
     public String getRootDeviceType() {
         return this.rootDeviceType;
     }
@@ -1155,6 +1213,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public CreateInstanceRequest withRootDeviceType(String rootDeviceType) {
         setRootDeviceType(rootDeviceType);
         return this;
@@ -1171,10 +1230,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        The instance root device type. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device"
      *        >Storage for the Root Device</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RootDeviceType
      */
+
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
         this.rootDeviceType = rootDeviceType.toString();
     }
@@ -1194,6 +1252,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see RootDeviceType
      */
+
     public CreateInstanceRequest withRootDeviceType(
             RootDeviceType rootDeviceType) {
         setRootDeviceType(rootDeviceType);
@@ -1215,6 +1274,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         >Block Device Mapping</a>. Note that block device mappings are
      *         not supported for custom AMIs.
      */
+
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
@@ -1238,6 +1298,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        >Block Device Mapping</a>. Note that block device mappings are not
      *        supported for custom AMIs.
      */
+
     public void setBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
@@ -1273,6 +1334,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withBlockDeviceMappings(
             BlockDeviceMapping... blockDeviceMappings) {
         if (this.blockDeviceMappings == null) {
@@ -1303,6 +1365,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withBlockDeviceMappings(
             java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         setBlockDeviceMappings(blockDeviceMappings);
@@ -1340,6 +1403,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        to ensure that your instances have the latest security updates.
      *        </p>
      */
+
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
     }
@@ -1375,6 +1439,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean getInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1412,6 +1477,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withInstallUpdatesOnBoot(
             Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
@@ -1449,6 +1515,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         security updates.
      *         </p>
      */
+
     public Boolean isInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1461,6 +1528,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @param ebsOptimized
      *        Whether to create an Amazon EBS-optimized instance.
      */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
@@ -1472,6 +1540,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to create an Amazon EBS-optimized instance.
      */
+
     public Boolean getEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1486,6 +1555,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withEbsOptimized(Boolean ebsOptimized) {
         setEbsOptimized(ebsOptimized);
         return this;
@@ -1498,6 +1568,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return Whether to create an Amazon EBS-optimized instance.
      */
+
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
     }
@@ -1539,6 +1610,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *        abbreviated number shown on the console. For a list of available
      *        agent version numbers, call <a>DescribeAgentVersions</a>.
      */
+
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
@@ -1579,6 +1651,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      *         abbreviated number shown on the console. For a list of available
      *         agent version numbers, call <a>DescribeAgentVersions</a>.
      */
+
     public String getAgentVersion() {
         return this.agentVersion;
     }
@@ -1622,8 +1695,137 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceRequest withAgentVersion(String agentVersion) {
         setAgentVersion(agentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option. The default option is no tenancy,
+     *        or if the instance is running in a VPC, inherit tenancy settings
+     *        from the VPC. The following are valid values for this parameter:
+     *        <code>dedicated</code>, <code>default</code>, or <code>host</code>
+     *        . Because there are costs associated with changes in tenancy
+     *        options, we recommend that you research tenancy options before
+     *        choosing them for your instances. For more information about
+     *        dedicated hosts, see <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     *        Overview</a> and <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *        Dedicated Hosts</a>. For more information about dedicated
+     *        instances, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *        >Dedicated Instances</a> and <a href=
+     *        "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *        >Amazon EC2 Dedicated Instances</a>.
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @return The instance's tenancy option. The default option is no tenancy,
+     *         or if the instance is running in a VPC, inherit tenancy settings
+     *         from the VPC. The following are valid values for this parameter:
+     *         <code>dedicated</code>, <code>default</code>, or
+     *         <code>host</code>. Because there are costs associated with
+     *         changes in tenancy options, we recommend that you research
+     *         tenancy options before choosing them for your instances. For more
+     *         information about dedicated hosts, see <a
+     *         href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated
+     *         Hosts Overview</a> and <a
+     *         href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *         Dedicated Hosts</a>. For more information about dedicated
+     *         instances, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *         >Dedicated Instances</a> and <a href=
+     *         "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *         >Amazon EC2 Dedicated Instances</a>.
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * The instance's tenancy option. The default option is no tenancy, or if
+     * the instance is running in a VPC, inherit tenancy settings from the VPC.
+     * The following are valid values for this parameter: <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs
+     * associated with changes in tenancy options, we recommend that you
+     * research tenancy options before choosing them for your instances. For
+     * more information about dedicated hosts, see <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     * Overview</a> and <a
+     * href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated
+     * Hosts</a>. For more information about dedicated instances, see <a href=
+     * "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     * >Dedicated Instances</a> and <a href=
+     * "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     * >Amazon EC2 Dedicated Instances</a>.
+     * </p>
+     * 
+     * @param tenancy
+     *        The instance's tenancy option. The default option is no tenancy,
+     *        or if the instance is running in a VPC, inherit tenancy settings
+     *        from the VPC. The following are valid values for this parameter:
+     *        <code>dedicated</code>, <code>default</code>, or <code>host</code>
+     *        . Because there are costs associated with changes in tenancy
+     *        options, we recommend that you research tenancy options before
+     *        choosing them for your instances. For more information about
+     *        dedicated hosts, see <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts
+     *        Overview</a> and <a
+     *        href="https://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2
+     *        Dedicated Hosts</a>. For more information about dedicated
+     *        instances, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html"
+     *        >Dedicated Instances</a> and <a href=
+     *        "https://aws.amazon.com/ec2/purchasing-options/dedicated-instances/"
+     *        >Amazon EC2 Dedicated Instances</a>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateInstanceRequest withTenancy(String tenancy) {
+        setTenancy(tenancy);
         return this;
     }
 
@@ -1673,7 +1875,9 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: " + getEbsOptimized() + ",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion());
+            sb.append("AgentVersion: " + getAgentVersion() + ",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: " + getTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -1783,6 +1987,11 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
         if (other.getAgentVersion() != null
                 && other.getAgentVersion().equals(this.getAgentVersion()) == false)
             return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null
+                && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
         return true;
     }
 
@@ -1845,6 +2054,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest implements
                 * hashCode
                 + ((getAgentVersion() == null) ? 0 : getAgentVersion()
                         .hashCode());
+        hashCode = prime * hashCode
+                + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         return hashCode;
     }
 

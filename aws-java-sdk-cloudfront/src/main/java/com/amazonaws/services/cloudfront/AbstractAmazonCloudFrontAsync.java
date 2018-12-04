@@ -90,46 +90,46 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    public java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest request) {
 
         return deleteCloudFrontOriginAccessIdentityAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCloudFrontOriginAccessIdentityAsync(
+    public java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
             DeleteCloudFrontOriginAccessIdentityRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDistributionAsync(
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             DeleteDistributionRequest request) {
 
         return deleteDistributionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDistributionAsync(
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(
             DeleteDistributionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest request) {
 
         return deleteStreamingDistributionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStreamingDistributionAsync(
+    public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

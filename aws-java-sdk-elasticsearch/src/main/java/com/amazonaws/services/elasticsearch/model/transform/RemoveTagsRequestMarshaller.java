@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RemoveTagsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class RemoveTagsRequestMarshaller implements
         Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RemoveTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RemoveTagsRequest> marshall(
             RemoveTagsRequest removeTagsRequest) {
@@ -66,32 +74,31 @@ public class RemoveTagsRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (removeTagsRequest.getARN() != null) {
-                jsonWriter.key("ARN").value(removeTagsRequest.getARN());
+                jsonGenerator.writeFieldName("ARN").writeValue(
+                        removeTagsRequest.getARN());
             }
 
             java.util.List<String> tagKeysList = removeTagsRequest.getTagKeys();
             if (tagKeysList != null) {
-                jsonWriter.key("TagKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagKeys");
+                jsonGenerator.writeStartArray();
                 for (String tagKeysListValue : tagKeysList) {
                     if (tagKeysListValue != null) {
-                        jsonWriter.value(tagKeysListValue);
+                        jsonGenerator.writeValue(tagKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -60,6 +60,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @param clusterId
      *        The identifier of the cluster for which to list the steps.
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -71,6 +72,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the cluster for which to list the steps.
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -85,6 +87,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;
@@ -98,6 +101,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return The filter to limit the step list based on certain states.
      * @see StepState
      */
+
     public java.util.List<String> getStepStates() {
         if (stepStates == null) {
             stepStates = new com.amazonaws.internal.SdkInternalList<String>();
@@ -114,6 +118,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *        The filter to limit the step list based on certain states.
      * @see StepState
      */
+
     public void setStepStates(java.util.Collection<String> stepStates) {
         if (stepStates == null) {
             this.stepStates = null;
@@ -141,6 +146,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StepState
      */
+
     public ListStepsRequest withStepStates(String... stepStates) {
         if (this.stepStates == null) {
             setStepStates(new com.amazonaws.internal.SdkInternalList<String>(
@@ -163,6 +169,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StepState
      */
+
     public ListStepsRequest withStepStates(
             java.util.Collection<String> stepStates) {
         setStepStates(stepStates);
@@ -180,6 +187,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see StepState
      */
+
     public ListStepsRequest withStepStates(StepState... stepStates) {
         com.amazonaws.internal.SdkInternalList<String> stepStatesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 stepStates.length);
@@ -202,6 +210,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return The filter to limit the step list based on the identifier of the
      *         steps.
      */
+
     public java.util.List<String> getStepIds() {
         if (stepIds == null) {
             stepIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -218,6 +227,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *        The filter to limit the step list based on the identifier of the
      *        steps.
      */
+
     public void setStepIds(java.util.Collection<String> stepIds) {
         if (stepIds == null) {
             this.stepIds = null;
@@ -245,6 +255,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsRequest withStepIds(String... stepIds) {
         if (this.stepIds == null) {
             setStepIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -267,6 +278,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsRequest withStepIds(java.util.Collection<String> stepIds) {
         setStepIds(stepIds);
         return this;
@@ -281,6 +293,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -293,6 +306,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -308,6 +322,7 @@ public class ListStepsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStepsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

@@ -32,6 +32,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable,
      * @param virtualInterfaceState
      * @see VirtualInterfaceState
      */
+
     public void setVirtualInterfaceState(String virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState;
     }
@@ -40,6 +41,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable,
      * @return
      * @see VirtualInterfaceState
      */
+
     public String getVirtualInterfaceState() {
         return this.virtualInterfaceState;
     }
@@ -50,6 +52,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable,
      *         chained together.
      * @see VirtualInterfaceState
      */
+
     public ConfirmPrivateVirtualInterfaceResult withVirtualInterfaceState(
             String virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);
@@ -58,10 +61,9 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable,
 
     /**
      * @param virtualInterfaceState
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VirtualInterfaceState
      */
+
     public void setVirtualInterfaceState(
             VirtualInterfaceState virtualInterfaceState) {
         this.virtualInterfaceState = virtualInterfaceState.toString();
@@ -73,6 +75,7 @@ public class ConfirmPrivateVirtualInterfaceResult implements Serializable,
      *         chained together.
      * @see VirtualInterfaceState
      */
+
     public ConfirmPrivateVirtualInterfaceResult withVirtualInterfaceState(
             VirtualInterfaceState virtualInterfaceState) {
         setVirtualInterfaceState(virtualInterfaceState);

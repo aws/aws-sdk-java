@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,8 @@ public class ListOpenIDConnectProvidersResultStaxUnmarshaller implements
                 if (context.testExpression("OpenIDConnectProviderList/member",
                         targetDepth)) {
                     listOpenIDConnectProvidersResult
-                            .getOpenIDConnectProviderList().add(
-                                    OpenIDConnectProviderListEntryStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withOpenIDConnectProviderList(OpenIDConnectProviderListEntryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

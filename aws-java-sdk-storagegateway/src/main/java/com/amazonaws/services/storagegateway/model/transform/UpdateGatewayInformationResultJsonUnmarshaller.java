@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class UpdateGatewayInformationResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    updateGatewayInformationResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    updateGatewayInformationResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("GatewayName", targetDepth)) {
                     context.nextToken();
-                    updateGatewayInformationResult
-                            .setGatewayName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateGatewayInformationResult.setGatewayName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

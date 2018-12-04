@@ -49,9 +49,8 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      */
     private String schema;
@@ -72,6 +71,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      *        The <a>RestApi</a> identifier under which the <a>Model</a> will be
      *        created.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -85,6 +85,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @return The <a>RestApi</a> identifier under which the <a>Model</a> will
      *         be created.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -101,6 +102,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -114,6 +116,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @param name
      *        The name of the model.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -125,6 +128,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the model.
      */
+
     public String getName() {
         return this.name;
     }
@@ -139,6 +143,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelRequest withName(String name) {
         setName(name);
         return this;
@@ -152,6 +157,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @param description
      *        The description of the model.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -163,6 +169,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The description of the model.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -177,6 +184,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -185,17 +193,17 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @param schema
      *        The schema for the model. For <code>application/json</code>
-     *        models, this should be <a target="_blank"
-     *        href="http://json-schema.org/documentation.html">JSON-schema draft
-     *        v4</a> model.
+     *        models, this should be <a
+     *        href="http://json-schema.org/documentation.html"
+     *        target="_blank">JSON-schema draft v4</a> model.
      */
+
     public void setSchema(String schema) {
         this.schema = schema;
     }
@@ -203,16 +211,16 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @return The schema for the model. For <code>application/json</code>
-     *         models, this should be <a target="_blank"
-     *         href="http://json-schema.org/documentation.html">JSON-schema
-     *         draft v4</a> model.
+     *         models, this should be <a
+     *         href="http://json-schema.org/documentation.html"
+     *         target="_blank">JSON-schema draft v4</a> model.
      */
+
     public String getSchema() {
         return this.schema;
     }
@@ -220,19 +228,19 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * The schema for the model. For <code>application/json</code> models, this
-     * should be <a target="_blank"
-     * href="http://json-schema.org/documentation.html">JSON-schema draft v4</a>
-     * model.
+     * should be <a href="http://json-schema.org/documentation.html"
+     * target="_blank">JSON-schema draft v4</a> model.
      * </p>
      * 
      * @param schema
      *        The schema for the model. For <code>application/json</code>
-     *        models, this should be <a target="_blank"
-     *        href="http://json-schema.org/documentation.html">JSON-schema draft
-     *        v4</a> model.
+     *        models, this should be <a
+     *        href="http://json-schema.org/documentation.html"
+     *        target="_blank">JSON-schema draft v4</a> model.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelRequest withSchema(String schema) {
         setSchema(schema);
         return this;
@@ -246,6 +254,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @param contentType
      *        The content-type for the model.
      */
+
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
@@ -257,6 +266,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The content-type for the model.
      */
+
     public String getContentType() {
         return this.contentType;
     }
@@ -271,6 +281,7 @@ public class CreateModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateModelRequest withContentType(String contentType) {
         setContentType(contentType);
         return this;

@@ -55,6 +55,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      *        <a>ListGateways</a> operation to return a list of gateways for
      *        your account and region.
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -71,6 +72,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      *         <a>ListGateways</a> operation to return a list of gateways for
      *         your account and region.
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -90,6 +92,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTapeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -103,6 +106,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      * @param tapeARN
      *        The Amazon Resource Name (ARN) of the virtual tape to delete.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -114,6 +118,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Amazon Resource Name (ARN) of the virtual tape to delete.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -128,6 +133,7 @@ public class DeleteTapeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTapeRequest withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;

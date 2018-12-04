@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * LogStreamMarshaller
@@ -39,56 +34,53 @@ import com.amazonaws.util.json.*;
 public class LogStreamJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(LogStream logStream, JSONWriter jsonWriter) {
+    public void marshall(LogStream logStream,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (logStream == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (logStream.getLogStreamName() != null) {
-                jsonWriter.key("logStreamName").value(
+                jsonGenerator.writeFieldName("logStreamName").writeValue(
                         logStream.getLogStreamName());
             }
-
             if (logStream.getCreationTime() != null) {
-                jsonWriter.key("creationTime").value(
+                jsonGenerator.writeFieldName("creationTime").writeValue(
                         logStream.getCreationTime());
             }
-
             if (logStream.getFirstEventTimestamp() != null) {
-                jsonWriter.key("firstEventTimestamp").value(
+                jsonGenerator.writeFieldName("firstEventTimestamp").writeValue(
                         logStream.getFirstEventTimestamp());
             }
-
             if (logStream.getLastEventTimestamp() != null) {
-                jsonWriter.key("lastEventTimestamp").value(
+                jsonGenerator.writeFieldName("lastEventTimestamp").writeValue(
                         logStream.getLastEventTimestamp());
             }
-
             if (logStream.getLastIngestionTime() != null) {
-                jsonWriter.key("lastIngestionTime").value(
+                jsonGenerator.writeFieldName("lastIngestionTime").writeValue(
                         logStream.getLastIngestionTime());
             }
-
             if (logStream.getUploadSequenceToken() != null) {
-                jsonWriter.key("uploadSequenceToken").value(
+                jsonGenerator.writeFieldName("uploadSequenceToken").writeValue(
                         logStream.getUploadSequenceToken());
             }
-
             if (logStream.getArn() != null) {
-                jsonWriter.key("arn").value(logStream.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        logStream.getArn());
             }
-
             if (logStream.getStoredBytes() != null) {
-                jsonWriter.key("storedBytes").value(logStream.getStoredBytes());
+                jsonGenerator.writeFieldName("storedBytes").writeValue(
+                        logStream.getStoredBytes());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

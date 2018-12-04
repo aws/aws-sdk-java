@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -81,9 +83,8 @@ public class InstanceProfileStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Roles/member", targetDepth)) {
-                    instanceProfile.getRoles().add(
-                            RoleStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    instanceProfile.withRoles(RoleStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -25,6 +25,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.ProfilesConfigFileLoader;
+import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
+import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsServiceLoader;
 
 /**
  * Loads the local AWS credential profiles from the standard location
@@ -81,6 +83,7 @@ public class ProfilesConfigFile {
     public static final String DEFAULT_PROFILE_NAME = "default";
 
     private final File profileFile;
+    private final ProfileCredentialsService profileCredentialsService;
     private volatile Map<String, Profile> profilesByName;
     private volatile long profileFileLastModified;
 
@@ -101,6 +104,14 @@ public class ProfilesConfigFile {
         this(new File(validateFilePath(filePath)));
     }
 
+    /**
+     * Loads the AWS credential profiles from the file. The path of the file is
+     * specified as a parameter to the constructor.
+     */
+    public ProfilesConfigFile(String filePath, ProfileCredentialsService credentialsService) throws AmazonClientException {
+        this(new File(validateFilePath(filePath)), credentialsService);
+    }
+
     private static String validateFilePath(String filePath) {
         if (filePath == null) {
             throw new IllegalArgumentException(
@@ -114,9 +125,18 @@ public class ProfilesConfigFile {
      * file is specified as a parameter to the constructor.
      */
     public ProfilesConfigFile(File file) throws AmazonClientException {
+        this(file, STSProfileCredentialsServiceLoader.getInstance());
+    }
+
+    /**
+     * Loads the AWS credential profiles from the file. The reference to the
+     * file is specified as a parameter to the constructor.
+     */
+    public ProfilesConfigFile(File file, ProfileCredentialsService credentialsService) throws AmazonClientException {
         profileFile = file;
+        profileCredentialsService = credentialsService;
         profileFileLastModified = file.lastModified();
-        profilesByName = loadProfiles(profileFile);
+        profilesByName = loadProfiles(profileFile, profileCredentialsService);
     }
 
     /**
@@ -137,7 +157,7 @@ public class ProfilesConfigFile {
     public void refresh() {
         if (profileFile.lastModified() > profileFileLastModified) {
             profileFileLastModified = profileFile.lastModified();
-            profilesByName = loadProfiles(profileFile);
+            profilesByName = loadProfiles(profileFile, profileCredentialsService);
         }
     }
 
@@ -154,12 +174,12 @@ public class ProfilesConfigFile {
             String legacyConfigFileOverride = System.getenv(LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE);
             if (legacyConfigFileOverride != null) {
                 LOG.warn(String.format(
-                            "Found the legacy environment variable [%s=%s]. " +
-                            "Please use the latest environment variable to specify your credentials file override: [%s=%s]",
-                            LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE,
-                            legacyConfigFileOverride,
-                            CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE,
-                            legacyConfigFileOverride));
+                        "Found the legacy environment variable [%s=%s]. " +
+                        "Please use the latest environment variable to specify your credentials file override: [%s=%s]",
+                        LEGACY_CONFIG_FILE_ENVIRONMENT_VARIABLE,
+                        legacyConfigFileOverride,
+                        CREDENTIAL_PROFILES_FILE_ENVIRONMENT_VARIABLE,
+                        legacyConfigFileOverride));
             }
         }
 
@@ -171,7 +191,7 @@ public class ProfilesConfigFile {
         String userHome = System.getProperty("user.home");
         if (userHome == null) {
             throw new AmazonClientException("Unable to load AWS profiles: "
-                    + "'user.home' System property is not set.");
+                                            + "'user.home' System property is not set.");
         }
 
         File awsDirectory = new File(userHome, ".aws");
@@ -181,17 +201,17 @@ public class ProfilesConfigFile {
         boolean foundlegacyConfigProfiles = legacyConfigProfiles.exists() && legacyConfigProfiles.isFile();
         if (!foundCredentialProfiles && foundlegacyConfigProfiles) {
             LOG.warn("Found the legacy config profiles file at ["
-                    + legacyConfigProfiles.getAbsolutePath()
-                    + "]. Please move it to the latest default location ["
-                    + credentialProfiles + "].");
+                     + legacyConfigProfiles.getAbsolutePath()
+                     + "]. Please move it to the latest default location ["
+                     + credentialProfiles + "].");
             return legacyConfigProfiles;
         }
 
         return credentialProfiles;
     }
 
-    private Map<String, Profile> loadProfiles(File file) {
-        return new LinkedHashMap<String, Profile>(ProfilesConfigFileLoader.loadProfiles(file));
+    private static Map<String, Profile> loadProfiles(File file, ProfileCredentialsService profileCredentialsService) {
+        return new LinkedHashMap<String, Profile>(ProfilesConfigFileLoader.loadProfiles(file, profileCredentialsService));
     }
 
 }

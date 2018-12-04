@@ -45,6 +45,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * 
      * @return The list of instance groups for the cluster and given filters.
      */
+
     public java.util.List<InstanceGroup> getInstanceGroups() {
         if (instanceGroups == null) {
             instanceGroups = new com.amazonaws.internal.SdkInternalList<InstanceGroup>();
@@ -60,6 +61,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * @param instanceGroups
      *        The list of instance groups for the cluster and given filters.
      */
+
     public void setInstanceGroups(
             java.util.Collection<InstanceGroup> instanceGroups) {
         if (instanceGroups == null) {
@@ -87,6 +89,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceGroupsResult withInstanceGroups(
             InstanceGroup... instanceGroups) {
         if (this.instanceGroups == null) {
@@ -109,6 +112,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceGroupsResult withInstanceGroups(
             java.util.Collection<InstanceGroup> instanceGroups) {
         setInstanceGroups(instanceGroups);
@@ -124,6 +128,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      *        The pagination token that indicates the next set of results to
      *        retrieve.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -136,6 +141,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * @return The pagination token that indicates the next set of results to
      *         retrieve.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -151,6 +157,7 @@ public class ListInstanceGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListInstanceGroupsResult withMarker(String marker) {
         setMarker(marker);
         return this;

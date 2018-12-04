@@ -39,14 +39,14 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * following:
      * </p>
      * <ul>
-     * <li><code>CustomUserData</code> -- arbitrary user data to associate with
+     * <li> <code>CustomUserData</code> -- arbitrary user data to associate with
      * the endpoint. Amazon SNS does not use this data. The data must be in
      * UTF-8 format and less than 2KB.</li>
-     * <li><code>Enabled</code> -- flag that enables/disables delivery to the
+     * <li> <code>Enabled</code> -- flag that enables/disables delivery to the
      * endpoint. Amazon SNS will set this to false when a notification service
      * indicates to Amazon SNS that the endpoint is invalid. Users can set it
      * back to true, typically after updating Token.</li>
-     * <li><code>Token</code> -- device token, also referred to as a
+     * <li> <code>Token</code> -- device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with
      * the notification service.</li>
@@ -62,6 +62,7 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * @param endpointArn
      *        EndpointArn used for SetEndpointAttributes action.
      */
+
     public void setEndpointArn(String endpointArn) {
         this.endpointArn = endpointArn;
     }
@@ -73,6 +74,7 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * 
      * @return EndpointArn used for SetEndpointAttributes action.
      */
+
     public String getEndpointArn() {
         return this.endpointArn;
     }
@@ -87,6 +89,7 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetEndpointAttributesRequest withEndpointArn(String endpointArn) {
         setEndpointArn(endpointArn);
         return this;
@@ -98,14 +101,14 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * following:
      * </p>
      * <ul>
-     * <li><code>CustomUserData</code> -- arbitrary user data to associate with
+     * <li> <code>CustomUserData</code> -- arbitrary user data to associate with
      * the endpoint. Amazon SNS does not use this data. The data must be in
      * UTF-8 format and less than 2KB.</li>
-     * <li><code>Enabled</code> -- flag that enables/disables delivery to the
+     * <li> <code>Enabled</code> -- flag that enables/disables delivery to the
      * endpoint. Amazon SNS will set this to false when a notification service
      * indicates to Amazon SNS that the endpoint is invalid. Users can set it
      * back to true, typically after updating Token.</li>
-     * <li><code>Token</code> -- device token, also referred to as a
+     * <li> <code>Token</code> -- device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with
      * the notification service.</li>
@@ -114,19 +117,20 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * @return A map of the endpoint attributes. Attributes in this map include
      *         the following:</p>
      *         <ul>
-     *         <li><code>CustomUserData</code> -- arbitrary user data to
+     *         <li> <code>CustomUserData</code> -- arbitrary user data to
      *         associate with the endpoint. Amazon SNS does not use this data.
      *         The data must be in UTF-8 format and less than 2KB.</li>
-     *         <li><code>Enabled</code> -- flag that enables/disables delivery
+     *         <li> <code>Enabled</code> -- flag that enables/disables delivery
      *         to the endpoint. Amazon SNS will set this to false when a
      *         notification service indicates to Amazon SNS that the endpoint is
      *         invalid. Users can set it back to true, typically after updating
      *         Token.</li>
-     *         <li><code>Token</code> -- device token, also referred to as a
+     *         <li> <code>Token</code> -- device token, also referred to as a
      *         registration id, for an app and mobile device. This is returned
      *         from the notification service when an app and mobile device are
      *         registered with the notification service.</li>
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -140,14 +144,14 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * following:
      * </p>
      * <ul>
-     * <li><code>CustomUserData</code> -- arbitrary user data to associate with
+     * <li> <code>CustomUserData</code> -- arbitrary user data to associate with
      * the endpoint. Amazon SNS does not use this data. The data must be in
      * UTF-8 format and less than 2KB.</li>
-     * <li><code>Enabled</code> -- flag that enables/disables delivery to the
+     * <li> <code>Enabled</code> -- flag that enables/disables delivery to the
      * endpoint. Amazon SNS will set this to false when a notification service
      * indicates to Amazon SNS that the endpoint is invalid. Users can set it
      * back to true, typically after updating Token.</li>
-     * <li><code>Token</code> -- device token, also referred to as a
+     * <li> <code>Token</code> -- device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with
      * the notification service.</li>
@@ -157,19 +161,20 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      *        A map of the endpoint attributes. Attributes in this map include
      *        the following:</p>
      *        <ul>
-     *        <li><code>CustomUserData</code> -- arbitrary user data to
+     *        <li> <code>CustomUserData</code> -- arbitrary user data to
      *        associate with the endpoint. Amazon SNS does not use this data.
      *        The data must be in UTF-8 format and less than 2KB.</li>
-     *        <li><code>Enabled</code> -- flag that enables/disables delivery to
+     *        <li> <code>Enabled</code> -- flag that enables/disables delivery to
      *        the endpoint. Amazon SNS will set this to false when a
      *        notification service indicates to Amazon SNS that the endpoint is
      *        invalid. Users can set it back to true, typically after updating
      *        Token.</li>
-     *        <li><code>Token</code> -- device token, also referred to as a
+     *        <li> <code>Token</code> -- device token, also referred to as a
      *        registration id, for an app and mobile device. This is returned
      *        from the notification service when an app and mobile device are
      *        registered with the notification service.</li>
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -182,14 +187,14 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * following:
      * </p>
      * <ul>
-     * <li><code>CustomUserData</code> -- arbitrary user data to associate with
+     * <li> <code>CustomUserData</code> -- arbitrary user data to associate with
      * the endpoint. Amazon SNS does not use this data. The data must be in
      * UTF-8 format and less than 2KB.</li>
-     * <li><code>Enabled</code> -- flag that enables/disables delivery to the
+     * <li> <code>Enabled</code> -- flag that enables/disables delivery to the
      * endpoint. Amazon SNS will set this to false when a notification service
      * indicates to Amazon SNS that the endpoint is invalid. Users can set it
      * back to true, typically after updating Token.</li>
-     * <li><code>Token</code> -- device token, also referred to as a
+     * <li> <code>Token</code> -- device token, also referred to as a
      * registration id, for an app and mobile device. This is returned from the
      * notification service when an app and mobile device are registered with
      * the notification service.</li>
@@ -199,21 +204,22 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      *        A map of the endpoint attributes. Attributes in this map include
      *        the following:</p>
      *        <ul>
-     *        <li><code>CustomUserData</code> -- arbitrary user data to
+     *        <li> <code>CustomUserData</code> -- arbitrary user data to
      *        associate with the endpoint. Amazon SNS does not use this data.
      *        The data must be in UTF-8 format and less than 2KB.</li>
-     *        <li><code>Enabled</code> -- flag that enables/disables delivery to
+     *        <li> <code>Enabled</code> -- flag that enables/disables delivery to
      *        the endpoint. Amazon SNS will set this to false when a
      *        notification service indicates to Amazon SNS that the endpoint is
      *        invalid. Users can set it back to true, typically after updating
      *        Token.</li>
-     *        <li><code>Token</code> -- device token, also referred to as a
+     *        <li> <code>Token</code> -- device token, also referred to as a
      *        registration id, for an app and mobile device. This is returned
      *        from the notification service when an app and mobile device are
      *        registered with the notification service.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetEndpointAttributesRequest withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -236,6 +242,7 @@ public class SetEndpointAttributesRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public SetEndpointAttributesRequest clearAttributesEntries() {
         this.attributes = null;
         return this;

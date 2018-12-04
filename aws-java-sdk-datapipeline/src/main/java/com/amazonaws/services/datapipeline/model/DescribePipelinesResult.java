@@ -39,6 +39,7 @@ public class DescribePipelinesResult implements Serializable, Cloneable {
      * 
      * @return An array of descriptions for the specified pipelines.
      */
+
     public java.util.List<PipelineDescription> getPipelineDescriptionList() {
         if (pipelineDescriptionList == null) {
             pipelineDescriptionList = new com.amazonaws.internal.SdkInternalList<PipelineDescription>();
@@ -54,6 +55,7 @@ public class DescribePipelinesResult implements Serializable, Cloneable {
      * @param pipelineDescriptionList
      *        An array of descriptions for the specified pipelines.
      */
+
     public void setPipelineDescriptionList(
             java.util.Collection<PipelineDescription> pipelineDescriptionList) {
         if (pipelineDescriptionList == null) {
@@ -81,6 +83,7 @@ public class DescribePipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePipelinesResult withPipelineDescriptionList(
             PipelineDescription... pipelineDescriptionList) {
         if (this.pipelineDescriptionList == null) {
@@ -103,6 +106,7 @@ public class DescribePipelinesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePipelinesResult withPipelineDescriptionList(
             java.util.Collection<PipelineDescription> pipelineDescriptionList) {
         setPipelineDescriptionList(pipelineDescriptionList);

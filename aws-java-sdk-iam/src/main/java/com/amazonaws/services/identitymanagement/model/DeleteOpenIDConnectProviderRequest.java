@@ -27,58 +27,64 @@ public class DeleteOpenIDConnectProviderRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to
-     * delete. You can get a list of OpenID Connect provider ARNs by using the
-     * <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
+     * resource object to delete. You can get a list of OpenID Connect provider
+     * resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      */
     private String openIDConnectProviderArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to
-     * delete. You can get a list of OpenID Connect provider ARNs by using the
-     * <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
+     * resource object to delete. You can get a list of OpenID Connect provider
+     * resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *        to delete. You can get a list of OpenID Connect provider ARNs by
-     *        using the <a>ListOpenIDConnectProviders</a> action.
+     *        resource object to delete. You can get a list of OpenID Connect
+     *        provider resource ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to
-     * delete. You can get a list of OpenID Connect provider ARNs by using the
-     * <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
+     * resource object to delete. You can get a list of OpenID Connect provider
+     * resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *         to delete. You can get a list of OpenID Connect provider ARNs by
-     *         using the <a>ListOpenIDConnectProviders</a> action.
+     *         resource object to delete. You can get a list of OpenID Connect
+     *         provider resource ARNs by using the
+     *         <a>ListOpenIDConnectProviders</a> action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider to
-     * delete. You can get a list of OpenID Connect provider ARNs by using the
-     * <a>ListOpenIDConnectProviders</a> action.
+     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
+     * resource object to delete. You can get a list of OpenID Connect provider
+     * resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *        to delete. You can get a list of OpenID Connect provider ARNs by
-     *        using the <a>ListOpenIDConnectProviders</a> action.
+     *        resource object to delete. You can get a list of OpenID Connect
+     *        provider resource ARNs by using the
+     *        <a>ListOpenIDConnectProviders</a> action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);

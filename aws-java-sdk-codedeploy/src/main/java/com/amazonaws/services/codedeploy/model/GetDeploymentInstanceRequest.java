@@ -35,7 +35,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
     private String deploymentId;
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      */
     private String instanceId;
@@ -48,6 +48,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
      * @param deploymentId
      *        The unique ID of a deployment.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -59,6 +60,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
      * 
      * @return The unique ID of a deployment.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -73,6 +75,7 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentInstanceRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;
@@ -80,38 +83,40 @@ public class GetDeploymentInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
      * @param instanceId
-     *        The unique ID of an instance in the deployment's deployment group.
+     *        The unique ID of an instance in the deployment group.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
-     * @return The unique ID of an instance in the deployment's deployment
-     *         group.
+     * @return The unique ID of an instance in the deployment group.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
      * <p>
-     * The unique ID of an instance in the deployment's deployment group.
+     * The unique ID of an instance in the deployment group.
      * </p>
      * 
      * @param instanceId
-     *        The unique ID of an instance in the deployment's deployment group.
+     *        The unique ID of an instance in the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

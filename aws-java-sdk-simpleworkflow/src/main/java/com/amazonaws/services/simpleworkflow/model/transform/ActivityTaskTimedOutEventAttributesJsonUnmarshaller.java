@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.simpleworkflow.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,11 +29,14 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Activity Task Timed Out Event Attributes JSON Unmarshaller
+ * ActivityTaskTimedOutEventAttributes JSON Unmarshaller
  */
-public class ActivityTaskTimedOutEventAttributesJsonUnmarshaller implements Unmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext> {
+public class ActivityTaskTimedOutEventAttributesJsonUnmarshaller
+        implements
+        Unmarshaller<ActivityTaskTimedOutEventAttributes, JsonUnmarshallerContext> {
 
-    public ActivityTaskTimedOutEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ActivityTaskTimedOutEventAttributes unmarshall(
+            JsonUnmarshallerContext context) throws Exception {
         ActivityTaskTimedOutEventAttributes activityTaskTimedOutEventAttributes = new ActivityTaskTimedOutEventAttributes();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,45 +44,57 @@ public class ActivityTaskTimedOutEventAttributesJsonUnmarshaller implements Unma
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timeoutType", targetDepth)) {
                     context.nextToken();
-                    activityTaskTimedOutEventAttributes.setTimeoutType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    activityTaskTimedOutEventAttributes.setTimeoutType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("scheduledEventId", targetDepth)) {
                     context.nextToken();
-                    activityTaskTimedOutEventAttributes.setScheduledEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    activityTaskTimedOutEventAttributes
+                            .setScheduledEventId(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("startedEventId", targetDepth)) {
                     context.nextToken();
-                    activityTaskTimedOutEventAttributes.setStartedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    activityTaskTimedOutEventAttributes
+                            .setStartedEventId(context.getUnmarshaller(
+                                    Long.class).unmarshall(context));
                 }
                 if (context.testExpression("details", targetDepth)) {
                     context.nextToken();
-                    activityTaskTimedOutEventAttributes.setDetails(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    activityTaskTimedOutEventAttributes.setDetails(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return activityTaskTimedOutEventAttributes;
     }
 
     private static ActivityTaskTimedOutEventAttributesJsonUnmarshaller instance;
+
     public static ActivityTaskTimedOutEventAttributesJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new ActivityTaskTimedOutEventAttributesJsonUnmarshaller();
+        if (instance == null)
+            instance = new ActivityTaskTimedOutEventAttributesJsonUnmarshaller();
         return instance;
     }
 }
-    

@@ -125,10 +125,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -297,10 +297,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -465,10 +465,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -636,10 +636,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -799,10 +799,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -954,9 +954,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         <i>Keys</i> - An array of primary key attribute values that
      *         define specific items in the table. For each primary key, you
      *         must provide <i>all</i> of the key attributes. For example, with
-     *         a hash type primary key, you only need to provide the hash
-     *         attribute. For a hash-and-range type primary key, you must
-     *         provide <i>both</i> the hash attribute and the range attribute.
+     *         a simple primary key, you only need to provide the partition key
+     *         value. For a composite key, you must provide <i>both</i> the
+     *         partition key value and the sort key value.
      *         </p>
      *         </li>
      *         <li>
@@ -1010,6 +1010,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, KeysAndAttributes> getRequestItems() {
         return requestItems;
     }
@@ -1112,10 +1113,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -1267,10 +1268,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -1324,6 +1325,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setRequestItems(
             java.util.Map<String, KeysAndAttributes> requestItems) {
         this.requestItems = requestItems;
@@ -1427,10 +1429,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * <p>
      * <i>Keys</i> - An array of primary key attribute values that define
      * specific items in the table. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a hash type primary
-     * key, you only need to provide the hash attribute. For a hash-and-range
-     * type primary key, you must provide <i>both</i> the hash attribute and the
-     * range attribute.
+     * <i>all</i> of the key attributes. For example, with a simple primary key,
+     * you only need to provide the partition key value. For a composite key,
+     * you must provide <i>both</i> the partition key value and the sort key
+     * value.
      * </p>
      * </li>
      * <li>
@@ -1582,10 +1584,10 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <i>Keys</i> - An array of primary key attribute values that define
      *        specific items in the table. For each primary key, you must
-     *        provide <i>all</i> of the key attributes. For example, with a hash
-     *        type primary key, you only need to provide the hash attribute. For
-     *        a hash-and-range type primary key, you must provide <i>both</i>
-     *        the hash attribute and the range attribute.
+     *        provide <i>all</i> of the key attributes. For example, with a
+     *        simple primary key, you only need to provide the partition key
+     *        value. For a composite key, you must provide <i>both</i> the
+     *        partition key value and the sort key value.
      *        </p>
      *        </li>
      *        <li>
@@ -1641,6 +1643,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemRequest withRequestItems(
             java.util.Map<String, KeysAndAttributes> requestItems) {
         setRequestItems(requestItems);
@@ -1663,6 +1666,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into RequestItems. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public BatchGetItemRequest clearRequestItemsEntries() {
         this.requestItems = null;
         return this;
@@ -1672,6 +1676,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -1680,6 +1685,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -1690,6 +1696,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchGetItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -1698,10 +1705,9 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -1713,6 +1719,7 @@ public class BatchGetItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public BatchGetItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);

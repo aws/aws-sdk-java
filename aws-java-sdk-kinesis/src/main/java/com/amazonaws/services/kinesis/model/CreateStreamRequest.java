@@ -32,8 +32,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * A name to identify the stream. The stream name is scoped to the AWS
      * account used by the application that creates the stream. It is also
      * scoped by region. That is, two streams in two different AWS accounts can
-     * have the same name, and two streams in the same AWS account, but in two
-     * different regions, can have the same name.
+     * have the same name, and two streams in the same AWS account but in two
+     * different regions can have the same name.
      * </p>
      */
     private String streamName;
@@ -54,8 +54,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * A name to identify the stream. The stream name is scoped to the AWS
      * account used by the application that creates the stream. It is also
      * scoped by region. That is, two streams in two different AWS accounts can
-     * have the same name, and two streams in the same AWS account, but in two
-     * different regions, can have the same name.
+     * have the same name, and two streams in the same AWS account but in two
+     * different regions can have the same name.
      * </p>
      * 
      * @param streamName
@@ -63,8 +63,9 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *        AWS account used by the application that creates the stream. It is
      *        also scoped by region. That is, two streams in two different AWS
      *        accounts can have the same name, and two streams in the same AWS
-     *        account, but in two different regions, can have the same name.
+     *        account but in two different regions can have the same name.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -74,17 +75,17 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * A name to identify the stream. The stream name is scoped to the AWS
      * account used by the application that creates the stream. It is also
      * scoped by region. That is, two streams in two different AWS accounts can
-     * have the same name, and two streams in the same AWS account, but in two
-     * different regions, can have the same name.
+     * have the same name, and two streams in the same AWS account but in two
+     * different regions can have the same name.
      * </p>
      * 
      * @return A name to identify the stream. The stream name is scoped to the
      *         AWS account used by the application that creates the stream. It
      *         is also scoped by region. That is, two streams in two different
      *         AWS accounts can have the same name, and two streams in the same
-     *         AWS account, but in two different regions, can have the same
-     *         name.
+     *         AWS account but in two different regions can have the same name.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -94,8 +95,8 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * A name to identify the stream. The stream name is scoped to the AWS
      * account used by the application that creates the stream. It is also
      * scoped by region. That is, two streams in two different AWS accounts can
-     * have the same name, and two streams in the same AWS account, but in two
-     * different regions, can have the same name.
+     * have the same name, and two streams in the same AWS account but in two
+     * different regions can have the same name.
      * </p>
      * 
      * @param streamName
@@ -103,10 +104,11 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *        AWS account used by the application that creates the stream. It is
      *        also scoped by region. That is, two streams in two different AWS
      *        accounts can have the same name, and two streams in the same AWS
-     *        account, but in two different regions, can have the same name.
+     *        account but in two different regions can have the same name.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -129,6 +131,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        DefaultShardLimit;
      */
+
     public void setShardCount(Integer shardCount) {
         this.shardCount = shardCount;
     }
@@ -149,6 +152,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         DefaultShardLimit;
      */
+
     public Integer getShardCount() {
         return this.shardCount;
     }
@@ -172,6 +176,7 @@ public class CreateStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamRequest withShardCount(Integer shardCount) {
         setShardCount(shardCount);
         return this;

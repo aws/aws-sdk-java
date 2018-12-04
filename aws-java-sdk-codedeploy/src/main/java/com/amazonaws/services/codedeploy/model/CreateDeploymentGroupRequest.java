@@ -29,67 +29,115 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a new deployment group for the specified application.
      * </p>
      */
     private String deploymentGroupName;
     /**
      * <p>
-     * If specified, the deployment configuration name must be one of the
-     * predefined values, or it can be a custom deployment configuration:
-     * </p>
-     * <ul>
-     * <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to
-     * all of the instances at once. The overall deployment succeeds if the
-     * application revision deploys to at least one of the instances. The
-     * overall deployment fails after the application revision fails to deploy
-     * to all of the instances. For example, for 9 instances, deploy to up to
-     * all 9 instances at once. The overall deployment succeeds if any of the 9
-     * instances is successfully deployed to, and it fails if all 9 instances
-     * fail to be deployed to.</li>
-     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
-     * at a time (with fractions rounded down). The overall deployment succeeds
-     * if the application revision deploys to at least half of the instances
-     * (with fractions rounded up); otherwise, the deployment fails. For
-     * example, for 9 instances, deploy to up to 4 instances at a time. The
-     * overall deployment succeeds if 5 or more instances are successfully
-     * deployed to; otherwise, the deployment fails. Note that the deployment
-     * may successfully deploy to some instances, even if the overall deployment
-     * fails.</li>
-     * <li>CodeDeployDefault.OneAtATime deploys the application revision to only
-     * one of the instances at a time. The overall deployment succeeds if the
-     * application revision deploys to all of the instances. The overall
-     * deployment fails after the application revision first fails to deploy to
-     * any one instances. For example, for 9 instances, deploy to one instance
-     * at a time. The overall deployment succeeds if all 9 instances are
-     * successfully deployed to, and it fails if any of one of the 9 instances
-     * fail to be deployed to. Note that the deployment may successfully deploy
-     * to some instances, even if the overall deployment fails. This is the
-     * default deployment configuration if a configuration isn't specified for
-     * either the deployment or the deployment group.</li>
-     * </ul>
-     * <p>
-     * To create a custom deployment configuration, call the create deployment
+     * If specified, the deployment configuration name can be either one of the
+     * predefined configurations provided with AWS CodeDeploy or a custom
+     * deployment configuration that you create by calling the create deployment
      * configuration operation.
      * </p>
+     * <note>
+     * <p>
+     * CodeDeployDefault.OneAtATime is the default deployment configuration. It
+     * is used if a configuration isn't specified for the deployment or the
+     * deployment group.
+     * </p>
+     * </note>
+     * <p>
+     * The predefined deployment configurations include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
+     * revision to as many instance as possible at once. The status of the
+     * overall deployment will be displayed as <b>Succeeded</b> if the
+     * application revision is deployed to one or more of the instances. The
+     * status of the overall deployment will be displayed as <b>Failed</b> if
+     * the application revision is not deployed to any of the instances. Using
+     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instance at once. The overall deployment will succeed
+     * if deployment to even a single instance is successful; it will fail only
+     * if deployments to all nine instance fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall deployment
+     * succeeds if the application revision is deployed to at least half of the
+     * instances (with fractions rounded up); otherwise, the deployment fails.
+     * In the example of nine instances, it will deploy to up to four instance
+     * at a time. The overall deployment succeeds if deployment to five or more
+     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to
+     * only one instance at a time.
+     * </p>
+     * <p>
+     * For deployment groups that contain more than one instance:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The overall deployment succeeds if the application revision is deployed
+     * to all of the instances. The exception to this rule is if deployment to
+     * the last instance fails, the overall deployment still succeeds. This is
+     * because AWS CodeDeploy allows only one instance at a time to be taken
+     * offline with the CodeDeployDefault.OneAtATime configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The overall deployment fails as soon as the application revision fails to
+     * be deployed to any but the last instance. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In an example using nine instance, it will deploy to one instance at a
+     * time. The overall deployment succeeds if deployment to the first eight
+     * instance is successful; the overall deployment fails if deployment to any
+     * of the first eight instance fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For deployment groups that contain only one instance, the overall
+     * deployment is successful only if deployment to the single instance is
+     * successful
+     * </p>
+     * </li>
+     * </ul>
      */
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -106,46 +154,56 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String serviceRoleArn;
+    /**
+     * <p>
+     * Information about triggers to create when the deployment group is
+     * created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -154,40 +212,40 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a new deployment group for the specified application.
      * </p>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified
-     *        application.
+     *        The name of a new deployment group for the specified application.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a new deployment group for the specified application.
      * </p>
      * 
-     * @return The name of an existing deployment group for the specified
-     *         application.
+     * @return The name of a new deployment group for the specified application.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
 
     /**
      * <p>
-     * The name of an existing deployment group for the specified application.
+     * The name of a new deployment group for the specified application.
      * </p>
      * 
      * @param deploymentGroupName
-     *        The name of an existing deployment group for the specified
-     *        application.
+     *        The name of a new deployment group for the specified application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
@@ -196,256 +254,541 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * If specified, the deployment configuration name must be one of the
-     * predefined values, or it can be a custom deployment configuration:
-     * </p>
-     * <ul>
-     * <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to
-     * all of the instances at once. The overall deployment succeeds if the
-     * application revision deploys to at least one of the instances. The
-     * overall deployment fails after the application revision fails to deploy
-     * to all of the instances. For example, for 9 instances, deploy to up to
-     * all 9 instances at once. The overall deployment succeeds if any of the 9
-     * instances is successfully deployed to, and it fails if all 9 instances
-     * fail to be deployed to.</li>
-     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
-     * at a time (with fractions rounded down). The overall deployment succeeds
-     * if the application revision deploys to at least half of the instances
-     * (with fractions rounded up); otherwise, the deployment fails. For
-     * example, for 9 instances, deploy to up to 4 instances at a time. The
-     * overall deployment succeeds if 5 or more instances are successfully
-     * deployed to; otherwise, the deployment fails. Note that the deployment
-     * may successfully deploy to some instances, even if the overall deployment
-     * fails.</li>
-     * <li>CodeDeployDefault.OneAtATime deploys the application revision to only
-     * one of the instances at a time. The overall deployment succeeds if the
-     * application revision deploys to all of the instances. The overall
-     * deployment fails after the application revision first fails to deploy to
-     * any one instances. For example, for 9 instances, deploy to one instance
-     * at a time. The overall deployment succeeds if all 9 instances are
-     * successfully deployed to, and it fails if any of one of the 9 instances
-     * fail to be deployed to. Note that the deployment may successfully deploy
-     * to some instances, even if the overall deployment fails. This is the
-     * default deployment configuration if a configuration isn't specified for
-     * either the deployment or the deployment group.</li>
-     * </ul>
-     * <p>
-     * To create a custom deployment configuration, call the create deployment
+     * If specified, the deployment configuration name can be either one of the
+     * predefined configurations provided with AWS CodeDeploy or a custom
+     * deployment configuration that you create by calling the create deployment
      * configuration operation.
      * </p>
+     * <note>
+     * <p>
+     * CodeDeployDefault.OneAtATime is the default deployment configuration. It
+     * is used if a configuration isn't specified for the deployment or the
+     * deployment group.
+     * </p>
+     * </note>
+     * <p>
+     * The predefined deployment configurations include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
+     * revision to as many instance as possible at once. The status of the
+     * overall deployment will be displayed as <b>Succeeded</b> if the
+     * application revision is deployed to one or more of the instances. The
+     * status of the overall deployment will be displayed as <b>Failed</b> if
+     * the application revision is not deployed to any of the instances. Using
+     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instance at once. The overall deployment will succeed
+     * if deployment to even a single instance is successful; it will fail only
+     * if deployments to all nine instance fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall deployment
+     * succeeds if the application revision is deployed to at least half of the
+     * instances (with fractions rounded up); otherwise, the deployment fails.
+     * In the example of nine instances, it will deploy to up to four instance
+     * at a time. The overall deployment succeeds if deployment to five or more
+     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to
+     * only one instance at a time.
+     * </p>
+     * <p>
+     * For deployment groups that contain more than one instance:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The overall deployment succeeds if the application revision is deployed
+     * to all of the instances. The exception to this rule is if deployment to
+     * the last instance fails, the overall deployment still succeeds. This is
+     * because AWS CodeDeploy allows only one instance at a time to be taken
+     * offline with the CodeDeployDefault.OneAtATime configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The overall deployment fails as soon as the application revision fails to
+     * be deployed to any but the last instance. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In an example using nine instance, it will deploy to one instance at a
+     * time. The overall deployment succeeds if deployment to the first eight
+     * instance is successful; the overall deployment fails if deployment to any
+     * of the first eight instance fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For deployment groups that contain only one instance, the overall
+     * deployment is successful only if deployment to the single instance is
+     * successful
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deploymentConfigName
-     *        If specified, the deployment configuration name must be one of the
-     *        predefined values, or it can be a custom deployment
-     *        configuration:</p>
+     *        If specified, the deployment configuration name can be either one
+     *        of the predefined configurations provided with AWS CodeDeploy or a
+     *        custom deployment configuration that you create by calling the
+     *        create deployment configuration operation.</p> <note>
+     *        <p>
+     *        CodeDeployDefault.OneAtATime is the default deployment
+     *        configuration. It is used if a configuration isn't specified for
+     *        the deployment or the deployment group.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The predefined deployment configurations include the following:
+     *        </p>
      *        <ul>
-     *        <li>CodeDeployDefault.AllAtOnce deploys an application revision to
-     *        up to all of the instances at once. The overall deployment
-     *        succeeds if the application revision deploys to at least one of
-     *        the instances. The overall deployment fails after the application
-     *        revision fails to deploy to all of the instances. For example, for
-     *        9 instances, deploy to up to all 9 instances at once. The overall
-     *        deployment succeeds if any of the 9 instances is successfully
-     *        deployed to, and it fails if all 9 instances fail to be deployed
-     *        to.</li>
-     *        <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
+     *        application revision to as many instance as possible at once. The
+     *        status of the overall deployment will be displayed as
+     *        <b>Succeeded</b> if the application revision is deployed to one or
+     *        more of the instances. The status of the overall deployment will
+     *        be displayed as <b>Failed</b> if the application revision is not
+     *        deployed to any of the instances. Using an example of nine
+     *        instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *        all nine instance at once. The overall deployment will succeed if
+     *        deployment to even a single instance is successful; it will fail
+     *        only if deployments to all nine instance fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
      *        instances at a time (with fractions rounded down). The overall
-     *        deployment succeeds if the application revision deploys to at
+     *        deployment succeeds if the application revision is deployed to at
      *        least half of the instances (with fractions rounded up);
-     *        otherwise, the deployment fails. For example, for 9 instances,
-     *        deploy to up to 4 instances at a time. The overall deployment
-     *        succeeds if 5 or more instances are successfully deployed to;
-     *        otherwise, the deployment fails. Note that the deployment may
-     *        successfully deploy to some instances, even if the overall
-     *        deployment fails.</li>
-     *        <li>CodeDeployDefault.OneAtATime deploys the application revision
-     *        to only one of the instances at a time. The overall deployment
-     *        succeeds if the application revision deploys to all of the
-     *        instances. The overall deployment fails after the application
-     *        revision first fails to deploy to any one instances. For example,
-     *        for 9 instances, deploy to one instance at a time. The overall
-     *        deployment succeeds if all 9 instances are successfully deployed
-     *        to, and it fails if any of one of the 9 instances fail to be
-     *        deployed to. Note that the deployment may successfully deploy to
-     *        some instances, even if the overall deployment fails. This is the
-     *        default deployment configuration if a configuration isn't
-     *        specified for either the deployment or the deployment group.</li>
+     *        otherwise, the deployment fails. In the example of nine instances,
+     *        it will deploy to up to four instance at a time. The overall
+     *        deployment succeeds if deployment to five or more instances
+     *        succeed; otherwise, the deployment fails. The deployment may be
+     *        successfully deployed to some instances even if the overall
+     *        deployment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.OneAtATime</b> deploys the application
+     *        revision to only one instance at a time.
+     *        </p>
+     *        <p>
+     *        For deployment groups that contain more than one instance:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The overall deployment succeeds if the application revision is
+     *        deployed to all of the instances. The exception to this rule is if
+     *        deployment to the last instance fails, the overall deployment
+     *        still succeeds. This is because AWS CodeDeploy allows only one
+     *        instance at a time to be taken offline with the
+     *        CodeDeployDefault.OneAtATime configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The overall deployment fails as soon as the application revision
+     *        fails to be deployed to any but the last instance. The deployment
+     *        may be successfully deployed to some instances even if the overall
+     *        deployment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In an example using nine instance, it will deploy to one instance
+     *        at a time. The overall deployment succeeds if deployment to the
+     *        first eight instance is successful; the overall deployment fails
+     *        if deployment to any of the first eight instance fails.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        To create a custom deployment configuration, call the create
-     *        deployment configuration operation.
+     *        For deployment groups that contain only one instance, the overall
+     *        deployment is successful only if deployment to the single instance
+     *        is successful
+     *        </p>
+     *        </li>
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
 
     /**
      * <p>
-     * If specified, the deployment configuration name must be one of the
-     * predefined values, or it can be a custom deployment configuration:
-     * </p>
-     * <ul>
-     * <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to
-     * all of the instances at once. The overall deployment succeeds if the
-     * application revision deploys to at least one of the instances. The
-     * overall deployment fails after the application revision fails to deploy
-     * to all of the instances. For example, for 9 instances, deploy to up to
-     * all 9 instances at once. The overall deployment succeeds if any of the 9
-     * instances is successfully deployed to, and it fails if all 9 instances
-     * fail to be deployed to.</li>
-     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
-     * at a time (with fractions rounded down). The overall deployment succeeds
-     * if the application revision deploys to at least half of the instances
-     * (with fractions rounded up); otherwise, the deployment fails. For
-     * example, for 9 instances, deploy to up to 4 instances at a time. The
-     * overall deployment succeeds if 5 or more instances are successfully
-     * deployed to; otherwise, the deployment fails. Note that the deployment
-     * may successfully deploy to some instances, even if the overall deployment
-     * fails.</li>
-     * <li>CodeDeployDefault.OneAtATime deploys the application revision to only
-     * one of the instances at a time. The overall deployment succeeds if the
-     * application revision deploys to all of the instances. The overall
-     * deployment fails after the application revision first fails to deploy to
-     * any one instances. For example, for 9 instances, deploy to one instance
-     * at a time. The overall deployment succeeds if all 9 instances are
-     * successfully deployed to, and it fails if any of one of the 9 instances
-     * fail to be deployed to. Note that the deployment may successfully deploy
-     * to some instances, even if the overall deployment fails. This is the
-     * default deployment configuration if a configuration isn't specified for
-     * either the deployment or the deployment group.</li>
-     * </ul>
-     * <p>
-     * To create a custom deployment configuration, call the create deployment
+     * If specified, the deployment configuration name can be either one of the
+     * predefined configurations provided with AWS CodeDeploy or a custom
+     * deployment configuration that you create by calling the create deployment
      * configuration operation.
      * </p>
+     * <note>
+     * <p>
+     * CodeDeployDefault.OneAtATime is the default deployment configuration. It
+     * is used if a configuration isn't specified for the deployment or the
+     * deployment group.
+     * </p>
+     * </note>
+     * <p>
+     * The predefined deployment configurations include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
+     * revision to as many instance as possible at once. The status of the
+     * overall deployment will be displayed as <b>Succeeded</b> if the
+     * application revision is deployed to one or more of the instances. The
+     * status of the overall deployment will be displayed as <b>Failed</b> if
+     * the application revision is not deployed to any of the instances. Using
+     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instance at once. The overall deployment will succeed
+     * if deployment to even a single instance is successful; it will fail only
+     * if deployments to all nine instance fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall deployment
+     * succeeds if the application revision is deployed to at least half of the
+     * instances (with fractions rounded up); otherwise, the deployment fails.
+     * In the example of nine instances, it will deploy to up to four instance
+     * at a time. The overall deployment succeeds if deployment to five or more
+     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to
+     * only one instance at a time.
+     * </p>
+     * <p>
+     * For deployment groups that contain more than one instance:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The overall deployment succeeds if the application revision is deployed
+     * to all of the instances. The exception to this rule is if deployment to
+     * the last instance fails, the overall deployment still succeeds. This is
+     * because AWS CodeDeploy allows only one instance at a time to be taken
+     * offline with the CodeDeployDefault.OneAtATime configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The overall deployment fails as soon as the application revision fails to
+     * be deployed to any but the last instance. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In an example using nine instance, it will deploy to one instance at a
+     * time. The overall deployment succeeds if deployment to the first eight
+     * instance is successful; the overall deployment fails if deployment to any
+     * of the first eight instance fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For deployment groups that contain only one instance, the overall
+     * deployment is successful only if deployment to the single instance is
+     * successful
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return If specified, the deployment configuration name must be one of
-     *         the predefined values, or it can be a custom deployment
-     *         configuration:</p>
+     * @return If specified, the deployment configuration name can be either one
+     *         of the predefined configurations provided with AWS CodeDeploy or
+     *         a custom deployment configuration that you create by calling the
+     *         create deployment configuration operation.</p> <note>
+     *         <p>
+     *         CodeDeployDefault.OneAtATime is the default deployment
+     *         configuration. It is used if a configuration isn't specified for
+     *         the deployment or the deployment group.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The predefined deployment configurations include the following:
+     *         </p>
      *         <ul>
-     *         <li>CodeDeployDefault.AllAtOnce deploys an application revision
-     *         to up to all of the instances at once. The overall deployment
-     *         succeeds if the application revision deploys to at least one of
-     *         the instances. The overall deployment fails after the application
-     *         revision fails to deploy to all of the instances. For example,
-     *         for 9 instances, deploy to up to all 9 instances at once. The
-     *         overall deployment succeeds if any of the 9 instances is
-     *         successfully deployed to, and it fails if all 9 instances fail to
-     *         be deployed to.</li>
-     *         <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *         <li>
+     *         <p>
+     *         <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
+     *         application revision to as many instance as possible at once. The
+     *         status of the overall deployment will be displayed as
+     *         <b>Succeeded</b> if the application revision is deployed to one
+     *         or more of the instances. The status of the overall deployment
+     *         will be displayed as <b>Failed</b> if the application revision is
+     *         not deployed to any of the instances. Using an example of nine
+     *         instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *         all nine instance at once. The overall deployment will succeed if
+     *         deployment to even a single instance is successful; it will fail
+     *         only if deployments to all nine instance fail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
      *         instances at a time (with fractions rounded down). The overall
-     *         deployment succeeds if the application revision deploys to at
+     *         deployment succeeds if the application revision is deployed to at
      *         least half of the instances (with fractions rounded up);
-     *         otherwise, the deployment fails. For example, for 9 instances,
-     *         deploy to up to 4 instances at a time. The overall deployment
-     *         succeeds if 5 or more instances are successfully deployed to;
-     *         otherwise, the deployment fails. Note that the deployment may
-     *         successfully deploy to some instances, even if the overall
-     *         deployment fails.</li>
-     *         <li>CodeDeployDefault.OneAtATime deploys the application revision
-     *         to only one of the instances at a time. The overall deployment
-     *         succeeds if the application revision deploys to all of the
-     *         instances. The overall deployment fails after the application
-     *         revision first fails to deploy to any one instances. For example,
-     *         for 9 instances, deploy to one instance at a time. The overall
-     *         deployment succeeds if all 9 instances are successfully deployed
-     *         to, and it fails if any of one of the 9 instances fail to be
-     *         deployed to. Note that the deployment may successfully deploy to
-     *         some instances, even if the overall deployment fails. This is the
-     *         default deployment configuration if a configuration isn't
-     *         specified for either the deployment or the deployment group.</li>
+     *         otherwise, the deployment fails. In the example of nine
+     *         instances, it will deploy to up to four instance at a time. The
+     *         overall deployment succeeds if deployment to five or more
+     *         instances succeed; otherwise, the deployment fails. The
+     *         deployment may be successfully deployed to some instances even if
+     *         the overall deployment fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>CodeDeployDefault.OneAtATime</b> deploys the application
+     *         revision to only one instance at a time.
+     *         </p>
+     *         <p>
+     *         For deployment groups that contain more than one instance:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The overall deployment succeeds if the application revision is
+     *         deployed to all of the instances. The exception to this rule is
+     *         if deployment to the last instance fails, the overall deployment
+     *         still succeeds. This is because AWS CodeDeploy allows only one
+     *         instance at a time to be taken offline with the
+     *         CodeDeployDefault.OneAtATime configuration.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The overall deployment fails as soon as the application revision
+     *         fails to be deployed to any but the last instance. The deployment
+     *         may be successfully deployed to some instances even if the
+     *         overall deployment fails.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In an example using nine instance, it will deploy to one instance
+     *         at a time. The overall deployment succeeds if deployment to the
+     *         first eight instance is successful; the overall deployment fails
+     *         if deployment to any of the first eight instance fails.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         To create a custom deployment configuration, call the create
-     *         deployment configuration operation.
+     *         For deployment groups that contain only one instance, the overall
+     *         deployment is successful only if deployment to the single
+     *         instance is successful
+     *         </p>
+     *         </li>
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
 
     /**
      * <p>
-     * If specified, the deployment configuration name must be one of the
-     * predefined values, or it can be a custom deployment configuration:
-     * </p>
-     * <ul>
-     * <li>CodeDeployDefault.AllAtOnce deploys an application revision to up to
-     * all of the instances at once. The overall deployment succeeds if the
-     * application revision deploys to at least one of the instances. The
-     * overall deployment fails after the application revision fails to deploy
-     * to all of the instances. For example, for 9 instances, deploy to up to
-     * all 9 instances at once. The overall deployment succeeds if any of the 9
-     * instances is successfully deployed to, and it fails if all 9 instances
-     * fail to be deployed to.</li>
-     * <li>CodeDeployDefault.HalfAtATime deploys to up to half of the instances
-     * at a time (with fractions rounded down). The overall deployment succeeds
-     * if the application revision deploys to at least half of the instances
-     * (with fractions rounded up); otherwise, the deployment fails. For
-     * example, for 9 instances, deploy to up to 4 instances at a time. The
-     * overall deployment succeeds if 5 or more instances are successfully
-     * deployed to; otherwise, the deployment fails. Note that the deployment
-     * may successfully deploy to some instances, even if the overall deployment
-     * fails.</li>
-     * <li>CodeDeployDefault.OneAtATime deploys the application revision to only
-     * one of the instances at a time. The overall deployment succeeds if the
-     * application revision deploys to all of the instances. The overall
-     * deployment fails after the application revision first fails to deploy to
-     * any one instances. For example, for 9 instances, deploy to one instance
-     * at a time. The overall deployment succeeds if all 9 instances are
-     * successfully deployed to, and it fails if any of one of the 9 instances
-     * fail to be deployed to. Note that the deployment may successfully deploy
-     * to some instances, even if the overall deployment fails. This is the
-     * default deployment configuration if a configuration isn't specified for
-     * either the deployment or the deployment group.</li>
-     * </ul>
-     * <p>
-     * To create a custom deployment configuration, call the create deployment
+     * If specified, the deployment configuration name can be either one of the
+     * predefined configurations provided with AWS CodeDeploy or a custom
+     * deployment configuration that you create by calling the create deployment
      * configuration operation.
      * </p>
+     * <note>
+     * <p>
+     * CodeDeployDefault.OneAtATime is the default deployment configuration. It
+     * is used if a configuration isn't specified for the deployment or the
+     * deployment group.
+     * </p>
+     * </note>
+     * <p>
+     * The predefined deployment configurations include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application
+     * revision to as many instance as possible at once. The status of the
+     * overall deployment will be displayed as <b>Succeeded</b> if the
+     * application revision is deployed to one or more of the instances. The
+     * status of the overall deployment will be displayed as <b>Failed</b> if
+     * the application revision is not deployed to any of the instances. Using
+     * an example of nine instance, CodeDeployDefault.AllAtOnce will attempt to
+     * deploy to all nine instance at once. The overall deployment will succeed
+     * if deployment to even a single instance is successful; it will fail only
+     * if deployments to all nine instance fail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
+     * instances at a time (with fractions rounded down). The overall deployment
+     * succeeds if the application revision is deployed to at least half of the
+     * instances (with fractions rounded up); otherwise, the deployment fails.
+     * In the example of nine instances, it will deploy to up to four instance
+     * at a time. The overall deployment succeeds if deployment to five or more
+     * instances succeed; otherwise, the deployment fails. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to
+     * only one instance at a time.
+     * </p>
+     * <p>
+     * For deployment groups that contain more than one instance:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The overall deployment succeeds if the application revision is deployed
+     * to all of the instances. The exception to this rule is if deployment to
+     * the last instance fails, the overall deployment still succeeds. This is
+     * because AWS CodeDeploy allows only one instance at a time to be taken
+     * offline with the CodeDeployDefault.OneAtATime configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The overall deployment fails as soon as the application revision fails to
+     * be deployed to any but the last instance. The deployment may be
+     * successfully deployed to some instances even if the overall deployment
+     * fails.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In an example using nine instance, it will deploy to one instance at a
+     * time. The overall deployment succeeds if deployment to the first eight
+     * instance is successful; the overall deployment fails if deployment to any
+     * of the first eight instance fails.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For deployment groups that contain only one instance, the overall
+     * deployment is successful only if deployment to the single instance is
+     * successful
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deploymentConfigName
-     *        If specified, the deployment configuration name must be one of the
-     *        predefined values, or it can be a custom deployment
-     *        configuration:</p>
+     *        If specified, the deployment configuration name can be either one
+     *        of the predefined configurations provided with AWS CodeDeploy or a
+     *        custom deployment configuration that you create by calling the
+     *        create deployment configuration operation.</p> <note>
+     *        <p>
+     *        CodeDeployDefault.OneAtATime is the default deployment
+     *        configuration. It is used if a configuration isn't specified for
+     *        the deployment or the deployment group.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The predefined deployment configurations include the following:
+     *        </p>
      *        <ul>
-     *        <li>CodeDeployDefault.AllAtOnce deploys an application revision to
-     *        up to all of the instances at once. The overall deployment
-     *        succeeds if the application revision deploys to at least one of
-     *        the instances. The overall deployment fails after the application
-     *        revision fails to deploy to all of the instances. For example, for
-     *        9 instances, deploy to up to all 9 instances at once. The overall
-     *        deployment succeeds if any of the 9 instances is successfully
-     *        deployed to, and it fails if all 9 instances fail to be deployed
-     *        to.</li>
-     *        <li>CodeDeployDefault.HalfAtATime deploys to up to half of the
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an
+     *        application revision to as many instance as possible at once. The
+     *        status of the overall deployment will be displayed as
+     *        <b>Succeeded</b> if the application revision is deployed to one or
+     *        more of the instances. The status of the overall deployment will
+     *        be displayed as <b>Failed</b> if the application revision is not
+     *        deployed to any of the instances. Using an example of nine
+     *        instance, CodeDeployDefault.AllAtOnce will attempt to deploy to
+     *        all nine instance at once. The overall deployment will succeed if
+     *        deployment to even a single instance is successful; it will fail
+     *        only if deployments to all nine instance fail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the
      *        instances at a time (with fractions rounded down). The overall
-     *        deployment succeeds if the application revision deploys to at
+     *        deployment succeeds if the application revision is deployed to at
      *        least half of the instances (with fractions rounded up);
-     *        otherwise, the deployment fails. For example, for 9 instances,
-     *        deploy to up to 4 instances at a time. The overall deployment
-     *        succeeds if 5 or more instances are successfully deployed to;
-     *        otherwise, the deployment fails. Note that the deployment may
-     *        successfully deploy to some instances, even if the overall
-     *        deployment fails.</li>
-     *        <li>CodeDeployDefault.OneAtATime deploys the application revision
-     *        to only one of the instances at a time. The overall deployment
-     *        succeeds if the application revision deploys to all of the
-     *        instances. The overall deployment fails after the application
-     *        revision first fails to deploy to any one instances. For example,
-     *        for 9 instances, deploy to one instance at a time. The overall
-     *        deployment succeeds if all 9 instances are successfully deployed
-     *        to, and it fails if any of one of the 9 instances fail to be
-     *        deployed to. Note that the deployment may successfully deploy to
-     *        some instances, even if the overall deployment fails. This is the
-     *        default deployment configuration if a configuration isn't
-     *        specified for either the deployment or the deployment group.</li>
+     *        otherwise, the deployment fails. In the example of nine instances,
+     *        it will deploy to up to four instance at a time. The overall
+     *        deployment succeeds if deployment to five or more instances
+     *        succeed; otherwise, the deployment fails. The deployment may be
+     *        successfully deployed to some instances even if the overall
+     *        deployment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>CodeDeployDefault.OneAtATime</b> deploys the application
+     *        revision to only one instance at a time.
+     *        </p>
+     *        <p>
+     *        For deployment groups that contain more than one instance:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The overall deployment succeeds if the application revision is
+     *        deployed to all of the instances. The exception to this rule is if
+     *        deployment to the last instance fails, the overall deployment
+     *        still succeeds. This is because AWS CodeDeploy allows only one
+     *        instance at a time to be taken offline with the
+     *        CodeDeployDefault.OneAtATime configuration.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The overall deployment fails as soon as the application revision
+     *        fails to be deployed to any but the last instance. The deployment
+     *        may be successfully deployed to some instances even if the overall
+     *        deployment fails.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In an example using nine instance, it will deploy to one instance
+     *        at a time. The overall deployment succeeds if deployment to the
+     *        first eight instance is successful; the overall deployment fails
+     *        if deployment to any of the first eight instance fails.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        To create a custom deployment configuration, call the create
-     *        deployment configuration operation.
+     *        For deployment groups that contain only one instance, the overall
+     *        deployment is successful only if deployment to the single instance
+     *        is successful
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -454,11 +797,12 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
-     * @return The Amazon EC2 tags to filter on.
+     * @return The Amazon EC2 tags on which to filter.
      */
+
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
         if (ec2TagFilters == null) {
             ec2TagFilters = new com.amazonaws.internal.SdkInternalList<EC2TagFilter>();
@@ -468,12 +812,13 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      */
+
     public void setEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         if (ec2TagFilters == null) {
@@ -487,7 +832,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -497,10 +842,11 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withEc2TagFilters(
             EC2TagFilter... ec2TagFilters) {
         if (this.ec2TagFilters == null) {
@@ -515,14 +861,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         setEc2TagFilters(ec2TagFilters);
@@ -531,11 +878,12 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
-     * @return The on-premises instance tags to filter on.
+     * @return The on-premises instance tags on which to filter.
      */
+
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
         if (onPremisesInstanceTagFilters == null) {
             onPremisesInstanceTagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>();
@@ -545,12 +893,13 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      */
+
     public void setOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         if (onPremisesInstanceTagFilters == null) {
@@ -564,7 +913,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -574,10 +923,11 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             TagFilter... onPremisesInstanceTagFilters) {
         if (this.onPremisesInstanceTagFilters == null) {
@@ -592,14 +942,15 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         setOnPremisesInstanceTagFilters(onPremisesInstanceTagFilters);
@@ -613,6 +964,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return A list of associated Auto Scaling groups.
      */
+
     public java.util.List<String> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -628,6 +980,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param autoScalingGroups
      *        A list of associated Auto Scaling groups.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -655,6 +1008,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withAutoScalingGroups(
             String... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -677,6 +1031,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -693,6 +1048,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        A service role ARN that allows AWS CodeDeploy to act on the user's
      *        behalf when interacting with AWS services.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -706,6 +1062,7 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return A service role ARN that allows AWS CodeDeploy to act on the
      *         user's behalf when interacting with AWS services.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -722,8 +1079,98 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentGroupRequest withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to create when the deployment group is
+     * created.
+     * </p>
+     * 
+     * @return Information about triggers to create when the deployment group is
+     *         created.
+     */
+
+    public java.util.List<TriggerConfig> getTriggerConfigurations() {
+        if (triggerConfigurations == null) {
+            triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>();
+        }
+        return triggerConfigurations;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to create when the deployment group is
+     * created.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to create when the deployment group is
+     *        created.
+     */
+
+    public void setTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        if (triggerConfigurations == null) {
+            this.triggerConfigurations = null;
+            return;
+        }
+
+        this.triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                triggerConfigurations);
+    }
+
+    /**
+     * <p>
+     * Information about triggers to create when the deployment group is
+     * created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTriggerConfigurations(java.util.Collection)} or
+     * {@link #withTriggerConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to create when the deployment group is
+     *        created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentGroupRequest withTriggerConfigurations(
+            TriggerConfig... triggerConfigurations) {
+        if (this.triggerConfigurations == null) {
+            setTriggerConfigurations(new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                    triggerConfigurations.length));
+        }
+        for (TriggerConfig ele : triggerConfigurations) {
+            this.triggerConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to create when the deployment group is
+     * created.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to create when the deployment group is
+     *        created.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDeploymentGroupRequest withTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        setTriggerConfigurations(triggerConfigurations);
         return this;
     }
 
@@ -754,7 +1201,9 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
         if (getAutoScalingGroups() != null)
             sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn());
+            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getTriggerConfigurations() != null)
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -814,6 +1263,13 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
         if (other.getServiceRoleArn() != null
                 && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false)
             return false;
+        if (other.getTriggerConfigurations() == null
+                ^ this.getTriggerConfigurations() == null)
+            return false;
+        if (other.getTriggerConfigurations() != null
+                && other.getTriggerConfigurations().equals(
+                        this.getTriggerConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -850,6 +1306,10 @@ public class CreateDeploymentGroupRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTriggerConfigurations() == null) ? 0
+                        : getTriggerConfigurations().hashCode());
         return hashCode;
     }
 

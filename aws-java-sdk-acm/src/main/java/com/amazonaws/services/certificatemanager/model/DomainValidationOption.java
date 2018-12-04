@@ -41,14 +41,33 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -63,6 +82,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        Fully Qualified Domain Name (FQDN) of the certificate being
      *        requested.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -75,6 +95,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * @return Fully Qualified Domain Name (FQDN) of the certificate being
      *         requested.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -90,6 +111,7 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidationOption withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -104,14 +126,33 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -124,16 +165,37 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <code>site.subdomain.example.com</code> and specify a
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS for the base domain and the and
-     *        the following five addresses:
+     *        administrative contact in WHOIS for the base domain and the
+     *        following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      */
+
     public void setValidationDomain(String validationDomain) {
         this.validationDomain = validationDomain;
     }
@@ -147,14 +209,33 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -166,16 +247,37 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *         <code>site.subdomain.example.com</code> and specify a
      *         <b>ValidationDomain</b> of <code>subdomain.example.com</code>,
      *         ACM sends email to the domain registrant, technical contact, and
-     *         administrative contact in WHOIS for the base domain and the and
-     *         the following five addresses:
+     *         administrative contact in WHOIS for the base domain and the
+     *         following five addresses:
      *         <ul>
-     *         <li>admin@subdomain.example.com</li>
-     *         <li>administrator@subdomain.example.com</li>
-     *         <li>hostmaster@subdomain.example.com</li>
-     *         <li>postmaster@subdomain.example.com</li>
-     *         <li>webmaster@subdomain.example.com</li>
+     *         <li>
+     *         <p>
+     *         admin@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         administrator@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         hostmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         postmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         webmaster@subdomain.example.com
+     *         </p>
+     *         </li>
      *         </ul>
      */
+
     public String getValidationDomain() {
         return this.validationDomain;
     }
@@ -189,14 +291,33 @@ public class DomainValidationOption implements Serializable, Cloneable {
      * certificate for <code>site.subdomain.example.com</code> and specify a
      * <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends
      * email to the domain registrant, technical contact, and administrative
-     * contact in WHOIS for the base domain and the and the following five
-     * addresses:
+     * contact in WHOIS for the base domain and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -209,18 +330,39 @@ public class DomainValidationOption implements Serializable, Cloneable {
      *        <code>site.subdomain.example.com</code> and specify a
      *        <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
-     *        administrative contact in WHOIS for the base domain and the and
-     *        the following five addresses:
+     *        administrative contact in WHOIS for the base domain and the
+     *        following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidationOption withValidationDomain(String validationDomain) {
         setValidationDomain(validationDomain);
         return this;

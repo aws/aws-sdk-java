@@ -243,8 +243,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityRequest
-     *        Represents a request instructing the service to delete an identity
-     *        from the list of identities for the AWS Account.
      * @return A Java Future containing the result of the DeleteIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteIdentity
@@ -262,8 +260,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityRequest
-     *        Represents a request instructing the service to delete an identity
-     *        from the list of identities for the AWS Account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -297,11 +293,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
-     *        Represents a request instructing the service to delete an
-     *        authorization policy applying to an identity.</p>
-     *        <p>
-     *        This request succeeds regardless of whether the specified policy
-     *        exists.
      * @return A Java Future containing the result of the DeleteIdentityPolicy
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteIdentityPolicy
@@ -329,11 +320,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteIdentityPolicyRequest
-     *        Represents a request instructing the service to delete an
-     *        authorization policy applying to an identity.</p>
-     *        <p>
-     *        This request succeeds regardless of whether the specified policy
-     *        exists.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -507,11 +493,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
-     *        Represents a request instructing the service to delete an address
-     *        from the list of verified email addresses.
+     * @return A Java Future containing the result of the
+     *         DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.DeleteVerifiedEmailAddress
      */
-    java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest);
 
     /**
@@ -526,18 +512,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param deleteVerifiedEmailAddressRequest
-     *        Represents a request instructing the service to delete an address
-     *        from the list of verified email addresses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteVerifiedEmailAddress operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsyncHandler.DeleteVerifiedEmailAddress
      */
-    java.util.concurrent.Future<Void> deleteVerifiedEmailAddressAsync(
+    java.util.concurrent.Future<DeleteVerifiedEmailAddressResult> deleteVerifiedEmailAddressAsync(
             DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedEmailAddressRequest, DeleteVerifiedEmailAddressResult> asyncHandler);
 
     /**
      * <p>
@@ -716,13 +702,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
-     *        Given a list of verified identities, describes their DKIM
-     *        attributes. The DKIM attributes of an email address identity
-     *        includes whether DKIM signing is individually enabled or disabled
-     *        for that address. The DKIM attributes of a domain name identity
-     *        includes whether DKIM signing is enabled, as well as the DNS
-     *        records (tokens) that must remain published in the domain name's
-     *        DNS.
      * @return A Java Future containing the result of the
      *         GetIdentityDkimAttributes operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.GetIdentityDkimAttributes
@@ -761,13 +740,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityDkimAttributesRequest
-     *        Given a list of verified identities, describes their DKIM
-     *        attributes. The DKIM attributes of an email address identity
-     *        includes whether DKIM signing is individually enabled or disabled
-     *        for that address. The DKIM attributes of a domain name identity
-     *        includes whether DKIM signing is enabled, as well as the DNS
-     *        records (tokens) that must remain published in the domain name's
-     *        DNS.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -780,6 +752,51 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
     java.util.concurrent.Future<GetIdentityDkimAttributesResult> getIdentityDkimAttributesAsync(
             GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<GetIdentityDkimAttributesRequest, GetIdentityDkimAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @return A Java Future containing the result of the
+     *         GetIdentityMailFromDomainAttributes operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceAsync.GetIdentityMailFromDomainAttributes
+     */
+    java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest);
+
+    /**
+     * <p>
+     * Returns the custom MAIL FROM attributes for a list of identities (email
+     * addresses and/or domains).
+     * </p>
+     * <p>
+     * This action is throttled at one request per second and can only get
+     * custom MAIL FROM attributes for up to 100 identities at a time.
+     * </p>
+     * 
+     * @param getIdentityMailFromDomainAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         GetIdentityMailFromDomainAttributes operation returned by the
+     *         service.
+     * @sample 
+     *         AmazonSimpleEmailServiceAsyncHandler.GetIdentityMailFromDomainAttributes
+     */
+    java.util.concurrent.Future<GetIdentityMailFromDomainAttributesResult> getIdentityMailFromDomainAttributesAsync(
+            GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIdentityMailFromDomainAttributesRequest, GetIdentityMailFromDomainAttributesResult> asyncHandler);
 
     /**
      * <p>
@@ -859,8 +876,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityPoliciesRequest
-     *        Represents a request instructing the service to retrieve the text
-     *        of a list of authorization policies applying to an identity.
      * @return A Java Future containing the result of the GetIdentityPolicies
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.GetIdentityPolicies
@@ -889,8 +904,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityPoliciesRequest
-     *        Represents a request instructing the service to retrieve the text
-     *        of a list of authorization policies applying to an identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -916,8 +929,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
-     *        Represents a request instructing the service to provide the
-     *        verification attributes for a list of identities.
      * @return A Java Future containing the result of the
      *         GetIdentityVerificationAttributes operation returned by the
      *         service.
@@ -938,8 +949,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param getIdentityVerificationAttributesRequest
-     *        Represents a request instructing the service to provide the
-     *        verification attributes for a list of identities.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1083,8 +1092,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentitiesRequest
-     *        Represents a request instructing the service to list all
-     *        identities for the AWS Account.
      * @return A Java Future containing the result of the ListIdentities
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListIdentities
@@ -1102,8 +1109,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentitiesRequest
-     *        Represents a request instructing the service to list all
-     *        identities for the AWS Account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1155,8 +1160,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentityPoliciesRequest
-     *        Represents a request instructing the service to list all
-     *        authorization policies, by name, applying to an identity.
      * @return A Java Future containing the result of the ListIdentityPolicies
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.ListIdentityPolicies
@@ -1185,8 +1188,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param listIdentityPoliciesRequest
-     *        Represents a request instructing the service to list all
-     *        authorization policies, by name, applying to an identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1385,8 +1386,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param putIdentityPolicyRequest
-     *        Represents a request instructing the service to apply an
-     *        authorization policy to an identity.
      * @return A Java Future containing the result of the PutIdentityPolicy
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.PutIdentityPolicy
@@ -1413,8 +1412,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param putIdentityPolicyRequest
-     *        Represents a request instructing the service to apply an
-     *        authorization policy to an identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1434,7 +1431,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn’t explicitly position all of the rules.</note>
+     * doesn't explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1458,7 +1455,7 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * <note>All of the rules in the rule set must be represented in this
      * request. That is, this API will return an error if the reorder request
-     * doesn’t explicitly position all of the rules.</note>
+     * doesn't explicitly position all of the rules.</note>
      * <p>
      * For information about managing receipt rule sets, see the <a href=
      * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-managing-receipt-rule-sets.html"
@@ -1501,9 +1498,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param sendBounceRequest
-     *        Request object for sending a simple/complex bounce. It contains
-     *        all of the information needed to generate a basic DSN or a
-     *        fully-customized DSN.
      * @return A Java Future containing the result of the SendBounce operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendBounce
@@ -1530,9 +1524,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param sendBounceRequest
-     *        Request object for sending a simple/complex bounce. It contains
-     *        all of the information needed to generate a basic DSN or a
-     *        fully-customized DSN.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1578,13 +1569,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * 
      * @param sendEmailRequest
-     *        Represents a request instructing the service to send a single
-     *        email message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, message, reply-to, and
-     *        return-path parts. This object can then be sent using the
-     *        <code>SendEmail</code> action.
      * @return A Java Future containing the result of the SendEmail operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendEmail
@@ -1624,13 +1608,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * 
      * @param sendEmailRequest
-     *        Represents a request instructing the service to send a single
-     *        email message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, message, reply-to, and
-     *        return-path parts. This object can then be sent using the
-     *        <code>SendEmail</code> action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1706,13 +1683,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * 
      * @param sendRawEmailRequest
-     *        Represents a request instructing the service to send a raw email
-     *        message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, and raw message text. This
-     *        object can then be sent using the <code>SendRawEmail</code>
-     *        action.
      * @return A Java Future containing the result of the SendRawEmail operation
      *         returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SendRawEmail
@@ -1782,13 +1752,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * 
      * @param sendRawEmailRequest
-     *        Represents a request instructing the service to send a raw email
-     *        message.</p>
-     *        <p>
-     *        This datatype can be used in application code to compose a message
-     *        consisting of source, destination, and raw message text. This
-     *        object can then be sent using the <code>SendRawEmail</code>
-     *        action.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1882,8 +1845,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
-     *        Represents a request instructing the service to enable or disable
-     *        DKIM signing for an identity.
      * @return A Java Future containing the result of the SetIdentityDkimEnabled
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetIdentityDkimEnabled
@@ -1919,8 +1880,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityDkimEnabledRequest
-     *        Represents a request instructing the service to enable or disable
-     *        DKIM signing for an identity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2000,6 +1959,58 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @return A Java Future containing the result of the
+     *         SetIdentityMailFromDomain operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsync.SetIdentityMailFromDomain
+     */
+    java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest);
+
+    /**
+     * <p>
+     * Enables or disables the custom MAIL FROM domain setup for a verified
+     * identity (email address or domain).
+     * </p>
+     * <important>To send emails using the specified MAIL FROM domain, you must
+     * add an MX record to your MAIL FROM domain's DNS settings. If you want
+     * your emails to pass Sender Policy Framework (SPF) checks, you must also
+     * add or update an SPF record. For more information, see the <a href=
+     * "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html"
+     * >Amazon SES Developer Guide</a>.</important>
+     * <p>
+     * This action is throttled at one request per second.
+     * </p>
+     * 
+     * @param setIdentityMailFromDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetIdentityMailFromDomain operation returned by the service.
+     * @sample AmazonSimpleEmailServiceAsyncHandler.SetIdentityMailFromDomain
+     */
+    java.util.concurrent.Future<SetIdentityMailFromDomainResult> setIdentityMailFromDomainAsync(
+            SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<SetIdentityMailFromDomainRequest, SetIdentityMailFromDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Given an identity (email address or domain), sets the Amazon Simple
      * Notification Service (Amazon SNS) topic to which Amazon SES will publish
      * bounce, complaint, and/or delivery notifications for emails sent with
@@ -2018,8 +2029,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
-     *        Represents a request to set or clear an identity's notification
-     *        topic.
      * @return A Java Future containing the result of the
      *         SetIdentityNotificationTopic operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.SetIdentityNotificationTopic
@@ -2047,8 +2056,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param setIdentityNotificationTopicRequest
-     *        Represents a request to set or clear an identity's notification
-     *        topic.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2183,8 +2190,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainDkimRequest
-     *        Represents a request instructing the service to begin DKIM
-     *        verification for a domain.
      * @return A Java Future containing the result of the VerifyDomainDkim
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyDomainDkim
@@ -2217,8 +2222,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainDkimRequest
-     *        Represents a request instructing the service to begin DKIM
-     *        verification for a domain.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2241,8 +2244,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainIdentityRequest
-     *        Represents a request instructing the service to begin domain
-     *        verification.
      * @return A Java Future containing the result of the VerifyDomainIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyDomainIdentity
@@ -2259,8 +2260,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyDomainIdentityRequest
-     *        Represents a request instructing the service to begin domain
-     *        verification.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2287,11 +2286,11 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailAddressRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
+     * @return A Java Future containing the result of the VerifyEmailAddress
+     *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyEmailAddress
      */
-    java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest verifyEmailAddressRequest);
 
     /**
@@ -2307,18 +2306,18 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailAddressRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the VerifyEmailAddress
+     *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsyncHandler.VerifyEmailAddress
      */
-    java.util.concurrent.Future<Void> verifyEmailAddressAsync(
+    java.util.concurrent.Future<VerifyEmailAddressResult> verifyEmailAddressAsync(
             VerifyEmailAddressRequest verifyEmailAddressRequest,
-            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<VerifyEmailAddressRequest, VerifyEmailAddressResult> asyncHandler);
 
     /**
      * <p>
@@ -2330,8 +2329,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailIdentityRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @return A Java Future containing the result of the VerifyEmailIdentity
      *         operation returned by the service.
      * @sample AmazonSimpleEmailServiceAsync.VerifyEmailIdentity
@@ -2349,8 +2346,6 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </p>
      * 
      * @param verifyEmailIdentityRequest
-     *        Represents a request instructing the service to begin email
-     *        address verification.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback

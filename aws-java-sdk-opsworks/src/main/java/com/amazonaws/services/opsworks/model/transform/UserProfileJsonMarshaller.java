@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UserProfileMarshaller
@@ -39,41 +34,41 @@ import com.amazonaws.util.json.*;
 public class UserProfileJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(UserProfile userProfile, JSONWriter jsonWriter) {
+    public void marshall(UserProfile userProfile,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (userProfile == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (userProfile.getIamUserArn() != null) {
-                jsonWriter.key("IamUserArn").value(userProfile.getIamUserArn());
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(
+                        userProfile.getIamUserArn());
             }
-
             if (userProfile.getName() != null) {
-                jsonWriter.key("Name").value(userProfile.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        userProfile.getName());
             }
-
             if (userProfile.getSshUsername() != null) {
-                jsonWriter.key("SshUsername").value(
+                jsonGenerator.writeFieldName("SshUsername").writeValue(
                         userProfile.getSshUsername());
             }
-
             if (userProfile.getSshPublicKey() != null) {
-                jsonWriter.key("SshPublicKey").value(
+                jsonGenerator.writeFieldName("SshPublicKey").writeValue(
                         userProfile.getSshPublicKey());
             }
-
             if (userProfile.getAllowSelfManagement() != null) {
-                jsonWriter.key("AllowSelfManagement").value(
+                jsonGenerator.writeFieldName("AllowSelfManagement").writeValue(
                         userProfile.getAllowSelfManagement());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

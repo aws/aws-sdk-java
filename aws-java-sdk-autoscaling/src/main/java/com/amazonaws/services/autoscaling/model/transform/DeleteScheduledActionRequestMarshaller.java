@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DeleteScheduledActionRequest Marshaller

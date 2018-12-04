@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateStageRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateStageRequestMarshaller implements
         Marshaller<Request<CreateStageRequest>, CreateStageRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateStageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateStageRequest> marshall(
             CreateStageRequest createStageRequest) {
@@ -65,63 +73,59 @@ public class CreateStageRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createStageRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(createStageRequest.getRestApiId()));
+                (createStageRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createStageRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createStageRequest.getStageName() != null) {
-                jsonWriter.key("stageName").value(
+                jsonGenerator.writeFieldName("stageName").writeValue(
                         createStageRequest.getStageName());
             }
-
             if (createStageRequest.getDeploymentId() != null) {
-                jsonWriter.key("deploymentId").value(
+                jsonGenerator.writeFieldName("deploymentId").writeValue(
                         createStageRequest.getDeploymentId());
             }
-
             if (createStageRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createStageRequest.getDescription());
             }
-
             if (createStageRequest.getCacheClusterEnabled() != null) {
-                jsonWriter.key("cacheClusterEnabled").value(
+                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
                         createStageRequest.getCacheClusterEnabled());
             }
-
             if (createStageRequest.getCacheClusterSize() != null) {
-                jsonWriter.key("cacheClusterSize").value(
+                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
                         createStageRequest.getCacheClusterSize());
             }
 
             java.util.Map<String, String> variablesMap = createStageRequest
                     .getVariables();
             if (variablesMap != null) {
-                jsonWriter.key("variables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("variables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> variablesMapValue : variablesMap
                         .entrySet()) {
                     if (variablesMapValue.getValue() != null) {
-                        jsonWriter.key(variablesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(variablesMapValue.getKey());
 
-                        jsonWriter.value(variablesMapValue.getValue());
+                        jsonGenerator.writeValue(variablesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

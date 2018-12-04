@@ -47,6 +47,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>DataSource</code> that meet the search criteria.
      */
+
     public java.util.List<DataSource> getResults() {
         if (results == null) {
             results = new com.amazonaws.internal.SdkInternalList<DataSource>();
@@ -62,6 +63,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * @param results
      *        A list of <code>DataSource</code> that meet the search criteria.
      */
+
     public void setResults(java.util.Collection<DataSource> results) {
         if (results == null) {
             this.results = null;
@@ -88,6 +90,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesResult withResults(DataSource... results) {
         if (this.results == null) {
             setResults(new com.amazonaws.internal.SdkInternalList<DataSource>(
@@ -109,6 +112,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesResult withResults(
             java.util.Collection<DataSource> results) {
         setResults(results);
@@ -125,6 +129,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      *        An ID of the next page in the paginated results that indicates at
      *        least one more page follows.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * @return An ID of the next page in the paginated results that indicates at
      *         least one more page follows.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeDataSourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

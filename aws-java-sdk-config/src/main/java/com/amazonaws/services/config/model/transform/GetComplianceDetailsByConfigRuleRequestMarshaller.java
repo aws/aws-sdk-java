@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetComplianceDetailsByConfigRuleRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class GetComplianceDetailsByConfigRuleRequestMarshaller
         implements
         Marshaller<Request<GetComplianceDetailsByConfigRuleRequest>, GetComplianceDetailsByConfigRuleRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetComplianceDetailsByConfigRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetComplianceDetailsByConfigRuleRequest> marshall(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest) {
@@ -65,13 +66,13 @@ public class GetComplianceDetailsByConfigRuleRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (getComplianceDetailsByConfigRuleRequest.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         getComplianceDetailsByConfigRuleRequest
                                 .getConfigRuleName());
             }
@@ -80,34 +81,31 @@ public class GetComplianceDetailsByConfigRuleRequestMarshaller
                     .getComplianceTypes();
             if (!complianceTypesList.isEmpty()
                     || !complianceTypesList.isAutoConstruct()) {
-                jsonWriter.key("ComplianceTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComplianceTypes");
+                jsonGenerator.writeStartArray();
                 for (String complianceTypesListValue : complianceTypesList) {
                     if (complianceTypesListValue != null) {
-                        jsonWriter.value(complianceTypesListValue);
+                        jsonGenerator.writeValue(complianceTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (getComplianceDetailsByConfigRuleRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         getComplianceDetailsByConfigRuleRequest.getLimit());
             }
-
             if (getComplianceDetailsByConfigRuleRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         getComplianceDetailsByConfigRuleRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

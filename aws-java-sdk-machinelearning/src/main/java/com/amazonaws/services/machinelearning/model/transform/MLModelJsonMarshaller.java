@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MLModelMarshaller
@@ -39,104 +34,101 @@ import com.amazonaws.util.json.*;
 public class MLModelJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MLModel mLModel, JSONWriter jsonWriter) {
+    public void marshall(MLModel mLModel, StructuredJsonGenerator jsonGenerator) {
+
         if (mLModel == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (mLModel.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(mLModel.getMLModelId());
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
+                        mLModel.getMLModelId());
             }
-
             if (mLModel.getTrainingDataSourceId() != null) {
-                jsonWriter.key("TrainingDataSourceId").value(
-                        mLModel.getTrainingDataSourceId());
+                jsonGenerator.writeFieldName("TrainingDataSourceId")
+                        .writeValue(mLModel.getTrainingDataSourceId());
             }
-
             if (mLModel.getCreatedByIamUser() != null) {
-                jsonWriter.key("CreatedByIamUser").value(
+                jsonGenerator.writeFieldName("CreatedByIamUser").writeValue(
                         mLModel.getCreatedByIamUser());
             }
-
             if (mLModel.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(mLModel.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        mLModel.getCreatedAt());
             }
-
             if (mLModel.getLastUpdatedAt() != null) {
-                jsonWriter.key("LastUpdatedAt").value(
+                jsonGenerator.writeFieldName("LastUpdatedAt").writeValue(
                         mLModel.getLastUpdatedAt());
             }
-
             if (mLModel.getName() != null) {
-                jsonWriter.key("Name").value(mLModel.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        mLModel.getName());
             }
-
             if (mLModel.getStatus() != null) {
-                jsonWriter.key("Status").value(mLModel.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        mLModel.getStatus());
             }
-
             if (mLModel.getSizeInBytes() != null) {
-                jsonWriter.key("SizeInBytes").value(mLModel.getSizeInBytes());
+                jsonGenerator.writeFieldName("SizeInBytes").writeValue(
+                        mLModel.getSizeInBytes());
             }
-
             if (mLModel.getEndpointInfo() != null) {
-                jsonWriter.key("EndpointInfo");
+                jsonGenerator.writeFieldName("EndpointInfo");
                 RealtimeEndpointInfoJsonMarshaller.getInstance().marshall(
-                        mLModel.getEndpointInfo(), jsonWriter);
+                        mLModel.getEndpointInfo(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalMap<String, String> trainingParametersMap = (com.amazonaws.internal.SdkInternalMap<String, String>) mLModel
                     .getTrainingParameters();
             if (!trainingParametersMap.isEmpty()
                     || !trainingParametersMap.isAutoConstruct()) {
-                jsonWriter.key("TrainingParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("TrainingParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> trainingParametersMapValue : trainingParametersMap
                         .entrySet()) {
                     if (trainingParametersMapValue.getValue() != null) {
-                        jsonWriter.key(trainingParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(trainingParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(trainingParametersMapValue.getValue());
+                        jsonGenerator.writeValue(trainingParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (mLModel.getInputDataLocationS3() != null) {
-                jsonWriter.key("InputDataLocationS3").value(
+                jsonGenerator.writeFieldName("InputDataLocationS3").writeValue(
                         mLModel.getInputDataLocationS3());
             }
-
             if (mLModel.getAlgorithm() != null) {
-                jsonWriter.key("Algorithm").value(mLModel.getAlgorithm());
+                jsonGenerator.writeFieldName("Algorithm").writeValue(
+                        mLModel.getAlgorithm());
             }
-
             if (mLModel.getMLModelType() != null) {
-                jsonWriter.key("MLModelType").value(mLModel.getMLModelType());
+                jsonGenerator.writeFieldName("MLModelType").writeValue(
+                        mLModel.getMLModelType());
             }
-
             if (mLModel.getScoreThreshold() != null) {
-                jsonWriter.key("ScoreThreshold").value(
+                jsonGenerator.writeFieldName("ScoreThreshold").writeValue(
                         mLModel.getScoreThreshold());
             }
-
             if (mLModel.getScoreThresholdLastUpdatedAt() != null) {
-                jsonWriter.key("ScoreThresholdLastUpdatedAt").value(
-                        mLModel.getScoreThresholdLastUpdatedAt());
+                jsonGenerator.writeFieldName("ScoreThresholdLastUpdatedAt")
+                        .writeValue(mLModel.getScoreThresholdLastUpdatedAt());
             }
-
             if (mLModel.getMessage() != null) {
-                jsonWriter.key("Message").value(mLModel.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        mLModel.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

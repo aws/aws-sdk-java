@@ -52,6 +52,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @param instanceIds
      *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -93,6 +95,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -114,6 +117,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -128,6 +132,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -139,6 +144,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -153,6 +159,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachInstancesRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -169,6 +176,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      *        If <code>True</code>, the Auto Scaling group decrements the
      *        desired capacity value by the number of instances detached.
      */
+
     public void setShouldDecrementDesiredCapacity(
             Boolean shouldDecrementDesiredCapacity) {
         this.shouldDecrementDesiredCapacity = shouldDecrementDesiredCapacity;
@@ -183,6 +191,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return If <code>True</code>, the Auto Scaling group decrements the
      *         desired capacity value by the number of instances detached.
      */
+
     public Boolean getShouldDecrementDesiredCapacity() {
         return this.shouldDecrementDesiredCapacity;
     }
@@ -199,6 +208,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetachInstancesRequest withShouldDecrementDesiredCapacity(
             Boolean shouldDecrementDesiredCapacity) {
         setShouldDecrementDesiredCapacity(shouldDecrementDesiredCapacity);
@@ -214,6 +224,7 @@ public class DetachInstancesRequest extends AmazonWebServiceRequest implements
      * @return If <code>True</code>, the Auto Scaling group decrements the
      *         desired capacity value by the number of instances detached.
      */
+
     public Boolean isShouldDecrementDesiredCapacity() {
         return this.shouldDecrementDesiredCapacity;
     }

@@ -24,7 +24,8 @@ public enum ShardIteratorType {
     AT_SEQUENCE_NUMBER("AT_SEQUENCE_NUMBER"),
     AFTER_SEQUENCE_NUMBER("AFTER_SEQUENCE_NUMBER"),
     TRIM_HORIZON("TRIM_HORIZON"),
-    LATEST("LATEST");
+    LATEST("LATEST"),
+    AT_TIMESTAMP("AT_TIMESTAMP");
 
     private String value;
 
@@ -55,6 +56,8 @@ public enum ShardIteratorType {
             return TRIM_HORIZON;
         } else if ("LATEST".equals(value)) {
             return LATEST;
+        } else if ("AT_TIMESTAMP".equals(value)) {
+            return AT_TIMESTAMP;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

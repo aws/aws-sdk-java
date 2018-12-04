@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,9 +58,8 @@ public class CacheBehaviorsStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Items/CacheBehavior", targetDepth)) {
-                    cacheBehaviors.getItems().add(
-                            CacheBehaviorStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    cacheBehaviors.withItems(CacheBehaviorStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

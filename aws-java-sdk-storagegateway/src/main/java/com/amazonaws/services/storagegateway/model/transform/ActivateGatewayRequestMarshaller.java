@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActivateGatewayRequest Marshaller
  */
 public class ActivateGatewayRequestMarshaller implements
         Marshaller<Request<ActivateGatewayRequest>, ActivateGatewayRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ActivateGatewayRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ActivateGatewayRequest> marshall(
             ActivateGatewayRequest activateGatewayRequest) {
@@ -64,54 +65,47 @@ public class ActivateGatewayRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (activateGatewayRequest.getActivationKey() != null) {
-                jsonWriter.key("ActivationKey").value(
+                jsonGenerator.writeFieldName("ActivationKey").writeValue(
                         activateGatewayRequest.getActivationKey());
             }
-
             if (activateGatewayRequest.getGatewayName() != null) {
-                jsonWriter.key("GatewayName").value(
+                jsonGenerator.writeFieldName("GatewayName").writeValue(
                         activateGatewayRequest.getGatewayName());
             }
-
             if (activateGatewayRequest.getGatewayTimezone() != null) {
-                jsonWriter.key("GatewayTimezone").value(
+                jsonGenerator.writeFieldName("GatewayTimezone").writeValue(
                         activateGatewayRequest.getGatewayTimezone());
             }
-
             if (activateGatewayRequest.getGatewayRegion() != null) {
-                jsonWriter.key("GatewayRegion").value(
+                jsonGenerator.writeFieldName("GatewayRegion").writeValue(
                         activateGatewayRequest.getGatewayRegion());
             }
-
             if (activateGatewayRequest.getGatewayType() != null) {
-                jsonWriter.key("GatewayType").value(
+                jsonGenerator.writeFieldName("GatewayType").writeValue(
                         activateGatewayRequest.getGatewayType());
             }
-
             if (activateGatewayRequest.getTapeDriveType() != null) {
-                jsonWriter.key("TapeDriveType").value(
+                jsonGenerator.writeFieldName("TapeDriveType").writeValue(
                         activateGatewayRequest.getTapeDriveType());
             }
-
             if (activateGatewayRequest.getMediumChangerType() != null) {
-                jsonWriter.key("MediumChangerType").value(
+                jsonGenerator.writeFieldName("MediumChangerType").writeValue(
                         activateGatewayRequest.getMediumChangerType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

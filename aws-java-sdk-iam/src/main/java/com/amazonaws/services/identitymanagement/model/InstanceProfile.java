@@ -110,6 +110,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -127,6 +128,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -147,6 +149,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withPath(String path) {
         setPath(path);
         return this;
@@ -160,6 +163,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @param instanceProfileName
      *        The name identifying the instance profile.
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -171,6 +175,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * 
      * @return The name identifying the instance profile.
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -185,6 +190,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withInstanceProfileName(String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
         return this;
@@ -204,6 +210,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setInstanceProfileId(String instanceProfileId) {
         this.instanceProfileId = instanceProfileId;
     }
@@ -221,6 +228,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getInstanceProfileId() {
         return this.instanceProfileId;
     }
@@ -241,6 +249,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withInstanceProfileId(String instanceProfileId) {
         setInstanceProfileId(instanceProfileId);
         return this;
@@ -261,6 +270,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -279,6 +289,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -300,6 +311,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withArn(String arn) {
         setArn(arn);
         return this;
@@ -313,6 +325,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @param createDate
      *        The date when the instance profile was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -324,6 +337,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * 
      * @return The date when the instance profile was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -338,6 +352,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -350,6 +365,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * 
      * @return The role associated with the instance profile.
      */
+
     public java.util.List<Role> getRoles() {
         if (roles == null) {
             roles = new com.amazonaws.internal.SdkInternalList<Role>();
@@ -365,6 +381,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @param roles
      *        The role associated with the instance profile.
      */
+
     public void setRoles(java.util.Collection<Role> roles) {
         if (roles == null) {
             this.roles = null;
@@ -390,6 +407,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withRoles(Role... roles) {
         if (this.roles == null) {
             setRoles(new com.amazonaws.internal.SdkInternalList<Role>(
@@ -411,6 +429,7 @@ public class InstanceProfile implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceProfile withRoles(java.util.Collection<Role> roles) {
         setRoles(roles);
         return this;

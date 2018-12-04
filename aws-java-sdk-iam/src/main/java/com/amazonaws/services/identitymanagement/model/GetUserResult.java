@@ -27,44 +27,47 @@ public class GetUserResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the user.
+     * A structure containing details about the IAM user.
      * </p>
      */
     private User user;
 
     /**
      * <p>
-     * Information about the user.
+     * A structure containing details about the IAM user.
      * </p>
      * 
      * @param user
-     *        Information about the user.
+     *        A structure containing details about the IAM user.
      */
+
     public void setUser(User user) {
         this.user = user;
     }
 
     /**
      * <p>
-     * Information about the user.
+     * A structure containing details about the IAM user.
      * </p>
      * 
-     * @return Information about the user.
+     * @return A structure containing details about the IAM user.
      */
+
     public User getUser() {
         return this.user;
     }
 
     /**
      * <p>
-     * Information about the user.
+     * A structure containing details about the IAM user.
      * </p>
      * 
      * @param user
-     *        Information about the user.
+     *        A structure containing details about the IAM user.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetUserResult withUser(User user) {
         setUser(user);
         return this;

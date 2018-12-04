@@ -31,6 +31,12 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * specified, the UserName field is determined implicitly based on the AWS
      * access key used to sign the request.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
@@ -66,12 +72,24 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * specified, the UserName field is determined implicitly based on the AWS
      * access key used to sign the request.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
      *        The name of the IAM user to list SSH public keys for. If none is
      *        specified, the UserName field is determined implicitly based on
-     *        the AWS access key used to sign the request.
+     *        the AWS access key used to sign the request.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -82,11 +100,23 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * specified, the UserName field is determined implicitly based on the AWS
      * access key used to sign the request.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name of the IAM user to list SSH public keys for. If none is
      *         specified, the UserName field is determined implicitly based on
-     *         the AWS access key used to sign the request.
+     *         the AWS access key used to sign the request.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -97,14 +127,26 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * specified, the UserName field is determined implicitly based on the AWS
      * access key used to sign the request.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
      *        The name of the IAM user to list SSH public keys for. If none is
      *        specified, the UserName field is determined implicitly based on
-     *        the AWS access key used to sign the request.
+     *        the AWS access key used to sign the request.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -124,6 +166,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -142,6 +185,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -162,6 +206,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -197,6 +242,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -231,6 +277,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -267,6 +314,7 @@ public class ListSSHPublicKeysRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSSHPublicKeysRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

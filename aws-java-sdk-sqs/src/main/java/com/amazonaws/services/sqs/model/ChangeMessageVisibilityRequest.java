@@ -29,6 +29,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      */
     private String queueUrl;
     /**
@@ -61,7 +64,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param receiptHandle
      *        The receipt handle associated with the message whose visibility
      *        timeout should be changed. This parameter is returned by the
@@ -81,10 +86,16 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -93,9 +104,15 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -104,12 +121,18 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -127,6 +150,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      *        timeout should be changed. This parameter is returned by the
      *        <a>ReceiveMessage</a> action.
      */
+
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
@@ -142,6 +166,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      *         timeout should be changed. This parameter is returned by the
      *         <a>ReceiveMessage</a> action.
      */
+
     public String getReceiptHandle() {
         return this.receiptHandle;
     }
@@ -160,6 +185,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityRequest withReceiptHandle(String receiptHandle) {
         setReceiptHandle(receiptHandle);
         return this;
@@ -175,6 +201,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      *        The new value (in seconds - from 0 to 43200 - maximum 12 hours)
      *        for the message's visibility timeout.
      */
+
     public void setVisibilityTimeout(Integer visibilityTimeout) {
         this.visibilityTimeout = visibilityTimeout;
     }
@@ -188,6 +215,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * @return The new value (in seconds - from 0 to 43200 - maximum 12 hours)
      *         for the message's visibility timeout.
      */
+
     public Integer getVisibilityTimeout() {
         return this.visibilityTimeout;
     }
@@ -204,6 +232,7 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityRequest withVisibilityTimeout(
             Integer visibilityTimeout) {
         setVisibilityTimeout(visibilityTimeout);

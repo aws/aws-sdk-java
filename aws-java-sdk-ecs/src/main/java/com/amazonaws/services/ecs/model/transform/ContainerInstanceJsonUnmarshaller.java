@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,13 @@ public class ContainerInstanceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("containerInstanceArn", targetDepth)) {
                     context.nextToken();
-                    containerInstance
-                            .setContainerInstanceArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    containerInstance.setContainerInstanceArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ec2InstanceId", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setEc2InstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    containerInstance.setEc2InstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("versionInfo", targetDepth)) {
                     context.nextToken();
@@ -84,31 +85,31 @@ public class ContainerInstanceJsonUnmarshaller implements
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    containerInstance.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("agentConnected", targetDepth)) {
                     context.nextToken();
-                    containerInstance.setAgentConnected(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    containerInstance
+                            .setAgentConnected(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("runningTasksCount", targetDepth)) {
                     context.nextToken();
                     containerInstance
-                            .setRunningTasksCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setRunningTasksCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingTasksCount", targetDepth)) {
                     context.nextToken();
                     containerInstance
-                            .setPendingTasksCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPendingTasksCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("agentUpdateStatus", targetDepth)) {
                     context.nextToken();
-                    containerInstance
-                            .setAgentUpdateStatus(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    containerInstance.setAgentUpdateStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();

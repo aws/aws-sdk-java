@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TrustedAdvisorResourcesSummaryMarshaller
@@ -39,41 +34,40 @@ import com.amazonaws.util.json.*;
 public class TrustedAdvisorResourcesSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(
             TrustedAdvisorResourcesSummary trustedAdvisorResourcesSummary,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (trustedAdvisorResourcesSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (trustedAdvisorResourcesSummary.getResourcesProcessed() != null) {
-                jsonWriter.key("resourcesProcessed").value(
+                jsonGenerator.writeFieldName("resourcesProcessed").writeValue(
                         trustedAdvisorResourcesSummary.getResourcesProcessed());
             }
-
             if (trustedAdvisorResourcesSummary.getResourcesFlagged() != null) {
-                jsonWriter.key("resourcesFlagged").value(
+                jsonGenerator.writeFieldName("resourcesFlagged").writeValue(
                         trustedAdvisorResourcesSummary.getResourcesFlagged());
             }
-
             if (trustedAdvisorResourcesSummary.getResourcesIgnored() != null) {
-                jsonWriter.key("resourcesIgnored").value(
+                jsonGenerator.writeFieldName("resourcesIgnored").writeValue(
                         trustedAdvisorResourcesSummary.getResourcesIgnored());
             }
-
             if (trustedAdvisorResourcesSummary.getResourcesSuppressed() != null) {
-                jsonWriter.key("resourcesSuppressed")
-                        .value(trustedAdvisorResourcesSummary
-                                .getResourcesSuppressed());
+                jsonGenerator.writeFieldName("resourcesSuppressed")
+                        .writeValue(
+                                trustedAdvisorResourcesSummary
+                                        .getResourcesSuppressed());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

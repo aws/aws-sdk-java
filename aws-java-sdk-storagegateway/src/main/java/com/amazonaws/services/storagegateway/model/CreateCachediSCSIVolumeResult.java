@@ -30,6 +30,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -37,6 +38,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -46,6 +48,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeResult withVolumeARN(String volumeARN) {
         setVolumeARN(volumeARN);
         return this;
@@ -54,6 +57,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     /**
      * @param targetARN
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -61,6 +65,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -70,6 +75,7 @@ public class CreateCachediSCSIVolumeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateCachediSCSIVolumeResult withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;

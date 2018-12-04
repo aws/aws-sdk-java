@@ -16,6 +16,7 @@
 package com.amazonaws.services.ecr;
 
 import com.amazonaws.services.ecr.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon ECR asynchronously. Each asynchronous method
@@ -33,6 +34,7 @@ import com.amazonaws.services.ecr.model.*;
  * manage images.
  * </p>
  */
+@ThreadSafe
 public class AmazonECRAsyncClient extends AmazonECRClient implements
         AmazonECRAsync {
 
@@ -130,8 +132,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -223,9 +224,7 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

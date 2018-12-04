@@ -18,29 +18,10 @@ import java.io.InputStream;
 import java.util.List;
 
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
-import com.amazonaws.services.s3.model.AccessControlList;
-import com.amazonaws.services.s3.model.Bucket;
-import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
-import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketReplicationConfiguration;
-import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
-import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
-import com.amazonaws.services.s3.model.MultipartUploadListing;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.Owner;
-import com.amazonaws.services.s3.model.PartListing;
-import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
-import com.amazonaws.services.s3.model.VersionListing;
-import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.BucketCrossOriginConfigurationHandler;
+import com.amazonaws.services.s3.model.*;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * Collection of unmarshallers for S3 XML responses.
@@ -85,6 +66,24 @@ public class Unmarshallers {
         public ObjectListing unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseListBucketObjectsResponse(in, shouldSDKDecodeResponse).getObjectListing();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListObjectsV2 XML response.
+     */
+    public static final class ListObjectsV2Unmarshaller implements
+            Unmarshaller<ListObjectsV2Result, InputStream> {
+
+        private final boolean shouldSDKDecodeResponse;
+
+        public ListObjectsV2Unmarshaller(final boolean shouldSDKDecodeResponse) {
+            this.shouldSDKDecodeResponse = shouldSDKDecodeResponse;
+        }
+
+        public ListObjectsV2Result unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser()
+                    .parseListObjectsV2Response(in, shouldSDKDecodeResponse).getResult();
         }
     }
 
@@ -188,6 +187,17 @@ public class Unmarshallers {
         public BucketTaggingConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseTaggingConfigurationResponse(in).getConfiguration();
+        }
+    }
+
+    /**
+     * Unmarshaller for the BucketAccelerateConfiguration XML response.
+     */
+    public static final class BucketAccelerateConfigurationUnmarshaller implements
+            Unmarshaller<BucketAccelerateConfiguration, InputStream> {
+        public BucketAccelerateConfiguration unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser()
+                    .parseAccelerateConfigurationResponse(in).getConfiguration();
         }
     }
 

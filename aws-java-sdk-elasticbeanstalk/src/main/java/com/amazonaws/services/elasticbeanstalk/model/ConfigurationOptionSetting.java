@@ -90,6 +90,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      *        A unique resource name for a time-based scaling configuration
      *        option.
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -102,6 +103,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return A unique resource name for a time-based scaling configuration
      *         option.
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -117,6 +119,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionSetting withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;
@@ -131,6 +134,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      *        A unique namespace identifying the option's associated AWS
      *        resource.
      */
+
     public void setNamespace(String namespace) {
         this.namespace = namespace;
     }
@@ -143,6 +147,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return A unique namespace identifying the option's associated AWS
      *         resource.
      */
+
     public String getNamespace() {
         return this.namespace;
     }
@@ -158,6 +163,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionSetting withNamespace(String namespace) {
         setNamespace(namespace);
         return this;
@@ -171,6 +177,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @param optionName
      *        The name of the configuration option.
      */
+
     public void setOptionName(String optionName) {
         this.optionName = optionName;
     }
@@ -182,6 +189,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * 
      * @return The name of the configuration option.
      */
+
     public String getOptionName() {
         return this.optionName;
     }
@@ -196,6 +204,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionSetting withOptionName(String optionName) {
         setOptionName(optionName);
         return this;
@@ -209,6 +218,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @param value
      *        The current value for the configuration option.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -220,6 +230,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * 
      * @return The current value for the configuration option.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -234,6 +245,7 @@ public class ConfigurationOptionSetting implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigurationOptionSetting withValue(String value) {
         setValue(value);
         return this;

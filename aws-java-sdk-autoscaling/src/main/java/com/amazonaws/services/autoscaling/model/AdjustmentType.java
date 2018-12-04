@@ -51,6 +51,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.
      */
+
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
     }
@@ -66,6 +67,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
      */
+
     public String getAdjustmentType() {
         return this.adjustmentType;
     }
@@ -84,6 +86,7 @@ public class AdjustmentType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AdjustmentType withAdjustmentType(String adjustmentType) {
         setAdjustmentType(adjustmentType);
         return this;

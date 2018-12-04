@@ -71,6 +71,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      * @param arn
      *        The project ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -82,6 +83,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The project ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -96,6 +98,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDevicePoolsRequest withArn(String arn) {
         setArn(arn);
         return this;
@@ -142,6 +145,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *        </li>
      * @see DevicePoolType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -186,6 +190,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *         </li>
      * @see DevicePoolType
      */
+
     public String getType() {
         return this.type;
     }
@@ -233,6 +238,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DevicePoolType
      */
+
     public ListDevicePoolsRequest withType(String type) {
         setType(type);
         return this;
@@ -277,10 +283,9 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *        pool developer.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DevicePoolType
      */
+
     public void setType(DevicePoolType type) {
         this.type = type.toString();
     }
@@ -328,6 +333,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DevicePoolType
      */
+
     public ListDevicePoolsRequest withType(DevicePoolType type) {
         setType(type);
         return this;
@@ -344,6 +350,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *        operation, which can be used to return the next set of items in
      *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -358,6 +365,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      *         operation, which can be used to return the next set of items in
      *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -375,6 +383,7 @@ public class ListDevicePoolsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDevicePoolsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

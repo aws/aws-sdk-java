@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetMethodRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetMethodRequestMarshaller implements
         Marshaller<Request<GetMethodRequest>, GetMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetMethodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetMethodRequest> marshall(GetMethodRequest getMethodRequest) {
 
@@ -64,16 +72,19 @@ public class GetMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getMethodRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getMethodRequest.getRestApiId()));
+                (getMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getMethodRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{resource_id}",
-                (getMethodRequest.getResourceId() == null) ? "" : StringUtils
-                        .fromString(getMethodRequest.getResourceId()));
+                (getMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getMethodRequest
+                                .getResourceId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{http_method}",
-                (getMethodRequest.getHttpMethod() == null) ? "" : StringUtils
-                        .fromString(getMethodRequest.getHttpMethod()));
+                (getMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getMethodRequest
+                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

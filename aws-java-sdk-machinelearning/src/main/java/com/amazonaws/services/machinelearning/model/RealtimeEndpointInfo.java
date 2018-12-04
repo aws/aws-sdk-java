@@ -75,6 +75,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        The maximum processing rate for the real-time endpoint for
      *        <code>MLModel</code>, measured in incoming requests per second.
      */
+
     public void setPeakRequestsPerSecond(Integer peakRequestsPerSecond) {
         this.peakRequestsPerSecond = peakRequestsPerSecond;
     }
@@ -88,6 +89,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * @return The maximum processing rate for the real-time endpoint for
      *         <code>MLModel</code>, measured in incoming requests per second.
      */
+
     public Integer getPeakRequestsPerSecond() {
         return this.peakRequestsPerSecond;
     }
@@ -104,6 +106,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RealtimeEndpointInfo withPeakRequestsPerSecond(
             Integer peakRequestsPerSecond) {
         setPeakRequestsPerSecond(peakRequestsPerSecond);
@@ -121,6 +124,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <code>MLModel</code> was received. The time is expressed in epoch
      *        time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -135,6 +139,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *         the <code>MLModel</code> was received. The time is expressed in
      *         epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -152,6 +157,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RealtimeEndpointInfo withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -177,6 +183,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        before using this URI.
      *        </p>
      */
+
     public void setEndpointUrl(String endpointUrl) {
         this.endpointUrl = endpointUrl;
     }
@@ -201,6 +208,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *         before using this URI.
      *         </p>
      */
+
     public String getEndpointUrl() {
         return this.endpointUrl;
     }
@@ -227,6 +235,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RealtimeEndpointInfo withEndpointUrl(String endpointUrl) {
         setEndpointUrl(endpointUrl);
         return this;
@@ -254,6 +263,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <li>UPDATING - Updating/creating the endpoint.</li>
      * @see RealtimeEndpointStatus
      */
+
     public void setEndpointStatus(String endpointStatus) {
         this.endpointStatus = endpointStatus;
     }
@@ -279,6 +289,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *         <li>UPDATING - Updating/creating the endpoint.</li>
      * @see RealtimeEndpointStatus
      */
+
     public String getEndpointStatus() {
         return this.endpointStatus;
     }
@@ -307,6 +318,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *         chained together.
      * @see RealtimeEndpointStatus
      */
+
     public RealtimeEndpointInfo withEndpointStatus(String endpointStatus) {
         setEndpointStatus(endpointStatus);
         return this;
@@ -332,10 +344,9 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *        <li>READY - Endpoint is ready to be used for real-time
      *        predictions.</li>
      *        <li>UPDATING - Updating/creating the endpoint.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RealtimeEndpointStatus
      */
+
     public void setEndpointStatus(RealtimeEndpointStatus endpointStatus) {
         this.endpointStatus = endpointStatus.toString();
     }
@@ -364,6 +375,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
      *         chained together.
      * @see RealtimeEndpointStatus
      */
+
     public RealtimeEndpointInfo withEndpointStatus(
             RealtimeEndpointStatus endpointStatus) {
         setEndpointStatus(endpointStatus);

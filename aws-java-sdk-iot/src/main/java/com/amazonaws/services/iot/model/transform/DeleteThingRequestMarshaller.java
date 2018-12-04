@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteThingRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteThingRequestMarshaller implements
         Marshaller<Request<DeleteThingRequest>, DeleteThingRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteThingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteThingRequest> marshall(
             DeleteThingRequest deleteThingRequest) {
@@ -65,8 +73,9 @@ public class DeleteThingRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{thingName}",
-                (deleteThingRequest.getThingName() == null) ? "" : StringUtils
-                        .fromString(deleteThingRequest.getThingName()));
+                (deleteThingRequest.getThingName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteThingRequest
+                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

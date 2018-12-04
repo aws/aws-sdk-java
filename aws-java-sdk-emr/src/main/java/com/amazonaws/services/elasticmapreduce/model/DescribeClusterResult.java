@@ -40,6 +40,7 @@ public class DescribeClusterResult implements Serializable, Cloneable {
      * @param cluster
      *        This output contains the details for the requested cluster.
      */
+
     public void setCluster(Cluster cluster) {
         this.cluster = cluster;
     }
@@ -51,6 +52,7 @@ public class DescribeClusterResult implements Serializable, Cloneable {
      * 
      * @return This output contains the details for the requested cluster.
      */
+
     public Cluster getCluster() {
         return this.cluster;
     }
@@ -65,6 +67,7 @@ public class DescribeClusterResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClusterResult withCluster(Cluster cluster) {
         setCluster(cluster);
         return this;

@@ -71,6 +71,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -94,6 +114,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * XCTEST: The XCode test type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
+     * </p>
+     * </li>
      * </ul>
      */
     private String testType;
@@ -106,6 +131,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * @param devicePoolArn
      *        The device pool's ARN.
      */
+
     public void setDevicePoolArn(String devicePoolArn) {
         this.devicePoolArn = devicePoolArn;
     }
@@ -117,6 +143,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * 
      * @return The device pool's ARN.
      */
+
     public String getDevicePoolArn() {
         return this.devicePoolArn;
     }
@@ -131,6 +158,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityRequest withDevicePoolArn(
             String devicePoolArn) {
         setDevicePoolArn(devicePoolArn);
@@ -146,6 +174,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        The ARN of the app that is associated with the specified device
      *        pool.
      */
+
     public void setAppArn(String appArn) {
         this.appArn = appArn;
     }
@@ -158,6 +187,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * @return The ARN of the app that is associated with the specified device
      *         pool.
      */
+
     public String getAppArn() {
         return this.appArn;
     }
@@ -173,6 +203,7 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDevicePoolCompatibilityRequest withAppArn(String appArn) {
         setAppArn(appArn);
         return this;
@@ -210,6 +241,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -231,6 +282,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -265,6 +321,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -288,8 +364,14 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setTestType(String testType) {
         this.testType = testType;
     }
@@ -326,6 +408,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -347,6 +449,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -380,6 +487,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -403,8 +530,14 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getTestType() {
         return this.testType;
     }
@@ -441,6 +574,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -462,6 +615,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -496,6 +654,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -519,10 +697,16 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public GetDevicePoolCompatibilityRequest withTestType(String testType) {
         setTestType(testType);
         return this;
@@ -560,6 +744,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -581,6 +785,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -615,6 +824,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -638,10 +867,14 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setTestType(TestType testType) {
         this.testType = testType.toString();
     }
@@ -678,6 +911,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -699,6 +952,11 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -733,6 +991,26 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -756,10 +1034,16 @@ public class GetDevicePoolCompatibilityRequest extends AmazonWebServiceRequest
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public GetDevicePoolCompatibilityRequest withTestType(TestType testType) {
         setTestType(testType);
         return this;

@@ -1,162 +1,170 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticloadbalancing.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest) AttachLoadBalancerToSubnets operation}.
- * <p>
- * Adds one or more subnets to the set of configured subnets for the
- * specified load balancer.
- * </p>
- * <p>
- * The load balancer evenly distributes requests across all registered
- * subnets. For more information, see
- * <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-manage-subnets.html"> Add or Remove Subnets for Your Load Balancer in a VPC </a>
- * in the <i>Elastic Load Balancing Developer Guide</i> .
- * </p>
- *
- * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest)
+ * 
  */
-public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the load balancer.
+     * </p>
      */
     private String loadBalancerName;
+    /**
+     * <p>
+     * The IDs of the subnets to add for the load balancer. You can add only one
+     * subnet per Availability Zone.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> subnets;
 
     /**
-     * The IDs of the subnets to add for the load balancer. You can add only
-     * one subnet per Availability Zone.
+     * <p>
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
 
-    /**
-     * The name of the load balancer.
-     *
-     * @return The name of the load balancer.
-     */
-    public String getLoadBalancerName() {
-        return loadBalancerName;
-    }
-    
-    /**
-     * The name of the load balancer.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
-    
+
     /**
-     * The name of the load balancer.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param loadBalancerName The name of the load balancer.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @return The name of the load balancer.
      */
-    public AttachLoadBalancerToSubnetsRequest withLoadBalancerName(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+
+    public String getLoadBalancerName() {
+        return this.loadBalancerName;
+    }
+
+    /**
+     * <p>
+     * The name of the load balancer.
+     * </p>
+     * 
+     * @param loadBalancerName
+     *        The name of the load balancer.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AttachLoadBalancerToSubnetsRequest withLoadBalancerName(
+            String loadBalancerName) {
+        setLoadBalancerName(loadBalancerName);
         return this;
     }
 
     /**
-     * The IDs of the subnets to add for the load balancer. You can add only
-     * one subnet per Availability Zone.
-     *
-     * @return The IDs of the subnets to add for the load balancer. You can add only
-     *         one subnet per Availability Zone.
+     * <p>
+     * The IDs of the subnets to add for the load balancer. You can add only one
+     * subnet per Availability Zone.
+     * </p>
+     * 
+     * @return The IDs of the subnets to add for the load balancer. You can add
+     *         only one subnet per Availability Zone.
      */
+
     public java.util.List<String> getSubnets() {
         if (subnets == null) {
-              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              subnets.setAutoConstruct(true);
+            subnets = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return subnets;
     }
-    
+
     /**
-     * The IDs of the subnets to add for the load balancer. You can add only
-     * one subnet per Availability Zone.
-     *
-     * @param subnets The IDs of the subnets to add for the load balancer. You can add only
-     *         one subnet per Availability Zone.
+     * <p>
+     * The IDs of the subnets to add for the load balancer. You can add only one
+     * subnet per Availability Zone.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets to add for the load balancer. You can add
+     *        only one subnet per Availability Zone.
      */
+
     public void setSubnets(java.util.Collection<String> subnets) {
         if (subnets == null) {
             this.subnets = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
-        subnetsCopy.addAll(subnets);
-        this.subnets = subnetsCopy;
+
+        this.subnets = new com.amazonaws.internal.SdkInternalList<String>(
+                subnets);
     }
-    
+
     /**
-     * The IDs of the subnets to add for the load balancer. You can add only
-     * one subnet per Availability Zone.
+     * <p>
+     * The IDs of the subnets to add for the load balancer. You can add only one
+     * subnet per Availability Zone.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSubnets(java.util.Collection)} or {@link
-     * #withSubnets(java.util.Collection)} if you want to override the
+     * any). Use {@link #setSubnets(java.util.Collection)} or
+     * {@link #withSubnets(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subnets The IDs of the subnets to add for the load balancer. You can add only
-     *         one subnet per Availability Zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets to add for the load balancer. You can add
+     *        only one subnet per Availability Zone.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public AttachLoadBalancerToSubnetsRequest withSubnets(String... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
-        for (String value : subnets) {
-            getSubnets().add(value);
+        if (this.subnets == null) {
+            setSubnets(new com.amazonaws.internal.SdkInternalList<String>(
+                    subnets.length));
+        }
+        for (String ele : subnets) {
+            this.subnets.add(ele);
         }
         return this;
     }
-    
-    /**
-     * The IDs of the subnets to add for the load balancer. You can add only
-     * one subnet per Availability Zone.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subnets The IDs of the subnets to add for the load balancer. You can add only
-     *         one subnet per Availability Zone.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public AttachLoadBalancerToSubnetsRequest withSubnets(java.util.Collection<String> subnets) {
-        if (subnets == null) {
-            this.subnets = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
-            subnetsCopy.addAll(subnets);
-            this.subnets = subnetsCopy;
-        }
 
+    /**
+     * <p>
+     * The IDs of the subnets to add for the load balancer. You can add only one
+     * subnet per Availability Zone.
+     * </p>
+     * 
+     * @param subnets
+     *        The IDs of the subnets to add for the load balancer. You can add
+     *        only one subnet per Availability Zone.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public AttachLoadBalancerToSubnetsRequest withSubnets(
+            java.util.Collection<String> subnets) {
+        setSubnets(subnets);
         return this;
     }
 
@@ -172,42 +180,55 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
+        if (getLoadBalancerName() != null)
+            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getSubnets() != null)
+            sb.append("Subnets: " + getSubnets());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AttachLoadBalancerToSubnetsRequest == false)
+            return false;
+        AttachLoadBalancerToSubnetsRequest other = (AttachLoadBalancerToSubnetsRequest) obj;
+        if (other.getLoadBalancerName() == null
+                ^ this.getLoadBalancerName() == null)
+            return false;
+        if (other.getLoadBalancerName() != null
+                && other.getLoadBalancerName().equals(
+                        this.getLoadBalancerName()) == false)
+            return false;
+        if (other.getSubnets() == null ^ this.getSubnets() == null)
+            return false;
+        if (other.getSubnets() != null
+                && other.getSubnets().equals(this.getSubnets()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
-        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof AttachLoadBalancerToSubnetsRequest == false) return false;
-        AttachLoadBalancerToSubnetsRequest other = (AttachLoadBalancerToSubnetsRequest)obj;
-        
-        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
-        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
-        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
-        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public AttachLoadBalancerToSubnetsRequest clone() {
-        
-            return (AttachLoadBalancerToSubnetsRequest) super.clone();
+        return (AttachLoadBalancerToSubnetsRequest) super.clone();
     }
-
 }
-    

@@ -58,6 +58,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param jobId
      */
+
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
@@ -65,6 +66,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getJobId() {
         return this.jobId;
     }
@@ -74,6 +76,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withJobId(String jobId) {
         setJobId(jobId);
         return this;
@@ -83,6 +86,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @param jobType
      * @see JobType
      */
+
     public void setJobType(String jobType) {
         this.jobType = jobType;
     }
@@ -91,6 +95,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return
      * @see JobType
      */
+
     public String getJobType() {
         return this.jobType;
     }
@@ -101,6 +106,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public GetStatusResult withJobType(String jobType) {
         setJobType(jobType);
         return this;
@@ -108,10 +114,9 @@ public class GetStatusResult implements Serializable, Cloneable {
 
     /**
      * @param jobType
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobType
      */
+
     public void setJobType(JobType jobType) {
         this.jobType = jobType.toString();
     }
@@ -122,6 +127,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobType
      */
+
     public GetStatusResult withJobType(JobType jobType) {
         setJobType(jobType);
         return this;
@@ -130,6 +136,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param locationCode
      */
+
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
     }
@@ -137,6 +144,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocationCode() {
         return this.locationCode;
     }
@@ -146,6 +154,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withLocationCode(String locationCode) {
         setLocationCode(locationCode);
         return this;
@@ -154,6 +163,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param locationMessage
      */
+
     public void setLocationMessage(String locationMessage) {
         this.locationMessage = locationMessage;
     }
@@ -161,6 +171,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLocationMessage() {
         return this.locationMessage;
     }
@@ -170,6 +181,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withLocationMessage(String locationMessage) {
         setLocationMessage(locationMessage);
         return this;
@@ -178,6 +190,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param progressCode
      */
+
     public void setProgressCode(String progressCode) {
         this.progressCode = progressCode;
     }
@@ -185,6 +198,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getProgressCode() {
         return this.progressCode;
     }
@@ -194,6 +208,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withProgressCode(String progressCode) {
         setProgressCode(progressCode);
         return this;
@@ -202,6 +217,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param progressMessage
      */
+
     public void setProgressMessage(String progressMessage) {
         this.progressMessage = progressMessage;
     }
@@ -209,6 +225,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getProgressMessage() {
         return this.progressMessage;
     }
@@ -218,6 +235,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withProgressMessage(String progressMessage) {
         setProgressMessage(progressMessage);
         return this;
@@ -226,6 +244,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param carrier
      */
+
     public void setCarrier(String carrier) {
         this.carrier = carrier;
     }
@@ -233,6 +252,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getCarrier() {
         return this.carrier;
     }
@@ -242,6 +262,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withCarrier(String carrier) {
         setCarrier(carrier);
         return this;
@@ -250,6 +271,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param trackingNumber
      */
+
     public void setTrackingNumber(String trackingNumber) {
         this.trackingNumber = trackingNumber;
     }
@@ -257,6 +279,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getTrackingNumber() {
         return this.trackingNumber;
     }
@@ -266,6 +289,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withTrackingNumber(String trackingNumber) {
         setTrackingNumber(trackingNumber);
         return this;
@@ -274,6 +298,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param logBucket
      */
+
     public void setLogBucket(String logBucket) {
         this.logBucket = logBucket;
     }
@@ -281,6 +306,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLogBucket() {
         return this.logBucket;
     }
@@ -290,6 +316,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withLogBucket(String logBucket) {
         setLogBucket(logBucket);
         return this;
@@ -298,6 +325,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param logKey
      */
+
     public void setLogKey(String logKey) {
         this.logKey = logKey;
     }
@@ -305,6 +333,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getLogKey() {
         return this.logKey;
     }
@@ -314,6 +343,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withLogKey(String logKey) {
         setLogKey(logKey);
         return this;
@@ -322,6 +352,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param errorCount
      */
+
     public void setErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
     }
@@ -329,6 +360,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getErrorCount() {
         return this.errorCount;
     }
@@ -338,6 +370,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withErrorCount(Integer errorCount) {
         setErrorCount(errorCount);
         return this;
@@ -346,6 +379,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param signature
      */
+
     public void setSignature(String signature) {
         this.signature = signature;
     }
@@ -353,6 +387,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSignature() {
         return this.signature;
     }
@@ -362,6 +397,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withSignature(String signature) {
         setSignature(signature);
         return this;
@@ -370,6 +406,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param signatureFileContents
      */
+
     public void setSignatureFileContents(String signatureFileContents) {
         this.signatureFileContents = signatureFileContents;
     }
@@ -377,6 +414,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getSignatureFileContents() {
         return this.signatureFileContents;
     }
@@ -386,6 +424,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withSignatureFileContents(
             String signatureFileContents) {
         setSignatureFileContents(signatureFileContents);
@@ -395,6 +434,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param currentManifest
      */
+
     public void setCurrentManifest(String currentManifest) {
         this.currentManifest = currentManifest;
     }
@@ -402,6 +442,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getCurrentManifest() {
         return this.currentManifest;
     }
@@ -411,6 +452,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withCurrentManifest(String currentManifest) {
         setCurrentManifest(currentManifest);
         return this;
@@ -419,6 +461,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param creationDate
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -426,6 +469,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -435,6 +479,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -443,6 +488,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
             artifactList = new com.amazonaws.internal.SdkInternalList<Artifact>();
@@ -453,6 +499,7 @@ public class GetStatusResult implements Serializable, Cloneable {
     /**
      * @param artifactList
      */
+
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
             this.artifactList = null;
@@ -475,6 +522,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withArtifactList(Artifact... artifactList) {
         if (this.artifactList == null) {
             setArtifactList(new com.amazonaws.internal.SdkInternalList<Artifact>(
@@ -491,6 +539,7 @@ public class GetStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStatusResult withArtifactList(
             java.util.Collection<Artifact> artifactList) {
         setArtifactList(artifactList);

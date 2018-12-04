@@ -24,8 +24,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object that contains one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>ListVolumesInput$Limit</a></li>
- * <li><a>ListVolumesInput$Marker</a></li>
+ * <li>
+ * <p>
+ * <a>ListVolumesInput$Limit</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListVolumesInput$Marker</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ListVolumesRequest extends AmazonWebServiceRequest implements
@@ -51,6 +59,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -58,6 +67,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -67,6 +77,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -84,6 +95,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      *        returned list of volumes. Obtain the marker from the response of a
      *        previous List iSCSI Volumes request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -99,6 +111,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      *         returned list of volumes. Obtain the marker from the response of
      *         a previous List iSCSI Volumes request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -117,6 +130,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -132,6 +146,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      *        Specifies that the list of volumes returned be limited to the
      *        specified number of items.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -145,6 +160,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      * @return Specifies that the list of volumes returned be limited to the
      *         specified number of items.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -161,6 +177,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListVolumesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

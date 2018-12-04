@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * UpdateStackRequest Marshaller
@@ -166,6 +167,28 @@ public class UpdateStackRequestMarshaller implements
                             StringUtils.fromString(notificationARNsListValue));
                 }
                 notificationARNsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) updateStackRequest
+                .getTags();
+        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".Key",
+                            StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex
+                            + ".Value",
+                            StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
             }
         }
 

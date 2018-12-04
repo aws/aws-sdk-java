@@ -41,6 +41,7 @@ public class AcknowledgeJobResult implements Serializable, Cloneable {
      *        Whether the job worker has received the specified job.
      * @see JobStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -53,6 +54,7 @@ public class AcknowledgeJobResult implements Serializable, Cloneable {
      * @return Whether the job worker has received the specified job.
      * @see JobStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -68,6 +70,7 @@ public class AcknowledgeJobResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobStatus
      */
+
     public AcknowledgeJobResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -80,10 +83,9 @@ public class AcknowledgeJobResult implements Serializable, Cloneable {
      * 
      * @param status
      *        Whether the job worker has received the specified job.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see JobStatus
      */
+
     public void setStatus(JobStatus status) {
         this.status = status.toString();
     }
@@ -99,6 +101,7 @@ public class AcknowledgeJobResult implements Serializable, Cloneable {
      *         chained together.
      * @see JobStatus
      */
+
     public AcknowledgeJobResult withStatus(JobStatus status) {
         setStatus(status);
         return this;

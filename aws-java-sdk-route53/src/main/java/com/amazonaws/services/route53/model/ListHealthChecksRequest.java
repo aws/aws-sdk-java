@@ -22,13 +22,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your health checks, send a <code>GET</code> request to
- * the <code>2015-01-01/healthcheck</code> resource. The response to this
- * request includes a <code>HealthChecks</code> element with zero or more
- * <code>HealthCheck</code> child elements. By default, the list of health
- * checks is displayed on a single page. You can control the length of the page
- * that is displayed by using the <code>MaxItems</code> parameter. You can use
- * the <code>Marker</code> parameter to control the health check that the list
- * begins with.
+ * the <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The
+ * response to this request includes a <code>HealthChecks</code> element with
+ * zero or more <code>HealthCheck</code> child elements. By default, the list of
+ * health checks is displayed on a single page. You can control the length of
+ * the page that is displayed by using the <code>MaxItems</code> parameter. You
+ * can use the <code>Marker</code> parameter to control the health check that
+ * the list begins with.
  * </p>
  * <note> Amazon Route 53 returns a maximum of 100 items. If you set
  * <code>MaxItems</code> to a value greater than 100, Amazon Route 53 returns
@@ -68,6 +68,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -85,6 +86,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -105,6 +107,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -120,6 +123,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      *        Specify the maximum number of health checks to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -133,6 +137,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Specify the maximum number of health checks to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -149,6 +154,7 @@ public class ListHealthChecksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHealthChecksRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

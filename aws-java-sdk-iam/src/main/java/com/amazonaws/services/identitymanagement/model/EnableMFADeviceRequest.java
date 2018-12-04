@@ -27,7 +27,13 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the user for whom you want to enable the MFA device.
+     * The name of the IAM user for whom you want to enable the MFA device.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -36,17 +42,29 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      */
     private String serialNumber;
     /**
      * <p>
      * An authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      */
     private String authenticationCode1;
     /**
      * <p>
      * A subsequent authentication code emitted by the device.
+     * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
      * </p>
      */
     private String authenticationCode2;
@@ -65,14 +83,32 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param userName
-     *        The name of the user for whom you want to enable the MFA device.
+     *        The name of the IAM user for whom you want to enable the MFA
+     *        device.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
      *        virtual MFA devices, the serial number is the device ARN.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      * @param authenticationCode1
      *        An authentication code emitted by the device.
+     *        </p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.
+     *        </p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      */
     public EnableMFADeviceRequest(String userName, String serialNumber,
             String authenticationCode1, String authenticationCode2) {
@@ -84,37 +120,76 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The name of the user for whom you want to enable the MFA device.
+     * The name of the IAM user for whom you want to enable the MFA device.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user for whom you want to enable the MFA device.
+     *        The name of the IAM user for whom you want to enable the MFA
+     *        device.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
     /**
      * <p>
-     * The name of the user for whom you want to enable the MFA device.
+     * The name of the IAM user for whom you want to enable the MFA device.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name of the user for whom you want to enable the MFA device.
+     * @return The name of the IAM user for whom you want to enable the MFA
+     *         device.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
 
     /**
      * <p>
-     * The name of the user for whom you want to enable the MFA device.
+     * The name of the IAM user for whom you want to enable the MFA device.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user for whom you want to enable the MFA device.
+     *        The name of the IAM user for whom you want to enable the MFA
+     *        device.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -125,11 +200,23 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
-     *        virtual MFA devices, the serial number is the device ARN.
+     *        virtual MFA devices, the serial number is the device ARN.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      */
+
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
@@ -139,10 +226,22 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @return The serial number that uniquely identifies the MFA device. For
-     *         virtual MFA devices, the serial number is the device ARN.
+     *         virtual MFA devices, the serial number is the device ARN.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =/:,.@-
      */
+
     public String getSerialNumber() {
         return this.serialNumber;
     }
@@ -152,13 +251,25 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * The serial number that uniquely identifies the MFA device. For virtual
      * MFA devices, the serial number is the device ARN.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =/:,.@-
+     * </p>
      * 
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For
-     *        virtual MFA devices, the serial number is the device ARN.
+     *        virtual MFA devices, the serial number is the device ARN.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =/:,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withSerialNumber(String serialNumber) {
         setSerialNumber(serialNumber);
         return this;
@@ -168,10 +279,16 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * An authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
      * @param authenticationCode1
-     *        An authentication code emitted by the device.
+     *        An authentication code emitted by the device.</p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      */
+
     public void setAuthenticationCode1(String authenticationCode1) {
         this.authenticationCode1 = authenticationCode1;
     }
@@ -180,9 +297,15 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * An authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
-     * @return An authentication code emitted by the device.
+     * @return An authentication code emitted by the device.</p>
+     *         <p>
+     *         The format for this parameter is a string of 6 digits.
      */
+
     public String getAuthenticationCode1() {
         return this.authenticationCode1;
     }
@@ -191,12 +314,18 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * An authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
      * @param authenticationCode1
-     *        An authentication code emitted by the device.
+     *        An authentication code emitted by the device.</p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withAuthenticationCode1(
             String authenticationCode1) {
         setAuthenticationCode1(authenticationCode1);
@@ -207,10 +336,16 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * A subsequent authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
      * @param authenticationCode2
-     *        A subsequent authentication code emitted by the device.
+     *        A subsequent authentication code emitted by the device.</p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      */
+
     public void setAuthenticationCode2(String authenticationCode2) {
         this.authenticationCode2 = authenticationCode2;
     }
@@ -219,9 +354,15 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * A subsequent authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
-     * @return A subsequent authentication code emitted by the device.
+     * @return A subsequent authentication code emitted by the device.</p>
+     *         <p>
+     *         The format for this parameter is a string of 6 digits.
      */
+
     public String getAuthenticationCode2() {
         return this.authenticationCode2;
     }
@@ -230,12 +371,18 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest implements
      * <p>
      * A subsequent authentication code emitted by the device.
      * </p>
+     * <p>
+     * The format for this parameter is a string of 6 digits.
+     * </p>
      * 
      * @param authenticationCode2
-     *        A subsequent authentication code emitted by the device.
+     *        A subsequent authentication code emitted by the device.</p>
+     *        <p>
+     *        The format for this parameter is a string of 6 digits.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnableMFADeviceRequest withAuthenticationCode2(
             String authenticationCode2) {
         setAuthenticationCode2(authenticationCode2);

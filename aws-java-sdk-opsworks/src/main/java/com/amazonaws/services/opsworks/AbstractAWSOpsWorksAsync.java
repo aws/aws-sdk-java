@@ -29,61 +29,61 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignInstanceAsync(
+    public java.util.concurrent.Future<AssignInstanceResult> assignInstanceAsync(
             AssignInstanceRequest request) {
 
         return assignInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignInstanceAsync(
+    public java.util.concurrent.Future<AssignInstanceResult> assignInstanceAsync(
             AssignInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<AssignInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AssignInstanceRequest, AssignInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignVolumeAsync(
+    public java.util.concurrent.Future<AssignVolumeResult> assignVolumeAsync(
             AssignVolumeRequest request) {
 
         return assignVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> assignVolumeAsync(
+    public java.util.concurrent.Future<AssignVolumeResult> assignVolumeAsync(
             AssignVolumeRequest request,
-            com.amazonaws.handlers.AsyncHandler<AssignVolumeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AssignVolumeRequest, AssignVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateElasticIpAsync(
+    public java.util.concurrent.Future<AssociateElasticIpResult> associateElasticIpAsync(
             AssociateElasticIpRequest request) {
 
         return associateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> associateElasticIpAsync(
+    public java.util.concurrent.Future<AssociateElasticIpResult> associateElasticIpAsync(
             AssociateElasticIpRequest request,
-            com.amazonaws.handlers.AsyncHandler<AssociateElasticIpRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AssociateElasticIpRequest, AssociateElasticIpResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<AttachElasticLoadBalancerResult> attachElasticLoadBalancerAsync(
             AttachElasticLoadBalancerRequest request) {
 
         return attachElasticLoadBalancerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<AttachElasticLoadBalancerResult> attachElasticLoadBalancerAsync(
             AttachElasticLoadBalancerRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachElasticLoadBalancerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -194,151 +194,151 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAppAsync(
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(
             DeleteAppRequest request) {
 
         return deleteAppAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAppAsync(
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(
             DeleteAppRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceAsync(
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(
             DeleteInstanceRequest request) {
 
         return deleteInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteInstanceAsync(
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(
             DeleteInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLayerAsync(
+    public java.util.concurrent.Future<DeleteLayerResult> deleteLayerAsync(
             DeleteLayerRequest request) {
 
         return deleteLayerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLayerAsync(
+    public java.util.concurrent.Future<DeleteLayerResult> deleteLayerAsync(
             DeleteLayerRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteLayerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteLayerRequest, DeleteLayerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request) {
 
         return deleteStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteStackAsync(
+    public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(
             DeleteStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserProfileAsync(
+    public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(
             DeleteUserProfileRequest request) {
 
         return deleteUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteUserProfileAsync(
+    public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(
             DeleteUserProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
+    public java.util.concurrent.Future<DeregisterEcsClusterResult> deregisterEcsClusterAsync(
             DeregisterEcsClusterRequest request) {
 
         return deregisterEcsClusterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterEcsClusterAsync(
+    public java.util.concurrent.Future<DeregisterEcsClusterResult> deregisterEcsClusterAsync(
             DeregisterEcsClusterRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterEcsClusterRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterEcsClusterRequest, DeregisterEcsClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterElasticIpAsync(
+    public java.util.concurrent.Future<DeregisterElasticIpResult> deregisterElasticIpAsync(
             DeregisterElasticIpRequest request) {
 
         return deregisterElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterElasticIpAsync(
+    public java.util.concurrent.Future<DeregisterElasticIpResult> deregisterElasticIpAsync(
             DeregisterElasticIpRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterElasticIpRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterElasticIpRequest, DeregisterElasticIpResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterInstanceAsync(
+    public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(
             DeregisterInstanceRequest request) {
 
         return deregisterInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterInstanceAsync(
+    public java.util.concurrent.Future<DeregisterInstanceResult> deregisterInstanceAsync(
             DeregisterInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterInstanceRequest, DeregisterInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
+    public java.util.concurrent.Future<DeregisterRdsDbInstanceResult> deregisterRdsDbInstanceAsync(
             DeregisterRdsDbInstanceRequest request) {
 
         return deregisterRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterRdsDbInstanceAsync(
+    public java.util.concurrent.Future<DeregisterRdsDbInstanceResult> deregisterRdsDbInstanceAsync(
             DeregisterRdsDbInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterRdsDbInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterRdsDbInstanceRequest, DeregisterRdsDbInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterVolumeAsync(
+    public java.util.concurrent.Future<DeregisterVolumeResult> deregisterVolumeAsync(
             DeregisterVolumeRequest request) {
 
         return deregisterVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deregisterVolumeAsync(
+    public java.util.concurrent.Future<DeregisterVolumeResult> deregisterVolumeAsync(
             DeregisterVolumeRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeregisterVolumeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeregisterVolumeRequest, DeregisterVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -659,31 +659,31 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<DetachElasticLoadBalancerResult> detachElasticLoadBalancerAsync(
             DetachElasticLoadBalancerRequest request) {
 
         return detachElasticLoadBalancerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachElasticLoadBalancerAsync(
+    public java.util.concurrent.Future<DetachElasticLoadBalancerResult> detachElasticLoadBalancerAsync(
             DetachElasticLoadBalancerRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachElasticLoadBalancerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateElasticIpAsync(
+    public java.util.concurrent.Future<DisassociateElasticIpResult> disassociateElasticIpAsync(
             DisassociateElasticIpRequest request) {
 
         return disassociateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disassociateElasticIpAsync(
+    public java.util.concurrent.Future<DisassociateElasticIpResult> disassociateElasticIpAsync(
             DisassociateElasticIpRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisassociateElasticIpRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisassociateElasticIpRequest, DisassociateElasticIpResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -719,16 +719,16 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstanceAsync(
+    public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(
             RebootInstanceRequest request) {
 
         return rebootInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rebootInstanceAsync(
+    public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(
             RebootInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -779,16 +779,16 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
+    public java.util.concurrent.Future<RegisterRdsDbInstanceResult> registerRdsDbInstanceAsync(
             RegisterRdsDbInstanceRequest request) {
 
         return registerRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> registerRdsDbInstanceAsync(
+    public java.util.concurrent.Future<RegisterRdsDbInstanceResult> registerRdsDbInstanceAsync(
             RegisterRdsDbInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<RegisterRdsDbInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RegisterRdsDbInstanceRequest, RegisterRdsDbInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -809,271 +809,271 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetLoadBasedAutoScalingResult> setLoadBasedAutoScalingAsync(
             SetLoadBasedAutoScalingRequest request) {
 
         return setLoadBasedAutoScalingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoadBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetLoadBasedAutoScalingResult> setLoadBasedAutoScalingAsync(
             SetLoadBasedAutoScalingRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetLoadBasedAutoScalingRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPermissionAsync(
+    public java.util.concurrent.Future<SetPermissionResult> setPermissionAsync(
             SetPermissionRequest request) {
 
         return setPermissionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setPermissionAsync(
+    public java.util.concurrent.Future<SetPermissionResult> setPermissionAsync(
             SetPermissionRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetPermissionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetPermissionRequest, SetPermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetTimeBasedAutoScalingResult> setTimeBasedAutoScalingAsync(
             SetTimeBasedAutoScalingRequest request) {
 
         return setTimeBasedAutoScalingAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setTimeBasedAutoScalingAsync(
+    public java.util.concurrent.Future<SetTimeBasedAutoScalingResult> setTimeBasedAutoScalingAsync(
             SetTimeBasedAutoScalingRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetTimeBasedAutoScalingRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startInstanceAsync(
+    public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(
             StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startInstanceAsync(
+    public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(
             StartInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, StartInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startStackAsync(
+    public java.util.concurrent.Future<StartStackResult> startStackAsync(
             StartStackRequest request) {
 
         return startStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startStackAsync(
+    public java.util.concurrent.Future<StartStackResult> startStackAsync(
             StartStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<StartStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StartStackRequest, StartStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopInstanceAsync(
+    public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(
             StopInstanceRequest request) {
 
         return stopInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopInstanceAsync(
+    public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(
             StopInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopStackAsync(
+    public java.util.concurrent.Future<StopStackResult> stopStackAsync(
             StopStackRequest request) {
 
         return stopStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopStackAsync(
+    public java.util.concurrent.Future<StopStackResult> stopStackAsync(
             StopStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<StopStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<StopStackRequest, StopStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignInstanceAsync(
+    public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(
             UnassignInstanceRequest request) {
 
         return unassignInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignInstanceAsync(
+    public java.util.concurrent.Future<UnassignInstanceResult> unassignInstanceAsync(
             UnassignInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnassignInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnassignInstanceRequest, UnassignInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignVolumeAsync(
+    public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(
             UnassignVolumeRequest request) {
 
         return unassignVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> unassignVolumeAsync(
+    public java.util.concurrent.Future<UnassignVolumeResult> unassignVolumeAsync(
             UnassignVolumeRequest request,
-            com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UnassignVolumeRequest, UnassignVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAppAsync(
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(
             UpdateAppRequest request) {
 
         return updateAppAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateAppAsync(
+    public java.util.concurrent.Future<UpdateAppResult> updateAppAsync(
             UpdateAppRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateAppRequest, UpdateAppResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateElasticIpAsync(
+    public java.util.concurrent.Future<UpdateElasticIpResult> updateElasticIpAsync(
             UpdateElasticIpRequest request) {
 
         return updateElasticIpAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateElasticIpAsync(
+    public java.util.concurrent.Future<UpdateElasticIpResult> updateElasticIpAsync(
             UpdateElasticIpRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateElasticIpRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateElasticIpRequest, UpdateElasticIpResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateInstanceAsync(
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(
             UpdateInstanceRequest request) {
 
         return updateInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateInstanceAsync(
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(
             UpdateInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLayerAsync(
+    public java.util.concurrent.Future<UpdateLayerResult> updateLayerAsync(
             UpdateLayerRequest request) {
 
         return updateLayerAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateLayerAsync(
+    public java.util.concurrent.Future<UpdateLayerResult> updateLayerAsync(
             UpdateLayerRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateLayerRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateLayerRequest, UpdateLayerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateMyUserProfileAsync(
+    public java.util.concurrent.Future<UpdateMyUserProfileResult> updateMyUserProfileAsync(
             UpdateMyUserProfileRequest request) {
 
         return updateMyUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateMyUserProfileAsync(
+    public java.util.concurrent.Future<UpdateMyUserProfileResult> updateMyUserProfileAsync(
             UpdateMyUserProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateMyUserProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateMyUserProfileRequest, UpdateMyUserProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
+    public java.util.concurrent.Future<UpdateRdsDbInstanceResult> updateRdsDbInstanceAsync(
             UpdateRdsDbInstanceRequest request) {
 
         return updateRdsDbInstanceAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRdsDbInstanceAsync(
+    public java.util.concurrent.Future<UpdateRdsDbInstanceResult> updateRdsDbInstanceAsync(
             UpdateRdsDbInstanceRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateRdsDbInstanceRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateRdsDbInstanceRequest, UpdateRdsDbInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateStackAsync(
+    public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             UpdateStackRequest request) {
 
         return updateStackAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateStackAsync(
+    public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(
             UpdateStackRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserProfileAsync(
+    public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(
             UpdateUserProfileRequest request) {
 
         return updateUserProfileAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateUserProfileAsync(
+    public java.util.concurrent.Future<UpdateUserProfileResult> updateUserProfileAsync(
             UpdateUserProfileRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateUserProfileRequest, UpdateUserProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateVolumeAsync(
+    public java.util.concurrent.Future<UpdateVolumeResult> updateVolumeAsync(
             UpdateVolumeRequest request) {
 
         return updateVolumeAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateVolumeAsync(
+    public java.util.concurrent.Future<UpdateVolumeResult> updateVolumeAsync(
             UpdateVolumeRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateVolumeRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateVolumeRequest, UpdateVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

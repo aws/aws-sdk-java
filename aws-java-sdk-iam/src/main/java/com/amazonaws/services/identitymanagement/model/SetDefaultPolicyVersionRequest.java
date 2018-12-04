@@ -25,6 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy whose default version
+     * you want to set.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     */
     private String policyArn;
     /**
      * <p>
@@ -39,24 +51,80 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
     private String versionId;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy whose default version
+     * you want to set.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy whose default
+     *        version you want to set.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setPolicyArn(String policyArn) {
         this.policyArn = policyArn;
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy whose default version
+     * you want to set.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM policy whose default
+     *         version you want to set.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getPolicyArn() {
         return this.policyArn;
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM policy whose default version
+     * you want to set.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
+     * </p>
+     * 
      * @param policyArn
+     *        The Amazon Resource Name (ARN) of the IAM policy whose default
+     *        version you want to set.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDefaultPolicyVersionRequest withPolicyArn(String policyArn) {
         setPolicyArn(policyArn);
         return this;
@@ -80,6 +148,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html"
      *        >Versioning for Managed Policies</a> in the <i>IAM User Guide</i>.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -102,6 +171,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      *         >Versioning for Managed Policies</a> in the <i>IAM User
      *         Guide</i>.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -126,6 +196,7 @@ public class SetDefaultPolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetDefaultPolicyVersionRequest withVersionId(String versionId) {
         setVersionId(versionId);
         return this;

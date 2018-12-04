@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListThingsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ListThingsRequestMarshaller implements
         Marshaller<Request<ListThingsRequest>, ListThingsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListThingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListThingsRequest> marshall(
             ListThingsRequest listThingsRequest) {
@@ -65,28 +73,24 @@ public class ListThingsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String nextToken = (listThingsRequest.getNextToken() == null) ? null
-                : StringUtils.fromString(listThingsRequest.getNextToken());
-        if (nextToken != null) {
-            request.addParameter("nextToken", nextToken);
+        if (listThingsRequest.getNextToken() != null) {
+            request.addParameter("nextToken",
+                    StringUtils.fromString(listThingsRequest.getNextToken()));
         }
 
-        String maxResults = (listThingsRequest.getMaxResults() == null) ? null
-                : StringUtils.fromInteger(listThingsRequest.getMaxResults());
-        if (maxResults != null) {
-            request.addParameter("maxResults", maxResults);
+        if (listThingsRequest.getMaxResults() != null) {
+            request.addParameter("maxResults",
+                    StringUtils.fromInteger(listThingsRequest.getMaxResults()));
         }
 
-        String attributeName = (listThingsRequest.getAttributeName() == null) ? null
-                : StringUtils.fromString(listThingsRequest.getAttributeName());
-        if (attributeName != null) {
-            request.addParameter("attributeName", attributeName);
+        if (listThingsRequest.getAttributeName() != null) {
+            request.addParameter("attributeName", StringUtils
+                    .fromString(listThingsRequest.getAttributeName()));
         }
 
-        String attributeValue = (listThingsRequest.getAttributeValue() == null) ? null
-                : StringUtils.fromString(listThingsRequest.getAttributeValue());
-        if (attributeValue != null) {
-            request.addParameter("attributeValue", attributeValue);
+        if (listThingsRequest.getAttributeValue() != null) {
+            request.addParameter("attributeValue", StringUtils
+                    .fromString(listThingsRequest.getAttributeValue()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

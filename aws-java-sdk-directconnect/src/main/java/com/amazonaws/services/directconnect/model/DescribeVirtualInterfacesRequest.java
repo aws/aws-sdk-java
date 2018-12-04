@@ -34,6 +34,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
     /**
      * @param connectionId
      */
+
     public void setConnectionId(String connectionId) {
         this.connectionId = connectionId;
     }
@@ -41,6 +42,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getConnectionId() {
         return this.connectionId;
     }
@@ -50,6 +52,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualInterfacesRequest withConnectionId(String connectionId) {
         setConnectionId(connectionId);
         return this;
@@ -58,6 +61,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
     /**
      * @param virtualInterfaceId
      */
+
     public void setVirtualInterfaceId(String virtualInterfaceId) {
         this.virtualInterfaceId = virtualInterfaceId;
     }
@@ -65,6 +69,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getVirtualInterfaceId() {
         return this.virtualInterfaceId;
     }
@@ -74,6 +79,7 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeVirtualInterfacesRequest withVirtualInterfaceId(
             String virtualInterfaceId) {
         setVirtualInterfaceId(virtualInterfaceId);

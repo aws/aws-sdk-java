@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StageMarshaller
@@ -39,93 +34,93 @@ import com.amazonaws.util.json.*;
 public class StageJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Stage stage, JSONWriter jsonWriter) {
+    public void marshall(Stage stage, StructuredJsonGenerator jsonGenerator) {
+
         if (stage == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stage.getDeploymentId() != null) {
-                jsonWriter.key("deploymentId").value(stage.getDeploymentId());
+                jsonGenerator.writeFieldName("deploymentId").writeValue(
+                        stage.getDeploymentId());
             }
-
             if (stage.getClientCertificateId() != null) {
-                jsonWriter.key("clientCertificateId").value(
+                jsonGenerator.writeFieldName("clientCertificateId").writeValue(
                         stage.getClientCertificateId());
             }
-
             if (stage.getStageName() != null) {
-                jsonWriter.key("stageName").value(stage.getStageName());
+                jsonGenerator.writeFieldName("stageName").writeValue(
+                        stage.getStageName());
             }
-
             if (stage.getDescription() != null) {
-                jsonWriter.key("description").value(stage.getDescription());
+                jsonGenerator.writeFieldName("description").writeValue(
+                        stage.getDescription());
             }
-
             if (stage.getCacheClusterEnabled() != null) {
-                jsonWriter.key("cacheClusterEnabled").value(
+                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
                         stage.getCacheClusterEnabled());
             }
-
             if (stage.getCacheClusterSize() != null) {
-                jsonWriter.key("cacheClusterSize").value(
+                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
                         stage.getCacheClusterSize());
             }
-
             if (stage.getCacheClusterStatus() != null) {
-                jsonWriter.key("cacheClusterStatus").value(
+                jsonGenerator.writeFieldName("cacheClusterStatus").writeValue(
                         stage.getCacheClusterStatus());
             }
 
             java.util.Map<String, MethodSetting> methodSettingsMap = stage
                     .getMethodSettings();
             if (methodSettingsMap != null) {
-                jsonWriter.key("methodSettings");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("methodSettings");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, MethodSetting> methodSettingsMapValue : methodSettingsMap
                         .entrySet()) {
                     if (methodSettingsMapValue.getValue() != null) {
-                        jsonWriter.key(methodSettingsMapValue.getKey());
+                        jsonGenerator.writeFieldName(methodSettingsMapValue
+                                .getKey());
 
                         MethodSettingJsonMarshaller.getInstance().marshall(
-                                methodSettingsMapValue.getValue(), jsonWriter);
+                                methodSettingsMapValue.getValue(),
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> variablesMap = stage.getVariables();
             if (variablesMap != null) {
-                jsonWriter.key("variables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("variables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> variablesMapValue : variablesMap
                         .entrySet()) {
                     if (variablesMapValue.getValue() != null) {
-                        jsonWriter.key(variablesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(variablesMapValue.getKey());
 
-                        jsonWriter.value(variablesMapValue.getValue());
+                        jsonGenerator.writeValue(variablesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (stage.getCreatedDate() != null) {
-                jsonWriter.key("createdDate").value(stage.getCreatedDate());
+                jsonGenerator.writeFieldName("createdDate").writeValue(
+                        stage.getCreatedDate());
             }
-
             if (stage.getLastUpdatedDate() != null) {
-                jsonWriter.key("lastUpdatedDate").value(
+                jsonGenerator.writeFieldName("lastUpdatedDate").writeValue(
                         stage.getLastUpdatedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

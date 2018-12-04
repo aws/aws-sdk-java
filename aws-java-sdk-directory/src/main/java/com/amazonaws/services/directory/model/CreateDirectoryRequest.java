@@ -78,6 +78,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *        The fully qualified name for the directory, such as
      *        <code>corp.example.com</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -91,6 +92,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return The fully qualified name for the directory, such as
      *         <code>corp.example.com</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -107,6 +109,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDirectoryRequest withName(String name) {
         setName(name);
         return this;
@@ -120,6 +123,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @param shortName
      *        The short name of the directory, such as <code>CORP</code>.
      */
+
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
@@ -131,6 +135,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The short name of the directory, such as <code>CORP</code>.
      */
+
     public String getShortName() {
         return this.shortName;
     }
@@ -145,6 +150,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDirectoryRequest withShortName(String shortName) {
         setShortName(shortName);
         return this;
@@ -162,6 +168,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *        creation process creates a directory administrator account with
      *        the username <code>Administrator</code> and this password.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -177,6 +184,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *         creation process creates a directory administrator account with
      *         the username <code>Administrator</code> and this password.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -195,6 +203,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDirectoryRequest withPassword(String password) {
         setPassword(password);
         return this;
@@ -208,6 +217,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @param description
      *        A textual description for the directory.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -219,6 +229,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return A textual description for the directory.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -233,6 +244,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDirectoryRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -247,6 +259,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *        The size of the directory.
      * @see DirectorySize
      */
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -259,6 +272,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return The size of the directory.
      * @see DirectorySize
      */
+
     public String getSize() {
         return this.size;
     }
@@ -274,6 +288,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DirectorySize
      */
+
     public CreateDirectoryRequest withSize(String size) {
         setSize(size);
         return this;
@@ -286,10 +301,9 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * 
      * @param size
      *        The size of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectorySize
      */
+
     public void setSize(DirectorySize size) {
         this.size = size.toString();
     }
@@ -305,6 +319,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see DirectorySize
      */
+
     public CreateDirectoryRequest withSize(DirectorySize size) {
         setSize(size);
         return this;
@@ -320,6 +335,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      *        A <a>DirectoryVpcSettings</a> object that contains additional
      *        information for the operation.
      */
+
     public void setVpcSettings(DirectoryVpcSettings vpcSettings) {
         this.vpcSettings = vpcSettings;
     }
@@ -333,6 +349,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return A <a>DirectoryVpcSettings</a> object that contains additional
      *         information for the operation.
      */
+
     public DirectoryVpcSettings getVpcSettings() {
         return this.vpcSettings;
     }
@@ -349,6 +366,7 @@ public class CreateDirectoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDirectoryRequest withVpcSettings(
             DirectoryVpcSettings vpcSettings) {
         setVpcSettings(vpcSettings);

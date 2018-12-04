@@ -29,6 +29,12 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
 
@@ -46,7 +52,12 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param userName
-     *        The name of the user whose password you want to delete.
+     *        The name of the user whose password you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public DeleteLoginProfileRequest(String userName) {
         setUserName(userName);
@@ -56,10 +67,22 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose password you want to delete.
+     *        The name of the user whose password you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -68,9 +91,21 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the user whose password you want to delete.
+     * @return The name of the user whose password you want to delete.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -79,12 +114,24 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the user whose password you want to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user whose password you want to delete.
+     *        The name of the user whose password you want to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLoginProfileRequest withUserName(String userName) {
         setUserName(userName);
         return this;

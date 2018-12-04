@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a count of all your hosted zones, send a <code>GET</code> request
- * to the <code>2015-01-01/hostedzonecount</code> resource.
+ * to the <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
  * </p>
  */
 public class GetHostedZoneCountRequest extends AmazonWebServiceRequest

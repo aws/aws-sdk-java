@@ -26,9 +26,21 @@ import java.io.Serializable;
  * This data type is used as a response element in the following actions:
  * </p>
  * <ul>
- * <li><a>CreateGroup</a></li>
- * <li><a>GetGroup</a></li>
- * <li><a>ListGroups</a></li>
+ * <li>
+ * <p>
+ * <a>CreateGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetGroup</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListGroups</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class Group implements Serializable, Cloneable {
@@ -129,6 +141,7 @@ public class Group implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -145,6 +158,7 @@ public class Group implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -164,6 +178,7 @@ public class Group implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Group withPath(String path) {
         setPath(path);
         return this;
@@ -177,6 +192,7 @@ public class Group implements Serializable, Cloneable {
      * @param groupName
      *        The friendly name that identifies the group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -188,6 +204,7 @@ public class Group implements Serializable, Cloneable {
      * 
      * @return The friendly name that identifies the group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -202,6 +219,7 @@ public class Group implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Group withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -221,6 +239,7 @@ public class Group implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -238,6 +257,7 @@ public class Group implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -258,6 +278,7 @@ public class Group implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Group withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -278,6 +299,7 @@ public class Group implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -296,6 +318,7 @@ public class Group implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -317,6 +340,7 @@ public class Group implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Group withArn(String arn) {
         setArn(arn);
         return this;
@@ -332,6 +356,7 @@ public class Group implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the group was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -346,6 +371,7 @@ public class Group implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the group was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -362,6 +388,7 @@ public class Group implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Group withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

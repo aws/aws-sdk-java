@@ -40,6 +40,7 @@ public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements
      * @param clientArn
      *        The ARN of the client to delete.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -51,6 +52,7 @@ public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the client to delete.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -65,6 +67,7 @@ public class DeleteLunaClientRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteLunaClientRequest withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;

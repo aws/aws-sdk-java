@@ -36,7 +36,8 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
     private String repositoryName;
     /**
      * <p>
-     * The new comment or description for the specified repository.
+     * The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.
      * </p>
      */
     private String repositoryDescription;
@@ -51,6 +52,7 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
      *        The name of the repository to set or change the comment or
      *        description for.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -64,6 +66,7 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
      * @return The name of the repository to set or change the comment or
      *         description for.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -80,6 +83,7 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRepositoryDescriptionRequest withRepositoryName(
             String repositoryName) {
         setRepositoryName(repositoryName);
@@ -88,37 +92,46 @@ public class UpdateRepositoryDescriptionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The new comment or description for the specified repository.
+     * The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.
      * </p>
      * 
      * @param repositoryDescription
      *        The new comment or description for the specified repository.
+     *        Repository descriptions are limited to 1,000 characters.
      */
+
     public void setRepositoryDescription(String repositoryDescription) {
         this.repositoryDescription = repositoryDescription;
     }
 
     /**
      * <p>
-     * The new comment or description for the specified repository.
+     * The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.
      * </p>
      * 
      * @return The new comment or description for the specified repository.
+     *         Repository descriptions are limited to 1,000 characters.
      */
+
     public String getRepositoryDescription() {
         return this.repositoryDescription;
     }
 
     /**
      * <p>
-     * The new comment or description for the specified repository.
+     * The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.
      * </p>
      * 
      * @param repositoryDescription
      *        The new comment or description for the specified repository.
+     *        Repository descriptions are limited to 1,000 characters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRepositoryDescriptionRequest withRepositoryDescription(
             String repositoryDescription) {
         setRepositoryDescription(repositoryDescription);

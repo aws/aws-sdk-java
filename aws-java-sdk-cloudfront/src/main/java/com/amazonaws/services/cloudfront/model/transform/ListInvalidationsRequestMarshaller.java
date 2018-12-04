@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListInvalidationsRequest Marshaller
@@ -56,24 +59,24 @@ public class ListInvalidationsRequestMarshaller implements
 
         String uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DistributionId}",
-                (listInvalidationsRequest.getDistributionId() == null) ? ""
-                        : StringUtils.fromString(listInvalidationsRequest
-                                .getDistributionId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DistributionId}",
+                        (listInvalidationsRequest.getDistributionId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listInvalidationsRequest
+                                                .getDistributionId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listInvalidationsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listInvalidationsRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (listInvalidationsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(listInvalidationsRequest.getMarker()));
         }
 
-        String maxItems = (listInvalidationsRequest.getMaxItems() == null) ? null
-                : StringUtils
-                        .fromString(listInvalidationsRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (listInvalidationsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils
+                    .fromString(listInvalidationsRequest.getMaxItems()));
         }
 
         return request;

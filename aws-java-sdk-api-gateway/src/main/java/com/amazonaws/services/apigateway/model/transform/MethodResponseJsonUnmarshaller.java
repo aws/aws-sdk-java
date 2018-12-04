@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class MethodResponseJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("statusCode", targetDepth)) {
                     context.nextToken();
-                    methodResponse.setStatusCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    methodResponse.setStatusCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("responseParameters", targetDepth)) {
                     context.nextToken();
                     methodResponse
                             .setResponseParameters(new MapUnmarshaller<String, Boolean>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    BooleanJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(Boolean.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("responseModels", targetDepth)) {
                     context.nextToken();
                     methodResponse
                             .setResponseModels(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -53,9 +53,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         AcceptCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.AcceptCertificateTransfer
      */
-    java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
 
     /**
@@ -75,11 +77,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         AcceptCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.AcceptCertificateTransfer
      */
-    java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, AcceptCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -89,9 +93,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @return A Java Future containing the result of the AttachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsync.AttachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
 
     /**
@@ -107,11 +113,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.AttachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -153,11 +161,11 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * <b>Note</b> Only the transfer source account can use this operation to
-     * cancel a transfer (transfer destinations can use
-     * <a>RejectCertificateTransfer</a> instead). After transfer, AWS IoT
-     * returns the certificate to the source account in the INACTIVE state. Once
-     * the destination account has accepted the transfer, the transfer may no
-     * longer be cancelled.
+     * cancel a transfer. (Transfer destinations can use
+     * <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT
+     * returns the certificate to the source account in the INACTIVE state.
+     * After the destination account has accepted the transfer, the transfer
+     * cannot be cancelled.
      * </p>
      * <p>
      * After a certificate transfer is cancelled, the status of the certificate
@@ -166,9 +174,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         CancelCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.CancelCertificateTransfer
      */
-    java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
 
     /**
@@ -177,11 +187,11 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * <b>Note</b> Only the transfer source account can use this operation to
-     * cancel a transfer (transfer destinations can use
-     * <a>RejectCertificateTransfer</a> instead). After transfer, AWS IoT
-     * returns the certificate to the source account in the INACTIVE state. Once
-     * the destination account has accepted the transfer, the transfer may no
-     * longer be cancelled.
+     * cancel a transfer. (Transfer destinations can use
+     * <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT
+     * returns the certificate to the source account in the INACTIVE state.
+     * After the destination account has accepted the transfer, the transfer
+     * cannot be cancelled.
      * </p>
      * <p>
      * After a certificate transfer is cancelled, the status of the certificate
@@ -195,11 +205,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         CancelCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.CancelCertificateTransfer
      */
-    java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest cancelCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -211,8 +223,8 @@ public interface AWSIotAsync extends AWSIot {
      * a distinct certificate.
      * </p>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory
-     * and copying multiple .csr files into that directory and specifying that
+     * You can create multiple certificates in a batch by creating a directory,
+     * copying multiple .csr files into that directory, and then specifying that
      * directory on the command line. The following commands show how to create
      * a batch of certificates given a batch of CSRs.
      * </p>
@@ -222,7 +234,7 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * &gt;
      * <p>
-     * On Linux and OSX, the command is:
+     * On Linux and OS X, the command is:
      * </p>
      * <p>
      * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
@@ -230,7 +242,7 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * This command lists all of the CSRs in my-csr-directory and pipes each CSR
-     * filename to the aws iot create-certificate-from-csr AWS CLI command to
+     * file name to the aws iot create-certificate-from-csr AWS CLI command to
      * create a certificate for the corresponding CSR.
      * </p>
      * <p>
@@ -251,7 +263,7 @@ public interface AWSIotAsync extends AWSIot {
      * --certificate-signing-request file://my-csr-directory/$_}
      * </p>
      * <p>
-     * On Windows Command Prompt, the command to create certificates for all
+     * On a Windows command prompt, the command to create certificates for all
      * CSRs in my-csr-directory is:
      * </p>
      * <p>
@@ -278,8 +290,8 @@ public interface AWSIotAsync extends AWSIot {
      * a distinct certificate.
      * </p>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory
-     * and copying multiple .csr files into that directory and specifying that
+     * You can create multiple certificates in a batch by creating a directory,
+     * copying multiple .csr files into that directory, and then specifying that
      * directory on the command line. The following commands show how to create
      * a batch of certificates given a batch of CSRs.
      * </p>
@@ -289,7 +301,7 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * &gt;
      * <p>
-     * On Linux and OSX, the command is:
+     * On Linux and OS X, the command is:
      * </p>
      * <p>
      * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
@@ -297,7 +309,7 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * This command lists all of the CSRs in my-csr-directory and pipes each CSR
-     * filename to the aws iot create-certificate-from-csr AWS CLI command to
+     * file name to the aws iot create-certificate-from-csr AWS CLI command to
      * create a certificate for the corresponding CSR.
      * </p>
      * <p>
@@ -318,7 +330,7 @@ public interface AWSIotAsync extends AWSIot {
      * --certificate-signing-request file://my-csr-directory/$_}
      * </p>
      * <p>
-     * On Windows Command Prompt, the command to create certificates for all
+     * On a Windows command prompt, the command to create certificates for all
      * CSRs in my-csr-directory is:
      * </p>
      * <p>
@@ -343,12 +355,12 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
      * issued public key.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this
-     * certificate. It is important to keep track of the private key.
+     * certificate, so it is important to keep it in a secure location.
      * </p>
      * 
      * @param createKeysAndCertificateRequest
@@ -362,12 +374,12 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
      * issued public key.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this
-     * certificate. It is important to keep track of the private key.
+     * certificate, so it is important to keep it in a secure location.
      * </p>
      * 
      * @param createKeysAndCertificateRequest
@@ -433,13 +445,14 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a new version of the specified AWS IoT policy. To update a
      * policy, create a new policy version. A managed policy can have up to five
-     * versions. If the policy has five versions, you must delete an existing
-     * version using <a>DeletePolicyVersion</a> before you create a new version.
+     * versions. If the policy has five versions, you must use
+     * <a>DeletePolicyVersion</a> to delete an existing version before you
+     * create a new one.
      * </p>
      * <p>
      * Optionally, you can set the new version as the policy's default version.
-     * The default version is the operative version; that is, the version that
-     * is in effect for the certificates that the policy is attached to.
+     * The default version is the operative version (that is, the version that
+     * is in effect for the certificates to which the policy is attached).
      * </p>
      * 
      * @param createPolicyVersionRequest
@@ -455,13 +468,14 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a new version of the specified AWS IoT policy. To update a
      * policy, create a new policy version. A managed policy can have up to five
-     * versions. If the policy has five versions, you must delete an existing
-     * version using <a>DeletePolicyVersion</a> before you create a new version.
+     * versions. If the policy has five versions, you must use
+     * <a>DeletePolicyVersion</a> to delete an existing version before you
+     * create a new one.
      * </p>
      * <p>
      * Optionally, you can set the new version as the policy's default version.
-     * The default version is the operative version; that is, the version that
-     * is in effect for the certificates that the policy is attached to.
+     * The default version is the operative version (that is, the version that
+     * is in effect for the certificates to which the policy is attached).
      * </p>
      * 
      * @param createPolicyVersionRequest
@@ -481,7 +495,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the thing registry.
+     * Creates a thing in the Thing Registry.
      * </p>
      * 
      * @param createThingRequest
@@ -495,7 +509,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the thing registry.
+     * Creates a thing in the Thing Registry.
      * </p>
      * 
      * @param createThingRequest
@@ -515,19 +529,25 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Creates a rule.
+     * Creates a rule. Creating rules is an administrator-level action. Any user
+     * who has permission to create rules will be able to access data processed
+     * by the rule.
      * </p>
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @return A Java Future containing the result of the CreateTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.CreateTopicRule
      */
-    java.util.concurrent.Future<Void> createTopicRuleAsync(
+    java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest);
 
     /**
      * <p>
-     * Creates a rule.
+     * Creates a rule. Creating rules is an administrator-level action. Any user
+     * who has permission to create rules will be able to access data processed
+     * by the rule.
      * </p>
      * 
      * @param createTopicRuleRequest
@@ -537,11 +557,47 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.CreateTopicRule
      */
-    java.util.concurrent.Future<Void> createTopicRuleAsync(
+    java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest createTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
+     * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
+     * @return A Java Future containing the result of the DeleteCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeleteCACertificate
+     */
+    java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest deleteCACertificateRequest);
+
+    /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
+     * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteCACertificate
+     */
+    java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest deleteCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCACertificateRequest, DeleteCACertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -549,17 +605,19 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * A certificate cannot be deleted if it has a policy attached to it or if
-     * its status is set to ACTIVE. To delete a certificate, first detach all
-     * policies using the <a>DetachPrincipalPolicy</a> API. Next use the
+     * its status is set to ACTIVE. To delete a certificate, first use the
+     * <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
      * status.
      * </p>
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest);
 
     /**
@@ -568,8 +626,8 @@ public interface AWSIotAsync extends AWSIot {
      * </p>
      * <p>
      * A certificate cannot be deleted if it has a policy attached to it or if
-     * its status is set to ACTIVE. To delete a certificate, first detach all
-     * policies using the <a>DetachPrincipalPolicy</a> API. Next use the
+     * its status is set to ACTIVE. To delete a certificate, first use the
+     * <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
      * status.
      * </p>
@@ -581,25 +639,27 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeleteCertificate
      */
-    java.util.concurrent.Future<Void> deleteCertificateAsync(
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest deleteCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
 
     /**
      * <p>
      * Deletes the specified policy.
      * </p>
      * <p>
-     * A policy cannot be deleted if it has non-default versions and/or it is
+     * A policy cannot be deleted if it has non-default versions or it is
      * attached to any certificate.
      * </p>
      * <p>
-     * To delete a policy, delete all non-default versions of the policy using
-     * the DeletePolicyVersion API, detach the policy from any certificate using
-     * the DetachPrincipalPolicy API, and then use the DeletePolicy API to
-     * delete the policy.
+     * To delete a policy, use the DeletePolicyVersion API to delete all
+     * non-default versions of the policy; use the DetachPrincipalPolicy API to
+     * detach the policy from any certificate; and then use the DeletePolicy API
+     * to delete the policy.
      * </p>
      * <p>
      * When a policy is deleted using DeletePolicy, its default version is
@@ -608,9 +668,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AWSIotAsync.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest);
 
     /**
@@ -618,14 +680,14 @@ public interface AWSIotAsync extends AWSIot {
      * Deletes the specified policy.
      * </p>
      * <p>
-     * A policy cannot be deleted if it has non-default versions and/or it is
+     * A policy cannot be deleted if it has non-default versions or it is
      * attached to any certificate.
      * </p>
      * <p>
-     * To delete a policy, delete all non-default versions of the policy using
-     * the DeletePolicyVersion API, detach the policy from any certificate using
-     * the DetachPrincipalPolicy API, and then use the DeletePolicy API to
-     * delete the policy.
+     * To delete a policy, use the DeletePolicyVersion API to delete all
+     * non-default versions of the policy; use the DetachPrincipalPolicy API to
+     * detach the policy from any certificate; and then use the DeletePolicy API
+     * to delete the policy.
      * </p>
      * <p>
      * When a policy is deleted using DeletePolicy, its default version is
@@ -639,11 +701,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicy operation
+     *         returned by the service.
      * @sample AWSIotAsyncHandler.DeletePolicy
      */
-    java.util.concurrent.Future<Void> deletePolicyAsync(
+    java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest deletePolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -655,9 +719,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
 
     /**
@@ -675,11 +741,47 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePolicyVersion
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeletePolicyVersion
      */
-    java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest deletePolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
+     * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
+     * @return A Java Future containing the result of the DeleteRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DeleteRegistrationCode
+     */
+    java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest);
+
+    /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
+     * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteRegistrationCode
+     */
+    java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationCodeRequest, DeleteRegistrationCodeResult> asyncHandler);
 
     /**
      * <p>
@@ -722,9 +824,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @return A Java Future containing the result of the DeleteTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.DeleteTopicRule
      */
-    java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest);
 
     /**
@@ -739,11 +843,47 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DeleteTopicRule
      */
-    java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest deleteTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
+     * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
+     * @return A Java Future containing the result of the DescribeCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.DescribeCACertificate
+     */
+    java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest describeCACertificateRequest);
+
+    /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
+     * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeCACertificate
+     */
+    java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest describeCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCACertificateRequest, DescribeCACertificateResult> asyncHandler);
 
     /**
      * <p>
@@ -858,9 +998,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @return A Java Future containing the result of the DetachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsync.DetachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
 
     /**
@@ -875,11 +1017,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachPrincipalPolicy
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DetachPrincipalPolicy
      */
-    java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -917,19 +1061,21 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule
+     * Disables the specified rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
      *        The input for the DisableTopicRuleRequest operation.
+     * @return A Java Future containing the result of the DisableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.DisableTopicRule
      */
-    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest disableTopicRuleRequest);
 
     /**
      * <p>
-     * Disables the specified rule
+     * Disables the specified rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
@@ -939,11 +1085,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.DisableTopicRule
      */
-    java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest disableTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, DisableTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -952,9 +1100,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param enableTopicRuleRequest
      *        The input for the EnableTopicRuleRequest operation.
+     * @return A Java Future containing the result of the EnableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.EnableTopicRule
      */
-    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest enableTopicRuleRequest);
 
     /**
@@ -969,11 +1119,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.EnableTopicRule
      */
-    java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest enableTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -1081,6 +1233,40 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
+     * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
+     * @return A Java Future containing the result of the GetRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsync.GetRegistrationCode
+     */
+    java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest getRegistrationCodeRequest);
+
+    /**
+     * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
+     * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRegistrationCode
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.GetRegistrationCode
+     */
+    java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest getRegistrationCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified rule.
      * </p>
      * 
@@ -1115,11 +1301,53 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the CA certificates registered for your AWS account.
      * </p>
      * <p>
-     * The results are paginated with a default page size of 25. You can
-     * retrieve additional results using the returned marker.
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
+     * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
+     * @return A Java Future containing the result of the ListCACertificates
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListCACertificates
+     */
+    java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest listCACertificatesRequest);
+
+    /**
+     * <p>
+     * Lists the CA certificates registered for your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
+     * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCACertificates
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCACertificates
+     */
+    java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest listCACertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the certificates registered in your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1133,11 +1361,11 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the certificates registered in your AWS account.
      * </p>
      * <p>
-     * The results are paginated with a default page size of 25. You can
-     * retrieve additional results using the returned marker.
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1154,6 +1382,40 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest listCertificatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
+     * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
+     * @return A Java Future containing the result of the ListCertificatesByCA
+     *         operation returned by the service.
+     * @sample AWSIotAsync.ListCertificatesByCA
+     */
+    java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest listCertificatesByCARequest);
+
+    /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
+     * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCertificatesByCA
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListCertificatesByCA
+     */
+    java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest listCertificatesByCARequest,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler);
 
     /**
      * <p>
@@ -1228,9 +1490,9 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the policies attached to the specified principal. If you use an
-     * Amazon Cognito identity, the ID needs to be in <a href=
+     * Cognito identity, the ID must be in <a href=
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
-     * >Amazon Cognito Identity format</a>.
+     * >AmazonCognito Identity format</a>.
      * </p>
      * 
      * @param listPrincipalPoliciesRequest
@@ -1245,9 +1507,9 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the policies attached to the specified principal. If you use an
-     * Amazon Cognito identity, the ID needs to be in <a href=
+     * Cognito identity, the ID must be in <a href=
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
-     * >Amazon Cognito Identity format</a>.
+     * >AmazonCognito Identity format</a>.
      * </p>
      * 
      * @param listPrincipalPoliciesRequest
@@ -1335,9 +1597,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName and/or AttributeValue to
-     * filter your things. For example:
-     * "ListThings where AttributeName=Color and AttributeValue=Red"
+     * Lists your things. You can pass an AttributeName or AttributeValue to
+     * filter your things (for example,
+     * "ListThings where AttributeName=Color and AttributeValue=Red").
      * </p>
      * 
      * @param listThingsRequest
@@ -1351,9 +1613,9 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName and/or AttributeValue to
-     * filter your things. For example:
-     * "ListThings where AttributeName=Color and AttributeValue=Red"
+     * Lists your things. You can pass an AttributeName or AttributeValue to
+     * filter your things (for example,
+     * "ListThings where AttributeName=Color and AttributeValue=Red").
      * </p>
      * 
      * @param listThingsRequest
@@ -1407,41 +1669,131 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
+     * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
+     * @return A Java Future containing the result of the RegisterCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.RegisterCACertificate
+     */
+    java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest registerCACertificateRequest);
+
+    /**
+     * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
+     * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.RegisterCACertificate
+     */
+    java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest registerCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
+     * @return A Java Future containing the result of the RegisterCertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.RegisterCertificate
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest registerCertificateRequest);
+
+    /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterCertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.RegisterCertificate
+     */
+    java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest registerCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
      * to enumerate your certificates.
      * </p>
      * <p>
-     * This operation can only be called by the transfer destination. Once
-     * called, the certificate will be returned to the source's account in the
-     * INACTIVE state.
+     * This operation can only be called by the transfer destination. After it
+     * is called, the certificate will be returned to the source's account in
+     * the INACTIVE state.
      * </p>
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @return A Java Future containing the result of the
+     *         RejectCertificateTransfer operation returned by the service.
      * @sample AWSIotAsync.RejectCertificateTransfer
      */
-    java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
 
     /**
      * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
      * to enumerate your certificates.
      * </p>
      * <p>
-     * This operation can only be called by the transfer destination. Once
-     * called, the certificate will be returned to the source's account in the
-     * INACTIVE state.
+     * This operation can only be called by the transfer destination. After it
+     * is called, the certificate will be returned to the source's account in
+     * the INACTIVE state.
      * </p>
      * 
      * @param rejectCertificateTransferRequest
@@ -1451,28 +1803,36 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         RejectCertificateTransfer operation returned by the service.
      * @sample AWSIotAsyncHandler.RejectCertificateTransfer
      */
-    java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest rejectCertificateTransferRequest,
-            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, RejectCertificateTransferResult> asyncHandler);
 
     /**
      * <p>
      * Replaces the specified rule. You must specify all parameters for the new
+     * rule. Creating rules is an administrator-level action. Any user who has
+     * permission to create rules will be able to access data processed by the
      * rule.
      * </p>
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @return A Java Future containing the result of the ReplaceTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsync.ReplaceTopicRule
      */
-    java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest);
 
     /**
      * <p>
      * Replaces the specified rule. You must specify all parameters for the new
+     * rule. Creating rules is an administrator-level action. Any user who has
+     * permission to create rules will be able to access data processed by the
      * rule.
      * </p>
      * 
@@ -1483,33 +1843,37 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceTopicRule
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.ReplaceTopicRule
      */
-    java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest replaceTopicRuleRequest,
-            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult> asyncHandler);
 
     /**
      * <p>
      * Sets the specified version of the specified policy as the policy's
-     * default (operative) version. This action affects all certificates that
-     * the policy is attached to. To list the principals the policy is attached
-     * to, use the ListPrincipalPolicy API.
+     * default (operative) version. This action affects all certificates to
+     * which the policy is attached. To list the principals the policy is
+     * attached to, use the ListPrincipalPolicy API.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AWSIotAsync.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
      * <p>
      * Sets the specified version of the specified policy as the policy's
-     * default (operative) version. This action affects all certificates that
-     * the policy is attached to. To list the principals the policy is attached
-     * to, use the ListPrincipalPolicy API.
+     * default (operative) version. This action affects all certificates to
+     * which the policy is attached. To list the principals the policy is
+     * attached to, use the ListPrincipalPolicy API.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
@@ -1519,11 +1883,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         SetDefaultPolicyVersion operation returned by the service.
      * @sample AWSIotAsyncHandler.SetDefaultPolicyVersion
      */
-    java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1532,9 +1898,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @return A Java Future containing the result of the SetLoggingOptions
+     *         operation returned by the service.
      * @sample AWSIotAsync.SetLoggingOptions
      */
-    java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest);
 
     /**
@@ -1549,11 +1917,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetLoggingOptions
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.SetLoggingOptions
      */
-    java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest setLoggingOptionsRequest,
-            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, SetLoggingOptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1563,16 +1933,16 @@ public interface AWSIotAsync extends AWSIot {
      * You can cancel the transfer until it is acknowledged by the recipient.
      * </p>
      * <p>
-     * No notification is sent to the transfer destination's account, it is up
+     * No notification is sent to the transfer destination's account. It is up
      * to the caller to notify the transfer target.
      * </p>
      * <p>
-     * The certificate being transferred must not be in the ACTIVE state. It can
-     * be deactivated using the UpdateCertificate API.
+     * The certificate being transferred must not be in the ACTIVE state. You
+     * can use the UpdateCertificate API to deactivate it.
      * </p>
      * <p>
-     * The certificate must not have any policies attached to it. These can be
-     * detached using the DetachPrincipalPolicy API.
+     * The certificate must not have any policies attached to it. You can use
+     * the DetachPrincipalPolicy API to detach them.
      * </p>
      * 
      * @param transferCertificateRequest
@@ -1592,16 +1962,16 @@ public interface AWSIotAsync extends AWSIot {
      * You can cancel the transfer until it is acknowledged by the recipient.
      * </p>
      * <p>
-     * No notification is sent to the transfer destination's account, it is up
+     * No notification is sent to the transfer destination's account. It is up
      * to the caller to notify the transfer target.
      * </p>
      * <p>
-     * The certificate being transferred must not be in the ACTIVE state. It can
-     * be deactivated using the UpdateCertificate API.
+     * The certificate being transferred must not be in the ACTIVE state. You
+     * can use the UpdateCertificate API to deactivate it.
      * </p>
      * <p>
-     * The certificate must not have any policies attached to it. These can be
-     * detached using the DetachPrincipalPolicy API.
+     * The certificate must not have any policies attached to it. You can use
+     * the DetachPrincipalPolicy API to detach them.
      * </p>
      * 
      * @param transferCertificateRequest
@@ -1621,13 +1991,47 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
+     * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
+     * @return A Java Future containing the result of the UpdateCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsync.UpdateCACertificate
+     */
+    java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
+            UpdateCACertificateRequest updateCACertificateRequest);
+
+    /**
+     * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
+     * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCACertificate
+     *         operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateCACertificate
+     */
+    java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
+            UpdateCACertificateRequest updateCACertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, UpdateCACertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the status of the specified certificate. This operation is
      * idempotent.
      * </p>
      * <p>
-     * Moving a cert from the ACTIVE state (including REVOKED) will NOT
-     * disconnect currently-connected devices, although these devices will be
-     * unable to reconnect.
+     * Moving a certificate from the ACTIVE state (including REVOKED) will not
+     * disconnect currently connected devices, but these devices will be unable
+     * to reconnect.
      * </p>
      * <p>
      * The ACTIVE state is required to authenticate devices connecting to AWS
@@ -1636,9 +2040,11 @@ public interface AWSIotAsync extends AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @return A Java Future containing the result of the UpdateCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsync.UpdateCertificate
      */
-    java.util.concurrent.Future<Void> updateCertificateAsync(
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest);
 
     /**
@@ -1647,9 +2053,9 @@ public interface AWSIotAsync extends AWSIot {
      * idempotent.
      * </p>
      * <p>
-     * Moving a cert from the ACTIVE state (including REVOKED) will NOT
-     * disconnect currently-connected devices, although these devices will be
-     * unable to reconnect.
+     * Moving a certificate from the ACTIVE state (including REVOKED) will not
+     * disconnect currently connected devices, but these devices will be unable
+     * to reconnect.
      * </p>
      * <p>
      * The ACTIVE state is required to authenticate devices connecting to AWS
@@ -1663,11 +2069,13 @@ public interface AWSIotAsync extends AWSIot {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCertificate
+     *         operation returned by the service.
      * @sample AWSIotAsyncHandler.UpdateCertificate
      */
-    java.util.concurrent.Future<Void> updateCertificateAsync(
+    java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest updateCertificateRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler);
 
     /**
      * <p>

@@ -27,44 +27,47 @@ public class CreateInstanceProfileResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the instance profile.
+     * A structure containing details about the new instance profile.
      * </p>
      */
     private InstanceProfile instanceProfile;
 
     /**
      * <p>
-     * Information about the instance profile.
+     * A structure containing details about the new instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        Information about the instance profile.
+     *        A structure containing details about the new instance profile.
      */
+
     public void setInstanceProfile(InstanceProfile instanceProfile) {
         this.instanceProfile = instanceProfile;
     }
 
     /**
      * <p>
-     * Information about the instance profile.
+     * A structure containing details about the new instance profile.
      * </p>
      * 
-     * @return Information about the instance profile.
+     * @return A structure containing details about the new instance profile.
      */
+
     public InstanceProfile getInstanceProfile() {
         return this.instanceProfile;
     }
 
     /**
      * <p>
-     * Information about the instance profile.
+     * A structure containing details about the new instance profile.
      * </p>
      * 
      * @param instanceProfile
-     *        Information about the instance profile.
+     *        A structure containing details about the new instance profile.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceProfileResult withInstanceProfile(
             InstanceProfile instanceProfile) {
         setInstanceProfile(instanceProfile);

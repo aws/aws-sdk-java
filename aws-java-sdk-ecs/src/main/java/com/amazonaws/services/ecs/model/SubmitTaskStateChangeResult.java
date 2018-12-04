@@ -38,6 +38,7 @@ public class SubmitTaskStateChangeResult implements Serializable, Cloneable {
      * @param acknowledgment
      *        Acknowledgement of the state change.
      */
+
     public void setAcknowledgment(String acknowledgment) {
         this.acknowledgment = acknowledgment;
     }
@@ -49,6 +50,7 @@ public class SubmitTaskStateChangeResult implements Serializable, Cloneable {
      * 
      * @return Acknowledgement of the state change.
      */
+
     public String getAcknowledgment() {
         return this.acknowledgment;
     }
@@ -63,6 +65,7 @@ public class SubmitTaskStateChangeResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SubmitTaskStateChangeResult withAcknowledgment(String acknowledgment) {
         setAcknowledgment(acknowledgment);
         return this;

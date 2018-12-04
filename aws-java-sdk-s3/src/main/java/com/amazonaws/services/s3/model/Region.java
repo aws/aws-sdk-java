@@ -34,6 +34,11 @@ import com.amazonaws.services.s3.internal.Constants;
  * Objects stored in a Amazon S3 Region never leave that region unless explicitly
  * transferred to another region.
  * </p>
+ * <p>
+ * In Amazon S3, all the regions provides
+ * read-after-write consistency for PUTS of new objects in Amazon
+ * S3 buckets and eventual consistency for overwrite PUTS and DELETES.
+ * </p>
  */
 public enum Region {
 
@@ -47,8 +52,7 @@ public enum Region {
      * to this region unless a location constraint is specified when creating a bucket.
      * The US Standard Region automatically places
      * data in either Amazon's east or west coast data centers depending on
-     * which one provides the lowest latency. The US Standard Region
-     * provides eventual consistency for all requests.
+     * which one provides the lowest latency.
      * </p>
      */
     US_Standard((String[])null),
@@ -61,11 +65,6 @@ public enum Region {
      * endpoint to <code>s3-us-west-1.amazonaws.com</code> on all requests to these
      * buckets to reduce any latency experienced after the first
      * hour of creating a bucket in this region.
-     * </p>
-     * <p>
-     * In Amazon S3, the US-West (Northern California) Region provides
-     * read-after-write consistency for PUTS of new objects in Amazon
-     * S3 buckets and eventual consistency for overwrite PUTS and DELETES.
      * </p>
      */
     US_West("us-west-1"),
@@ -91,22 +90,12 @@ public enum Region {
     /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
      * in Ireland.
-     * <p>
-     * In Amazon S3, the EU (Ireland) Region provides read-after-write
-     * consistency for PUTS of new objects in Amazon S3 buckets and eventual
-     * consistency for overwrite PUTS and DELETES.
-     * </p>
      */
     EU_Ireland("eu-west-1","EU"),
 
     /**
      * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers
      * located in Frankfurt.
-     * <p>
-     * In Amazon S3, the EU (Frankfurt) Region provides read-after-write
-     * consistency for PUTS of new objects in Amazon S3 buckets and eventual
-     * consistency for overwrite PUTS and DELETES.
-     * </p>
      * <p>
      * The EU (Frankfurt) Region requires AWS V4 authentication, therefore when
      * accessing buckets inside this region, you need to explicitly configure
@@ -276,7 +265,10 @@ public enum Region {
     public com.amazonaws.regions.Region toAWSRegion() {
         String s3regionId = getFirstRegionId();
         if ( s3regionId == null ) { // US Standard
-            return RegionUtils.getRegionByEndpoint(Constants.S3_HOSTNAME);
+            // TODO This is a bit of a hack but customers are relying on this returning us-east-1 rather then
+            // aws-global. For now we'll keep the legacy behavior and consider changing it in the next major version
+            // bump. See TT0073140598
+            return RegionUtils.getRegion("us-east-1");
         } else {
             return RegionUtils.getRegion(s3regionId);
         }

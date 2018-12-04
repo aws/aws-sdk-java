@@ -102,6 +102,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      *        <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -121,6 +122,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      *         <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -143,6 +145,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationVersionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -166,6 +169,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      *        <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -186,6 +190,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      *         <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -209,6 +214,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationVersionRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -222,6 +228,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      * @param description
      *        A new description for this release.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -233,6 +240,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      * 
      * @return A new description for this release.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -247,6 +255,7 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationVersionRequest withDescription(String description) {
         setDescription(description);
         return this;

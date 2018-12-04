@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,8 +61,8 @@ public class RedshiftDataSpecJsonUnmarshaller implements
                 }
                 if (context.testExpression("SelectSqlQuery", targetDepth)) {
                     context.nextToken();
-                    redshiftDataSpec.setSelectSqlQuery(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftDataSpec.setSelectSqlQuery(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DatabaseCredentials", targetDepth)) {
                     context.nextToken();
@@ -70,25 +72,23 @@ public class RedshiftDataSpecJsonUnmarshaller implements
                 }
                 if (context.testExpression("S3StagingLocation", targetDepth)) {
                     context.nextToken();
-                    redshiftDataSpec
-                            .setS3StagingLocation(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    redshiftDataSpec.setS3StagingLocation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
                     context.nextToken();
-                    redshiftDataSpec
-                            .setDataRearrangement(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    redshiftDataSpec.setDataRearrangement(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
                     context.nextToken();
-                    redshiftDataSpec.setDataSchema(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftDataSpec.setDataSchema(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaUri", targetDepth)) {
                     context.nextToken();
-                    redshiftDataSpec.setDataSchemaUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    redshiftDataSpec.setDataSchemaUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

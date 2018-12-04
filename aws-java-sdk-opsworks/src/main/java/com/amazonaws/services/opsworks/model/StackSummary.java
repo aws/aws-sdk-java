@@ -71,6 +71,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -82,6 +83,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -96,6 +98,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -109,6 +112,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param name
      *        The stack name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -120,6 +124,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The stack name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -134,6 +139,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withName(String name) {
         setName(name);
         return this;
@@ -147,6 +153,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param arn
      *        The stack's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -158,6 +165,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The stack's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -172,6 +180,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withArn(String arn) {
         setArn(arn);
         return this;
@@ -185,6 +194,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param layersCount
      *        The number of layers.
      */
+
     public void setLayersCount(Integer layersCount) {
         this.layersCount = layersCount;
     }
@@ -196,6 +206,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The number of layers.
      */
+
     public Integer getLayersCount() {
         return this.layersCount;
     }
@@ -210,6 +221,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withLayersCount(Integer layersCount) {
         setLayersCount(layersCount);
         return this;
@@ -223,6 +235,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param appsCount
      *        The number of apps.
      */
+
     public void setAppsCount(Integer appsCount) {
         this.appsCount = appsCount;
     }
@@ -234,6 +247,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The number of apps.
      */
+
     public Integer getAppsCount() {
         return this.appsCount;
     }
@@ -248,6 +262,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withAppsCount(Integer appsCount) {
         setAppsCount(appsCount);
         return this;
@@ -263,6 +278,7 @@ public class StackSummary implements Serializable, Cloneable {
      *        An <code>InstancesCount</code> object with the number of instances
      *        in each status.
      */
+
     public void setInstancesCount(InstancesCount instancesCount) {
         this.instancesCount = instancesCount;
     }
@@ -276,6 +292,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return An <code>InstancesCount</code> object with the number of
      *         instances in each status.
      */
+
     public InstancesCount getInstancesCount() {
         return this.instancesCount;
     }
@@ -292,6 +309,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withInstancesCount(InstancesCount instancesCount) {
         setInstancesCount(instancesCount);
         return this;

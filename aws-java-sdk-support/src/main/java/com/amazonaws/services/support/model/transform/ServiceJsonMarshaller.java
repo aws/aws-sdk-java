@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ServiceMarshaller
@@ -39,41 +34,43 @@ import com.amazonaws.util.json.*;
 public class ServiceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Service service, JSONWriter jsonWriter) {
+    public void marshall(Service service, StructuredJsonGenerator jsonGenerator) {
+
         if (service == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (service.getCode() != null) {
-                jsonWriter.key("code").value(service.getCode());
+                jsonGenerator.writeFieldName("code").writeValue(
+                        service.getCode());
             }
-
             if (service.getName() != null) {
-                jsonWriter.key("name").value(service.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        service.getName());
             }
 
             com.amazonaws.internal.SdkInternalList<Category> categoriesList = (com.amazonaws.internal.SdkInternalList<Category>) service
                     .getCategories();
             if (!categoriesList.isEmpty() || !categoriesList.isAutoConstruct()) {
-                jsonWriter.key("categories");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("categories");
+                jsonGenerator.writeStartArray();
                 for (Category categoriesListValue : categoriesList) {
                     if (categoriesListValue != null) {
 
                         CategoryJsonMarshaller.getInstance().marshall(
-                                categoriesListValue, jsonWriter);
+                                categoriesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

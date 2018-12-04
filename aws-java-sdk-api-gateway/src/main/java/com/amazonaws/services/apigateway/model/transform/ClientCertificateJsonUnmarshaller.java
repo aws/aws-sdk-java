@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,31 +55,30 @@ public class ClientCertificateJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("clientCertificateId", targetDepth)) {
                     context.nextToken();
-                    clientCertificate
-                            .setClientCertificateId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    clientCertificate.setClientCertificateId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    clientCertificate.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    clientCertificate.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("pemEncodedCertificate", targetDepth)) {
                     context.nextToken();
-                    clientCertificate
-                            .setPemEncodedCertificate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    clientCertificate.setPemEncodedCertificate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    clientCertificate.setCreatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    clientCertificate.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("expirationDate", targetDepth)) {
                     context.nextToken();
-                    clientCertificate.setExpirationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    clientCertificate.setExpirationDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

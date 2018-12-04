@@ -187,8 +187,10 @@ public class ProfileCredentialsProvider implements AWSCredentialsProvider {
 
     @Override
     public void refresh() {
-        profilesConfigFile.refresh();
-        lastRefreshed = System.nanoTime();
+        if (profilesConfigFile != null) {
+            profilesConfigFile.refresh();
+            lastRefreshed = System.nanoTime();
+        }
     }
 
     /**

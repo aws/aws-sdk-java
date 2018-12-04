@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListTrafficPolicyVersionsRequest Marshaller
@@ -57,28 +60,25 @@ public class ListTrafficPolicyVersionsRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (listTrafficPolicyVersionsRequest.getId() == null) ? ""
-                        : StringUtils
-                                .fromString(listTrafficPolicyVersionsRequest
-                                        .getId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{Id}",
+                        (listTrafficPolicyVersionsRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(listTrafficPolicyVersionsRequest
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String trafficPolicyVersionMarker = (listTrafficPolicyVersionsRequest
-                .getTrafficPolicyVersionMarker() == null) ? null : StringUtils
-                .fromString(listTrafficPolicyVersionsRequest
-                        .getTrafficPolicyVersionMarker());
-        if (trafficPolicyVersionMarker != null) {
-            request.addParameter("trafficpolicyversion",
-                    trafficPolicyVersionMarker);
+        if (listTrafficPolicyVersionsRequest.getTrafficPolicyVersionMarker() != null) {
+            request.addParameter("trafficpolicyversion", StringUtils
+                    .fromString(listTrafficPolicyVersionsRequest
+                            .getTrafficPolicyVersionMarker()));
         }
 
-        String maxItems = (listTrafficPolicyVersionsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listTrafficPolicyVersionsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listTrafficPolicyVersionsRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listTrafficPolicyVersionsRequest.getMaxItems()));
         }
 
         return request;

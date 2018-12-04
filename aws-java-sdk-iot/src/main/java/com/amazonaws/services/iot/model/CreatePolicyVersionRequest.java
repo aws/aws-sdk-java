@@ -36,16 +36,16 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces
+     * length of 2048, excluding whitespaces
      * </p>
      */
     private String policyDocument;
     /**
      * <p>
      * Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version;
-     * that is, the version that is in effect for the certificates that the
-     * policy is attached to.
+     * parameter is true, the new policy version becomes the operative version
+     * (that is, the version that is in effect for the certificates to which the
+     * policy is attached).
      * </p>
      */
     private Boolean setAsDefault;
@@ -58,6 +58,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -69,6 +70,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -83,6 +85,7 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -91,13 +94,14 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces
+     * length of 2048, excluding whitespaces
      * </p>
      * 
      * @param policyDocument
      *        The JSON document that describes the policy. Minimum length of 1.
-     *        Maximum length of 2048 excluding whitespaces
+     *        Maximum length of 2048, excluding whitespaces
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -105,12 +109,13 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces
+     * length of 2048, excluding whitespaces
      * </p>
      * 
      * @return The JSON document that describes the policy. Minimum length of 1.
-     *         Maximum length of 2048 excluding whitespaces
+     *         Maximum length of 2048, excluding whitespaces
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -118,15 +123,16 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The JSON document that describes the policy. Minimum length of 1. Maximum
-     * length of 2048 excluding whitespaces
+     * length of 2048, excluding whitespaces
      * </p>
      * 
      * @param policyDocument
      *        The JSON document that describes the policy. Minimum length of 1.
-     *        Maximum length of 2048 excluding whitespaces
+     *        Maximum length of 2048, excluding whitespaces
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;
@@ -135,17 +141,18 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version;
-     * that is, the version that is in effect for the certificates that the
-     * policy is attached to.
+     * parameter is true, the new policy version becomes the operative version
+     * (that is, the version that is in effect for the certificates to which the
+     * policy is attached).
      * </p>
      * 
      * @param setAsDefault
      *        Specifies whether the policy version is set as the default. When
      *        this parameter is true, the new policy version becomes the
-     *        operative version; that is, the version that is in effect for the
-     *        certificates that the policy is attached to.
+     *        operative version (that is, the version that is in effect for the
+     *        certificates to which the policy is attached).
      */
+
     public void setSetAsDefault(Boolean setAsDefault) {
         this.setAsDefault = setAsDefault;
     }
@@ -153,16 +160,17 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version;
-     * that is, the version that is in effect for the certificates that the
-     * policy is attached to.
+     * parameter is true, the new policy version becomes the operative version
+     * (that is, the version that is in effect for the certificates to which the
+     * policy is attached).
      * </p>
      * 
      * @return Specifies whether the policy version is set as the default. When
      *         this parameter is true, the new policy version becomes the
-     *         operative version; that is, the version that is in effect for the
-     *         certificates that the policy is attached to.
+     *         operative version (that is, the version that is in effect for the
+     *         certificates to which the policy is attached).
      */
+
     public Boolean getSetAsDefault() {
         return this.setAsDefault;
     }
@@ -170,19 +178,20 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version;
-     * that is, the version that is in effect for the certificates that the
-     * policy is attached to.
+     * parameter is true, the new policy version becomes the operative version
+     * (that is, the version that is in effect for the certificates to which the
+     * policy is attached).
      * </p>
      * 
      * @param setAsDefault
      *        Specifies whether the policy version is set as the default. When
      *        this parameter is true, the new policy version becomes the
-     *        operative version; that is, the version that is in effect for the
-     *        certificates that the policy is attached to.
+     *        operative version (that is, the version that is in effect for the
+     *        certificates to which the policy is attached).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreatePolicyVersionRequest withSetAsDefault(Boolean setAsDefault) {
         setSetAsDefault(setAsDefault);
         return this;
@@ -191,16 +200,17 @@ public class CreatePolicyVersionRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * Specifies whether the policy version is set as the default. When this
-     * parameter is true, the new policy version becomes the operative version;
-     * that is, the version that is in effect for the certificates that the
-     * policy is attached to.
+     * parameter is true, the new policy version becomes the operative version
+     * (that is, the version that is in effect for the certificates to which the
+     * policy is attached).
      * </p>
      * 
      * @return Specifies whether the policy version is set as the default. When
      *         this parameter is true, the new policy version becomes the
-     *         operative version; that is, the version that is in effect for the
-     *         certificates that the policy is attached to.
+     *         operative version (that is, the version that is in effect for the
+     *         certificates to which the policy is attached).
      */
+
     public Boolean isSetAsDefault() {
         return this.setAsDefault;
     }

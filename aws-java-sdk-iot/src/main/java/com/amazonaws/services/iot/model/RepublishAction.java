@@ -46,6 +46,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * @param roleArn
      *        The ARN of the IAM role that grants access.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -57,6 +58,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * 
      * @return The ARN of the IAM role that grants access.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -71,6 +73,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepublishAction withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -84,6 +87,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * @param topic
      *        The name of the MQTT topic.
      */
+
     public void setTopic(String topic) {
         this.topic = topic;
     }
@@ -95,6 +99,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * 
      * @return The name of the MQTT topic.
      */
+
     public String getTopic() {
         return this.topic;
     }
@@ -109,6 +114,7 @@ public class RepublishAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepublishAction withTopic(String topic) {
         setTopic(topic);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,13 @@ public class SqlInjectionMatchSetJsonUnmarshaller implements
                 if (context.testExpression("SqlInjectionMatchSetId",
                         targetDepth)) {
                     context.nextToken();
-                    sqlInjectionMatchSet
-                            .setSqlInjectionMatchSetId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    sqlInjectionMatchSet.setSqlInjectionMatchSetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    sqlInjectionMatchSet.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    sqlInjectionMatchSet.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SqlInjectionMatchTuples",
                         targetDepth)) {

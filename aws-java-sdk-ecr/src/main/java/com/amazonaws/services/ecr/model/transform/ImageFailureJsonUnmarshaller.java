@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,13 +60,13 @@ public class ImageFailureJsonUnmarshaller implements
                 }
                 if (context.testExpression("failureCode", targetDepth)) {
                     context.nextToken();
-                    imageFailure.setFailureCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    imageFailure.setFailureCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("failureReason", targetDepth)) {
                     context.nextToken();
-                    imageFailure.setFailureReason(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    imageFailure.setFailureReason(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

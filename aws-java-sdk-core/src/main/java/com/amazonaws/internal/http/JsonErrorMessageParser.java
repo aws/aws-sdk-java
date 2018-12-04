@@ -18,16 +18,18 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.fasterxml.jackson.databind.JsonNode;
 
+@SdkInternalApi
 public class JsonErrorMessageParser {
 
     private static final List<String> DEFAULT_ERROR_MESSAGE_LOCATIONS = Arrays
             .asList("message", "Message", "errorMessage");
 
     /**
-     * Standard JSON Error Message Parser that checks for JSON fields in this
-     * order: 'message', 'Message', 'errorMessage'
+     * Standard JSON Error Message Parser that checks for JSON fields in this order: 'message',
+     * 'Message', 'errorMessage'
      */
     public static final JsonErrorMessageParser DEFAULT_ERROR_MESSAGE_PARSER = new JsonErrorMessageParser(
             DEFAULT_ERROR_MESSAGE_LOCATIONS);
@@ -35,20 +37,17 @@ public class JsonErrorMessageParser {
     private final List<String> errorMessageJsonLocations;
 
     /**
-     * @param errorMessageJsonFieldNames
-     *            JSON field locations where the parser will attempt to extract
-     *            the error message from.
+     * @param errorMessageJsonLocations JSON field locations where the parser will attempt to
+     *                                  extract the error message from.
      */
     public JsonErrorMessageParser(List<String> errorMessageJsonLocations) {
-        this.errorMessageJsonLocations = new LinkedList<String>(
-                errorMessageJsonLocations);
+        this.errorMessageJsonLocations = new LinkedList<String>(errorMessageJsonLocations);
     }
 
     /**
      * Parse the error message from the response.
      *
-     * @return Error Code of exceptional response or null if it can't be
-     *         determined
+     * @return Error Code of exceptional response or null if it can't be determined
      */
     public String parseErrorMessage(JsonNode jsonNode) {
         for (String field : errorMessageJsonLocations) {

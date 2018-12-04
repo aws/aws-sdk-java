@@ -45,20 +45,14 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public AttachAssessmentAndRulesPackageResult attachAssessmentAndRulesPackage(
-            AttachAssessmentAndRulesPackageRequest request) {
+    public CreateAssessmentTargetResult createAssessmentTarget(
+            CreateAssessmentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public CreateApplicationResult createApplication(
-            CreateApplicationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public CreateAssessmentResult createAssessment(
-            CreateAssessmentRequest request) {
+    public CreateAssessmentTemplateResult createAssessmentTemplate(
+            CreateAssessmentTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,31 +63,38 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public DeleteApplicationResult deleteApplication(
-            DeleteApplicationRequest request) {
+    public DeleteAssessmentRunResult deleteAssessmentRun(
+            DeleteAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteAssessmentResult deleteAssessment(
-            DeleteAssessmentRequest request) {
+    public DeleteAssessmentTargetResult deleteAssessmentTarget(
+            DeleteAssessmentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteRunResult deleteRun(DeleteRunRequest request) {
+    public DeleteAssessmentTemplateResult deleteAssessmentTemplate(
+            DeleteAssessmentTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeApplicationResult describeApplication(
-            DescribeApplicationRequest request) {
+    public DescribeAssessmentRunsResult describeAssessmentRuns(
+            DescribeAssessmentRunsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeAssessmentResult describeAssessment(
-            DescribeAssessmentRequest request) {
+    public DescribeAssessmentTargetsResult describeAssessmentTargets(
+            DescribeAssessmentTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAssessmentTemplatesResult describeAssessmentTemplates(
+            DescribeAssessmentTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,65 +105,56 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public DescribeFindingResult describeFinding(DescribeFindingRequest request) {
+    public DescribeFindingsResult describeFindings(
+            DescribeFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeResourceGroupResult describeResourceGroup(
-            DescribeResourceGroupRequest request) {
+    public DescribeResourceGroupsResult describeResourceGroups(
+            DescribeResourceGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeRulesPackageResult describeRulesPackage(
-            DescribeRulesPackageRequest request) {
+    public DescribeRulesPackagesResult describeRulesPackages(
+            DescribeRulesPackagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DescribeRunResult describeRun(DescribeRunRequest request) {
+    public GetTelemetryMetadataResult getTelemetryMetadata(
+            GetTelemetryMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DetachAssessmentAndRulesPackageResult detachAssessmentAndRulesPackage(
-            DetachAssessmentAndRulesPackageRequest request) {
+    public ListAssessmentRunAgentsResult listAssessmentRunAgents(
+            ListAssessmentRunAgentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public GetAssessmentTelemetryResult getAssessmentTelemetry(
-            GetAssessmentTelemetryRequest request) {
+    public ListAssessmentRunsResult listAssessmentRuns(
+            ListAssessmentRunsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListApplicationsResult listApplications(
-            ListApplicationsRequest request) {
+    public ListAssessmentTargetsResult listAssessmentTargets(
+            ListAssessmentTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListAssessmentAgentsResult listAssessmentAgents(
-            ListAssessmentAgentsRequest request) {
+    public ListAssessmentTemplatesResult listAssessmentTemplates(
+            ListAssessmentTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public ListAssessmentsResult listAssessments(ListAssessmentsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public ListAttachedAssessmentsResult listAttachedAssessments(
-            ListAttachedAssessmentsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public ListAttachedRulesPackagesResult listAttachedRulesPackages(
-            ListAttachedRulesPackagesRequest request) {
+    public ListEventSubscriptionsResult listEventSubscriptions(
+            ListEventSubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,24 +170,13 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public ListRunsResult listRuns(ListRunsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public ListTagsForResourceResult listTagsForResource(
             ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public LocalizeTextResult localizeText(LocalizeTextRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public PreviewAgentsForResourceGroupResult previewAgentsForResourceGroup(
-            PreviewAgentsForResourceGroupRequest request) {
+    public PreviewAgentsResult previewAgents(PreviewAgentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -212,37 +193,38 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
-    public RunAssessmentResult runAssessment(RunAssessmentRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public SetTagsForResourceResult setTagsForResource(
             SetTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StartDataCollectionResult startDataCollection(
-            StartDataCollectionRequest request) {
+    public StartAssessmentRunResult startAssessmentRun(
+            StartAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StopDataCollectionResult stopDataCollection(
-            StopDataCollectionRequest request) {
+    public StopAssessmentRunResult stopAssessmentRun(
+            StopAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateApplicationResult updateApplication(
-            UpdateApplicationRequest request) {
+    public SubscribeToEventResult subscribeToEvent(
+            SubscribeToEventRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public UpdateAssessmentResult updateAssessment(
-            UpdateAssessmentRequest request) {
+    public UnsubscribeFromEventResult unsubscribeFromEvent(
+            UnsubscribeFromEventRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAssessmentTargetResult updateAssessmentTarget(
+            UpdateAssessmentTargetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

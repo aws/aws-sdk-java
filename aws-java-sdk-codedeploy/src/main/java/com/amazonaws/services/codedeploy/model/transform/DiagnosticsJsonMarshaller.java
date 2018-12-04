@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DiagnosticsMarshaller
@@ -39,34 +34,37 @@ import com.amazonaws.util.json.*;
 public class DiagnosticsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Diagnostics diagnostics, JSONWriter jsonWriter) {
+    public void marshall(Diagnostics diagnostics,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (diagnostics == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (diagnostics.getErrorCode() != null) {
-                jsonWriter.key("errorCode").value(diagnostics.getErrorCode());
+                jsonGenerator.writeFieldName("errorCode").writeValue(
+                        diagnostics.getErrorCode());
             }
-
             if (diagnostics.getScriptName() != null) {
-                jsonWriter.key("scriptName").value(diagnostics.getScriptName());
+                jsonGenerator.writeFieldName("scriptName").writeValue(
+                        diagnostics.getScriptName());
             }
-
             if (diagnostics.getMessage() != null) {
-                jsonWriter.key("message").value(diagnostics.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        diagnostics.getMessage());
             }
-
             if (diagnostics.getLogTail() != null) {
-                jsonWriter.key("logTail").value(diagnostics.getLogTail());
+                jsonGenerator.writeFieldName("logTail").writeValue(
+                        diagnostics.getLogTail());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -61,9 +63,8 @@ public class DescribeDirectoriesResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    describeDirectoriesResult
-                            .setNextToken(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeDirectoriesResult.setNextToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

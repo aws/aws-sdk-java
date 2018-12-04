@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * InstanceGroupMarshaller
@@ -39,76 +34,99 @@ import com.amazonaws.util.json.*;
 public class InstanceGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(InstanceGroup instanceGroup, JSONWriter jsonWriter) {
+    public void marshall(InstanceGroup instanceGroup,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (instanceGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (instanceGroup.getId() != null) {
-                jsonWriter.key("Id").value(instanceGroup.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(
+                        instanceGroup.getId());
             }
-
             if (instanceGroup.getName() != null) {
-                jsonWriter.key("Name").value(instanceGroup.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        instanceGroup.getName());
             }
-
             if (instanceGroup.getMarket() != null) {
-                jsonWriter.key("Market").value(instanceGroup.getMarket());
+                jsonGenerator.writeFieldName("Market").writeValue(
+                        instanceGroup.getMarket());
             }
-
             if (instanceGroup.getInstanceGroupType() != null) {
-                jsonWriter.key("InstanceGroupType").value(
+                jsonGenerator.writeFieldName("InstanceGroupType").writeValue(
                         instanceGroup.getInstanceGroupType());
             }
-
             if (instanceGroup.getBidPrice() != null) {
-                jsonWriter.key("BidPrice").value(instanceGroup.getBidPrice());
+                jsonGenerator.writeFieldName("BidPrice").writeValue(
+                        instanceGroup.getBidPrice());
             }
-
             if (instanceGroup.getInstanceType() != null) {
-                jsonWriter.key("InstanceType").value(
+                jsonGenerator.writeFieldName("InstanceType").writeValue(
                         instanceGroup.getInstanceType());
             }
-
             if (instanceGroup.getRequestedInstanceCount() != null) {
-                jsonWriter.key("RequestedInstanceCount").value(
-                        instanceGroup.getRequestedInstanceCount());
+                jsonGenerator.writeFieldName("RequestedInstanceCount")
+                        .writeValue(instanceGroup.getRequestedInstanceCount());
             }
-
             if (instanceGroup.getRunningInstanceCount() != null) {
-                jsonWriter.key("RunningInstanceCount").value(
-                        instanceGroup.getRunningInstanceCount());
+                jsonGenerator.writeFieldName("RunningInstanceCount")
+                        .writeValue(instanceGroup.getRunningInstanceCount());
             }
-
             if (instanceGroup.getStatus() != null) {
-                jsonWriter.key("Status");
+                jsonGenerator.writeFieldName("Status");
                 InstanceGroupStatusJsonMarshaller.getInstance().marshall(
-                        instanceGroup.getStatus(), jsonWriter);
+                        instanceGroup.getStatus(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<Configuration> configurationsList = (com.amazonaws.internal.SdkInternalList<Configuration>) instanceGroup
                     .getConfigurations();
             if (!configurationsList.isEmpty()
                     || !configurationsList.isAutoConstruct()) {
-                jsonWriter.key("Configurations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Configurations");
+                jsonGenerator.writeStartArray();
                 for (Configuration configurationsListValue : configurationsList) {
                     if (configurationsListValue != null) {
 
                         ConfigurationJsonMarshaller.getInstance().marshall(
-                                configurationsListValue, jsonWriter);
+                                configurationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            com.amazonaws.internal.SdkInternalList<EbsBlockDevice> ebsBlockDevicesList = (com.amazonaws.internal.SdkInternalList<EbsBlockDevice>) instanceGroup
+                    .getEbsBlockDevices();
+            if (!ebsBlockDevicesList.isEmpty()
+                    || !ebsBlockDevicesList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("EbsBlockDevices");
+                jsonGenerator.writeStartArray();
+                for (EbsBlockDevice ebsBlockDevicesListValue : ebsBlockDevicesList) {
+                    if (ebsBlockDevicesListValue != null) {
+
+                        EbsBlockDeviceJsonMarshaller.getInstance().marshall(
+                                ebsBlockDevicesListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+            if (instanceGroup.getEbsOptimized() != null) {
+                jsonGenerator.writeFieldName("EbsOptimized").writeValue(
+                        instanceGroup.getEbsOptimized());
+            }
+            if (instanceGroup.getShrinkPolicy() != null) {
+                jsonGenerator.writeFieldName("ShrinkPolicy");
+                ShrinkPolicyJsonMarshaller.getInstance().marshall(
+                        instanceGroup.getShrinkPolicy(), jsonGenerator);
+            }
+
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

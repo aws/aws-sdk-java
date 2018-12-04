@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class ServiceEventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    serviceEvent.setId(StringJsonUnmarshaller.getInstance()
+                    serviceEvent.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    serviceEvent.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceEvent.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    serviceEvent.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    serviceEvent.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

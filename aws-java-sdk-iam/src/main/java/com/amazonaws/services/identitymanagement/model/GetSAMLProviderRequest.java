@@ -27,51 +27,93 @@ public class GetSAMLProviderRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider to get information
-     * about.
+     * The Amazon Resource Name (ARN) of the SAML provider resource object in
+     * IAM to get information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      */
     private String sAMLProviderArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider to get information
-     * about.
+     * The Amazon Resource Name (ARN) of the SAML provider resource object in
+     * IAM to get information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider to get
-     *        information about.
+     *        The Amazon Resource Name (ARN) of the SAML provider resource
+     *        object in IAM to get information about.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      */
+
     public void setSAMLProviderArn(String sAMLProviderArn) {
         this.sAMLProviderArn = sAMLProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider to get information
-     * about.
+     * The Amazon Resource Name (ARN) of the SAML provider resource object in
+     * IAM to get information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the SAML provider to get
-     *         information about.
+     * @return The Amazon Resource Name (ARN) of the SAML provider resource
+     *         object in IAM to get information about.</p>
+     *         <p>
+     *         For more information about ARNs, see <a href=
+     *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *         the <i>AWS General Reference</i>.
      */
+
     public String getSAMLProviderArn() {
         return this.sAMLProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the SAML provider to get information
-     * about.
+     * The Amazon Resource Name (ARN) of the SAML provider resource object in
+     * IAM to get information about.
+     * </p>
+     * <p>
+     * For more information about ARNs, see <a href=
+     * "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     * >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the
+     * <i>AWS General Reference</i>.
      * </p>
      * 
      * @param sAMLProviderArn
-     *        The Amazon Resource Name (ARN) of the SAML provider to get
-     *        information about.
+     *        The Amazon Resource Name (ARN) of the SAML provider resource
+     *        object in IAM to get information about.</p>
+     *        <p>
+     *        For more information about ARNs, see <a href=
+     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
+     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in
+     *        the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSAMLProviderRequest withSAMLProviderArn(String sAMLProviderArn) {
         setSAMLProviderArn(sAMLProviderArn);
         return this;

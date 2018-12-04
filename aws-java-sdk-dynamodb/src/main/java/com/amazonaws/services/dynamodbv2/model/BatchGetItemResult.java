@@ -105,6 +105,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *         <i>Responses</i> consists of a table name, along with a map of
      *         attribute data consisting of the data type and attribute value.
      */
+
     public java.util.Map<String, java.util.List<java.util.Map<String, AttributeValue>>> getResponses() {
         return responses;
     }
@@ -121,6 +122,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *        <i>Responses</i> consists of a table name, along with a map of
      *        attribute data consisting of the data type and attribute value.
      */
+
     public void setResponses(
             java.util.Map<String, java.util.List<java.util.Map<String, AttributeValue>>> responses) {
         this.responses = responses;
@@ -140,6 +142,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemResult withResponses(
             java.util.Map<String, java.util.List<java.util.Map<String, AttributeValue>>> responses) {
         setResponses(responses);
@@ -162,6 +165,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * Removes all the entries added into Responses. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public BatchGetItemResult clearResponsesEntries() {
         this.responses = null;
         return this;
@@ -241,6 +245,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *         If there are no unprocessed keys remaining, the response contains
      *         an empty <i>UnprocessedKeys</i> map.
      */
+
     public java.util.Map<String, KeysAndAttributes> getUnprocessedKeys() {
         return unprocessedKeys;
     }
@@ -320,6 +325,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *        If there are no unprocessed keys remaining, the response contains
      *        an empty <i>UnprocessedKeys</i> map.
      */
+
     public void setUnprocessedKeys(
             java.util.Map<String, KeysAndAttributes> unprocessedKeys) {
         this.unprocessedKeys = unprocessedKeys;
@@ -402,6 +408,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemResult withUnprocessedKeys(
             java.util.Map<String, KeysAndAttributes> unprocessedKeys) {
         setUnprocessedKeys(unprocessedKeys);
@@ -424,6 +431,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * Removes all the entries added into UnprocessedKeys. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public BatchGetItemResult clearUnprocessedKeysEntries() {
         this.unprocessedKeys = null;
         return this;
@@ -467,6 +475,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.List<ConsumedCapacity> getConsumedCapacity() {
         return consumedCapacity;
     }
@@ -510,6 +519,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setConsumedCapacity(
             java.util.Collection<ConsumedCapacity> consumedCapacity) {
         if (consumedCapacity == null) {
@@ -568,6 +578,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemResult withConsumedCapacity(
             ConsumedCapacity... consumedCapacity) {
         if (this.consumedCapacity == null) {
@@ -621,6 +632,7 @@ public class BatchGetItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetItemResult withConsumedCapacity(
             java.util.Collection<ConsumedCapacity> consumedCapacity) {
         setConsumedCapacity(consumedCapacity);

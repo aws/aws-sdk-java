@@ -42,6 +42,7 @@ public class DeleteThingRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The thing name.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -53,6 +54,7 @@ public class DeleteThingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The thing name.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -67,6 +69,7 @@ public class DeleteThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteThingRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;

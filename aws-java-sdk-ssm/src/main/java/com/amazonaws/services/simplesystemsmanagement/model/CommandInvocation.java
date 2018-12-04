@@ -19,125 +19,179 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * An invocation is copy of a command sent to a specific instance. A command can
  * apply to one or more instances. A command invocation applies to one instance.
  * For example, if a user executes SendCommand against three instances, then a
  * command invocation is created for each requested instance ID. A command
  * invocation returns status and detail information about a command you
  * executed.
+ * </p>
  */
 public class CommandInvocation implements Serializable, Cloneable {
 
-    /** The command against which this invocation was requested. */
+    /**
+     * <p>
+     * The command against which this invocation was requested.
+     * </p>
+     */
     private String commandId;
-    /** The instance ID in which this invocation was requested. */
+    /**
+     * <p>
+     * The instance ID in which this invocation was requested.
+     * </p>
+     */
     private String instanceId;
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      */
     private String comment;
-    /** The document name that was requested for execution. */
+    /**
+     * <p>
+     * The document name that was requested for execution.
+     * </p>
+     */
     private String documentName;
-    /** The time and date the request was sent to this instance. */
+    /**
+     * <p>
+     * The time and date the request was sent to this instance.
+     * </p>
+     */
     private java.util.Date requestedDateTime;
-    /** Whether or not the invocation succeeded, failed, or is pending. */
+    /**
+     * <p>
+     * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
+     */
     private String status;
-    /** Gets the trace output sent by the agent. */
+    /**
+     * <p>
+     * Gets the trace output sent by the agent.
+     * </p>
+     */
     private String traceOutput;
 
     private com.amazonaws.internal.SdkInternalList<CommandPlugin> commandPlugins;
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @param commandId
      *        The command against which this invocation was requested.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @return The command against which this invocation was requested.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
 
     /**
+     * <p>
      * The command against which this invocation was requested.
+     * </p>
      * 
      * @param commandId
      *        The command against which this invocation was requested.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID in which this invocation was requested.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @return The instance ID in which this invocation was requested.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
+     * <p>
      * The instance ID in which this invocation was requested.
+     * </p>
      * 
      * @param instanceId
      *        The instance ID in which this invocation was requested.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
      *        description of what the command should do.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
      */
+
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -145,70 +199,89 @@ public class CommandInvocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withComment(String comment) {
         setComment(comment);
         return this;
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The document name that was requested for execution.
      */
+
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @return The document name that was requested for execution.
      */
+
     public String getDocumentName() {
         return this.documentName;
     }
 
     /**
+     * <p>
      * The document name that was requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The document name that was requested for execution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withDocumentName(String documentName) {
         setDocumentName(documentName);
         return this;
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @param requestedDateTime
      *        The time and date the request was sent to this instance.
      */
+
     public void setRequestedDateTime(java.util.Date requestedDateTime) {
         this.requestedDateTime = requestedDateTime;
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @return The time and date the request was sent to this instance.
      */
+
     public java.util.Date getRequestedDateTime() {
         return this.requestedDateTime;
     }
 
     /**
+     * <p>
      * The time and date the request was sent to this instance.
+     * </p>
      * 
      * @param requestedDateTime
      *        The time and date the request was sent to this instance.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withRequestedDateTime(
             java.util.Date requestedDateTime) {
         setRequestedDateTime(requestedDateTime);
@@ -216,28 +289,36 @@ public class CommandInvocation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
      * @see CommandInvocationStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @return Whether or not the invocation succeeded, failed, or is pending.
      * @see CommandInvocationStatus
      */
+
     public String getStatus() {
         return this.status;
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -245,26 +326,30 @@ public class CommandInvocation implements Serializable, Cloneable {
      *         chained together.
      * @see CommandInvocationStatus
      */
+
     public CommandInvocation withStatus(String status) {
         setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandInvocationStatus
      */
+
     public void setStatus(CommandInvocationStatus status) {
         this.status = status.toString();
     }
 
     /**
+     * <p>
      * Whether or not the invocation succeeded, failed, or is pending.
+     * </p>
      * 
      * @param status
      *        Whether or not the invocation succeeded, failed, or is pending.
@@ -272,38 +357,48 @@ public class CommandInvocation implements Serializable, Cloneable {
      *         chained together.
      * @see CommandInvocationStatus
      */
+
     public CommandInvocation withStatus(CommandInvocationStatus status) {
         setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @param traceOutput
      *        Gets the trace output sent by the agent.
      */
+
     public void setTraceOutput(String traceOutput) {
         this.traceOutput = traceOutput;
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @return Gets the trace output sent by the agent.
      */
+
     public String getTraceOutput() {
         return this.traceOutput;
     }
 
     /**
+     * <p>
      * Gets the trace output sent by the agent.
+     * </p>
      * 
      * @param traceOutput
      *        Gets the trace output sent by the agent.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withTraceOutput(String traceOutput) {
         setTraceOutput(traceOutput);
         return this;
@@ -312,6 +407,7 @@ public class CommandInvocation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<CommandPlugin> getCommandPlugins() {
         if (commandPlugins == null) {
             commandPlugins = new com.amazonaws.internal.SdkInternalList<CommandPlugin>();
@@ -322,6 +418,7 @@ public class CommandInvocation implements Serializable, Cloneable {
     /**
      * @param commandPlugins
      */
+
     public void setCommandPlugins(
             java.util.Collection<CommandPlugin> commandPlugins) {
         if (commandPlugins == null) {
@@ -345,6 +442,7 @@ public class CommandInvocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withCommandPlugins(CommandPlugin... commandPlugins) {
         if (this.commandPlugins == null) {
             setCommandPlugins(new com.amazonaws.internal.SdkInternalList<CommandPlugin>(
@@ -361,6 +459,7 @@ public class CommandInvocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CommandInvocation withCommandPlugins(
             java.util.Collection<CommandPlugin> commandPlugins) {
         setCommandPlugins(commandPlugins);

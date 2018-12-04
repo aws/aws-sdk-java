@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ServiceEventMarshaller
@@ -39,30 +34,33 @@ import com.amazonaws.util.json.*;
 public class ServiceEventJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ServiceEvent serviceEvent, JSONWriter jsonWriter) {
+    public void marshall(ServiceEvent serviceEvent,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (serviceEvent == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (serviceEvent.getId() != null) {
-                jsonWriter.key("id").value(serviceEvent.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        serviceEvent.getId());
             }
-
             if (serviceEvent.getCreatedAt() != null) {
-                jsonWriter.key("createdAt").value(serviceEvent.getCreatedAt());
+                jsonGenerator.writeFieldName("createdAt").writeValue(
+                        serviceEvent.getCreatedAt());
             }
-
             if (serviceEvent.getMessage() != null) {
-                jsonWriter.key("message").value(serviceEvent.getMessage());
+                jsonGenerator.writeFieldName("message").writeValue(
+                        serviceEvent.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

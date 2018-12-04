@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.transfer.internal;
 import java.io.File;
 import java.io.IOException;
 
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -33,17 +34,38 @@ public class DownloadImpl extends AbstractTransfer implements Download {
     /**
      * Information to resume if the download is paused.
      */
-    private final PersistableDownload persistableDownload;
+    private PersistableDownload persistableDownload;
+
+    /**
+     * The last part that has been successfully written into the downloaded file.
+     */
+    private Integer lastFullyDownloadedPartNumber;
+
+    private final GetObjectRequest getObjectRequest;
+    private final File file;
+    private final ObjectMetadata objectMetadata;
+    private final ProgressListenerChain progressListenerChain;
+
+    @Deprecated
+    public DownloadImpl(String description, TransferProgress transferProgress,
+            ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener,
+            GetObjectRequest getObjectRequest, File file) {
+        this(description, transferProgress, progressListenerChain, s3Object, listener,
+                getObjectRequest, file, null, false);
+    }
 
     public DownloadImpl(String description, TransferProgress transferProgress,
-            ProgressListenerChain progressListenerChain, S3Object s3Object,
-            TransferStateChangeListener listener,
-            GetObjectRequest getObjectRequest, File file) {
+            ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener,
+            GetObjectRequest getObjectRequest, File file,
+            ObjectMetadata objectMetadata, boolean isDownloadParallel) {
         super(description, transferProgress, progressListenerChain, listener);
         this.s3Object = s3Object;
+        this.objectMetadata = objectMetadata;
+        this.getObjectRequest = getObjectRequest;
+        this.file = file;
+        this.progressListenerChain = progressListenerChain;
         this.persistableDownload = captureDownloadState(getObjectRequest, file);
-        S3ProgressPublisher.publishTransferPersistable(progressListenerChain,
-                persistableDownload);
+        S3ProgressPublisher.publishTransferPersistable(progressListenerChain, persistableDownload);
     }
 
     /**
@@ -51,8 +73,11 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      *
      * @return The ObjectMetadata for the object being downloaded.
      */
-    public ObjectMetadata getObjectMetadata() {
-        return s3Object.getObjectMetadata();
+    public synchronized ObjectMetadata getObjectMetadata() {
+        if (s3Object != null) {
+            return s3Object.getObjectMetadata();
+        }
+        return objectMetadata;
     }
 
     /**
@@ -61,7 +86,7 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * @return The name of the bucket where the object is being downloaded from.
      */
     public String getBucketName() {
-        return s3Object.getBucketName();
+        return getObjectRequest.getBucketName();
     }
 
     /**
@@ -70,7 +95,32 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      * @return The key under which this object was stored in Amazon S3.
      */
     public String getKey() {
-        return s3Object.getKey();
+        return getObjectRequest.getKey();
+    }
+
+    /**
+     * Only for internal use.
+     * For parallel downloads, Updates the persistableTransfer each time a
+     * part is successfully merged into download file.
+     * Then notify the listeners that new persistableTransfer is available.
+     */
+    @SdkInternalApi
+    public void updatePersistableTransfer(Integer lastFullyDownloadedPartNumber) {
+        synchronized (this) {
+            this.lastFullyDownloadedPartNumber = lastFullyDownloadedPartNumber;
+        }
+
+        persistableDownload = captureDownloadState(getObjectRequest, file);
+        S3ProgressPublisher.publishTransferPersistable(progressListenerChain, persistableDownload);
+    }
+
+    /**
+     * For parallel downloads, returns the last part number that was
+     * successfully written into the download file.
+     * Returns null for serial downloads.
+     */
+    public synchronized Integer getLastFullyDownloadedPartNumber() {
+        return lastFullyDownloadedPartNumber;
     }
 
     /**
@@ -126,11 +176,11 @@ public class DownloadImpl extends AbstractTransfer implements Download {
             final GetObjectRequest getObjectRequest, final File file) {
         if (getObjectRequest.getSSECustomerKey() == null) {
             return new PersistableDownload(
-                    getObjectRequest.getBucketName(),
-                    getObjectRequest.getKey(), getObjectRequest.getVersionId(),
-                    getObjectRequest.getRange(),
-                    getObjectRequest.getResponseHeaders(),
-                    getObjectRequest.isRequesterPays(), file.getAbsolutePath());
+                    getObjectRequest.getBucketName(), getObjectRequest.getKey(),
+                    getObjectRequest.getVersionId(), getObjectRequest.getRange(),
+                    getObjectRequest.getResponseHeaders(), getObjectRequest.isRequesterPays(),
+                    file.getAbsolutePath(), getLastFullyDownloadedPartNumber(),
+                    getObjectMetadata().getLastModified().getTime());
         }
         return null;
     }

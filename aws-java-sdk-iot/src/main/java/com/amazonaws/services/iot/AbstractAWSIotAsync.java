@@ -28,31 +28,31 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    public java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest request) {
 
         return acceptCertificateTransferAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> acceptCertificateTransferAsync(
+    public java.util.concurrent.Future<AcceptCertificateTransferResult> acceptCertificateTransferAsync(
             AcceptCertificateTransferRequest request,
-            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AcceptCertificateTransferRequest, AcceptCertificateTransferResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    public java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest request) {
 
         return attachPrincipalPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> attachPrincipalPolicyAsync(
+    public java.util.concurrent.Future<AttachPrincipalPolicyResult> attachPrincipalPolicyAsync(
             AttachPrincipalPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AttachPrincipalPolicyRequest, AttachPrincipalPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,16 +73,16 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    public java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest request) {
 
         return cancelCertificateTransferAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelCertificateTransferAsync(
+    public java.util.concurrent.Future<CancelCertificateTransferResult> cancelCertificateTransferAsync(
             CancelCertificateTransferRequest request,
-            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CancelCertificateTransferRequest, CancelCertificateTransferResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -163,61 +163,91 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTopicRuleAsync(
+    public java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest request) {
 
         return createTopicRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createTopicRuleAsync(
+    public java.util.concurrent.Future<CreateTopicRuleResult> createTopicRuleAsync(
             CreateTopicRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRuleRequest, CreateTopicRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest request) {
+
+        return deleteCACertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCACertificateResult> deleteCACertificateAsync(
+            DeleteCACertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCACertificateRequest, DeleteCACertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest request) {
 
         return deleteCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request) {
 
         return deletePolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyAsync(
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(
             DeletePolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest request) {
 
         return deletePolicyVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePolicyVersionAsync(
+    public java.util.concurrent.Future<DeletePolicyVersionResult> deletePolicyVersionAsync(
             DeletePolicyVersionRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeletePolicyVersionRequest, DeletePolicyVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest request) {
+
+        return deleteRegistrationCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistrationCodeResult> deleteRegistrationCodeAsync(
+            DeleteRegistrationCodeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationCodeRequest, DeleteRegistrationCodeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -238,16 +268,31 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest request) {
 
         return deleteTopicRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteTopicRuleAsync(
+    public java.util.concurrent.Future<DeleteTopicRuleResult> deleteTopicRuleAsync(
             DeleteTopicRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRuleRequest, DeleteTopicRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest request) {
+
+        return describeCACertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCACertificateResult> describeCACertificateAsync(
+            DescribeCACertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCACertificateRequest, DescribeCACertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -298,16 +343,16 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    public java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest request) {
 
         return detachPrincipalPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> detachPrincipalPolicyAsync(
+    public java.util.concurrent.Future<DetachPrincipalPolicyResult> detachPrincipalPolicyAsync(
             DetachPrincipalPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DetachPrincipalPolicyRequest, DetachPrincipalPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -328,31 +373,31 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    public java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest request) {
 
         return disableTopicRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableTopicRuleAsync(
+    public java.util.concurrent.Future<DisableTopicRuleResult> disableTopicRuleAsync(
             DisableTopicRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableTopicRuleRequest, DisableTopicRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    public java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest request) {
 
         return enableTopicRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableTopicRuleAsync(
+    public java.util.concurrent.Future<EnableTopicRuleResult> enableTopicRuleAsync(
             EnableTopicRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableTopicRuleRequest, EnableTopicRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -403,6 +448,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest request) {
+
+        return getRegistrationCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegistrationCodeResult> getRegistrationCodeAsync(
+            GetRegistrationCodeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRegistrationCodeRequest, GetRegistrationCodeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTopicRuleResult> getTopicRuleAsync(
             GetTopicRuleRequest request) {
 
@@ -418,6 +478,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest request) {
+
+        return listCACertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCACertificatesResult> listCACertificatesAsync(
+            ListCACertificatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCACertificatesRequest, ListCACertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest request) {
 
@@ -428,6 +503,21 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     public java.util.concurrent.Future<ListCertificatesResult> listCertificatesAsync(
             ListCertificatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCertificatesRequest, ListCertificatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest request) {
+
+        return listCertificatesByCAAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesByCAResult> listCertificatesByCAAsync(
+            ListCertificatesByCARequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCertificatesByCARequest, ListCertificatesByCAResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -538,61 +628,91 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    public java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest request) {
+
+        return registerCACertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCACertificateResult> registerCACertificateAsync(
+            RegisterCACertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterCACertificateRequest, RegisterCACertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest request) {
+
+        return registerCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterCertificateResult> registerCertificateAsync(
+            RegisterCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterCertificateRequest, RegisterCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest request) {
 
         return rejectCertificateTransferAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> rejectCertificateTransferAsync(
+    public java.util.concurrent.Future<RejectCertificateTransferResult> rejectCertificateTransferAsync(
             RejectCertificateTransferRequest request,
-            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RejectCertificateTransferRequest, RejectCertificateTransferResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    public java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest request) {
 
         return replaceTopicRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> replaceTopicRuleAsync(
+    public java.util.concurrent.Future<ReplaceTopicRuleResult> replaceTopicRuleAsync(
             ReplaceTopicRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ReplaceTopicRuleRequest, ReplaceTopicRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest request) {
 
         return setDefaultPolicyVersionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setDefaultPolicyVersionAsync(
+    public java.util.concurrent.Future<SetDefaultPolicyVersionResult> setDefaultPolicyVersionAsync(
             SetDefaultPolicyVersionRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    public java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest request) {
 
         return setLoggingOptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setLoggingOptionsAsync(
+    public java.util.concurrent.Future<SetLoggingOptionsResult> setLoggingOptionsAsync(
             SetLoggingOptionsRequest request,
-            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<SetLoggingOptionsRequest, SetLoggingOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -613,16 +733,31 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateCertificateAsync(
+    public java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
+            UpdateCACertificateRequest request) {
+
+        return updateCACertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCACertificateResult> updateCACertificateAsync(
+            UpdateCACertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCACertificateRequest, UpdateCACertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest request) {
 
         return updateCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateCertificateAsync(
+    public java.util.concurrent.Future<UpdateCertificateResult> updateCertificateAsync(
             UpdateCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

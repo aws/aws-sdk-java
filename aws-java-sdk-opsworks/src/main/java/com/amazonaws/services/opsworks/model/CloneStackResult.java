@@ -40,6 +40,7 @@ public class CloneStackResult implements Serializable, Cloneable {
      * @param stackId
      *        The cloned stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -51,6 +52,7 @@ public class CloneStackResult implements Serializable, Cloneable {
      * 
      * @return The cloned stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -65,6 +67,7 @@ public class CloneStackResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloneStackResult withStackId(String stackId) {
         setStackId(stackId);
         return this;

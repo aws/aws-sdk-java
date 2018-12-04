@@ -14,6 +14,21 @@
  */
 package com.amazonaws.http.timers.request;
 
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.TestPreConditions;
+import com.amazonaws.http.AmazonHttpClient;
+import com.amazonaws.http.MockServerTestBase;
+import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
+import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
+import com.amazonaws.http.client.HttpClientFactory;
+import com.amazonaws.http.server.MockServer;
+import com.amazonaws.http.settings.HttpClientSettings;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import java.io.IOException;
+
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertNumberOfRetries;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.assertNumberOfTasksTriggered;
 import static com.amazonaws.http.timers.ClientExecutionAndRequestTimerTestUtils.execute;
@@ -21,20 +36,6 @@ import static com.amazonaws.http.timers.TimeoutTestConstants.TEST_TIMEOUT;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.spy;
-
-import java.io.IOException;
-
-import org.apache.http.client.HttpClient;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.TestPreConditions;
-import com.amazonaws.http.AmazonHttpClient;
-import com.amazonaws.http.HttpClientFactory;
-import com.amazonaws.http.MockServerTestBase;
-import com.amazonaws.http.server.MockServer;
 
 /**
  * Tests that use a server that returns a predetermined response within the timeout limit
@@ -61,8 +62,8 @@ public class DummyResponseServerTests extends MockServerTestBase {
         int maxRetries = 2;
         ClientConfiguration config = new ClientConfiguration().withRequestTimeout(25 * 1000)
                 .withClientExecutionTimeout(25 * 1000).withMaxErrorRetry(maxRetries);
-        HttpClientFactory httpClientFactory = new HttpClientFactory();
-        HttpClient rawHttpClient = spy(httpClientFactory.createHttpClient(config));
+        HttpClientFactory<ConnectionManagerAwareHttpClient> httpClientFactory = new ApacheHttpClientFactory();
+        ConnectionManagerAwareHttpClient rawHttpClient = spy(httpClientFactory.create(HttpClientSettings.adapt(config)));
 
         httpClient = new AmazonHttpClient(config, rawHttpClient, null);
 

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MountTargetDescriptionMarshaller
@@ -39,54 +34,49 @@ import com.amazonaws.util.json.*;
 public class MountTargetDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MountTargetDescription mountTargetDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (mountTargetDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (mountTargetDescription.getOwnerId() != null) {
-                jsonWriter.key("OwnerId").value(
+                jsonGenerator.writeFieldName("OwnerId").writeValue(
                         mountTargetDescription.getOwnerId());
             }
-
             if (mountTargetDescription.getMountTargetId() != null) {
-                jsonWriter.key("MountTargetId").value(
+                jsonGenerator.writeFieldName("MountTargetId").writeValue(
                         mountTargetDescription.getMountTargetId());
             }
-
             if (mountTargetDescription.getFileSystemId() != null) {
-                jsonWriter.key("FileSystemId").value(
+                jsonGenerator.writeFieldName("FileSystemId").writeValue(
                         mountTargetDescription.getFileSystemId());
             }
-
             if (mountTargetDescription.getSubnetId() != null) {
-                jsonWriter.key("SubnetId").value(
+                jsonGenerator.writeFieldName("SubnetId").writeValue(
                         mountTargetDescription.getSubnetId());
             }
-
             if (mountTargetDescription.getLifeCycleState() != null) {
-                jsonWriter.key("LifeCycleState").value(
+                jsonGenerator.writeFieldName("LifeCycleState").writeValue(
                         mountTargetDescription.getLifeCycleState());
             }
-
             if (mountTargetDescription.getIpAddress() != null) {
-                jsonWriter.key("IpAddress").value(
+                jsonGenerator.writeFieldName("IpAddress").writeValue(
                         mountTargetDescription.getIpAddress());
             }
-
             if (mountTargetDescription.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
                         mountTargetDescription.getNetworkInterfaceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class EncryptionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();
-                    encryption.setMode(StringJsonUnmarshaller.getInstance()
+                    encryption.setMode(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    encryption.setKey(StringJsonUnmarshaller.getInstance()
+                    encryption.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("KeyMd5", targetDepth)) {
                     context.nextToken();
-                    encryption.setKeyMd5(StringJsonUnmarshaller.getInstance()
+                    encryption.setKeyMd5(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InitializationVector", targetDepth)) {
                     context.nextToken();
-                    encryption.setInitializationVector(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    encryption.setInitializationVector(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -27,68 +27,72 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      */
     private Long pending;
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      */
     private Long inProgress;
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      */
     private Long succeeded;
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      */
     private Long failed;
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      */
     private Long skipped;
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
      * @param pending
-     *        The number of instances that are pending in the deployment.
+     *        The number of instances in the deployment in a pending state.
      */
+
     public void setPending(Long pending) {
         this.pending = pending;
     }
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
-     * @return The number of instances that are pending in the deployment.
+     * @return The number of instances in the deployment in a pending state.
      */
+
     public Long getPending() {
         return this.pending;
     }
 
     /**
      * <p>
-     * The number of instances that are pending in the deployment.
+     * The number of instances in the deployment in a pending state.
      * </p>
      * 
      * @param pending
-     *        The number of instances that are pending in the deployment.
+     *        The number of instances in the deployment in a pending state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withPending(Long pending) {
         setPending(pending);
         return this;
@@ -96,37 +100,40 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
      * @param inProgress
-     *        The number of instances that are in progress in the deployment.
+     *        The number of instances in which the deployment is in progress.
      */
+
     public void setInProgress(Long inProgress) {
         this.inProgress = inProgress;
     }
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
-     * @return The number of instances that are in progress in the deployment.
+     * @return The number of instances in which the deployment is in progress.
      */
+
     public Long getInProgress() {
         return this.inProgress;
     }
 
     /**
      * <p>
-     * The number of instances that are in progress in the deployment.
+     * The number of instances in which the deployment is in progress.
      * </p>
      * 
      * @param inProgress
-     *        The number of instances that are in progress in the deployment.
+     *        The number of instances in which the deployment is in progress.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withInProgress(Long inProgress) {
         setInProgress(inProgress);
         return this;
@@ -134,37 +141,46 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances that have succeeded in the deployment.
+     *        The number of instances in the deployment to which revisions have
+     *        been successfully deployed.
      */
+
     public void setSucceeded(Long succeeded) {
         this.succeeded = succeeded;
     }
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
-     * @return The number of instances that have succeeded in the deployment.
+     * @return The number of instances in the deployment to which revisions have
+     *         been successfully deployed.
      */
+
     public Long getSucceeded() {
         return this.succeeded;
     }
 
     /**
      * <p>
-     * The number of instances that have succeeded in the deployment.
+     * The number of instances in the deployment to which revisions have been
+     * successfully deployed.
      * </p>
      * 
      * @param succeeded
-     *        The number of instances that have succeeded in the deployment.
+     *        The number of instances in the deployment to which revisions have
+     *        been successfully deployed.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withSucceeded(Long succeeded) {
         setSucceeded(succeeded);
         return this;
@@ -172,37 +188,40 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
      * @param failed
-     *        The number of instances that have failed in the deployment.
+     *        The number of instances in the deployment in a failed state.
      */
+
     public void setFailed(Long failed) {
         this.failed = failed;
     }
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
-     * @return The number of instances that have failed in the deployment.
+     * @return The number of instances in the deployment in a failed state.
      */
+
     public Long getFailed() {
         return this.failed;
     }
 
     /**
      * <p>
-     * The number of instances that have failed in the deployment.
+     * The number of instances in the deployment in a failed state.
      * </p>
      * 
      * @param failed
-     *        The number of instances that have failed in the deployment.
+     *        The number of instances in the deployment in a failed state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withFailed(Long failed) {
         setFailed(failed);
         return this;
@@ -210,37 +229,40 @@ public class DeploymentOverview implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
      * @param skipped
-     *        The number of instances that have been skipped in the deployment.
+     *        The number of instances in the deployment in a skipped state.
      */
+
     public void setSkipped(Long skipped) {
         this.skipped = skipped;
     }
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
-     * @return The number of instances that have been skipped in the deployment.
+     * @return The number of instances in the deployment in a skipped state.
      */
+
     public Long getSkipped() {
         return this.skipped;
     }
 
     /**
      * <p>
-     * The number of instances that have been skipped in the deployment.
+     * The number of instances in the deployment in a skipped state.
      * </p>
      * 
      * @param skipped
-     *        The number of instances that have been skipped in the deployment.
+     *        The number of instances in the deployment in a skipped state.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentOverview withSkipped(Long skipped) {
         setSkipped(skipped);
         return this;

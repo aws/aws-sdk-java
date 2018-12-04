@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SubmitContainerStateChangeRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class SubmitContainerStateChangeRequestMarshaller
         implements
         Marshaller<Request<SubmitContainerStateChangeRequest>, SubmitContainerStateChangeRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SubmitContainerStateChangeRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SubmitContainerStateChangeRequest> marshall(
             SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
@@ -65,38 +66,33 @@ public class SubmitContainerStateChangeRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (submitContainerStateChangeRequest.getCluster() != null) {
-                jsonWriter.key("cluster").value(
+                jsonGenerator.writeFieldName("cluster").writeValue(
                         submitContainerStateChangeRequest.getCluster());
             }
-
             if (submitContainerStateChangeRequest.getTask() != null) {
-                jsonWriter.key("task").value(
+                jsonGenerator.writeFieldName("task").writeValue(
                         submitContainerStateChangeRequest.getTask());
             }
-
             if (submitContainerStateChangeRequest.getContainerName() != null) {
-                jsonWriter.key("containerName").value(
+                jsonGenerator.writeFieldName("containerName").writeValue(
                         submitContainerStateChangeRequest.getContainerName());
             }
-
             if (submitContainerStateChangeRequest.getStatus() != null) {
-                jsonWriter.key("status").value(
+                jsonGenerator.writeFieldName("status").writeValue(
                         submitContainerStateChangeRequest.getStatus());
             }
-
             if (submitContainerStateChangeRequest.getExitCode() != null) {
-                jsonWriter.key("exitCode").value(
+                jsonGenerator.writeFieldName("exitCode").writeValue(
                         submitContainerStateChangeRequest.getExitCode());
             }
-
             if (submitContainerStateChangeRequest.getReason() != null) {
-                jsonWriter.key("reason").value(
+                jsonGenerator.writeFieldName("reason").writeValue(
                         submitContainerStateChangeRequest.getReason());
             }
 
@@ -104,26 +100,25 @@ public class SubmitContainerStateChangeRequestMarshaller
                     .getNetworkBindings();
             if (!networkBindingsList.isEmpty()
                     || !networkBindingsList.isAutoConstruct()) {
-                jsonWriter.key("networkBindings");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("networkBindings");
+                jsonGenerator.writeStartArray();
                 for (NetworkBinding networkBindingsListValue : networkBindingsList) {
                     if (networkBindingsListValue != null) {
 
                         NetworkBindingJsonMarshaller.getInstance().marshall(
-                                networkBindingsListValue, jsonWriter);
+                                networkBindingsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

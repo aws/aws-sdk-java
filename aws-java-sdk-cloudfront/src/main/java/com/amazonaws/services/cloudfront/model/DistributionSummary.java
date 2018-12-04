@@ -81,6 +81,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @param id
      *        The identifier for the distribution. For example: EDFDVBD632BHDS5.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -91,6 +92,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return The identifier for the distribution. For example:
      *         EDFDVBD632BHDS5.
      */
+
     public String getId() {
         return this.id;
     }
@@ -103,6 +105,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withId(String id) {
         setId(id);
         return this;
@@ -119,6 +122,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        information is fully propagated throughout the Amazon CloudFront
      *        system.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -133,6 +137,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *         information is fully propagated throughout the Amazon CloudFront
      *         system.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -150,6 +155,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -161,6 +167,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @param lastModifiedTime
      *        The date and time the distribution was last modified.
      */
+
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
         this.lastModifiedTime = lastModifiedTime;
     }
@@ -170,6 +177,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * 
      * @return The date and time the distribution was last modified.
      */
+
     public java.util.Date getLastModifiedTime() {
         return this.lastModifiedTime;
     }
@@ -182,6 +190,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withLastModifiedTime(
             java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
@@ -196,6 +205,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        The domain name corresponding to the distribution. For example:
      *        d604721fxaaqy9.cloudfront.net.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -207,6 +217,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return The domain name corresponding to the distribution. For example:
      *         d604721fxaaqy9.cloudfront.net.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -221,6 +232,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -234,6 +246,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        A complex type that contains information about CNAMEs (alternate
      *        domain names), if any, for this distribution.
      */
+
     public void setAliases(Aliases aliases) {
         this.aliases = aliases;
     }
@@ -245,6 +258,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return A complex type that contains information about CNAMEs (alternate
      *         domain names), if any, for this distribution.
      */
+
     public Aliases getAliases() {
         return this.aliases;
     }
@@ -259,6 +273,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withAliases(Aliases aliases) {
         setAliases(aliases);
         return this;
@@ -272,6 +287,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        A complex type that contains information about origins for this
      *        distribution.
      */
+
     public void setOrigins(Origins origins) {
         this.origins = origins;
     }
@@ -283,6 +299,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return A complex type that contains information about origins for this
      *         distribution.
      */
+
     public Origins getOrigins() {
         return this.origins;
     }
@@ -297,6 +314,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withOrigins(Origins origins) {
         setOrigins(origins);
         return this;
@@ -314,6 +332,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        the values of PathPattern in CacheBehavior elements.You must
      *        create exactly one default cache behavior.
      */
+
     public void setDefaultCacheBehavior(
             DefaultCacheBehavior defaultCacheBehavior) {
         this.defaultCacheBehavior = defaultCacheBehavior;
@@ -330,6 +349,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *         any of the values of PathPattern in CacheBehavior elements.You
      *         must create exactly one default cache behavior.
      */
+
     public DefaultCacheBehavior getDefaultCacheBehavior() {
         return this.defaultCacheBehavior;
     }
@@ -348,6 +368,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withDefaultCacheBehavior(
             DefaultCacheBehavior defaultCacheBehavior) {
         setDefaultCacheBehavior(defaultCacheBehavior);
@@ -360,6 +381,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @param cacheBehaviors
      *        A complex type that contains zero or more CacheBehavior elements.
      */
+
     public void setCacheBehaviors(CacheBehaviors cacheBehaviors) {
         this.cacheBehaviors = cacheBehaviors;
     }
@@ -369,6 +391,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * 
      * @return A complex type that contains zero or more CacheBehavior elements.
      */
+
     public CacheBehaviors getCacheBehaviors() {
         return this.cacheBehaviors;
     }
@@ -381,6 +404,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withCacheBehaviors(CacheBehaviors cacheBehaviors) {
         setCacheBehaviors(cacheBehaviors);
         return this;
@@ -393,6 +417,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        A complex type that contains zero or more CustomErrorResponses
      *        elements.
      */
+
     public void setCustomErrorResponses(
             CustomErrorResponses customErrorResponses) {
         this.customErrorResponses = customErrorResponses;
@@ -404,6 +429,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return A complex type that contains zero or more CustomErrorResponses
      *         elements.
      */
+
     public CustomErrorResponses getCustomErrorResponses() {
         return this.customErrorResponses;
     }
@@ -417,6 +443,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withCustomErrorResponses(
             CustomErrorResponses customErrorResponses) {
         setCustomErrorResponses(customErrorResponses);
@@ -430,6 +457,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        The comment originally specified when this distribution was
      *        created.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -440,6 +468,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return The comment originally specified when this distribution was
      *         created.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -453,6 +482,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withComment(String comment) {
         setComment(comment);
         return this;
@@ -462,6 +492,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @param priceClass
      * @see PriceClass
      */
+
     public void setPriceClass(String priceClass) {
         this.priceClass = priceClass;
     }
@@ -470,6 +501,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return
      * @see PriceClass
      */
+
     public String getPriceClass() {
         return this.priceClass;
     }
@@ -480,6 +512,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public DistributionSummary withPriceClass(String priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -487,10 +520,9 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * @param priceClass
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PriceClass
      */
+
     public void setPriceClass(PriceClass priceClass) {
         this.priceClass = priceClass.toString();
     }
@@ -501,6 +533,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *         chained together.
      * @see PriceClass
      */
+
     public DistributionSummary withPriceClass(PriceClass priceClass) {
         setPriceClass(priceClass);
         return this;
@@ -514,6 +547,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      *        Whether the distribution is enabled to accept end user requests
      *        for content.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -525,6 +559,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -539,6 +574,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -551,6 +587,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Whether the distribution is enabled to accept end user requests
      *         for content.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -558,6 +595,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     /**
      * @param viewerCertificate
      */
+
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
         this.viewerCertificate = viewerCertificate;
     }
@@ -565,6 +603,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ViewerCertificate getViewerCertificate() {
         return this.viewerCertificate;
     }
@@ -574,6 +613,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withViewerCertificate(
             ViewerCertificate viewerCertificate) {
         setViewerCertificate(viewerCertificate);
@@ -583,6 +623,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     /**
      * @param restrictions
      */
+
     public void setRestrictions(Restrictions restrictions) {
         this.restrictions = restrictions;
     }
@@ -590,6 +631,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Restrictions getRestrictions() {
         return this.restrictions;
     }
@@ -599,6 +641,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withRestrictions(Restrictions restrictions) {
         setRestrictions(restrictions);
         return this;
@@ -610,6 +653,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @param webACLId
      *        The Web ACL Id (if any) associated with the distribution.
      */
+
     public void setWebACLId(String webACLId) {
         this.webACLId = webACLId;
     }
@@ -619,6 +663,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * 
      * @return The Web ACL Id (if any) associated with the distribution.
      */
+
     public String getWebACLId() {
         return this.webACLId;
     }
@@ -631,6 +676,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DistributionSummary withWebACLId(String webACLId) {
         setWebACLId(webACLId);
         return this;

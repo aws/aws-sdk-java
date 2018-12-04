@@ -32,6 +32,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @param metricName
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -39,6 +40,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -48,6 +50,7 @@ public class MetricTransformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricTransformation withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -56,6 +59,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @param metricNamespace
      */
+
     public void setMetricNamespace(String metricNamespace) {
         this.metricNamespace = metricNamespace;
     }
@@ -63,6 +67,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMetricNamespace() {
         return this.metricNamespace;
     }
@@ -72,6 +77,7 @@ public class MetricTransformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricTransformation withMetricNamespace(String metricNamespace) {
         setMetricNamespace(metricNamespace);
         return this;
@@ -80,6 +86,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @param metricValue
      */
+
     public void setMetricValue(String metricValue) {
         this.metricValue = metricValue;
     }
@@ -87,6 +94,7 @@ public class MetricTransformation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMetricValue() {
         return this.metricValue;
     }
@@ -96,6 +104,7 @@ public class MetricTransformation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricTransformation withMetricValue(String metricValue) {
         setMetricValue(metricValue);
         return this;

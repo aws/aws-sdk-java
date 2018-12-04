@@ -39,7 +39,8 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see AmazonS3Client#uploadPart(UploadPartRequest)
  * @see CopyPartResult
  */
-public class CopyPartRequest extends AmazonWebServiceRequest implements Serializable {
+public class CopyPartRequest extends AmazonWebServiceRequest implements Serializable,
+                                                                        S3AccelerateUnsupported {
 
     /**
      * The upload id of the multipart upload into which to copy this part.

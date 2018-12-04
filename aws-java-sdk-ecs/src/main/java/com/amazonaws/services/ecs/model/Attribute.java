@@ -48,6 +48,7 @@ public class Attribute implements Serializable, Cloneable {
      * @param name
      *        The name of the container instance attribute.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -59,6 +60,7 @@ public class Attribute implements Serializable, Cloneable {
      * 
      * @return The name of the container instance attribute.
      */
+
     public String getName() {
         return this.name;
     }
@@ -73,6 +75,7 @@ public class Attribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Attribute withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class Attribute implements Serializable, Cloneable {
      *        value here is <code>Null</code>, but this could change in future
      *        revisions for expandability).
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -105,6 +109,7 @@ public class Attribute implements Serializable, Cloneable {
      *         value here is <code>Null</code>, but this could change in future
      *         revisions for expandability).
      */
+
     public String getValue() {
         return this.value;
     }
@@ -123,6 +128,7 @@ public class Attribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Attribute withValue(String value) {
         setValue(value);
         return this;

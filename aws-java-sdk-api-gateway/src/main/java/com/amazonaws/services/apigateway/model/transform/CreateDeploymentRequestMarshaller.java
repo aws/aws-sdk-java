@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateDeploymentRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class CreateDeploymentRequestMarshaller implements
         Marshaller<Request<CreateDeploymentRequest>, CreateDeploymentRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateDeploymentRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateDeploymentRequest> marshall(
             CreateDeploymentRequest createDeploymentRequest) {
@@ -65,64 +74,60 @@ public class CreateDeploymentRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (createDeploymentRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(createDeploymentRequest
-                                .getRestApiId()));
+                (createDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(createDeploymentRequest
+                                        .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createDeploymentRequest.getStageName() != null) {
-                jsonWriter.key("stageName").value(
+                jsonGenerator.writeFieldName("stageName").writeValue(
                         createDeploymentRequest.getStageName());
             }
-
             if (createDeploymentRequest.getStageDescription() != null) {
-                jsonWriter.key("stageDescription").value(
+                jsonGenerator.writeFieldName("stageDescription").writeValue(
                         createDeploymentRequest.getStageDescription());
             }
-
             if (createDeploymentRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         createDeploymentRequest.getDescription());
             }
-
             if (createDeploymentRequest.getCacheClusterEnabled() != null) {
-                jsonWriter.key("cacheClusterEnabled").value(
+                jsonGenerator.writeFieldName("cacheClusterEnabled").writeValue(
                         createDeploymentRequest.getCacheClusterEnabled());
             }
-
             if (createDeploymentRequest.getCacheClusterSize() != null) {
-                jsonWriter.key("cacheClusterSize").value(
+                jsonGenerator.writeFieldName("cacheClusterSize").writeValue(
                         createDeploymentRequest.getCacheClusterSize());
             }
 
             java.util.Map<String, String> variablesMap = createDeploymentRequest
                     .getVariables();
             if (variablesMap != null) {
-                jsonWriter.key("variables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("variables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> variablesMapValue : variablesMap
                         .entrySet()) {
                     if (variablesMapValue.getValue() != null) {
-                        jsonWriter.key(variablesMapValue.getKey());
+                        jsonGenerator
+                                .writeFieldName(variablesMapValue.getKey());
 
-                        jsonWriter.value(variablesMapValue.getValue());
+                        jsonGenerator.writeValue(variablesMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

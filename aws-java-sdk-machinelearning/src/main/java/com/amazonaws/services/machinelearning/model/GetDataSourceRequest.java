@@ -53,6 +53,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      * @param dataSourceId
      *        The ID assigned to the <code>DataSource</code> at creation.
      */
+
     public void setDataSourceId(String dataSourceId) {
         this.dataSourceId = dataSourceId;
     }
@@ -64,6 +65,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID assigned to the <code>DataSource</code> at creation.
      */
+
     public String getDataSourceId() {
         return this.dataSourceId;
     }
@@ -78,6 +80,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceRequest withDataSourceId(String dataSourceId) {
         setDataSourceId(dataSourceId);
         return this;
@@ -104,6 +107,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        If false, <code>DataSourceSchema</code> is not returned.
      */
+
     public void setVerbose(Boolean verbose) {
         this.verbose = verbose;
     }
@@ -128,6 +132,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         If false, <code>DataSourceSchema</code> is not returned.
      */
+
     public Boolean getVerbose() {
         return this.verbose;
     }
@@ -155,6 +160,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDataSourceRequest withVerbose(Boolean verbose) {
         setVerbose(verbose);
         return this;
@@ -180,6 +186,7 @@ public class GetDataSourceRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         If false, <code>DataSourceSchema</code> is not returned.
      */
+
     public Boolean isVerbose() {
         return this.verbose;
     }

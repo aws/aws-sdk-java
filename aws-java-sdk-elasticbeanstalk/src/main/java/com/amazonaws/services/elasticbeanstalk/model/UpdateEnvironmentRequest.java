@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to update an environment.
+ * </p>
  */
 public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -65,7 +67,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -136,6 +138,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        The name of the application with which the environment is
      *        associated.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -148,6 +151,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return The name of the application with which the environment is
      *         associated.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -163,6 +167,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -193,6 +198,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -221,6 +227,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -252,6 +259,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -278,6 +286,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -302,6 +311,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -329,6 +339,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
@@ -340,7 +351,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -349,9 +360,10 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -362,7 +374,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -370,9 +382,10 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         Specify a group name only if the environment's name is specified
      *         in an environment manifest and not with the environment name or
      *         environment ID parameters. See <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *         >Environment Manifest (env.yaml)</a> for details.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -383,7 +396,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name or environment ID parameters.
      * See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -392,11 +405,12 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name or
      *        environment ID parameters. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -412,6 +426,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        If this parameter is specified, AWS Elastic Beanstalk updates the
      *        description of this environment.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -425,6 +440,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return If this parameter is specified, AWS Elastic Beanstalk updates the
      *         description of this environment.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -441,6 +457,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -462,6 +479,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        type, AWS Elastic Beanstalk returns
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setTier(EnvironmentTier tier) {
         this.tier = tier;
     }
@@ -481,6 +499,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         type, AWS Elastic Beanstalk returns
      *         <code>InvalidParameterValue</code> error.
      */
+
     public EnvironmentTier getTier() {
         return this.tier;
     }
@@ -503,6 +522,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withTier(EnvironmentTier tier) {
         setTier(tier);
         return this;
@@ -521,6 +541,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        application version is found, returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -537,6 +558,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         application version is found, returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -556,6 +578,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -575,6 +598,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        configuration template is found, AWS Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -592,6 +616,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         configuration template is found, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -612,6 +637,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;
@@ -627,6 +653,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        This specifies the platform version that the environment will run
      *        after the environment is updated.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -640,6 +667,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return This specifies the platform version that the environment will run
      *         after the environment is updated.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -656,6 +684,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -673,6 +702,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         associated with the running environment and sets the specified
      *         configuration options to the requested value.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -692,6 +722,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        associated with the running environment and sets the specified
      *        configuration options to the requested value.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -723,6 +754,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -749,6 +781,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
@@ -764,6 +797,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return A list of custom user-defined configuration options to remove
      *         from the configuration set for this environment.
      */
+
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         if (optionsToRemove == null) {
             optionsToRemove = new com.amazonaws.internal.SdkInternalList<OptionSpecification>();
@@ -781,6 +815,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A list of custom user-defined configuration options to remove from
      *        the configuration set for this environment.
      */
+
     public void setOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {
@@ -810,6 +845,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withOptionsToRemove(
             OptionSpecification... optionsToRemove) {
         if (this.optionsToRemove == null) {
@@ -834,6 +870,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEnvironmentRequest withOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         setOptionsToRemove(optionsToRemove);

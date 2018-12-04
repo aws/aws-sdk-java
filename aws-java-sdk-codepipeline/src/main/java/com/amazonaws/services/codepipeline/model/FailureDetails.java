@@ -53,6 +53,7 @@ public class FailureDetails implements Serializable, Cloneable {
      *        The type of the failure.
      * @see FailureType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -65,6 +66,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * @return The type of the failure.
      * @see FailureType
      */
+
     public String getType() {
         return this.type;
     }
@@ -80,6 +82,7 @@ public class FailureDetails implements Serializable, Cloneable {
      *         chained together.
      * @see FailureType
      */
+
     public FailureDetails withType(String type) {
         setType(type);
         return this;
@@ -92,10 +95,9 @@ public class FailureDetails implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the failure.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see FailureType
      */
+
     public void setType(FailureType type) {
         this.type = type.toString();
     }
@@ -111,6 +113,7 @@ public class FailureDetails implements Serializable, Cloneable {
      *         chained together.
      * @see FailureType
      */
+
     public FailureDetails withType(FailureType type) {
         setType(type);
         return this;
@@ -124,6 +127,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * @param message
      *        The message about the failure.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -135,6 +139,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * 
      * @return The message about the failure.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -149,6 +154,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailureDetails withMessage(String message) {
         setMessage(message);
         return this;
@@ -162,6 +168,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * @param externalExecutionId
      *        The external ID of the run of the action that failed.
      */
+
     public void setExternalExecutionId(String externalExecutionId) {
         this.externalExecutionId = externalExecutionId;
     }
@@ -173,6 +180,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * 
      * @return The external ID of the run of the action that failed.
      */
+
     public String getExternalExecutionId() {
         return this.externalExecutionId;
     }
@@ -187,6 +195,7 @@ public class FailureDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailureDetails withExternalExecutionId(String externalExecutionId) {
         setExternalExecutionId(externalExecutionId);
         return this;

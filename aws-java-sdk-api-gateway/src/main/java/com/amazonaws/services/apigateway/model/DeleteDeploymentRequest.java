@@ -51,6 +51,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      *        The identifier of the <a>RestApi</a> resource for the
      *        <a>Deployment</a> resource to delete.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -64,6 +65,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the <a>RestApi</a> resource for the
      *         <a>Deployment</a> resource to delete.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -80,6 +82,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -93,6 +96,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      * @param deploymentId
      *        The identifier of the <a>Deployment</a> resource to delete.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -104,6 +108,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the <a>Deployment</a> resource to delete.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -118,6 +123,7 @@ public class DeleteDeploymentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

@@ -67,6 +67,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      *        Note that you cannot associate a VPC with a hosted zone that
      *        doesn't have an existing VPC association.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -86,6 +87,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      *         Note that you cannot associate a VPC with a hosted zone that
      *         doesn't have an existing VPC association.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -107,6 +109,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateVPCWithHostedZoneRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -121,6 +124,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * @param vPC
      *        The VPC that you want your hosted zone to be associated with.
      */
+
     public void setVPC(VPC vPC) {
         this.vPC = vPC;
     }
@@ -132,6 +136,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * 
      * @return The VPC that you want your hosted zone to be associated with.
      */
+
     public VPC getVPC() {
         return this.vPC;
     }
@@ -146,6 +151,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateVPCWithHostedZoneRequest withVPC(VPC vPC) {
         setVPC(vPC);
         return this;
@@ -161,6 +167,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      *        Optional:</i> Any comments you want to include about a
      *        <code>AssociateVPCWithHostedZoneRequest
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -174,6 +181,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * @return Optional:</i> Any comments you want to include about a
      *         <code>AssociateVPCWithHostedZoneRequest
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -190,6 +198,7 @@ public class AssociateVPCWithHostedZoneRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssociateVPCWithHostedZoneRequest withComment(String comment) {
         setComment(comment);
         return this;

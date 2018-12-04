@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents the user's current activity limits returned from a successful
- * <code>GetSendQuota</code> request.
- * </p>
+ * 
  */
 public class GetSendQuotaResult implements Serializable, Cloneable {
 
@@ -59,6 +56,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      *        The maximum number of emails the user is allowed to send in a
      *        24-hour interval. A value of -1 signifies an unlimited quota.
      */
+
     public void setMax24HourSend(Double max24HourSend) {
         this.max24HourSend = max24HourSend;
     }
@@ -72,6 +70,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * @return The maximum number of emails the user is allowed to send in a
      *         24-hour interval. A value of -1 signifies an unlimited quota.
      */
+
     public Double getMax24HourSend() {
         return this.max24HourSend;
     }
@@ -88,6 +87,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSendQuotaResult withMax24HourSend(Double max24HourSend) {
         setMax24HourSend(max24HourSend);
         return this;
@@ -107,6 +107,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      *        accepts the user's messages might be less than the maximum send
      *        rate.
      */
+
     public void setMaxSendRate(Double maxSendRate) {
         this.maxSendRate = maxSendRate;
     }
@@ -124,6 +125,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      *         accepts the user's messages might be less than the maximum send
      *         rate.
      */
+
     public Double getMaxSendRate() {
         return this.maxSendRate;
     }
@@ -144,6 +146,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSendQuotaResult withMaxSendRate(Double maxSendRate) {
         setMaxSendRate(maxSendRate);
         return this;
@@ -157,6 +160,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * @param sentLast24Hours
      *        The number of emails sent during the previous 24 hours.
      */
+
     public void setSentLast24Hours(Double sentLast24Hours) {
         this.sentLast24Hours = sentLast24Hours;
     }
@@ -168,6 +172,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * 
      * @return The number of emails sent during the previous 24 hours.
      */
+
     public Double getSentLast24Hours() {
         return this.sentLast24Hours;
     }
@@ -182,6 +187,7 @@ public class GetSendQuotaResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSendQuotaResult withSentLast24Hours(Double sentLast24Hours) {
         setSentLast24Hours(sentLast24Hours);
         return this;

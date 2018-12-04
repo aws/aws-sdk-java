@@ -45,16 +45,16 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createBranchAsync(
+    public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest request) {
 
         return createBranchAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createBranchAsync(
+    public java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +105,21 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCommitResult> getCommitAsync(
+            GetCommitRequest request) {
+
+        return getCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommitResult> getCommitAsync(
+            GetCommitRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
             GetRepositoryRequest request) {
 
@@ -115,6 +130,21 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     public java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
             GetRepositoryRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(
+            GetRepositoryTriggersRequest request) {
+
+        return getRepositoryTriggersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(
+            GetRepositoryTriggersRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,46 +180,76 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    public java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(
+            PutRepositoryTriggersRequest request) {
+
+        return putRepositoryTriggersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(
+            PutRepositoryTriggersRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(
+            TestRepositoryTriggersRequest request) {
+
+        return testRepositoryTriggersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(
+            TestRepositoryTriggersRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest request) {
 
         return updateDefaultBranchAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    public java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest request) {
 
         return updateRepositoryDescriptionAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    public java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest request) {
 
         return updateRepositoryNameAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    public java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -29,6 +29,7 @@ import java.lang.annotation.Target;
  * This annotation is required if this attribute will be used as index key for
  * item queries.
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBIndexRangeKey {

@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,43 @@ public class ThumbnailsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Format", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setFormat(StringJsonUnmarshaller.getInstance()
+                    thumbnails.setFormat(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Interval", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setInterval(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    thumbnails.setInterval(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setResolution(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thumbnails.setResolution(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setAspectRatio(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thumbnails.setAspectRatio(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxWidth", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setMaxWidth(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    thumbnails.setMaxWidth(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MaxHeight", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setMaxHeight(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thumbnails.setMaxHeight(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizingPolicy", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setSizingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thumbnails.setSizingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PaddingPolicy", targetDepth)) {
                     context.nextToken();
-                    thumbnails.setPaddingPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    thumbnails.setPaddingPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -55,9 +57,8 @@ public class FilterStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Values/member", targetDepth)) {
-                    filter.getValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    filter.withValues(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 

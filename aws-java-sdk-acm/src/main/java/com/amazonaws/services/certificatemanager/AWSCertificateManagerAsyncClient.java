@@ -16,6 +16,7 @@
 package com.amazonaws.services.certificatemanager;
 
 import com.amazonaws.services.certificatemanager.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing ACM asynchronously. Each asynchronous method will
@@ -25,17 +26,19 @@ import com.amazonaws.services.certificatemanager.model.*;
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) CLI Command Reference. This
- * guide provides descriptions, syntax, and usage examples for each ACM CLI
- * command. You can use AWS Certificate Manager to request ACM Certificates for
- * your AWS-based websites and applications. For general information about using
- * ACM and for more information about using the console, see the <a
- * href="url-acm-ug;acm-overview.html">AWS Certificate Manager User Guide</a>.
- * For more information about using the ACM API, see the <a
+ * Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide
+ * provides descriptions, syntax, and usage examples for each ACM command. You
+ * can use AWS Certificate Manager to request ACM Certificates for your
+ * AWS-based websites and applications. For general information about using ACM
+ * and for more information about using the console, see the <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
+ * Certificate Manager User Guide</a>. For more information about using the ACM
+ * API, see the <a
  * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
  * Certificate Manager API Reference</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSCertificateManagerAsyncClient extends
         AWSCertificateManagerClient implements AWSCertificateManagerAsync {
 
@@ -134,8 +137,7 @@ public class AWSCertificateManagerAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -227,9 +229,7 @@ public class AWSCertificateManagerAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -268,26 +268,60 @@ public class AWSCertificateManagerAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request) {
+
+        return addTagsToCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
+            final AddTagsToCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<AddTagsToCertificateResult>() {
+                    @Override
+                    public AddTagsToCertificateResult call() throws Exception {
+                        AddTagsToCertificateResult result;
+
+                        try {
+                            result = addTagsToCertificate(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest request) {
 
         return deleteCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             final DeleteCertificateRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteCertificateResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteCertificateResult call() throws Exception {
+                        DeleteCertificateResult result;
 
                         try {
-                            deleteCertificate(request);
-                            result = null;
+                            result = deleteCertificate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -409,6 +443,77 @@ public class AWSCertificateManagerAsyncClient extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request) {
+
+        return listTagsForCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            final ListTagsForCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<ListTagsForCertificateResult>() {
+                    @Override
+                    public ListTagsForCertificateResult call() throws Exception {
+                        ListTagsForCertificateResult result;
+
+                        try {
+                            result = listTagsForCertificate(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request) {
+
+        return removeTagsFromCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
+            final RemoveTagsFromCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<RemoveTagsFromCertificateResult>() {
+                    @Override
+                    public RemoveTagsFromCertificateResult call()
+                            throws Exception {
+                        RemoveTagsFromCertificateResult result;
+
+                        try {
+                            result = removeTagsFromCertificate(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestCertificateResult> requestCertificateAsync(
             RequestCertificateRequest request) {
 
@@ -444,26 +549,25 @@ public class AWSCertificateManagerAsyncClient extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    public java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             ResendValidationEmailRequest request) {
 
         return resendValidationEmailAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    public java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             final ResendValidationEmailRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<ResendValidationEmailResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public ResendValidationEmailResult call() throws Exception {
+                        ResendValidationEmailResult result;
 
                         try {
-                            resendValidationEmail(request);
-                            result = null;
+                            result = resendValidationEmail(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

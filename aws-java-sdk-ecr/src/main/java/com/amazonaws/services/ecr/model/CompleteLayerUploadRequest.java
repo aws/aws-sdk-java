@@ -65,6 +65,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      *        layers. If you do not specify a registry, the default registry is
      *        assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -80,6 +81,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      *         upload layers. If you do not specify a registry, the default
      *         registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -98,6 +100,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -111,6 +114,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @param repositoryName
      *        The name of the repository to associate with the image layer.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -122,6 +126,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the repository to associate with the image layer.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -136,6 +141,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -151,6 +157,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      *        The upload ID from a previous <a>InitiateLayerUpload</a> operation
      *        to associate with the image layer.
      */
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -164,6 +171,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return The upload ID from a previous <a>InitiateLayerUpload</a>
      *         operation to associate with the image layer.
      */
+
     public String getUploadId() {
         return this.uploadId;
     }
@@ -180,6 +188,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadRequest withUploadId(String uploadId) {
         setUploadId(uploadId);
         return this;
@@ -192,6 +201,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * 
      * @return The <code>sha256</code> digest of the image layer.
      */
+
     public java.util.List<String> getLayerDigests() {
         return layerDigests;
     }
@@ -204,6 +214,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @param layerDigests
      *        The <code>sha256</code> digest of the image layer.
      */
+
     public void setLayerDigests(java.util.Collection<String> layerDigests) {
         if (layerDigests == null) {
             this.layerDigests = null;
@@ -229,6 +240,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadRequest withLayerDigests(String... layerDigests) {
         if (this.layerDigests == null) {
             setLayerDigests(new java.util.ArrayList<String>(layerDigests.length));
@@ -249,6 +261,7 @@ public class CompleteLayerUploadRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CompleteLayerUploadRequest withLayerDigests(
             java.util.Collection<String> layerDigests) {
         setLayerDigests(layerDigests);

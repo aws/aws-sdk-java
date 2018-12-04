@@ -62,6 +62,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table to delete.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -73,6 +74,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table to delete.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -87,6 +89,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTableRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;

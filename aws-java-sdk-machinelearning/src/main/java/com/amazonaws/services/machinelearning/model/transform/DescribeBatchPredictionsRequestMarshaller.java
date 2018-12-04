@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeBatchPredictionsRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeBatchPredictionsRequestMarshaller
         implements
         Marshaller<Request<DescribeBatchPredictionsRequest>, DescribeBatchPredictionsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeBatchPredictionsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeBatchPredictionsRequest> marshall(
             DescribeBatchPredictionsRequest describeBatchPredictionsRequest) {
@@ -65,74 +66,63 @@ public class DescribeBatchPredictionsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeBatchPredictionsRequest.getFilterVariable() != null) {
-                jsonWriter.key("FilterVariable").value(
+                jsonGenerator.writeFieldName("FilterVariable").writeValue(
                         describeBatchPredictionsRequest.getFilterVariable());
             }
-
             if (describeBatchPredictionsRequest.getEQ() != null) {
-                jsonWriter.key("EQ").value(
+                jsonGenerator.writeFieldName("EQ").writeValue(
                         describeBatchPredictionsRequest.getEQ());
             }
-
             if (describeBatchPredictionsRequest.getGT() != null) {
-                jsonWriter.key("GT").value(
+                jsonGenerator.writeFieldName("GT").writeValue(
                         describeBatchPredictionsRequest.getGT());
             }
-
             if (describeBatchPredictionsRequest.getLT() != null) {
-                jsonWriter.key("LT").value(
+                jsonGenerator.writeFieldName("LT").writeValue(
                         describeBatchPredictionsRequest.getLT());
             }
-
             if (describeBatchPredictionsRequest.getGE() != null) {
-                jsonWriter.key("GE").value(
+                jsonGenerator.writeFieldName("GE").writeValue(
                         describeBatchPredictionsRequest.getGE());
             }
-
             if (describeBatchPredictionsRequest.getLE() != null) {
-                jsonWriter.key("LE").value(
+                jsonGenerator.writeFieldName("LE").writeValue(
                         describeBatchPredictionsRequest.getLE());
             }
-
             if (describeBatchPredictionsRequest.getNE() != null) {
-                jsonWriter.key("NE").value(
+                jsonGenerator.writeFieldName("NE").writeValue(
                         describeBatchPredictionsRequest.getNE());
             }
-
             if (describeBatchPredictionsRequest.getPrefix() != null) {
-                jsonWriter.key("Prefix").value(
+                jsonGenerator.writeFieldName("Prefix").writeValue(
                         describeBatchPredictionsRequest.getPrefix());
             }
-
             if (describeBatchPredictionsRequest.getSortOrder() != null) {
-                jsonWriter.key("SortOrder").value(
+                jsonGenerator.writeFieldName("SortOrder").writeValue(
                         describeBatchPredictionsRequest.getSortOrder());
             }
-
             if (describeBatchPredictionsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeBatchPredictionsRequest.getNextToken());
             }
-
             if (describeBatchPredictionsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(
+                jsonGenerator.writeFieldName("Limit").writeValue(
                         describeBatchPredictionsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

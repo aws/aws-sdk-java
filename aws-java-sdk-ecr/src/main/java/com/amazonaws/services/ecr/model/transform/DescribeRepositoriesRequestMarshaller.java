@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.ecr.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeRepositoriesRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class DescribeRepositoriesRequestMarshaller
         implements
         Marshaller<Request<DescribeRepositoriesRequest>, DescribeRepositoriesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeRepositoriesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeRepositoriesRequest> marshall(
             DescribeRepositoriesRequest describeRepositoriesRequest) {
@@ -65,47 +66,44 @@ public class DescribeRepositoriesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeRepositoriesRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         describeRepositoriesRequest.getRegistryId());
             }
 
             java.util.List<String> repositoryNamesList = describeRepositoriesRequest
                     .getRepositoryNames();
             if (repositoryNamesList != null) {
-                jsonWriter.key("repositoryNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("repositoryNames");
+                jsonGenerator.writeStartArray();
                 for (String repositoryNamesListValue : repositoryNamesList) {
                     if (repositoryNamesListValue != null) {
-                        jsonWriter.value(repositoryNamesListValue);
+                        jsonGenerator.writeValue(repositoryNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (describeRepositoriesRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         describeRepositoriesRequest.getNextToken());
             }
-
             if (describeRepositoriesRequest.getMaxResults() != null) {
-                jsonWriter.key("maxResults").value(
+                jsonGenerator.writeFieldName("maxResults").writeValue(
                         describeRepositoriesRequest.getMaxResults());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

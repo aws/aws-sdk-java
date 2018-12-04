@@ -42,6 +42,7 @@ public class DescribeIdentityRequest extends AmazonWebServiceRequest implements
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -53,6 +54,7 @@ public class DescribeIdentityRequest extends AmazonWebServiceRequest implements
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -67,6 +69,7 @@ public class DescribeIdentityRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;

@@ -40,6 +40,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
      * @param encodedMessage
      *        The encoded message that was returned with the response.
      */
+
     public void setEncodedMessage(String encodedMessage) {
         this.encodedMessage = encodedMessage;
     }
@@ -51,6 +52,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
      * 
      * @return The encoded message that was returned with the response.
      */
+
     public String getEncodedMessage() {
         return this.encodedMessage;
     }
@@ -65,6 +67,7 @@ public class DecodeAuthorizationMessageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecodeAuthorizationMessageRequest withEncodedMessage(
             String encodedMessage) {
         setEncodedMessage(encodedMessage);

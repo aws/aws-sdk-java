@@ -53,6 +53,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      *        repository policy to delete. If you do not specify a registry, the
      *        default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -68,6 +69,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      *         repository policy to delete. If you do not specify a registry,
      *         the default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -86,6 +88,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryPolicyRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -101,6 +104,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      *        The name of the repository that is associated with the repository
      *        policy to delete.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -114,6 +118,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return The name of the repository that is associated with the repository
      *         policy to delete.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -130,6 +135,7 @@ public class DeleteRepositoryPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryPolicyRequest withRepositoryName(
             String repositoryName) {
         setRepositoryName(repositoryName);

@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,74 +55,73 @@ public class ConfigRuleEvaluationStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setConfigRuleName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setConfigRuleName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleArn", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setConfigRuleArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setConfigRuleArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleId", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setConfigRuleId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setConfigRuleId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulInvocationTime",
                         targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
-                            .setLastSuccessfulInvocationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastSuccessfulInvocationTime(context
+                                    .getUnmarshaller(java.util.Date.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("LastFailedInvocationTime",
                         targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
-                            .setLastFailedInvocationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastFailedInvocationTime(context
+                                    .getUnmarshaller(java.util.Date.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulEvaluationTime",
                         targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
-                            .setLastSuccessfulEvaluationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastSuccessfulEvaluationTime(context
+                                    .getUnmarshaller(java.util.Date.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("LastFailedEvaluationTime",
                         targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
-                            .setLastFailedEvaluationTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setLastFailedEvaluationTime(context
+                                    .getUnmarshaller(java.util.Date.class)
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("FirstActivatedTime", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setFirstActivatedTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setFirstActivatedTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setLastErrorCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setLastErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configRuleEvaluationStatus
-                            .setLastErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configRuleEvaluationStatus.setLastErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FirstEvaluationStarted",
                         targetDepth)) {
                     context.nextToken();
                     configRuleEvaluationStatus
-                            .setFirstEvaluationStarted(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setFirstEvaluationStarted(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -49,6 +49,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      * @param domainName
      *        The name of the <a>DomainName</a> resource to be changed.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -60,6 +61,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the <a>DomainName</a> resource to be changed.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -74,6 +76,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -89,6 +92,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -104,6 +108,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -134,6 +139,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -159,6 +165,7 @@ public class UpdateDomainNameRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainNameRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

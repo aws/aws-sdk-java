@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeleteApiKeyRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DeleteApiKeyRequestMarshaller implements
         Marshaller<Request<DeleteApiKeyRequest>, DeleteApiKeyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DeleteApiKeyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DeleteApiKeyRequest> marshall(
             DeleteApiKeyRequest deleteApiKeyRequest) {
@@ -65,8 +73,9 @@ public class DeleteApiKeyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{api_Key}",
-                (deleteApiKeyRequest.getApiKey() == null) ? "" : StringUtils
-                        .fromString(deleteApiKeyRequest.getApiKey()));
+                (deleteApiKeyRequest.getApiKey() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(deleteApiKeyRequest
+                                .getApiKey()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

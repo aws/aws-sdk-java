@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,56 +54,56 @@ public class CommandJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
                     context.nextToken();
-                    command.setCommandId(StringJsonUnmarshaller.getInstance()
+                    command.setCommandId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DocumentName", targetDepth)) {
                     context.nextToken();
-                    command.setDocumentName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setDocumentName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
-                    command.setComment(StringJsonUnmarshaller.getInstance()
+                    command.setComment(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ExpiresAfter", targetDepth)) {
                     context.nextToken();
-                    command.setExpiresAfter(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    command.setExpiresAfter(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     command.setParameters(new MapUnmarshaller<String, java.util.List<String>>(
-                            StringJsonUnmarshaller.getInstance(),
-                            new ListUnmarshaller<String>(StringJsonUnmarshaller
-                                    .getInstance())).unmarshall(context));
+                            context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class)))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
                     context.nextToken();
-                    command.setInstanceIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    command.setInstanceIds(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
-                    command.setRequestedDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setRequestedDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    command.setStatus(StringJsonUnmarshaller.getInstance()
+                    command.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("OutputS3BucketName", targetDepth)) {
                     context.nextToken();
-                    command.setOutputS3BucketName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setOutputS3BucketName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputS3KeyPrefix", targetDepth)) {
                     context.nextToken();
-                    command.setOutputS3KeyPrefix(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    command.setOutputS3KeyPrefix(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

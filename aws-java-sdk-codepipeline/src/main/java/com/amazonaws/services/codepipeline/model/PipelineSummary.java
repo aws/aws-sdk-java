@@ -59,6 +59,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @param name
      *        The name of the pipeline.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -70,6 +71,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * 
      * @return The name of the pipeline.
      */
+
     public String getName() {
         return this.name;
     }
@@ -84,6 +86,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineSummary withName(String name) {
         setName(name);
         return this;
@@ -97,6 +100,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @param version
      *        The version number of the pipeline.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -108,6 +112,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * 
      * @return The version number of the pipeline.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -122,6 +127,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineSummary withVersion(Integer version) {
         setVersion(version);
         return this;
@@ -135,6 +141,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @param created
      *        The date and time the pipeline was created, in timestamp format.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -146,6 +153,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * 
      * @return The date and time the pipeline was created, in timestamp format.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -160,6 +168,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineSummary withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -175,6 +184,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      *        The date and time of the last update to the pipeline, in timestamp
      *        format.
      */
+
     public void setUpdated(java.util.Date updated) {
         this.updated = updated;
     }
@@ -188,6 +198,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @return The date and time of the last update to the pipeline, in
      *         timestamp format.
      */
+
     public java.util.Date getUpdated() {
         return this.updated;
     }
@@ -204,6 +215,7 @@ public class PipelineSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineSummary withUpdated(java.util.Date updated) {
         setUpdated(updated);
         return this;

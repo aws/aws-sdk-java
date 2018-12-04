@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetStreamingDistributionConfigRequest Marshaller
@@ -60,10 +63,11 @@ public class GetStreamingDistributionConfigRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (getStreamingDistributionConfigRequest.getId() == null) ? ""
-                                : StringUtils
+                        (getStreamingDistributionConfigRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(getStreamingDistributionConfigRequest
-                                                .getId()));
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

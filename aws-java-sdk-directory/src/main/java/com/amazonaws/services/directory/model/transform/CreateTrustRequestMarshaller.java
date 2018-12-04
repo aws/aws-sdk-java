@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateTrustRequest Marshaller
  */
 public class CreateTrustRequestMarshaller implements
         Marshaller<Request<CreateTrustRequest>, CreateTrustRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateTrustRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateTrustRequest> marshall(
             CreateTrustRequest createTrustRequest) {
@@ -64,44 +64,54 @@ public class CreateTrustRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createTrustRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         createTrustRequest.getDirectoryId());
             }
-
             if (createTrustRequest.getRemoteDomainName() != null) {
-                jsonWriter.key("RemoteDomainName").value(
+                jsonGenerator.writeFieldName("RemoteDomainName").writeValue(
                         createTrustRequest.getRemoteDomainName());
             }
-
             if (createTrustRequest.getTrustPassword() != null) {
-                jsonWriter.key("TrustPassword").value(
+                jsonGenerator.writeFieldName("TrustPassword").writeValue(
                         createTrustRequest.getTrustPassword());
             }
-
             if (createTrustRequest.getTrustDirection() != null) {
-                jsonWriter.key("TrustDirection").value(
+                jsonGenerator.writeFieldName("TrustDirection").writeValue(
                         createTrustRequest.getTrustDirection());
             }
-
             if (createTrustRequest.getTrustType() != null) {
-                jsonWriter.key("TrustType").value(
+                jsonGenerator.writeFieldName("TrustType").writeValue(
                         createTrustRequest.getTrustType());
             }
 
-            jsonWriter.endObject();
+            com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrsList = (com.amazonaws.internal.SdkInternalList<String>) createTrustRequest
+                    .getConditionalForwarderIpAddrs();
+            if (!conditionalForwarderIpAddrsList.isEmpty()
+                    || !conditionalForwarderIpAddrsList.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("ConditionalForwarderIpAddrs");
+                jsonGenerator.writeStartArray();
+                for (String conditionalForwarderIpAddrsListValue : conditionalForwarderIpAddrsList) {
+                    if (conditionalForwarderIpAddrsListValue != null) {
+                        jsonGenerator
+                                .writeValue(conditionalForwarderIpAddrsListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -19,138 +19,196 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a command request.
+ * </p>
  */
 public class Command implements Serializable, Cloneable {
 
-    /** A unique identifier for this command. */
+    /**
+     * <p>
+     * A unique identifier for this command.
+     * </p>
+     */
     private String commandId;
-    /** The name of the SSM document requested for execution. */
+    /**
+     * <p>
+     * The name of the SSM document requested for execution.
+     * </p>
+     */
     private String documentName;
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      */
     private String comment;
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      */
     private java.util.Date expiresAfter;
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
-    /** The instance IDs against which this command was requested. */
+    /**
+     * <p>
+     * The instance IDs against which this command was requested.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
-    /** The date and time the command was requested. */
+    /**
+     * <p>
+     * The date and time the command was requested.
+     * </p>
+     */
     private java.util.Date requestedDateTime;
-    /** The status of the command. */
+    /**
+     * <p>
+     * The status of the command.
+     * </p>
+     */
     private String status;
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      */
     private String outputS3BucketName;
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @param commandId
      *        A unique identifier for this command.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @return A unique identifier for this command.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
 
     /**
+     * <p>
      * A unique identifier for this command.
+     * </p>
      * 
      * @param commandId
      *        A unique identifier for this command.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The name of the SSM document requested for execution.
      */
+
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @return The name of the SSM document requested for execution.
      */
+
     public String getDocumentName() {
         return this.documentName;
     }
 
     /**
+     * <p>
      * The name of the SSM document requested for execution.
+     * </p>
      * 
      * @param documentName
      *        The name of the SSM document requested for execution.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withDocumentName(String documentName) {
         setDocumentName(documentName);
         return this;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
      *        description of what the command should do.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
      */
+
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -158,42 +216,51 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withComment(String comment) {
         setComment(comment);
         return this;
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @param expiresAfter
      *        If this time is reached and the command has not already started
      *        executing, it will not execute. Calculated based on the
      *        ExpiresAfter user input provided as part of the SendCommand API.
      */
+
     public void setExpiresAfter(java.util.Date expiresAfter) {
         this.expiresAfter = expiresAfter;
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @return If this time is reached and the command has not already started
      *         executing, it will not execute. Calculated based on the
      *         ExpiresAfter user input provided as part of the SendCommand API.
      */
+
     public java.util.Date getExpiresAfter() {
         return this.expiresAfter;
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute. Calculated based on the ExpiresAfter user
      * input provided as part of the SendCommand API.
+     * </p>
      * 
      * @param expiresAfter
      *        If this time is reached and the command has not already started
@@ -202,38 +269,47 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withExpiresAfter(java.util.Date expiresAfter) {
         setExpiresAfter(expiresAfter);
         return this;
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @return The parameter values to be inserted in the SSM document when
      *         executing the command.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @param parameters
      *        The parameter values to be inserted in the SSM document when
      *        executing the command.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
     }
 
     /**
+     * <p>
      * The parameter values to be inserted in the SSM document when executing
      * the command.
+     * </p>
      * 
      * @param parameters
      *        The parameter values to be inserted in the SSM document when
@@ -241,6 +317,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -262,16 +339,20 @@ public class Command implements Serializable, Cloneable {
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Command clearParametersEntries() {
         this.parameters = null;
         return this;
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @return The instance IDs against which this command was requested.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -280,11 +361,14 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @param instanceIds
      *        The instance IDs against which this command was requested.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -296,7 +380,9 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceIds(java.util.Collection)} or
@@ -309,6 +395,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -321,73 +408,93 @@ public class Command implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The instance IDs against which this command was requested.
+     * </p>
      * 
      * @param instanceIds
      *        The instance IDs against which this command was requested.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withInstanceIds(java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
         return this;
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @param requestedDateTime
      *        The date and time the command was requested.
      */
+
     public void setRequestedDateTime(java.util.Date requestedDateTime) {
         this.requestedDateTime = requestedDateTime;
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @return The date and time the command was requested.
      */
+
     public java.util.Date getRequestedDateTime() {
         return this.requestedDateTime;
     }
 
     /**
+     * <p>
      * The date and time the command was requested.
+     * </p>
      * 
      * @param requestedDateTime
      *        The date and time the command was requested.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withRequestedDateTime(java.util.Date requestedDateTime) {
         setRequestedDateTime(requestedDateTime);
         return this;
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
      * @see CommandStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @return The status of the command.
      * @see CommandStatus
      */
+
     public String getStatus() {
         return this.status;
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -395,26 +502,30 @@ public class Command implements Serializable, Cloneable {
      *         chained together.
      * @see CommandStatus
      */
+
     public Command withStatus(String status) {
         setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CommandStatus
      */
+
     public void setStatus(CommandStatus status) {
         this.status = status.toString();
     }
 
     /**
+     * <p>
      * The status of the command.
+     * </p>
      * 
      * @param status
      *        The status of the command.
@@ -422,37 +533,46 @@ public class Command implements Serializable, Cloneable {
      *         chained together.
      * @see CommandStatus
      */
+
     public Command withStatus(CommandStatus status) {
         setStatus(status);
         return this;
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
      *        be stored. This was requested when issuing the command.
      */
+
     public void setOutputS3BucketName(String outputS3BucketName) {
         this.outputS3BucketName = outputS3BucketName;
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @return The S3 bucket where the responses to the command executions
      *         should be stored. This was requested when issuing the command.
      */
+
     public String getOutputS3BucketName() {
         return this.outputS3BucketName;
     }
 
     /**
+     * <p>
      * The S3 bucket where the responses to the command executions should be
      * stored. This was requested when issuing the command.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The S3 bucket where the responses to the command executions should
@@ -460,42 +580,51 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withOutputS3BucketName(String outputS3BucketName) {
         setOutputS3BucketName(outputS3BucketName);
         return this;
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the
      *        command executions should be stored. This was requested when
      *        issuing the command.
      */
+
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
         this.outputS3KeyPrefix = outputS3KeyPrefix;
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @return The S3 directory path inside the bucket where the responses to
      *         the command executions should be stored. This was requested when
      *         issuing the command.
      */
+
     public String getOutputS3KeyPrefix() {
         return this.outputS3KeyPrefix;
     }
 
     /**
+     * <p>
      * The S3 directory path inside the bucket where the responses to the
      * command executions should be stored. This was requested when issuing the
      * command.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The S3 directory path inside the bucket where the responses to the
@@ -504,6 +633,7 @@ public class Command implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Command withOutputS3KeyPrefix(String outputS3KeyPrefix) {
         setOutputS3KeyPrefix(outputS3KeyPrefix);
         return this;

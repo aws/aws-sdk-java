@@ -55,8 +55,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -82,6 +87,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *        The name of the simulated resource, in Amazon Resource Name (ARN)
      *        format.
      */
+
     public void setEvalResourceName(String evalResourceName) {
         this.evalResourceName = evalResourceName;
     }
@@ -94,6 +100,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @return The name of the simulated resource, in Amazon Resource Name (ARN)
      *         format.
      */
+
     public String getEvalResourceName() {
         return this.evalResourceName;
     }
@@ -109,6 +116,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withEvalResourceName(String evalResourceName) {
         setEvalResourceName(evalResourceName);
         return this;
@@ -125,6 +133,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *        resource specified in <code>EvalResourceName</code>.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalResourceDecision(String evalResourceDecision) {
         this.evalResourceDecision = evalResourceDecision;
     }
@@ -139,6 +148,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *         resource specified in <code>EvalResourceName</code>.
      * @see PolicyEvaluationDecisionType
      */
+
     public String getEvalResourceDecision() {
         return this.evalResourceDecision;
     }
@@ -156,6 +166,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public ResourceSpecificResult withEvalResourceDecision(
             String evalResourceDecision) {
         setEvalResourceDecision(evalResourceDecision);
@@ -171,10 +182,9 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param evalResourceDecision
      *        The result of the simulation of the simulated API action on the
      *        resource specified in <code>EvalResourceName</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalResourceDecision(
             PolicyEvaluationDecisionType evalResourceDecision) {
         this.evalResourceDecision = evalResourceDecision.toString();
@@ -193,6 +203,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public ResourceSpecificResult withEvalResourceDecision(
             PolicyEvaluationDecisionType evalResourceDecision) {
         setEvalResourceDecision(evalResourceDecision);
@@ -215,6 +226,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *         overrides any allow, and the deny statement is the only entry
      *         included in the result.
      */
+
     public java.util.List<Statement> getMatchedStatements() {
         if (matchedStatements == null) {
             matchedStatements = new com.amazonaws.internal.SdkInternalList<Statement>();
@@ -239,6 +251,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *        overrides any allow, and the deny statement is the only entry
      *        included in the result.
      */
+
     public void setMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         if (matchedStatements == null) {
@@ -275,6 +288,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withMatchedStatements(
             Statement... matchedStatements) {
         if (this.matchedStatements == null) {
@@ -306,6 +320,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         setMatchedStatements(matchedStatements);
@@ -315,18 +330,31 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
      * 
      * @return A list of context keys that are required by the included input
      *         policies but that were not provided by one of the input
-     *         parameters. To discover the context keys used by a set of
-     *         policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *         parameters. This list is used when a list of ARNs is included in
+     *         the <code>ResourceArns</code> parameter instead of "*". If you do
+     *         not specify individual resources, by setting
+     *         <code>ResourceArns</code> to "*" or by not including the
+     *         <code>ResourceArns</code> parameter, then any missing context
+     *         values are instead included under the
+     *         <code>EvaluationResults</code> section. To discover the context
+     *         keys used by a set of policies, you can call
+     *         <a>GetContextKeysForCustomPolicy</a> or
      *         <a>GetContextKeysForPrincipalPolicy</a>.
      */
+
     public java.util.List<String> getMissingContextValues() {
         if (missingContextValues == null) {
             missingContextValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -337,8 +365,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -346,10 +379,18 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      */
+
     public void setMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         if (missingContextValues == null) {
@@ -364,8 +405,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -379,12 +425,20 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withMissingContextValues(
             String... missingContextValues) {
         if (this.missingContextValues == null) {
@@ -400,8 +454,13 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when a list of ARNs is included in the <code>ResourceArns</code>
+     * parameter instead of "*". If you do not specify individual resources, by
+     * setting <code>ResourceArns</code> to "*" or by not including the
+     * <code>ResourceArns</code> parameter, then any missing context values are
+     * instead included under the <code>EvaluationResults</code> section. To
+     * discover the context keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
@@ -409,12 +468,20 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     *        parameters. This list is used when a list of ARNs is included in
+     *        the <code>ResourceArns</code> parameter instead of "*". If you do
+     *        not specify individual resources, by setting
+     *        <code>ResourceArns</code> to "*" or by not including the
+     *        <code>ResourceArns</code> parameter, then any missing context
+     *        values are instead included under the
+     *        <code>EvaluationResults</code> section. To discover the context
+     *        keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
      *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         setMissingContextValues(missingContextValues);
@@ -437,6 +504,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *         to a resource, both the resource-based policy and the caller's
      *         IAM policy must grant access.
      */
+
     public java.util.Map<String, String> getEvalDecisionDetails() {
         if (evalDecisionDetails == null) {
             evalDecisionDetails = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -461,6 +529,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      *        a resource, both the resource-based policy and the caller's IAM
      *        policy must grant access.
      */
+
     public void setEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         this.evalDecisionDetails = evalDecisionDetails == null ? null
@@ -487,6 +556,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceSpecificResult withEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         setEvalDecisionDetails(evalDecisionDetails);
@@ -509,6 +579,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * Removes all the entries added into EvalDecisionDetails. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ResourceSpecificResult clearEvalDecisionDetailsEntries() {
         this.evalDecisionDetails = null;
         return this;

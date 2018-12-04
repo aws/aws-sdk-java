@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class MountPointJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("sourceVolume", targetDepth)) {
                     context.nextToken();
-                    mountPoint.setSourceVolume(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountPoint.setSourceVolume(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("containerPath", targetDepth)) {
                     context.nextToken();
-                    mountPoint.setContainerPath(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountPoint.setContainerPath(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("readOnly", targetDepth)) {
                     context.nextToken();
-                    mountPoint.setReadOnly(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    mountPoint.setReadOnly(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

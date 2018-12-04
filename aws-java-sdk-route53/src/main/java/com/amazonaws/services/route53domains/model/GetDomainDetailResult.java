@@ -272,6 +272,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -288,6 +289,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -307,6 +309,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -324,6 +327,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public java.util.List<Nameserver> getNameservers() {
         if (nameservers == null) {
             nameservers = new com.amazonaws.internal.SdkInternalList<Nameserver>();
@@ -344,6 +348,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
         if (nameservers == null) {
             this.nameservers = null;
@@ -375,6 +380,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withNameservers(Nameserver... nameservers) {
         if (this.nameservers == null) {
             setNameservers(new com.amazonaws.internal.SdkInternalList<Nameserver>(
@@ -401,6 +407,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withNameservers(
             java.util.Collection<Nameserver> nameservers) {
         setNameservers(nameservers);
@@ -421,6 +428,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: Boolean
      */
+
     public void setAutoRenew(Boolean autoRenew) {
         this.autoRenew = autoRenew;
     }
@@ -438,6 +446,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean getAutoRenew() {
         return this.autoRenew;
     }
@@ -458,6 +467,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withAutoRenew(Boolean autoRenew) {
         setAutoRenew(autoRenew);
         return this;
@@ -476,6 +486,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean isAutoRenew() {
         return this.autoRenew;
     }
@@ -510,6 +521,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *        <code>ExtraParams</code>
      */
+
     public void setAdminContact(ContactDetail adminContact) {
         this.adminContact = adminContact;
     }
@@ -543,6 +555,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      */
+
     public ContactDetail getAdminContact() {
         return this.adminContact;
     }
@@ -579,6 +592,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withAdminContact(ContactDetail adminContact) {
         setAdminContact(adminContact);
         return this;
@@ -614,6 +628,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *        <code>ExtraParams</code>
      */
+
     public void setRegistrantContact(ContactDetail registrantContact) {
         this.registrantContact = registrantContact;
     }
@@ -647,6 +662,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      */
+
     public ContactDetail getRegistrantContact() {
         return this.registrantContact;
     }
@@ -683,6 +699,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withRegistrantContact(
             ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
@@ -719,6 +736,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *        <code>ExtraParams</code>
      */
+
     public void setTechContact(ContactDetail techContact) {
         this.techContact = techContact;
     }
@@ -752,6 +770,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
      *         <code>ExtraParams</code>
      */
+
     public ContactDetail getTechContact() {
         return this.techContact;
     }
@@ -788,6 +807,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withTechContact(ContactDetail techContact) {
         setTechContact(techContact);
         return this;
@@ -813,6 +833,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: Boolean
      */
+
     public void setAdminPrivacy(Boolean adminPrivacy) {
         this.adminPrivacy = adminPrivacy;
     }
@@ -836,6 +857,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean getAdminPrivacy() {
         return this.adminPrivacy;
     }
@@ -862,6 +884,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withAdminPrivacy(Boolean adminPrivacy) {
         setAdminPrivacy(adminPrivacy);
         return this;
@@ -886,6 +909,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean isAdminPrivacy() {
         return this.adminPrivacy;
     }
@@ -910,6 +934,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: Boolean
      */
+
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
         this.registrantPrivacy = registrantPrivacy;
     }
@@ -933,6 +958,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean getRegistrantPrivacy() {
         return this.registrantPrivacy;
     }
@@ -959,6 +985,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withRegistrantPrivacy(Boolean registrantPrivacy) {
         setRegistrantPrivacy(registrantPrivacy);
         return this;
@@ -983,6 +1010,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean isRegistrantPrivacy() {
         return this.registrantPrivacy;
     }
@@ -1007,6 +1035,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: Boolean
      */
+
     public void setTechPrivacy(Boolean techPrivacy) {
         this.techPrivacy = techPrivacy;
     }
@@ -1030,6 +1059,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean getTechPrivacy() {
         return this.techPrivacy;
     }
@@ -1056,6 +1086,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withTechPrivacy(Boolean techPrivacy) {
         setTechPrivacy(techPrivacy);
         return this;
@@ -1080,6 +1111,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Boolean
      */
+
     public Boolean isTechPrivacy() {
         return this.techPrivacy;
     }
@@ -1101,6 +1133,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setRegistrarName(String registrarName) {
         this.registrarName = registrarName;
     }
@@ -1121,6 +1154,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getRegistrarName() {
         return this.registrarName;
     }
@@ -1144,6 +1178,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withRegistrarName(String registrarName) {
         setRegistrarName(registrarName);
         return this;
@@ -1164,6 +1199,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setWhoIsServer(String whoIsServer) {
         this.whoIsServer = whoIsServer;
     }
@@ -1182,6 +1218,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getWhoIsServer() {
         return this.whoIsServer;
     }
@@ -1203,6 +1240,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withWhoIsServer(String whoIsServer) {
         setWhoIsServer(whoIsServer);
         return this;
@@ -1221,6 +1259,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setRegistrarUrl(String registrarUrl) {
         this.registrarUrl = registrarUrl;
     }
@@ -1237,6 +1276,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getRegistrarUrl() {
         return this.registrarUrl;
     }
@@ -1256,6 +1296,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withRegistrarUrl(String registrarUrl) {
         setRegistrarUrl(registrarUrl);
         return this;
@@ -1280,6 +1321,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setAbuseContactEmail(String abuseContactEmail) {
         this.abuseContactEmail = abuseContactEmail;
     }
@@ -1302,6 +1344,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getAbuseContactEmail() {
         return this.abuseContactEmail;
     }
@@ -1327,6 +1370,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withAbuseContactEmail(String abuseContactEmail) {
         setAbuseContactEmail(abuseContactEmail);
         return this;
@@ -1345,6 +1389,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setAbuseContactPhone(String abuseContactPhone) {
         this.abuseContactPhone = abuseContactPhone;
     }
@@ -1361,6 +1406,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getAbuseContactPhone() {
         return this.abuseContactPhone;
     }
@@ -1380,6 +1426,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withAbuseContactPhone(String abuseContactPhone) {
         setAbuseContactPhone(abuseContactPhone);
         return this;
@@ -1393,6 +1440,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @param registryDomainId
      *        Reserved for future use.
      */
+
     public void setRegistryDomainId(String registryDomainId) {
         this.registryDomainId = registryDomainId;
     }
@@ -1404,6 +1452,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * 
      * @return Reserved for future use.
      */
+
     public String getRegistryDomainId() {
         return this.registryDomainId;
     }
@@ -1418,6 +1467,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withRegistryDomainId(String registryDomainId) {
         setRegistryDomainId(registryDomainId);
         return this;
@@ -1433,6 +1483,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        The date when the domain was created as found in the response to a
      *        WHOIS query. The date format is Unix time.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -1446,6 +1497,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return The date when the domain was created as found in the response to
      *         a WHOIS query. The date format is Unix time.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -1462,6 +1514,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -1477,6 +1530,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        The last updated date of the domain as found in the response to a
      *        WHOIS query. The date format is Unix time.
      */
+
     public void setUpdatedDate(java.util.Date updatedDate) {
         this.updatedDate = updatedDate;
     }
@@ -1490,6 +1544,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return The last updated date of the domain as found in the response to a
      *         WHOIS query. The date format is Unix time.
      */
+
     public java.util.Date getUpdatedDate() {
         return this.updatedDate;
     }
@@ -1506,6 +1561,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withUpdatedDate(java.util.Date updatedDate) {
         setUpdatedDate(updatedDate);
         return this;
@@ -1521,6 +1577,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        The date when the registration for the domain is set to expire.
      *        The date format is Unix time.
      */
+
     public void setExpirationDate(java.util.Date expirationDate) {
         this.expirationDate = expirationDate;
     }
@@ -1534,6 +1591,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return The date when the registration for the domain is set to expire.
      *         The date format is Unix time.
      */
+
     public java.util.Date getExpirationDate() {
         return this.expirationDate;
     }
@@ -1550,6 +1608,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withExpirationDate(
             java.util.Date expirationDate) {
         setExpirationDate(expirationDate);
@@ -1572,6 +1631,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: String
      */
+
     public void setReseller(String reseller) {
         this.reseller = reseller;
     }
@@ -1591,6 +1651,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: String
      */
+
     public String getReseller() {
         return this.reseller;
     }
@@ -1613,6 +1674,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withReseller(String reseller) {
         setReseller(reseller);
         return this;
@@ -1626,6 +1688,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @param dnsSec
      *        Reserved for future use.
      */
+
     public void setDnsSec(String dnsSec) {
         this.dnsSec = dnsSec;
     }
@@ -1637,6 +1700,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * 
      * @return Reserved for future use.
      */
+
     public String getDnsSec() {
         return this.dnsSec;
     }
@@ -1651,6 +1715,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withDnsSec(String dnsSec) {
         setDnsSec(dnsSec);
         return this;
@@ -1701,6 +1766,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *         <p>
      *         Type: Array of String
      */
+
     public java.util.List<String> getStatusList() {
         if (statusList == null) {
             statusList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -1753,6 +1819,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      *        <p>
      *        Type: Array of String
      */
+
     public void setStatusList(java.util.Collection<String> statusList) {
         if (statusList == null) {
             this.statusList = null;
@@ -1816,6 +1883,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withStatusList(String... statusList) {
         if (this.statusList == null) {
             setStatusList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -1874,6 +1942,7 @@ public class GetDomainDetailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainDetailResult withStatusList(
             java.util.Collection<String> statusList) {
         setStatusList(statusList);

@@ -58,6 +58,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.Map<String, String> getProperties() {
         if (properties == null) {
             properties = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -68,6 +69,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
     /**
      * @param properties
      */
+
     public void setProperties(java.util.Map<String, String> properties) {
         this.properties = properties == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -79,6 +81,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PerformanceMetrics withProperties(
             java.util.Map<String, String> properties) {
         setProperties(properties);
@@ -100,6 +103,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
      * Removes all the entries added into Properties. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public PerformanceMetrics clearPropertiesEntries() {
         this.properties = null;
         return this;

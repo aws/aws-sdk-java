@@ -29,6 +29,24 @@
  * aws_access_key_id=AKIAZZZZZZZZZZ
  * aws_secret_access_key=xyz01234567890
  * </pre>
+ * <p>
+ * Role assumption is also supported for cross account access. The source profile credentials are
+ * used to assume the given role when the <pre>test</pre> profile is used. One requirement to use
+ * assume role profiles is that the STS SDK module be on the class path.
+ * <pre>
+ * [default]
+ * aws_access_key_id=AKIAXXXXXXXXXX
+ * aws_secret_access_key=abc01234567890
+ *
+ * [profile test]
+ * role_arn=arn:aws:iam::123456789012:role/role-name
+ * source_profile=default
+ * # Optionally, provide a session name
+ * # role_session_name=mysession
+ * # Optionally, provide an external id
+ * # external_id=abc01234567890
+ * </pre>
+ *
  *
  * <p>
  * You can use {@link com.amazonaws.auth.profile.ProfileCredentialsProvider} to

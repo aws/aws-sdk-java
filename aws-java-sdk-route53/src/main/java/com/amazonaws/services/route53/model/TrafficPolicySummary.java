@@ -36,6 +36,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -43,6 +44,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getId() {
         return this.id;
     }
@@ -52,6 +54,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicySummary withId(String id) {
         setId(id);
         return this;
@@ -60,6 +63,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -67,6 +71,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -76,6 +81,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicySummary withName(String name) {
         setName(name);
         return this;
@@ -85,6 +91,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @param type
      * @see RRType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -93,6 +100,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @return
      * @see RRType
      */
+
     public String getType() {
         return this.type;
     }
@@ -103,6 +111,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicySummary withType(String type) {
         setType(type);
         return this;
@@ -110,10 +119,9 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
 
     /**
      * @param type
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
+
     public void setType(RRType type) {
         this.type = type.toString();
     }
@@ -124,6 +132,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicySummary withType(RRType type) {
         setType(type);
         return this;
@@ -132,6 +141,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @param latestVersion
      */
+
     public void setLatestVersion(Integer latestVersion) {
         this.latestVersion = latestVersion;
     }
@@ -139,6 +149,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getLatestVersion() {
         return this.latestVersion;
     }
@@ -148,6 +159,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicySummary withLatestVersion(Integer latestVersion) {
         setLatestVersion(latestVersion);
         return this;
@@ -156,6 +168,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @param trafficPolicyCount
      */
+
     public void setTrafficPolicyCount(Integer trafficPolicyCount) {
         this.trafficPolicyCount = trafficPolicyCount;
     }
@@ -163,6 +176,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getTrafficPolicyCount() {
         return this.trafficPolicyCount;
     }
@@ -172,6 +186,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicySummary withTrafficPolicyCount(
             Integer trafficPolicyCount) {
         setTrafficPolicyCount(trafficPolicyCount);

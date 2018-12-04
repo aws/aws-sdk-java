@@ -72,6 +72,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *         An empty list results in an
      *         <code>InvalidParameterException</code> being thrown.
      */
+
     public java.util.List<String> getDirectoryIds() {
         if (directoryIds == null) {
             directoryIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -98,6 +99,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *        An empty list results in an <code>InvalidParameterException</code>
      *        being thrown.
      */
+
     public void setDirectoryIds(java.util.Collection<String> directoryIds) {
         if (directoryIds == null) {
             this.directoryIds = null;
@@ -135,6 +137,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesRequest withDirectoryIds(String... directoryIds) {
         if (this.directoryIds == null) {
             setDirectoryIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -167,6 +170,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesRequest withDirectoryIds(
             java.util.Collection<String> directoryIds) {
         setDirectoryIds(directoryIds);
@@ -184,6 +188,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *        previous call to <a>DescribeDirectories</a>. Pass null if this is
      *        the first call.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -198,6 +203,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *         previous call to <a>DescribeDirectories</a>. Pass null if this is
      *         the first call.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -215,6 +221,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -231,6 +238,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *        maximum number of items is specified by the limitations of the
      *        operation.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -245,6 +253,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      *         maximum number of items is specified by the limitations of the
      *         operation.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -262,6 +271,7 @@ public class DescribeDirectoriesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDirectoriesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

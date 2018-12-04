@@ -41,6 +41,7 @@ public class CreateElasticsearchDomainResult implements Serializable, Cloneable 
      * @param domainStatus
      *        The status of the newly created Elasticsearch domain.
      */
+
     public void setDomainStatus(ElasticsearchDomainStatus domainStatus) {
         this.domainStatus = domainStatus;
     }
@@ -52,6 +53,7 @@ public class CreateElasticsearchDomainResult implements Serializable, Cloneable 
      * 
      * @return The status of the newly created Elasticsearch domain.
      */
+
     public ElasticsearchDomainStatus getDomainStatus() {
         return this.domainStatus;
     }
@@ -66,6 +68,7 @@ public class CreateElasticsearchDomainResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateElasticsearchDomainResult withDomainStatus(
             ElasticsearchDomainStatus domainStatus) {
         setDomainStatus(domainStatus);

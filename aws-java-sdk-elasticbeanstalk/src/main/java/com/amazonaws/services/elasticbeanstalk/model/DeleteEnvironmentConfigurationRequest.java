@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to delete a draft environment configuration.
+ * </p>
  */
 public class DeleteEnvironmentConfigurationRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -71,6 +73,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * @param applicationName
      *        The name of the application the environment is associated with.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -82,6 +85,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * 
      * @return The name of the application the environment is associated with.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -96,6 +100,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteEnvironmentConfigurationRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -111,6 +116,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      *        The name of the environment to delete the draft configuration
      *        from.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -123,6 +129,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * @return The name of the environment to delete the draft configuration
      *         from.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -138,6 +145,7 @@ public class DeleteEnvironmentConfigurationRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteEnvironmentConfigurationRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);

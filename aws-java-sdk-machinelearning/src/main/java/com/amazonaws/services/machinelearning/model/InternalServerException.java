@@ -43,6 +43,7 @@ public class InternalServerException extends AmazonServiceException {
     /**
      * @param code
      */
+
     public void setCode(Integer code) {
         this.code = code;
     }
@@ -50,6 +51,7 @@ public class InternalServerException extends AmazonServiceException {
     /**
      * @return
      */
+
     public Integer getCode() {
         return this.code;
     }
@@ -59,6 +61,7 @@ public class InternalServerException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InternalServerException withCode(Integer code) {
         setCode(code);
         return this;

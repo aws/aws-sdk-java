@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetDomainNameRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetDomainNameRequestMarshaller implements
         Marshaller<Request<GetDomainNameRequest>, GetDomainNameRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetDomainNameRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetDomainNameRequest> marshall(
             GetDomainNameRequest getDomainNameRequest) {
@@ -65,9 +73,9 @@ public class GetDomainNameRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{domain_name}",
-                (getDomainNameRequest.getDomainName() == null) ? ""
-                        : StringUtils.fromString(getDomainNameRequest
-                                .getDomainName()));
+                (getDomainNameRequest.getDomainName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getDomainNameRequest
+                                .getDomainName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

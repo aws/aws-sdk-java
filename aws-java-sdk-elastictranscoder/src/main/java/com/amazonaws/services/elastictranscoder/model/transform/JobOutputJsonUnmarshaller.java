@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class JobOutputJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setId(StringJsonUnmarshaller.getInstance()
+                    jobOutput.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setKey(StringJsonUnmarshaller.getInstance()
+                    jobOutput.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailPattern", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setThumbnailPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobOutput.setThumbnailPattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailEncryption", targetDepth)) {
                     context.nextToken();
@@ -73,58 +75,58 @@ public class JobOutputJsonUnmarshaller implements
                 }
                 if (context.testExpression("Rotate", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setRotate(StringJsonUnmarshaller.getInstance()
+                    jobOutput.setRotate(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PresetId", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setPresetId(StringJsonUnmarshaller.getInstance()
+                    jobOutput.setPresetId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SegmentDuration", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setSegmentDuration(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobOutput.setSegmentDuration(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setStatus(StringJsonUnmarshaller.getInstance()
+                    jobOutput.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("StatusDetail", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setStatusDetail(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobOutput.setStatusDetail(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Duration", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setDuration(LongJsonUnmarshaller.getInstance()
+                    jobOutput.setDuration(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Width", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setWidth(IntegerJsonUnmarshaller.getInstance()
+                    jobOutput.setWidth(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Height", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setHeight(IntegerJsonUnmarshaller.getInstance()
+                    jobOutput.setHeight(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setFrameRate(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    jobOutput.setFrameRate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("FileSize", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setFileSize(LongJsonUnmarshaller.getInstance()
+                    jobOutput.setFileSize(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("DurationMillis", targetDepth)) {
                     context.nextToken();
-                    jobOutput.setDurationMillis(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobOutput.setDurationMillis(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();
@@ -156,9 +158,8 @@ public class JobOutputJsonUnmarshaller implements
                 if (context.testExpression("AppliedColorSpaceConversion",
                         targetDepth)) {
                     context.nextToken();
-                    jobOutput
-                            .setAppliedColorSpaceConversion(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    jobOutput.setAppliedColorSpaceConversion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -35,8 +35,8 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
     private String applicationName;
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      */
     private RevisionLocation revision;
@@ -49,6 +49,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @param applicationName
      *        The name of the application that corresponds to the revision.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -60,6 +61,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the application that corresponds to the revision.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -74,6 +76,7 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -82,43 +85,46 @@ public class GetApplicationRevisionRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including the
-     *        revision's type and its location.
+     *        Information about the application revision to get, including type
+     *        and location.
      */
+
     public void setRevision(RevisionLocation revision) {
         this.revision = revision;
     }
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
-     * @return Information about the application revision to get, including the
-     *         revision's type and its location.
+     * @return Information about the application revision to get, including type
+     *         and location.
      */
+
     public RevisionLocation getRevision() {
         return this.revision;
     }
 
     /**
      * <p>
-     * Information about the application revision to get, including the
-     * revision's type and its location.
+     * Information about the application revision to get, including type and
+     * location.
      * </p>
      * 
      * @param revision
-     *        Information about the application revision to get, including the
-     *        revision's type and its location.
+     *        Information about the application revision to get, including type
+     *        and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetApplicationRevisionRequest withRevision(RevisionLocation revision) {
         setRevision(revision);
         return this;

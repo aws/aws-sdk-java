@@ -47,6 +47,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      * @param evaluationId
      *        The ID assigned to the <code>Evaluation</code> during creation.
      */
+
     public void setEvaluationId(String evaluationId) {
         this.evaluationId = evaluationId;
     }
@@ -58,6 +59,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID assigned to the <code>Evaluation</code> during creation.
      */
+
     public String getEvaluationId() {
         return this.evaluationId;
     }
@@ -72,6 +74,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEvaluationRequest withEvaluationId(String evaluationId) {
         setEvaluationId(evaluationId);
         return this;
@@ -87,6 +90,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      *        A new user-supplied name or description of the
      *        <code>Evaluation</code> that will replace the current content.
      */
+
     public void setEvaluationName(String evaluationName) {
         this.evaluationName = evaluationName;
     }
@@ -100,6 +104,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return A new user-supplied name or description of the
      *         <code>Evaluation</code> that will replace the current content.
      */
+
     public String getEvaluationName() {
         return this.evaluationName;
     }
@@ -116,6 +121,7 @@ public class UpdateEvaluationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateEvaluationRequest withEvaluationName(String evaluationName) {
         setEvaluationName(evaluationName);
         return this;

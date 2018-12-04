@@ -18,6 +18,8 @@ package com.amazonaws.services.workspaces.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.workspaces.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,66 +55,63 @@ public class WorkspaceDirectoryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DirectoryId", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setDirectoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setDirectoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Alias", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setAlias(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setAlias(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryName", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setDirectoryName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setDirectoryName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RegistrationCode", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory
-                            .setRegistrationCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    workspaceDirectory.setRegistrationCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
                     workspaceDirectory
-                            .setSubnetIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setSubnetIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("DnsIpAddresses", targetDepth)) {
                     context.nextToken();
                     workspaceDirectory
                             .setDnsIpAddresses(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory
-                            .setCustomerUserName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    workspaceDirectory.setCustomerUserName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("IamRoleId", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setIamRoleId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setIamRoleId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DirectoryType", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setDirectoryType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setDirectoryType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceSecurityGroupId",
                         targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory
-                            .setWorkspaceSecurityGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    workspaceDirectory.setWorkspaceSecurityGroupId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    workspaceDirectory.setState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    workspaceDirectory.setState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("WorkspaceCreationProperties",
                         targetDepth)) {

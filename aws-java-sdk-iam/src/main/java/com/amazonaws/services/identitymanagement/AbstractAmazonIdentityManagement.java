@@ -40,38 +40,42 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void addClientIDToOpenIDConnectProvider(
+    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void addRoleToInstanceProfile(AddRoleToInstanceProfileRequest request) {
+    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(
+            AddRoleToInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void addUserToGroup(AddUserToGroupRequest request) {
+    public AddUserToGroupResult addUserToGroup(AddUserToGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void attachGroupPolicy(AttachGroupPolicyRequest request) {
+    public AttachGroupPolicyResult attachGroupPolicy(
+            AttachGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void attachRolePolicy(AttachRolePolicyRequest request) {
+    public AttachRolePolicyResult attachRolePolicy(
+            AttachRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void attachUserPolicy(AttachUserPolicyRequest request) {
+    public AttachUserPolicyResult attachUserPolicy(
+            AttachUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void changePassword(ChangePasswordRequest request) {
+    public ChangePasswordResult changePassword(ChangePasswordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,7 +90,8 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void createAccountAlias(CreateAccountAliasRequest request) {
+    public CreateAccountAliasResult createAccountAlias(
+            CreateAccountAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -147,129 +152,145 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void deactivateMFADevice(DeactivateMFADeviceRequest request) {
+    public DeactivateMFADeviceResult deactivateMFADevice(
+            DeactivateMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAccessKey(DeleteAccessKeyRequest request) {
+    public DeleteAccessKeyResult deleteAccessKey(DeleteAccessKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAccountAlias(DeleteAccountAliasRequest request) {
+    public DeleteAccountAliasResult deleteAccountAlias(
+            DeleteAccountAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAccountPasswordPolicy(
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(
             DeleteAccountPasswordPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteAccountPasswordPolicy() {
-        deleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy() {
+        return deleteAccountPasswordPolicy(new DeleteAccountPasswordPolicyRequest());
     }
 
     @Override
-    public void deleteGroup(DeleteGroupRequest request) {
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteGroupPolicy(DeleteGroupPolicyRequest request) {
+    public DeleteGroupPolicyResult deleteGroupPolicy(
+            DeleteGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteInstanceProfile(DeleteInstanceProfileRequest request) {
+    public DeleteInstanceProfileResult deleteInstanceProfile(
+            DeleteInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteLoginProfile(DeleteLoginProfileRequest request) {
+    public DeleteLoginProfileResult deleteLoginProfile(
+            DeleteLoginProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteOpenIDConnectProvider(
+    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(
             DeleteOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePolicy(DeletePolicyRequest request) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deletePolicyVersion(DeletePolicyVersionRequest request) {
+    public DeletePolicyVersionResult deletePolicyVersion(
+            DeletePolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteRole(DeleteRoleRequest request) {
+    public DeleteRoleResult deleteRole(DeleteRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteRolePolicy(DeleteRolePolicyRequest request) {
+    public DeleteRolePolicyResult deleteRolePolicy(
+            DeleteRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteSAMLProvider(DeleteSAMLProviderRequest request) {
+    public DeleteSAMLProviderResult deleteSAMLProvider(
+            DeleteSAMLProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteSSHPublicKey(DeleteSSHPublicKeyRequest request) {
+    public DeleteSSHPublicKeyResult deleteSSHPublicKey(
+            DeleteSSHPublicKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteServerCertificate(DeleteServerCertificateRequest request) {
+    public DeleteServerCertificateResult deleteServerCertificate(
+            DeleteServerCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteSigningCertificate(DeleteSigningCertificateRequest request) {
+    public DeleteSigningCertificateResult deleteSigningCertificate(
+            DeleteSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteUser(DeleteUserRequest request) {
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteUserPolicy(DeleteUserPolicyRequest request) {
+    public DeleteUserPolicyResult deleteUserPolicy(
+            DeleteUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request) {
+    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(
+            DeleteVirtualMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void detachGroupPolicy(DetachGroupPolicyRequest request) {
+    public DetachGroupPolicyResult detachGroupPolicy(
+            DetachGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void detachRolePolicy(DetachRolePolicyRequest request) {
+    public DetachRolePolicyResult detachRolePolicy(
+            DetachRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void detachUserPolicy(DetachUserPolicyRequest request) {
+    public DetachUserPolicyResult detachUserPolicy(
+            DetachUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableMFADevice(EnableMFADeviceRequest request) {
+    public EnableMFADeviceResult enableMFADevice(EnableMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -634,44 +655,46 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void putGroupPolicy(PutGroupPolicyRequest request) {
+    public PutGroupPolicyResult putGroupPolicy(PutGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putRolePolicy(PutRolePolicyRequest request) {
+    public PutRolePolicyResult putRolePolicy(PutRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putUserPolicy(PutUserPolicyRequest request) {
+    public PutUserPolicyResult putUserPolicy(PutUserPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removeClientIDFromOpenIDConnectProvider(
+    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removeRoleFromInstanceProfile(
+    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(
             RemoveRoleFromInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void removeUserFromGroup(RemoveUserFromGroupRequest request) {
+    public RemoveUserFromGroupResult removeUserFromGroup(
+            RemoveUserFromGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void resyncMFADevice(ResyncMFADeviceRequest request) {
+    public ResyncMFADeviceResult resyncMFADevice(ResyncMFADeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void setDefaultPolicyVersion(SetDefaultPolicyVersionRequest request) {
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(
+            SetDefaultPolicyVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -688,33 +711,35 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void updateAccessKey(UpdateAccessKeyRequest request) {
+    public UpdateAccessKeyResult updateAccessKey(UpdateAccessKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateAccountPasswordPolicy(
+    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(
             UpdateAccountPasswordPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request) {
+    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(
+            UpdateAssumeRolePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateGroup(UpdateGroupRequest request) {
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateLoginProfile(UpdateLoginProfileRequest request) {
+    public UpdateLoginProfileResult updateLoginProfile(
+            UpdateLoginProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateOpenIDConnectProviderThumbprint(
+    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -726,22 +751,25 @@ public class AbstractAmazonIdentityManagement implements
     }
 
     @Override
-    public void updateSSHPublicKey(UpdateSSHPublicKeyRequest request) {
+    public UpdateSSHPublicKeyResult updateSSHPublicKey(
+            UpdateSSHPublicKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateServerCertificate(UpdateServerCertificateRequest request) {
+    public UpdateServerCertificateResult updateServerCertificate(
+            UpdateServerCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateSigningCertificate(UpdateSigningCertificateRequest request) {
+    public UpdateSigningCertificateResult updateSigningCertificate(
+            UpdateSigningCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void updateUser(UpdateUserRequest request) {
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

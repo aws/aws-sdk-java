@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RuleMarshaller
@@ -39,44 +34,45 @@ import com.amazonaws.util.json.*;
 public class RuleJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Rule rule, JSONWriter jsonWriter) {
+    public void marshall(Rule rule, StructuredJsonGenerator jsonGenerator) {
+
         if (rule == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rule.getRuleId() != null) {
-                jsonWriter.key("RuleId").value(rule.getRuleId());
+                jsonGenerator.writeFieldName("RuleId").writeValue(
+                        rule.getRuleId());
             }
-
             if (rule.getName() != null) {
-                jsonWriter.key("Name").value(rule.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(rule.getName());
             }
-
             if (rule.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(rule.getMetricName());
+                jsonGenerator.writeFieldName("MetricName").writeValue(
+                        rule.getMetricName());
             }
 
             java.util.List<Predicate> predicatesList = rule.getPredicates();
             if (predicatesList != null) {
-                jsonWriter.key("Predicates");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Predicates");
+                jsonGenerator.writeStartArray();
                 for (Predicate predicatesListValue : predicatesList) {
                     if (predicatesListValue != null) {
 
                         PredicateJsonMarshaller.getInstance().marshall(
-                                predicatesListValue, jsonWriter);
+                                predicatesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

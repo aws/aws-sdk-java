@@ -58,20 +58,31 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      */
     private String policy;
     /**
@@ -82,8 +93,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * authentication response's <code>SessionNotOnOrAfter</code> value. The
      * actual expiration time is whichever value is shorter.
      * </p>
-     * <note>The maximum duration for a session is 1 hour, and the minimum
-     * duration is 15 minutes, even if values outside this range are specified.
+     * <note>
+     * <p>
+     * The maximum duration for a session is 1 hour, and the minimum duration is
+     * 15 minutes, even if values outside this range are specified.
+     * </p>
      * </note>
      */
     private Integer durationSeconds;
@@ -97,6 +111,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the role that the caller is
      *        assuming.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -109,6 +124,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the role that the caller is
      *         assuming.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -124,6 +140,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -139,6 +156,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *        describes the IdP.
      */
+
     public void setPrincipalArn(String principalArn) {
         this.principalArn = principalArn;
     }
@@ -152,6 +170,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return The Amazon Resource Name (ARN) of the SAML provider in IAM that
      *         describes the IdP.
      */
+
     public String getPrincipalArn() {
         return this.principalArn;
     }
@@ -168,6 +187,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withPrincipalArn(String principalArn) {
         setPrincipalArn(principalArn);
         return this;
@@ -193,6 +213,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        >Configuring a Relying Party and Adding Claims</a> in the <i>Using
      *        IAM</i> guide.
      */
+
     public void setSAMLAssertion(String sAMLAssertion) {
         this.sAMLAssertion = sAMLAssertion;
     }
@@ -216,6 +237,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         >Configuring a Relying Party and Adding Claims</a> in the
      *         <i>Using IAM</i> guide.
      */
+
     public String getSAMLAssertion() {
         return this.sAMLAssertion;
     }
@@ -242,6 +264,7 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withSAMLAssertion(String sAMLAssertion) {
         setSAMLAssertion(sAMLAssertion);
         return this;
@@ -255,20 +278,31 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -276,22 +310,34 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The policy parameter is optional. If you pass a policy, the
      *        temporary security credentials that are returned by the operation
      *        have the permissions that are allowed by both the access policy of
-     *        the role that is being assumed, <i><b>and</b></i> the policy that
-     *        you pass. This gives you a way to further restrict the permissions
-     *        for the resulting temporary security credentials. You cannot use
-     *        the passed policy to grant permissions that are in excess of those
-     *        allowed by the access policy of the role that is being assumed.
-     *        For more information, <a href=
+     *        the role that is being assumed, <i> <b>and</b> </i> the policy
+     *        that you pass. This gives you a way to further restrict the
+     *        permissions for the resulting temporary security credentials. You
+     *        cannot use the passed policy to grant permissions that are in
+     *        excess of those allowed by the access policy of the role that is
+     *        being assumed. For more information, <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      */
+
     public void setPolicy(String policy) {
         this.policy = policy;
     }
@@ -304,27 +350,38 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @return An IAM policy in JSON format.</p>
      *         <p>
      *         The policy parameter is optional. If you pass a policy, the
      *         temporary security credentials that are returned by the operation
      *         have the permissions that are allowed by both the access policy
-     *         of the role that is being assumed, <i><b>and</b></i> the policy
+     *         of the role that is being assumed, <i> <b>and</b> </i> the policy
      *         that you pass. This gives you a way to further restrict the
      *         permissions for the resulting temporary security credentials. You
      *         cannot use the passed policy to grant permissions that are in
@@ -332,15 +389,26 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         being assumed. For more information, <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *         >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *         AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *         AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *         </p>
-     *         <note>The policy plain text must be 2048 bytes or shorter.
-     *         However, an internal conversion compresses it into a packed
-     *         binary format with a separate limit. The PackedPolicySize
-     *         response element indicates by percentage how close to the upper
-     *         size limit the policy is, with 100% equaling the maximum allowed
-     *         size.
+     *         <p>
+     *         The format for this parameter, as described by its regex pattern,
+     *         is a string of characters up to 2048 characters in length. The
+     *         characters can be any ASCII character from the space character to
+     *         the end of the valid character list ( -\u00FF). It can also
+     *         include the tab ( ), linefeed ( ), and carriage return ( )
+     *         characters.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The policy plain text must be 2048 bytes or shorter. However, an
+     *         internal conversion compresses it into a packed binary format
+     *         with a separate limit. The PackedPolicySize response element
+     *         indicates by percentage how close to the upper size limit the
+     *         policy is, with 100% equaling the maximum allowed size.
+     *         </p>
      */
+
     public String getPolicy() {
         return this.policy;
     }
@@ -353,20 +421,31 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * The policy parameter is optional. If you pass a policy, the temporary
      * security credentials that are returned by the operation have the
      * permissions that are allowed by both the access policy of the role that
-     * is being assumed, <i><b>and</b></i> the policy that you pass. This gives
-     * you a way to further restrict the permissions for the resulting temporary
-     * security credentials. You cannot use the passed policy to grant
+     * is being assumed, <i> <b>and</b> </i> the policy that you pass. This
+     * gives you a way to further restrict the permissions for the resulting
+     * temporary security credentials. You cannot use the passed policy to grant
      * permissions that are in excess of those allowed by the access policy of
      * the role that is being assumed. For more information, <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      * >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     * AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     * AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <note>The policy plain text must be 2048 bytes or shorter. However, an
-     * internal conversion compresses it into a packed binary format with a
-     * separate limit. The PackedPolicySize response element indicates by
-     * percentage how close to the upper size limit the policy is, with 100%
-     * equaling the maximum allowed size. </note>
+     * <p>
+     * The format for this parameter, as described by its regex pattern, is a
+     * string of characters up to 2048 characters in length. The characters can
+     * be any ASCII character from the space character to the end of the valid
+     * character list ( -\u00FF). It can also include the tab ( ), linefeed ( ),
+     * and carriage return ( ) characters.
+     * </p>
+     * <note>
+     * <p>
+     * The policy plain text must be 2048 bytes or shorter. However, an internal
+     * conversion compresses it into a packed binary format with a separate
+     * limit. The PackedPolicySize response element indicates by percentage how
+     * close to the upper size limit the policy is, with 100% equaling the
+     * maximum allowed size.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        An IAM policy in JSON format.</p>
@@ -374,24 +453,36 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        The policy parameter is optional. If you pass a policy, the
      *        temporary security credentials that are returned by the operation
      *        have the permissions that are allowed by both the access policy of
-     *        the role that is being assumed, <i><b>and</b></i> the policy that
-     *        you pass. This gives you a way to further restrict the permissions
-     *        for the resulting temporary security credentials. You cannot use
-     *        the passed policy to grant permissions that are in excess of those
-     *        allowed by the access policy of the role that is being assumed.
-     *        For more information, <a href=
+     *        the role that is being assumed, <i> <b>and</b> </i> the policy
+     *        that you pass. This gives you a way to further restrict the
+     *        permissions for the resulting temporary security credentials. You
+     *        cannot use the passed policy to grant permissions that are in
+     *        excess of those allowed by the access policy of the role that is
+     *        being assumed. For more information, <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_assumerole.html"
      *        >Permissions for AssumeRole, AssumeRoleWithSAML, and
-     *        AssumeRoleWithWebIdentity</a> in the <i>Using IAM</i>.
+     *        AssumeRoleWithWebIdentity</a> in the <i>IAM User Guide</i>.
      *        </p>
-     *        <note>The policy plain text must be 2048 bytes or shorter.
-     *        However, an internal conversion compresses it into a packed binary
-     *        format with a separate limit. The PackedPolicySize response
-     *        element indicates by percentage how close to the upper size limit
-     *        the policy is, with 100% equaling the maximum allowed size.
+     *        <p>
+     *        The format for this parameter, as described by its regex pattern,
+     *        is a string of characters up to 2048 characters in length. The
+     *        characters can be any ASCII character from the space character to
+     *        the end of the valid character list ( -\u00FF). It can also
+     *        include the tab ( ), linefeed ( ), and carriage return ( )
+     *        characters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The policy plain text must be 2048 bytes or shorter. However, an
+     *        internal conversion compresses it into a packed binary format with
+     *        a separate limit. The PackedPolicySize response element indicates
+     *        by percentage how close to the upper size limit the policy is,
+     *        with 100% equaling the maximum allowed size.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withPolicy(String policy) {
         setPolicy(policy);
         return this;
@@ -405,8 +496,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * authentication response's <code>SessionNotOnOrAfter</code> value. The
      * actual expiration time is whichever value is shorter.
      * </p>
-     * <note>The maximum duration for a session is 1 hour, and the minimum
-     * duration is 15 minutes, even if values outside this range are specified.
+     * <note>
+     * <p>
+     * The maximum duration for a session is 1 hour, and the minimum duration is
+     * 15 minutes, even if values outside this range are specified.
+     * </p>
      * </note>
      * 
      * @param durationSeconds
@@ -415,10 +509,14 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        default, the value is set to 3600 seconds. An expiration can also
      *        be specified in the SAML authentication response's
      *        <code>SessionNotOnOrAfter</code> value. The actual expiration time
-     *        is whichever value is shorter. </p> <note>The maximum duration for
-     *        a session is 1 hour, and the minimum duration is 15 minutes, even
-     *        if values outside this range are specified.
+     *        is whichever value is shorter. </p> <note>
+     *        <p>
+     *        The maximum duration for a session is 1 hour, and the minimum
+     *        duration is 15 minutes, even if values outside this range are
+     *        specified.
+     *        </p>
      */
+
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
     }
@@ -431,8 +529,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * authentication response's <code>SessionNotOnOrAfter</code> value. The
      * actual expiration time is whichever value is shorter.
      * </p>
-     * <note>The maximum duration for a session is 1 hour, and the minimum
-     * duration is 15 minutes, even if values outside this range are specified.
+     * <note>
+     * <p>
+     * The maximum duration for a session is 1 hour, and the minimum duration is
+     * 15 minutes, even if values outside this range are specified.
+     * </p>
      * </note>
      * 
      * @return The duration, in seconds, of the role session. The value can
@@ -440,10 +541,14 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *         default, the value is set to 3600 seconds. An expiration can also
      *         be specified in the SAML authentication response's
      *         <code>SessionNotOnOrAfter</code> value. The actual expiration
-     *         time is whichever value is shorter. </p> <note>The maximum
-     *         duration for a session is 1 hour, and the minimum duration is 15
-     *         minutes, even if values outside this range are specified.
+     *         time is whichever value is shorter. </p> <note>
+     *         <p>
+     *         The maximum duration for a session is 1 hour, and the minimum
+     *         duration is 15 minutes, even if values outside this range are
+     *         specified.
+     *         </p>
      */
+
     public Integer getDurationSeconds() {
         return this.durationSeconds;
     }
@@ -456,8 +561,11 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      * authentication response's <code>SessionNotOnOrAfter</code> value. The
      * actual expiration time is whichever value is shorter.
      * </p>
-     * <note>The maximum duration for a session is 1 hour, and the minimum
-     * duration is 15 minutes, even if values outside this range are specified.
+     * <note>
+     * <p>
+     * The maximum duration for a session is 1 hour, and the minimum duration is
+     * 15 minutes, even if values outside this range are specified.
+     * </p>
      * </note>
      * 
      * @param durationSeconds
@@ -466,12 +574,16 @@ public class AssumeRoleWithSAMLRequest extends AmazonWebServiceRequest
      *        default, the value is set to 3600 seconds. An expiration can also
      *        be specified in the SAML authentication response's
      *        <code>SessionNotOnOrAfter</code> value. The actual expiration time
-     *        is whichever value is shorter. </p> <note>The maximum duration for
-     *        a session is 1 hour, and the minimum duration is 15 minutes, even
-     *        if values outside this range are specified.
+     *        is whichever value is shorter. </p> <note>
+     *        <p>
+     *        The maximum duration for a session is 1 hour, and the minimum
+     *        duration is 15 minutes, even if values outside this range are
+     *        specified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLRequest withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
         return this;

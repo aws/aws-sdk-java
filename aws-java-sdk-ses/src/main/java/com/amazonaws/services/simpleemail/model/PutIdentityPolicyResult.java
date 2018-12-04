@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * An empty element. Receiving this element indicates that the request completed
- * successfully.
- * </p>
+ * 
  */
 public class PutIdentityPolicyResult implements Serializable, Cloneable {
 

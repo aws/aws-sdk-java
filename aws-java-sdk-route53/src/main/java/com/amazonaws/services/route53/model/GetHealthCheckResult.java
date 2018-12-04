@@ -43,6 +43,7 @@ public class GetHealthCheckResult implements Serializable, Cloneable {
      *        A complex type that contains the information about the specified
      *        health check.
      */
+
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
@@ -56,6 +57,7 @@ public class GetHealthCheckResult implements Serializable, Cloneable {
      * @return A complex type that contains the information about the specified
      *         health check.
      */
+
     public HealthCheck getHealthCheck() {
         return this.healthCheck;
     }
@@ -72,6 +74,7 @@ public class GetHealthCheckResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckResult withHealthCheck(HealthCheck healthCheck) {
         setHealthCheck(healthCheck);
         return this;

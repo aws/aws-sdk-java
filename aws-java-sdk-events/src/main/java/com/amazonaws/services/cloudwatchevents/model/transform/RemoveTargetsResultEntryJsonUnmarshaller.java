@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudwatchevents.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,20 +55,18 @@ public class RemoveTargetsResultEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetId", targetDepth)) {
                     context.nextToken();
-                    removeTargetsResultEntry.setTargetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    removeTargetsResultEntry.setTargetId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    removeTargetsResultEntry
-                            .setErrorCode(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    removeTargetsResultEntry.setErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    removeTargetsResultEntry
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    removeTargetsResultEntry.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

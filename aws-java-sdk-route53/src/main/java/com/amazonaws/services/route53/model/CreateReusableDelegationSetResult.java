@@ -45,6 +45,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * @param delegationSet
      *        A complex type that contains name server information.
      */
+
     public void setDelegationSet(DelegationSet delegationSet) {
         this.delegationSet = delegationSet;
     }
@@ -56,6 +57,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * 
      * @return A complex type that contains name server information.
      */
+
     public DelegationSet getDelegationSet() {
         return this.delegationSet;
     }
@@ -70,6 +72,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReusableDelegationSetResult withDelegationSet(
             DelegationSet delegationSet) {
         setDelegationSet(delegationSet);
@@ -84,6 +87,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * @param location
      *        The unique URL representing the new reusbale delegation set.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -95,6 +99,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * 
      * @return The unique URL representing the new reusbale delegation set.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -109,6 +114,7 @@ public class CreateReusableDelegationSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReusableDelegationSetResult withLocation(String location) {
         setLocation(location);
         return this;

@@ -117,6 +117,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @param configRuleName
      *        The name of the AWS Config rule.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -128,6 +129,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * 
      * @return The name of the AWS Config rule.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -142,6 +144,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;
@@ -155,6 +158,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @param configRuleArn
      *        The Amazon Resource Name (ARN) of the AWS Config rule.
      */
+
     public void setConfigRuleArn(String configRuleArn) {
         this.configRuleArn = configRuleArn;
     }
@@ -166,6 +170,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the AWS Config rule.
      */
+
     public String getConfigRuleArn() {
         return this.configRuleArn;
     }
@@ -180,6 +185,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withConfigRuleArn(String configRuleArn) {
         setConfigRuleArn(configRuleArn);
         return this;
@@ -193,6 +199,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @param configRuleId
      *        The ID of the AWS Config rule.
      */
+
     public void setConfigRuleId(String configRuleId) {
         this.configRuleId = configRuleId;
     }
@@ -204,6 +211,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS Config rule.
      */
+
     public String getConfigRuleId() {
         return this.configRuleId;
     }
@@ -218,6 +226,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withConfigRuleId(String configRuleId) {
         setConfigRuleId(configRuleId);
         return this;
@@ -233,6 +242,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        The time that AWS Config last successfully invoked the AWS Config
      *        rule to evaluate your AWS resources.
      */
+
     public void setLastSuccessfulInvocationTime(
             java.util.Date lastSuccessfulInvocationTime) {
         this.lastSuccessfulInvocationTime = lastSuccessfulInvocationTime;
@@ -247,6 +257,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The time that AWS Config last successfully invoked the AWS Config
      *         rule to evaluate your AWS resources.
      */
+
     public java.util.Date getLastSuccessfulInvocationTime() {
         return this.lastSuccessfulInvocationTime;
     }
@@ -263,6 +274,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastSuccessfulInvocationTime(
             java.util.Date lastSuccessfulInvocationTime) {
         setLastSuccessfulInvocationTime(lastSuccessfulInvocationTime);
@@ -279,6 +291,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        The time that AWS Config last failed to invoke the AWS Config rule
      *        to evaluate your AWS resources.
      */
+
     public void setLastFailedInvocationTime(
             java.util.Date lastFailedInvocationTime) {
         this.lastFailedInvocationTime = lastFailedInvocationTime;
@@ -293,6 +306,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The time that AWS Config last failed to invoke the AWS Config
      *         rule to evaluate your AWS resources.
      */
+
     public java.util.Date getLastFailedInvocationTime() {
         return this.lastFailedInvocationTime;
     }
@@ -309,6 +323,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastFailedInvocationTime(
             java.util.Date lastFailedInvocationTime) {
         setLastFailedInvocationTime(lastFailedInvocationTime);
@@ -325,6 +340,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        The time that AWS Config last successfully evaluated your AWS
      *        resources against the rule.
      */
+
     public void setLastSuccessfulEvaluationTime(
             java.util.Date lastSuccessfulEvaluationTime) {
         this.lastSuccessfulEvaluationTime = lastSuccessfulEvaluationTime;
@@ -339,6 +355,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The time that AWS Config last successfully evaluated your AWS
      *         resources against the rule.
      */
+
     public java.util.Date getLastSuccessfulEvaluationTime() {
         return this.lastSuccessfulEvaluationTime;
     }
@@ -355,6 +372,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastSuccessfulEvaluationTime(
             java.util.Date lastSuccessfulEvaluationTime) {
         setLastSuccessfulEvaluationTime(lastSuccessfulEvaluationTime);
@@ -371,6 +389,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        The time that AWS Config last failed to evaluate your AWS
      *        resources against the rule.
      */
+
     public void setLastFailedEvaluationTime(
             java.util.Date lastFailedEvaluationTime) {
         this.lastFailedEvaluationTime = lastFailedEvaluationTime;
@@ -385,6 +404,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The time that AWS Config last failed to evaluate your AWS
      *         resources against the rule.
      */
+
     public java.util.Date getLastFailedEvaluationTime() {
         return this.lastFailedEvaluationTime;
     }
@@ -401,6 +421,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastFailedEvaluationTime(
             java.util.Date lastFailedEvaluationTime) {
         setLastFailedEvaluationTime(lastFailedEvaluationTime);
@@ -415,6 +436,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @param firstActivatedTime
      *        The time that you first activated the AWS Config rule.
      */
+
     public void setFirstActivatedTime(java.util.Date firstActivatedTime) {
         this.firstActivatedTime = firstActivatedTime;
     }
@@ -426,6 +448,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * 
      * @return The time that you first activated the AWS Config rule.
      */
+
     public java.util.Date getFirstActivatedTime() {
         return this.firstActivatedTime;
     }
@@ -440,6 +463,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withFirstActivatedTime(
             java.util.Date firstActivatedTime) {
         setFirstActivatedTime(firstActivatedTime);
@@ -454,6 +478,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @param lastErrorCode
      *        The error code that AWS Config returned when the rule last failed.
      */
+
     public void setLastErrorCode(String lastErrorCode) {
         this.lastErrorCode = lastErrorCode;
     }
@@ -466,6 +491,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The error code that AWS Config returned when the rule last
      *         failed.
      */
+
     public String getLastErrorCode() {
         return this.lastErrorCode;
     }
@@ -480,6 +506,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastErrorCode(String lastErrorCode) {
         setLastErrorCode(lastErrorCode);
         return this;
@@ -494,6 +521,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        The error message that AWS Config returned when the rule last
      *        failed.
      */
+
     public void setLastErrorMessage(String lastErrorMessage) {
         this.lastErrorMessage = lastErrorMessage;
     }
@@ -506,6 +534,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return The error message that AWS Config returned when the rule last
      *         failed.
      */
+
     public String getLastErrorMessage() {
         return this.lastErrorMessage;
     }
@@ -521,6 +550,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withLastErrorMessage(
             String lastErrorMessage) {
         setLastErrorMessage(lastErrorMessage);
@@ -548,6 +578,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *        <li><code>false</code> - AWS Config has not once finished
      *        evaluating your AWS resources against the rule.</li>
      */
+
     public void setFirstEvaluationStarted(Boolean firstEvaluationStarted) {
         this.firstEvaluationStarted = firstEvaluationStarted;
     }
@@ -572,6 +603,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *         <li><code>false</code> - AWS Config has not once finished
      *         evaluating your AWS resources against the rule.</li>
      */
+
     public Boolean getFirstEvaluationStarted() {
         return this.firstEvaluationStarted;
     }
@@ -599,6 +631,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRuleEvaluationStatus withFirstEvaluationStarted(
             Boolean firstEvaluationStarted) {
         setFirstEvaluationStarted(firstEvaluationStarted);
@@ -625,6 +658,7 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
      *         <li><code>false</code> - AWS Config has not once finished
      *         evaluating your AWS resources against the rule.</li>
      */
+
     public Boolean isFirstEvaluationStarted() {
         return this.firstEvaluationStarted;
     }

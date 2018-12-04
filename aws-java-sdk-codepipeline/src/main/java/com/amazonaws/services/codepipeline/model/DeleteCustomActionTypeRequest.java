@@ -60,6 +60,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      *        source or deploy.
      * @see ActionCategory
      */
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -74,6 +75,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      *         as source or deploy.
      * @see ActionCategory
      */
+
     public String getCategory() {
         return this.category;
     }
@@ -91,6 +93,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ActionCategory
      */
+
     public DeleteCustomActionTypeRequest withCategory(String category) {
         setCategory(category);
         return this;
@@ -105,10 +108,9 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @param category
      *        The category of the custom action that you want to delete, such as
      *        source or deploy.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionCategory
      */
+
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }
@@ -126,6 +128,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ActionCategory
      */
+
     public DeleteCustomActionTypeRequest withCategory(ActionCategory category) {
         setCategory(category);
         return this;
@@ -141,6 +144,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      *        The provider of the service used in the custom action, such as AWS
      *        CodeDeploy.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -154,6 +158,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return The provider of the service used in the custom action, such as
      *         AWS CodeDeploy.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -170,6 +175,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteCustomActionTypeRequest withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -183,6 +189,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @param version
      *        The version of the custom action to delete.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -194,6 +201,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * 
      * @return The version of the custom action to delete.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -208,6 +216,7 @@ public class DeleteCustomActionTypeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteCustomActionTypeRequest withVersion(String version) {
         setVersion(version);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class CognitoStreamsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StreamName", targetDepth)) {
                     context.nextToken();
-                    cognitoStreams.setStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cognitoStreams.setStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
-                    cognitoStreams.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cognitoStreams.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamingStatus", targetDepth)) {
                     context.nextToken();
-                    cognitoStreams.setStreamingStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    cognitoStreams.setStreamingStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

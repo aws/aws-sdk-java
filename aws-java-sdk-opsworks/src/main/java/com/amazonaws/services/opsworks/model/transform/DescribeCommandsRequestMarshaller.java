@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeCommandsRequest Marshaller
  */
 public class DescribeCommandsRequestMarshaller implements
         Marshaller<Request<DescribeCommandsRequest>, DescribeCommandsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeCommandsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeCommandsRequest> marshall(
             DescribeCommandsRequest describeCommandsRequest) {
@@ -63,42 +64,40 @@ public class DescribeCommandsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeCommandsRequest.getDeploymentId() != null) {
-                jsonWriter.key("DeploymentId").value(
+                jsonGenerator.writeFieldName("DeploymentId").writeValue(
                         describeCommandsRequest.getDeploymentId());
             }
-
             if (describeCommandsRequest.getInstanceId() != null) {
-                jsonWriter.key("InstanceId").value(
+                jsonGenerator.writeFieldName("InstanceId").writeValue(
                         describeCommandsRequest.getInstanceId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> commandIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeCommandsRequest
                     .getCommandIds();
             if (!commandIdsList.isEmpty() || !commandIdsList.isAutoConstruct()) {
-                jsonWriter.key("CommandIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CommandIds");
+                jsonGenerator.writeStartArray();
                 for (String commandIdsListValue : commandIdsList) {
                     if (commandIdsListValue != null) {
-                        jsonWriter.value(commandIdsListValue);
+                        jsonGenerator.writeValue(commandIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -20,5 +20,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Request object for listing all the Amazon S3 buckets owned by a user.
  */
-public class ListBucketsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListBucketsRequest extends AmazonWebServiceRequest implements
+        Serializable, S3AccelerateUnsupported {
 }

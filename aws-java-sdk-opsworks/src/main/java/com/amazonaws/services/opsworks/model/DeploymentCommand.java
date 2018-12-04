@@ -175,6 +175,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *        <li><code>undeploy</code>: Undeploy the app.</li>
      * @see DeploymentCommandName
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -260,6 +261,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         <li><code>undeploy</code>: Undeploy the app.</li>
      * @see DeploymentCommandName
      */
+
     public String getName() {
         return this.name;
     }
@@ -347,6 +349,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         chained together.
      * @see DeploymentCommandName
      */
+
     public DeploymentCommand withName(String name) {
         setName(name);
         return this;
@@ -431,10 +434,9 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *        <li><code>restart</code>: Restart the app's web or application
      *        server.</li>
      *        <li><code>undeploy</code>: Undeploy the app.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeploymentCommandName
      */
+
     public void setName(DeploymentCommandName name) {
         this.name = name.toString();
     }
@@ -522,6 +524,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         chained together.
      * @see DeploymentCommandName
      */
+
     public DeploymentCommand withName(DeploymentCommandName name) {
         setName(name);
         return this;
@@ -578,6 +581,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *         </p>
      *         <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
      */
+
     public java.util.Map<String, java.util.List<String>> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>();
@@ -637,6 +641,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      *        </p>
      *        <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] }
      */
+
     public void setArgs(java.util.Map<String, java.util.List<String>> args) {
         this.args = args == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>>(
@@ -697,6 +702,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentCommand withArgs(
             java.util.Map<String, java.util.List<String>> args) {
         setArgs(args);
@@ -719,6 +725,7 @@ public class DeploymentCommand implements Serializable, Cloneable {
      * Removes all the entries added into Args. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public DeploymentCommand clearArgsEntries() {
         this.args = null;
         return this;

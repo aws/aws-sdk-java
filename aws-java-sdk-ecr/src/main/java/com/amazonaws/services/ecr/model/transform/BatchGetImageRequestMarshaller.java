@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.ecr.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BatchGetImageRequest Marshaller
  */
 public class BatchGetImageRequestMarshaller implements
         Marshaller<Request<BatchGetImageRequest>, BatchGetImageRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public BatchGetImageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<BatchGetImageRequest> marshall(
             BatchGetImageRequest batchGetImageRequest) {
@@ -64,44 +64,42 @@ public class BatchGetImageRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (batchGetImageRequest.getRegistryId() != null) {
-                jsonWriter.key("registryId").value(
+                jsonGenerator.writeFieldName("registryId").writeValue(
                         batchGetImageRequest.getRegistryId());
             }
-
             if (batchGetImageRequest.getRepositoryName() != null) {
-                jsonWriter.key("repositoryName").value(
+                jsonGenerator.writeFieldName("repositoryName").writeValue(
                         batchGetImageRequest.getRepositoryName());
             }
 
             java.util.List<ImageIdentifier> imageIdsList = batchGetImageRequest
                     .getImageIds();
             if (imageIdsList != null) {
-                jsonWriter.key("imageIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("imageIds");
+                jsonGenerator.writeStartArray();
                 for (ImageIdentifier imageIdsListValue : imageIdsList) {
                     if (imageIdsListValue != null) {
 
                         ImageIdentifierJsonMarshaller.getInstance().marshall(
-                                imageIdsListValue, jsonWriter);
+                                imageIdsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeServicesRequest Marshaller
  */
 public class DescribeServicesRequestMarshaller implements
         Marshaller<Request<DescribeServicesRequest>, DescribeServicesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeServicesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeServicesRequest> marshall(
             DescribeServicesRequest describeServicesRequest) {
@@ -64,38 +65,36 @@ public class DescribeServicesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> serviceCodeListList = (com.amazonaws.internal.SdkInternalList<String>) describeServicesRequest
                     .getServiceCodeList();
             if (!serviceCodeListList.isEmpty()
                     || !serviceCodeListList.isAutoConstruct()) {
-                jsonWriter.key("serviceCodeList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("serviceCodeList");
+                jsonGenerator.writeStartArray();
                 for (String serviceCodeListListValue : serviceCodeListList) {
                     if (serviceCodeListListValue != null) {
-                        jsonWriter.value(serviceCodeListListValue);
+                        jsonGenerator.writeValue(serviceCodeListListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (describeServicesRequest.getLanguage() != null) {
-                jsonWriter.key("language").value(
+                jsonGenerator.writeFieldName("language").writeValue(
                         describeServicesRequest.getLanguage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

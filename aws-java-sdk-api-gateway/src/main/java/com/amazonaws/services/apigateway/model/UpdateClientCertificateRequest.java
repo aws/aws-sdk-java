@@ -20,11 +20,18 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to change information about an <a>ClientCertificate</a> resource.
+ * </p>
  */
 public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     */
     private String clientCertificateId;
     /**
      * <p>
@@ -35,24 +42,44 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
     private java.util.List<PatchOperation> patchOperations;
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        updated.
      */
+
     public void setClientCertificateId(String clientCertificateId) {
         this.clientCertificateId = clientCertificateId;
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
+     * @return The identifier of the <a>ClientCertificate</a> resource to be
+     *         updated.
      */
+
     public String getClientCertificateId() {
         return this.clientCertificateId;
     }
 
     /**
+     * <p>
+     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * </p>
+     * 
      * @param clientCertificateId
+     *        The identifier of the <a>ClientCertificate</a> resource to be
+     *        updated.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withClientCertificateId(
             String clientCertificateId) {
         setClientCertificateId(clientCertificateId);
@@ -69,6 +96,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      *         specified resource. The patches are applied in the order
      *         specified in the list.
      */
+
     public java.util.List<PatchOperation> getPatchOperations() {
         return patchOperations;
     }
@@ -84,6 +112,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      *        specified resource. The patches are applied in the order specified
      *        in the list.
      */
+
     public void setPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         if (patchOperations == null) {
@@ -114,6 +143,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withPatchOperations(
             PatchOperation... patchOperations) {
         if (this.patchOperations == null) {
@@ -139,6 +169,7 @@ public class UpdateClientCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateClientCertificateRequest withPatchOperations(
             java.util.Collection<PatchOperation> patchOperations) {
         setPatchOperations(patchOperations);

@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,25 +55,23 @@ public class DeploymentInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("applicationName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setApplicationName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setApplicationName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentGroupName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setDeploymentGroupName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentInfo.setDeploymentGroupName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentConfigName", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo
-                            .setDeploymentConfigName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deploymentInfo.setDeploymentConfigName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentId", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDeploymentId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setDeploymentId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
@@ -80,8 +80,8 @@ public class DeploymentInfoJsonUnmarshaller implements
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorInformation", targetDepth)) {
                     context.nextToken();
@@ -91,18 +91,18 @@ public class DeploymentInfoJsonUnmarshaller implements
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCreateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setCreateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setStartTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setStartTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("completeTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCompleteTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setCompleteTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("deploymentOverview", targetDepth)) {
                     context.nextToken();
@@ -112,20 +112,21 @@ public class DeploymentInfoJsonUnmarshaller implements
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("creator", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCreator(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    deploymentInfo.setCreator(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ignoreApplicationStopFailures",
                         targetDepth)) {
                     context.nextToken();
                     deploymentInfo
-                            .setIgnoreApplicationStopFailures(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIgnoreApplicationStopFailures(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

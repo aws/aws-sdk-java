@@ -47,6 +47,7 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest
      *        Language parameters must be passed explicitly for operations that
      *        take them.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -63,6 +64,7 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest
      *         Japanese ("ja"). Language parameters must be passed explicitly
      *         for operations that take them.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -82,6 +84,7 @@ public class DescribeSeverityLevelsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeSeverityLevelsRequest withLanguage(String language) {
         setLanguage(language);
         return this;

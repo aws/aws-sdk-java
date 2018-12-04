@@ -33,9 +33,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -83,9 +91,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -99,9 +115,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.
@@ -111,6 +135,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        <code>StackName</code>, you must specify
      *        <code>PhysicalResourceId</code>.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -121,9 +146,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -136,9 +169,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * @return The name or the unique stack ID that is associated with the
      *         stack, which are not always interchangeable:</p>
      *         <ul>
-     *         <li>Running stacks: You can specify either the stack's name or
-     *         its unique stack ID.</li>
-     *         <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *         <li>
+     *         <p>
+     *         Running stacks: You can specify either the stack's name or its
+     *         unique stack ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Deleted stacks: You must specify the unique stack ID.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Default: There is no default value.
@@ -148,6 +189,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *         <code>StackName</code>, you must specify
      *         <code>PhysicalResourceId</code>.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -158,9 +200,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * are not always interchangeable:
      * </p>
      * <ul>
-     * <li>Running stacks: You can specify either the stack's name or its unique
-     * stack ID.</li>
-     * <li>Deleted stacks: You must specify the unique stack ID.</li>
+     * <li>
+     * <p>
+     * Running stacks: You can specify either the stack's name or its unique
+     * stack ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted stacks: You must specify the unique stack ID.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Default: There is no default value.
@@ -174,9 +224,17 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        The name or the unique stack ID that is associated with the stack,
      *        which are not always interchangeable:</p>
      *        <ul>
-     *        <li>Running stacks: You can specify either the stack's name or its
-     *        unique stack ID.</li>
-     *        <li>Deleted stacks: You must specify the unique stack ID.</li>
+     *        <li>
+     *        <p>
+     *        Running stacks: You can specify either the stack's name or its
+     *        unique stack ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Deleted stacks: You must specify the unique stack ID.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Default: There is no default value.
@@ -188,6 +246,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourcesRequest withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -206,6 +265,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -223,6 +283,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -242,6 +303,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourcesRequest withLogicalResourceId(
             String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
@@ -287,6 +349,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: There is no default value.
      */
+
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
@@ -329,6 +392,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: There is no default value.
      */
+
     public String getPhysicalResourceId() {
         return this.physicalResourceId;
     }
@@ -374,6 +438,7 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackResourcesRequest withPhysicalResourceId(
             String physicalResourceId) {
         setPhysicalResourceId(physicalResourceId);

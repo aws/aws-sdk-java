@@ -24,13 +24,23 @@ import com.amazonaws.AmazonClientException;
  * com.amazonaws.services.s3.model.ProgressListener has been deprecated in favor
  * of this new class.
  * </p>
- * 
+ *
  * @see ProgressEvent
  */
 public interface ProgressListener {
-    public static final ProgressListener NOOP = new ProgressListener() {
-        @Override public void progressChanged(ProgressEvent progressEvent) {}
-    };
+	public static final ProgressListener NOOP = new NoOpProgressListener();
+
+    static class NoOpProgressListener implements ProgressListener, DeliveryMode {
+
+        @Override
+        public boolean isSyncCallSafe() {
+            return true;
+        }
+
+        @Override
+        public void progressChanged(ProgressEvent progressEvent) {
+        }
+    }
 
     /**
      * Called when progress has changed, such as additional bytes transferred,
@@ -47,7 +57,7 @@ public interface ProgressListener {
      *
      * @param progressEvent
      *            The event describing the progress change.
-     *            
+     *
      * @see SDKProgressPublisher
      * @see ExceptionReporter
      */

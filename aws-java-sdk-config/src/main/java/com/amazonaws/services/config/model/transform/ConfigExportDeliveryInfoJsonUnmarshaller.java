@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,39 +55,36 @@ public class ConfigExportDeliveryInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setLastStatus(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configExportDeliveryInfo.setLastStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setLastErrorCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configExportDeliveryInfo.setLastErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setLastErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configExportDeliveryInfo.setLastErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastAttemptTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setLastAttemptTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configExportDeliveryInfo.setLastAttemptTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("lastSuccessfulTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setLastSuccessfulTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configExportDeliveryInfo.setLastSuccessfulTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("nextDeliveryTime", targetDepth)) {
                     context.nextToken();
-                    configExportDeliveryInfo
-                            .setNextDeliveryTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configExportDeliveryInfo.setNextDeliveryTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -47,6 +47,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * @param failedPutCount
      *        The number of unsuccessfully written records.
      */
+
     public void setFailedPutCount(Integer failedPutCount) {
         this.failedPutCount = failedPutCount;
     }
@@ -58,6 +59,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * 
      * @return The number of unsuccessfully written records.
      */
+
     public Integer getFailedPutCount() {
         return this.failedPutCount;
     }
@@ -72,6 +74,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResult withFailedPutCount(Integer failedPutCount) {
         setFailedPutCount(failedPutCount);
         return this;
@@ -86,6 +89,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * @return The results for the individual records. The index of each element
      *         matches the same index in which records were sent.
      */
+
     public java.util.List<PutRecordBatchResponseEntry> getRequestResponses() {
         return requestResponses;
     }
@@ -100,6 +104,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      *        The results for the individual records. The index of each element
      *        matches the same index in which records were sent.
      */
+
     public void setRequestResponses(
             java.util.Collection<PutRecordBatchResponseEntry> requestResponses) {
         if (requestResponses == null) {
@@ -129,6 +134,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResult withRequestResponses(
             PutRecordBatchResponseEntry... requestResponses) {
         if (this.requestResponses == null) {
@@ -153,6 +159,7 @@ public class PutRecordBatchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordBatchResult withRequestResponses(
             java.util.Collection<PutRecordBatchResponseEntry> requestResponses) {
         setRequestResponses(requestResponses);

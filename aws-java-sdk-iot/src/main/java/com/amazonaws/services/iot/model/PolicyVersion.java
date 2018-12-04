@@ -52,6 +52,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @param versionId
      *        The policy version ID.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -63,6 +64,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * 
      * @return The policy version ID.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -77,6 +79,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withVersionId(String versionId) {
         setVersionId(versionId);
         return this;
@@ -90,6 +93,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @param isDefaultVersion
      *        Specifies whether the policy version is the default.
      */
+
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
         this.isDefaultVersion = isDefaultVersion;
     }
@@ -101,6 +105,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * 
      * @return Specifies whether the policy version is the default.
      */
+
     public Boolean getIsDefaultVersion() {
         return this.isDefaultVersion;
     }
@@ -115,6 +120,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withIsDefaultVersion(Boolean isDefaultVersion) {
         setIsDefaultVersion(isDefaultVersion);
         return this;
@@ -127,6 +133,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * 
      * @return Specifies whether the policy version is the default.
      */
+
     public Boolean isDefaultVersion() {
         return this.isDefaultVersion;
     }
@@ -139,6 +146,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @param createDate
      *        The date and time the policy was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -150,6 +158,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * 
      * @return The date and time the policy was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -164,6 +173,7 @@ public class PolicyVersion implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PolicyVersion withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;

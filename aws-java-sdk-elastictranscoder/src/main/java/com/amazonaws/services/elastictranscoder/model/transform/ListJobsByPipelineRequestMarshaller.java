@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListJobsByPipelineRequest Marshaller
@@ -47,7 +49,14 @@ public class ListJobsByPipelineRequestMarshaller
         implements
         Marshaller<Request<ListJobsByPipelineRequest>, ListJobsByPipelineRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListJobsByPipelineRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListJobsByPipelineRequest> marshall(
             ListJobsByPipelineRequest listJobsByPipelineRequest) {
@@ -64,25 +73,23 @@ public class ListJobsByPipelineRequestMarshaller
 
         String uriResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{PipelineId}",
-                (listJobsByPipelineRequest.getPipelineId() == null) ? ""
-                        : StringUtils.fromString(listJobsByPipelineRequest
-                                .getPipelineId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{PipelineId}",
+                        (listJobsByPipelineRequest.getPipelineId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listJobsByPipelineRequest
+                                                .getPipelineId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String ascending = (listJobsByPipelineRequest.getAscending() == null) ? null
-                : StringUtils.fromString(listJobsByPipelineRequest
-                        .getAscending());
-        if (ascending != null) {
-            request.addParameter("Ascending", ascending);
+        if (listJobsByPipelineRequest.getAscending() != null) {
+            request.addParameter("Ascending", StringUtils
+                    .fromString(listJobsByPipelineRequest.getAscending()));
         }
 
-        String pageToken = (listJobsByPipelineRequest.getPageToken() == null) ? null
-                : StringUtils.fromString(listJobsByPipelineRequest
-                        .getPageToken());
-        if (pageToken != null) {
-            request.addParameter("PageToken", pageToken);
+        if (listJobsByPipelineRequest.getPageToken() != null) {
+            request.addParameter("PageToken", StringUtils
+                    .fromString(listJobsByPipelineRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

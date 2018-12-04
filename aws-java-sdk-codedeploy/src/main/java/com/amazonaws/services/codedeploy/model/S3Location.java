@@ -20,8 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about the location of application artifacts that are stored in
- * Amazon S3.
+ * Information about the location of application artifacts stored in Amazon S3.
  * </p>
  */
 public class S3Location implements Serializable, Cloneable {
@@ -84,6 +83,7 @@ public class S3Location implements Serializable, Cloneable {
      *        The name of the Amazon S3 bucket where the application revision is
      *        stored.
      */
+
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
@@ -97,6 +97,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return The name of the Amazon S3 bucket where the application revision
      *         is stored.
      */
+
     public String getBucket() {
         return this.bucket;
     }
@@ -113,6 +114,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withBucket(String bucket) {
         setBucket(bucket);
         return this;
@@ -128,6 +130,7 @@ public class S3Location implements Serializable, Cloneable {
      *        The name of the Amazon S3 object that represents the bundled
      *        artifacts for the application revision.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -141,6 +144,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return The name of the Amazon S3 object that represents the bundled
      *         artifacts for the application revision.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -157,6 +161,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withKey(String key) {
         setKey(key);
         return this;
@@ -181,6 +186,7 @@ public class S3Location implements Serializable, Cloneable {
      *        <li>zip: A zip archive file.</li>
      * @see BundleType
      */
+
     public void setBundleType(String bundleType) {
         this.bundleType = bundleType;
     }
@@ -203,6 +209,7 @@ public class S3Location implements Serializable, Cloneable {
      *         <li>zip: A zip archive file.</li>
      * @see BundleType
      */
+
     public String getBundleType() {
         return this.bundleType;
     }
@@ -228,6 +235,7 @@ public class S3Location implements Serializable, Cloneable {
      *         chained together.
      * @see BundleType
      */
+
     public S3Location withBundleType(String bundleType) {
         setBundleType(bundleType);
         return this;
@@ -250,10 +258,9 @@ public class S3Location implements Serializable, Cloneable {
      *        <li>tar: A tar archive file.</li>
      *        <li>tgz: A compressed tar archive file.</li>
      *        <li>zip: A zip archive file.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BundleType
      */
+
     public void setBundleType(BundleType bundleType) {
         this.bundleType = bundleType.toString();
     }
@@ -279,6 +286,7 @@ public class S3Location implements Serializable, Cloneable {
      *         chained together.
      * @see BundleType
      */
+
     public S3Location withBundleType(BundleType bundleType) {
         setBundleType(bundleType);
         return this;
@@ -301,6 +309,7 @@ public class S3Location implements Serializable, Cloneable {
      *        If the version is not specified, the system will use the most
      *        recent version by default.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -321,6 +330,7 @@ public class S3Location implements Serializable, Cloneable {
      *         If the version is not specified, the system will use the most
      *         recent version by default.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -344,6 +354,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withVersion(String version) {
         setVersion(version);
         return this;
@@ -366,6 +377,7 @@ public class S3Location implements Serializable, Cloneable {
      *        If the ETag is not specified as an input parameter, ETag
      *        validation of the object will be skipped.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -386,6 +398,7 @@ public class S3Location implements Serializable, Cloneable {
      *         If the ETag is not specified as an input parameter, ETag
      *         validation of the object will be skipped.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -409,6 +422,7 @@ public class S3Location implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Location withETag(String eTag) {
         setETag(eTag);
         return this;

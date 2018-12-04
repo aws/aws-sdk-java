@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to terminate an environment.
+ * </p>
  */
 public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -97,6 +99,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -117,6 +120,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -140,6 +144,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateEnvironmentRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -162,6 +167,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -182,6 +188,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -205,6 +212,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateEnvironmentRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -257,6 +265,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setTerminateResources(Boolean terminateResources) {
         this.terminateResources = terminateResources;
     }
@@ -306,6 +315,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getTerminateResources() {
         return this.terminateResources;
     }
@@ -358,6 +368,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateEnvironmentRequest withTerminateResources(
             Boolean terminateResources) {
         setTerminateResources(terminateResources);
@@ -409,6 +420,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTerminateResources() {
         return this.terminateResources;
     }
@@ -423,6 +435,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      *        Terminates the target environment even if another environment in
      *        the same group is dependent on it.
      */
+
     public void setForceTerminate(Boolean forceTerminate) {
         this.forceTerminate = forceTerminate;
     }
@@ -436,6 +449,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Terminates the target environment even if another environment in
      *         the same group is dependent on it.
      */
+
     public Boolean getForceTerminate() {
         return this.forceTerminate;
     }
@@ -452,6 +466,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TerminateEnvironmentRequest withForceTerminate(Boolean forceTerminate) {
         setForceTerminate(forceTerminate);
         return this;
@@ -466,6 +481,7 @@ public class TerminateEnvironmentRequest extends AmazonWebServiceRequest
      * @return Terminates the target environment even if another environment in
      *         the same group is dependent on it.
      */
+
     public Boolean isForceTerminate() {
         return this.forceTerminate;
     }

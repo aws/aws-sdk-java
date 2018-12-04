@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.10.50-SNAPSHOT</version>
+  <version>1.11.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -92,21 +92,31 @@
     <module>aws-java-sdk-iot</module>
     <module>aws-java-sdk-api-gateway</module>
     <module>aws-java-sdk-acm</module>
+    <module>aws-java-sdk-gamelift</module>
+    <module>aws-java-sdk-dms</module>
+    <module>aws-java-sdk-marketplacemeteringservice</module>
+    <module>aws-java-sdk-cognitoidp</module>
+    <module>aws-java-sdk-discovery</module>
+    <module>aws-java-sdk-applicationautoscaling</module>
     <module>aws-java-sdk</module>
     <module>aws-java-sdk-osgi</module>
     <module>aws-java-sdk-core</module>
     <module>aws-java-sdk-bom</module>
     <module>aws-java-sdk-test-utils</module>
+    <module>aws-java-sdk-code-generator</module>
+    <module>aws-java-sdk-codegen-maven-plugin</module>
   </modules>
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
+    <httpcomponents.httpclient.version>4.5.2</httpcomponents.httpclient.version>
     <freemarker.version>2.3.9</freemarker.version>
     <javax.mail.version>1.4.6</javax.mail.version>
     <aspectj.version>1.8.2</aspectj.version>
     <spring.version>3.0.7.RELEASE</spring.version>
-    <jackson.version>2.5.3</jackson.version>
+    <jackson.version>2.6.6</jackson.version>
+    <jre.version>1.6</jre.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencyManagement>
@@ -115,6 +125,16 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.12</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.tomakehurst</groupId>
+        <artifactId>wiremock</artifactId>
+        <version>1.55</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
@@ -140,8 +160,8 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>2.3</version>
           <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
+            <source>${jre.version}</source>
+            <target>${jre.version}</target>
             <encoding>UTF-8</encoding>
             <forceJavacCompilerUse>true</forceJavacCompilerUse>
           </configuration>

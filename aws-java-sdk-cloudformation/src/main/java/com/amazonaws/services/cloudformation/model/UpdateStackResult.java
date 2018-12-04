@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The output for a <a>UpdateStack</a> action.
+ * The output for an <a>UpdateStack</a> action.
  * </p>
  */
 public class UpdateStackResult implements Serializable, Cloneable {
@@ -40,6 +40,7 @@ public class UpdateStackResult implements Serializable, Cloneable {
      * @param stackId
      *        Unique identifier of the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -51,6 +52,7 @@ public class UpdateStackResult implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -65,6 +67,7 @@ public class UpdateStackResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStackResult withStackId(String stackId) {
         setStackId(stackId);
         return this;

@@ -16,6 +16,7 @@
 package com.amazonaws.services.importexport;
 
 import com.amazonaws.services.importexport.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Import/Export asynchronously. Each asynchronous
@@ -31,6 +32,7 @@ import com.amazonaws.services.importexport.model.*;
  * faster than Internet transfer and more cost effective than upgrading your
  * connectivity.
  */
+@ThreadSafe
 public class AmazonImportExportAsyncClient extends AmazonImportExportClient
         implements AmazonImportExportAsync {
 
@@ -130,8 +132,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -223,9 +224,7 @@ public class AmazonImportExportAsyncClient extends AmazonImportExportClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

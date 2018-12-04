@@ -96,6 +96,7 @@ public class Activity implements Serializable, Cloneable {
      * @param activityId
      *        The ID of the activity.
      */
+
     public void setActivityId(String activityId) {
         this.activityId = activityId;
     }
@@ -107,6 +108,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The ID of the activity.
      */
+
     public String getActivityId() {
         return this.activityId;
     }
@@ -121,6 +123,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withActivityId(String activityId) {
         setActivityId(activityId);
         return this;
@@ -134,6 +137,7 @@ public class Activity implements Serializable, Cloneable {
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -145,6 +149,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The name of the Auto Scaling group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -159,6 +164,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
@@ -172,6 +178,7 @@ public class Activity implements Serializable, Cloneable {
      * @param description
      *        A friendly, more verbose description of the activity.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -183,6 +190,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return A friendly, more verbose description of the activity.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -197,6 +205,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withDescription(String description) {
         setDescription(description);
         return this;
@@ -210,6 +219,7 @@ public class Activity implements Serializable, Cloneable {
      * @param cause
      *        The reason the activity began.
      */
+
     public void setCause(String cause) {
         this.cause = cause;
     }
@@ -221,6 +231,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The reason the activity began.
      */
+
     public String getCause() {
         return this.cause;
     }
@@ -235,6 +246,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withCause(String cause) {
         setCause(cause);
         return this;
@@ -248,6 +260,7 @@ public class Activity implements Serializable, Cloneable {
      * @param startTime
      *        The start time of the activity.
      */
+
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
@@ -259,6 +272,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The start time of the activity.
      */
+
     public java.util.Date getStartTime() {
         return this.startTime;
     }
@@ -273,6 +287,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
         return this;
@@ -286,6 +301,7 @@ public class Activity implements Serializable, Cloneable {
      * @param endTime
      *        The end time of the activity.
      */
+
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
     }
@@ -297,6 +313,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The end time of the activity.
      */
+
     public java.util.Date getEndTime() {
         return this.endTime;
     }
@@ -311,6 +328,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withEndTime(java.util.Date endTime) {
         setEndTime(endTime);
         return this;
@@ -325,6 +343,7 @@ public class Activity implements Serializable, Cloneable {
      *        The current status of the activity.
      * @see ScalingActivityStatusCode
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -337,6 +356,7 @@ public class Activity implements Serializable, Cloneable {
      * @return The current status of the activity.
      * @see ScalingActivityStatusCode
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -352,6 +372,7 @@ public class Activity implements Serializable, Cloneable {
      *         chained together.
      * @see ScalingActivityStatusCode
      */
+
     public Activity withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -364,10 +385,9 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @param statusCode
      *        The current status of the activity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ScalingActivityStatusCode
      */
+
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
         this.statusCode = statusCode.toString();
     }
@@ -383,6 +403,7 @@ public class Activity implements Serializable, Cloneable {
      *         chained together.
      * @see ScalingActivityStatusCode
      */
+
     public Activity withStatusCode(ScalingActivityStatusCode statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -396,6 +417,7 @@ public class Activity implements Serializable, Cloneable {
      * @param statusMessage
      *        A friendly, more verbose description of the activity status.
      */
+
     public void setStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
     }
@@ -407,6 +429,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return A friendly, more verbose description of the activity status.
      */
+
     public String getStatusMessage() {
         return this.statusMessage;
     }
@@ -421,6 +444,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withStatusMessage(String statusMessage) {
         setStatusMessage(statusMessage);
         return this;
@@ -435,6 +459,7 @@ public class Activity implements Serializable, Cloneable {
      *        A value between 0 and 100 that indicates the progress of the
      *        activity.
      */
+
     public void setProgress(Integer progress) {
         this.progress = progress;
     }
@@ -447,6 +472,7 @@ public class Activity implements Serializable, Cloneable {
      * @return A value between 0 and 100 that indicates the progress of the
      *         activity.
      */
+
     public Integer getProgress() {
         return this.progress;
     }
@@ -462,6 +488,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withProgress(Integer progress) {
         setProgress(progress);
         return this;
@@ -475,6 +502,7 @@ public class Activity implements Serializable, Cloneable {
      * @param details
      *        The details about the activity.
      */
+
     public void setDetails(String details) {
         this.details = details;
     }
@@ -486,6 +514,7 @@ public class Activity implements Serializable, Cloneable {
      * 
      * @return The details about the activity.
      */
+
     public String getDetails() {
         return this.details;
     }
@@ -500,6 +529,7 @@ public class Activity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Activity withDetails(String details) {
         setDetails(details);
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BufferingHintsMarshaller
@@ -39,28 +34,29 @@ import com.amazonaws.util.json.*;
 public class BufferingHintsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(BufferingHints bufferingHints, JSONWriter jsonWriter) {
+    public void marshall(BufferingHints bufferingHints,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (bufferingHints == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (bufferingHints.getSizeInMBs() != null) {
-                jsonWriter.key("SizeInMBs")
-                        .value(bufferingHints.getSizeInMBs());
+                jsonGenerator.writeFieldName("SizeInMBs").writeValue(
+                        bufferingHints.getSizeInMBs());
             }
-
             if (bufferingHints.getIntervalInSeconds() != null) {
-                jsonWriter.key("IntervalInSeconds").value(
+                jsonGenerator.writeFieldName("IntervalInSeconds").writeValue(
                         bufferingHints.getIntervalInSeconds());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActionExecutionMarshaller
@@ -39,52 +34,50 @@ import com.amazonaws.util.json.*;
 public class ActionExecutionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionExecution actionExecution, JSONWriter jsonWriter) {
+    public void marshall(ActionExecution actionExecution,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (actionExecution == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionExecution.getStatus() != null) {
-                jsonWriter.key("status").value(actionExecution.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        actionExecution.getStatus());
             }
-
             if (actionExecution.getSummary() != null) {
-                jsonWriter.key("summary").value(actionExecution.getSummary());
+                jsonGenerator.writeFieldName("summary").writeValue(
+                        actionExecution.getSummary());
             }
-
             if (actionExecution.getLastStatusChange() != null) {
-                jsonWriter.key("lastStatusChange").value(
+                jsonGenerator.writeFieldName("lastStatusChange").writeValue(
                         actionExecution.getLastStatusChange());
             }
-
             if (actionExecution.getExternalExecutionId() != null) {
-                jsonWriter.key("externalExecutionId").value(
+                jsonGenerator.writeFieldName("externalExecutionId").writeValue(
                         actionExecution.getExternalExecutionId());
             }
-
             if (actionExecution.getExternalExecutionUrl() != null) {
-                jsonWriter.key("externalExecutionUrl").value(
-                        actionExecution.getExternalExecutionUrl());
+                jsonGenerator.writeFieldName("externalExecutionUrl")
+                        .writeValue(actionExecution.getExternalExecutionUrl());
             }
-
             if (actionExecution.getPercentComplete() != null) {
-                jsonWriter.key("percentComplete").value(
+                jsonGenerator.writeFieldName("percentComplete").writeValue(
                         actionExecution.getPercentComplete());
             }
-
             if (actionExecution.getErrorDetails() != null) {
-                jsonWriter.key("errorDetails");
+                jsonGenerator.writeFieldName("errorDetails");
                 ErrorDetailsJsonMarshaller.getInstance().marshall(
-                        actionExecution.getErrorDetails(), jsonWriter);
+                        actionExecution.getErrorDetails(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

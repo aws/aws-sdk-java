@@ -49,6 +49,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      *        Specifies the daily snapshot options specified for the
      *        Elasticsearch domain.
      */
+
     public void setOptions(SnapshotOptions options) {
         this.options = options;
     }
@@ -62,6 +63,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      * @return Specifies the daily snapshot options specified for the
      *         Elasticsearch domain.
      */
+
     public SnapshotOptions getOptions() {
         return this.options;
     }
@@ -78,6 +80,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotOptionsStatus withOptions(SnapshotOptions options) {
         setOptions(options);
         return this;
@@ -91,6 +94,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      * @param status
      *        Specifies the status of a daily automated snapshot.
      */
+
     public void setStatus(OptionStatus status) {
         this.status = status;
     }
@@ -102,6 +106,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      * 
      * @return Specifies the status of a daily automated snapshot.
      */
+
     public OptionStatus getStatus() {
         return this.status;
     }
@@ -116,6 +121,7 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SnapshotOptionsStatus withStatus(OptionStatus status) {
         setStatus(status);
         return this;

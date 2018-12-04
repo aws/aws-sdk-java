@@ -49,6 +49,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      *        The name of the repository to set or change the default branch
      *        for.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -61,6 +62,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      * @return The name of the repository to set or change the default branch
      *         for.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -76,6 +78,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDefaultBranchRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -89,6 +92,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      * @param defaultBranchName
      *        The name of the branch to set as the default.
      */
+
     public void setDefaultBranchName(String defaultBranchName) {
         this.defaultBranchName = defaultBranchName;
     }
@@ -100,6 +104,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the branch to set as the default.
      */
+
     public String getDefaultBranchName() {
         return this.defaultBranchName;
     }
@@ -114,6 +119,7 @@ public class UpdateDefaultBranchRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDefaultBranchRequest withDefaultBranchName(
             String defaultBranchName) {
         setDefaultBranchName(defaultBranchName);

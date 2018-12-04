@@ -279,6 +279,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -317,6 +318,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -358,6 +360,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -371,6 +374,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @param idnLangCode
      *        Reserved for future use.
      */
+
     public void setIdnLangCode(String idnLangCode) {
         this.idnLangCode = idnLangCode;
     }
@@ -382,6 +386,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved for future use.
      */
+
     public String getIdnLangCode() {
         return this.idnLangCode;
     }
@@ -396,6 +401,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withIdnLangCode(String idnLangCode) {
         setIdnLangCode(idnLangCode);
         return this;
@@ -436,6 +442,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setDurationInYears(Integer durationInYears) {
         this.durationInYears = durationInYears;
     }
@@ -474,6 +481,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public Integer getDurationInYears() {
         return this.durationInYears;
     }
@@ -515,6 +523,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withDurationInYears(Integer durationInYears) {
         setDurationInYears(durationInYears);
         return this;
@@ -544,6 +553,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public java.util.List<Nameserver> getNameservers() {
         if (nameservers == null) {
             nameservers = new com.amazonaws.internal.SdkInternalList<Nameserver>();
@@ -576,6 +586,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
         if (nameservers == null) {
             this.nameservers = null;
@@ -619,6 +630,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withNameservers(Nameserver... nameservers) {
         if (this.nameservers == null) {
             setNameservers(new com.amazonaws.internal.SdkInternalList<Nameserver>(
@@ -657,6 +669,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withNameservers(
             java.util.Collection<Nameserver> nameservers) {
         setNameservers(nameservers);
@@ -684,6 +697,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
     }
@@ -708,6 +722,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public String getAuthCode() {
         return this.authCode;
     }
@@ -735,6 +750,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withAuthCode(String authCode) {
         setAuthCode(authCode);
         return this;
@@ -774,6 +790,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setAutoRenew(Boolean autoRenew) {
         this.autoRenew = autoRenew;
     }
@@ -811,6 +828,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getAutoRenew() {
         return this.autoRenew;
     }
@@ -851,6 +869,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withAutoRenew(Boolean autoRenew) {
         setAutoRenew(autoRenew);
         return this;
@@ -889,6 +908,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isAutoRenew() {
         return this.autoRenew;
     }
@@ -929,6 +949,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setAdminContact(ContactDetail adminContact) {
         this.adminContact = adminContact;
     }
@@ -968,6 +989,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getAdminContact() {
         return this.adminContact;
     }
@@ -1010,6 +1032,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withAdminContact(ContactDetail adminContact) {
         setAdminContact(adminContact);
         return this;
@@ -1051,6 +1074,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setRegistrantContact(ContactDetail registrantContact) {
         this.registrantContact = registrantContact;
     }
@@ -1090,6 +1114,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getRegistrantContact() {
         return this.registrantContact;
     }
@@ -1132,6 +1157,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withRegistrantContact(
             ContactDetail registrantContact) {
         setRegistrantContact(registrantContact);
@@ -1174,6 +1200,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: Yes
      */
+
     public void setTechContact(ContactDetail techContact) {
         this.techContact = techContact;
     }
@@ -1213,6 +1240,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: Yes
      */
+
     public ContactDetail getTechContact() {
         return this.techContact;
     }
@@ -1255,6 +1283,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withTechContact(ContactDetail techContact) {
         setTechContact(techContact);
         return this;
@@ -1297,6 +1326,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectAdminContact(Boolean privacyProtectAdminContact) {
         this.privacyProtectAdminContact = privacyProtectAdminContact;
     }
@@ -1337,6 +1367,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectAdminContact() {
         return this.privacyProtectAdminContact;
     }
@@ -1380,6 +1411,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withPrivacyProtectAdminContact(
             Boolean privacyProtectAdminContact) {
         setPrivacyProtectAdminContact(privacyProtectAdminContact);
@@ -1422,6 +1454,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectAdminContact() {
         return this.privacyProtectAdminContact;
     }
@@ -1463,6 +1496,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectRegistrantContact(
             Boolean privacyProtectRegistrantContact) {
         this.privacyProtectRegistrantContact = privacyProtectRegistrantContact;
@@ -1504,6 +1538,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectRegistrantContact() {
         return this.privacyProtectRegistrantContact;
     }
@@ -1547,6 +1582,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withPrivacyProtectRegistrantContact(
             Boolean privacyProtectRegistrantContact) {
         setPrivacyProtectRegistrantContact(privacyProtectRegistrantContact);
@@ -1589,6 +1625,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectRegistrantContact() {
         return this.privacyProtectRegistrantContact;
     }
@@ -1630,6 +1667,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        Required: No
      */
+
     public void setPrivacyProtectTechContact(Boolean privacyProtectTechContact) {
         this.privacyProtectTechContact = privacyProtectTechContact;
     }
@@ -1670,6 +1708,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean getPrivacyProtectTechContact() {
         return this.privacyProtectTechContact;
     }
@@ -1713,6 +1752,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferDomainRequest withPrivacyProtectTechContact(
             Boolean privacyProtectTechContact) {
         setPrivacyProtectTechContact(privacyProtectTechContact);
@@ -1755,6 +1795,7 @@ public class TransferDomainRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         Required: No
      */
+
     public Boolean isPrivacyProtectTechContact() {
         return this.privacyProtectTechContact;
     }

@@ -28,15 +28,15 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to add the client ID to. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * resource to add the client ID to. You can get a list of OIDC provider
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      */
     private String openIDConnectProviderArn;
     /**
      * <p>
      * The client ID (also known as audience) to add to the IAM OpenID Connect
-     * provider.
+     * provider resource.
      * </p>
      */
     private String clientID;
@@ -44,16 +44,17 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to add the client ID to. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * resource to add the client ID to. You can get a list of OIDC provider
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to add the client ID to. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *        provider resource to add the client ID to. You can get a list of
+     *        OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
@@ -61,15 +62,16 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to add the client ID to. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * resource to add the client ID to. You can get a list of OIDC provider
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *         provider to add the client ID to. You can get a list of OIDC
-     *         provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *         provider resource to add the client ID to. You can get a list of
+     *         OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *         action.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
@@ -77,18 +79,19 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider
-     * to add the client ID to. You can get a list of OIDC provider ARNs by
-     * using the <a>ListOpenIDConnectProviders</a> action.
+     * resource to add the client ID to. You can get a list of OIDC provider
+     * ARNs by using the <a>ListOpenIDConnectProviders</a> action.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC)
-     *        provider to add the client ID to. You can get a list of OIDC
-     *        provider ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *        provider resource to add the client ID to. You can get a list of
+     *        OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a>
      *        action.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddClientIDToOpenIDConnectProviderRequest withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);
@@ -98,13 +101,14 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The client ID (also known as audience) to add to the IAM OpenID Connect
-     * provider.
+     * provider resource.
      * </p>
      * 
      * @param clientID
      *        The client ID (also known as audience) to add to the IAM OpenID
-     *        Connect provider.
+     *        Connect provider resource.
      */
+
     public void setClientID(String clientID) {
         this.clientID = clientID;
     }
@@ -112,12 +116,13 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The client ID (also known as audience) to add to the IAM OpenID Connect
-     * provider.
+     * provider resource.
      * </p>
      * 
      * @return The client ID (also known as audience) to add to the IAM OpenID
-     *         Connect provider.
+     *         Connect provider resource.
      */
+
     public String getClientID() {
         return this.clientID;
     }
@@ -125,15 +130,16 @@ public class AddClientIDToOpenIDConnectProviderRequest extends
     /**
      * <p>
      * The client ID (also known as audience) to add to the IAM OpenID Connect
-     * provider.
+     * provider resource.
      * </p>
      * 
      * @param clientID
      *        The client ID (also known as audience) to add to the IAM OpenID
-     *        Connect provider.
+     *        Connect provider resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddClientIDToOpenIDConnectProviderRequest withClientID(
             String clientID) {
         setClientID(clientID);

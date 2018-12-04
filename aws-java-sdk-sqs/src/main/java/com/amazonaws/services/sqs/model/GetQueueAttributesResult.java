@@ -19,7 +19,9 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A list of returned queue attributes.
+ * </p>
  */
 public class GetQueueAttributesResult implements Serializable, Cloneable {
 
@@ -37,6 +39,7 @@ public class GetQueueAttributesResult implements Serializable, Cloneable {
      * 
      * @return A map of attributes to the respective values.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -52,6 +55,7 @@ public class GetQueueAttributesResult implements Serializable, Cloneable {
      * @param attributes
      *        A map of attributes to the respective values.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -68,6 +72,7 @@ public class GetQueueAttributesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetQueueAttributesResult withAttributes(
             java.util.Map<String, String> attributes) {
         setAttributes(attributes);
@@ -89,6 +94,7 @@ public class GetQueueAttributesResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetQueueAttributesResult clearAttributesEntries() {
         this.attributes = null;
         return this;

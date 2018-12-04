@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePolicyRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreatePolicyRequestMarshaller implements
         Marshaller<Request<CreatePolicyRequest>, CreatePolicyRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePolicyRequest> marshall(
             CreatePolicyRequest createPolicyRequest) {
@@ -65,27 +73,25 @@ public class CreatePolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{policyName}",
-                (createPolicyRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(createPolicyRequest
-                                .getPolicyName()));
+                (createPolicyRequest.getPolicyName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createPolicyRequest
+                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createPolicyRequest.getPolicyDocument() != null) {
-                jsonWriter.key("policyDocument").value(
+                jsonGenerator.writeFieldName("policyDocument").writeValue(
                         createPolicyRequest.getPolicyDocument());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

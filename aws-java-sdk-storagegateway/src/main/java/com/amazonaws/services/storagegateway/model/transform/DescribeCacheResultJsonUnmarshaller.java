@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,46 +55,41 @@ public class DescribeCacheResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult.setGatewayARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeCacheResult.setGatewayARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DiskIds", targetDepth)) {
                     context.nextToken();
                     describeCacheResult
-                            .setDiskIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setDiskIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context
                         .testExpression("CacheAllocatedInBytes", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult
-                            .setCacheAllocatedInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeCacheResult.setCacheAllocatedInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheUsedPercentage", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult
-                            .setCacheUsedPercentage(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeCacheResult.setCacheUsedPercentage(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheDirtyPercentage", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult
-                            .setCacheDirtyPercentage(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeCacheResult.setCacheDirtyPercentage(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheHitPercentage", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult
-                            .setCacheHitPercentage(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeCacheResult.setCacheHitPercentage(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("CacheMissPercentage", targetDepth)) {
                     context.nextToken();
-                    describeCacheResult
-                            .setCacheMissPercentage(DoubleJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeCacheResult.setCacheMissPercentage(context
+                            .getUnmarshaller(Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

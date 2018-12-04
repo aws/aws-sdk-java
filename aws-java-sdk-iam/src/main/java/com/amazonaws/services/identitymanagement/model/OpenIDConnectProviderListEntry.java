@@ -30,6 +30,7 @@ public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -37,6 +38,7 @@ public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -46,6 +48,7 @@ public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public OpenIDConnectProviderListEntry withArn(String arn) {
         setArn(arn);
         return this;

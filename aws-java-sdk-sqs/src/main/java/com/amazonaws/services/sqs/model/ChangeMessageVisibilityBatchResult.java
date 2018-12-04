@@ -48,6 +48,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * 
      * @return A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
      */
+
     public java.util.List<ChangeMessageVisibilityBatchResultEntry> getSuccessful() {
         if (successful == null) {
             successful = new com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchResultEntry>();
@@ -63,6 +64,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @param successful
      *        A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
      */
+
     public void setSuccessful(
             java.util.Collection<ChangeMessageVisibilityBatchResultEntry> successful) {
         if (successful == null) {
@@ -90,6 +92,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchResult withSuccessful(
             ChangeMessageVisibilityBatchResultEntry... successful) {
         if (this.successful == null) {
@@ -112,6 +115,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchResult withSuccessful(
             java.util.Collection<ChangeMessageVisibilityBatchResultEntry> successful) {
         setSuccessful(successful);
@@ -125,6 +129,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * 
      * @return A list of <a>BatchResultErrorEntry</a> items.
      */
+
     public java.util.List<BatchResultErrorEntry> getFailed() {
         if (failed == null) {
             failed = new com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry>();
@@ -140,6 +145,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @param failed
      *        A list of <a>BatchResultErrorEntry</a> items.
      */
+
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
         if (failed == null) {
             this.failed = null;
@@ -166,6 +172,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchResult withFailed(
             BatchResultErrorEntry... failed) {
         if (this.failed == null) {
@@ -188,6 +195,7 @@ public class ChangeMessageVisibilityBatchResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchResult withFailed(
             java.util.Collection<BatchResultErrorEntry> failed) {
         setFailed(failed);

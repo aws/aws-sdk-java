@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeScalingProcessTypesResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Processes/member", targetDepth)) {
-                    describeScalingProcessTypesResult.getProcesses().add(
-                            ProcessTypeStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeScalingProcessTypesResult
+                            .withProcesses(ProcessTypeStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

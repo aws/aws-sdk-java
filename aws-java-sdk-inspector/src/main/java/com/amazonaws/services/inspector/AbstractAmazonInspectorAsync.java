@@ -45,46 +45,31 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
-            AttachAssessmentAndRulesPackageRequest request) {
+    public java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
+            CreateAssessmentTargetRequest request) {
 
-        return attachAssessmentAndRulesPackageAsync(request, null);
+        return createAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
-            AttachAssessmentAndRulesPackageRequest request,
-            com.amazonaws.handlers.AsyncHandler<AttachAssessmentAndRulesPackageRequest, AttachAssessmentAndRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
+            CreateAssessmentTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            CreateApplicationRequest request) {
+    public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
+            CreateAssessmentTemplateRequest request) {
 
-        return createApplicationAsync(request, null);
+        return createAssessmentTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            CreateApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
-            CreateAssessmentRequest request) {
-
-        return createAssessmentAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
-            CreateAssessmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateAssessmentRequest, CreateAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
+            CreateAssessmentTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,76 +90,91 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
-            DeleteApplicationRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
+            DeleteAssessmentRunRequest request) {
 
-        return deleteApplicationAsync(request, null);
+        return deleteAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
-            DeleteApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
+            DeleteAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
-            DeleteAssessmentRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
+            DeleteAssessmentTargetRequest request) {
 
-        return deleteAssessmentAsync(request, null);
+        return deleteAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
-            DeleteAssessmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRequest, DeleteAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
+            DeleteAssessmentTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
-            DeleteRunRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
+            DeleteAssessmentTemplateRequest request) {
 
-        return deleteRunAsync(request, null);
+        return deleteAssessmentTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
-            DeleteRunRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
+            DeleteAssessmentTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
-            DescribeApplicationRequest request) {
+    public java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
+            DescribeAssessmentRunsRequest request) {
 
-        return describeApplicationAsync(request, null);
+        return describeAssessmentRunsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
-            DescribeApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
+            DescribeAssessmentRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
-            DescribeAssessmentRequest request) {
+    public java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
+            DescribeAssessmentTargetsRequest request) {
 
-        return describeAssessmentAsync(request, null);
+        return describeAssessmentTargetsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
-            DescribeAssessmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRequest, DescribeAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
+            DescribeAssessmentTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTargetsRequest, DescribeAssessmentTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
+            DescribeAssessmentTemplatesRequest request) {
+
+        return describeAssessmentTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
+            DescribeAssessmentTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTemplatesRequest, DescribeAssessmentTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -195,166 +195,136 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
-            DescribeFindingRequest request) {
+    public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
+            DescribeFindingsRequest request) {
 
-        return describeFindingAsync(request, null);
+        return describeFindingsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
-            DescribeFindingRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeFindingRequest, DescribeFindingResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
+            DescribeFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
-            DescribeResourceGroupRequest request) {
+    public java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
+            DescribeResourceGroupsRequest request) {
 
-        return describeResourceGroupAsync(request, null);
+        return describeResourceGroupsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
-            DescribeResourceGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupRequest, DescribeResourceGroupResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
+            DescribeResourceGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
-            DescribeRulesPackageRequest request) {
+    public java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
+            DescribeRulesPackagesRequest request) {
 
-        return describeRulesPackageAsync(request, null);
+        return describeRulesPackagesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
-            DescribeRulesPackageRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeRulesPackageRequest, DescribeRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
+            DescribeRulesPackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
-            DescribeRunRequest request) {
+    public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
+            GetTelemetryMetadataRequest request) {
 
-        return describeRunAsync(request, null);
+        return getTelemetryMetadataAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
-            DescribeRunRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeRunRequest, DescribeRunResult> asyncHandler) {
+    public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
+            GetTelemetryMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
-            DetachAssessmentAndRulesPackageRequest request) {
+    public java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
+            ListAssessmentRunAgentsRequest request) {
 
-        return detachAssessmentAndRulesPackageAsync(request, null);
+        return listAssessmentRunAgentsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
-            DetachAssessmentAndRulesPackageRequest request,
-            com.amazonaws.handlers.AsyncHandler<DetachAssessmentAndRulesPackageRequest, DetachAssessmentAndRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
+            ListAssessmentRunAgentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
-            GetAssessmentTelemetryRequest request) {
+    public java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
+            ListAssessmentRunsRequest request) {
 
-        return getAssessmentTelemetryAsync(request, null);
+        return listAssessmentRunsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
-            GetAssessmentTelemetryRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetAssessmentTelemetryRequest, GetAssessmentTelemetryResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
+            ListAssessmentRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            ListApplicationsRequest request) {
+    public java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
+            ListAssessmentTargetsRequest request) {
 
-        return listApplicationsAsync(request, null);
+        return listAssessmentTargetsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            ListApplicationsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
+            ListAssessmentTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
-            ListAssessmentAgentsRequest request) {
+    public java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
+            ListAssessmentTemplatesRequest request) {
 
-        return listAssessmentAgentsAsync(request, null);
+        return listAssessmentTemplatesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
-            ListAssessmentAgentsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListAssessmentAgentsRequest, ListAssessmentAgentsResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
+            ListAssessmentTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
-            ListAssessmentsRequest request) {
+    public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
+            ListEventSubscriptionsRequest request) {
 
-        return listAssessmentsAsync(request, null);
+        return listEventSubscriptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
-            ListAssessmentsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListAssessmentsRequest, ListAssessmentsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
-            ListAttachedAssessmentsRequest request) {
-
-        return listAttachedAssessmentsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
-            ListAttachedAssessmentsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListAttachedAssessmentsRequest, ListAttachedAssessmentsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
-            ListAttachedRulesPackagesRequest request) {
-
-        return listAttachedRulesPackagesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
-            ListAttachedRulesPackagesRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListAttachedRulesPackagesRequest, ListAttachedRulesPackagesResult> asyncHandler) {
+    public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
+            ListEventSubscriptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -390,21 +360,6 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<ListRunsResult> listRunsAsync(
-            ListRunsRequest request) {
-
-        return listRunsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListRunsResult> listRunsAsync(
-            ListRunsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListRunsRequest, ListRunsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest request) {
 
@@ -420,31 +375,16 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
-            LocalizeTextRequest request) {
+    public java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
+            PreviewAgentsRequest request) {
 
-        return localizeTextAsync(request, null);
+        return previewAgentsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
-            LocalizeTextRequest request,
-            com.amazonaws.handlers.AsyncHandler<LocalizeTextRequest, LocalizeTextResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
-            PreviewAgentsForResourceGroupRequest request) {
-
-        return previewAgentsForResourceGroupAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
-            PreviewAgentsForResourceGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<PreviewAgentsForResourceGroupRequest, PreviewAgentsForResourceGroupResult> asyncHandler) {
+    public java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
+            PreviewAgentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -480,21 +420,6 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
-            RunAssessmentRequest request) {
-
-        return runAssessmentAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
-            RunAssessmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<RunAssessmentRequest, RunAssessmentResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest request) {
 
@@ -510,61 +435,76 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector
     }
 
     @Override
-    public java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
-            StartDataCollectionRequest request) {
+    public java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
+            StartAssessmentRunRequest request) {
 
-        return startDataCollectionAsync(request, null);
+        return startAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
-            StartDataCollectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<StartDataCollectionRequest, StartDataCollectionResult> asyncHandler) {
+    public java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
+            StartAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
-            StopDataCollectionRequest request) {
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
+            StopAssessmentRunRequest request) {
 
-        return stopDataCollectionAsync(request, null);
+        return stopAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
-            StopDataCollectionRequest request,
-            com.amazonaws.handlers.AsyncHandler<StopDataCollectionRequest, StopDataCollectionResult> asyncHandler) {
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
+            StopAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
-            UpdateApplicationRequest request) {
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
+            SubscribeToEventRequest request) {
 
-        return updateApplicationAsync(request, null);
+        return subscribeToEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
-            UpdateApplicationRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
+            SubscribeToEventRequest request,
+            com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
-            UpdateAssessmentRequest request) {
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
+            UnsubscribeFromEventRequest request) {
 
-        return updateAssessmentAsync(request, null);
+        return unsubscribeFromEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
-            UpdateAssessmentRequest request,
-            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentRequest, UpdateAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
+            UnsubscribeFromEventRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
+            UpdateAssessmentTargetRequest request) {
+
+        return updateAssessmentTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
+            UpdateAssessmentTargetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

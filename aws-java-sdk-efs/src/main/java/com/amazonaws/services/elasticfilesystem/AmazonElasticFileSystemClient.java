@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.services.elasticfilesystem.model.transform.*;
@@ -43,6 +45,7 @@ import com.amazonaws.services.elasticfilesystem.model.transform.*;
  * <p>
  * <fullname>Amazon Elastic File System</fullname>
  */
+@ThreadSafe
 public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         implements AmazonElasticFileSystem {
     /** Provider for AWS credentials. */
@@ -58,9 +61,108 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "elasticfilesystem";
 
     /**
-     * List of exception unmarshallers for all EFS exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("FileSystemInUse")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "IncorrectFileSystemLifeCycleState")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SecurityGroupNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SubnetNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DependencyTimeout")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("FileSystemNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.FileSystemNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedAvailabilityZone")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("IpAddressInUse")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("SecurityGroupLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServerError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MountTargetConflict")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NoFreeAddressesInSubnet")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("BadRequest")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.BadRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "NetworkInterfaceLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("FileSystemAlreadyExists")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MountTargetNotFound")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("IncorrectMountTargetState")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("FileSystemLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on EFS. A credentials
@@ -79,8 +181,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonElasticFileSystemClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -120,8 +222,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonElasticFileSystemClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -161,8 +262,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      */
     public AmazonElasticFileSystemClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -215,81 +315,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException.class,
-                        "FileSystemInUse"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException.class,
-                        "IncorrectFileSystemLifeCycleState"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException.class,
-                        "SecurityGroupNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException.class,
-                        "SubnetNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.DependencyTimeoutException.class,
-                        "DependencyTimeout"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.FileSystemNotFoundException.class,
-                        "FileSystemNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException.class,
-                        "UnsupportedAvailabilityZone"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException.class,
-                        "IpAddressInUse"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException.class,
-                        "SecurityGroupLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.InternalServerErrorException.class,
-                        "InternalServerError"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException.class,
-                        "MountTargetConflict"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException.class,
-                        "NoFreeAddressesInSubnet"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.BadRequestException.class,
-                        "BadRequest"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException.class,
-                        "NetworkInterfaceLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException.class,
-                        "FileSystemAlreadyExists"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException.class,
-                        "MountTargetNotFound"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException.class,
-                        "IncorrectMountTargetState"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException.class,
-                        "FileSystemLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -379,7 +404,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFileSystemRequestMarshaller()
+                request = new CreateFileSystemRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createFileSystemRequest));
                 // Binds the request metrics to the current request.
@@ -388,9 +413,11 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateFileSystemResult> responseHandler = new JsonResponseHandler<CreateFileSystemResult>(
-                    new CreateFileSystemResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFileSystemResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateFileSystemResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -579,18 +606,20 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMountTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(createMountTargetRequest));
+                request = new CreateMountTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateMountTargetResult> responseHandler = new JsonResponseHandler<CreateMountTargetResult>(
-                    new CreateMountTargetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMountTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateMountTargetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -616,6 +645,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param createTagsRequest
+     * @return Result of the CreateTags operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -627,29 +657,33 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @sample AmazonElasticFileSystem.CreateTags
      */
     @Override
-    public void createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTagsRequest));
+                request = new CreateTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -682,6 +716,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteFileSystemRequest
+     * @return Result of the DeleteFileSystem operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -695,18 +730,19 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @sample AmazonElasticFileSystem.DeleteFileSystem
      */
     @Override
-    public void deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
+    public DeleteFileSystemResult deleteFileSystem(
+            DeleteFileSystemRequest deleteFileSystemRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteFileSystemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteFileSystemRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteFileSystemResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFileSystemRequestMarshaller()
+                request = new DeleteFileSystemRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(deleteFileSystemRequest));
                 // Binds the request metrics to the current request.
@@ -715,10 +751,14 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFileSystemResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteFileSystemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -760,6 +800,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * </ul>
      * 
      * @param deleteMountTargetRequest
+     * @return Result of the DeleteMountTarget operation returned by the
+     *         service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -774,31 +816,35 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @sample AmazonElasticFileSystem.DeleteMountTarget
      */
     @Override
-    public void deleteMountTarget(
+    public DeleteMountTargetResult deleteMountTarget(
             DeleteMountTargetRequest deleteMountTargetRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMountTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMountTargetRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMountTargetResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMountTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteMountTargetRequest));
+                request = new DeleteMountTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMountTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteMountTargetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -822,6 +868,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -833,29 +880,33 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @sample AmazonElasticFileSystem.DeleteTags
      */
     @Override
-    public void deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteTagsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteTagsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTagsRequest));
+                request = new DeleteTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -929,18 +980,20 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFileSystemsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeFileSystemsRequest));
+                request = new DescribeFileSystemsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeFileSystemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeFileSystemsResult> responseHandler = new JsonResponseHandler<DescribeFileSystemsResult>(
-                    new DescribeFileSystemsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFileSystemsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeFileSystemsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1002,7 +1055,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMountTargetSecurityGroupsRequestMarshaller()
+                request = new DescribeMountTargetSecurityGroupsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
@@ -1011,9 +1065,11 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMountTargetSecurityGroupsResult> responseHandler = new JsonResponseHandler<DescribeMountTargetSecurityGroupsResult>(
-                    new DescribeMountTargetSecurityGroupsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMountTargetSecurityGroupsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeMountTargetSecurityGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1068,18 +1124,20 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMountTargetsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeMountTargetsRequest));
+                request = new DescribeMountTargetsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeMountTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMountTargetsResult> responseHandler = new JsonResponseHandler<DescribeMountTargetsResult>(
-                    new DescribeMountTargetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMountTargetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeMountTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1127,17 +1185,19 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTagsResult> responseHandler = new JsonResponseHandler<DescribeTagsResult>(
-                    new DescribeTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1172,6 +1232,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * </ul>
      * 
      * @param modifyMountTargetSecurityGroupsRequest
+     * @return Result of the ModifyMountTargetSecurityGroups operation returned
+     *         by the service.
      * @throws BadRequestException
      *         Returned if the request is malformed or contains an error such as
      *         an invalid parameter value or a missing required parameter.
@@ -1192,19 +1254,20 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
      * @sample AmazonElasticFileSystem.ModifyMountTargetSecurityGroups
      */
     @Override
-    public void modifyMountTargetSecurityGroups(
+    public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(
             ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
         ExecutionContext executionContext = createExecutionContext(modifyMountTargetSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ModifyMountTargetSecurityGroupsRequest> request = null;
-        Response<Void> response = null;
+        Response<ModifyMountTargetSecurityGroupsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyMountTargetSecurityGroupsRequestMarshaller()
+                request = new ModifyMountTargetSecurityGroupsRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(modifyMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
@@ -1213,10 +1276,14 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyMountTargetSecurityGroupsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ModifyMountTargetSecurityGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1247,33 +1314,48 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

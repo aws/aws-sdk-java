@@ -39,6 +39,7 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      *        The status of the change token.
      * @see ChangeTokenStatus
      */
+
     public void setChangeTokenStatus(String changeTokenStatus) {
         this.changeTokenStatus = changeTokenStatus;
     }
@@ -51,6 +52,7 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      * @return The status of the change token.
      * @see ChangeTokenStatus
      */
+
     public String getChangeTokenStatus() {
         return this.changeTokenStatus;
     }
@@ -66,6 +68,7 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeTokenStatus
      */
+
     public GetChangeTokenStatusResult withChangeTokenStatus(
             String changeTokenStatus) {
         setChangeTokenStatus(changeTokenStatus);
@@ -79,10 +82,9 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      * 
      * @param changeTokenStatus
      *        The status of the change token.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeTokenStatus
      */
+
     public void setChangeTokenStatus(ChangeTokenStatus changeTokenStatus) {
         this.changeTokenStatus = changeTokenStatus.toString();
     }
@@ -98,6 +100,7 @@ public class GetChangeTokenStatusResult implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeTokenStatus
      */
+
     public GetChangeTokenStatusResult withChangeTokenStatus(
             ChangeTokenStatus changeTokenStatus) {
         setChangeTokenStatus(changeTokenStatus);

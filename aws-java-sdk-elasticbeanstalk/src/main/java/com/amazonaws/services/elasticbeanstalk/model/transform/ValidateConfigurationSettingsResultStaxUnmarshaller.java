@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class ValidateConfigurationSettingsResultStaxUnmarshaller
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Messages/member", targetDepth)) {
-                    validateConfigurationSettingsResult.getMessages().add(
-                            ValidationMessageStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    validateConfigurationSettingsResult
+                            .withMessages(ValidationMessageStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

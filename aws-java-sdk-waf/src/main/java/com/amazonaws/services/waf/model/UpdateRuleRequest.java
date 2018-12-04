@@ -68,6 +68,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      *        update. <code>RuleId</code> is returned by <code>CreateRule</code>
      *        and by <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -83,6 +84,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      *         update. <code>RuleId</code> is returned by
      *         <code>CreateRule</code> and by <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -101,6 +103,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRuleRequest withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -115,6 +118,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -127,6 +131,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -142,6 +147,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRuleRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -173,6 +179,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public java.util.List<RuleUpdate> getUpdates() {
         return updates;
     }
@@ -204,6 +211,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setUpdates(java.util.Collection<RuleUpdate> updates) {
         if (updates == null) {
             this.updates = null;
@@ -248,6 +256,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRuleRequest withUpdates(RuleUpdate... updates) {
         if (this.updates == null) {
             setUpdates(new java.util.ArrayList<RuleUpdate>(updates.length));
@@ -287,6 +296,7 @@ public class UpdateRuleRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRuleRequest withUpdates(
             java.util.Collection<RuleUpdate> updates) {
         setUpdates(updates);

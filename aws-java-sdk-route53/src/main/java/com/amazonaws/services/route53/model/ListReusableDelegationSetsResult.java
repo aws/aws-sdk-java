@@ -87,6 +87,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return A complex type that contains information about the reusable
      *         delegation sets associated with the current AWS account.
      */
+
     public java.util.List<DelegationSet> getDelegationSets() {
         if (delegationSets == null) {
             delegationSets = new com.amazonaws.internal.SdkInternalList<DelegationSet>();
@@ -104,6 +105,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *        A complex type that contains information about the reusable
      *        delegation sets associated with the current AWS account.
      */
+
     public void setDelegationSets(
             java.util.Collection<DelegationSet> delegationSets) {
         if (delegationSets == null) {
@@ -133,6 +135,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withDelegationSets(
             DelegationSet... delegationSets) {
         if (this.delegationSets == null) {
@@ -157,6 +160,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withDelegationSets(
             java.util.Collection<DelegationSet> delegationSets) {
         setDelegationSets(delegationSets);
@@ -177,6 +181,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -194,6 +199,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -214,6 +220,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -237,6 +244,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -258,6 +266,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -282,6 +291,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -304,6 +314,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -326,6 +337,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *        the <code>NextMarker</code> element in the <code>Marker</code>
      *        element to get the next page of results.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -347,6 +359,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *         the <code>NextMarker</code> element in the <code>Marker</code>
      *         element to get the next page of results.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -371,6 +384,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -399,6 +413,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *        the <a>ListReusableDelegationSetsRequest$Marker</a> element to get
      *        the next page of results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -425,6 +440,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      *         the <a>ListReusableDelegationSetsRequest$Marker</a> element to
      *         get the next page of results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -454,6 +470,7 @@ public class ListReusableDelegationSetsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListReusableDelegationSetsResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

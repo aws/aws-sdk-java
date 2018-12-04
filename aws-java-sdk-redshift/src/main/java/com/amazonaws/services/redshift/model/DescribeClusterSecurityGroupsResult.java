@@ -1,176 +1,200 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output from the DescribeClusterSecurityGroups action.
  * </p>
  */
-public class DescribeClusterSecurityGroupsResult implements Serializable, Cloneable {
+public class DescribeClusterSecurityGroupsResult implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response,
      * you can retrieve the next set of records by providing this returned
      * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response
-     * records have been retrieved for the request.
+     * command. If the <code>Marker</code> field is empty, all response records
+     * have been retrieved for the request.
+     * </p>
      */
     private String marker;
-
     /**
+     * <p>
      * A list of <a>ClusterSecurityGroup</a> instances.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup> clusterSecurityGroups;
+    private com.amazonaws.internal.SdkInternalList<ClusterSecurityGroup> clusterSecurityGroups;
 
     /**
+     * <p>
      * A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response,
      * you can retrieve the next set of records by providing this returned
      * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response
-     * records have been retrieved for the request.
-     *
-     * @return A value that indicates the starting point for the next set of response
-     *         records in a subsequent request. If a value is returned in a response,
-     *         you can retrieve the next set of records by providing this returned
-     *         marker value in the <code>Marker</code> parameter and retrying the
-     *         command. If the <code>Marker</code> field is empty, all response
-     *         records have been retrieved for the request.
+     * command. If the <code>Marker</code> field is empty, all response records
+     * have been retrieved for the request.
+     * </p>
+     * 
+     * @param marker
+     *        A value that indicates the starting point for the next set of
+     *        response records in a subsequent request. If a value is returned
+     *        in a response, you can retrieve the next set of records by
+     *        providing this returned marker value in the <code>Marker</code>
+     *        parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the
+     *        request.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * A value that indicates the starting point for the next set of response
-     * records in a subsequent request. If a value is returned in a response,
-     * you can retrieve the next set of records by providing this returned
-     * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response
-     * records have been retrieved for the request.
-     *
-     * @param marker A value that indicates the starting point for the next set of response
-     *         records in a subsequent request. If a value is returned in a response,
-     *         you can retrieve the next set of records by providing this returned
-     *         marker value in the <code>Marker</code> parameter and retrying the
-     *         command. If the <code>Marker</code> field is empty, all response
-     *         records have been retrieved for the request.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
+     * <p>
      * A value that indicates the starting point for the next set of response
      * records in a subsequent request. If a value is returned in a response,
      * you can retrieve the next set of records by providing this returned
      * marker value in the <code>Marker</code> parameter and retrying the
-     * command. If the <code>Marker</code> field is empty, all response
-     * records have been retrieved for the request.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker A value that indicates the starting point for the next set of response
-     *         records in a subsequent request. If a value is returned in a response,
-     *         you can retrieve the next set of records by providing this returned
-     *         marker value in the <code>Marker</code> parameter and retrying the
-     *         command. If the <code>Marker</code> field is empty, all response
-     *         records have been retrieved for the request.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * command. If the <code>Marker</code> field is empty, all response records
+     * have been retrieved for the request.
+     * </p>
+     * 
+     * @return A value that indicates the starting point for the next set of
+     *         response records in a subsequent request. If a value is returned
+     *         in a response, you can retrieve the next set of records by
+     *         providing this returned marker value in the <code>Marker</code>
+     *         parameter and retrying the command. If the <code>Marker</code>
+     *         field is empty, all response records have been retrieved for the
+     *         request.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response,
+     * you can retrieve the next set of records by providing this returned
+     * marker value in the <code>Marker</code> parameter and retrying the
+     * command. If the <code>Marker</code> field is empty, all response records
+     * have been retrieved for the request.
+     * </p>
+     * 
+     * @param marker
+     *        A value that indicates the starting point for the next set of
+     *        response records in a subsequent request. If a value is returned
+     *        in a response, you can retrieve the next set of records by
+     *        providing this returned marker value in the <code>Marker</code>
+     *        parameter and retrying the command. If the <code>Marker</code>
+     *        field is empty, all response records have been retrieved for the
+     *        request.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeClusterSecurityGroupsResult withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
+     * <p>
      * A list of <a>ClusterSecurityGroup</a> instances.
-     *
+     * </p>
+     * 
      * @return A list of <a>ClusterSecurityGroup</a> instances.
      */
+
     public java.util.List<ClusterSecurityGroup> getClusterSecurityGroups() {
         if (clusterSecurityGroups == null) {
-              clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup>();
-              clusterSecurityGroups.setAutoConstruct(true);
+            clusterSecurityGroups = new com.amazonaws.internal.SdkInternalList<ClusterSecurityGroup>();
         }
         return clusterSecurityGroups;
     }
-    
+
     /**
+     * <p>
      * A list of <a>ClusterSecurityGroup</a> instances.
-     *
-     * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
+     * </p>
+     * 
+     * @param clusterSecurityGroups
+     *        A list of <a>ClusterSecurityGroup</a> instances.
      */
-    public void setClusterSecurityGroups(java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {
+
+    public void setClusterSecurityGroups(
+            java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {
         if (clusterSecurityGroups == null) {
             this.clusterSecurityGroups = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup>(clusterSecurityGroups.size());
-        clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
-        this.clusterSecurityGroups = clusterSecurityGroupsCopy;
+
+        this.clusterSecurityGroups = new com.amazonaws.internal.SdkInternalList<ClusterSecurityGroup>(
+                clusterSecurityGroups);
     }
-    
+
     /**
+     * <p>
      * A list of <a>ClusterSecurityGroup</a> instances.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setClusterSecurityGroups(java.util.Collection)} or
-     * {@link #withClusterSecurityGroups(java.util.Collection)} if you want
-     * to override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * {@link #withClusterSecurityGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param clusterSecurityGroups
+     *        A list of <a>ClusterSecurityGroup</a> instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(ClusterSecurityGroup... clusterSecurityGroups) {
-        if (getClusterSecurityGroups() == null) setClusterSecurityGroups(new java.util.ArrayList<ClusterSecurityGroup>(clusterSecurityGroups.length));
-        for (ClusterSecurityGroup value : clusterSecurityGroups) {
-            getClusterSecurityGroups().add(value);
+
+    public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(
+            ClusterSecurityGroup... clusterSecurityGroups) {
+        if (this.clusterSecurityGroups == null) {
+            setClusterSecurityGroups(new com.amazonaws.internal.SdkInternalList<ClusterSecurityGroup>(
+                    clusterSecurityGroups.length));
+        }
+        for (ClusterSecurityGroup ele : clusterSecurityGroups) {
+            this.clusterSecurityGroups.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of <a>ClusterSecurityGroup</a> instances.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clusterSecurityGroups A list of <a>ClusterSecurityGroup</a> instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {
-        if (clusterSecurityGroups == null) {
-            this.clusterSecurityGroups = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroup>(clusterSecurityGroups.size());
-            clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
-            this.clusterSecurityGroups = clusterSecurityGroupsCopy;
-        }
 
+    /**
+     * <p>
+     * A list of <a>ClusterSecurityGroup</a> instances.
+     * </p>
+     * 
+     * @param clusterSecurityGroups
+     *        A list of <a>ClusterSecurityGroup</a> instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeClusterSecurityGroupsResult withClusterSecurityGroups(
+            java.util.Collection<ClusterSecurityGroup> clusterSecurityGroups) {
+        setClusterSecurityGroups(clusterSecurityGroups);
         return this;
     }
 
@@ -186,50 +210,61 @@ public class DescribeClusterSecurityGroupsResult implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() );
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getClusterSecurityGroups() != null)
+            sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeClusterSecurityGroupsResult == false)
+            return false;
+        DescribeClusterSecurityGroupsResult other = (DescribeClusterSecurityGroupsResult) obj;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getClusterSecurityGroups() == null
+                ^ this.getClusterSecurityGroups() == null)
+            return false;
+        if (other.getClusterSecurityGroups() != null
+                && other.getClusterSecurityGroups().equals(
+                        this.getClusterSecurityGroups()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((getClusterSecurityGroups() == null) ? 0 : getClusterSecurityGroups().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getClusterSecurityGroups() == null) ? 0
+                        : getClusterSecurityGroups().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeClusterSecurityGroupsResult == false) return false;
-        DescribeClusterSecurityGroupsResult other = (DescribeClusterSecurityGroupsResult)obj;
-        
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.getClusterSecurityGroups() == null ^ this.getClusterSecurityGroups() == null) return false;
-        if (other.getClusterSecurityGroups() != null && other.getClusterSecurityGroups().equals(this.getClusterSecurityGroups()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeClusterSecurityGroupsResult clone() {
         try {
             return (DescribeClusterSecurityGroupsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

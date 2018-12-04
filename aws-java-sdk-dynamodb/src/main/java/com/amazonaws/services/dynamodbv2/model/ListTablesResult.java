@@ -62,13 +62,14 @@ public class ListTablesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @return The names of the tables associated with the current account at
-     *         the current endpoint. The maximum size of this array is 100. </p>
+     *         the current endpoint. The maximum size of this array is 100.</p>
      *         <p>
      *         If <i>LastEvaluatedTableName</i> also appears in the output, you
      *         can use this value as the <i>ExclusiveStartTableName</i>
      *         parameter in a subsequent <i>ListTables</i> request and obtain
      *         the next page of results.
      */
+
     public java.util.List<String> getTableNames() {
         return tableNames;
     }
@@ -86,13 +87,14 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter
      *        in a subsequent <i>ListTables</i> request and obtain the next page
      *        of results.
      */
+
     public void setTableNames(java.util.Collection<String> tableNames) {
         if (tableNames == null) {
             this.tableNames = null;
@@ -121,7 +123,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter
@@ -130,6 +132,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withTableNames(String... tableNames) {
         if (this.tableNames == null) {
             setTableNames(new java.util.ArrayList<String>(tableNames.length));
@@ -153,7 +156,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * 
      * @param tableNames
      *        The names of the tables associated with the current account at the
-     *        current endpoint. The maximum size of this array is 100. </p>
+     *        current endpoint. The maximum size of this array is 100.</p>
      *        <p>
      *        If <i>LastEvaluatedTableName</i> also appears in the output, you
      *        can use this value as the <i>ExclusiveStartTableName</i> parameter
@@ -162,6 +165,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withTableNames(
             java.util.Collection<String> tableNames) {
         setTableNames(tableNames);
@@ -189,6 +193,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *        response, this means that there are no more table names to be
      *        retrieved.
      */
+
     public void setLastEvaluatedTableName(String lastEvaluatedTableName) {
         this.lastEvaluatedTableName = lastEvaluatedTableName;
     }
@@ -213,6 +218,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      *         the response, this means that there are no more table names to be
      *         retrieved.
      */
+
     public String getLastEvaluatedTableName() {
         return this.lastEvaluatedTableName;
     }
@@ -240,6 +246,7 @@ public class ListTablesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTablesResult withLastEvaluatedTableName(
             String lastEvaluatedTableName) {
         setLastEvaluatedTableName(lastEvaluatedTableName);

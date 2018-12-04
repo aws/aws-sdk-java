@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class OperationSummaryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OperationId", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setOperationId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    operationSummary.setOperationId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    operationSummary.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    operationSummary.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
-                    operationSummary.setSubmittedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    operationSummary.setSubmittedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

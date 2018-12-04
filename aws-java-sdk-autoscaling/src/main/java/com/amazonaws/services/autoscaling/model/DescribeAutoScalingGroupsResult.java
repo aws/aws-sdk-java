@@ -44,6 +44,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * 
      * @return The groups.
      */
+
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>();
@@ -59,6 +60,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * @param autoScalingGroups
      *        The groups.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -86,6 +88,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(
             AutoScalingGroup... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -108,6 +111,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -124,6 +128,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribeAutoScalingGroupsResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAutoScalingGroupsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

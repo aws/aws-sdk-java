@@ -1,24 +1,26 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 /**
- * Instance Type
+ * 
  */
 public enum InstanceType {
-    
+
     T1Micro("t1.micro"),
     M1Small("m1.small"),
     M1Medium("m1.medium"),
@@ -63,6 +65,7 @@ public enum InstanceType {
     Cc14xlarge("cc1.4xlarge"),
     Cc28xlarge("cc2.8xlarge"),
     G22xlarge("g2.2xlarge"),
+    G28xlarge("g2.8xlarge"),
     Cg14xlarge("cg1.4xlarge"),
     R3Large("r3.large"),
     R3Xlarge("r3.xlarge"),
@@ -89,124 +92,125 @@ public enum InstanceType {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return InstanceType corresponding to the value
      */
     public static InstanceType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("t1.micro".equals(value)) {
-            return InstanceType.T1Micro;
+            return T1Micro;
         } else if ("m1.small".equals(value)) {
-            return InstanceType.M1Small;
+            return M1Small;
         } else if ("m1.medium".equals(value)) {
-            return InstanceType.M1Medium;
+            return M1Medium;
         } else if ("m1.large".equals(value)) {
-            return InstanceType.M1Large;
+            return M1Large;
         } else if ("m1.xlarge".equals(value)) {
-            return InstanceType.M1Xlarge;
+            return M1Xlarge;
         } else if ("m3.medium".equals(value)) {
-            return InstanceType.M3Medium;
+            return M3Medium;
         } else if ("m3.large".equals(value)) {
-            return InstanceType.M3Large;
+            return M3Large;
         } else if ("m3.xlarge".equals(value)) {
-            return InstanceType.M3Xlarge;
+            return M3Xlarge;
         } else if ("m3.2xlarge".equals(value)) {
-            return InstanceType.M32xlarge;
+            return M32xlarge;
         } else if ("m4.large".equals(value)) {
-            return InstanceType.M4Large;
+            return M4Large;
         } else if ("m4.xlarge".equals(value)) {
-            return InstanceType.M4Xlarge;
+            return M4Xlarge;
         } else if ("m4.2xlarge".equals(value)) {
-            return InstanceType.M42xlarge;
+            return M42xlarge;
         } else if ("m4.4xlarge".equals(value)) {
-            return InstanceType.M44xlarge;
+            return M44xlarge;
         } else if ("m4.10xlarge".equals(value)) {
-            return InstanceType.M410xlarge;
+            return M410xlarge;
         } else if ("t2.nano".equals(value)) {
-            return InstanceType.T2Nano;
+            return T2Nano;
         } else if ("t2.micro".equals(value)) {
-            return InstanceType.T2Micro;
+            return T2Micro;
         } else if ("t2.small".equals(value)) {
-            return InstanceType.T2Small;
+            return T2Small;
         } else if ("t2.medium".equals(value)) {
-            return InstanceType.T2Medium;
+            return T2Medium;
         } else if ("t2.large".equals(value)) {
-            return InstanceType.T2Large;
+            return T2Large;
         } else if ("m2.xlarge".equals(value)) {
-            return InstanceType.M2Xlarge;
+            return M2Xlarge;
         } else if ("m2.2xlarge".equals(value)) {
-            return InstanceType.M22xlarge;
+            return M22xlarge;
         } else if ("m2.4xlarge".equals(value)) {
-            return InstanceType.M24xlarge;
+            return M24xlarge;
         } else if ("cr1.8xlarge".equals(value)) {
-            return InstanceType.Cr18xlarge;
+            return Cr18xlarge;
         } else if ("i2.xlarge".equals(value)) {
-            return InstanceType.I2Xlarge;
+            return I2Xlarge;
         } else if ("i2.2xlarge".equals(value)) {
-            return InstanceType.I22xlarge;
+            return I22xlarge;
         } else if ("i2.4xlarge".equals(value)) {
-            return InstanceType.I24xlarge;
+            return I24xlarge;
         } else if ("i2.8xlarge".equals(value)) {
-            return InstanceType.I28xlarge;
+            return I28xlarge;
         } else if ("hi1.4xlarge".equals(value)) {
-            return InstanceType.Hi14xlarge;
+            return Hi14xlarge;
         } else if ("hs1.8xlarge".equals(value)) {
-            return InstanceType.Hs18xlarge;
+            return Hs18xlarge;
         } else if ("c1.medium".equals(value)) {
-            return InstanceType.C1Medium;
+            return C1Medium;
         } else if ("c1.xlarge".equals(value)) {
-            return InstanceType.C1Xlarge;
+            return C1Xlarge;
         } else if ("c3.large".equals(value)) {
-            return InstanceType.C3Large;
+            return C3Large;
         } else if ("c3.xlarge".equals(value)) {
-            return InstanceType.C3Xlarge;
+            return C3Xlarge;
         } else if ("c3.2xlarge".equals(value)) {
-            return InstanceType.C32xlarge;
+            return C32xlarge;
         } else if ("c3.4xlarge".equals(value)) {
-            return InstanceType.C34xlarge;
+            return C34xlarge;
         } else if ("c3.8xlarge".equals(value)) {
-            return InstanceType.C38xlarge;
+            return C38xlarge;
         } else if ("c4.large".equals(value)) {
-            return InstanceType.C4Large;
+            return C4Large;
         } else if ("c4.xlarge".equals(value)) {
-            return InstanceType.C4Xlarge;
+            return C4Xlarge;
         } else if ("c4.2xlarge".equals(value)) {
-            return InstanceType.C42xlarge;
+            return C42xlarge;
         } else if ("c4.4xlarge".equals(value)) {
-            return InstanceType.C44xlarge;
+            return C44xlarge;
         } else if ("c4.8xlarge".equals(value)) {
-            return InstanceType.C48xlarge;
+            return C48xlarge;
         } else if ("cc1.4xlarge".equals(value)) {
-            return InstanceType.Cc14xlarge;
+            return Cc14xlarge;
         } else if ("cc2.8xlarge".equals(value)) {
-            return InstanceType.Cc28xlarge;
+            return Cc28xlarge;
         } else if ("g2.2xlarge".equals(value)) {
-            return InstanceType.G22xlarge;
+            return G22xlarge;
+        } else if ("g2.8xlarge".equals(value)) {
+            return G28xlarge;
         } else if ("cg1.4xlarge".equals(value)) {
-            return InstanceType.Cg14xlarge;
+            return Cg14xlarge;
         } else if ("r3.large".equals(value)) {
-            return InstanceType.R3Large;
+            return R3Large;
         } else if ("r3.xlarge".equals(value)) {
-            return InstanceType.R3Xlarge;
+            return R3Xlarge;
         } else if ("r3.2xlarge".equals(value)) {
-            return InstanceType.R32xlarge;
+            return R32xlarge;
         } else if ("r3.4xlarge".equals(value)) {
-            return InstanceType.R34xlarge;
+            return R34xlarge;
         } else if ("r3.8xlarge".equals(value)) {
-            return InstanceType.R38xlarge;
+            return R38xlarge;
         } else if ("d2.xlarge".equals(value)) {
-            return InstanceType.D2Xlarge;
+            return D2Xlarge;
         } else if ("d2.2xlarge".equals(value)) {
-            return InstanceType.D22xlarge;
+            return D22xlarge;
         } else if ("d2.4xlarge".equals(value)) {
-            return InstanceType.D24xlarge;
+            return D24xlarge;
         } else if ("d2.8xlarge".equals(value)) {
-            return InstanceType.D28xlarge;
+            return D28xlarge;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

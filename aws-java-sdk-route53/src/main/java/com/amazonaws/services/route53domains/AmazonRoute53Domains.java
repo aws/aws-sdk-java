@@ -85,10 +85,9 @@ public interface AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can access
-     * this API without authenticating. Note that if the availability status of
-     * a domain is pending, you must submit another request to determine the
-     * availability of the domain name.
+     * This operation checks the availability of one domain name. Note that if
+     * the availability status of a domain is pending, you must submit another
+     * request to determine the availability of the domain name.
      * </p>
      * 
      * @param checkDomainAvailabilityRequest
@@ -222,6 +221,8 @@ public interface AmazonRoute53Domains {
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @sample AmazonRoute53Domains.EnableDomainAutoRenew
      */
     EnableDomainAutoRenewResult enableDomainAutoRenew(
@@ -259,6 +260,36 @@ public interface AmazonRoute53Domains {
      */
     EnableDomainTransferLockResult enableDomainTransferLock(
             EnableDomainTransferLockRequest enableDomainTransferLockRequest);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation returns information about whether the registrant contact has
+     * responded.
+     * </p>
+     * <p>
+     * If you want us to resend the email, use the
+     * <code>ResendContactReachabilityEmail</code> operation.
+     * </p>
+     * 
+     * @param getContactReachabilityStatusRequest
+     * @return Result of the GetContactReachabilityStatus operation returned by
+     *         the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetContactReachabilityStatus
+     */
+    GetContactReachabilityStatusResult getContactReachabilityStatus(
+            GetContactReachabilityStatusRequest getContactReachabilityStatusRequest);
 
     /**
      * <p>
@@ -434,6 +465,32 @@ public interface AmazonRoute53Domains {
      */
     RegisterDomainResult registerDomain(
             RegisterDomainRequest registerDomainRequest);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation resends the confirmation email to the current email address for
+     * the registrant contact.
+     * </p>
+     * 
+     * @param resendContactReachabilityEmailRequest
+     * @return Result of the ResendContactReachabilityEmail operation returned
+     *         by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.ResendContactReachabilityEmail
+     */
+    ResendContactReachabilityEmailResult resendContactReachabilityEmail(
+            ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest);
 
     /**
      * <p>

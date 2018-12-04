@@ -216,6 +216,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        S3) bucket or directory.</li>
      * @see MLModelFilterVariable
      */
+
     public void setFilterVariable(String filterVariable) {
         this.filterVariable = filterVariable;
     }
@@ -274,6 +275,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         (Amazon S3) bucket or directory.</li>
      * @see MLModelFilterVariable
      */
+
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -335,6 +337,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see MLModelFilterVariable
      */
+
     public DescribeMLModelsRequest withFilterVariable(String filterVariable) {
         setFilterVariable(filterVariable);
         return this;
@@ -393,10 +396,9 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        data file(s) used in training a <code>MLModel</code>. The URL can
      *        identify either a file or an Amazon Simple Storage Service (Amazon
      *        S3) bucket or directory.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelFilterVariable
      */
+
     public void setFilterVariable(MLModelFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -458,6 +460,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see MLModelFilterVariable
      */
+
     public DescribeMLModelsRequest withFilterVariable(
             MLModelFilterVariable filterVariable) {
         setFilterVariable(filterVariable);
@@ -476,6 +479,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        <code>FilterVariable</code> values that exactly match the value
      *        specified with <code>EQ</code>.
      */
+
     public void setEQ(String eQ) {
         this.eQ = eQ;
     }
@@ -491,6 +495,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         <code>FilterVariable</code> values that exactly match the value
      *         specified with <code>EQ</code>.
      */
+
     public String getEQ() {
         return this.eQ;
     }
@@ -509,6 +514,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withEQ(String eQ) {
         setEQ(eQ);
         return this;
@@ -526,6 +532,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        have <code>FilterVariable</code> values that are greater than the
      *        value specified with <code>GT</code>.
      */
+
     public void setGT(String gT) {
         this.gT = gT;
     }
@@ -541,6 +548,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         have <code>FilterVariable</code> values that are greater than the
      *         value specified with <code>GT</code>.
      */
+
     public String getGT() {
         return this.gT;
     }
@@ -559,6 +567,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withGT(String gT) {
         setGT(gT);
         return this;
@@ -576,6 +585,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        <code>FilterVariable</code> values that are less than the value
      *        specified with <code>LT</code>.
      */
+
     public void setLT(String lT) {
         this.lT = lT;
     }
@@ -591,6 +601,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         have <code>FilterVariable</code> values that are less than the
      *         value specified with <code>LT</code>.
      */
+
     public String getLT() {
         return this.lT;
     }
@@ -609,6 +620,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withLT(String lT) {
         setLT(lT);
         return this;
@@ -626,6 +638,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        results will have <code>FilterVariable</code> values that are
      *        greater than or equal to the value specified with <code>GE</code>.
      */
+
     public void setGE(String gE) {
         this.gE = gE;
     }
@@ -642,6 +655,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         greater than or equal to the value specified with <code>GE</code>
      *         .
      */
+
     public String getGE() {
         return this.gE;
     }
@@ -660,6 +674,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withGE(String gE) {
         setGE(gE);
         return this;
@@ -677,6 +692,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        results will have <code>FilterVariable</code> values that are less
      *        than or equal to the value specified with <code>LE</code>.
      */
+
     public void setLE(String lE) {
         this.lE = lE;
     }
@@ -692,6 +708,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         results will have <code>FilterVariable</code> values that are
      *         less than or equal to the value specified with <code>LE</code>.
      */
+
     public String getLE() {
         return this.lE;
     }
@@ -710,6 +727,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withLE(String lE) {
         setLE(lE);
         return this;
@@ -727,6 +745,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        have <code>FilterVariable</code> values not equal to the value
      *        specified with <code>NE</code>.
      */
+
     public void setNE(String nE) {
         this.nE = nE;
     }
@@ -742,6 +761,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         have <code>FilterVariable</code> values not equal to the value
      *         specified with <code>NE</code>.
      */
+
     public String getNE() {
         return this.nE;
     }
@@ -760,6 +780,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withNE(String nE) {
         setNE(nE);
         return this;
@@ -822,6 +843,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -882,6 +904,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -945,6 +968,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -976,6 +1000,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -1005,6 +1030,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -1037,6 +1063,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeMLModelsRequest withSortOrder(String sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1066,10 +1093,9 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
+
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -1102,6 +1128,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeMLModelsRequest withSortOrder(SortOrder sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1115,6 +1142,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The ID of the page in the paginated results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1126,6 +1154,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the page in the paginated results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1140,6 +1169,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1156,6 +1186,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *        range of acceptable values is 1 through 100. The default value is
      *        100.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -1170,6 +1201,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      *         range of acceptable values is 1 through 100. The default value is
      *         100.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -1187,6 +1219,7 @@ public class DescribeMLModelsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMLModelsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

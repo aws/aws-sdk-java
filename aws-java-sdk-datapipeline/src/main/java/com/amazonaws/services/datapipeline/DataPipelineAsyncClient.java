@@ -16,6 +16,7 @@
 package com.amazonaws.services.datapipeline;
 
 import com.amazonaws.services.datapipeline.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Data Pipeline asynchronously. Each asynchronous
@@ -50,6 +51,7 @@ import com.amazonaws.services.datapipeline.model.*;
  * task to the web service.
  * </p>
  */
+@ThreadSafe
 public class DataPipelineAsyncClient extends DataPipelineClient implements
         DataPipelineAsync {
 
@@ -149,8 +151,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -242,9 +243,7 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -423,26 +422,25 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             DeletePipelineRequest request) {
 
         return deletePipelineAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deletePipelineAsync(
+    public java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(
             final DeletePipelineRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeletePipelineResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeletePipelineResult call() throws Exception {
+                        DeletePipelineResult result;
 
                         try {
-                            deletePipeline(request);
-                            result = null;
+                            result = deletePipeline(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -869,26 +867,25 @@ public class DataPipelineAsyncClient extends DataPipelineClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStatusAsync(
+    public java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             SetStatusRequest request) {
 
         return setStatusAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setStatusAsync(
+    public java.util.concurrent.Future<SetStatusResult> setStatusAsync(
             final SetStatusRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetStatusRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetStatusRequest, SetStatusResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetStatusResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetStatusResult call() throws Exception {
+                        SetStatusResult result;
 
                         try {
-                            setStatus(request);
-                            result = null;
+                            result = setStatus(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

@@ -46,6 +46,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * @param elasticIp
      *        The Elastic IP address.
      */
+
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
     }
@@ -57,6 +58,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * 
      * @return The Elastic IP address.
      */
+
     public String getElasticIp() {
         return this.elasticIp;
     }
@@ -71,6 +73,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterElasticIpRequest withElasticIp(String elasticIp) {
         setElasticIp(elasticIp);
         return this;
@@ -84,6 +87,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * @param stackId
      *        The stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -95,6 +99,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -109,6 +114,7 @@ public class RegisterElasticIpRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RegisterElasticIpRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;

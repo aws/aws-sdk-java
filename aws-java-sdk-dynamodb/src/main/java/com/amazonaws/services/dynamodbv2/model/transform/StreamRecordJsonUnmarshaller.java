@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class StreamRecordJsonUnmarshaller implements
                     context.nextToken();
                     streamRecord
                             .setKeys(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
@@ -63,7 +65,7 @@ public class StreamRecordJsonUnmarshaller implements
                     context.nextToken();
                     streamRecord
                             .setNewImage(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
@@ -71,24 +73,24 @@ public class StreamRecordJsonUnmarshaller implements
                     context.nextToken();
                     streamRecord
                             .setOldImage(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("SequenceNumber", targetDepth)) {
                     context.nextToken();
-                    streamRecord.setSequenceNumber(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamRecord.setSequenceNumber(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SizeBytes", targetDepth)) {
                     context.nextToken();
-                    streamRecord.setSizeBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamRecord.setSizeBytes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("StreamViewType", targetDepth)) {
                     context.nextToken();
-                    streamRecord.setStreamViewType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    streamRecord.setStreamViewType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

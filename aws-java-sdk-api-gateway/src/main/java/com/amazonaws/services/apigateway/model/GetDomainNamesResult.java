@@ -37,6 +37,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -44,6 +45,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -53,6 +55,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainNamesResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -67,6 +70,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
      * @return The current page of any <a>DomainName</a> resources in the
      *         collection of <a>DomainName</a> resources.
      */
+
     public java.util.List<DomainName> getItems() {
         return items;
     }
@@ -81,6 +85,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
      *        The current page of any <a>DomainName</a> resources in the
      *        collection of <a>DomainName</a> resources.
      */
+
     public void setItems(java.util.Collection<DomainName> items) {
         if (items == null) {
             this.items = null;
@@ -108,6 +113,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainNamesResult withItems(DomainName... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<DomainName>(items.length));
@@ -130,6 +136,7 @@ public class GetDomainNamesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDomainNamesResult withItems(java.util.Collection<DomainName> items) {
         setItems(items);
         return this;

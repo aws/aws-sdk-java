@@ -38,6 +38,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      */
     private String complianceType;
     /**
@@ -76,6 +83,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param evaluationResultIdentifier
      *        Uniquely identifies the evaluation result.
      */
+
     public void setEvaluationResultIdentifier(
             EvaluationResultIdentifier evaluationResultIdentifier) {
         this.evaluationResultIdentifier = evaluationResultIdentifier;
@@ -88,6 +96,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return Uniquely identifies the evaluation result.
      */
+
     public EvaluationResultIdentifier getEvaluationResultIdentifier() {
         return this.evaluationResultIdentifier;
     }
@@ -102,6 +111,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvaluationResultIdentifier(
             EvaluationResultIdentifier evaluationResultIdentifier) {
         setEvaluationResultIdentifier(evaluationResultIdentifier);
@@ -113,12 +123,27 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @see ComplianceType
      */
+
     public void setComplianceType(String complianceType) {
         this.complianceType = complianceType;
     }
@@ -128,11 +153,26 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @return Indicates whether the AWS resource complies with the AWS Config
-     *         rule that evaluated it.
+     *         rule that evaluated it.</p>
+     *         <p>
+     *         For the <code>EvaluationResult</code> data type, AWS Config
+     *         supports only the <code>COMPLIANT</code>,
+     *         <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *         values. AWS Config does not support the
+     *         <code>INSUFFICIENT_DATA</code> value for the
+     *         <code>EvaluationResult</code> data type.
      * @see ComplianceType
      */
+
     public String getComplianceType() {
         return this.complianceType;
     }
@@ -142,14 +182,29 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public EvaluationResult withComplianceType(String complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -160,14 +215,27 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @see ComplianceType
      */
+
     public void setComplianceType(ComplianceType complianceType) {
         this.complianceType = complianceType.toString();
     }
@@ -177,14 +245,29 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Indicates whether the AWS resource complies with the AWS Config rule that
      * evaluated it.
      * </p>
+     * <p>
+     * For the <code>EvaluationResult</code> data type, AWS Config supports only
+     * the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the
+     * <code>EvaluationResult</code> data type.
+     * </p>
      * 
      * @param complianceType
      *        Indicates whether the AWS resource complies with the AWS Config
-     *        rule that evaluated it.
+     *        rule that evaluated it.</p>
+     *        <p>
+     *        For the <code>EvaluationResult</code> data type, AWS Config
+     *        supports only the <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>
+     *        values. AWS Config does not support the
+     *        <code>INSUFFICIENT_DATA</code> value for the
+     *        <code>EvaluationResult</code> data type.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ComplianceType
      */
+
     public EvaluationResult withComplianceType(ComplianceType complianceType) {
         setComplianceType(complianceType);
         return this;
@@ -198,6 +281,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param resultRecordedTime
      *        The time when AWS Config recorded the evaluation result.
      */
+
     public void setResultRecordedTime(java.util.Date resultRecordedTime) {
         this.resultRecordedTime = resultRecordedTime;
     }
@@ -209,6 +293,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return The time when AWS Config recorded the evaluation result.
      */
+
     public java.util.Date getResultRecordedTime() {
         return this.resultRecordedTime;
     }
@@ -223,6 +308,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResultRecordedTime(
             java.util.Date resultRecordedTime) {
         setResultRecordedTime(resultRecordedTime);
@@ -237,6 +323,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param configRuleInvokedTime
      *        The time when the AWS Config rule evaluated the AWS resource.
      */
+
     public void setConfigRuleInvokedTime(java.util.Date configRuleInvokedTime) {
         this.configRuleInvokedTime = configRuleInvokedTime;
     }
@@ -248,6 +335,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return The time when the AWS Config rule evaluated the AWS resource.
      */
+
     public java.util.Date getConfigRuleInvokedTime() {
         return this.configRuleInvokedTime;
     }
@@ -262,6 +350,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withConfigRuleInvokedTime(
             java.util.Date configRuleInvokedTime) {
         setConfigRuleInvokedTime(configRuleInvokedTime);
@@ -278,6 +367,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        Supplementary information about how the evaluation determined the
      *        compliance.
      */
+
     public void setAnnotation(String annotation) {
         this.annotation = annotation;
     }
@@ -291,6 +381,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Supplementary information about how the evaluation determined the
      *         compliance.
      */
+
     public String getAnnotation() {
         return this.annotation;
     }
@@ -307,6 +398,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withAnnotation(String annotation) {
         setAnnotation(annotation);
         return this;
@@ -324,6 +416,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        Config rule. The token identifies the rule, the AWS resource being
      *        evaluated, and the event that triggered the evaluation.
      */
+
     public void setResultToken(String resultToken) {
         this.resultToken = resultToken;
     }
@@ -339,6 +432,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         Config rule. The token identifies the rule, the AWS resource
      *         being evaluated, and the event that triggered the evaluation.
      */
+
     public String getResultToken() {
         return this.resultToken;
     }
@@ -357,6 +451,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResultToken(String resultToken) {
         setResultToken(resultToken);
         return this;

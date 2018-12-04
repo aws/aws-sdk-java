@@ -22,7 +22,7 @@
         {"shape":"InvalidInput"},
         {"shape":"UnsupportedTLD"}
       ],
-      "documentation":"<p>This operation checks the availability of one domain name. You can access this API without authenticating. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.</p>"
+      "documentation":"<p>This operation checks the availability of one domain name. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.</p>"
     },
     "DeleteTagsForDomain":{
       "name":"DeleteTagsForDomain",
@@ -80,7 +80,8 @@
       "output":{"shape":"EnableDomainAutoRenewResponse"},
       "errors":[
         {"shape":"InvalidInput"},
-        {"shape":"UnsupportedTLD"}
+        {"shape":"UnsupportedTLD"},
+        {"shape":"TLDRulesViolation"}
       ],
       "documentation":"<p>This operation configures Amazon Route 53 to automatically renew the specified domain before the domain registration expires. The cost of renewing your domain registration is billed to your AWS account.</p> <p>The period during which you can renew a domain name varies by TLD. For a list of TLDs and their renewal policies, see <a href=\"http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times\">\"Renewal, restoration, and deletion times\"</a> on the website for our registrar partner, Gandi. Route 53 requires that you renew before the end of the renewal period that is listed on the Gandi website so we can complete processing before the deadline.</p>"
     },
@@ -100,6 +101,21 @@
         {"shape":"UnsupportedTLD"}
       ],
       "documentation":"<p>This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code> status) to prevent domain transfers. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>"
+    },
+    "GetContactReachabilityStatus":{
+      "name":"GetContactReachabilityStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetContactReachabilityStatusRequest"},
+      "output":{"shape":"GetContactReachabilityStatusResponse"},
+      "errors":[
+        {"shape":"InvalidInput"},
+        {"shape":"OperationLimitExceeded"},
+        {"shape":"UnsupportedTLD"}
+      ],
+      "documentation":"<p>For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation returns information about whether the registrant contact has responded.</p> <p>If you want us to resend the email, use the <code>ResendContactReachabilityEmail</code> operation.</p>"
     },
     "GetDomainDetail":{
       "name":"GetDomainDetail",
@@ -186,6 +202,21 @@
         {"shape":"OperationLimitExceeded"}
       ],
       "documentation":"<p>This operation registers a domain. Domains are registered by the AWS registrar partner, Gandi. For some top-level domains (TLDs), this operation requires extra parameters.</p> <p>When you register a domain, Amazon Route 53 does the following:</p> <ul> <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name servers to your hosted zone and automatically updates your domain registration with the names of these name servers.</li> <li>Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of the renewal date so you can choose whether to renew the registration.</li> <li>Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner, Gandi, instead of the information you entered for registrant, admin, and tech contacts.</li> <li>If registration is successful, returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant is notified by email.</li> <li>Charges your AWS account an amount based on the top-level domain. For more information, see <a href=\"http://aws.amazon.com/route53/pricing/\">Amazon Route 53 Pricing</a>.</li> </ul>"
+    },
+    "ResendContactReachabilityEmail":{
+      "name":"ResendContactReachabilityEmail",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResendContactReachabilityEmailRequest"},
+      "output":{"shape":"ResendContactReachabilityEmailResponse"},
+      "errors":[
+        {"shape":"InvalidInput"},
+        {"shape":"OperationLimitExceeded"},
+        {"shape":"UnsupportedTLD"}
+      ],
+      "documentation":"<p>For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation resends the confirmation email to the current email address for the registrant contact. </p>"
     },
     "RetrieveDomainAuthCode":{
       "name":"RetrieveDomainAuthCode",
@@ -818,7 +849,7 @@
       "members":{
         "Name":{
           "shape":"ExtraParamName",
-          "documentation":"<p>Name of the additional parameter required by the top-level domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> | <code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required: Yes</p>"
+          "documentation":"<p>Name of the additional parameter required by the top-level domain.</p> <p>Type: String</p> <p>Default: None</p> <p>Valid values: <code>DUNS_NUMBER</code> | <code>BRAND_NUMBER</code> | <code>BIRTH_DEPARTMENT</code> | <code>BIRTH_DATE_IN_YYYY_MM_DD</code> | <code>BIRTH_COUNTRY</code> | <code>BIRTH_CITY</code> | <code>DOCUMENT_NUMBER</code> | <code>AU_ID_NUMBER</code> | <code>AU_ID_TYPE</code> | <code>CA_LEGAL_TYPE</code> | <code>CA_BUSINESS_ENTITY_TYPE</code> |<code>ES_IDENTIFICATION</code> | <code>ES_IDENTIFICATION_TYPE</code> | <code>ES_LEGAL_FORM</code> | <code>FI_BUSINESS_NUMBER</code> | <code>FI_ID_NUMBER</code> | <code>IT_PIN</code> | <code>RU_PASSPORT_DATA</code> | <code>SE_ID_NUMBER</code> | <code>SG_ID_NUMBER</code> | <code>VAT_NUMBER</code></p> <p>Parent: <code>ExtraParams</code></p> <p>Required: Yes</p>"
         },
         "Value":{
           "shape":"ExtraParamValue",
@@ -844,6 +875,7 @@
         "AU_ID_NUMBER",
         "AU_ID_TYPE",
         "CA_LEGAL_TYPE",
+        "CA_BUSINESS_ENTITY_TYPE",
         "ES_IDENTIFICATION",
         "ES_IDENTIFICATION_TYPE",
         "ES_LEGAL_FORM",
@@ -861,6 +893,28 @@
       "max":2048
     },
     "FIAuthKey":{"type":"string"},
+    "GetContactReachabilityStatusRequest":{
+      "type":"structure",
+      "members":{
+        "domainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p> <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>"
+        }
+      }
+    },
+    "GetContactReachabilityStatusResponse":{
+      "type":"structure",
+      "members":{
+        "domainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The domain name for which you requested the reachability status.</p>"
+        },
+        "status":{
+          "shape":"ReachabilityStatus",
+          "documentation":"<p>Whether the registrant contact has responded. <code>PENDING</code> indicates that we sent the confirmation email and haven't received a response yet, <code>DONE</code> indicates that we sent the email and got confirmation from the registrant contact, and <code>EXPIRED</code> indicates that the time limit expired before the registrant contact responded. </p> <p>Type: String</p> <p>Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code></p>"
+        }
+      }
+    },
     "GetDomainDetailRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -1208,6 +1262,14 @@
       "type":"integer",
       "max":100
     },
+    "ReachabilityStatus":{
+      "type":"string",
+      "enum":[
+        "PENDING",
+        "DONE",
+        "EXPIRED"
+      ]
+    },
     "RegisterDomainRequest":{
       "type":"structure",
       "required":[
@@ -1277,6 +1339,32 @@
     "RegistrarWhoIsServer":{"type":"string"},
     "RegistryDomainId":{"type":"string"},
     "Reseller":{"type":"string"},
+    "ResendContactReachabilityEmailRequest":{
+      "type":"structure",
+      "members":{
+        "domainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The name of the domain for which you want Amazon Route 53 to resend a confirmation email to the registrant contact.</p> <p>Type: String</p> <p>Default: None</p> <p>Required: Yes</p>"
+        }
+      }
+    },
+    "ResendContactReachabilityEmailResponse":{
+      "type":"structure",
+      "members":{
+        "domainName":{
+          "shape":"DomainName",
+          "documentation":"<p>The domain name for which you requested a confirmation email.</p>"
+        },
+        "emailAddress":{
+          "shape":"Email",
+          "documentation":"<p>The email address for the registrant contact at the time that we sent the verification email.</p>"
+        },
+        "isAlreadyVerified":{
+          "shape":"Boolean",
+          "documentation":"<p>True if the email address for the registrant contact has already been verified, and false otherwise. If the email address has already been verified, we don't send another confirmation email.</p>"
+        }
+      }
+    },
     "RetrieveDomainAuthCodeRequest":{
       "type":"structure",
       "required":["DomainName"],

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CaptionsMarshaller
@@ -39,54 +34,57 @@ import com.amazonaws.util.json.*;
 public class CaptionsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Captions captions, JSONWriter jsonWriter) {
+    public void marshall(Captions captions,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (captions == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (captions.getMergePolicy() != null) {
-                jsonWriter.key("MergePolicy").value(captions.getMergePolicy());
+                jsonGenerator.writeFieldName("MergePolicy").writeValue(
+                        captions.getMergePolicy());
             }
 
             com.amazonaws.internal.SdkInternalList<CaptionSource> captionSourcesList = (com.amazonaws.internal.SdkInternalList<CaptionSource>) captions
                     .getCaptionSources();
             if (!captionSourcesList.isEmpty()
                     || !captionSourcesList.isAutoConstruct()) {
-                jsonWriter.key("CaptionSources");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CaptionSources");
+                jsonGenerator.writeStartArray();
                 for (CaptionSource captionSourcesListValue : captionSourcesList) {
                     if (captionSourcesListValue != null) {
 
                         CaptionSourceJsonMarshaller.getInstance().marshall(
-                                captionSourcesListValue, jsonWriter);
+                                captionSourcesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<CaptionFormat> captionFormatsList = (com.amazonaws.internal.SdkInternalList<CaptionFormat>) captions
                     .getCaptionFormats();
             if (!captionFormatsList.isEmpty()
                     || !captionFormatsList.isAutoConstruct()) {
-                jsonWriter.key("CaptionFormats");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("CaptionFormats");
+                jsonGenerator.writeStartArray();
                 for (CaptionFormat captionFormatsListValue : captionFormatsList) {
                     if (captionFormatsListValue != null) {
 
                         CaptionFormatJsonMarshaller.getInstance().marshall(
-                                captionFormatsListValue, jsonWriter);
+                                captionFormatsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -51,30 +53,30 @@ public class RulesPackageJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("rulesPackageArn", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setRulesPackageArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setArn(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
-                if (context.testExpression("rulesPackageName", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setRulesPackageName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setName(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setVersion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setVersion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("provider", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setProvider(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setProvider(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    rulesPackage.setDescription(LocalizedTextJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    rulesPackage.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

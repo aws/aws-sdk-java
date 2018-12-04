@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.10.49</version>
+    <version>1.11.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.10.49</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.2</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.10.49</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.2</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -360,6 +360,30 @@
                       <packages>com.amazonaws.services.ecr*</packages>
                     </group>
                     <group>
+                      <title>Amazon GameLift</title>
+                      <packages>com.amazonaws.services.gamelift*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Database Migration Service</title>
+                      <packages>com.amazonaws.services.databasemigrationservice*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Marketplace Metering Service</title>
+                      <packages>com.amazonaws.services.marketplacemetering*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Cognito Identity Provider</title>
+                      <packages>com.amazonaws.services.cognitoidp*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Application Discovery Service</title>
+                      <packages>com.amazonaws.services.applicationdiscovery*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Application Auto Scaling</title>
+                      <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                    </group>
+                    <group>
                       <title>Common</title>
                       <packages>com.amazonaws*</packages>
                     </group>
@@ -446,7 +470,6 @@
                           &lt;/div&gt;
                           
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script&gt;jQuery.noConflict();&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
@@ -459,17 +482,14 @@
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
-                          &lt;script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js (view-source:https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js)" /&gt;
-                      &lt;script language="JavaScript" type="text/javascript"&gt;
-                      &lt;!--
-                      // Documentation Service Name
+                          &lt;script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js" /&gt;
+                      &lt;script type="text/javascript"&gt;
                       s.prop66='AWS SDK for Java';
                       s.eVar66='D=c66';
-                      // Documentation Guide Name
                       s.prop65='API Reference';
                       s.eVar65='D=c65';
-                      var s_code=s.t();if(s_code)document.write(s_code)
-                      //--&gt;
+                      var s_code=s.t();
+                      if (s_code) document.write(s_code);
                       &lt;/script&gt;
                       &lt;script language="JavaScript" type="text/javascript"&gt;
                       &lt;!--if(navigator.appVersion.indexOf('MSIE')&gt;=0)document.write(unescape('%3C')+'\!-'+'-')
@@ -502,10 +522,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.10.49</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.2</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.10.49</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.2</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -748,6 +768,30 @@
                       <packages>com.amazonaws.services.ecr*</packages>
                     </group>
                     <group>
+                      <title>Amazon GameLift</title>
+                      <packages>com.amazonaws.services.gamelift*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Database Migration Service</title>
+                      <packages>com.amazonaws.services.databasemigrationservice*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Marketplace Metering Service</title>
+                      <packages>com.amazonaws.services.marketplacemetering*</packages>
+                    </group>
+                    <group>
+                      <title>Amazon Cognito Identity Provider</title>
+                      <packages>com.amazonaws.services.cognitoidp*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Application Discovery Service</title>
+                      <packages>com.amazonaws.services.applicationdiscovery*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Application Auto Scaling</title>
+                      <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                    </group>
+                    <group>
                       <title>Common</title>
                       <packages>com.amazonaws*</packages>
                     </group>
@@ -834,7 +878,6 @@
                           &lt;/div&gt;
                           
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script&gt;jQuery.noConflict();&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
@@ -847,17 +890,14 @@
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
-                          &lt;script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js (view-source:https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js)" /&gt;
-                      &lt;script language="JavaScript" type="text/javascript"&gt;
-                      &lt;!--
-                      // Documentation Service Name
+                          &lt;script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js" /&gt;
+                      &lt;script type="text/javascript"&gt;
                       s.prop66='AWS SDK for Java';
                       s.eVar66='D=c66';
-                      // Documentation Guide Name
                       s.prop65='API Reference';
                       s.eVar65='D=c65';
-                      var s_code=s.t();if(s_code)document.write(s_code)
-                      //--&gt;
+                      var s_code=s.t();
+                      if (s_code) document.write(s_code);
                       &lt;/script&gt;
                       &lt;script language="JavaScript" type="text/javascript"&gt;
                       &lt;!--if(navigator.appVersion.indexOf('MSIE')&gt;=0)document.write(unescape('%3C')+'\!-'+'-')
@@ -886,10 +926,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.10.49</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.2</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.10.49</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.2</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1132,6 +1172,30 @@
                   <packages>com.amazonaws.services.ecr*</packages>
                 </group>
                 <group>
+                  <title>Amazon GameLift</title>
+                  <packages>com.amazonaws.services.gamelift*</packages>
+                </group>
+                <group>
+                  <title>AWS Database Migration Service</title>
+                  <packages>com.amazonaws.services.databasemigrationservice*</packages>
+                </group>
+                <group>
+                  <title>AWS Marketplace Metering Service</title>
+                  <packages>com.amazonaws.services.marketplacemetering*</packages>
+                </group>
+                <group>
+                  <title>Amazon Cognito Identity Provider</title>
+                  <packages>com.amazonaws.services.cognitoidp*</packages>
+                </group>
+                <group>
+                  <title>AWS Application Discovery Service</title>
+                  <packages>com.amazonaws.services.applicationdiscovery*</packages>
+                </group>
+                <group>
+                  <title>AWS Application Auto Scaling</title>
+                  <packages>com.amazonaws.services.applicationautoscaling*</packages>
+                </group>
+                <group>
                   <title>Common</title>
                   <packages>com.amazonaws*</packages>
                 </group>
@@ -1218,7 +1282,6 @@
                           &lt;/div&gt;
                           
                           &lt;script src="http://a0.awsstatic.com/chrome/js/1.0.46/jquery.1.9.js" type="text/javascript"&gt;&lt;/script&gt;
-                          &lt;script&gt;jQuery.noConflict();&lt;/script&gt;
                           &lt;script&gt;
                           jQuery(function ($) {
                           $("div.header").prepend('&lt;!--REGION_DISCLAIMER_DO_NOT_REMOVE--&gt;');
@@ -1231,17 +1294,14 @@
 
                           &lt;!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
                           More info available at http://www.omniture.com --&gt;
-                          &lt;script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js (view-source:https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js)" /&gt;
-                      &lt;script language="JavaScript" type="text/javascript"&gt;
-                      &lt;!--
-                      // Documentation Service Name
+                          &lt;script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js" /&gt;
+                      &lt;script type="text/javascript"&gt;
                       s.prop66='AWS SDK for Java';
                       s.eVar66='D=c66';
-                      // Documentation Guide Name
                       s.prop65='API Reference';
                       s.eVar65='D=c65';
-                      var s_code=s.t();if(s_code)document.write(s_code)
-                      //--&gt;
+                      var s_code=s.t();
+                      if (s_code) document.write(s_code);
                       &lt;/script&gt;
                       &lt;script language="JavaScript" type="text/javascript"&gt;
                       &lt;!--if(navigator.appVersion.indexOf('MSIE')&gt;=0)document.write(unescape('%3C')+'\!-'+'-')
@@ -1256,24 +1316,17 @@
               <excludePackageNames>*.internal:*.transform</excludePackageNames>
             </configuration>
           </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>staging</id>
+      <build>
+        <plugins>
           <plugin>
             <artifactId>maven-resources-plugin</artifactId>
             <version>2.7</version>
             <executions>
-              <execution>
-                <id>default-resources</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>resources</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>default-testResources</id>
-                <phase>process-test-resources</phase>
-                <goals>
-                  <goal>testResources</goal>
-                </goals>
-              </execution>
               <execution>
                 <id>copy-resources</id>
                 <phase>process-resources</phase>
@@ -1281,10 +1334,10 @@
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files}</outputDirectory>
                   <resources>
                     <resource>
-                      <directory>/apollo/env/AWSJavaSDKReleaseTools/zip-additional-files</directory>
+                      <directory>${zip.generation.additional.files.sources}</directory>
                     </resource>
                   </resources>
                 </configuration>
@@ -1301,66 +1354,6 @@
                 <goals>
                   <goal>copy</goal>
                 </goals>
-                <configuration>
-                  <artifactItems>
-                    <artifactItem>
-                      <groupId>javax.mail</groupId>
-                      <artifactId>javax.mail-api</artifactId>
-                      <version>1.4.6</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.freemarker</groupId>
-                      <artifactId>freemarker</artifactId>
-                      <version>2.3.9</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.aspectj</groupId>
-                      <artifactId>aspectjrt</artifactId>
-                      <version>1.8.2</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.springframework</groupId>
-                      <artifactId>spring-beans</artifactId>
-                      <version>3.0.7.RELEASE</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.springframework</groupId>
-                      <artifactId>spring-core</artifactId>
-                      <version>3.0.7.RELEASE</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.springframework</groupId>
-                      <artifactId>spring-context</artifactId>
-                      <version>3.0.7.RELEASE</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>org.springframework</groupId>
-                      <artifactId>spring-test</artifactId>
-                      <version>3.0.7.RELEASE</version>
-                      <type>jar</type>
-                      <overWrite>true</overWrite>
-                      <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
-                    </artifactItem>
-                  </artifactItems>
-                </configuration>
               </execution>
             </executions>
             <configuration>
@@ -1368,58 +1361,58 @@
                 <artifactItem>
                   <groupId>javax.mail</groupId>
                   <artifactId>javax.mail-api</artifactId>
-                  <version>1.4.6</version>
+                  <version>${javax.mail.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.freemarker</groupId>
                   <artifactId>freemarker</artifactId>
-                  <version>2.3.9</version>
+                  <version>${freemarker.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.aspectj</groupId>
                   <artifactId>aspectjrt</artifactId>
-                  <version>1.8.2</version>
+                  <version>${aspectj.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-beans</artifactId>
-                  <version>3.0.7.RELEASE</version>
+                  <version>${spring.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-core</artifactId>
-                  <version>3.0.7.RELEASE</version>
+                  <version>${spring.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-context</artifactId>
-                  <version>3.0.7.RELEASE</version>
+                  <version>${spring.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
                 <artifactItem>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-test</artifactId>
-                  <version>3.0.7.RELEASE</version>
+                  <version>${spring.version}</version>
                   <type>jar</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>/local/apollo/var/env/AWSJavaSDKReleaseTools/git/aws-java-sdk.git/aws-java-sdk-osgi/target/zip-additional-files/third-party/lib</outputDirectory>
+                  <outputDirectory>${zip.generation.additional.files.third-party.lib}</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -1434,12 +1427,6 @@
                 <goals>
                   <goal>single</goal>
                 </goals>
-                <configuration>
-                  <descriptors>
-                    <descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>
-                  </descriptors>
-                  <tarLongFileMode>gnu</tarLongFileMode>
-                </configuration>
               </execution>
             </executions>
             <configuration>
@@ -1452,7 +1439,6 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>1.4.0</version>
             <executions>
               <execution>
                 <phase>package</phase>
@@ -1460,9 +1446,9 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.10.49-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/${project.build.finalName}-${zip.assembly.id}/</workingDirectory>
                   <executable>zip</executable>
-                  <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
+                  <commandlineArgs>-r ../${zip.artifact.name} .</commandlineArgs>
                 </configuration>
               </execution>
             </executions>
@@ -1481,37 +1467,43 @@
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
-      <version>4.3.6</version>
+      <version>4.5.2</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpcore</artifactId>
-      <version>4.3.3</version>
+      <version>4.4.4</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>1.6</version>
+      <version>1.9</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.5.3</version>
+      <version>2.6.6</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-      <version>2.5.0</version>
+      <version>2.6.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.5.3</version>
+      <version>2.6.6</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-cbor</artifactId>
+      <version>2.6.6</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,24 @@ public class ConfigStreamDeliveryInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
-                    configStreamDeliveryInfo
-                            .setLastStatus(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    configStreamDeliveryInfo.setLastStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorCode", targetDepth)) {
                     context.nextToken();
-                    configStreamDeliveryInfo
-                            .setLastErrorCode(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configStreamDeliveryInfo.setLastErrorCode(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastErrorMessage", targetDepth)) {
                     context.nextToken();
-                    configStreamDeliveryInfo
-                            .setLastErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configStreamDeliveryInfo.setLastErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChangeTime", targetDepth)) {
                     context.nextToken();
-                    configStreamDeliveryInfo
-                            .setLastStatusChangeTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    configStreamDeliveryInfo.setLastStatusChangeTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

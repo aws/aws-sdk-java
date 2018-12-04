@@ -40,6 +40,7 @@ public class DescribeStepResult implements Serializable, Cloneable {
      * @param step
      *        The step details for the requested step identifier.
      */
+
     public void setStep(Step step) {
         this.step = step;
     }
@@ -51,6 +52,7 @@ public class DescribeStepResult implements Serializable, Cloneable {
      * 
      * @return The step details for the requested step identifier.
      */
+
     public Step getStep() {
         return this.step;
     }
@@ -65,6 +67,7 @@ public class DescribeStepResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStepResult withStep(Step step) {
         setStep(step);
         return this;

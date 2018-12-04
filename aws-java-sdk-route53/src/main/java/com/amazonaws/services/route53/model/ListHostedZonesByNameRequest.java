@@ -22,14 +22,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your hosted zones in lexicographic order, send a
- * <code>GET</code> request to the <code>2015-01-01/hostedzonesbyname</code>
- * resource. The response to this request includes a <code>HostedZones</code>
- * element with zero or more <code>HostedZone</code> child elements
- * lexicographically ordered by DNS name. By default, the list of hosted zones
- * is displayed on a single page. You can control the length of the page that is
- * displayed by using the <code>MaxItems</code> parameter. You can use the
- * <code>DNSName</code> and <code>HostedZoneId</code> parameters to control the
- * hosted zone that the list begins with.
+ * <code>GET</code> request to the
+ * <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The
+ * response to this request includes a <code>HostedZones</code> element with
+ * zero or more <code>HostedZone</code> child elements lexicographically ordered
+ * by DNS name. By default, the list of hosted zones is displayed on a single
+ * page. You can control the length of the page that is displayed by using the
+ * <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and
+ * <code>HostedZoneId</code> parameters to control the hosted zone that the list
+ * begins with.
  * </p>
  * <p>
  * For more information about listing hosted zones, see <a href=
@@ -96,6 +97,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *        get the next page of results.
      */
+
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
@@ -123,6 +125,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *         get the next page of results.
      */
+
     public String getDNSName() {
         return this.dNSName;
     }
@@ -153,6 +156,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withDNSName(String dNSName) {
         setDNSName(dNSName);
         return this;
@@ -174,6 +178,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *        get the next page of results.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -193,6 +198,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *         <code>DNSName</code> and <code>HostedZoneId</code> parameters to
      *         get the next page of results.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -215,6 +221,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -229,6 +236,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      *        Specify the maximum number of hosted zones to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -241,6 +249,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Specify the maximum number of hosted zones to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -256,6 +265,7 @@ public class ListHostedZonesByNameRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesByNameRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

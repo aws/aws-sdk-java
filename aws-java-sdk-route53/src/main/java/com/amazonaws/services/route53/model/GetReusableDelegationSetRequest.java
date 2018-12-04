@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for a GetReusableDelegationSet request.
+ * The input for a <code>GetReusableDelegationSet</code> request.
  * </p>
  */
 public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest
@@ -45,6 +45,7 @@ public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest
      *        The ID of the reusable delegation set for which you want to get a
      *        list of the name server.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -58,6 +59,7 @@ public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return The ID of the reusable delegation set for which you want to get a
      *         list of the name server.
      */
+
     public String getId() {
         return this.id;
     }
@@ -74,6 +76,7 @@ public class GetReusableDelegationSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetReusableDelegationSetRequest withId(String id) {
         setId(id);
         return this;

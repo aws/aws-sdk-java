@@ -45,6 +45,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      *        The ID for the origin access identity. For example:
      *        E74FTE3AJFJ256A.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -55,6 +56,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      * @return The ID for the origin access identity. For example:
      *         E74FTE3AJFJ256A.
      */
+
     public String getId() {
         return this.id;
     }
@@ -68,6 +70,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentitySummary withId(String id) {
         setId(id);
         return this;
@@ -83,6 +86,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      *        which you use when giving the origin access identity read
      *        permission to an object in Amazon S3.
      */
+
     public void setS3CanonicalUserId(String s3CanonicalUserId) {
         this.s3CanonicalUserId = s3CanonicalUserId;
     }
@@ -96,6 +100,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      *         which you use when giving the origin access identity read
      *         permission to an object in Amazon S3.
      */
+
     public String getS3CanonicalUserId() {
         return this.s3CanonicalUserId;
     }
@@ -112,6 +117,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentitySummary withS3CanonicalUserId(
             String s3CanonicalUserId) {
         setS3CanonicalUserId(s3CanonicalUserId);
@@ -126,6 +132,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      *        The comment for this origin access identity, as originally
      *        specified when created.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -137,6 +144,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      * @return The comment for this origin access identity, as originally
      *         specified when created.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -151,6 +159,7 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CloudFrontOriginAccessIdentitySummary withComment(String comment) {
         setComment(comment);
         return this;

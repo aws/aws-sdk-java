@@ -86,6 +86,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: None
      */
+
     public void setInterconnectName(String interconnectName) {
         this.interconnectName = interconnectName;
     }
@@ -108,6 +109,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: None
      */
+
     public String getInterconnectName() {
         return this.interconnectName;
     }
@@ -133,6 +135,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectRequest withInterconnectName(
             String interconnectName) {
         setInterconnectName(interconnectName);
@@ -164,6 +167,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *        <p>
      *        Available values: 1Gbps,10Gbps
      */
+
     public void setBandwidth(String bandwidth) {
         this.bandwidth = bandwidth;
     }
@@ -192,6 +196,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *         <p>
      *         Available values: 1Gbps,10Gbps
      */
+
     public String getBandwidth() {
         return this.bandwidth;
     }
@@ -223,6 +228,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectRequest withBandwidth(String bandwidth) {
         setBandwidth(bandwidth);
         return this;
@@ -247,6 +253,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default: None
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -269,6 +276,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default: None
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -294,6 +302,7 @@ public class CreateInterconnectRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInterconnectRequest withLocation(String location) {
         setLocation(location);
         return this;

@@ -40,7 +40,12 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * </p>
      */
     private Credentials credentials;
-
+    /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     */
     private AssumedRoleUser assumedRoleUser;
     /**
      * <p>
@@ -127,6 +132,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        less than 4096 bytes, but that can vary. Also, future updates to
      *        AWS might require larger sizes.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -153,6 +159,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *         less than 4096 bytes, but that can vary. Also, future updates to
      *         AWS might require larger sizes.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -182,30 +189,54 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withCredentials(Credentials credentials) {
         setCredentials(credentials);
         return this;
     }
 
     /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
      * @param assumedRoleUser
+     *        The identifiers for the temporary security credentials that the
+     *        operation returns.
      */
+
     public void setAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
         this.assumedRoleUser = assumedRoleUser;
     }
 
     /**
-     * @return
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
+     * @return The identifiers for the temporary security credentials that the
+     *         operation returns.
      */
+
     public AssumedRoleUser getAssumedRoleUser() {
         return this.assumedRoleUser;
     }
 
     /**
+     * <p>
+     * The identifiers for the temporary security credentials that the operation
+     * returns.
+     * </p>
+     * 
      * @param assumedRoleUser
+     *        The identifiers for the temporary security credentials that the
+     *        operation returns.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withAssumedRoleUser(
             AssumedRoleUser assumedRoleUser) {
         setAssumedRoleUser(assumedRoleUser);
@@ -225,6 +256,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        than 100 percent, which means the policy exceeded the allowed
      *        space.
      */
+
     public void setPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;
     }
@@ -241,6 +273,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *         greater than 100 percent, which means the policy exceeded the
      *         allowed space.
      */
+
     public Integer getPackedPolicySize() {
         return this.packedPolicySize;
     }
@@ -260,6 +293,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withPackedPolicySize(
             Integer packedPolicySize) {
         setPackedPolicySize(packedPolicySize);
@@ -276,6 +310,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        The value of the <code>NameID</code> element in the
      *        <code>Subject</code> element of the SAML assertion.
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -289,6 +324,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return The value of the <code>NameID</code> element in the
      *         <code>Subject</code> element of the SAML assertion.
      */
+
     public String getSubject() {
         return this.subject;
     }
@@ -305,6 +341,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withSubject(String subject) {
         setSubject(subject);
         return this;
@@ -339,6 +376,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        is returned as <code>transient</code>. If the format includes any
      *        other prefix, the format is returned with no modifications.
      */
+
     public void setSubjectType(String subjectType) {
         this.subjectType = subjectType;
     }
@@ -371,6 +409,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *         is returned as <code>transient</code>. If the format includes any
      *         other prefix, the format is returned with no modifications.
      */
+
     public String getSubjectType() {
         return this.subjectType;
     }
@@ -406,6 +445,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withSubjectType(String subjectType) {
         setSubjectType(subjectType);
         return this;
@@ -420,6 +460,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        The value of the <code>Issuer</code> element of the SAML
      *        assertion.
      */
+
     public void setIssuer(String issuer) {
         this.issuer = issuer;
     }
@@ -432,6 +473,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return The value of the <code>Issuer</code> element of the SAML
      *         assertion.
      */
+
     public String getIssuer() {
         return this.issuer;
     }
@@ -447,6 +489,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withIssuer(String issuer) {
         setIssuer(issuer);
         return this;
@@ -463,6 +506,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        <code>SubjectConfirmationData</code> element of the SAML
      *        assertion.
      */
+
     public void setAudience(String audience) {
         this.audience = audience;
     }
@@ -477,6 +521,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *         <code>SubjectConfirmationData</code> element of the SAML
      *         assertion.
      */
+
     public String getAudience() {
         return this.audience;
     }
@@ -494,6 +539,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withAudience(String audience) {
         setAudience(audience);
         return this;
@@ -526,6 +572,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *        <p>
      *        <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      */
+
     public void setNameQualifier(String nameQualifier) {
         this.nameQualifier = nameQualifier;
     }
@@ -557,6 +604,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      *         <p>
      *         <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      */
+
     public String getNameQualifier() {
         return this.nameQualifier;
     }
@@ -590,6 +638,7 @@ public class AssumeRoleWithSAMLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssumeRoleWithSAMLResult withNameQualifier(String nameQualifier) {
         setNameQualifier(nameQualifier);
         return this;

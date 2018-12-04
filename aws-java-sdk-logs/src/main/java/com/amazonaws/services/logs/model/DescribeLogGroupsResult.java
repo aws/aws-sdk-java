@@ -30,6 +30,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<LogGroup> getLogGroups() {
         if (logGroups == null) {
             logGroups = new com.amazonaws.internal.SdkInternalList<LogGroup>();
@@ -40,6 +41,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     /**
      * @param logGroups
      */
+
     public void setLogGroups(java.util.Collection<LogGroup> logGroups) {
         if (logGroups == null) {
             this.logGroups = null;
@@ -62,6 +64,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsResult withLogGroups(LogGroup... logGroups) {
         if (this.logGroups == null) {
             setLogGroups(new com.amazonaws.internal.SdkInternalList<LogGroup>(
@@ -78,6 +81,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsResult withLogGroups(
             java.util.Collection<LogGroup> logGroups) {
         setLogGroups(logGroups);
@@ -87,6 +91,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -94,6 +99,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -103,6 +109,7 @@ public class DescribeLogGroupsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogGroupsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

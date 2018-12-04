@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.datapipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SelectorMarshaller
@@ -39,28 +34,30 @@ import com.amazonaws.util.json.*;
 public class SelectorJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Selector selector, JSONWriter jsonWriter) {
+    public void marshall(Selector selector,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (selector == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (selector.getFieldName() != null) {
-                jsonWriter.key("fieldName").value(selector.getFieldName());
+                jsonGenerator.writeFieldName("fieldName").writeValue(
+                        selector.getFieldName());
             }
-
             if (selector.getOperator() != null) {
-                jsonWriter.key("operator");
+                jsonGenerator.writeFieldName("operator");
                 OperatorJsonMarshaller.getInstance().marshall(
-                        selector.getOperator(), jsonWriter);
+                        selector.getOperator(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

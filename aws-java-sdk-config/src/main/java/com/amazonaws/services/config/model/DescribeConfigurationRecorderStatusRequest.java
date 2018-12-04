@@ -47,6 +47,7 @@ public class DescribeConfigurationRecorderStatusRequest extends
      *         specified, the action returns the current status of all the
      *         configuration recorders associated with the account.
      */
+
     public java.util.List<String> getConfigurationRecorderNames() {
         if (configurationRecorderNames == null) {
             configurationRecorderNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -66,6 +67,7 @@ public class DescribeConfigurationRecorderStatusRequest extends
      *        specified, the action returns the current status of all the
      *        configuration recorders associated with the account.
      */
+
     public void setConfigurationRecorderNames(
             java.util.Collection<String> configurationRecorderNames) {
         if (configurationRecorderNames == null) {
@@ -97,6 +99,7 @@ public class DescribeConfigurationRecorderStatusRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecorderStatusRequest withConfigurationRecorderNames(
             String... configurationRecorderNames) {
         if (this.configurationRecorderNames == null) {
@@ -123,6 +126,7 @@ public class DescribeConfigurationRecorderStatusRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigurationRecorderStatusRequest withConfigurationRecorderNames(
             java.util.Collection<String> configurationRecorderNames) {
         setConfigurationRecorderNames(configurationRecorderNames);

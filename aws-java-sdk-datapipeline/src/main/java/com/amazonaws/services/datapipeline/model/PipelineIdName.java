@@ -49,6 +49,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      *        The ID of the pipeline that was assigned by AWS Data Pipeline.
      *        This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -62,6 +63,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * @return The ID of the pipeline that was assigned by AWS Data Pipeline.
      *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
+
     public String getId() {
         return this.id;
     }
@@ -78,6 +80,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineIdName withId(String id) {
         setId(id);
         return this;
@@ -91,6 +94,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * @param name
      *        The name of the pipeline.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -102,6 +106,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * 
      * @return The name of the pipeline.
      */
+
     public String getName() {
         return this.name;
     }
@@ -116,6 +121,7 @@ public class PipelineIdName implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PipelineIdName withName(String name) {
         setName(name);
         return this;

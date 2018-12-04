@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class DocumentParameterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    documentParameter.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentParameter.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    documentParameter.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentParameter.setType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    documentParameter.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentParameter.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultValue", targetDepth)) {
                     context.nextToken();
-                    documentParameter.setDefaultValue(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    documentParameter.setDefaultValue(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

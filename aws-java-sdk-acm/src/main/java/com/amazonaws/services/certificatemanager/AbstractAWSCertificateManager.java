@@ -39,7 +39,14 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
-    public void deleteCertificate(DeleteCertificateRequest request) {
+    public AddTagsToCertificateResult addTagsToCertificate(
+            AddTagsToCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,13 +68,26 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public ListTagsForCertificateResult listTagsForCertificate(
+            ListTagsForCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTagsFromCertificateResult removeTagsFromCertificate(
+            RemoveTagsFromCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RequestCertificateResult requestCertificate(
             RequestCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void resendValidationEmail(ResendValidationEmailRequest request) {
+    public ResendValidationEmailResult resendValidationEmail(
+            ResendValidationEmailRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

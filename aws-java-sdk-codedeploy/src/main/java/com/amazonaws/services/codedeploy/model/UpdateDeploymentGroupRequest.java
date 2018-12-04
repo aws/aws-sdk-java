@@ -35,7 +35,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     private String applicationName;
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      */
     private String currentDeploymentGroupName;
@@ -54,31 +54,42 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     private String deploymentConfigName;
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
-     * change them.
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them.
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
+     * remove tags, do not enter any tag names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> autoScalingGroups;
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      */
     private String serviceRoleArn;
+    /**
+     * <p>
+     * Information about triggers to change when the deployment group is
+     * updated.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
 
     /**
      * <p>
@@ -89,6 +100,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The application name corresponding to the deployment group to
      *        update.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -101,6 +113,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The application name corresponding to the deployment group to
      *         update.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -116,6 +129,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -124,37 +138,40 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
      * @param currentDeploymentGroupName
-     *        The current name of the existing deployment group.
+     *        The current name of the deployment group.
      */
+
     public void setCurrentDeploymentGroupName(String currentDeploymentGroupName) {
         this.currentDeploymentGroupName = currentDeploymentGroupName;
     }
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
-     * @return The current name of the existing deployment group.
+     * @return The current name of the deployment group.
      */
+
     public String getCurrentDeploymentGroupName() {
         return this.currentDeploymentGroupName;
     }
 
     /**
      * <p>
-     * The current name of the existing deployment group.
+     * The current name of the deployment group.
      * </p>
      * 
      * @param currentDeploymentGroupName
-     *        The current name of the existing deployment group.
+     *        The current name of the deployment group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withCurrentDeploymentGroupName(
             String currentDeploymentGroupName) {
         setCurrentDeploymentGroupName(currentDeploymentGroupName);
@@ -169,6 +186,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @param newDeploymentGroupName
      *        The new name of the deployment group, if you want to change it.
      */
+
     public void setNewDeploymentGroupName(String newDeploymentGroupName) {
         this.newDeploymentGroupName = newDeploymentGroupName;
     }
@@ -180,6 +198,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @return The new name of the deployment group, if you want to change it.
      */
+
     public String getNewDeploymentGroupName() {
         return this.newDeploymentGroupName;
     }
@@ -194,6 +213,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withNewDeploymentGroupName(
             String newDeploymentGroupName) {
         setNewDeploymentGroupName(newDeploymentGroupName);
@@ -210,6 +230,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The replacement deployment configuration name to use, if you want
      *        to change it.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -223,6 +244,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The replacement deployment configuration name to use, if you want
      *         to change it.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -239,6 +261,7 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -247,13 +270,16 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
-     * change them.
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.
      * </p>
      * 
-     * @return The replacement set of Amazon EC2 tags to filter on, if you want
-     *         to change them.
+     * @return The replacement set of Amazon EC2 tags on which to filter, if you
+     *         want to change them. To keep the existing tags, enter their
+     *         names. To remove tags, do not enter any tag names.
      */
+
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
         if (ec2TagFilters == null) {
             ec2TagFilters = new com.amazonaws.internal.SdkInternalList<EC2TagFilter>();
@@ -263,14 +289,17 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
-     * change them.
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      */
+
     public void setEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         if (ec2TagFilters == null) {
@@ -284,8 +313,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
-     * change them.
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -295,11 +325,13 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withEc2TagFilters(
             EC2TagFilter... ec2TagFilters) {
         if (this.ec2TagFilters == null) {
@@ -314,16 +346,19 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of Amazon EC2 tags to filter on, if you want to
-     * change them.
+     * The replacement set of Amazon EC2 tags on which to filter, if you want to
+     * change them. To keep the existing tags, enter their names. To remove
+     * tags, do not enter any tag names.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The replacement set of Amazon EC2 tags to filter on, if you want
-     *        to change them.
+     *        The replacement set of Amazon EC2 tags on which to filter, if you
+     *        want to change them. To keep the existing tags, enter their names.
+     *        To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         setEc2TagFilters(ec2TagFilters);
@@ -332,13 +367,16 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them.
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
+     * remove tags, do not enter any tag names.
      * </p>
      * 
-     * @return The replacement set of on-premises instance tags for filter on,
-     *         if you want to change them.
+     * @return The replacement set of on-premises instance tags on which to
+     *         filter, if you want to change them. To keep the existing tags,
+     *         enter their names. To remove tags, do not enter any tag names.
      */
+
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
         if (onPremisesInstanceTagFilters == null) {
             onPremisesInstanceTagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>();
@@ -348,14 +386,17 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them.
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
+     * remove tags, do not enter any tag names.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      */
+
     public void setOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         if (onPremisesInstanceTagFilters == null) {
@@ -369,8 +410,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them.
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
+     * remove tags, do not enter any tag names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -380,11 +422,13 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             TagFilter... onPremisesInstanceTagFilters) {
         if (this.onPremisesInstanceTagFilters == null) {
@@ -399,16 +443,19 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The replacement set of on-premises instance tags for filter on, if you
-     * want to change them.
+     * The replacement set of on-premises instance tags on which to filter, if
+     * you want to change them. To keep the existing tags, enter their names. To
+     * remove tags, do not enter any tag names.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The replacement set of on-premises instance tags for filter on, if
-     *        you want to change them.
+     *        The replacement set of on-premises instance tags on which to
+     *        filter, if you want to change them. To keep the existing tags,
+     *        enter their names. To remove tags, do not enter any tag names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         setOnPremisesInstanceTagFilters(onPremisesInstanceTagFilters);
@@ -418,12 +465,17 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @return The replacement list of Auto Scaling groups to be included in the
-     *         deployment group, if you want to change them.
+     *         deployment group, if you want to change them. To keep the Auto
+     *         Scaling groups, enter their names. To remove Auto Scaling groups,
+     *         do not enter any Auto Scaling group names.
      */
+
     public java.util.List<String> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<String>();
@@ -434,13 +486,18 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -455,7 +512,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -466,10 +525,13 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withAutoScalingGroups(
             String... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -485,15 +547,20 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The replacement list of Auto Scaling groups to be included in the
-     * deployment group, if you want to change them.
+     * deployment group, if you want to change them. To keep the Auto Scaling
+     * groups, enter their names. To remove Auto Scaling groups, do not enter
+     * any Auto Scaling group names.
      * </p>
      * 
      * @param autoScalingGroups
      *        The replacement list of Auto Scaling groups to be included in the
-     *        deployment group, if you want to change them.
+     *        deployment group, if you want to change them. To keep the Auto
+     *        Scaling groups, enter their names. To remove Auto Scaling groups,
+     *        do not enter any Auto Scaling group names.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withAutoScalingGroups(
             java.util.Collection<String> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -502,39 +569,131 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A replacement service role's ARN, if you want to change it.
+     *        A replacement ARN for the service role, if you want to change it.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
-     * @return A replacement service role's ARN, if you want to change it.
+     * @return A replacement ARN for the service role, if you want to change it.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
 
     /**
      * <p>
-     * A replacement service role's ARN, if you want to change it.
+     * A replacement ARN for the service role, if you want to change it.
      * </p>
      * 
      * @param serviceRoleArn
-     *        A replacement service role's ARN, if you want to change it.
+     *        A replacement ARN for the service role, if you want to change it.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDeploymentGroupRequest withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to change when the deployment group is
+     * updated.
+     * </p>
+     * 
+     * @return Information about triggers to change when the deployment group is
+     *         updated.
+     */
+
+    public java.util.List<TriggerConfig> getTriggerConfigurations() {
+        if (triggerConfigurations == null) {
+            triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>();
+        }
+        return triggerConfigurations;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to change when the deployment group is
+     * updated.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to change when the deployment group is
+     *        updated.
+     */
+
+    public void setTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        if (triggerConfigurations == null) {
+            this.triggerConfigurations = null;
+            return;
+        }
+
+        this.triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                triggerConfigurations);
+    }
+
+    /**
+     * <p>
+     * Information about triggers to change when the deployment group is
+     * updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTriggerConfigurations(java.util.Collection)} or
+     * {@link #withTriggerConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to change when the deployment group is
+     *        updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withTriggerConfigurations(
+            TriggerConfig... triggerConfigurations) {
+        if (this.triggerConfigurations == null) {
+            setTriggerConfigurations(new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                    triggerConfigurations.length));
+        }
+        for (TriggerConfig ele : triggerConfigurations) {
+            this.triggerConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about triggers to change when the deployment group is
+     * updated.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        Information about triggers to change when the deployment group is
+     *        updated.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public UpdateDeploymentGroupRequest withTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        setTriggerConfigurations(triggerConfigurations);
         return this;
     }
 
@@ -569,7 +728,9 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
         if (getAutoScalingGroups() != null)
             sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn());
+            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getTriggerConfigurations() != null)
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +797,13 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
         if (other.getServiceRoleArn() != null
                 && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false)
             return false;
+        if (other.getTriggerConfigurations() == null
+                ^ this.getTriggerConfigurations() == null)
+            return false;
+        if (other.getTriggerConfigurations() != null
+                && other.getTriggerConfigurations().equals(
+                        this.getTriggerConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -676,6 +844,10 @@ public class UpdateDeploymentGroupRequest extends AmazonWebServiceRequest
                 * hashCode
                 + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTriggerConfigurations() == null) ? 0
+                        : getTriggerConfigurations().hashCode());
         return hashCode;
     }
 

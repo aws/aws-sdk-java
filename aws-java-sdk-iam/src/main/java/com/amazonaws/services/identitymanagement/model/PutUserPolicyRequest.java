@@ -29,17 +29,36 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to associate the policy with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String userName;
     /**
      * <p>
      * The name of the policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String policyName;
     /**
      * <p>
      * The policy document.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String policyDocument;
@@ -58,11 +77,30 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * object members.
      * 
      * @param userName
-     *        The name of the user to associate the policy with.
+     *        The name of the user to associate the policy with.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param policyName
      *        The name of the policy document.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param policyDocument
      *        The policy document.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
     public PutUserPolicyRequest(String userName, String policyName,
             String policyDocument) {
@@ -75,10 +113,22 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to associate the policy with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user to associate the policy with.
+     *        The name of the user to associate the policy with.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -87,9 +137,21 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to associate the policy with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the user to associate the policy with.
+     * @return The name of the user to associate the policy with.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
@@ -98,12 +160,24 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the user to associate the policy with.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param userName
-     *        The name of the user to associate the policy with.
+     *        The name of the user to associate the policy with.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutUserPolicyRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -113,10 +187,22 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name of the policy document.
+     *        The name of the policy document.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -125,9 +211,21 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the policy document.
+     * @return The name of the policy document.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -136,12 +234,24 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name of the policy document.
+     *        The name of the policy document.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutUserPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -151,10 +261,25 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The policy document.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
@@ -163,9 +288,24 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
-     * @return The policy document.
+     * @return The policy document.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getPolicyDocument() {
         return this.policyDocument;
     }
@@ -174,12 +314,27 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The policy document.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param policyDocument
-     *        The policy document.
+     *        The policy document.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutUserPolicyRequest withPolicyDocument(String policyDocument) {
         setPolicyDocument(policyDocument);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,7 +57,7 @@ public class ItemCollectionMetricsJsonUnmarshaller implements
                     context.nextToken();
                     itemCollectionMetrics
                             .setItemCollectionKey(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
@@ -63,7 +65,7 @@ public class ItemCollectionMetricsJsonUnmarshaller implements
                     context.nextToken();
                     itemCollectionMetrics
                             .setSizeEstimateRangeGB(new ListUnmarshaller<Double>(
-                                    DoubleJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(Double.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

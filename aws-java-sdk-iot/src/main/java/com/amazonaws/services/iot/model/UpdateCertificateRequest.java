@@ -38,9 +38,9 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      */
     private String newStatus;
@@ -53,6 +53,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -64,6 +65,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -78,6 +80,7 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCertificateRequest withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -88,19 +91,20 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        Note: setting the status to PENDING_TRANSFER will result in an
-     *        exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT and is not meant to be used by developers.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
+     *        an exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT. It is not intended for developer use.
      * @see CertificateStatus
      */
+
     public void setNewStatus(String newStatus) {
         this.newStatus = newStatus;
     }
@@ -110,18 +114,19 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      * 
      * @return The new status.</p>
      *         <p>
-     *         Note: setting the status to PENDING_TRANSFER will result in an
-     *         exception being thrown. PENDING_TRANSFER is a status used
-     *         internally by AWS IoT and is not meant to be used by developers.
+     *         <b>Note:</b> Setting the status to PENDING_TRANSFER will result
+     *         in an exception being thrown. PENDING_TRANSFER is a status used
+     *         internally by AWS IoT. It is not intended for developer use.
      * @see CertificateStatus
      */
+
     public String getNewStatus() {
         return this.newStatus;
     }
@@ -131,21 +136,22 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        Note: setting the status to PENDING_TRANSFER will result in an
-     *        exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT and is not meant to be used by developers.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
+     *        an exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT. It is not intended for developer use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
      */
+
     public UpdateCertificateRequest withNewStatus(String newStatus) {
         setNewStatus(newStatus);
         return this;
@@ -156,21 +162,20 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        Note: setting the status to PENDING_TRANSFER will result in an
-     *        exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT and is not meant to be used by developers.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
+     *        an exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT. It is not intended for developer use.
      * @see CertificateStatus
      */
+
     public void setNewStatus(CertificateStatus newStatus) {
         this.newStatus = newStatus.toString();
     }
@@ -180,21 +185,22 @@ public class UpdateCertificateRequest extends AmazonWebServiceRequest implements
      * The new status.
      * </p>
      * <p>
-     * Note: setting the status to PENDING_TRANSFER will result in an exception
-     * being thrown. PENDING_TRANSFER is a status used internally by AWS IoT and
-     * is not meant to be used by developers.
+     * <b>Note:</b> Setting the status to PENDING_TRANSFER will result in an
+     * exception being thrown. PENDING_TRANSFER is a status used internally by
+     * AWS IoT. It is not intended for developer use.
      * </p>
      * 
      * @param newStatus
      *        The new status.</p>
      *        <p>
-     *        Note: setting the status to PENDING_TRANSFER will result in an
-     *        exception being thrown. PENDING_TRANSFER is a status used
-     *        internally by AWS IoT and is not meant to be used by developers.
+     *        <b>Note:</b> Setting the status to PENDING_TRANSFER will result in
+     *        an exception being thrown. PENDING_TRANSFER is a status used
+     *        internally by AWS IoT. It is not intended for developer use.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
      */
+
     public UpdateCertificateRequest withNewStatus(CertificateStatus newStatus) {
         setNewStatus(newStatus);
         return this;

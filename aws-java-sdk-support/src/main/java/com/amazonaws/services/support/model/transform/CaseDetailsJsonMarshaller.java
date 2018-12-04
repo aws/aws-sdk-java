@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.support.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CaseDetailsMarshaller
@@ -39,83 +34,80 @@ import com.amazonaws.util.json.*;
 public class CaseDetailsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CaseDetails caseDetails, JSONWriter jsonWriter) {
+    public void marshall(CaseDetails caseDetails,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (caseDetails == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (caseDetails.getCaseId() != null) {
-                jsonWriter.key("caseId").value(caseDetails.getCaseId());
+                jsonGenerator.writeFieldName("caseId").writeValue(
+                        caseDetails.getCaseId());
             }
-
             if (caseDetails.getDisplayId() != null) {
-                jsonWriter.key("displayId").value(caseDetails.getDisplayId());
+                jsonGenerator.writeFieldName("displayId").writeValue(
+                        caseDetails.getDisplayId());
             }
-
             if (caseDetails.getSubject() != null) {
-                jsonWriter.key("subject").value(caseDetails.getSubject());
+                jsonGenerator.writeFieldName("subject").writeValue(
+                        caseDetails.getSubject());
             }
-
             if (caseDetails.getStatus() != null) {
-                jsonWriter.key("status").value(caseDetails.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        caseDetails.getStatus());
             }
-
             if (caseDetails.getServiceCode() != null) {
-                jsonWriter.key("serviceCode").value(
+                jsonGenerator.writeFieldName("serviceCode").writeValue(
                         caseDetails.getServiceCode());
             }
-
             if (caseDetails.getCategoryCode() != null) {
-                jsonWriter.key("categoryCode").value(
+                jsonGenerator.writeFieldName("categoryCode").writeValue(
                         caseDetails.getCategoryCode());
             }
-
             if (caseDetails.getSeverityCode() != null) {
-                jsonWriter.key("severityCode").value(
+                jsonGenerator.writeFieldName("severityCode").writeValue(
                         caseDetails.getSeverityCode());
             }
-
             if (caseDetails.getSubmittedBy() != null) {
-                jsonWriter.key("submittedBy").value(
+                jsonGenerator.writeFieldName("submittedBy").writeValue(
                         caseDetails.getSubmittedBy());
             }
-
             if (caseDetails.getTimeCreated() != null) {
-                jsonWriter.key("timeCreated").value(
+                jsonGenerator.writeFieldName("timeCreated").writeValue(
                         caseDetails.getTimeCreated());
             }
-
             if (caseDetails.getRecentCommunications() != null) {
-                jsonWriter.key("recentCommunications");
+                jsonGenerator.writeFieldName("recentCommunications");
                 RecentCaseCommunicationsJsonMarshaller.getInstance().marshall(
-                        caseDetails.getRecentCommunications(), jsonWriter);
+                        caseDetails.getRecentCommunications(), jsonGenerator);
             }
 
             com.amazonaws.internal.SdkInternalList<String> ccEmailAddressesList = (com.amazonaws.internal.SdkInternalList<String>) caseDetails
                     .getCcEmailAddresses();
             if (!ccEmailAddressesList.isEmpty()
                     || !ccEmailAddressesList.isAutoConstruct()) {
-                jsonWriter.key("ccEmailAddresses");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ccEmailAddresses");
+                jsonGenerator.writeStartArray();
                 for (String ccEmailAddressesListValue : ccEmailAddressesList) {
                     if (ccEmailAddressesListValue != null) {
-                        jsonWriter.value(ccEmailAddressesListValue);
+                        jsonGenerator.writeValue(ccEmailAddressesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (caseDetails.getLanguage() != null) {
-                jsonWriter.key("language").value(caseDetails.getLanguage());
+                jsonGenerator.writeFieldName("language").writeValue(
+                        caseDetails.getLanguage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

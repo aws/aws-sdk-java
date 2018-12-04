@@ -71,6 +71,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * @param enabled
      *        Each active trusted signer.
      */
+
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
@@ -80,6 +81,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * 
      * @return Each active trusted signer.
      */
+
     public Boolean getEnabled() {
         return this.enabled;
     }
@@ -92,6 +94,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActiveTrustedSigners withEnabled(Boolean enabled) {
         setEnabled(enabled);
         return this;
@@ -102,6 +105,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * 
      * @return Each active trusted signer.
      */
+
     public Boolean isEnabled() {
         return this.enabled;
     }
@@ -117,6 +121,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      *        three AWS accounts, the value of Quantity for ActiveTrustedSigners
      *        will be 3.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -131,6 +136,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      *         same three AWS accounts, the value of Quantity for
      *         ActiveTrustedSigners will be 3.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -148,6 +154,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActiveTrustedSigners withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -164,6 +171,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      *         complex type, including trusted signers in the default cache
      *         behavior and in all of the other cache behaviors.
      */
+
     public java.util.List<Signer> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<Signer>();
@@ -183,6 +191,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      *        complex type, including trusted signers in the default cache
      *        behavior and in all of the other cache behaviors.
      */
+
     public void setItems(java.util.Collection<Signer> items) {
         if (items == null) {
             this.items = null;
@@ -212,6 +221,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActiveTrustedSigners withItems(Signer... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<Signer>(
@@ -237,6 +247,7 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActiveTrustedSigners withItems(java.util.Collection<Signer> items) {
         setItems(items);
         return this;

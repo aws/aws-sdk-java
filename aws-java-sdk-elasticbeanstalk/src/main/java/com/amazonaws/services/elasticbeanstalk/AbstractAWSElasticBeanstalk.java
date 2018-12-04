@@ -39,13 +39,20 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
-    public void abortEnvironmentUpdate(AbortEnvironmentUpdateRequest request) {
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate(
+            AbortEnvironmentUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void abortEnvironmentUpdate() {
-        abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
+    public AbortEnvironmentUpdateResult abortEnvironmentUpdate() {
+        return abortEnvironmentUpdate(new AbortEnvironmentUpdateRequest());
+    }
+
+    @Override
+    public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -96,23 +103,25 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
-    public void deleteApplication(DeleteApplicationRequest request) {
+    public DeleteApplicationResult deleteApplication(
+            DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteApplicationVersion(DeleteApplicationVersionRequest request) {
+    public DeleteApplicationVersionResult deleteApplicationVersion(
+            DeleteApplicationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteConfigurationTemplate(
+    public DeleteConfigurationTemplateResult deleteConfigurationTemplate(
             DeleteConfigurationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteEnvironmentConfiguration(
+    public DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(
             DeleteEnvironmentConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +163,18 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     @Override
     public DescribeEnvironmentHealthResult describeEnvironmentHealth(
             DescribeEnvironmentHealthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,17 +223,20 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
-    public void rebuildEnvironment(RebuildEnvironmentRequest request) {
+    public RebuildEnvironmentResult rebuildEnvironment(
+            RebuildEnvironmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void requestEnvironmentInfo(RequestEnvironmentInfoRequest request) {
+    public RequestEnvironmentInfoResult requestEnvironmentInfo(
+            RequestEnvironmentInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void restartAppServer(RestartAppServerRequest request) {
+    public RestartAppServerResult restartAppServer(
+            RestartAppServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,13 +247,14 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
-    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request) {
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(
+            SwapEnvironmentCNAMEsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void swapEnvironmentCNAMEs() {
-        swapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest());
+    public SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs() {
+        return swapEnvironmentCNAMEs(new SwapEnvironmentCNAMEsRequest());
     }
 
     @Override

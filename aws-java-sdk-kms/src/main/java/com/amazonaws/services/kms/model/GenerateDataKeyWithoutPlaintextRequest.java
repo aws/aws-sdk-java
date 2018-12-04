@@ -30,17 +30,31 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier, a fully specified ARN to either an alias or a
      * key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      */
     private String keyId;
     /**
@@ -70,7 +84,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -83,33 +97,63 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier, a fully specified ARN to either an alias or a
      * key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
      *        A unique identifier for the customer master key. This value can be
      *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".
+     *        alias or a key, or an alias name prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -119,32 +163,62 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier, a fully specified ARN to either an alias or a
      * key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A unique identifier for the customer master key. This value can
      *         be a globally unique identifier, a fully specified ARN to either
-     *         an alias or a key, or an alias name prefixed by "alias/".
+     *         an alias or a key, or an alias name prefixed by "alias/".</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Alias ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         <li>Alias Name Example - alias/MyAliasName</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias Name Example - alias/MyAliasName
+     *         </p>
+     *         </li>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -154,35 +228,65 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier, a fully specified ARN to either an alias or a
      * key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keyId
      *        A unique identifier for the customer master key. This value can be
      *        a globally unique identifier, a fully specified ARN to either an
-     *        alias or a key, or an alias name prefixed by "alias/".
+     *        alias or a key, or an alias name prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -197,6 +301,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Name:value pair that contains additional data to be authenticated
      *         during the encryption and decryption processes.
      */
+
     public java.util.Map<String, String> getEncryptionContext() {
         if (encryptionContext == null) {
             encryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -214,6 +319,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        Name:value pair that contains additional data to be authenticated
      *        during the encryption and decryption processes.
      */
+
     public void setEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         this.encryptionContext = encryptionContext == null ? null
@@ -233,6 +339,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withEncryptionContext(
             java.util.Map<String, String> encryptionContext) {
         setEncryptionContext(encryptionContext);
@@ -255,6 +362,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * Removes all the entries added into EncryptionContext. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest clearEncryptionContextEntries() {
         this.encryptionContext = null;
         return this;
@@ -271,6 +379,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        Currently this can be AES_128 or AES_256.
      * @see DataKeySpec
      */
+
     public void setKeySpec(String keySpec) {
         this.keySpec = keySpec;
     }
@@ -285,6 +394,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         Currently this can be AES_128 or AES_256.
      * @see DataKeySpec
      */
+
     public String getKeySpec() {
         return this.keySpec;
     }
@@ -302,6 +412,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeySpec(String keySpec) {
         setKeySpec(keySpec);
         return this;
@@ -316,10 +427,9 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @param keySpec
      *        Value that identifies the encryption algorithm and key size.
      *        Currently this can be AES_128 or AES_256.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataKeySpec
      */
+
     public void setKeySpec(DataKeySpec keySpec) {
         this.keySpec = keySpec.toString();
     }
@@ -337,6 +447,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         chained together.
      * @see DataKeySpec
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withKeySpec(
             DataKeySpec keySpec) {
         setKeySpec(keySpec);
@@ -355,6 +466,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *        values are 128, 256, 512, 1024 and so on. We recommend that you
      *        use the <code>KeySpec</code> parameter instead.
      */
+
     public void setNumberOfBytes(Integer numberOfBytes) {
         this.numberOfBytes = numberOfBytes;
     }
@@ -370,6 +482,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      *         values are 128, 256, 512, 1024 and so on. We recommend that you
      *         use the <code>KeySpec</code> parameter instead.
      */
+
     public Integer getNumberOfBytes() {
         return this.numberOfBytes;
     }
@@ -388,6 +501,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withNumberOfBytes(
             Integer numberOfBytes) {
         setNumberOfBytes(numberOfBytes);
@@ -399,7 +513,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -407,11 +521,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, go to <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -424,7 +539,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -433,11 +548,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -453,7 +569,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -468,13 +584,14 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withGrantTokens(
             String... grantTokens) {
         if (this.grantTokens == null) {
@@ -492,7 +609,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -501,13 +618,14 @@ public class GenerateDataKeyWithoutPlaintextRequest extends
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

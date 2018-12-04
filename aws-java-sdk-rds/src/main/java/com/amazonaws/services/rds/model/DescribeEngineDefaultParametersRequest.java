@@ -1,290 +1,357 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
- * <p>
- * Returns the default engine and system parameter information for the
- * specified database engine.
- * </p>
- *
- * @see com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
+ * <p/>
  */
-public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeEngineDefaultParametersRequest extends
+        AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the DB parameter group family.
+     * </p>
      */
     private String dBParameterGroupFamily;
-
     /**
+     * <p>
      * Not currently supported.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
-
+    private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
      */
     private Integer maxRecords;
-
     /**
+     * <p>
      * An optional pagination token provided by a previous
-     * <code>DescribeEngineDefaultParameters</code> request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
+     * <code>DescribeEngineDefaultParameters</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
+     * </p>
      */
     private String marker;
 
     /**
-     * Default constructor for a new DescribeEngineDefaultParametersRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public DescribeEngineDefaultParametersRequest() {}
-    
-    /**
-     * Constructs a new DescribeEngineDefaultParametersRequest object.
+     * Default constructor for DescribeEngineDefaultParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * initialize the object after creating it.
+     */
+    public DescribeEngineDefaultParametersRequest() {
+    }
+
+    /**
+     * Constructs a new DescribeEngineDefaultParametersRequest object. Callers
+     * should use the setter or fluent setter (with...) methods to initialize
+     * any additional object members.
      * 
-     * @param dBParameterGroupFamily The name of the DB parameter group
-     * family.
+     * @param dBParameterGroupFamily
+     *        The name of the DB parameter group family.
      */
     public DescribeEngineDefaultParametersRequest(String dBParameterGroupFamily) {
         setDBParameterGroupFamily(dBParameterGroupFamily);
     }
 
     /**
+     * <p>
      * The name of the DB parameter group family.
-     *
-     * @return The name of the DB parameter group family.
+     * </p>
+     * 
+     * @param dBParameterGroupFamily
+     *        The name of the DB parameter group family.
      */
-    public String getDBParameterGroupFamily() {
-        return dBParameterGroupFamily;
-    }
-    
-    /**
-     * The name of the DB parameter group family.
-     *
-     * @param dBParameterGroupFamily The name of the DB parameter group family.
-     */
+
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
-    
+
     /**
-     * The name of the DB parameter group family.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBParameterGroupFamily The name of the DB parameter group family.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the DB parameter group family.
+     * </p>
+     * 
+     * @return The name of the DB parameter group family.
      */
-    public DescribeEngineDefaultParametersRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
-        this.dBParameterGroupFamily = dBParameterGroupFamily;
+
+    public String getDBParameterGroupFamily() {
+        return this.dBParameterGroupFamily;
+    }
+
+    /**
+     * <p>
+     * The name of the DB parameter group family.
+     * </p>
+     * 
+     * @param dBParameterGroupFamily
+     *        The name of the DB parameter group family.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeEngineDefaultParametersRequest withDBParameterGroupFamily(
+            String dBParameterGroupFamily) {
+        setDBParameterGroupFamily(dBParameterGroupFamily);
         return this;
     }
 
     /**
+     * <p>
      * Not currently supported.
-     *
+     * </p>
+     * 
      * @return Not currently supported.
      */
+
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
-              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
-              filters.setAutoConstruct(true);
+            filters = new com.amazonaws.internal.SdkInternalList<Filter>();
         }
         return filters;
     }
-    
+
     /**
+     * <p>
      * Not currently supported.
-     *
-     * @param filters Not currently supported.
+     * </p>
+     * 
+     * @param filters
+     *        Not currently supported.
      */
+
     public void setFilters(java.util.Collection<Filter> filters) {
         if (filters == null) {
             this.filters = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-        filtersCopy.addAll(filters);
-        this.filters = filtersCopy;
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<Filter>(
+                filters);
     }
-    
+
     /**
+     * <p>
      * Not currently supported.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setFilters(java.util.Collection)} or {@link
-     * #withFilters(java.util.Collection)} if you want to override the
+     * any). Use {@link #setFilters(java.util.Collection)} or
+     * {@link #withFilters(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters Not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param filters
+     *        Not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public DescribeEngineDefaultParametersRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
-        for (Filter value : filters) {
-            getFilters().add(value);
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<Filter>(
+                    filters.length));
+        }
+        for (Filter ele : filters) {
+            this.filters.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * Not currently supported.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param filters Not currently supported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Not currently supported.
+     * </p>
+     * 
+     * @param filters
+     *        Not currently supported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeEngineDefaultParametersRequest withFilters(java.util.Collection<Filter> filters) {
-        if (filters == null) {
-            this.filters = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
-            filtersCopy.addAll(filters);
-            this.filters = filtersCopy;
-        }
 
+    public DescribeEngineDefaultParametersRequest withFilters(
+            java.util.Collection<Filter> filters) {
+        setFilters(filters);
         return this;
     }
 
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        pagination token called a marker is included in the response so
+     *        that the remaining results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
      */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
-     */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * pagination token called a marker is included in the response so that
-     * the remaining results can be retrieved. <p>Default: 100
-     * <p>Constraints: Minimum 20, maximum 100.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         pagination token called a marker is included in the response so that
-     *         the remaining results can be retrieved. <p>Default: 100
-     *         <p>Constraints: Minimum 20, maximum 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         pagination token called a marker is included in the response so
+     *         that the remaining results can be retrieved. </p>
+     *         <p>
+     *         Default: 100
+     *         </p>
+     *         <p>
+     *         Constraints: Minimum 20, maximum 100.
      */
-    public DescribeEngineDefaultParametersRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination
+     * token called a marker is included in the response so that the remaining
+     * results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: Minimum 20, maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        pagination token called a marker is included in the response so
+     *        that the remaining results can be retrieved. </p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: Minimum 20, maximum 100.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeEngineDefaultParametersRequest withMaxRecords(
+            Integer maxRecords) {
+        setMaxRecords(maxRecords);
         return this;
     }
 
     /**
+     * <p>
      * An optional pagination token provided by a previous
-     * <code>DescribeEngineDefaultParameters</code> request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return An optional pagination token provided by a previous
-     *         <code>DescribeEngineDefaultParameters</code> request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
+     * <code>DescribeEngineDefaultParameters</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous
+     *        <code>DescribeEngineDefaultParameters</code> request. If this
+     *        parameter is specified, the response includes only records beyond
+     *        the marker, up to the value specified by <code>MaxRecords</code>.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * An optional pagination token provided by a previous
-     * <code>DescribeEngineDefaultParameters</code> request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @param marker An optional pagination token provided by a previous
-     *         <code>DescribeEngineDefaultParameters</code> request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
-     * An optional pagination token provided by a previous
-     * <code>DescribeEngineDefaultParameters</code> request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker An optional pagination token provided by a previous
+     * An optional pagination token provided by a previous
+     * <code>DescribeEngineDefaultParameters</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @return An optional pagination token provided by a previous
      *         <code>DescribeEngineDefaultParameters</code> request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         parameter is specified, the response includes only records beyond
+     *         the marker, up to the value specified by <code>MaxRecords</code>.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * An optional pagination token provided by a previous
+     * <code>DescribeEngineDefaultParameters</code> request. If this parameter
+     * is specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous
+     *        <code>DescribeEngineDefaultParameters</code> request. If this
+     *        parameter is specified, the response includes only records beyond
+     *        the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeEngineDefaultParametersRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
@@ -300,50 +367,74 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() );
+        if (getDBParameterGroupFamily() != null)
+            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily()
+                    + ",");
+        if (getFilters() != null)
+            sb.append("Filters: " + getFilters() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeEngineDefaultParametersRequest == false)
+            return false;
+        DescribeEngineDefaultParametersRequest other = (DescribeEngineDefaultParametersRequest) obj;
+        if (other.getDBParameterGroupFamily() == null
+                ^ this.getDBParameterGroupFamily() == null)
+            return false;
+        if (other.getDBParameterGroupFamily() != null
+                && other.getDBParameterGroupFamily().equals(
+                        this.getDBParameterGroupFamily()) == false)
+            return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null
+                && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDBParameterGroupFamily() == null) ? 0 : getDBParameterGroupFamily().hashCode()); 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDBParameterGroupFamily() == null) ? 0
+                        : getDBParameterGroupFamily().hashCode());
+        hashCode = prime * hashCode
+                + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeEngineDefaultParametersRequest == false) return false;
-        DescribeEngineDefaultParametersRequest other = (DescribeEngineDefaultParametersRequest)obj;
-        
-        if (other.getDBParameterGroupFamily() == null ^ this.getDBParameterGroupFamily() == null) return false;
-        if (other.getDBParameterGroupFamily() != null && other.getDBParameterGroupFamily().equals(this.getDBParameterGroupFamily()) == false) return false; 
-        if (other.getFilters() == null ^ this.getFilters() == null) return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeEngineDefaultParametersRequest clone() {
-        
-            return (DescribeEngineDefaultParametersRequest) super.clone();
+        return (DescribeEngineDefaultParametersRequest) super.clone();
     }
-
 }
-    

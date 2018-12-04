@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * IPSetUpdateMarshaller
@@ -39,28 +34,30 @@ import com.amazonaws.util.json.*;
 public class IPSetUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(IPSetUpdate iPSetUpdate, JSONWriter jsonWriter) {
+    public void marshall(IPSetUpdate iPSetUpdate,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (iPSetUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (iPSetUpdate.getAction() != null) {
-                jsonWriter.key("Action").value(iPSetUpdate.getAction());
+                jsonGenerator.writeFieldName("Action").writeValue(
+                        iPSetUpdate.getAction());
             }
-
             if (iPSetUpdate.getIPSetDescriptor() != null) {
-                jsonWriter.key("IPSetDescriptor");
+                jsonGenerator.writeFieldName("IPSetDescriptor");
                 IPSetDescriptorJsonMarshaller.getInstance().marshall(
-                        iPSetUpdate.getIPSetDescriptor(), jsonWriter);
+                        iPSetUpdate.getIPSetDescriptor(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

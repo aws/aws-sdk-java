@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListApplicationRevisionsRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class ListApplicationRevisionsRequestMarshaller
         implements
         Marshaller<Request<ListApplicationRevisionsRequest>, ListApplicationRevisionsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListApplicationRevisionsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListApplicationRevisionsRequest> marshall(
             ListApplicationRevisionsRequest listApplicationRevisionsRequest) {
@@ -65,54 +66,47 @@ public class ListApplicationRevisionsRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listApplicationRevisionsRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName").value(
+                jsonGenerator.writeFieldName("applicationName").writeValue(
                         listApplicationRevisionsRequest.getApplicationName());
             }
-
             if (listApplicationRevisionsRequest.getSortBy() != null) {
-                jsonWriter.key("sortBy").value(
+                jsonGenerator.writeFieldName("sortBy").writeValue(
                         listApplicationRevisionsRequest.getSortBy());
             }
-
             if (listApplicationRevisionsRequest.getSortOrder() != null) {
-                jsonWriter.key("sortOrder").value(
+                jsonGenerator.writeFieldName("sortOrder").writeValue(
                         listApplicationRevisionsRequest.getSortOrder());
             }
-
             if (listApplicationRevisionsRequest.getS3Bucket() != null) {
-                jsonWriter.key("s3Bucket").value(
+                jsonGenerator.writeFieldName("s3Bucket").writeValue(
                         listApplicationRevisionsRequest.getS3Bucket());
             }
-
             if (listApplicationRevisionsRequest.getS3KeyPrefix() != null) {
-                jsonWriter.key("s3KeyPrefix").value(
+                jsonGenerator.writeFieldName("s3KeyPrefix").writeValue(
                         listApplicationRevisionsRequest.getS3KeyPrefix());
             }
-
             if (listApplicationRevisionsRequest.getDeployed() != null) {
-                jsonWriter.key("deployed").value(
+                jsonGenerator.writeFieldName("deployed").writeValue(
                         listApplicationRevisionsRequest.getDeployed());
             }
-
             if (listApplicationRevisionsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         listApplicationRevisionsRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

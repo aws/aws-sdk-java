@@ -42,6 +42,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
      * @param healthCheckId
      *        The ID of the health check to delete.
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -53,6 +54,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the health check to delete.
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -67,6 +69,7 @@ public class DeleteHealthCheckRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteHealthCheckRequest withHealthCheckId(String healthCheckId) {
         setHealthCheckId(healthCheckId);
         return this;

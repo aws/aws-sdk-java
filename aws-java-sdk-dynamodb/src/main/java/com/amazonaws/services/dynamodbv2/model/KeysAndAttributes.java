@@ -25,9 +25,9 @@ import java.io.Serializable;
  * </p>
  * <p>
  * For each primary key, you must provide <i>all</i> of the key attributes. For
- * example, with a hash type primary key, you only need to provide the hash
- * attribute. For a hash-and-range type primary key, you must provide
- * <i>both</i> the hash attribute and the range attribute.
+ * example, with a simple primary key, you only need to provide the partition
+ * key. For a composite primary key, you must provide <i>both</i> the partition
+ * key and the sort key.
  * </p>
  */
 public class KeysAndAttributes implements Serializable, Cloneable {
@@ -169,6 +169,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return The primary key attribute values that define the items and the
      *         attributes associated with the items.
      */
+
     public java.util.List<java.util.Map<String, AttributeValue>> getKeys() {
         return keys;
     }
@@ -183,6 +184,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        The primary key attribute values that define the items and the
      *        attributes associated with the items.
      */
+
     public void setKeys(
             java.util.Collection<java.util.Map<String, AttributeValue>> keys) {
         if (keys == null) {
@@ -212,6 +214,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withKeys(
             java.util.Map<String, AttributeValue>... keys) {
         if (this.keys == null) {
@@ -236,6 +239,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withKeys(
             java.util.Collection<java.util.Map<String, AttributeValue>> keys) {
         setKeys(keys);
@@ -255,6 +259,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         returned. If any of the specified attributes are not found, they
      *         will not appear in the result.
      */
+
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
     }
@@ -273,6 +278,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        returned. If any of the specified attributes are not found, they
      *        will not appear in the result.
      */
+
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
             this.attributesToGet = null;
@@ -304,6 +310,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withAttributesToGet(String... attributesToGet) {
         if (this.attributesToGet == null) {
             setAttributesToGet(new java.util.ArrayList<String>(
@@ -331,6 +338,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withAttributesToGet(
             java.util.Collection<String> attributesToGet) {
         setAttributesToGet(attributesToGet);
@@ -349,6 +357,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        then a strongly consistent read is used; otherwise, an eventually
      *        consistent read is used.
      */
+
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
@@ -364,6 +373,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         then a strongly consistent read is used; otherwise, an eventually
      *         consistent read is used.
      */
+
     public Boolean getConsistentRead() {
         return this.consistentRead;
     }
@@ -382,6 +392,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withConsistentRead(Boolean consistentRead) {
         setConsistentRead(consistentRead);
         return this;
@@ -398,6 +409,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         then a strongly consistent read is used; otherwise, an eventually
      *         consistent read is used.
      */
+
     public Boolean isConsistentRead() {
         return this.consistentRead;
     }
@@ -449,6 +461,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        <i>AttributesToGet</i> parameter.
      *        </p>
      */
+
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
@@ -499,6 +512,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         <i>AttributesToGet</i> parameter.
      *         </p>
      */
+
     public String getProjectionExpression() {
         return this.projectionExpression;
     }
@@ -552,6 +566,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withProjectionExpression(
             String projectionExpression) {
         setProjectionExpression(projectionExpression);
@@ -709,6 +724,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -865,6 +881,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -1024,6 +1041,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeysAndAttributes withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -1047,6 +1065,7 @@ public class KeysAndAttributes implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public KeysAndAttributes clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;

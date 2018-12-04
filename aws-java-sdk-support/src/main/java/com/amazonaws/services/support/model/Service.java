@@ -63,6 +63,7 @@ public class Service implements Serializable, Cloneable {
      *        <a>DescribeServices</a> response. The <code>Name</code> element
      *        contains the corresponding friendly name.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -78,6 +79,7 @@ public class Service implements Serializable, Cloneable {
      *         <a>DescribeServices</a> response. The <code>Name</code> element
      *         contains the corresponding friendly name.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -96,6 +98,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withCode(String code) {
         setCode(code);
         return this;
@@ -111,6 +114,7 @@ public class Service implements Serializable, Cloneable {
      *        The friendly name for an AWS service. The <code>Code</code>
      *        element contains the corresponding code.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -124,6 +128,7 @@ public class Service implements Serializable, Cloneable {
      * @return The friendly name for an AWS service. The <code>Code</code>
      *         element contains the corresponding code.
      */
+
     public String getName() {
         return this.name;
     }
@@ -140,6 +145,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withName(String name) {
         setName(name);
         return this;
@@ -158,6 +164,7 @@ public class Service implements Serializable, Cloneable {
      *         category code. Category names and codes are passed to AWS Support
      *         when you call <a>CreateCase</a>.
      */
+
     public java.util.List<Category> getCategories() {
         if (categories == null) {
             categories = new com.amazonaws.internal.SdkInternalList<Category>();
@@ -179,6 +186,7 @@ public class Service implements Serializable, Cloneable {
      *        category code. Category names and codes are passed to AWS Support
      *        when you call <a>CreateCase</a>.
      */
+
     public void setCategories(java.util.Collection<Category> categories) {
         if (categories == null) {
             this.categories = null;
@@ -211,6 +219,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withCategories(Category... categories) {
         if (this.categories == null) {
             setCategories(new com.amazonaws.internal.SdkInternalList<Category>(
@@ -238,6 +247,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withCategories(java.util.Collection<Category> categories) {
         setCategories(categories);
         return this;

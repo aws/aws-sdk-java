@@ -53,6 +53,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      *         <code>NONE</code> in the request. Each element represents one
      *         attribute.
      */
+
     public java.util.Map<String, AttributeValue> getAttributes() {
         return attributes;
     }
@@ -72,6 +73,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      *        <code>NONE</code> in the request. Each element represents one
      *        attribute.
      */
+
     public void setAttributes(java.util.Map<String, AttributeValue> attributes) {
         this.attributes = attributes;
     }
@@ -93,6 +95,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemResult withAttributes(
             java.util.Map<String, AttributeValue> attributes) {
         setAttributes(attributes);
@@ -114,6 +117,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public UpdateItemResult clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -122,6 +126,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
     /**
      * @param consumedCapacity
      */
+
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
     }
@@ -129,6 +134,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ConsumedCapacity getConsumedCapacity() {
         return this.consumedCapacity;
     }
@@ -138,6 +144,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemResult withConsumedCapacity(
             ConsumedCapacity consumedCapacity) {
         setConsumedCapacity(consumedCapacity);
@@ -147,6 +154,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
     /**
      * @param itemCollectionMetrics
      */
+
     public void setItemCollectionMetrics(
             ItemCollectionMetrics itemCollectionMetrics) {
         this.itemCollectionMetrics = itemCollectionMetrics;
@@ -155,6 +163,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ItemCollectionMetrics getItemCollectionMetrics() {
         return this.itemCollectionMetrics;
     }
@@ -164,6 +173,7 @@ public class UpdateItemResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemResult withItemCollectionMetrics(
             ItemCollectionMetrics itemCollectionMetrics) {
         setItemCollectionMetrics(itemCollectionMetrics);

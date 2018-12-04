@@ -46,6 +46,7 @@ public class Failure implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the failed resource.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -57,6 +58,7 @@ public class Failure implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the failed resource.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -71,6 +73,7 @@ public class Failure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Failure withArn(String arn) {
         setArn(arn);
         return this;
@@ -84,6 +87,7 @@ public class Failure implements Serializable, Cloneable {
      * @param reason
      *        The reason for the failure.
      */
+
     public void setReason(String reason) {
         this.reason = reason;
     }
@@ -95,6 +99,7 @@ public class Failure implements Serializable, Cloneable {
      * 
      * @return The reason for the failure.
      */
+
     public String getReason() {
         return this.reason;
     }
@@ -109,6 +114,7 @@ public class Failure implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Failure withReason(String reason) {
         setReason(reason);
         return this;

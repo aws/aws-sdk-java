@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.services.ecs.model.transform.*;
@@ -58,6 +60,7 @@ import com.amazonaws.services.ecs.model.transform.*;
  * worry about scaling your management infrastructure.
  * </p>
  */
+@ThreadSafe
 public class AmazonECSClient extends AmazonWebServiceClient implements
         AmazonECS {
     /** Provider for AWS credentials. */
@@ -72,9 +75,72 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "ecs";
 
     /**
-     * List of exception unmarshallers for all Amazon ECS exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ClusterContainsServicesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NoUpdateAvailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.NoUpdateAvailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ClusterNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UpdateInProgressException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.UpdateInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServiceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ServiceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServiceNotActiveException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("MissingVersionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.MissingVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ClusterContainsContainerInstancesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ClientException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.ecs.model.ClientException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECS. A
@@ -94,8 +160,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonECSClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -136,8 +202,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonECSClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -176,8 +241,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonECSClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -228,50 +292,6 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.ClusterContainsServicesException.class,
-                        "ClusterContainsServicesException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.ecs.model.ServerException.class,
-                "ServerException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.NoUpdateAvailableException.class,
-                        "NoUpdateAvailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.ClusterNotFoundException.class,
-                        "ClusterNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.UpdateInProgressException.class,
-                        "UpdateInProgressException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.ServiceNotFoundException.class,
-                        "ServiceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.ServiceNotActiveException.class,
-                        "ServiceNotActiveException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.ecs.model.MissingVersionException.class,
-                "MissingVersionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.InvalidParameterException.class,
-                        "InvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class,
-                        "ClusterContainsContainerInstancesException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.ecs.model.ClientException.class,
-                "ClientException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -320,17 +340,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller().marshall(super
-                        .beforeMarshalling(createClusterRequest));
+                request = new CreateClusterRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateClusterResult> responseHandler = new JsonResponseHandler<CreateClusterResult>(
-                    new CreateClusterResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateClusterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -353,6 +375,12 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * <code>desiredCount</code>, Amazon ECS spawns another instantiation of the
      * task in the specified cluster. To update an existing service, see
      * <a>UpdateService</a>.
+     * </p>
+     * <p>
+     * In addition to maintaining the desired count of tasks in your service,
+     * you can optionally run your service behind a load balancer. The load
+     * balancer distributes traffic across the tasks that are associated with
+     * the service.
      * </p>
      * <p>
      * You can optionally specify a deployment configuration for your service.
@@ -447,17 +475,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateServiceRequestMarshaller().marshall(super
-                        .beforeMarshalling(createServiceRequest));
+                request = new CreateServiceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateServiceResult> responseHandler = new JsonResponseHandler<CreateServiceResult>(
-                    new CreateServiceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateServiceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateServiceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -517,17 +547,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteClusterRequest));
+                request = new DeleteClusterRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteClusterResult> responseHandler = new JsonResponseHandler<DeleteClusterResult>(
-                    new DeleteClusterResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteClusterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -597,17 +629,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteServiceRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteServiceRequest));
+                request = new DeleteServiceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteServiceResult> responseHandler = new JsonResponseHandler<DeleteServiceResult>(
-                    new DeleteServiceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteServiceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteServiceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -637,8 +671,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
      * </p>
      * <note>
      * <p>
-     * When you terminate a container instance, it is automatically deregistered
-     * from your cluster.
+     * If you terminate a running container instance with a connected Amazon ECS
+     * container agent, the agent automatically deregisters the instance from
+     * your cluster (stopped container instances or instances with disconnected
+     * agents are not automatically deregistered when terminated).
      * </p>
      * </note>
      * 
@@ -674,18 +710,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterContainerInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterContainerInstanceRequest));
+                request = new DeregisterContainerInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeregisterContainerInstanceResult> responseHandler = new JsonResponseHandler<DeregisterContainerInstanceResult>(
-                    new DeregisterContainerInstanceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterContainerInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeregisterContainerInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -741,18 +779,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterTaskDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deregisterTaskDefinitionRequest));
+                request = new DeregisterTaskDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeregisterTaskDefinitionResult> responseHandler = new JsonResponseHandler<DeregisterTaskDefinitionResult>(
-                    new DeregisterTaskDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterTaskDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeregisterTaskDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -795,7 +835,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClustersRequestMarshaller()
+                request = new DescribeClustersRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
@@ -804,9 +844,11 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeClustersResult> responseHandler = new JsonResponseHandler<DescribeClustersResult>(
-                    new DescribeClustersResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeClustersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeClustersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -861,18 +903,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeContainerInstancesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeContainerInstancesRequest));
+                request = new DescribeContainerInstancesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeContainerInstancesResult> responseHandler = new JsonResponseHandler<DescribeContainerInstancesResult>(
-                    new DescribeContainerInstancesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeContainerInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeContainerInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -919,7 +963,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServicesRequestMarshaller()
+                request = new DescribeServicesRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
@@ -928,9 +972,11 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeServicesResult> responseHandler = new JsonResponseHandler<DescribeServicesResult>(
-                    new DescribeServicesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeServicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeServicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -983,18 +1029,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTaskDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeTaskDefinitionRequest));
+                request = new DescribeTaskDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTaskDefinitionResult> responseHandler = new JsonResponseHandler<DescribeTaskDefinitionResult>(
-                    new DescribeTaskDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTaskDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTaskDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1041,17 +1089,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTasksRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTasksRequest));
+                request = new DescribeTasksRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTasksResult> responseHandler = new JsonResponseHandler<DescribeTasksResult>(
-                    new DescribeTasksResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTasksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1099,18 +1149,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DiscoverPollEndpointRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(discoverPollEndpointRequest));
+                request = new DiscoverPollEndpointRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(discoverPollEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DiscoverPollEndpointResult> responseHandler = new JsonResponseHandler<DiscoverPollEndpointResult>(
-                    new DiscoverPollEndpointResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DiscoverPollEndpointResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DiscoverPollEndpointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1158,17 +1210,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller().marshall(super
-                        .beforeMarshalling(listClustersRequest));
+                request = new ListClustersRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListClustersResult> responseHandler = new JsonResponseHandler<ListClustersResult>(
-                    new ListClustersResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListClustersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListClustersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1221,18 +1275,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListContainerInstancesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listContainerInstancesRequest));
+                request = new ListContainerInstancesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListContainerInstancesResult> responseHandler = new JsonResponseHandler<ListContainerInstancesResult>(
-                    new ListContainerInstancesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListContainerInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListContainerInstancesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1284,17 +1340,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServicesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listServicesRequest));
+                request = new ListServicesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListServicesResult> responseHandler = new JsonResponseHandler<ListServicesResult>(
-                    new ListServicesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListServicesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListServicesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1346,18 +1404,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionFamiliesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTaskDefinitionFamiliesRequest));
+                request = new ListTaskDefinitionFamiliesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTaskDefinitionFamiliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTaskDefinitionFamiliesResult> responseHandler = new JsonResponseHandler<ListTaskDefinitionFamiliesResult>(
-                    new ListTaskDefinitionFamiliesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTaskDefinitionFamiliesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ListTaskDefinitionFamiliesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1409,18 +1469,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTaskDefinitionsRequest));
+                request = new ListTaskDefinitionsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTaskDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTaskDefinitionsResult> responseHandler = new JsonResponseHandler<ListTaskDefinitionsResult>(
-                    new ListTaskDefinitionsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTaskDefinitionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTaskDefinitionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1479,17 +1541,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTasksRequestMarshaller().marshall(super
-                        .beforeMarshalling(listTasksRequest));
+                request = new ListTasksRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTasksResult> responseHandler = new JsonResponseHandler<ListTasksResult>(
-                    new ListTasksResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTasksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1542,18 +1606,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterContainerInstanceRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerContainerInstanceRequest));
+                request = new RegisterContainerInstanceRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterContainerInstanceResult> responseHandler = new JsonResponseHandler<RegisterContainerInstanceResult>(
-                    new RegisterContainerInstanceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterContainerInstanceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RegisterContainerInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1603,18 +1669,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterTaskDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(registerTaskDefinitionRequest));
+                request = new RegisterTaskDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(registerTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterTaskDefinitionResult> responseHandler = new JsonResponseHandler<RegisterTaskDefinitionResult>(
-                    new RegisterTaskDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterTaskDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterTaskDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1667,17 +1735,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunTaskRequestMarshaller().marshall(super
-                        .beforeMarshalling(runTaskRequest));
+                request = new RunTaskRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(runTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RunTaskResult> responseHandler = new JsonResponseHandler<RunTaskResult>(
-                    new RunTaskResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RunTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RunTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1730,17 +1800,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartTaskRequestMarshaller().marshall(super
-                        .beforeMarshalling(startTaskRequest));
+                request = new StartTaskRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartTaskResult> responseHandler = new JsonResponseHandler<StartTaskResult>(
-                    new StartTaskResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1795,17 +1867,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopTaskRequestMarshaller().marshall(super
-                        .beforeMarshalling(stopTaskRequest));
+                request = new StopTaskRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(stopTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopTaskResult> responseHandler = new JsonResponseHandler<StopTaskResult>(
-                    new StopTaskResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StopTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1852,18 +1926,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitContainerStateChangeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(submitContainerStateChangeRequest));
+                request = new SubmitContainerStateChangeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(submitContainerStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SubmitContainerStateChangeResult> responseHandler = new JsonResponseHandler<SubmitContainerStateChangeResult>(
-                    new SubmitContainerStateChangeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SubmitContainerStateChangeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new SubmitContainerStateChangeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1915,18 +1991,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitTaskStateChangeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(submitTaskStateChangeRequest));
+                request = new SubmitTaskStateChangeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(submitTaskStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SubmitTaskStateChangeResult> responseHandler = new JsonResponseHandler<SubmitTaskStateChangeResult>(
-                    new SubmitTaskStateChangeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SubmitTaskStateChangeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SubmitTaskStateChangeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2005,18 +2083,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateContainerAgentRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateContainerAgentRequest));
+                request = new UpdateContainerAgentRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateContainerAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateContainerAgentResult> responseHandler = new JsonResponseHandler<UpdateContainerAgentResult>(
-                    new UpdateContainerAgentResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContainerAgentResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateContainerAgentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2147,17 +2227,19 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServiceRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateServiceRequest));
+                request = new UpdateServiceRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateServiceResult> responseHandler = new JsonResponseHandler<UpdateServiceResult>(
-                    new UpdateServiceResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateServiceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateServiceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2191,33 +2273,48 @@ public class AmazonECSClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

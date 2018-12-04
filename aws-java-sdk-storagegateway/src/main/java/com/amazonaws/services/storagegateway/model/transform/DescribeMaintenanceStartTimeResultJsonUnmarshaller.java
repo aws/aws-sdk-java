@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,33 +56,33 @@ public class DescribeMaintenanceStartTimeResultJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
-                    describeMaintenanceStartTimeResult
-                            .setGatewayARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeMaintenanceStartTimeResult.setGatewayARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("HourOfDay", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceStartTimeResult
-                            .setHourOfDay(IntegerJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setHourOfDay(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("MinuteOfHour", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceStartTimeResult
-                            .setMinuteOfHour(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMinuteOfHour(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DayOfWeek", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceStartTimeResult
-                            .setDayOfWeek(IntegerJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setDayOfWeek(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("Timezone", targetDepth)) {
                     context.nextToken();
-                    describeMaintenanceStartTimeResult
-                            .setTimezone(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeMaintenanceStartTimeResult.setTimezone(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

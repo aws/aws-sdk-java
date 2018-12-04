@@ -43,17 +43,31 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      */
     private String destinationKeyId;
     /**
@@ -67,7 +81,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -84,10 +98,19 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param ciphertextBlob
      *        Ciphertext of the data to re-encrypt.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -109,6 +132,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Ciphertext of the data to re-encrypt.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -123,6 +147,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withCiphertextBlob(
             java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
@@ -138,6 +163,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Encryption context used to encrypt and decrypt the data specified
      *         in the <code>CiphertextBlob</code> parameter.
      */
+
     public java.util.Map<String, String> getSourceEncryptionContext() {
         if (sourceEncryptionContext == null) {
             sourceEncryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -155,6 +181,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      *        Encryption context used to encrypt and decrypt the data specified
      *        in the <code>CiphertextBlob</code> parameter.
      */
+
     public void setSourceEncryptionContext(
             java.util.Map<String, String> sourceEncryptionContext) {
         this.sourceEncryptionContext = sourceEncryptionContext == null ? null
@@ -174,6 +201,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withSourceEncryptionContext(
             java.util.Map<String, String> sourceEncryptionContext) {
         setSourceEncryptionContext(sourceEncryptionContext);
@@ -197,6 +225,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ReEncryptRequest clearSourceEncryptionContextEntries() {
         this.sourceEncryptionContext = null;
         return this;
@@ -207,34 +236,64 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationKeyId
      *        A unique identifier for the customer master key used to re-encrypt
      *        the data. This value can be a globally unique identifier, a fully
      *        specified ARN to either an alias or a key, or an alias name
-     *        prefixed by "alias/".
+     *        prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      */
+
     public void setDestinationKeyId(String destinationKeyId) {
         this.destinationKeyId = destinationKeyId;
     }
@@ -244,33 +303,63 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A unique identifier for the customer master key used to
      *         re-encrypt the data. This value can be a globally unique
      *         identifier, a fully specified ARN to either an alias or a key, or
-     *         an alias name prefixed by "alias/".
+     *         an alias name prefixed by "alias/".</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Alias ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         <li>Alias Name Example - alias/MyAliasName</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Alias Name Example - alias/MyAliasName
+     *         </p>
+     *         </li>
      */
+
     public String getDestinationKeyId() {
         return this.destinationKeyId;
     }
@@ -280,36 +369,66 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A unique identifier for the customer master key used to re-encrypt the
      * data. This value can be a globally unique identifier, a fully specified
      * ARN to either an alias or a key, or an alias name prefixed by "alias/".
-     * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Alias ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </li>
-     * <li>Alias Name Example - alias/MyAliasName</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Alias Name Example - alias/MyAliasName
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationKeyId
      *        A unique identifier for the customer master key used to re-encrypt
      *        the data. This value can be a globally unique identifier, a fully
      *        specified ARN to either an alias or a key, or an alias name
-     *        prefixed by "alias/".
+     *        prefixed by "alias/".</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Alias ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        <li>Alias Name Example - alias/MyAliasName</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Alias Name Example - alias/MyAliasName
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withDestinationKeyId(String destinationKeyId) {
         setDestinationKeyId(destinationKeyId);
         return this;
@@ -322,6 +441,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return Encryption context to be used when the data is re-encrypted.
      */
+
     public java.util.Map<String, String> getDestinationEncryptionContext() {
         if (destinationEncryptionContext == null) {
             destinationEncryptionContext = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -337,6 +457,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param destinationEncryptionContext
      *        Encryption context to be used when the data is re-encrypted.
      */
+
     public void setDestinationEncryptionContext(
             java.util.Map<String, String> destinationEncryptionContext) {
         this.destinationEncryptionContext = destinationEncryptionContext == null ? null
@@ -354,6 +475,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withDestinationEncryptionContext(
             java.util.Map<String, String> destinationEncryptionContext) {
         setDestinationEncryptionContext(destinationEncryptionContext);
@@ -377,6 +499,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ReEncryptRequest clearDestinationEncryptionContextEntries() {
         this.destinationEncryptionContext = null;
         return this;
@@ -387,7 +510,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -395,11 +518,12 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, go to <a href=
+     *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *         >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
+
     public java.util.List<String> getGrantTokens() {
         if (grantTokens == null) {
             grantTokens = new com.amazonaws.internal.SdkInternalList<String>();
@@ -412,7 +536,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -421,11 +545,12 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
+
     public void setGrantTokens(java.util.Collection<String> grantTokens) {
         if (grantTokens == null) {
             this.grantTokens = null;
@@ -441,7 +566,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -456,13 +581,14 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withGrantTokens(String... grantTokens) {
         if (this.grantTokens == null) {
             setGrantTokens(new com.amazonaws.internal.SdkInternalList<String>(
@@ -479,7 +605,7 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, go to <a href=
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      * >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.
@@ -488,13 +614,14 @@ public class ReEncryptRequest extends AmazonWebServiceRequest implements
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, go to <a href=
+     *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token"
      *        >Grant Tokens</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptRequest withGrantTokens(
             java.util.Collection<String> grantTokens) {
         setGrantTokens(grantTokens);

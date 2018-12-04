@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetPolicyVersionRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetPolicyVersionRequestMarshaller implements
         Marshaller<Request<GetPolicyVersionRequest>, GetPolicyVersionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetPolicyVersionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetPolicyVersionRequest> marshall(
             GetPolicyVersionRequest getPolicyVersionRequest) {
@@ -63,16 +72,21 @@ public class GetPolicyVersionRequestMarshaller implements
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (getPolicyVersionRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(getPolicyVersionRequest
-                                .getPolicyName()));
-        uriResourcePath = uriResourcePath.replace(
-                "{policyVersionId}",
-                (getPolicyVersionRequest.getPolicyVersionId() == null) ? ""
-                        : StringUtils.fromString(getPolicyVersionRequest
-                                .getPolicyVersionId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyName}",
+                        (getPolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getPolicyVersionRequest
+                                                .getPolicyName()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyVersionId}",
+                        (getPolicyVersionRequest.getPolicyVersionId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getPolicyVersionRequest
+                                                .getPolicyVersionId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

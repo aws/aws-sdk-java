@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePolicyVersionRequest Marshaller
@@ -47,7 +49,14 @@ public class CreatePolicyVersionRequestMarshaller
         implements
         Marshaller<Request<CreatePolicyVersionRequest>, CreatePolicyVersionRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePolicyVersionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePolicyVersionRequest> marshall(
             CreatePolicyVersionRequest createPolicyVersionRequest) {
@@ -64,36 +73,34 @@ public class CreatePolicyVersionRequestMarshaller
 
         String uriResourcePath = "/policies/{policyName}/version";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (createPolicyVersionRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(createPolicyVersionRequest
-                                .getPolicyName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyName}",
+                        (createPolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(createPolicyVersionRequest
+                                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String setAsDefault = (createPolicyVersionRequest.getSetAsDefault() == null) ? null
-                : StringUtils.fromBoolean(createPolicyVersionRequest
-                        .getSetAsDefault());
-        if (setAsDefault != null) {
-            request.addParameter("setAsDefault", setAsDefault);
+        if (createPolicyVersionRequest.getSetAsDefault() != null) {
+            request.addParameter("setAsDefault", StringUtils
+                    .fromBoolean(createPolicyVersionRequest.getSetAsDefault()));
         }
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createPolicyVersionRequest.getPolicyDocument() != null) {
-                jsonWriter.key("policyDocument").value(
+                jsonGenerator.writeFieldName("policyDocument").writeValue(
                         createPolicyVersionRequest.getPolicyDocument());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

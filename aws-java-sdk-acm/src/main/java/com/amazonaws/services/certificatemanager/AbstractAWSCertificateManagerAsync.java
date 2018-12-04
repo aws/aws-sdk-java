@@ -30,16 +30,31 @@ public class AbstractAWSCertificateManagerAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request) {
+
+        return addTagsToCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddTagsToCertificateResult> addTagsToCertificateAsync(
+            AddTagsToCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddTagsToCertificateRequest, AddTagsToCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest request) {
 
         return deleteCertificateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteCertificateAsync(
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(
             DeleteCertificateRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -90,6 +105,36 @@ public class AbstractAWSCertificateManagerAsync extends
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request) {
+
+        return listTagsForCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForCertificateResult> listTagsForCertificateAsync(
+            ListTagsForCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForCertificateRequest, ListTagsForCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request) {
+
+        return removeTagsFromCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTagsFromCertificateResult> removeTagsFromCertificateAsync(
+            RemoveTagsFromCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsFromCertificateRequest, RemoveTagsFromCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestCertificateResult> requestCertificateAsync(
             RequestCertificateRequest request) {
 
@@ -105,16 +150,16 @@ public class AbstractAWSCertificateManagerAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    public java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             ResendValidationEmailRequest request) {
 
         return resendValidationEmailAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> resendValidationEmailAsync(
+    public java.util.concurrent.Future<ResendValidationEmailResult> resendValidationEmailAsync(
             ResendValidationEmailRequest request,
-            com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<ResendValidationEmailRequest, ResendValidationEmailResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RejectedLogEventsInfoMarshaller
@@ -39,34 +34,39 @@ import com.amazonaws.util.json.*;
 public class RejectedLogEventsInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(RejectedLogEventsInfo rejectedLogEventsInfo,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (rejectedLogEventsInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (rejectedLogEventsInfo.getTooNewLogEventStartIndex() != null) {
-                jsonWriter.key("tooNewLogEventStartIndex").value(
-                        rejectedLogEventsInfo.getTooNewLogEventStartIndex());
+                jsonGenerator.writeFieldName("tooNewLogEventStartIndex")
+                        .writeValue(
+                                rejectedLogEventsInfo
+                                        .getTooNewLogEventStartIndex());
             }
-
             if (rejectedLogEventsInfo.getTooOldLogEventEndIndex() != null) {
-                jsonWriter.key("tooOldLogEventEndIndex").value(
-                        rejectedLogEventsInfo.getTooOldLogEventEndIndex());
+                jsonGenerator.writeFieldName("tooOldLogEventEndIndex")
+                        .writeValue(
+                                rejectedLogEventsInfo
+                                        .getTooOldLogEventEndIndex());
             }
-
             if (rejectedLogEventsInfo.getExpiredLogEventEndIndex() != null) {
-                jsonWriter.key("expiredLogEventEndIndex").value(
-                        rejectedLogEventsInfo.getExpiredLogEventEndIndex());
+                jsonGenerator.writeFieldName("expiredLogEventEndIndex")
+                        .writeValue(
+                                rejectedLogEventsInfo
+                                        .getExpiredLogEventEndIndex());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

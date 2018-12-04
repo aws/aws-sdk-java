@@ -59,6 +59,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * 
      * @return A list of policies.
      */
+
     public java.util.List<Policy> getPolicies() {
         if (policies == null) {
             policies = new com.amazonaws.internal.SdkInternalList<Policy>();
@@ -74,6 +75,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @param policies
      *        A list of policies.
      */
+
     public void setPolicies(java.util.Collection<Policy> policies) {
         if (policies == null) {
             this.policies = null;
@@ -100,6 +102,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withPolicies(Policy... policies) {
         if (this.policies == null) {
             setPolicies(new com.amazonaws.internal.SdkInternalList<Policy>(
@@ -121,6 +124,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withPolicies(java.util.Collection<Policy> policies) {
         setPolicies(policies);
         return this;
@@ -147,6 +151,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -171,6 +176,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -198,6 +204,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -223,6 +230,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -239,6 +247,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -254,6 +263,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -272,6 +282,7 @@ public class ListPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListPoliciesResult withMarker(String marker) {
         setMarker(marker);
         return this;

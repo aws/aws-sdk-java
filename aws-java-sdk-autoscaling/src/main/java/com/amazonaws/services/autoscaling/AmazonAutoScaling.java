@@ -109,12 +109,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param attachInstancesRequest
+     * @return Result of the AttachInstances operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.AttachInstances
      */
-    void attachInstances(AttachInstancesRequest attachInstancesRequest);
+    AttachInstancesResult attachInstances(
+            AttachInstancesRequest attachInstancesRequest);
 
     /**
      * <p>
@@ -152,31 +154,31 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Completes the lifecycle action for the associated token initiated under
-     * the given lifecycle hook with the specified result.
+     * Completes the lifecycle action for the specified token or instance with
+     * the specified result.
      * </p>
      * <p>
-     * This operation is a part of the basic sequence for adding a lifecycle
-     * hook to an Auto Scaling group:
+     * This step is a part of the procedure for adding a lifecycle hook to an
+     * Auto Scaling group:
      * </p>
      * <ol>
-     * <li>Create a notification target. A target can be either an Amazon SQS
-     * queue or an Amazon SNS topic.</li>
-     * <li>Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
-     * <li>Create the lifecycle hook. You can create a hook that acts when
-     * instances launch or when instances terminate.</li>
-     * <li>If necessary, record the lifecycle action heartbeat to keep the
-     * instance in a pending state.</li>
-     * <li><b>Complete the lifecycle action</b>.</li>
+     * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch
+     * Events to invoke your Lambda function when Auto Scaling launches or
+     * terminates instances.</li>
+     * <li>(Optional) Create a notification target and an IAM role. The target
+     * can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
+     * Auto Scaling to publish lifecycle notifications to the target.</li>
+     * <li>Create the lifecycle hook. Specify whether the hook is used when the
+     * instances launch or terminate.</li>
+     * <li>If you need more time, record the lifecycle action heartbeat to keep
+     * the instance in a pending state.</li>
+     * <li><b>If you finish before the timeout period ends, complete the
+     * lifecycle action.</b></li>
      * </ol>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"
-     * >Auto Scaling Pending State</a> and <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"
-     * >Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param completeLifecycleActionRequest
@@ -206,6 +208,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createAutoScalingGroupRequest
+     * @return Result of the CreateAutoScalingGroup operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -218,7 +222,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
      */
-    void createAutoScalingGroup(
+    CreateAutoScalingGroupResult createAutoScalingGroup(
             CreateAutoScalingGroupRequest createAutoScalingGroupRequest);
 
     /**
@@ -237,6 +241,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createLaunchConfigurationRequest
+     * @return Result of the CreateLaunchConfiguration operation returned by the
+     *         service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -249,21 +255,12 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateLaunchConfiguration
      */
-    void createLaunchConfiguration(
+    CreateLaunchConfigurationResult createLaunchConfiguration(
             CreateLaunchConfigurationRequest createLaunchConfigurationRequest);
 
     /**
      * <p>
      * Creates or updates tags for the specified Auto Scaling group.
-     * </p>
-     * <p>
-     * A tag is defined by its resource ID, resource type, key, value, and
-     * propagate flag. The value and the propagate flag are optional parameters.
-     * The only supported resource type is <code>auto-scaling-group</code>, and
-     * the resource ID must be the name of the group. The
-     * <code>PropagateAtLaunch</code> flag determines whether the tag is added
-     * to instances launched in the group. Valid values are <code>true</code> or
-     * <code>false</code>.
      * </p>
      * <p>
      * When you specify a tag with a key that already exists, the operation
@@ -278,6 +275,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param createOrUpdateTagsRequest
+     * @return Result of the CreateOrUpdateTags operation returned by the
+     *         service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -290,7 +289,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.CreateOrUpdateTags
      */
-    void createOrUpdateTags(CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
+    CreateOrUpdateTagsResult createOrUpdateTags(
+            CreateOrUpdateTagsRequest createOrUpdateTagsRequest);
 
     /**
      * <p>
@@ -318,6 +318,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
+     * @return Result of the DeleteAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -329,7 +331,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteAutoScalingGroup
      */
-    void deleteAutoScalingGroup(
+    DeleteAutoScalingGroupResult deleteAutoScalingGroup(
             DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest);
 
     /**
@@ -343,6 +345,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
+     * @return Result of the DeleteLaunchConfiguration operation returned by the
+     *         service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -351,7 +355,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteLaunchConfiguration
      */
-    void deleteLaunchConfiguration(
+    DeleteLaunchConfigurationResult deleteLaunchConfiguration(
             DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest);
 
     /**
@@ -381,12 +385,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
+     * @return Result of the DeleteNotificationConfiguration operation returned
+     *         by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteNotificationConfiguration
      */
-    void deleteNotificationConfiguration(
+    DeleteNotificationConfigurationResult deleteNotificationConfiguration(
             DeleteNotificationConfigurationRequest deleteNotificationConfigurationRequest);
 
     /**
@@ -399,12 +405,13 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deletePolicyRequest
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeletePolicy
      */
-    void deletePolicy(DeletePolicyRequest deletePolicyRequest);
+    DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
     /**
      * <p>
@@ -412,12 +419,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteScheduledActionRequest
+     * @return Result of the DeleteScheduledAction operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteScheduledAction
      */
-    void deleteScheduledAction(
+    DeleteScheduledActionResult deleteScheduledAction(
             DeleteScheduledActionRequest deleteScheduledActionRequest);
 
     /**
@@ -426,12 +435,13 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DeleteTags
      */
-    void deleteTags(DeleteTagsRequest deleteTagsRequest);
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
      * <p>
@@ -934,12 +944,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param disableMetricsCollectionRequest
+     * @return Result of the DisableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.DisableMetricsCollection
      */
-    void disableMetricsCollection(
+    DisableMetricsCollectionResult disableMetricsCollection(
             DisableMetricsCollectionRequest disableMetricsCollectionRequest);
 
     /**
@@ -953,12 +965,14 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param enableMetricsCollectionRequest
+     * @return Result of the EnableMetricsCollection operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.EnableMetricsCollection
      */
-    void enableMetricsCollection(
+    EnableMetricsCollectionResult enableMetricsCollection(
             EnableMetricsCollectionRequest enableMetricsCollectionRequest);
 
     /**
@@ -967,9 +981,8 @@ public interface AmazonAutoScaling {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"
-     * >Auto Scaling InService State</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param enterStandbyRequest
@@ -987,6 +1000,7 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param executePolicyRequest
+     * @return Result of the ExecutePolicy operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -995,7 +1009,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.ExecutePolicy
      */
-    void executePolicy(ExecutePolicyRequest executePolicyRequest);
+    ExecutePolicyResult executePolicy(ExecutePolicyRequest executePolicyRequest);
 
     /**
      * <p>
@@ -1003,9 +1017,8 @@ public interface AmazonAutoScaling {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingInServiceState.html"
-     * >Auto Scaling InService State</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param exitStandbyRequest
@@ -1027,27 +1040,27 @@ public interface AmazonAutoScaling {
      * instance launches or before the instance terminates.
      * </p>
      * <p>
-     * This operation is a part of the basic sequence for adding a lifecycle
-     * hook to an Auto Scaling group:
+     * This step is a part of the procedure for adding a lifecycle hook to an
+     * Auto Scaling group:
      * </p>
      * <ol>
-     * <li>Create a notification target. A target can be either an Amazon SQS
-     * queue or an Amazon SNS topic.</li>
-     * <li>Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
-     * <li><b>Create the lifecycle hook. You can create a hook that acts when
-     * instances launch or when instances terminate.</b></li>
-     * <li>If necessary, record the lifecycle action heartbeat to keep the
-     * instance in a pending state.</li>
-     * <li>Complete the lifecycle action.</li>
+     * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch
+     * Events to invoke your Lambda function when Auto Scaling launches or
+     * terminates instances.</li>
+     * <li>(Optional) Create a notification target and an IAM role. The target
+     * can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
+     * Auto Scaling to publish lifecycle notifications to the target.</li>
+     * <li><b>Create the lifecycle hook. Specify whether the hook is used when
+     * the instances launch or terminate.</b></li>
+     * <li>If you need more time, record the lifecycle action heartbeat to keep
+     * the instance in a pending state.</li>
+     * <li>If you finish before the timeout period ends, complete the lifecycle
+     * action.</li>
      * </ol>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"
-     * >Auto Scaling Pending State</a> and <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"
-     * >Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * <p>
      * If you exceed your maximum limit of lifecycle hooks, which by default is
@@ -1089,6 +1102,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param putNotificationConfigurationRequest
+     * @return Result of the PutNotificationConfiguration operation returned by
+     *         the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources
      *         (for example, groups, launch configurations, or lifecycle hooks).
@@ -1098,7 +1113,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutNotificationConfiguration
      */
-    void putNotificationConfiguration(
+    PutNotificationConfigurationResult putNotificationConfiguration(
             PutNotificationConfigurationRequest putNotificationConfigurationRequest);
 
     /**
@@ -1145,6 +1160,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
+     * @return Result of the PutScheduledUpdateGroupAction operation returned by
+     *         the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration
      *         with this name.
@@ -1157,37 +1174,37 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.PutScheduledUpdateGroupAction
      */
-    void putScheduledUpdateGroupAction(
+    PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(
             PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest);
 
     /**
      * <p>
-     * Records a heartbeat for the lifecycle action associated with a specific
-     * token. This extends the timeout by the length of time defined by the
-     * <code>HeartbeatTimeout</code> parameter of <a>PutLifecycleHook</a>.
+     * Records a heartbeat for the lifecycle action associated with the
+     * specified token or instance. This extends the timeout by the length of
+     * time defined using <a>PutLifecycleHook</a>.
      * </p>
      * <p>
-     * This operation is a part of the basic sequence for adding a lifecycle
-     * hook to an Auto Scaling group:
+     * This step is a part of the procedure for adding a lifecycle hook to an
+     * Auto Scaling group:
      * </p>
      * <ol>
-     * <li>Create a notification target. A target can be either an Amazon SQS
-     * queue or an Amazon SNS topic.</li>
-     * <li>Create an IAM role. This role allows Auto Scaling to publish
-     * lifecycle notifications to the designated SQS queue or SNS topic.</li>
-     * <li>Create the lifecycle hook. You can create a hook that acts when
-     * instances launch or when instances terminate.</li>
-     * <li><b>If necessary, record the lifecycle action heartbeat to keep the
-     * instance in a pending state.</b></li>
-     * <li>Complete the lifecycle action.</li>
+     * <li>(Optional) Create a Lambda function and a rule that allows CloudWatch
+     * Events to invoke your Lambda function when Auto Scaling launches or
+     * terminates instances.</li>
+     * <li>(Optional) Create a notification target and an IAM role. The target
+     * can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
+     * Auto Scaling to publish lifecycle notifications to the target.</li>
+     * <li>Create the lifecycle hook. Specify whether the hook is used when the
+     * instances launch or terminate.</li>
+     * <li><b>If you need more time, record the lifecycle action heartbeat to
+     * keep the instance in a pending state.</b></li>
+     * <li>If you finish before the timeout period ends, complete the lifecycle
+     * action.</li>
      * </ol>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"
-     * >Auto Scaling Pending State</a> and <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"
-     * >Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
@@ -1203,17 +1220,18 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Resumes the specified suspended Auto Scaling processes for the specified
-     * Auto Scaling group. To resume specific processes, use the
-     * <code>ScalingProcesses</code> parameter. To resume all processes, omit
-     * the <code>ScalingProcesses</code> parameter. For more information, see <a
-     * href=
+     * Resumes the specified suspended Auto Scaling processes, or all suspended
+     * process, for the specified Auto Scaling group.
+     * </p>
+     * <p>
+     * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"
-     * >Suspend and Resume Auto Scaling Processes</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Suspending and Resuming Auto Scaling Processes</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      * 
      * @param resumeProcessesRequest
+     * @return Result of the ResumeProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -1222,7 +1240,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.ResumeProcesses
      */
-    void resumeProcesses(ResumeProcessesRequest resumeProcessesRequest);
+    ResumeProcessesResult resumeProcesses(
+            ResumeProcessesRequest resumeProcessesRequest);
 
     /**
      * <p>
@@ -1235,6 +1254,8 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param setDesiredCapacityRequest
+     * @return Result of the SetDesiredCapacity operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -1243,7 +1264,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetDesiredCapacity
      */
-    void setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest);
+    SetDesiredCapacityResult setDesiredCapacity(
+            SetDesiredCapacityRequest setDesiredCapacityRequest);
 
     /**
      * <p>
@@ -1256,12 +1278,15 @@ public interface AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceHealthRequest
+     * @return Result of the SetInstanceHealth operation returned by the
+     *         service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SetInstanceHealth
      */
-    void setInstanceHealth(SetInstanceHealthRequest setInstanceHealthRequest);
+    SetInstanceHealthResult setInstanceHealth(
+            SetInstanceHealthRequest setInstanceHealthRequest);
 
     /**
      * <p>
@@ -1290,10 +1315,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Suspends the specified Auto Scaling processes for the specified Auto
-     * Scaling group. To suspend specific processes, use the
-     * <code>ScalingProcesses</code> parameter. To suspend all processes, omit
-     * the <code>ScalingProcesses</code> parameter.
+     * Suspends the specified Auto Scaling processes, or all processes, for the
+     * specified Auto Scaling group.
      * </p>
      * <p>
      * Note that if you suspend either the <code>Launch</code> or
@@ -1306,11 +1329,12 @@ public interface AmazonAutoScaling {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html"
-     * >Suspend and Resume Auto Scaling Processes</a> in the <i>Auto Scaling
-     * Developer Guide</i>.
+     * >Suspending and Resuming Auto Scaling Processes</a> in the <i>Auto
+     * Scaling Developer Guide</i>.
      * </p>
      * 
      * @param suspendProcessesRequest
+     * @return Result of the SuspendProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The Auto Scaling group or launch configuration can't be deleted
      *         because it is in use.
@@ -1319,7 +1343,8 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.SuspendProcesses
      */
-    void suspendProcesses(SuspendProcessesRequest suspendProcessesRequest);
+    SuspendProcessesResult suspendProcesses(
+            SuspendProcessesRequest suspendProcessesRequest);
 
     /**
      * <p>
@@ -1392,6 +1417,8 @@ public interface AmazonAutoScaling {
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
+     * @return Result of the UpdateAutoScalingGroup operation returned by the
+     *         service.
      * @throws ScalingActivityInProgressException
      *         The Auto Scaling group can't be deleted because there are scaling
      *         activities in progress.
@@ -1400,7 +1427,7 @@ public interface AmazonAutoScaling {
      *         (for example, a group, instance, or load balancer).
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      */
-    void updateAutoScalingGroup(
+    UpdateAutoScalingGroupResult updateAutoScalingGroup(
             UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest);
 
     /**

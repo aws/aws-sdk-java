@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DataSourceMarshaller
@@ -39,90 +34,83 @@ import com.amazonaws.util.json.*;
 public class DataSourceJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DataSource dataSource, JSONWriter jsonWriter) {
+    public void marshall(DataSource dataSource,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (dataSource == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (dataSource.getDataSourceId() != null) {
-                jsonWriter.key("DataSourceId").value(
+                jsonGenerator.writeFieldName("DataSourceId").writeValue(
                         dataSource.getDataSourceId());
             }
-
             if (dataSource.getDataLocationS3() != null) {
-                jsonWriter.key("DataLocationS3").value(
+                jsonGenerator.writeFieldName("DataLocationS3").writeValue(
                         dataSource.getDataLocationS3());
             }
-
             if (dataSource.getDataRearrangement() != null) {
-                jsonWriter.key("DataRearrangement").value(
+                jsonGenerator.writeFieldName("DataRearrangement").writeValue(
                         dataSource.getDataRearrangement());
             }
-
             if (dataSource.getCreatedByIamUser() != null) {
-                jsonWriter.key("CreatedByIamUser").value(
+                jsonGenerator.writeFieldName("CreatedByIamUser").writeValue(
                         dataSource.getCreatedByIamUser());
             }
-
             if (dataSource.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(dataSource.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        dataSource.getCreatedAt());
             }
-
             if (dataSource.getLastUpdatedAt() != null) {
-                jsonWriter.key("LastUpdatedAt").value(
+                jsonGenerator.writeFieldName("LastUpdatedAt").writeValue(
                         dataSource.getLastUpdatedAt());
             }
-
             if (dataSource.getDataSizeInBytes() != null) {
-                jsonWriter.key("DataSizeInBytes").value(
+                jsonGenerator.writeFieldName("DataSizeInBytes").writeValue(
                         dataSource.getDataSizeInBytes());
             }
-
             if (dataSource.getNumberOfFiles() != null) {
-                jsonWriter.key("NumberOfFiles").value(
+                jsonGenerator.writeFieldName("NumberOfFiles").writeValue(
                         dataSource.getNumberOfFiles());
             }
-
             if (dataSource.getName() != null) {
-                jsonWriter.key("Name").value(dataSource.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        dataSource.getName());
             }
-
             if (dataSource.getStatus() != null) {
-                jsonWriter.key("Status").value(dataSource.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        dataSource.getStatus());
             }
-
             if (dataSource.getMessage() != null) {
-                jsonWriter.key("Message").value(dataSource.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        dataSource.getMessage());
             }
-
             if (dataSource.getRedshiftMetadata() != null) {
-                jsonWriter.key("RedshiftMetadata");
+                jsonGenerator.writeFieldName("RedshiftMetadata");
                 RedshiftMetadataJsonMarshaller.getInstance().marshall(
-                        dataSource.getRedshiftMetadata(), jsonWriter);
+                        dataSource.getRedshiftMetadata(), jsonGenerator);
             }
-
             if (dataSource.getRDSMetadata() != null) {
-                jsonWriter.key("RDSMetadata");
+                jsonGenerator.writeFieldName("RDSMetadata");
                 RDSMetadataJsonMarshaller.getInstance().marshall(
-                        dataSource.getRDSMetadata(), jsonWriter);
+                        dataSource.getRDSMetadata(), jsonGenerator);
             }
-
             if (dataSource.getRoleARN() != null) {
-                jsonWriter.key("RoleARN").value(dataSource.getRoleARN());
+                jsonGenerator.writeFieldName("RoleARN").writeValue(
+                        dataSource.getRoleARN());
             }
-
             if (dataSource.getComputeStatistics() != null) {
-                jsonWriter.key("ComputeStatistics").value(
+                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(
                         dataSource.getComputeStatistics());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

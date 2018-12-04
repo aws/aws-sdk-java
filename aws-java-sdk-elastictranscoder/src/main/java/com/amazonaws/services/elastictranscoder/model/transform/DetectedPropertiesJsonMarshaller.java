@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DetectedPropertiesMarshaller
@@ -39,42 +34,41 @@ import com.amazonaws.util.json.*;
 public class DetectedPropertiesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DetectedProperties detectedProperties,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (detectedProperties == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (detectedProperties.getWidth() != null) {
-                jsonWriter.key("Width").value(detectedProperties.getWidth());
+                jsonGenerator.writeFieldName("Width").writeValue(
+                        detectedProperties.getWidth());
             }
-
             if (detectedProperties.getHeight() != null) {
-                jsonWriter.key("Height").value(detectedProperties.getHeight());
+                jsonGenerator.writeFieldName("Height").writeValue(
+                        detectedProperties.getHeight());
             }
-
             if (detectedProperties.getFrameRate() != null) {
-                jsonWriter.key("FrameRate").value(
+                jsonGenerator.writeFieldName("FrameRate").writeValue(
                         detectedProperties.getFrameRate());
             }
-
             if (detectedProperties.getFileSize() != null) {
-                jsonWriter.key("FileSize").value(
+                jsonGenerator.writeFieldName("FileSize").writeValue(
                         detectedProperties.getFileSize());
             }
-
             if (detectedProperties.getDurationMillis() != null) {
-                jsonWriter.key("DurationMillis").value(
+                jsonGenerator.writeFieldName("DurationMillis").writeValue(
                         detectedProperties.getDurationMillis());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

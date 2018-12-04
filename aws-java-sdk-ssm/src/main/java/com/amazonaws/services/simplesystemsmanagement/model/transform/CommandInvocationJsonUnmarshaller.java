@@ -18,6 +18,8 @@ package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,38 +55,39 @@ public class CommandInvocationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CommandId", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setCommandId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setCommandId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setInstanceId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setInstanceId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setComment(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setComment(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DocumentName", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setDocumentName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setDocumentName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setRequestedDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setRequestedDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TraceOutput", targetDepth)) {
                     context.nextToken();
-                    commandInvocation.setTraceOutput(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    commandInvocation.setTraceOutput(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CommandPlugins", targetDepth)) {
                     context.nextToken();

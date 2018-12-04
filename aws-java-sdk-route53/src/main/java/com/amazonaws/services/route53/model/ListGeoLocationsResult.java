@@ -91,6 +91,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return A complex type that contains information about the geo locations
      *         that are returned by the request.
      */
+
     public java.util.List<GeoLocationDetails> getGeoLocationDetailsList() {
         if (geoLocationDetailsList == null) {
             geoLocationDetailsList = new com.amazonaws.internal.SdkInternalList<GeoLocationDetails>();
@@ -108,6 +109,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        A complex type that contains information about the geo locations
      *        that are returned by the request.
      */
+
     public void setGeoLocationDetailsList(
             java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
         if (geoLocationDetailsList == null) {
@@ -137,6 +139,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withGeoLocationDetailsList(
             GeoLocationDetails... geoLocationDetailsList) {
         if (this.geoLocationDetailsList == null) {
@@ -161,6 +164,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withGeoLocationDetailsList(
             java.util.Collection<GeoLocationDetails> geoLocationDetailsList) {
         setGeoLocationDetailsList(geoLocationDetailsList);
@@ -190,6 +194,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -216,6 +221,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -245,6 +251,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -272,6 +279,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -290,6 +298,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *        geo location to list is a continent location.
      */
+
     public void setNextContinentCode(String nextContinentCode) {
         this.nextContinentCode = nextContinentCode;
     }
@@ -307,6 +316,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *         geo location to list is a continent location.
      */
+
     public String getNextContinentCode() {
         return this.nextContinentCode;
     }
@@ -327,6 +337,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withNextContinentCode(String nextContinentCode) {
         setNextContinentCode(nextContinentCode);
         return this;
@@ -346,6 +357,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *        geo location to list is not a continent location.
      */
+
     public void setNextCountryCode(String nextCountryCode) {
         this.nextCountryCode = nextCountryCode;
     }
@@ -363,6 +375,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *         geo location to list is not a continent location.
      */
+
     public String getNextCountryCode() {
         return this.nextCountryCode;
     }
@@ -383,6 +396,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withNextCountryCode(String nextCountryCode) {
         setNextCountryCode(nextCountryCode);
         return this;
@@ -402,6 +416,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *        geo location has a subdivision.
      */
+
     public void setNextSubdivisionCode(String nextSubdivisionCode) {
         this.nextSubdivisionCode = nextSubdivisionCode;
     }
@@ -419,6 +434,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *         <a>ListGeoLocationsResponse$IsTruncated</a> is true and the next
      *         geo location has a subdivision.
      */
+
     public String getNextSubdivisionCode() {
         return this.nextSubdivisionCode;
     }
@@ -439,6 +455,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withNextSubdivisionCode(
             String nextSubdivisionCode) {
         setNextSubdivisionCode(nextSubdivisionCode);
@@ -455,6 +472,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      *        The maximum number of records you requested. The maximum value of
      *        <code>MaxItems</code> is 100.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -468,6 +486,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return The maximum number of records you requested. The maximum value of
      *         <code>MaxItems</code> is 100.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -484,6 +503,7 @@ public class ListGeoLocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGeoLocationsResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

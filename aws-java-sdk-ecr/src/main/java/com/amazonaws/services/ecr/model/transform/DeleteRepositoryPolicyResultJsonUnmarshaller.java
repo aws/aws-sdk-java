@@ -18,6 +18,8 @@ package com.amazonaws.services.ecr.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class DeleteRepositoryPolicyResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("registryId", targetDepth)) {
                     context.nextToken();
-                    deleteRepositoryPolicyResult
-                            .setRegistryId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deleteRepositoryPolicyResult.setRegistryId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    deleteRepositoryPolicyResult
-                            .setRepositoryName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    deleteRepositoryPolicyResult.setRepositoryName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("policyText", targetDepth)) {
                     context.nextToken();
-                    deleteRepositoryPolicyResult
-                            .setPolicyText(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    deleteRepositoryPolicyResult.setPolicyText(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

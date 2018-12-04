@@ -80,6 +80,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        response.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -93,6 +94,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         response.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -109,6 +111,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResourceType
      */
+
     public ListDiscoveredResourcesRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -122,10 +125,9 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @param resourceType
      *        The type of resources that you want AWS Config to list in the
      *        response.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -142,6 +144,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResourceType
      */
+
     public ListDiscoveredResourcesRequest withResourceType(
             ResourceType resourceType) {
         setResourceType(resourceType);
@@ -159,6 +162,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         in the response. If you do not specify this parameter, AWS Config
      *         lists all resources of the specified type that it has discovered.
      */
+
     public java.util.List<String> getResourceIds() {
         if (resourceIds == null) {
             resourceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -178,6 +182,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        in the response. If you do not specify this parameter, AWS Config
      *        lists all resources of the specified type that it has discovered.
      */
+
     public void setResourceIds(java.util.Collection<String> resourceIds) {
         if (resourceIds == null) {
             this.resourceIds = null;
@@ -208,6 +213,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withResourceIds(String... resourceIds) {
         if (this.resourceIds == null) {
             setResourceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -233,6 +239,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withResourceIds(
             java.util.Collection<String> resourceIds) {
         setResourceIds(resourceIds);
@@ -252,6 +259,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        Config lists all resources of the specified type that it has
      *        discovered.
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -268,6 +276,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         AWS Config lists all resources of the specified type that it has
      *         discovered.
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -287,6 +296,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;
@@ -304,6 +314,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        The default is 100. You cannot specify a limit greater than 100.
      *        If you specify 0, AWS Config uses the default.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -319,6 +330,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         The default is 100. You cannot specify a limit greater than 100.
      *         If you specify 0, AWS Config uses the default.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -337,6 +349,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -352,6 +365,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        Specifies whether AWS Config includes deleted resources in the
      *        results. By default, deleted resources are not included.
      */
+
     public void setIncludeDeletedResources(Boolean includeDeletedResources) {
         this.includeDeletedResources = includeDeletedResources;
     }
@@ -365,6 +379,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Specifies whether AWS Config includes deleted resources in the
      *         results. By default, deleted resources are not included.
      */
+
     public Boolean getIncludeDeletedResources() {
         return this.includeDeletedResources;
     }
@@ -381,6 +396,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withIncludeDeletedResources(
             Boolean includeDeletedResources) {
         setIncludeDeletedResources(includeDeletedResources);
@@ -396,6 +412,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Specifies whether AWS Config includes deleted resources in the
      *         results. By default, deleted resources are not included.
      */
+
     public Boolean isIncludeDeletedResources() {
         return this.includeDeletedResources;
     }
@@ -410,6 +427,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *        The <code>nextToken</code> string returned on a previous page that
      *        you use to get the next page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -424,6 +442,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      *         that you use to get the next page of results in a paginated
      *         response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -440,6 +459,7 @@ public class ListDiscoveredResourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListDiscoveredResourcesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

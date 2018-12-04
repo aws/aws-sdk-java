@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.apigateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MethodSettingMarshaller
@@ -39,58 +34,64 @@ import com.amazonaws.util.json.*;
 public class MethodSettingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(MethodSetting methodSetting, JSONWriter jsonWriter) {
+    public void marshall(MethodSetting methodSetting,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (methodSetting == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (methodSetting.getMetricsEnabled() != null) {
-                jsonWriter.key("metricsEnabled").value(
+                jsonGenerator.writeFieldName("metricsEnabled").writeValue(
                         methodSetting.getMetricsEnabled());
             }
-
             if (methodSetting.getLoggingLevel() != null) {
-                jsonWriter.key("loggingLevel").value(
+                jsonGenerator.writeFieldName("loggingLevel").writeValue(
                         methodSetting.getLoggingLevel());
             }
-
             if (methodSetting.getDataTraceEnabled() != null) {
-                jsonWriter.key("dataTraceEnabled").value(
+                jsonGenerator.writeFieldName("dataTraceEnabled").writeValue(
                         methodSetting.getDataTraceEnabled());
             }
-
             if (methodSetting.getThrottlingBurstLimit() != null) {
-                jsonWriter.key("throttlingBurstLimit").value(
-                        methodSetting.getThrottlingBurstLimit());
+                jsonGenerator.writeFieldName("throttlingBurstLimit")
+                        .writeValue(methodSetting.getThrottlingBurstLimit());
             }
-
             if (methodSetting.getThrottlingRateLimit() != null) {
-                jsonWriter.key("throttlingRateLimit").value(
+                jsonGenerator.writeFieldName("throttlingRateLimit").writeValue(
                         methodSetting.getThrottlingRateLimit());
             }
-
             if (methodSetting.getCachingEnabled() != null) {
-                jsonWriter.key("cachingEnabled").value(
+                jsonGenerator.writeFieldName("cachingEnabled").writeValue(
                         methodSetting.getCachingEnabled());
             }
-
             if (methodSetting.getCacheTtlInSeconds() != null) {
-                jsonWriter.key("cacheTtlInSeconds").value(
+                jsonGenerator.writeFieldName("cacheTtlInSeconds").writeValue(
                         methodSetting.getCacheTtlInSeconds());
             }
-
             if (methodSetting.getCacheDataEncrypted() != null) {
-                jsonWriter.key("cacheDataEncrypted").value(
+                jsonGenerator.writeFieldName("cacheDataEncrypted").writeValue(
                         methodSetting.getCacheDataEncrypted());
             }
+            if (methodSetting.getRequireAuthorizationForCacheControl() != null) {
+                jsonGenerator.writeFieldName(
+                        "requireAuthorizationForCacheControl").writeValue(
+                        methodSetting.getRequireAuthorizationForCacheControl());
+            }
+            if (methodSetting.getUnauthorizedCacheControlHeaderStrategy() != null) {
+                jsonGenerator.writeFieldName(
+                        "unauthorizedCacheControlHeaderStrategy").writeValue(
+                        methodSetting
+                                .getUnauthorizedCacheControlHeaderStrategy());
+            }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

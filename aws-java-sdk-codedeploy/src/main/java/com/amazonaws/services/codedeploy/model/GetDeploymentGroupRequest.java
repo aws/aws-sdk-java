@@ -29,8 +29,8 @@ public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -43,43 +43,46 @@ public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an existing AWS CodeDeploy application associated
-     *         with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the
+     *         applicable IAM user or AWS account.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
 
     /**
      * <p>
-     * The name of an existing AWS CodeDeploy application associated with the
-     * applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the applicable
+     * IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an existing AWS CodeDeploy application associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentGroupRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -94,6 +97,7 @@ public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
      *        The name of an existing deployment group for the specified
      *        application.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -106,6 +110,7 @@ public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return The name of an existing deployment group for the specified
      *         application.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -121,6 +126,7 @@ public class GetDeploymentGroupRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeploymentGroupRequest withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);

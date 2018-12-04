@@ -24,9 +24,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing the following fields:
  * </p>
  * <ul>
- * <li><a>UpdateMaintenanceStartTimeInput$DayOfWeek</a></li>
- * <li><a>UpdateMaintenanceStartTimeInput$HourOfDay</a></li>
- * <li><a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$HourOfDay</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
@@ -59,6 +71,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -66,6 +79,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -75,6 +89,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMaintenanceStartTimeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -92,6 +107,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      *        <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of the
      *        day is in the time zone of the gateway.
      */
+
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
     }
@@ -107,6 +123,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      *         <i>hh</i>, where <i>hh</i> is the hour (00 to 23). The hour of
      *         the day is in the time zone of the gateway.
      */
+
     public Integer getHourOfDay() {
         return this.hourOfDay;
     }
@@ -125,6 +142,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMaintenanceStartTimeRequest withHourOfDay(Integer hourOfDay) {
         setHourOfDay(hourOfDay);
         return this;
@@ -142,6 +160,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      *        <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of
      *        the hour is in the time zone of the gateway.
      */
+
     public void setMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
     }
@@ -157,6 +176,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute
      *         of the hour is in the time zone of the gateway.
      */
+
     public Integer getMinuteOfHour() {
         return this.minuteOfHour;
     }
@@ -175,6 +195,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMaintenanceStartTimeRequest withMinuteOfHour(
             Integer minuteOfHour) {
         setMinuteOfHour(minuteOfHour);
@@ -189,6 +210,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * @param dayOfWeek
      *        The maintenance start time day of the week.
      */
+
     public void setDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
@@ -200,6 +222,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * 
      * @return The maintenance start time day of the week.
      */
+
     public Integer getDayOfWeek() {
         return this.dayOfWeek;
     }
@@ -214,6 +237,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMaintenanceStartTimeRequest withDayOfWeek(Integer dayOfWeek) {
         setDayOfWeek(dayOfWeek);
         return this;

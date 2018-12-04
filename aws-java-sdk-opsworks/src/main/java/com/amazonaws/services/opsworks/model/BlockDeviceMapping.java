@@ -75,6 +75,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        <code>ROOT_DEVICE</code> and AWS OpsWorks will provide the correct
      *        device name.
      */
+
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
@@ -93,6 +94,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *         <code>ROOT_DEVICE</code> and AWS OpsWorks will provide the
      *         correct device name.
      */
+
     public String getDeviceName() {
         return this.deviceName;
     }
@@ -114,6 +116,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
         return this;
@@ -129,6 +132,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        Suppresses the specified device included in the AMI's block device
      *        mapping.
      */
+
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
@@ -142,6 +146,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Suppresses the specified device included in the AMI's block
      *         device mapping.
      */
+
     public String getNoDevice() {
         return this.noDevice;
     }
@@ -158,6 +163,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withNoDevice(String noDevice) {
         setNoDevice(noDevice);
         return this;
@@ -175,6 +181,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
      *        >BlockDeviceMapping</a>.
      */
+
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
@@ -190,6 +197,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html"
      *         >BlockDeviceMapping</a>.
      */
+
     public String getVirtualName() {
         return this.virtualName;
     }
@@ -208,6 +216,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withVirtualName(String virtualName) {
         setVirtualName(virtualName);
         return this;
@@ -223,6 +232,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      *        An <code>EBSBlockDevice</code> that defines how to configure an
      *        Amazon EBS volume when the instance is launched.
      */
+
     public void setEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
     }
@@ -236,6 +246,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return An <code>EBSBlockDevice</code> that defines how to configure an
      *         Amazon EBS volume when the instance is launched.
      */
+
     public EbsBlockDevice getEbs() {
         return this.ebs;
     }
@@ -252,6 +263,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BlockDeviceMapping withEbs(EbsBlockDevice ebs) {
         setEbs(ebs);
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.route53domains.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DomainSummaryMarshaller
@@ -39,36 +34,37 @@ import com.amazonaws.util.json.*;
 public class DomainSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(DomainSummary domainSummary, JSONWriter jsonWriter) {
+    public void marshall(DomainSummary domainSummary,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (domainSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (domainSummary.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         domainSummary.getDomainName());
             }
-
             if (domainSummary.getAutoRenew() != null) {
-                jsonWriter.key("AutoRenew").value(domainSummary.getAutoRenew());
+                jsonGenerator.writeFieldName("AutoRenew").writeValue(
+                        domainSummary.getAutoRenew());
             }
-
             if (domainSummary.getTransferLock() != null) {
-                jsonWriter.key("TransferLock").value(
+                jsonGenerator.writeFieldName("TransferLock").writeValue(
                         domainSummary.getTransferLock());
             }
-
             if (domainSummary.getExpiry() != null) {
-                jsonWriter.key("Expiry").value(domainSummary.getExpiry());
+                jsonGenerator.writeFieldName("Expiry").writeValue(
+                        domainSummary.getExpiry());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

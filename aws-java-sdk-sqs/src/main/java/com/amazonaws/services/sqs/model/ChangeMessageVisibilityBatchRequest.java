@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ChangeMessageVisibilityBatchRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -28,6 +28,9 @@ public class ChangeMessageVisibilityBatchRequest extends
     /**
      * <p>
      * The URL of the Amazon SQS queue to take action on.
+     * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
      * </p>
      */
     private String queueUrl;
@@ -53,7 +56,9 @@ public class ChangeMessageVisibilityBatchRequest extends
      * any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @param entries
      *        A list of receipt handles of the messages for which the visibility
      *        timeout must be changed.
@@ -68,10 +73,16 @@ public class ChangeMessageVisibilityBatchRequest extends
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      */
+
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
@@ -80,9 +91,15 @@ public class ChangeMessageVisibilityBatchRequest extends
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.
+     * @return The URL of the Amazon SQS queue to take action on.</p>
+     *         <p>
+     *         Queue URLs are case-sensitive.
      */
+
     public String getQueueUrl() {
         return this.queueUrl;
     }
@@ -91,12 +108,18 @@ public class ChangeMessageVisibilityBatchRequest extends
      * <p>
      * The URL of the Amazon SQS queue to take action on.
      * </p>
+     * <p>
+     * Queue URLs are case-sensitive.
+     * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.
+     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        <p>
+     *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchRequest withQueueUrl(String queueUrl) {
         setQueueUrl(queueUrl);
         return this;
@@ -111,6 +134,7 @@ public class ChangeMessageVisibilityBatchRequest extends
      * @return A list of receipt handles of the messages for which the
      *         visibility timeout must be changed.
      */
+
     public java.util.List<ChangeMessageVisibilityBatchRequestEntry> getEntries() {
         if (entries == null) {
             entries = new com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>();
@@ -128,6 +152,7 @@ public class ChangeMessageVisibilityBatchRequest extends
      *        A list of receipt handles of the messages for which the visibility
      *        timeout must be changed.
      */
+
     public void setEntries(
             java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
         if (entries == null) {
@@ -157,6 +182,7 @@ public class ChangeMessageVisibilityBatchRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchRequest withEntries(
             ChangeMessageVisibilityBatchRequestEntry... entries) {
         if (this.entries == null) {
@@ -181,6 +207,7 @@ public class ChangeMessageVisibilityBatchRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchRequest withEntries(
             java.util.Collection<ChangeMessageVisibilityBatchRequestEntry> entries) {
         setEntries(entries);

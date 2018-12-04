@@ -42,6 +42,7 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements
      * @param clusterId
      *        The identifier of the cluster to describe.
      */
+
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
@@ -53,6 +54,7 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements
      * 
      * @return The identifier of the cluster to describe.
      */
+
     public String getClusterId() {
         return this.clusterId;
     }
@@ -67,6 +69,7 @@ public class DescribeClusterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClusterRequest withClusterId(String clusterId) {
         setClusterId(clusterId);
         return this;

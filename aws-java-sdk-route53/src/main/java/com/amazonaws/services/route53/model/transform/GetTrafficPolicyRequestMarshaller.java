@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetTrafficPolicyRequest Marshaller
@@ -58,13 +61,16 @@ public class GetTrafficPolicyRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Id}",
-                (getTrafficPolicyRequest.getId() == null) ? "" : StringUtils
-                        .fromString(getTrafficPolicyRequest.getId()));
+                (getTrafficPolicyRequest.getId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(getTrafficPolicyRequest.getId()),
+                                false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{Version}",
-                (getTrafficPolicyRequest.getVersion() == null) ? ""
-                        : StringUtils.fromInteger(getTrafficPolicyRequest
-                                .getVersion()));
+                (getTrafficPolicyRequest.getVersion() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromInteger(getTrafficPolicyRequest
+                                        .getVersion()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

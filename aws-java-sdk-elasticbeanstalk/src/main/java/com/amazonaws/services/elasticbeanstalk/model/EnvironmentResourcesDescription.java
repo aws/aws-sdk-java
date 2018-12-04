@@ -41,6 +41,7 @@ public class EnvironmentResourcesDescription implements Serializable, Cloneable 
      * @param loadBalancer
      *        Describes the LoadBalancer.
      */
+
     public void setLoadBalancer(LoadBalancerDescription loadBalancer) {
         this.loadBalancer = loadBalancer;
     }
@@ -52,6 +53,7 @@ public class EnvironmentResourcesDescription implements Serializable, Cloneable 
      * 
      * @return Describes the LoadBalancer.
      */
+
     public LoadBalancerDescription getLoadBalancer() {
         return this.loadBalancer;
     }
@@ -66,6 +68,7 @@ public class EnvironmentResourcesDescription implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EnvironmentResourcesDescription withLoadBalancer(
             LoadBalancerDescription loadBalancer) {
         setLoadBalancer(loadBalancer);

@@ -27,7 +27,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -40,11 +40,12 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
-     * @return One or more EC2 instance IDs.
+     * @return One or more instance IDs.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -54,12 +55,13 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -72,7 +74,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -82,10 +84,11 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -99,14 +102,15 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more EC2 instance IDs.
+     * One or more instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more EC2 instance IDs.
+     *        One or more instance IDs.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -121,6 +125,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
      * @param autoScalingGroupName
      *        The name of the group.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -132,6 +137,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the group.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -146,6 +152,7 @@ public class AttachInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachInstancesRequest withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);

@@ -27,44 +27,47 @@ public class CreateAccessKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the access key.
+     * A structure with details about the access key.
      * </p>
      */
     private AccessKey accessKey;
 
     /**
      * <p>
-     * Information about the access key.
+     * A structure with details about the access key.
      * </p>
      * 
      * @param accessKey
-     *        Information about the access key.
+     *        A structure with details about the access key.
      */
+
     public void setAccessKey(AccessKey accessKey) {
         this.accessKey = accessKey;
     }
 
     /**
      * <p>
-     * Information about the access key.
+     * A structure with details about the access key.
      * </p>
      * 
-     * @return Information about the access key.
+     * @return A structure with details about the access key.
      */
+
     public AccessKey getAccessKey() {
         return this.accessKey;
     }
 
     /**
      * <p>
-     * Information about the access key.
+     * A structure with details about the access key.
      * </p>
      * 
      * @param accessKey
-     *        Information about the access key.
+     *        A structure with details about the access key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAccessKeyResult withAccessKey(AccessKey accessKey) {
         setAccessKey(accessKey);
         return this;

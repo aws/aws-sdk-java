@@ -71,6 +71,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * @param message
      *        A message about the incompatibility.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -82,6 +83,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * 
      * @return A message about the incompatibility.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -96,6 +98,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IncompatibilityMessage withMessage(String message) {
         setMessage(message);
         return this;
@@ -159,6 +162,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        </li>
      * @see DeviceAttribute
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -220,6 +224,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *         </li>
      * @see DeviceAttribute
      */
+
     public String getType() {
         return this.type;
     }
@@ -284,6 +289,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceAttribute
      */
+
     public IncompatibilityMessage withType(String type) {
         setType(type);
         return this;
@@ -345,10 +351,9 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *        PLATFORM: The platform (for example, Android or iOS).
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeviceAttribute
      */
+
     public void setType(DeviceAttribute type) {
         this.type = type.toString();
     }
@@ -413,6 +418,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable {
      *         chained together.
      * @see DeviceAttribute
      */
+
     public IncompatibilityMessage withType(DeviceAttribute type) {
         setType(type);
         return this;

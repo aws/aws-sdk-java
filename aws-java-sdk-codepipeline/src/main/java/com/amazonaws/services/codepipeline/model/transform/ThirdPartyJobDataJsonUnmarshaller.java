@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -91,9 +93,8 @@ public class ThirdPartyJobDataJsonUnmarshaller implements
                 }
                 if (context.testExpression("continuationToken", targetDepth)) {
                     context.nextToken();
-                    thirdPartyJobData
-                            .setContinuationToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    thirdPartyJobData.setContinuationToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("encryptionKey", targetDepth)) {
                     context.nextToken();

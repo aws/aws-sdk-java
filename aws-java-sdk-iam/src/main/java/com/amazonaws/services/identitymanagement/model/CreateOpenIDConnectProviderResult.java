@@ -29,8 +29,8 @@ public class CreateOpenIDConnectProviderResult implements Serializable,
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that
-     * was created. For more information, see
+     * The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider
+     * that is created. For more information, see
      * <a>OpenIDConnectProviderListEntry</a>.
      * </p>
      */
@@ -38,49 +38,52 @@ public class CreateOpenIDConnectProviderResult implements Serializable,
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that
-     * was created. For more information, see
+     * The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider
+     * that is created. For more information, see
      * <a>OpenIDConnectProviderListEntry</a>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *        that was created. For more information, see
+     *        The Amazon Resource Name (ARN) of the new IAM OpenID Connect
+     *        provider that is created. For more information, see
      *        <a>OpenIDConnectProviderListEntry</a>.
      */
+
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
         this.openIDConnectProviderArn = openIDConnectProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that
-     * was created. For more information, see
+     * The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider
+     * that is created. For more information, see
      * <a>OpenIDConnectProviderListEntry</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *         that was created. For more information, see
+     * @return The Amazon Resource Name (ARN) of the new IAM OpenID Connect
+     *         provider that is created. For more information, see
      *         <a>OpenIDConnectProviderListEntry</a>.
      */
+
     public String getOpenIDConnectProviderArn() {
         return this.openIDConnectProviderArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM OpenID Connect provider that
-     * was created. For more information, see
+     * The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider
+     * that is created. For more information, see
      * <a>OpenIDConnectProviderListEntry</a>.
      * </p>
      * 
      * @param openIDConnectProviderArn
-     *        The Amazon Resource Name (ARN) of the IAM OpenID Connect provider
-     *        that was created. For more information, see
+     *        The Amazon Resource Name (ARN) of the new IAM OpenID Connect
+     *        provider that is created. For more information, see
      *        <a>OpenIDConnectProviderListEntry</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderResult withOpenIDConnectProviderArn(
             String openIDConnectProviderArn) {
         setOpenIDConnectProviderArn(openIDConnectProviderArn);

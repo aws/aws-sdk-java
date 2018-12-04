@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,66 +54,65 @@ public class LayerJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
-                    layer.setStackId(StringJsonUnmarshaller.getInstance()
+                    layer.setStackId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LayerId", targetDepth)) {
                     context.nextToken();
-                    layer.setLayerId(StringJsonUnmarshaller.getInstance()
+                    layer.setLayerId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    layer.setType(StringJsonUnmarshaller.getInstance()
+                    layer.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    layer.setName(StringJsonUnmarshaller.getInstance()
+                    layer.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Shortname", targetDepth)) {
                     context.nextToken();
-                    layer.setShortname(StringJsonUnmarshaller.getInstance()
+                    layer.setShortname(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     layer.setAttributes(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class), context
+                                    .getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("CustomInstanceProfileArn",
                         targetDepth)) {
                     context.nextToken();
-                    layer.setCustomInstanceProfileArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setCustomInstanceProfileArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CustomJson", targetDepth)) {
                     context.nextToken();
-                    layer.setCustomJson(StringJsonUnmarshaller.getInstance()
+                    layer.setCustomJson(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("CustomSecurityGroupIds",
                         targetDepth)) {
                     context.nextToken();
                     layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("DefaultSecurityGroupNames",
                         targetDepth)) {
                     context.nextToken();
                     layer.setDefaultSecurityGroupNames(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Packages", targetDepth)) {
                     context.nextToken();
-                    layer.setPackages(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    layer.setPackages(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("VolumeConfigurations", targetDepth)) {
                     context.nextToken();
@@ -121,18 +122,18 @@ public class LayerJsonUnmarshaller implements
                 }
                 if (context.testExpression("EnableAutoHealing", targetDepth)) {
                     context.nextToken();
-                    layer.setEnableAutoHealing(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setEnableAutoHealing(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAssignElasticIps", targetDepth)) {
                     context.nextToken();
-                    layer.setAutoAssignElasticIps(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setAutoAssignElasticIps(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("AutoAssignPublicIps", targetDepth)) {
                     context.nextToken();
-                    layer.setAutoAssignPublicIps(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setAutoAssignPublicIps(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("DefaultRecipes", targetDepth)) {
                     context.nextToken();
@@ -146,19 +147,19 @@ public class LayerJsonUnmarshaller implements
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    layer.setCreatedAt(StringJsonUnmarshaller.getInstance()
+                    layer.setCreatedAt(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("InstallUpdatesOnBoot", targetDepth)) {
                     context.nextToken();
-                    layer.setInstallUpdatesOnBoot(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setInstallUpdatesOnBoot(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("UseEbsOptimizedInstances",
                         targetDepth)) {
                     context.nextToken();
-                    layer.setUseEbsOptimizedInstances(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    layer.setUseEbsOptimizedInstances(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("LifecycleEventConfiguration",
                         targetDepth)) {

@@ -20,11 +20,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains information about an Inspector rules package.
- * </p>
- * <p>
- * This data type is used as the response element in the
- * <a>DescribeRulesPackage</a> action.
+ * Contains information about an Amazon Inspector rules package. This data type
+ * is used as the response element in the <a>DescribeRulesPackages</a> action.
  * </p>
  */
 public class RulesPackage implements Serializable, Cloneable {
@@ -34,16 +31,16 @@ public class RulesPackage implements Serializable, Cloneable {
      * The ARN of the rules package.
      * </p>
      */
-    private String rulesPackageArn;
+    private String arn;
     /**
      * <p>
      * The name of the rules package.
      * </p>
      */
-    private String rulesPackageName;
+    private String name;
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      */
     private String version;
@@ -58,18 +55,19 @@ public class RulesPackage implements Serializable, Cloneable {
      * The description of the rules package.
      * </p>
      */
-    private LocalizedText description;
+    private String description;
 
     /**
      * <p>
      * The ARN of the rules package.
      * </p>
      * 
-     * @param rulesPackageArn
+     * @param arn
      *        The ARN of the rules package.
      */
-    public void setRulesPackageArn(String rulesPackageArn) {
-        this.rulesPackageArn = rulesPackageArn;
+
+    public void setArn(String arn) {
+        this.arn = arn;
     }
 
     /**
@@ -79,8 +77,9 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The ARN of the rules package.
      */
-    public String getRulesPackageArn() {
-        return this.rulesPackageArn;
+
+    public String getArn() {
+        return this.arn;
     }
 
     /**
@@ -88,13 +87,14 @@ public class RulesPackage implements Serializable, Cloneable {
      * The ARN of the rules package.
      * </p>
      * 
-     * @param rulesPackageArn
+     * @param arn
      *        The ARN of the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-    public RulesPackage withRulesPackageArn(String rulesPackageArn) {
-        setRulesPackageArn(rulesPackageArn);
+
+    public RulesPackage withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -103,11 +103,12 @@ public class RulesPackage implements Serializable, Cloneable {
      * The name of the rules package.
      * </p>
      * 
-     * @param rulesPackageName
+     * @param name
      *        The name of the rules package.
      */
-    public void setRulesPackageName(String rulesPackageName) {
-        this.rulesPackageName = rulesPackageName;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -117,8 +118,9 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The name of the rules package.
      */
-    public String getRulesPackageName() {
-        return this.rulesPackageName;
+
+    public String getName() {
+        return this.name;
     }
 
     /**
@@ -126,49 +128,53 @@ public class RulesPackage implements Serializable, Cloneable {
      * The name of the rules package.
      * </p>
      * 
-     * @param rulesPackageName
+     * @param name
      *        The name of the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-    public RulesPackage withRulesPackageName(String rulesPackageName) {
-        setRulesPackageName(rulesPackageName);
+
+    public RulesPackage withName(String name) {
+        setName(name);
         return this;
     }
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
      * @param version
-     *        The version id of the rules package.
+     *        The version ID of the rules package.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
-     * @return The version id of the rules package.
+     * @return The version ID of the rules package.
      */
+
     public String getVersion() {
         return this.version;
     }
 
     /**
      * <p>
-     * The version id of the rules package.
+     * The version ID of the rules package.
      * </p>
      * 
      * @param version
-     *        The version id of the rules package.
+     *        The version ID of the rules package.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withVersion(String version) {
         setVersion(version);
         return this;
@@ -182,6 +188,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param provider
      *        The provider of the rules package.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -193,6 +200,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The provider of the rules package.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -207,6 +215,7 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RulesPackage withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -220,7 +229,8 @@ public class RulesPackage implements Serializable, Cloneable {
      * @param description
      *        The description of the rules package.
      */
-    public void setDescription(LocalizedText description) {
+
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -231,7 +241,8 @@ public class RulesPackage implements Serializable, Cloneable {
      * 
      * @return The description of the rules package.
      */
-    public LocalizedText getDescription() {
+
+    public String getDescription() {
         return this.description;
     }
 
@@ -245,7 +256,8 @@ public class RulesPackage implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
-    public RulesPackage withDescription(LocalizedText description) {
+
+    public RulesPackage withDescription(String description) {
         setDescription(description);
         return this;
     }
@@ -262,10 +274,10 @@ public class RulesPackage implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRulesPackageArn() != null)
-            sb.append("RulesPackageArn: " + getRulesPackageArn() + ",");
-        if (getRulesPackageName() != null)
-            sb.append("RulesPackageName: " + getRulesPackageName() + ",");
+        if (getArn() != null)
+            sb.append("Arn: " + getArn() + ",");
+        if (getName() != null)
+            sb.append("Name: " + getName() + ",");
         if (getVersion() != null)
             sb.append("Version: " + getVersion() + ",");
         if (getProvider() != null)
@@ -286,18 +298,15 @@ public class RulesPackage implements Serializable, Cloneable {
         if (obj instanceof RulesPackage == false)
             return false;
         RulesPackage other = (RulesPackage) obj;
-        if (other.getRulesPackageArn() == null
-                ^ this.getRulesPackageArn() == null)
+        if (other.getArn() == null ^ this.getArn() == null)
             return false;
-        if (other.getRulesPackageArn() != null
-                && other.getRulesPackageArn().equals(this.getRulesPackageArn()) == false)
+        if (other.getArn() != null
+                && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getRulesPackageName() == null
-                ^ this.getRulesPackageName() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getRulesPackageName() != null
-                && other.getRulesPackageName().equals(
-                        this.getRulesPackageName()) == false)
+        if (other.getName() != null
+                && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
@@ -322,14 +331,10 @@ public class RulesPackage implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime
-                * hashCode
-                + ((getRulesPackageArn() == null) ? 0 : getRulesPackageArn()
-                        .hashCode());
-        hashCode = prime
-                * hashCode
-                + ((getRulesPackageName() == null) ? 0 : getRulesPackageName()
-                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode
+                + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode
                 + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode

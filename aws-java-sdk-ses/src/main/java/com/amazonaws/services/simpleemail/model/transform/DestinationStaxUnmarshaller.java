@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,23 +52,20 @@ public class DestinationStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("ToAddresses/member", targetDepth)) {
-                    destination.getToAddresses().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    destination.withToAddresses(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("CcAddresses/member", targetDepth)) {
-                    destination.getCcAddresses().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    destination.withCcAddresses(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BccAddresses/member", targetDepth)) {
-                    destination.getBccAddresses().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    destination.withBccAddresses(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -58,6 +58,7 @@ public class DomainValidation implements Serializable, Cloneable {
      *        Fully Qualified Domain Name (FQDN) of the form
      *        <code>www.example.com or </code><code>example.com</code>
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -71,6 +72,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return Fully Qualified Domain Name (FQDN) of the form
      *         <code>www.example.com or </code><code>example.com</code>
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -87,6 +89,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidation withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -99,6 +102,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * 
      * @return A list of contact address for the domain registrant.
      */
+
     public java.util.List<String> getValidationEmails() {
         return validationEmails;
     }
@@ -111,6 +115,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @param validationEmails
      *        A list of contact address for the domain registrant.
      */
+
     public void setValidationEmails(
             java.util.Collection<String> validationEmails) {
         if (validationEmails == null) {
@@ -138,6 +143,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidation withValidationEmails(String... validationEmails) {
         if (this.validationEmails == null) {
             setValidationEmails(new java.util.ArrayList<String>(
@@ -159,6 +165,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidation withValidationEmails(
             java.util.Collection<String> validationEmails) {
         setValidationEmails(validationEmails);
@@ -175,6 +182,7 @@ public class DomainValidation implements Serializable, Cloneable {
      *        The base validation domain that acts as the suffix of the email
      *        addresses that are used to send the emails.
      */
+
     public void setValidationDomain(String validationDomain) {
         this.validationDomain = validationDomain;
     }
@@ -188,6 +196,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return The base validation domain that acts as the suffix of the email
      *         addresses that are used to send the emails.
      */
+
     public String getValidationDomain() {
         return this.validationDomain;
     }
@@ -204,6 +213,7 @@ public class DomainValidation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DomainValidation withValidationDomain(String validationDomain) {
         setValidationDomain(validationDomain);
         return this;

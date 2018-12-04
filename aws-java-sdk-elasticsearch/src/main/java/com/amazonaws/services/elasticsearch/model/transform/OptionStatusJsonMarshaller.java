@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * OptionStatusMarshaller
@@ -39,42 +34,41 @@ import com.amazonaws.util.json.*;
 public class OptionStatusJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(OptionStatus optionStatus, JSONWriter jsonWriter) {
+    public void marshall(OptionStatus optionStatus,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (optionStatus == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (optionStatus.getCreationDate() != null) {
-                jsonWriter.key("CreationDate").value(
+                jsonGenerator.writeFieldName("CreationDate").writeValue(
                         optionStatus.getCreationDate());
             }
-
             if (optionStatus.getUpdateDate() != null) {
-                jsonWriter.key("UpdateDate")
-                        .value(optionStatus.getUpdateDate());
+                jsonGenerator.writeFieldName("UpdateDate").writeValue(
+                        optionStatus.getUpdateDate());
             }
-
             if (optionStatus.getUpdateVersion() != null) {
-                jsonWriter.key("UpdateVersion").value(
+                jsonGenerator.writeFieldName("UpdateVersion").writeValue(
                         optionStatus.getUpdateVersion());
             }
-
             if (optionStatus.getState() != null) {
-                jsonWriter.key("State").value(optionStatus.getState());
+                jsonGenerator.writeFieldName("State").writeValue(
+                        optionStatus.getState());
             }
-
             if (optionStatus.getPendingDeletion() != null) {
-                jsonWriter.key("PendingDeletion").value(
+                jsonGenerator.writeFieldName("PendingDeletion").writeValue(
                         optionStatus.getPendingDeletion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -58,7 +58,11 @@ public class Diagnostics implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * The last portion of the associated diagnostic log.
+     * The last portion of the diagnostic log.
+     * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * diagnostic log.
      * </p>
      */
     private String logTail;
@@ -95,6 +99,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *        reason.</li>
      * @see LifecycleErrorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -131,6 +136,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         reason.</li>
      * @see LifecycleErrorCode
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -169,6 +175,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleErrorCode
      */
+
     public Diagnostics withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -204,10 +211,9 @@ public class Diagnostics implements Serializable, Cloneable {
      *        <li>ScriptFailed: The specified script failed to run as expected.</li>
      *        <li>UnknownError: The specified script did not run for an unknown
      *        reason.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LifecycleErrorCode
      */
+
     public void setErrorCode(LifecycleErrorCode errorCode) {
         this.errorCode = errorCode.toString();
     }
@@ -246,6 +252,7 @@ public class Diagnostics implements Serializable, Cloneable {
      *         chained together.
      * @see LifecycleErrorCode
      */
+
     public Diagnostics withErrorCode(LifecycleErrorCode errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -259,6 +266,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @param scriptName
      *        The name of the script.
      */
+
     public void setScriptName(String scriptName) {
         this.scriptName = scriptName;
     }
@@ -270,6 +278,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * 
      * @return The name of the script.
      */
+
     public String getScriptName() {
         return this.scriptName;
     }
@@ -284,6 +293,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withScriptName(String scriptName) {
         setScriptName(scriptName);
         return this;
@@ -297,6 +307,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @param message
      *        The message associated with the error.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -308,6 +319,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * 
      * @return The message associated with the error.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -322,6 +334,7 @@ public class Diagnostics implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withMessage(String message) {
         setMessage(message);
         return this;
@@ -329,37 +342,61 @@ public class Diagnostics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last portion of the associated diagnostic log.
+     * The last portion of the diagnostic log.
+     * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * diagnostic log.
      * </p>
      * 
      * @param logTail
-     *        The last portion of the associated diagnostic log.
+     *        The last portion of the diagnostic log.</p>
+     *        <p>
+     *        If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *        diagnostic log.
      */
+
     public void setLogTail(String logTail) {
         this.logTail = logTail;
     }
 
     /**
      * <p>
-     * The last portion of the associated diagnostic log.
+     * The last portion of the diagnostic log.
+     * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * diagnostic log.
      * </p>
      * 
-     * @return The last portion of the associated diagnostic log.
+     * @return The last portion of the diagnostic log.</p>
+     *         <p>
+     *         If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *         diagnostic log.
      */
+
     public String getLogTail() {
         return this.logTail;
     }
 
     /**
      * <p>
-     * The last portion of the associated diagnostic log.
+     * The last portion of the diagnostic log.
+     * </p>
+     * <p>
+     * If available, AWS CodeDeploy returns up to the last 4 KB of the
+     * diagnostic log.
      * </p>
      * 
      * @param logTail
-     *        The last portion of the associated diagnostic log.
+     *        The last portion of the diagnostic log.</p>
+     *        <p>
+     *        If available, AWS CodeDeploy returns up to the last 4 KB of the
+     *        diagnostic log.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Diagnostics withLogTail(String logTail) {
         setLogTail(logTail);
         return this;

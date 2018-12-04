@@ -55,6 +55,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *        must be in the developers account and in the same region as the
      *        identity pool.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -67,6 +68,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *         must be in the developers account and in the same region as the
      *         identity pool.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -82,6 +84,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CognitoStreams withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -97,6 +100,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *        to the stream. This role must grant access to Amazon Cognito
      *        (cognito-sync) to invoke PutRecord on your Cognito stream.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -110,6 +114,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *         to the stream. This role must grant access to Amazon Cognito
      *         (cognito-sync) to invoke PutRecord on your Cognito stream.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -126,6 +131,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CognitoStreams withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -152,6 +158,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *        </p>
      * @see StreamingStatus
      */
+
     public void setStreamingStatus(String streamingStatus) {
         this.streamingStatus = streamingStatus;
     }
@@ -176,6 +183,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *         </p>
      * @see StreamingStatus
      */
+
     public String getStreamingStatus() {
         return this.streamingStatus;
     }
@@ -203,6 +211,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *         chained together.
      * @see StreamingStatus
      */
+
     public CognitoStreams withStreamingStatus(String streamingStatus) {
         setStreamingStatus(streamingStatus);
         return this;
@@ -227,10 +236,9 @@ public class CognitoStreams implements Serializable, Cloneable {
      *        DISABLED - Streaming of updates to identity pool is disabled. Bulk
      *        publish will also fail if StreamingStatus is DISABLED.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamingStatus
      */
+
     public void setStreamingStatus(StreamingStatus streamingStatus) {
         this.streamingStatus = streamingStatus.toString();
     }
@@ -258,6 +266,7 @@ public class CognitoStreams implements Serializable, Cloneable {
      *         chained together.
      * @see StreamingStatus
      */
+
     public CognitoStreams withStreamingStatus(StreamingStatus streamingStatus) {
         setStreamingStatus(streamingStatus);
         return this;

@@ -22,9 +22,13 @@ import com.amazonaws.AmazonServiceException;
  * <p>
  * At least one specified repository name is not valid.
  * </p>
- * <note>This exception only occurs when a specified repository name is not
- * valid. Other exceptions occur when a required repository parameter is
- * missing, or when a specified repository does not exist.</note>
+ * <note>
+ * <p>
+ * This exception only occurs when a specified repository name is not valid.
+ * Other exceptions occur when a required repository parameter is missing, or
+ * when a specified repository does not exist.
+ * </p>
+ * </note>
  */
 public class InvalidRepositoryNameException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

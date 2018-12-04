@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class SimulatePrincipalPolicyResultStaxUnmarshaller implements
 
                 if (context.testExpression("EvaluationResults/member",
                         targetDepth)) {
-                    simulatePrincipalPolicyResult.getEvaluationResults().add(
-                            EvaluationResultStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    simulatePrincipalPolicyResult
+                            .withEvaluationResults(EvaluationResultStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

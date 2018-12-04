@@ -176,6 +176,40 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Creates a conditional forwarder associated with your AWS directory.
+     * Conditional forwarders are required in order to set up a trust
+     * relationship with another domain. The conditional forwarder points to the
+     * trusted domain.
+     * </p>
+     * 
+     * @param createConditionalForwarderRequest
+     *        Initiates the creation of a conditional forwarder for your AWS
+     *        Directory Service for Microsoft Active Directory. Conditional
+     *        forwarders are required in order to set up a trust relationship
+     *        with another domain.
+     * @return Result of the CreateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateConditionalForwarder
+     */
+    CreateConditionalForwarderResult createConditionalForwarder(
+            CreateConditionalForwarderRequest createConditionalForwarderRequest);
+
+    /**
+     * <p>
      * Creates a Simple AD directory.
      * </p>
      * 
@@ -297,6 +331,32 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Deletes a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param deleteConditionalForwarderRequest
+     * @return Result of the DeleteConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteConditionalForwarder
+     */
+    DeleteConditionalForwarderResult deleteConditionalForwarder(
+            DeleteConditionalForwarderRequest deleteConditionalForwarderRequest);
+
+    /**
+     * <p>
      * Deletes an AWS Directory Service directory.
      * </p>
      * 
@@ -359,6 +419,59 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Removes the specified directory as a publisher to the specified SNS
+     * topic.
+     * </p>
+     * 
+     * @param deregisterEventTopicRequest
+     *        Removes the specified directory as a publisher to the specified
+     *        SNS topic.
+     * @return Result of the DeregisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeregisterEventTopic
+     */
+    DeregisterEventTopicResult deregisterEventTopic(
+            DeregisterEventTopicRequest deregisterEventTopicRequest);
+
+    /**
+     * <p>
+     * Obtains information about the conditional forwarders for this account.
+     * </p>
+     * <p>
+     * If no input parameters are provided for RemoteDomainNames, this request
+     * describes all conditional forwarders for the specified directory ID.
+     * </p>
+     * 
+     * @param describeConditionalForwardersRequest
+     * @return Result of the DescribeConditionalForwarders operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeConditionalForwarders
+     */
+    DescribeConditionalForwardersResult describeConditionalForwarders(
+            DescribeConditionalForwardersRequest describeConditionalForwardersRequest);
+
+    /**
+     * <p>
      * Obtains information about the directories that belong to this account.
      * </p>
      * <p>
@@ -403,6 +516,32 @@ public interface AWSDirectoryService {
      * @see #describeDirectories(DescribeDirectoriesRequest)
      */
     DescribeDirectoriesResult describeDirectories();
+
+    /**
+     * <p>
+     * Obtains information about which SNS topics receive status messages from
+     * the specified directory.
+     * </p>
+     * <p>
+     * If no input parameters are provided, such as DirectoryId or TopicName,
+     * this request describes all of the associations in the account.
+     * </p>
+     * 
+     * @param describeEventTopicsRequest
+     * @return Result of the DescribeEventTopics operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeEventTopics
+     */
+    DescribeEventTopicsResult describeEventTopics(
+            DescribeEventTopicsRequest describeEventTopicsRequest);
 
     /**
      * <p>
@@ -617,6 +756,32 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Associates a directory with an SNS topic. This establishes the directory
+     * as a publisher to the specified SNS topic. You can then receive email or
+     * text (SMS) messages when the status of your directory changes. You get
+     * notified if your directory goes from an Active status to an Impaired or
+     * Inoperable status. You also receive a notification when the directory
+     * returns to an Active status.
+     * </p>
+     * 
+     * @param registerEventTopicRequest
+     * @return Result of the RegisterEventTopic operation returned by the
+     *         service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RegisterEventTopic
+     */
+    RegisterEventTopicResult registerEventTopic(
+            RegisterEventTopicRequest registerEventTopicRequest);
+
+    /**
+     * <p>
      * Restores a directory using an existing directory snapshot.
      * </p>
      * <p>
@@ -648,6 +813,32 @@ public interface AWSDirectoryService {
      */
     RestoreFromSnapshotResult restoreFromSnapshot(
             RestoreFromSnapshotRequest restoreFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Updates a conditional forwarder that has been set up for your AWS
+     * directory.
+     * </p>
+     * 
+     * @param updateConditionalForwarderRequest
+     * @return Result of the UpdateConditionalForwarder operation returned by
+     *         the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateConditionalForwarder
+     */
+    UpdateConditionalForwarderResult updateConditionalForwarder(
+            UpdateConditionalForwarderRequest updateConditionalForwarderRequest);
 
     /**
      * <p>

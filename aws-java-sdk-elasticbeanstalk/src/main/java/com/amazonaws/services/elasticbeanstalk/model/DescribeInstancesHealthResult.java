@@ -54,6 +54,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @return Contains the response body with information about the health of
      *         the instance.
      */
+
     public java.util.List<SingleInstanceHealth> getInstanceHealthList() {
         if (instanceHealthList == null) {
             instanceHealthList = new com.amazonaws.internal.SdkInternalList<SingleInstanceHealth>();
@@ -71,6 +72,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      *        Contains the response body with information about the health of
      *        the instance.
      */
+
     public void setInstanceHealthList(
             java.util.Collection<SingleInstanceHealth> instanceHealthList) {
         if (instanceHealthList == null) {
@@ -100,6 +102,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthResult withInstanceHealthList(
             SingleInstanceHealth... instanceHealthList) {
         if (this.instanceHealthList == null) {
@@ -124,6 +127,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthResult withInstanceHealthList(
             java.util.Collection<SingleInstanceHealth> instanceHealthList) {
         setInstanceHealthList(instanceHealthList);
@@ -138,6 +142,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @param refreshedAt
      *        The date and time the information was last refreshed.
      */
+
     public void setRefreshedAt(java.util.Date refreshedAt) {
         this.refreshedAt = refreshedAt;
     }
@@ -149,6 +154,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * 
      * @return The date and time the information was last refreshed.
      */
+
     public java.util.Date getRefreshedAt() {
         return this.refreshedAt;
     }
@@ -163,6 +169,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthResult withRefreshedAt(
             java.util.Date refreshedAt) {
         setRefreshedAt(refreshedAt);
@@ -177,6 +184,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @param nextToken
      *        The next token.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -188,6 +196,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * 
      * @return The next token.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -202,6 +211,7 @@ public class DescribeInstancesHealthResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesHealthResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -68,6 +68,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      *        case ID is an alphanumeric string formatted as shown in this
      *        example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public void setCaseId(String caseId) {
         this.caseId = caseId;
     }
@@ -83,6 +84,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      *         case ID is an alphanumeric string formatted as shown in this
      *         example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
+
     public String getCaseId() {
         return this.caseId;
     }
@@ -101,6 +103,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseRequest withCaseId(String caseId) {
         setCaseId(caseId);
         return this;
@@ -114,6 +117,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @param communicationBody
      *        The body of an email communication to add to the support case.
      */
+
     public void setCommunicationBody(String communicationBody) {
         this.communicationBody = communicationBody;
     }
@@ -125,6 +129,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * 
      * @return The body of an email communication to add to the support case.
      */
+
     public String getCommunicationBody() {
         return this.communicationBody;
     }
@@ -139,6 +144,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseRequest withCommunicationBody(
             String communicationBody) {
         setCommunicationBody(communicationBody);
@@ -154,6 +160,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return The email addresses in the CC line of an email to be added to the
      *         support case.
      */
+
     public java.util.List<String> getCcEmailAddresses() {
         if (ccEmailAddresses == null) {
             ccEmailAddresses = new com.amazonaws.internal.SdkInternalList<String>();
@@ -171,6 +178,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      *        The email addresses in the CC line of an email to be added to the
      *        support case.
      */
+
     public void setCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         if (ccEmailAddresses == null) {
@@ -200,6 +208,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseRequest withCcEmailAddresses(
             String... ccEmailAddresses) {
         if (this.ccEmailAddresses == null) {
@@ -224,6 +233,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseRequest withCcEmailAddresses(
             java.util.Collection<String> ccEmailAddresses) {
         setCcEmailAddresses(ccEmailAddresses);
@@ -241,6 +251,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      *        to add to the case. Create the set by calling
      *        <a>AddAttachmentsToSet</a>
      */
+
     public void setAttachmentSetId(String attachmentSetId) {
         this.attachmentSetId = attachmentSetId;
     }
@@ -255,6 +266,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      *         to add to the case. Create the set by calling
      *         <a>AddAttachmentsToSet</a>
      */
+
     public String getAttachmentSetId() {
         return this.attachmentSetId;
     }
@@ -272,6 +284,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddCommunicationToCaseRequest withAttachmentSetId(
             String attachmentSetId) {
         setAttachmentSetId(attachmentSetId);

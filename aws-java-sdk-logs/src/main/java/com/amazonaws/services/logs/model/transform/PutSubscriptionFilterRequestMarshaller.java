@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutSubscriptionFilterRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class PutSubscriptionFilterRequestMarshaller
         implements
         Marshaller<Request<PutSubscriptionFilterRequest>, PutSubscriptionFilterRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutSubscriptionFilterRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutSubscriptionFilterRequest> marshall(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest) {
@@ -64,44 +65,39 @@ public class PutSubscriptionFilterRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putSubscriptionFilterRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         putSubscriptionFilterRequest.getLogGroupName());
             }
-
             if (putSubscriptionFilterRequest.getFilterName() != null) {
-                jsonWriter.key("filterName").value(
+                jsonGenerator.writeFieldName("filterName").writeValue(
                         putSubscriptionFilterRequest.getFilterName());
             }
-
             if (putSubscriptionFilterRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         putSubscriptionFilterRequest.getFilterPattern());
             }
-
             if (putSubscriptionFilterRequest.getDestinationArn() != null) {
-                jsonWriter.key("destinationArn").value(
+                jsonGenerator.writeFieldName("destinationArn").writeValue(
                         putSubscriptionFilterRequest.getDestinationArn());
             }
-
             if (putSubscriptionFilterRequest.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(
+                jsonGenerator.writeFieldName("roleArn").writeValue(
                         putSubscriptionFilterRequest.getRoleArn());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

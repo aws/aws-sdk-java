@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,13 +62,13 @@ public class ListDatasetsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
-                    listDatasetsResult.setCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listDatasetsResult.setCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listDatasetsResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listDatasetsResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

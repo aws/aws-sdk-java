@@ -47,6 +47,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * 
      * @return Information about the projects.
      */
+
     public java.util.List<Project> getProjects() {
         return projects;
     }
@@ -59,6 +60,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * @param projects
      *        Information about the projects.
      */
+
     public void setProjects(java.util.Collection<Project> projects) {
         if (projects == null) {
             this.projects = null;
@@ -84,6 +86,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListProjectsResult withProjects(Project... projects) {
         if (this.projects == null) {
             setProjects(new java.util.ArrayList<Project>(projects.length));
@@ -104,6 +107,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListProjectsResult withProjects(
             java.util.Collection<Project> projects) {
         setProjects(projects);
@@ -123,6 +127,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -139,6 +144,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -158,6 +164,7 @@ public class ListProjectsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListProjectsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

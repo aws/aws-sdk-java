@@ -48,6 +48,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param id
      *        The ID of the traffic policy that you want to delete.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -59,6 +60,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the traffic policy that you want to delete.
      */
+
     public String getId() {
         return this.id;
     }
@@ -73,6 +75,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrafficPolicyRequest withId(String id) {
         setId(id);
         return this;
@@ -86,6 +89,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * @param version
      *        The version number of the traffic policy that you want to delete.
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -97,6 +101,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The version number of the traffic policy that you want to delete.
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -111,6 +116,7 @@ public class DeleteTrafficPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteTrafficPolicyRequest withVersion(Integer version) {
         setVersion(version);
         return this;

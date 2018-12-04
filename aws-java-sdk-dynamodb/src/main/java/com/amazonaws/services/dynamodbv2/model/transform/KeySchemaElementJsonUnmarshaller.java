@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class KeySchemaElementJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeName", targetDepth)) {
                     context.nextToken();
-                    keySchemaElement.setAttributeName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keySchemaElement.setAttributeName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeyType", targetDepth)) {
                     context.nextToken();
-                    keySchemaElement.setKeyType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    keySchemaElement.setKeyType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

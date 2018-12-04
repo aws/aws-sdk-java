@@ -55,6 +55,12 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      */
     private String encodingType;
 
+    /**
+     * If enabled, the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterPays;
+
 
     /**
      * Constructs a new ListPartsRequest from the required parameters bucket
@@ -264,7 +270,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * Gets the optional <code>encodingType</code> parameter indicating the
      * encoding method to be applied on the response.
-     * 
+     *
      * @return The encoding method to be applied on the response.
      */
     public String getEncodingType() {
@@ -278,7 +284,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      * characters, such as characters with an ASCII value from 0 to 10. For
      * characters that are not supported in XML 1.0, you can add this parameter
      * to request that Amazon S3 encode the keys in the response.
-     * 
+     *
      * @param encodingType
      *            The encoding method to be applied on the response. Valid
      *            values: null (not encoded) or "url".
@@ -286,23 +292,89 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
     public void setEncodingType(String encodingType) {
         this.encodingType = encodingType;
     }
-    
+
     /**
      * Sets the optional <code>encodingType</code> parameter indicating the
      * encoding method to be applied on the response. An object key can contain
      * any Unicode character; however, XML 1.0 parser cannot parse some
      * characters, such as characters with an ASCII value from 0 to 10. For
      * characters that are not supported in XML 1.0, you can add this parameter
-     * to request that Amazon S3 encode the keys in the response. 
+     * to request that Amazon S3 encode the keys in the response.
      * Returns this {@link ListPartsRequest}, enabling additional method calls
      * to be chained together.
-     * 
+     *
      * @param encodingType
      *            The encoding method to be applied on the response. Valid
      *            values: null (not encoded) or "url".
      */
     public ListPartsRequest withEncodingType(String encodingType) {
         setEncodingType(encodingType);
+        return this;
+    }
+
+
+    /**
+     * Returns true if the user has enabled Requester Pays option when
+     * conducting this operation from Requester Pays Bucket; else false.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Used for conducting this operation from a Requester Pays Bucket. If
+     * set the requester is charged for requests from the bucket. It returns this
+     * updated ListPartsRequest object so that additional method calls can be
+     * chained together.
+     *
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to upload or
+     * download an object from it without Requester Pays enabled will result in
+     * a 403 error and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * @param isRequesterPays
+     *            Enable Requester Pays option for the operation.
+     *
+     * @return The updated ListPartsRequest object.
+     */
+    public ListPartsRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
         return this;
     }
 

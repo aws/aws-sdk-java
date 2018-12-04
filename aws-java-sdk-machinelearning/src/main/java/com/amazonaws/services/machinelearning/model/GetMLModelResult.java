@@ -243,6 +243,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        The MLModel ID which is same as the <code>MLModelId</code> in the
      *        request.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -256,6 +257,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return The MLModel ID which is same as the <code>MLModelId</code> in the
      *         request.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -272,6 +274,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -285,6 +288,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param trainingDataSourceId
      *        The ID of the training <code>DataSource</code>.
      */
+
     public void setTrainingDataSourceId(String trainingDataSourceId) {
         this.trainingDataSourceId = trainingDataSourceId;
     }
@@ -296,6 +300,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @return The ID of the training <code>DataSource</code>.
      */
+
     public String getTrainingDataSourceId() {
         return this.trainingDataSourceId;
     }
@@ -310,6 +315,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withTrainingDataSourceId(String trainingDataSourceId) {
         setTrainingDataSourceId(trainingDataSourceId);
         return this;
@@ -327,6 +333,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        created. The account type can be either an AWS root account or an
      *        AWS Identity and Access Management (IAM) user account.
      */
+
     public void setCreatedByIamUser(String createdByIamUser) {
         this.createdByIamUser = createdByIamUser;
     }
@@ -342,6 +349,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         created. The account type can be either an AWS root account or an
      *         AWS Identity and Access Management (IAM) user account.
      */
+
     public String getCreatedByIamUser() {
         return this.createdByIamUser;
     }
@@ -360,6 +368,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withCreatedByIamUser(String createdByIamUser) {
         setCreatedByIamUser(createdByIamUser);
         return this;
@@ -375,6 +384,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        The time that the <code>MLModel</code> was created. The time is
      *        expressed in epoch time.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -388,6 +398,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return The time that the <code>MLModel</code> was created. The time is
      *         expressed in epoch time.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -404,6 +415,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -419,6 +431,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        The time of the most recent edit to the <code>MLModel</code>. The
      *        time is expressed in epoch time.
      */
+
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
         this.lastUpdatedAt = lastUpdatedAt;
     }
@@ -432,6 +445,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return The time of the most recent edit to the <code>MLModel</code>. The
      *         time is expressed in epoch time.
      */
+
     public java.util.Date getLastUpdatedAt() {
         return this.lastUpdatedAt;
     }
@@ -448,6 +462,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withLastUpdatedAt(java.util.Date lastUpdatedAt) {
         setLastUpdatedAt(lastUpdatedAt);
         return this;
@@ -461,6 +476,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param name
      *        A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -472,6 +488,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @return A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -486,6 +503,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withName(String name) {
         setName(name);
         return this;
@@ -521,6 +539,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -554,6 +573,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         deleted. It is not usable.</li>
      * @see EntityStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -590,6 +610,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public GetMLModelResult withStatus(String status) {
         setStatus(status);
         return this;
@@ -623,10 +644,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        <li> <code>COMPLETED</code> - The request completed successfully.</li>
      *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as
      *        deleted. It is not usable.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EntityStatus
      */
+
     public void setStatus(EntityStatus status) {
         this.status = status.toString();
     }
@@ -663,6 +683,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         chained together.
      * @see EntityStatus
      */
+
     public GetMLModelResult withStatus(EntityStatus status) {
         setStatus(status);
         return this;
@@ -671,6 +692,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * @param sizeInBytes
      */
+
     public void setSizeInBytes(Long sizeInBytes) {
         this.sizeInBytes = sizeInBytes;
     }
@@ -678,6 +700,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getSizeInBytes() {
         return this.sizeInBytes;
     }
@@ -687,6 +710,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withSizeInBytes(Long sizeInBytes) {
         setSizeInBytes(sizeInBytes);
         return this;
@@ -700,6 +724,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @param endpointInfo
      *        The current endpoint of the <code>MLModel</code>
      */
+
     public void setEndpointInfo(RealtimeEndpointInfo endpointInfo) {
         this.endpointInfo = endpointInfo;
     }
@@ -711,6 +736,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * 
      * @return The current endpoint of the <code>MLModel</code>
      */
+
     public RealtimeEndpointInfo getEndpointInfo() {
         return this.endpointInfo;
     }
@@ -725,6 +751,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withEndpointInfo(RealtimeEndpointInfo endpointInfo) {
         setEndpointInfo(endpointInfo);
         return this;
@@ -842,6 +869,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, String> getTrainingParameters() {
         if (trainingParameters == null) {
             trainingParameters = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -962,6 +990,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setTrainingParameters(
             java.util.Map<String, String> trainingParameters) {
         this.trainingParameters = trainingParameters == null ? null
@@ -1084,6 +1113,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withTrainingParameters(
             java.util.Map<String, String> trainingParameters) {
         setTrainingParameters(trainingParameters);
@@ -1105,6 +1135,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * Removes all the entries added into TrainingParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetMLModelResult clearTrainingParametersEntries() {
         this.trainingParameters = null;
         return this;
@@ -1120,6 +1151,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        The location of the data file or directory in Amazon Simple
      *        Storage Service (Amazon S3).
      */
+
     public void setInputDataLocationS3(String inputDataLocationS3) {
         this.inputDataLocationS3 = inputDataLocationS3;
     }
@@ -1133,6 +1165,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return The location of the data file or directory in Amazon Simple
      *         Storage Service (Amazon S3).
      */
+
     public String getInputDataLocationS3() {
         return this.inputDataLocationS3;
     }
@@ -1149,6 +1182,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withInputDataLocationS3(String inputDataLocationS3) {
         setInputDataLocationS3(inputDataLocationS3);
         return this;
@@ -1180,6 +1214,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @see MLModelType
      */
+
     public void setMLModelType(String mLModelType) {
         this.mLModelType = mLModelType;
     }
@@ -1209,6 +1244,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
      * @see MLModelType
      */
+
     public String getMLModelType() {
         return this.mLModelType;
     }
@@ -1241,6 +1277,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         chained together.
      * @see MLModelType
      */
+
     public GetMLModelResult withMLModelType(String mLModelType) {
         setMLModelType(mLModelType);
         return this;
@@ -1270,10 +1307,9 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        "Is this an e-commerce website?"</li>
      *        <li>MULTICLASS -- Produces more than two possible results. For
      *        example, "Is this a HIGH, LOW or MEDIUM risk trade?"</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelType
      */
+
     public void setMLModelType(MLModelType mLModelType) {
         this.mLModelType = mLModelType.toString();
     }
@@ -1306,6 +1342,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         chained together.
      * @see MLModelType
      */
+
     public GetMLModelResult withMLModelType(MLModelType mLModelType) {
         setMLModelType(mLModelType);
         return this;
@@ -1334,6 +1371,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        Output values less than the threshold receive a negative response
      *        from the MLModel, such as <code>false</code>.
      */
+
     public void setScoreThreshold(Float scoreThreshold) {
         this.scoreThreshold = scoreThreshold;
     }
@@ -1360,6 +1398,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         Output values less than the threshold receive a negative response
      *         from the MLModel, such as <code>false</code>.
      */
+
     public Float getScoreThreshold() {
         return this.scoreThreshold;
     }
@@ -1389,6 +1428,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withScoreThreshold(Float scoreThreshold) {
         setScoreThreshold(scoreThreshold);
         return this;
@@ -1404,6 +1444,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        The time of the most recent edit to the
      *        <code>ScoreThreshold</code>. The time is expressed in epoch time.
      */
+
     public void setScoreThresholdLastUpdatedAt(
             java.util.Date scoreThresholdLastUpdatedAt) {
         this.scoreThresholdLastUpdatedAt = scoreThresholdLastUpdatedAt;
@@ -1418,6 +1459,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return The time of the most recent edit to the
      *         <code>ScoreThreshold</code>. The time is expressed in epoch time.
      */
+
     public java.util.Date getScoreThresholdLastUpdatedAt() {
         return this.scoreThresholdLastUpdatedAt;
     }
@@ -1434,6 +1476,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withScoreThresholdLastUpdatedAt(
             java.util.Date scoreThresholdLastUpdatedAt) {
         setScoreThresholdLastUpdatedAt(scoreThresholdLastUpdatedAt);
@@ -1450,6 +1493,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        A link to the file that contains logs of the
      *        <code>CreateMLModel</code> operation.
      */
+
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
@@ -1463,6 +1507,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return A link to the file that contains logs of the
      *         <code>CreateMLModel</code> operation.
      */
+
     public String getLogUri() {
         return this.logUri;
     }
@@ -1479,6 +1524,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withLogUri(String logUri) {
         setLogUri(logUri);
         return this;
@@ -1494,6 +1540,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        Description of the most recent details about accessing the
      *        <code>MLModel</code>.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -1507,6 +1554,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Description of the most recent details about accessing the
      *         <code>MLModel</code>.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -1523,6 +1571,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withMessage(String message) {
         setMessage(message);
         return this;
@@ -1551,6 +1600,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        This parameter is provided as part of the verbose format.
      *        </p>
      */
+
     public void setRecipe(String recipe) {
         this.recipe = recipe;
     }
@@ -1577,6 +1627,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         This parameter is provided as part of the verbose format.
      *         </p>
      */
+
     public String getRecipe() {
         return this.recipe;
     }
@@ -1606,6 +1657,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withRecipe(String recipe) {
         setRecipe(recipe);
         return this;
@@ -1629,6 +1681,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *        This parameter is provided as part of the verbose format.
      *        </p>
      */
+
     public void setSchema(String schema) {
         this.schema = schema;
     }
@@ -1650,6 +1703,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      *         This parameter is provided as part of the verbose format.
      *         </p>
      */
+
     public String getSchema() {
         return this.schema;
     }
@@ -1674,6 +1728,7 @@ public class GetMLModelResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetMLModelResult withSchema(String schema) {
         setSchema(schema);
         return this;

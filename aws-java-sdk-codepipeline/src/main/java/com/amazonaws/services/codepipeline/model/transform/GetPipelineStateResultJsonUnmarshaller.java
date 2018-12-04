@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,14 @@ public class GetPipelineStateResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("pipelineName", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult
-                            .setPipelineName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getPipelineStateResult.setPipelineName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pipelineVersion", targetDepth)) {
                     context.nextToken();
                     getPipelineStateResult
-                            .setPipelineVersion(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setPipelineVersion(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stageStates", targetDepth)) {
                     context.nextToken();
@@ -72,13 +73,13 @@ public class GetPipelineStateResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setCreated(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getPipelineStateResult.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("updated", targetDepth)) {
                     context.nextToken();
-                    getPipelineStateResult.setUpdated(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getPipelineStateResult.setUpdated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

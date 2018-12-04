@@ -23,10 +23,7 @@ import com.amazonaws.services.iotdata.model.*;
 /**
  * Interface for accessing AWS IoT Data Plane.
  * <p>
- * <fullname>AWS IoT (Beta)</fullname>
- * <p>
- * <b>AWS IoT is considered a beta service as defined in the Service Terms</b>
- * </p>
+ * <fullname>AWS IoT</fullname>
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between
  * Internet-connected things (such as sensors, actuators, embedded devices, or
@@ -177,6 +174,7 @@ public interface AWSIotData {
      * 
      * @param publishRequest
      *        The input for the Publish operation.
+     * @return Result of the Publish operation returned by the service.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -187,7 +185,7 @@ public interface AWSIotData {
      *         The specified combination of HTTP verb and URI is not supported.
      * @sample AWSIotData.Publish
      */
-    void publish(PublishRequest publishRequest);
+    PublishResult publish(PublishRequest publishRequest);
 
     /**
      * <p>

@@ -40,6 +40,7 @@ public class DescribeStackProvisioningParametersRequest extends
      * @param stackId
      *        The stack ID
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -51,6 +52,7 @@ public class DescribeStackProvisioningParametersRequest extends
      * 
      * @return The stack ID
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -65,6 +67,7 @@ public class DescribeStackProvisioningParametersRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackProvisioningParametersRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;

@@ -1,269 +1,370 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest) CreateDBSnapshot operation}.
- * <p>
- * Creates a DBSnapshot. The source DBInstance must be in "available"
- * state.
- * </p>
- *
- * @see com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest)
+ * <p/>
  */
-public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
-     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <p>
+     * The identifier for the DB snapshot.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Cannot be null, empty, or blank</li>
+     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <code>my-snapshot-id</code>
+     * </ul>
+     * <p>
+     * Example: <code>my-snapshot-id</code>
+     * </p>
      */
     private String dBSnapshotIdentifier;
-
     /**
-     * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
+     * <p>
+     * The DB instance identifier. This is the unique key that identifies a DB
+     * instance.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     private String dBInstanceIdentifier;
 
-    /**
-     * A list of tags.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
-     * Default constructor for a new CreateDBSnapshotRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     * Default constructor for CreateDBSnapshotRequest object. Callers should
+     * use the setter or fluent setter (with...) methods to initialize the
+     * object after creating it.
      */
-    public CreateDBSnapshotRequest() {}
-    
+    public CreateDBSnapshotRequest() {
+    }
+
     /**
-     * Constructs a new CreateDBSnapshotRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
+     * Constructs a new CreateDBSnapshotRequest object. Callers should use the
+     * setter or fluent setter (with...) methods to initialize any additional
+     * object members.
      * 
-     * @param dBSnapshotIdentifier The identifier for the DB snapshot.
-     * <p>Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must
-     * contain from 1 to 255 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul> <p>Example:
-     * <code>my-snapshot-id</code>
-     * @param dBInstanceIdentifier The DB instance identifier. This is the
-     * unique key that identifies a DB instance. <p>Constraints: <ul>
-     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * @param dBSnapshotIdentifier
+     *        The identifier for the DB snapshot. </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Cannot be null, empty, or blank</li>
+     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>my-snapshot-id</code>
+     * @param dBInstanceIdentifier
+     *        The DB instance identifier. This is the unique key that identifies
+     *        a DB instance.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      */
-    public CreateDBSnapshotRequest(String dBSnapshotIdentifier, String dBInstanceIdentifier) {
+    public CreateDBSnapshotRequest(String dBSnapshotIdentifier,
+            String dBInstanceIdentifier) {
         setDBSnapshotIdentifier(dBSnapshotIdentifier);
         setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
     /**
-     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <p>
+     * The identifier for the DB snapshot.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Cannot be null, empty, or blank</li>
+     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <code>my-snapshot-id</code>
-     *
-     * @return The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <code>my-snapshot-id</code>
+     * </ul>
+     * <p>
+     * Example: <code>my-snapshot-id</code>
+     * </p>
+     * 
+     * @param dBSnapshotIdentifier
+     *        The identifier for the DB snapshot. </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Cannot be null, empty, or blank</li>
+     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>my-snapshot-id</code>
      */
-    public String getDBSnapshotIdentifier() {
-        return dBSnapshotIdentifier;
-    }
-    
-    /**
-     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <code>my-snapshot-id</code>
-     *
-     * @param dBSnapshotIdentifier The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <code>my-snapshot-id</code>
-     */
+
     public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
     }
-    
+
     /**
-     * The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     * null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <code>my-snapshot-id</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBSnapshotIdentifier The identifier for the DB snapshot. <p>Constraints: <ul> <li>Cannot be
-     *         null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
+     * The identifier for the DB snapshot.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Cannot be null, empty, or blank</li>
+     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
+     * <p>
+     * Example: <code>my-snapshot-id</code>
+     * </p>
+     * 
+     * @return The identifier for the DB snapshot. </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>Cannot be null, empty, or blank</li>
+     *         <li>Must contain from 1 to 255 alphanumeric characters or hyphens
+     *         </li>
+     *         <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <code>my-snapshot-id</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         </ul>
+     *         <p>
+     *         Example: <code>my-snapshot-id</code>
      */
-    public CreateDBSnapshotRequest withDBSnapshotIdentifier(String dBSnapshotIdentifier) {
-        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+
+    public String getDBSnapshotIdentifier() {
+        return this.dBSnapshotIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the DB snapshot.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Cannot be null, empty, or blank</li>
+     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
+     * <p>
+     * Example: <code>my-snapshot-id</code>
+     * </p>
+     * 
+     * @param dBSnapshotIdentifier
+     *        The identifier for the DB snapshot. </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Cannot be null, empty, or blank</li>
+     *        <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>my-snapshot-id</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDBSnapshotRequest withDBSnapshotIdentifier(
+            String dBSnapshotIdentifier) {
+        setDBSnapshotIdentifier(dBSnapshotIdentifier);
         return this;
     }
 
     /**
-     * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
-     *
-     * @return The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
+     * <p>
+     * The DB instance identifier. This is the unique key that identifies a DB
+     * instance.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
+     * 
+     * @param dBInstanceIdentifier
+     *        The DB instance identifier. This is the unique key that identifies
+     *        a DB instance. </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      */
-    public String getDBInstanceIdentifier() {
-        return dBInstanceIdentifier;
-    }
-    
-    /**
-     * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
-     *
-     * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
-     */
+
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
-    
+
     /**
-     * The DB instance identifier. This is the unique key that identifies a
-     * DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBInstanceIdentifier The DB instance identifier. This is the unique key that identifies a
-     *         DB instance. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The DB instance identifier. This is the unique key that identifies a DB
+     * instance.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
+     * 
+     * @return The DB instance identifier. This is the unique key that
+     *         identifies a DB instance. </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     *         <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      */
-    public CreateDBSnapshotRequest withDBInstanceIdentifier(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
+
+    public String getDBInstanceIdentifier() {
+        return this.dBInstanceIdentifier;
+    }
+
+    /**
+     * <p>
+     * The DB instance identifier. This is the unique key that identifies a DB
+     * instance.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
+     * 
+     * @param dBInstanceIdentifier
+     *        The DB instance identifier. This is the unique key that identifies
+     *        a DB instance. </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+     *        <li>First character must be a letter</li>
+     *        <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDBSnapshotRequest withDBInstanceIdentifier(
+            String dBInstanceIdentifier) {
+        setDBInstanceIdentifier(dBInstanceIdentifier);
         return this;
     }
 
     /**
-     * A list of tags.
-     *
-     * @return A list of tags.
+     * @return
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
-              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
-              tags.setAutoConstruct(true);
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
         }
         return tags;
     }
-    
+
     /**
-     * A list of tags.
-     *
-     * @param tags A list of tags.
+     * @param tags
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-        tagsCopy.addAll(tags);
-        this.tags = tagsCopy;
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
     }
-    
+
     /**
-     * A list of tags.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTags(java.util.Collection)} or {@link
-     * #withTags(java.util.Collection)} if you want to override the existing
-     * values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of tags.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setTags(java.util.Collection)} or
+     * {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public CreateDBSnapshotRequest withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
-        for (Tag value : tags) {
-            getTags().add(value);
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of tags.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tags A list of tags.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public CreateDBSnapshotRequest withTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
-            tagsCopy.addAll(tags);
-            this.tags = tagsCopy;
-        }
 
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateDBSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -279,46 +380,70 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
-        if (getTags() != null) sb.append("Tags: " + getTags() );
+        if (getDBSnapshotIdentifier() != null)
+            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier()
+                    + ",");
+        if (getDBInstanceIdentifier() != null)
+            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier()
+                    + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateDBSnapshotRequest == false)
+            return false;
+        CreateDBSnapshotRequest other = (CreateDBSnapshotRequest) obj;
+        if (other.getDBSnapshotIdentifier() == null
+                ^ this.getDBSnapshotIdentifier() == null)
+            return false;
+        if (other.getDBSnapshotIdentifier() != null
+                && other.getDBSnapshotIdentifier().equals(
+                        this.getDBSnapshotIdentifier()) == false)
+            return false;
+        if (other.getDBInstanceIdentifier() == null
+                ^ this.getDBInstanceIdentifier() == null)
+            return false;
+        if (other.getDBInstanceIdentifier() != null
+                && other.getDBInstanceIdentifier().equals(
+                        this.getDBInstanceIdentifier()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null
+                && other.getTags().equals(this.getTags()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDBSnapshotIdentifier() == null) ? 0 : getDBSnapshotIdentifier().hashCode()); 
-        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDBSnapshotIdentifier() == null) ? 0
+                        : getDBSnapshotIdentifier().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBInstanceIdentifier() == null) ? 0
+                        : getDBInstanceIdentifier().hashCode());
+        hashCode = prime * hashCode
+                + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CreateDBSnapshotRequest == false) return false;
-        CreateDBSnapshotRequest other = (CreateDBSnapshotRequest)obj;
-        
-        if (other.getDBSnapshotIdentifier() == null ^ this.getDBSnapshotIdentifier() == null) return false;
-        if (other.getDBSnapshotIdentifier() != null && other.getDBSnapshotIdentifier().equals(this.getDBSnapshotIdentifier()) == false) return false; 
-        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
-        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
-        if (other.getTags() == null ^ this.getTags() == null) return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CreateDBSnapshotRequest clone() {
-        
-            return (CreateDBSnapshotRequest) super.clone();
+        return (CreateDBSnapshotRequest) super.clone();
     }
-
 }
-    

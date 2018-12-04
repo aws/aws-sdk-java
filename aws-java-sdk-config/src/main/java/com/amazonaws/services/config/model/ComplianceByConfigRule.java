@@ -48,6 +48,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * @param configRuleName
      *        The name of the AWS Config rule.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -59,6 +60,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * 
      * @return The name of the AWS Config rule.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -73,6 +75,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceByConfigRule withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;
@@ -86,6 +89,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * @param compliance
      *        Indicates whether the AWS Config rule is compliant.
      */
+
     public void setCompliance(Compliance compliance) {
         this.compliance = compliance;
     }
@@ -97,6 +101,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * 
      * @return Indicates whether the AWS Config rule is compliant.
      */
+
     public Compliance getCompliance() {
         return this.compliance;
     }
@@ -111,6 +116,7 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ComplianceByConfigRule withCompliance(Compliance compliance) {
         setCompliance(compliance);
         return this;

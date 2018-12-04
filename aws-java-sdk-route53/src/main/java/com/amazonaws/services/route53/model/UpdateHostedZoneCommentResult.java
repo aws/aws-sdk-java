@@ -31,6 +31,7 @@ public class UpdateHostedZoneCommentResult implements Serializable, Cloneable {
     /**
      * @param hostedZone
      */
+
     public void setHostedZone(HostedZone hostedZone) {
         this.hostedZone = hostedZone;
     }
@@ -38,6 +39,7 @@ public class UpdateHostedZoneCommentResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public HostedZone getHostedZone() {
         return this.hostedZone;
     }
@@ -47,6 +49,7 @@ public class UpdateHostedZoneCommentResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateHostedZoneCommentResult withHostedZone(HostedZone hostedZone) {
         setHostedZone(hostedZone);
         return this;

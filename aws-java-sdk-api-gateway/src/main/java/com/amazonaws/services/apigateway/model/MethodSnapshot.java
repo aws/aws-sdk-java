@@ -47,6 +47,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * @param authorizationType
      *        Specifies the type of authorization used for the method.
      */
+
     public void setAuthorizationType(String authorizationType) {
         this.authorizationType = authorizationType;
     }
@@ -58,6 +59,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * 
      * @return Specifies the type of authorization used for the method.
      */
+
     public String getAuthorizationType() {
         return this.authorizationType;
     }
@@ -72,6 +74,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSnapshot withAuthorizationType(String authorizationType) {
         setAuthorizationType(authorizationType);
         return this;
@@ -85,6 +88,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * @param apiKeyRequired
      *        Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public void setApiKeyRequired(Boolean apiKeyRequired) {
         this.apiKeyRequired = apiKeyRequired;
     }
@@ -96,6 +100,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * 
      * @return Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public Boolean getApiKeyRequired() {
         return this.apiKeyRequired;
     }
@@ -110,6 +115,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MethodSnapshot withApiKeyRequired(Boolean apiKeyRequired) {
         setApiKeyRequired(apiKeyRequired);
         return this;
@@ -122,6 +128,7 @@ public class MethodSnapshot implements Serializable, Cloneable {
      * 
      * @return Specifies whether the method requires a valid <a>ApiKey</a>.
      */
+
     public Boolean isApiKeyRequired() {
         return this.apiKeyRequired;
     }

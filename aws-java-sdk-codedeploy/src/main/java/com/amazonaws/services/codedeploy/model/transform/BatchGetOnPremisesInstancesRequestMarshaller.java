@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BatchGetOnPremisesInstancesRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class BatchGetOnPremisesInstancesRequestMarshaller
         implements
         Marshaller<Request<BatchGetOnPremisesInstancesRequest>, BatchGetOnPremisesInstancesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public BatchGetOnPremisesInstancesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<BatchGetOnPremisesInstancesRequest> marshall(
             BatchGetOnPremisesInstancesRequest batchGetOnPremisesInstancesRequest) {
@@ -65,33 +66,32 @@ public class BatchGetOnPremisesInstancesRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> instanceNamesList = (com.amazonaws.internal.SdkInternalList<String>) batchGetOnPremisesInstancesRequest
                     .getInstanceNames();
             if (!instanceNamesList.isEmpty()
                     || !instanceNamesList.isAutoConstruct()) {
-                jsonWriter.key("instanceNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("instanceNames");
+                jsonGenerator.writeStartArray();
                 for (String instanceNamesListValue : instanceNamesList) {
                     if (instanceNamesListValue != null) {
-                        jsonWriter.value(instanceNamesListValue);
+                        jsonGenerator.writeValue(instanceNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

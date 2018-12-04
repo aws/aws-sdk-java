@@ -100,6 +100,7 @@ public class Rule implements Serializable, Cloneable {
      *        <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *        <a>ListRules</a>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -129,6 +130,7 @@ public class Rule implements Serializable, Cloneable {
      *         <code>RuleId</code> is returned by <a>CreateRule</a> and by
      *         <a>ListRules</a>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -161,6 +163,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -176,6 +179,7 @@ public class Rule implements Serializable, Cloneable {
      *        The friendly name or description for the <code>Rule</code>. You
      *        can't change the name of a <code>Rule</code> after you create it.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -189,6 +193,7 @@ public class Rule implements Serializable, Cloneable {
      * @return The friendly name or description for the <code>Rule</code>. You
      *         can't change the name of a <code>Rule</code> after you create it.
      */
+
     public String getName() {
         return this.name;
     }
@@ -205,6 +210,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withName(String name) {
         setName(name);
         return this;
@@ -213,6 +219,7 @@ public class Rule implements Serializable, Cloneable {
     /**
      * @param metricName
      */
+
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
@@ -220,6 +227,7 @@ public class Rule implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getMetricName() {
         return this.metricName;
     }
@@ -229,6 +237,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withMetricName(String metricName) {
         setMetricName(metricName);
         return this;
@@ -247,6 +256,7 @@ public class Rule implements Serializable, Cloneable {
      *         <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
      *         to include in a <code>Rule</code>.
      */
+
     public java.util.List<Predicate> getPredicates() {
         return predicates;
     }
@@ -265,6 +275,7 @@ public class Rule implements Serializable, Cloneable {
      *        <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want
      *        to include in a <code>Rule</code>.
      */
+
     public void setPredicates(java.util.Collection<Predicate> predicates) {
         if (predicates == null) {
             this.predicates = null;
@@ -296,6 +307,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withPredicates(Predicate... predicates) {
         if (this.predicates == null) {
             setPredicates(new java.util.ArrayList<Predicate>(predicates.length));
@@ -322,6 +334,7 @@ public class Rule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Rule withPredicates(java.util.Collection<Predicate> predicates) {
         setPredicates(predicates);
         return this;

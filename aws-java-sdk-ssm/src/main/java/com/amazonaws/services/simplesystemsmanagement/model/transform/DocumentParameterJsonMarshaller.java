@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DocumentParameterMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class DocumentParameterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DocumentParameter documentParameter,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (documentParameter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (documentParameter.getName() != null) {
-                jsonWriter.key("Name").value(documentParameter.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        documentParameter.getName());
             }
-
             if (documentParameter.getType() != null) {
-                jsonWriter.key("Type").value(documentParameter.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        documentParameter.getType());
             }
-
             if (documentParameter.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         documentParameter.getDescription());
             }
-
             if (documentParameter.getDefaultValue() != null) {
-                jsonWriter.key("DefaultValue").value(
+                jsonGenerator.writeFieldName("DefaultValue").writeValue(
                         documentParameter.getDefaultValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

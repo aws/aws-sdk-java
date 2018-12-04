@@ -54,6 +54,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        Specifies a get integration request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -65,6 +66,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a get integration request's API identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -79,6 +81,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -92,6 +95,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        Specifies a get integration request's resource identifier
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -103,6 +107,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a get integration request's resource identifier
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -117,6 +122,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -130,6 +136,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        Specifies a get integration request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -141,6 +148,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a get integration request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -155,6 +163,7 @@ public class GetIntegrationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIntegrationRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;

@@ -27,10 +27,9 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can access
-     * this API without authenticating. Note that if the availability status of
-     * a domain is pending, you must submit another request to determine the
-     * availability of the domain name.
+     * This operation checks the availability of one domain name. Note that if
+     * the availability status of a domain is pending, you must submit another
+     * request to determine the availability of the domain name.
      * </p>
      * 
      * @param checkDomainAvailabilityRequest
@@ -45,10 +44,9 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can access
-     * this API without authenticating. Note that if the availability status of
-     * a domain is pending, you must submit another request to determine the
-     * availability of the domain name.
+     * This operation checks the availability of one domain name. Note that if
+     * the availability status of a domain is pending, you must submit another
+     * request to determine the availability of the domain name.
      * </p>
      * 
      * @param checkDomainAvailabilityRequest
@@ -296,6 +294,52 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<EnableDomainTransferLockResult> enableDomainTransferLockAsync(
             EnableDomainTransferLockRequest enableDomainTransferLockRequest,
             com.amazonaws.handlers.AsyncHandler<EnableDomainTransferLockRequest, EnableDomainTransferLockResult> asyncHandler);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation returns information about whether the registrant contact has
+     * responded.
+     * </p>
+     * <p>
+     * If you want us to resend the email, use the
+     * <code>ResendContactReachabilityEmail</code> operation.
+     * </p>
+     * 
+     * @param getContactReachabilityStatusRequest
+     * @return A Java Future containing the result of the
+     *         GetContactReachabilityStatus operation returned by the service.
+     * @sample AmazonRoute53DomainsAsync.GetContactReachabilityStatus
+     */
+    java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest getContactReachabilityStatusRequest);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation returns information about whether the registrant contact has
+     * responded.
+     * </p>
+     * <p>
+     * If you want us to resend the email, use the
+     * <code>ResendContactReachabilityEmail</code> operation.
+     * </p>
+     * 
+     * @param getContactReachabilityStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         GetContactReachabilityStatus operation returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.GetContactReachabilityStatus
+     */
+    java.util.concurrent.Future<GetContactReachabilityStatusResult> getContactReachabilityStatusAsync(
+            GetContactReachabilityStatusRequest getContactReachabilityStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetContactReachabilityStatusRequest, GetContactReachabilityStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -600,6 +644,44 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(
             RegisterDomainRequest registerDomainRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, RegisterDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation resends the confirmation email to the current email address for
+     * the registrant contact.
+     * </p>
+     * 
+     * @param resendContactReachabilityEmailRequest
+     * @return A Java Future containing the result of the
+     *         ResendContactReachabilityEmail operation returned by the service.
+     * @sample AmazonRoute53DomainsAsync.ResendContactReachabilityEmail
+     */
+    java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest);
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation resends the confirmation email to the current email address for
+     * the registrant contact.
+     * </p>
+     * 
+     * @param resendContactReachabilityEmailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         ResendContactReachabilityEmail operation returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.ResendContactReachabilityEmail
+     */
+    java.util.concurrent.Future<ResendContactReachabilityEmailResult> resendContactReachabilityEmailAsync(
+            ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest,
+            com.amazonaws.handlers.AsyncHandler<ResendContactReachabilityEmailRequest, ResendContactReachabilityEmailResult> asyncHandler);
 
     /**
      * <p>

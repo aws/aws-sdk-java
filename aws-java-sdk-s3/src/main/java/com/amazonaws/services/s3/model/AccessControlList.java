@@ -25,6 +25,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
+
 /**
  * <p>
  * Represents an Amazon S3 Access Control List (ACL), including the ACL's set of
@@ -63,7 +65,7 @@ import java.util.Set;
  *
  * @see CannedAccessControlList
  */
-public class AccessControlList implements Serializable {
+public class AccessControlList implements Serializable, S3RequesterChargedResult {
     private static final long serialVersionUID = 8095040648034788376L;
 
     // grant set is maintained for backwards compatibility. Both grantSet and
@@ -71,6 +73,12 @@ public class AccessControlList implements Serializable {
     private Set<Grant> grantSet;
     private List<Grant> grantList;
     private Owner owner = null;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Gets the owner of the {@link AccessControlList}.
@@ -265,6 +273,16 @@ public class AccessControlList implements Serializable {
     @Override
     public String toString() {
         return "AccessControlList [owner=" + owner + ", grants=" + getGrantsAsList() + "]";
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 
 }

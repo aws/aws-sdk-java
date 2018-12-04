@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AttributeValueUpdateMarshaller
@@ -39,30 +34,30 @@ import com.amazonaws.util.json.*;
 public class AttributeValueUpdateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(AttributeValueUpdate attributeValueUpdate,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (attributeValueUpdate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (attributeValueUpdate.getValue() != null) {
-                jsonWriter.key("Value");
+                jsonGenerator.writeFieldName("Value");
                 AttributeValueJsonMarshaller.getInstance().marshall(
-                        attributeValueUpdate.getValue(), jsonWriter);
+                        attributeValueUpdate.getValue(), jsonGenerator);
             }
-
             if (attributeValueUpdate.getAction() != null) {
-                jsonWriter.key("Action")
-                        .value(attributeValueUpdate.getAction());
+                jsonGenerator.writeFieldName("Action").writeValue(
+                        attributeValueUpdate.getAction());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class UlimitJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    ulimit.setName(StringJsonUnmarshaller.getInstance()
+                    ulimit.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("softLimit", targetDepth)) {
                     context.nextToken();
-                    ulimit.setSoftLimit(IntegerJsonUnmarshaller.getInstance()
+                    ulimit.setSoftLimit(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("hardLimit", targetDepth)) {
                     context.nextToken();
-                    ulimit.setHardLimit(IntegerJsonUnmarshaller.getInstance()
+                    ulimit.setHardLimit(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

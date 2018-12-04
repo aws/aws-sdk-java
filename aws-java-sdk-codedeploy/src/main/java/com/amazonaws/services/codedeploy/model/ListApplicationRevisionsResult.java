@@ -27,27 +27,27 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of revision locations that contain the matching revisions.
+     * A list of locations that contain the matching revisions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RevisionLocation> revisions;
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * application revisions call to return the next set of application
-     * revisions in the list.
+     * If a large amount of information is returned, an identifier will also be
+     * returned. It can be used in a subsequent list application revisions call
+     * to return the next set of application revisions in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of revision locations that contain the matching revisions.
+     * A list of locations that contain the matching revisions.
      * </p>
      * 
-     * @return A list of revision locations that contain the matching revisions.
+     * @return A list of locations that contain the matching revisions.
      */
+
     public java.util.List<RevisionLocation> getRevisions() {
         if (revisions == null) {
             revisions = new com.amazonaws.internal.SdkInternalList<RevisionLocation>();
@@ -57,12 +57,13 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of revision locations that contain the matching revisions.
+     * A list of locations that contain the matching revisions.
      * </p>
      * 
      * @param revisions
-     *        A list of revision locations that contain the matching revisions.
+     *        A list of locations that contain the matching revisions.
      */
+
     public void setRevisions(java.util.Collection<RevisionLocation> revisions) {
         if (revisions == null) {
             this.revisions = null;
@@ -75,7 +76,7 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of revision locations that contain the matching revisions.
+     * A list of locations that contain the matching revisions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -85,10 +86,11 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param revisions
-     *        A list of revision locations that contain the matching revisions.
+     *        A list of locations that contain the matching revisions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withRevisions(
             RevisionLocation... revisions) {
         if (this.revisions == null) {
@@ -103,14 +105,15 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of revision locations that contain the matching revisions.
+     * A list of locations that contain the matching revisions.
      * </p>
      * 
      * @param revisions
-     *        A list of revision locations that contain the matching revisions.
+     *        A list of locations that contain the matching revisions.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withRevisions(
             java.util.Collection<RevisionLocation> revisions) {
         setRevisions(revisions);
@@ -119,55 +122,55 @@ public class ListApplicationRevisionsResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * application revisions call to return the next set of application
-     * revisions in the list.
+     * If a large amount of information is returned, an identifier will also be
+     * returned. It can be used in a subsequent list application revisions call
+     * to return the next set of application revisions in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list application revisions call to return the next set
-     *        of application revisions in the list.
+     *        If a large amount of information is returned, an identifier will
+     *        also be returned. It can be used in a subsequent list application
+     *        revisions call to return the next set of application revisions in
+     *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * application revisions call to return the next set of application
-     * revisions in the list.
+     * If a large amount of information is returned, an identifier will also be
+     * returned. It can be used in a subsequent list application revisions call
+     * to return the next set of application revisions in the list.
      * </p>
      * 
-     * @return If the amount of information that is returned is significantly
-     *         large, an identifier will also be returned, which can be used in
-     *         a subsequent list application revisions call to return the next
-     *         set of application revisions in the list.
+     * @return If a large amount of information is returned, an identifier will
+     *         also be returned. It can be used in a subsequent list application
+     *         revisions call to return the next set of application revisions in
+     *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * application revisions call to return the next set of application
-     * revisions in the list.
+     * If a large amount of information is returned, an identifier will also be
+     * returned. It can be used in a subsequent list application revisions call
+     * to return the next set of application revisions in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list application revisions call to return the next set
-     *        of application revisions in the list.
+     *        If a large amount of information is returned, an identifier will
+     *        also be returned. It can be used in a subsequent list application
+     *        revisions call to return the next set of application revisions in
+     *        the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationRevisionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

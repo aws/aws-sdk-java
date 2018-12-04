@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetCloudFrontOriginAccessIdentityRequest Marshaller
@@ -60,10 +63,11 @@ public class GetCloudFrontOriginAccessIdentityRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (getCloudFrontOriginAccessIdentityRequest.getId() == null) ? ""
-                                : StringUtils
+                        (getCloudFrontOriginAccessIdentityRequest.getId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(getCloudFrontOriginAccessIdentityRequest
-                                                .getId()));
+                                                .getId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

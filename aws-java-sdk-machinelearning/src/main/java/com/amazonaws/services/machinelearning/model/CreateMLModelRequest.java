@@ -147,6 +147,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        A user-supplied ID that uniquely identifies the
      *        <code>MLModel</code>.
      */
+
     public void setMLModelId(String mLModelId) {
         this.mLModelId = mLModelId;
     }
@@ -159,6 +160,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return A user-supplied ID that uniquely identifies the
      *         <code>MLModel</code>.
      */
+
     public String getMLModelId() {
         return this.mLModelId;
     }
@@ -174,6 +176,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withMLModelId(String mLModelId) {
         setMLModelId(mLModelId);
         return this;
@@ -187,6 +190,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @param mLModelName
      *        A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public void setMLModelName(String mLModelName) {
         this.mLModelName = mLModelName;
     }
@@ -198,6 +202,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return A user-supplied name or description of the <code>MLModel</code>.
      */
+
     public String getMLModelName() {
         return this.mLModelName;
     }
@@ -212,6 +217,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withMLModelName(String mLModelName) {
         setMLModelName(mLModelName);
         return this;
@@ -253,6 +259,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        >Amazon Machine Learning Developer Guide</a>.
      * @see MLModelType
      */
+
     public void setMLModelType(String mLModelType) {
         this.mLModelType = mLModelType;
     }
@@ -293,6 +300,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         >Amazon Machine Learning Developer Guide</a>.
      * @see MLModelType
      */
+
     public String getMLModelType() {
         return this.mLModelType;
     }
@@ -335,6 +343,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see MLModelType
      */
+
     public CreateMLModelRequest withMLModelType(String mLModelType) {
         setMLModelType(mLModelType);
         return this;
@@ -374,10 +383,9 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        For more information, see the <a
      *        href="http://docs.aws.amazon.com/machine-learning/latest/dg"
      *        >Amazon Machine Learning Developer Guide</a>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MLModelType
      */
+
     public void setMLModelType(MLModelType mLModelType) {
         this.mLModelType = mLModelType.toString();
     }
@@ -420,6 +428,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see MLModelType
      */
+
     public CreateMLModelRequest withMLModelType(MLModelType mLModelType) {
         setMLModelType(mLModelType);
         return this;
@@ -536,6 +545,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, String> getParameters() {
         if (parameters == null) {
             parameters = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -655,6 +665,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setParameters(java.util.Map<String, String> parameters) {
         this.parameters = parameters == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -775,6 +786,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withParameters(
             java.util.Map<String, String> parameters) {
         setParameters(parameters);
@@ -796,6 +808,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public CreateMLModelRequest clearParametersEntries() {
         this.parameters = null;
         return this;
@@ -809,6 +822,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @param trainingDataSourceId
      *        The <code>DataSource</code> that points to the training data.
      */
+
     public void setTrainingDataSourceId(String trainingDataSourceId) {
         this.trainingDataSourceId = trainingDataSourceId;
     }
@@ -820,6 +834,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <code>DataSource</code> that points to the training data.
      */
+
     public String getTrainingDataSourceId() {
         return this.trainingDataSourceId;
     }
@@ -834,6 +849,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withTrainingDataSourceId(
             String trainingDataSourceId) {
         setTrainingDataSourceId(trainingDataSourceId);
@@ -852,6 +868,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        specify either the recipe or its URI. If you don’t specify a
      *        recipe or its URI, Amazon ML creates a default.
      */
+
     public void setRecipe(String recipe) {
         this.recipe = recipe;
     }
@@ -867,6 +884,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         specify either the recipe or its URI. If you don’t specify a
      *         recipe or its URI, Amazon ML creates a default.
      */
+
     public String getRecipe() {
         return this.recipe;
     }
@@ -885,6 +903,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withRecipe(String recipe) {
         setRecipe(recipe);
         return this;
@@ -904,6 +923,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *        specify either the recipe or its URI. If you don’t specify a
      *        recipe or its URI, Amazon ML creates a default.
      */
+
     public void setRecipeUri(String recipeUri) {
         this.recipeUri = recipeUri;
     }
@@ -921,6 +941,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      *         specify either the recipe or its URI. If you don’t specify a
      *         recipe or its URI, Amazon ML creates a default.
      */
+
     public String getRecipeUri() {
         return this.recipeUri;
     }
@@ -941,6 +962,7 @@ public class CreateMLModelRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateMLModelRequest withRecipeUri(String recipeUri) {
         setRecipeUri(recipeUri);
         return this;

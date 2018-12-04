@@ -40,6 +40,11 @@ public class CredentialProfilesTest {
     /** Name of the sample test profile used during testing. */
     private static final String PROFILE_NAME_TEST = "test";
 
+    @Test(expected = IllegalArgumentException.class)
+    public void loadProfileFromNonExistentFile() {
+        new ProfilesConfigFile(new File("/some/invalid/file/location.txt"));
+    }
+
     /**
      * Tests two profiles having same name. The second profile overrides the
      * first profile. Also checks if the AWS Access Key ID and AWS
@@ -127,6 +132,14 @@ public class CredentialProfilesTest {
                 "Should throw an exception as there is a profile with AWS Access Key ID not specified.");
     }
 
+    @Test
+    public void testProfileWithEmptyAccessKey() {
+        checkExpectedException(
+                "ProfileWithEmptyAccessKey.tst",
+                AmazonClientException.class,
+                "Should throw an exception as there is a profile with an empty AWS Access Key ID");
+    }
+
     /**
      * Tests loading profile with AWS Secret Access Key not specified for
      * a profile. An exception should be thrown in this case.
@@ -137,6 +150,12 @@ public class CredentialProfilesTest {
                 "ProfilesWithSecretAccessKeyNotSpecified.tst",
                 AmazonClientException.class,
                 "Should throw an exception as there is a profile with AWS Secret Access Key not specified.");
+    }
+
+    @Test
+    public void testProfileWithEmptySecretAccessKey() {
+        checkExpectedException("ProfileWithEmptySecretKey.tst", AmazonClientException.class,
+                               "Should throw an exception as there is a profile with an empty AWS Secret Access Key.");
     }
 
     /**
@@ -166,10 +185,10 @@ public class CredentialProfilesTest {
         assertNotNull(profile.getCredentials(PROFILE_NAME_TEST));
 
         assertEquals(profile.getCredentials(PROFILE_NAME_TEST)
-                .getAWSAccessKeyId(), "test");
+                             .getAWSAccessKeyId(), "test");
 
         assertEquals(profile.getCredentials(PROFILE_NAME_TEST)
-                .getAWSSecretKey(), "test key");
+                             .getAWSSecretKey(), "test key");
     }
 
     /**
@@ -199,6 +218,44 @@ public class CredentialProfilesTest {
     }
 
     /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileWithNoSourceName() throws URISyntaxException {
+        checkDeferredException("RoleProfileWithNoSourceName.tst", AmazonClientException.class,
+                               "test",
+                               "Should throw an exception as there is a role profile with a missing source role");
+    }
+
+    /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileWithEmptySourceName() throws URISyntaxException {
+        checkDeferredException("RoleProfileWithEmptySourceName.tst", AmazonClientException.class,
+                               "test",
+                               "Should throw an exception as there is a role profile with an empty source role");
+    }
+
+    /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileMissingSource() throws URISyntaxException {
+        checkDeferredException("RoleProfileMissingSource.tst", AmazonClientException.class, "test",
+                               "Should throw an exception as there is a role profile without a source specified");
+    }
+
+    /**
+     * Tests loading a profile that assumes a role, but the source profile does not exist.
+     */
+    @Test
+    public void testRoleProfileWithRoleSource() throws URISyntaxException {
+        checkDeferredException("RoleProfileWithRoleSource.tst", AmazonClientException.class, "test",
+                               "Should throw an exception as a role profile can not use a role profile as its source");
+    }
+
+    /**
      * Loads the file with the given name from the tst/resources/profile
      * directory. Returns a reference to the file.
      *
@@ -223,16 +280,35 @@ public class CredentialProfilesTest {
      *            failure message to be displayed if the file configuration is
      *            success
      */
-    private void checkExpectedException(
-                    String fileName,
-                    Class<? extends Exception> expectedExceptionClass,
-                    String failureMessage) {
+    private void checkExpectedException(String fileName,
+                                        Class<? extends Exception> expectedExceptionClass,
+                                        String failureMessage) {
         try {
             new ProfilesConfigFile(loadFile(fileName));
-
             fail(failureMessage);
         } catch (Exception e) {
-            if ( !expectedExceptionClass.isInstance(e) ) {
+            if (!expectedExceptionClass.isInstance(e)) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    /**
+     * This behavior exists for legacy reasons. Ideally we would throw an exception immediately on
+     * encountering an invalid profile but if a customer already has an invalid role based profile
+     * in their config but not using it then suddenly we would start failing to parse the
+     * credentials file even when they aren't using it.
+     */
+    private void checkDeferredException(String fileName,
+                                        Class<? extends Exception> expectedExceptionClass,
+                                        String profileName, String failureMessage) throws
+                                                                                   URISyntaxException {
+        ProfilesConfigFile configFile = new ProfilesConfigFile(loadFile(fileName));
+        try {
+            configFile.getCredentials(profileName);
+            fail(failureMessage);
+        } catch (Exception e) {
+            if (!expectedExceptionClass.isInstance(e)) {
                 throw new RuntimeException(e);
             }
         }

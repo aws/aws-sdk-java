@@ -69,6 +69,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -92,6 +112,11 @@ public class Suite implements Serializable, Cloneable {
      * XCTEST: The XCode test type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -111,12 +136,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -126,12 +156,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -147,7 +192,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -162,22 +217,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -223,6 +268,7 @@ public class Suite implements Serializable, Cloneable {
      * @param arn
      *        The suite's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -234,6 +280,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return The suite's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -248,6 +295,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withArn(String arn) {
         setArn(arn);
         return this;
@@ -261,6 +309,7 @@ public class Suite implements Serializable, Cloneable {
      * @param name
      *        The suite's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -272,6 +321,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return The suite's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -286,6 +336,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withName(String name) {
         setName(name);
         return this;
@@ -323,6 +374,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -344,6 +415,11 @@ public class Suite implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -378,6 +454,26 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -401,8 +497,14 @@ public class Suite implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -439,6 +541,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -460,6 +582,11 @@ public class Suite implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -493,6 +620,26 @@ public class Suite implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         APPIUM_PYTHON: The Appium Python type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         CALABASH: The Calabash type.
      *         </p>
      *         </li>
@@ -516,8 +663,14 @@ public class Suite implements Serializable, Cloneable {
      *         XCTEST: The XCode test type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         XCTEST_UI: The XCode UI test type.
+     *         </p>
+     *         </li>
      * @see TestType
      */
+
     public String getType() {
         return this.type;
     }
@@ -554,6 +707,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -575,6 +748,11 @@ public class Suite implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -609,6 +787,26 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -632,10 +830,16 @@ public class Suite implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Suite withType(String type) {
         setType(type);
         return this;
@@ -673,6 +877,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -694,6 +918,11 @@ public class Suite implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -728,6 +957,26 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -751,10 +1000,14 @@ public class Suite implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @see TestType
      */
+
     public void setType(TestType type) {
         this.type = type.toString();
     }
@@ -791,6 +1044,26 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * APPIUM_PYTHON: The Appium Python type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * CALABASH: The Calabash type.
      * </p>
      * </li>
@@ -812,6 +1085,11 @@ public class Suite implements Serializable, Cloneable {
      * <li>
      * <p>
      * XCTEST: The XCode test type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * XCTEST_UI: The XCode UI test type.
      * </p>
      * </li>
      * </ul>
@@ -846,6 +1124,26 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        APPIUM_PYTHON: The Appium Python type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        CALABASH: The Calabash type.
      *        </p>
      *        </li>
@@ -869,10 +1167,16 @@ public class Suite implements Serializable, Cloneable {
      *        XCTEST: The XCode test type.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        XCTEST_UI: The XCode UI test type.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see TestType
      */
+
     public Suite withType(TestType type) {
         setType(type);
         return this;
@@ -886,6 +1190,7 @@ public class Suite implements Serializable, Cloneable {
      * @param created
      *        When the suite was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -897,6 +1202,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return When the suite was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -911,6 +1217,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withCreated(java.util.Date created) {
         setCreated(created);
         return this;
@@ -926,12 +1233,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -941,12 +1253,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -959,12 +1286,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -974,16 +1306,32 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @see ExecutionStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -998,12 +1346,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1013,12 +1366,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1030,12 +1398,17 @@ public class Suite implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         COMPLETED: A completed status.
+     *         PENDING: A pending status.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PENDING: A pending status.
+     *         PENDING_CONCURRENCY: A pending concurrency status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PENDING_DEVICE: A pending device status.
      *         </p>
      *         </li>
      *         <li>
@@ -1045,16 +1418,32 @@ public class Suite implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         SCHEDULING: A scheduling status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PREPARING: A preparing status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         RUNNING: A running status.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SCHEDULING: A scheduling status.
+     *         COMPLETED: A completed status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         STOPPING: A stopping status.
      *         </p>
      *         </li>
      * @see ExecutionStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -1069,12 +1458,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1084,12 +1478,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1102,12 +1511,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1117,18 +1531,34 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Suite withStatus(String status) {
         setStatus(status);
         return this;
@@ -1144,12 +1574,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1159,12 +1594,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1177,12 +1627,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1192,18 +1647,32 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
+     *        </p>
+     *        </li>
      * @see ExecutionStatus
      */
+
     public void setStatus(ExecutionStatus status) {
         this.status = status.toString();
     }
@@ -1218,12 +1687,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * COMPLETED: A completed status.
+     * PENDING: A pending status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PENDING: A pending status.
+     * PENDING_CONCURRENCY: A pending concurrency status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PENDING_DEVICE: A pending device status.
      * </p>
      * </li>
      * <li>
@@ -1233,12 +1707,27 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * SCHEDULING: A scheduling status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PREPARING: A preparing status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RUNNING: A running status.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SCHEDULING: A scheduling status.
+     * COMPLETED: A completed status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * STOPPING: A stopping status.
      * </p>
      * </li>
      * </ul>
@@ -1251,12 +1740,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        COMPLETED: A completed status.
+     *        PENDING: A pending status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PENDING: A pending status.
+     *        PENDING_CONCURRENCY: A pending concurrency status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PENDING_DEVICE: A pending device status.
      *        </p>
      *        </li>
      *        <li>
@@ -1266,18 +1760,34 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        SCHEDULING: A scheduling status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PREPARING: A preparing status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RUNNING: A running status.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SCHEDULING: A scheduling status.
+     *        COMPLETED: A completed status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        STOPPING: A stopping status.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ExecutionStatus
      */
+
     public Suite withStatus(ExecutionStatus status) {
         setStatus(status);
         return this;
@@ -1293,7 +1803,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1308,22 +1828,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1336,7 +1846,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1351,26 +1871,17 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @see ExecutionResult
      */
+
     public void setResult(String result) {
         this.result = result;
     }
@@ -1385,7 +1896,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1400,22 +1921,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1427,7 +1938,17 @@ public class Suite implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         ERRORED: An error condition.
+     *         PENDING: A pending condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PASSED: A passing condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      *         <li>
@@ -1442,26 +1963,17 @@ public class Suite implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         ERRORED: An error condition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         STOPPED: A stopped condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PASSED: A passing condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PENDING: A pending condition.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         WARNED: A warning condition.
      *         </p>
      *         </li>
      * @see ExecutionResult
      */
+
     public String getResult() {
         return this.result;
     }
@@ -1476,7 +1988,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1491,22 +2013,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1519,7 +2031,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1534,28 +2056,19 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ExecutionResult
      */
+
     public Suite withResult(String result) {
         setResult(result);
         return this;
@@ -1571,7 +2084,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1586,22 +2109,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1614,7 +2127,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1629,28 +2152,17 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
-     *        </p>
-     *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExecutionResult
      */
+
     public void setResult(ExecutionResult result) {
         this.result = result.toString();
     }
@@ -1665,7 +2177,17 @@ public class Suite implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * ERRORED: An error condition.
+     * PENDING: A pending condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PASSED: A passing condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WARNED: A warning condition.
      * </p>
      * </li>
      * <li>
@@ -1680,22 +2202,12 @@ public class Suite implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * ERRORED: An error condition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * STOPPED: A stopped condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PASSED: A passing condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PENDING: A pending condition.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * WARNED: A warning condition.
      * </p>
      * </li>
      * </ul>
@@ -1708,7 +2220,17 @@ public class Suite implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        ERRORED: An error condition.
+     *        PENDING: A pending condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PASSED: A passing condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      *        <li>
@@ -1723,28 +2245,19 @@ public class Suite implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        ERRORED: An error condition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        STOPPED: A stopped condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PASSED: A passing condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PENDING: A pending condition.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        WARNED: A warning condition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ExecutionResult
      */
+
     public Suite withResult(ExecutionResult result) {
         setResult(result);
         return this;
@@ -1758,6 +2271,7 @@ public class Suite implements Serializable, Cloneable {
      * @param started
      *        The suite's start time.
      */
+
     public void setStarted(java.util.Date started) {
         this.started = started;
     }
@@ -1769,6 +2283,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return The suite's start time.
      */
+
     public java.util.Date getStarted() {
         return this.started;
     }
@@ -1783,6 +2298,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withStarted(java.util.Date started) {
         setStarted(started);
         return this;
@@ -1796,6 +2312,7 @@ public class Suite implements Serializable, Cloneable {
      * @param stopped
      *        The suite's stop time.
      */
+
     public void setStopped(java.util.Date stopped) {
         this.stopped = stopped;
     }
@@ -1807,6 +2324,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return The suite's stop time.
      */
+
     public java.util.Date getStopped() {
         return this.stopped;
     }
@@ -1821,6 +2339,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withStopped(java.util.Date stopped) {
         setStopped(stopped);
         return this;
@@ -1834,6 +2353,7 @@ public class Suite implements Serializable, Cloneable {
      * @param counters
      *        The suite's result counters.
      */
+
     public void setCounters(Counters counters) {
         this.counters = counters;
     }
@@ -1845,6 +2365,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return The suite's result counters.
      */
+
     public Counters getCounters() {
         return this.counters;
     }
@@ -1859,6 +2380,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withCounters(Counters counters) {
         setCounters(counters);
         return this;
@@ -1872,6 +2394,7 @@ public class Suite implements Serializable, Cloneable {
      * @param message
      *        A message about the suite's result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -1883,6 +2406,7 @@ public class Suite implements Serializable, Cloneable {
      * 
      * @return A message about the suite's result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -1897,6 +2421,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withMessage(String message) {
         setMessage(message);
         return this;
@@ -1912,6 +2437,7 @@ public class Suite implements Serializable, Cloneable {
      *        Represents the total (metered or unmetered) minutes used by the
      *        test suite.
      */
+
     public void setDeviceMinutes(DeviceMinutes deviceMinutes) {
         this.deviceMinutes = deviceMinutes;
     }
@@ -1925,6 +2451,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Represents the total (metered or unmetered) minutes used by the
      *         test suite.
      */
+
     public DeviceMinutes getDeviceMinutes() {
         return this.deviceMinutes;
     }
@@ -1941,6 +2468,7 @@ public class Suite implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Suite withDeviceMinutes(DeviceMinutes deviceMinutes) {
         setDeviceMinutes(deviceMinutes);
         return this;

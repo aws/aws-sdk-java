@@ -40,9 +40,8 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      */
     private String marker;
@@ -50,14 +49,21 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier or the fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String keyId;
 
@@ -82,6 +88,7 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      *        1 and 100, inclusive. If you do not include a value, it defaults
      *        to 50.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -106,6 +113,7 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      *         between 1 and 100, inclusive. If you do not include a value, it
      *         defaults to 50.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -133,6 +141,7 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -141,17 +150,17 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -159,16 +168,16 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @return Use this parameter only when paginating results and only in a
-     *         subsequent request after you've received a response with
-     *         truncated results. Set it to the value of <code>NextMarker</code>
-     *         from the response you just received.
+     *         subsequent request after you receive a response with truncated
+     *         results. Set it to the value of <code>NextMarker</code> from the
+     *         response you just received.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -176,19 +185,19 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Use this parameter only when paginating results and only in a subsequent
-     * request after you've received a response with truncated results. Set it
-     * to the value of <code>NextMarker</code> from the response you just
-     * received.
+     * request after you receive a response with truncated results. Set it to
+     * the value of <code>NextMarker</code> from the response you just received.
      * </p>
      * 
      * @param marker
      *        Use this parameter only when paginating results and only in a
-     *        subsequent request after you've received a response with truncated
+     *        subsequent request after you receive a response with truncated
      *        results. Set it to the value of <code>NextMarker</code> from the
      *        response you just received.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -198,26 +207,42 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier or the fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
      *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a key.
+     *        a globally unique identifier or the fully specified ARN to a
+     *        key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -226,26 +251,41 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier or the fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return A unique identifier for the customer master key. This value can
      *         be a globally unique identifier or the fully specified ARN to a
-     *         key.
+     *         key.</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -254,28 +294,44 @@ public class ListGrantsRequest extends AmazonWebServiceRequest implements
      * <p>
      * A unique identifier for the customer master key. This value can be a
      * globally unique identifier or the fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param keyId
      *        A unique identifier for the customer master key. This value can be
-     *        a globally unique identifier or the fully specified ARN to a key.
+     *        a globally unique identifier or the fully specified ARN to a
+     *        key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsRequest withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

@@ -25,7 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * To get information about a traffic policy instance, send a <code>GET</code>
- * request to the <code>2015-01-01/trafficpolicyinstance/<i>Id</i></code>
+ * request to the
+ * <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>Id</i></code>
  * resource.
  * </p>
  */
@@ -50,6 +51,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      *        The ID of the traffic policy instance that you want to get
      *        information about.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +65,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return The ID of the traffic policy instance that you want to get
      *         information about.
      */
+
     public String getId() {
         return this.id;
     }
@@ -79,6 +82,7 @@ public class GetTrafficPolicyInstanceRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetTrafficPolicyInstanceRequest withId(String id) {
         setId(id);
         return this;

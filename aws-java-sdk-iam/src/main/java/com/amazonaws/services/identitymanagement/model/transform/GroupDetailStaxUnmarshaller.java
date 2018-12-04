@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -81,17 +83,17 @@ public class GroupDetailStaxUnmarshaller implements
 
                 if (context.testExpression("GroupPolicyList/member",
                         targetDepth)) {
-                    groupDetail.getGroupPolicyList().add(
-                            PolicyDetailStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    groupDetail
+                            .withGroupPolicyList(PolicyDetailStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("AttachedManagedPolicies/member",
                         targetDepth)) {
-                    groupDetail.getAttachedManagedPolicies().add(
-                            AttachedPolicyStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    groupDetail
+                            .withAttachedManagedPolicies(AttachedPolicyStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

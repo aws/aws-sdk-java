@@ -33,7 +33,13 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all user names.
+     * (/), listing all user names. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String pathPrefix;
@@ -72,18 +78,31 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all user names.
+     * (/), listing all user names. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. For example:
      *        <code>/division_abc/subdivision_xyz/</code>, which would get all
      *        user names whose path starts with
-     *        <code>/division_abc/subdivision_xyz/</code>. </p>
+     *        <code>/division_abc/subdivision_xyz/</code>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/), listing all user names.
+     *        a slash (/), listing all user names. The <a
+     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *        parameter is a string of characters consisting of either a forward
+     *        slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
+
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
     }
@@ -96,17 +115,30 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all user names.
+     * (/), listing all user names. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @return The path prefix for filtering the results. For example:
      *         <code>/division_abc/subdivision_xyz/</code>, which would get all
      *         user names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. </p>
+     *         <code>/division_abc/subdivision_xyz/</code>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to
-     *         a slash (/), listing all user names.
+     *         a slash (/), listing all user names. The <a
+     *         href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *         parameter is a string of characters consisting of either a
+     *         forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
+
     public String getPathPrefix() {
         return this.pathPrefix;
     }
@@ -119,20 +151,33 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/), listing all user names.
+     * (/), listing all user names. The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. For example:
      *        <code>/division_abc/subdivision_xyz/</code>, which would get all
      *        user names whose path starts with
-     *        <code>/division_abc/subdivision_xyz/</code>. </p>
+     *        <code>/division_abc/subdivision_xyz/</code>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/), listing all user names.
+     *        a slash (/), listing all user names. The <a
+     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     *        parameter is a string of characters consisting of either a forward
+     *        slash (/) by itself or a string that must begin and end with
+     *        forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUsersRequest withPathPrefix(String pathPrefix) {
         setPathPrefix(pathPrefix);
         return this;
@@ -152,6 +197,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -170,6 +216,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -190,6 +237,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUsersRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -225,6 +273,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -259,6 +308,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -295,6 +345,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListUsersRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

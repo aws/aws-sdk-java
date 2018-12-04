@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateBatchPredictionRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class CreateBatchPredictionRequestMarshaller
         implements
         Marshaller<Request<CreateBatchPredictionRequest>, CreateBatchPredictionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateBatchPredictionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateBatchPredictionRequest> marshall(
             CreateBatchPredictionRequest createBatchPredictionRequest) {
@@ -65,45 +66,41 @@ public class CreateBatchPredictionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createBatchPredictionRequest.getBatchPredictionId() != null) {
-                jsonWriter.key("BatchPredictionId").value(
+                jsonGenerator.writeFieldName("BatchPredictionId").writeValue(
                         createBatchPredictionRequest.getBatchPredictionId());
             }
-
             if (createBatchPredictionRequest.getBatchPredictionName() != null) {
-                jsonWriter.key("BatchPredictionName").value(
+                jsonGenerator.writeFieldName("BatchPredictionName").writeValue(
                         createBatchPredictionRequest.getBatchPredictionName());
             }
-
             if (createBatchPredictionRequest.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
                         createBatchPredictionRequest.getMLModelId());
             }
-
             if (createBatchPredictionRequest.getBatchPredictionDataSourceId() != null) {
-                jsonWriter.key("BatchPredictionDataSourceId").value(
-                        createBatchPredictionRequest
-                                .getBatchPredictionDataSourceId());
+                jsonGenerator.writeFieldName("BatchPredictionDataSourceId")
+                        .writeValue(
+                                createBatchPredictionRequest
+                                        .getBatchPredictionDataSourceId());
             }
-
             if (createBatchPredictionRequest.getOutputUri() != null) {
-                jsonWriter.key("OutputUri").value(
+                jsonGenerator.writeFieldName("OutputUri").writeValue(
                         createBatchPredictionRequest.getOutputUri());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

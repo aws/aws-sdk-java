@@ -60,6 +60,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      *        The type of resource.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -72,6 +73,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @return The type of resource.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -87,6 +89,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public ResourceIdentifier withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -99,10 +102,9 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * 
      * @param resourceType
      *        The type of resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -118,6 +120,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceType
      */
+
     public ResourceIdentifier withResourceType(ResourceType resourceType) {
         setResourceType(resourceType);
         return this;
@@ -131,6 +134,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @param resourceId
      *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -142,6 +146,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * 
      * @return The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -156,6 +161,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceIdentifier withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -169,6 +175,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @param resourceName
      *        The custom name of the resource (if available).
      */
+
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
@@ -180,6 +187,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * 
      * @return The custom name of the resource (if available).
      */
+
     public String getResourceName() {
         return this.resourceName;
     }
@@ -194,6 +202,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceIdentifier withResourceName(String resourceName) {
         setResourceName(resourceName);
         return this;
@@ -207,6 +216,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @param resourceDeletionTime
      *        The time that the resource was deleted.
      */
+
     public void setResourceDeletionTime(java.util.Date resourceDeletionTime) {
         this.resourceDeletionTime = resourceDeletionTime;
     }
@@ -218,6 +228,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * 
      * @return The time that the resource was deleted.
      */
+
     public java.util.Date getResourceDeletionTime() {
         return this.resourceDeletionTime;
     }
@@ -232,6 +243,7 @@ public class ResourceIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResourceIdentifier withResourceDeletionTime(
             java.util.Date resourceDeletionTime) {
         setResourceDeletionTime(resourceDeletionTime);

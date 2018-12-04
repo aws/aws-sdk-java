@@ -57,6 +57,7 @@ public class DocumentServiceException extends AmazonServiceException {
      *        The return status of a document upload request, <code>error</code>
      *        or <code>success</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -70,6 +71,7 @@ public class DocumentServiceException extends AmazonServiceException {
      * @return The return status of a document upload request,
      *         <code>error</code> or <code>success</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -86,6 +88,7 @@ public class DocumentServiceException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentServiceException withStatus(String status) {
         setStatus(status);
         return this;

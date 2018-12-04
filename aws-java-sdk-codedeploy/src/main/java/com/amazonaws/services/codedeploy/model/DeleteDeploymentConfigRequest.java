@@ -29,51 +29,54 @@ public class DeleteDeploymentConfigRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      */
     private String deploymentConfigName;
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of an existing deployment configuration associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of a deployment configuration associated with the
+     *        applicable IAM user or AWS account.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * 
-     * @return The name of an existing deployment configuration associated with
-     *         the applicable IAM user or AWS account.
+     * @return The name of a deployment configuration associated with the
+     *         applicable IAM user or AWS account.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
 
     /**
      * <p>
-     * The name of an existing deployment configuration associated with the
-     * applicable IAM user or AWS account.
+     * The name of a deployment configuration associated with the applicable IAM
+     * user or AWS account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of an existing deployment configuration associated with
-     *        the applicable IAM user or AWS account.
+     *        The name of a deployment configuration associated with the
+     *        applicable IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDeploymentConfigRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);

@@ -62,6 +62,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeInstances</code> returns descriptions of the
      *        instances associated with the specified stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -77,6 +78,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeInstances</code> returns descriptions of the
      *         instances associated with the specified stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -95,6 +97,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -112,6 +115,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeInstances</code> returns descriptions of the
      *        instances associated with the specified layer.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -127,6 +131,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <code>DescribeInstances</code> returns descriptions of the
      *         instances associated with the specified layer.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -145,6 +150,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -162,6 +168,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         of the specified instances. Otherwise, it returns a description
      *         of every instance.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -182,6 +189,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        the specified instances. Otherwise, it returns a description of
      *        every instance.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -213,6 +221,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -239,6 +248,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeInstancesRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);

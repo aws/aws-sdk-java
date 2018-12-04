@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -51,10 +53,10 @@ public class ListTagsForResourceResultJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("tagList", targetDepth)) {
+                if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     listTagsForResourceResult
-                            .setTagList(new ListUnmarshaller<Tag>(
+                            .setTags(new ListUnmarshaller<Tag>(
                                     TagJsonUnmarshaller.getInstance())
                                     .unmarshall(context));
                 }

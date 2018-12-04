@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ValidateTemplateResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Parameters/member", targetDepth)) {
-                    validateTemplateResult.getParameters().add(
-                            TemplateParameterStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    validateTemplateResult
+                            .withParameters(TemplateParameterStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -64,9 +66,9 @@ public class ValidateTemplateResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Capabilities/member", targetDepth)) {
-                    validateTemplateResult.getCapabilities().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    validateTemplateResult
+                            .withCapabilities(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

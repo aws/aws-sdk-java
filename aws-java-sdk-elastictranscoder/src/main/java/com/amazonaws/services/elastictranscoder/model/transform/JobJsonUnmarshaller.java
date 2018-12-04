@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class JobJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    job.setId(StringJsonUnmarshaller.getInstance().unmarshall(
+                    job.setId(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    job.setArn(StringJsonUnmarshaller.getInstance().unmarshall(
-                            context));
+                    job.setArn(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("PipelineId", targetDepth)) {
                     context.nextToken();
-                    job.setPipelineId(StringJsonUnmarshaller.getInstance()
+                    job.setPipelineId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Input", targetDepth)) {
@@ -83,8 +85,8 @@ public class JobJsonUnmarshaller implements
                 }
                 if (context.testExpression("OutputKeyPrefix", targetDepth)) {
                     context.nextToken();
-                    job.setOutputKeyPrefix(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    job.setOutputKeyPrefix(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Playlists", targetDepth)) {
                     context.nextToken();
@@ -94,14 +96,14 @@ public class JobJsonUnmarshaller implements
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    job.setStatus(StringJsonUnmarshaller.getInstance()
+                    job.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("UserMetadata", targetDepth)) {
                     context.nextToken();
                     job.setUserMetadata(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class), context
+                                    .getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("Timing", targetDepth)) {

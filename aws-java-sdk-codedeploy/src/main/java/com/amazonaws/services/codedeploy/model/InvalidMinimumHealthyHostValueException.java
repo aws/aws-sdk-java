@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The minimum healthy instances value was specified in an invalid format.
+ * The minimum healthy instance value was specified in an invalid format.
  * </p>
  */
 public class InvalidMinimumHealthyHostValueException extends

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.glacier.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.glacier.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -25,55 +28,56 @@ import com.amazonaws.transform.*;
 import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
-import com.amazonaws.util.LengthCheckInputStream;
-import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
-
 /**
- * Get Job Output Result JSON Unmarshaller
+ * GetJobOutputResult JSON Unmarshaller
  */
-public class GetJobOutputResultJsonUnmarshaller implements Unmarshaller<GetJobOutputResult, JsonUnmarshallerContext> {
+public class GetJobOutputResultJsonUnmarshaller implements
+        Unmarshaller<GetJobOutputResult, JsonUnmarshallerContext> {
 
-    public GetJobOutputResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public GetJobOutputResult unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         GetJobOutputResult getJobOutputResult = new GetJobOutputResult();
 
         if (context.isStartOfDocument()) {
             if (context.getHeader("x-amz-sha256-tree-hash") != null) {
                 context.setCurrentHeader("x-amz-sha256-tree-hash");
-                getJobOutputResult.setChecksum(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                getJobOutputResult.setChecksum(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
-            
             if (context.getHeader("Content-Range") != null) {
                 context.setCurrentHeader("Content-Range");
-                getJobOutputResult.setContentRange(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                getJobOutputResult.setContentRange(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
-            
             if (context.getHeader("Accept-Ranges") != null) {
                 context.setCurrentHeader("Accept-Ranges");
-                getJobOutputResult.setAcceptRanges(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                getJobOutputResult.setAcceptRanges(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
-            
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
-                getJobOutputResult.setContentType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                getJobOutputResult.setContentType(context.getUnmarshaller(
+                        String.class).unmarshall(context));
             }
-            
             if (context.getHeader("x-amz-archive-description") != null) {
                 context.setCurrentHeader("x-amz-archive-description");
-                getJobOutputResult.setArchiveDescription(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                getJobOutputResult.setArchiveDescription(context
+                        .getUnmarshaller(String.class).unmarshall(context));
             }
-            
         }
-        
+
         getJobOutputResult.setStatus(context.getHttpResponse().getStatusCode());
-        getJobOutputResult.setBody(new LengthCheckInputStream(context.getHttpResponse().getContent(), Long.parseLong(context.getHeader("Content-Length")), INCLUDE_SKIPPED_BYTES));
-            
+
+        getJobOutputResult.setBody(context.getHttpResponse().getContent());
+
         return getJobOutputResult;
     }
 
     private static GetJobOutputResultJsonUnmarshaller instance;
+
     public static GetJobOutputResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new GetJobOutputResultJsonUnmarshaller();
+        if (instance == null)
+            instance = new GetJobOutputResultJsonUnmarshaller();
         return instance;
     }
 }
-    

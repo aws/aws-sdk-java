@@ -32,8 +32,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To associate a VPC with an hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
-     * resource. The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
+     * resource. The request body must include a document with a
      * <code>AssociateVPCWithHostedZoneRequest</code> element. The response
      * returns the <code>AssociateVPCWithHostedZoneResponse</code> element that
      * contains <code>ChangeInfo</code> for you to track the progress of the
@@ -59,8 +59,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To associate a VPC with an hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
-     * resource. The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
+     * resource. The request body must include a document with a
      * <code>AssociateVPCWithHostedZoneRequest</code> element. The response
      * returns the <code>AssociateVPCWithHostedZoneResponse</code> element that
      * contains <code>ChangeInfo</code> for you to track the progress of the
@@ -89,16 +89,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Use this action to create or change your authoritative DNS information.
      * To use this action, send a <code>POST</code> request to the
-     * <code>2015-01-01/hostedzone/<i>hosted Zone ID</i>/rrset</code> resource.
-     * The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted Zone ID</i>/rrset</code>
+     * resource. The request body must include a document with a
      * <code>ChangeResourceRecordSetsRequest</code> element.
      * </p>
      * <p>
      * Changes are a list of change items and are considered transactional. For
      * more information on transactional changes, also known as change batches,
-     * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/">POST
-     * ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.
+     * see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html"
+     * >POST ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API
+     * Reference</i>.
      * </p>
      * <important>Due to the nature of transactional changes, you cannot delete
      * the same resource record set more than once in a single change batch. If
@@ -137,16 +138,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Use this action to create or change your authoritative DNS information.
      * To use this action, send a <code>POST</code> request to the
-     * <code>2015-01-01/hostedzone/<i>hosted Zone ID</i>/rrset</code> resource.
-     * The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted Zone ID</i>/rrset</code>
+     * resource. The request body must include a document with a
      * <code>ChangeResourceRecordSetsRequest</code> element.
      * </p>
      * <p>
      * Changes are a list of change items and are considered transactional. For
      * more information on transactional changes, also known as change batches,
-     * see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/">POST
-     * ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.
+     * see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html"
+     * >POST ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API
+     * Reference</i>.
      * </p>
      * <important>Due to the nature of transactional changes, you cannot delete
      * the same resource record set more than once in a single change batch. If
@@ -221,10 +223,11 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new health check, send a <code>POST</code> request to the
-     * <code>2015-01-01/healthcheck</code> resource. The request body must
-     * include an XML document with a <code>CreateHealthCheckRequest</code>
-     * element. The response returns the <code>CreateHealthCheckResponse</code>
-     * element that contains metadata about the health check.
+     * <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The
+     * request body must include a document with a
+     * <code>CreateHealthCheckRequest</code> element. The response returns the
+     * <code>CreateHealthCheckResponse</code> element that contains metadata
+     * about the health check.
      * </p>
      * 
      * @param createHealthCheckRequest
@@ -243,10 +246,11 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new health check, send a <code>POST</code> request to the
-     * <code>2015-01-01/healthcheck</code> resource. The request body must
-     * include an XML document with a <code>CreateHealthCheckRequest</code>
-     * element. The response returns the <code>CreateHealthCheckResponse</code>
-     * element that contains metadata about the health check.
+     * <code>/<i>Route 53 API version</i>/healthcheck</code> resource. The
+     * request body must include a document with a
+     * <code>CreateHealthCheckRequest</code> element. The response returns the
+     * <code>CreateHealthCheckResponse</code> element that contains metadata
+     * about the health check.
      * </p>
      * 
      * @param createHealthCheckRequest
@@ -271,10 +275,11 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new hosted zone, send a <code>POST</code> request to the
-     * <code>2015-01-01/hostedzone</code> resource. The request body must
-     * include an XML document with a <code>CreateHostedZoneRequest</code>
-     * element. The response returns the <code>CreateHostedZoneResponse</code>
-     * element that contains metadata about the hosted zone.
+     * <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
+     * request body must include a document with a
+     * <code>CreateHostedZoneRequest</code> element. The response returns the
+     * <code>CreateHostedZoneResponse</code> element that contains metadata
+     * about the hosted zone.
      * </p>
      * <p>
      * Amazon Route 53 automatically creates a default SOA record and four NS
@@ -313,10 +318,11 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new hosted zone, send a <code>POST</code> request to the
-     * <code>2015-01-01/hostedzone</code> resource. The request body must
-     * include an XML document with a <code>CreateHostedZoneRequest</code>
-     * element. The response returns the <code>CreateHostedZoneResponse</code>
-     * element that contains metadata about the hosted zone.
+     * <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
+     * request body must include a document with a
+     * <code>CreateHostedZoneRequest</code> element. The response returns the
+     * <code>CreateHostedZoneResponse</code> element that contains metadata
+     * about the hosted zone.
      * </p>
      * <p>
      * Amazon Route 53 automatically creates a default SOA record and four NS
@@ -361,8 +367,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new reusable delegationSet, send a <code>POST</code> request
-     * to the <code>2015-01-01/delegationset</code> resource. The request body
-     * must include an XML document with a
+     * to the <code>/<i>Route 53 API version</i>/delegationset</code> resource.
+     * The request body must include a document with a
      * <code>CreateReusableDelegationSetRequest</code> element. The response
      * returns the <code>CreateReusableDelegationSetResponse</code> element that
      * contains metadata about the delegationSet.
@@ -386,8 +392,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new reusable delegationSet, send a <code>POST</code> request
-     * to the <code>2015-01-01/delegationset</code> resource. The request body
-     * must include an XML document with a
+     * to the <code>/<i>Route 53 API version</i>/delegationset</code> resource.
+     * The request body must include a document with a
      * <code>CreateReusableDelegationSetRequest</code> element. The response
      * returns the <code>CreateReusableDelegationSetResponse</code> element that
      * contains metadata about the delegationSet.
@@ -419,10 +425,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a traffic policy, send a <code>POST</code> request to the
-     * <code>2015-01-01/trafficpolicy</code> resource. The request body must
-     * include an XML document with a <code>CreateTrafficPolicyRequest</code>
-     * element. The response includes the
-     * <code>CreateTrafficPolicyResponse</code> element, which contains
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource. The
+     * request body must include a document with a
+     * <code>CreateTrafficPolicyRequest</code> element. The response includes
+     * the <code>CreateTrafficPolicyResponse</code> element, which contains
      * information about the new traffic policy.
      * </p>
      * 
@@ -444,10 +450,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a traffic policy, send a <code>POST</code> request to the
-     * <code>2015-01-01/trafficpolicy</code> resource. The request body must
-     * include an XML document with a <code>CreateTrafficPolicyRequest</code>
-     * element. The response includes the
-     * <code>CreateTrafficPolicyResponse</code> element, which contains
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource. The
+     * request body must include a document with a
+     * <code>CreateTrafficPolicyRequest</code> element. The response includes
+     * the <code>CreateTrafficPolicyResponse</code> element, which contains
      * information about the new traffic policy.
      * </p>
      * 
@@ -479,8 +485,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a traffic policy instance, send a <code>POST</code> request to
-     * the <code>2015-01-01/trafficpolicyinstance</code> resource. The request
-     * body must include an XML document with a
+     * the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+     * resource. The request body must include a document with a
      * <code>CreateTrafficPolicyRequest</code> element. The response returns the
      * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
      * information about the traffic policy instance.
@@ -508,8 +514,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a traffic policy instance, send a <code>POST</code> request to
-     * the <code>2015-01-01/trafficpolicyinstance</code> resource. The request
-     * body must include an XML document with a
+     * the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+     * resource. The request body must include a document with a
      * <code>CreateTrafficPolicyRequest</code> element. The response returns the
      * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains
      * information about the traffic policy instance.
@@ -545,8 +551,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new version, send a <code>POST</code> request to the
-     * <code>2015-01-01/trafficpolicy/</code> resource. The request body
-     * includes an XML document with a
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource. The
+     * request body includes a document with a
      * <code>CreateTrafficPolicyVersionRequest</code> element. The response
      * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
      * which contains information about the new version of the traffic policy.
@@ -576,8 +582,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To create a new version, send a <code>POST</code> request to the
-     * <code>2015-01-01/trafficpolicy/</code> resource. The request body
-     * includes an XML document with a
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource. The
+     * request body includes a document with a
      * <code>CreateTrafficPolicyVersionRequest</code> element. The response
      * returns the <code>CreateTrafficPolicyVersionResponse</code> element,
      * which contains information about the new version of the traffic policy.
@@ -603,7 +609,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a health check. To delete a health check, send a
      * <code>DELETE</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource.
      * </p>
      * <important> You can delete a health check only if there are no resource
      * record sets associated with this health check. If resource record sets
@@ -628,7 +635,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a health check. To delete a health check, send a
      * <code>DELETE</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource.
      * </p>
      * <important> You can delete a health check only if there are no resource
      * record sets associated with this health check. If resource record sets
@@ -659,7 +667,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
+     * resource.
      * </p>
      * <p>
      * For more information about deleting a hosted zone, see <a href=
@@ -690,7 +699,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a hosted zone. To delete a hosted zone, send a
      * <code>DELETE</code> request to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
+     * resource.
      * </p>
      * <p>
      * For more information about deleting a hosted zone, see <a href=
@@ -727,7 +737,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a reusable delegation set. To delete a reusable
      * delegation set, send a <code>DELETE</code> request to the
-     * <code>2015-01-01/delegationset/<i>delegation set ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code>
+     * resource.
      * </p>
      * <important> You can delete a reusable delegation set only if there are no
      * associated hosted zones. If your reusable delegation set contains
@@ -749,7 +760,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * This action deletes a reusable delegation set. To delete a reusable
      * delegation set, send a <code>DELETE</code> request to the
-     * <code>2015-01-01/delegationset/<i>delegation set ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code>
+     * resource.
      * </p>
      * <important> You can delete a reusable delegation set only if there are no
      * associated hosted zones. If your reusable delegation set contains
@@ -776,8 +788,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * Deletes a traffic policy. To delete a traffic policy, send a
-     * <code>DELETE</code> request to the <code>2015-01-01/trafficpolicy</code>
-     * resource.
+     * <code>DELETE</code> request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * 
      * @param deleteTrafficPolicyRequest
@@ -792,8 +804,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * Deletes a traffic policy. To delete a traffic policy, send a
-     * <code>DELETE</code> request to the <code>2015-01-01/trafficpolicy</code>
-     * resource.
+     * <code>DELETE</code> request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * 
      * @param deleteTrafficPolicyRequest
@@ -819,7 +831,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To delete a traffic policy instance, send a <code>DELETE</code> request
      * to the
-     * <code>2015-01-01/trafficpolicy/<i>traffic policy instance ID</i></code>
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i></code>
      * resource.
      * </p>
      * <important>When you delete a traffic policy instance, Amazon Route 53
@@ -844,7 +856,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To delete a traffic policy instance, send a <code>DELETE</code> request
      * to the
-     * <code>2015-01-01/trafficpolicy/<i>traffic policy instance ID</i></code>
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i></code>
      * resource.
      * </p>
      * <important>When you delete a traffic policy instance, Amazon Route 53
@@ -874,8 +886,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To disassociate a VPC to a hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-     * resource. The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+     * resource. The request body must include a document with a
      * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
      * returns the <code>DisassociateVPCFromHostedZoneResponse</code> element
      * that contains <code>ChangeInfo</code> for you to track the progress of
@@ -901,8 +913,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To disassociate a VPC to a hosted zone, send a <code>POST</code> request
      * to the
-     * <code>2015-01-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-     * resource. The request body must include an XML document with a
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
+     * resource. The request body must include a document with a
      * <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
      * returns the <code>DisassociateVPCFromHostedZoneResponse</code> element
      * that contains <code>ChangeInfo</code> for you to track the progress of
@@ -992,6 +1004,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         operation returned by the service.
      * @sample AmazonRoute53Async.GetChangeDetails
      */
+    @Deprecated
     java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest getChangeDetailsRequest);
 
@@ -1011,6 +1024,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.GetChangeDetails
      */
+    @Deprecated
     java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest getChangeDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler);
@@ -1019,9 +1033,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To retrieve a list of the IP ranges used by Amazon Route 53 health
      * checkers to check the health of your resources, send a <code>GET</code>
-     * request to the <code>2015-01-01/checkeripranges</code> resource. You can
-     * use these IP addresses to configure router and firewall rules to allow
-     * health checkers to check the health of your resources.
+     * request to the <code>/<i>Route 53 API version</i>/checkeripranges</code>
+     * resource. You can use these IP addresses to configure router and firewall
+     * rules to allow health checkers to check the health of your resources.
      * </p>
      * 
      * @param getCheckerIpRangesRequest
@@ -1037,9 +1051,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To retrieve a list of the IP ranges used by Amazon Route 53 health
      * checkers to check the health of your resources, send a <code>GET</code>
-     * request to the <code>2015-01-01/checkeripranges</code> resource. You can
-     * use these IP addresses to configure router and firewall rules to allow
-     * health checkers to check the health of your resources.
+     * request to the <code>/<i>Route 53 API version</i>/checkeripranges</code>
+     * resource. You can use these IP addresses to configure router and firewall
+     * rules to allow health checkers to check the health of your resources.
      * </p>
      * 
      * @param getCheckerIpRangesRequest
@@ -1077,8 +1091,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a single geo location, send a <code>GET</code> request to the
-     * <code>2015-01-01/geolocation</code> resource with one of these options:
-     * continentcode | countrycode | countrycode and subdivisioncode.
+     * <code>/<i>Route 53 API version</i>/geolocation</code> resource with one
+     * of these options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
      * </p>
      * 
      * @param getGeoLocationRequest
@@ -1094,8 +1109,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a single geo location, send a <code>GET</code> request to the
-     * <code>2015-01-01/geolocation</code> resource with one of these options:
-     * continentcode | countrycode | countrycode and subdivisioncode.
+     * <code>/<i>Route 53 API version</i>/geolocation</code> resource with one
+     * of these options: continentcode | countrycode | countrycode and
+     * subdivisioncode.
      * </p>
      * 
      * @param getGeoLocationRequest
@@ -1134,7 +1150,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource.
      * </p>
      * 
      * @param getHealthCheckRequest
@@ -1150,7 +1167,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the health check, send a <code>GET</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource.
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource.
      * </p>
      * 
      * @param getHealthCheckRequest
@@ -1172,13 +1190,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a count of all your health checks, send a <code>GET</code>
-     * request to the <code>2015-01-01/healthcheckcount</code> resource.
+     * request to the <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+     * resource.
      * </p>
      * 
      * @param getHealthCheckCountRequest
      *        To retrieve a count of all your health checks, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/healthcheckcount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+     *        resource.
      * @return A Java Future containing the result of the GetHealthCheckCount
      *         operation returned by the service.
      * @sample AmazonRoute53Async.GetHealthCheckCount
@@ -1189,13 +1209,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a count of all your health checks, send a <code>GET</code>
-     * request to the <code>2015-01-01/healthcheckcount</code> resource.
+     * request to the <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+     * resource.
      * </p>
      * 
      * @param getHealthCheckCountRequest
      *        To retrieve a count of all your health checks, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/healthcheckcount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/healthcheckcount</code>
+     *        resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1231,7 +1253,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * If you want to learn why a health check is currently failing or why it
      * failed most recently (if at all), you can get the failure reason for the
      * most recent failure. Send a <code>GET</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i>/lastfailurereason</code>
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code>
      * resource.
      * </p>
      * 
@@ -1251,7 +1273,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * If you want to learn why a health check is currently failing or why it
      * failed most recently (if at all), you can get the failure reason for the
      * most recent failure. Send a <code>GET</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i>/lastfailurereason</code>
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code>
      * resource.
      * </p>
      * 
@@ -1275,7 +1297,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the health check status, send a <code>GET</code> request to
-     * the <code>2015-01-01/healthcheck/<i>health check ID</i>/status</code>
+     * the
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/status</code>
      * resource. You can use this call to get a health check's current status.
      * </p>
      * 
@@ -1292,7 +1315,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the health check status, send a <code>GET</code> request to
-     * the <code>2015-01-01/healthcheck/<i>health check ID</i>/status</code>
+     * the
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i>/status</code>
      * resource. You can use this call to get a health check's current status.
      * </p>
      * 
@@ -1315,7 +1339,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the delegation set for a hosted zone, send a <code>GET</code>
-     * request to the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code>
+     * request to the
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
      * resource. The delegation set is the four Amazon Route 53 name servers
      * that were assigned to the hosted zone when you created it.
      * </p>
@@ -1332,7 +1357,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the delegation set for a hosted zone, send a <code>GET</code>
-     * request to the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code>
+     * request to the
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
      * resource. The delegation set is the four Amazon Route 53 name servers
      * that were assigned to the hosted zone when you created it.
      * </p>
@@ -1355,13 +1381,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a count of all your hosted zones, send a <code>GET</code>
-     * request to the <code>2015-01-01/hostedzonecount</code> resource.
+     * request to the <code>/<i>Route 53 API version</i>/hostedzonecount</code>
+     * resource.
      * </p>
      * 
      * @param getHostedZoneCountRequest
      *        To retrieve a count of all your hosted zones, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/hostedzonecount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/hostedzonecount</code>
+     *        resource.
      * @return A Java Future containing the result of the GetHostedZoneCount
      *         operation returned by the service.
      * @sample AmazonRoute53Async.GetHostedZoneCount
@@ -1372,13 +1400,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a count of all your hosted zones, send a <code>GET</code>
-     * request to the <code>2015-01-01/hostedzonecount</code> resource.
+     * request to the <code>/<i>Route 53 API version</i>/hostedzonecount</code>
+     * resource.
      * </p>
      * 
      * @param getHostedZoneCountRequest
      *        To retrieve a count of all your hosted zones, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/hostedzonecount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/hostedzonecount</code>
+     *        resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1412,12 +1442,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the reusable delegation set, send a <code>GET</code> request
-     * to the <code>2015-01-01/delegationset/<i>delegation set ID</i></code>
+     * to the
+     * <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code>
      * resource.
      * </p>
      * 
      * @param getReusableDelegationSetRequest
-     *        The input for a GetReusableDelegationSet request.
+     *        The input for a <code>GetReusableDelegationSet</code> request.
      * @return A Java Future containing the result of the
      *         GetReusableDelegationSet operation returned by the service.
      * @sample AmazonRoute53Async.GetReusableDelegationSet
@@ -1428,12 +1459,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve the reusable delegation set, send a <code>GET</code> request
-     * to the <code>2015-01-01/delegationset/<i>delegation set ID</i></code>
+     * to the
+     * <code>/<i>Route 53 API version</i>/delegationset/<i>delegation set ID</i></code>
      * resource.
      * </p>
      * 
      * @param getReusableDelegationSetRequest
-     *        The input for a GetReusableDelegationSet request.
+     *        The input for a <code>GetReusableDelegationSet</code> request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1451,13 +1483,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about a specific traffic policy version. To get the
      * information, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicy</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version. To get
-     *        the information, send a GET request to the
-     *        2015-01-01/trafficpolicy resource, and specify the ID and the
+     *        the information, send a GET request to the /<i>Route 53 API
+     *        version</i>/trafficpolicy resource, and specify the ID and the
      *        version of the traffic policy.
      * @return A Java Future containing the result of the GetTrafficPolicy
      *         operation returned by the service.
@@ -1470,13 +1502,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about a specific traffic policy version. To get the
      * information, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicy</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version. To get
-     *        the information, send a GET request to the
-     *        2015-01-01/trafficpolicy resource, and specify the ID and the
+     *        the information, send a GET request to the /<i>Route 53 API
+     *        version</i>/trafficpolicy resource, and specify the ID and the
      *        version of the traffic policy.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
@@ -1498,7 +1530,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instance, send a
      * <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
      * </p>
      * <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an
      * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
@@ -1511,7 +1543,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <p>
      *        To get information about a traffic policy instance, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/trafficpolicyinstance/<i>Id</i></code> resource.
+     *        <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>Id</i></code>
+     *        resource.
      * @return A Java Future containing the result of the
      *         GetTrafficPolicyInstance operation returned by the service.
      * @sample AmazonRoute53Async.GetTrafficPolicyInstance
@@ -1526,7 +1559,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instance, send a
      * <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
      * </p>
      * <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an
      * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay
@@ -1539,7 +1572,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *        <p>
      *        To get information about a traffic policy instance, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/trafficpolicyinstance/<i>Id</i></code> resource.
+     *        <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>Id</i></code>
+     *        resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1560,14 +1594,16 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To get the number of traffic policy instances, send a <code>GET</code>
-     * request to the <code>2015-01-01/trafficpolicyinstancecount</code>
+     * request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code>
      * resource.
      * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
      *        To retrieve a count of all your traffic policy instances, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/trafficpolicyinstancecount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code>
+     *        resource.
      * @return A Java Future containing the result of the
      *         GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53Async.GetTrafficPolicyInstanceCount
@@ -1582,14 +1618,16 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To get the number of traffic policy instances, send a <code>GET</code>
-     * request to the <code>2015-01-01/trafficpolicyinstancecount</code>
+     * request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code>
      * resource.
      * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
      *        To retrieve a count of all your traffic policy instances, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/trafficpolicyinstancecount</code> resource.
+     *        <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code>
+     *        resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1633,6 +1671,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByHostedZone operation returned by the service.
      * @sample AmazonRoute53Async.ListChangeBatchesByHostedZone
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest);
 
@@ -1653,6 +1692,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByHostedZone operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListChangeBatchesByHostedZone
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest listChangeBatchesByHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler);
@@ -1669,6 +1709,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByRRSet operation returned by the service.
      * @sample AmazonRoute53Async.ListChangeBatchesByRRSet
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest);
 
@@ -1689,6 +1730,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      *         ListChangeBatchesByRRSet operation returned by the service.
      * @sample AmazonRoute53AsyncHandler.ListChangeBatchesByRRSet
      */
+    @Deprecated
     java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest listChangeBatchesByRRSetRequest,
             com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler);
@@ -1696,11 +1738,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of supported geo locations, send a <code>GET</code>
-     * request to the <code>2015-01-01/geolocations</code> resource. The
-     * response to this request includes a <code>GeoLocationDetailsList</code>
-     * element with zero, one, or multiple <code>GeoLocationDetails</code> child
-     * elements. The list is sorted by country code, and then subdivision code,
-     * followed by continents at the end of the list.
+     * request to the <code>/<i>Route 53 API version</i>/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or multiple
+     * <code>GeoLocationDetails</code> child elements. The list is sorted by
+     * country code, and then subdivision code, followed by continents at the
+     * end of the list.
      * </p>
      * <p>
      * By default, the list of geo locations is displayed on a single page. You
@@ -1714,7 +1757,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * 
      * @param listGeoLocationsRequest
-     *        The input for a ListGeoLocations request.
+     *        The input for a <code>ListGeoLocations</code> request.
      * @return A Java Future containing the result of the ListGeoLocations
      *         operation returned by the service.
      * @sample AmazonRoute53Async.ListGeoLocations
@@ -1725,11 +1768,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of supported geo locations, send a <code>GET</code>
-     * request to the <code>2015-01-01/geolocations</code> resource. The
-     * response to this request includes a <code>GeoLocationDetailsList</code>
-     * element with zero, one, or multiple <code>GeoLocationDetails</code> child
-     * elements. The list is sorted by country code, and then subdivision code,
-     * followed by continents at the end of the list.
+     * request to the <code>/<i>Route 53 API version</i>/geolocations</code>
+     * resource. The response to this request includes a
+     * <code>GeoLocationDetailsList</code> element with zero, one, or multiple
+     * <code>GeoLocationDetails</code> child elements. The list is sorted by
+     * country code, and then subdivision code, followed by continents at the
+     * end of the list.
      * </p>
      * <p>
      * By default, the list of geo locations is displayed on a single page. You
@@ -1743,7 +1787,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * 
      * @param listGeoLocationsRequest
-     *        The input for a ListGeoLocations request.
+     *        The input for a <code>ListGeoLocations</code> request.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -1777,13 +1821,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your health checks, send a <code>GET</code> request
-     * to the <code>2015-01-01/healthcheck</code> resource. The response to this
-     * request includes a <code>HealthChecks</code> element with zero, one, or
-     * multiple <code>HealthCheck</code> child elements. By default, the list of
-     * health checks is displayed on a single page. You can control the length
-     * of the page that is displayed by using the <code>MaxItems</code>
-     * parameter. You can use the <code>Marker</code> parameter to control the
-     * health check that the list begins with.
+     * to the <code>/<i>Route 53 API version</i>/healthcheck</code> resource.
+     * The response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements. By
+     * default, the list of health checks is displayed on a single page. You can
+     * control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -1791,8 +1835,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * 
      * @param listHealthChecksRequest
      *        To retrieve a list of your health checks, send a <code>GET</code>
-     *        request to the <code>2015-01-01/healthcheck</code> resource. The
-     *        response to this request includes a <code>HealthChecks</code>
+     *        request to the
+     *        <code>/<i>Route 53 API version</i>/healthcheck</code> resource.
+     *        The response to this request includes a <code>HealthChecks</code>
      *        element with zero or more <code>HealthCheck</code> child elements.
      *        By default, the list of health checks is displayed on a single
      *        page. You can control the length of the page that is displayed by
@@ -1811,13 +1856,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your health checks, send a <code>GET</code> request
-     * to the <code>2015-01-01/healthcheck</code> resource. The response to this
-     * request includes a <code>HealthChecks</code> element with zero, one, or
-     * multiple <code>HealthCheck</code> child elements. By default, the list of
-     * health checks is displayed on a single page. You can control the length
-     * of the page that is displayed by using the <code>MaxItems</code>
-     * parameter. You can use the <code>Marker</code> parameter to control the
-     * health check that the list begins with.
+     * to the <code>/<i>Route 53 API version</i>/healthcheck</code> resource.
+     * The response to this request includes a <code>HealthChecks</code> element
+     * with zero, one, or multiple <code>HealthCheck</code> child elements. By
+     * default, the list of health checks is displayed on a single page. You can
+     * control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the health check that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -1825,8 +1870,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * 
      * @param listHealthChecksRequest
      *        To retrieve a list of your health checks, send a <code>GET</code>
-     *        request to the <code>2015-01-01/healthcheck</code> resource. The
-     *        response to this request includes a <code>HealthChecks</code>
+     *        request to the
+     *        <code>/<i>Route 53 API version</i>/healthcheck</code> resource.
+     *        The response to this request includes a <code>HealthChecks</code>
      *        element with zero or more <code>HealthCheck</code> child elements.
      *        By default, the list of health checks is displayed on a single
      *        page. You can control the length of the page that is displayed by
@@ -1868,13 +1914,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code> request
-     * to the <code>2015-01-01/hostedzone</code> resource. The response to this
-     * request includes a <code>HostedZones</code> element with zero, one, or
-     * multiple <code>HostedZone</code> child elements. By default, the list of
-     * hosted zones is displayed on a single page. You can control the length of
-     * the page that is displayed by using the <code>MaxItems</code> parameter.
-     * You can use the <code>Marker</code> parameter to control the hosted zone
-     * that the list begins with.
+     * to the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
+     * response to this request includes a <code>HostedZones</code> element with
+     * zero, one, or multiple <code>HostedZone</code> child elements. By
+     * default, the list of hosted zones is displayed on a single page. You can
+     * control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the hosted zone that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -1882,7 +1928,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * 
      * @param listHostedZonesRequest
      *        To retrieve a list of your hosted zones, send a <code>GET</code>
-     *        request to the <code>2015-01-01/hostedzone</code> resource. The
+     *        request to the
+     *        <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
      *        response to this request includes a <code>HostedZones</code>
      *        element with zero or more <code>HostedZone</code> child elements.
      *        By default, the list of hosted zones is displayed on a single
@@ -1906,13 +1953,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your hosted zones, send a <code>GET</code> request
-     * to the <code>2015-01-01/hostedzone</code> resource. The response to this
-     * request includes a <code>HostedZones</code> element with zero, one, or
-     * multiple <code>HostedZone</code> child elements. By default, the list of
-     * hosted zones is displayed on a single page. You can control the length of
-     * the page that is displayed by using the <code>MaxItems</code> parameter.
-     * You can use the <code>Marker</code> parameter to control the hosted zone
-     * that the list begins with.
+     * to the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
+     * response to this request includes a <code>HostedZones</code> element with
+     * zero, one, or multiple <code>HostedZone</code> child elements. By
+     * default, the list of hosted zones is displayed on a single page. You can
+     * control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the hosted zone that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -1920,7 +1967,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * 
      * @param listHostedZonesRequest
      *        To retrieve a list of your hosted zones, send a <code>GET</code>
-     *        request to the <code>2015-01-01/hostedzone</code> resource. The
+     *        request to the
+     *        <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
      *        response to this request includes a <code>HostedZones</code>
      *        element with zero or more <code>HostedZone</code> child elements.
      *        By default, the list of hosted zones is displayed on a single
@@ -1967,15 +2015,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your hosted zones in lexicographic order, send a
-     * <code>GET</code> request to the <code>2015-01-01/hostedzonesbyname</code>
-     * resource. The response to this request includes a
-     * <code>HostedZones</code> element with zero or more
-     * <code>HostedZone</code> child elements lexicographically ordered by DNS
-     * name. By default, the list of hosted zones is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and
-     * <code>HostedZoneId</code> parameters to control the hosted zone that the
-     * list begins with.
+     * <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The
+     * response to this request includes a <code>HostedZones</code> element with
+     * zero or more <code>HostedZone</code> child elements lexicographically
+     * ordered by DNS name. By default, the list of hosted zones is displayed on
+     * a single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to control
+     * the hosted zone that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -1984,15 +2032,16 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @param listHostedZonesByNameRequest
      *        To retrieve a list of your hosted zones in lexicographic order,
      *        send a <code>GET</code> request to the
-     *        <code>2015-01-01/hostedzonesbyname</code> resource. The response
-     *        to this request includes a <code>HostedZones</code> element with
-     *        zero or more <code>HostedZone</code> child elements
-     *        lexicographically ordered by DNS name. By default, the list of
-     *        hosted zones is displayed on a single page. You can control the
-     *        length of the page that is displayed by using the
-     *        <code>MaxItems</code> parameter. You can use the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        control the hosted zone that the list begins with.</p>
+     *        <code>/<i>Route 53 API version</i>/hostedzonesbyname</code>
+     *        resource. The response to this request includes a
+     *        <code>HostedZones</code> element with zero or more
+     *        <code>HostedZone</code> child elements lexicographically ordered
+     *        by DNS name. By default, the list of hosted zones is displayed on
+     *        a single page. You can control the length of the page that is
+     *        displayed by using the <code>MaxItems</code> parameter. You can
+     *        use the <code>DNSName</code> and <code>HostedZoneId</code>
+     *        parameters to control the hosted zone that the list begins
+     *        with.</p>
      *        <p>
      *        For more information about listing hosted zones, see <a href=
      *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
@@ -2008,15 +2057,15 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your hosted zones in lexicographic order, send a
-     * <code>GET</code> request to the <code>2015-01-01/hostedzonesbyname</code>
-     * resource. The response to this request includes a
-     * <code>HostedZones</code> element with zero or more
-     * <code>HostedZone</code> child elements lexicographically ordered by DNS
-     * name. By default, the list of hosted zones is displayed on a single page.
-     * You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>DNSName</code> and
-     * <code>HostedZoneId</code> parameters to control the hosted zone that the
-     * list begins with.
+     * <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource. The
+     * response to this request includes a <code>HostedZones</code> element with
+     * zero or more <code>HostedZone</code> child elements lexicographically
+     * ordered by DNS name. By default, the list of hosted zones is displayed on
+     * a single page. You can control the length of the page that is displayed
+     * by using the <code>MaxItems</code> parameter. You can use the
+     * <code>DNSName</code> and <code>HostedZoneId</code> parameters to control
+     * the hosted zone that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -2025,15 +2074,16 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @param listHostedZonesByNameRequest
      *        To retrieve a list of your hosted zones in lexicographic order,
      *        send a <code>GET</code> request to the
-     *        <code>2015-01-01/hostedzonesbyname</code> resource. The response
-     *        to this request includes a <code>HostedZones</code> element with
-     *        zero or more <code>HostedZone</code> child elements
-     *        lexicographically ordered by DNS name. By default, the list of
-     *        hosted zones is displayed on a single page. You can control the
-     *        length of the page that is displayed by using the
-     *        <code>MaxItems</code> parameter. You can use the
-     *        <code>DNSName</code> and <code>HostedZoneId</code> parameters to
-     *        control the hosted zone that the list begins with.</p>
+     *        <code>/<i>Route 53 API version</i>/hostedzonesbyname</code>
+     *        resource. The response to this request includes a
+     *        <code>HostedZones</code> element with zero or more
+     *        <code>HostedZone</code> child elements lexicographically ordered
+     *        by DNS name. By default, the list of hosted zones is displayed on
+     *        a single page. You can control the length of the page that is
+     *        displayed by using the <code>MaxItems</code> parameter. You can
+     *        use the <code>DNSName</code> and <code>HostedZoneId</code>
+     *        parameters to control the hosted zone that the list begins
+     *        with.</p>
      *        <p>
      *        For more information about listing hosted zones, see <a href=
      *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
@@ -2200,14 +2250,14 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
-     * <code>GET</code> request to the <code>2015-01-01/delegationset</code>
-     * resource. The response to this request includes a
-     * <code>DelegationSets</code> element with zero, one, or multiple
-     * <code>DelegationSet</code> child elements. By default, the list of
-     * delegation sets is displayed on a single page. You can control the length
-     * of the page that is displayed by using the <code>MaxItems</code>
-     * parameter. You can use the <code>Marker</code> parameter to control the
-     * delegation set that the list begins with.
+     * <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/delegationset</code> resource. The
+     * response to this request includes a <code>DelegationSets</code> element
+     * with zero, one, or multiple <code>DelegationSet</code> child elements. By
+     * default, the list of delegation sets is displayed on a single page. You
+     * can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the delegation set that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -2216,17 +2266,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @param listReusableDelegationSetsRequest
      *        To retrieve a list of your reusable delegation sets, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/delegationset</code> resource. The response to
-     *        this request includes a <code>DelegationSets</code> element with
-     *        zero or more <code>DelegationSet</code> child elements. By
-     *        default, the list of reusable delegation sets is displayed on a
-     *        single page. You can control the length of the page that is
-     *        displayed by using the <code>MaxItems</code> parameter. You can
-     *        use the <code>Marker</code> parameter to control the delegation
-     *        set that the list begins with.</p> <note> Amazon Route 53 returns
-     *        a maximum of 100 items. If you set <code>MaxItems</code> to a
-     *        value greater than 100, Amazon Route 53 returns only the first
-     *        100.
+     *        <code>/<i>Route 53 API version</i>/delegationset</code> resource.
+     *        The response to this request includes a
+     *        <code>DelegationSets</code> element with zero or more
+     *        <code>DelegationSet</code> child elements. By default, the list of
+     *        reusable delegation sets is displayed on a single page. You can
+     *        control the length of the page that is displayed by using the
+     *        <code>MaxItems</code> parameter. You can use the
+     *        <code>Marker</code> parameter to control the delegation set that
+     *        the list begins with.</p> <note> Amazon Route 53 returns a maximum
+     *        of 100 items. If you set <code>MaxItems</code> to a value greater
+     *        than 100, Amazon Route 53 returns only the first 100.
      * @return A Java Future containing the result of the
      *         ListReusableDelegationSets operation returned by the service.
      * @sample AmazonRoute53Async.ListReusableDelegationSets
@@ -2237,14 +2287,14 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To retrieve a list of your reusable delegation sets, send a
-     * <code>GET</code> request to the <code>2015-01-01/delegationset</code>
-     * resource. The response to this request includes a
-     * <code>DelegationSets</code> element with zero, one, or multiple
-     * <code>DelegationSet</code> child elements. By default, the list of
-     * delegation sets is displayed on a single page. You can control the length
-     * of the page that is displayed by using the <code>MaxItems</code>
-     * parameter. You can use the <code>Marker</code> parameter to control the
-     * delegation set that the list begins with.
+     * <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/delegationset</code> resource. The
+     * response to this request includes a <code>DelegationSets</code> element
+     * with zero, one, or multiple <code>DelegationSet</code> child elements. By
+     * default, the list of delegation sets is displayed on a single page. You
+     * can control the length of the page that is displayed by using the
+     * <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+     * parameter to control the delegation set that the list begins with.
      * </p>
      * <note> Amazon Route 53 returns a maximum of 100 items. If you set
      * MaxItems to a value greater than 100, Amazon Route 53 returns only the
@@ -2253,17 +2303,17 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * @param listReusableDelegationSetsRequest
      *        To retrieve a list of your reusable delegation sets, send a
      *        <code>GET</code> request to the
-     *        <code>2015-01-01/delegationset</code> resource. The response to
-     *        this request includes a <code>DelegationSets</code> element with
-     *        zero or more <code>DelegationSet</code> child elements. By
-     *        default, the list of reusable delegation sets is displayed on a
-     *        single page. You can control the length of the page that is
-     *        displayed by using the <code>MaxItems</code> parameter. You can
-     *        use the <code>Marker</code> parameter to control the delegation
-     *        set that the list begins with.</p> <note> Amazon Route 53 returns
-     *        a maximum of 100 items. If you set <code>MaxItems</code> to a
-     *        value greater than 100, Amazon Route 53 returns only the first
-     *        100.
+     *        <code>/<i>Route 53 API version</i>/delegationset</code> resource.
+     *        The response to this request includes a
+     *        <code>DelegationSets</code> element with zero or more
+     *        <code>DelegationSet</code> child elements. By default, the list of
+     *        reusable delegation sets is displayed on a single page. You can
+     *        control the length of the page that is displayed by using the
+     *        <code>MaxItems</code> parameter. You can use the
+     *        <code>Marker</code> parameter to control the delegation set that
+     *        the list begins with.</p> <note> Amazon Route 53 returns a maximum
+     *        of 100 items. If you set <code>MaxItems</code> to a value greater
+     *        than 100, Amazon Route 53 returns only the first 100.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the
      *        request. Users can provide an implementation of the callback
@@ -2355,8 +2405,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about the latest version for every traffic policy that
      * is associated with the current AWS account. To get the information, send
-     * a <code>GET</code> request to the <code>2015-01-01/trafficpolicy</code>
-     * resource.
+     * a <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2414,8 +2464,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about the latest version for every traffic policy that
      * is associated with the current AWS account. To get the information, send
-     * a <code>GET</code> request to the <code>2015-01-01/trafficpolicy</code>
-     * resource.
+     * a <code>GET</code> request to the
+     * <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2504,7 +2554,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that are associated
      * with the current AWS account, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2570,7 +2620,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that are associated
      * with the current AWS account, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2660,8 +2710,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that you created in
      * a specified hosted zone, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource and include the ID
-     * of the hosted zone.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource
+     * and include the ID of the hosted zone.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2728,8 +2778,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that you created in
      * a specified hosted zone, send a <code>GET</code> request to the
-     * <code>2015-01-01/trafficpolicyinstance</code> resource and include the ID
-     * of the hosted zone.
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource
+     * and include the ID of the hosted zone.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2803,8 +2853,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that you created by
      * using a specify traffic policy version, send a <code>GET</code> request
-     * to the <code>2015-01-01/trafficpolicyinstance</code> resource and include
-     * the ID and version of the traffic policy.
+     * to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+     * resource and include the ID and version of the traffic policy.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -2875,8 +2925,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To get information about the traffic policy instances that you created by
      * using a specify traffic policy version, send a <code>GET</code> request
-     * to the <code>2015-01-01/trafficpolicyinstance</code> resource and include
-     * the ID and version of the traffic policy.
+     * to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+     * resource and include the ID and version of the traffic policy.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you
@@ -3064,8 +3114,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To update a health check, send a <code>POST</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource. The
-     * request body must include an XML document with an
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource. The request body must include a document with an
      * <code>UpdateHealthCheckRequest</code> element. The response returns an
      * <code>UpdateHealthCheckResponse</code> element, which contains metadata
      * about the health check.
@@ -3087,8 +3137,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To update a health check, send a <code>POST</code> request to the
-     * <code>2015-01-01/healthcheck/<i>health check ID</i></code> resource. The
-     * request body must include an XML document with an
+     * <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
+     * resource. The request body must include a document with an
      * <code>UpdateHealthCheckRequest</code> element. The response returns an
      * <code>UpdateHealthCheckResponse</code> element, which contains metadata
      * about the health check.
@@ -3113,8 +3163,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To update the hosted zone comment, send a <code>POST</code> request to
-     * the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
-     * The request body must include an XML document with a
+     * the
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
+     * resource. The request body must include a document with a
      * <code>UpdateHostedZoneCommentRequest</code> element. The response to this
      * request includes the modified <code>HostedZone</code> element.
      * </p>
@@ -3133,8 +3184,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * To update the hosted zone comment, send a <code>POST</code> request to
-     * the <code>2015-01-01/hostedzone/<i>hosted zone ID</i></code> resource.
-     * The request body must include an XML document with a
+     * the
+     * <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
+     * resource. The request body must include a document with a
      * <code>UpdateHostedZoneCommentRequest</code> element. The response to this
      * request includes the modified <code>HostedZone</code> element.
      * </p>
@@ -3162,10 +3214,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To update the comment, send a <code>POST</code> request to the
-     * <code>/2015-01-01/trafficpolicy/</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource.
      * </p>
      * <p>
-     * The request body must include an XML document with an
+     * The request body must include a document with an
      * <code>UpdateTrafficPolicyCommentRequest</code> element.
      * </p>
      * 
@@ -3185,10 +3237,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * </p>
      * <p>
      * To update the comment, send a <code>POST</code> request to the
-     * <code>/2015-01-01/trafficpolicy/</code> resource.
+     * <code>/<i>Route 53 API version</i>/trafficpolicy/</code> resource.
      * </p>
      * <p>
-     * The request body must include an XML document with an
+     * The request body must include a document with an
      * <code>UpdateTrafficPolicyCommentRequest</code> element.
      * </p>
      * 
@@ -3237,8 +3289,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To update a traffic policy instance, send a <code>POST</code> request to
      * the
-     * <code>/2015-01-01/trafficpolicyinstance/<i>traffic policy ID</i></code>
-     * resource. The request body must include an XML document with an
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>traffic policy ID</i></code>
+     * resource. The request body must include a document with an
      * <code>UpdateTrafficPolicyInstanceRequest</code> element.
      * </p>
      * 
@@ -3282,8 +3334,8 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * To update a traffic policy instance, send a <code>POST</code> request to
      * the
-     * <code>/2015-01-01/trafficpolicyinstance/<i>traffic policy ID</i></code>
-     * resource. The request body must include an XML document with an
+     * <code>/<i>Route 53 API version</i>/trafficpolicyinstance/<i>traffic policy ID</i></code>
+     * resource. The request body must include a document with an
      * <code>UpdateTrafficPolicyInstanceRequest</code> element.
      * </p>
      * 

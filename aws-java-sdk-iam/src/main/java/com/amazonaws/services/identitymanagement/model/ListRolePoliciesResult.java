@@ -59,6 +59,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * 
      * @return A list of policy names.
      */
+
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
             policyNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -74,6 +75,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * @param policyNames
      *        A list of policy names.
      */
+
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         if (policyNames == null) {
             this.policyNames = null;
@@ -100,6 +102,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolePoliciesResult withPolicyNames(String... policyNames) {
         if (this.policyNames == null) {
             setPolicyNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -121,6 +124,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolePoliciesResult withPolicyNames(
             java.util.Collection<String> policyNames) {
         setPolicyNames(policyNames);
@@ -148,6 +152,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -172,6 +177,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -199,6 +205,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolePoliciesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -224,6 +231,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -240,6 +248,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -255,6 +264,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -273,6 +283,7 @@ public class ListRolePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolePoliciesResult withMarker(String marker) {
         setMarker(marker);
         return this;

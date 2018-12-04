@@ -55,6 +55,7 @@ public class Timing implements Serializable, Cloneable {
      *        The time the job was submitted to Elastic Transcoder, in epoch
      *        milliseconds.
      */
+
     public void setSubmitTimeMillis(Long submitTimeMillis) {
         this.submitTimeMillis = submitTimeMillis;
     }
@@ -68,6 +69,7 @@ public class Timing implements Serializable, Cloneable {
      * @return The time the job was submitted to Elastic Transcoder, in epoch
      *         milliseconds.
      */
+
     public Long getSubmitTimeMillis() {
         return this.submitTimeMillis;
     }
@@ -84,6 +86,7 @@ public class Timing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Timing withSubmitTimeMillis(Long submitTimeMillis) {
         setSubmitTimeMillis(submitTimeMillis);
         return this;
@@ -97,6 +100,7 @@ public class Timing implements Serializable, Cloneable {
      * @param startTimeMillis
      *        The time the job began transcoding, in epoch milliseconds.
      */
+
     public void setStartTimeMillis(Long startTimeMillis) {
         this.startTimeMillis = startTimeMillis;
     }
@@ -108,6 +112,7 @@ public class Timing implements Serializable, Cloneable {
      * 
      * @return The time the job began transcoding, in epoch milliseconds.
      */
+
     public Long getStartTimeMillis() {
         return this.startTimeMillis;
     }
@@ -122,6 +127,7 @@ public class Timing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Timing withStartTimeMillis(Long startTimeMillis) {
         setStartTimeMillis(startTimeMillis);
         return this;
@@ -135,6 +141,7 @@ public class Timing implements Serializable, Cloneable {
      * @param finishTimeMillis
      *        The time the job finished transcoding, in epoch milliseconds.
      */
+
     public void setFinishTimeMillis(Long finishTimeMillis) {
         this.finishTimeMillis = finishTimeMillis;
     }
@@ -146,6 +153,7 @@ public class Timing implements Serializable, Cloneable {
      * 
      * @return The time the job finished transcoding, in epoch milliseconds.
      */
+
     public Long getFinishTimeMillis() {
         return this.finishTimeMillis;
     }
@@ -160,6 +168,7 @@ public class Timing implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Timing withFinishTimeMillis(Long finishTimeMillis) {
         setFinishTimeMillis(finishTimeMillis);
         return this;

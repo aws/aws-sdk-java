@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,94 +15,204 @@
  */
 package com.amazonaws.services.lambda;
 
-import java.io.*;
+import org.w3c.dom.*;
 
 import java.net.*;
 import java.util.*;
+import java.util.Map.Entry;
 
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.*;
 import com.amazonaws.http.*;
-import com.amazonaws.regions.*;
 import com.amazonaws.internal.*;
 import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.json.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.services.lambda.model.transform.*;
 
 /**
- * Client for accessing AWSLambda.  All service calls made
- * using this client are blocking, and will not return until the service call
- * completes.
+ * Client for accessing AWS Lambda. All service calls made using this client are
+ * blocking, and will not return until the service call completes.
  * <p>
- * AWS Lambda <p>
+ * <fullname>AWS Lambda</fullname>
+ * <p>
  * <b>Overview</b>
  * </p>
  * <p>
- * This is the <i>AWS Lambda API Reference</i> .
- * The AWS Lambda Developer Guide provides additional information.
- * For the service overview, go to
- * <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html"> What is AWS Lambda </a> , and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
- * in the <i>AWS Lambda Developer Guide</i> .
+ * This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide
+ * provides additional information. For the service overview, go to <a
+ * href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
+ * Lambda</a>, and for information about how the service works, go to <a
+ * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
+ * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
  * </p>
  */
-public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda {
-
+@ThreadSafe
+public class AWSLambdaClient extends AmazonWebServiceClient implements
+        AWSLambda {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AWSLambda.class);
 
-    /**
-     * List of exception unmarshallers for all AWSLambda exceptions.
-     */
-    protected List<JsonErrorUnmarshaller> jsonErrorUnmarshallers;
+    /** Default signing name for the service. */
+    private static final String DEFAULT_SIGNING_NAME = "lambda";
+
+    /** The region metadata service name for computing region endpoints. */
+    private static final String DEFAULT_ENDPOINT_PREFIX = "lambda";
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceConflictException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ResourceConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CodeStorageExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ServiceException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("RequestTooLargeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.RequestTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSecurityGroupIDException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterValueException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2AccessDeniedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "PolicyLengthExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidSubnetIDException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ENILimitReachedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ENILimitReachedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2ThrottledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2ThrottledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("EC2UnexpectedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "SubnetIPAddressLimitReachedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedMediaTypeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidRequestContentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyRequestsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.lambda.model.TooManyRequestsException.class)));
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Lambda. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLambdaClient() {
-        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda.  A credentials provider chain will be used
-     * that searches for credentials in this order:
+     * Constructs a new client to invoke service methods on AWS Lambda. A
+     * credentials provider chain will be used that searches for credentials in
+     * this order:
      * <ul>
-     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
-     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
-     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * <li>Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY</li>
+     * <li>Java System Properties - aws.accessKeyId and aws.secretKey</li>
+     * <li>Instance profile credentials delivered through the Amazon EC2
+     * metadata service</li>
      * </ul>
      *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSLambda
-     *                       (ex: proxy settings, retry counts, etc.).
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS Lambda (ex: proxy settings, retry counts, etc.).
      *
      * @see DefaultAWSCredentialsProviderChain
      */
@@ -110,1240 +221,497 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda using the specified AWS account credentials.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified AWS account credentials.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
      */
     public AWSLambdaClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, new ClientConfiguration());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda using the specified AWS account credentials
-     * and client configuration options.
-     * 
-     * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified AWS account credentials and client configuration options.
      *
-     * @param awsCredentials The AWS credentials (access key ID and secret key) to use
-     *                       when authenticating with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSLambda
-     *                       (ex: proxy settings, retry counts, etc.).
+     * <p>
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
+     *
+     * @param awsCredentials
+     *        The AWS credentials (access key ID and secret key) to use when
+     *        authenticating with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS Lambda (ex: proxy settings, retry counts, etc.).
      */
-    public AWSLambdaClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
-        super(adjustClientConfiguration(clientConfiguration));
-        
-        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
-        
+    public AWSLambdaClient(AWSCredentials awsCredentials,
+            ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = new StaticCredentialsProvider(
+                awsCredentials);
         init();
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda using the specified AWS account credentials provider.
-     * 
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified AWS account credentials provider.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
      */
     public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, new ClientConfiguration());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda using the specified AWS account credentials
-     * provider and client configuration options.
-     * 
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified AWS account credentials provider and client configuration
+     * options.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSLambda
-     *                       (ex: proxy settings, retry counts, etc.).
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS Lambda (ex: proxy settings, retry counts, etc.).
      */
-    public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+    public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider,
+            ClientConfiguration clientConfiguration) {
         this(awsCredentialsProvider, clientConfiguration, null);
     }
 
     /**
-     * Constructs a new client to invoke service methods on
-     * AWSLambda using the specified AWS account credentials
-     * provider, client configuration options and request metric collector.
-     * 
+     * Constructs a new client to invoke service methods on AWS Lambda using the
+     * specified AWS account credentials provider, client configuration options,
+     * and request metric collector.
+     *
      * <p>
-     * All service calls made using this new client object are blocking, and will not
-     * return until the service call completes.
+     * All service calls made using this new client object are blocking, and
+     * will not return until the service call completes.
      *
      * @param awsCredentialsProvider
-     *            The AWS credentials provider which will provide credentials
-     *            to authenticate requests with AWS services.
-     * @param clientConfiguration The client configuration options controlling how this
-     *                       client connects to AWSLambda
-     *                       (ex: proxy settings, retry counts, etc.).
-     * @param requestMetricCollector optional request metric collector
+     *        The AWS credentials provider which will provide credentials to
+     *        authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        The client configuration options controlling how this client
+     *        connects to AWS Lambda (ex: proxy settings, retry counts, etc.).
+     * @param requestMetricCollector
+     *        optional request metric collector
      */
     public AWSLambdaClient(AWSCredentialsProvider awsCredentialsProvider,
             ClientConfiguration clientConfiguration,
             RequestMetricCollector requestMetricCollector) {
-        super(adjustClientConfiguration(clientConfiguration), requestMetricCollector);
-        
+        super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
-        
         init();
     }
 
     private void init() {
-        jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
-        jsonErrorUnmarshallers.add(new ServiceExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new RequestTooLargeExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new UnsupportedMediaTypeExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new CodeStorageExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidRequestContentExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new PolicyLengthExceededExceptionUnmarshaller());
-        jsonErrorUnmarshallers.add(new ResourceConflictExceptionUnmarshaller());
-        
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshaller());
-        
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("lambda.us-east-1.amazonaws.com/");
-        
+        setEndpoint("lambda.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-        requestHandler2s.addAll(chainFactory.newRequestHandlerChain(
-                "/com/amazonaws/services/lambda/request.handlers"));
-        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain(
-                "/com/amazonaws/services/lambda/request.handler2s"));
-    }
-
-    private static ClientConfiguration adjustClientConfiguration(ClientConfiguration orig) {
-        ClientConfiguration config = orig;
-        
-        return config;
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandlerChain("/com/amazonaws/services/lambda/request.handlers"));
+        requestHandler2s
+                .addAll(chainFactory
+                        .newRequestHandler2Chain("/com/amazonaws/services/lambda/request.handler2s"));
     }
 
     /**
      * <p>
-     * Using this API you can update function version to which the alias
-     * points to and alias description. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Adds a permission to the resource policy associated with the specified
+     * AWS Lambda function. You use resource policies to grant permissions to
+     * event sources that use <i>push</i> model. In a <i>push</i> model, event
+     * sources (such as Amazon S3 and custom applications) invoke your Lambda
+     * function. Each permission you add to the resource policy allows an event
+     * source, permission to invoke the Lambda function.
      * </p>
      * <p>
-     * This requires permission for the lambda:UpdateAlias action.
-     * </p>
-     *
-     * @param updateAliasRequest Container for the necessary parameters to
-     *           execute the UpdateAlias service method on AWSLambda.
-     * 
-     * @return The response from the UpdateAlias service method, as returned
-     *         by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateAliasRequest> request = null;
-        Response<UpdateAliasResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateAliasRequestMarshaller().marshall(super.beforeMarshalling(updateAliasRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<UpdateAliasResult, JsonUnmarshallerContext> unmarshaller =
-                new UpdateAliasResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateAliasResult> responseHandler =
-                new JsonResponseHandler<UpdateAliasResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes the specified Lambda function code and configuration.
+     * For information about the push model, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
+     * >AWS Lambda: How it Works</a>.
      * </p>
      * <p>
-     * If you don't specify a function version, AWS Lambda will delete the
-     * function, including all its versions, and any aliases pointing to the
-     * function versions.
-     * </p>
-     * <p>
-     * When you delete a function the associated resource policy is also
-     * deleted. You will need to delete the event source mappings explicitly.
-     * </p>
-     * <p>
-     * For information about function versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * .
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:DeleteFunction</code> action.
-     * </p>
-     *
-     * @param deleteFunctionRequest Container for the necessary parameters to
-     *           execute the DeleteFunction service method on AWSLambda.
-     * 
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     * @throws ResourceConflictException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
-        ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteFunctionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteFunctionRequestMarshaller().marshall(super.beforeMarshalling(deleteFunctionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Adds a permission to the resource policy associated with the
-     * specified AWS Lambda function. You use resource policies to grant
-     * permissions to event sources that use "push" model. In "push" model,
-     * event sources (such as Amazon S3 and custom applications) invoke your
-     * Lambda function. Each permission you add to the resource policy allows
-     * an event source, permission to invoke the Lambda function.
-     * </p>
-     * <p>
-     * For information about the push model, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * .
-     * </p>
-     * <p>
-     * If you are using versioning feature (see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * ), a Lambda function can have multiple ARNs that can be used to
-     * invoke the function. Note that, each permission you add to resource
-     * policy using this API is specific to an ARN, specified using the
-     * <code>Qualifier</code> parameter
+     * If you are using versioning, the permissions you add are specific to the
+     * Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
      * </p>
      * <p>
      * This operation requires permission for the
      * <code>lambda:AddPermission</code> action.
      * </p>
-     *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission service method on AWSLambda.
      * 
-     * @return The response from the AddPermission service method, as
-     *         returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param addPermissionRequest
+     * @return Result of the AddPermission operation returned by the service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
-     * @throws PolicyLengthExceededException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
      * @throws ResourceConflictException
+     *         The resource already exists.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws PolicyLengthExceededException
+     *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @sample AWSLambda.AddPermission
      */
-    public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
+    @Override
+    public AddPermissionResult addPermission(
+            AddPermissionRequest addPermissionRequest) {
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<AddPermissionRequest> request = null;
         Response<AddPermissionResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
+                request = new AddPermissionRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<AddPermissionResult, JsonUnmarshallerContext> unmarshaller =
-                new AddPermissionResultJsonUnmarshaller();
-            JsonResponseHandler<AddPermissionResult> responseHandler =
-                new JsonResponseHandler<AddPermissionResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<AddPermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddPermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns a list of your Lambda functions. For each function, the
-     * response includes the function configuration information. You must use
-     * GetFunction to retrieve the code for your function.
+     * Creates an alias that points to the specified Lambda function version.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
+     * >Introduction to AWS Lambda Aliases</a>.
+     * </p>
+     * Alias names are unique for a given function.
+     * <p>
+     * This requires permission for the lambda:CreateAlias action.
+     * </p>
+     * 
+     * @param createAliasRequest
+     * @return Result of the CreateAlias operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.CreateAlias
+     */
+    @Override
+    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+        ExecutionContext executionContext = createExecutionContext(createAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAliasRequest> request = null;
+        Response<CreateAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Identifies a stream as an event source for a Lambda function. It can be
+     * either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS Lambda
+     * invokes the specified function when records are posted to the stream.
+     * </p>
+     * <p>
+     * This association between a stream source and a Lambda function is called
+     * the event source mapping.
+     * </p>
+     * <important>This event source mapping is relevant only in the AWS Lambda
+     * pull model, where AWS Lambda invokes the function. For more information,
+     * go to <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"
+     * >AWS Lambda: How it Works</a> in the <i>AWS Lambda Developer
+     * Guide</i>.</important>
+     * <p>
+     * You provide mapping information (for example, which stream to read from
+     * and which Lambda function to invoke) in the request body.
+     * </p>
+     * <p>
+     * Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be
+     * associated with multiple AWS Lambda function. A given Lambda function can
+     * be associated with multiple AWS event sources.
+     * </p>
+     * <p>
+     * <p>
+     * If you are using versioning, you can specify a specific function version
+     * or an alias via the function name parameter. For more information about
+     * versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:ListFunctions</code> action.
+     * <code>lambda:CreateEventSourceMapping</code> action.
      * </p>
-     *
-     * @param listFunctionsRequest Container for the necessary parameters to
-     *           execute the ListFunctions service method on AWSLambda.
      * 
-     * @return The response from the ListFunctions service method, as
-     *         returned by AWSLambda.
-     * 
+     * @param createEventSourceMappingRequest
+     * @return Result of the CreateEventSourceMapping operation returned by the
+     *         service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws ResourceConflictException
+     *         The resource already exists.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @sample AWSLambda.CreateEventSourceMapping
      */
-    public ListFunctionsResult listFunctions(ListFunctionsRequest listFunctionsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listFunctionsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public CreateEventSourceMappingResult createEventSourceMapping(
+            CreateEventSourceMappingRequest createEventSourceMappingRequest) {
+        ExecutionContext executionContext = createExecutionContext(createEventSourceMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListFunctionsRequest> request = null;
-        Response<ListFunctionsResult> response = null;
-        
+        Request<CreateEventSourceMappingRequest> request = null;
+        Response<CreateEventSourceMappingResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFunctionsRequestMarshaller().marshall(super.beforeMarshalling(listFunctionsRequest));
+                request = new CreateEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(createEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<ListFunctionsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListFunctionsResultJsonUnmarshaller();
-            JsonResponseHandler<ListFunctionsResult> responseHandler =
-                new JsonResponseHandler<ListFunctionsResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEventSourceMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new CreateEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Returns the specified alias information such as the alias ARN,
-     * description, and function version it is pointing to. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Creates a new Lambda function. The function metadata is created from the
+     * request parameters, and the code for the function is provided by a .zip
+     * file in the request body. If the function name already exists, the
+     * operation will fail. Note that the function name is case-sensitive.
      * </p>
      * <p>
-     * This requires permission for the lambda:GetAlias action.
-     * </p>
-     *
-     * @param getAliasRequest Container for the necessary parameters to
-     *           execute the GetAlias service method on AWSLambda.
-     * 
-     * @return The response from the GetAlias service method, as returned by
-     *         AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetAliasResult getAlias(GetAliasRequest getAliasRequest) {
-        ExecutionContext executionContext = createExecutionContext(getAliasRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetAliasRequest> request = null;
-        Response<GetAliasResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetAliasRequestMarshaller().marshall(super.beforeMarshalling(getAliasRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetAliasResult, JsonUnmarshallerContext> unmarshaller =
-                new GetAliasResultJsonUnmarshaller();
-            JsonResponseHandler<GetAliasResult> responseHandler =
-                new JsonResponseHandler<GetAliasResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * You can remove individual permissions from an resource policy
-     * associated with a Lambda function by providing a statement ID that you
-     * provided when you addded the permission. The API removes corresponding
-     * permission that is associated with the specific ARN identified by the
-     * <code>Qualifier</code> parameter.
-     * </p>
-     * <p>
-     * Note that removal of a permission will cause an active event source
-     * to lose permission to the function.
-     * </p>
-     * <p>
-     * You need permission for the <code>lambda:RemovePermission</code>
-     * action.
-     * </p>
-     *
-     * @param removePermissionRequest Container for the necessary parameters
-     *           to execute the RemovePermission service method on AWSLambda.
-     * 
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void removePermission(RemovePermissionRequest removePermissionRequest) {
-        ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<RemovePermissionRequest> request = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Creates a new Lambda function. The function metadata is created from
-     * the request parameters, and the code for the function is provided by a
-     * .zip file in the request body. If the function name already exists,
-     * the operation will fail. Note that the function name is
-     * case-sensitive.
+     * If you are using versioning, you can also publish a version of the Lambda
+     * function you are creating using the <code>Publish</code> parameter. For
+     * more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
      * </p>
      * <p>
      * This operation requires permission for the
      * <code>lambda:CreateFunction</code> action.
      * </p>
-     *
-     * @param createFunctionRequest Container for the necessary parameters to
-     *           execute the CreateFunction service method on AWSLambda.
      * 
-     * @return The response from the CreateFunction service method, as
-     *         returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param createFunctionRequest
+     * @return Result of the CreateFunction operation returned by the service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws ResourceNotFoundException
-     * @throws CodeStorageExceededException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
      * @throws ResourceConflictException
+     *         The resource already exists.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @throws CodeStorageExceededException
+     *         You have exceeded your maximum total code size per account. <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">
+     *         Limits</a>
+     * @sample AWSLambda.CreateFunction
      */
-    public CreateFunctionResult createFunction(CreateFunctionRequest createFunctionRequest) {
+    @Override
+    public CreateFunctionResult createFunction(
+            CreateFunctionRequest createFunctionRequest) {
         ExecutionContext executionContext = createExecutionContext(createFunctionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateFunctionRequest> request = null;
         Response<CreateFunctionResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFunctionRequestMarshaller().marshall(super.beforeMarshalling(createFunctionRequest));
+                request = new CreateFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateFunctionResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateFunctionResultJsonUnmarshaller();
-            JsonResponseHandler<CreateFunctionResult> responseHandler =
-                new JsonResponseHandler<CreateFunctionResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * You can update an event source mapping. This is useful if you want to
-     * change the parameters of the existing mapping without losing your
-     * position in the stream. You can change which function will receive the
-     * stream records, but to change the stream itself, you must create a new
-     * mapping.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateEventSourceMapping</code> action.
-     * </p>
-     *
-     * @param updateEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the UpdateEventSourceMapping service method on
-     *           AWSLambda.
-     * 
-     * @return The response from the UpdateEventSourceMapping service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     * @throws ResourceConflictException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateEventSourceMappingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateEventSourceMappingRequest> request = null;
-        Response<UpdateEventSourceMappingResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateEventSourceMappingRequestMarshaller().marshall(super.beforeMarshalling(updateEventSourceMappingRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<UpdateEventSourceMappingResult, JsonUnmarshallerContext> unmarshaller =
-                new UpdateEventSourceMappingResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateEventSourceMappingResult> responseHandler =
-                new JsonResponseHandler<UpdateEventSourceMappingResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Publishes a version of your function from the current snapshot of
-     * HEAD. That is, AWS Lambda takes a snapshot of the function code and
-     * configuration information from HEAD and publishes a new version. The
-     * code and <code>handler</code> of this specific Lambda function version
-     * cannot be modified after publication, but you can modify the
-     * configuration information.
-     * </p>
-     *
-     * @param publishVersionRequest Container for the necessary parameters to
-     *           execute the PublishVersion service method on AWSLambda.
-     * 
-     * @return The response from the PublishVersion service method, as
-     *         returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws CodeStorageExceededException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public PublishVersionResult publishVersion(PublishVersionRequest publishVersionRequest) {
-        ExecutionContext executionContext = createExecutionContext(publishVersionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<PublishVersionRequest> request = null;
-        Response<PublishVersionResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new PublishVersionRequestMarshaller().marshall(super.beforeMarshalling(publishVersionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<PublishVersionResult, JsonUnmarshallerContext> unmarshaller =
-                new PublishVersionResultJsonUnmarshaller();
-            JsonResponseHandler<PublishVersionResult> responseHandler =
-                new JsonResponseHandler<PublishVersionResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * <b>IMPORTANT:</b>This API is deprecated. We recommend you use Invoke
-     * API (see Invoke).
-     * </p>
-     * <p>
-     * Submits an invocation request to AWS Lambda. Upon receiving the
-     * request, Lambda executes the specified function asynchronously. To see
-     * the logs generated by the Lambda function execution, see the
-     * CloudWatch logs console.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
-     * </p>
-     *
-     * @param invokeAsyncRequest Container for the necessary parameters to
-     *           execute the InvokeAsync service method on AWSLambda.
-     * 
-     * @return The response from the InvokeAsync service method, as returned
-     *         by AWSLambda.
-     * 
-     * @throws InvalidRequestContentException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    @Deprecated
-    public InvokeAsyncResult invokeAsync(InvokeAsyncRequest invokeAsyncRequest) {
-        ExecutionContext executionContext = createExecutionContext(invokeAsyncRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<InvokeAsyncRequest> request = null;
-        Response<InvokeAsyncResult> response = null;
-        
-        final InputStream isOrig = invokeAsyncRequest.getInvokeArgs();
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new InvokeAsyncRequestMarshaller().marshall(super.beforeMarshalling(invokeAsyncRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<InvokeAsyncResult, JsonUnmarshallerContext> unmarshaller =
-                new InvokeAsyncResultJsonUnmarshaller();
-            JsonResponseHandler<InvokeAsyncResult> responseHandler =
-                new JsonResponseHandler<InvokeAsyncResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            // Restore the original input stream, so that the caller
-            // (who is responsible) can close it
-            invokeAsyncRequest.setInvokeArgs(isOrig);
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Updates the configuration parameters for the specified Lambda
-     * function by using the values provided in the request. You provide only
-     * the parameters you want to change. This operation must only be used on
-     * an existing Lambda function and cannot be used to update the
-     * function's code.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:UpdateFunctionConfiguration</code> action.
-     * </p>
-     *
-     * @param updateFunctionConfigurationRequest Container for the necessary
-     *           parameters to execute the UpdateFunctionConfiguration service method
-     *           on AWSLambda.
-     * 
-     * @return The response from the UpdateFunctionConfiguration service
-     *         method, as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateFunctionConfigurationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateFunctionConfigurationRequest> request = null;
-        Response<UpdateFunctionConfigurationResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UpdateFunctionConfigurationRequestMarshaller().marshall(super.beforeMarshalling(updateFunctionConfigurationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<UpdateFunctionConfigurationResult, JsonUnmarshallerContext> unmarshaller =
-                new UpdateFunctionConfigurationResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateFunctionConfigurationResult> responseHandler =
-                new JsonResponseHandler<UpdateFunctionConfigurationResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Invokes a specific Lambda function version.
-     * </p>
-     * <p>
-     * If you don't provide the <code>Qualifier</code> parameter, it uses
-     * the unqualified function ARN which results in invocation of the
-     * $LATEST version of the Lambda function (when you create a Lambda
-     * function, the $LATEST is the version). The AWS Lambda versioning and
-     * aliases feature allows you to publish multiple versions of a Lambda
-     * function and also create aliases for each function version. So each
-     * your Lambda function version can be invoked using multiple ARNs. For
-     * more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * . Using the <code>Qualifier</code> parameter, you can specify a
-     * function version or alias name to invoke specific function version. If
-     * you specify function version, the API uses the qualified function ARN
-     * to invoke a specific function version. If you specify alias name, the
-     * API uses the alias ARN to invoke the function version to which the
-     * alias points.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:InvokeFunction</code> action.
-     * </p>
-     *
-     * @param invokeRequest Container for the necessary parameters to execute
-     *           the Invoke service method on AWSLambda.
-     * 
-     * @return The response from the Invoke service method, as returned by
-     *         AWSLambda.
-     * 
-     * @throws InvalidRequestContentException
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws RequestTooLargeException
-     * @throws ResourceNotFoundException
-     * @throws UnsupportedMediaTypeException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public InvokeResult invoke(InvokeRequest invokeRequest) {
-        ExecutionContext executionContext = createExecutionContext(invokeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<InvokeRequest> request = null;
-        Response<InvokeResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new InvokeRequestMarshaller().marshall(super.beforeMarshalling(invokeRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<InvokeResult, JsonUnmarshallerContext> unmarshaller =
-                new InvokeResultJsonUnmarshaller();
-            JsonResponseHandler<InvokeResult> responseHandler =
-                new JsonResponseHandler<InvokeResult>(unmarshaller);
-
-            responseHandler.needsConnectionLeftOpen = true;
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns the resource policy, containing a list of permissions that
-     * apply to a specific to an ARN that you specify via the
-     * <code>Qualifier</code> paramter.
-     * </p>
-     * <p>
-     * For informration about adding permissions, see AddPermission.
-     * </p>
-     * <p>
-     * You need permission for the <code>lambda:GetPolicy action.</code>
-     * </p>
-     *
-     * @param getPolicyRequest Container for the necessary parameters to
-     *           execute the GetPolicy service method on AWSLambda.
-     * 
-     * @return The response from the GetPolicy service method, as returned by
-     *         AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
-        ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetPolicyRequest> request = null;
-        Response<GetPolicyResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetPolicyRequestMarshaller().marshall(super.beforeMarshalling(getPolicyRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetPolicyResult, JsonUnmarshallerContext> unmarshaller =
-                new GetPolicyResultJsonUnmarshaller();
-            JsonResponseHandler<GetPolicyResult> responseHandler =
-                new JsonResponseHandler<GetPolicyResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns configuration information for the specified event source
-     * mapping (see CreateEventSourceMapping).
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetEventSourceMapping</code> action.
-     * </p>
-     *
-     * @param getEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the GetEventSourceMapping service method on
-     *           AWSLambda.
-     * 
-     * @return The response from the GetEventSourceMapping service method, as
-     *         returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest getEventSourceMappingRequest) {
-        ExecutionContext executionContext = createExecutionContext(getEventSourceMappingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetEventSourceMappingRequest> request = null;
-        Response<GetEventSourceMappingResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetEventSourceMappingRequestMarshaller().marshall(super.beforeMarshalling(getEventSourceMappingRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetEventSourceMappingResult, JsonUnmarshallerContext> unmarshaller =
-                new GetEventSourceMappingResultJsonUnmarshaller();
-            JsonResponseHandler<GetEventSourceMappingResult> responseHandler =
-                new JsonResponseHandler<GetEventSourceMappingResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
-     * where you identify a stream as an event source. This list does not
-     * include Amazon S3 event sources.
-     * </p>
-     * <p>
-     * For each mapping, the API returns configuration information. You can
-     * optionally specify filters to retrieve specific event source mappings.
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:ListEventSourceMappings</code> action.
-     * </p>
-     *
-     * @param listEventSourceMappingsRequest Container for the necessary
-     *           parameters to execute the ListEventSourceMappings service method on
-     *           AWSLambda.
-     * 
-     * @return The response from the ListEventSourceMappings service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListEventSourceMappingsResult listEventSourceMappings(ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
-        ExecutionContext executionContext = createExecutionContext(listEventSourceMappingsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListEventSourceMappingsRequest> request = null;
-        Response<ListEventSourceMappingsResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListEventSourceMappingsRequestMarshaller().marshall(super.beforeMarshalling(listEventSourceMappingsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListEventSourceMappingsResult, JsonUnmarshallerContext> unmarshaller =
-                new ListEventSourceMappingsResultJsonUnmarshaller();
-            JsonResponseHandler<ListEventSourceMappingsResult> responseHandler =
-                new JsonResponseHandler<ListEventSourceMappingsResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Deletes specified Lambda function alias. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Deletes the specified Lambda function alias. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">
+     * Introduction to AWS Lambda Aliases</a>.
      * </p>
      * <p>
      * This requires permission for the lambda:DeleteAlias action.
      * </p>
-     *
-     * @param deleteAliasRequest Container for the necessary parameters to
-     *           execute the DeleteAlias service method on AWSLambda.
      * 
-     * 
-     * @throws InvalidParameterValueException
+     * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @sample AWSLambda.DeleteAlias
      */
-    public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    @Override
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAliasRequest> request = null;
-        
+        Response<DeleteAliasResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
-            invoke(request, responseHandler, executionContext);
-
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, null, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-    
-    /**
-     * <p>
-     * Returns the configuration information of the Lambda function. This
-     * the same information you provided as parameters when uploading the
-     * function by using CreateFunction.
-     * </p>
-     * <p>
-     * You can use the optional <code>Qualifier</code> parameter to retrieve
-     * configuration information for a specific Lambda function version. If
-     * you don't provide it, the API returns information about the $LATEST
-     * version of the function. For more information about versioning, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * .
-     * </p>
-     * <p>
-     * This operation requires permission for the
-     * <code>lambda:GetFunctionConfiguration</code> operation.
-     * </p>
-     *
-     * @param getFunctionConfigurationRequest Container for the necessary
-     *           parameters to execute the GetFunctionConfiguration service method on
-     *           AWSLambda.
-     * 
-     * @return The response from the GetFunctionConfiguration service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
-        ExecutionContext executionContext = createExecutionContext(getFunctionConfigurationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetFunctionConfigurationRequest> request = null;
-        Response<GetFunctionConfigurationResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetFunctionConfigurationRequestMarshaller().marshall(super.beforeMarshalling(getFunctionConfigurationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<GetFunctionConfigurationResult, JsonUnmarshallerContext> unmarshaller =
-                new GetFunctionConfigurationResultJsonUnmarshaller();
-            JsonResponseHandler<GetFunctionConfigurationResult> responseHandler =
-                new JsonResponseHandler<GetFunctionConfigurationResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
@@ -1356,575 +724,1428 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * This operation requires permission for the
      * <code>lambda:DeleteEventSourceMapping</code> action.
      * </p>
-     *
-     * @param deleteEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the DeleteEventSourceMapping service method on
-     *           AWSLambda.
      * 
-     * @return The response from the DeleteEventSourceMapping service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param deleteEventSourceMappingRequest
+     * @return Result of the DeleteEventSourceMapping operation returned by the
+     *         service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @sample AWSLambda.DeleteEventSourceMapping
      */
-    public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
+    @Override
+    public DeleteEventSourceMappingResult deleteEventSourceMapping(
+            DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteEventSourceMappingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteEventSourceMappingRequest> request = null;
         Response<DeleteEventSourceMappingResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEventSourceMappingRequestMarshaller().marshall(super.beforeMarshalling(deleteEventSourceMappingRequest));
+                request = new DeleteEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<DeleteEventSourceMappingResult, JsonUnmarshallerContext> unmarshaller =
-                new DeleteEventSourceMappingResultJsonUnmarshaller();
-            JsonResponseHandler<DeleteEventSourceMappingResult> responseHandler =
-                new JsonResponseHandler<DeleteEventSourceMappingResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventSourceMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Identifies a stream as an event source for a Lambda function. It can
-     * be either an Amazon Kinesis stream or an Amazon DynamoDB stream. AWS
-     * Lambda invokes the specified function when records are posted to the
-     * stream.
+     * Deletes the specified Lambda function code and configuration.
      * </p>
      * <p>
-     * This is the pull model, where AWS Lambda invokes the function. For
-     * more information, go to
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html"> AWS Lambda: How it Works </a>
-     * in the <i>AWS Lambda Developer Guide</i> .
+     * If you are using the versioning feature and you don't specify a function
+     * version in your <code>DeleteFunction</code> request, AWS Lambda will
+     * delete the function, including all its versions, and any aliases pointing
+     * to the function versions. To delete a specific function version, you must
+     * provide the function version via the <code>Qualifier</code> parameter.
+     * For information about function versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
      * </p>
      * <p>
-     * This association between an Amazon Kinesis stream and a Lambda
-     * function is called the event source mapping. You provide the
-     * configuration information (for example, which stream to read from and
-     * which Lambda function to invoke) for the event source mapping in the
-     * request body.
-     * </p>
-     * <p>
-     * Each event source, such as an Amazon Kinesis or a DynamoDB stream,
-     * can be associated with multiple AWS Lambda function. A given Lambda
-     * function can be associated with multiple AWS event sources.
+     * When you delete a function the associated resource policy is also
+     * deleted. You will need to delete the event source mappings explicitly.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:CreateEventSourceMapping</code> action.
+     * <code>lambda:DeleteFunction</code> action.
      * </p>
-     *
-     * @param createEventSourceMappingRequest Container for the necessary
-     *           parameters to execute the CreateEventSourceMapping service method on
-     *           AWSLambda.
      * 
-     * @return The response from the CreateEventSourceMapping service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws ResourceConflictException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     *         The resource already exists.
+     * @sample AWSLambda.DeleteFunction
      */
-    public CreateEventSourceMappingResult createEventSourceMapping(CreateEventSourceMappingRequest createEventSourceMappingRequest) {
-        ExecutionContext executionContext = createExecutionContext(createEventSourceMappingRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public DeleteFunctionResult deleteFunction(
+            DeleteFunctionRequest deleteFunctionRequest) {
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateEventSourceMappingRequest> request = null;
-        Response<CreateEventSourceMappingResult> response = null;
-        
+        Request<DeleteFunctionRequest> request = null;
+        Response<DeleteFunctionResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateEventSourceMappingRequestMarshaller().marshall(super.beforeMarshalling(createEventSourceMappingRequest));
+                request = new DeleteFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<CreateEventSourceMappingResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateEventSourceMappingResultJsonUnmarshaller();
-            JsonResponseHandler<CreateEventSourceMappingResult> responseHandler =
-                new JsonResponseHandler<CreateEventSourceMappingResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Updates the code for the specified Lambda function. This operation
-     * must only be used on an existing Lambda function and cannot be used to
-     * update the function configuration.
+     * Returns the specified alias information such as the alias ARN,
+     * description, and function version it is pointing to. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
+     * >Introduction to AWS Lambda Aliases</a>.
+     * </p>
+     * <p>
+     * This requires permission for the <code>lambda:GetAlias</code> action.
+     * </p>
+     * 
+     * @param getAliasRequest
+     * @return Result of the GetAlias operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.GetAlias
+     */
+    @Override
+    public GetAliasResult getAlias(GetAliasRequest getAliasRequest) {
+        ExecutionContext executionContext = createExecutionContext(getAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAliasRequest> request = null;
+        Response<GetAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns configuration information for the specified event source mapping
+     * (see <a>CreateEventSourceMapping</a>).
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:UpdateFunctionCode</code> action.
+     * <code>lambda:GetEventSourceMapping</code> action.
      * </p>
-     *
-     * @param updateFunctionCodeRequest Container for the necessary
-     *           parameters to execute the UpdateFunctionCode service method on
-     *           AWSLambda.
      * 
-     * @return The response from the UpdateFunctionCode service method, as
-     *         returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param getEventSourceMappingRequest
+     * @return Result of the GetEventSourceMapping operation returned by the
+     *         service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
-     * @throws CodeStorageExceededException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @sample AWSLambda.GetEventSourceMapping
      */
-    public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
-        ExecutionContext executionContext = createExecutionContext(updateFunctionCodeRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+    @Override
+    public GetEventSourceMappingResult getEventSourceMapping(
+            GetEventSourceMappingRequest getEventSourceMappingRequest) {
+        ExecutionContext executionContext = createExecutionContext(getEventSourceMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UpdateFunctionCodeRequest> request = null;
-        Response<UpdateFunctionCodeResult> response = null;
-        
+        Request<GetEventSourceMappingRequest> request = null;
+        Response<GetEventSourceMappingResult> response = null;
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFunctionCodeRequestMarshaller().marshall(super.beforeMarshalling(updateFunctionCodeRequest));
+                request = new GetEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<UpdateFunctionCodeResult, JsonUnmarshallerContext> unmarshaller =
-                new UpdateFunctionCodeResultJsonUnmarshaller();
-            JsonResponseHandler<UpdateFunctionCodeResult> responseHandler =
-                new JsonResponseHandler<UpdateFunctionCodeResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventSourceMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetEventSourceMappingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
 
-    /**
-     * <p>
-     * Returns list of aliases created for a Lambda function. For each
-     * alias, the response includes information such as the alias ARN,
-     * description, alias name, and the function version to which it points.
-     * For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
-     * </p>
-     * <p>
-     * This requires permission for the lambda:ListAliases action.
-     * </p>
-     *
-     * @param listAliasesRequest Container for the necessary parameters to
-     *           execute the ListAliases service method on AWSLambda.
-     * 
-     * @return The response from the ListAliases service method, as returned
-     *         by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
-        ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListAliasesRequest> request = null;
-        Response<ListAliasesResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListAliasesRequestMarshaller().marshall(super.beforeMarshalling(listAliasesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListAliasesResult, JsonUnmarshallerContext> unmarshaller =
-                new ListAliasesResultJsonUnmarshaller();
-            JsonResponseHandler<ListAliasesResult> responseHandler =
-                new JsonResponseHandler<ListAliasesResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * List all versions of a function.
-     * </p>
-     *
-     * @param listVersionsByFunctionRequest Container for the necessary
-     *           parameters to execute the ListVersionsByFunction service method on
-     *           AWSLambda.
-     * 
-     * @return The response from the ListVersionsByFunction service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
-        ExecutionContext executionContext = createExecutionContext(listVersionsByFunctionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListVersionsByFunctionRequest> request = null;
-        Response<ListVersionsByFunctionResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListVersionsByFunctionRequestMarshaller().marshall(super.beforeMarshalling(listVersionsByFunctionRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<ListVersionsByFunctionResult, JsonUnmarshallerContext> unmarshaller =
-                new ListVersionsByFunctionResultJsonUnmarshaller();
-            JsonResponseHandler<ListVersionsByFunctionResult> responseHandler =
-                new JsonResponseHandler<ListVersionsByFunctionResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
      * Returns the configuration information of the Lambda function and a
-     * presigned URL link to the .zip file you uploaded with CreateFunction
-     * so you can download the .zip file. Note that the URL is valid for up
-     * to 10 minutes. The configuration information is the same information
-     * you provided as parameters when uploading the function.
+     * presigned URL link to the .zip file you uploaded with
+     * <a>CreateFunction</a> so you can download the .zip file. Note that the
+     * URL is valid for up to 10 minutes. The configuration information is the
+     * same information you provided as parameters when uploading the function.
      * </p>
      * <p>
-     * Using the optional <code>Qualifier</code> parameter, you can specify
-     * a specific function version for which you want this information. If
-     * you don't specify this parameter, the API uses unqualified function
-     * ARN which return information about the $LATEST version of the Lambda
-     * function. For more information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases-v2.html"> AWS Lambda Function Versioning and Aliases </a>
-     * .
+     * Using the optional <code>Qualifier</code> parameter, you can specify a
+     * specific function version for which you want this information. If you
+     * don't specify this parameter, the API uses unqualified function ARN which
+     * return information about the <code>$LATEST</code> version of the Lambda
+     * function. For more information, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
      * </p>
      * <p>
      * This operation requires permission for the
      * <code>lambda:GetFunction</code> action.
      * </p>
-     *
-     * @param getFunctionRequest Container for the necessary parameters to
-     *           execute the GetFunction service method on AWSLambda.
      * 
-     * @return The response from the GetFunction service method, as returned
-     *         by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param getFunctionRequest
+     * @return Result of the GetFunction operation returned by the service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @sample AWSLambda.GetFunction
      */
+    @Override
     public GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest) {
         ExecutionContext executionContext = createExecutionContext(getFunctionRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<GetFunctionRequest> request = null;
         Response<GetFunctionResult> response = null;
-        
+
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFunctionRequestMarshaller().marshall(super.beforeMarshalling(getFunctionRequest));
+                request = new GetFunctionRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            Unmarshaller<GetFunctionResult, JsonUnmarshallerContext> unmarshaller =
-                new GetFunctionResultJsonUnmarshaller();
-            JsonResponseHandler<GetFunctionResult> responseHandler =
-                new JsonResponseHandler<GetFunctionResult>(unmarshaller);
-
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetFunctionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
+
         } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
+
+            endClientExecution(awsRequestMetrics, request, response);
         }
     }
 
     /**
      * <p>
-     * Creates an alias to the specified Lambda function version. For more
-     * information, see
-     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-v2-intro-aliases.html"> Introduction to AWS Lambda Aliases </a>
-     * 
+     * Returns the configuration information of the Lambda function. This the
+     * same information you provided as parameters when uploading the function
+     * by using <a>CreateFunction</a>.
      * </p>
      * <p>
-     * This requires permission for the lambda:CreateAlias action.
-     * </p>
-     *
-     * @param createAliasRequest Container for the necessary parameters to
-     *           execute the CreateAlias service method on AWSLambda.
-     * 
-     * @return The response from the CreateAlias service method, as returned
-     *         by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ServiceException
-     * @throws ResourceNotFoundException
-     * @throws ResourceConflictException
-     * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
-        ExecutionContext executionContext = createExecutionContext(createAliasRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<CreateAliasRequest> request = null;
-        Response<CreateAliasResult> response = null;
-        
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new CreateAliasRequestMarshaller().marshall(super.beforeMarshalling(createAliasRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            Unmarshaller<CreateAliasResult, JsonUnmarshallerContext> unmarshaller =
-                new CreateAliasResultJsonUnmarshaller();
-            JsonResponseHandler<CreateAliasResult> responseHandler =
-                new JsonResponseHandler<CreateAliasResult>(unmarshaller);
-
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-        } finally {
-            
-            endClientExecution(awsRequestMetrics, request, response, LOGGING_AWS_REQUEST_METRIC);
-        }
-    }
-
-    /**
-     * <p>
-     * Returns a list of your Lambda functions. For each function, the
-     * response includes the function configuration information. You must use
-     * GetFunction to retrieve the code for your function.
+     * If you are using the versioning feature, you can retrieve this
+     * information for a specific function version by using the optional
+     * <code>Qualifier</code> parameter and specifying the function version or
+     * alias that points to it. If you don't provide it, the API returns
+     * information about the $LATEST version of the function. For more
+     * information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
      * </p>
      * <p>
      * This operation requires permission for the
-     * <code>lambda:ListFunctions</code> action.
+     * <code>lambda:GetFunctionConfiguration</code> operation.
      * </p>
      * 
-     * @return The response from the ListFunctions service method, as
-     *         returned by AWSLambda.
-     * 
+     * @param getFunctionConfigurationRequest
+     * @return Result of the GetFunctionConfiguration operation returned by the
+     *         service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @sample AWSLambda.GetFunctionConfiguration
      */
-    public ListFunctionsResult listFunctions() throws AmazonServiceException, AmazonClientException {
-        return listFunctions(new ListFunctionsRequest());
+    @Override
+    public GetFunctionConfigurationResult getFunctionConfiguration(
+            GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(getFunctionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFunctionConfigurationRequest> request = null;
+        Response<GetFunctionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFunctionConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getFunctionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetFunctionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
-    
+
+    /**
+     * <p>
+     * Returns the resource policy associated with the specified Lambda
+     * function.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can get the resource policy
+     * associated with the specific Lambda function version or alias by
+     * specifying the version or alias name using the <code>Qualifier</code>
+     * parameter. For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * For information about adding permissions, see <a>AddPermission</a>.
+     * </p>
+     * <p>
+     * You need permission for the <code>lambda:GetPolicy action.</code>
+     * </p>
+     * 
+     * @param getPolicyRequest
+     * @return Result of the GetPolicy operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @sample AWSLambda.GetPolicy
+     */
+    @Override
+    public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
+        ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPolicyRequest> request = null;
+        Response<GetPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Invokes a specific Lambda function.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can invoke the specific
+     * function version by providing function version or alias name that is
+     * pointing to the function version using the <code>Qualifier</code>
+     * parameter in the request. If you don't provide the <code>Qualifier</code>
+     * parameter, the <code>$LATEST</code> version of the Lambda function is
+     * invoked. For information about the versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:InvokeFunction</code> action.
+     * </p>
+     * 
+     * @param invokeRequest
+     * @return Result of the Invoke operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidRequestContentException
+     *         The request body could not be parsed as JSON.
+     * @throws RequestTooLargeException
+     *         The request payload exceeded the <code>Invoke</code> request body
+     *         JSON input limit. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html"
+     *         >Limits</a>.
+     * @throws UnsupportedMediaTypeException
+     *         The content type of the <code>Invoke</code> request body is not
+     *         JSON.
+     * @throws TooManyRequestsException
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws EC2UnexpectedException
+     *         AWS Lambda received an unexpected EC2 client exception while
+     *         setting up for the Lambda function.
+     * @throws SubnetIPAddressLimitReachedException
+     *         AWS Lambda was not able to set up VPC access for the Lambda
+     *         function because one or more configured subnets has no available
+     *         IP addresses.
+     * @throws ENILimitReachedException
+     *         AWS Lambda was not able to create an Elastic Network Interface
+     *         (ENI) in the VPC, specified as part of Lambda function
+     *         configuration, because the limit for network interfaces has been
+     *         reached.
+     * @throws EC2ThrottledException
+     *         AWS Lambda was throttled by Amazon EC2 during Lambda function
+     *         initiatization using the execution role provided for the Lambda
+     *         function.
+     * @throws EC2AccessDeniedException
+     * @throws InvalidSubnetIDException
+     *         The Subnet ID provided in the Lambda function VPC configuration
+     *         is invalid.
+     * @throws InvalidSecurityGroupIDException
+     *         The Security Group ID provided in the Lambda function VPC
+     *         configuration is invalid.
+     * @sample AWSLambda.Invoke
+     */
+    @Override
+    public InvokeResult invoke(InvokeRequest invokeRequest) {
+        ExecutionContext executionContext = createExecutionContext(invokeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InvokeRequest> request = null;
+        Response<InvokeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InvokeRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(invokeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InvokeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(false)
+                            .withHasStreamingSuccessResponse(false),
+                            new InvokeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <important>This API is deprecated. We recommend you use
+     * <code>Invoke</code> API (see <a>Invoke</a>).</important>
+     * <p>
+     * Submits an invocation request to AWS Lambda. Upon receiving the request,
+     * Lambda executes the specified function asynchronously. To see the logs
+     * generated by the Lambda function execution, see the CloudWatch Logs
+     * console.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:InvokeFunction</code> action.
+     * </p>
+     * 
+     * @param invokeAsyncRequest
+     * @return Result of the InvokeAsync operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidRequestContentException
+     *         The request body could not be parsed as JSON.
+     * @sample AWSLambda.InvokeAsync
+     */
+    @Override
+    @Deprecated
+    public InvokeAsyncResult invokeAsync(InvokeAsyncRequest invokeAsyncRequest) {
+        ExecutionContext executionContext = createExecutionContext(invokeAsyncRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InvokeAsyncRequest> request = null;
+        Response<InvokeAsyncResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InvokeAsyncRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(invokeAsyncRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InvokeAsyncResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new InvokeAsyncResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns list of aliases created for a Lambda function. For each alias,
+     * the response includes information such as the alias ARN, description,
+     * alias name, and the function version to which it points. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
+     * >Introduction to AWS Lambda Aliases</a>.
+     * </p>
+     * <p>
+     * This requires permission for the lambda:ListAliases action.
+     * </p>
+     * 
+     * @param listAliasesRequest
+     * @return Result of the ListAliases operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.ListAliases
+     */
+    @Override
+    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+        ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAliasesRequest> request = null;
+        Response<ListAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAliasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
     /**
      * <p>
      * Returns a list of event source mappings you created using the
-     * <code>CreateEventSourceMapping</code> (see CreateEventSourceMapping),
-     * where you identify a stream as an event source. This list does not
-     * include Amazon S3 event sources.
+     * <code>CreateEventSourceMapping</code> (see
+     * <a>CreateEventSourceMapping</a>).
      * </p>
      * <p>
      * For each mapping, the API returns configuration information. You can
      * optionally specify filters to retrieve specific event source mappings.
      * </p>
      * <p>
+     * If you are using the versioning feature, you can get list of event source
+     * mappings for a specific Lambda function version or an alias as described
+     * in the <code>FunctionName</code> parameter. For information about the
+     * versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
      * This operation requires permission for the
      * <code>lambda:ListEventSourceMappings</code> action.
      * </p>
      * 
-     * @return The response from the ListEventSourceMappings service method,
-     *         as returned by AWSLambda.
-     * 
-     * @throws InvalidParameterValueException
+     * @param listEventSourceMappingsRequest
+     * @return Result of the ListEventSourceMappings operation returned by the
+     *         service.
      * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
      * @throws TooManyRequestsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSLambda indicating
-     *             either a problem with the data in the request, or a server side issue.
+     * @sample AWSLambda.ListEventSourceMappings
      */
-    public ListEventSourceMappingsResult listEventSourceMappings() throws AmazonServiceException, AmazonClientException {
+    @Override
+    public ListEventSourceMappingsResult listEventSourceMappings(
+            ListEventSourceMappingsRequest listEventSourceMappingsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listEventSourceMappingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEventSourceMappingsRequest> request = null;
+        Response<ListEventSourceMappingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEventSourceMappingsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listEventSourceMappingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEventSourceMappingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListEventSourceMappingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    @Override
+    public ListEventSourceMappingsResult listEventSourceMappings() {
         return listEventSourceMappings(new ListEventSourceMappingsRequest());
     }
 
+    /**
+     * <p>
+     * Returns a list of your Lambda functions. For each function, the response
+     * includes the function configuration information. You must use
+     * <a>GetFunction</a> to retrieve the code for your function.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:ListFunctions</code> action.
+     * </p>
+     * <p>
+     * If you are using versioning feature, the response returns list of $LATEST
+     * versions of your functions. For information about the versioning feature,
+     * see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return Result of the ListFunctions operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.ListFunctions
+     */
     @Override
-    public void setEndpoint(String endpoint) {
-        super.setEndpoint(endpoint);
+    public ListFunctionsResult listFunctions(
+            ListFunctionsRequest listFunctionsRequest) {
+        ExecutionContext executionContext = createExecutionContext(listFunctionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFunctionsRequest> request = null;
+        Response<ListFunctionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFunctionsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listFunctionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFunctionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListFunctionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     @Override
-    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
-        super.setEndpoint(endpoint, serviceName, regionId);
+    public ListFunctionsResult listFunctions() {
+        return listFunctions(new ListFunctionsRequest());
     }
 
     /**
-     * Returns additional metadata for a previously executed successful, request, typically used for
-     * debugging issues where a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation, so it's available through this separate,
-     * diagnostic interface.
      * <p>
-     * Response metadata is only cached for a limited period of time, so if you need to access
-     * this extra diagnostic information for an executed request, you should use this method
-     * to retrieve it as soon as possible after executing the request.
+     * List all versions of a function. For information about the versioning
+     * feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * 
+     * @param listVersionsByFunctionRequest
+     * @return Result of the ListVersionsByFunction operation returned by the
+     *         service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.ListVersionsByFunction
+     */
+    @Override
+    public ListVersionsByFunctionResult listVersionsByFunction(
+            ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
+        ExecutionContext executionContext = createExecutionContext(listVersionsByFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVersionsByFunctionRequest> request = null;
+        Response<ListVersionsByFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVersionsByFunctionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listVersionsByFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVersionsByFunctionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListVersionsByFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Publishes a version of your function from the current snapshot of
+     * $LATEST. That is, AWS Lambda takes a snapshot of the function code and
+     * configuration information from $LATEST and publishes a new version. The
+     * code and configuration cannot be modified after publication. For
+     * information about the versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * 
+     * @param publishVersionRequest
+     * @return Result of the PublishVersion operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @throws CodeStorageExceededException
+     *         You have exceeded your maximum total code size per account. <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">
+     *         Limits</a>
+     * @sample AWSLambda.PublishVersion
+     */
+    @Override
+    public PublishVersionResult publishVersion(
+            PublishVersionRequest publishVersionRequest) {
+        ExecutionContext executionContext = createExecutionContext(publishVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PublishVersionRequest> request = null;
+        Response<PublishVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PublishVersionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(publishVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PublishVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PublishVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * You can remove individual permissions from an resource policy associated
+     * with a Lambda function by providing a statement ID that you provided when
+     * you added the permission.
+     * </p>
+     * <p>
+     * If you are using versioning, the permissions you remove are specific to
+     * the Lambda function version or alias you specify in the
+     * <code>AddPermission</code> request via the <code>Qualifier</code>
+     * parameter. For more information about versioning, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * Note that removal of a permission will cause an active event source to
+     * lose permission to the function.
+     * </p>
+     * <p>
+     * You need permission for the <code>lambda:RemovePermission</code> action.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.RemovePermission
+     */
+    @Override
+    public RemovePermissionResult removePermission(
+            RemovePermissionRequest removePermissionRequest) {
+        ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemovePermissionRequest> request = null;
+        Response<RemovePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemovePermissionRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(removePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemovePermissionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemovePermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Using this API you can update the function version to which the alias
+     * points and the alias description. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html"
+     * >Introduction to AWS Lambda Aliases</a>.
+     * </p>
+     * <p>
+     * This requires permission for the lambda:UpdateAlias action.
+     * </p>
+     * 
+     * @param updateAliasRequest
+     * @return Result of the UpdateAlias operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.UpdateAlias
+     */
+    @Override
+    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAliasRequest> request = null;
+        Response<UpdateAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * You can update an event source mapping. This is useful if you want to
+     * change the parameters of the existing mapping without losing your
+     * position in the stream. You can change which function will receive the
+     * stream records, but to change the stream itself, you must create a new
+     * mapping.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, you can update the event source
+     * mapping to map to a specific Lambda function version or alias as
+     * described in the <code>FunctionName</code> parameter. For information
+     * about the versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * If you disable the event source mapping, AWS Lambda stops polling. If you
+     * enable again, it will resume polling from the time it had stopped
+     * polling, so you don't lose processing of any records. However, if you
+     * delete event source mapping and create it again, it will reset.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:UpdateEventSourceMapping</code> action.
+     * </p>
+     * 
+     * @param updateEventSourceMappingRequest
+     * @return Result of the UpdateEventSourceMapping operation returned by the
+     *         service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @throws ResourceConflictException
+     *         The resource already exists.
+     * @sample AWSLambda.UpdateEventSourceMapping
+     */
+    @Override
+    public UpdateEventSourceMappingResult updateEventSourceMapping(
+            UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateEventSourceMappingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEventSourceMappingRequest> request = null;
+        Response<UpdateEventSourceMappingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEventSourceMappingRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateEventSourceMappingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEventSourceMappingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateEventSourceMappingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the code for the specified Lambda function. This operation must
+     * only be used on an existing Lambda function and cannot be used to update
+     * the function configuration.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, note this API will always update
+     * the $LATEST version of your Lambda function. For information about the
+     * versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:UpdateFunctionCode</code> action.
+     * </p>
+     * 
+     * @param updateFunctionCodeRequest
+     * @return Result of the UpdateFunctionCode operation returned by the
+     *         service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @throws CodeStorageExceededException
+     *         You have exceeded your maximum total code size per account. <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">
+     *         Limits</a>
+     * @sample AWSLambda.UpdateFunctionCode
+     */
+    @Override
+    public UpdateFunctionCodeResult updateFunctionCode(
+            UpdateFunctionCodeRequest updateFunctionCodeRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateFunctionCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFunctionCodeRequest> request = null;
+        Response<UpdateFunctionCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFunctionCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFunctionCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateFunctionCodeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration parameters for the specified Lambda function by
+     * using the values provided in the request. You provide only the parameters
+     * you want to change. This operation must only be used on an existing
+     * Lambda function and cannot be used to update the function's code.
+     * </p>
+     * <p>
+     * If you are using the versioning feature, note this API will always update
+     * the $LATEST version of your Lambda function. For information about the
+     * versioning feature, see <a href=
+     * "http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+     * Lambda Function Versioning and Aliases</a>.
+     * </p>
+     * <p>
+     * This operation requires permission for the
+     * <code>lambda:UpdateFunctionConfiguration</code> action.
+     * </p>
+     * 
+     * @param updateFunctionConfigurationRequest
+     * @return Result of the UpdateFunctionConfiguration operation returned by
+     *         the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy
+     *         statement) specified in the request does not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if
+     *         you provided an IAM role for AWS Lambda to assume in the
+     *         <code>CreateFunction</code> or the
+     *         <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is
+     *         unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.UpdateFunctionConfiguration
+     */
+    @Override
+    public UpdateFunctionConfigurationResult updateFunctionConfiguration(
+            UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
+        ExecutionContext executionContext = createExecutionContext(updateFunctionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFunctionConfigurationRequest> request = null;
+        Response<UpdateFunctionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFunctionConfigurationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateFunctionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFunctionConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateFunctionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns additional metadata for a previously executed successful,
+     * request, typically used for debugging issues where a service isn't acting
+     * as expected. This data isn't considered part of the result data returned
+     * by an operation, so it's available through this separate, diagnostic
+     * interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you
+     * need to access this extra diagnostic information for an executed request,
+     * you should use this method to retrieve it as soon as possible after
+     * executing the request.
      *
      * @param request
-     *            The originally executed request
+     *        The originally executed request
      *
      * @return The response metadata for the specified request, or null if none
      *         is available.
      */
-    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+    public ResponseMetadata getCachedResponseMetadata(
+            AmazonWebServiceRequest request) {
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request,
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
+            Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-        JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(jsonErrorUnmarshallers);
-        Response<X> result = client.execute(request, responseHandler,
-                errorResponseHandler, executionContext);
-        return result;
+        return client.execute(request, responseHandler, errorResponseHandler,
+                executionContext);
     }
+
 }
-        

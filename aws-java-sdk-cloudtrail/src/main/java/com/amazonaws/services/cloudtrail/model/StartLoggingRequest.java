@@ -30,8 +30,10 @@ public class StartLoggingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail logs AWS API calls. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * CloudTrail logs AWS API calls. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String name;
@@ -39,16 +41,19 @@ public class StartLoggingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail logs AWS API calls. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * CloudTrail logs AWS API calls. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
      *        Specifies the name or the CloudTrail ARN of the trail for which
-     *        CloudTrail logs AWS API calls. The format of a trail ARN is
+     *        CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -56,15 +61,18 @@ public class StartLoggingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail logs AWS API calls. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * CloudTrail logs AWS API calls. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name or the CloudTrail ARN of the trail for which
-     *         CloudTrail logs AWS API calls. The format of a trail ARN is
+     *         CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      */
+
     public String getName() {
         return this.name;
     }
@@ -72,18 +80,21 @@ public class StartLoggingRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the name or the CloudTrail ARN of the trail for which
-     * CloudTrail logs AWS API calls. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * CloudTrail logs AWS API calls. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
      *        Specifies the name or the CloudTrail ARN of the trail for which
-     *        CloudTrail logs AWS API calls. The format of a trail ARN is
+     *        CloudTrail logs AWS API calls. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StartLoggingRequest withName(String name) {
         setName(name);
         return this;

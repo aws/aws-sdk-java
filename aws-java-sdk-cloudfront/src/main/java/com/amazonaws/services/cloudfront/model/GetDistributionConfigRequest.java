@@ -54,6 +54,7 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest
      * @param id
      *        The distribution's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -75,6 +77,7 @@ public class GetDistributionConfigRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDistributionConfigRequest withId(String id) {
         setId(id);
         return this;

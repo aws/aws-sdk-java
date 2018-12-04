@@ -16,6 +16,7 @@
 package com.amazonaws.services.kinesisfirehose;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Firehose asynchronously. Each asynchronous method
@@ -26,9 +27,11 @@ import com.amazonaws.services.kinesisfirehose.model.*;
  * <fullname>Amazon Kinesis Firehose API Reference</fullname>
  * <p>
  * Amazon Kinesis Firehose is a fully-managed service that delivers real-time
- * streaming data to destinations such as Amazon S3 and Amazon Redshift.
+ * streaming data to destinations such as Amazon Simple Storage Service (Amazon
+ * S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.
  * </p>
  */
+@ThreadSafe
 public class AmazonKinesisFirehoseAsyncClient extends
         AmazonKinesisFirehoseClient implements AmazonKinesisFirehoseAsync {
 
@@ -127,8 +130,7 @@ public class AmazonKinesisFirehoseAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -220,9 +222,7 @@ public class AmazonKinesisFirehoseAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

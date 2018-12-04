@@ -40,6 +40,7 @@ public class UploadSSHPublicKeyResult implements Serializable, Cloneable {
      * @param sSHPublicKey
      *        Contains information about the SSH public key.
      */
+
     public void setSSHPublicKey(SSHPublicKey sSHPublicKey) {
         this.sSHPublicKey = sSHPublicKey;
     }
@@ -51,6 +52,7 @@ public class UploadSSHPublicKeyResult implements Serializable, Cloneable {
      * 
      * @return Contains information about the SSH public key.
      */
+
     public SSHPublicKey getSSHPublicKey() {
         return this.sSHPublicKey;
     }
@@ -65,6 +67,7 @@ public class UploadSSHPublicKeyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadSSHPublicKeyResult withSSHPublicKey(SSHPublicKey sSHPublicKey) {
         setSSHPublicKey(sSHPublicKey);
         return this;

@@ -41,6 +41,7 @@ public class RebuildWorkspacesRequest extends AmazonWebServiceRequest implements
      * 
      * @return An array of structures that specify the WorkSpaces to rebuild.
      */
+
     public java.util.List<RebuildRequest> getRebuildWorkspaceRequests() {
         if (rebuildWorkspaceRequests == null) {
             rebuildWorkspaceRequests = new com.amazonaws.internal.SdkInternalList<RebuildRequest>();
@@ -56,6 +57,7 @@ public class RebuildWorkspacesRequest extends AmazonWebServiceRequest implements
      * @param rebuildWorkspaceRequests
      *        An array of structures that specify the WorkSpaces to rebuild.
      */
+
     public void setRebuildWorkspaceRequests(
             java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
         if (rebuildWorkspaceRequests == null) {
@@ -83,6 +85,7 @@ public class RebuildWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebuildWorkspacesRequest withRebuildWorkspaceRequests(
             RebuildRequest... rebuildWorkspaceRequests) {
         if (this.rebuildWorkspaceRequests == null) {
@@ -105,6 +108,7 @@ public class RebuildWorkspacesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RebuildWorkspacesRequest withRebuildWorkspaceRequests(
             java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
         setRebuildWorkspaceRequests(rebuildWorkspaceRequests);

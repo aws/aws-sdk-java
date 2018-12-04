@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class IdentityUsageJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IdentityId", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setIdentityId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityUsage.setIdentityId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("IdentityPoolId", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setIdentityPoolId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityUsage.setIdentityPoolId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityUsage.setLastModifiedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetCount", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setDatasetCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityUsage.setDatasetCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DataStorage", targetDepth)) {
                     context.nextToken();
-                    identityUsage.setDataStorage(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    identityUsage.setDataStorage(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

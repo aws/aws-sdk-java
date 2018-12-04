@@ -26,7 +26,6 @@ import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.AmazonS3URI;
 import com.amazonaws.util.AwsHostNameUtils;
 
 public class S3ExecutionContext extends ExecutionContext {
@@ -59,6 +58,12 @@ public class S3ExecutionContext extends ExecutionContext {
         AmazonWebServiceClient awsClient = getAwsClient();
         if (awsClient != null &&
             awsClient.getSignerRegionOverride() != null) {
+            return signer;
+        }
+
+        // Don't modify the signer region if the request endpoint is known to be
+        // an S3 accelerate endpoint.
+        if (ServiceUtils.isS3AccelerateEndpoint(uri.getHost())) {
             return signer;
         }
 

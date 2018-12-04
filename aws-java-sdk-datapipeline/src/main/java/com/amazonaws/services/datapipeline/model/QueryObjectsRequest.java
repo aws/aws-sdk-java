@@ -75,6 +75,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -86,6 +87,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -100,6 +102,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -120,6 +123,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *        in the object. These filters can be applied to components,
      *        instances, and attempts.
      */
+
     public void setQuery(Query query) {
         this.query = query;
     }
@@ -138,6 +142,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *         fields in the object. These filters can be applied to components,
      *         instances, and attempts.
      */
+
     public Query getQuery() {
         return this.query;
     }
@@ -159,6 +164,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsRequest withQuery(Query query) {
         setQuery(query);
         return this;
@@ -176,6 +182,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *        The possible values are: <code>COMPONENT</code>,
      *        <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      */
+
     public void setSphere(String sphere) {
         this.sphere = sphere;
     }
@@ -191,6 +198,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *         The possible values are: <code>COMPONENT</code>,
      *         <code>INSTANCE</code>, and <code>ATTEMPT</code>.
      */
+
     public String getSphere() {
         return this.sphere;
     }
@@ -209,6 +217,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsRequest withSphere(String sphere) {
         setSphere(sphere);
         return this;
@@ -229,6 +238,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *        marker value from the previous call to retrieve the next set of
      *        results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -247,6 +257,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *         marker value from the previous call to retrieve the next set of
      *         results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -268,6 +279,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -283,6 +295,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      *        The maximum number of object names that <code>QueryObjects</code>
      *        will return in a single call. The default value is 100.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -296,6 +309,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of object names that <code>QueryObjects</code>
      *         will return in a single call. The default value is 100.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -312,6 +326,7 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public QueryObjectsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

@@ -48,6 +48,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.internal.Mimetypes;
+import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -144,9 +145,12 @@ public class TransferManager {
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
     /** The thread pool in which transfers are uploaded or downloaded. */
-    private final ExecutorService threadPool;
+    private final ExecutorService executorService;
 
-    /** Thread used for periodicially checking transfers and updating thier state. */
+    /**
+     * Thread used for periodically checking transfers and updating their state, as well as enforcing
+     * timeouts.
+     */
     private final ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1, daemonThreadFactory);
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
@@ -239,14 +243,19 @@ public class TransferManager {
      *
      * @param s3
      *            The client to use when making requests to Amazon S3.
-     * @param threadPool
-     *            The thread pool in which to execute requests.
+     * @param executorService
+     *            The ExecutorService to use for the TransferManager. It is not recommended to
+     *            use a single threaded executor or a thread pool with a bounded work queue as
+     *            control tasks may submit subtasks that can't complete until all sub tasks
+     *            complete. Using an incorrectly configured thread pool may cause a deadlock (I.E.
+     *            the work queue is filled with control tasks that can't finish until subtasks
+     *            complete but subtasks can't execute because the queue is filled).
      *
      * @see TransferManager#TransferManager(AmazonS3 s3, ExecutorService
-     *      threadPool, boolean shutDownThreadPools)
+     *      executorService, boolean shutDownThreadPools)
      */
-    public TransferManager(AmazonS3 s3, ExecutorService threadPool) {
-        this(s3,threadPool,true);
+    public TransferManager(AmazonS3 s3, ExecutorService executorService) {
+        this(s3, executorService, true);
     }
 
     /**
@@ -261,15 +270,20 @@ public class TransferManager {
      *
      * @param s3
      *            The client to use when making requests to Amazon S3.
-     * @param threadPool
-     *            The thread pool in which to execute requests.
+     * @param executorService
+     *            The ExecutorService to use for the TransferManager. It is not recommended to
+     *            use a single threaded executor or a thread pool with a bounded work queue as
+     *            control tasks may submit subtasks that can't complete until all sub tasks
+     *            complete. Using an incorrectly configured thread pool may cause a deadlock (I.E.
+     *            the work queue is filled with control tasks that can't finish until subtasks
+     *            complete but subtasks can't execute because the queue is filled).
      * @param shutDownThreadPools
      *            If set to true, the thread pool will be shutdown when transfer
      *            manager instance is garbage collected.
      */
-    public TransferManager(AmazonS3 s3, ExecutorService threadPool, boolean shutDownThreadPools) {
+    public TransferManager(AmazonS3 s3, ExecutorService executorService, boolean shutDownThreadPools) {
         this.s3 = s3;
-        this.threadPool = threadPool;
+        this.executorService = executorService;
         this.configuration = new TransferManagerConfiguration();
         this.shutDownThreadPools = shutDownThreadPools;
     }
@@ -605,11 +619,11 @@ public class TransferManager {
          * multiple parallel uploads submitted. This may result in a delay for
          * processing the complete multi part upload request.
          */
-        UploadCallable uploadCallable = new UploadCallable(this, threadPool,
-                upload, putObjectRequest, listenerChain, multipartUploadId,
-                transferProgress);
-        UploadMonitor watcher = UploadMonitor.create(this, upload, threadPool,
-                uploadCallable, putObjectRequest, listenerChain);
+        UploadCallable uploadCallable = new UploadCallable(this, executorService,
+                                                           upload, putObjectRequest, listenerChain, multipartUploadId,
+                                                           transferProgress);
+        UploadMonitor watcher = UploadMonitor.create(this, upload, executorService,
+                                                     uploadCallable, putObjectRequest, listenerChain);
         upload.setMonitor(watcher);
 
         return upload;
@@ -651,7 +665,54 @@ public class TransferManager {
      *             request.
      */
     public Download download(String bucket, String key, File file) {
-        return download(new GetObjectRequest(bucket, key), file);
+        return download(bucket, key, file, 0);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param bucket
+     *            The name of the bucket containing the object to download.
+     * @param key
+     *            The key under which the object to download is stored.
+     * @param file
+     *            The file to download the object's data to.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(String bucket, String key,
+                             File file, long timeoutMillis) {
+        return download(new GetObjectRequest(bucket, key), file,
+                timeoutMillis);
     }
 
     /**
@@ -688,7 +749,52 @@ public class TransferManager {
      *             request.
      */
     public Download download(final GetObjectRequest getObjectRequest, final File file) {
-        return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE);
+        return download(getObjectRequest, file, 0);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest,
+                             final File file, long timeoutMillis) {
+        return doDownload(getObjectRequest, file, null, null, OVERWRITE_MODE,
+                timeoutMillis, null, 0L);
     }
 
     /**
@@ -730,7 +836,56 @@ public class TransferManager {
     public Download download(final GetObjectRequest getObjectRequest,
             final File file, final S3ProgressListener progressListener) {
         return doDownload(getObjectRequest, file, null, progressListener,
-                OVERWRITE_MODE);
+                OVERWRITE_MODE, 0, null, 0L);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     * </p>
+     * <p>
+     * If you are downloading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     * @param progressListener
+     *            An optional callback listener to get the progress of the
+     *            download.
+     * @param timeoutMillis
+     *            Timeout, in milliseconds, for waiting for this download to
+     *            complete.  Note that the timeout time will be approximate
+     *            and is not strictly guaranteed.  As a result this timeout
+     *            should not be relied on in cases where exact precision is
+     *            required.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest,
+                             final File file, final S3ProgressListener progressListener,
+                             final long timeoutMillis) {
+        return doDownload(getObjectRequest, file, null, progressListener,
+                OVERWRITE_MODE, timeoutMillis, null, 0L);
     }
 
     /**
@@ -742,77 +897,92 @@ public class TransferManager {
     private Download doDownload(final GetObjectRequest getObjectRequest,
             final File file, final TransferStateChangeListener stateListener,
             final S3ProgressListener s3progressListener,
-            final boolean resumeExistingDownload)
+            final boolean resumeExistingDownload,
+            final long timeoutMillis,
+            final Integer lastFullyDownloadedPart,
+            final long lastModifiedTimeRecordedDuringPause)
     {
+        assertParameterNotNull(getObjectRequest,
+                "A valid GetObjectRequest must be provided to initiate download");
+        assertParameterNotNull(file,
+                "A valid file must be provided to download into");
+
         appendSingleObjectUserAgent(getObjectRequest);
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
 
         TransferProgress transferProgress = new TransferProgress();
         // S3 progress listener to capture the persistable transfer when available
         S3ProgressListenerChain listenerChain = new S3ProgressListenerChain(
-            // The listener for updating transfer progress
-            new TransferProgressUpdatingListener(transferProgress),
-            getObjectRequest.getGeneralProgressListener(),
-            s3progressListener);           // Listeners included in the original request
+                // The listener for updating transfer progress
+                new TransferProgressUpdatingListener(transferProgress),
+                getObjectRequest.getGeneralProgressListener(),
+                s3progressListener); // Listeners included in the original request
         // The listener chain used by the low-level GetObject request.
         // This listener chain ignores any COMPLETE event, so that we could
         // delay firing the signal until the high-level download fully finishes.
-        getObjectRequest.setGeneralProgressListener(
-            new ProgressListenerChain(
-                new TransferCompletionFilter(), listenerChain));
+        getObjectRequest
+                .setGeneralProgressListener(new ProgressListenerChain(new TransferCompletionFilter(), listenerChain));
+
+        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
+                getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId());
+        if (getObjectRequest.getSSECustomerKey() != null) {
+            getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
+        }
+        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
+
+        // Used to check if the object is modified between pause and resume
+        long lastModifiedTime = objectMetadata.getLastModified().getTime();
 
         long startingByte = 0;
         long lastByte;
 
         long[] range = getObjectRequest.getRange();
-        if (range != null
-                && range.length == 2) {
+        if (range != null && range.length == 2) {
             startingByte = range[0];
             lastByte = range[1];
         } else {
-            GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
-                    getObjectRequest.getBucketName(), getObjectRequest.getKey());
-            if (getObjectRequest.getSSECustomerKey() != null)
-                getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
-            if (getObjectRequest.getVersionId() != null)
-                getObjectMetadataRequest.setVersionId(getObjectRequest.getVersionId());
-            final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
-
             lastByte = objectMetadata.getContentLength() - 1;
         }
+
         final long origStartingByte = startingByte;
+        final boolean isDownloadParallel = TransferManagerUtils.isDownloadParallelizable(s3, getObjectRequest,
+                ServiceUtils.getPartCount(getObjectRequest, s3));
         // We still pass the unfiltered listener chain into DownloadImpl
-        final DownloadImpl download = new DownloadImpl(description,
-                transferProgress, listenerChain, null, stateListener,
-                getObjectRequest, file);
+        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null,
+                stateListener, getObjectRequest, file, objectMetadata, isDownloadParallel);
 
         long totalBytesToDownload = lastByte - startingByte + 1;
         transferProgress.setTotalBytesToTransfer(totalBytesToDownload);
 
         long fileLength = -1;
+
         if (resumeExistingDownload) {
-            if (!FileLocks.lock(file)) {
-                throw new FileLockException("Fail to lock " + file
-                        + " for resume download");
+            if (isS3ObjectModifiedSincePause(lastModifiedTime, lastModifiedTimeRecordedDuringPause)) {
+                throw new AmazonClientException("The requested object in bucket " + getObjectRequest.getBucketName()
+                        + " with key " + getObjectRequest.getKey() + " is modified on Amazon S3 since the last pause.");
             }
-            try {
-                if (file.exists()) {
-                    fileLength = file.length();
-                    startingByte = startingByte + fileLength;
-                    getObjectRequest.setRange(startingByte, lastByte);
-                    transferProgress.updateProgress(Math.min(fileLength,
-                            totalBytesToDownload));
-                    totalBytesToDownload = lastByte - startingByte + 1;
-                    if (log.isDebugEnabled()) {
-                        log.debug("Resume download: totalBytesToDownload=" + totalBytesToDownload
-                            + ", origStartingByte=" + origStartingByte
-                            + ", startingByte=" + startingByte + ", lastByte="
-                            + lastByte + ", numberOfBytesRead=" + fileLength
-                            + ", file: " + file);
-                    }
+
+            if (!isDownloadParallel) {
+                if (!FileLocks.lock(file)) {
+                    throw new FileLockException("Fail to lock " + file + " for resume download");
                 }
-            } finally {
-                FileLocks.unlock(file);
+                try {
+                    if (file.exists()) {
+                        fileLength = file.length();
+                        startingByte = startingByte + fileLength;
+                        getObjectRequest.setRange(startingByte, lastByte);
+                        transferProgress.updateProgress(Math.min(fileLength, totalBytesToDownload));
+                        totalBytesToDownload = lastByte - startingByte + 1;
+                        if (log.isDebugEnabled()) {
+                            log.debug("Resume download: totalBytesToDownload=" + totalBytesToDownload
+                                    + ", origStartingByte=" + origStartingByte + ", startingByte=" + startingByte
+                                    + ", lastByte=" + lastByte + ", numberOfBytesRead=" + fileLength + ", file: "
+                                    + file);
+                        }
+                    }
+                } finally {
+                    FileLocks.unlock(file);
+                }
             }
         }
 
@@ -822,13 +992,19 @@ public class TransferManager {
         }
 
         final CountDownLatch latch = new CountDownLatch(1);
-        Future<?> future = threadPool.submit(
+        Future<?> future = executorService.submit(
             new DownloadCallable(s3, latch,
                 getObjectRequest, resumeExistingDownload, download, file,
-                origStartingByte, fileLength));
+                origStartingByte, fileLength, timeoutMillis, timedThreadPool,
+                lastFullyDownloadedPart, isDownloadParallel));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
         return download;
+    }
+
+    private boolean isS3ObjectModifiedSincePause(final long lastModifiedTimeRecordedDuringResume,
+            long lastModifiedTimeRecordedDuringPause) {
+        return lastModifiedTimeRecordedDuringResume != lastModifiedTimeRecordedDuringPause;
     }
 
     /**
@@ -935,7 +1111,8 @@ public class TransferManager {
                                     .<GetObjectRequest>withGeneralProgressListener(
                                             listener),
                             f,
-                            transferListener, null, false));
+                            transferListener, null, false, 0,
+                            null, 0L));
         }
 
         if ( downloads.isEmpty() ) {
@@ -1263,7 +1440,7 @@ public class TransferManager {
      */
     public void shutdownNow(boolean shutDownS3Client) {
         if (shutDownThreadPools) {
-            threadPool.shutdownNow();
+            executorService.shutdownNow();
             timedThreadPool.shutdownNow();
         }
 
@@ -1281,7 +1458,7 @@ public class TransferManager {
      */
     private void shutdownThreadPools() {
         if (shutDownThreadPools) {
-            threadPool.shutdown();
+            executorService.shutdown();
             timedThreadPool.shutdown();
         }
     }
@@ -1474,10 +1651,10 @@ public class TransferManager {
                 new TransferProgressUpdatingListener(transferProgress));
         CopyImpl copy = new CopyImpl(description, transferProgress,
                 listenerChain, stateChangeListener);
-        CopyCallable copyCallable = new CopyCallable(this, threadPool, copy,
-                copyObjectRequest, metadata, listenerChain);
-        CopyMonitor watcher = CopyMonitor.create(this, copy, threadPool,
-                copyCallable, copyObjectRequest, listenerChain);
+        CopyCallable copyCallable = new CopyCallable(this, executorService, copy,
+                                                     copyObjectRequest, metadata, listenerChain);
+        CopyMonitor watcher = CopyMonitor.create(this, copy, executorService,
+                                                 copyCallable, copyObjectRequest, listenerChain);
         watcher.setTimedThreadPool(timedThreadPool);
         copy.setMonitor(watcher);
         return copy;
@@ -1546,7 +1723,9 @@ public class TransferManager {
         request.setResponseHeaders(persistableDownload.getResponseHeaders());
 
         return doDownload(request, new File(persistableDownload.getFile()), null, null,
-                APPEND_MODE);
+                APPEND_MODE, 0,
+                persistableDownload.getLastFullyDownloadedPartNumber(),
+                persistableDownload.getlastModifiedTime());
     }
 
     /**

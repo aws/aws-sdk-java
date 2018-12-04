@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeIdentityPoolUsageRequest Marshaller
@@ -48,6 +50,13 @@ public class DescribeIdentityPoolUsageRequestMarshaller
         Marshaller<Request<DescribeIdentityPoolUsageRequest>, DescribeIdentityPoolUsageRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeIdentityPoolUsageRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeIdentityPoolUsageRequest> marshall(
             DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
@@ -67,10 +76,11 @@ public class DescribeIdentityPoolUsageRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{IdentityPoolId}",
-                        (describeIdentityPoolUsageRequest.getIdentityPoolId() == null) ? ""
-                                : StringUtils
+                        (describeIdentityPoolUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(describeIdentityPoolUsageRequest
-                                                .getIdentityPoolId()));
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

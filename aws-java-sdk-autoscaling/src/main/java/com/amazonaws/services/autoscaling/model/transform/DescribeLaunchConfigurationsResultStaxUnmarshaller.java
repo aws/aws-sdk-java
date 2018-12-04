@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -53,9 +55,8 @@ public class DescribeLaunchConfigurationsResultStaxUnmarshaller
                 if (context.testExpression("LaunchConfigurations/member",
                         targetDepth)) {
                     describeLaunchConfigurationsResult
-                            .getLaunchConfigurations().add(
-                                    LaunchConfigurationStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withLaunchConfigurations(LaunchConfigurationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

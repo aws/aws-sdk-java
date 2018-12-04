@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * IPSetMarshaller
@@ -39,41 +34,43 @@ import com.amazonaws.util.json.*;
 public class IPSetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(IPSet iPSet, JSONWriter jsonWriter) {
+    public void marshall(IPSet iPSet, StructuredJsonGenerator jsonGenerator) {
+
         if (iPSet == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (iPSet.getIPSetId() != null) {
-                jsonWriter.key("IPSetId").value(iPSet.getIPSetId());
+                jsonGenerator.writeFieldName("IPSetId").writeValue(
+                        iPSet.getIPSetId());
             }
-
             if (iPSet.getName() != null) {
-                jsonWriter.key("Name").value(iPSet.getName());
+                jsonGenerator.writeFieldName("Name")
+                        .writeValue(iPSet.getName());
             }
 
             java.util.List<IPSetDescriptor> iPSetDescriptorsList = iPSet
                     .getIPSetDescriptors();
             if (iPSetDescriptorsList != null) {
-                jsonWriter.key("IPSetDescriptors");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("IPSetDescriptors");
+                jsonGenerator.writeStartArray();
                 for (IPSetDescriptor iPSetDescriptorsListValue : iPSetDescriptorsList) {
                     if (iPSetDescriptorsListValue != null) {
 
                         IPSetDescriptorJsonMarshaller.getInstance().marshall(
-                                iPSetDescriptorsListValue, jsonWriter);
+                                iPSetDescriptorsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

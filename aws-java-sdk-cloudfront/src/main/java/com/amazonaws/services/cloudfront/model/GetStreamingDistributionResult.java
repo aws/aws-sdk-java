@@ -37,6 +37,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      * @param streamingDistribution
      *        The streaming distribution's information.
      */
+
     public void setStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         this.streamingDistribution = streamingDistribution;
@@ -47,6 +48,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      * 
      * @return The streaming distribution's information.
      */
+
     public StreamingDistribution getStreamingDistribution() {
         return this.streamingDistribution;
     }
@@ -59,6 +61,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStreamingDistributionResult withStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         setStreamingDistribution(streamingDistribution);
@@ -73,6 +76,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      *        The current version of the streaming distribution's information.
      *        For example: E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -84,6 +88,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      * @return The current version of the streaming distribution's information.
      *         For example: E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -98,6 +103,7 @@ public class GetStreamingDistributionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStreamingDistributionResult withETag(String eTag) {
         setETag(eTag);
         return this;

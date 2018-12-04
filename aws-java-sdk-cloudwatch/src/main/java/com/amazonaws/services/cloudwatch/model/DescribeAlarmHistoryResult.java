@@ -45,6 +45,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * 
      * @return A list of alarm histories in JSON format.
      */
+
     public java.util.List<AlarmHistoryItem> getAlarmHistoryItems() {
         if (alarmHistoryItems == null) {
             alarmHistoryItems = new com.amazonaws.internal.SdkInternalList<AlarmHistoryItem>();
@@ -60,6 +61,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * @param alarmHistoryItems
      *        A list of alarm histories in JSON format.
      */
+
     public void setAlarmHistoryItems(
             java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
         if (alarmHistoryItems == null) {
@@ -87,6 +89,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryResult withAlarmHistoryItems(
             AlarmHistoryItem... alarmHistoryItems) {
         if (this.alarmHistoryItems == null) {
@@ -109,6 +112,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryResult withAlarmHistoryItems(
             java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
         setAlarmHistoryItems(alarmHistoryItems);
@@ -124,6 +128,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      *        A string that marks the start of the next batch of returned
      *        results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -136,6 +141,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * @return A string that marks the start of the next batch of returned
      *         results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribeAlarmHistoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

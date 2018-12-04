@@ -78,6 +78,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *        <b>Not_Applicable</b>.
      * @see DeliveryStatus
      */
+
     public void setLastStatus(String lastStatus) {
         this.lastStatus = lastStatus;
     }
@@ -102,6 +103,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *         <b>Not_Applicable</b>.
      * @see DeliveryStatus
      */
+
     public String getLastStatus() {
         return this.lastStatus;
     }
@@ -129,6 +131,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStatus
      */
+
     public ConfigStreamDeliveryInfo withLastStatus(String lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -153,10 +156,9 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *        >DeliveryChannel</a> for AWS Config is optional. If the SNS
      *        delivery is turned off, the last status will be
      *        <b>Not_Applicable</b>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeliveryStatus
      */
+
     public void setLastStatus(DeliveryStatus lastStatus) {
         this.lastStatus = lastStatus.toString();
     }
@@ -184,6 +186,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStatus
      */
+
     public ConfigStreamDeliveryInfo withLastStatus(DeliveryStatus lastStatus) {
         setLastStatus(lastStatus);
         return this;
@@ -197,6 +200,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @param lastErrorCode
      *        The error code from the last attempted delivery.
      */
+
     public void setLastErrorCode(String lastErrorCode) {
         this.lastErrorCode = lastErrorCode;
     }
@@ -208,6 +212,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The error code from the last attempted delivery.
      */
+
     public String getLastErrorCode() {
         return this.lastErrorCode;
     }
@@ -222,6 +227,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigStreamDeliveryInfo withLastErrorCode(String lastErrorCode) {
         setLastErrorCode(lastErrorCode);
         return this;
@@ -235,6 +241,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @param lastErrorMessage
      *        The error message from the last attempted delivery.
      */
+
     public void setLastErrorMessage(String lastErrorMessage) {
         this.lastErrorMessage = lastErrorMessage;
     }
@@ -246,6 +253,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The error message from the last attempted delivery.
      */
+
     public String getLastErrorMessage() {
         return this.lastErrorMessage;
     }
@@ -260,6 +268,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigStreamDeliveryInfo withLastErrorMessage(String lastErrorMessage) {
         setLastErrorMessage(lastErrorMessage);
         return this;
@@ -273,6 +282,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @param lastStatusChangeTime
      *        The time from the last status change.
      */
+
     public void setLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
         this.lastStatusChangeTime = lastStatusChangeTime;
     }
@@ -284,6 +294,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * 
      * @return The time from the last status change.
      */
+
     public java.util.Date getLastStatusChangeTime() {
         return this.lastStatusChangeTime;
     }
@@ -298,6 +309,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigStreamDeliveryInfo withLastStatusChangeTime(
             java.util.Date lastStatusChangeTime) {
         setLastStatusChangeTime(lastStatusChangeTime);

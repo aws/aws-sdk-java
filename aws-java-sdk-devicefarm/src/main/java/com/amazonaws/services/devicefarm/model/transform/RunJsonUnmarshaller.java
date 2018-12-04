@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,48 +54,51 @@ public class RunJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    run.setArn(StringJsonUnmarshaller.getInstance().unmarshall(
-                            context));
+                    run.setArn(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    run.setName(StringJsonUnmarshaller.getInstance()
+                    run.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    run.setType(StringJsonUnmarshaller.getInstance()
+                    run.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("platform", targetDepth)) {
                     context.nextToken();
-                    run.setPlatform(StringJsonUnmarshaller.getInstance()
+                    run.setPlatform(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    run.setCreated(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    run.setCreated(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    run.setStatus(StringJsonUnmarshaller.getInstance()
+                    run.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("result", targetDepth)) {
                     context.nextToken();
-                    run.setResult(StringJsonUnmarshaller.getInstance()
+                    run.setResult(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    run.setStarted(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    run.setStarted(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    run.setStopped(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    run.setStopped(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
@@ -102,22 +107,22 @@ public class RunJsonUnmarshaller implements
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    run.setMessage(StringJsonUnmarshaller.getInstance()
+                    run.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("totalJobs", targetDepth)) {
                     context.nextToken();
-                    run.setTotalJobs(IntegerJsonUnmarshaller.getInstance()
+                    run.setTotalJobs(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("completedJobs", targetDepth)) {
                     context.nextToken();
-                    run.setCompletedJobs(IntegerJsonUnmarshaller.getInstance()
+                    run.setCompletedJobs(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
                     context.nextToken();
-                    run.setBillingMethod(StringJsonUnmarshaller.getInstance()
+                    run.setBillingMethod(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("deviceMinutes", targetDepth)) {

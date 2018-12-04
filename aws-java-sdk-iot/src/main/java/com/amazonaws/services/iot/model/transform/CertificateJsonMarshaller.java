@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CertificateMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class CertificateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Certificate certificate, JSONWriter jsonWriter) {
+    public void marshall(Certificate certificate,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (certificate == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (certificate.getCertificateArn() != null) {
-                jsonWriter.key("certificateArn").value(
+                jsonGenerator.writeFieldName("certificateArn").writeValue(
                         certificate.getCertificateArn());
             }
-
             if (certificate.getCertificateId() != null) {
-                jsonWriter.key("certificateId").value(
+                jsonGenerator.writeFieldName("certificateId").writeValue(
                         certificate.getCertificateId());
             }
-
             if (certificate.getStatus() != null) {
-                jsonWriter.key("status").value(certificate.getStatus());
+                jsonGenerator.writeFieldName("status").writeValue(
+                        certificate.getStatus());
             }
-
             if (certificate.getCreationDate() != null) {
-                jsonWriter.key("creationDate").value(
+                jsonGenerator.writeFieldName("creationDate").writeValue(
                         certificate.getCreationDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -55,6 +55,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      *        A <a>WorkspaceRequest</a> object that contains the information
      *        about the WorkSpace that could not be created.
      */
+
     public void setWorkspaceRequest(WorkspaceRequest workspaceRequest) {
         this.workspaceRequest = workspaceRequest;
     }
@@ -68,6 +69,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @return A <a>WorkspaceRequest</a> object that contains the information
      *         about the WorkSpace that could not be created.
      */
+
     public WorkspaceRequest getWorkspaceRequest() {
         return this.workspaceRequest;
     }
@@ -84,6 +86,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedCreateWorkspaceRequest withWorkspaceRequest(
             WorkspaceRequest workspaceRequest) {
         setWorkspaceRequest(workspaceRequest);
@@ -98,6 +101,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @param errorCode
      *        The error code.
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -109,6 +113,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * 
      * @return The error code.
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -123,6 +128,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedCreateWorkspaceRequest withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;
@@ -136,6 +142,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @param errorMessage
      *        The textual error message.
      */
+
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
@@ -147,6 +154,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * 
      * @return The textual error message.
      */
+
     public String getErrorMessage() {
         return this.errorMessage;
     }
@@ -161,6 +169,7 @@ public class FailedCreateWorkspaceRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FailedCreateWorkspaceRequest withErrorMessage(String errorMessage) {
         setErrorMessage(errorMessage);
         return this;

@@ -1,76 +1,97 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.redshift.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#disableLogging(DisableLoggingRequest) DisableLogging operation}.
  * <p>
- * Stops logging information, such as queries and connection attempts,
- * for the specified Amazon Redshift cluster.
  * </p>
- *
- * @see com.amazonaws.services.redshift.AmazonRedshift#disableLogging(DisableLoggingRequest)
  */
-public class DisableLoggingRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DisableLoggingRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable {
 
     /**
+     * <p>
      * The identifier of the cluster on which logging is to be stopped.
-     * <p>Example: <code>examplecluster</code>
+     * </p>
+     * <p>
+     * Example: <code>examplecluster</code>
+     * </p>
      */
     private String clusterIdentifier;
 
     /**
+     * <p>
      * The identifier of the cluster on which logging is to be stopped.
-     * <p>Example: <code>examplecluster</code>
-     *
-     * @return The identifier of the cluster on which logging is to be stopped.
-     *         <p>Example: <code>examplecluster</code>
+     * </p>
+     * <p>
+     * Example: <code>examplecluster</code>
+     * </p>
+     * 
+     * @param clusterIdentifier
+     *        The identifier of the cluster on which logging is to be stopped.
+     *        </p>
+     *        <p>
+     *        Example: <code>examplecluster</code>
      */
-    public String getClusterIdentifier() {
-        return clusterIdentifier;
-    }
-    
-    /**
-     * The identifier of the cluster on which logging is to be stopped.
-     * <p>Example: <code>examplecluster</code>
-     *
-     * @param clusterIdentifier The identifier of the cluster on which logging is to be stopped.
-     *         <p>Example: <code>examplecluster</code>
-     */
+
     public void setClusterIdentifier(String clusterIdentifier) {
         this.clusterIdentifier = clusterIdentifier;
     }
-    
+
     /**
-     * The identifier of the cluster on which logging is to be stopped.
-     * <p>Example: <code>examplecluster</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param clusterIdentifier The identifier of the cluster on which logging is to be stopped.
-     *         <p>Example: <code>examplecluster</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The identifier of the cluster on which logging is to be stopped.
+     * </p>
+     * <p>
+     * Example: <code>examplecluster</code>
+     * </p>
+     * 
+     * @return The identifier of the cluster on which logging is to be stopped.
+     *         </p>
+     *         <p>
+     *         Example: <code>examplecluster</code>
      */
+
+    public String getClusterIdentifier() {
+        return this.clusterIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier of the cluster on which logging is to be stopped.
+     * </p>
+     * <p>
+     * Example: <code>examplecluster</code>
+     * </p>
+     * 
+     * @param clusterIdentifier
+     *        The identifier of the cluster on which logging is to be stopped.
+     *        </p>
+     *        <p>
+     *        Example: <code>examplecluster</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DisableLoggingRequest withClusterIdentifier(String clusterIdentifier) {
-        this.clusterIdentifier = clusterIdentifier;
+        setClusterIdentifier(clusterIdentifier);
         return this;
     }
 
@@ -86,38 +107,46 @@ public class DisableLoggingRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() );
+        if (getClusterIdentifier() != null)
+            sb.append("ClusterIdentifier: " + getClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DisableLoggingRequest == false)
+            return false;
+        DisableLoggingRequest other = (DisableLoggingRequest) obj;
+        if (other.getClusterIdentifier() == null
+                ^ this.getClusterIdentifier() == null)
+            return false;
+        if (other.getClusterIdentifier() != null
+                && other.getClusterIdentifier().equals(
+                        this.getClusterIdentifier()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getClusterIdentifier() == null) ? 0
+                        : getClusterIdentifier().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DisableLoggingRequest == false) return false;
-        DisableLoggingRequest other = (DisableLoggingRequest)obj;
-        
-        if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null) return false;
-        if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DisableLoggingRequest clone() {
-        
-            return (DisableLoggingRequest) super.clone();
+        return (DisableLoggingRequest) super.clone();
     }
-
 }
-    

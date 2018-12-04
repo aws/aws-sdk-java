@@ -124,6 +124,7 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *        later.</li>
      * @see DomainAvailability
      */
+
     public void setAvailability(String availability) {
         this.availability = availability;
     }
@@ -192,6 +193,7 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         again later.</li>
      * @see DomainAvailability
      */
+
     public String getAvailability() {
         return this.availability;
     }
@@ -263,6 +265,7 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         chained together.
      * @see DomainAvailability
      */
+
     public CheckDomainAvailabilityResult withAvailability(String availability) {
         setAvailability(availability);
         return this;
@@ -331,10 +334,9 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *        Amazon Route 53 can return this response for a variety of reasons,
      *        for example, the registry is performing maintenance. Try again
      *        later.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DomainAvailability
      */
+
     public void setAvailability(DomainAvailability availability) {
         this.availability = availability.toString();
     }
@@ -406,6 +408,7 @@ public class CheckDomainAvailabilityResult implements Serializable, Cloneable {
      *         chained together.
      * @see DomainAvailability
      */
+
     public CheckDomainAvailabilityResult withAvailability(
             DomainAvailability availability) {
         setAvailability(availability);

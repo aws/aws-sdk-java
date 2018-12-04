@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,12 +54,12 @@ public class BucketJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("value", targetDepth)) {
                     context.nextToken();
-                    bucket.setValue(StringJsonUnmarshaller.getInstance()
+                    bucket.setValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("count", targetDepth)) {
                     context.nextToken();
-                    bucket.setCount(LongJsonUnmarshaller.getInstance()
+                    bucket.setCount(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

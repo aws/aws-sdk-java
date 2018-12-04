@@ -55,6 +55,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * @param checkId
      *        The unique identifier for the Trusted Advisor check.
      */
+
     public void setCheckId(String checkId) {
         this.checkId = checkId;
     }
@@ -66,6 +67,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * 
      * @return The unique identifier for the Trusted Advisor check.
      */
+
     public String getCheckId() {
         return this.checkId;
     }
@@ -80,6 +82,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckRefreshStatus withCheckId(String checkId) {
         setCheckId(checkId);
         return this;
@@ -96,6 +99,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      *        been requested: "none", "enqueued", "processing", "success", or
      *        "abandoned".
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -110,6 +114,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      *         been requested: "none", "enqueued", "processing", "success", or
      *         "abandoned".
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -127,6 +132,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckRefreshStatus withStatus(String status) {
         setStatus(status);
         return this;
@@ -142,6 +148,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      *        The amount of time, in milliseconds, until the Trusted Advisor
      *        check is eligible for refresh.
      */
+
     public void setMillisUntilNextRefreshable(Long millisUntilNextRefreshable) {
         this.millisUntilNextRefreshable = millisUntilNextRefreshable;
     }
@@ -155,6 +162,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * @return The amount of time, in milliseconds, until the Trusted Advisor
      *         check is eligible for refresh.
      */
+
     public Long getMillisUntilNextRefreshable() {
         return this.millisUntilNextRefreshable;
     }
@@ -171,6 +179,7 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCheckRefreshStatus withMillisUntilNextRefreshable(
             Long millisUntilNextRefreshable) {
         setMillisUntilNextRefreshable(millisUntilNextRefreshable);

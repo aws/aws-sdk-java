@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,37 +55,33 @@ public class CreateInterconnectResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("interconnectId", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult
-                            .setInterconnectId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createInterconnectResult.setInterconnectId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("interconnectName", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult
-                            .setInterconnectName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createInterconnectResult.setInterconnectName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("interconnectState", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult
-                            .setInterconnectState(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    createInterconnectResult.setInterconnectState(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult.setRegion(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createInterconnectResult.setRegion(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult.setLocation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createInterconnectResult.setLocation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("bandwidth", targetDepth)) {
                     context.nextToken();
-                    createInterconnectResult
-                            .setBandwidth(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    createInterconnectResult.setBandwidth(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

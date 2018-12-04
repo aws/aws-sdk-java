@@ -40,6 +40,7 @@ public class DeleteDirectoryResult implements Serializable, Cloneable {
      * @param directoryId
      *        The directory identifier.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -51,6 +52,7 @@ public class DeleteDirectoryResult implements Serializable, Cloneable {
      * 
      * @return The directory identifier.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -65,6 +67,7 @@ public class DeleteDirectoryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteDirectoryResult withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;

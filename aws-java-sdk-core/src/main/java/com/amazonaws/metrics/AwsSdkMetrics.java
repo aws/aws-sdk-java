@@ -124,8 +124,20 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
+     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
     public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+
+    /**
+     * Used to specify an AWS credential property file.
+     * By default, the {@link DefaultAWSCredentialsProviderChain} is used.
+     *
+     * <pre>
+     * Example:
+     *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
+     * </pre>
+     */
+    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
 
     /**
      * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
@@ -210,7 +222,7 @@ public enum AwsSdkMetrics {
      */
     private static final String ENABLE_HTTP_SOCKET_READ_METRIC = "enableHttpSocketReadMetric";
     /**
-     * True iff the system property {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has
+     * True if the system property {@link #DEFAULT_METRICS_SYSTEM_PROPERTY} has
      * been set; false otherwise.
      */
     private static final boolean defaultMetricsEnabled;
@@ -290,17 +302,18 @@ public enum AwsSdkMetrics {
                         String key = pair[0].trim();
                         String value  = pair[1].trim();
                         try {
-                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)) {
+                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)
+                                    || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = Regions.fromName(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
-                                Integer i = new Integer(value);
+                            	Integer i = Integer.valueOf(value);
                                 if (i.intValue() < 1)
                                     throw new IllegalArgumentException(METRIC_QUEUE_SIZE + " must be at least 1");
                                 metricQueueSize = i;
                             } else if (QUEUE_POLL_TIMEOUT_MILLI.equals(key)) {
-                                Long i = new Long(value);
+                            	Long i = Long.valueOf(value);
                                 if (i.intValue() < 1000)
                                     throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
                                 queuePollTimeoutMilli = i;
@@ -859,6 +872,7 @@ public enum AwsSdkMetrics {
 //            metricTypes.add(Field.RequestSigningTime);
 //            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
+            metricTypes.add(Field.RetryCapacityConsumed);
             metricTypes.add(Field.HttpClientSendRequestTime);
             metricTypes.add(Field.HttpClientReceiveResponseTime);
             metricTypes.add(Field.HttpSocketReadTime);

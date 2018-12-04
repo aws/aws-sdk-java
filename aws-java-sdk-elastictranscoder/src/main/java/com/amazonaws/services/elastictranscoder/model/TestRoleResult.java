@@ -51,6 +51,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      *        If the operation is successful, this value is <code>true</code>;
      *        otherwise, the value is <code>false</code>.
      */
+
     public void setSuccess(String success) {
         this.success = success;
     }
@@ -64,6 +65,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      * @return If the operation is successful, this value is <code>true</code>;
      *         otherwise, the value is <code>false</code>.
      */
+
     public String getSuccess() {
         return this.success;
     }
@@ -80,6 +82,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleResult withSuccess(String success) {
         setSuccess(success);
         return this;
@@ -96,6 +99,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      *         this value is an array of one or more error messages that were
      *         generated during the test process.
      */
+
     public java.util.List<String> getMessages() {
         if (messages == null) {
             messages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -115,6 +119,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      *        this value is an array of one or more error messages that were
      *        generated during the test process.
      */
+
     public void setMessages(java.util.Collection<String> messages) {
         if (messages == null) {
             this.messages = null;
@@ -145,6 +150,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleResult withMessages(String... messages) {
         if (this.messages == null) {
             setMessages(new com.amazonaws.internal.SdkInternalList<String>(
@@ -170,6 +176,7 @@ public class TestRoleResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestRoleResult withMessages(java.util.Collection<String> messages) {
         setMessages(messages);
         return this;

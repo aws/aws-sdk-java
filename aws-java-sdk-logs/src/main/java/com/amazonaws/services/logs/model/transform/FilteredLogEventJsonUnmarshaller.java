@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class FilteredLogEventJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreamName", targetDepth)) {
                     context.nextToken();
-                    filteredLogEvent.setLogStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    filteredLogEvent.setLogStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    filteredLogEvent.setTimestamp(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    filteredLogEvent.setTimestamp(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    filteredLogEvent.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    filteredLogEvent.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ingestionTime", targetDepth)) {
                     context.nextToken();
-                    filteredLogEvent.setIngestionTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    filteredLogEvent.setIngestionTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("eventId", targetDepth)) {
                     context.nextToken();
-                    filteredLogEvent.setEventId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    filteredLogEvent.setEventId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateElasticsearchDomainRequest Marshaller
@@ -47,7 +49,14 @@ public class CreateElasticsearchDomainRequestMarshaller
         implements
         Marshaller<Request<CreateElasticsearchDomainRequest>, CreateElasticsearchDomainRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateElasticsearchDomainRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateElasticsearchDomainRequest> marshall(
             CreateElasticsearchDomainRequest createElasticsearchDomainRequest) {
@@ -67,68 +76,64 @@ public class CreateElasticsearchDomainRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createElasticsearchDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         createElasticsearchDomainRequest.getDomainName());
             }
-
             if (createElasticsearchDomainRequest
                     .getElasticsearchClusterConfig() != null) {
-                jsonWriter.key("ElasticsearchClusterConfig");
+                jsonGenerator.writeFieldName("ElasticsearchClusterConfig");
                 ElasticsearchClusterConfigJsonMarshaller
                         .getInstance()
                         .marshall(
                                 createElasticsearchDomainRequest
                                         .getElasticsearchClusterConfig(),
-                                jsonWriter);
+                                jsonGenerator);
             }
-
             if (createElasticsearchDomainRequest.getEBSOptions() != null) {
-                jsonWriter.key("EBSOptions");
+                jsonGenerator.writeFieldName("EBSOptions");
                 EBSOptionsJsonMarshaller.getInstance().marshall(
                         createElasticsearchDomainRequest.getEBSOptions(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (createElasticsearchDomainRequest.getAccessPolicies() != null) {
-                jsonWriter.key("AccessPolicies").value(
+                jsonGenerator.writeFieldName("AccessPolicies").writeValue(
                         createElasticsearchDomainRequest.getAccessPolicies());
             }
-
             if (createElasticsearchDomainRequest.getSnapshotOptions() != null) {
-                jsonWriter.key("SnapshotOptions");
+                jsonGenerator.writeFieldName("SnapshotOptions");
                 SnapshotOptionsJsonMarshaller.getInstance().marshall(
                         createElasticsearchDomainRequest.getSnapshotOptions(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
             java.util.Map<String, String> advancedOptionsMap = createElasticsearchDomainRequest
                     .getAdvancedOptions();
             if (advancedOptionsMap != null) {
-                jsonWriter.key("AdvancedOptions");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("AdvancedOptions");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> advancedOptionsMapValue : advancedOptionsMap
                         .entrySet()) {
                     if (advancedOptionsMapValue.getValue() != null) {
-                        jsonWriter.key(advancedOptionsMapValue.getKey());
+                        jsonGenerator.writeFieldName(advancedOptionsMapValue
+                                .getKey());
 
-                        jsonWriter.value(advancedOptionsMapValue.getValue());
+                        jsonGenerator.writeValue(advancedOptionsMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

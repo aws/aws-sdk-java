@@ -59,6 +59,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * 
      * @return A list of roles.
      */
+
     public java.util.List<Role> getRoles() {
         if (roles == null) {
             roles = new com.amazonaws.internal.SdkInternalList<Role>();
@@ -74,6 +75,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * @param roles
      *        A list of roles.
      */
+
     public void setRoles(java.util.Collection<Role> roles) {
         if (roles == null) {
             this.roles = null;
@@ -99,6 +101,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolesResult withRoles(Role... roles) {
         if (this.roles == null) {
             setRoles(new com.amazonaws.internal.SdkInternalList<Role>(
@@ -120,6 +123,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolesResult withRoles(java.util.Collection<Role> roles) {
         setRoles(roles);
         return this;
@@ -146,6 +150,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -170,6 +175,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -197,6 +203,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -222,6 +229,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -238,6 +246,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -253,6 +262,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -271,6 +281,7 @@ public class ListRolesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRolesResult withMarker(String marker) {
         setMarker(marker);
         return this;

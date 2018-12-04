@@ -65,6 +65,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      *        The number of AWS resources that were analyzed by the Trusted
      *        Advisor check.
      */
+
     public void setResourcesProcessed(Long resourcesProcessed) {
         this.resourcesProcessed = resourcesProcessed;
     }
@@ -78,6 +79,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return The number of AWS resources that were analyzed by the Trusted
      *         Advisor check.
      */
+
     public Long getResourcesProcessed() {
         return this.resourcesProcessed;
     }
@@ -94,6 +96,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourcesSummary withResourcesProcessed(
             Long resourcesProcessed) {
         setResourcesProcessed(resourcesProcessed);
@@ -110,6 +113,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      *        The number of AWS resources that were flagged (listed) by the
      *        Trusted Advisor check.
      */
+
     public void setResourcesFlagged(Long resourcesFlagged) {
         this.resourcesFlagged = resourcesFlagged;
     }
@@ -123,6 +127,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return The number of AWS resources that were flagged (listed) by the
      *         Trusted Advisor check.
      */
+
     public Long getResourcesFlagged() {
         return this.resourcesFlagged;
     }
@@ -139,6 +144,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourcesSummary withResourcesFlagged(
             Long resourcesFlagged) {
         setResourcesFlagged(resourcesFlagged);
@@ -155,6 +161,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      *        The number of AWS resources ignored by Trusted Advisor because
      *        information was unavailable.
      */
+
     public void setResourcesIgnored(Long resourcesIgnored) {
         this.resourcesIgnored = resourcesIgnored;
     }
@@ -168,6 +175,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return The number of AWS resources ignored by Trusted Advisor because
      *         information was unavailable.
      */
+
     public Long getResourcesIgnored() {
         return this.resourcesIgnored;
     }
@@ -184,6 +192,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourcesSummary withResourcesIgnored(
             Long resourcesIgnored) {
         setResourcesIgnored(resourcesIgnored);
@@ -200,6 +209,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      *        The number of AWS resources ignored by Trusted Advisor because
      *        they were marked as suppressed by the user.
      */
+
     public void setResourcesSuppressed(Long resourcesSuppressed) {
         this.resourcesSuppressed = resourcesSuppressed;
     }
@@ -213,6 +223,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return The number of AWS resources ignored by Trusted Advisor because
      *         they were marked as suppressed by the user.
      */
+
     public Long getResourcesSuppressed() {
         return this.resourcesSuppressed;
     }
@@ -229,6 +240,7 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorResourcesSummary withResourcesSuppressed(
             Long resourcesSuppressed) {
         setResourcesSuppressed(resourcesSuppressed);

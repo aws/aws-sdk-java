@@ -71,6 +71,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @param alarmName
      *        The name of the alarm.
      */
+
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
@@ -82,6 +83,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the alarm.
      */
+
     public String getAlarmName() {
         return this.alarmName;
     }
@@ -96,6 +98,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryRequest withAlarmName(String alarmName) {
         setAlarmName(alarmName);
         return this;
@@ -110,6 +113,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      *        The type of alarm histories to retrieve.
      * @see HistoryItemType
      */
+
     public void setHistoryItemType(String historyItemType) {
         this.historyItemType = historyItemType;
     }
@@ -122,6 +126,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return The type of alarm histories to retrieve.
      * @see HistoryItemType
      */
+
     public String getHistoryItemType() {
         return this.historyItemType;
     }
@@ -137,6 +142,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see HistoryItemType
      */
+
     public DescribeAlarmHistoryRequest withHistoryItemType(
             String historyItemType) {
         setHistoryItemType(historyItemType);
@@ -150,10 +156,9 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param historyItemType
      *        The type of alarm histories to retrieve.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see HistoryItemType
      */
+
     public void setHistoryItemType(HistoryItemType historyItemType) {
         this.historyItemType = historyItemType.toString();
     }
@@ -169,6 +174,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see HistoryItemType
      */
+
     public DescribeAlarmHistoryRequest withHistoryItemType(
             HistoryItemType historyItemType) {
         setHistoryItemType(historyItemType);
@@ -183,6 +189,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @param startDate
      *        The starting date to retrieve alarm history.
      */
+
     public void setStartDate(java.util.Date startDate) {
         this.startDate = startDate;
     }
@@ -194,6 +201,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The starting date to retrieve alarm history.
      */
+
     public java.util.Date getStartDate() {
         return this.startDate;
     }
@@ -208,6 +216,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryRequest withStartDate(java.util.Date startDate) {
         setStartDate(startDate);
         return this;
@@ -221,6 +230,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @param endDate
      *        The ending date to retrieve alarm history.
      */
+
     public void setEndDate(java.util.Date endDate) {
         this.endDate = endDate;
     }
@@ -232,6 +242,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The ending date to retrieve alarm history.
      */
+
     public java.util.Date getEndDate() {
         return this.endDate;
     }
@@ -246,6 +257,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryRequest withEndDate(java.util.Date endDate) {
         setEndDate(endDate);
         return this;
@@ -259,6 +271,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @param maxRecords
      *        The maximum number of alarm history records to retrieve.
      */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
@@ -270,6 +283,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of alarm history records to retrieve.
      */
+
     public Integer getMaxRecords() {
         return this.maxRecords;
     }
@@ -284,6 +298,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryRequest withMaxRecords(Integer maxRecords) {
         setMaxRecords(maxRecords);
         return this;
@@ -299,6 +314,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      *        The token returned by a previous call to indicate that there is
      *        more data available.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -312,6 +328,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return The token returned by a previous call to indicate that there is
      *         more data available.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -328,6 +345,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAlarmHistoryRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

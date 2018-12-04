@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeviceiSCSIAttributesMarshaller
@@ -39,39 +34,39 @@ import com.amazonaws.util.json.*;
 public class DeviceiSCSIAttributesJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeviceiSCSIAttributes deviceiSCSIAttributes,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (deviceiSCSIAttributes == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deviceiSCSIAttributes.getTargetARN() != null) {
-                jsonWriter.key("TargetARN").value(
+                jsonGenerator.writeFieldName("TargetARN").writeValue(
                         deviceiSCSIAttributes.getTargetARN());
             }
-
             if (deviceiSCSIAttributes.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(
+                jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(
                         deviceiSCSIAttributes.getNetworkInterfaceId());
             }
-
             if (deviceiSCSIAttributes.getNetworkInterfacePort() != null) {
-                jsonWriter.key("NetworkInterfacePort").value(
-                        deviceiSCSIAttributes.getNetworkInterfacePort());
+                jsonGenerator
+                        .writeFieldName("NetworkInterfacePort")
+                        .writeValue(
+                                deviceiSCSIAttributes.getNetworkInterfacePort());
             }
-
             if (deviceiSCSIAttributes.getChapEnabled() != null) {
-                jsonWriter.key("ChapEnabled").value(
+                jsonGenerator.writeFieldName("ChapEnabled").writeValue(
                         deviceiSCSIAttributes.getChapEnabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

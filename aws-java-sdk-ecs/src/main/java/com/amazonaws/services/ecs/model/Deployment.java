@@ -91,6 +91,7 @@ public class Deployment implements Serializable, Cloneable {
      * @param id
      *        The ID of the deployment.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -102,6 +103,7 @@ public class Deployment implements Serializable, Cloneable {
      * 
      * @return The ID of the deployment.
      */
+
     public String getId() {
         return this.id;
     }
@@ -116,6 +118,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withId(String id) {
         setId(id);
         return this;
@@ -138,6 +141,7 @@ public class Deployment implements Serializable, Cloneable {
      *        <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for
      *        deployments that have been completely replaced).
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -158,6 +162,7 @@ public class Deployment implements Serializable, Cloneable {
      *         <code>PRIMARY</code> deployment), and <code>INACTIVE</code> (for
      *         deployments that have been completely replaced).
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -181,6 +186,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withStatus(String status) {
         setStatus(status);
         return this;
@@ -196,6 +202,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The most recent task definition that was specified for the service
      *        to use.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -209,6 +216,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The most recent task definition that was specified for the
      *         service to use.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -225,6 +233,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -240,6 +249,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The most recent desired count of tasks that was specified for the
      *        service to deploy or maintain.
      */
+
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
@@ -253,6 +263,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The most recent desired count of tasks that was specified for the
      *         service to deploy or maintain.
      */
+
     public Integer getDesiredCount() {
         return this.desiredCount;
     }
@@ -269,6 +280,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withDesiredCount(Integer desiredCount) {
         setDesiredCount(desiredCount);
         return this;
@@ -284,6 +296,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The number of tasks in the deployment that are in the
      *        <code>PENDING</code> status.
      */
+
     public void setPendingCount(Integer pendingCount) {
         this.pendingCount = pendingCount;
     }
@@ -297,6 +310,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The number of tasks in the deployment that are in the
      *         <code>PENDING</code> status.
      */
+
     public Integer getPendingCount() {
         return this.pendingCount;
     }
@@ -313,6 +327,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withPendingCount(Integer pendingCount) {
         setPendingCount(pendingCount);
         return this;
@@ -328,6 +343,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The number of tasks in the deployment that are in the
      *        <code>RUNNING</code> status.
      */
+
     public void setRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
     }
@@ -341,6 +357,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The number of tasks in the deployment that are in the
      *         <code>RUNNING</code> status.
      */
+
     public Integer getRunningCount() {
         return this.runningCount;
     }
@@ -357,6 +374,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withRunningCount(Integer runningCount) {
         setRunningCount(runningCount);
         return this;
@@ -371,6 +389,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The Unix time in seconds and milliseconds when the service was
      *        created.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -383,6 +402,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The Unix time in seconds and milliseconds when the service was
      *         created.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -398,6 +418,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -413,6 +434,7 @@ public class Deployment implements Serializable, Cloneable {
      *        The Unix time in seconds and milliseconds when the service was
      *        last updated.
      */
+
     public void setUpdatedAt(java.util.Date updatedAt) {
         this.updatedAt = updatedAt;
     }
@@ -426,6 +448,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return The Unix time in seconds and milliseconds when the service was
      *         last updated.
      */
+
     public java.util.Date getUpdatedAt() {
         return this.updatedAt;
     }
@@ -442,6 +465,7 @@ public class Deployment implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Deployment withUpdatedAt(java.util.Date updatedAt) {
         setUpdatedAt(updatedAt);
         return this;

@@ -40,9 +40,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      */
     private java.util.Map<String, AttributeValue> key;
@@ -65,7 +65,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -613,6 +613,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      */
     private String returnValues;
 
@@ -788,7 +796,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -940,9 +948,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -962,7 +970,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1119,9 +1127,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -1141,7 +1149,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1314,6 +1322,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      */
     public UpdateItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key,
@@ -1337,9 +1353,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @param attributeUpdates
      *        <p>
      *        This is a legacy parameter, for backward compatibility. New
@@ -1359,7 +1375,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -1532,6 +1548,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      */
     public UpdateItemRequest(String tableName,
             java.util.Map<String, AttributeValue> key,
@@ -1551,6 +1575,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @param tableName
      *        The name of the table containing the item to update.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -1562,6 +1587,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the table containing the item to update.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -1576,6 +1602,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -1588,19 +1615,20 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @return The primary key of the item to be updated. Each element consists
      *         of an attribute name and a value for that attribute.</p>
      *         <p>
      *         For the primary key, you must provide all of the attributes. For
-     *         example, with a hash type primary key, you only need to provide
-     *         the hash attribute. For a hash-and-range type primary key, you
-     *         must provide both the hash attribute and the range attribute.
+     *         example, with a simple primary key, you only need to provide a
+     *         value for the partition key. For a composite primary key, you
+     *         must provide values for both the partition key and the sort key.
      */
+
     public java.util.Map<String, AttributeValue> getKey() {
         return key;
     }
@@ -1612,9 +1640,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -1622,10 +1650,11 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      */
+
     public void setKey(java.util.Map<String, AttributeValue> key) {
         this.key = key;
     }
@@ -1637,9 +1666,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * <p>
      * For the primary key, you must provide all of the attributes. For example,
-     * with a hash type primary key, you only need to provide the hash
-     * attribute. For a hash-and-range type primary key, you must provide both
-     * the hash attribute and the range attribute.
+     * with a simple primary key, you only need to provide a value for the
+     * partition key. For a composite primary key, you must provide values for
+     * both the partition key and the sort key.
      * </p>
      * 
      * @param key
@@ -1647,12 +1676,13 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        of an attribute name and a value for that attribute.</p>
      *        <p>
      *        For the primary key, you must provide all of the attributes. For
-     *        example, with a hash type primary key, you only need to provide
-     *        the hash attribute. For a hash-and-range type primary key, you
-     *        must provide both the hash attribute and the range attribute.
+     *        example, with a simple primary key, you only need to provide a
+     *        value for the partition key. For a composite primary key, you must
+     *        provide values for both the partition key and the sort key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withKey(java.util.Map<String, AttributeValue> key) {
         setKey(key);
         return this;
@@ -1673,6 +1703,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Key. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearKeyEntries() {
         this.key = null;
         return this;
@@ -1697,7 +1728,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -1849,7 +1880,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         attribute that is an index key attribute for any indexes on that
      *         table, the attribute type must match the index key type defined
      *         in the <i>AttributesDefinition</i> of the table description. You
-     *         can use <i>UpdateItem</i> to update any nonkey attributes.
+     *         can use <i>UpdateItem</i> to update any non-key attributes.
      *         </p>
      *         <p>
      *         Attribute values cannot be null. String and Binary type
@@ -1987,6 +2018,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         the data types for those attributes must match those of the
      *         schema in the table's attribute definition.
      */
+
     public java.util.Map<String, AttributeValueUpdate> getAttributeUpdates() {
         return attributeUpdates;
     }
@@ -2010,7 +2042,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -2163,7 +2195,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -2300,6 +2332,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        the data types for those attributes must match those of the schema
      *        in the table's attribute definition.
      */
+
     public void setAttributeUpdates(
             java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
         this.attributeUpdates = attributeUpdates;
@@ -2324,7 +2357,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * index key attribute for any indexes on that table, the attribute type
      * must match the index key type defined in the <i>AttributesDefinition</i>
      * of the table description. You can use <i>UpdateItem</i> to update any
-     * nonkey attributes.
+     * non-key attributes.
      * </p>
      * <p>
      * Attribute values cannot be null. String and Binary type attributes must
@@ -2477,7 +2510,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        that is an index key attribute for any indexes on that table, the
      *        attribute type must match the index key type defined in the
      *        <i>AttributesDefinition</i> of the table description. You can use
-     *        <i>UpdateItem</i> to update any nonkey attributes.
+     *        <i>UpdateItem</i> to update any non-key attributes.
      *        </p>
      *        <p>
      *        Attribute values cannot be null. String and Binary type attributes
@@ -2616,6 +2649,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withAttributeUpdates(
             java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
         setAttributeUpdates(attributeUpdates);
@@ -2638,6 +2672,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into AttributeUpdates. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearAttributeUpdatesEntries() {
         this.attributeUpdates = null;
         return this;
@@ -3027,8 +3062,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         is greater than <code>B</code>. For a list of code values, see <a
      *         href
      *         ="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters"
-     *         >http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a
-     *         >.
+     *         >http
+     *         ://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         </p>
      *         <p>
      *         For type Binary, DynamoDB treats each byte of the binary data as
@@ -3327,6 +3362,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         This parameter does not support attributes of type List or Map.
      *         </p>
      */
+
     public java.util.Map<String, ExpectedAttributeValue> getExpected() {
         return expected;
     }
@@ -4013,6 +4049,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        This parameter does not support attributes of type List or Map.
      *        </p>
      */
+
     public void setExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         this.expected = expected;
@@ -4702,6 +4739,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpected(
             java.util.Map<String, ExpectedAttributeValue> expected) {
         setExpected(expected);
@@ -4724,6 +4762,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Expected. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public UpdateItemRequest clearExpectedEntries() {
         this.expected = null;
         return this;
@@ -4809,6 +4848,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
@@ -4892,6 +4932,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see ConditionalOperator
      */
+
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -4978,6 +5019,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public UpdateItemRequest withConditionalOperator(String conditionalOperator) {
         setConditionalOperator(conditionalOperator);
         return this;
@@ -5061,10 +5103,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -5151,6 +5192,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public UpdateItemRequest withConditionalOperator(
             ConditionalOperator conditionalOperator) {
         setConditionalOperator(conditionalOperator);
@@ -5196,6 +5238,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5233,8 +5283,17 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @see ReturnValue
      */
+
     public void setReturnValues(String returnValues) {
         this.returnValues = returnValues;
     }
@@ -5278,6 +5337,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as
      *         they appeared either before or after they were updated. For
@@ -5315,8 +5382,17 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         attributes are returned.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         There is no additional cost associated with requesting a return
+     *         value aside from the small network and processing overhead of
+     *         receiving a larger response. No Read Capacity Units are consumed.
+     *         </p>
+     *         <p>
+     *         Values returned are strongly consistent
      * @see ReturnValue
      */
+
     public String getReturnValues() {
         return this.returnValues;
     }
@@ -5360,6 +5436,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5397,10 +5481,19 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
      */
+
     public UpdateItemRequest withReturnValues(String returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -5445,6 +5538,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5482,10 +5583,17 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @see ReturnValue
      */
+
     public void setReturnValues(ReturnValue returnValues) {
         this.returnValues = returnValues.toString();
     }
@@ -5529,6 +5637,14 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * There is no additional cost associated with requesting a return value
+     * aside from the small network and processing overhead of receiving a
+     * larger response. No Read Capacity Units are consumed.
+     * </p>
+     * <p>
+     * Values returned are strongly consistent
+     * </p>
      * 
      * @param returnValues
      *        Use <i>ReturnValues</i> if you want to get the item attributes as
@@ -5566,10 +5682,19 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        attributes are returned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        There is no additional cost associated with requesting a return
+     *        value aside from the small network and processing overhead of
+     *        receiving a larger response. No Read Capacity Units are consumed.
+     *        </p>
+     *        <p>
+     *        Values returned are strongly consistent
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see ReturnValue
      */
+
     public UpdateItemRequest withReturnValues(ReturnValue returnValues) {
         setReturnValues(returnValues);
         return this;
@@ -5579,6 +5704,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -5587,6 +5713,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -5597,6 +5724,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public UpdateItemRequest withReturnConsumedCapacity(
             String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -5605,10 +5733,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -5620,6 +5747,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public UpdateItemRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -5643,6 +5771,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics;
@@ -5664,6 +5793,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         default), no statistics are returned.
      * @see ReturnItemCollectionMetrics
      */
+
     public String getReturnItemCollectionMetrics() {
         return this.returnItemCollectionMetrics;
     }
@@ -5687,6 +5817,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public UpdateItemRequest withReturnItemCollectionMetrics(
             String returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -5708,10 +5839,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        collections, if any, that were modified during the operation are
      *        returned in the response. If set to <code>NONE</code> (the
      *        default), no statistics are returned.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public void setReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         this.returnItemCollectionMetrics = returnItemCollectionMetrics
@@ -5737,6 +5867,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnItemCollectionMetrics
      */
+
     public UpdateItemRequest withReturnItemCollectionMetrics(
             ReturnItemCollectionMetrics returnItemCollectionMetrics) {
         setReturnItemCollectionMetrics(returnItemCollectionMetrics);
@@ -6023,6 +6154,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <i>AttributeUpdates</i> parameter.
      *        </p>
      */
+
     public void setUpdateExpression(String updateExpression) {
         this.updateExpression = updateExpression;
     }
@@ -6309,6 +6441,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <i>AttributeUpdates</i> parameter.
      *         </p>
      */
+
     public String getUpdateExpression() {
         return this.updateExpression;
     }
@@ -6595,6 +6728,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withUpdateExpression(String updateExpression) {
         setUpdateExpression(updateExpression);
         return this;
@@ -6621,7 +6755,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6661,7 +6795,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6682,6 +6816,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *        </p>
      */
+
     public void setConditionExpression(String conditionExpression) {
         this.conditionExpression = conditionExpression;
     }
@@ -6707,7 +6842,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6746,7 +6881,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         Comparison operators:
-     *         <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *         <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *         </p>
      *         </li>
      *         <li>
@@ -6767,6 +6902,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         <i>ConditionalOperator</i> and <i>Expected</i> parameters.
      *         </p>
      */
+
     public String getConditionExpression() {
         return this.conditionExpression;
     }
@@ -6792,7 +6928,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * Comparison operators:
-     * <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     * <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      * </p>
      * </li>
      * <li>
@@ -6832,7 +6968,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        Comparison operators:
-     *        <code> = | <![CDATA[&#x3C;]]><![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]> | <![CDATA[&#x3E;]]> | <![CDATA[&#x3C;]]>= | <![CDATA[&#x3E;]]>= | BETWEEN | IN</code>
+     *        <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; | &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6855,6 +6991,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withConditionExpression(String conditionExpression) {
         setConditionExpression(conditionExpression);
         return this;
@@ -7011,6 +7148,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -7167,6 +7305,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -7326,6 +7465,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -7349,6 +7489,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateItemRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;
@@ -7414,6 +7555,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
         return expressionAttributeValues;
     }
@@ -7479,6 +7621,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -7547,6 +7690,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateItemRequest withExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         setExpressionAttributeValues(expressionAttributeValues);
@@ -7570,6 +7714,7 @@ public class UpdateItemRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public UpdateItemRequest clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
         return this;

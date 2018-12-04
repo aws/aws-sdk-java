@@ -24,7 +24,8 @@ import java.io.Serializable;
  * </p>
  * <p>
  * This data type is used by the return parameter of
- * <code><a>SimulatePolicy</a></code>.
+ * <code> <a>SimulateCustomPolicy</a> </code> and
+ * <code> <a>SimulatePrincipalPolicy</a> </code>.
  * </p>
  */
 public class EvaluationResult implements Serializable, Cloneable {
@@ -60,19 +61,15 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      */
     private com.amazonaws.internal.SdkInternalList<String> missingContextValues;
     /**
@@ -104,6 +101,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param evalActionName
      *        The name of the API action tested on the indicated resource.
      */
+
     public void setEvalActionName(String evalActionName) {
         this.evalActionName = evalActionName;
     }
@@ -115,6 +113,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @return The name of the API action tested on the indicated resource.
      */
+
     public String getEvalActionName() {
         return this.evalActionName;
     }
@@ -129,6 +128,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalActionName(String evalActionName) {
         setEvalActionName(evalActionName);
         return this;
@@ -143,6 +143,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The ARN of the resource that the indicated API action was tested
      *        on.
      */
+
     public void setEvalResourceName(String evalResourceName) {
         this.evalResourceName = evalResourceName;
     }
@@ -155,6 +156,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The ARN of the resource that the indicated API action was tested
      *         on.
      */
+
     public String getEvalResourceName() {
         return this.evalResourceName;
     }
@@ -170,6 +172,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalResourceName(String evalResourceName) {
         setEvalResourceName(evalResourceName);
         return this;
@@ -184,6 +187,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The result of the simulation.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalDecision(String evalDecision) {
         this.evalDecision = evalDecision;
     }
@@ -196,6 +200,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The result of the simulation.
      * @see PolicyEvaluationDecisionType
      */
+
     public String getEvalDecision() {
         return this.evalDecision;
     }
@@ -211,6 +216,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public EvaluationResult withEvalDecision(String evalDecision) {
         setEvalDecision(evalDecision);
         return this;
@@ -223,10 +229,9 @@ public class EvaluationResult implements Serializable, Cloneable {
      * 
      * @param evalDecision
      *        The result of the simulation.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
         this.evalDecision = evalDecision.toString();
     }
@@ -242,6 +247,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         chained together.
      * @see PolicyEvaluationDecisionType
      */
+
     public EvaluationResult withEvalDecision(
             PolicyEvaluationDecisionType evalDecision) {
         setEvalDecision(evalDecision);
@@ -264,6 +270,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         any allow, and the deny statement is the only entry included in
      *         the result.
      */
+
     public java.util.List<Statement> getMatchedStatements() {
         if (matchedStatements == null) {
             matchedStatements = new com.amazonaws.internal.SdkInternalList<Statement>();
@@ -287,6 +294,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        denies that action, then the explicit deny overrides any allow,
      *        and the deny statement is the only entry included in the result.
      */
+
     public void setMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         if (matchedStatements == null) {
@@ -322,6 +330,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMatchedStatements(
             Statement... matchedStatements) {
         if (this.matchedStatements == null) {
@@ -352,6 +361,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMatchedStatements(
             java.util.Collection<Statement> matchedStatements) {
         setMatchedStatements(matchedStatements);
@@ -361,32 +371,28 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @return A list of context keys that are required by the included input
      *         policies but that were not provided by one of the input
-     *         parameters. To discover the context keys used by a set of
-     *         policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     *         <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *         <p>
-     *         If the response includes any keys in this list, then the reported
-     *         results might be untrustworthy because the simulation could not
-     *         completely evaluate all of the conditions specified in the
-     *         policies that would occur in a real world request.
-     *         </p>
+     *         parameters. This list is used when the resource in a simulation
+     *         is "*", either explicitly, or when the <code>ResourceArns</code>
+     *         parameter blank. If you include a list of resources, then any
+     *         missing context values are instead included under the
+     *         <code>ResourceSpecificResults</code> section. To discover the
+     *         context keys used by a set of policies, you can call
+     *         <a>GetContextKeysForCustomPolicy</a> or
+     *         <a>GetContextKeysForPrincipalPolicy</a>.
      */
+
     public java.util.List<String> getMissingContextValues() {
         if (missingContextValues == null) {
             missingContextValues = new com.amazonaws.internal.SdkInternalList<String>();
@@ -397,33 +403,29 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      */
+
     public void setMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         if (missingContextValues == null) {
@@ -438,19 +440,15 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setMissingContextValues(java.util.Collection)} or
@@ -461,18 +459,18 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMissingContextValues(
             String... missingContextValues) {
         if (this.missingContextValues == null) {
@@ -488,35 +486,31 @@ public class EvaluationResult implements Serializable, Cloneable {
     /**
      * <p>
      * A list of context keys that are required by the included input policies
-     * but that were not provided by one of the input parameters. To discover
-     * the context keys used by a set of policies, you can call
+     * but that were not provided by one of the input parameters. This list is
+     * used when the resource in a simulation is "*", either explicitly, or when
+     * the <code>ResourceArns</code> parameter blank. If you include a list of
+     * resources, then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context
+     * keys used by a set of policies, you can call
      * <a>GetContextKeysForCustomPolicy</a> or
      * <a>GetContextKeysForPrincipalPolicy</a>.
      * </p>
-     * <caution>
-     * <p>
-     * If the response includes any keys in this list, then the reported results
-     * might be untrustworthy because the simulation could not completely
-     * evaluate all of the conditions specified in the policies that would occur
-     * in a real world request.
-     * </p>
-     * </caution>
      * 
      * @param missingContextValues
      *        A list of context keys that are required by the included input
      *        policies but that were not provided by one of the input
-     *        parameters. To discover the context keys used by a set of
-     *        policies, you can call <a>GetContextKeysForCustomPolicy</a> or
-     *        <a>GetContextKeysForPrincipalPolicy</a>.</p> <caution>
-     *        <p>
-     *        If the response includes any keys in this list, then the reported
-     *        results might be untrustworthy because the simulation could not
-     *        completely evaluate all of the conditions specified in the
-     *        policies that would occur in a real world request.
-     *        </p>
+     *        parameters. This list is used when the resource in a simulation is
+     *        "*", either explicitly, or when the <code>ResourceArns</code>
+     *        parameter blank. If you include a list of resources, then any
+     *        missing context values are instead included under the
+     *        <code>ResourceSpecificResults</code> section. To discover the
+     *        context keys used by a set of policies, you can call
+     *        <a>GetContextKeysForCustomPolicy</a> or
+     *        <a>GetContextKeysForPrincipalPolicy</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withMissingContextValues(
             java.util.Collection<String> missingContextValues) {
         setMissingContextValues(missingContextValues);
@@ -544,6 +538,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
      *         >How IAM Roles Differ from Resource-based Policies</a>
      */
+
     public java.util.Map<String, String> getEvalDecisionDetails() {
         if (evalDecisionDetails == null) {
             evalDecisionDetails = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -573,6 +568,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html"
      *        >How IAM Roles Differ from Resource-based Policies</a>
      */
+
     public void setEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         this.evalDecisionDetails = evalDecisionDetails == null ? null
@@ -604,6 +600,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withEvalDecisionDetails(
             java.util.Map<String, String> evalDecisionDetails) {
         setEvalDecisionDetails(evalDecisionDetails);
@@ -625,6 +622,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * Removes all the entries added into EvalDecisionDetails. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public EvaluationResult clearEvalDecisionDetailsEntries() {
         this.evalDecisionDetails = null;
         return this;
@@ -639,6 +637,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return The individual results of the simulation of the API action
      *         specified in EvalActionName on each resource.
      */
+
     public java.util.List<ResourceSpecificResult> getResourceSpecificResults() {
         if (resourceSpecificResults == null) {
             resourceSpecificResults = new com.amazonaws.internal.SdkInternalList<ResourceSpecificResult>();
@@ -656,6 +655,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        The individual results of the simulation of the API action
      *        specified in EvalActionName on each resource.
      */
+
     public void setResourceSpecificResults(
             java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         if (resourceSpecificResults == null) {
@@ -685,6 +685,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResourceSpecificResults(
             ResourceSpecificResult... resourceSpecificResults) {
         if (this.resourceSpecificResults == null) {
@@ -709,6 +710,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluationResult withResourceSpecificResults(
             java.util.Collection<ResourceSpecificResult> resourceSpecificResults) {
         setResourceSpecificResults(resourceSpecificResults);

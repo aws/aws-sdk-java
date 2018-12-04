@@ -19,7 +19,10 @@ package com.amazonaws.services.devicefarm.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents the account settings return values from the
+ * <code>GetAccountSettings</code> request.
+ * </p>
  */
 public class GetAccountSettingsResult implements Serializable, Cloneable {
 
@@ -28,6 +31,7 @@ public class GetAccountSettingsResult implements Serializable, Cloneable {
     /**
      * @param accountSettings
      */
+
     public void setAccountSettings(AccountSettings accountSettings) {
         this.accountSettings = accountSettings;
     }
@@ -35,6 +39,7 @@ public class GetAccountSettingsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AccountSettings getAccountSettings() {
         return this.accountSettings;
     }
@@ -44,6 +49,7 @@ public class GetAccountSettingsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountSettingsResult withAccountSettings(
             AccountSettings accountSettings) {
         setAccountSettings(accountSettings);

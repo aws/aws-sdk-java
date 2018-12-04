@@ -53,6 +53,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @param hapgArn
      *        The ARN of the high-availability partition group to modify.
      */
+
     public void setHapgArn(String hapgArn) {
         this.hapgArn = hapgArn;
     }
@@ -64,6 +65,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the high-availability partition group to modify.
      */
+
     public String getHapgArn() {
         return this.hapgArn;
     }
@@ -78,6 +80,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHapgRequest withHapgArn(String hapgArn) {
         setHapgArn(hapgArn);
         return this;
@@ -91,6 +94,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @param label
      *        The new label for the high-availability partition group.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -102,6 +106,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * 
      * @return The new label for the high-availability partition group.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -116,6 +121,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHapgRequest withLabel(String label) {
         setLabel(label);
         return this;
@@ -130,6 +136,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @return The list of partition serial numbers to make members of the
      *         high-availability partition group.
      */
+
     public java.util.List<String> getPartitionSerialList() {
         if (partitionSerialList == null) {
             partitionSerialList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -147,6 +154,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      *        The list of partition serial numbers to make members of the
      *        high-availability partition group.
      */
+
     public void setPartitionSerialList(
             java.util.Collection<String> partitionSerialList) {
         if (partitionSerialList == null) {
@@ -176,6 +184,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHapgRequest withPartitionSerialList(
             String... partitionSerialList) {
         if (this.partitionSerialList == null) {
@@ -200,6 +209,7 @@ public class ModifyHapgRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ModifyHapgRequest withPartitionSerialList(
             java.util.Collection<String> partitionSerialList) {
         setPartitionSerialList(partitionSerialList);

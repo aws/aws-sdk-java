@@ -1,27 +1,31 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 /**
- * Volume Type
+ * 
  */
 public enum VolumeType {
-    
+
     Standard("standard"),
     Io1("io1"),
-    Gp2("gp2");
+    Gp2("gp2"),
+    Sc1("sc1"),
+    St1("st1");
 
     private String value;
 
@@ -38,22 +42,25 @@ public enum VolumeType {
      * Use this in place of valueOf.
      *
      * @param value
-     *            real value
+     *        real value
      * @return VolumeType corresponding to the value
      */
     public static VolumeType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
-        
         } else if ("standard".equals(value)) {
-            return VolumeType.Standard;
+            return Standard;
         } else if ("io1".equals(value)) {
-            return VolumeType.Io1;
+            return Io1;
         } else if ("gp2".equals(value)) {
-            return VolumeType.Gp2;
+            return Gp2;
+        } else if ("sc1".equals(value)) {
+            return Sc1;
+        } else if ("st1".equals(value)) {
+            return St1;
         } else {
-            throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
+            throw new IllegalArgumentException("Cannot create enum from "
+                    + value + " value!");
         }
     }
 }
-    

@@ -93,7 +93,7 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
-    public void deleteVerifiedEmailAddress(
+    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(
             DeleteVerifiedEmailAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +119,12 @@ public class AbstractAmazonSimpleEmailService implements
     @Override
     public GetIdentityDkimAttributesResult getIdentityDkimAttributes(
             GetIdentityDkimAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
+            GetIdentityMailFromDomainAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -246,6 +252,12 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
+    public SetIdentityMailFromDomainResult setIdentityMailFromDomain(
+            SetIdentityMailFromDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetIdentityNotificationTopicResult setIdentityNotificationTopic(
             SetIdentityNotificationTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -276,7 +288,8 @@ public class AbstractAmazonSimpleEmailService implements
     }
 
     @Override
-    public void verifyEmailAddress(VerifyEmailAddressRequest request) {
+    public VerifyEmailAddressResult verifyEmailAddress(
+            VerifyEmailAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -190,6 +190,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        account that invoked the <code>DataSource</code> creation.</li>
      * @see DataSourceFilterVariable
      */
+
     public void setFilterVariable(String filterVariable) {
         this.filterVariable = filterVariable;
     }
@@ -231,6 +232,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         account that invoked the <code>DataSource</code> creation.</li>
      * @see DataSourceFilterVariable
      */
+
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -275,6 +277,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see DataSourceFilterVariable
      */
+
     public DescribeDataSourcesRequest withFilterVariable(String filterVariable) {
         setFilterVariable(filterVariable);
         return this;
@@ -316,10 +319,9 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        S3) bucket or directory.</li>
      *        <li> <code>IAMUser</code> - Sets the search criteria to the user
      *        account that invoked the <code>DataSource</code> creation.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DataSourceFilterVariable
      */
+
     public void setFilterVariable(DataSourceFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -364,6 +366,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see DataSourceFilterVariable
      */
+
     public DescribeDataSourcesRequest withFilterVariable(
             DataSourceFilterVariable filterVariable) {
         setFilterVariable(filterVariable);
@@ -382,6 +385,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        have <code>FilterVariable</code> values that exactly match the
      *        value specified with <code>EQ</code>.
      */
+
     public void setEQ(String eQ) {
         this.eQ = eQ;
     }
@@ -397,6 +401,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         have <code>FilterVariable</code> values that exactly match the
      *         value specified with <code>EQ</code>.
      */
+
     public String getEQ() {
         return this.eQ;
     }
@@ -415,6 +420,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withEQ(String eQ) {
         setEQ(eQ);
         return this;
@@ -432,6 +438,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values that are greater than
      *        the value specified with <code>GT</code>.
      */
+
     public void setGT(String gT) {
         this.gT = gT;
     }
@@ -447,6 +454,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values that are greater
      *         than the value specified with <code>GT</code>.
      */
+
     public String getGT() {
         return this.gT;
     }
@@ -465,6 +473,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withGT(String gT) {
         setGT(gT);
         return this;
@@ -482,6 +491,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        have <code>FilterVariable</code> values that are less than the
      *        value specified with <code>LT</code>.
      */
+
     public void setLT(String lT) {
         this.lT = lT;
     }
@@ -497,6 +507,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         have <code>FilterVariable</code> values that are less than the
      *         value specified with <code>LT</code>.
      */
+
     public String getLT() {
         return this.lT;
     }
@@ -515,6 +526,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withLT(String lT) {
         setLT(lT);
         return this;
@@ -532,6 +544,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values that are
      *        greater than or equal to the value specified with <code>GE</code>.
      */
+
     public void setGE(String gE) {
         this.gE = gE;
     }
@@ -548,6 +561,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         <code>FilterVariable</code> values that are greater than or equal
      *         to the value specified with <code>GE</code>.
      */
+
     public String getGE() {
         return this.gE;
     }
@@ -566,6 +580,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withGE(String gE) {
         setGE(gE);
         return this;
@@ -583,6 +598,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values that are less
      *        than or equal to the value specified with <code>LE</code>.
      */
+
     public void setLE(String lE) {
         this.lE = lE;
     }
@@ -598,6 +614,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         results will have <code>FilterVariable</code> values that are
      *         less than or equal to the value specified with <code>LE</code>.
      */
+
     public String getLE() {
         return this.lE;
     }
@@ -616,6 +633,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withLE(String lE) {
         setLE(lE);
         return this;
@@ -633,6 +651,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values not equal to the
      *        value specified with <code>NE</code>.
      */
+
     public void setNE(String nE) {
         this.nE = nE;
     }
@@ -648,6 +667,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values not equal to the
      *         value specified with <code>NE</code>.
      */
+
     public String getNE() {
         return this.nE;
     }
@@ -666,6 +686,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withNE(String nE) {
         setNE(nE);
         return this;
@@ -728,6 +749,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -788,6 +810,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -851,6 +874,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -882,6 +906,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -911,6 +936,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -943,6 +969,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeDataSourcesRequest withSortOrder(String sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -972,10 +999,9 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
+
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -1008,6 +1034,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeDataSourcesRequest withSortOrder(SortOrder sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1021,6 +1048,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        The ID of the page in the paginated results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1032,6 +1060,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the page in the paginated results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1046,6 +1075,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1060,6 +1090,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      *        The maximum number of <code>DataSource</code> to include in the
      *        result.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -1072,6 +1103,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return The maximum number of <code>DataSource</code> to include in the
      *         result.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -1087,6 +1119,7 @@ public class DescribeDataSourcesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDataSourcesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

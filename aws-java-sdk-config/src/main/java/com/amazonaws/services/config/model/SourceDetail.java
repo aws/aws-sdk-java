@@ -56,6 +56,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *        Config to evaluate your AWS resources.
      * @see EventSource
      */
+
     public void setEventSource(String eventSource) {
         this.eventSource = eventSource;
     }
@@ -70,6 +71,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         AWS Config to evaluate your AWS resources.
      * @see EventSource
      */
+
     public String getEventSource() {
         return this.eventSource;
     }
@@ -87,6 +89,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see EventSource
      */
+
     public SourceDetail withEventSource(String eventSource) {
         setEventSource(eventSource);
         return this;
@@ -101,10 +104,9 @@ public class SourceDetail implements Serializable, Cloneable {
      * @param eventSource
      *        The source of the event, such as an AWS service, that triggers AWS
      *        Config to evaluate your AWS resources.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EventSource
      */
+
     public void setEventSource(EventSource eventSource) {
         this.eventSource = eventSource.toString();
     }
@@ -122,6 +124,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see EventSource
      */
+
     public SourceDetail withEventSource(EventSource eventSource) {
         setEventSource(eventSource);
         return this;
@@ -147,6 +150,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
      * @see MessageType
      */
+
     public void setMessageType(String messageType) {
         this.messageType = messageType;
     }
@@ -170,6 +174,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         <code>ConfigurationSnapshotDeliveryCompleted</code>.
      * @see MessageType
      */
+
     public String getMessageType() {
         return this.messageType;
     }
@@ -196,6 +201,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see MessageType
      */
+
     public SourceDetail withMessageType(String messageType) {
         setMessageType(messageType);
         return this;
@@ -219,10 +225,9 @@ public class SourceDetail implements Serializable, Cloneable {
      *        that are initiated when AWS Config delivers a configuration
      *        snapshot, you must use
      *        <code>ConfigurationSnapshotDeliveryCompleted</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MessageType
      */
+
     public void setMessageType(MessageType messageType) {
         this.messageType = messageType.toString();
     }
@@ -249,6 +254,7 @@ public class SourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see MessageType
      */
+
     public SourceDetail withMessageType(MessageType messageType) {
         setMessageType(messageType);
         return this;

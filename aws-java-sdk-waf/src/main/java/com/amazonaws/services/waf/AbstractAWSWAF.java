@@ -55,6 +55,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateSizeConstraintSetResult createSizeConstraintSet(
+            CreateSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSqlInjectionMatchSetResult createSqlInjectionMatchSet(
             CreateSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -62,6 +68,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public CreateWebACLResult createWebACL(CreateWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateXssMatchSetResult createXssMatchSet(
+            CreateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,6 +94,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public DeleteSizeConstraintSetResult deleteSizeConstraintSet(
+            DeleteSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSqlInjectionMatchSetResult deleteSqlInjectionMatchSet(
             DeleteSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -89,6 +107,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public DeleteWebACLResult deleteWebACL(DeleteWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteXssMatchSetResult deleteXssMatchSet(
+            DeleteXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,6 +149,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public GetSizeConstraintSetResult getSizeConstraintSet(
+            GetSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSqlInjectionMatchSetResult getSqlInjectionMatchSet(
             GetSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -132,6 +162,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public GetWebACLResult getWebACL(GetWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetXssMatchSetResult getXssMatchSet(GetXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,6 +187,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListSizeConstraintSetsResult listSizeConstraintSets(
+            ListSizeConstraintSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSqlInjectionMatchSetsResult listSqlInjectionMatchSets(
             ListSqlInjectionMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -159,6 +200,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public ListWebACLsResult listWebACLs(ListWebACLsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListXssMatchSetsResult listXssMatchSets(
+            ListXssMatchSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +226,12 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public UpdateSizeConstraintSetResult updateSizeConstraintSet(
+            UpdateSizeConstraintSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateSqlInjectionMatchSetResult updateSqlInjectionMatchSet(
             UpdateSqlInjectionMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -186,6 +239,12 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public UpdateWebACLResult updateWebACL(UpdateWebACLRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateXssMatchSetResult updateXssMatchSet(
+            UpdateXssMatchSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

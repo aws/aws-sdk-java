@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class KeyValueJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    keyValue.setKey(StringJsonUnmarshaller.getInstance()
+                    keyValue.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    keyValue.setValue(StringJsonUnmarshaller.getInstance()
+                    keyValue.setValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

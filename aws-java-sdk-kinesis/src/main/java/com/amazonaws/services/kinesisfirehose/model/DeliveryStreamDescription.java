@@ -86,6 +86,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param deliveryStreamName
      *        The name of the delivery stream.
      */
+
     public void setDeliveryStreamName(String deliveryStreamName) {
         this.deliveryStreamName = deliveryStreamName;
     }
@@ -97,6 +98,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return The name of the delivery stream.
      */
+
     public String getDeliveryStreamName() {
         return this.deliveryStreamName;
     }
@@ -111,6 +113,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withDeliveryStreamName(
             String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
@@ -125,6 +128,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param deliveryStreamARN
      *        The Amazon Resource Name (ARN) of the delivery stream.
      */
+
     public void setDeliveryStreamARN(String deliveryStreamARN) {
         this.deliveryStreamARN = deliveryStreamARN;
     }
@@ -136,6 +140,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the delivery stream.
      */
+
     public String getDeliveryStreamARN() {
         return this.deliveryStreamARN;
     }
@@ -150,6 +155,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withDeliveryStreamARN(
             String deliveryStreamARN) {
         setDeliveryStreamARN(deliveryStreamARN);
@@ -165,6 +171,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      *        The status of the delivery stream.
      * @see DeliveryStreamStatus
      */
+
     public void setDeliveryStreamStatus(String deliveryStreamStatus) {
         this.deliveryStreamStatus = deliveryStreamStatus;
     }
@@ -177,6 +184,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return The status of the delivery stream.
      * @see DeliveryStreamStatus
      */
+
     public String getDeliveryStreamStatus() {
         return this.deliveryStreamStatus;
     }
@@ -192,6 +200,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStreamStatus
      */
+
     public DeliveryStreamDescription withDeliveryStreamStatus(
             String deliveryStreamStatus) {
         setDeliveryStreamStatus(deliveryStreamStatus);
@@ -205,10 +214,9 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @param deliveryStreamStatus
      *        The status of the delivery stream.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DeliveryStreamStatus
      */
+
     public void setDeliveryStreamStatus(
             DeliveryStreamStatus deliveryStreamStatus) {
         this.deliveryStreamStatus = deliveryStreamStatus.toString();
@@ -225,6 +233,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DeliveryStreamStatus
      */
+
     public DeliveryStreamDescription withDeliveryStreamStatus(
             DeliveryStreamStatus deliveryStreamStatus) {
         setDeliveryStreamStatus(deliveryStreamStatus);
@@ -248,6 +257,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      *        applying the changes to the correct version of the delivery
      *        stream.
      */
+
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
@@ -268,6 +278,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      *         applying the changes to the correct version of the delivery
      *         stream.
      */
+
     public String getVersionId() {
         return this.versionId;
     }
@@ -291,6 +302,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withVersionId(String versionId) {
         setVersionId(versionId);
         return this;
@@ -304,6 +316,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param createTimestamp
      *        The date and time that the delivery stream was created.
      */
+
     public void setCreateTimestamp(java.util.Date createTimestamp) {
         this.createTimestamp = createTimestamp;
     }
@@ -315,6 +328,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return The date and time that the delivery stream was created.
      */
+
     public java.util.Date getCreateTimestamp() {
         return this.createTimestamp;
     }
@@ -329,6 +343,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withCreateTimestamp(
             java.util.Date createTimestamp) {
         setCreateTimestamp(createTimestamp);
@@ -343,6 +358,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param lastUpdateTimestamp
      *        The date and time that the delivery stream was last updated.
      */
+
     public void setLastUpdateTimestamp(java.util.Date lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
@@ -354,6 +370,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return The date and time that the delivery stream was last updated.
      */
+
     public java.util.Date getLastUpdateTimestamp() {
         return this.lastUpdateTimestamp;
     }
@@ -368,6 +385,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withLastUpdateTimestamp(
             java.util.Date lastUpdateTimestamp) {
         setLastUpdateTimestamp(lastUpdateTimestamp);
@@ -381,6 +399,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return The destinations.
      */
+
     public java.util.List<DestinationDescription> getDestinations() {
         return destinations;
     }
@@ -393,6 +412,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param destinations
      *        The destinations.
      */
+
     public void setDestinations(
             java.util.Collection<DestinationDescription> destinations) {
         if (destinations == null) {
@@ -420,6 +440,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withDestinations(
             DestinationDescription... destinations) {
         if (this.destinations == null) {
@@ -442,6 +463,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withDestinations(
             java.util.Collection<DestinationDescription> destinations) {
         setDestinations(destinations);
@@ -456,6 +478,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @param hasMoreDestinations
      *        Indicates whether there are more destinations available to list.
      */
+
     public void setHasMoreDestinations(Boolean hasMoreDestinations) {
         this.hasMoreDestinations = hasMoreDestinations;
     }
@@ -467,6 +490,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return Indicates whether there are more destinations available to list.
      */
+
     public Boolean getHasMoreDestinations() {
         return this.hasMoreDestinations;
     }
@@ -481,6 +505,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliveryStreamDescription withHasMoreDestinations(
             Boolean hasMoreDestinations) {
         setHasMoreDestinations(hasMoreDestinations);
@@ -494,6 +519,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
      * 
      * @return Indicates whether there are more destinations available to list.
      */
+
     public Boolean isHasMoreDestinations() {
         return this.hasMoreDestinations;
     }

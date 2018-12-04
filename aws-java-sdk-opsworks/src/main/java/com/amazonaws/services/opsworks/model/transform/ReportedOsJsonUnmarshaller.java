@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class ReportedOsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Family", targetDepth)) {
                     context.nextToken();
-                    reportedOs.setFamily(StringJsonUnmarshaller.getInstance()
+                    reportedOs.setFamily(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    reportedOs.setName(StringJsonUnmarshaller.getInstance()
+                    reportedOs.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
-                    reportedOs.setVersion(StringJsonUnmarshaller.getInstance()
+                    reportedOs.setVersion(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

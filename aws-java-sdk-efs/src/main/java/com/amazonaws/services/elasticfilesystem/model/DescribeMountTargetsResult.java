@@ -56,6 +56,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      *        If the request included the <code>Marker</code>, the response
      *        returns that value in this field.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -69,6 +70,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return If the request included the <code>Marker</code>, the response
      *         returns that value in this field.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -85,6 +87,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetsResult withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -99,6 +102,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return Returns the file system's mount targets as an array of
      *         <code>MountTargetDescription</code> objects.
      */
+
     public java.util.List<MountTargetDescription> getMountTargets() {
         if (mountTargets == null) {
             mountTargets = new com.amazonaws.internal.SdkInternalList<MountTargetDescription>();
@@ -116,6 +120,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      *        Returns the file system's mount targets as an array of
      *        <code>MountTargetDescription</code> objects.
      */
+
     public void setMountTargets(
             java.util.Collection<MountTargetDescription> mountTargets) {
         if (mountTargets == null) {
@@ -145,6 +150,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetsResult withMountTargets(
             MountTargetDescription... mountTargets) {
         if (this.mountTargets == null) {
@@ -169,6 +175,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetsResult withMountTargets(
             java.util.Collection<MountTargetDescription> mountTargets) {
         setMountTargets(mountTargets);
@@ -187,6 +194,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      *        a subsequent request, you can provide <code>Marker</code> in your
      *        request with this value to retrieve the next set of mount targets.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -203,6 +211,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      *         request with this value to retrieve the next set of mount
      *         targets.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -221,6 +230,7 @@ public class DescribeMountTargetsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMountTargetsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;

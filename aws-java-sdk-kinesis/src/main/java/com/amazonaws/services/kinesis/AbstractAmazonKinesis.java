@@ -39,35 +39,36 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public void addTagsToStream(AddTagsToStreamRequest request) {
+    public AddTagsToStreamResult addTagsToStream(AddTagsToStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void createStream(CreateStreamRequest request) {
+    public CreateStreamResult createStream(CreateStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void createStream(String streamName, Integer shardCount) {
-        createStream(new CreateStreamRequest().withStreamName(streamName)
-                .withShardCount(shardCount));
+    public CreateStreamResult createStream(String streamName, Integer shardCount) {
+        return createStream(new CreateStreamRequest()
+                .withStreamName(streamName).withShardCount(shardCount));
     }
 
     @Override
-    public void decreaseStreamRetentionPeriod(
+    public DecreaseStreamRetentionPeriodResult decreaseStreamRetentionPeriod(
             DecreaseStreamRetentionPeriodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStream(DeleteStreamRequest request) {
+    public DeleteStreamResult deleteStream(DeleteStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteStream(String streamName) {
-        deleteStream(new DeleteStreamRequest().withStreamName(streamName));
+    public DeleteStreamResult deleteStream(String streamName) {
+        return deleteStream(new DeleteStreamRequest()
+                .withStreamName(streamName));
     }
 
     @Override
@@ -94,6 +95,18 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
         return describeStream(new DescribeStreamRequest()
                 .withStreamName(streamName).withLimit(limit)
                 .withExclusiveStartShardId(exclusiveStartShardId));
+    }
+
+    @Override
+    public DisableEnhancedMonitoringResult disableEnhancedMonitoring(
+            DisableEnhancedMonitoringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableEnhancedMonitoringResult enableEnhancedMonitoring(
+            EnableEnhancedMonitoringRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -126,7 +139,7 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public void increaseStreamRetentionPeriod(
+    public IncreaseStreamRetentionPeriodResult increaseStreamRetentionPeriod(
             IncreaseStreamRetentionPeriodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -161,14 +174,14 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public void mergeShards(MergeShardsRequest request) {
+    public MergeShardsResult mergeShards(MergeShardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void mergeShards(String streamName, String shardToMerge,
-            String adjacentShardToMerge) {
-        mergeShards(new MergeShardsRequest().withStreamName(streamName)
+    public MergeShardsResult mergeShards(String streamName,
+            String shardToMerge, String adjacentShardToMerge) {
+        return mergeShards(new MergeShardsRequest().withStreamName(streamName)
                 .withShardToMerge(shardToMerge)
                 .withAdjacentShardToMerge(adjacentShardToMerge));
     }
@@ -200,19 +213,20 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
-    public void removeTagsFromStream(RemoveTagsFromStreamRequest request) {
+    public RemoveTagsFromStreamResult removeTagsFromStream(
+            RemoveTagsFromStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void splitShard(SplitShardRequest request) {
+    public SplitShardResult splitShard(SplitShardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void splitShard(String streamName, String shardToSplit,
+    public SplitShardResult splitShard(String streamName, String shardToSplit,
             String newStartingHashKey) {
-        splitShard(new SplitShardRequest().withStreamName(streamName)
+        return splitShard(new SplitShardRequest().withStreamName(streamName)
                 .withShardToSplit(shardToSplit)
                 .withNewStartingHashKey(newStartingHashKey));
     }

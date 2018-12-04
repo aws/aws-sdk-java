@@ -16,6 +16,7 @@
 package com.amazonaws.services.support;
 
 import com.amazonaws.services.support.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing AWS Support asynchronously. Each asynchronous method
@@ -85,6 +86,7 @@ import com.amazonaws.services.support.model.*;
  * how to call Trusted Advisor for results of checks on your resources.
  * </p>
  */
+@ThreadSafe
 public class AWSSupportAsyncClient extends AWSSupportClient implements
         AWSSupportAsync {
 
@@ -183,8 +185,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -276,9 +277,7 @@ public class AWSSupportAsyncClient extends AWSSupportClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

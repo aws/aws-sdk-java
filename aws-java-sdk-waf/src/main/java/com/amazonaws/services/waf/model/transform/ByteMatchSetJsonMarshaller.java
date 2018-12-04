@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ByteMatchSetMarshaller
@@ -39,42 +34,44 @@ import com.amazonaws.util.json.*;
 public class ByteMatchSetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ByteMatchSet byteMatchSet, JSONWriter jsonWriter) {
+    public void marshall(ByteMatchSet byteMatchSet,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (byteMatchSet == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (byteMatchSet.getByteMatchSetId() != null) {
-                jsonWriter.key("ByteMatchSetId").value(
+                jsonGenerator.writeFieldName("ByteMatchSetId").writeValue(
                         byteMatchSet.getByteMatchSetId());
             }
-
             if (byteMatchSet.getName() != null) {
-                jsonWriter.key("Name").value(byteMatchSet.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        byteMatchSet.getName());
             }
 
             java.util.List<ByteMatchTuple> byteMatchTuplesList = byteMatchSet
                     .getByteMatchTuples();
             if (byteMatchTuplesList != null) {
-                jsonWriter.key("ByteMatchTuples");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ByteMatchTuples");
+                jsonGenerator.writeStartArray();
                 for (ByteMatchTuple byteMatchTuplesListValue : byteMatchTuplesList) {
                     if (byteMatchTuplesListValue != null) {
 
                         ByteMatchTupleJsonMarshaller.getInstance().marshall(
-                                byteMatchTuplesListValue, jsonWriter);
+                                byteMatchTuplesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

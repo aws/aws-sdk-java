@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ResourceTagMarshaller
@@ -39,37 +34,40 @@ import com.amazonaws.util.json.*;
 public class ResourceTagJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ResourceTag resourceTag, JSONWriter jsonWriter) {
+    public void marshall(ResourceTag resourceTag,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (resourceTag == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (resourceTag.getResourceId() != null) {
-                jsonWriter.key("ResourceId").value(resourceTag.getResourceId());
+                jsonGenerator.writeFieldName("ResourceId").writeValue(
+                        resourceTag.getResourceId());
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsListList = (com.amazonaws.internal.SdkInternalList<Tag>) resourceTag
                     .getTagsList();
             if (!tagsListList.isEmpty() || !tagsListList.isAutoConstruct()) {
-                jsonWriter.key("TagsList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TagsList");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListListValue : tagsListList) {
                     if (tagsListListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(
-                                tagsListListValue, jsonWriter);
+                                tagsListListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

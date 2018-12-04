@@ -31,6 +31,7 @@ import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.S3ClientOptions;
 import com.amazonaws.util.StringUtils;
 
 /**

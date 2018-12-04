@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SnapshotLimitsMarshaller
@@ -39,33 +34,37 @@ import com.amazonaws.util.json.*;
 public class SnapshotLimitsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(SnapshotLimits snapshotLimits, JSONWriter jsonWriter) {
+    public void marshall(SnapshotLimits snapshotLimits,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (snapshotLimits == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (snapshotLimits.getManualSnapshotsLimit() != null) {
-                jsonWriter.key("ManualSnapshotsLimit").value(
-                        snapshotLimits.getManualSnapshotsLimit());
+                jsonGenerator.writeFieldName("ManualSnapshotsLimit")
+                        .writeValue(snapshotLimits.getManualSnapshotsLimit());
             }
-
             if (snapshotLimits.getManualSnapshotsCurrentCount() != null) {
-                jsonWriter.key("ManualSnapshotsCurrentCount").value(
-                        snapshotLimits.getManualSnapshotsCurrentCount());
+                jsonGenerator
+                        .writeFieldName("ManualSnapshotsCurrentCount")
+                        .writeValue(
+                                snapshotLimits.getManualSnapshotsCurrentCount());
             }
-
             if (snapshotLimits.getManualSnapshotsLimitReached() != null) {
-                jsonWriter.key("ManualSnapshotsLimitReached").value(
-                        snapshotLimits.getManualSnapshotsLimitReached());
+                jsonGenerator
+                        .writeFieldName("ManualSnapshotsLimitReached")
+                        .writeValue(
+                                snapshotLimits.getManualSnapshotsLimitReached());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -51,8 +51,8 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
     private String prefix;
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      */
     private BufferingHints bufferingHints;
@@ -76,6 +76,12 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * </p>
      */
     private EncryptionConfiguration encryptionConfiguration;
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     */
+    private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
@@ -85,6 +91,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @param roleARN
      *        The ARN of the AWS credentials.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -96,6 +103,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The ARN of the AWS credentials.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -110,6 +118,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -123,6 +132,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @param bucketARN
      *        The ARN of the S3 bucket.
      */
+
     public void setBucketARN(String bucketARN) {
         this.bucketARN = bucketARN;
     }
@@ -134,6 +144,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * 
      * @return The ARN of the S3 bucket.
      */
+
     public String getBucketARN() {
         return this.bucketARN;
     }
@@ -148,6 +159,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withBucketARN(String bucketARN) {
         setBucketARN(bucketARN);
         return this;
@@ -175,6 +187,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/"
      *        >guide-fh-dev</a>.
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -200,6 +213,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/"
      *         >guide-fh-dev</a>.
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -228,6 +242,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -235,43 +250,46 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @param bufferingHints
      *        The buffering option. If no value is specified,
-     *        <code>BufferingHints</code> object default values are used.
+     *        <b>BufferingHints</b> object default values are used.
      */
+
     public void setBufferingHints(BufferingHints bufferingHints) {
         this.bufferingHints = bufferingHints;
     }
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @return The buffering option. If no value is specified,
-     *         <code>BufferingHints</code> object default values are used.
+     *         <b>BufferingHints</b> object default values are used.
      */
+
     public BufferingHints getBufferingHints() {
         return this.bufferingHints;
     }
 
     /**
      * <p>
-     * The buffering option. If no value is specified,
-     * <code>BufferingHints</code> object default values are used.
+     * The buffering option. If no value is specified, <b>BufferingHints</b>
+     * object default values are used.
      * </p>
      * 
      * @param bufferingHints
      *        The buffering option. If no value is specified,
-     *        <code>BufferingHints</code> object default values are used.
+     *        <b>BufferingHints</b> object default values are used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withBufferingHints(BufferingHints bufferingHints) {
         setBufferingHints(bufferingHints);
         return this;
@@ -299,6 +317,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        operation that reads from the S3 bucket.
      * @see CompressionFormat
      */
+
     public void setCompressionFormat(String compressionFormat) {
         this.compressionFormat = compressionFormat;
     }
@@ -324,6 +343,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         operation that reads from the S3 bucket.
      * @see CompressionFormat
      */
+
     public String getCompressionFormat() {
         return this.compressionFormat;
     }
@@ -352,6 +372,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see CompressionFormat
      */
+
     public S3DestinationUpdate withCompressionFormat(String compressionFormat) {
         setCompressionFormat(compressionFormat);
         return this;
@@ -377,10 +398,9 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        cannot be specified for Amazon Redshift destinations because they
      *        are not supported by the Amazon Redshift <code>COPY</code>
      *        operation that reads from the S3 bucket.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CompressionFormat
      */
+
     public void setCompressionFormat(CompressionFormat compressionFormat) {
         this.compressionFormat = compressionFormat.toString();
     }
@@ -409,6 +429,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see CompressionFormat
      */
+
     public S3DestinationUpdate withCompressionFormat(
             CompressionFormat compressionFormat) {
         setCompressionFormat(compressionFormat);
@@ -425,6 +446,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        The encryption configuration. If no value is specified, the
      *        default is no encryption.
      */
+
     public void setEncryptionConfiguration(
             EncryptionConfiguration encryptionConfiguration) {
         this.encryptionConfiguration = encryptionConfiguration;
@@ -439,6 +461,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return The encryption configuration. If no value is specified, the
      *         default is no encryption.
      */
+
     public EncryptionConfiguration getEncryptionConfiguration() {
         return this.encryptionConfiguration;
     }
@@ -455,9 +478,53 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3DestinationUpdate withEncryptionConfiguration(
             EncryptionConfiguration encryptionConfiguration) {
         setEncryptionConfiguration(encryptionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public void setCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        this.cloudWatchLoggingOptions = cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @return Describes CloudWatch logging options for your delivery stream.
+     */
+
+    public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
+        return this.cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Describes CloudWatch logging options for your delivery stream.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Describes CloudWatch logging options for your delivery stream.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public S3DestinationUpdate withCloudWatchLoggingOptions(
+            CloudWatchLoggingOptions cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
         return this;
     }
 
@@ -485,7 +552,10 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
             sb.append("CompressionFormat: " + getCompressionFormat() + ",");
         if (getEncryptionConfiguration() != null)
             sb.append("EncryptionConfiguration: "
-                    + getEncryptionConfiguration());
+                    + getEncryptionConfiguration() + ",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: "
+                    + getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +605,13 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
                 && other.getEncryptionConfiguration().equals(
                         this.getEncryptionConfiguration()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null
+                ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null
+                && other.getCloudWatchLoggingOptions().equals(
+                        this.getCloudWatchLoggingOptions()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +638,10 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
                 * hashCode
                 + ((getEncryptionConfiguration() == null) ? 0
                         : getEncryptionConfiguration().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchLoggingOptions() == null) ? 0
+                        : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }
 

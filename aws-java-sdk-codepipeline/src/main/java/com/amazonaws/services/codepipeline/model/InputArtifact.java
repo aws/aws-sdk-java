@@ -63,6 +63,7 @@ public class InputArtifact implements Serializable, Cloneable {
      *        declare different output artifacts, which are in turn consumed by
      *        different following actions.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -89,6 +90,7 @@ public class InputArtifact implements Serializable, Cloneable {
      *         declare different output artifacts, which are in turn consumed by
      *         different following actions.
      */
+
     public String getName() {
         return this.name;
     }
@@ -118,6 +120,7 @@ public class InputArtifact implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InputArtifact withName(String name) {
         setName(name);
         return this;

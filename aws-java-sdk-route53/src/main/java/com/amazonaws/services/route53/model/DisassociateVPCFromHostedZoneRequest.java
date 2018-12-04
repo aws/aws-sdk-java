@@ -65,6 +65,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      *        <p>
      *        Note that you cannot disassociate the last VPC from a hosted zone.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -83,6 +84,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      *         Note that you cannot disassociate the last VPC from a hosted
      *         zone.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -103,6 +105,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateVPCFromHostedZoneRequest withHostedZoneId(
             String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
@@ -117,6 +120,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * @param vPC
      *        The VPC that you want your hosted zone to be disassociated from.
      */
+
     public void setVPC(VPC vPC) {
         this.vPC = vPC;
     }
@@ -128,6 +132,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * 
      * @return The VPC that you want your hosted zone to be disassociated from.
      */
+
     public VPC getVPC() {
         return this.vPC;
     }
@@ -142,6 +147,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateVPCFromHostedZoneRequest withVPC(VPC vPC) {
         setVPC(vPC);
         return this;
@@ -157,6 +163,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      *        Optional:</i> Any comments you want to include about a
      *        <code>DisassociateVPCFromHostedZoneRequest
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -170,6 +177,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * @return Optional:</i> Any comments you want to include about a
      *         <code>DisassociateVPCFromHostedZoneRequest
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -186,6 +194,7 @@ public class DisassociateVPCFromHostedZoneRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateVPCFromHostedZoneRequest withComment(String comment) {
         setComment(comment);
         return this;

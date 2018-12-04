@@ -38,6 +38,7 @@ public class PutImageResult implements Serializable, Cloneable {
      * @param image
      *        Details of the image uploaded.
      */
+
     public void setImage(Image image) {
         this.image = image;
     }
@@ -49,6 +50,7 @@ public class PutImageResult implements Serializable, Cloneable {
      * 
      * @return Details of the image uploaded.
      */
+
     public Image getImage() {
         return this.image;
     }
@@ -63,6 +65,7 @@ public class PutImageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutImageResult withImage(Image image) {
         setImage(image);
         return this;

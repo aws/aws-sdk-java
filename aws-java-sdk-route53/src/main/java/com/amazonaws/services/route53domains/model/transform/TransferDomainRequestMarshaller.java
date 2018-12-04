@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.route53domains.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TransferDomainRequest Marshaller
  */
 public class TransferDomainRequestMarshaller implements
         Marshaller<Request<TransferDomainRequest>, TransferDomainRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TransferDomainRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TransferDomainRequest> marshall(
             TransferDomainRequest transferDomainRequest) {
@@ -64,23 +65,21 @@ public class TransferDomainRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (transferDomainRequest.getDomainName() != null) {
-                jsonWriter.key("DomainName").value(
+                jsonGenerator.writeFieldName("DomainName").writeValue(
                         transferDomainRequest.getDomainName());
             }
-
             if (transferDomainRequest.getIdnLangCode() != null) {
-                jsonWriter.key("IdnLangCode").value(
+                jsonGenerator.writeFieldName("IdnLangCode").writeValue(
                         transferDomainRequest.getIdnLangCode());
             }
-
             if (transferDomainRequest.getDurationInYears() != null) {
-                jsonWriter.key("DurationInYears").value(
+                jsonGenerator.writeFieldName("DurationInYears").writeValue(
                         transferDomainRequest.getDurationInYears());
             }
 
@@ -88,71 +87,67 @@ public class TransferDomainRequestMarshaller implements
                     .getNameservers();
             if (!nameserversList.isEmpty()
                     || !nameserversList.isAutoConstruct()) {
-                jsonWriter.key("Nameservers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Nameservers");
+                jsonGenerator.writeStartArray();
                 for (Nameserver nameserversListValue : nameserversList) {
                     if (nameserversListValue != null) {
 
                         NameserverJsonMarshaller.getInstance().marshall(
-                                nameserversListValue, jsonWriter);
+                                nameserversListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (transferDomainRequest.getAuthCode() != null) {
-                jsonWriter.key("AuthCode").value(
+                jsonGenerator.writeFieldName("AuthCode").writeValue(
                         transferDomainRequest.getAuthCode());
             }
-
             if (transferDomainRequest.getAutoRenew() != null) {
-                jsonWriter.key("AutoRenew").value(
+                jsonGenerator.writeFieldName("AutoRenew").writeValue(
                         transferDomainRequest.getAutoRenew());
             }
-
             if (transferDomainRequest.getAdminContact() != null) {
-                jsonWriter.key("AdminContact");
+                jsonGenerator.writeFieldName("AdminContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
-                        transferDomainRequest.getAdminContact(), jsonWriter);
+                        transferDomainRequest.getAdminContact(), jsonGenerator);
             }
-
             if (transferDomainRequest.getRegistrantContact() != null) {
-                jsonWriter.key("RegistrantContact");
+                jsonGenerator.writeFieldName("RegistrantContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
                         transferDomainRequest.getRegistrantContact(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (transferDomainRequest.getTechContact() != null) {
-                jsonWriter.key("TechContact");
+                jsonGenerator.writeFieldName("TechContact");
                 ContactDetailJsonMarshaller.getInstance().marshall(
-                        transferDomainRequest.getTechContact(), jsonWriter);
+                        transferDomainRequest.getTechContact(), jsonGenerator);
             }
-
             if (transferDomainRequest.getPrivacyProtectAdminContact() != null) {
-                jsonWriter.key("PrivacyProtectAdminContact").value(
-                        transferDomainRequest.getPrivacyProtectAdminContact());
+                jsonGenerator.writeFieldName("PrivacyProtectAdminContact")
+                        .writeValue(
+                                transferDomainRequest
+                                        .getPrivacyProtectAdminContact());
             }
-
             if (transferDomainRequest.getPrivacyProtectRegistrantContact() != null) {
-                jsonWriter.key("PrivacyProtectRegistrantContact").value(
-                        transferDomainRequest
-                                .getPrivacyProtectRegistrantContact());
+                jsonGenerator.writeFieldName("PrivacyProtectRegistrantContact")
+                        .writeValue(
+                                transferDomainRequest
+                                        .getPrivacyProtectRegistrantContact());
             }
-
             if (transferDomainRequest.getPrivacyProtectTechContact() != null) {
-                jsonWriter.key("PrivacyProtectTechContact").value(
-                        transferDomainRequest.getPrivacyProtectTechContact());
+                jsonGenerator.writeFieldName("PrivacyProtectTechContact")
+                        .writeValue(
+                                transferDomainRequest
+                                        .getPrivacyProtectTechContact());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,30 @@ public class TrustedAdvisorResourceDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorResourceDetail
-                            .setStatus(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorResourceDetail.setStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("region", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorResourceDetail
-                            .setRegion(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorResourceDetail.setRegion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorResourceDetail
-                            .setResourceId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorResourceDetail.setResourceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isSuppressed", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorResourceDetail
-                            .setIsSuppressed(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setIsSuppressed(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
                     trustedAdvisorResourceDetail
-                            .setMetadata(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setMetadata(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

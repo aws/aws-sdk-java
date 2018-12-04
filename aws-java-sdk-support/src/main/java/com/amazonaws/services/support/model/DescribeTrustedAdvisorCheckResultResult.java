@@ -42,6 +42,7 @@ public class DescribeTrustedAdvisorCheckResultResult implements Serializable,
      * @param result
      *        The detailed results of the Trusted Advisor check.
      */
+
     public void setResult(TrustedAdvisorCheckResult result) {
         this.result = result;
     }
@@ -53,6 +54,7 @@ public class DescribeTrustedAdvisorCheckResultResult implements Serializable,
      * 
      * @return The detailed results of the Trusted Advisor check.
      */
+
     public TrustedAdvisorCheckResult getResult() {
         return this.result;
     }
@@ -67,6 +69,7 @@ public class DescribeTrustedAdvisorCheckResultResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTrustedAdvisorCheckResultResult withResult(
             TrustedAdvisorCheckResult result) {
         setResult(result);

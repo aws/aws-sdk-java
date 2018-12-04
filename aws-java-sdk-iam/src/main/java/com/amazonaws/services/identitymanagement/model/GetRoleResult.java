@@ -27,44 +27,47 @@ public class GetRoleResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the IAM role.
      * </p>
      */
     private Role role;
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the IAM role.
      * </p>
      * 
      * @param role
-     *        Information about the role.
+     *        A structure containing details about the IAM role.
      */
+
     public void setRole(Role role) {
         this.role = role;
     }
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the IAM role.
      * </p>
      * 
-     * @return Information about the role.
+     * @return A structure containing details about the IAM role.
      */
+
     public Role getRole() {
         return this.role;
     }
 
     /**
      * <p>
-     * Information about the role.
+     * A structure containing details about the IAM role.
      * </p>
      * 
      * @param role
-     *        Information about the role.
+     *        A structure containing details about the IAM role.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRoleResult withRole(Role role) {
         setRole(role);
         return this;

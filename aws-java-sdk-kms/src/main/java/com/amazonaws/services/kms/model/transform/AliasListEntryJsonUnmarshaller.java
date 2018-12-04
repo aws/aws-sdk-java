@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class AliasListEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AliasName", targetDepth)) {
                     context.nextToken();
-                    aliasListEntry.setAliasName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    aliasListEntry.setAliasName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AliasArn", targetDepth)) {
                     context.nextToken();
-                    aliasListEntry.setAliasArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    aliasListEntry.setAliasArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetKeyId", targetDepth)) {
                     context.nextToken();
-                    aliasListEntry.setTargetKeyId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    aliasListEntry.setTargetKeyId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

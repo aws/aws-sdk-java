@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a map of policy names to policies returned from a successful
- * <code>GetIdentityPolicies</code> request.
- * </p>
+ * 
  */
 public class GetIdentityPoliciesResult implements Serializable, Cloneable {
 
@@ -40,6 +37,7 @@ public class GetIdentityPoliciesResult implements Serializable, Cloneable {
      * 
      * @return A map of policy names to policies.
      */
+
     public java.util.Map<String, String> getPolicies() {
         if (policies == null) {
             policies = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -55,6 +53,7 @@ public class GetIdentityPoliciesResult implements Serializable, Cloneable {
      * @param policies
      *        A map of policy names to policies.
      */
+
     public void setPolicies(java.util.Map<String, String> policies) {
         this.policies = policies == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -71,6 +70,7 @@ public class GetIdentityPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityPoliciesResult withPolicies(
             java.util.Map<String, String> policies) {
         setPolicies(policies);
@@ -92,6 +92,7 @@ public class GetIdentityPoliciesResult implements Serializable, Cloneable {
      * Removes all the entries added into Policies. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public GetIdentityPoliciesResult clearPoliciesEntries() {
         this.policies = null;
         return this;

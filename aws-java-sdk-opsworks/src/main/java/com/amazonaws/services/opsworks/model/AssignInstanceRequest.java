@@ -47,6 +47,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -58,6 +59,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -72,6 +74,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignInstanceRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -86,6 +89,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * @return The layer ID, which must correspond to a custom layer. You cannot
      *         assign a registered instance to a built-in layer.
      */
+
     public java.util.List<String> getLayerIds() {
         if (layerIds == null) {
             layerIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -103,6 +107,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      *        The layer ID, which must correspond to a custom layer. You cannot
      *        assign a registered instance to a built-in layer.
      */
+
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
             this.layerIds = null;
@@ -131,6 +136,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignInstanceRequest withLayerIds(String... layerIds) {
         if (this.layerIds == null) {
             setLayerIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -154,6 +160,7 @@ public class AssignInstanceRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AssignInstanceRequest withLayerIds(
             java.util.Collection<String> layerIds) {
         setLayerIds(layerIds);

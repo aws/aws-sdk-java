@@ -47,6 +47,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      *        Status code of the export task.
      * @see ExportTaskStatusCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * @return Status code of the export task.
      * @see ExportTaskStatusCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public ExportTaskStatus withCode(String code) {
         setCode(code);
         return this;
@@ -86,10 +89,9 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * 
      * @param code
      *        Status code of the export task.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public void setCode(ExportTaskStatusCode code) {
         this.code = code.toString();
     }
@@ -105,6 +107,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      *         chained together.
      * @see ExportTaskStatusCode
      */
+
     public ExportTaskStatus withCode(ExportTaskStatusCode code) {
         setCode(code);
         return this;
@@ -118,6 +121,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * @param message
      *        Status message related to the <code class="code">code</code>.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -129,6 +133,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * 
      * @return Status message related to the <code class="code">code</code>.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -143,6 +148,7 @@ public class ExportTaskStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTaskStatus withMessage(String message) {
         setMessage(message);
         return this;

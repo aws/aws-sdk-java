@@ -127,6 +127,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        The name of the Auto Scaling group associated with this scaling
      *        policy.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -139,6 +140,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return The name of the Auto Scaling group associated with this scaling
      *         policy.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -154,6 +156,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
@@ -167,6 +170,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @param policyName
      *        The name of the scaling policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -178,6 +182,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @return The name of the scaling policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -192,6 +197,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -205,6 +211,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @param policyARN
      *        The Amazon Resource Name (ARN) of the policy.
      */
+
     public void setPolicyARN(String policyARN) {
         this.policyARN = policyARN;
     }
@@ -216,6 +223,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the policy.
      */
+
     public String getPolicyARN() {
         return this.policyARN;
     }
@@ -230,6 +238,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withPolicyARN(String policyARN) {
         setPolicyARN(policyARN);
         return this;
@@ -245,6 +254,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        The policy type. Valid values are <code>SimpleScaling</code> and
      *        <code>StepScaling</code>.
      */
+
     public void setPolicyType(String policyType) {
         this.policyType = policyType;
     }
@@ -258,6 +268,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return The policy type. Valid values are <code>SimpleScaling</code> and
      *         <code>StepScaling</code>.
      */
+
     public String getPolicyType() {
         return this.policyType;
     }
@@ -274,6 +285,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withPolicyType(String policyType) {
         setPolicyType(policyType);
         return this;
@@ -292,6 +304,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.
      */
+
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
     }
@@ -308,6 +321,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
      */
+
     public String getAdjustmentType() {
         return this.adjustmentType;
     }
@@ -327,6 +341,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withAdjustmentType(String adjustmentType) {
         setAdjustmentType(adjustmentType);
         return this;
@@ -342,6 +357,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        Available for backward compatibility. Use
      *        <code>MinAdjustmentMagnitude</code> instead.
      */
+
     public void setMinAdjustmentStep(Integer minAdjustmentStep) {
         this.minAdjustmentStep = minAdjustmentStep;
     }
@@ -355,6 +371,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Available for backward compatibility. Use
      *         <code>MinAdjustmentMagnitude</code> instead.
      */
+
     public Integer getMinAdjustmentStep() {
         return this.minAdjustmentStep;
     }
@@ -371,6 +388,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withMinAdjustmentStep(Integer minAdjustmentStep) {
         setMinAdjustmentStep(minAdjustmentStep);
         return this;
@@ -393,6 +411,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        least this many instances. Otherwise, the error is
      *        <code>ValidationError</code>.
      */
+
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
         this.minAdjustmentMagnitude = minAdjustmentMagnitude;
     }
@@ -413,6 +432,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         least this many instances. Otherwise, the error is
      *         <code>ValidationError</code>.
      */
+
     public Integer getMinAdjustmentMagnitude() {
         return this.minAdjustmentMagnitude;
     }
@@ -436,6 +456,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withMinAdjustmentMagnitude(
             Integer minAdjustmentMagnitude) {
         setMinAdjustmentMagnitude(minAdjustmentMagnitude);
@@ -454,6 +475,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        type. A positive value adds to the current capacity while a
      *        negative number removes from the current capacity.
      */
+
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
     }
@@ -469,6 +491,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         type. A positive value adds to the current capacity while a
      *         negative number removes from the current capacity.
      */
+
     public Integer getScalingAdjustment() {
         return this.scalingAdjustment;
     }
@@ -487,6 +510,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withScalingAdjustment(Integer scalingAdjustment) {
         setScalingAdjustment(scalingAdjustment);
         return this;
@@ -502,6 +526,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        The amount of time, in seconds, after a scaling activity completes
      *        before any further trigger-related scaling activities can start.
      */
+
     public void setCooldown(Integer cooldown) {
         this.cooldown = cooldown;
     }
@@ -516,6 +541,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         completes before any further trigger-related scaling activities
      *         can start.
      */
+
     public Integer getCooldown() {
         return this.cooldown;
     }
@@ -532,6 +558,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withCooldown(Integer cooldown) {
         setCooldown(cooldown);
         return this;
@@ -546,6 +573,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return A set of adjustments that enable you to scale based on the size
      *         of the alarm breach.
      */
+
     public java.util.List<StepAdjustment> getStepAdjustments() {
         if (stepAdjustments == null) {
             stepAdjustments = new com.amazonaws.internal.SdkInternalList<StepAdjustment>();
@@ -563,6 +591,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        A set of adjustments that enable you to scale based on the size of
      *        the alarm breach.
      */
+
     public void setStepAdjustments(
             java.util.Collection<StepAdjustment> stepAdjustments) {
         if (stepAdjustments == null) {
@@ -592,6 +621,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withStepAdjustments(StepAdjustment... stepAdjustments) {
         if (this.stepAdjustments == null) {
             setStepAdjustments(new com.amazonaws.internal.SdkInternalList<StepAdjustment>(
@@ -615,6 +645,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withStepAdjustments(
             java.util.Collection<StepAdjustment> stepAdjustments) {
         setStepAdjustments(stepAdjustments);
@@ -632,6 +663,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <code>Minimum</code>, <code>Maximum</code>, and
      *        <code>Average</code>.
      */
+
     public void setMetricAggregationType(String metricAggregationType) {
         this.metricAggregationType = metricAggregationType;
     }
@@ -646,6 +678,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         <code>Minimum</code>, <code>Maximum</code>, and
      *         <code>Average</code>.
      */
+
     public String getMetricAggregationType() {
         return this.metricAggregationType;
     }
@@ -663,6 +696,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withMetricAggregationType(String metricAggregationType) {
         setMetricAggregationType(metricAggregationType);
         return this;
@@ -678,6 +712,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        The estimated time, in seconds, until a newly launched instance
      *        can contribute to the CloudWatch metrics.
      */
+
     public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
         this.estimatedInstanceWarmup = estimatedInstanceWarmup;
     }
@@ -691,6 +726,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return The estimated time, in seconds, until a newly launched instance
      *         can contribute to the CloudWatch metrics.
      */
+
     public Integer getEstimatedInstanceWarmup() {
         return this.estimatedInstanceWarmup;
     }
@@ -707,6 +743,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withEstimatedInstanceWarmup(
             Integer estimatedInstanceWarmup) {
         setEstimatedInstanceWarmup(estimatedInstanceWarmup);
@@ -720,6 +757,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * 
      * @return The CloudWatch alarms related to the policy.
      */
+
     public java.util.List<Alarm> getAlarms() {
         if (alarms == null) {
             alarms = new com.amazonaws.internal.SdkInternalList<Alarm>();
@@ -735,6 +773,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @param alarms
      *        The CloudWatch alarms related to the policy.
      */
+
     public void setAlarms(java.util.Collection<Alarm> alarms) {
         if (alarms == null) {
             this.alarms = null;
@@ -760,6 +799,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withAlarms(Alarm... alarms) {
         if (this.alarms == null) {
             setAlarms(new com.amazonaws.internal.SdkInternalList<Alarm>(
@@ -781,6 +821,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
         setAlarms(alarms);
         return this;

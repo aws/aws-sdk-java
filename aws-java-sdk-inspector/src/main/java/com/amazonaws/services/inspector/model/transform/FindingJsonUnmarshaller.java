@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -50,55 +52,76 @@ public class FindingJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("findingArn", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    finding.setFindingArn(StringJsonUnmarshaller.getInstance()
+                    finding.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
-                if (context.testExpression("runArn", targetDepth)) {
+                if (context.testExpression("schemaVersion", targetDepth)) {
                     context.nextToken();
-                    finding.setRunArn(StringJsonUnmarshaller.getInstance()
+                    finding.setSchemaVersion(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("service", targetDepth)) {
+                    context.nextToken();
+                    finding.setService(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
-                if (context.testExpression("rulesPackageArn", targetDepth)) {
+                if (context.testExpression("serviceAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setRulesPackageArn(StringJsonUnmarshaller
+                    finding.setServiceAttributes(InspectorServiceAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("ruleName", targetDepth)) {
+                if (context.testExpression("assetType", targetDepth)) {
                     context.nextToken();
-                    finding.setRuleName(StringJsonUnmarshaller.getInstance()
+                    finding.setAssetType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
-                if (context.testExpression("agentId", targetDepth)) {
+                if (context.testExpression("assetAttributes", targetDepth)) {
                     context.nextToken();
-                    finding.setAgentId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
-                }
-                if (context.testExpression("autoScalingGroup", targetDepth)) {
-                    context.nextToken();
-                    finding.setAutoScalingGroup(StringJsonUnmarshaller
+                    finding.setAssetAttributes(AssetAttributesJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
-                if (context.testExpression("severity", targetDepth)) {
+                if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    finding.setSeverity(StringJsonUnmarshaller.getInstance()
+                    finding.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
-                if (context.testExpression("finding", targetDepth)) {
+                if (context.testExpression("title", targetDepth)) {
                     context.nextToken();
-                    finding.setFinding(LocalizedTextJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    finding.setTitle(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    finding.setDescription(LocalizedTextJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    finding.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("recommendation", targetDepth)) {
                     context.nextToken();
-                    finding.setRecommendation(LocalizedTextJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    finding.setRecommendation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
+                }
+                if (context.testExpression("severity", targetDepth)) {
+                    context.nextToken();
+                    finding.setSeverity(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
+                }
+                if (context.testExpression("numericSeverity", targetDepth)) {
+                    context.nextToken();
+                    finding.setNumericSeverity(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
+                }
+                if (context.testExpression("confidence", targetDepth)) {
+                    context.nextToken();
+                    finding.setConfidence(context
+                            .getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context
+                        .testExpression("indicatorOfCompromise", targetDepth)) {
+                    context.nextToken();
+                    finding.setIndicatorOfCompromise(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
@@ -111,6 +134,16 @@ public class FindingJsonUnmarshaller implements
                     finding.setUserAttributes(new ListUnmarshaller<Attribute>(
                             AttributeJsonUnmarshaller.getInstance())
                             .unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    finding.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("updatedAt", targetDepth)) {
+                    context.nextToken();
+                    finding.setUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

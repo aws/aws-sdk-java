@@ -36,6 +36,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * @param maxResults
      *        The maximum number of identities to return.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -45,6 +46,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of identities to return.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -57,6 +59,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -68,6 +71,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        A pagination token.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -77,6 +81,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * 
      * @return A pagination token.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -89,6 +94,7 @@ public class ListIdentityPoolsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

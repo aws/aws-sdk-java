@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class RequestCertificateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -62,16 +62,36 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -94,6 +114,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        protects www.example.com, site.example.com, and
      *        images.example.com.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -114,6 +135,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         protects www.example.com, site.example.com, and
      *         images.example.com.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -137,6 +159,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -156,6 +179,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         <code>DomainName</code> field is www.example.com if users can
      *         reach your site by using either name.
      */
+
     public java.util.List<String> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -175,6 +199,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        <code>DomainName</code> field is www.example.com if users can
      *        reach your site by using either name.
      */
+
     public void setSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         if (subjectAlternativeNames == null) {
@@ -209,6 +234,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withSubjectAlternativeNames(
             String... subjectAlternativeNames) {
         if (this.subjectAlternativeNames == null) {
@@ -238,6 +264,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         setSubjectAlternativeNames(subjectAlternativeNames);
@@ -265,6 +292,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        change the idempotency token for each call, ACM recognizes that
      *        you are requesting multiple certificates.
      */
+
     public void setIdempotencyToken(String idempotencyToken) {
         this.idempotencyToken = idempotencyToken;
     }
@@ -289,6 +317,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         change the idempotency token for each call, ACM recognizes that
      *         you are requesting multiple certificates.
      */
+
     public String getIdempotencyToken() {
         return this.idempotencyToken;
     }
@@ -316,6 +345,7 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withIdempotencyToken(
             String idempotencyToken) {
         setIdempotencyToken(idempotencyToken);
@@ -328,16 +358,36 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -345,18 +395,39 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *         email addresses that are used to send the emails. This must be
      *         the same as the <code>Domain</code> value or a superdomain of the
      *         <code>Domain</code> value. For example, if you requested a
-     *         certificate for <code>www.example.com</code> and specify
+     *         certificate for <code>test.example.com</code> and specify
      *         <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *         sends email to the domain registrant, technical contact, and
      *         administrative contact in WHOIS and the following five addresses:
      *         <ul>
-     *         <li>admin@example.com</li>
-     *         <li>administrator@example.com</li>
-     *         <li>hostmaster@example.com</li>
-     *         <li>postmaster@example.com</li>
-     *         <li>webmaster@example.com</li>
+     *         <li>
+     *         <p>
+     *         admin@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         administrator@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         hostmaster@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         postmaster@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         webmaster@example.com
+     *         </p>
+     *         </li>
      *         </ul>
      */
+
     public java.util.List<DomainValidationOption> getDomainValidationOptions() {
         return domainValidationOptions;
     }
@@ -367,16 +438,36 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -385,18 +476,39 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      */
+
     public void setDomainValidationOptions(
             java.util.Collection<DomainValidationOption> domainValidationOptions) {
         if (domainValidationOptions == null) {
@@ -414,16 +526,36 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * <p>
@@ -438,20 +570,41 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainValidationOptions(
             DomainValidationOption... domainValidationOptions) {
         if (this.domainValidationOptions == null) {
@@ -470,16 +623,36 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      * addresses that are used to send the emails. This must be the same as the
      * <code>Domain</code> value or a superdomain of the <code>Domain</code>
      * value. For example, if you requested a certificate for
-     * <code>www.example.com</code> and specify <b>DomainValidationOptions</b>
+     * <code>test.example.com</code> and specify <b>DomainValidationOptions</b>
      * of <code>example.com</code>, ACM sends email to the domain registrant,
      * technical contact, and administrative contact in WHOIS and the following
      * five addresses:
      * <ul>
-     * <li>admin@example.com</li>
-     * <li>administrator@example.com</li>
-     * <li>hostmaster@example.com</li>
-     * <li>postmaster@example.com</li>
-     * <li>webmaster@example.com</li>
+     * <li>
+     * <p>
+     * admin@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -488,20 +661,41 @@ public class RequestCertificateRequest extends AmazonWebServiceRequest
      *        email addresses that are used to send the emails. This must be the
      *        same as the <code>Domain</code> value or a superdomain of the
      *        <code>Domain</code> value. For example, if you requested a
-     *        certificate for <code>www.example.com</code> and specify
+     *        certificate for <code>test.example.com</code> and specify
      *        <b>DomainValidationOptions</b> of <code>example.com</code>, ACM
      *        sends email to the domain registrant, technical contact, and
      *        administrative contact in WHOIS and the following five addresses:
      *        <ul>
-     *        <li>admin@example.com</li>
-     *        <li>administrator@example.com</li>
-     *        <li>hostmaster@example.com</li>
-     *        <li>postmaster@example.com</li>
-     *        <li>webmaster@example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestCertificateRequest withDomainValidationOptions(
             java.util.Collection<DomainValidationOption> domainValidationOptions) {
         setDomainValidationOptions(domainValidationOptions);

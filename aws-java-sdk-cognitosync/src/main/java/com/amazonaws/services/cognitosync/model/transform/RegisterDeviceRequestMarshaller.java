@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterDeviceRequest Marshaller
@@ -47,6 +49,13 @@ public class RegisterDeviceRequestMarshaller implements
         Marshaller<Request<RegisterDeviceRequest>, RegisterDeviceRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterDeviceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterDeviceRequest> marshall(
             RegisterDeviceRequest registerDeviceRequest) {
@@ -63,38 +72,39 @@ public class RegisterDeviceRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (registerDeviceRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(registerDeviceRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (registerDeviceRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(registerDeviceRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (registerDeviceRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(registerDeviceRequest
-                                .getIdentityId()));
+                (registerDeviceRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(registerDeviceRequest
+                                .getIdentityId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (registerDeviceRequest.getPlatform() != null) {
-                jsonWriter.key("Platform").value(
+                jsonGenerator.writeFieldName("Platform").writeValue(
                         registerDeviceRequest.getPlatform());
             }
-
             if (registerDeviceRequest.getToken() != null) {
-                jsonWriter.key("Token").value(registerDeviceRequest.getToken());
+                jsonGenerator.writeFieldName("Token").writeValue(
+                        registerDeviceRequest.getToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

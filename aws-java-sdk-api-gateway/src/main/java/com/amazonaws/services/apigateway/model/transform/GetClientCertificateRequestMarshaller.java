@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetClientCertificateRequest Marshaller
@@ -47,7 +49,14 @@ public class GetClientCertificateRequestMarshaller
         implements
         Marshaller<Request<GetClientCertificateRequest>, GetClientCertificateRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetClientCertificateRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetClientCertificateRequest> marshall(
             GetClientCertificateRequest getClientCertificateRequest) {
@@ -67,10 +76,11 @@ public class GetClientCertificateRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{clientcertificate_id}",
-                        (getClientCertificateRequest.getClientCertificateId() == null) ? ""
-                                : StringUtils
+                        (getClientCertificateRequest.getClientCertificateId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
                                         .fromString(getClientCertificateRequest
-                                                .getClientCertificateId()));
+                                                .getClientCertificateId()),
+                                        false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

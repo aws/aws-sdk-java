@@ -48,6 +48,7 @@ public class DecryptResult implements Serializable, Cloneable {
      *        ARN of the key used to perform the decryption. This value is
      *        returned if no errors are encountered during the operation.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -61,6 +62,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return ARN of the key used to perform the decryption. This value is
      *         returned if no errors are encountered during the operation.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -77,6 +79,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -92,12 +95,21 @@ public class DecryptResult implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param plaintext
      *        Decrypted plaintext data. This value may not be returned if the
      *        customer master key is not available or if you didn't have
      *        permission to use it.
      */
+
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
         this.plaintext = plaintext;
     }
@@ -122,6 +134,7 @@ public class DecryptResult implements Serializable, Cloneable {
      *         customer master key is not available or if you didn't have
      *         permission to use it.
      */
+
     public java.nio.ByteBuffer getPlaintext() {
         return this.plaintext;
     }
@@ -139,6 +152,7 @@ public class DecryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecryptResult withPlaintext(java.nio.ByteBuffer plaintext) {
         setPlaintext(plaintext);
         return this;

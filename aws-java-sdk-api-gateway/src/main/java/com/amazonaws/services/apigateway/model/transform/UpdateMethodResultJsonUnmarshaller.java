@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,46 @@ public class UpdateMethodResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("httpMethod", targetDepth)) {
                     context.nextToken();
-                    updateMethodResult.setHttpMethod(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    updateMethodResult.setHttpMethod(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("authorizationType", targetDepth)) {
                     context.nextToken();
-                    updateMethodResult
-                            .setAuthorizationType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    updateMethodResult.setAuthorizationType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("authorizerId", targetDepth)) {
+                    context.nextToken();
+                    updateMethodResult.setAuthorizerId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("apiKeyRequired", targetDepth)) {
                     context.nextToken();
                     updateMethodResult
-                            .setApiKeyRequired(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setApiKeyRequired(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
                     context.nextToken();
                     updateMethodResult
                             .setRequestParameters(new MapUnmarshaller<String, Boolean>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    BooleanJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(Boolean.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("requestModels", targetDepth)) {
                     context.nextToken();
                     updateMethodResult
                             .setRequestModels(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("methodResponses", targetDepth)) {
                     context.nextToken();
                     updateMethodResult
                             .setMethodResponses(new MapUnmarshaller<String, MethodResponse>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     MethodResponseJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

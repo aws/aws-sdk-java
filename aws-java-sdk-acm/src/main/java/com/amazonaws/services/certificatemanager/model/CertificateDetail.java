@@ -103,13 +103,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -127,16 +155,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -199,6 +267,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -226,6 +295,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
      *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -256,6 +326,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -271,6 +342,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        Fully qualified domain name (FQDN), such as www.example.com or
      *        example.com, for the certificate.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -284,6 +356,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Fully qualified domain name (FQDN), such as www.example.com or
      *         example.com, for the certificate.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -300,6 +373,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -322,6 +396,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         canonical domain name (CN) of the certificate and additional
      *         domain names that can be used to connect to the website.
      */
+
     public java.util.List<String> getSubjectAlternativeNames() {
         return subjectAlternativeNames;
     }
@@ -344,6 +419,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        canonical domain name (CN) of the certificate and additional
      *        domain names that can be used to connect to the website.
      */
+
     public void setSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         if (subjectAlternativeNames == null) {
@@ -381,6 +457,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withSubjectAlternativeNames(
             String... subjectAlternativeNames) {
         if (this.subjectAlternativeNames == null) {
@@ -413,6 +490,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withSubjectAlternativeNames(
             java.util.Collection<String> subjectAlternativeNames) {
         setSubjectAlternativeNames(subjectAlternativeNames);
@@ -430,6 +508,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         domain name in the certificate and the email address that can be
      *         used for validation.
      */
+
     public java.util.List<DomainValidation> getDomainValidationOptions() {
         return domainValidationOptions;
     }
@@ -446,6 +525,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        domain name in the certificate and the email address that can be
      *        used for validation.
      */
+
     public void setDomainValidationOptions(
             java.util.Collection<DomainValidation> domainValidationOptions) {
         if (domainValidationOptions == null) {
@@ -477,6 +557,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withDomainValidationOptions(
             DomainValidation... domainValidationOptions) {
         if (this.domainValidationOptions == null) {
@@ -503,6 +584,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withDomainValidationOptions(
             java.util.Collection<DomainValidation> domainValidationOptions) {
         setDomainValidationOptions(domainValidationOptions);
@@ -517,6 +599,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param serial
      *        String that contains the serial number of the certificate.
      */
+
     public void setSerial(String serial) {
         this.serial = serial;
     }
@@ -528,6 +611,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * 
      * @return String that contains the serial number of the certificate.
      */
+
     public String getSerial() {
         return this.serial;
     }
@@ -542,6 +626,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withSerial(String serial) {
         setSerial(serial);
         return this;
@@ -557,6 +642,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        The X.500 distinguished name of the entity associated with the
      *        public key contained in the certificate.
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -570,6 +656,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return The X.500 distinguished name of the entity associated with the
      *         public key contained in the certificate.
      */
+
     public String getSubject() {
         return this.subject;
     }
@@ -586,6 +673,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withSubject(String subject) {
         setSubject(subject);
         return this;
@@ -601,6 +689,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        The X.500 distinguished name of the CA that issued and signed the
      *        certificate.
      */
+
     public void setIssuer(String issuer) {
         this.issuer = issuer;
     }
@@ -614,6 +703,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return The X.500 distinguished name of the CA that issued and signed the
      *         certificate.
      */
+
     public String getIssuer() {
         return this.issuer;
     }
@@ -630,6 +720,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withIssuer(String issuer) {
         setIssuer(issuer);
         return this;
@@ -643,6 +734,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param createdAt
      *        Time at which the certificate was requested.
      */
+
     public void setCreatedAt(java.util.Date createdAt) {
         this.createdAt = createdAt;
     }
@@ -654,6 +746,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * 
      * @return Time at which the certificate was requested.
      */
+
     public java.util.Date getCreatedAt() {
         return this.createdAt;
     }
@@ -668,6 +761,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -681,6 +775,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param issuedAt
      *        Time at which the certificate was issued.
      */
+
     public void setIssuedAt(java.util.Date issuedAt) {
         this.issuedAt = issuedAt;
     }
@@ -692,6 +787,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * 
      * @return Time at which the certificate was issued.
      */
+
     public java.util.Date getIssuedAt() {
         return this.issuedAt;
     }
@@ -706,6 +802,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withIssuedAt(java.util.Date issuedAt) {
         setIssuedAt(issuedAt);
         return this;
@@ -716,13 +813,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -730,16 +855,45 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @see CertificateStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -749,29 +903,86 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
      * @return A <code>CertificateStatus</code> enumeration value that can
      *         contain one of the following:
      *         <ul>
-     *         <li>PENDING_VALIDATION</li>
-     *         <li>ISSUED</li>
-     *         <li>INACTIVE</li>
-     *         <li>EXPIRED</li>
-     *         <li>REVOKED</li>
-     *         <li>FAILED</li>
-     *         <li>VALIDATION_TIMED_OUT</li>
+     *         <li>
+     *         <p>
+     *         PENDING_VALIDATION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ISSUED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INACTIVE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EXPIRED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REVOKED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VALIDATION_TIMED_OUT
+     *         </p>
+     *         </li>
      *         </ul>
      * @see CertificateStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -781,13 +992,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -795,18 +1034,47 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
      */
+
     public CertificateDetail withStatus(String status) {
         setStatus(status);
         return this;
@@ -817,13 +1085,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -831,18 +1127,45 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see CertificateStatus
      */
+
     public void setStatus(CertificateStatus status) {
         this.status = status.toString();
     }
@@ -852,13 +1175,41 @@ public class CertificateDetail implements Serializable, Cloneable {
      * A <code>CertificateStatus</code> enumeration value that can contain one
      * of the following:
      * <ul>
-     * <li>PENDING_VALIDATION</li>
-     * <li>ISSUED</li>
-     * <li>INACTIVE</li>
-     * <li>EXPIRED</li>
-     * <li>REVOKED</li>
-     * <li>FAILED</li>
-     * <li>VALIDATION_TIMED_OUT</li>
+     * <li>
+     * <p>
+     * PENDING_VALIDATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EXPIRED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REVOKED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VALIDATION_TIMED_OUT
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -866,18 +1217,47 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        A <code>CertificateStatus</code> enumeration value that can
      *        contain one of the following:
      *        <ul>
-     *        <li>PENDING_VALIDATION</li>
-     *        <li>ISSUED</li>
-     *        <li>INACTIVE</li>
-     *        <li>EXPIRED</li>
-     *        <li>REVOKED</li>
-     *        <li>FAILED</li>
-     *        <li>VALIDATION_TIMED_OUT</li>
+     *        <li>
+     *        <p>
+     *        PENDING_VALIDATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ISSUED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INACTIVE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EXPIRED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REVOKED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VALIDATION_TIMED_OUT
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see CertificateStatus
      */
+
     public CertificateDetail withStatus(CertificateStatus status) {
         setStatus(status);
         return this;
@@ -893,6 +1273,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        The time, if any, at which the certificate was revoked. This value
      *        exists only if the certificate has been revoked.
      */
+
     public void setRevokedAt(java.util.Date revokedAt) {
         this.revokedAt = revokedAt;
     }
@@ -906,6 +1287,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return The time, if any, at which the certificate was revoked. This
      *         value exists only if the certificate has been revoked.
      */
+
     public java.util.Date getRevokedAt() {
         return this.revokedAt;
     }
@@ -922,6 +1304,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withRevokedAt(java.util.Date revokedAt) {
         setRevokedAt(revokedAt);
         return this;
@@ -933,16 +1316,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -952,19 +1375,60 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @see RevocationReason
      */
+
     public void setRevocationReason(String revocationReason) {
         this.revocationReason = revocationReason;
     }
@@ -975,16 +1439,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -993,19 +1497,60 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         certificate has been revoked. This can be one of the following
      *         vales:
      *         <ul>
-     *         <li>UNSPECIFIED</li>
-     *         <li>KEY_COMPROMISE</li>
-     *         <li>CA_COMPROMISE</li>
-     *         <li>AFFILIATION_CHANGED</li>
-     *         <li>SUPERCEDED</li>
-     *         <li>CESSATION_OF_OPERATION</li>
-     *         <li>CERTIFICATE_HOLD</li>
-     *         <li>REMOVE_FROM_CRL</li>
-     *         <li>PRIVILEGE_WITHDRAWN</li>
-     *         <li>A_A_COMPROMISE</li>
+     *         <li>
+     *         <p>
+     *         UNSPECIFIED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         KEY_COMPROMISE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CA_COMPROMISE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AFFILIATION_CHANGED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SUPERCEDED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CESSATION_OF_OPERATION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CERTIFICATE_HOLD
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOVE_FROM_CRL
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PRIVILEGE_WITHDRAWN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A_A_COMPROMISE
+     *         </p>
+     *         </li>
      *         </ul>
      * @see RevocationReason
      */
+
     public String getRevocationReason() {
         return this.revocationReason;
     }
@@ -1016,16 +1561,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1035,21 +1620,62 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RevocationReason
      */
+
     public CertificateDetail withRevocationReason(String revocationReason) {
         setRevocationReason(revocationReason);
         return this;
@@ -1061,16 +1687,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1080,21 +1746,60 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RevocationReason
      */
+
     public void setRevocationReason(RevocationReason revocationReason) {
         this.revocationReason = revocationReason.toString();
     }
@@ -1105,16 +1810,56 @@ public class CertificateDetail implements Serializable, Cloneable {
      * certificate was revoked. This value exists only if the certificate has
      * been revoked. This can be one of the following vales:
      * <ul>
-     * <li>UNSPECIFIED</li>
-     * <li>KEY_COMPROMISE</li>
-     * <li>CA_COMPROMISE</li>
-     * <li>AFFILIATION_CHANGED</li>
-     * <li>SUPERCEDED</li>
-     * <li>CESSATION_OF_OPERATION</li>
-     * <li>CERTIFICATE_HOLD</li>
-     * <li>REMOVE_FROM_CRL</li>
-     * <li>PRIVILEGE_WITHDRAWN</li>
-     * <li>A_A_COMPROMISE</li>
+     * <li>
+     * <p>
+     * UNSPECIFIED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KEY_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_COMPROMISE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AFFILIATION_CHANGED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SUPERCEDED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CESSATION_OF_OPERATION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CERTIFICATE_HOLD
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOVE_FROM_CRL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PRIVILEGE_WITHDRAWN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A_A_COMPROMISE
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -1124,21 +1869,62 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        certificate has been revoked. This can be one of the following
      *        vales:
      *        <ul>
-     *        <li>UNSPECIFIED</li>
-     *        <li>KEY_COMPROMISE</li>
-     *        <li>CA_COMPROMISE</li>
-     *        <li>AFFILIATION_CHANGED</li>
-     *        <li>SUPERCEDED</li>
-     *        <li>CESSATION_OF_OPERATION</li>
-     *        <li>CERTIFICATE_HOLD</li>
-     *        <li>REMOVE_FROM_CRL</li>
-     *        <li>PRIVILEGE_WITHDRAWN</li>
-     *        <li>A_A_COMPROMISE</li>
+     *        <li>
+     *        <p>
+     *        UNSPECIFIED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KEY_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CA_COMPROMISE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AFFILIATION_CHANGED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SUPERCEDED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CESSATION_OF_OPERATION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CERTIFICATE_HOLD
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOVE_FROM_CRL
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PRIVILEGE_WITHDRAWN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A_A_COMPROMISE
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see RevocationReason
      */
+
     public CertificateDetail withRevocationReason(
             RevocationReason revocationReason) {
         setRevocationReason(revocationReason);
@@ -1153,6 +1939,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param notBefore
      *        Time before which the certificate is not valid.
      */
+
     public void setNotBefore(java.util.Date notBefore) {
         this.notBefore = notBefore;
     }
@@ -1164,6 +1951,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * 
      * @return Time before which the certificate is not valid.
      */
+
     public java.util.Date getNotBefore() {
         return this.notBefore;
     }
@@ -1178,6 +1966,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withNotBefore(java.util.Date notBefore) {
         setNotBefore(notBefore);
         return this;
@@ -1191,6 +1980,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param notAfter
      *        Time after which the certificate is not valid.
      */
+
     public void setNotAfter(java.util.Date notAfter) {
         this.notAfter = notAfter;
     }
@@ -1202,6 +1992,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * 
      * @return Time after which the certificate is not valid.
      */
+
     public java.util.Date getNotAfter() {
         return this.notAfter;
     }
@@ -1216,6 +2007,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withNotAfter(java.util.Date notAfter) {
         setNotAfter(notAfter);
         return this;
@@ -1232,6 +2024,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        pair. Currently the only supported value is <code>RSA_2048</code>.
      * @see KeyAlgorithm
      */
+
     public void setKeyAlgorithm(String keyAlgorithm) {
         this.keyAlgorithm = keyAlgorithm;
     }
@@ -1247,6 +2040,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         .
      * @see KeyAlgorithm
      */
+
     public String getKeyAlgorithm() {
         return this.keyAlgorithm;
     }
@@ -1264,6 +2058,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         chained together.
      * @see KeyAlgorithm
      */
+
     public CertificateDetail withKeyAlgorithm(String keyAlgorithm) {
         setKeyAlgorithm(keyAlgorithm);
         return this;
@@ -1278,10 +2073,9 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @param keyAlgorithm
      *        Asymmetric algorithm used to generate the public and private key
      *        pair. Currently the only supported value is <code>RSA_2048</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see KeyAlgorithm
      */
+
     public void setKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
         this.keyAlgorithm = keyAlgorithm.toString();
     }
@@ -1299,6 +2093,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *         chained together.
      * @see KeyAlgorithm
      */
+
     public CertificateDetail withKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
         setKeyAlgorithm(keyAlgorithm);
         return this;
@@ -1314,6 +2109,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        Algorithm used to generate a signature. Currently the only
      *        supported value is <code>SHA256WITHRSA</code>.
      */
+
     public void setSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
@@ -1327,6 +2123,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Algorithm used to generate a signature. Currently the only
      *         supported value is <code>SHA256WITHRSA</code>.
      */
+
     public String getSignatureAlgorithm() {
         return this.signatureAlgorithm;
     }
@@ -1343,6 +2140,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withSignatureAlgorithm(String signatureAlgorithm) {
         setSignatureAlgorithm(signatureAlgorithm);
         return this;
@@ -1357,6 +2155,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return List that identifies ARNs that are using the certificate. A
      *         single ACM Certificate can be used by multiple AWS resources.
      */
+
     public java.util.List<String> getInUseBy() {
         return inUseBy;
     }
@@ -1371,6 +2170,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      *        List that identifies ARNs that are using the certificate. A single
      *        ACM Certificate can be used by multiple AWS resources.
      */
+
     public void setInUseBy(java.util.Collection<String> inUseBy) {
         if (inUseBy == null) {
             this.inUseBy = null;
@@ -1398,6 +2198,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withInUseBy(String... inUseBy) {
         if (this.inUseBy == null) {
             setInUseBy(new java.util.ArrayList<String>(inUseBy.length));
@@ -1420,6 +2221,7 @@ public class CertificateDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CertificateDetail withInUseBy(java.util.Collection<String> inUseBy) {
         setInUseBy(inUseBy);
         return this;

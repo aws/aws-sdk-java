@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeTapesRequest Marshaller
  */
 public class DescribeTapesRequestMarshaller implements
         Marshaller<Request<DescribeTapesRequest>, DescribeTapesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeTapesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeTapesRequest> marshall(
             DescribeTapesRequest describeTapesRequest) {
@@ -64,46 +64,44 @@ public class DescribeTapesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeTapesRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
                         describeTapesRequest.getGatewayARN());
             }
 
             com.amazonaws.internal.SdkInternalList<String> tapeARNsList = (com.amazonaws.internal.SdkInternalList<String>) describeTapesRequest
                     .getTapeARNs();
             if (!tapeARNsList.isEmpty() || !tapeARNsList.isAutoConstruct()) {
-                jsonWriter.key("TapeARNs");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TapeARNs");
+                jsonGenerator.writeStartArray();
                 for (String tapeARNsListValue : tapeARNsList) {
                     if (tapeARNsListValue != null) {
-                        jsonWriter.value(tapeARNsListValue);
+                        jsonGenerator.writeValue(tapeARNsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (describeTapesRequest.getMarker() != null) {
-                jsonWriter.key("Marker")
-                        .value(describeTapesRequest.getMarker());
+                jsonGenerator.writeFieldName("Marker").writeValue(
+                        describeTapesRequest.getMarker());
             }
-
             if (describeTapesRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeTapesRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        describeTapesRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

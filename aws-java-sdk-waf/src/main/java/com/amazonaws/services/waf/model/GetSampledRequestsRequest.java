@@ -76,6 +76,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        want <code>GetSampledRequests</code> to return a sample of
      *        requests.
      */
+
     public void setWebAclId(String webAclId) {
         this.webAclId = webAclId;
     }
@@ -90,6 +91,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *         you want <code>GetSampledRequests</code> to return a sample of
      *         requests.
      */
+
     public String getWebAclId() {
         return this.webAclId;
     }
@@ -107,6 +109,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsRequest withWebAclId(String webAclId) {
         setWebAclId(webAclId);
         return this;
@@ -135,6 +138,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        that didn't match any of the rules in the specified
      *        <code>WebACL</code>.
      */
+
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
@@ -161,6 +165,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *         requests that didn't match any of the rules in the specified
      *         <code>WebACL</code>.
      */
+
     public String getRuleId() {
         return this.ruleId;
     }
@@ -190,6 +195,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsRequest withRuleId(String ruleId) {
         setRuleId(ruleId);
         return this;
@@ -210,6 +216,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        seconds). You can specify any time range in the previous three
      *        hours.
      */
+
     public void setTimeWindow(TimeWindow timeWindow) {
         this.timeWindow = timeWindow;
     }
@@ -228,6 +235,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *         (in seconds). You can specify any time range in the previous
      *         three hours.
      */
+
     public TimeWindow getTimeWindow() {
         return this.timeWindow;
     }
@@ -249,6 +257,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsRequest withTimeWindow(TimeWindow timeWindow) {
         setTimeWindow(timeWindow);
         return this;
@@ -270,6 +279,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *        value of <code>MaxItems</code>, <code>GetSampledRequests</code>
      *        returns information about all of them.
      */
+
     public void setMaxItems(Long maxItems) {
         this.maxItems = maxItems;
     }
@@ -289,6 +299,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      *         value of <code>MaxItems</code>, <code>GetSampledRequests</code>
      *         returns information about all of them.
      */
+
     public Long getMaxItems() {
         return this.maxItems;
     }
@@ -311,6 +322,7 @@ public class GetSampledRequestsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsRequest withMaxItems(Long maxItems) {
         setMaxItems(maxItems);
         return this;

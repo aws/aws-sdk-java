@@ -30,6 +30,7 @@ public class GetDeviceResult implements Serializable, Cloneable {
     /**
      * @param device
      */
+
     public void setDevice(Device device) {
         this.device = device;
     }
@@ -37,6 +38,7 @@ public class GetDeviceResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Device getDevice() {
         return this.device;
     }
@@ -46,6 +48,7 @@ public class GetDeviceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetDeviceResult withDevice(Device device) {
         setDevice(device);
         return this;

@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to update an application.
+ * </p>
  */
 public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -78,6 +80,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      *        found, <code>UpdateApplication</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -93,6 +96,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      *         found, <code>UpdateApplication</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -111,6 +115,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -131,6 +136,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      *        Default: If not specified, AWS Elastic Beanstalk does not update
      *        the description.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -149,6 +155,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      *         Default: If not specified, AWS Elastic Beanstalk does not update
      *         the description.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -170,6 +177,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateApplicationRequest withDescription(String description) {
         setDescription(description);
         return this;

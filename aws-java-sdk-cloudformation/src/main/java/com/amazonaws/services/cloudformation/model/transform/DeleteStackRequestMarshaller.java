@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudformation.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * DeleteStackRequest Marshaller
@@ -52,6 +53,22 @@ public class DeleteStackRequestMarshaller implements
         if (deleteStackRequest.getStackName() != null) {
             request.addParameter("StackName",
                     StringUtils.fromString(deleteStackRequest.getStackName()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
+                .getRetainResources();
+        if (!retainResourcesList.isEmpty()
+                || !retainResourcesList.isAutoConstruct()) {
+            int retainResourcesListIndex = 1;
+
+            for (String retainResourcesListValue : retainResourcesList) {
+                if (retainResourcesListValue != null) {
+                    request.addParameter("RetainResources.member."
+                            + retainResourcesListIndex,
+                            StringUtils.fromString(retainResourcesListValue));
+                }
+                retainResourcesListIndex++;
+            }
         }
 
         return request;

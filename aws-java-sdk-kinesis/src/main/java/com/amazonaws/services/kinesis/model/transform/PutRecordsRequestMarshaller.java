@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.kinesis.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutRecordsRequest Marshaller
  */
 public class PutRecordsRequestMarshaller implements
         Marshaller<Request<PutRecordsRequest>, PutRecordsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutRecordsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutRecordsRequest> marshall(
             PutRecordsRequest putRecordsRequest) {
@@ -63,39 +63,37 @@ public class PutRecordsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry> recordsList = (com.amazonaws.internal.SdkInternalList<PutRecordsRequestEntry>) putRecordsRequest
                     .getRecords();
             if (!recordsList.isEmpty() || !recordsList.isAutoConstruct()) {
-                jsonWriter.key("Records");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Records");
+                jsonGenerator.writeStartArray();
                 for (PutRecordsRequestEntry recordsListValue : recordsList) {
                     if (recordsListValue != null) {
 
                         PutRecordsRequestEntryJsonMarshaller.getInstance()
-                                .marshall(recordsListValue, jsonWriter);
+                                .marshall(recordsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (putRecordsRequest.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         putRecordsRequest.getStreamName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

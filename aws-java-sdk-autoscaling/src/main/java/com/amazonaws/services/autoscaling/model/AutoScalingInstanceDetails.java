@@ -46,9 +46,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      */
     private String lifecycleState;
@@ -82,6 +81,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -93,6 +93,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -107,6 +108,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -120,6 +122,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group associated with the instance.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -131,6 +134,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * 
      * @return The name of the Auto Scaling group associated with the instance.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -145,6 +149,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withAutoScalingGroupName(
             String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
@@ -159,6 +164,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Availability Zone for the instance.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -170,6 +176,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * 
      * @return The Availability Zone for the instance.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -184,6 +191,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withAvailabilityZone(
             String availabilityZone) {
         setAvailabilityZone(availabilityZone);
@@ -193,18 +201,18 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *        >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
      *        Guide</i>.
      */
+
     public void setLifecycleState(String lifecycleState) {
         this.lifecycleState = lifecycleState;
     }
@@ -212,17 +220,17 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @return The lifecycle state for the instance. For more information, see
      *         <a href=
-     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *         >Auto Scaling Instance States</a> in the <i>Auto Scaling
-     *         Developer Guide</i>.
+     *         "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *         >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
+     *         Guide</i>.
      */
+
     public String getLifecycleState() {
         return this.lifecycleState;
     }
@@ -230,20 +238,20 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     /**
      * <p>
      * The lifecycle state for the instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     * >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
-     * Guide</i>.
+     * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
      * </p>
      * 
      * @param lifecycleState
      *        The lifecycle state for the instance. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html#AutoScalingStates"
-     *        >Auto Scaling Instance States</a> in the <i>Auto Scaling Developer
+     *        "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+     *        >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withLifecycleState(String lifecycleState) {
         setLifecycleState(lifecycleState);
         return this;
@@ -262,6 +270,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        means that the instance is unhealthy and Auto Scaling should
      *        terminate and replace it.
      */
+
     public void setHealthStatus(String healthStatus) {
         this.healthStatus = healthStatus;
     }
@@ -278,6 +287,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *         means that the instance is unhealthy and Auto Scaling should
      *         terminate and replace it.
      */
+
     public String getHealthStatus() {
         return this.healthStatus;
     }
@@ -297,6 +307,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withHealthStatus(String healthStatus) {
         setHealthStatus(healthStatus);
         return this;
@@ -310,6 +321,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @param launchConfigurationName
      *        The launch configuration associated with the instance.
      */
+
     public void setLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
     }
@@ -321,6 +333,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * 
      * @return The launch configuration associated with the instance.
      */
+
     public String getLaunchConfigurationName() {
         return this.launchConfigurationName;
     }
@@ -335,6 +348,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withLaunchConfigurationName(
             String launchConfigurationName) {
         setLaunchConfigurationName(launchConfigurationName);
@@ -351,6 +365,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        Indicates whether the instance is protected from termination by
      *        Auto Scaling when scaling in.
      */
+
     public void setProtectedFromScaleIn(Boolean protectedFromScaleIn) {
         this.protectedFromScaleIn = protectedFromScaleIn;
     }
@@ -364,6 +379,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Indicates whether the instance is protected from termination by
      *         Auto Scaling when scaling in.
      */
+
     public Boolean getProtectedFromScaleIn() {
         return this.protectedFromScaleIn;
     }
@@ -380,6 +396,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AutoScalingInstanceDetails withProtectedFromScaleIn(
             Boolean protectedFromScaleIn) {
         setProtectedFromScaleIn(protectedFromScaleIn);
@@ -395,6 +412,7 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * @return Indicates whether the instance is protected from termination by
      *         Auto Scaling when scaling in.
      */
+
     public Boolean isProtectedFromScaleIn() {
         return this.protectedFromScaleIn;
     }

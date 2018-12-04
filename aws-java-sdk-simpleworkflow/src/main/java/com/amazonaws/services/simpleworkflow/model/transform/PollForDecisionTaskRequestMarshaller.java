@@ -1,28 +1,23 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -35,70 +30,87 @@ import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
- * Poll For Decision Task Request Marshaller
+ * PollForDecisionTaskRequest Marshaller
  */
-public class PollForDecisionTaskRequestMarshaller implements Marshaller<Request<PollForDecisionTaskRequest>, PollForDecisionTaskRequest> {
+public class PollForDecisionTaskRequestMarshaller
+        implements
+        Marshaller<Request<PollForDecisionTaskRequest>, PollForDecisionTaskRequest> {
 
-    public Request<PollForDecisionTaskRequest> marshall(PollForDecisionTaskRequest pollForDecisionTaskRequest) {
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PollForDecisionTaskRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
+
+    public Request<PollForDecisionTaskRequest> marshall(
+            PollForDecisionTaskRequest pollForDecisionTaskRequest) {
+
         if (pollForDecisionTaskRequest == null) {
-            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+            throw new AmazonClientException(
+                    "Invalid argument passed to marshall(...)");
         }
 
-        Request<PollForDecisionTaskRequest> request = new DefaultRequest<PollForDecisionTaskRequest>(pollForDecisionTaskRequest, "AmazonSimpleWorkflow");
-        String target = "SimpleWorkflowService.PollForDecisionTask";
-        request.addHeader("X-Amz-Target", target);
+        Request<PollForDecisionTaskRequest> request = new DefaultRequest<PollForDecisionTaskRequest>(
+                pollForDecisionTaskRequest, "AmazonSimpleWorkflow");
+        request.addHeader("X-Amz-Target",
+                "SimpleWorkflowService.PollForDecisionTask");
 
         request.setHttpMethod(HttpMethodName.POST);
+
         request.setResourcePath("");
-        
+
         try {
-          StringWriter stringWriter = new StringWriter();
-          JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-          jsonWriter.object();
-          
+            jsonGenerator.writeStartObject();
+
             if (pollForDecisionTaskRequest.getDomain() != null) {
-                jsonWriter.key("domain").value(pollForDecisionTaskRequest.getDomain());
+                jsonGenerator.writeFieldName("domain").writeValue(
+                        pollForDecisionTaskRequest.getDomain());
             }
-            TaskList taskList = pollForDecisionTaskRequest.getTaskList();
-            if (taskList != null) {
-
-                jsonWriter.key("taskList");
-                jsonWriter.object();
-
-                if (taskList.getName() != null) {
-                    jsonWriter.key("name").value(taskList.getName());
-                }
-                jsonWriter.endObject();
+            if (pollForDecisionTaskRequest.getTaskList() != null) {
+                jsonGenerator.writeFieldName("taskList");
+                TaskListJsonMarshaller.getInstance()
+                        .marshall(pollForDecisionTaskRequest.getTaskList(),
+                                jsonGenerator);
             }
             if (pollForDecisionTaskRequest.getIdentity() != null) {
-                jsonWriter.key("identity").value(pollForDecisionTaskRequest.getIdentity());
+                jsonGenerator.writeFieldName("identity").writeValue(
+                        pollForDecisionTaskRequest.getIdentity());
             }
             if (pollForDecisionTaskRequest.getNextPageToken() != null) {
-                jsonWriter.key("nextPageToken").value(pollForDecisionTaskRequest.getNextPageToken());
+                jsonGenerator.writeFieldName("nextPageToken").writeValue(
+                        pollForDecisionTaskRequest.getNextPageToken());
             }
             if (pollForDecisionTaskRequest.getMaximumPageSize() != null) {
-                jsonWriter.key("maximumPageSize").value(pollForDecisionTaskRequest.getMaximumPageSize());
+                jsonGenerator.writeFieldName("maximumPageSize").writeValue(
+                        pollForDecisionTaskRequest.getMaximumPageSize());
             }
-            if (pollForDecisionTaskRequest.isReverseOrder() != null) {
-                jsonWriter.key("reverseOrder").value(pollForDecisionTaskRequest.isReverseOrder());
+            if (pollForDecisionTaskRequest.getReverseOrder() != null) {
+                jsonGenerator.writeFieldName("reverseOrder").writeValue(
+                        pollForDecisionTaskRequest.getReverseOrder());
             }
 
-          jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-          String snippet = stringWriter.toString();
-          byte[] content = snippet.getBytes(UTF8);
-          request.setContent(new StringInputStream(snippet));
-          request.addHeader("Content-Length", Integer.toString(content.length));
-          request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        } catch(Throwable t) {
-          throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;
     }
+
 }

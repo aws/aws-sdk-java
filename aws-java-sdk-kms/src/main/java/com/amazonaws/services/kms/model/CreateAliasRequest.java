@@ -38,14 +38,21 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * An identifier of the key for which you are creating the alias. This value
      * cannot be another alias but can be a globally unique identifier or a
      * fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String targetKeyId;
 
@@ -61,6 +68,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *        the word "alias" followed by a forward slash (alias/). Aliases
      *        that begin with "alias/AWS" are reserved.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -76,6 +84,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      *         the word "alias" followed by a forward slash (alias/). Aliases
      *         that begin with "alias/AWS" are reserved.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -94,6 +103,7 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;
@@ -104,27 +114,42 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * An identifier of the key for which you are creating the alias. This value
      * cannot be another alias but can be a globally unique identifier or a
      * fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param targetKeyId
      *        An identifier of the key for which you are creating the alias.
      *        This value cannot be another alias but can be a globally unique
-     *        identifier or a fully specified ARN to a key.
+     *        identifier or a fully specified ARN to a key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      */
+
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
@@ -134,26 +159,41 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * An identifier of the key for which you are creating the alias. This value
      * cannot be another alias but can be a globally unique identifier or a
      * fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return An identifier of the key for which you are creating the alias.
      *         This value cannot be another alias but can be a globally unique
-     *         identifier or a fully specified ARN to a key.
+     *         identifier or a fully specified ARN to a key.</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
      */
+
     public String getTargetKeyId() {
         return this.targetKeyId;
     }
@@ -163,29 +203,44 @@ public class CreateAliasRequest extends AmazonWebServiceRequest implements
      * An identifier of the key for which you are creating the alias. This value
      * cannot be another alias but can be a globally unique identifier or a
      * fully specified ARN to a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param targetKeyId
      *        An identifier of the key for which you are creating the alias.
      *        This value cannot be another alias but can be a globally unique
-     *        identifier or a fully specified ARN to a key.
+     *        identifier or a fully specified ARN to a key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAliasRequest withTargetKeyId(String targetKeyId) {
         setTargetKeyId(targetKeyId);
         return this;

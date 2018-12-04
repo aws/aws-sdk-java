@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,34 +54,34 @@ public class RecordJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    record.setKey(StringJsonUnmarshaller.getInstance()
+                    record.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Value", targetDepth)) {
                     context.nextToken();
-                    record.setValue(StringJsonUnmarshaller.getInstance()
+                    record.setValue(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("SyncCount", targetDepth)) {
                     context.nextToken();
-                    record.setSyncCount(LongJsonUnmarshaller.getInstance()
+                    record.setSyncCount(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    record.setLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    record.setLastModifiedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
                     context.nextToken();
-                    record.setLastModifiedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    record.setLastModifiedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DeviceLastModifiedDate",
                         targetDepth)) {
                     context.nextToken();
-                    record.setDeviceLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    record.setDeviceLastModifiedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

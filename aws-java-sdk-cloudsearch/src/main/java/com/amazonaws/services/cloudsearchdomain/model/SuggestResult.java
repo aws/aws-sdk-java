@@ -52,6 +52,7 @@ public class SuggestResult implements Serializable, Cloneable {
      *        ID (<code>rid</code>) and how long it took to process the request
      *        (<code>timems</code>).
      */
+
     public void setStatus(SuggestStatus status) {
         this.status = status;
     }
@@ -67,6 +68,7 @@ public class SuggestResult implements Serializable, Cloneable {
      *         resource ID (<code>rid</code>) and how long it took to process
      *         the request (<code>timems</code>).
      */
+
     public SuggestStatus getStatus() {
         return this.status;
     }
@@ -85,6 +87,7 @@ public class SuggestResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestResult withStatus(SuggestStatus status) {
         setStatus(status);
         return this;
@@ -98,6 +101,7 @@ public class SuggestResult implements Serializable, Cloneable {
      * @param suggest
      *        Container for the matching search suggestion information.
      */
+
     public void setSuggest(SuggestModel suggest) {
         this.suggest = suggest;
     }
@@ -109,6 +113,7 @@ public class SuggestResult implements Serializable, Cloneable {
      * 
      * @return Container for the matching search suggestion information.
      */
+
     public SuggestModel getSuggest() {
         return this.suggest;
     }
@@ -123,6 +128,7 @@ public class SuggestResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SuggestResult withSuggest(SuggestModel suggest) {
         setSuggest(suggest);
         return this;

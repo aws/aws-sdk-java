@@ -20,7 +20,10 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to retrieve logs from an environment and store them in your Elastic
+ * Beanstalk storage bucket.
+ * </p>
  */
 public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -120,6 +123,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -149,6 +153,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -181,6 +186,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestEnvironmentInfoRequest withEnvironmentId(String environmentId) {
         setEnvironmentId(environmentId);
         return this;
@@ -212,6 +218,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *        both. If you do not specify either, AWS Elastic Beanstalk returns
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -241,6 +248,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *         both. If you do not specify either, AWS Elastic Beanstalk returns
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -273,6 +281,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RequestEnvironmentInfoRequest withEnvironmentName(
             String environmentName) {
         setEnvironmentName(environmentName);
@@ -288,6 +297,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *        The type of information to request.
      * @see EnvironmentInfoType
      */
+
     public void setInfoType(String infoType) {
         this.infoType = infoType;
     }
@@ -300,6 +310,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * @return The type of information to request.
      * @see EnvironmentInfoType
      */
+
     public String getInfoType() {
         return this.infoType;
     }
@@ -315,6 +326,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EnvironmentInfoType
      */
+
     public RequestEnvironmentInfoRequest withInfoType(String infoType) {
         setInfoType(infoType);
         return this;
@@ -327,10 +339,9 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      * 
      * @param infoType
      *        The type of information to request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see EnvironmentInfoType
      */
+
     public void setInfoType(EnvironmentInfoType infoType) {
         this.infoType = infoType.toString();
     }
@@ -346,6 +357,7 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see EnvironmentInfoType
      */
+
     public RequestEnvironmentInfoRequest withInfoType(
             EnvironmentInfoType infoType) {
         setInfoType(infoType);

@@ -106,6 +106,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *        proxy or a load balancer to send the request</li>
      */
+
     public void setClientIP(String clientIP) {
         this.clientIP = clientIP;
     }
@@ -133,6 +134,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *         <li><code>x-forwarded-for</code>, if the viewer did use an HTTP
      *         proxy or a load balancer to send the request</li>
      */
+
     public String getClientIP() {
         return this.clientIP;
     }
@@ -163,6 +165,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withClientIP(String clientIP) {
         setClientIP(clientIP);
         return this;
@@ -183,6 +186,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
      *        alpha-2</a>.
      */
+
     public void setCountry(String country) {
         this.country = country;
     }
@@ -201,6 +205,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
      *         3166-1 alpha-2</a>.
      */
+
     public String getCountry() {
         return this.country;
     }
@@ -222,6 +227,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withCountry(String country) {
         setCountry(country);
         return this;
@@ -237,6 +243,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        The part of a web request that identifies the resource, for
      *        example, <code>/images/daily-ad.jpg</code>.
      */
+
     public void setURI(String uRI) {
         this.uRI = uRI;
     }
@@ -250,6 +257,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return The part of a web request that identifies the resource, for
      *         example, <code>/images/daily-ad.jpg</code>.
      */
+
     public String getURI() {
         return this.uRI;
     }
@@ -266,6 +274,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withURI(String uRI) {
         setURI(uRI);
         return this;
@@ -285,6 +294,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      *        <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.
      */
+
     public void setMethod(String method) {
         this.method = method;
     }
@@ -302,6 +312,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *         <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
      *         <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.
      */
+
     public String getMethod() {
         return this.method;
     }
@@ -322,6 +333,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withMethod(String method) {
         setMethod(method);
         return this;
@@ -337,6 +349,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        The HTTP version specified in the sampled web request, for
      *        example, <code>HTTP/1.1</code>.
      */
+
     public void setHTTPVersion(String hTTPVersion) {
         this.hTTPVersion = hTTPVersion;
     }
@@ -350,6 +363,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return The HTTP version specified in the sampled web request, for
      *         example, <code>HTTP/1.1</code>.
      */
+
     public String getHTTPVersion() {
         return this.hTTPVersion;
     }
@@ -366,6 +380,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withHTTPVersion(String hTTPVersion) {
         setHTTPVersion(hTTPVersion);
         return this;
@@ -381,6 +396,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *         sampled web request: the name of the header and the value of the
      *         header.
      */
+
     public java.util.List<HTTPHeader> getHeaders() {
         return headers;
     }
@@ -396,6 +412,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      *        sampled web request: the name of the header and the value of the
      *        header.
      */
+
     public void setHeaders(java.util.Collection<HTTPHeader> headers) {
         if (headers == null) {
             this.headers = null;
@@ -424,6 +441,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withHeaders(HTTPHeader... headers) {
         if (this.headers == null) {
             setHeaders(new java.util.ArrayList<HTTPHeader>(headers.length));
@@ -447,6 +465,7 @@ public class HTTPRequest implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HTTPRequest withHeaders(java.util.Collection<HTTPHeader> headers) {
         setHeaders(headers);
         return this;

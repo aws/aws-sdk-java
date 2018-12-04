@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActionMarshaller
@@ -39,66 +34,75 @@ import com.amazonaws.util.json.*;
 public class ActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Action action, JSONWriter jsonWriter) {
+    public void marshall(Action action, StructuredJsonGenerator jsonGenerator) {
+
         if (action == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (action.getDynamoDB() != null) {
-                jsonWriter.key("dynamoDB");
+                jsonGenerator.writeFieldName("dynamoDB");
                 DynamoDBActionJsonMarshaller.getInstance().marshall(
-                        action.getDynamoDB(), jsonWriter);
+                        action.getDynamoDB(), jsonGenerator);
             }
-
             if (action.getLambda() != null) {
-                jsonWriter.key("lambda");
+                jsonGenerator.writeFieldName("lambda");
                 LambdaActionJsonMarshaller.getInstance().marshall(
-                        action.getLambda(), jsonWriter);
+                        action.getLambda(), jsonGenerator);
             }
-
             if (action.getSns() != null) {
-                jsonWriter.key("sns");
+                jsonGenerator.writeFieldName("sns");
                 SnsActionJsonMarshaller.getInstance().marshall(action.getSns(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (action.getSqs() != null) {
-                jsonWriter.key("sqs");
+                jsonGenerator.writeFieldName("sqs");
                 SqsActionJsonMarshaller.getInstance().marshall(action.getSqs(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (action.getKinesis() != null) {
-                jsonWriter.key("kinesis");
+                jsonGenerator.writeFieldName("kinesis");
                 KinesisActionJsonMarshaller.getInstance().marshall(
-                        action.getKinesis(), jsonWriter);
+                        action.getKinesis(), jsonGenerator);
             }
-
             if (action.getRepublish() != null) {
-                jsonWriter.key("republish");
+                jsonGenerator.writeFieldName("republish");
                 RepublishActionJsonMarshaller.getInstance().marshall(
-                        action.getRepublish(), jsonWriter);
+                        action.getRepublish(), jsonGenerator);
             }
-
             if (action.getS3() != null) {
-                jsonWriter.key("s3");
+                jsonGenerator.writeFieldName("s3");
                 S3ActionJsonMarshaller.getInstance().marshall(action.getS3(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (action.getFirehose() != null) {
-                jsonWriter.key("firehose");
+                jsonGenerator.writeFieldName("firehose");
                 FirehoseActionJsonMarshaller.getInstance().marshall(
-                        action.getFirehose(), jsonWriter);
+                        action.getFirehose(), jsonGenerator);
+            }
+            if (action.getCloudwatchMetric() != null) {
+                jsonGenerator.writeFieldName("cloudwatchMetric");
+                CloudwatchMetricActionJsonMarshaller.getInstance().marshall(
+                        action.getCloudwatchMetric(), jsonGenerator);
+            }
+            if (action.getCloudwatchAlarm() != null) {
+                jsonGenerator.writeFieldName("cloudwatchAlarm");
+                CloudwatchAlarmActionJsonMarshaller.getInstance().marshall(
+                        action.getCloudwatchAlarm(), jsonGenerator);
+            }
+            if (action.getElasticsearch() != null) {
+                jsonGenerator.writeFieldName("elasticsearch");
+                ElasticsearchActionJsonMarshaller.getInstance().marshall(
+                        action.getElasticsearch(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

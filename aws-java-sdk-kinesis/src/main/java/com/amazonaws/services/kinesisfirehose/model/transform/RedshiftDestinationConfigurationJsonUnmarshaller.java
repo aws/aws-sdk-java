@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesisfirehose.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class RedshiftDestinationConfigurationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RoleARN", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationConfiguration
-                            .setRoleARN(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationConfiguration.setRoleARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ClusterJDBCURL", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationConfiguration
-                            .setClusterJDBCURL(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    redshiftDestinationConfiguration.setClusterJDBCURL(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CopyCommand", targetDepth)) {
                     context.nextToken();
@@ -71,20 +71,25 @@ public class RedshiftDestinationConfigurationJsonUnmarshaller implements
                 }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationConfiguration
-                            .setUsername(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationConfiguration.setUsername(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Password", targetDepth)) {
                     context.nextToken();
-                    redshiftDestinationConfiguration
-                            .setPassword(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    redshiftDestinationConfiguration.setPassword(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("S3Configuration", targetDepth)) {
                     context.nextToken();
                     redshiftDestinationConfiguration
                             .setS3Configuration(S3DestinationConfigurationJsonUnmarshaller
+                                    .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchLoggingOptions",
+                        targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationConfiguration
+                            .setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller
                                     .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

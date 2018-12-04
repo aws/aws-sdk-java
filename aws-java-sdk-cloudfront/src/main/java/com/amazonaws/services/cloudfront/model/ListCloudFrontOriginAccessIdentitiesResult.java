@@ -33,6 +33,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements
      * @param cloudFrontOriginAccessIdentityList
      *        The CloudFrontOriginAccessIdentityList type.
      */
+
     public void setCloudFrontOriginAccessIdentityList(
             CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList) {
         this.cloudFrontOriginAccessIdentityList = cloudFrontOriginAccessIdentityList;
@@ -43,6 +44,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements
      * 
      * @return The CloudFrontOriginAccessIdentityList type.
      */
+
     public CloudFrontOriginAccessIdentityList getCloudFrontOriginAccessIdentityList() {
         return this.cloudFrontOriginAccessIdentityList;
     }
@@ -55,6 +57,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCloudFrontOriginAccessIdentitiesResult withCloudFrontOriginAccessIdentityList(
             CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList) {
         setCloudFrontOriginAccessIdentityList(cloudFrontOriginAccessIdentityList);

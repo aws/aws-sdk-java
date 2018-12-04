@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.rds.model;
 
 import java.io.Serializable;
@@ -19,138 +21,160 @@ import java.io.Serializable;
 /**
  * <p>
  * Contains the result of a successful invocation of the
- * DescribeDBEngineVersions action.
+ * <a>DescribeDBEngineVersions</a> action.
  * </p>
  */
 public class DescribeDBEngineVersionsResult implements Serializable, Cloneable {
 
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
      */
     private String marker;
-
     /**
+     * <p>
      * A list of <code>DBEngineVersion</code> elements.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersions;
+    private com.amazonaws.internal.SdkInternalList<DBEngineVersion> dBEngineVersions;
 
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous request. If
+     *        this parameter is specified, the response includes only records
+     *        beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the
-     * marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @param marker An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
+     * <p>
      * An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the
      * marker, up to the value specified by <code>MaxRecords</code>.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker An optional pagination token provided by a previous request. If this
-     *         parameter is specified, the response includes only records beyond the
-     *         marker, up to the value specified by <code>MaxRecords</code>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return An optional pagination token provided by a previous request. If
+     *         this parameter is specified, the response includes only records
+     *         beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional pagination token provided by a previous request. If
+     *        this parameter is specified, the response includes only records
+     *        beyond the marker, up to the value specified by
+     *        <code>MaxRecords</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeDBEngineVersionsResult withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
+     * <p>
      * A list of <code>DBEngineVersion</code> elements.
-     *
+     * </p>
+     * 
      * @return A list of <code>DBEngineVersion</code> elements.
      */
+
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
         if (dBEngineVersions == null) {
-              dBEngineVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>();
-              dBEngineVersions.setAutoConstruct(true);
+            dBEngineVersions = new com.amazonaws.internal.SdkInternalList<DBEngineVersion>();
         }
         return dBEngineVersions;
     }
-    
+
     /**
+     * <p>
      * A list of <code>DBEngineVersion</code> elements.
-     *
-     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
+     * </p>
+     * 
+     * @param dBEngineVersions
+     *        A list of <code>DBEngineVersion</code> elements.
      */
-    public void setDBEngineVersions(java.util.Collection<DBEngineVersion> dBEngineVersions) {
+
+    public void setDBEngineVersions(
+            java.util.Collection<DBEngineVersion> dBEngineVersions) {
         if (dBEngineVersions == null) {
             this.dBEngineVersions = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>(dBEngineVersions.size());
-        dBEngineVersionsCopy.addAll(dBEngineVersions);
-        this.dBEngineVersions = dBEngineVersionsCopy;
+
+        this.dBEngineVersions = new com.amazonaws.internal.SdkInternalList<DBEngineVersion>(
+                dBEngineVersions);
     }
-    
+
     /**
+     * <p>
      * A list of <code>DBEngineVersion</code> elements.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDBEngineVersions(java.util.Collection)} or {@link
-     * #withDBEngineVersions(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setDBEngineVersions(java.util.Collection)} or
+     * {@link #withDBEngineVersions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dBEngineVersions
+     *        A list of <code>DBEngineVersion</code> elements.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public DescribeDBEngineVersionsResult withDBEngineVersions(DBEngineVersion... dBEngineVersions) {
-        if (getDBEngineVersions() == null) setDBEngineVersions(new java.util.ArrayList<DBEngineVersion>(dBEngineVersions.length));
-        for (DBEngineVersion value : dBEngineVersions) {
-            getDBEngineVersions().add(value);
+
+    public DescribeDBEngineVersionsResult withDBEngineVersions(
+            DBEngineVersion... dBEngineVersions) {
+        if (this.dBEngineVersions == null) {
+            setDBEngineVersions(new com.amazonaws.internal.SdkInternalList<DBEngineVersion>(
+                    dBEngineVersions.length));
+        }
+        for (DBEngineVersion ele : dBEngineVersions) {
+            this.dBEngineVersions.add(ele);
         }
         return this;
     }
-    
-    /**
-     * A list of <code>DBEngineVersion</code> elements.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DescribeDBEngineVersionsResult withDBEngineVersions(java.util.Collection<DBEngineVersion> dBEngineVersions) {
-        if (dBEngineVersions == null) {
-            this.dBEngineVersions = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>(dBEngineVersions.size());
-            dBEngineVersionsCopy.addAll(dBEngineVersions);
-            this.dBEngineVersions = dBEngineVersionsCopy;
-        }
 
+    /**
+     * <p>
+     * A list of <code>DBEngineVersion</code> elements.
+     * </p>
+     * 
+     * @param dBEngineVersions
+     *        A list of <code>DBEngineVersion</code> elements.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeDBEngineVersionsResult withDBEngineVersions(
+            java.util.Collection<DBEngineVersion> dBEngineVersions) {
+        setDBEngineVersions(dBEngineVersions);
         return this;
     }
 
@@ -166,50 +190,61 @@ public class DescribeDBEngineVersionsResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (getDBEngineVersions() != null) sb.append("DBEngineVersions: " + getDBEngineVersions() );
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getDBEngineVersions() != null)
+            sb.append("DBEngineVersions: " + getDBEngineVersions());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeDBEngineVersionsResult == false)
+            return false;
+        DescribeDBEngineVersionsResult other = (DescribeDBEngineVersionsResult) obj;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getDBEngineVersions() == null
+                ^ this.getDBEngineVersions() == null)
+            return false;
+        if (other.getDBEngineVersions() != null
+                && other.getDBEngineVersions().equals(
+                        this.getDBEngineVersions()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((getDBEngineVersions() == null) ? 0 : getDBEngineVersions().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDBEngineVersions() == null) ? 0 : getDBEngineVersions()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeDBEngineVersionsResult == false) return false;
-        DescribeDBEngineVersionsResult other = (DescribeDBEngineVersionsResult)obj;
-        
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.getDBEngineVersions() == null ^ this.getDBEngineVersions() == null) return false;
-        if (other.getDBEngineVersions() != null && other.getDBEngineVersions().equals(this.getDBEngineVersions()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeDBEngineVersionsResult clone() {
         try {
             return (DescribeDBEngineVersionsResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

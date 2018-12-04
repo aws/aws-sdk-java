@@ -25,122 +25,162 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListCommandsRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** (Optional) If provided, lists only the specified command. */
+    /**
+     * <p>
+     * (Optional) If provided, lists only the specified command.
+     * </p>
+     */
     private String commandId;
-    /** (Optional) Lists commands issued against this instance ID. */
+    /**
+     * <p>
+     * (Optional) Lists commands issued against this instance ID.
+     * </p>
+     */
     private String instanceId;
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      */
     private Integer maxResults;
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      */
     private String nextToken;
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @param commandId
      *        (Optional) If provided, lists only the specified command.
      */
+
     public void setCommandId(String commandId) {
         this.commandId = commandId;
     }
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @return (Optional) If provided, lists only the specified command.
      */
+
     public String getCommandId() {
         return this.commandId;
     }
 
     /**
+     * <p>
      * (Optional) If provided, lists only the specified command.
+     * </p>
      * 
      * @param commandId
      *        (Optional) If provided, lists only the specified command.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withCommandId(String commandId) {
         setCommandId(commandId);
         return this;
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) Lists commands issued against this instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @return (Optional) Lists commands issued against this instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
+     * <p>
      * (Optional) Lists commands issued against this instance ID.
+     * </p>
      * 
      * @param instanceId
      *        (Optional) Lists commands issued against this instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
      *        The call also returns a token that you can specify in a subsequent
      *        call to get the next set of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @return (Optional) The maximum number of items to return for this call.
      *         The call also returns a token that you can specify in a
      *         subsequent call to get the next set of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
 
     /**
+     * <p>
      * (Optional) The maximum number of items to return for this call. The call
      * also returns a token that you can specify in a subsequent call to get the
      * next set of results.
+     * </p>
      * 
      * @param maxResults
      *        (Optional) The maximum number of items to return for this call.
@@ -149,37 +189,46 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
      *        received this token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -187,18 +236,22 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @return (Optional) One or more filters. Use a filter to return a more
      *         specific list of results.
      */
+
     public java.util.List<CommandFilter> getFilters() {
         if (filters == null) {
             filters = new com.amazonaws.internal.SdkInternalList<CommandFilter>();
@@ -207,13 +260,16 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more
      *        specific list of results.
      */
+
     public void setFilters(java.util.Collection<CommandFilter> filters) {
         if (filters == null) {
             this.filters = null;
@@ -225,8 +281,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilters(java.util.Collection)} or
@@ -240,6 +298,7 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withFilters(CommandFilter... filters) {
         if (this.filters == null) {
             setFilters(new com.amazonaws.internal.SdkInternalList<CommandFilter>(
@@ -252,8 +311,10 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * (Optional) One or more filters. Use a filter to return a more specific
      * list of results.
+     * </p>
      * 
      * @param filters
      *        (Optional) One or more filters. Use a filter to return a more
@@ -261,6 +322,7 @@ public class ListCommandsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandsRequest withFilters(
             java.util.Collection<CommandFilter> filters) {
         setFilters(filters);

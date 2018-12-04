@@ -46,6 +46,7 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements
      *        assigned to the instance when you registered the volume with the
      *        stack, not the Amazon EC2 volume ID.
      */
+
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
@@ -61,6 +62,7 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements
      *         assigned to the instance when you registered the volume with the
      *         stack, not the Amazon EC2 volume ID.
      */
+
     public String getVolumeId() {
         return this.volumeId;
     }
@@ -79,6 +81,7 @@ public class DeregisterVolumeRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeregisterVolumeRequest withVolumeId(String volumeId) {
         setVolumeId(volumeId);
         return this;

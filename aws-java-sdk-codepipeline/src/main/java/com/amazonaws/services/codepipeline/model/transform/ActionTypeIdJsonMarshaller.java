@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ActionTypeIdMarshaller
@@ -39,34 +34,37 @@ import com.amazonaws.util.json.*;
 public class ActionTypeIdJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ActionTypeId actionTypeId, JSONWriter jsonWriter) {
+    public void marshall(ActionTypeId actionTypeId,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (actionTypeId == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (actionTypeId.getCategory() != null) {
-                jsonWriter.key("category").value(actionTypeId.getCategory());
+                jsonGenerator.writeFieldName("category").writeValue(
+                        actionTypeId.getCategory());
             }
-
             if (actionTypeId.getOwner() != null) {
-                jsonWriter.key("owner").value(actionTypeId.getOwner());
+                jsonGenerator.writeFieldName("owner").writeValue(
+                        actionTypeId.getOwner());
             }
-
             if (actionTypeId.getProvider() != null) {
-                jsonWriter.key("provider").value(actionTypeId.getProvider());
+                jsonGenerator.writeFieldName("provider").writeValue(
+                        actionTypeId.getProvider());
             }
-
             if (actionTypeId.getVersion() != null) {
-                jsonWriter.key("version").value(actionTypeId.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(
+                        actionTypeId.getVersion());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

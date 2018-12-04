@@ -146,6 +146,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -184,6 +185,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -225,6 +227,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactPrivacyRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -267,6 +270,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: No
      */
+
     public void setAdminPrivacy(Boolean adminPrivacy) {
         this.adminPrivacy = adminPrivacy;
     }
@@ -307,6 +311,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean getAdminPrivacy() {
         return this.adminPrivacy;
     }
@@ -350,6 +355,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactPrivacyRequest withAdminPrivacy(
             Boolean adminPrivacy) {
         setAdminPrivacy(adminPrivacy);
@@ -392,6 +398,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean isAdminPrivacy() {
         return this.adminPrivacy;
     }
@@ -433,6 +440,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: No
      */
+
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
         this.registrantPrivacy = registrantPrivacy;
     }
@@ -473,6 +481,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean getRegistrantPrivacy() {
         return this.registrantPrivacy;
     }
@@ -516,6 +525,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactPrivacyRequest withRegistrantPrivacy(
             Boolean registrantPrivacy) {
         setRegistrantPrivacy(registrantPrivacy);
@@ -558,6 +568,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean isRegistrantPrivacy() {
         return this.registrantPrivacy;
     }
@@ -599,6 +610,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: No
      */
+
     public void setTechPrivacy(Boolean techPrivacy) {
         this.techPrivacy = techPrivacy;
     }
@@ -639,6 +651,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean getTechPrivacy() {
         return this.techPrivacy;
     }
@@ -682,6 +695,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateDomainContactPrivacyRequest withTechPrivacy(Boolean techPrivacy) {
         setTechPrivacy(techPrivacy);
         return this;
@@ -723,6 +737,7 @@ public class UpdateDomainContactPrivacyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: No
      */
+
     public Boolean isTechPrivacy() {
         return this.techPrivacy;
     }

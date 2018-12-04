@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TapeRecoveryPointInfoMarshaller
@@ -39,39 +34,39 @@ import com.amazonaws.util.json.*;
 public class TapeRecoveryPointInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(TapeRecoveryPointInfo tapeRecoveryPointInfo,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (tapeRecoveryPointInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (tapeRecoveryPointInfo.getTapeARN() != null) {
-                jsonWriter.key("TapeARN").value(
+                jsonGenerator.writeFieldName("TapeARN").writeValue(
                         tapeRecoveryPointInfo.getTapeARN());
             }
-
             if (tapeRecoveryPointInfo.getTapeRecoveryPointTime() != null) {
-                jsonWriter.key("TapeRecoveryPointTime").value(
-                        tapeRecoveryPointInfo.getTapeRecoveryPointTime());
+                jsonGenerator.writeFieldName("TapeRecoveryPointTime")
+                        .writeValue(
+                                tapeRecoveryPointInfo
+                                        .getTapeRecoveryPointTime());
             }
-
             if (tapeRecoveryPointInfo.getTapeSizeInBytes() != null) {
-                jsonWriter.key("TapeSizeInBytes").value(
+                jsonGenerator.writeFieldName("TapeSizeInBytes").writeValue(
                         tapeRecoveryPointInfo.getTapeSizeInBytes());
             }
-
             if (tapeRecoveryPointInfo.getTapeStatus() != null) {
-                jsonWriter.key("TapeStatus").value(
+                jsonGenerator.writeFieldName("TapeStatus").writeValue(
                         tapeRecoveryPointInfo.getTapeStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

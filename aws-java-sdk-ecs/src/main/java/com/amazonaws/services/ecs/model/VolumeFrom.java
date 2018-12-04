@@ -48,6 +48,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      * @param sourceContainer
      *        The name of the container to mount volumes from.
      */
+
     public void setSourceContainer(String sourceContainer) {
         this.sourceContainer = sourceContainer;
     }
@@ -59,6 +60,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      * 
      * @return The name of the container to mount volumes from.
      */
+
     public String getSourceContainer() {
         return this.sourceContainer;
     }
@@ -73,6 +75,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeFrom withSourceContainer(String sourceContainer) {
         setSourceContainer(sourceContainer);
         return this;
@@ -91,6 +94,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      *        the container can write to the volume. The default value is
      *        <code>false</code>.
      */
+
     public void setReadOnly(Boolean readOnly) {
         this.readOnly = readOnly;
     }
@@ -107,6 +111,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      *         the container can write to the volume. The default value is
      *         <code>false</code>.
      */
+
     public Boolean getReadOnly() {
         return this.readOnly;
     }
@@ -126,6 +131,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VolumeFrom withReadOnly(Boolean readOnly) {
         setReadOnly(readOnly);
         return this;
@@ -143,6 +149,7 @@ public class VolumeFrom implements Serializable, Cloneable {
      *         the container can write to the volume. The default value is
      *         <code>false</code>.
      */
+
     public Boolean isReadOnly() {
         return this.readOnly;
     }

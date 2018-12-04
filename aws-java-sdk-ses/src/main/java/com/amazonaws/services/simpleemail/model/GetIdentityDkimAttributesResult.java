@@ -19,9 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a list of all the DKIM attributes for the specified identity.
- * </p>
+ * 
  */
 public class GetIdentityDkimAttributesResult implements Serializable, Cloneable {
 
@@ -39,6 +37,7 @@ public class GetIdentityDkimAttributesResult implements Serializable, Cloneable 
      * 
      * @return The DKIM attributes for an email address or a domain.
      */
+
     public java.util.Map<String, IdentityDkimAttributes> getDkimAttributes() {
         if (dkimAttributes == null) {
             dkimAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityDkimAttributes>();
@@ -54,6 +53,7 @@ public class GetIdentityDkimAttributesResult implements Serializable, Cloneable 
      * @param dkimAttributes
      *        The DKIM attributes for an email address or a domain.
      */
+
     public void setDkimAttributes(
             java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
         this.dkimAttributes = dkimAttributes == null ? null
@@ -71,6 +71,7 @@ public class GetIdentityDkimAttributesResult implements Serializable, Cloneable 
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityDkimAttributesResult withDkimAttributes(
             java.util.Map<String, IdentityDkimAttributes> dkimAttributes) {
         setDkimAttributes(dkimAttributes);
@@ -93,6 +94,7 @@ public class GetIdentityDkimAttributesResult implements Serializable, Cloneable 
      * Removes all the entries added into DkimAttributes. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public GetIdentityDkimAttributesResult clearDkimAttributesEntries() {
         this.dkimAttributes = null;
         return this;

@@ -57,6 +57,7 @@ public class CreateReceiptRuleSetRequest extends AmazonWebServiceRequest
      *        <li>Start and end with a letter or number.</li>
      *        <li>Contain less than 64 characters.</li>
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -79,6 +80,7 @@ public class CreateReceiptRuleSetRequest extends AmazonWebServiceRequest
      *         <li>Start and end with a letter or number.</li>
      *         <li>Contain less than 64 characters.</li>
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -104,6 +106,7 @@ public class CreateReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;

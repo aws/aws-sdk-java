@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -35,37 +37,6 @@ public class SetTagsForResourceResultJsonUnmarshaller implements
     public SetTagsForResourceResult unmarshall(JsonUnmarshallerContext context)
             throws Exception {
         SetTagsForResourceResult setTagsForResourceResult = new SetTagsForResourceResult();
-
-        int originalDepth = context.getCurrentDepth();
-        String currentParentElement = context.getCurrentParentElement();
-        int targetDepth = originalDepth + 1;
-
-        JsonToken token = context.getCurrentToken();
-        if (token == null)
-            token = context.nextToken();
-        if (token == VALUE_NULL)
-            return null;
-
-        while (true) {
-            if (token == null)
-                break;
-
-            if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("message", targetDepth)) {
-                    context.nextToken();
-                    setTagsForResourceResult.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
-                }
-            } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null
-                        || context.getLastParsedParentElement().equals(
-                                currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth)
-                        break;
-                }
-            }
-            token = context.nextToken();
-        }
 
         return setTagsForResourceResult;
     }

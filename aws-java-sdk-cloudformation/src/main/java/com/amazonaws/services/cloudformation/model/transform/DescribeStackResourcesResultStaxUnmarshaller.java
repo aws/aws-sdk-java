@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class DescribeStackResourcesResultStaxUnmarshaller implements
 
                 if (context
                         .testExpression("StackResources/member", targetDepth)) {
-                    describeStackResourcesResult.getStackResources().add(
-                            StackResourceStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeStackResourcesResult
+                            .withStackResources(StackResourceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

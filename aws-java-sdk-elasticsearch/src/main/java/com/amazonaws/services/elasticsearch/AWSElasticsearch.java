@@ -110,6 +110,7 @@ public interface AWSElasticsearch {
      *        Container for the parameters to the <code><a>AddTags</a></code>
      *        operation. Specify the tags that you want to attach to the
      *        Elasticsearch domain.
+     * @return Result of the AddTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws LimitExceededException
@@ -124,7 +125,7 @@ public interface AWSElasticsearch {
      *         Gives http status code of 500.
      * @sample AWSElasticsearch.AddTags
      */
-    void addTags(AddTagsRequest addTagsRequest);
+    AddTagsResult addTags(AddTagsRequest addTagsRequest);
 
     /**
      * <p>
@@ -335,6 +336,7 @@ public interface AWSElasticsearch {
      *        operation. Specify the <code>ARN</code> for the Elasticsearch
      *        domain from which you want to remove the specified
      *        <code>TagKey</code>.
+     * @return Result of the RemoveTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ValidationException
@@ -346,7 +348,7 @@ public interface AWSElasticsearch {
      *         Gives http status code of 500.
      * @sample AWSElasticsearch.RemoveTags
      */
-    void removeTags(RemoveTagsRequest removeTagsRequest);
+    RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest);
 
     /**
      * <p>

@@ -50,6 +50,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      *        Currently, the service provides no code for the state change.
      * @see StepStateChangeReasonCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -64,6 +65,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      *         Currently, the service provides no code for the state change.
      * @see StepStateChangeReasonCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -81,6 +83,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see StepStateChangeReasonCode
      */
+
     public StepStateChangeReason withCode(String code) {
         setCode(code);
         return this;
@@ -95,10 +98,9 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      * @param code
      *        The programmable code for the state change reason. Note:
      *        Currently, the service provides no code for the state change.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StepStateChangeReasonCode
      */
+
     public void setCode(StepStateChangeReasonCode code) {
         this.code = code.toString();
     }
@@ -116,6 +118,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see StepStateChangeReasonCode
      */
+
     public StepStateChangeReason withCode(StepStateChangeReasonCode code) {
         setCode(code);
         return this;
@@ -129,6 +132,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      * @param message
      *        The descriptive message for the state change reason.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -140,6 +144,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      * 
      * @return The descriptive message for the state change reason.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -154,6 +159,7 @@ public class StepStateChangeReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepStateChangeReason withMessage(String message) {
         setMessage(message);
         return this;

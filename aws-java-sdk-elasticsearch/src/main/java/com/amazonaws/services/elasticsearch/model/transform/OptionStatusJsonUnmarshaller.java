@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class OptionStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    optionStatus.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateDate", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setUpdateDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    optionStatus.setUpdateDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("UpdateVersion", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setUpdateVersion(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    optionStatus.setUpdateVersion(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setState(StringJsonUnmarshaller.getInstance()
+                    optionStatus.setState(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("PendingDeletion", targetDepth)) {
                     context.nextToken();
-                    optionStatus.setPendingDeletion(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    optionStatus.setPendingDeletion(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

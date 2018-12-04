@@ -49,6 +49,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -60,6 +61,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -74,6 +76,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialsForIdentityRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;
@@ -88,6 +91,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * @return A set of optional name-value pairs that map provider names to
      *         provider tokens.
      */
+
     public java.util.Map<String, String> getLogins() {
         return logins;
     }
@@ -102,6 +106,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      *        A set of optional name-value pairs that map provider names to
      *        provider tokens.
      */
+
     public void setLogins(java.util.Map<String, String> logins) {
         this.logins = logins;
     }
@@ -118,6 +123,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetCredentialsForIdentityRequest withLogins(
             java.util.Map<String, String> logins) {
         setLogins(logins);
@@ -140,6 +146,7 @@ public class GetCredentialsForIdentityRequest extends AmazonWebServiceRequest
      * Removes all the entries added into Logins. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetCredentialsForIdentityRequest clearLoginsEntries() {
         this.logins = null;
         return this;

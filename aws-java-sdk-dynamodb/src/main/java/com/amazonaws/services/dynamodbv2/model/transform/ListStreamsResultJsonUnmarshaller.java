@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,9 +62,8 @@ public class ListStreamsResultJsonUnmarshaller implements
                 if (context.testExpression("LastEvaluatedStreamArn",
                         targetDepth)) {
                     context.nextToken();
-                    listStreamsResult
-                            .setLastEvaluatedStreamArn(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listStreamsResult.setLastEvaluatedStreamArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

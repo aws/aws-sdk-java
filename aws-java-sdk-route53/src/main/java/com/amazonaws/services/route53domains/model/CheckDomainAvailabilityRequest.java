@@ -89,6 +89,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      *        <p>
      *        Required: Yes
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -127,6 +128,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      *         <p>
      *         Required: Yes
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -168,6 +170,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CheckDomainAvailabilityRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -181,6 +184,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      * @param idnLangCode
      *        Reserved for future use.
      */
+
     public void setIdnLangCode(String idnLangCode) {
         this.idnLangCode = idnLangCode;
     }
@@ -192,6 +196,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      * 
      * @return Reserved for future use.
      */
+
     public String getIdnLangCode() {
         return this.idnLangCode;
     }
@@ -206,6 +211,7 @@ public class CheckDomainAvailabilityRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CheckDomainAvailabilityRequest withIdnLangCode(String idnLangCode) {
         setIdnLangCode(idnLangCode);
         return this;

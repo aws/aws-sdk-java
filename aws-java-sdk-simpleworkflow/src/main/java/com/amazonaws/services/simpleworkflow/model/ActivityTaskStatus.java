@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
@@ -24,50 +26,65 @@ import java.io.Serializable;
 public class ActivityTaskStatus implements Serializable, Cloneable {
 
     /**
+     * <p>
      * Set to <code>true</code> if cancellation of the task is requested.
+     * </p>
      */
     private Boolean cancelRequested;
 
     /**
+     * <p>
      * Set to <code>true</code> if cancellation of the task is requested.
-     *
-     * @return Set to <code>true</code> if cancellation of the task is requested.
+     * </p>
+     * 
+     * @param cancelRequested
+     *        Set to <code>true</code> if cancellation of the task is requested.
      */
-    public Boolean isCancelRequested() {
-        return cancelRequested;
-    }
-    
-    /**
-     * Set to <code>true</code> if cancellation of the task is requested.
-     *
-     * @param cancelRequested Set to <code>true</code> if cancellation of the task is requested.
-     */
+
     public void setCancelRequested(Boolean cancelRequested) {
         this.cancelRequested = cancelRequested;
     }
-    
+
     /**
-     * Set to <code>true</code> if cancellation of the task is requested.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cancelRequested Set to <code>true</code> if cancellation of the task is requested.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Set to <code>true</code> if cancellation of the task is requested.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if cancellation of the task is
+     *         requested.
      */
+
+    public Boolean getCancelRequested() {
+        return this.cancelRequested;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> if cancellation of the task is requested.
+     * </p>
+     * 
+     * @param cancelRequested
+     *        Set to <code>true</code> if cancellation of the task is requested.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ActivityTaskStatus withCancelRequested(Boolean cancelRequested) {
-        this.cancelRequested = cancelRequested;
+        setCancelRequested(cancelRequested);
         return this;
     }
 
     /**
+     * <p>
      * Set to <code>true</code> if cancellation of the task is requested.
-     *
-     * @return Set to <code>true</code> if cancellation of the task is requested.
+     * </p>
+     * 
+     * @return Set to <code>true</code> if cancellation of the task is
+     *         requested.
      */
-    public Boolean getCancelRequested() {
-        return cancelRequested;
+
+    public Boolean isCancelRequested() {
+        return this.cancelRequested;
     }
 
     /**
@@ -82,46 +99,51 @@ public class ActivityTaskStatus implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() );
+        if (getCancelRequested() != null)
+            sb.append("CancelRequested: " + getCancelRequested());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ActivityTaskStatus == false)
+            return false;
+        ActivityTaskStatus other = (ActivityTaskStatus) obj;
+        if (other.getCancelRequested() == null
+                ^ this.getCancelRequested() == null)
+            return false;
+        if (other.getCancelRequested() != null
+                && other.getCancelRequested().equals(this.getCancelRequested()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((isCancelRequested() == null) ? 0 : isCancelRequested().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCancelRequested() == null) ? 0 : getCancelRequested()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ActivityTaskStatus == false) return false;
-        ActivityTaskStatus other = (ActivityTaskStatus)obj;
-        
-        if (other.isCancelRequested() == null ^ this.isCancelRequested() == null) return false;
-        if (other.isCancelRequested() != null && other.isCancelRequested().equals(this.isCancelRequested()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ActivityTaskStatus clone() {
         try {
             return (ActivityTaskStatus) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

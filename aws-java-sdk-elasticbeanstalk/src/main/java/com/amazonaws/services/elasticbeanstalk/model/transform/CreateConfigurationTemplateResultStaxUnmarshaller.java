@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -108,8 +110,8 @@ public class CreateConfigurationTemplateResultStaxUnmarshaller
 
                 if (context
                         .testExpression("OptionSettings/member", targetDepth)) {
-                    createConfigurationTemplateResult.getOptionSettings().add(
-                            ConfigurationOptionSettingStaxUnmarshaller
+                    createConfigurationTemplateResult
+                            .withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

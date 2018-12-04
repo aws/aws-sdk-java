@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TapeArchiveMarshaller
@@ -39,46 +34,45 @@ import com.amazonaws.util.json.*;
 public class TapeArchiveJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TapeArchive tapeArchive, JSONWriter jsonWriter) {
+    public void marshall(TapeArchive tapeArchive,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (tapeArchive == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (tapeArchive.getTapeARN() != null) {
-                jsonWriter.key("TapeARN").value(tapeArchive.getTapeARN());
+                jsonGenerator.writeFieldName("TapeARN").writeValue(
+                        tapeArchive.getTapeARN());
             }
-
             if (tapeArchive.getTapeBarcode() != null) {
-                jsonWriter.key("TapeBarcode").value(
+                jsonGenerator.writeFieldName("TapeBarcode").writeValue(
                         tapeArchive.getTapeBarcode());
             }
-
             if (tapeArchive.getTapeSizeInBytes() != null) {
-                jsonWriter.key("TapeSizeInBytes").value(
+                jsonGenerator.writeFieldName("TapeSizeInBytes").writeValue(
                         tapeArchive.getTapeSizeInBytes());
             }
-
             if (tapeArchive.getCompletionTime() != null) {
-                jsonWriter.key("CompletionTime").value(
+                jsonGenerator.writeFieldName("CompletionTime").writeValue(
                         tapeArchive.getCompletionTime());
             }
-
             if (tapeArchive.getRetrievedTo() != null) {
-                jsonWriter.key("RetrievedTo").value(
+                jsonGenerator.writeFieldName("RetrievedTo").writeValue(
                         tapeArchive.getRetrievedTo());
             }
-
             if (tapeArchive.getTapeStatus() != null) {
-                jsonWriter.key("TapeStatus").value(tapeArchive.getTapeStatus());
+                jsonGenerator.writeFieldName("TapeStatus").writeValue(
+                        tapeArchive.getTapeStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

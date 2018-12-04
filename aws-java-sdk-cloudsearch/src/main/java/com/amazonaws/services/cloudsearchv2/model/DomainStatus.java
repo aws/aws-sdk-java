@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
@@ -23,719 +25,682 @@ import java.io.Serializable;
  */
 public class DomainStatus implements Serializable, Cloneable {
 
-    /**
-     * An internally generated unique identifier for a domain.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     */
     private String domainId;
 
-    /**
-     * A string that represents the name of a domain. Domain names are unique
-     * across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following
-     * characters: a-z (lowercase), 0-9, and - (hyphen).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 28<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9\-]+<br/>
-     */
     private String domainName;
 
-    /**
-     * The Amazon Resource Name (ARN) of the search domain. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i> for more information.
-     */
     private String aRN;
-
     /**
+     * <p>
      * True if the search domain is created. It can take several minutes to
      * initialize a domain when <a>CreateDomain</a> is called. Newly created
      * search domains are returned from <a>DescribeDomains</a> with a false
      * value for Created until domain creation is complete.
+     * </p>
      */
     private Boolean created;
-
     /**
+     * <p>
      * True if the search domain has been deleted. The system must clean up
      * resources dedicated to the search domain when <a>DeleteDomain</a> is
      * called. Newly deleted search domains are returned from
      * <a>DescribeDomains</a> with a true value for IsDeleted for several
      * minutes until resource cleanup is complete.
+     * </p>
      */
     private Boolean deleted;
-
     /**
+     * <p>
      * The service endpoint for updating documents in a search domain.
+     * </p>
      */
     private ServiceEndpoint docService;
-
     /**
-     * The service endpoint for requesting search results from a search
-     * domain.
+     * <p>
+     * The service endpoint for requesting search results from a search domain.
+     * </p>
      */
     private ServiceEndpoint searchService;
-
     /**
-     * True if <a>IndexDocuments</a> needs to be called to activate the
-     * current domain configuration.
+     * <p>
+     * True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.
+     * </p>
      */
     private Boolean requiresIndexDocuments;
-
     /**
+     * <p>
      * True if processing is being done to activate the current domain
      * configuration.
+     * </p>
      */
     private Boolean processing;
-
     /**
+     * <p>
      * The instance type that is being used to process search requests.
+     * </p>
      */
     private String searchInstanceType;
-
     /**
-     * The number of partitions across which the search index is spread.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * The number of partitions across which the search index is spread.
+     * </p>
      */
     private Integer searchPartitionCount;
-
     /**
+     * <p>
      * The number of search instances that are available to process search
      * requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
+     * </p>
      */
     private Integer searchInstanceCount;
 
     private Limits limits;
 
     /**
-     * An internally generated unique identifier for a domain.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @return An internally generated unique identifier for a domain.
+     * @param domainId
      */
-    public String getDomainId() {
-        return domainId;
-    }
-    
-    /**
-     * An internally generated unique identifier for a domain.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param domainId An internally generated unique identifier for a domain.
-     */
+
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
-    
+
     /**
-     * An internally generated unique identifier for a domain.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
-     *
-     * @param domainId An internally generated unique identifier for a domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public String getDomainId() {
+        return this.domainId;
+    }
+
+    /**
+     * @param domainId
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withDomainId(String domainId) {
-        this.domainId = domainId;
+        setDomainId(domainId);
         return this;
     }
 
     /**
-     * A string that represents the name of a domain. Domain names are unique
-     * across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following
-     * characters: a-z (lowercase), 0-9, and - (hyphen).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 28<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9\-]+<br/>
-     *
-     * @return A string that represents the name of a domain. Domain names are unique
-     *         across the domains owned by an account within an AWS region. Domain
-     *         names start with a letter or number and can contain the following
-     *         characters: a-z (lowercase), 0-9, and - (hyphen).
+     * @param domainName
      */
-    public String getDomainName() {
-        return domainName;
-    }
-    
-    /**
-     * A string that represents the name of a domain. Domain names are unique
-     * across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following
-     * characters: a-z (lowercase), 0-9, and - (hyphen).
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 28<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9\-]+<br/>
-     *
-     * @param domainName A string that represents the name of a domain. Domain names are unique
-     *         across the domains owned by an account within an AWS region. Domain
-     *         names start with a letter or number and can contain the following
-     *         characters: a-z (lowercase), 0-9, and - (hyphen).
-     */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
-    
+
     /**
-     * A string that represents the name of a domain. Domain names are unique
-     * across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following
-     * characters: a-z (lowercase), 0-9, and - (hyphen).
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>3 - 28<br/>
-     * <b>Pattern: </b>[a-z][a-z0-9\-]+<br/>
-     *
-     * @param domainName A string that represents the name of a domain. Domain names are unique
-     *         across the domains owned by an account within an AWS region. Domain
-     *         names start with a letter or number and can contain the following
-     *         characters: a-z (lowercase), 0-9, and - (hyphen).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public String getDomainName() {
+        return this.domainName;
+    }
+
+    /**
+     * @param domainName
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withDomainName(String domainName) {
-        this.domainName = domainName;
+        setDomainName(domainName);
         return this;
     }
 
     /**
-     * The Amazon Resource Name (ARN) of the search domain. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i> for more information.
-     *
-     * @return The Amazon Resource Name (ARN) of the search domain. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i> for more information.
+     * @param aRN
      */
-    public String getARN() {
-        return aRN;
-    }
-    
-    /**
-     * The Amazon Resource Name (ARN) of the search domain. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i> for more information.
-     *
-     * @param aRN The Amazon Resource Name (ARN) of the search domain. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i> for more information.
-     */
+
     public void setARN(String aRN) {
         this.aRN = aRN;
     }
-    
+
     /**
-     * The Amazon Resource Name (ARN) of the search domain. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     * Identity and Access Management</i> for more information.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param aRN The Amazon Resource Name (ARN) of the search domain. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
-     *         Identity and Access Management</i> for more information.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * @param aRN
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withARN(String aRN) {
-        this.aRN = aRN;
+        setARN(aRN);
         return this;
     }
 
     /**
+     * <p>
      * True if the search domain is created. It can take several minutes to
      * initialize a domain when <a>CreateDomain</a> is called. Newly created
      * search domains are returned from <a>DescribeDomains</a> with a false
      * value for Created until domain creation is complete.
-     *
-     * @return True if the search domain is created. It can take several minutes to
-     *         initialize a domain when <a>CreateDomain</a> is called. Newly created
-     *         search domains are returned from <a>DescribeDomains</a> with a false
-     *         value for Created until domain creation is complete.
+     * </p>
+     * 
+     * @param created
+     *        True if the search domain is created. It can take several minutes
+     *        to initialize a domain when <a>CreateDomain</a> is called. Newly
+     *        created search domains are returned from <a>DescribeDomains</a>
+     *        with a false value for Created until domain creation is complete.
      */
-    public Boolean isCreated() {
-        return created;
-    }
-    
-    /**
-     * True if the search domain is created. It can take several minutes to
-     * initialize a domain when <a>CreateDomain</a> is called. Newly created
-     * search domains are returned from <a>DescribeDomains</a> with a false
-     * value for Created until domain creation is complete.
-     *
-     * @param created True if the search domain is created. It can take several minutes to
-     *         initialize a domain when <a>CreateDomain</a> is called. Newly created
-     *         search domains are returned from <a>DescribeDomains</a> with a false
-     *         value for Created until domain creation is complete.
-     */
+
     public void setCreated(Boolean created) {
         this.created = created;
     }
-    
+
     /**
+     * <p>
      * True if the search domain is created. It can take several minutes to
      * initialize a domain when <a>CreateDomain</a> is called. Newly created
      * search domains are returned from <a>DescribeDomains</a> with a false
      * value for Created until domain creation is complete.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param created True if the search domain is created. It can take several minutes to
-     *         initialize a domain when <a>CreateDomain</a> is called. Newly created
-     *         search domains are returned from <a>DescribeDomains</a> with a false
-     *         value for Created until domain creation is complete.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return True if the search domain is created. It can take several minutes
+     *         to initialize a domain when <a>CreateDomain</a> is called. Newly
+     *         created search domains are returned from <a>DescribeDomains</a>
+     *         with a false value for Created until domain creation is complete.
      */
+
+    public Boolean getCreated() {
+        return this.created;
+    }
+
+    /**
+     * <p>
+     * True if the search domain is created. It can take several minutes to
+     * initialize a domain when <a>CreateDomain</a> is called. Newly created
+     * search domains are returned from <a>DescribeDomains</a> with a false
+     * value for Created until domain creation is complete.
+     * </p>
+     * 
+     * @param created
+     *        True if the search domain is created. It can take several minutes
+     *        to initialize a domain when <a>CreateDomain</a> is called. Newly
+     *        created search domains are returned from <a>DescribeDomains</a>
+     *        with a false value for Created until domain creation is complete.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withCreated(Boolean created) {
-        this.created = created;
+        setCreated(created);
         return this;
     }
 
     /**
+     * <p>
      * True if the search domain is created. It can take several minutes to
      * initialize a domain when <a>CreateDomain</a> is called. Newly created
      * search domains are returned from <a>DescribeDomains</a> with a false
      * value for Created until domain creation is complete.
-     *
-     * @return True if the search domain is created. It can take several minutes to
-     *         initialize a domain when <a>CreateDomain</a> is called. Newly created
-     *         search domains are returned from <a>DescribeDomains</a> with a false
-     *         value for Created until domain creation is complete.
+     * </p>
+     * 
+     * @return True if the search domain is created. It can take several minutes
+     *         to initialize a domain when <a>CreateDomain</a> is called. Newly
+     *         created search domains are returned from <a>DescribeDomains</a>
+     *         with a false value for Created until domain creation is complete.
      */
-    public Boolean getCreated() {
-        return created;
+
+    public Boolean isCreated() {
+        return this.created;
     }
 
     /**
+     * <p>
      * True if the search domain has been deleted. The system must clean up
      * resources dedicated to the search domain when <a>DeleteDomain</a> is
      * called. Newly deleted search domains are returned from
      * <a>DescribeDomains</a> with a true value for IsDeleted for several
      * minutes until resource cleanup is complete.
-     *
-     * @return True if the search domain has been deleted. The system must clean up
-     *         resources dedicated to the search domain when <a>DeleteDomain</a> is
-     *         called. Newly deleted search domains are returned from
-     *         <a>DescribeDomains</a> with a true value for IsDeleted for several
-     *         minutes until resource cleanup is complete.
+     * </p>
+     * 
+     * @param deleted
+     *        True if the search domain has been deleted. The system must clean
+     *        up resources dedicated to the search domain when
+     *        <a>DeleteDomain</a> is called. Newly deleted search domains are
+     *        returned from <a>DescribeDomains</a> with a true value for
+     *        IsDeleted for several minutes until resource cleanup is complete.
      */
-    public Boolean isDeleted() {
-        return deleted;
-    }
-    
-    /**
-     * True if the search domain has been deleted. The system must clean up
-     * resources dedicated to the search domain when <a>DeleteDomain</a> is
-     * called. Newly deleted search domains are returned from
-     * <a>DescribeDomains</a> with a true value for IsDeleted for several
-     * minutes until resource cleanup is complete.
-     *
-     * @param deleted True if the search domain has been deleted. The system must clean up
-     *         resources dedicated to the search domain when <a>DeleteDomain</a> is
-     *         called. Newly deleted search domains are returned from
-     *         <a>DescribeDomains</a> with a true value for IsDeleted for several
-     *         minutes until resource cleanup is complete.
-     */
+
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
     }
-    
+
     /**
+     * <p>
      * True if the search domain has been deleted. The system must clean up
      * resources dedicated to the search domain when <a>DeleteDomain</a> is
      * called. Newly deleted search domains are returned from
      * <a>DescribeDomains</a> with a true value for IsDeleted for several
      * minutes until resource cleanup is complete.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param deleted True if the search domain has been deleted. The system must clean up
-     *         resources dedicated to the search domain when <a>DeleteDomain</a> is
-     *         called. Newly deleted search domains are returned from
-     *         <a>DescribeDomains</a> with a true value for IsDeleted for several
-     *         minutes until resource cleanup is complete.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return True if the search domain has been deleted. The system must clean
+     *         up resources dedicated to the search domain when
+     *         <a>DeleteDomain</a> is called. Newly deleted search domains are
+     *         returned from <a>DescribeDomains</a> with a true value for
+     *         IsDeleted for several minutes until resource cleanup is complete.
      */
+
+    public Boolean getDeleted() {
+        return this.deleted;
+    }
+
+    /**
+     * <p>
+     * True if the search domain has been deleted. The system must clean up
+     * resources dedicated to the search domain when <a>DeleteDomain</a> is
+     * called. Newly deleted search domains are returned from
+     * <a>DescribeDomains</a> with a true value for IsDeleted for several
+     * minutes until resource cleanup is complete.
+     * </p>
+     * 
+     * @param deleted
+     *        True if the search domain has been deleted. The system must clean
+     *        up resources dedicated to the search domain when
+     *        <a>DeleteDomain</a> is called. Newly deleted search domains are
+     *        returned from <a>DescribeDomains</a> with a true value for
+     *        IsDeleted for several minutes until resource cleanup is complete.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withDeleted(Boolean deleted) {
-        this.deleted = deleted;
+        setDeleted(deleted);
         return this;
     }
 
     /**
+     * <p>
      * True if the search domain has been deleted. The system must clean up
      * resources dedicated to the search domain when <a>DeleteDomain</a> is
      * called. Newly deleted search domains are returned from
      * <a>DescribeDomains</a> with a true value for IsDeleted for several
      * minutes until resource cleanup is complete.
-     *
-     * @return True if the search domain has been deleted. The system must clean up
-     *         resources dedicated to the search domain when <a>DeleteDomain</a> is
-     *         called. Newly deleted search domains are returned from
-     *         <a>DescribeDomains</a> with a true value for IsDeleted for several
-     *         minutes until resource cleanup is complete.
+     * </p>
+     * 
+     * @return True if the search domain has been deleted. The system must clean
+     *         up resources dedicated to the search domain when
+     *         <a>DeleteDomain</a> is called. Newly deleted search domains are
+     *         returned from <a>DescribeDomains</a> with a true value for
+     *         IsDeleted for several minutes until resource cleanup is complete.
      */
-    public Boolean getDeleted() {
-        return deleted;
+
+    public Boolean isDeleted() {
+        return this.deleted;
     }
 
     /**
+     * <p>
      * The service endpoint for updating documents in a search domain.
-     *
-     * @return The service endpoint for updating documents in a search domain.
+     * </p>
+     * 
+     * @param docService
+     *        The service endpoint for updating documents in a search domain.
      */
-    public ServiceEndpoint getDocService() {
-        return docService;
-    }
-    
-    /**
-     * The service endpoint for updating documents in a search domain.
-     *
-     * @param docService The service endpoint for updating documents in a search domain.
-     */
+
     public void setDocService(ServiceEndpoint docService) {
         this.docService = docService;
     }
-    
+
     /**
-     * The service endpoint for updating documents in a search domain.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param docService The service endpoint for updating documents in a search domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The service endpoint for updating documents in a search domain.
+     * </p>
+     * 
+     * @return The service endpoint for updating documents in a search domain.
      */
+
+    public ServiceEndpoint getDocService() {
+        return this.docService;
+    }
+
+    /**
+     * <p>
+     * The service endpoint for updating documents in a search domain.
+     * </p>
+     * 
+     * @param docService
+     *        The service endpoint for updating documents in a search domain.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withDocService(ServiceEndpoint docService) {
-        this.docService = docService;
+        setDocService(docService);
         return this;
     }
 
     /**
-     * The service endpoint for requesting search results from a search
-     * domain.
-     *
-     * @return The service endpoint for requesting search results from a search
-     *         domain.
+     * <p>
+     * The service endpoint for requesting search results from a search domain.
+     * </p>
+     * 
+     * @param searchService
+     *        The service endpoint for requesting search results from a search
+     *        domain.
      */
-    public ServiceEndpoint getSearchService() {
-        return searchService;
-    }
-    
-    /**
-     * The service endpoint for requesting search results from a search
-     * domain.
-     *
-     * @param searchService The service endpoint for requesting search results from a search
-     *         domain.
-     */
+
     public void setSearchService(ServiceEndpoint searchService) {
         this.searchService = searchService;
     }
-    
+
     /**
-     * The service endpoint for requesting search results from a search
-     * domain.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param searchService The service endpoint for requesting search results from a search
+     * The service endpoint for requesting search results from a search domain.
+     * </p>
+     * 
+     * @return The service endpoint for requesting search results from a search
      *         domain.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public ServiceEndpoint getSearchService() {
+        return this.searchService;
+    }
+
+    /**
+     * <p>
+     * The service endpoint for requesting search results from a search domain.
+     * </p>
+     * 
+     * @param searchService
+     *        The service endpoint for requesting search results from a search
+     *        domain.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withSearchService(ServiceEndpoint searchService) {
-        this.searchService = searchService;
+        setSearchService(searchService);
         return this;
     }
 
     /**
-     * True if <a>IndexDocuments</a> needs to be called to activate the
-     * current domain configuration.
-     *
-     * @return True if <a>IndexDocuments</a> needs to be called to activate the
-     *         current domain configuration.
+     * <p>
+     * True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.
+     * </p>
+     * 
+     * @param requiresIndexDocuments
+     *        True if <a>IndexDocuments</a> needs to be called to activate the
+     *        current domain configuration.
      */
-    public Boolean isRequiresIndexDocuments() {
-        return requiresIndexDocuments;
-    }
-    
-    /**
-     * True if <a>IndexDocuments</a> needs to be called to activate the
-     * current domain configuration.
-     *
-     * @param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the
-     *         current domain configuration.
-     */
+
     public void setRequiresIndexDocuments(Boolean requiresIndexDocuments) {
         this.requiresIndexDocuments = requiresIndexDocuments;
     }
-    
-    /**
-     * True if <a>IndexDocuments</a> needs to be called to activate the
-     * current domain configuration.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param requiresIndexDocuments True if <a>IndexDocuments</a> needs to be called to activate the
-     *         current domain configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DomainStatus withRequiresIndexDocuments(Boolean requiresIndexDocuments) {
-        this.requiresIndexDocuments = requiresIndexDocuments;
-        return this;
-    }
 
     /**
-     * True if <a>IndexDocuments</a> needs to be called to activate the
-     * current domain configuration.
-     *
+     * <p>
+     * True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.
+     * </p>
+     * 
      * @return True if <a>IndexDocuments</a> needs to be called to activate the
      *         current domain configuration.
      */
+
     public Boolean getRequiresIndexDocuments() {
-        return requiresIndexDocuments;
+        return this.requiresIndexDocuments;
     }
 
     /**
-     * True if processing is being done to activate the current domain
-     * configuration.
-     *
-     * @return True if processing is being done to activate the current domain
-     *         configuration.
+     * <p>
+     * True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.
+     * </p>
+     * 
+     * @param requiresIndexDocuments
+     *        True if <a>IndexDocuments</a> needs to be called to activate the
+     *        current domain configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public Boolean isProcessing() {
-        return processing;
+
+    public DomainStatus withRequiresIndexDocuments(
+            Boolean requiresIndexDocuments) {
+        setRequiresIndexDocuments(requiresIndexDocuments);
+        return this;
     }
-    
+
     /**
+     * <p>
+     * True if <a>IndexDocuments</a> needs to be called to activate the current
+     * domain configuration.
+     * </p>
+     * 
+     * @return True if <a>IndexDocuments</a> needs to be called to activate the
+     *         current domain configuration.
+     */
+
+    public Boolean isRequiresIndexDocuments() {
+        return this.requiresIndexDocuments;
+    }
+
+    /**
+     * <p>
      * True if processing is being done to activate the current domain
      * configuration.
-     *
-     * @param processing True if processing is being done to activate the current domain
-     *         configuration.
+     * </p>
+     * 
+     * @param processing
+     *        True if processing is being done to activate the current domain
+     *        configuration.
      */
+
     public void setProcessing(Boolean processing) {
         this.processing = processing;
     }
-    
-    /**
-     * True if processing is being done to activate the current domain
-     * configuration.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param processing True if processing is being done to activate the current domain
-     *         configuration.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     */
-    public DomainStatus withProcessing(Boolean processing) {
-        this.processing = processing;
-        return this;
-    }
 
     /**
+     * <p>
      * True if processing is being done to activate the current domain
      * configuration.
-     *
+     * </p>
+     * 
      * @return True if processing is being done to activate the current domain
      *         configuration.
      */
+
     public Boolean getProcessing() {
-        return processing;
+        return this.processing;
     }
 
     /**
-     * The instance type that is being used to process search requests.
-     *
-     * @return The instance type that is being used to process search requests.
+     * <p>
+     * True if processing is being done to activate the current domain
+     * configuration.
+     * </p>
+     * 
+     * @param processing
+     *        True if processing is being done to activate the current domain
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public String getSearchInstanceType() {
-        return searchInstanceType;
+
+    public DomainStatus withProcessing(Boolean processing) {
+        setProcessing(processing);
+        return this;
     }
-    
+
     /**
-     * The instance type that is being used to process search requests.
-     *
-     * @param searchInstanceType The instance type that is being used to process search requests.
+     * <p>
+     * True if processing is being done to activate the current domain
+     * configuration.
+     * </p>
+     * 
+     * @return True if processing is being done to activate the current domain
+     *         configuration.
      */
+
+    public Boolean isProcessing() {
+        return this.processing;
+    }
+
+    /**
+     * <p>
+     * The instance type that is being used to process search requests.
+     * </p>
+     * 
+     * @param searchInstanceType
+     *        The instance type that is being used to process search requests.
+     */
+
     public void setSearchInstanceType(String searchInstanceType) {
         this.searchInstanceType = searchInstanceType;
     }
-    
+
     /**
-     * The instance type that is being used to process search requests.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param searchInstanceType The instance type that is being used to process search requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The instance type that is being used to process search requests.
+     * </p>
+     * 
+     * @return The instance type that is being used to process search requests.
      */
+
+    public String getSearchInstanceType() {
+        return this.searchInstanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type that is being used to process search requests.
+     * </p>
+     * 
+     * @param searchInstanceType
+     *        The instance type that is being used to process search requests.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withSearchInstanceType(String searchInstanceType) {
-        this.searchInstanceType = searchInstanceType;
+        setSearchInstanceType(searchInstanceType);
         return this;
     }
 
     /**
-     * The number of partitions across which the search index is spread.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @return The number of partitions across which the search index is spread.
-     */
-    public Integer getSearchPartitionCount() {
-        return searchPartitionCount;
-    }
-    
-    /**
      * The number of partitions across which the search index is spread.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param searchPartitionCount The number of partitions across which the search index is spread.
+     * </p>
+     * 
+     * @param searchPartitionCount
+     *        The number of partitions across which the search index is spread.
      */
+
     public void setSearchPartitionCount(Integer searchPartitionCount) {
         this.searchPartitionCount = searchPartitionCount;
     }
-    
+
     /**
+     * <p>
      * The number of partitions across which the search index is spread.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param searchPartitionCount The number of partitions across which the search index is spread.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The number of partitions across which the search index is spread.
      */
+
+    public Integer getSearchPartitionCount() {
+        return this.searchPartitionCount;
+    }
+
+    /**
+     * <p>
+     * The number of partitions across which the search index is spread.
+     * </p>
+     * 
+     * @param searchPartitionCount
+     *        The number of partitions across which the search index is spread.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withSearchPartitionCount(Integer searchPartitionCount) {
-        this.searchPartitionCount = searchPartitionCount;
+        setSearchPartitionCount(searchPartitionCount);
         return this;
     }
 
     /**
+     * <p>
      * The number of search instances that are available to process search
      * requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @return The number of search instances that are available to process search
-     *         requests.
+     * </p>
+     * 
+     * @param searchInstanceCount
+     *        The number of search instances that are available to process
+     *        search requests.
      */
-    public Integer getSearchInstanceCount() {
-        return searchInstanceCount;
-    }
-    
-    /**
-     * The number of search instances that are available to process search
-     * requests.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param searchInstanceCount The number of search instances that are available to process search
-     *         requests.
-     */
+
     public void setSearchInstanceCount(Integer searchInstanceCount) {
         this.searchInstanceCount = searchInstanceCount;
     }
-    
+
     /**
+     * <p>
      * The number of search instances that are available to process search
      * requests.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Range: </b>1 - <br/>
-     *
-     * @param searchInstanceCount The number of search instances that are available to process search
-     *         requests.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The number of search instances that are available to process
+     *         search requests.
      */
+
+    public Integer getSearchInstanceCount() {
+        return this.searchInstanceCount;
+    }
+
+    /**
+     * <p>
+     * The number of search instances that are available to process search
+     * requests.
+     * </p>
+     * 
+     * @param searchInstanceCount
+     *        The number of search instances that are available to process
+     *        search requests.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withSearchInstanceCount(Integer searchInstanceCount) {
-        this.searchInstanceCount = searchInstanceCount;
+        setSearchInstanceCount(searchInstanceCount);
         return this;
     }
 
     /**
-     * Returns the value of the Limits property for this object.
-     *
-     * @return The value of the Limits property for this object.
+     * @param limits
      */
-    public Limits getLimits() {
-        return limits;
-    }
-    
-    /**
-     * Sets the value of the Limits property for this object.
-     *
-     * @param limits The new value for the Limits property for this object.
-     */
+
     public void setLimits(Limits limits) {
         this.limits = limits;
     }
-    
+
     /**
-     * Sets the value of the Limits property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param limits The new value for the Limits property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * @return
      */
+
+    public Limits getLimits() {
+        return this.limits;
+    }
+
+    /**
+     * @param limits
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DomainStatus withLimits(Limits limits) {
-        this.limits = limits;
+        setLimits(limits);
         return this;
     }
 
@@ -751,94 +716,176 @@ public class DomainStatus implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDomainId() != null) sb.append("DomainId: " + getDomainId() + ",");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
-        if (getARN() != null) sb.append("ARN: " + getARN() + ",");
-        if (isCreated() != null) sb.append("Created: " + isCreated() + ",");
-        if (isDeleted() != null) sb.append("Deleted: " + isDeleted() + ",");
-        if (getDocService() != null) sb.append("DocService: " + getDocService() + ",");
-        if (getSearchService() != null) sb.append("SearchService: " + getSearchService() + ",");
-        if (isRequiresIndexDocuments() != null) sb.append("RequiresIndexDocuments: " + isRequiresIndexDocuments() + ",");
-        if (isProcessing() != null) sb.append("Processing: " + isProcessing() + ",");
-        if (getSearchInstanceType() != null) sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");
-        if (getSearchPartitionCount() != null) sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ",");
-        if (getSearchInstanceCount() != null) sb.append("SearchInstanceCount: " + getSearchInstanceCount() + ",");
-        if (getLimits() != null) sb.append("Limits: " + getLimits() );
+        if (getDomainId() != null)
+            sb.append("DomainId: " + getDomainId() + ",");
+        if (getDomainName() != null)
+            sb.append("DomainName: " + getDomainName() + ",");
+        if (getARN() != null)
+            sb.append("ARN: " + getARN() + ",");
+        if (getCreated() != null)
+            sb.append("Created: " + getCreated() + ",");
+        if (getDeleted() != null)
+            sb.append("Deleted: " + getDeleted() + ",");
+        if (getDocService() != null)
+            sb.append("DocService: " + getDocService() + ",");
+        if (getSearchService() != null)
+            sb.append("SearchService: " + getSearchService() + ",");
+        if (getRequiresIndexDocuments() != null)
+            sb.append("RequiresIndexDocuments: " + getRequiresIndexDocuments()
+                    + ",");
+        if (getProcessing() != null)
+            sb.append("Processing: " + getProcessing() + ",");
+        if (getSearchInstanceType() != null)
+            sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");
+        if (getSearchPartitionCount() != null)
+            sb.append("SearchPartitionCount: " + getSearchPartitionCount()
+                    + ",");
+        if (getSearchInstanceCount() != null)
+            sb.append("SearchInstanceCount: " + getSearchInstanceCount() + ",");
+        if (getLimits() != null)
+            sb.append("Limits: " + getLimits());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DomainStatus == false)
+            return false;
+        DomainStatus other = (DomainStatus) obj;
+        if (other.getDomainId() == null ^ this.getDomainId() == null)
+            return false;
+        if (other.getDomainId() != null
+                && other.getDomainId().equals(this.getDomainId()) == false)
+            return false;
+        if (other.getDomainName() == null ^ this.getDomainName() == null)
+            return false;
+        if (other.getDomainName() != null
+                && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null
+                && other.getARN().equals(this.getARN()) == false)
+            return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null
+                && other.getCreated().equals(this.getCreated()) == false)
+            return false;
+        if (other.getDeleted() == null ^ this.getDeleted() == null)
+            return false;
+        if (other.getDeleted() != null
+                && other.getDeleted().equals(this.getDeleted()) == false)
+            return false;
+        if (other.getDocService() == null ^ this.getDocService() == null)
+            return false;
+        if (other.getDocService() != null
+                && other.getDocService().equals(this.getDocService()) == false)
+            return false;
+        if (other.getSearchService() == null ^ this.getSearchService() == null)
+            return false;
+        if (other.getSearchService() != null
+                && other.getSearchService().equals(this.getSearchService()) == false)
+            return false;
+        if (other.getRequiresIndexDocuments() == null
+                ^ this.getRequiresIndexDocuments() == null)
+            return false;
+        if (other.getRequiresIndexDocuments() != null
+                && other.getRequiresIndexDocuments().equals(
+                        this.getRequiresIndexDocuments()) == false)
+            return false;
+        if (other.getProcessing() == null ^ this.getProcessing() == null)
+            return false;
+        if (other.getProcessing() != null
+                && other.getProcessing().equals(this.getProcessing()) == false)
+            return false;
+        if (other.getSearchInstanceType() == null
+                ^ this.getSearchInstanceType() == null)
+            return false;
+        if (other.getSearchInstanceType() != null
+                && other.getSearchInstanceType().equals(
+                        this.getSearchInstanceType()) == false)
+            return false;
+        if (other.getSearchPartitionCount() == null
+                ^ this.getSearchPartitionCount() == null)
+            return false;
+        if (other.getSearchPartitionCount() != null
+                && other.getSearchPartitionCount().equals(
+                        this.getSearchPartitionCount()) == false)
+            return false;
+        if (other.getSearchInstanceCount() == null
+                ^ this.getSearchInstanceCount() == null)
+            return false;
+        if (other.getSearchInstanceCount() != null
+                && other.getSearchInstanceCount().equals(
+                        this.getSearchInstanceCount()) == false)
+            return false;
+        if (other.getLimits() == null ^ this.getLimits() == null)
+            return false;
+        if (other.getLimits() != null
+                && other.getLimits().equals(this.getLimits()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode()); 
-        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
-        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode()); 
-        hashCode = prime * hashCode + ((isCreated() == null) ? 0 : isCreated().hashCode()); 
-        hashCode = prime * hashCode + ((isDeleted() == null) ? 0 : isDeleted().hashCode()); 
-        hashCode = prime * hashCode + ((getDocService() == null) ? 0 : getDocService().hashCode()); 
-        hashCode = prime * hashCode + ((getSearchService() == null) ? 0 : getSearchService().hashCode()); 
-        hashCode = prime * hashCode + ((isRequiresIndexDocuments() == null) ? 0 : isRequiresIndexDocuments().hashCode()); 
-        hashCode = prime * hashCode + ((isProcessing() == null) ? 0 : isProcessing().hashCode()); 
-        hashCode = prime * hashCode + ((getSearchInstanceType() == null) ? 0 : getSearchInstanceType().hashCode()); 
-        hashCode = prime * hashCode + ((getSearchPartitionCount() == null) ? 0 : getSearchPartitionCount().hashCode()); 
-        hashCode = prime * hashCode + ((getSearchInstanceCount() == null) ? 0 : getSearchInstanceCount().hashCode()); 
-        hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
+        hashCode = prime * hashCode
+                + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode
+                + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode
+                + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime * hashCode
+                + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
+        hashCode = prime * hashCode
+                + ((getDocService() == null) ? 0 : getDocService().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSearchService() == null) ? 0 : getSearchService()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRequiresIndexDocuments() == null) ? 0
+                        : getRequiresIndexDocuments().hashCode());
+        hashCode = prime * hashCode
+                + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSearchInstanceType() == null) ? 0
+                        : getSearchInstanceType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSearchPartitionCount() == null) ? 0
+                        : getSearchPartitionCount().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSearchInstanceCount() == null) ? 0
+                        : getSearchInstanceCount().hashCode());
+        hashCode = prime * hashCode
+                + ((getLimits() == null) ? 0 : getLimits().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DomainStatus == false) return false;
-        DomainStatus other = (DomainStatus)obj;
-        
-        if (other.getDomainId() == null ^ this.getDomainId() == null) return false;
-        if (other.getDomainId() != null && other.getDomainId().equals(this.getDomainId()) == false) return false; 
-        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
-        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
-        if (other.getARN() == null ^ this.getARN() == null) return false;
-        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false) return false; 
-        if (other.isCreated() == null ^ this.isCreated() == null) return false;
-        if (other.isCreated() != null && other.isCreated().equals(this.isCreated()) == false) return false; 
-        if (other.isDeleted() == null ^ this.isDeleted() == null) return false;
-        if (other.isDeleted() != null && other.isDeleted().equals(this.isDeleted()) == false) return false; 
-        if (other.getDocService() == null ^ this.getDocService() == null) return false;
-        if (other.getDocService() != null && other.getDocService().equals(this.getDocService()) == false) return false; 
-        if (other.getSearchService() == null ^ this.getSearchService() == null) return false;
-        if (other.getSearchService() != null && other.getSearchService().equals(this.getSearchService()) == false) return false; 
-        if (other.isRequiresIndexDocuments() == null ^ this.isRequiresIndexDocuments() == null) return false;
-        if (other.isRequiresIndexDocuments() != null && other.isRequiresIndexDocuments().equals(this.isRequiresIndexDocuments()) == false) return false; 
-        if (other.isProcessing() == null ^ this.isProcessing() == null) return false;
-        if (other.isProcessing() != null && other.isProcessing().equals(this.isProcessing()) == false) return false; 
-        if (other.getSearchInstanceType() == null ^ this.getSearchInstanceType() == null) return false;
-        if (other.getSearchInstanceType() != null && other.getSearchInstanceType().equals(this.getSearchInstanceType()) == false) return false; 
-        if (other.getSearchPartitionCount() == null ^ this.getSearchPartitionCount() == null) return false;
-        if (other.getSearchPartitionCount() != null && other.getSearchPartitionCount().equals(this.getSearchPartitionCount()) == false) return false; 
-        if (other.getSearchInstanceCount() == null ^ this.getSearchInstanceCount() == null) return false;
-        if (other.getSearchInstanceCount() != null && other.getSearchInstanceCount().equals(this.getSearchInstanceCount()) == false) return false; 
-        if (other.getLimits() == null ^ this.getLimits() == null) return false;
-        if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DomainStatus clone() {
         try {
             return (DomainStatus) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

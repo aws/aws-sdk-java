@@ -50,6 +50,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
      *        destinationNamePrefix. If you don't specify a value, no prefix is
      *        applied.
      */
+
     public void setDestinationNamePrefix(String destinationNamePrefix) {
         this.destinationNamePrefix = destinationNamePrefix;
     }
@@ -65,6 +66,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
      *         destinationNamePrefix. If you don't specify a value, no prefix is
      *         applied.
      */
+
     public String getDestinationNamePrefix() {
         return this.destinationNamePrefix;
     }
@@ -83,6 +85,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsRequest withDestinationNamePrefix(
             String destinationNamePrefix) {
         setDestinationNamePrefix(destinationNamePrefix);
@@ -92,6 +95,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -99,6 +103,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -108,6 +113,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -116,6 +122,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
     /**
      * @param limit
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -123,6 +130,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -132,6 +140,7 @@ public class DescribeDestinationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDestinationsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

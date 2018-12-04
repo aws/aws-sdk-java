@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,17 +55,17 @@ public class S3ActionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    s3Action.setRoleArn(StringJsonUnmarshaller.getInstance()
+                    s3Action.setRoleArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("bucketName", targetDepth)) {
                     context.nextToken();
-                    s3Action.setBucketName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    s3Action.setBucketName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    s3Action.setKey(StringJsonUnmarshaller.getInstance()
+                    s3Action.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

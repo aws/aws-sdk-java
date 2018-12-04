@@ -20,14 +20,14 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about an application revision's location.
+ * Information about the location of an application revision.
  * </p>
  */
 public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -42,7 +42,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -50,38 +50,40 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
      * @see RevisionLocationType
      */
+
     public void setRevisionType(String revisionType) {
         this.revisionType = revisionType;
     }
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
      * <li>GitHub: An application revision stored in GitHub.</li>
      * </ul>
      * 
-     * @return The application revision's type:</p>
+     * @return The type of application revision:</p>
      *         <ul>
      *         <li>S3: An application revision stored in Amazon S3.</li>
      *         <li>GitHub: An application revision stored in GitHub.</li>
      * @see RevisionLocationType
      */
+
     public String getRevisionType() {
         return this.revisionType;
     }
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -89,7 +91,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
@@ -97,6 +99,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         chained together.
      * @see RevisionLocationType
      */
+
     public RevisionLocation withRevisionType(String revisionType) {
         setRevisionType(revisionType);
         return this;
@@ -104,7 +107,7 @@ public class RevisionLocation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -112,21 +115,20 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RevisionLocationType
      */
+
     public void setRevisionType(RevisionLocationType revisionType) {
         this.revisionType = revisionType.toString();
     }
 
     /**
      * <p>
-     * The application revision's type:
+     * The type of application revision:
      * </p>
      * <ul>
      * <li>S3: An application revision stored in Amazon S3.</li>
@@ -134,7 +136,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * </ul>
      * 
      * @param revisionType
-     *        The application revision's type:</p>
+     *        The type of application revision:</p>
      *        <ul>
      *        <li>S3: An application revision stored in Amazon S3.</li>
      *        <li>GitHub: An application revision stored in GitHub.</li>
@@ -142,6 +144,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      *         chained together.
      * @see RevisionLocationType
      */
+
     public RevisionLocation withRevisionType(RevisionLocationType revisionType) {
         setRevisionType(revisionType);
         return this;
@@ -150,6 +153,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @param s3Location
      */
+
     public void setS3Location(S3Location s3Location) {
         this.s3Location = s3Location;
     }
@@ -157,6 +161,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public S3Location getS3Location() {
         return this.s3Location;
     }
@@ -166,6 +171,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionLocation withS3Location(S3Location s3Location) {
         setS3Location(s3Location);
         return this;
@@ -174,6 +180,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @param gitHubLocation
      */
+
     public void setGitHubLocation(GitHubLocation gitHubLocation) {
         this.gitHubLocation = gitHubLocation;
     }
@@ -181,6 +188,7 @@ public class RevisionLocation implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public GitHubLocation getGitHubLocation() {
         return this.gitHubLocation;
     }
@@ -190,6 +198,7 @@ public class RevisionLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RevisionLocation withGitHubLocation(GitHubLocation gitHubLocation) {
         setGitHubLocation(gitHubLocation);
         return this;

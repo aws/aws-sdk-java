@@ -43,6 +43,7 @@ public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest
      *        The name of the delivery channel through which the snapshot is
      *        delivered.
      */
+
     public void setDeliveryChannelName(String deliveryChannelName) {
         this.deliveryChannelName = deliveryChannelName;
     }
@@ -55,6 +56,7 @@ public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest
      * @return The name of the delivery channel through which the snapshot is
      *         delivered.
      */
+
     public String getDeliveryChannelName() {
         return this.deliveryChannelName;
     }
@@ -70,6 +72,7 @@ public class DeliverConfigSnapshotRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeliverConfigSnapshotRequest withDeliveryChannelName(
             String deliveryChannelName) {
         setDeliveryChannelName(deliveryChannelName);

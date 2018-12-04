@@ -30,6 +30,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<MetricFilter> getMetricFilters() {
         if (metricFilters == null) {
             metricFilters = new com.amazonaws.internal.SdkInternalList<MetricFilter>();
@@ -40,6 +41,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
     /**
      * @param metricFilters
      */
+
     public void setMetricFilters(
             java.util.Collection<MetricFilter> metricFilters) {
         if (metricFilters == null) {
@@ -63,6 +65,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricFiltersResult withMetricFilters(
             MetricFilter... metricFilters) {
         if (this.metricFilters == null) {
@@ -80,6 +83,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricFiltersResult withMetricFilters(
             java.util.Collection<MetricFilter> metricFilters) {
         setMetricFilters(metricFilters);
@@ -89,6 +93,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -96,6 +101,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -105,6 +111,7 @@ public class DescribeMetricFiltersResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMetricFiltersResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

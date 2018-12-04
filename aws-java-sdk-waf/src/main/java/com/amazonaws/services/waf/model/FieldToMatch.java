@@ -45,6 +45,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      */
     private String type;
@@ -81,6 +89,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      * 
      * @param type
@@ -102,8 +118,17 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        of a URL that appears after a <code>?</code> character, if any.</li>
      *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     *        <li><code>BODY</code>: The part of a request that contains any
+     *        additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. The request body
+     *        immediately follows the request headers. Note that only the first
+     *        <code>8192</code> bytes of the request body are forwarded to AWS
+     *        WAF for inspection. To allow or block requests based on the length
+     *        of the body, you can create a size constraint set. For more
+     *        information, see <a>CreateSizeConstraintSet</a>.</li>
      * @see MatchFieldType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -128,6 +153,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      * 
      * @return The part of the web request that you want AWS WAF to search for a
@@ -148,8 +181,17 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         of a URL that appears after a <code>?</code> character, if any.</li>
      *         <li><code>URI</code>: The part of a web request that identifies a
      *         resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     *         <li><code>BODY</code>: The part of a request that contains any
+     *         additional data that you want to send to your web server as the
+     *         HTTP request body, such as data from a form. The request body
+     *         immediately follows the request headers. Note that only the first
+     *         <code>8192</code> bytes of the request body are forwarded to AWS
+     *         WAF for inspection. To allow or block requests based on the
+     *         length of the body, you can create a size constraint set. For
+     *         more information, see <a>CreateSizeConstraintSet</a>.</li>
      * @see MatchFieldType
      */
+
     public String getType() {
         return this.type;
     }
@@ -174,6 +216,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      * 
      * @param type
@@ -195,10 +245,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        of a URL that appears after a <code>?</code> character, if any.</li>
      *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     *        <li><code>BODY</code>: The part of a request that contains any
+     *        additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. The request body
+     *        immediately follows the request headers. Note that only the first
+     *        <code>8192</code> bytes of the request body are forwarded to AWS
+     *        WAF for inspection. To allow or block requests based on the length
+     *        of the body, you can create a size constraint set. For more
+     *        information, see <a>CreateSizeConstraintSet</a>.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MatchFieldType
      */
+
     public FieldToMatch withType(String type) {
         setType(type);
         return this;
@@ -224,6 +283,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      * 
      * @param type
@@ -245,10 +312,17 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        of a URL that appears after a <code>?</code> character, if any.</li>
      *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        <li><code>BODY</code>: The part of a request that contains any
+     *        additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. The request body
+     *        immediately follows the request headers. Note that only the first
+     *        <code>8192</code> bytes of the request body are forwarded to AWS
+     *        WAF for inspection. To allow or block requests based on the length
+     *        of the body, you can create a size constraint set. For more
+     *        information, see <a>CreateSizeConstraintSet</a>.</li>
      * @see MatchFieldType
      */
+
     public void setType(MatchFieldType type) {
         this.type = type.toString();
     }
@@ -273,6 +347,14 @@ public class FieldToMatch implements Serializable, Cloneable {
      * that appears after a <code>?</code> character, if any.</li>
      * <li><code>URI</code>: The part of a web request that identifies a
      * resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     * <li><code>BODY</code>: The part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body,
+     * such as data from a form. The request body immediately follows the
+     * request headers. Note that only the first <code>8192</code> bytes of the
+     * request body are forwarded to AWS WAF for inspection. To allow or block
+     * requests based on the length of the body, you can create a size
+     * constraint set. For more information, see <a>CreateSizeConstraintSet</a>.
+     * </li>
      * </ul>
      * 
      * @param type
@@ -294,10 +376,19 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        of a URL that appears after a <code>?</code> character, if any.</li>
      *        <li><code>URI</code>: The part of a web request that identifies a
      *        resource, for example, <code>/images/daily-ad.jpg</code>.</li>
+     *        <li><code>BODY</code>: The part of a request that contains any
+     *        additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. The request body
+     *        immediately follows the request headers. Note that only the first
+     *        <code>8192</code> bytes of the request body are forwarded to AWS
+     *        WAF for inspection. To allow or block requests based on the length
+     *        of the body, you can create a size constraint set. For more
+     *        information, see <a>CreateSizeConstraintSet</a>.</li>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see MatchFieldType
      */
+
     public FieldToMatch withType(MatchFieldType type) {
         setType(type);
         return this;
@@ -323,6 +414,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *        <p>
      *        The name of the header is not case sensitive.
      */
+
     public void setData(String data) {
         this.data = data;
     }
@@ -346,6 +438,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      *         <p>
      *         The name of the header is not case sensitive.
      */
+
     public String getData() {
         return this.data;
     }
@@ -372,6 +465,7 @@ public class FieldToMatch implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public FieldToMatch withData(String data) {
         setData(data);
         return this;

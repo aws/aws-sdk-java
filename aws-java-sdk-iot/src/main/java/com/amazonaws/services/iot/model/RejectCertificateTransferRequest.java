@@ -33,6 +33,12 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String certificateId;
+    /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     */
+    private String rejectReason;
 
     /**
      * <p>
@@ -42,6 +48,7 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -53,6 +60,7 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -67,9 +75,51 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RejectCertificateTransferRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
+     * @param rejectReason
+     *        The reason the certificate transfer was rejected.
+     */
+
+    public void setRejectReason(String rejectReason) {
+        this.rejectReason = rejectReason;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
+     * @return The reason the certificate transfer was rejected.
+     */
+
+    public String getRejectReason() {
+        return this.rejectReason;
+    }
+
+    /**
+     * <p>
+     * The reason the certificate transfer was rejected.
+     * </p>
+     * 
+     * @param rejectReason
+     *        The reason the certificate transfer was rejected.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RejectCertificateTransferRequest withRejectReason(String rejectReason) {
+        setRejectReason(rejectReason);
         return this;
     }
 
@@ -86,7 +136,9 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: " + getCertificateId() + ",");
+        if (getRejectReason() != null)
+            sb.append("RejectReason: " + getRejectReason());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +158,11 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         if (other.getCertificateId() != null
                 && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
+        if (other.getRejectReason() == null ^ this.getRejectReason() == null)
+            return false;
+        if (other.getRejectReason() != null
+                && other.getRejectReason().equals(this.getRejectReason()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +174,10 @@ public class RejectCertificateTransferRequest extends AmazonWebServiceRequest
         hashCode = prime
                 * hashCode
                 + ((getCertificateId() == null) ? 0 : getCertificateId()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getRejectReason() == null) ? 0 : getRejectReason()
                         .hashCode());
         return hashCode;
     }

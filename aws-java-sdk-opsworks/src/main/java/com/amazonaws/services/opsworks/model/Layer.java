@@ -193,6 +193,7 @@ public class Layer implements Serializable, Cloneable {
      * @param stackId
      *        The layer stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -204,6 +205,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The layer stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -218,6 +220,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -231,6 +234,7 @@ public class Layer implements Serializable, Cloneable {
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -242,6 +246,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -256,6 +261,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -270,6 +276,7 @@ public class Layer implements Serializable, Cloneable {
      *        The layer type.
      * @see LayerType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -282,6 +289,7 @@ public class Layer implements Serializable, Cloneable {
      * @return The layer type.
      * @see LayerType
      */
+
     public String getType() {
         return this.type;
     }
@@ -297,6 +305,7 @@ public class Layer implements Serializable, Cloneable {
      *         chained together.
      * @see LayerType
      */
+
     public Layer withType(String type) {
         setType(type);
         return this;
@@ -309,10 +318,9 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @param type
      *        The layer type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see LayerType
      */
+
     public void setType(LayerType type) {
         this.type = type.toString();
     }
@@ -328,6 +336,7 @@ public class Layer implements Serializable, Cloneable {
      *         chained together.
      * @see LayerType
      */
+
     public Layer withType(LayerType type) {
         setType(type);
         return this;
@@ -341,6 +350,7 @@ public class Layer implements Serializable, Cloneable {
      * @param name
      *        The layer name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -352,6 +362,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The layer name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -366,6 +377,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withName(String name) {
         setName(name);
         return this;
@@ -379,6 +391,7 @@ public class Layer implements Serializable, Cloneable {
      * @param shortname
      *        The layer short name.
      */
+
     public void setShortname(String shortname) {
         this.shortname = shortname;
     }
@@ -390,6 +403,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return The layer short name.
      */
+
     public String getShortname() {
         return this.shortname;
     }
@@ -404,6 +418,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withShortname(String shortname) {
         setShortname(shortname);
         return this;
@@ -434,6 +449,7 @@ public class Layer implements Serializable, Cloneable {
      *         For an ECS Cluster layer, AWS OpsWorks the
      *         <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      */
+
     public java.util.Map<String, String> getAttributes() {
         if (attributes == null) {
             attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -467,6 +483,7 @@ public class Layer implements Serializable, Cloneable {
      *        For an ECS Cluster layer, AWS OpsWorks the
      *        <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
      */
+
     public void setAttributes(java.util.Map<String, String> attributes) {
         this.attributes = attributes == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -501,6 +518,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withAttributes(java.util.Map<String, String> attributes) {
         setAttributes(attributes);
         return this;
@@ -521,6 +539,7 @@ public class Layer implements Serializable, Cloneable {
      * Removes all the entries added into Attributes. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public Layer clearAttributesEntries() {
         this.attributes = null;
         return this;
@@ -540,6 +559,7 @@ public class Layer implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
         this.customInstanceProfileArn = customInstanceProfileArn;
     }
@@ -557,6 +577,7 @@ public class Layer implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getCustomInstanceProfileArn() {
         return this.customInstanceProfileArn;
     }
@@ -577,6 +598,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCustomInstanceProfileArn(String customInstanceProfileArn) {
         setCustomInstanceProfileArn(customInstanceProfileArn);
         return this;
@@ -592,6 +614,7 @@ public class Layer implements Serializable, Cloneable {
      *        A JSON formatted string containing the layer's custom stack
      *        configuration and deployment attributes.
      */
+
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
     }
@@ -605,6 +628,7 @@ public class Layer implements Serializable, Cloneable {
      * @return A JSON formatted string containing the layer's custom stack
      *         configuration and deployment attributes.
      */
+
     public String getCustomJson() {
         return this.customJson;
     }
@@ -621,6 +645,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCustomJson(String customJson) {
         setCustomJson(customJson);
         return this;
@@ -633,6 +658,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return An array containing the layer's custom security group IDs.
      */
+
     public java.util.List<String> getCustomSecurityGroupIds() {
         if (customSecurityGroupIds == null) {
             customSecurityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -648,6 +674,7 @@ public class Layer implements Serializable, Cloneable {
      * @param customSecurityGroupIds
      *        An array containing the layer's custom security group IDs.
      */
+
     public void setCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         if (customSecurityGroupIds == null) {
@@ -675,6 +702,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCustomSecurityGroupIds(String... customSecurityGroupIds) {
         if (this.customSecurityGroupIds == null) {
             setCustomSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -696,6 +724,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCustomSecurityGroupIds(
             java.util.Collection<String> customSecurityGroupIds) {
         setCustomSecurityGroupIds(customSecurityGroupIds);
@@ -709,6 +738,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return An array containing the layer's security group names.
      */
+
     public java.util.List<String> getDefaultSecurityGroupNames() {
         if (defaultSecurityGroupNames == null) {
             defaultSecurityGroupNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -724,6 +754,7 @@ public class Layer implements Serializable, Cloneable {
      * @param defaultSecurityGroupNames
      *        An array containing the layer's security group names.
      */
+
     public void setDefaultSecurityGroupNames(
             java.util.Collection<String> defaultSecurityGroupNames) {
         if (defaultSecurityGroupNames == null) {
@@ -751,6 +782,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withDefaultSecurityGroupNames(
             String... defaultSecurityGroupNames) {
         if (this.defaultSecurityGroupNames == null) {
@@ -773,6 +805,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withDefaultSecurityGroupNames(
             java.util.Collection<String> defaultSecurityGroupNames) {
         setDefaultSecurityGroupNames(defaultSecurityGroupNames);
@@ -788,6 +821,7 @@ public class Layer implements Serializable, Cloneable {
      * @return An array of <code>Package</code> objects that describe the
      *         layer's packages.
      */
+
     public java.util.List<String> getPackages() {
         if (packages == null) {
             packages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -805,6 +839,7 @@ public class Layer implements Serializable, Cloneable {
      *        An array of <code>Package</code> objects that describe the layer's
      *        packages.
      */
+
     public void setPackages(java.util.Collection<String> packages) {
         if (packages == null) {
             this.packages = null;
@@ -833,6 +868,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withPackages(String... packages) {
         if (this.packages == null) {
             setPackages(new com.amazonaws.internal.SdkInternalList<String>(
@@ -856,6 +892,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withPackages(java.util.Collection<String> packages) {
         setPackages(packages);
         return this;
@@ -870,6 +907,7 @@ public class Layer implements Serializable, Cloneable {
      * @return A <code>VolumeConfigurations</code> object that describes the
      *         layer's Amazon EBS volumes.
      */
+
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
         if (volumeConfigurations == null) {
             volumeConfigurations = new com.amazonaws.internal.SdkInternalList<VolumeConfiguration>();
@@ -887,6 +925,7 @@ public class Layer implements Serializable, Cloneable {
      *        A <code>VolumeConfigurations</code> object that describes the
      *        layer's Amazon EBS volumes.
      */
+
     public void setVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         if (volumeConfigurations == null) {
@@ -916,6 +955,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withVolumeConfigurations(
             VolumeConfiguration... volumeConfigurations) {
         if (this.volumeConfigurations == null) {
@@ -940,6 +980,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withVolumeConfigurations(
             java.util.Collection<VolumeConfiguration> volumeConfigurations) {
         setVolumeConfigurations(volumeConfigurations);
@@ -954,6 +995,7 @@ public class Layer implements Serializable, Cloneable {
      * @param enableAutoHealing
      *        Whether auto healing is disabled for the layer.
      */
+
     public void setEnableAutoHealing(Boolean enableAutoHealing) {
         this.enableAutoHealing = enableAutoHealing;
     }
@@ -965,6 +1007,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return Whether auto healing is disabled for the layer.
      */
+
     public Boolean getEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -979,6 +1022,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withEnableAutoHealing(Boolean enableAutoHealing) {
         setEnableAutoHealing(enableAutoHealing);
         return this;
@@ -991,6 +1035,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return Whether auto healing is disabled for the layer.
      */
+
     public Boolean isEnableAutoHealing() {
         return this.enableAutoHealing;
     }
@@ -1013,6 +1058,7 @@ public class Layer implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         this.autoAssignElasticIps = autoAssignElasticIps;
     }
@@ -1034,6 +1080,7 @@ public class Layer implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -1058,6 +1105,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withAutoAssignElasticIps(Boolean autoAssignElasticIps) {
         setAutoAssignElasticIps(autoAssignElasticIps);
         return this;
@@ -1080,6 +1128,7 @@ public class Layer implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignElasticIps() {
         return this.autoAssignElasticIps;
     }
@@ -1100,6 +1149,7 @@ public class Layer implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *        >How to Edit a Layer</a>.
      */
+
     public void setAutoAssignPublicIps(Boolean autoAssignPublicIps) {
         this.autoAssignPublicIps = autoAssignPublicIps;
     }
@@ -1119,6 +1169,7 @@ public class Layer implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean getAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -1141,6 +1192,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withAutoAssignPublicIps(Boolean autoAssignPublicIps) {
         setAutoAssignPublicIps(autoAssignPublicIps);
         return this;
@@ -1161,6 +1213,7 @@ public class Layer implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html"
      *         >How to Edit a Layer</a>.
      */
+
     public Boolean isAutoAssignPublicIps() {
         return this.autoAssignPublicIps;
     }
@@ -1168,6 +1221,7 @@ public class Layer implements Serializable, Cloneable {
     /**
      * @param defaultRecipes
      */
+
     public void setDefaultRecipes(Recipes defaultRecipes) {
         this.defaultRecipes = defaultRecipes;
     }
@@ -1175,6 +1229,7 @@ public class Layer implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Recipes getDefaultRecipes() {
         return this.defaultRecipes;
     }
@@ -1184,6 +1239,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withDefaultRecipes(Recipes defaultRecipes) {
         setDefaultRecipes(defaultRecipes);
         return this;
@@ -1199,6 +1255,7 @@ public class Layer implements Serializable, Cloneable {
      *        A <code>LayerCustomRecipes</code> object that specifies the
      *        layer's custom recipes.
      */
+
     public void setCustomRecipes(Recipes customRecipes) {
         this.customRecipes = customRecipes;
     }
@@ -1212,6 +1269,7 @@ public class Layer implements Serializable, Cloneable {
      * @return A <code>LayerCustomRecipes</code> object that specifies the
      *         layer's custom recipes.
      */
+
     public Recipes getCustomRecipes() {
         return this.customRecipes;
     }
@@ -1228,6 +1286,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCustomRecipes(Recipes customRecipes) {
         setCustomRecipes(customRecipes);
         return this;
@@ -1241,6 +1300,7 @@ public class Layer implements Serializable, Cloneable {
      * @param createdAt
      *        Date when the layer was created.
      */
+
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
@@ -1252,6 +1312,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return Date when the layer was created.
      */
+
     public String getCreatedAt() {
         return this.createdAt;
     }
@@ -1266,6 +1327,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withCreatedAt(String createdAt) {
         setCreatedAt(createdAt);
         return this;
@@ -1300,6 +1362,7 @@ public class Layer implements Serializable, Cloneable {
      *        , to ensure that your instances have the latest security updates.
      *        </p>
      */
+
     public void setInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         this.installUpdatesOnBoot = installUpdatesOnBoot;
     }
@@ -1333,6 +1396,7 @@ public class Layer implements Serializable, Cloneable {
      *         security updates.
      *         </p>
      */
+
     public Boolean getInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1368,6 +1432,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withInstallUpdatesOnBoot(Boolean installUpdatesOnBoot) {
         setInstallUpdatesOnBoot(installUpdatesOnBoot);
         return this;
@@ -1402,6 +1467,7 @@ public class Layer implements Serializable, Cloneable {
      *         security updates.
      *         </p>
      */
+
     public Boolean isInstallUpdatesOnBoot() {
         return this.installUpdatesOnBoot;
     }
@@ -1414,6 +1480,7 @@ public class Layer implements Serializable, Cloneable {
      * @param useEbsOptimizedInstances
      *        Whether the layer uses Amazon EBS-optimized instances.
      */
+
     public void setUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
         this.useEbsOptimizedInstances = useEbsOptimizedInstances;
     }
@@ -1425,6 +1492,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return Whether the layer uses Amazon EBS-optimized instances.
      */
+
     public Boolean getUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1439,6 +1507,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withUseEbsOptimizedInstances(Boolean useEbsOptimizedInstances) {
         setUseEbsOptimizedInstances(useEbsOptimizedInstances);
         return this;
@@ -1451,6 +1520,7 @@ public class Layer implements Serializable, Cloneable {
      * 
      * @return Whether the layer uses Amazon EBS-optimized instances.
      */
+
     public Boolean isUseEbsOptimizedInstances() {
         return this.useEbsOptimizedInstances;
     }
@@ -1465,6 +1535,7 @@ public class Layer implements Serializable, Cloneable {
      *        A <code>LifeCycleEventConfiguration</code> object that specifies
      *        the Shutdown event configuration.
      */
+
     public void setLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         this.lifecycleEventConfiguration = lifecycleEventConfiguration;
@@ -1479,6 +1550,7 @@ public class Layer implements Serializable, Cloneable {
      * @return A <code>LifeCycleEventConfiguration</code> object that specifies
      *         the Shutdown event configuration.
      */
+
     public LifecycleEventConfiguration getLifecycleEventConfiguration() {
         return this.lifecycleEventConfiguration;
     }
@@ -1495,6 +1567,7 @@ public class Layer implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Layer withLifecycleEventConfiguration(
             LifecycleEventConfiguration lifecycleEventConfiguration) {
         setLifecycleEventConfiguration(lifecycleEventConfiguration);

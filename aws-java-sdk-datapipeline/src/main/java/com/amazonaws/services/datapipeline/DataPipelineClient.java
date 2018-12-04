@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.datapipeline.model.*;
 import com.amazonaws.services.datapipeline.model.transform.*;
@@ -68,6 +70,7 @@ import com.amazonaws.services.datapipeline.model.transform.*;
  * task to the web service.
  * </p>
  */
+@ThreadSafe
 public class DataPipelineClient extends AmazonWebServiceClient implements
         DataPipeline {
     /** Provider for AWS credentials. */
@@ -82,9 +85,40 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "datapipeline";
 
     /**
-     * List of exception unmarshallers for all AWS Data Pipeline exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("PipelineNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TaskNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.TaskNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalServiceError")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("PipelineDeletedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.PipelineDeletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidRequestException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.datapipeline.model.InvalidRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline. A
@@ -104,8 +138,8 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public DataPipelineClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -147,8 +181,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public DataPipelineClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -189,8 +222,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public DataPipelineClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -243,29 +275,6 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class,
-                        "PipelineNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.datapipeline.model.TaskNotFoundException.class,
-                        "TaskNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class,
-                        "InternalServiceError"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.datapipeline.model.PipelineDeletedException.class,
-                        "PipelineDeletedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.datapipeline.model.InvalidRequestException.class,
-                        "InvalidRequestException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -324,7 +333,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivatePipelineRequestMarshaller()
+                request = new ActivatePipelineRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(activatePipelineRequest));
                 // Binds the request metrics to the current request.
@@ -333,9 +342,11 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ActivatePipelineResult> responseHandler = new JsonResponseHandler<ActivatePipelineResult>(
-                    new ActivatePipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ActivatePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ActivatePipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -380,17 +391,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(
-                    new AddTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -432,17 +445,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(createPipelineRequest));
+                request = new CreatePipelineRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreatePipelineResult> responseHandler = new JsonResponseHandler<CreatePipelineResult>(
-                    new CreatePipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreatePipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -495,18 +511,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeactivatePipelineRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deactivatePipelineRequest));
+                request = new DeactivatePipelineRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deactivatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeactivatePipelineResult> responseHandler = new JsonResponseHandler<DeactivatePipelineResult>(
-                    new DeactivatePipelineResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeactivatePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeactivatePipelineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -533,6 +551,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * 
      * @param deletePipelineRequest
      *        Contains the parameters for DeletePipeline.
+     * @return Result of the DeletePipeline operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was not found. Verify that you used the
      *         correct user and account identifiers.
@@ -546,29 +565,35 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * @sample DataPipeline.DeletePipeline
      */
     @Override
-    public void deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+    public DeletePipelineResult deletePipeline(
+            DeletePipelineRequest deletePipelineRequest) {
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeletePipelineRequest> request = null;
-        Response<Void> response = null;
+        Response<DeletePipelineResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller().marshall(super
-                        .beforeMarshalling(deletePipelineRequest));
+                request = new DeletePipelineRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePipelineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeletePipelineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -613,17 +638,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeObjectsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeObjectsRequest));
+                request = new DescribeObjectsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeObjectsResult> responseHandler = new JsonResponseHandler<DescribeObjectsResult>(
-                    new DescribeObjectsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeObjectsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeObjectsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -680,18 +708,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePipelinesRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describePipelinesRequest));
+                request = new DescribePipelinesRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describePipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribePipelinesResult> responseHandler = new JsonResponseHandler<DescribePipelinesResult>(
-                    new DescribePipelinesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePipelinesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribePipelinesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -742,18 +772,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EvaluateExpressionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(evaluateExpressionRequest));
+                request = new EvaluateExpressionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(evaluateExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EvaluateExpressionResult> responseHandler = new JsonResponseHandler<EvaluateExpressionResult>(
-                    new EvaluateExpressionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EvaluateExpressionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EvaluateExpressionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -802,18 +834,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPipelineDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getPipelineDefinitionRequest));
+                request = new GetPipelineDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetPipelineDefinitionResult> responseHandler = new JsonResponseHandler<GetPipelineDefinitionResult>(
-                    new GetPipelineDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetPipelineDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetPipelineDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -855,17 +889,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listPipelinesRequest));
+                request = new ListPipelinesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPipelinesResult> responseHandler = new JsonResponseHandler<ListPipelinesResult>(
-                    new ListPipelinesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPipelinesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPipelinesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -928,17 +964,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PollForTaskRequestMarshaller().marshall(super
-                        .beforeMarshalling(pollForTaskRequest));
+                request = new PollForTaskRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(pollForTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PollForTaskResult> responseHandler = new JsonResponseHandler<PollForTaskResult>(
-                    new PollForTaskResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PollForTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PollForTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1003,18 +1041,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutPipelineDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putPipelineDefinitionRequest));
+                request = new PutPipelineDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutPipelineDefinitionResult> responseHandler = new JsonResponseHandler<PutPipelineDefinitionResult>(
-                    new PutPipelineDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutPipelineDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutPipelineDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1061,17 +1101,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new QueryObjectsRequestMarshaller().marshall(super
-                        .beforeMarshalling(queryObjectsRequest));
+                request = new QueryObjectsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(queryObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<QueryObjectsResult> responseHandler = new JsonResponseHandler<QueryObjectsResult>(
-                    new QueryObjectsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<QueryObjectsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new QueryObjectsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1116,17 +1158,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(
-                    new RemoveTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1188,18 +1232,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReportTaskProgressRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(reportTaskProgressRequest));
+                request = new ReportTaskProgressRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(reportTaskProgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReportTaskProgressResult> responseHandler = new JsonResponseHandler<ReportTaskProgressResult>(
-                    new ReportTaskProgressResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ReportTaskProgressResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ReportTaskProgressResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1245,18 +1291,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReportTaskRunnerHeartbeatRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(reportTaskRunnerHeartbeatRequest));
+                request = new ReportTaskRunnerHeartbeatRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(reportTaskRunnerHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReportTaskRunnerHeartbeatResult> responseHandler = new JsonResponseHandler<ReportTaskRunnerHeartbeatResult>(
-                    new ReportTaskRunnerHeartbeatResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ReportTaskRunnerHeartbeatResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ReportTaskRunnerHeartbeatResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1279,6 +1327,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * 
      * @param setStatusRequest
      *        Contains the parameters for SetStatus.
+     * @return Result of the SetStatus operation returned by the service.
      * @throws PipelineNotFoundException
      *         The specified pipeline was not found. Verify that you used the
      *         correct user and account identifiers.
@@ -1294,29 +1343,33 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
      * @sample DataPipeline.SetStatus
      */
     @Override
-    public void setStatus(SetStatusRequest setStatusRequest) {
+    public SetStatusResult setStatus(SetStatusRequest setStatusRequest) {
         ExecutionContext executionContext = createExecutionContext(setStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetStatusRequest> request = null;
-        Response<Void> response = null;
+        Response<SetStatusResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetStatusRequestMarshaller().marshall(super
-                        .beforeMarshalling(setStatusRequest));
+                request = new SetStatusRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(setStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<SetStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1366,17 +1419,19 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTaskStatusRequestMarshaller().marshall(super
-                        .beforeMarshalling(setTaskStatusRequest));
+                request = new SetTaskStatusRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(setTaskStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<SetTaskStatusResult> responseHandler = new JsonResponseHandler<SetTaskStatusResult>(
-                    new SetTaskStatusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<SetTaskStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new SetTaskStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1424,18 +1479,20 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ValidatePipelineDefinitionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(validatePipelineDefinitionRequest));
+                request = new ValidatePipelineDefinitionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(validatePipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ValidatePipelineDefinitionResult> responseHandler = new JsonResponseHandler<ValidatePipelineDefinitionResult>(
-                    new ValidatePipelineDefinitionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ValidatePipelineDefinitionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ValidatePipelineDefinitionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1469,33 +1526,48 @@ public class DataPipelineClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

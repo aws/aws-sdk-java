@@ -44,6 +44,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * 
      * @return The details about your AWS Config rules.
      */
+
     public java.util.List<ConfigRule> getConfigRules() {
         if (configRules == null) {
             configRules = new com.amazonaws.internal.SdkInternalList<ConfigRule>();
@@ -59,6 +60,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * @param configRules
      *        The details about your AWS Config rules.
      */
+
     public void setConfigRules(java.util.Collection<ConfigRule> configRules) {
         if (configRules == null) {
             this.configRules = null;
@@ -85,6 +87,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesResult withConfigRules(ConfigRule... configRules) {
         if (this.configRules == null) {
             setConfigRules(new com.amazonaws.internal.SdkInternalList<ConfigRule>(
@@ -106,6 +109,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesResult withConfigRules(
             java.util.Collection<ConfigRule> configRules) {
         setConfigRules(configRules);
@@ -122,6 +126,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      *        The string that you use in a subsequent request to get the next
      *        page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * @return The string that you use in a subsequent request to get the next
      *         page of results in a paginated response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class DescribeConfigRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeConfigRulesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

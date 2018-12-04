@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,71 +55,68 @@ public class GetBatchPredictionResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchPredictionId", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setBatchPredictionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setBatchPredictionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setMLModelId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getBatchPredictionResult.setMLModelId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchPredictionDataSourceId",
                         targetDepth)) {
                     context.nextToken();
                     getBatchPredictionResult
-                            .setBatchPredictionDataSourceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setBatchPredictionDataSourceId(context
+                                    .getUnmarshaller(String.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setInputDataLocationS3(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setInputDataLocationS3(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setCreatedByIamUser(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setCreatedByIamUser(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setCreatedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setLastUpdatedAt(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setLastUpdatedAt(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUri", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult
-                            .setOutputUri(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getBatchPredictionResult.setOutputUri(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setLogUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setLogUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    getBatchPredictionResult.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getBatchPredictionResult.setMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -40,6 +40,7 @@ public class BatchGetOnPremisesInstancesResult implements Serializable,
      * 
      * @return Information about the on-premises instances.
      */
+
     public java.util.List<InstanceInfo> getInstanceInfos() {
         if (instanceInfos == null) {
             instanceInfos = new com.amazonaws.internal.SdkInternalList<InstanceInfo>();
@@ -55,6 +56,7 @@ public class BatchGetOnPremisesInstancesResult implements Serializable,
      * @param instanceInfos
      *        Information about the on-premises instances.
      */
+
     public void setInstanceInfos(
             java.util.Collection<InstanceInfo> instanceInfos) {
         if (instanceInfos == null) {
@@ -82,6 +84,7 @@ public class BatchGetOnPremisesInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetOnPremisesInstancesResult withInstanceInfos(
             InstanceInfo... instanceInfos) {
         if (this.instanceInfos == null) {
@@ -104,6 +107,7 @@ public class BatchGetOnPremisesInstancesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetOnPremisesInstancesResult withInstanceInfos(
             java.util.Collection<InstanceInfo> instanceInfos) {
         setInstanceInfos(instanceInfos);

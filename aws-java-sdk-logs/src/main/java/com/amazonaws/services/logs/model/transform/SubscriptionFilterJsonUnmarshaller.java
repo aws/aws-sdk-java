@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class SubscriptionFilterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filterName", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setFilterName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setFilterName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("logGroupName", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setLogGroupName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setLogGroupName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterPattern", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setFilterPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setFilterPattern(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinationArn", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setDestinationArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setDestinationArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setRoleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setRoleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    subscriptionFilter.setCreationTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    subscriptionFilter.setCreationTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

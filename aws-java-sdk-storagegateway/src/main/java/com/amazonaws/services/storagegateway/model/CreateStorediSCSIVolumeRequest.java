@@ -24,11 +24,31 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>CreateStorediSCSIVolumeInput$DiskId</a></li>
- * <li><a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a></li>
- * <li><a>CreateStorediSCSIVolumeInput$PreserveExistingData</a></li>
- * <li><a>CreateStorediSCSIVolumeInput$SnapshotId</a></li>
- * <li><a>CreateStorediSCSIVolumeInput$TargetName</a></li>
+ * <li>
+ * <p>
+ * <a>CreateStorediSCSIVolumeInput$DiskId</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateStorediSCSIVolumeInput$SnapshotId</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateStorediSCSIVolumeInput$TargetName</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
@@ -62,7 +82,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * disk. Otherwise, specifying this field as false creates an empty volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: true, false
+     * Valid Values: true, false
      * </p>
      */
     private Boolean preserveExistingData;
@@ -72,9 +92,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      */
     private String targetName;
@@ -85,7 +105,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * to get a list of the network interfaces available on a gateway.
      * </p>
      * <p>
-     * <i>Valid Values</i>: A valid IP address.
+     * Valid Values: A valid IP address.
      * </p>
      */
     private String networkInterfaceId;
@@ -93,6 +113,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -100,6 +121,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -109,6 +131,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -128,6 +151,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        "http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *        >ListLocalDisks</a> to list disk IDs for a gateway.
      */
+
     public void setDiskId(String diskId) {
         this.diskId = diskId;
     }
@@ -145,6 +169,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         "http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *         >ListLocalDisks</a> to list disk IDs for a gateway.
      */
+
     public String getDiskId() {
         return this.diskId;
     }
@@ -165,6 +190,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withDiskId(String diskId) {
         setDiskId(diskId);
         return this;
@@ -190,6 +216,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API
      *        Reference</i>.
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -214,6 +241,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API
      *         Reference</i>.
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -240,6 +268,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         setSnapshotId(snapshotId);
         return this;
@@ -251,7 +280,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * disk. Otherwise, specifying this field as false creates an empty volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: true, false
+     * Valid Values: true, false
      * </p>
      * 
      * @param preserveExistingData
@@ -259,8 +288,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        local disk. Otherwise, specifying this field as false creates an
      *        empty volume.</p>
      *        <p>
-     *        <i>Valid Values</i>: true, false
+     *        Valid Values: true, false
      */
+
     public void setPreserveExistingData(Boolean preserveExistingData) {
         this.preserveExistingData = preserveExistingData;
     }
@@ -271,15 +301,16 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * disk. Otherwise, specifying this field as false creates an empty volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: true, false
+     * Valid Values: true, false
      * </p>
      * 
      * @return Specify this field as true if you want to preserve the data on
      *         the local disk. Otherwise, specifying this field as false creates
      *         an empty volume.</p>
      *         <p>
-     *         <i>Valid Values</i>: true, false
+     *         Valid Values: true, false
      */
+
     public Boolean getPreserveExistingData() {
         return this.preserveExistingData;
     }
@@ -290,7 +321,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * disk. Otherwise, specifying this field as false creates an empty volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: true, false
+     * Valid Values: true, false
      * </p>
      * 
      * @param preserveExistingData
@@ -298,10 +329,11 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        local disk. Otherwise, specifying this field as false creates an
      *        empty volume.</p>
      *        <p>
-     *        <i>Valid Values</i>: true, false
+     *        Valid Values: true, false
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withPreserveExistingData(
             Boolean preserveExistingData) {
         setPreserveExistingData(preserveExistingData);
@@ -314,15 +346,16 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * disk. Otherwise, specifying this field as false creates an empty volume.
      * </p>
      * <p>
-     * <i>Valid Values</i>: true, false
+     * Valid Values: true, false
      * </p>
      * 
      * @return Specify this field as true if you want to preserve the data on
      *         the local disk. Otherwise, specifying this field as false creates
      *         an empty volume.</p>
      *         <p>
-     *         <i>Valid Values</i>: true, false
+     *         Valid Values: true, false
      */
+
     public Boolean isPreserveExistingData() {
         return this.preserveExistingData;
     }
@@ -333,9 +366,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @param targetName
@@ -343,10 +376,11 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        target and as a suffix for the target ARN. For example, specifying
      *        <code>TargetName</code> as <i>myvolume</i> results in the target
      *        ARN of
-     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway
-     *        /target/iqn.1997-05.com.amazon:myvolume. The target name must be
-     *        unique across all volumes of a gateway.
+     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12
+     *        A3456B/target/iqn.1997-05.com.amazon:myvolume. The target name
+     *        must be unique across all volumes of a gateway.
      */
+
     public void setTargetName(String targetName) {
         this.targetName = targetName;
     }
@@ -357,9 +391,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @return The name of the iSCSI target used by initiators to connect to the
@@ -367,9 +401,10 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         specifying <code>TargetName</code> as <i>myvolume</i> results in
      *         the target ARN of
      *         arn:aws:storagegateway:us-east-1:111122223333:gateway
-     *         /mygateway/target/iqn.1997-05.com.amazon:myvolume. The target
+     *         /sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The target
      *         name must be unique across all volumes of a gateway.
      */
+
     public String getTargetName() {
         return this.targetName;
     }
@@ -380,9 +415,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * and as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
      * arn
-     * :aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn
-     * .1997-05.com.amazon:myvolume. The target name must be unique across all
-     * volumes of a gateway.
+     * :aws:storagegateway:us-east-1:111122223333:gateway/sgw-12A3456B/target/
+     * iqn.1997-05.com.amazon:myvolume. The target name must be unique across
+     * all volumes of a gateway.
      * </p>
      * 
      * @param targetName
@@ -390,12 +425,13 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        target and as a suffix for the target ARN. For example, specifying
      *        <code>TargetName</code> as <i>myvolume</i> results in the target
      *        ARN of
-     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway
-     *        /target/iqn.1997-05.com.amazon:myvolume. The target name must be
-     *        unique across all volumes of a gateway.
+     *        arn:aws:storagegateway:us-east-1:111122223333:gateway/sgw-12
+     *        A3456B/target/iqn.1997-05.com.amazon:myvolume. The target name
+     *        must be unique across all volumes of a gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withTargetName(String targetName) {
         setTargetName(targetName);
         return this;
@@ -408,7 +444,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * to get a list of the network interfaces available on a gateway.
      * </p>
      * <p>
-     * <i>Valid Values</i>: A valid IP address.
+     * Valid Values: A valid IP address.
      * </p>
      * 
      * @param networkInterfaceId
@@ -417,8 +453,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        <a>DescribeGatewayInformation</a> to get a list of the network
      *        interfaces available on a gateway.</p>
      *        <p>
-     *        <i>Valid Values</i>: A valid IP address.
+     *        Valid Values: A valid IP address.
      */
+
     public void setNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
     }
@@ -430,7 +467,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * to get a list of the network interfaces available on a gateway.
      * </p>
      * <p>
-     * <i>Valid Values</i>: A valid IP address.
+     * Valid Values: A valid IP address.
      * </p>
      * 
      * @return The network interface of the gateway on which to expose the iSCSI
@@ -438,8 +475,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *         <a>DescribeGatewayInformation</a> to get a list of the network
      *         interfaces available on a gateway.</p>
      *         <p>
-     *         <i>Valid Values</i>: A valid IP address.
+     *         Valid Values: A valid IP address.
      */
+
     public String getNetworkInterfaceId() {
         return this.networkInterfaceId;
     }
@@ -451,7 +489,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      * to get a list of the network interfaces available on a gateway.
      * </p>
      * <p>
-     * <i>Valid Values</i>: A valid IP address.
+     * Valid Values: A valid IP address.
      * </p>
      * 
      * @param networkInterfaceId
@@ -460,10 +498,11 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest
      *        <a>DescribeGatewayInformation</a> to get a list of the network
      *        interfaces available on a gateway.</p>
      *        <p>
-     *        <i>Valid Values</i>: A valid IP address.
+     *        Valid Values: A valid IP address.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStorediSCSIVolumeRequest withNetworkInterfaceId(
             String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);

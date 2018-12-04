@@ -27,65 +27,68 @@ public class GetModelTemplateResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Apache <a target="_blank"
+     * The Apache <a
      * href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     * >Velocity Template Language (VTL)</a> template content used for the
-     * template resource.
+     * target="_blank">Velocity Template Language (VTL)</a> template content
+     * used for the template resource.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The Apache <a target="_blank"
+     * The Apache <a
      * href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     * >Velocity Template Language (VTL)</a> template content used for the
-     * template resource.
+     * target="_blank">Velocity Template Language (VTL)</a> template content
+     * used for the template resource.
      * </p>
      * 
      * @param value
-     *        The Apache <a target="_blank" href=
+     *        The Apache <a href=
      *        "http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     *        >Velocity Template Language (VTL)</a> template content used for
-     *        the template resource.
+     *        target="_blank">Velocity Template Language (VTL)</a> template
+     *        content used for the template resource.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
 
     /**
      * <p>
-     * The Apache <a target="_blank"
+     * The Apache <a
      * href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     * >Velocity Template Language (VTL)</a> template content used for the
-     * template resource.
+     * target="_blank">Velocity Template Language (VTL)</a> template content
+     * used for the template resource.
      * </p>
      * 
-     * @return The Apache <a target="_blank"
+     * @return The Apache <a
      *         href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     *         >Velocity Template Language (VTL)</a> template content used for
-     *         the template resource.
+     *         target="_blank">Velocity Template Language (VTL)</a> template
+     *         content used for the template resource.
      */
+
     public String getValue() {
         return this.value;
     }
 
     /**
      * <p>
-     * The Apache <a target="_blank"
+     * The Apache <a
      * href="http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     * >Velocity Template Language (VTL)</a> template content used for the
-     * template resource.
+     * target="_blank">Velocity Template Language (VTL)</a> template content
+     * used for the template resource.
      * </p>
      * 
      * @param value
-     *        The Apache <a target="_blank" href=
+     *        The Apache <a href=
      *        "http://velocity.apache.org/engine/devel/vtl-reference-guide.html"
-     *        >Velocity Template Language (VTL)</a> template content used for
-     *        the template resource.
+     *        target="_blank">Velocity Template Language (VTL)</a> template
+     *        content used for the template resource.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetModelTemplateResult withValue(String value) {
         setValue(value);
         return this;

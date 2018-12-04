@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,14 +61,13 @@ public class GetRecordsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextShardIterator", targetDepth)) {
                     context.nextToken();
-                    getRecordsResult
-                            .setNextShardIterator(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    getRecordsResult.setNextShardIterator(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MillisBehindLatest", targetDepth)) {
                     context.nextToken();
-                    getRecordsResult.setMillisBehindLatest(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getRecordsResult.setMillisBehindLatest(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

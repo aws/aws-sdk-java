@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.services.cloudtrail.model.transform.*;
@@ -53,20 +55,24 @@ import com.amazonaws.services.cloudtrail.model.transform.*;
  * source IP address, the request parameters, and the response elements returned
  * by the service.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
- * convenient way to create programmatic access to AWSCloudTrail. For example,
- * the SDKs take care of cryptographically signing requests, managing errors,
- * and retrying requests automatically. For information about the AWS SDKs,
- * including how to download and install them, see the <a
- * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * <note>
+ * <p>
+ * As an alternative to the API, you can use one of the AWS SDKs, which consist
+ * of libraries and sample code for various programming languages and platforms
+ * (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to
+ * create programmatic access to AWSCloudTrail. For example, the SDKs take care
+ * of cryptographically signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to download
+ * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
+ * Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * See the CloudTrail User Guide for information about the data that is included
  * with each AWS API call listed in the log files.
  * </p>
  */
+@ThreadSafe
 public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         AWSCloudTrail {
     /** Provider for AWS credentials. */
@@ -81,9 +87,193 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "cloudtrail";
 
     /**
-     * List of exception unmarshallers for all CloudTrail exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidNextTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KmsKeyNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TrailNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KmsKeyDisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "TrailAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "OperationNotPermittedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.OperationNotPermittedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidS3PrefixException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CloudTrailARNInvalidException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTimeRangeException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "S3BucketDoesNotExistException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceTypeNotSupportedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientEncryptionPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidLookupAttributesException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidHomeRegionException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MaximumNumberOfTrailsExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidMaxResultsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidMaxResultsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidCloudWatchLogsRoleArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientSnsTopicPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSnsTopicNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidCloudWatchLogsLogGroupArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "CloudWatchLogsDeliveryUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InsufficientS3BucketPolicyException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidS3BucketNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TrailNotProvidedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidKmsKeyIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidTagParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TagsLimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidParameterCombinationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTrailNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class)));
 
     /**
      * Constructs a new client to invoke service methods on CloudTrail. A
@@ -103,8 +293,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCloudTrailClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -145,8 +335,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AWSCloudTrailClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -185,8 +374,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AWSCloudTrailClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -237,137 +425,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class,
-                        "InvalidNextTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class,
-                        "KmsKeyNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class,
-                        "TrailNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class,
-                        "KmsKeyDisabledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class,
-                        "TrailAlreadyExistsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.OperationNotPermittedException.class,
-                        "OperationNotPermittedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class,
-                        "InvalidS3PrefixException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class,
-                        "CloudTrailARNInvalidException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class,
-                        "InvalidTimeRangeException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class,
-                        "S3BucketDoesNotExistException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class,
-                        "ResourceTypeNotSupportedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.UnsupportedOperationException.class,
-                        "UnsupportedOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class,
-                        "InsufficientEncryptionPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class,
-                        "InvalidLookupAttributesException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class,
-                        "InvalidHomeRegionException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class,
-                        "MaximumNumberOfTrailsExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidMaxResultsException.class,
-                        "InvalidMaxResultsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class,
-                        "InvalidCloudWatchLogsRoleArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class,
-                        "InsufficientSnsTopicPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class,
-                        "InvalidSnsTopicNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class,
-                        "InvalidCloudWatchLogsLogGroupArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTokenException.class,
-                        "InvalidTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class,
-                        "CloudWatchLogsDeliveryUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class,
-                        "InsufficientS3BucketPolicyException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class,
-                        "InvalidS3BucketNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class,
-                        "TrailNotProvidedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class,
-                        "InvalidKmsKeyIdException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class,
-                        "InvalidTagParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class,
-                        "TagsLimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class,
-                        "InvalidParameterCombinationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class,
-                        "InvalidTrailNameException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -399,9 +456,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
@@ -410,17 +467,37 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         Currently, the limit is 10.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidTagParameterException
      *         This exception is thrown when the key or value specified for the
      *         tag does not match the regular expression
@@ -445,17 +522,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<AddTagsResult> responseHandler = new JsonResponseHandler<AddTagsResult>(
-                    new AddTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -508,15 +587,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
      * @throws InvalidParameterCombinationException
@@ -554,17 +652,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(createTrailRequest));
+                request = new CreateTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateTrailResult> responseHandler = new JsonResponseHandler<CreateTrailResult>(
-                    new CreateTrailResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -593,15 +693,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -620,17 +739,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteTrailRequest));
+                request = new DeleteTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTrailResult> responseHandler = new JsonResponseHandler<DeleteTrailResult>(
-                    new DeleteTrailResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -671,17 +792,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrailsRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeTrailsRequest));
+                request = new DescribeTrailsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(describeTrailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeTrailsResult> responseHandler = new JsonResponseHandler<DescribeTrailsResult>(
-                    new DescribeTrailsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrailsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeTrailsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -716,15 +840,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @sample AWSCloudTrail.GetTrailStatus
      */
     @Override
@@ -740,17 +883,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTrailStatusRequestMarshaller().marshall(super
-                        .beforeMarshalling(getTrailStatusRequest));
+                request = new GetTrailStatusRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getTrailStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetTrailStatusResult> responseHandler = new JsonResponseHandler<GetTrailStatusResult>(
-                    new GetTrailStatusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetTrailStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetTrailStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -768,10 +914,14 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * validate digest files that were signed with its corresponding private
      * key.
      * </p>
-     * <note>CloudTrail uses different private/public key pairs per region. Each
+     * <note>
+     * <p>
+     * CloudTrail uses different private/public key pairs per region. Each
      * digest file is signed with a private key unique to its region. Therefore,
      * when you validate a digest file from a particular region, you must look
-     * in the same region for its corresponding public key.</note>
+     * in the same region for its corresponding public key.
+     * </p>
+     * </note>
      * 
      * @param listPublicKeysRequest
      *        Requests the public keys for a specified time range.
@@ -803,17 +953,20 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPublicKeysRequestMarshaller().marshall(super
-                        .beforeMarshalling(listPublicKeysRequest));
+                request = new ListPublicKeysRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listPublicKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListPublicKeysResult> responseHandler = new JsonResponseHandler<ListPublicKeysResult>(
-                    new ListPublicKeysResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListPublicKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListPublicKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -831,9 +984,6 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists the tags for the specified trail or trails in the current region.
-     * </p>
-     * <p>
      * Lists the tags for the trail in the current region.
      * </p>
      * 
@@ -845,25 +995,45 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not
      *         supported.
@@ -886,17 +1056,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listTagsRequest));
+                request = new ListTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsResult> responseHandler = new JsonResponseHandler<ListTagsResult>(
-                    new ListTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -920,11 +1092,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      * results returned is 10, with a maximum of 50 possible. The response
      * includes a token that you can use to get the next page of results.
      * </p>
-     * <important>The rate of lookup requests is limited to one per second per
-     * account. If this limit is exceeded, a throttling error occurs.
-     * </important> <important>Events that occurred during the selected time
-     * range will not be available for lookup if CloudTrail logging was not
-     * enabled when the events occurred.</important>
+     * <important>
+     * <p>
+     * The rate of lookup requests is limited to one per second per account. If
+     * this limit is exceeded, a throttling error occurs.
+     * </p>
+     * </important> <important>
+     * <p>
+     * Events that occurred during the selected time range will not be available
+     * for lookup if CloudTrail logging was not enabled when the events
+     * occurred.
+     * </p>
+     * </important>
      * 
      * @param lookupEventsRequest
      *        Contains a request for LookupEvents.
@@ -956,17 +1135,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LookupEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(lookupEventsRequest));
+                request = new LookupEventsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(lookupEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<LookupEventsResult> responseHandler = new JsonResponseHandler<LookupEventsResult>(
-                    new LookupEventsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<LookupEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new LookupEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -995,25 +1176,45 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         found.
      * @throws CloudTrailARNInvalidException
      *         This exception is thrown when an operation is called with an
-     *         invalid trail ARN. The format of a trail ARN is
+     *         invalid trail ARN. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not
      *         supported by CloudTrail.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not
-     *         valid. Trail names must meet the following requirements:</p>
+     *         valid. Trail names must meet the following requirements:
+     *         </p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidTagParameterException
      *         This exception is thrown when the key or value specified for the
      *         tag does not match the regular expression
@@ -1038,17 +1239,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller().marshall(super
-                        .beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTagsResult> responseHandler = new JsonResponseHandler<RemoveTagsResult>(
-                    new RemoveTagsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1079,15 +1282,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -1107,17 +1329,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartLoggingRequestMarshaller().marshall(super
-                        .beforeMarshalling(startLoggingRequest));
+                request = new StartLoggingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(startLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StartLoggingResult> responseHandler = new JsonResponseHandler<StartLoggingResult>(
-                    new StartLoggingResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StartLoggingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StartLoggingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1151,15 +1375,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail
      *         from a region other than the region in which the trail was
@@ -1178,17 +1421,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopLoggingRequestMarshaller().marshall(super
-                        .beforeMarshalling(stopLoggingRequest));
+                request = new StopLoggingRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(stopLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<StopLoggingResult> responseHandler = new JsonResponseHandler<StopLoggingResult>(
-                    new StopLoggingResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<StopLoggingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new StopLoggingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1243,15 +1488,34 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
      *         This exception is thrown when the provided trail name is not
      *         valid. Trail names must meet the following requirements:</p>
      *         <ul>
-     *         <li>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
-     *         (.), underscores (_), or dashes (-)</li>
-     *         <li>Start with a letter or number, and end with a letter or
-     *         number</li>
-     *         <li>Be between 3 and 128 characters</li>
-     *         <li>Have no adjacent periods, underscores or dashes. Names like
+     *         <li>
+     *         <p>
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods
+     *         (.), underscores (_), or dashes (-)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Start with a letter or number, and end with a letter or number
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be between 3 and 128 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Have no adjacent periods, underscores or dashes. Names like
      *         <code>my-_namespace</code> and <code>my--namespace</code> are
-     *         invalid.</li>
-     *         <li>Not be in IP address format (for example, 192.168.5.4)</li>
+     *         invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not be in IP address format (for example, 192.168.5.4)
+     *         </p>
+     *         </li>
      * @throws TrailNotProvidedException
      *         This exception is deprecated.
      * @throws InvalidParameterCombinationException
@@ -1293,17 +1557,19 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTrailRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateTrailRequest));
+                request = new UpdateTrailRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTrailResult> responseHandler = new JsonResponseHandler<UpdateTrailResult>(
-                    new UpdateTrailResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateTrailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1337,33 +1603,48 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

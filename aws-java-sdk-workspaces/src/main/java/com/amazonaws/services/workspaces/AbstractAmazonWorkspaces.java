@@ -39,8 +39,23 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkspacesResult createWorkspaces(
             CreateWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

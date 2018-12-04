@@ -48,6 +48,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * @param certificateId
      *        The ID of the certificate.
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -59,6 +60,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the certificate.
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -73,6 +75,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcceptCertificateTransferRequest withCertificateId(
             String certificateId) {
         setCertificateId(certificateId);
@@ -87,6 +90,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * @param setAsActive
      *        Specifies whether the certificate is active.
      */
+
     public void setSetAsActive(Boolean setAsActive) {
         this.setAsActive = setAsActive;
     }
@@ -98,6 +102,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether the certificate is active.
      */
+
     public Boolean getSetAsActive() {
         return this.setAsActive;
     }
@@ -112,6 +117,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AcceptCertificateTransferRequest withSetAsActive(Boolean setAsActive) {
         setSetAsActive(setAsActive);
         return this;
@@ -124,6 +130,7 @@ public class AcceptCertificateTransferRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies whether the certificate is active.
      */
+
     public Boolean isSetAsActive() {
         return this.setAsActive;
     }

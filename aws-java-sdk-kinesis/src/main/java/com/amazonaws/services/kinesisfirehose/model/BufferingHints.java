@@ -20,7 +20,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes the buffering to perform before delivering data to the destination.
+ * Describes hints for the buffering to perform before delivering data to the
+ * destination. Please note that these options are treated as hints, and
+ * therefore Firehose may choose to use different values when it is optimal.
  * </p>
  */
 public class BufferingHints implements Serializable, Cloneable {
@@ -67,6 +69,7 @@ public class BufferingHints implements Serializable, Cloneable {
      *        seconds. For example, if you typically ingest data at 1 MB/sec set
      *        SizeInMBs to be 10 MB or higher.
      */
+
     public void setSizeInMBs(Integer sizeInMBs) {
         this.sizeInMBs = sizeInMBs;
     }
@@ -91,6 +94,7 @@ public class BufferingHints implements Serializable, Cloneable {
      *         seconds. For example, if you typically ingest data at 1 MB/sec
      *         set SizeInMBs to be 10 MB or higher.
      */
+
     public Integer getSizeInMBs() {
         return this.sizeInMBs;
     }
@@ -118,6 +122,7 @@ public class BufferingHints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BufferingHints withSizeInMBs(Integer sizeInMBs) {
         setSizeInMBs(sizeInMBs);
         return this;
@@ -133,6 +138,7 @@ public class BufferingHints implements Serializable, Cloneable {
      *        Buffer incoming data for the specified period of time, in seconds,
      *        before delivering it to the destination. The default value is 300.
      */
+
     public void setIntervalInSeconds(Integer intervalInSeconds) {
         this.intervalInSeconds = intervalInSeconds;
     }
@@ -147,6 +153,7 @@ public class BufferingHints implements Serializable, Cloneable {
      *         seconds, before delivering it to the destination. The default
      *         value is 300.
      */
+
     public Integer getIntervalInSeconds() {
         return this.intervalInSeconds;
     }
@@ -163,6 +170,7 @@ public class BufferingHints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BufferingHints withIntervalInSeconds(Integer intervalInSeconds) {
         setIntervalInSeconds(intervalInSeconds);
         return this;

@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListPolicyVersionsRequest Marshaller
@@ -47,7 +49,14 @@ public class ListPolicyVersionsRequestMarshaller
         implements
         Marshaller<Request<ListPolicyVersionsRequest>, ListPolicyVersionsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListPolicyVersionsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListPolicyVersionsRequest> marshall(
             ListPolicyVersionsRequest listPolicyVersionsRequest) {
@@ -64,11 +73,13 @@ public class ListPolicyVersionsRequestMarshaller
 
         String uriResourcePath = "/policies/{policyName}/version";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (listPolicyVersionsRequest.getPolicyName() == null) ? ""
-                        : StringUtils.fromString(listPolicyVersionsRequest
-                                .getPolicyName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{policyName}",
+                        (listPolicyVersionsRequest.getPolicyName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listPolicyVersionsRequest
+                                                .getPolicyName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

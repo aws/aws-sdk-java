@@ -50,6 +50,7 @@ public class StageKey implements Serializable, Cloneable {
      *        A list of <a>Stage</a> resources that are associated with the
      *        <a>ApiKey</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -63,6 +64,7 @@ public class StageKey implements Serializable, Cloneable {
      * @return A list of <a>Stage</a> resources that are associated with the
      *         <a>ApiKey</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -79,6 +81,7 @@ public class StageKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageKey withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -93,6 +96,7 @@ public class StageKey implements Serializable, Cloneable {
      *        The stage name in the <a>RestApi</a> that the stage key
      *        references.
      */
+
     public void setStageName(String stageName) {
         this.stageName = stageName;
     }
@@ -105,6 +109,7 @@ public class StageKey implements Serializable, Cloneable {
      * @return The stage name in the <a>RestApi</a> that the stage key
      *         references.
      */
+
     public String getStageName() {
         return this.stageName;
     }
@@ -120,6 +125,7 @@ public class StageKey implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StageKey withStageName(String stageName) {
         setStageName(stageName);
         return this;

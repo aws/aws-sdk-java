@@ -18,6 +18,8 @@ package com.amazonaws.services.codecommit.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,55 +55,55 @@ public class RepositoryMetadataJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("accountId", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setAccountId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setAccountId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryId", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setRepositoryId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setRepositoryId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("repositoryName", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setRepositoryName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setRepositoryName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("repositoryDescription", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata
-                            .setRepositoryDescription(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    repositoryMetadata.setRepositoryDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("defaultBranch", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setDefaultBranch(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setDefaultBranch(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setLastModifiedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setLastModifiedDate(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setCreationDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setCreationDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("cloneUrlHttp", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setCloneUrlHttp(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setCloneUrlHttp(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("cloneUrlSsh", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setCloneUrlSsh(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setCloneUrlSsh(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    repositoryMetadata.setArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    repositoryMetadata.setArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

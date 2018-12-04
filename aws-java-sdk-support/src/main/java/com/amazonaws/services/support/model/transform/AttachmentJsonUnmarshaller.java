@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class AttachmentJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("fileName", targetDepth)) {
                     context.nextToken();
-                    attachment.setFileName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    attachment.setFileName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("data", targetDepth)) {
                     context.nextToken();
-                    attachment.setData(ByteBufferJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    attachment.setData(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

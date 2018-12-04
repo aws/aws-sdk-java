@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -63,9 +65,9 @@ public class MessageDsnStaxUnmarshaller implements
 
                 if (context.testExpression("ExtensionFields/member",
                         targetDepth)) {
-                    messageDsn.getExtensionFields().add(
-                            ExtensionFieldStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    messageDsn
+                            .withExtensionFields(ExtensionFieldStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

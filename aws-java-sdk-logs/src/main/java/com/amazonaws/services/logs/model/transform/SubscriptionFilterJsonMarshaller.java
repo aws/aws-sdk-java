@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SubscriptionFilterMarshaller
@@ -39,49 +34,45 @@ import com.amazonaws.util.json.*;
 public class SubscriptionFilterJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(SubscriptionFilter subscriptionFilter,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (subscriptionFilter == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (subscriptionFilter.getFilterName() != null) {
-                jsonWriter.key("filterName").value(
+                jsonGenerator.writeFieldName("filterName").writeValue(
                         subscriptionFilter.getFilterName());
             }
-
             if (subscriptionFilter.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         subscriptionFilter.getLogGroupName());
             }
-
             if (subscriptionFilter.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         subscriptionFilter.getFilterPattern());
             }
-
             if (subscriptionFilter.getDestinationArn() != null) {
-                jsonWriter.key("destinationArn").value(
+                jsonGenerator.writeFieldName("destinationArn").writeValue(
                         subscriptionFilter.getDestinationArn());
             }
-
             if (subscriptionFilter.getRoleArn() != null) {
-                jsonWriter.key("roleArn")
-                        .value(subscriptionFilter.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        subscriptionFilter.getRoleArn());
             }
-
             if (subscriptionFilter.getCreationTime() != null) {
-                jsonWriter.key("creationTime").value(
+                jsonGenerator.writeFieldName("creationTime").writeValue(
                         subscriptionFilter.getCreationTime());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

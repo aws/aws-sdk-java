@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,8 +54,8 @@ public class DescribeApplicationVersionsResultStaxUnmarshaller
 
                 if (context.testExpression("ApplicationVersions/member",
                         targetDepth)) {
-                    describeApplicationVersionsResult.getApplicationVersions()
-                            .add(ApplicationVersionDescriptionStaxUnmarshaller
+                    describeApplicationVersionsResult
+                            .withApplicationVersions(ApplicationVersionDescriptionStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

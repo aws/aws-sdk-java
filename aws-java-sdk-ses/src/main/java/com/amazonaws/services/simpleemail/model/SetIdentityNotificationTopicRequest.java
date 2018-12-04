@@ -20,9 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request to set or clear an identity's notification topic.
- * </p>
+ * 
  */
 public class SetIdentityNotificationTopicRequest extends
         AmazonWebServiceRequest implements Serializable, Cloneable {
@@ -68,6 +66,7 @@ public class SetIdentityNotificationTopicRequest extends
      *        <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
      *        .
      */
+
     public void setIdentity(String identity) {
         this.identity = identity;
     }
@@ -87,6 +86,7 @@ public class SetIdentityNotificationTopicRequest extends
      *         <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>
      *         .
      */
+
     public String getIdentity() {
         return this.identity;
     }
@@ -109,6 +109,7 @@ public class SetIdentityNotificationTopicRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityNotificationTopicRequest withIdentity(String identity) {
         setIdentity(identity);
         return this;
@@ -125,6 +126,7 @@ public class SetIdentityNotificationTopicRequest extends
      *        Amazon SNS topic.
      * @see NotificationType
      */
+
     public void setNotificationType(String notificationType) {
         this.notificationType = notificationType;
     }
@@ -139,6 +141,7 @@ public class SetIdentityNotificationTopicRequest extends
      *         Amazon SNS topic.
      * @see NotificationType
      */
+
     public String getNotificationType() {
         return this.notificationType;
     }
@@ -156,6 +159,7 @@ public class SetIdentityNotificationTopicRequest extends
      *         chained together.
      * @see NotificationType
      */
+
     public SetIdentityNotificationTopicRequest withNotificationType(
             String notificationType) {
         setNotificationType(notificationType);
@@ -171,10 +175,9 @@ public class SetIdentityNotificationTopicRequest extends
      * @param notificationType
      *        The type of notifications that will be published to the specified
      *        Amazon SNS topic.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see NotificationType
      */
+
     public void setNotificationType(NotificationType notificationType) {
         this.notificationType = notificationType.toString();
     }
@@ -192,6 +195,7 @@ public class SetIdentityNotificationTopicRequest extends
      *         chained together.
      * @see NotificationType
      */
+
     public SetIdentityNotificationTopicRequest withNotificationType(
             NotificationType notificationType) {
         setNotificationType(notificationType);
@@ -210,6 +214,7 @@ public class SetIdentityNotificationTopicRequest extends
      *        parameter is omitted from the request or a null value is passed,
      *        <code>SnsTopic</code> is cleared and publishing is disabled.
      */
+
     public void setSnsTopic(String snsTopic) {
         this.snsTopic = snsTopic;
     }
@@ -225,6 +230,7 @@ public class SetIdentityNotificationTopicRequest extends
      *         parameter is omitted from the request or a null value is passed,
      *         <code>SnsTopic</code> is cleared and publishing is disabled.
      */
+
     public String getSnsTopic() {
         return this.snsTopic;
     }
@@ -243,6 +249,7 @@ public class SetIdentityNotificationTopicRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SetIdentityNotificationTopicRequest withSnsTopic(String snsTopic) {
         setSnsTopic(snsTopic);
         return this;

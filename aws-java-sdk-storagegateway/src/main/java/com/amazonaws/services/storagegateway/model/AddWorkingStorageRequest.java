@@ -24,7 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>AddWorkingStorageInput$DiskIds</a></li>
+ * <li>
+ * <p>
+ * <a>AddWorkingStorageInput$DiskIds</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
@@ -44,6 +48,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -51,6 +56,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -60,6 +66,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddWorkingStorageRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -78,6 +85,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      *         maximum length of 300. You can get the disk IDs from the
      *         <a>ListLocalDisks</a> API.
      */
+
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
             diskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -99,6 +107,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      *        maximum length of 300. You can get the disk IDs from the
      *        <a>ListLocalDisks</a> API.
      */
+
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
             this.diskIds = null;
@@ -131,6 +140,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddWorkingStorageRequest withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
             setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -158,6 +168,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddWorkingStorageRequest withDiskIds(
             java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);

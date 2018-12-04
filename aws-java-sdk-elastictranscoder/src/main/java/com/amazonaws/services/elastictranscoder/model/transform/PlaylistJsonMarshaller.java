@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PlaylistMarshaller
@@ -39,60 +34,60 @@ import com.amazonaws.util.json.*;
 public class PlaylistJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Playlist playlist, JSONWriter jsonWriter) {
+    public void marshall(Playlist playlist,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (playlist == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (playlist.getName() != null) {
-                jsonWriter.key("Name").value(playlist.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        playlist.getName());
             }
-
             if (playlist.getFormat() != null) {
-                jsonWriter.key("Format").value(playlist.getFormat());
+                jsonGenerator.writeFieldName("Format").writeValue(
+                        playlist.getFormat());
             }
 
             com.amazonaws.internal.SdkInternalList<String> outputKeysList = (com.amazonaws.internal.SdkInternalList<String>) playlist
                     .getOutputKeys();
             if (!outputKeysList.isEmpty() || !outputKeysList.isAutoConstruct()) {
-                jsonWriter.key("OutputKeys");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("OutputKeys");
+                jsonGenerator.writeStartArray();
                 for (String outputKeysListValue : outputKeysList) {
                     if (outputKeysListValue != null) {
-                        jsonWriter.value(outputKeysListValue);
+                        jsonGenerator.writeValue(outputKeysListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (playlist.getHlsContentProtection() != null) {
-                jsonWriter.key("HlsContentProtection");
+                jsonGenerator.writeFieldName("HlsContentProtection");
                 HlsContentProtectionJsonMarshaller.getInstance().marshall(
-                        playlist.getHlsContentProtection(), jsonWriter);
+                        playlist.getHlsContentProtection(), jsonGenerator);
             }
-
             if (playlist.getPlayReadyDrm() != null) {
-                jsonWriter.key("PlayReadyDrm");
+                jsonGenerator.writeFieldName("PlayReadyDrm");
                 PlayReadyDrmJsonMarshaller.getInstance().marshall(
-                        playlist.getPlayReadyDrm(), jsonWriter);
+                        playlist.getPlayReadyDrm(), jsonGenerator);
             }
-
             if (playlist.getStatus() != null) {
-                jsonWriter.key("Status").value(playlist.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        playlist.getStatus());
             }
-
             if (playlist.getStatusDetail() != null) {
-                jsonWriter.key("StatusDetail")
-                        .value(playlist.getStatusDetail());
+                jsonGenerator.writeFieldName("StatusDetail").writeValue(
+                        playlist.getStatusDetail());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

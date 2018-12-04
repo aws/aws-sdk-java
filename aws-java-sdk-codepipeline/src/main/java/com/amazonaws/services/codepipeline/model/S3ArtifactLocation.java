@@ -47,6 +47,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      * @param bucketName
      *        The name of the Amazon S3 bucket.
      */
+
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
@@ -58,6 +59,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      * 
      * @return The name of the Amazon S3 bucket.
      */
+
     public String getBucketName() {
         return this.bucketName;
     }
@@ -72,6 +74,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3ArtifactLocation withBucketName(String bucketName) {
         setBucketName(bucketName);
         return this;
@@ -87,6 +90,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      *        The key of the object in the Amazon S3 bucket, which uniquely
      *        identifies the object in the bucket.
      */
+
     public void setObjectKey(String objectKey) {
         this.objectKey = objectKey;
     }
@@ -100,6 +104,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      * @return The key of the object in the Amazon S3 bucket, which uniquely
      *         identifies the object in the bucket.
      */
+
     public String getObjectKey() {
         return this.objectKey;
     }
@@ -116,6 +121,7 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3ArtifactLocation withObjectKey(String objectKey) {
         setObjectKey(objectKey);
         return this;

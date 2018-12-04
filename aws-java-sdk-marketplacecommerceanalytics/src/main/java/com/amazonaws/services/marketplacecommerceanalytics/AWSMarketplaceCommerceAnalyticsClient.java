@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.marketplacecommerceanalytics.model.*;
 import com.amazonaws.services.marketplacecommerceanalytics.model.transform.*;
@@ -44,6 +46,7 @@ import com.amazonaws.services.marketplacecommerceanalytics.model.transform.*;
  * <p>
  * Provides AWS Marketplace business intelligence data on-demand.
  */
+@ThreadSafe
 public class AWSMarketplaceCommerceAnalyticsClient extends
         AmazonWebServiceClient implements AWSMarketplaceCommerceAnalytics {
     /** Provider for AWS credentials. */
@@ -59,10 +62,21 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
     private static final String DEFAULT_ENDPOINT_PREFIX = "marketplacecommerceanalytics";
 
     /**
-     * List of exception unmarshallers for all AWS Marketplace Commerce
-     * Analytics exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MarketplaceCommerceAnalyticsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException.class)));
 
     /**
      * Constructs a new client to invoke service methods on AWS Marketplace
@@ -82,8 +96,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSMarketplaceCommerceAnalyticsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -126,8 +140,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      *        authenticating with AWS services.
      */
     public AWSMarketplaceCommerceAnalyticsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -169,8 +182,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      */
     public AWSMarketplaceCommerceAnalyticsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -225,13 +237,6 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException.class,
-                        "MarketplaceCommerceAnalyticsException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -256,8 +261,8 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
      * exists (e.g. if the same data set is requested twice), the original file
      * will be overwritten by the new file. Requires a Role with an attached
      * permissions policy providing Allow permissions for the following actions:
-     * s3:PutObject, s3:getBucketLocation, sns:SetRegion, sns:ListTopics,
-     * sns:Publish, iam:GetRolePolicy.
+     * s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+     * iam:GetRolePolicy.
      * 
      * @param generateDataSetRequest
      *        Container for the parameters to the GenerateDataSet operation.
@@ -279,17 +284,20 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataSetRequestMarshaller().marshall(super
-                        .beforeMarshalling(generateDataSetRequest));
+                request = new GenerateDataSetRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(generateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataSetResult> responseHandler = new JsonResponseHandler<GenerateDataSetResult>(
-                    new GenerateDataSetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateDataSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GenerateDataSetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -323,33 +331,48 @@ public class AWSMarketplaceCommerceAnalyticsClient extends
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -52,9 +54,8 @@ public class DescribeScheduledActionsResultStaxUnmarshaller implements
                 if (context.testExpression(
                         "ScheduledUpdateGroupActions/member", targetDepth)) {
                     describeScheduledActionsResult
-                            .getScheduledUpdateGroupActions().add(
-                                    ScheduledUpdateGroupActionStaxUnmarshaller
-                                            .getInstance().unmarshall(context));
+                            .withScheduledUpdateGroupActions(ScheduledUpdateGroupActionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

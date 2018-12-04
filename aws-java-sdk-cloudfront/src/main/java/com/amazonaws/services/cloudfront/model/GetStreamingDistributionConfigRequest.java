@@ -54,6 +54,7 @@ public class GetStreamingDistributionConfigRequest extends
      * @param id
      *        The streaming distribution's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -63,6 +64,7 @@ public class GetStreamingDistributionConfigRequest extends
      * 
      * @return The streaming distribution's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -75,6 +77,7 @@ public class GetStreamingDistributionConfigRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStreamingDistributionConfigRequest withId(String id) {
         setId(id);
         return this;

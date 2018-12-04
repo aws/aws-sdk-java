@@ -48,6 +48,7 @@ public class PublishResult implements Serializable, Cloneable {
      *        <p>
      *        Length Constraint: Maximum 100 characters
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -64,6 +65,7 @@ public class PublishResult implements Serializable, Cloneable {
      *         <p>
      *         Length Constraint: Maximum 100 characters
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -83,6 +85,7 @@ public class PublishResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PublishResult withMessageId(String messageId) {
         setMessageId(messageId);
         return this;

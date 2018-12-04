@@ -34,6 +34,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -41,6 +42,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -50,6 +52,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGatewayInformationRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -58,6 +61,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayName
      */
+
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
     }
@@ -65,6 +69,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayName() {
         return this.gatewayName;
     }
@@ -74,6 +79,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGatewayInformationRequest withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
         return this;
@@ -82,6 +88,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @param gatewayTimezone
      */
+
     public void setGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
     }
@@ -89,6 +96,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
     /**
      * @return
      */
+
     public String getGatewayTimezone() {
         return this.gatewayTimezone;
     }
@@ -98,6 +106,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateGatewayInformationRequest withGatewayTimezone(
             String gatewayTimezone) {
         setGatewayTimezone(gatewayTimezone);

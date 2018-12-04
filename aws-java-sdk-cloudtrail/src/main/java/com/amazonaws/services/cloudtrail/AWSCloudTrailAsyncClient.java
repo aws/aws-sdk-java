@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudtrail;
 
 import com.amazonaws.services.cloudtrail.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudTrail asynchronously. Each asynchronous method
@@ -35,20 +36,24 @@ import com.amazonaws.services.cloudtrail.model.*;
  * source IP address, the request parameters, and the response elements returned
  * by the service.
  * </p>
- * <note> As an alternative to using the API, you can use one of the AWS SDKs,
- * which consist of libraries and sample code for various programming languages
- * and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a
- * convenient way to create programmatic access to AWSCloudTrail. For example,
- * the SDKs take care of cryptographically signing requests, managing errors,
- * and retrying requests automatically. For information about the AWS SDKs,
- * including how to download and install them, see the <a
- * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services page</a>.
+ * <note>
+ * <p>
+ * As an alternative to the API, you can use one of the AWS SDKs, which consist
+ * of libraries and sample code for various programming languages and platforms
+ * (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide a convenient way to
+ * create programmatic access to AWSCloudTrail. For example, the SDKs take care
+ * of cryptographically signing requests, managing errors, and retrying requests
+ * automatically. For information about the AWS SDKs, including how to download
+ * and install them, see the <a href="http://aws.amazon.com/tools/">Tools for
+ * Amazon Web Services page</a>.
+ * </p>
  * </note>
  * <p>
  * See the CloudTrail User Guide for information about the data that is included
  * with each AWS API call listed in the log files.
  * </p>
  */
+@ThreadSafe
 public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements
         AWSCloudTrailAsync {
 
@@ -147,8 +152,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -240,9 +244,7 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

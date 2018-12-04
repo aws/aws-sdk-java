@@ -39,6 +39,7 @@ public class CancelKeyDeletionResult implements Serializable, Cloneable {
      *        The unique identifier of the master key for which deletion is
      *        canceled.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -51,6 +52,7 @@ public class CancelKeyDeletionResult implements Serializable, Cloneable {
      * @return The unique identifier of the master key for which deletion is
      *         canceled.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -66,6 +68,7 @@ public class CancelKeyDeletionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelKeyDeletionResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

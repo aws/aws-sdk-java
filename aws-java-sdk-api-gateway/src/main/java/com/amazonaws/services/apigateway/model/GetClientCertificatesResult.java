@@ -19,17 +19,25 @@ package com.amazonaws.services.apigateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Represents a collection of <a>ClientCertificate</a> resources.
+ * </p>
  */
 public class GetClientCertificatesResult implements Serializable, Cloneable {
 
     private String position;
-
+    /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     */
     private java.util.List<ClientCertificate> items;
 
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -37,6 +45,7 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -46,21 +55,37 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withPosition(String position) {
         setPosition(position);
         return this;
     }
 
     /**
-     * @return
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
+     * @return The current page of any <a>ClientCertificate</a> resources in the
+     *         collection of <a>ClientCertificate</a> resources.
      */
+
     public java.util.List<ClientCertificate> getItems() {
         return items;
     }
 
     /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      */
+
     public void setItems(java.util.Collection<ClientCertificate> items) {
         if (items == null) {
             this.items = null;
@@ -72,6 +97,10 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setItems(java.util.Collection)} or
      * {@link #withItems(java.util.Collection)} if you want to override the
@@ -79,9 +108,12 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withItems(ClientCertificate... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<ClientCertificate>(items.length));
@@ -93,10 +125,18 @@ public class GetClientCertificatesResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The current page of any <a>ClientCertificate</a> resources in the
+     * collection of <a>ClientCertificate</a> resources.
+     * </p>
+     * 
      * @param items
+     *        The current page of any <a>ClientCertificate</a> resources in the
+     *        collection of <a>ClientCertificate</a> resources.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesResult withItems(
             java.util.Collection<ClientCertificate> items) {
         setItems(items);

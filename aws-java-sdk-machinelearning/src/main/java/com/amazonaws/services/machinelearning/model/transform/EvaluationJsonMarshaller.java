@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.machinelearning.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EvaluationMarshaller
@@ -39,69 +34,66 @@ import com.amazonaws.util.json.*;
 public class EvaluationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Evaluation evaluation, JSONWriter jsonWriter) {
+    public void marshall(Evaluation evaluation,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (evaluation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluation.getEvaluationId() != null) {
-                jsonWriter.key("EvaluationId").value(
+                jsonGenerator.writeFieldName("EvaluationId").writeValue(
                         evaluation.getEvaluationId());
             }
-
             if (evaluation.getMLModelId() != null) {
-                jsonWriter.key("MLModelId").value(evaluation.getMLModelId());
+                jsonGenerator.writeFieldName("MLModelId").writeValue(
+                        evaluation.getMLModelId());
             }
-
             if (evaluation.getEvaluationDataSourceId() != null) {
-                jsonWriter.key("EvaluationDataSourceId").value(
-                        evaluation.getEvaluationDataSourceId());
+                jsonGenerator.writeFieldName("EvaluationDataSourceId")
+                        .writeValue(evaluation.getEvaluationDataSourceId());
             }
-
             if (evaluation.getInputDataLocationS3() != null) {
-                jsonWriter.key("InputDataLocationS3").value(
+                jsonGenerator.writeFieldName("InputDataLocationS3").writeValue(
                         evaluation.getInputDataLocationS3());
             }
-
             if (evaluation.getCreatedByIamUser() != null) {
-                jsonWriter.key("CreatedByIamUser").value(
+                jsonGenerator.writeFieldName("CreatedByIamUser").writeValue(
                         evaluation.getCreatedByIamUser());
             }
-
             if (evaluation.getCreatedAt() != null) {
-                jsonWriter.key("CreatedAt").value(evaluation.getCreatedAt());
+                jsonGenerator.writeFieldName("CreatedAt").writeValue(
+                        evaluation.getCreatedAt());
             }
-
             if (evaluation.getLastUpdatedAt() != null) {
-                jsonWriter.key("LastUpdatedAt").value(
+                jsonGenerator.writeFieldName("LastUpdatedAt").writeValue(
                         evaluation.getLastUpdatedAt());
             }
-
             if (evaluation.getName() != null) {
-                jsonWriter.key("Name").value(evaluation.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        evaluation.getName());
             }
-
             if (evaluation.getStatus() != null) {
-                jsonWriter.key("Status").value(evaluation.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        evaluation.getStatus());
             }
-
             if (evaluation.getPerformanceMetrics() != null) {
-                jsonWriter.key("PerformanceMetrics");
+                jsonGenerator.writeFieldName("PerformanceMetrics");
                 PerformanceMetricsJsonMarshaller.getInstance().marshall(
-                        evaluation.getPerformanceMetrics(), jsonWriter);
+                        evaluation.getPerformanceMetrics(), jsonGenerator);
             }
-
             if (evaluation.getMessage() != null) {
-                jsonWriter.key("Message").value(evaluation.getMessage());
+                jsonGenerator.writeFieldName("Message").writeValue(
+                        evaluation.getMessage());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

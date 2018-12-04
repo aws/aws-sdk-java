@@ -33,6 +33,7 @@ import java.util.Set;
  * @see DynamoDBMarshaller
  * @see JsonMarshaller
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBMarshalling {

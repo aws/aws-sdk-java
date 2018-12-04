@@ -66,6 +66,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      *        update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and
      *        by <a>ListIPSets</a>.
      */
+
     public void setIPSetId(String iPSetId) {
         this.iPSetId = iPSetId;
     }
@@ -81,6 +82,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      *         update. <code>IPSetId</code> is returned by <a>CreateIPSet</a>
      *         and by <a>ListIPSets</a>.
      */
+
     public String getIPSetId() {
         return this.iPSetId;
     }
@@ -99,6 +101,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIPSetRequest withIPSetId(String iPSetId) {
         setIPSetId(iPSetId);
         return this;
@@ -113,6 +116,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -125,6 +129,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -140,6 +145,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIPSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -167,6 +173,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      *         <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
      *         <code>Value</code></li>
      */
+
     public java.util.List<IPSetUpdate> getUpdates() {
         return updates;
     }
@@ -194,6 +201,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      *        <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and
      *        <code>Value</code></li>
      */
+
     public void setUpdates(java.util.Collection<IPSetUpdate> updates) {
         if (updates == null) {
             this.updates = null;
@@ -234,6 +242,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIPSetRequest withUpdates(IPSetUpdate... updates) {
         if (this.updates == null) {
             setUpdates(new java.util.ArrayList<IPSetUpdate>(updates.length));
@@ -269,6 +278,7 @@ public class UpdateIPSetRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateIPSetRequest withUpdates(
             java.util.Collection<IPSetUpdate> updates) {
         setUpdates(updates);

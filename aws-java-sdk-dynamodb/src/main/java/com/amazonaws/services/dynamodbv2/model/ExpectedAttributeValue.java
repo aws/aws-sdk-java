@@ -83,7 +83,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * The default setting for <i>Exists</i> is <code>true</code>. If you supply
      * a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
-     * don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is
+     * don't have to set <i>Exists</i> to <code>true</code>, because it is
      * implied.
      * </p>
      * <p>
@@ -93,7 +93,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check.
-     * (You expect a value to exist, but don&#39;t specify what that value is.)
+     * (You expect a value to exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
@@ -401,7 +401,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        The default setting for <i>Exists</i> is <code>true</code>. If you
      *        supply a <i>Value</i> all by itself, DynamoDB assumes the
-     *        attribute exists: You don&#39;t have to set <i>Exists</i> to
+     *        attribute exists: You don't have to set <i>Exists</i> to
      *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
@@ -411,8 +411,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to
-     *        check. (You expect a value to exist, but don&#39;t specify what
-     *        that value is.)
+     *        check. (You expect a value to exist, but don't specify what that
+     *        value is.)
      *        </p>
      *        </li>
      *        <li>
@@ -430,6 +430,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * @param value
      */
+
     public void setValue(AttributeValue value) {
         this.value = value;
     }
@@ -437,6 +438,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public AttributeValue getValue() {
         return this.value;
     }
@@ -446,6 +448,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withValue(AttributeValue value) {
         setValue(value);
         return this;
@@ -478,7 +481,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * The default setting for <i>Exists</i> is <code>true</code>. If you supply
      * a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
-     * don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is
+     * don't have to set <i>Exists</i> to <code>true</code>, because it is
      * implied.
      * </p>
      * <p>
@@ -488,7 +491,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check.
-     * (You expect a value to exist, but don&#39;t specify what that value is.)
+     * (You expect a value to exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
@@ -526,7 +529,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        The default setting for <i>Exists</i> is <code>true</code>. If you
      *        supply a <i>Value</i> all by itself, DynamoDB assumes the
-     *        attribute exists: You don&#39;t have to set <i>Exists</i> to
+     *        attribute exists: You don't have to set <i>Exists</i> to
      *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
@@ -536,8 +539,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to
-     *        check. (You expect a value to exist, but don&#39;t specify what
-     *        that value is.)
+     *        check. (You expect a value to exist, but don't specify what that
+     *        value is.)
      *        </p>
      *        </li>
      *        <li>
@@ -548,6 +551,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setExists(Boolean exists) {
         this.exists = exists;
     }
@@ -579,7 +583,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * The default setting for <i>Exists</i> is <code>true</code>. If you supply
      * a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
-     * don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is
+     * don't have to set <i>Exists</i> to <code>true</code>, because it is
      * implied.
      * </p>
      * <p>
@@ -589,7 +593,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check.
-     * (You expect a value to exist, but don&#39;t specify what that value is.)
+     * (You expect a value to exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
@@ -626,7 +630,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         The default setting for <i>Exists</i> is <code>true</code>. If
      *         you supply a <i>Value</i> all by itself, DynamoDB assumes the
-     *         attribute exists: You don&#39;t have to set <i>Exists</i> to
+     *         attribute exists: You don't have to set <i>Exists</i> to
      *         <code>true</code>, because it is implied.
      *         </p>
      *         <p>
@@ -636,8 +640,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <i>Exists</i> is <code>true</code> but there is no <i>Value</i>
-     *         to check. (You expect a value to exist, but don&#39;t specify
-     *         what that value is.)
+     *         to check. (You expect a value to exist, but don't specify what
+     *         that value is.)
      *         </p>
      *         </li>
      *         <li>
@@ -648,6 +652,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public Boolean getExists() {
         return this.exists;
     }
@@ -679,7 +684,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * The default setting for <i>Exists</i> is <code>true</code>. If you supply
      * a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
-     * don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is
+     * don't have to set <i>Exists</i> to <code>true</code>, because it is
      * implied.
      * </p>
      * <p>
@@ -689,7 +694,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check.
-     * (You expect a value to exist, but don&#39;t specify what that value is.)
+     * (You expect a value to exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
@@ -727,7 +732,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <p>
      *        The default setting for <i>Exists</i> is <code>true</code>. If you
      *        supply a <i>Value</i> all by itself, DynamoDB assumes the
-     *        attribute exists: You don&#39;t have to set <i>Exists</i> to
+     *        attribute exists: You don't have to set <i>Exists</i> to
      *        <code>true</code>, because it is implied.
      *        </p>
      *        <p>
@@ -737,8 +742,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to
-     *        check. (You expect a value to exist, but don&#39;t specify what
-     *        that value is.)
+     *        check. (You expect a value to exist, but don't specify what that
+     *        value is.)
      *        </p>
      *        </li>
      *        <li>
@@ -751,6 +756,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withExists(Boolean exists) {
         setExists(exists);
         return this;
@@ -783,7 +789,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <p>
      * The default setting for <i>Exists</i> is <code>true</code>. If you supply
      * a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
-     * don&#39;t have to set <i>Exists</i> to <code>true</code>, because it is
+     * don't have to set <i>Exists</i> to <code>true</code>, because it is
      * implied.
      * </p>
      * <p>
@@ -793,7 +799,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>Exists</i> is <code>true</code> but there is no <i>Value</i> to check.
-     * (You expect a value to exist, but don&#39;t specify what that value is.)
+     * (You expect a value to exist, but don't specify what that value is.)
      * </p>
      * </li>
      * <li>
@@ -830,7 +836,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <p>
      *         The default setting for <i>Exists</i> is <code>true</code>. If
      *         you supply a <i>Value</i> all by itself, DynamoDB assumes the
-     *         attribute exists: You don&#39;t have to set <i>Exists</i> to
+     *         attribute exists: You don't have to set <i>Exists</i> to
      *         <code>true</code>, because it is implied.
      *         </p>
      *         <p>
@@ -840,8 +846,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <i>Exists</i> is <code>true</code> but there is no <i>Value</i>
-     *         to check. (You expect a value to exist, but don&#39;t specify
-     *         what that value is.)
+     *         to check. (You expect a value to exist, but don't specify what
+     *         that value is.)
      *         </p>
      *         </li>
      *         <li>
@@ -852,6 +858,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public Boolean isExists() {
         return this.exists;
     }
@@ -1297,6 +1304,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        </li>
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
     }
@@ -1744,6 +1752,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         </li>
      * @see ComparisonOperator
      */
+
     public String getComparisonOperator() {
         return this.comparisonOperator;
     }
@@ -2191,6 +2200,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public ExpectedAttributeValue withComparisonOperator(
             String comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -2636,10 +2646,9 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        <code>{"NS":["6", "2", "1"]}</code>
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ComparisonOperator
      */
+
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
         this.comparisonOperator = comparisonOperator.toString();
     }
@@ -3087,6 +3096,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         chained together.
      * @see ComparisonOperator
      */
+
     public ExpectedAttributeValue withComparisonOperator(
             ComparisonOperator comparisonOperator) {
         setComparisonOperator(comparisonOperator);
@@ -3146,6 +3156,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *         >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.List<AttributeValue> getAttributeValueList() {
         return attributeValueList;
     }
@@ -3204,6 +3215,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      *        >JSON Data Format</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         if (attributeValueList == null) {
@@ -3277,6 +3289,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withAttributeValueList(
             AttributeValue... attributeValueList) {
         if (this.attributeValueList == null) {
@@ -3345,6 +3358,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExpectedAttributeValue withAttributeValueList(
             java.util.Collection<AttributeValue> attributeValueList) {
         setAttributeValueList(attributeValueList);

@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,21 +55,18 @@ public class EvaluationResultQualifierJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConfigRuleName", targetDepth)) {
                     context.nextToken();
-                    evaluationResultQualifier
-                            .setConfigRuleName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    evaluationResultQualifier.setConfigRuleName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
-                    evaluationResultQualifier
-                            .setResourceType(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    evaluationResultQualifier.setResourceType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceId", targetDepth)) {
                     context.nextToken();
-                    evaluationResultQualifier
-                            .setResourceId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    evaluationResultQualifier.setResourceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

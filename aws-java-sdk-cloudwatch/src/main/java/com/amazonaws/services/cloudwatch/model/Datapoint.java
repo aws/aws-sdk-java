@@ -78,6 +78,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @param timestamp
      *        The time stamp used for the datapoint.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -89,6 +90,7 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @return The time stamp used for the datapoint.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -103,6 +105,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -118,6 +121,7 @@ public class Datapoint implements Serializable, Cloneable {
      *        The number of metric values that contributed to the aggregate
      *        value of this datapoint.
      */
+
     public void setSampleCount(Double sampleCount) {
         this.sampleCount = sampleCount;
     }
@@ -131,6 +135,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return The number of metric values that contributed to the aggregate
      *         value of this datapoint.
      */
+
     public Double getSampleCount() {
         return this.sampleCount;
     }
@@ -147,6 +152,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withSampleCount(Double sampleCount) {
         setSampleCount(sampleCount);
         return this;
@@ -160,6 +166,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @param average
      *        The average of metric values that correspond to the datapoint.
      */
+
     public void setAverage(Double average) {
         this.average = average;
     }
@@ -171,6 +178,7 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @return The average of metric values that correspond to the datapoint.
      */
+
     public Double getAverage() {
         return this.average;
     }
@@ -185,6 +193,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withAverage(Double average) {
         setAverage(average);
         return this;
@@ -198,6 +207,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @param sum
      *        The sum of metric values used for the datapoint.
      */
+
     public void setSum(Double sum) {
         this.sum = sum;
     }
@@ -209,6 +219,7 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @return The sum of metric values used for the datapoint.
      */
+
     public Double getSum() {
         return this.sum;
     }
@@ -223,6 +234,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withSum(Double sum) {
         setSum(sum);
         return this;
@@ -236,6 +248,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @param minimum
      *        The minimum metric value used for the datapoint.
      */
+
     public void setMinimum(Double minimum) {
         this.minimum = minimum;
     }
@@ -247,6 +260,7 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @return The minimum metric value used for the datapoint.
      */
+
     public Double getMinimum() {
         return this.minimum;
     }
@@ -261,6 +275,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withMinimum(Double minimum) {
         setMinimum(minimum);
         return this;
@@ -274,6 +289,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @param maximum
      *        The maximum of the metric value used for the datapoint.
      */
+
     public void setMaximum(Double maximum) {
         this.maximum = maximum;
     }
@@ -285,6 +301,7 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @return The maximum of the metric value used for the datapoint.
      */
+
     public Double getMaximum() {
         return this.maximum;
     }
@@ -299,6 +316,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Datapoint withMaximum(Double maximum) {
         setMaximum(maximum);
         return this;
@@ -313,6 +331,7 @@ public class Datapoint implements Serializable, Cloneable {
      *        The standard unit used for the datapoint.
      * @see StandardUnit
      */
+
     public void setUnit(String unit) {
         this.unit = unit;
     }
@@ -325,6 +344,7 @@ public class Datapoint implements Serializable, Cloneable {
      * @return The standard unit used for the datapoint.
      * @see StandardUnit
      */
+
     public String getUnit() {
         return this.unit;
     }
@@ -340,6 +360,7 @@ public class Datapoint implements Serializable, Cloneable {
      *         chained together.
      * @see StandardUnit
      */
+
     public Datapoint withUnit(String unit) {
         setUnit(unit);
         return this;
@@ -352,10 +373,9 @@ public class Datapoint implements Serializable, Cloneable {
      * 
      * @param unit
      *        The standard unit used for the datapoint.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StandardUnit
      */
+
     public void setUnit(StandardUnit unit) {
         this.unit = unit.toString();
     }
@@ -371,6 +391,7 @@ public class Datapoint implements Serializable, Cloneable {
      *         chained together.
      * @see StandardUnit
      */
+
     public Datapoint withUnit(StandardUnit unit) {
         setUnit(unit);
         return this;

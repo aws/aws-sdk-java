@@ -126,8 +126,9 @@ public interface AmazonConfig {
      * <p>
      * AWS Config sets the state of a rule to <code>DELETING</code> until the
      * deletion is complete. You cannot update a rule while it is in this state.
-     * If you make a <code>PutConfigRule</code> request for the rule, you will
-     * receive a <code>ResourceInUseException</code>.
+     * If you make a <code>PutConfigRule</code> or <code>DeleteConfigRule</code>
+     * request for the rule, you will receive a
+     * <code>ResourceInUseException</code>.
      * </p>
      * <p>
      * You can check the state of a rule by using the
@@ -135,6 +136,7 @@ public interface AmazonConfig {
      * </p>
      * 
      * @param deleteConfigRuleRequest
+     * @return Result of the DeleteConfigRule operation returned by the service.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify
      *         that the rule names are correct and try again.
@@ -143,7 +145,8 @@ public interface AmazonConfig {
      *         again.
      * @sample AmazonConfig.DeleteConfigRule
      */
-    void deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest);
+    DeleteConfigRuleResult deleteConfigRule(
+            DeleteConfigRuleRequest deleteConfigRuleRequest);
 
     /**
      * <p>
@@ -159,6 +162,8 @@ public interface AmazonConfig {
      * @param deleteDeliveryChannelRequest
      *        The input for the <a>DeleteDeliveryChannel</a> action. The action
      *        accepts the following data in JSON format.
+     * @return Result of the DeleteDeliveryChannel operation returned by the
+     *         service.
      * @throws NoSuchDeliveryChannelException
      *         You have specified a delivery channel that does not exist.
      * @throws LastDeliveryChannelDeleteFailedException
@@ -166,7 +171,7 @@ public interface AmazonConfig {
      *         configuration recorder is running.
      * @sample AmazonConfig.DeleteDeliveryChannel
      */
-    void deleteDeliveryChannel(
+    DeleteDeliveryChannelResult deleteDeliveryChannel(
             DeleteDeliveryChannelRequest deleteDeliveryChannelRequest);
 
     /**
@@ -213,7 +218,7 @@ public interface AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the rule, it returns
-     * <code>InsufficientData</code>. This result might indicate one of the
+     * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
      * following conditions:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -267,7 +272,7 @@ public interface AmazonConfig {
      * </p>
      * <p>
      * If AWS Config has no current evaluation results for the resource, it
-     * returns <code>InsufficientData</code>. This result might indicate one of
+     * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of
      * the following conditions about the rules that evaluate the resource:
      * <ul>
      * <li>AWS Config has never invoked an evaluation for the rule. To check
@@ -715,6 +720,7 @@ public interface AmazonConfig {
      * <p/>
      * 
      * @param putConfigRuleRequest
+     * @return Result of the PutConfigRule operation returned by the service.
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that
      *         your parameters are valid and try again.
@@ -735,7 +741,7 @@ public interface AmazonConfig {
      *         ARN, and check the function's permissions.</li>
      * @sample AmazonConfig.PutConfigRule
      */
-    void putConfigRule(PutConfigRuleRequest putConfigRuleRequest);
+    PutConfigRuleResult putConfigRule(PutConfigRuleRequest putConfigRuleRequest);
 
     /**
      * <p>
@@ -761,6 +767,8 @@ public interface AmazonConfig {
      * 
      * @param putConfigurationRecorderRequest
      *        The input for the <a>PutConfigurationRecorder</a> action.
+     * @return Result of the PutConfigurationRecorder operation returned by the
+     *         service.
      * @throws MaxNumberOfConfigurationRecordersExceededException
      *         You have reached the limit on the number of recorders you can
      *         create.
@@ -775,7 +783,7 @@ public interface AmazonConfig {
      *         be incorrectly formatted.
      * @sample AmazonConfig.PutConfigurationRecorder
      */
-    void putConfigurationRecorder(
+    PutConfigurationRecorderResult putConfigurationRecorder(
             PutConfigurationRecorderRequest putConfigurationRecorderRequest);
 
     /**
@@ -799,6 +807,8 @@ public interface AmazonConfig {
      * 
      * @param putDeliveryChannelRequest
      *        The input for the <a>PutDeliveryChannel</a> action.
+     * @return Result of the PutDeliveryChannel operation returned by the
+     *         service.
      * @throws MaxNumberOfDeliveryChannelsExceededException
      *         You have reached the limit on the number of delivery channels you
      *         can create.
@@ -819,7 +829,8 @@ public interface AmazonConfig {
      *         to it.
      * @sample AmazonConfig.PutDeliveryChannel
      */
-    void putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest);
+    PutDeliveryChannelResult putDeliveryChannel(
+            PutDeliveryChannelRequest putDeliveryChannelRequest);
 
     /**
      * <p>
@@ -855,13 +866,15 @@ public interface AmazonConfig {
      * 
      * @param startConfigurationRecorderRequest
      *        The input for the <a>StartConfigurationRecorder</a> action.
+     * @return Result of the StartConfigurationRecorder operation returned by
+     *         the service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @throws NoAvailableDeliveryChannelException
      *         There is no delivery channel available to record configurations.
      * @sample AmazonConfig.StartConfigurationRecorder
      */
-    void startConfigurationRecorder(
+    StartConfigurationRecorderResult startConfigurationRecorder(
             StartConfigurationRecorderRequest startConfigurationRecorderRequest);
 
     /**
@@ -874,11 +887,13 @@ public interface AmazonConfig {
      *        <p>
      *        The input for the <a>StopConfigurationRecorder</a> action.
      *        </p>
+     * @return Result of the StopConfigurationRecorder operation returned by the
+     *         service.
      * @throws NoSuchConfigurationRecorderException
      *         You have specified a configuration recorder that does not exist.
      * @sample AmazonConfig.StopConfigurationRecorder
      */
-    void stopConfigurationRecorder(
+    StopConfigurationRecorderResult stopConfigurationRecorder(
             StopConfigurationRecorderRequest stopConfigurationRecorderRequest);
 
     /**

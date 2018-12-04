@@ -17,6 +17,8 @@
 package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -57,9 +59,8 @@ public class SystemStatusStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("LoadAverage/member", targetDepth)) {
-                    systemStatus.getLoadAverage().add(
-                            DoubleStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    systemStatus.withLoadAverage(DoubleStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

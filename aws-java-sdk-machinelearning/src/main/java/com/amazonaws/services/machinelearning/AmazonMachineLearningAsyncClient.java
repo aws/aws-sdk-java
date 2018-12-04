@@ -16,6 +16,7 @@
 package com.amazonaws.services.machinelearning;
 
 import com.amazonaws.services.machinelearning.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Machine Learning asynchronously. Each
@@ -25,6 +26,7 @@ import com.amazonaws.services.machinelearning.model.*;
  * <p>
  * Definition of the public APIs exposed by Amazon Machine Learning
  */
+@ThreadSafe
 public class AmazonMachineLearningAsyncClient extends
         AmazonMachineLearningClient implements AmazonMachineLearningAsync {
 
@@ -124,8 +126,7 @@ public class AmazonMachineLearningAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -217,9 +218,7 @@ public class AmazonMachineLearningAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

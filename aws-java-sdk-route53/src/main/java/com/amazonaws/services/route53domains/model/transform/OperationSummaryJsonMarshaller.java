@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.route53domains.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * OperationSummaryMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class OperationSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(OperationSummary operationSummary,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (operationSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (operationSummary.getOperationId() != null) {
-                jsonWriter.key("OperationId").value(
+                jsonGenerator.writeFieldName("OperationId").writeValue(
                         operationSummary.getOperationId());
             }
-
             if (operationSummary.getStatus() != null) {
-                jsonWriter.key("Status").value(operationSummary.getStatus());
+                jsonGenerator.writeFieldName("Status").writeValue(
+                        operationSummary.getStatus());
             }
-
             if (operationSummary.getType() != null) {
-                jsonWriter.key("Type").value(operationSummary.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        operationSummary.getType());
             }
-
             if (operationSummary.getSubmittedDate() != null) {
-                jsonWriter.key("SubmittedDate").value(
+                jsonGenerator.writeFieldName("SubmittedDate").writeValue(
                         operationSummary.getSubmittedDate());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

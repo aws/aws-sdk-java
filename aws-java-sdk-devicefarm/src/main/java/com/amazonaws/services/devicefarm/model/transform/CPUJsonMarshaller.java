@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CPUMarshaller
@@ -39,30 +34,32 @@ import com.amazonaws.util.json.*;
 public class CPUJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CPU cPU, JSONWriter jsonWriter) {
+    public void marshall(CPU cPU, StructuredJsonGenerator jsonGenerator) {
+
         if (cPU == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cPU.getFrequency() != null) {
-                jsonWriter.key("frequency").value(cPU.getFrequency());
+                jsonGenerator.writeFieldName("frequency").writeValue(
+                        cPU.getFrequency());
             }
-
             if (cPU.getArchitecture() != null) {
-                jsonWriter.key("architecture").value(cPU.getArchitecture());
+                jsonGenerator.writeFieldName("architecture").writeValue(
+                        cPU.getArchitecture());
             }
-
             if (cPU.getClock() != null) {
-                jsonWriter.key("clock").value(cPU.getClock());
+                jsonGenerator.writeFieldName("clock")
+                        .writeValue(cPU.getClock());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

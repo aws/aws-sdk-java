@@ -73,6 +73,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      *         Children: <code>OperationId</code>, <code>Status</code>,
      *         <code>SubmittedDate</code>, <code>Type</code>
      */
+
     public java.util.List<OperationSummary> getOperations() {
         if (operations == null) {
             operations = new com.amazonaws.internal.SdkInternalList<OperationSummary>();
@@ -101,6 +102,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      *        Children: <code>OperationId</code>, <code>Status</code>,
      *        <code>SubmittedDate</code>, <code>Type</code>
      */
+
     public void setOperations(java.util.Collection<OperationSummary> operations) {
         if (operations == null) {
             this.operations = null;
@@ -140,6 +142,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOperationsResult withOperations(OperationSummary... operations) {
         if (this.operations == null) {
             setOperations(new com.amazonaws.internal.SdkInternalList<OperationSummary>(
@@ -174,6 +177,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOperationsResult withOperations(
             java.util.Collection<OperationSummary> operations) {
         setOperations(operations);
@@ -204,6 +208,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      *        <p>
      *        Parent: <code>Operations</code>
      */
+
     public void setNextPageMarker(String nextPageMarker) {
         this.nextPageMarker = nextPageMarker;
     }
@@ -231,6 +236,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      *         <p>
      *         Parent: <code>Operations</code>
      */
+
     public String getNextPageMarker() {
         return this.nextPageMarker;
     }
@@ -261,6 +267,7 @@ public class ListOperationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOperationsResult withNextPageMarker(String nextPageMarker) {
         setNextPageMarker(nextPageMarker);
         return this;

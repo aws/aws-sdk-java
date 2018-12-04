@@ -28,7 +28,8 @@ public enum ParameterExceptionField {
     BYTE_MATCH_FIELD_TYPE("BYTE_MATCH_FIELD_TYPE"),
     SQL_INJECTION_MATCH_FIELD_TYPE("SQL_INJECTION_MATCH_FIELD_TYPE"),
     BYTE_MATCH_TEXT_TRANSFORMATION("BYTE_MATCH_TEXT_TRANSFORMATION"),
-    BYTE_MATCH_POSITIONAL_CONSTRAINT("BYTE_MATCH_POSITIONAL_CONSTRAINT");
+    BYTE_MATCH_POSITIONAL_CONSTRAINT("BYTE_MATCH_POSITIONAL_CONSTRAINT"),
+    SIZE_CONSTRAINT_COMPARISON_OPERATOR("SIZE_CONSTRAINT_COMPARISON_OPERATOR");
 
     private String value;
 
@@ -67,6 +68,8 @@ public enum ParameterExceptionField {
             return BYTE_MATCH_TEXT_TRANSFORMATION;
         } else if ("BYTE_MATCH_POSITIONAL_CONSTRAINT".equals(value)) {
             return BYTE_MATCH_POSITIONAL_CONSTRAINT;
+        } else if ("SIZE_CONSTRAINT_COMPARISON_OPERATOR".equals(value)) {
+            return SIZE_CONSTRAINT_COMPARISON_OPERATOR;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

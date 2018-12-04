@@ -19,7 +19,10 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Parameters specified in the SSM document that execute on the server when the
+ * command is run.
+ * </p>
  */
 public class DocumentParameter implements Serializable, Cloneable {
 
@@ -58,6 +61,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @param name
      *        The name of the parameter.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -69,6 +73,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * 
      * @return The name of the parameter.
      */
+
     public String getName() {
         return this.name;
     }
@@ -83,6 +88,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentParameter withName(String name) {
         setName(name);
         return this;
@@ -98,6 +104,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *        “StringList”.
      * @see DocumentParameterType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -111,6 +118,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *         “StringList”.
      * @see DocumentParameterType
      */
+
     public String getType() {
         return this.type;
     }
@@ -127,6 +135,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentParameterType
      */
+
     public DocumentParameter withType(String type) {
         setType(type);
         return this;
@@ -140,10 +149,9 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @param type
      *        The type of parameter. The type can be either “String” or
      *        “StringList”.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DocumentParameterType
      */
+
     public void setType(DocumentParameterType type) {
         this.type = type.toString();
     }
@@ -160,6 +168,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *         chained together.
      * @see DocumentParameterType
      */
+
     public DocumentParameter withType(DocumentParameterType type) {
         setType(type);
         return this;
@@ -175,6 +184,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *        A description of what the parameter does, how to use it, the
      *        default value, and whether or not the parameter is optional.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -188,6 +198,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @return A description of what the parameter does, how to use it, the
      *         default value, and whether or not the parameter is optional.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -204,6 +215,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentParameter withDescription(String description) {
         setDescription(description);
         return this;
@@ -220,6 +232,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *        without a default value are required. Parameters with a default
      *        value are optional.
      */
+
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
     }
@@ -234,6 +247,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      *         without a default value are required. Parameters with a default
      *         value are optional.
      */
+
     public String getDefaultValue() {
         return this.defaultValue;
     }
@@ -251,6 +265,7 @@ public class DocumentParameter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentParameter withDefaultValue(String defaultValue) {
         setDefaultValue(defaultValue);
         return this;

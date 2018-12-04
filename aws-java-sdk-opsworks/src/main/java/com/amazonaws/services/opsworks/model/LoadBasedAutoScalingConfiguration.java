@@ -63,6 +63,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @param layerId
      *        The layer ID.
      */
+
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
@@ -74,6 +75,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * 
      * @return The layer ID.
      */
+
     public String getLayerId() {
         return this.layerId;
     }
@@ -88,6 +90,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBasedAutoScalingConfiguration withLayerId(String layerId) {
         setLayerId(layerId);
         return this;
@@ -101,6 +104,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @param enable
      *        Whether load-based auto scaling is enabled for the layer.
      */
+
     public void setEnable(Boolean enable) {
         this.enable = enable;
     }
@@ -112,6 +116,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * 
      * @return Whether load-based auto scaling is enabled for the layer.
      */
+
     public Boolean getEnable() {
         return this.enable;
     }
@@ -126,6 +131,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBasedAutoScalingConfiguration withEnable(Boolean enable) {
         setEnable(enable);
         return this;
@@ -138,6 +144,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * 
      * @return Whether load-based auto scaling is enabled for the layer.
      */
+
     public Boolean isEnable() {
         return this.enable;
     }
@@ -154,6 +161,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      *        upscaling configuration, which defines how and when AWS OpsWorks
      *        increases the number of instances.
      */
+
     public void setUpScaling(AutoScalingThresholds upScaling) {
         this.upScaling = upScaling;
     }
@@ -169,6 +177,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      *         upscaling configuration, which defines how and when AWS OpsWorks
      *         increases the number of instances.
      */
+
     public AutoScalingThresholds getUpScaling() {
         return this.upScaling;
     }
@@ -187,6 +196,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBasedAutoScalingConfiguration withUpScaling(
             AutoScalingThresholds upScaling) {
         setUpScaling(upScaling);
@@ -205,6 +215,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      *        downscaling configuration, which defines how and when AWS OpsWorks
      *        reduces the number of instances.
      */
+
     public void setDownScaling(AutoScalingThresholds downScaling) {
         this.downScaling = downScaling;
     }
@@ -220,6 +231,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      *         downscaling configuration, which defines how and when AWS
      *         OpsWorks reduces the number of instances.
      */
+
     public AutoScalingThresholds getDownScaling() {
         return this.downScaling;
     }
@@ -238,6 +250,7 @@ public class LoadBasedAutoScalingConfiguration implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LoadBasedAutoScalingConfiguration withDownScaling(
             AutoScalingThresholds downScaling) {
         setDownScaling(downScaling);

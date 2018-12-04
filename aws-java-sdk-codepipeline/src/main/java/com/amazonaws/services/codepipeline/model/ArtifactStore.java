@@ -22,9 +22,9 @@ import java.io.Serializable;
  * <p>
  * The Amazon S3 location where artifacts are stored for the pipeline. If this
  * Amazon S3 bucket is created manually, it must meet the requirements for AWS
- * CodePipeline. For more information, see the <ulink url=
- * "http://docs.aws.amazon.com/codepipeline/latest/UserGuide/concepts.html"
- * >Concepts</ulink>.
+ * CodePipeline. For more information, see the <a href=
+ * "http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket"
+ * >Concepts</a>.
  * </p>
  */
 public class ArtifactStore implements Serializable, Cloneable {
@@ -42,7 +42,13 @@ public class ArtifactStore implements Serializable, Cloneable {
      * </p>
      */
     private String location;
-
+    /**
+     * <p>
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
+     * </p>
+     */
     private EncryptionKey encryptionKey;
 
     /**
@@ -54,6 +60,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *        The type of the artifact store, such as S3.
      * @see ArtifactStoreType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -66,6 +73,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return The type of the artifact store, such as S3.
      * @see ArtifactStoreType
      */
+
     public String getType() {
         return this.type;
     }
@@ -81,6 +89,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactStoreType
      */
+
     public ArtifactStore withType(String type) {
         setType(type);
         return this;
@@ -93,10 +102,9 @@ public class ArtifactStore implements Serializable, Cloneable {
      * 
      * @param type
      *        The type of the artifact store, such as S3.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ArtifactStoreType
      */
+
     public void setType(ArtifactStoreType type) {
         this.type = type.toString();
     }
@@ -112,6 +120,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *         chained together.
      * @see ArtifactStoreType
      */
+
     public ArtifactStore withType(ArtifactStoreType type) {
         setType(type);
         return this;
@@ -127,6 +136,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      *        The location for storing the artifacts for a pipeline, such as an
      *        S3 bucket or folder.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -140,6 +150,7 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return The location for storing the artifacts for a pipeline, such as an
      *         S3 bucket or folder.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -156,30 +167,60 @@ public class ArtifactStore implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactStore withLocation(String location) {
         setLocation(location);
         return this;
     }
 
     /**
+     * <p>
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The encryption key used to encrypt the data in the artifact store,
+     *        such as an AWS Key Management Service (AWS KMS) key. If this is
+     *        undefined, the default key for Amazon S3 is used.
      */
+
     public void setEncryptionKey(EncryptionKey encryptionKey) {
         this.encryptionKey = encryptionKey;
     }
 
     /**
-     * @return
+     * <p>
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
+     * </p>
+     * 
+     * @return The encryption key used to encrypt the data in the artifact
+     *         store, such as an AWS Key Management Service (AWS KMS) key. If
+     *         this is undefined, the default key for Amazon S3 is used.
      */
+
     public EncryptionKey getEncryptionKey() {
         return this.encryptionKey;
     }
 
     /**
+     * <p>
+     * The encryption key used to encrypt the data in the artifact store, such
+     * as an AWS Key Management Service (AWS KMS) key. If this is undefined, the
+     * default key for Amazon S3 is used.
+     * </p>
+     * 
      * @param encryptionKey
+     *        The encryption key used to encrypt the data in the artifact store,
+     *        such as an AWS Key Management Service (AWS KMS) key. If this is
+     *        undefined, the default key for Amazon S3 is used.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ArtifactStore withEncryptionKey(EncryptionKey encryptionKey) {
         setEncryptionKey(encryptionKey);
         return this;

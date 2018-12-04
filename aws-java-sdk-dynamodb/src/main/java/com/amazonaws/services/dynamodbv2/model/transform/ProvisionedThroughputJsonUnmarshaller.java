@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,15 +55,13 @@ public class ProvisionedThroughputJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ReadCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughput
-                            .setReadCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    provisionedThroughput.setReadCapacityUnits(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("WriteCapacityUnits", targetDepth)) {
                     context.nextToken();
-                    provisionedThroughput
-                            .setWriteCapacityUnits(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    provisionedThroughput.setWriteCapacityUnits(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

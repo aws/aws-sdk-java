@@ -45,6 +45,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * 
      * @return The five most recent communications associated with the case.
      */
+
     public java.util.List<Communication> getCommunications() {
         if (communications == null) {
             communications = new com.amazonaws.internal.SdkInternalList<Communication>();
@@ -60,6 +61,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * @param communications
      *        The five most recent communications associated with the case.
      */
+
     public void setCommunications(
             java.util.Collection<Communication> communications) {
         if (communications == null) {
@@ -87,6 +89,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecentCaseCommunications withCommunications(
             Communication... communications) {
         if (this.communications == null) {
@@ -109,6 +112,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecentCaseCommunications withCommunications(
             java.util.Collection<Communication> communications) {
         setCommunications(communications);
@@ -123,6 +127,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * @param nextToken
      *        A resumption point for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -134,6 +139,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * 
      * @return A resumption point for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -148,6 +154,7 @@ public class RecentCaseCommunications implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RecentCaseCommunications withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

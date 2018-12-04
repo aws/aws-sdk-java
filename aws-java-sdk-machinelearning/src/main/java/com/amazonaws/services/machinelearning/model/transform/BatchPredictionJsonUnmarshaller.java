@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,61 +55,59 @@ public class BatchPredictionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("BatchPredictionId", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setBatchPredictionId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setBatchPredictionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MLModelId", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setMLModelId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setMLModelId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("BatchPredictionDataSourceId",
                         targetDepth)) {
                     context.nextToken();
-                    batchPrediction
-                            .setBatchPredictionDataSourceId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    batchPrediction.setBatchPredictionDataSourceId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("InputDataLocationS3", targetDepth)) {
                     context.nextToken();
-                    batchPrediction
-                            .setInputDataLocationS3(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    batchPrediction.setInputDataLocationS3(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedByIamUser", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setCreatedByIamUser(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setCreatedByIamUser(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("LastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setLastUpdatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setLastUpdatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("OutputUri", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setOutputUri(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setOutputUri(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
-                    batchPrediction.setMessage(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    batchPrediction.setMessage(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

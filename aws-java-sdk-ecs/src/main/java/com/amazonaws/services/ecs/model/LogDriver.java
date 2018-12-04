@@ -25,7 +25,8 @@ public enum LogDriver {
     Syslog("syslog"),
     Journald("journald"),
     Gelf("gelf"),
-    Fluentd("fluentd");
+    Fluentd("fluentd"),
+    Awslogs("awslogs");
 
     private String value;
 
@@ -58,6 +59,8 @@ public enum LogDriver {
             return Gelf;
         } else if ("fluentd".equals(value)) {
             return Fluentd;
+        } else if ("awslogs".equals(value)) {
+            return Awslogs;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

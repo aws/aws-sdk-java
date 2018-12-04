@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeTagsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class DescribeTagsRequestMarshaller implements
         Marshaller<Request<DescribeTagsRequest>, DescribeTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeTagsRequest> marshall(
             DescribeTagsRequest describeTagsRequest) {
@@ -65,21 +73,19 @@ public class DescribeTagsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
-                (describeTagsRequest.getFileSystemId() == null) ? ""
-                        : StringUtils.fromString(describeTagsRequest
-                                .getFileSystemId()));
+                (describeTagsRequest.getFileSystemId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(describeTagsRequest
+                                .getFileSystemId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String maxItems = (describeTagsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromInteger(describeTagsRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (describeTagsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems",
+                    StringUtils.fromInteger(describeTagsRequest.getMaxItems()));
         }
 
-        String marker = (describeTagsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(describeTagsRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (describeTagsRequest.getMarker() != null) {
+            request.addParameter("Marker",
+                    StringUtils.fromString(describeTagsRequest.getMarker()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

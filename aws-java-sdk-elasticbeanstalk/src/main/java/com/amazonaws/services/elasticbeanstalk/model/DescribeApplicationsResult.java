@@ -39,6 +39,7 @@ public class DescribeApplicationsResult implements Serializable, Cloneable {
      * 
      * @return This parameter contains a list of <a>ApplicationDescription</a>.
      */
+
     public java.util.List<ApplicationDescription> getApplications() {
         if (applications == null) {
             applications = new com.amazonaws.internal.SdkInternalList<ApplicationDescription>();
@@ -54,6 +55,7 @@ public class DescribeApplicationsResult implements Serializable, Cloneable {
      * @param applications
      *        This parameter contains a list of <a>ApplicationDescription</a>.
      */
+
     public void setApplications(
             java.util.Collection<ApplicationDescription> applications) {
         if (applications == null) {
@@ -81,6 +83,7 @@ public class DescribeApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationsResult withApplications(
             ApplicationDescription... applications) {
         if (this.applications == null) {
@@ -103,6 +106,7 @@ public class DescribeApplicationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeApplicationsResult withApplications(
             java.util.Collection<ApplicationDescription> applications) {
         setApplications(applications);

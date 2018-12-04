@@ -45,6 +45,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * 
      * @return The launch configurations.
      */
+
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
         if (launchConfigurations == null) {
             launchConfigurations = new com.amazonaws.internal.SdkInternalList<LaunchConfiguration>();
@@ -60,6 +61,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * @param launchConfigurations
      *        The launch configurations.
      */
+
     public void setLaunchConfigurations(
             java.util.Collection<LaunchConfiguration> launchConfigurations) {
         if (launchConfigurations == null) {
@@ -87,6 +89,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(
             LaunchConfiguration... launchConfigurations) {
         if (this.launchConfigurations == null) {
@@ -109,6 +112,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(
             java.util.Collection<LaunchConfiguration> launchConfigurations) {
         setLaunchConfigurations(launchConfigurations);
@@ -125,6 +129,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +160,7 @@ public class DescribeLaunchConfigurationsResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLaunchConfigurationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

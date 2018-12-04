@@ -30,6 +30,7 @@ import com.amazonaws.Request;
 import com.amazonaws.SignableRequest;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Utilities useful for REST/HTTP S3Service implementations.
@@ -43,7 +44,7 @@ public class RestUtils {
     private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] {
             "acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
             "versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website",
-            "delete", "lifecycle", "tagging", "cors", "restore", "replication",
+            "delete", "lifecycle", "tagging", "cors", "restore", "replication", "accelerate",
             ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
@@ -100,7 +101,7 @@ public class RestUtils {
                 String value = entry.getValue();
 
                 if (key == null) continue;
-                String lk = key.toLowerCase(Locale.getDefault());
+                String lk = StringUtils.lowerCase(key);
 
                 // Ignore any headers that are not particularly interesting.
                 if (lk.equals("content-type") || lk.equals("content-md5") || lk.equals("date") ||

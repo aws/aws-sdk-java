@@ -60,6 +60,7 @@ public class PlacementType implements Serializable, Cloneable {
      * @param availabilityZone
      *        The Amazon EC2 Availability Zone for the job flow.
      */
+
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
@@ -71,6 +72,7 @@ public class PlacementType implements Serializable, Cloneable {
      * 
      * @return The Amazon EC2 Availability Zone for the job flow.
      */
+
     public String getAvailabilityZone() {
         return this.availabilityZone;
     }
@@ -85,6 +87,7 @@ public class PlacementType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlacementType withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
         return this;

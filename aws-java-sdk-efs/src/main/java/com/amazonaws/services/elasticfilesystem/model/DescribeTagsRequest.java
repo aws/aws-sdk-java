@@ -57,6 +57,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *        Optional. Maximum number of file system tags to return in the
      *        response. It must be an integer with a value greater than zero.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -70,6 +71,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Optional. Maximum number of file system tags to return in the
      *         response. It must be an integer with a value greater than zero.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -86,6 +88,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -103,6 +106,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *        <code>DescribeTags</code> operation. If present, it specifies to
      *        continue the list from where the previous call left off.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -119,6 +123,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      *         specifies to continue the list from where the previous call left
      *         off.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -137,6 +142,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -150,6 +156,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @param fileSystemId
      *        The ID of the file system whose tag set you want to retrieve.
      */
+
     public void setFileSystemId(String fileSystemId) {
         this.fileSystemId = fileSystemId;
     }
@@ -161,6 +168,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the file system whose tag set you want to retrieve.
      */
+
     public String getFileSystemId() {
         return this.fileSystemId;
     }
@@ -175,6 +183,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeTagsRequest withFileSystemId(String fileSystemId) {
         setFileSystemId(fileSystemId);
         return this;

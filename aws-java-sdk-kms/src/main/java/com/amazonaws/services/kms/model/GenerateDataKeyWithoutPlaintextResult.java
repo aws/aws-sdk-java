@@ -59,15 +59,24 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param ciphertextBlob
      *        Ciphertext that contains the wrapped data key. You must store the
      *        blob and encryption context so that the key can be used in a
-     *        future decrypt operation. </p>
+     *        future decrypt operation.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -95,11 +104,12 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * 
      * @return Ciphertext that contains the wrapped data key. You must store the
      *         blob and encryption context so that the key can be used in a
-     *         future decrypt operation. </p>
+     *         future decrypt operation.</p>
      *         <p>
      *         If you are using the CLI, the value is Base64 encoded. Otherwise,
      *         it is not encoded.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -118,13 +128,14 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @param ciphertextBlob
      *        Ciphertext that contains the wrapped data key. You must store the
      *        blob and encryption context so that the key can be used in a
-     *        future decrypt operation. </p>
+     *        future decrypt operation.</p>
      *        <p>
      *        If you are using the CLI, the value is Base64 encoded. Otherwise,
      *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextResult withCiphertextBlob(
             java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
@@ -141,6 +152,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      *        System generated unique identifier of the key to be used to
      *        decrypt the encrypted copy of the data key.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -154,6 +166,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @return System generated unique identifier of the key to be used to
      *         decrypt the encrypted copy of the data key.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -170,6 +183,7 @@ public class GenerateDataKeyWithoutPlaintextResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateDataKeyWithoutPlaintextResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

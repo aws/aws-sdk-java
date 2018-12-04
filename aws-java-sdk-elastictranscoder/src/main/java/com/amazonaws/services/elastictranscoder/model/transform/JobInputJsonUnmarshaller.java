@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,32 +55,32 @@ public class JobInputJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    jobInput.setKey(StringJsonUnmarshaller.getInstance()
+                    jobInput.setKey(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("FrameRate", targetDepth)) {
                     context.nextToken();
-                    jobInput.setFrameRate(StringJsonUnmarshaller.getInstance()
+                    jobInput.setFrameRate(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Resolution", targetDepth)) {
                     context.nextToken();
-                    jobInput.setResolution(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    jobInput.setResolution(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("AspectRatio", targetDepth)) {
                     context.nextToken();
-                    jobInput.setAspectRatio(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobInput.setAspectRatio(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Interlaced", targetDepth)) {
                     context.nextToken();
-                    jobInput.setInterlaced(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    jobInput.setInterlaced(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();
-                    jobInput.setContainer(StringJsonUnmarshaller.getInstance()
+                    jobInput.setContainer(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Encryption", targetDepth)) {

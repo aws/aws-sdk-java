@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PresetMarshaller
@@ -39,60 +34,57 @@ import com.amazonaws.util.json.*;
 public class PresetJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Preset preset, JSONWriter jsonWriter) {
+    public void marshall(Preset preset, StructuredJsonGenerator jsonGenerator) {
+
         if (preset == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (preset.getId() != null) {
-                jsonWriter.key("Id").value(preset.getId());
+                jsonGenerator.writeFieldName("Id").writeValue(preset.getId());
             }
-
             if (preset.getArn() != null) {
-                jsonWriter.key("Arn").value(preset.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(preset.getArn());
             }
-
             if (preset.getName() != null) {
-                jsonWriter.key("Name").value(preset.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        preset.getName());
             }
-
             if (preset.getDescription() != null) {
-                jsonWriter.key("Description").value(preset.getDescription());
+                jsonGenerator.writeFieldName("Description").writeValue(
+                        preset.getDescription());
             }
-
             if (preset.getContainer() != null) {
-                jsonWriter.key("Container").value(preset.getContainer());
+                jsonGenerator.writeFieldName("Container").writeValue(
+                        preset.getContainer());
             }
-
             if (preset.getAudio() != null) {
-                jsonWriter.key("Audio");
+                jsonGenerator.writeFieldName("Audio");
                 AudioParametersJsonMarshaller.getInstance().marshall(
-                        preset.getAudio(), jsonWriter);
+                        preset.getAudio(), jsonGenerator);
             }
-
             if (preset.getVideo() != null) {
-                jsonWriter.key("Video");
+                jsonGenerator.writeFieldName("Video");
                 VideoParametersJsonMarshaller.getInstance().marshall(
-                        preset.getVideo(), jsonWriter);
+                        preset.getVideo(), jsonGenerator);
             }
-
             if (preset.getThumbnails() != null) {
-                jsonWriter.key("Thumbnails");
+                jsonGenerator.writeFieldName("Thumbnails");
                 ThumbnailsJsonMarshaller.getInstance().marshall(
-                        preset.getThumbnails(), jsonWriter);
+                        preset.getThumbnails(), jsonGenerator);
             }
-
             if (preset.getType() != null) {
-                jsonWriter.key("Type").value(preset.getType());
+                jsonGenerator.writeFieldName("Type").writeValue(
+                        preset.getType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

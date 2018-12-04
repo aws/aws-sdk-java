@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class HitsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("found", targetDepth)) {
                     context.nextToken();
-                    hits.setFound(LongJsonUnmarshaller.getInstance()
+                    hits.setFound(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("start", targetDepth)) {
                     context.nextToken();
-                    hits.setStart(LongJsonUnmarshaller.getInstance()
+                    hits.setStart(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("cursor", targetDepth)) {
                     context.nextToken();
-                    hits.setCursor(StringJsonUnmarshaller.getInstance()
+                    hits.setCursor(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("hit", targetDepth)) {

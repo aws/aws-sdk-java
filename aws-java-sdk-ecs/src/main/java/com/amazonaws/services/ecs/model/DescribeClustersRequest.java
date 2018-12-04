@@ -45,6 +45,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
      *         Resource Name (ARN) entries. If you do not specify a cluster, the
      *         default cluster is assumed.
      */
+
     public java.util.List<String> getClusters() {
         if (clusters == null) {
             clusters = new com.amazonaws.internal.SdkInternalList<String>();
@@ -64,6 +65,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
      *        Resource Name (ARN) entries. If you do not specify a cluster, the
      *        default cluster is assumed.
      */
+
     public void setClusters(java.util.Collection<String> clusters) {
         if (clusters == null) {
             this.clusters = null;
@@ -94,6 +96,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersRequest withClusters(String... clusters) {
         if (this.clusters == null) {
             setClusters(new com.amazonaws.internal.SdkInternalList<String>(
@@ -119,6 +122,7 @@ public class DescribeClustersRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeClustersRequest withClusters(
             java.util.Collection<String> clusters) {
         setClusters(clusters);

@@ -20,58 +20,125 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A request to get information about a collection of <a>ClientCertificate</a>
+ * resources.
+ * </p>
  */
 public class GetClientCertificatesRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.
+     * </p>
+     */
     private String position;
-
+    /**
+     * <p>
+     * The maximum number of <a>ClientCertificate</a> resources in the
+     * collection to get information about. The default limit is 25. It should
+     * be an integer between 1 - 500.
+     * </p>
+     */
     private Integer limit;
 
     /**
+     * <p>
+     * The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.
+     * </p>
+     * 
      * @param position
+     *        The position of the current <a>ClientCertificate</a> resource in
+     *        the collection to get information about.
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
 
     /**
-     * @return
+     * <p>
+     * The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.
+     * </p>
+     * 
+     * @return The position of the current <a>ClientCertificate</a> resource in
+     *         the collection to get information about.
      */
+
     public String getPosition() {
         return this.position;
     }
 
     /**
+     * <p>
+     * The position of the current <a>ClientCertificate</a> resource in the
+     * collection to get information about.
+     * </p>
+     * 
      * @param position
+     *        The position of the current <a>ClientCertificate</a> resource in
+     *        the collection to get information about.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesRequest withPosition(String position) {
         setPosition(position);
         return this;
     }
 
     /**
+     * <p>
+     * The maximum number of <a>ClientCertificate</a> resources in the
+     * collection to get information about. The default limit is 25. It should
+     * be an integer between 1 - 500.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of <a>ClientCertificate</a> resources in the
+     *        collection to get information about. The default limit is 25. It
+     *        should be an integer between 1 - 500.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of <a>ClientCertificate</a> resources in the
+     * collection to get information about. The default limit is 25. It should
+     * be an integer between 1 - 500.
+     * </p>
+     * 
+     * @return The maximum number of <a>ClientCertificate</a> resources in the
+     *         collection to get information about. The default limit is 25. It
+     *         should be an integer between 1 - 500.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
 
     /**
+     * <p>
+     * The maximum number of <a>ClientCertificate</a> resources in the
+     * collection to get information about. The default limit is 25. It should
+     * be an integer between 1 - 500.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of <a>ClientCertificate</a> resources in the
+     *        collection to get information about. The default limit is 25. It
+     *        should be an integer between 1 - 500.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetClientCertificatesRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

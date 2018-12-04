@@ -40,6 +40,7 @@ public class CreateAppResult implements Serializable, Cloneable {
      * @param appId
      *        The app ID.
      */
+
     public void setAppId(String appId) {
         this.appId = appId;
     }
@@ -51,6 +52,7 @@ public class CreateAppResult implements Serializable, Cloneable {
      * 
      * @return The app ID.
      */
+
     public String getAppId() {
         return this.appId;
     }
@@ -65,6 +67,7 @@ public class CreateAppResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateAppResult withAppId(String appId) {
         setAppId(appId);
         return this;

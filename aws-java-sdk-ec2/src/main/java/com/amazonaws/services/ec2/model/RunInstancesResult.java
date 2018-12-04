@@ -1,63 +1,74 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
 
 /**
- * <p>
- * The result of the RunInstances call.
- * </p>
+ * A simple result wrapper around the Reservation object that was sent over the
+ * wire.
  */
 public class RunInstancesResult implements Serializable, Cloneable {
 
     /**
-     * Zero or more reservations.
+     * <p>
+     * Describes a reservation.
+     * </p>
      */
     private Reservation reservation;
 
     /**
-     * Zero or more reservations.
-     *
-     * @return Zero or more reservations.
+     * <p>
+     * Describes a reservation.
+     * </p>
+     * 
+     * @param reservation
+     *        Describes a reservation.
      */
-    public Reservation getReservation() {
-        return reservation;
-    }
-    
-    /**
-     * Zero or more reservations.
-     *
-     * @param reservation Zero or more reservations.
-     */
+
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
-    
+
     /**
-     * Zero or more reservations.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param reservation Zero or more reservations.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Describes a reservation.
+     * </p>
+     * 
+     * @return Describes a reservation.
      */
+
+    public Reservation getReservation() {
+        return this.reservation;
+    }
+
+    /**
+     * <p>
+     * Describes a reservation.
+     * </p>
+     * 
+     * @param reservation
+     *        Describes a reservation.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public RunInstancesResult withReservation(Reservation reservation) {
-        this.reservation = reservation;
+        setReservation(reservation);
         return this;
     }
 
@@ -73,46 +84,49 @@ public class RunInstancesResult implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservation() != null) sb.append("Reservation: " + getReservation() );
+        if (getReservation() != null)
+            sb.append("Reservation: " + getReservation());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RunInstancesResult == false)
+            return false;
+        RunInstancesResult other = (RunInstancesResult) obj;
+        if (other.getReservation() == null ^ this.getReservation() == null)
+            return false;
+        if (other.getReservation() != null
+                && other.getReservation().equals(this.getReservation()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getReservation() == null) ? 0 : getReservation().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getReservation() == null) ? 0 : getReservation().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RunInstancesResult == false) return false;
-        RunInstancesResult other = (RunInstancesResult)obj;
-        
-        if (other.getReservation() == null ^ this.getReservation() == null) return false;
-        if (other.getReservation() != null && other.getReservation().equals(this.getReservation()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RunInstancesResult clone() {
         try {
             return (RunInstancesResult) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

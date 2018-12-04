@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A JSON Object containing a list of
+ * A JSON object containing a list of
  * <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>.
  * </p>
  */
@@ -51,6 +51,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest
      *         stored volumes must from the same gateway. Use <a>ListVolumes</a>
      *         to get volume ARNs for a gateway.
      */
+
     public java.util.List<String> getVolumeARNs() {
         if (volumeARNs == null) {
             volumeARNs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -72,6 +73,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest
      *        stored volumes must from the same gateway. Use <a>ListVolumes</a>
      *        to get volume ARNs for a gateway.
      */
+
     public void setVolumeARNs(java.util.Collection<String> volumeARNs) {
         if (volumeARNs == null) {
             this.volumeARNs = null;
@@ -104,6 +106,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(
             String... volumeARNs) {
         if (this.volumeARNs == null) {
@@ -132,6 +135,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStorediSCSIVolumesRequest withVolumeARNs(
             java.util.Collection<String> volumeARNs) {
         setVolumeARNs(volumeARNs);

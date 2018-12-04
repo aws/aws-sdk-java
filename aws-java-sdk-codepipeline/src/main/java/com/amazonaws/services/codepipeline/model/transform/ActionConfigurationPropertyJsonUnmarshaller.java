@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,42 +55,42 @@ public class ActionConfigurationPropertyJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    actionConfigurationProperty.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionConfigurationProperty.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("required", targetDepth)) {
                     context.nextToken();
                     actionConfigurationProperty
-                            .setRequired(BooleanJsonUnmarshaller.getInstance()
+                            .setRequired(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
-                    actionConfigurationProperty.setKey(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionConfigurationProperty.setKey(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("secret", targetDepth)) {
                     context.nextToken();
                     actionConfigurationProperty
-                            .setSecret(BooleanJsonUnmarshaller.getInstance()
+                            .setSecret(context.getUnmarshaller(Boolean.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("queryable", targetDepth)) {
                     context.nextToken();
                     actionConfigurationProperty
-                            .setQueryable(BooleanJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                            .setQueryable(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    actionConfigurationProperty
-                            .setDescription(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionConfigurationProperty.setDescription(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    actionConfigurationProperty.setType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionConfigurationProperty.setType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

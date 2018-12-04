@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeTrustsRequest Marshaller
  */
 public class DescribeTrustsRequestMarshaller implements
         Marshaller<Request<DescribeTrustsRequest>, DescribeTrustsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeTrustsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeTrustsRequest> marshall(
             DescribeTrustsRequest describeTrustsRequest) {
@@ -64,46 +65,44 @@ public class DescribeTrustsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (describeTrustsRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         describeTrustsRequest.getDirectoryId());
             }
 
             com.amazonaws.internal.SdkInternalList<String> trustIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeTrustsRequest
                     .getTrustIds();
             if (!trustIdsList.isEmpty() || !trustIdsList.isAutoConstruct()) {
-                jsonWriter.key("TrustIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("TrustIds");
+                jsonGenerator.writeStartArray();
                 for (String trustIdsListValue : trustIdsList) {
                     if (trustIdsListValue != null) {
-                        jsonWriter.value(trustIdsListValue);
+                        jsonGenerator.writeValue(trustIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (describeTrustsRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         describeTrustsRequest.getNextToken());
             }
-
             if (describeTrustsRequest.getLimit() != null) {
-                jsonWriter.key("Limit").value(describeTrustsRequest.getLimit());
+                jsonGenerator.writeFieldName("Limit").writeValue(
+                        describeTrustsRequest.getLimit());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

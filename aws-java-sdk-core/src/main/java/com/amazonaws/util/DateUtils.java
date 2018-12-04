@@ -189,6 +189,9 @@ public class DateUtils {
      * @return The parsed Date object.
      */
     public static Date parseRFC822Date(String dateString) {
+        if (dateString == null) {
+            return null;
+        }
         try {
             return new Date(rfc822DateFormat.parseMillis(dateString));
         } catch(RuntimeException ex) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -59,48 +61,48 @@ public class ListRecordsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listRecordsResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Count", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setCount(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listRecordsResult.setCount(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("DatasetSyncCount", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setDatasetSyncCount(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listRecordsResult.setDatasetSyncCount(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedBy", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setLastModifiedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listRecordsResult.setLastModifiedBy(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MergedDatasetNames", targetDepth)) {
                     context.nextToken();
                     listRecordsResult
                             .setMergedDatasetNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("DatasetExists", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult.setDatasetExists(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listRecordsResult.setDatasetExists(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression(
                         "DatasetDeletedAfterRequestedSyncCount", targetDepth)) {
                     context.nextToken();
                     listRecordsResult
-                            .setDatasetDeletedAfterRequestedSyncCount(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setDatasetDeletedAfterRequestedSyncCount(context
+                                    .getUnmarshaller(Boolean.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("SyncSessionToken", targetDepth)) {
                     context.nextToken();
-                    listRecordsResult
-                            .setSyncSessionToken(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    listRecordsResult.setSyncSessionToken(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

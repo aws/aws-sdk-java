@@ -31,7 +31,8 @@ public class Service implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the region
      * of the service, the AWS account ID of the service owner, the
      * <code>service</code> namespace, and then the service name. For example,
-     * arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     * .
      * </p>
      */
     private String serviceArn;
@@ -46,16 +47,15 @@ public class Service implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the
-     * service.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the service.
      * </p>
      */
     private String clusterArn;
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
@@ -114,7 +114,7 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      */
     private String roleArn;
@@ -126,13 +126,16 @@ public class Service implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<ServiceEvent> events;
 
+    private java.util.Date createdAt;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the service. The ARN
      * contains the <code>arn:aws:ecs</code> namespace, followed by the region
      * of the service, the AWS account ID of the service owner, the
      * <code>service</code> namespace, and then the service name. For example,
-     * arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     * .
      * </p>
      * 
      * @param serviceArn
@@ -141,9 +144,10 @@ public class Service implements Serializable, Cloneable {
      *        the region of the service, the AWS account ID of the service
      *        owner, the <code>service</code> namespace, and then the service
      *        name. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service
-     *        /<i>my-service</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     *        .
      */
+
     public void setServiceArn(String serviceArn) {
         this.serviceArn = serviceArn;
     }
@@ -154,7 +158,8 @@ public class Service implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the region
      * of the service, the AWS account ID of the service owner, the
      * <code>service</code> namespace, and then the service name. For example,
-     * arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the service. The
@@ -162,9 +167,10 @@ public class Service implements Serializable, Cloneable {
      *         the region of the service, the AWS account ID of the service
      *         owner, the <code>service</code> namespace, and then the service
      *         name. For example,
-     *         arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service
-     *         /<i>my-service</i>.
+     *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     *         .
      */
+
     public String getServiceArn() {
         return this.serviceArn;
     }
@@ -175,7 +181,8 @@ public class Service implements Serializable, Cloneable {
      * contains the <code>arn:aws:ecs</code> namespace, followed by the region
      * of the service, the AWS account ID of the service owner, the
      * <code>service</code> namespace, and then the service name. For example,
-     * arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>.
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     * .
      * </p>
      * 
      * @param serviceArn
@@ -184,11 +191,12 @@ public class Service implements Serializable, Cloneable {
      *        the region of the service, the AWS account ID of the service
      *        owner, the <code>service</code> namespace, and then the service
      *        name. For example,
-     *        arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service
-     *        /<i>my-service</i>.
+     *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i> </code>
+     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withServiceArn(String serviceArn) {
         setServiceArn(serviceArn);
         return this;
@@ -209,6 +217,7 @@ public class Service implements Serializable, Cloneable {
      *        named services in multiple clusters within a region or across
      *        multiple regions.
      */
+
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
@@ -227,6 +236,7 @@ public class Service implements Serializable, Cloneable {
      *         similarly named services in multiple clusters within a region or
      *         across multiple regions.
      */
+
     public String getServiceName() {
         return this.serviceName;
     }
@@ -248,6 +258,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withServiceName(String serviceName) {
         setServiceName(serviceName);
         return this;
@@ -255,43 +266,43 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the
-     * service.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the service.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *        the service.
+     *        The Amazon Resource Name (ARN) of the cluster that hosts the
+     *        service.
      */
+
     public void setClusterArn(String clusterArn) {
         this.clusterArn = clusterArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the
-     * service.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the service.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *         the service.
+     * @return The Amazon Resource Name (ARN) of the cluster that hosts the
+     *         service.
      */
+
     public String getClusterArn() {
         return this.clusterArn;
     }
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the of the cluster that hosts the
-     * service.
+     * The Amazon Resource Name (ARN) of the cluster that hosts the service.
      * </p>
      * 
      * @param clusterArn
-     *        The Amazon Resource Name (ARN) of the of the cluster that hosts
-     *        the service.
+     *        The Amazon Resource Name (ARN) of the cluster that hosts the
+     *        service.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withClusterArn(String clusterArn) {
         setClusterArn(clusterArn);
         return this;
@@ -299,16 +310,17 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
-     * @return A list of load balancer objects, containing the load balancer
-     *         name, the container name (as it appears in a container
-     *         definition), and the container port to access from the load
-     *         balancer.
+     * @return A list of Elastic Load Balancing load balancer objects,
+     *         containing the load balancer name, the container name (as it
+     *         appears in a container definition), and the container port to
+     *         access from the load balancer.
      */
+
     public java.util.List<LoadBalancer> getLoadBalancers() {
         if (loadBalancers == null) {
             loadBalancers = new com.amazonaws.internal.SdkInternalList<LoadBalancer>();
@@ -318,17 +330,18 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      */
+
     public void setLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         if (loadBalancers == null) {
@@ -342,9 +355,9 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -354,13 +367,14 @@ public class Service implements Serializable, Cloneable {
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withLoadBalancers(LoadBalancer... loadBalancers) {
         if (this.loadBalancers == null) {
             setLoadBalancers(new com.amazonaws.internal.SdkInternalList<LoadBalancer>(
@@ -374,19 +388,20 @@ public class Service implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of load balancer objects, containing the load balancer name, the
-     * container name (as it appears in a container definition), and the
-     * container port to access from the load balancer.
+     * A list of Elastic Load Balancing load balancer objects, containing the
+     * load balancer name, the container name (as it appears in a container
+     * definition), and the container port to access from the load balancer.
      * </p>
      * 
      * @param loadBalancers
-     *        A list of load balancer objects, containing the load balancer
-     *        name, the container name (as it appears in a container
-     *        definition), and the container port to access from the load
-     *        balancer.
+     *        A list of Elastic Load Balancing load balancer objects, containing
+     *        the load balancer name, the container name (as it appears in a
+     *        container definition), and the container port to access from the
+     *        load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withLoadBalancers(
             java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
@@ -404,6 +419,7 @@ public class Service implements Serializable, Cloneable {
      *        <code>ACTIVE</code>, <code>DRAINING</code>, or
      *        <code>INACTIVE</code>.
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -418,6 +434,7 @@ public class Service implements Serializable, Cloneable {
      *         <code>ACTIVE</code>, <code>DRAINING</code>, or
      *         <code>INACTIVE</code>.
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -435,6 +452,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withStatus(String status) {
         setStatus(status);
         return this;
@@ -454,6 +472,7 @@ public class Service implements Serializable, Cloneable {
      *        service is created with <a>CreateService</a>, and it can be
      *        modified with <a>UpdateService</a>.
      */
+
     public void setDesiredCount(Integer desiredCount) {
         this.desiredCount = desiredCount;
     }
@@ -471,6 +490,7 @@ public class Service implements Serializable, Cloneable {
      *         service is created with <a>CreateService</a>, and it can be
      *         modified with <a>UpdateService</a>.
      */
+
     public Integer getDesiredCount() {
         return this.desiredCount;
     }
@@ -491,6 +511,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDesiredCount(Integer desiredCount) {
         setDesiredCount(desiredCount);
         return this;
@@ -506,6 +527,7 @@ public class Service implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>RUNNING</code> state.
      */
+
     public void setRunningCount(Integer runningCount) {
         this.runningCount = runningCount;
     }
@@ -519,6 +541,7 @@ public class Service implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>RUNNING</code> state.
      */
+
     public Integer getRunningCount() {
         return this.runningCount;
     }
@@ -535,6 +558,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withRunningCount(Integer runningCount) {
         setRunningCount(runningCount);
         return this;
@@ -550,6 +574,7 @@ public class Service implements Serializable, Cloneable {
      *        The number of tasks in the cluster that are in the
      *        <code>PENDING</code> state.
      */
+
     public void setPendingCount(Integer pendingCount) {
         this.pendingCount = pendingCount;
     }
@@ -563,6 +588,7 @@ public class Service implements Serializable, Cloneable {
      * @return The number of tasks in the cluster that are in the
      *         <code>PENDING</code> state.
      */
+
     public Integer getPendingCount() {
         return this.pendingCount;
     }
@@ -579,6 +605,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withPendingCount(Integer pendingCount) {
         setPendingCount(pendingCount);
         return this;
@@ -596,6 +623,7 @@ public class Service implements Serializable, Cloneable {
      *        specified when the service is created with <a>CreateService</a>,
      *        and it can be modified with <a>UpdateService</a>.
      */
+
     public void setTaskDefinition(String taskDefinition) {
         this.taskDefinition = taskDefinition;
     }
@@ -612,6 +640,7 @@ public class Service implements Serializable, Cloneable {
      *         <a>CreateService</a>, and it can be modified with
      *         <a>UpdateService</a>.
      */
+
     public String getTaskDefinition() {
         return this.taskDefinition;
     }
@@ -630,6 +659,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withTaskDefinition(String taskDefinition) {
         setTaskDefinition(taskDefinition);
         return this;
@@ -646,6 +676,7 @@ public class Service implements Serializable, Cloneable {
      *        during the deployment and the ordering of stopping and starting
      *        tasks.
      */
+
     public void setDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         this.deploymentConfiguration = deploymentConfiguration;
@@ -661,6 +692,7 @@ public class Service implements Serializable, Cloneable {
      *         during the deployment and the ordering of stopping and starting
      *         tasks.
      */
+
     public DeploymentConfiguration getDeploymentConfiguration() {
         return this.deploymentConfiguration;
     }
@@ -678,6 +710,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeploymentConfiguration(
             DeploymentConfiguration deploymentConfiguration) {
         setDeploymentConfiguration(deploymentConfiguration);
@@ -691,6 +724,7 @@ public class Service implements Serializable, Cloneable {
      * 
      * @return The current state of deployments for the service.
      */
+
     public java.util.List<Deployment> getDeployments() {
         if (deployments == null) {
             deployments = new com.amazonaws.internal.SdkInternalList<Deployment>();
@@ -706,6 +740,7 @@ public class Service implements Serializable, Cloneable {
      * @param deployments
      *        The current state of deployments for the service.
      */
+
     public void setDeployments(java.util.Collection<Deployment> deployments) {
         if (deployments == null) {
             this.deployments = null;
@@ -732,6 +767,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeployments(Deployment... deployments) {
         if (this.deployments == null) {
             setDeployments(new com.amazonaws.internal.SdkInternalList<Deployment>(
@@ -753,6 +789,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withDeployments(java.util.Collection<Deployment> deployments) {
         setDeployments(deployments);
         return this;
@@ -762,14 +799,15 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role associated with the
      *        service that allows the Amazon ECS container agent to register
-     *        container instances with a load balancer.
+     *        container instances with an Elastic Load Balancing load balancer.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -778,13 +816,15 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role associated with
      *         the service that allows the Amazon ECS container agent to
-     *         register container instances with a load balancer.
+     *         register container instances with an Elastic Load Balancing load
+     *         balancer.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -793,16 +833,17 @@ public class Service implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the IAM role associated with the
      * service that allows the Amazon ECS container agent to register container
-     * instances with a load balancer.
+     * instances with an Elastic Load Balancing load balancer.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the IAM role associated with the
      *        service that allows the Amazon ECS container agent to register
-     *        container instances with a load balancer.
+     *        container instances with an Elastic Load Balancing load balancer.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;
@@ -817,6 +858,7 @@ public class Service implements Serializable, Cloneable {
      * @return The event stream for your service. A maximum of 100 of the latest
      *         events are displayed.
      */
+
     public java.util.List<ServiceEvent> getEvents() {
         if (events == null) {
             events = new com.amazonaws.internal.SdkInternalList<ServiceEvent>();
@@ -834,6 +876,7 @@ public class Service implements Serializable, Cloneable {
      *        The event stream for your service. A maximum of 100 of the latest
      *        events are displayed.
      */
+
     public void setEvents(java.util.Collection<ServiceEvent> events) {
         if (events == null) {
             this.events = null;
@@ -862,6 +905,7 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withEvents(ServiceEvent... events) {
         if (this.events == null) {
             setEvents(new com.amazonaws.internal.SdkInternalList<ServiceEvent>(
@@ -885,8 +929,36 @@ public class Service implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Service withEvents(java.util.Collection<ServiceEvent> events) {
         setEvents(events);
+        return this;
+    }
+
+    /**
+     * @param createdAt
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * @param createdAt
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Service withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -928,7 +1000,9 @@ public class Service implements Serializable, Cloneable {
         if (getRoleArn() != null)
             sb.append("RoleArn: " + getRoleArn() + ",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents());
+            sb.append("Events: " + getEvents() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -1011,6 +1085,11 @@ public class Service implements Serializable, Cloneable {
         if (other.getEvents() != null
                 && other.getEvents().equals(this.getEvents()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null
+                && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         return true;
     }
 
@@ -1059,6 +1138,8 @@ public class Service implements Serializable, Cloneable {
                 + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode
                 + ((getEvents() == null) ? 0 : getEvents().hashCode());
+        hashCode = prime * hashCode
+                + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         return hashCode;
     }
 

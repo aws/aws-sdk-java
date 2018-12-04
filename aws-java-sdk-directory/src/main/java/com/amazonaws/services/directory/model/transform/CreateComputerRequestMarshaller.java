@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.directory.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateComputerRequest Marshaller
  */
 public class CreateComputerRequestMarshaller implements
         Marshaller<Request<CreateComputerRequest>, CreateComputerRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateComputerRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateComputerRequest> marshall(
             CreateComputerRequest createComputerRequest) {
@@ -64,28 +65,26 @@ public class CreateComputerRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createComputerRequest.getDirectoryId() != null) {
-                jsonWriter.key("DirectoryId").value(
+                jsonGenerator.writeFieldName("DirectoryId").writeValue(
                         createComputerRequest.getDirectoryId());
             }
-
             if (createComputerRequest.getComputerName() != null) {
-                jsonWriter.key("ComputerName").value(
+                jsonGenerator.writeFieldName("ComputerName").writeValue(
                         createComputerRequest.getComputerName());
             }
-
             if (createComputerRequest.getPassword() != null) {
-                jsonWriter.key("Password").value(
+                jsonGenerator.writeFieldName("Password").writeValue(
                         createComputerRequest.getPassword());
             }
-
             if (createComputerRequest.getOrganizationalUnitDistinguishedName() != null) {
-                jsonWriter.key("OrganizationalUnitDistinguishedName").value(
+                jsonGenerator.writeFieldName(
+                        "OrganizationalUnitDistinguishedName").writeValue(
                         createComputerRequest
                                 .getOrganizationalUnitDistinguishedName());
             }
@@ -94,26 +93,25 @@ public class CreateComputerRequestMarshaller implements
                     .getComputerAttributes();
             if (!computerAttributesList.isEmpty()
                     || !computerAttributesList.isAutoConstruct()) {
-                jsonWriter.key("ComputerAttributes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("ComputerAttributes");
+                jsonGenerator.writeStartArray();
                 for (Attribute computerAttributesListValue : computerAttributesList) {
                     if (computerAttributesListValue != null) {
 
                         AttributeJsonMarshaller.getInstance().marshall(
-                                computerAttributesListValue, jsonWriter);
+                                computerAttributesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

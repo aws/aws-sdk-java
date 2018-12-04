@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.ec2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,54 +30,78 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Security Group StAX Unmarshaller
+ * SecurityGroup StAX Unmarshaller
  */
-public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup, StaxUnmarshallerContext> {
+public class SecurityGroupStaxUnmarshaller implements
+        Unmarshaller<SecurityGroup, StaxUnmarshallerContext> {
 
-    public SecurityGroup unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public SecurityGroup unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         SecurityGroup securityGroup = new SecurityGroup();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return securityGroup;
+            if (xmlEvent.isEndDocument())
+                return securityGroup;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("ownerId", targetDepth)) {
-                    securityGroup.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.setOwnerId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupName", targetDepth)) {
-                    securityGroup.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.setGroupName(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupId", targetDepth)) {
-                    securityGroup.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.setGroupId(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("groupDescription", targetDepth)) {
-                    securityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.setDescription(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ipPermissions/item", targetDepth)) {
-                    securityGroup.getIpPermissions().add(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup
+                            .withIpPermissions(IpPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("ipPermissionsEgress/item", targetDepth)) {
-                    securityGroup.getIpPermissionsEgress().add(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+
+                if (context.testExpression("ipPermissionsEgress/item",
+                        targetDepth)) {
+                    securityGroup
+                            .withIpPermissionsEgress(IpPermissionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("vpcId", targetDepth)) {
-                    securityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.setVpcId(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
-                    securityGroup.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    securityGroup.withTags(TagStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return securityGroup;
@@ -84,9 +111,10 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
     }
 
     private static SecurityGroupStaxUnmarshaller instance;
+
     public static SecurityGroupStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new SecurityGroupStaxUnmarshaller();
+        if (instance == null)
+            instance = new SecurityGroupStaxUnmarshaller();
         return instance;
     }
 }
-    

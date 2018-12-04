@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateModelRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateModelRequestMarshaller implements
         Marshaller<Request<UpdateModelRequest>, UpdateModelRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateModelRequest> marshall(
             UpdateModelRequest updateModelRequest) {
@@ -65,40 +73,40 @@ public class UpdateModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(updateModelRequest.getRestApiId()));
+                (updateModelRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateModelRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (updateModelRequest.getModelName() == null) ? "" : StringUtils
-                        .fromString(updateModelRequest.getModelName()));
+                (updateModelRequest.getModelName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateModelRequest
+                                .getModelName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateModelRequest
                     .getPatchOperations();
             if (patchOperationsList != null) {
-                jsonWriter.key("patchOperations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("patchOperations");
+                jsonGenerator.writeStartArray();
                 for (PatchOperation patchOperationsListValue : patchOperationsList) {
                     if (patchOperationsListValue != null) {
 
                         PatchOperationJsonMarshaller.getInstance().marshall(
-                                patchOperationsListValue, jsonWriter);
+                                patchOperationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,24 @@ public class VolumeRecoveryPointInfoJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    volumeRecoveryPointInfo.setVolumeARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    volumeRecoveryPointInfo.setVolumeARN(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    volumeRecoveryPointInfo
-                            .setVolumeSizeInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeRecoveryPointInfo.setVolumeSizeInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeUsageInBytes", targetDepth)) {
                     context.nextToken();
-                    volumeRecoveryPointInfo
-                            .setVolumeUsageInBytes(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeRecoveryPointInfo.setVolumeUsageInBytes(context
+                            .getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeRecoveryPointTime",
                         targetDepth)) {
                     context.nextToken();
-                    volumeRecoveryPointInfo
-                            .setVolumeRecoveryPointTime(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    volumeRecoveryPointInfo.setVolumeRecoveryPointTime(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

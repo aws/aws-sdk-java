@@ -38,6 +38,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @param id
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -45,6 +46,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getId() {
         return this.id;
     }
@@ -54,6 +56,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicy withId(String id) {
         setId(id);
         return this;
@@ -62,6 +65,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @param version
      */
+
     public void setVersion(Integer version) {
         this.version = version;
     }
@@ -69,6 +73,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Integer getVersion() {
         return this.version;
     }
@@ -78,6 +83,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicy withVersion(Integer version) {
         setVersion(version);
         return this;
@@ -86,6 +92,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @param name
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -93,6 +100,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getName() {
         return this.name;
     }
@@ -102,6 +110,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicy withName(String name) {
         setName(name);
         return this;
@@ -111,6 +120,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @param type
      * @see RRType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -119,6 +129,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return
      * @see RRType
      */
+
     public String getType() {
         return this.type;
     }
@@ -129,6 +140,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicy withType(String type) {
         setType(type);
         return this;
@@ -136,10 +148,9 @@ public class TrafficPolicy implements Serializable, Cloneable {
 
     /**
      * @param type
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RRType
      */
+
     public void setType(RRType type) {
         this.type = type.toString();
     }
@@ -150,6 +161,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      *         chained together.
      * @see RRType
      */
+
     public TrafficPolicy withType(RRType type) {
         setType(type);
         return this;
@@ -158,6 +170,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @param document
      */
+
     public void setDocument(String document) {
         this.document = document;
     }
@@ -165,6 +178,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDocument() {
         return this.document;
     }
@@ -174,6 +188,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicy withDocument(String document) {
         setDocument(document);
         return this;
@@ -182,6 +197,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @param comment
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -189,6 +205,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -198,6 +215,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrafficPolicy withComment(String comment) {
         setComment(comment);
         return this;

@@ -60,6 +60,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token for the next value.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -71,6 +72,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token for the next value.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -85,6 +87,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -98,6 +101,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @param maxResults
      *        The maximum number of results.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -109,6 +113,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of results.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -123,6 +128,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -136,6 +142,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @param attributeName
      *        The attribute name.
      */
+
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
@@ -147,6 +154,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The attribute name.
      */
+
     public String getAttributeName() {
         return this.attributeName;
     }
@@ -161,6 +169,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingsRequest withAttributeName(String attributeName) {
         setAttributeName(attributeName);
         return this;
@@ -174,6 +183,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @param attributeValue
      *        The attribute value.
      */
+
     public void setAttributeValue(String attributeValue) {
         this.attributeValue = attributeValue;
     }
@@ -185,6 +195,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The attribute value.
      */
+
     public String getAttributeValue() {
         return this.attributeValue;
     }
@@ -199,6 +210,7 @@ public class ListThingsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListThingsRequest withAttributeValue(String attributeValue) {
         setAttributeValue(attributeValue);
         return this;

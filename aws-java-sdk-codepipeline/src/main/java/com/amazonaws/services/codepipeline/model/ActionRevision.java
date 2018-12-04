@@ -57,6 +57,7 @@ public class ActionRevision implements Serializable, Cloneable {
      *        The system-generated unique ID that identifies the revision number
      *        of the action.
      */
+
     public void setRevisionId(String revisionId) {
         this.revisionId = revisionId;
     }
@@ -70,6 +71,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return The system-generated unique ID that identifies the revision
      *         number of the action.
      */
+
     public String getRevisionId() {
         return this.revisionId;
     }
@@ -86,6 +88,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionRevision withRevisionId(String revisionId) {
         setRevisionId(revisionId);
         return this;
@@ -101,6 +104,7 @@ public class ActionRevision implements Serializable, Cloneable {
      *        The unique identifier of the change that set the state to this
      *        revision, for example a deployment ID or timestamp.
      */
+
     public void setRevisionChangeId(String revisionChangeId) {
         this.revisionChangeId = revisionChangeId;
     }
@@ -114,6 +118,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return The unique identifier of the change that set the state to this
      *         revision, for example a deployment ID or timestamp.
      */
+
     public String getRevisionChangeId() {
         return this.revisionChangeId;
     }
@@ -130,6 +135,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionRevision withRevisionChangeId(String revisionChangeId) {
         setRevisionChangeId(revisionChangeId);
         return this;
@@ -145,6 +151,7 @@ public class ActionRevision implements Serializable, Cloneable {
      *        The date and time when the most recent version of the action was
      *        created, in timestamp format.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -158,6 +165,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return The date and time when the most recent version of the action was
      *         created, in timestamp format.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -174,6 +182,7 @@ public class ActionRevision implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionRevision withCreated(java.util.Date created) {
         setCreated(created);
         return this;

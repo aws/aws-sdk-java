@@ -38,6 +38,7 @@ public class GetKeyRotationStatusResult implements Serializable, Cloneable {
      * @param keyRotationEnabled
      *        A Boolean value that specifies whether key rotation is enabled.
      */
+
     public void setKeyRotationEnabled(Boolean keyRotationEnabled) {
         this.keyRotationEnabled = keyRotationEnabled;
     }
@@ -49,6 +50,7 @@ public class GetKeyRotationStatusResult implements Serializable, Cloneable {
      * 
      * @return A Boolean value that specifies whether key rotation is enabled.
      */
+
     public Boolean getKeyRotationEnabled() {
         return this.keyRotationEnabled;
     }
@@ -63,6 +65,7 @@ public class GetKeyRotationStatusResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetKeyRotationStatusResult withKeyRotationEnabled(
             Boolean keyRotationEnabled) {
         setKeyRotationEnabled(keyRotationEnabled);
@@ -76,6 +79,7 @@ public class GetKeyRotationStatusResult implements Serializable, Cloneable {
      * 
      * @return A Boolean value that specifies whether key rotation is enabled.
      */
+
     public Boolean isKeyRotationEnabled() {
         return this.keyRotationEnabled;
     }

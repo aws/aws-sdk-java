@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RecordingGroupMarshaller
@@ -39,42 +34,44 @@ import com.amazonaws.util.json.*;
 public class RecordingGroupJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(RecordingGroup recordingGroup, JSONWriter jsonWriter) {
+    public void marshall(RecordingGroup recordingGroup,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (recordingGroup == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (recordingGroup.getAllSupported() != null) {
-                jsonWriter.key("allSupported").value(
+                jsonGenerator.writeFieldName("allSupported").writeValue(
                         recordingGroup.getAllSupported());
             }
-
             if (recordingGroup.getIncludeGlobalResourceTypes() != null) {
-                jsonWriter.key("includeGlobalResourceTypes").value(
-                        recordingGroup.getIncludeGlobalResourceTypes());
+                jsonGenerator.writeFieldName("includeGlobalResourceTypes")
+                        .writeValue(
+                                recordingGroup.getIncludeGlobalResourceTypes());
             }
 
             com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) recordingGroup
                     .getResourceTypes();
             if (!resourceTypesList.isEmpty()
                     || !resourceTypesList.isAutoConstruct()) {
-                jsonWriter.key("resourceTypes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("resourceTypes");
+                jsonGenerator.writeStartArray();
                 for (String resourceTypesListValue : resourceTypesList) {
                     if (resourceTypesListValue != null) {
-                        jsonWriter.value(resourceTypesListValue);
+                        jsonGenerator.writeValue(resourceTypesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -85,6 +85,12 @@ public class AbstractAWSSimpleSystemsManagement implements
     }
 
     @Override
+    public DescribeDocumentPermissionResult describeDocumentPermission(
+            DescribeDocumentPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInstanceInformationResult describeInstanceInformation(
             DescribeInstanceInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
@@ -120,6 +126,12 @@ public class AbstractAWSSimpleSystemsManagement implements
     @Override
     public ListDocumentsResult listDocuments() {
         return listDocuments(new ListDocumentsRequest());
+    }
+
+    @Override
+    public ModifyDocumentPermissionResult modifyDocumentPermission(
+            ModifyDocumentPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

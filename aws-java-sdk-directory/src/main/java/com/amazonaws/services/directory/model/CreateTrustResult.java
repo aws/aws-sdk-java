@@ -32,6 +32,7 @@ public class CreateTrustResult implements Serializable, Cloneable {
      * @param trustId
      *        A unique identifier for the trust relationship that was created.
      */
+
     public void setTrustId(String trustId) {
         this.trustId = trustId;
     }
@@ -41,6 +42,7 @@ public class CreateTrustResult implements Serializable, Cloneable {
      * 
      * @return A unique identifier for the trust relationship that was created.
      */
+
     public String getTrustId() {
         return this.trustId;
     }
@@ -53,6 +55,7 @@ public class CreateTrustResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrustResult withTrustId(String trustId) {
         setTrustId(trustId);
         return this;

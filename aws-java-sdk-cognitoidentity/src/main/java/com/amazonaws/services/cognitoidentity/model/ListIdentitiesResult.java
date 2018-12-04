@@ -36,6 +36,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -45,6 +46,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -57,6 +59,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -67,6 +70,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return An object containing a set of identities and associated mappings.
      */
+
     public java.util.List<IdentityDescription> getIdentities() {
         return identities;
     }
@@ -77,6 +81,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @param identities
      *        An object containing a set of identities and associated mappings.
      */
+
     public void setIdentities(
             java.util.Collection<IdentityDescription> identities) {
         if (identities == null) {
@@ -102,6 +107,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withIdentities(
             IdentityDescription... identities) {
         if (this.identities == null) {
@@ -122,6 +128,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withIdentities(
             java.util.Collection<IdentityDescription> identities) {
         setIdentities(identities);
@@ -134,6 +141,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @param nextToken
      *        A pagination token.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -143,6 +151,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * 
      * @return A pagination token.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -155,6 +164,7 @@ public class ListIdentitiesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

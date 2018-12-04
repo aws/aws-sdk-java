@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,45 +57,44 @@ public class RadiusSettingsJsonUnmarshaller implements
                     context.nextToken();
                     radiusSettings
                             .setRadiusServers(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("RadiusPort", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setRadiusPort(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setRadiusPort(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RadiusTimeout", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setRadiusTimeout(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setRadiusTimeout(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("RadiusRetries", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setRadiusRetries(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setRadiusRetries(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("SharedSecret", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setSharedSecret(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setSharedSecret(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("AuthenticationProtocol",
                         targetDepth)) {
                     context.nextToken();
-                    radiusSettings
-                            .setAuthenticationProtocol(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    radiusSettings.setAuthenticationProtocol(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisplayLabel", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setDisplayLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setDisplayLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("UseSameUsername", targetDepth)) {
                     context.nextToken();
-                    radiusSettings.setUseSameUsername(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    radiusSettings.setUseSameUsername(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

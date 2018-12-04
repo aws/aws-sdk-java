@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StackSummaryMarshaller
@@ -39,45 +34,46 @@ import com.amazonaws.util.json.*;
 public class StackSummaryJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StackSummary stackSummary, JSONWriter jsonWriter) {
+    public void marshall(StackSummary stackSummary,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (stackSummary == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stackSummary.getStackId() != null) {
-                jsonWriter.key("StackId").value(stackSummary.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        stackSummary.getStackId());
             }
-
             if (stackSummary.getName() != null) {
-                jsonWriter.key("Name").value(stackSummary.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        stackSummary.getName());
             }
-
             if (stackSummary.getArn() != null) {
-                jsonWriter.key("Arn").value(stackSummary.getArn());
+                jsonGenerator.writeFieldName("Arn").writeValue(
+                        stackSummary.getArn());
             }
-
             if (stackSummary.getLayersCount() != null) {
-                jsonWriter.key("LayersCount").value(
+                jsonGenerator.writeFieldName("LayersCount").writeValue(
                         stackSummary.getLayersCount());
             }
-
             if (stackSummary.getAppsCount() != null) {
-                jsonWriter.key("AppsCount").value(stackSummary.getAppsCount());
+                jsonGenerator.writeFieldName("AppsCount").writeValue(
+                        stackSummary.getAppsCount());
             }
-
             if (stackSummary.getInstancesCount() != null) {
-                jsonWriter.key("InstancesCount");
+                jsonGenerator.writeFieldName("InstancesCount");
                 InstancesCountJsonMarshaller.getInstance().marshall(
-                        stackSummary.getInstancesCount(), jsonWriter);
+                        stackSummary.getInstancesCount(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

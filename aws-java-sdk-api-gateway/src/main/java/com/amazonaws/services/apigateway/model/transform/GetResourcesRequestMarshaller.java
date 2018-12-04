@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetResourcesRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetResourcesRequestMarshaller implements
         Marshaller<Request<GetResourcesRequest>, GetResourcesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetResourcesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetResourcesRequest> marshall(
             GetResourcesRequest getResourcesRequest) {
@@ -65,20 +73,19 @@ public class GetResourcesRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getResourcesRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getResourcesRequest.getRestApiId()));
+                (getResourcesRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getResourcesRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String position = (getResourcesRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getResourcesRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getResourcesRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getResourcesRequest.getPosition()));
         }
 
-        String limit = (getResourcesRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getResourcesRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getResourcesRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getResourcesRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

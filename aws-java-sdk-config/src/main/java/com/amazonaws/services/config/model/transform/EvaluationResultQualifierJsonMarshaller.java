@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * EvaluationResultQualifierMarshaller
@@ -39,34 +34,33 @@ import com.amazonaws.util.json.*;
 public class EvaluationResultQualifierJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(EvaluationResultQualifier evaluationResultQualifier,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (evaluationResultQualifier == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (evaluationResultQualifier.getConfigRuleName() != null) {
-                jsonWriter.key("ConfigRuleName").value(
+                jsonGenerator.writeFieldName("ConfigRuleName").writeValue(
                         evaluationResultQualifier.getConfigRuleName());
             }
-
             if (evaluationResultQualifier.getResourceType() != null) {
-                jsonWriter.key("ResourceType").value(
+                jsonGenerator.writeFieldName("ResourceType").writeValue(
                         evaluationResultQualifier.getResourceType());
             }
-
             if (evaluationResultQualifier.getResourceId() != null) {
-                jsonWriter.key("ResourceId").value(
+                jsonGenerator.writeFieldName("ResourceId").writeValue(
                         evaluationResultQualifier.getResourceId());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -51,13 +51,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -75,11 +75,17 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
     private String serviceRoleArn;
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      */
     private RevisionLocation targetRevision;
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurations;
 
     /**
      * <p>
@@ -89,6 +95,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param applicationName
      *        The application name.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -100,6 +107,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return The application name.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -114,6 +122,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -127,6 +136,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param deploymentGroupId
      *        The deployment group ID.
      */
+
     public void setDeploymentGroupId(String deploymentGroupId) {
         this.deploymentGroupId = deploymentGroupId;
     }
@@ -138,6 +148,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return The deployment group ID.
      */
+
     public String getDeploymentGroupId() {
         return this.deploymentGroupId;
     }
@@ -152,6 +163,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withDeploymentGroupId(String deploymentGroupId) {
         setDeploymentGroupId(deploymentGroupId);
         return this;
@@ -165,6 +177,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param deploymentGroupName
      *        The deployment group name.
      */
+
     public void setDeploymentGroupName(String deploymentGroupName) {
         this.deploymentGroupName = deploymentGroupName;
     }
@@ -176,6 +189,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return The deployment group name.
      */
+
     public String getDeploymentGroupName() {
         return this.deploymentGroupName;
     }
@@ -190,6 +204,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withDeploymentGroupName(
             String deploymentGroupName) {
         setDeploymentGroupName(deploymentGroupName);
@@ -204,6 +219,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param deploymentConfigName
      *        The deployment configuration name.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -215,6 +231,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return The deployment configuration name.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -229,6 +246,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -237,11 +255,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
-     * @return The Amazon EC2 tags to filter on.
+     * @return The Amazon EC2 tags on which to filter.
      */
+
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
         if (ec2TagFilters == null) {
             ec2TagFilters = new com.amazonaws.internal.SdkInternalList<EC2TagFilter>();
@@ -251,12 +270,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      */
+
     public void setEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         if (ec2TagFilters == null) {
@@ -270,7 +290,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -280,10 +300,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withEc2TagFilters(EC2TagFilter... ec2TagFilters) {
         if (this.ec2TagFilters == null) {
             setEc2TagFilters(new com.amazonaws.internal.SdkInternalList<EC2TagFilter>(
@@ -297,14 +318,15 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon EC2 tags to filter on.
+     * The Amazon EC2 tags on which to filter.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags to filter on.
+     *        The Amazon EC2 tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withEc2TagFilters(
             java.util.Collection<EC2TagFilter> ec2TagFilters) {
         setEc2TagFilters(ec2TagFilters);
@@ -313,11 +335,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
-     * @return The on-premises instance tags to filter on.
+     * @return The on-premises instance tags on which to filter.
      */
+
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
         if (onPremisesInstanceTagFilters == null) {
             onPremisesInstanceTagFilters = new com.amazonaws.internal.SdkInternalList<TagFilter>();
@@ -327,12 +350,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      */
+
     public void setOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         if (onPremisesInstanceTagFilters == null) {
@@ -346,7 +370,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -356,10 +380,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withOnPremisesInstanceTagFilters(
             TagFilter... onPremisesInstanceTagFilters) {
         if (this.onPremisesInstanceTagFilters == null) {
@@ -374,14 +399,15 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The on-premises instance tags to filter on.
+     * The on-premises instance tags on which to filter.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags to filter on.
+     *        The on-premises instance tags on which to filter.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withOnPremisesInstanceTagFilters(
             java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
         setOnPremisesInstanceTagFilters(onPremisesInstanceTagFilters);
@@ -395,6 +421,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return A list of associated Auto Scaling groups.
      */
+
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
             autoScalingGroups = new com.amazonaws.internal.SdkInternalList<AutoScalingGroup>();
@@ -410,6 +437,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param autoScalingGroups
      *        A list of associated Auto Scaling groups.
      */
+
     public void setAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         if (autoScalingGroups == null) {
@@ -437,6 +465,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withAutoScalingGroups(
             AutoScalingGroup... autoScalingGroups) {
         if (this.autoScalingGroups == null) {
@@ -459,6 +488,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withAutoScalingGroups(
             java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         setAutoScalingGroups(autoScalingGroups);
@@ -473,6 +503,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @param serviceRoleArn
      *        A service role ARN.
      */
+
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
     }
@@ -484,6 +515,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * 
      * @return A service role ARN.
      */
+
     public String getServiceRoleArn() {
         return this.serviceRoleArn;
     }
@@ -498,6 +530,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withServiceRoleArn(String serviceRoleArn) {
         setServiceRoleArn(serviceRoleArn);
         return this;
@@ -505,46 +538,130 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @param targetRevision
      *        Information about the deployment group's target revision,
-     *        including the revision's type and its location.
+     *        including type and location.
      */
+
     public void setTargetRevision(RevisionLocation targetRevision) {
         this.targetRevision = targetRevision;
     }
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @return Information about the deployment group's target revision,
-     *         including the revision's type and its location.
+     *         including type and location.
      */
+
     public RevisionLocation getTargetRevision() {
         return this.targetRevision;
     }
 
     /**
      * <p>
-     * Information about the deployment group's target revision, including the
-     * revision's type and its location.
+     * Information about the deployment group's target revision, including type
+     * and location.
      * </p>
      * 
      * @param targetRevision
      *        Information about the deployment group's target revision,
-     *        including the revision's type and its location.
+     *        including type and location.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeploymentGroupInfo withTargetRevision(
             RevisionLocation targetRevision) {
         setTargetRevision(targetRevision);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @return A list of associated triggers.
+     */
+
+    public java.util.List<TriggerConfig> getTriggerConfigurations() {
+        if (triggerConfigurations == null) {
+            triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>();
+        }
+        return triggerConfigurations;
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     */
+
+    public void setTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        if (triggerConfigurations == null) {
+            this.triggerConfigurations = null;
+            return;
+        }
+
+        this.triggerConfigurations = new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                triggerConfigurations);
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setTriggerConfigurations(java.util.Collection)} or
+     * {@link #withTriggerConfigurations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentGroupInfo withTriggerConfigurations(
+            TriggerConfig... triggerConfigurations) {
+        if (this.triggerConfigurations == null) {
+            setTriggerConfigurations(new com.amazonaws.internal.SdkInternalList<TriggerConfig>(
+                    triggerConfigurations.length));
+        }
+        for (TriggerConfig ele : triggerConfigurations) {
+            this.triggerConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of associated triggers.
+     * </p>
+     * 
+     * @param triggerConfigurations
+     *        A list of associated triggers.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DeploymentGroupInfo withTriggerConfigurations(
+            java.util.Collection<TriggerConfig> triggerConfigurations) {
+        setTriggerConfigurations(triggerConfigurations);
         return this;
     }
 
@@ -579,7 +696,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
         if (getTargetRevision() != null)
-            sb.append("TargetRevision: " + getTargetRevision());
+            sb.append("TargetRevision: " + getTargetRevision() + ",");
+        if (getTriggerConfigurations() != null)
+            sb.append("TriggerConfigurations: " + getTriggerConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +771,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         if (other.getTargetRevision() != null
                 && other.getTargetRevision().equals(this.getTargetRevision()) == false)
             return false;
+        if (other.getTriggerConfigurations() == null
+                ^ this.getTriggerConfigurations() == null)
+            return false;
+        if (other.getTriggerConfigurations() != null
+                && other.getTriggerConfigurations().equals(
+                        this.getTriggerConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -696,6 +822,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
                 * hashCode
                 + ((getTargetRevision() == null) ? 0 : getTargetRevision()
                         .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getTriggerConfigurations() == null) ? 0
+                        : getTriggerConfigurations().hashCode());
         return hashCode;
     }
 

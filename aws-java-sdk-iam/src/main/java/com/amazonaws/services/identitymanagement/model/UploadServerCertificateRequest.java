@@ -30,17 +30,26 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The path for the server certificate. For more information about paths,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * (/). The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL
+     * character (\u007F), including most punctuation characters, digits, and
+     * upper and lowercased letters.
      * </p>
-     * <note> If you are uploading a server certificate specifically for use
-     * with Amazon CloudFront distributions, you must specify a path using the
+     * <note>
+     * <p>
+     * If you are uploading a server certificate specifically for use with
+     * Amazon CloudFront distributions, you must specify a path using the
      * <code>--path</code> option. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>). </note>
+     * <code>/cloudfront/test/</code>).
+     * </p>
+     * </note>
      */
     private String path;
     /**
@@ -48,11 +57,24 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The name for the server certificate. Do not include the path in this
      * value. The name of the certificate cannot contain any spaces.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String serverCertificateName;
     /**
      * <p>
      * The contents of the public key certificate in PEM-encoded format.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String certificateBody;
@@ -60,12 +82,26 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the private key in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      */
     private String privateKey;
     /**
      * <p>
      * The contents of the certificate chain. This is typically a concatenation
      * of the PEM-encoded public key certificates of the chain.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
      * </p>
      */
     private String certificateChain;
@@ -85,11 +121,33 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * 
      * @param serverCertificateName
      *        The name for the server certificate. Do not include the path in
-     *        this value. The name of the certificate cannot contain any spaces.
+     *        this value. The name of the certificate cannot contain any
+     *        spaces.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
     public UploadServerCertificateRequest(String serverCertificateName,
             String certificateBody, String privateKey) {
@@ -103,33 +161,52 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The path for the server certificate. For more information about paths,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * (/). The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL
+     * character (\u007F), including most punctuation characters, digits, and
+     * upper and lowercased letters.
      * </p>
-     * <note> If you are uploading a server certificate specifically for use
-     * with Amazon CloudFront distributions, you must specify a path using the
+     * <note>
+     * <p>
+     * If you are uploading a server certificate specifically for use with
+     * Amazon CloudFront distributions, you must specify a path using the
      * <code>--path</code> option. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>). </note>
+     * <code>/cloudfront/test/</code>).
+     * </p>
+     * </note>
      * 
      * @param path
      *        The path for the server certificate. For more information about
      *        paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/).
+     *        a slash (/). The <a href="http://wikipedia.org/wiki/regex">regex
+     *        pattern</a> for this parameter is a string of characters
+     *        consisting of either a forward slash (/) by itself or a string
+     *        that must begin and end with forward slashes, containing any ASCII
+     *        character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and
+     *        lowercased letters.
      *        </p>
-     *        <note> If you are uploading a server certificate specifically for
-     *        use with Amazon CloudFront distributions, you must specify a path
+     *        <note>
+     *        <p>
+     *        If you are uploading a server certificate specifically for use
+     *        with Amazon CloudFront distributions, you must specify a path
      *        using the <code>--path</code> option. The path must begin with
      *        <code>/cloudfront</code> and must include a trailing slash (for
      *        example, <code>/cloudfront/test/</code>).
+     *        </p>
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -139,32 +216,51 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The path for the server certificate. For more information about paths,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * (/). The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL
+     * character (\u007F), including most punctuation characters, digits, and
+     * upper and lowercased letters.
      * </p>
-     * <note> If you are uploading a server certificate specifically for use
-     * with Amazon CloudFront distributions, you must specify a path using the
+     * <note>
+     * <p>
+     * If you are uploading a server certificate specifically for use with
+     * Amazon CloudFront distributions, you must specify a path using the
      * <code>--path</code> option. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>). </note>
+     * <code>/cloudfront/test/</code>).
+     * </p>
+     * </note>
      * 
      * @return The path for the server certificate. For more information about
      *         paths, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to
-     *         a slash (/).
+     *         a slash (/). The <a href="http://wikipedia.org/wiki/regex">regex
+     *         pattern</a> for this parameter is a string of characters
+     *         consisting of either a forward slash (/) by itself or a string
+     *         that must begin and end with forward slashes, containing any
+     *         ASCII character from the ! (\u0021) thru the DEL character
+     *         (\u007F), including most punctuation characters, digits, and
+     *         upper and lowercased letters.
      *         </p>
-     *         <note> If you are uploading a server certificate specifically for
-     *         use with Amazon CloudFront distributions, you must specify a path
+     *         <note>
+     *         <p>
+     *         If you are uploading a server certificate specifically for use
+     *         with Amazon CloudFront distributions, you must specify a path
      *         using the <code>--path</code> option. The path must begin with
      *         <code>/cloudfront</code> and must include a trailing slash (for
      *         example, <code>/cloudfront/test/</code>).
+     *         </p>
      */
+
     public String getPath() {
         return this.path;
     }
@@ -174,35 +270,54 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The path for the server certificate. For more information about paths,
      * see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
-     * (/).
+     * (/). The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for
+     * this parameter is a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL
+     * character (\u007F), including most punctuation characters, digits, and
+     * upper and lowercased letters.
      * </p>
-     * <note> If you are uploading a server certificate specifically for use
-     * with Amazon CloudFront distributions, you must specify a path using the
+     * <note>
+     * <p>
+     * If you are uploading a server certificate specifically for use with
+     * Amazon CloudFront distributions, you must specify a path using the
      * <code>--path</code> option. The path must begin with
      * <code>/cloudfront</code> and must include a trailing slash (for example,
-     * <code>/cloudfront/test/</code>). </note>
+     * <code>/cloudfront/test/</code>).
+     * </p>
+     * </note>
      * 
      * @param path
      *        The path for the server certificate. For more information about
      *        paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
-     *        a slash (/).
+     *        a slash (/). The <a href="http://wikipedia.org/wiki/regex">regex
+     *        pattern</a> for this parameter is a string of characters
+     *        consisting of either a forward slash (/) by itself or a string
+     *        that must begin and end with forward slashes, containing any ASCII
+     *        character from the ! (\u0021) thru the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and
+     *        lowercased letters.
      *        </p>
-     *        <note> If you are uploading a server certificate specifically for
-     *        use with Amazon CloudFront distributions, you must specify a path
+     *        <note>
+     *        <p>
+     *        If you are uploading a server certificate specifically for use
+     *        with Amazon CloudFront distributions, you must specify a path
      *        using the <code>--path</code> option. The path must begin with
      *        <code>/cloudfront</code> and must include a trailing slash (for
      *        example, <code>/cloudfront/test/</code>).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withPath(String path) {
         setPath(path);
         return this;
@@ -213,11 +328,24 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The name for the server certificate. Do not include the path in this
      * value. The name of the certificate cannot contain any spaces.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
      *        The name for the server certificate. Do not include the path in
-     *        this value. The name of the certificate cannot contain any spaces.
+     *        this value. The name of the certificate cannot contain any
+     *        spaces.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -227,11 +355,23 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The name for the server certificate. Do not include the path in this
      * value. The name of the certificate cannot contain any spaces.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name for the server certificate. Do not include the path in
      *         this value. The name of the certificate cannot contain any
-     *         spaces.
+     *         spaces.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -241,13 +381,26 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The name for the server certificate. Do not include the path in this
      * value. The name of the certificate cannot contain any spaces.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
      *        The name for the server certificate. Do not include the path in
-     *        this value. The name of the certificate cannot contain any spaces.
+     *        this value. The name of the certificate cannot contain any
+     *        spaces.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);
@@ -258,10 +411,26 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param certificateBody
-     *        The contents of the public key certificate in PEM-encoded format.
+     *        The contents of the public key certificate in PEM-encoded
+     *        format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setCertificateBody(String certificateBody) {
         this.certificateBody = certificateBody;
     }
@@ -270,9 +439,25 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
-     * @return The contents of the public key certificate in PEM-encoded format.
+     * @return The contents of the public key certificate in PEM-encoded
+     *         format.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getCertificateBody() {
         return this.certificateBody;
     }
@@ -281,12 +466,28 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param certificateBody
-     *        The contents of the public key certificate in PEM-encoded format.
+     *        The contents of the public key certificate in PEM-encoded
+     *        format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withCertificateBody(
             String certificateBody) {
         setCertificateBody(certificateBody);
@@ -297,10 +498,25 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the private key in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param privateKey
-     *        The contents of the private key in PEM-encoded format.
+     *        The contents of the private key in PEM-encoded format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
@@ -309,9 +525,24 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the private key in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
-     * @return The contents of the private key in PEM-encoded format.
+     * @return The contents of the private key in PEM-encoded format.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getPrivateKey() {
         return this.privateKey;
     }
@@ -320,12 +551,27 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * <p>
      * The contents of the private key in PEM-encoded format.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param privateKey
-     *        The contents of the private key in PEM-encoded format.
+     *        The contents of the private key in PEM-encoded format.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withPrivateKey(String privateKey) {
         setPrivateKey(privateKey);
         return this;
@@ -336,12 +582,27 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The contents of the certificate chain. This is typically a concatenation
      * of the PEM-encoded public key certificates of the chain.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a
      *        concatenation of the PEM-encoded public key certificates of the
-     *        chain.
+     *        chain.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      */
+
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
@@ -351,11 +612,26 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The contents of the certificate chain. This is typically a concatenation
      * of the PEM-encoded public key certificates of the chain.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @return The contents of the certificate chain. This is typically a
      *         concatenation of the PEM-encoded public key certificates of the
-     *         chain.
+     *         chain.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of any
+     *         printable ASCII character ranging from the space character ( )
+     *         through end of the ASCII character range (\u00FF). It also
+     *         includes the special characters tab ( ), line feed ( ), and
+     *         carriage return ( ).
      */
+
     public String getCertificateChain() {
         return this.certificateChain;
     }
@@ -365,14 +641,29 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest
      * The contents of the certificate chain. This is typically a concatenation
      * of the PEM-encoded public key certificates of the chain.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of any printable ASCII
+     * character ranging from the space character ( ) through end of the ASCII
+     * character range (\u00FF). It also includes the special characters tab (
+     * ), line feed ( ), and carriage return ( ).
+     * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a
      *        concatenation of the PEM-encoded public key certificates of the
-     *        chain.
+     *        chain.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of any
+     *        printable ASCII character ranging from the space character ( )
+     *        through end of the ASCII character range (\u00FF). It also
+     *        includes the special characters tab ( ), line feed ( ), and
+     *        carriage return ( ).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateRequest withCertificateChain(
             String certificateChain) {
         setCertificateChain(certificateChain);

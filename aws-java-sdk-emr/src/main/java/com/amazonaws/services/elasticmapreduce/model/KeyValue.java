@@ -68,6 +68,7 @@ public class KeyValue implements Serializable, Cloneable {
      * @param key
      *        The unique identifier of a key value pair.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -79,6 +80,7 @@ public class KeyValue implements Serializable, Cloneable {
      * 
      * @return The unique identifier of a key value pair.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -93,6 +95,7 @@ public class KeyValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyValue withKey(String key) {
         setKey(key);
         return this;
@@ -106,6 +109,7 @@ public class KeyValue implements Serializable, Cloneable {
      * @param value
      *        The value part of the identified key.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -117,6 +121,7 @@ public class KeyValue implements Serializable, Cloneable {
      * 
      * @return The value part of the identified key.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -131,6 +136,7 @@ public class KeyValue implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public KeyValue withValue(String value) {
         setValue(value);
         return this;

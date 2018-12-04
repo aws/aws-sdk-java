@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StreamRecordMarshaller
@@ -39,86 +34,86 @@ import com.amazonaws.util.json.*;
 public class StreamRecordJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(StreamRecord streamRecord, JSONWriter jsonWriter) {
+    public void marshall(StreamRecord streamRecord,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (streamRecord == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, AttributeValue> keysMap = streamRecord
                     .getKeys();
             if (keysMap != null) {
-                jsonWriter.key("Keys");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Keys");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> keysMapValue : keysMap
                         .entrySet()) {
                     if (keysMapValue.getValue() != null) {
-                        jsonWriter.key(keysMapValue.getKey());
+                        jsonGenerator.writeFieldName(keysMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                keysMapValue.getValue(), jsonWriter);
+                                keysMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, AttributeValue> newImageMap = streamRecord
                     .getNewImage();
             if (newImageMap != null) {
-                jsonWriter.key("NewImage");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("NewImage");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> newImageMapValue : newImageMap
                         .entrySet()) {
                     if (newImageMapValue.getValue() != null) {
-                        jsonWriter.key(newImageMapValue.getKey());
+                        jsonGenerator.writeFieldName(newImageMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                newImageMapValue.getValue(), jsonWriter);
+                                newImageMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, AttributeValue> oldImageMap = streamRecord
                     .getOldImage();
             if (oldImageMap != null) {
-                jsonWriter.key("OldImage");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("OldImage");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, AttributeValue> oldImageMapValue : oldImageMap
                         .entrySet()) {
                     if (oldImageMapValue.getValue() != null) {
-                        jsonWriter.key(oldImageMapValue.getKey());
+                        jsonGenerator.writeFieldName(oldImageMapValue.getKey());
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                oldImageMapValue.getValue(), jsonWriter);
+                                oldImageMapValue.getValue(), jsonGenerator);
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (streamRecord.getSequenceNumber() != null) {
-                jsonWriter.key("SequenceNumber").value(
+                jsonGenerator.writeFieldName("SequenceNumber").writeValue(
                         streamRecord.getSequenceNumber());
             }
-
             if (streamRecord.getSizeBytes() != null) {
-                jsonWriter.key("SizeBytes").value(streamRecord.getSizeBytes());
+                jsonGenerator.writeFieldName("SizeBytes").writeValue(
+                        streamRecord.getSizeBytes());
             }
-
             if (streamRecord.getStreamViewType() != null) {
-                jsonWriter.key("StreamViewType").value(
+                jsonGenerator.writeFieldName("StreamViewType").writeValue(
                         streamRecord.getStreamViewType());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -59,6 +59,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      *        characters, inclusive, and consist of alphanumeric (a-z, A-Z, 0-9)
      *        characters and dashes only.
      */
+
     public void setHeaderName(String headerName) {
         this.headerName = headerName;
     }
@@ -74,6 +75,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      *         characters, inclusive, and consist of alphanumeric (a-z, A-Z,
      *         0-9) characters and dashes only.
      */
+
     public String getHeaderName() {
         return this.headerName;
     }
@@ -92,6 +94,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddHeaderAction withHeaderName(String headerName) {
         setHeaderName(headerName);
         return this;
@@ -107,6 +110,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      *        Must be less than 2048 characters, and must not contain newline
      *        characters ("\r" or "\n").
      */
+
     public void setHeaderValue(String headerValue) {
         this.headerValue = headerValue;
     }
@@ -120,6 +124,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      * @return Must be less than 2048 characters, and must not contain newline
      *         characters ("\r" or "\n").
      */
+
     public String getHeaderValue() {
         return this.headerValue;
     }
@@ -136,6 +141,7 @@ public class AddHeaderAction implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddHeaderAction withHeaderValue(String headerValue) {
         setHeaderValue(headerValue);
         return this;

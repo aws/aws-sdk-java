@@ -30,11 +30,23 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the group that the policy
      * is embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String groupName;
     /**
      * <p>
      * The name identifying the policy document to delete.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -54,9 +66,20 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @param groupName
      *        The name (friendly name, not ARN) identifying the group that the
-     *        policy is embedded in.
+     *        policy is embedded in.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param policyName
      *        The name identifying the policy document to delete.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public DeleteGroupPolicyRequest(String groupName, String policyName) {
         setGroupName(groupName);
@@ -68,11 +91,23 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the group that the policy
      * is embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name (friendly name, not ARN) identifying the group that the
-     *        policy is embedded in.
+     *        policy is embedded in.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -82,10 +117,22 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the group that the policy
      * is embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name (friendly name, not ARN) identifying the group that the
-     *         policy is embedded in.
+     *         policy is embedded in.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -95,13 +142,25 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * The name (friendly name, not ARN) identifying the group that the policy
      * is embedded in.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param groupName
      *        The name (friendly name, not ARN) identifying the group that the
-     *        policy is embedded in.
+     *        policy is embedded in.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGroupPolicyRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -111,10 +170,22 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name identifying the policy document to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name identifying the policy document to delete.
+     *        The name identifying the policy document to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -123,9 +194,21 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name identifying the policy document to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name identifying the policy document to delete.
+     * @return The name identifying the policy document to delete.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -134,12 +217,24 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name identifying the policy document to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param policyName
-     *        The name identifying the policy document to delete.
+     *        The name identifying the policy document to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteGroupPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

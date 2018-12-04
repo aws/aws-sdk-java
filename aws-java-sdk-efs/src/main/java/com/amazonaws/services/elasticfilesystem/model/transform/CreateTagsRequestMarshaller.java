@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateTagsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreateTagsRequestMarshaller implements
         Marshaller<Request<CreateTagsRequest>, CreateTagsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateTagsRequest> marshall(
             CreateTagsRequest createTagsRequest) {
@@ -65,37 +73,35 @@ public class CreateTagsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{FileSystemId}",
-                (createTagsRequest.getFileSystemId() == null) ? ""
-                        : StringUtils.fromString(createTagsRequest
-                                .getFileSystemId()));
+                (createTagsRequest.getFileSystemId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(createTagsRequest
+                                .getFileSystemId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

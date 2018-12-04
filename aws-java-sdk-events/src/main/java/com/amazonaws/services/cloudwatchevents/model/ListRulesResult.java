@@ -45,6 +45,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * 
      * @return List of rules matching the specified criteria.
      */
+
     public java.util.List<Rule> getRules() {
         return rules;
     }
@@ -57,6 +58,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @param rules
      *        List of rules matching the specified criteria.
      */
+
     public void setRules(java.util.Collection<Rule> rules) {
         if (rules == null) {
             this.rules = null;
@@ -82,6 +84,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withRules(Rule... rules) {
         if (this.rules == null) {
             setRules(new java.util.ArrayList<Rule>(rules.length));
@@ -102,6 +105,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withRules(java.util.Collection<Rule> rules) {
         setRules(rules);
         return this;
@@ -115,6 +119,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @param nextToken
      *        Indicates that there are additional results to retrieve.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -126,6 +131,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * 
      * @return Indicates that there are additional results to retrieve.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -140,6 +146,7 @@ public class ListRulesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRulesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -65,6 +65,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @param timestamp
      *        Time of the data point.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -76,6 +77,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @return Time of the data point.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -90,6 +92,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendDataPoint withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -103,6 +106,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @param deliveryAttempts
      *        Number of emails that have been enqueued for sending.
      */
+
     public void setDeliveryAttempts(Long deliveryAttempts) {
         this.deliveryAttempts = deliveryAttempts;
     }
@@ -114,6 +118,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @return Number of emails that have been enqueued for sending.
      */
+
     public Long getDeliveryAttempts() {
         return this.deliveryAttempts;
     }
@@ -128,6 +133,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendDataPoint withDeliveryAttempts(Long deliveryAttempts) {
         setDeliveryAttempts(deliveryAttempts);
         return this;
@@ -141,6 +147,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @param bounces
      *        Number of emails that have bounced.
      */
+
     public void setBounces(Long bounces) {
         this.bounces = bounces;
     }
@@ -152,6 +159,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @return Number of emails that have bounced.
      */
+
     public Long getBounces() {
         return this.bounces;
     }
@@ -166,6 +174,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendDataPoint withBounces(Long bounces) {
         setBounces(bounces);
         return this;
@@ -179,6 +188,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @param complaints
      *        Number of unwanted emails that were rejected by recipients.
      */
+
     public void setComplaints(Long complaints) {
         this.complaints = complaints;
     }
@@ -190,6 +200,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @return Number of unwanted emails that were rejected by recipients.
      */
+
     public Long getComplaints() {
         return this.complaints;
     }
@@ -204,6 +215,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendDataPoint withComplaints(Long complaints) {
         setComplaints(complaints);
         return this;
@@ -217,6 +229,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @param rejects
      *        Number of emails rejected by Amazon SES.
      */
+
     public void setRejects(Long rejects) {
         this.rejects = rejects;
     }
@@ -228,6 +241,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * 
      * @return Number of emails rejected by Amazon SES.
      */
+
     public Long getRejects() {
         return this.rejects;
     }
@@ -242,6 +256,7 @@ public class SendDataPoint implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendDataPoint withRejects(Long rejects) {
         setRejects(rejects);
         return this;

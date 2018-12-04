@@ -50,6 +50,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @param registryId
      *        The registry ID associated with the request.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -61,6 +62,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @return The registry ID associated with the request.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -75,6 +77,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRepositoryPolicyResult withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -88,6 +91,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @param repositoryName
      *        The repository name associated with the request.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -99,6 +103,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @return The repository name associated with the request.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -113,6 +118,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRepositoryPolicyResult withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -126,6 +132,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @param policyText
      *        The JSON repository policy text associated with the repository.
      */
+
     public void setPolicyText(String policyText) {
         this.policyText = policyText;
     }
@@ -137,6 +144,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * 
      * @return The JSON repository policy text associated with the repository.
      */
+
     public String getPolicyText() {
         return this.policyText;
     }
@@ -151,6 +159,7 @@ public class GetRepositoryPolicyResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRepositoryPolicyResult withPolicyText(String policyText) {
         setPolicyText(policyText);
         return this;

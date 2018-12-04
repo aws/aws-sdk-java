@@ -80,6 +80,7 @@ public class Permission implements Serializable, Cloneable {
      * @param stackId
      *        A stack ID.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -91,6 +92,7 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return A stack ID.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -105,6 +107,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -125,6 +128,7 @@ public class Permission implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >Using Identifiers</a>.
      */
+
     public void setIamUserArn(String iamUserArn) {
         this.iamUserArn = iamUserArn;
     }
@@ -143,6 +147,7 @@ public class Permission implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >Using Identifiers</a>.
      */
+
     public String getIamUserArn() {
         return this.iamUserArn;
     }
@@ -164,6 +169,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withIamUserArn(String iamUserArn) {
         setIamUserArn(iamUserArn);
         return this;
@@ -177,6 +183,7 @@ public class Permission implements Serializable, Cloneable {
      * @param allowSsh
      *        Whether the user can use SSH.
      */
+
     public void setAllowSsh(Boolean allowSsh) {
         this.allowSsh = allowSsh;
     }
@@ -188,6 +195,7 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return Whether the user can use SSH.
      */
+
     public Boolean getAllowSsh() {
         return this.allowSsh;
     }
@@ -202,6 +210,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withAllowSsh(Boolean allowSsh) {
         setAllowSsh(allowSsh);
         return this;
@@ -214,6 +223,7 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return Whether the user can use SSH.
      */
+
     public Boolean isAllowSsh() {
         return this.allowSsh;
     }
@@ -226,6 +236,7 @@ public class Permission implements Serializable, Cloneable {
      * @param allowSudo
      *        Whether the user can use <b>sudo</b>.
      */
+
     public void setAllowSudo(Boolean allowSudo) {
         this.allowSudo = allowSudo;
     }
@@ -237,6 +248,7 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return Whether the user can use <b>sudo</b>.
      */
+
     public Boolean getAllowSudo() {
         return this.allowSudo;
     }
@@ -251,6 +263,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withAllowSudo(Boolean allowSudo) {
         setAllowSudo(allowSudo);
         return this;
@@ -263,6 +276,7 @@ public class Permission implements Serializable, Cloneable {
      * 
      * @return Whether the user can use <b>sudo</b>.
      */
+
     public Boolean isAllowSudo() {
         return this.allowSudo;
     }
@@ -300,6 +314,7 @@ public class Permission implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
      *        >Managing User Permissions</a>
      */
+
     public void setLevel(String level) {
         this.level = level;
     }
@@ -336,6 +351,7 @@ public class Permission implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
      *         >Managing User Permissions</a>
      */
+
     public String getLevel() {
         return this.level;
     }
@@ -375,6 +391,7 @@ public class Permission implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Permission withLevel(String level) {
         setLevel(level);
         return this;

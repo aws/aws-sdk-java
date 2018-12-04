@@ -111,6 +111,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        The type of DRM, if any, that you want Elastic Transcoder to apply
      *        to the output files associated with this playlist.
      */
+
     public void setFormat(String format) {
         this.format = format;
     }
@@ -124,6 +125,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return The type of DRM, if any, that you want Elastic Transcoder to
      *         apply to the output files associated with this playlist.
      */
+
     public String getFormat() {
         return this.format;
     }
@@ -140,6 +142,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withFormat(String format) {
         setFormat(format);
         return this;
@@ -168,6 +171,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        <p>
      *        The key must also be encrypted by using AWS KMS.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -194,6 +198,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         <p>
      *         The key must also be encrypted by using AWS KMS.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -223,6 +228,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withKey(String key) {
         setKey(key);
         return this;
@@ -242,6 +248,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        was not corrupted in transit. The key MD5 must be base64-encoded,
      *        and it must be exactly 16 bytes before being base64-encoded.
      */
+
     public void setKeyMd5(String keyMd5) {
         this.keyMd5 = keyMd5;
     }
@@ -260,6 +267,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         base64-encoded, and it must be exactly 16 bytes before being
      *         base64-encoded.
      */
+
     public String getKeyMd5() {
         return this.keyMd5;
     }
@@ -280,6 +288,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withKeyMd5(String keyMd5) {
         setKeyMd5(keyMd5);
         return this;
@@ -307,6 +316,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        server provides your key ID in big or little endian, check with
      *        your DRM provider.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -332,6 +342,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         server provides your key ID in big or little endian, check with
      *         your DRM provider.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -360,6 +371,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withKeyId(String keyId) {
         setKeyId(keyId);
         return this;
@@ -383,6 +395,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        being base64-encoded. If no initialization vector is provided,
      *        Elastic Transcoder generates one for you.
      */
+
     public void setInitializationVector(String initializationVector) {
         this.initializationVector = initializationVector;
     }
@@ -404,6 +417,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         long before being base64-encoded. If no initialization vector is
      *         provided, Elastic Transcoder generates one for you.
      */
+
     public String getInitializationVector() {
         return this.initializationVector;
     }
@@ -428,6 +442,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withInitializationVector(String initializationVector) {
         setInitializationVector(initializationVector);
         return this;
@@ -454,6 +469,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *        <programlisting>https://www
      *        .example.com/exampleKey/</programlisting>
      */
+
     public void setLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
         this.licenseAcquisitionUrl = licenseAcquisitionUrl;
     }
@@ -478,6 +494,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      *         <programlisting>
      *         https://www.example.com/exampleKey/</programlisting>
      */
+
     public String getLicenseAcquisitionUrl() {
         return this.licenseAcquisitionUrl;
     }
@@ -505,6 +522,7 @@ public class PlayReadyDrm implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PlayReadyDrm withLicenseAcquisitionUrl(String licenseAcquisitionUrl) {
         setLicenseAcquisitionUrl(licenseAcquisitionUrl);
         return this;

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterApplicationRevisionRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class RegisterApplicationRevisionRequestMarshaller
         implements
         Marshaller<Request<RegisterApplicationRevisionRequest>, RegisterApplicationRevisionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterApplicationRevisionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterApplicationRevisionRequest> marshall(
             RegisterApplicationRevisionRequest registerApplicationRevisionRequest) {
@@ -65,37 +66,35 @@ public class RegisterApplicationRevisionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerApplicationRevisionRequest.getApplicationName() != null) {
-                jsonWriter.key("applicationName")
-                        .value(registerApplicationRevisionRequest
-                                .getApplicationName());
+                jsonGenerator.writeFieldName("applicationName")
+                        .writeValue(
+                                registerApplicationRevisionRequest
+                                        .getApplicationName());
             }
-
             if (registerApplicationRevisionRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         registerApplicationRevisionRequest.getDescription());
             }
-
             if (registerApplicationRevisionRequest.getRevision() != null) {
-                jsonWriter.key("revision");
+                jsonGenerator.writeFieldName("revision");
                 RevisionLocationJsonMarshaller.getInstance().marshall(
                         registerApplicationRevisionRequest.getRevision(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

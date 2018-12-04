@@ -26,26 +26,68 @@ import com.amazonaws.services.codecommit.model.*;
  * <fullname>AWS CodeCommit</fullname>
  * <p>
  * This is the <i>AWS CodeCommit API Reference</i>. This reference provides
- * descriptions of the AWS CodeCommit API.
+ * descriptions of the operations and data types for AWS CodeCommit API.
  * </p>
  * <p>
  * You can use the AWS CodeCommit API to work with the following objects:
  * </p>
  * <ul>
- * <li>Repositories</li>
- * <li>Branches</li>
- * <li>Commits</li>
+ * <li>Repositories, by calling the following:
+ * <ul>
+ * <li><a>BatchGetRepositories</a>, which returns information about one or more
+ * repositories associated with your AWS account</li>
+ * <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
+ * <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li>
+ * <li><a>GetRepository</a>, which returns information about a specified
+ * repository</li>
+ * <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories
+ * associated with your AWS account</li>
+ * <li><a>UpdateRepositoryDescription</a>, which sets or updates the description
+ * of the repository</li>
+ * <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If
+ * you change the name of a repository, no other users of that repository will
+ * be able to access it until you send them the new HTTPS or SSH URL to use.</li>
+ * </ul>
+ * </li>
+ * <li>Branches, by calling the following:
+ * <ul>
+ * <li><a>CreateBranch</a>, which creates a new branch in a specified repository
+ * </li>
+ * <li><a>GetBranch</a>, which returns information about a specified branch</li>
+ * <li><a>ListBranches</a>, which lists all branches for a specified repository</li>
+ * <li><a>UpdateDefaultBranch</a>, which changes the default branch for a
+ * repository</li>
+ * </ul>
+ * </li>
+ * <li>Information about committed code in a repository, by calling the
+ * following:
+ * <ul>
+ * <li><a>GetCommit</a>, which returns information about a commit, including
+ * commit messages and committer information.</li>
+ * </ul>
+ * </li>
+ * <li>Triggers, by calling the following:
+ * <ul>
+ * <li><a>GetRepositoryTriggers</a>, which returns information about triggers
+ * configured for a repository</li>
+ * <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a
+ * repository and can be used to create or delete triggers</li>
+ * <li><a>TestRepositoryTriggers</a>, which tests the functionality of a
+ * repository trigger by sending data to the trigger target</li>
+ * </ul>
+ * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeCommit, see the <i>AWS CodeCommit
- * User Guide</i>.
+ * For information about how to use AWS CodeCommit, see the <a
+ * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html"
+ * >AWS CodeCommit User Guide</a>.
  * </p>
  */
 public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about one or more repositories.
+     * Returns information about one or more repositories.
      * </p>
      * <note>
      * <p>
@@ -69,7 +111,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about one or more repositories.
+     * Returns information about one or more repositories.
      * </p>
      * <note>
      * <p>
@@ -101,24 +143,32 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * <p>
      * Creates a new branch in a repository and points the branch to a commit.
      * </p>
-     * <note>Calling the create branch operation does not set a repository's
-     * default branch. To do this, call the update default branch
-     * operation.</note>
+     * <note>
+     * <p>
+     * Calling the create branch operation does not set a repository's default
+     * branch. To do this, call the update default branch operation.
+     * </p>
+     * </note>
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
+     * @return A Java Future containing the result of the CreateBranch operation
+     *         returned by the service.
      * @sample AWSCodeCommitAsync.CreateBranch
      */
-    java.util.concurrent.Future<Void> createBranchAsync(
+    java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest createBranchRequest);
 
     /**
      * <p>
      * Creates a new branch in a repository and points the branch to a commit.
      * </p>
-     * <note>Calling the create branch operation does not set a repository's
-     * default branch. To do this, call the update default branch
-     * operation.</note>
+     * <note>
+     * <p>
+     * Calling the create branch operation does not set a repository's default
+     * branch. To do this, call the update default branch operation.
+     * </p>
+     * </note>
      * 
      * @param createBranchRequest
      *        Represents the input of a create branch operation.
@@ -127,11 +177,13 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBranch operation
+     *         returned by the service.
      * @sample AWSCodeCommitAsyncHandler.CreateBranch
      */
-    java.util.concurrent.Future<Void> createBranchAsync(
+    java.util.concurrent.Future<CreateBranchResult> createBranchAsync(
             CreateBranchRequest createBranchRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateBranchRequest, CreateBranchResult> asyncHandler);
 
     /**
      * <p>
@@ -211,8 +263,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Retrieves information about a repository branch, including its name and
-     * the last commit ID.
+     * Returns information about a repository branch, including its name and the
+     * last commit ID.
      * </p>
      * 
      * @param getBranchRequest
@@ -226,8 +278,8 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Retrieves information about a repository branch, including its name and
-     * the last commit ID.
+     * Returns information about a repository branch, including its name and the
+     * last commit ID.
      * </p>
      * 
      * @param getBranchRequest
@@ -247,7 +299,43 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about a repository.
+     * Returns information about a commit, including commit message and
+     * committer information.
+     * </p>
+     * 
+     * @param getCommitRequest
+     *        Represents the input of a get commit operation.
+     * @return A Java Future containing the result of the GetCommit operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsync.GetCommit
+     */
+    java.util.concurrent.Future<GetCommitResult> getCommitAsync(
+            GetCommitRequest getCommitRequest);
+
+    /**
+     * <p>
+     * Returns information about a commit, including commit message and
+     * committer information.
+     * </p>
+     * 
+     * @param getCommitRequest
+     *        Represents the input of a get commit operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCommit operation
+     *         returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetCommit
+     */
+    java.util.concurrent.Future<GetCommitResult> getCommitAsync(
+            GetCommitRequest getCommitRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCommitRequest, GetCommitResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a repository.
      * </p>
      * <note>
      * <p>
@@ -271,7 +359,7 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
-     * Gets information about a repository.
+     * Returns information about a repository.
      * </p>
      * <note>
      * <p>
@@ -298,6 +386,40 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
     java.util.concurrent.Future<GetRepositoryResult> getRepositoryAsync(
             GetRepositoryRequest getRepositoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetRepositoryRequest, GetRepositoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about triggers configured for a repository.
+     * </p>
+     * 
+     * @param getRepositoryTriggersRequest
+     *        Represents the input of a get repository triggers operation.
+     * @return A Java Future containing the result of the GetRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.GetRepositoryTriggers
+     */
+    java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(
+            GetRepositoryTriggersRequest getRepositoryTriggersRequest);
+
+    /**
+     * <p>
+     * Gets information about triggers configured for a repository.
+     * </p>
+     * 
+     * @param getRepositoryTriggersRequest
+     *        Represents the input of a get repository triggers operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.GetRepositoryTriggers
+     */
+    java.util.concurrent.Future<GetRepositoryTriggersResult> getRepositoryTriggersAsync(
+            GetRepositoryTriggersRequest getRepositoryTriggersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRepositoryTriggersRequest, GetRepositoryTriggersResult> asyncHandler);
 
     /**
      * <p>
@@ -369,26 +491,112 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
 
     /**
      * <p>
+     * Replaces all triggers for a repository. This can be used to create or
+     * delete triggers.
+     * </p>
+     * 
+     * @param putRepositoryTriggersRequest
+     *        Represents the input ofa put repository triggers operation.
+     * @return A Java Future containing the result of the PutRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.PutRepositoryTriggers
+     */
+    java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(
+            PutRepositoryTriggersRequest putRepositoryTriggersRequest);
+
+    /**
+     * <p>
+     * Replaces all triggers for a repository. This can be used to create or
+     * delete triggers.
+     * </p>
+     * 
+     * @param putRepositoryTriggersRequest
+     *        Represents the input ofa put repository triggers operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.PutRepositoryTriggers
+     */
+    java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(
+            PutRepositoryTriggersRequest putRepositoryTriggersRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRepositoryTriggersRequest, PutRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tests the functionality of repository triggers by sending information to
+     * the trigger target. If real data is available in the repository, the test
+     * will send data from the last commit. If no data is available, sample data
+     * will be generated.
+     * </p>
+     * 
+     * @param testRepositoryTriggersRequest
+     *        Represents the input of a test repository triggers operation.
+     * @return A Java Future containing the result of the TestRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsync.TestRepositoryTriggers
+     */
+    java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(
+            TestRepositoryTriggersRequest testRepositoryTriggersRequest);
+
+    /**
+     * <p>
+     * Tests the functionality of repository triggers by sending information to
+     * the trigger target. If real data is available in the repository, the test
+     * will send data from the last commit. If no data is available, sample data
+     * will be generated.
+     * </p>
+     * 
+     * @param testRepositoryTriggersRequest
+     *        Represents the input of a test repository triggers operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the
+     *        request. Users can provide an implementation of the callback
+     *        methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestRepositoryTriggers
+     *         operation returned by the service.
+     * @sample AWSCodeCommitAsyncHandler.TestRepositoryTriggers
+     */
+    java.util.concurrent.Future<TestRepositoryTriggersResult> testRepositoryTriggersAsync(
+            TestRepositoryTriggersRequest testRepositoryTriggersRequest,
+            com.amazonaws.handlers.AsyncHandler<TestRepositoryTriggersRequest, TestRepositoryTriggersResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets or changes the default branch name for the specified repository.
      * </p>
-     * <note>If you use this operation to change the default branch name to the
+     * <note>
+     * <p>
+     * If you use this operation to change the default branch name to the
      * current default branch name, a success message is returned even though
-     * the default branch did not change.</note>
+     * the default branch did not change.
+     * </p>
+     * </note>
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
+     * @return A Java Future containing the result of the UpdateDefaultBranch
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateDefaultBranch
      */
-    java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest);
 
     /**
      * <p>
      * Sets or changes the default branch name for the specified repository.
      * </p>
-     * <note>If you use this operation to change the default branch name to the
+     * <note>
+     * <p>
+     * If you use this operation to change the default branch name to the
      * current default branch name, a success message is returned even though
-     * the default branch did not change.</note>
+     * the default branch did not change.
+     * </p>
+     * </note>
      * 
      * @param updateDefaultBranchRequest
      *        Represents the input of an update default branch operation.
@@ -397,11 +605,13 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDefaultBranch
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateDefaultBranch
      */
-    java.util.concurrent.Future<Void> updateDefaultBranchAsync(
+    java.util.concurrent.Future<UpdateDefaultBranchResult> updateDefaultBranchAsync(
             UpdateDefaultBranchRequest updateDefaultBranchRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateDefaultBranchRequest, UpdateDefaultBranchResult> asyncHandler);
 
     /**
      * <p>
@@ -421,9 +631,11 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      * @param updateRepositoryDescriptionRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return A Java Future containing the result of the
+     *         UpdateRepositoryDescription operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateRepositoryDescription
      */
-    java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest);
 
     /**
@@ -449,28 +661,44 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         UpdateRepositoryDescription operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryDescription
      */
-    java.util.concurrent.Future<Void> updateRepositoryDescriptionAsync(
+    java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(
             UpdateRepositoryDescriptionRequest updateRepositoryDescriptionRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler);
 
     /**
      * <p>
-     * Renames a repository.
+     * Renames a repository. The repository name must be unique across the
+     * calling AWS account. In addition, repository names are limited to 100
+     * alphanumeric, dash, and underscore characters, and cannot include certain
+     * characters. The suffix ".git" is prohibited. For a full description of
+     * the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide.
      * </p>
      * 
      * @param updateRepositoryNameRequest
      *        Represents the input of an update repository description
      *        operation.
+     * @return A Java Future containing the result of the UpdateRepositoryName
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsync.UpdateRepositoryName
      */
-    java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest);
 
     /**
      * <p>
-     * Renames a repository.
+     * Renames a repository. The repository name must be unique across the
+     * calling AWS account. In addition, repository names are limited to 100
+     * alphanumeric, dash, and underscore characters, and cannot include certain
+     * characters. The suffix ".git" is prohibited. For a full description of
+     * the limits on repository names, see <a href=
+     * "http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html"
+     * >Limits</a> in the AWS CodeCommit User Guide.
      * </p>
      * 
      * @param updateRepositoryNameRequest
@@ -481,10 +709,12 @@ public interface AWSCodeCommitAsync extends AWSCodeCommit {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRepositoryName
+     *         operation returned by the service.
      * @sample AWSCodeCommitAsyncHandler.UpdateRepositoryName
      */
-    java.util.concurrent.Future<Void> updateRepositoryNameAsync(
+    java.util.concurrent.Future<UpdateRepositoryNameResult> updateRepositoryNameAsync(
             UpdateRepositoryNameRequest updateRepositoryNameRequest,
-            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryNameRequest, UpdateRepositoryNameResult> asyncHandler);
 
 }

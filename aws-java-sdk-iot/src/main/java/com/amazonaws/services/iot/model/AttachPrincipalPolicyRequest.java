@@ -35,8 +35,8 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
     private String policyName;
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      */
     private String principal;
@@ -49,6 +49,7 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * @param policyName
      *        The policy name.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -60,6 +61,7 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * 
      * @return The policy name.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -74,6 +76,7 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachPrincipalPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -81,43 +84,46 @@ public class AttachPrincipalPolicyRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
      * @param principal
-     *        The principal which can be a certificate ARN (as returned from the
-     *        CreateCertificate operation) or a Cognito ID.
+     *        The principal, which can be a certificate ARN (as returned from
+     *        the CreateCertificate operation) or an Amazon Cognito ID.
      */
+
     public void setPrincipal(String principal) {
         this.principal = principal;
     }
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
-     * @return The principal which can be a certificate ARN (as returned from
-     *         the CreateCertificate operation) or a Cognito ID.
+     * @return The principal, which can be a certificate ARN (as returned from
+     *         the CreateCertificate operation) or an Amazon Cognito ID.
      */
+
     public String getPrincipal() {
         return this.principal;
     }
 
     /**
      * <p>
-     * The principal which can be a certificate ARN (as returned from the
-     * CreateCertificate operation) or a Cognito ID.
+     * The principal, which can be a certificate ARN (as returned from the
+     * CreateCertificate operation) or an Amazon Cognito ID.
      * </p>
      * 
      * @param principal
-     *        The principal which can be a certificate ARN (as returned from the
-     *        CreateCertificate operation) or a Cognito ID.
+     *        The principal, which can be a certificate ARN (as returned from
+     *        the CreateCertificate operation) or an Amazon Cognito ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AttachPrincipalPolicyRequest withPrincipal(String principal) {
         setPrincipal(principal);
         return this;

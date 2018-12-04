@@ -44,6 +44,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * 
      * @return The list of clients.
      */
+
     public java.util.List<String> getClientList() {
         if (clientList == null) {
             clientList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -59,6 +60,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * @param clientList
      *        The list of clients.
      */
+
     public void setClientList(java.util.Collection<String> clientList) {
         if (clientList == null) {
             this.clientList = null;
@@ -85,6 +87,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLunaClientsResult withClientList(String... clientList) {
         if (this.clientList == null) {
             setClientList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -106,6 +109,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLunaClientsResult withClientList(
             java.util.Collection<String> clientList) {
         setClientList(clientList);
@@ -122,6 +126,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      *        If not null, more results are available. Pass this to
      *        <a>ListLunaClients</a> to retrieve the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -135,6 +140,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * @return If not null, more results are available. Pass this to
      *         <a>ListLunaClients</a> to retrieve the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -151,6 +157,7 @@ public class ListLunaClientsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListLunaClientsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

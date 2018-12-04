@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.services.route53domains.model.transform.*;
@@ -44,6 +46,7 @@ import com.amazonaws.services.route53domains.model.transform.*;
  * <p>
  * 
  */
+@ThreadSafe
 public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         implements AmazonRoute53Domains {
     /** Provider for AWS credentials. */
@@ -59,10 +62,45 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "route53domains";
 
     /**
-     * List of exception unmarshallers for all Amazon Route 53 Domains
-     * exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("OperationLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.OperationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidInput")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.InvalidInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DomainLimitExceeded")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TLDRulesViolation")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.TLDRulesViolationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("UnsupportedTLD")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.UnsupportedTLDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DuplicateRequest")
+                                    .withModeledClass(
+                                            com.amazonaws.services.route53domains.model.DuplicateRequestException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53
@@ -82,8 +120,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonRoute53DomainsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -125,8 +163,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonRoute53DomainsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -168,8 +205,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      */
     public AmazonRoute53DomainsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -224,33 +260,6 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.OperationLimitExceededException.class,
-                        "OperationLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.InvalidInputException.class,
-                        "InvalidInput"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.DomainLimitExceededException.class,
-                        "DomainLimitExceeded"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.TLDRulesViolationException.class,
-                        "TLDRulesViolation"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.UnsupportedTLDException.class,
-                        "UnsupportedTLD"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.route53domains.model.DuplicateRequestException.class,
-                        "DuplicateRequest"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -266,10 +275,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * This operation checks the availability of one domain name. You can access
-     * this API without authenticating. Note that if the availability status of
-     * a domain is pending, you must submit another request to determine the
-     * availability of the domain name.
+     * This operation checks the availability of one domain name. Note that if
+     * the availability status of a domain is pending, you must submit another
+     * request to determine the availability of the domain name.
      * </p>
      * 
      * @param checkDomainAvailabilityRequest
@@ -299,18 +307,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CheckDomainAvailabilityRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(checkDomainAvailabilityRequest));
+                request = new CheckDomainAvailabilityRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(checkDomainAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CheckDomainAvailabilityResult> responseHandler = new JsonResponseHandler<CheckDomainAvailabilityResult>(
-                    new CheckDomainAvailabilityResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CheckDomainAvailabilityResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CheckDomainAvailabilityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -359,18 +369,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsForDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteTagsForDomainRequest));
+                request = new DeleteTagsForDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DeleteTagsForDomainResult> responseHandler = new JsonResponseHandler<DeleteTagsForDomainResult>(
-                    new DeleteTagsForDomainResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTagsForDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteTagsForDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -416,18 +428,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainAutoRenewRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableDomainAutoRenewRequest));
+                request = new DisableDomainAutoRenewRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableDomainAutoRenewResult> responseHandler = new JsonResponseHandler<DisableDomainAutoRenewResult>(
-                    new DisableDomainAutoRenewResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableDomainAutoRenewResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableDomainAutoRenewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -483,18 +497,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainTransferLockRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableDomainTransferLockRequest));
+                request = new DisableDomainTransferLockRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DisableDomainTransferLockResult> responseHandler = new JsonResponseHandler<DisableDomainTransferLockResult>(
-                    new DisableDomainTransferLockResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableDomainTransferLockResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DisableDomainTransferLockResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -531,6 +547,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
      *         domain name or belong to the requester account.
      * @throws UnsupportedTLDException
      *         Amazon Route 53 does not support this top-level domain.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
      * @sample AmazonRoute53Domains.EnableDomainAutoRenew
      */
     @Override
@@ -546,18 +564,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainAutoRenewRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableDomainAutoRenewRequest));
+                request = new EnableDomainAutoRenewRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableDomainAutoRenewResult> responseHandler = new JsonResponseHandler<EnableDomainAutoRenewResult>(
-                    new EnableDomainAutoRenewResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableDomainAutoRenewResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableDomainAutoRenewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -611,18 +631,85 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainTransferLockRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableDomainTransferLockRequest));
+                request = new EnableDomainTransferLockRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EnableDomainTransferLockResult> responseHandler = new JsonResponseHandler<EnableDomainTransferLockResult>(
-                    new EnableDomainTransferLockResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableDomainTransferLockResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new EnableDomainTransferLockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation returns information about whether the registrant contact has
+     * responded.
+     * </p>
+     * <p>
+     * If you want us to resend the email, use the
+     * <code>ResendContactReachabilityEmail</code> operation.
+     * </p>
+     * 
+     * @param getContactReachabilityStatusRequest
+     * @return Result of the GetContactReachabilityStatus operation returned by
+     *         the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.GetContactReachabilityStatus
+     */
+    @Override
+    public GetContactReachabilityStatusResult getContactReachabilityStatus(
+            GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
+        ExecutionContext executionContext = createExecutionContext(getContactReachabilityStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactReachabilityStatusRequest> request = null;
+        Response<GetContactReachabilityStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactReachabilityStatusRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getContactReachabilityStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactReachabilityStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GetContactReachabilityStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -664,17 +751,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainDetailRequestMarshaller().marshall(super
-                        .beforeMarshalling(getDomainDetailRequest));
+                request = new GetDomainDetailRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getDomainDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetDomainDetailResult> responseHandler = new JsonResponseHandler<GetDomainDetailResult>(
-                    new GetDomainDetailResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainDetailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetDomainDetailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -715,18 +805,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationDetailRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getOperationDetailRequest));
+                request = new GetOperationDetailRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getOperationDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetOperationDetailResult> responseHandler = new JsonResponseHandler<GetOperationDetailResult>(
-                    new GetOperationDetailResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetOperationDetailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetOperationDetailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -765,17 +857,19 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listDomainsRequest));
+                request = new ListDomainsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListDomainsResult> responseHandler = new JsonResponseHandler<ListDomainsResult>(
-                    new ListDomainsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListDomainsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListDomainsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -820,17 +914,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOperationsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listOperationsRequest));
+                request = new ListOperationsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListOperationsResult> responseHandler = new JsonResponseHandler<ListOperationsResult>(
-                    new ListOperationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListOperationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListOperationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -885,18 +982,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTagsForDomainRequest));
+                request = new ListTagsForDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTagsForDomainResult> responseHandler = new JsonResponseHandler<ListTagsForDomainResult>(
-                    new ListTagsForDomainResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -971,17 +1070,81 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDomainRequestMarshaller().marshall(super
-                        .beforeMarshalling(registerDomainRequest));
+                request = new RegisterDomainRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(registerDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RegisterDomainResult> responseHandler = new JsonResponseHandler<RegisterDomainResult>(
-                    new RegisterDomainResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RegisterDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For operations that require confirmation that the email address for the
+     * registrant contact is valid, such as registering a new domain, this
+     * operation resends the confirmation email to the current email address for
+     * the registrant contact.
+     * </p>
+     * 
+     * @param resendContactReachabilityEmailRequest
+     * @return Result of the ResendContactReachabilityEmail operation returned
+     *         by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for an
+     *         OperationId it may refer to the ID of an operation that is
+     *         already completed. For a domain name, it may not be a valid
+     *         domain name or belong to the requester account.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed
+     *         threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain.
+     * @sample AmazonRoute53Domains.ResendContactReachabilityEmail
+     */
+    @Override
+    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(
+            ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+        ExecutionContext executionContext = createExecutionContext(resendContactReachabilityEmailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResendContactReachabilityEmailRequest> request = null;
+        Response<ResendContactReachabilityEmailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResendContactReachabilityEmailRequestMarshaller(
+                        protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(resendContactReachabilityEmailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResendContactReachabilityEmailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new ResendContactReachabilityEmailResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1024,18 +1187,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveDomainAuthCodeRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(retrieveDomainAuthCodeRequest));
+                request = new RetrieveDomainAuthCodeRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(retrieveDomainAuthCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RetrieveDomainAuthCodeResult> responseHandler = new JsonResponseHandler<RetrieveDomainAuthCodeResult>(
-                    new RetrieveDomainAuthCodeResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RetrieveDomainAuthCodeResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RetrieveDomainAuthCodeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1114,17 +1279,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TransferDomainRequestMarshaller().marshall(super
-                        .beforeMarshalling(transferDomainRequest));
+                request = new TransferDomainRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(transferDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TransferDomainResult> responseHandler = new JsonResponseHandler<TransferDomainResult>(
-                    new TransferDomainResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TransferDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TransferDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1181,18 +1349,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateDomainContactRequest));
+                request = new UpdateDomainContactRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainContactResult> responseHandler = new JsonResponseHandler<UpdateDomainContactResult>(
-                    new UpdateDomainContactResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainContactResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDomainContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1255,18 +1425,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactPrivacyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateDomainContactPrivacyRequest));
+                request = new UpdateDomainContactPrivacyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainContactPrivacyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainContactPrivacyResult> responseHandler = new JsonResponseHandler<UpdateDomainContactPrivacyResult>(
-                    new UpdateDomainContactPrivacyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainContactPrivacyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new UpdateDomainContactPrivacyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1324,18 +1496,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainNameserversRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateDomainNameserversRequest));
+                request = new UpdateDomainNameserversRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainNameserversRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateDomainNameserversResult> responseHandler = new JsonResponseHandler<UpdateDomainNameserversResult>(
-                    new UpdateDomainNameserversResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDomainNameserversResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateDomainNameserversResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1384,18 +1558,20 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTagsForDomainRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateTagsForDomainRequest));
+                request = new UpdateTagsForDomainRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<UpdateTagsForDomainResult> responseHandler = new JsonResponseHandler<UpdateTagsForDomainResult>(
-                    new UpdateTagsForDomainResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTagsForDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateTagsForDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1429,33 +1605,48 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

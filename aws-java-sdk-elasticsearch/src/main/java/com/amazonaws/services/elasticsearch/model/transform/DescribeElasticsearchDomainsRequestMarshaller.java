@@ -37,8 +37,10 @@ import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeElasticsearchDomainsRequest Marshaller
@@ -47,7 +49,14 @@ public class DescribeElasticsearchDomainsRequestMarshaller
         implements
         Marshaller<Request<DescribeElasticsearchDomainsRequest>, DescribeElasticsearchDomainsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeElasticsearchDomainsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeElasticsearchDomainsRequest> marshall(
             DescribeElasticsearchDomainsRequest describeElasticsearchDomainsRequest) {
@@ -67,29 +76,27 @@ public class DescribeElasticsearchDomainsRequestMarshaller
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.List<String> domainNamesList = describeElasticsearchDomainsRequest
                     .getDomainNames();
             if (domainNamesList != null) {
-                jsonWriter.key("DomainNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("DomainNames");
+                jsonGenerator.writeStartArray();
                 for (String domainNamesListValue : domainNamesList) {
                     if (domainNamesListValue != null) {
-                        jsonWriter.value(domainNamesListValue);
+                        jsonGenerator.writeValue(domainNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

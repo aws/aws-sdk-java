@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.iot.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * KinesisActionMarshaller
@@ -39,32 +34,33 @@ import com.amazonaws.util.json.*;
 public class KinesisActionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(KinesisAction kinesisAction, JSONWriter jsonWriter) {
+    public void marshall(KinesisAction kinesisAction,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (kinesisAction == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (kinesisAction.getRoleArn() != null) {
-                jsonWriter.key("roleArn").value(kinesisAction.getRoleArn());
+                jsonGenerator.writeFieldName("roleArn").writeValue(
+                        kinesisAction.getRoleArn());
             }
-
             if (kinesisAction.getStreamName() != null) {
-                jsonWriter.key("streamName").value(
+                jsonGenerator.writeFieldName("streamName").writeValue(
                         kinesisAction.getStreamName());
             }
-
             if (kinesisAction.getPartitionKey() != null) {
-                jsonWriter.key("partitionKey").value(
+                jsonGenerator.writeFieldName("partitionKey").writeValue(
                         kinesisAction.getPartitionKey());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

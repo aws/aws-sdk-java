@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,47 +54,47 @@ public class UploadJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    upload.setArn(StringJsonUnmarshaller.getInstance()
+                    upload.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    upload.setName(StringJsonUnmarshaller.getInstance()
+                    upload.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    upload.setCreated(DateJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    upload.setCreated(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    upload.setType(StringJsonUnmarshaller.getInstance()
+                    upload.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    upload.setStatus(StringJsonUnmarshaller.getInstance()
+                    upload.setStatus(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
-                    upload.setUrl(StringJsonUnmarshaller.getInstance()
+                    upload.setUrl(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("metadata", targetDepth)) {
                     context.nextToken();
-                    upload.setMetadata(StringJsonUnmarshaller.getInstance()
+                    upload.setMetadata(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
                     context.nextToken();
-                    upload.setContentType(StringJsonUnmarshaller.getInstance()
+                    upload.setContentType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("message", targetDepth)) {
                     context.nextToken();
-                    upload.setMessage(StringJsonUnmarshaller.getInstance()
+                    upload.setMessage(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudformation.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ParameterConstraintsStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("AllowedValues/member", targetDepth)) {
-                    parameterConstraints.getAllowedValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    parameterConstraints
+                            .withAllowedValues(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

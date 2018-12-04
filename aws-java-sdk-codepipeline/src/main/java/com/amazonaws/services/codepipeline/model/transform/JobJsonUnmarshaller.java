@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,7 +54,7 @@ public class JobJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    job.setId(StringJsonUnmarshaller.getInstance().unmarshall(
+                    job.setId(context.getUnmarshaller(String.class).unmarshall(
                             context));
                 }
                 if (context.testExpression("data", targetDepth)) {
@@ -62,12 +64,12 @@ public class JobJsonUnmarshaller implements
                 }
                 if (context.testExpression("nonce", targetDepth)) {
                     context.nextToken();
-                    job.setNonce(StringJsonUnmarshaller.getInstance()
+                    job.setNonce(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("accountId", targetDepth)) {
                     context.nextToken();
-                    job.setAccountId(StringJsonUnmarshaller.getInstance()
+                    job.setAccountId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

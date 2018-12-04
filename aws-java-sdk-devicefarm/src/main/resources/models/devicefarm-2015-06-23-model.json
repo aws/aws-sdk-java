@@ -202,6 +202,23 @@
       ],
       "documentation":"<p>Gets information about a job.</p>"
     },
+    "GetOfferingStatus":{
+      "name":"GetOfferingStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetOfferingStatusRequest"},
+      "output":{"shape":"GetOfferingStatusResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"NotEligibleException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>"
+    },
     "GetProject":{
       "name":"GetProject",
       "http":{
@@ -346,6 +363,40 @@
       ],
       "documentation":"<p>Gets information about jobs.</p>"
     },
+    "ListOfferingTransactions":{
+      "name":"ListOfferingTransactions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListOfferingTransactionsRequest"},
+      "output":{"shape":"ListOfferingTransactionsResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"NotEligibleException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>"
+    },
+    "ListOfferings":{
+      "name":"ListOfferings",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListOfferingsRequest"},
+      "output":{"shape":"ListOfferingsResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"NotEligibleException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>"
+    },
     "ListProjects":{
       "name":"ListProjects",
       "http":{
@@ -458,6 +509,40 @@
       ],
       "documentation":"<p>Gets information about uploads.</p>"
     },
+    "PurchaseOffering":{
+      "name":"PurchaseOffering",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PurchaseOfferingRequest"},
+      "output":{"shape":"PurchaseOfferingResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"NotEligibleException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>"
+    },
+    "RenewOffering":{
+      "name":"RenewOffering",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RenewOfferingRequest"},
+      "output":{"shape":"RenewOfferingResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"NotEligibleException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>"
+    },
     "ScheduleRun":{
       "name":"ScheduleRun",
       "http":{
@@ -474,6 +559,22 @@
         {"shape":"ServiceAccountException"}
       ],
       "documentation":"<p>Schedules a run.</p>"
+    },
+    "StopRun":{
+      "name":"StopRun",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopRunRequest"},
+      "output":{"shape":"StopRunResult"},
+      "errors":[
+        {"shape":"ArgumentException"},
+        {"shape":"NotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ServiceAccountException"}
+      ],
+      "documentation":"<p>Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where tests have not started executing, and you will not be billed for these devices. On devices where tests have started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.</p>"
     },
     "UpdateDevicePool":{
       "name":"UpdateDevicePool",
@@ -523,7 +624,11 @@
         },
         "unmeteredDevices":{
           "shape":"PurchasedDevicesMap",
-          "documentation":"<p>Returns the unmetered devices you have purchased.</p>"
+          "documentation":"<p>Returns the unmetered devices you have purchased or want to purchase.</p>"
+        },
+        "unmeteredRemoteAccessDevices":{
+          "shape":"PurchasedDevicesMap",
+          "documentation":"<p>Returns the unmetered remote access devices you have purchased or want to purchase.</p>"
         }
       },
       "documentation":"<p>A container for account-level settings within AWS Device Farm.</p>"
@@ -560,7 +665,7 @@
         },
         "type":{
           "shape":"ArtifactType",
-          "documentation":"<p>The artifact's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>APPIUM_JAVA_OUTPUT: The Appium Java output type.</p></li> <li><p>APPIUM_JAVA_XML_OUTPUT: The Appium Java XML output type.</p></li> <li><p>APPIUM_SERVER_OUTPUT: The Appium server output type.</p></li> <li><p>AUTOMATION_OUTPUT: The automation output type.</p></li> <li><p>CALABASH_JSON_OUTPUT: The Calabash JSON output type.</p></li> <li><p>CALABASH_JAVA_XML_OUTPUT: The Calabash Java XML output type.</p></li> <li><p>CALABASH_PRETTY_OUTPUT: The Calabash pretty output type.</p></li> <li><p>CALABASH_STANDARD_OUTPUT: The Calabash standard output type.</p></li> <li><p>DEVICE_LOG: The device log type.</p></li> <li><p>EXERCISER_MONKEY_OUTPUT: For Android, the artifact (log) generated by an Android fuzz test.</p></li> <li><p>INSTRUMENTATION_OUTPUT: The instrumentation type.</p></li> <li><p>MESSAGE_LOG: The message log type.</p></li> <li><p>RESULT_LOG: The result log type.</p></li> <li><p>SCREENSHOT: The screenshot type.</p></li> <li><p>SERVICE_LOG: The service log type.</p></li> <li><p>UNKNOWN: An unknown type.</p></li> </ul>"
+          "documentation":"<p>The artifact's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>UNKNOWN: An unknown type.</p></li> <li><p>SCREENSHOT: The screenshot type.</p></li> <li><p>DEVICE_LOG: The device log type.</p></li> <li><p>MESSAGE_LOG: The message log type.</p></li> <li><p>RESULT_LOG: The result log type.</p></li> <li><p>SERVICE_LOG: The service log type.</p></li> <li><p>WEBKIT_LOG: The web kit log type.</p></li> <li><p>INSTRUMENTATION_OUTPUT: The instrumentation type.</p></li> <li><p>EXERCISER_MONKEY_OUTPUT: For Android, the artifact (log) generated by an Android fuzz test.</p></li> <li><p>CALABASH_JSON_OUTPUT: The Calabash JSON output type.</p></li> <li><p>CALABASH_PRETTY_OUTPUT: The Calabash pretty output type.</p></li> <li><p>CALABASH_STANDARD_OUTPUT: The Calabash standard output type.</p></li> <li><p>CALABASH_JAVA_XML_OUTPUT: The Calabash Java XML output type.</p></li> <li><p>AUTOMATION_OUTPUT: The automation output type.</p></li> <li><p>APPIUM_SERVER_OUTPUT: The Appium server output type.</p></li> <li><p>APPIUM_JAVA_OUTPUT: The Appium Java output type.</p></li> <li><p>APPIUM_JAVA_XML_OUTPUT: The Appium Java XML output type.</p></li> <li><p>APPIUM_PYTHON_OUTPUT: The Appium Python output type.</p></li> <li><p>APPIUM_PYTHON_XML_OUTPUT: The Appium Python XML output type.</p></li> <li><p>EXPLORER_EVENT_LOG: The Explorer event log output type.</p></li> <li><p>EXPLORER_SUMMARY_LOG: The Explorer summary log output type.</p></li> <li><p>APPLICATION_CRASH_REPORT: The application crash report output type.</p></li> <li><p>XCTEST_LOG: The XCode test output type.</p></li> </ul>"
         },
         "extension":{
           "shape":"String",
@@ -605,7 +710,9 @@
         "APPIUM_PYTHON_XML_OUTPUT",
         "EXPLORER_EVENT_LOG",
         "EXPLORER_SUMMARY_LOG",
-        "APPLICATION_CRASH_REPORT"
+        "APPLICATION_CRASH_REPORT",
+        "XCTEST_LOG",
+        "VIDEO"
       ]
     },
     "Artifacts":{
@@ -753,7 +860,7 @@
         },
         "type":{
           "shape":"UploadType",
-          "documentation":"<p>The upload's upload type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <a>ArgumentException</a> error.</p>"
+          "documentation":"<p>The upload's upload type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p></li> </ul> <p><b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>"
         },
         "contentType":{
           "shape":"ContentType",
@@ -771,6 +878,10 @@
         }
       },
       "documentation":"<p>Represents the result of a create upload request.</p>"
+    },
+    "CurrencyCode":{
+      "type":"string",
+      "enum":["USD"]
     },
     "DateTime":{"type":"timestamp"},
     "DeleteDevicePoolRequest":{
@@ -1018,10 +1129,14 @@
       "type":"string",
       "enum":[
         "PENDING",
+        "PENDING_CONCURRENCY",
+        "PENDING_DEVICE",
         "PROCESSING",
         "SCHEDULING",
+        "PREPARING",
         "RUNNING",
-        "COMPLETED"
+        "COMPLETED",
+        "STOPPING"
       ]
     },
     "Filter":{
@@ -1032,13 +1147,15 @@
     "GetAccountSettingsRequest":{
       "type":"structure",
       "members":{
-      }
+      },
+      "documentation":"<p>Represents the request sent to retrieve the account settings.</p>"
     },
     "GetAccountSettingsResult":{
       "type":"structure",
       "members":{
         "accountSettings":{"shape":"AccountSettings"}
-      }
+      },
+      "documentation":"<p>Represents the account settings return values from the <code>GetAccountSettings</code> request.</p>"
     },
     "GetDevicePoolCompatibilityRequest":{
       "type":"structure",
@@ -1054,7 +1171,7 @@
         },
         "testType":{
           "shape":"TestType",
-          "documentation":"<p>The test type for the specified device pool.</p> <p>Allowed values include the following:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The test type for the specified device pool.</p> <p>Allowed values include the following:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         }
       },
       "documentation":"<p>Represents a request to the get device pool compatibility operation.</p>"
@@ -1126,6 +1243,34 @@
         "job":{"shape":"Job"}
       },
       "documentation":"<p>Represents the result of a get job request.</p>"
+    },
+    "GetOfferingStatusRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Represents the request to retrieve the offering status for the specified customer or account.</p>"
+    },
+    "GetOfferingStatusResult":{
+      "type":"structure",
+      "members":{
+        "current":{
+          "shape":"OfferingStatusMap",
+          "documentation":"<p>When specified, gets the offering status for the current period.</p>"
+        },
+        "nextPeriod":{
+          "shape":"OfferingStatusMap",
+          "documentation":"<p>When specified, gets the offering status for the next period.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Returns the status result for a device offering.</p>"
     },
     "GetProjectRequest":{
       "type":"structure",
@@ -1260,7 +1405,7 @@
         },
         "type":{
           "shape":"TestType",
-          "documentation":"<p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The job's type.</p> <p>Allowed values include the following:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         },
         "created":{
           "shape":"DateTime",
@@ -1268,11 +1413,11 @@
         },
         "status":{
           "shape":"ExecutionStatus",
-          "documentation":"<p>The job's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+          "documentation":"<p>The job's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>"
         },
         "result":{
           "shape":"ExecutionResult",
-          "documentation":"<p>The job's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>The job's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "started":{
           "shape":"DateTime",
@@ -1439,6 +1584,54 @@
       },
       "documentation":"<p>Represents the result of a list jobs request.</p>"
     },
+    "ListOfferingTransactionsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Represents the request to list the offering transaction history.</p>"
+    },
+    "ListOfferingTransactionsResult":{
+      "type":"structure",
+      "members":{
+        "offeringTransactions":{
+          "shape":"OfferingTransactions",
+          "documentation":"<p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Returns the transaction log of the specified offerings.</p>"
+    },
+    "ListOfferingsRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Represents the request to list all offerings.</p>"
+    },
+    "ListOfferingsResult":{
+      "type":"structure",
+      "members":{
+        "offerings":{
+          "shape":"Offerings",
+          "documentation":"<p>A value representing the list offering results.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>"
+        }
+      },
+      "documentation":"<p>Represents the return values of the list of offerings.</p>"
+    },
     "ListProjectsRequest":{
       "type":"structure",
       "members":{
@@ -1603,7 +1796,7 @@
       "members":{
         "uniqueProblems":{
           "shape":"UniqueProblemsByExecutionResultMap",
-          "documentation":"<p>Information about the unique problems.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>Information about the unique problems.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "nextToken":{
           "shape":"PaginationToken",
@@ -1662,7 +1855,7 @@
     "Long":{"type":"long"},
     "Message":{
       "type":"string",
-      "max":8192,
+      "max":16384,
       "min":0
     },
     "Metadata":{
@@ -1670,10 +1863,35 @@
       "max":8192,
       "min":0
     },
+    "MonetaryAmount":{
+      "type":"structure",
+      "members":{
+        "amount":{
+          "shape":"Double",
+          "documentation":"<p>The numerical amount of an offering or transaction.</p>"
+        },
+        "currencyCode":{
+          "shape":"CurrencyCode",
+          "documentation":"<p>The currency code of a monetary amount. For example, <code>USD</code> means \"U.S. dollars.\"</p>"
+        }
+      },
+      "documentation":"<p>A number representing the monetary amount for an offering or transaction.</p>"
+    },
     "Name":{
       "type":"string",
       "max":256,
       "min":0
+    },
+    "NotEligibleException":{
+      "type":"structure",
+      "members":{
+        "message":{
+          "shape":"Message",
+          "documentation":"<p>The HTTP response code of a Not Eligible exception.</p>"
+        }
+      },
+      "documentation":"<p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>",
+      "exception":true
     },
     "NotFoundException":{
       "type":"structure",
@@ -1685,6 +1903,105 @@
       },
       "documentation":"<p>The specified entity was not found.</p>",
       "exception":true
+    },
+    "Offering":{
+      "type":"structure",
+      "members":{
+        "id":{
+          "shape":"OfferingIdentifier",
+          "documentation":"<p>The ID that corresponds to a device offering.</p>"
+        },
+        "description":{
+          "shape":"Message",
+          "documentation":"<p>A string describing the offering.</p>"
+        },
+        "type":{
+          "shape":"OfferingType",
+          "documentation":"<p>The type of offering (e.g., \"RECURRING\") for a device.</p>"
+        },
+        "platform":{
+          "shape":"DevicePlatform",
+          "documentation":"<p>The platform of the device (e.g., ANDROID or IOS).</p>"
+        },
+        "recurringCharges":{
+          "shape":"RecurringCharges",
+          "documentation":"<p>Specifies whether there are recurring charges for the offering.</p>"
+        }
+      },
+      "documentation":"<p>Represents the metadata of a device offering.</p>"
+    },
+    "OfferingIdentifier":{
+      "type":"string",
+      "min":32
+    },
+    "OfferingStatus":{
+      "type":"structure",
+      "members":{
+        "type":{
+          "shape":"OfferingTransactionType",
+          "documentation":"<p>The type specified for the offering status.</p>"
+        },
+        "offering":{
+          "shape":"Offering",
+          "documentation":"<p>Represents the metadata of an offering status.</p>"
+        },
+        "quantity":{
+          "shape":"Integer",
+          "documentation":"<p>The number of available devices in the offering.</p>"
+        },
+        "effectiveOn":{
+          "shape":"DateTime",
+          "documentation":"<p>The date on which the offering is effective.</p>"
+        }
+      },
+      "documentation":"<p>The status of the offering.</p>"
+    },
+    "OfferingStatusMap":{
+      "type":"map",
+      "key":{"shape":"OfferingIdentifier"},
+      "value":{"shape":"OfferingStatus"}
+    },
+    "OfferingTransaction":{
+      "type":"structure",
+      "members":{
+        "offeringStatus":{
+          "shape":"OfferingStatus",
+          "documentation":"<p>The status of an offering transaction.</p>"
+        },
+        "transactionId":{
+          "shape":"TransactionIdentifier",
+          "documentation":"<p>The transaction ID of the offering transaction.</p>"
+        },
+        "createdOn":{
+          "shape":"DateTime",
+          "documentation":"<p>The date on which an offering transaction was created.</p>"
+        },
+        "cost":{
+          "shape":"MonetaryAmount",
+          "documentation":"<p>The cost of an offering transaction.</p>"
+        }
+      },
+      "documentation":"<p>Represents the metadata of an offering transaction.</p>"
+    },
+    "OfferingTransactionType":{
+      "type":"string",
+      "enum":[
+        "PURCHASE",
+        "RENEW",
+        "SYSTEM"
+      ]
+    },
+    "OfferingTransactions":{
+      "type":"list",
+      "member":{"shape":"OfferingTransaction"}
+    },
+    "OfferingType":{
+      "type":"string",
+      "enum":["RECURRING"]
+    },
+    "Offerings":{
+      "type":"list",
+      "member":{"shape":"Offering"}
     },
     "PaginationToken":{
       "type":"string",
@@ -1716,7 +2033,7 @@
         },
         "result":{
           "shape":"ExecutionResult",
-          "documentation":"<p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "message":{
           "shape":"Message",
@@ -1765,6 +2082,30 @@
       "type":"list",
       "member":{"shape":"Project"}
     },
+    "PurchaseOfferingRequest":{
+      "type":"structure",
+      "members":{
+        "offeringId":{
+          "shape":"OfferingIdentifier",
+          "documentation":"<p>The ID of the offering.</p>"
+        },
+        "quantity":{
+          "shape":"Integer",
+          "documentation":"<p>The number of device slots you wish to purchase in an offering request.</p>"
+        }
+      },
+      "documentation":"<p>Represents a request for a purchase offering.</p>"
+    },
+    "PurchaseOfferingResult":{
+      "type":"structure",
+      "members":{
+        "offeringTransaction":{
+          "shape":"OfferingTransaction",
+          "documentation":"<p>Represents the offering transaction for the purchase result.</p>"
+        }
+      },
+      "documentation":"<p>The result of the purchase offering (e.g., success or failure).</p>"
+    },
     "PurchasedDevicesMap":{
       "type":"map",
       "key":{"shape":"DevicePlatform"},
@@ -1792,6 +2133,52 @@
       },
       "documentation":"<p>Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC.</p>"
     },
+    "RecurringCharge":{
+      "type":"structure",
+      "members":{
+        "cost":{
+          "shape":"MonetaryAmount",
+          "documentation":"<p>The cost of the recurring charge.</p>"
+        },
+        "frequency":{
+          "shape":"RecurringChargeFrequency",
+          "documentation":"<p>The frequency in which charges will recur.</p>"
+        }
+      },
+      "documentation":"<p>Specifies whether charges for devices will be recurring.</p>"
+    },
+    "RecurringChargeFrequency":{
+      "type":"string",
+      "enum":["MONTHLY"]
+    },
+    "RecurringCharges":{
+      "type":"list",
+      "member":{"shape":"RecurringCharge"}
+    },
+    "RenewOfferingRequest":{
+      "type":"structure",
+      "members":{
+        "offeringId":{
+          "shape":"OfferingIdentifier",
+          "documentation":"<p>The ID of a request to renew an offering.</p>"
+        },
+        "quantity":{
+          "shape":"Integer",
+          "documentation":"<p>The quantity requested in an offering renewal.</p>"
+        }
+      },
+      "documentation":"<p>A request representing an offering renewal.</p>"
+    },
+    "RenewOfferingResult":{
+      "type":"structure",
+      "members":{
+        "offeringTransaction":{
+          "shape":"OfferingTransaction",
+          "documentation":"<p>Represents the status of the offering transaction for the renewal.</p>"
+        }
+      },
+      "documentation":"<p>The result of a renewal offering.</p>"
+    },
     "Resolution":{
       "type":"structure",
       "members":{
@@ -1811,7 +2198,7 @@
       "members":{
         "attribute":{
           "shape":"DeviceAttribute",
-          "documentation":"<p>The rule's attribute.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li> <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>"
+          "documentation":"<p>The rule's stringified attribute. For example, specify the value as <code>\"\\\"abc\\\"\"</code>.</p> <p>Allowed values include:</p> <ul> <li><p>ARN: The ARN.</p></li> <li><p>FORM_FACTOR: The form factor (for example, phone or tablet).</p></li> <li><p>MANUFACTURER: The manufacturer.</p></li> <li><p>PLATFORM: The platform (for example, Android or iOS).</p></li> </ul>"
         },
         "operator":{
           "shape":"RuleOperator",
@@ -1851,7 +2238,7 @@
         },
         "type":{
           "shape":"TestType",
-          "documentation":"<p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The run's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         },
         "platform":{
           "shape":"DevicePlatform",
@@ -1863,11 +2250,11 @@
         },
         "status":{
           "shape":"ExecutionStatus",
-          "documentation":"<p>The run's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+          "documentation":"<p>The run's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>"
         },
         "result":{
           "shape":"ExecutionResult",
-          "documentation":"<p>The run's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>The run's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "started":{
           "shape":"DateTime",
@@ -2037,7 +2424,7 @@
       "members":{
         "type":{
           "shape":"TestType",
-          "documentation":"<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         },
         "testPackageArn":{
           "shape":"AmazonResourceName",
@@ -2065,6 +2452,24 @@
       "documentation":"<p>There was a problem with the service account.</p>",
       "exception":true
     },
+    "StopRunRequest":{
+      "type":"structure",
+      "required":["arn"],
+      "members":{
+        "arn":{
+          "shape":"AmazonResourceName",
+          "documentation":"<p>Represents the Amazon Resource Name (ARN) of the Device Farm run you wish to stop.</p>"
+        }
+      },
+      "documentation":"<p>Represents the request to stop a specific run.</p>"
+    },
+    "StopRunResult":{
+      "type":"structure",
+      "members":{
+        "run":{"shape":"Run"}
+      },
+      "documentation":"<p>Represents the results of your stop run attempt.</p>"
+    },
     "String":{"type":"string"},
     "Suite":{
       "type":"structure",
@@ -2079,7 +2484,7 @@
         },
         "type":{
           "shape":"TestType",
-          "documentation":"<p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The suite's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         },
         "created":{
           "shape":"DateTime",
@@ -2087,11 +2492,11 @@
         },
         "status":{
           "shape":"ExecutionStatus",
-          "documentation":"<p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+          "documentation":"<p>The suite's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>"
         },
         "result":{
           "shape":"ExecutionResult",
-          "documentation":"<p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>The suite's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "started":{
           "shape":"DateTime",
@@ -2133,7 +2538,7 @@
         },
         "type":{
           "shape":"TestType",
-          "documentation":"<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> </ul>"
+          "documentation":"<p>The test's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>BUILTIN_FUZZ: The built-in fuzz type.</p></li> <li><p>BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app, interacting with it and capturing screenshots at the same time.</p></li> <li><p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p></li> <li><p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p></li> <li><p>APPIUM_PYTHON: The Appium Python type.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p></li> <li><p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p></li> <li><p>CALABASH: The Calabash type.</p></li> <li><p>INSTRUMENTATION: The Instrumentation type.</p></li> <li><p>UIAUTOMATION: The uiautomation type.</p></li> <li><p>UIAUTOMATOR: The uiautomator type.</p></li> <li><p>XCTEST: The XCode test type.</p></li> <li><p>XCTEST_UI: The XCode UI test type.</p></li> </ul>"
         },
         "created":{
           "shape":"DateTime",
@@ -2141,11 +2546,11 @@
         },
         "status":{
           "shape":"ExecutionStatus",
-          "documentation":"<p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>COMPLETED: A completed status.</p></li> <li><p>PENDING: A pending status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> </ul>"
+          "documentation":"<p>The test's status.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending status.</p></li> <li><p>PENDING_CONCURRENCY: A pending concurrency status.</p></li> <li><p>PENDING_DEVICE: A pending device status.</p></li> <li><p>PROCESSING: A processing status.</p></li> <li><p>SCHEDULING: A scheduling status.</p></li> <li><p>PREPARING: A preparing status.</p></li> <li><p>RUNNING: A running status.</p></li> <li><p>COMPLETED: A completed status.</p></li> <li><p>STOPPING: A stopping status.</p></li> </ul>"
         },
         "result":{
           "shape":"ExecutionResult",
-          "documentation":"<p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>ERRORED: An error condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>PENDING: A pending condition.</p></li> <li><p>WARNED: A warning condition.</p></li> </ul>"
+          "documentation":"<p>The test's result.</p> <p>Allowed values include:</p> <ul> <li><p>PENDING: A pending condition.</p></li> <li><p>PASSED: A passing condition.</p></li> <li><p>WARNED: A warning condition.</p></li> <li><p>FAILED: A failed condition.</p></li> <li><p>SKIPPED: A skipped condition.</p></li> <li><p>ERRORED: An error condition.</p></li> <li><p>STOPPED: A stopped condition.</p></li> </ul>"
         },
         "started":{
           "shape":"DateTime",
@@ -2190,12 +2595,17 @@
         "INSTRUMENTATION",
         "UIAUTOMATION",
         "UIAUTOMATOR",
-        "XCTEST"
+        "XCTEST",
+        "XCTEST_UI"
       ]
     },
     "Tests":{
       "type":"list",
       "member":{"shape":"Test"}
+    },
+    "TransactionIdentifier":{
+      "type":"string",
+      "min":32
     },
     "URL":{
       "type":"string",
@@ -2294,7 +2704,7 @@
         },
         "type":{
           "shape":"UploadType",
-          "documentation":"<p>The upload's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> </ul>"
+          "documentation":"<p>The upload's type.</p> <p>Must be one of the following values:</p> <ul> <li><p>ANDROID_APP: An Android upload.</p></li> <li><p>IOS_APP: An iOS upload.</p></li> <li><p>WEB_APP: A web appliction upload.</p></li> <li><p>EXTERNAL_DATA: An external data upload.</p></li> <li><p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p></li> <li><p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.</p></li> <li><p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.</p></li> <li><p>CALABASH_TEST_PACKAGE: A Calabash test package upload.</p></li> <li><p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.</p></li> <li><p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.</p></li> <li><p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.</p></li> <li><p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p></li> <li><p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p></li> </ul>"
         },
         "status":{
           "shape":"UploadStatus",
@@ -2345,7 +2755,8 @@
         "INSTRUMENTATION_TEST_PACKAGE",
         "UIAUTOMATION_TEST_PACKAGE",
         "UIAUTOMATOR_TEST_PACKAGE",
-        "XCTEST_TEST_PACKAGE"
+        "XCTEST_TEST_PACKAGE",
+        "XCTEST_UI_TEST_PACKAGE"
       ]
     },
     "Uploads":{

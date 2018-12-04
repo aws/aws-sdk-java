@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,19 +54,19 @@ public class ShardJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ShardId", targetDepth)) {
                     context.nextToken();
-                    shard.setShardId(StringJsonUnmarshaller.getInstance()
+                    shard.setShardId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("ParentShardId", targetDepth)) {
                     context.nextToken();
-                    shard.setParentShardId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    shard.setParentShardId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("AdjacentParentShardId", targetDepth)) {
                     context.nextToken();
-                    shard.setAdjacentParentShardId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    shard.setAdjacentParentShardId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("HashKeyRange", targetDepth)) {
                     context.nextToken();

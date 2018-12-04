@@ -59,6 +59,7 @@ public class Volume implements Serializable, Cloneable {
      *        name is referenced in the <code>sourceVolume</code> parameter of
      *        container definition <code>mountPoints</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -76,6 +77,7 @@ public class Volume implements Serializable, Cloneable {
      *         name is referenced in the <code>sourceVolume</code> parameter of
      *         container definition <code>mountPoints</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -96,6 +98,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withName(String name) {
         setName(name);
         return this;
@@ -118,6 +121,7 @@ public class Volume implements Serializable, Cloneable {
      *        not guaranteed to persist after the containers associated with it
      *        stop running.
      */
+
     public void setHost(HostVolumeProperties host) {
         this.host = host;
     }
@@ -138,6 +142,7 @@ public class Volume implements Serializable, Cloneable {
      *         data is not guaranteed to persist after the containers associated
      *         with it stop running.
      */
+
     public HostVolumeProperties getHost() {
         return this.host;
     }
@@ -161,6 +166,7 @@ public class Volume implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Volume withHost(HostVolumeProperties host) {
         setHost(host);
         return this;

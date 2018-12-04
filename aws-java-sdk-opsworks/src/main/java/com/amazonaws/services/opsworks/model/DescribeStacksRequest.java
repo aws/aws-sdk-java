@@ -45,6 +45,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      *         you omit this parameter, <code>DescribeStacks</code> returns a
      *         description of every stack.
      */
+
     public java.util.List<String> getStackIds() {
         if (stackIds == null) {
             stackIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -64,6 +65,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      *        you omit this parameter, <code>DescribeStacks</code> returns a
      *        description of every stack.
      */
+
     public void setStackIds(java.util.Collection<String> stackIds) {
         if (stackIds == null) {
             this.stackIds = null;
@@ -94,6 +96,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksRequest withStackIds(String... stackIds) {
         if (this.stackIds == null) {
             setStackIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -119,6 +122,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStacksRequest withStackIds(
             java.util.Collection<String> stackIds) {
         setStackIds(stackIds);

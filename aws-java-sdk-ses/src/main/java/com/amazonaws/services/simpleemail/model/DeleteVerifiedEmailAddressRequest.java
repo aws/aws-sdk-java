@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to delete an address from the
- * list of verified email addresses.
- * </p>
+ * 
  */
 public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -44,6 +41,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      *        An email address to be removed from the list of verified
      *        addresses.
      */
+
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
@@ -56,6 +54,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      * @return An email address to be removed from the list of verified
      *         addresses.
      */
+
     public String getEmailAddress() {
         return this.emailAddress;
     }
@@ -71,6 +70,7 @@ public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteVerifiedEmailAddressRequest withEmailAddress(
             String emailAddress) {
         setEmailAddress(emailAddress);

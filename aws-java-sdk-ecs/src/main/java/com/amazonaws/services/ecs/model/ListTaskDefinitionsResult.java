@@ -50,6 +50,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * @return The list of task definition Amazon Resource Name (ARN) entries
      *         for the <code>ListTaskDefinitions</code> request.
      */
+
     public java.util.List<String> getTaskDefinitionArns() {
         if (taskDefinitionArns == null) {
             taskDefinitionArns = new com.amazonaws.internal.SdkInternalList<String>();
@@ -67,6 +68,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      *        The list of task definition Amazon Resource Name (ARN) entries for
      *        the <code>ListTaskDefinitions</code> request.
      */
+
     public void setTaskDefinitionArns(
             java.util.Collection<String> taskDefinitionArns) {
         if (taskDefinitionArns == null) {
@@ -96,6 +98,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsResult withTaskDefinitionArns(
             String... taskDefinitionArns) {
         if (this.taskDefinitionArns == null) {
@@ -120,6 +123,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsResult withTaskDefinitionArns(
             java.util.Collection<String> taskDefinitionArns) {
         setTaskDefinitionArns(taskDefinitionArns);
@@ -143,6 +147,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      *        next page of results. This value is <code>null</code> when there
      *        are no more results to return.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -163,6 +168,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      *         next page of results. This value is <code>null</code> when there
      *         are no more results to return.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -186,6 +192,7 @@ public class ListTaskDefinitionsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTaskDefinitionsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutIntegrationResponseRequest Marshaller
@@ -47,7 +49,14 @@ public class PutIntegrationResponseRequestMarshaller
         implements
         Marshaller<Request<PutIntegrationResponseRequest>, PutIntegrationResponseRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutIntegrationResponseRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutIntegrationResponseRequest> marshall(
             PutIntegrationResponseRequest putIntegrationResponseRequest) {
@@ -64,78 +73,92 @@ public class PutIntegrationResponseRequestMarshaller
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putIntegrationResponseRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putIntegrationResponseRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putIntegrationResponseRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getHttpMethod()));
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (putIntegrationResponseRequest.getStatusCode() == null) ? ""
-                        : StringUtils.fromString(putIntegrationResponseRequest
-                                .getStatusCode()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{restapi_id}",
+                        (putIntegrationResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(putIntegrationResponseRequest
+                                                .getRestApiId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (putIntegrationResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(putIntegrationResponseRequest
+                                                .getResourceId()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (putIntegrationResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(putIntegrationResponseRequest
+                                                .getHttpMethod()), false)
+                                : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{status_code}",
+                        (putIntegrationResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
+                                        .fromString(putIntegrationResponseRequest
+                                                .getStatusCode()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (putIntegrationResponseRequest.getSelectionPattern() != null) {
-                jsonWriter.key("selectionPattern").value(
+                jsonGenerator.writeFieldName("selectionPattern").writeValue(
                         putIntegrationResponseRequest.getSelectionPattern());
             }
 
             java.util.Map<String, String> responseParametersMap = putIntegrationResponseRequest
                     .getResponseParameters();
             if (responseParametersMap != null) {
-                jsonWriter.key("responseParameters");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseParameters");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseParametersMapValue : responseParametersMap
                         .entrySet()) {
                     if (responseParametersMapValue.getValue() != null) {
-                        jsonWriter.key(responseParametersMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseParametersMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseParametersMapValue.getValue());
+                        jsonGenerator.writeValue(responseParametersMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
             java.util.Map<String, String> responseTemplatesMap = putIntegrationResponseRequest
                     .getResponseTemplates();
             if (responseTemplatesMap != null) {
-                jsonWriter.key("responseTemplates");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("responseTemplates");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> responseTemplatesMapValue : responseTemplatesMap
                         .entrySet()) {
                     if (responseTemplatesMapValue.getValue() != null) {
-                        jsonWriter.key(responseTemplatesMapValue.getKey());
+                        jsonGenerator.writeFieldName(responseTemplatesMapValue
+                                .getKey());
 
-                        jsonWriter.value(responseTemplatesMapValue.getValue());
+                        jsonGenerator.writeValue(responseTemplatesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

@@ -99,6 +99,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -474,30 +482,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
-     * eventually consistent reads. The data returned from <i>Scan</i> might not
-     * contain the results of other recently completed write operations
-     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.
+     * If <i>ConsistentRead</i> is <code>false</code>, then the data returned
+     * from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
-     * strongly consistent reads. All of the write operations that completed
-     * before the <i>Scan</i> began are guaranteed to be contained in the
-     * <i>Scan</i> response.
+     * If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to
+     * be contained in the <i>Scan</i> response.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
-     * meaning that eventually consistent reads will be used.
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>.
      * </p>
      * <p>
-     * Strongly consistent reads are not supported on global secondary indexes.
-     * If you scan a global secondary index with <i>ConsistentRead</i> set to
-     * true, you will receive a <i>ValidationException</i>.
+     * The <i>ConsistentRead</i> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <i>ConsistentRead</i>
+     * set to true, you will receive a <i>ValidationException</i>.
      * </p>
      */
     private Boolean consistentRead;
@@ -536,6 +540,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        provide <code>IndexName</code>, the name of the table to which
      *        that index belongs.
      */
+
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
@@ -551,6 +556,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         provide <code>IndexName</code>, the name of the table to which
      *         that index belongs.
      */
+
     public String getTableName() {
         return this.tableName;
     }
@@ -569,6 +575,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withTableName(String tableName) {
         setTableName(tableName);
         return this;
@@ -588,6 +595,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the <code>IndexName</code> parameter, you must also provide
      *        <code>TableName</code>.
      */
+
     public void setIndexName(String indexName) {
         this.indexName = indexName;
     }
@@ -605,6 +613,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         use the <code>IndexName</code> parameter, you must also provide
      *         <code>TableName</code>.
      */
+
     public String getIndexName() {
         return this.indexName;
     }
@@ -625,6 +634,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withIndexName(String indexName) {
         setIndexName(indexName);
         return this;
@@ -654,11 +664,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * size, not on the amount of data that is returned to an application.
      * </p>
      * 
-     * @return This is a legacy parameter, for backward compatibility. New
+     * @return <p>
+     *         This is a legacy parameter, for backward compatibility. New
      *         applications should use <i>ProjectionExpression</i> instead. Do
      *         not combine legacy parameters and expression parameters in a
      *         single API call; otherwise, DynamoDB will return a
-     *         <i>ValidationException</i> exception.</p>
+     *         <i>ValidationException</i> exception.
+     *         </p>
      *         <p>
      *         This parameter allows you to retrieve attributes of type List or
      *         Map; however, it cannot retrieve individual elements within a
@@ -672,8 +684,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         in the result.
      *         </p>
      *         <p>
-     *         Note that <i>AttributesToGet
+     *         Note that <i>AttributesToGet</i> has no effect on provisioned
+     *         throughput consumption. DynamoDB determines capacity units
+     *         consumed based on item size, not on the amount of data that is
+     *         returned to an application.
      */
+
     public java.util.List<String> getAttributesToGet() {
         return attributesToGet;
     }
@@ -703,11 +719,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -721,8 +739,12 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      */
+
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
             this.attributesToGet = null;
@@ -763,11 +785,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -781,10 +805,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withAttributesToGet(String... attributesToGet) {
         if (this.attributesToGet == null) {
             setAttributesToGet(new java.util.ArrayList<String>(
@@ -821,11 +849,13 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param attributesToGet
+     *        <p>
      *        This is a legacy parameter, for backward compatibility. New
      *        applications should use <i>ProjectionExpression</i> instead. Do
      *        not combine legacy parameters and expression parameters in a
      *        single API call; otherwise, DynamoDB will return a
-     *        <i>ValidationException</i> exception.</p>
+     *        <i>ValidationException</i> exception.
+     *        </p>
      *        <p>
      *        This parameter allows you to retrieve attributes of type List or
      *        Map; however, it cannot retrieve individual elements within a List
@@ -839,10 +869,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        the result.
      *        </p>
      *        <p>
-     *        Note that <i>AttributesToGet
+     *        Note that <i>AttributesToGet</i> has no effect on provisioned
+     *        throughput consumption. DynamoDB determines capacity units
+     *        consumed based on item size, not on the amount of data that is
+     *        returned to an application.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withAttributesToGet(
             java.util.Collection<String> attributesToGet) {
         setAttributesToGet(attributesToGet);
@@ -880,6 +914,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html"
      *        >Query and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -915,6 +950,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         >Query and Scan</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -952,6 +988,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -966,6 +1003,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
      * </p>
      * </li>
      * <li>
@@ -1003,6 +1048,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>COUNT</code> - Returns the number of matching items, rather
      *        than the matching items themselves.
      *        </p>
@@ -1026,6 +1080,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <i>Select</i>.)
      * @see Select
      */
+
     public void setSelect(String select) {
         this.select = select;
     }
@@ -1039,6 +1094,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
      * </p>
      * </li>
      * <li>
@@ -1075,6 +1138,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when
+     *         querying an index. Retrieves all attributes that have been
+     *         projected into the index. If the index is configured to project
+     *         all attributes, this return value is equivalent to specifying
+     *         <code>ALL_ATTRIBUTES</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>COUNT</code> - Returns the number of matching items, rather
      *         than the matching items themselves.
      *         </p>
@@ -1098,6 +1170,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <i>Select</i>.)
      * @see Select
      */
+
     public String getSelect() {
         return this.select;
     }
@@ -1111,6 +1184,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
      * </p>
      * </li>
      * <li>
@@ -1148,6 +1229,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>COUNT</code> - Returns the number of matching items, rather
      *        than the matching items themselves.
      *        </p>
@@ -1173,6 +1263,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Select
      */
+
     public ScanRequest withSelect(String select) {
         setSelect(select);
         return this;
@@ -1191,6 +1282,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1224,6 +1323,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>COUNT</code> - Returns the number of matching items, rather
      *        than the matching items themselves.
      *        </p>
@@ -1245,10 +1353,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <code>SPECIFIC_ATTRIBUTES</code>. (This usage is equivalent to
      *        specifying <i>AttributesToGet</i> without any value for
      *        <i>Select</i>.)
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see Select
      */
+
     public void setSelect(Select select) {
         this.select = select.toString();
     }
@@ -1266,6 +1373,14 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying an
+     * index. Retrieves all attributes that have been projected into the index.
+     * If the index is configured to project all attributes, this return value
+     * is equivalent to specifying <code>ALL_ATTRIBUTES</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>COUNT</code> - Returns the number of matching items, rather than
      * the matching items themselves.
      * </p>
@@ -1299,6 +1414,15 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ALL_PROJECTED_ATTRIBUTES</code> - Allowed only when querying
+     *        an index. Retrieves all attributes that have been projected into
+     *        the index. If the index is configured to project all attributes,
+     *        this return value is equivalent to specifying
+     *        <code>ALL_ATTRIBUTES</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>COUNT</code> - Returns the number of matching items, rather
      *        than the matching items themselves.
      *        </p>
@@ -1324,6 +1448,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see Select
      */
+
     public ScanRequest withSelect(Select select) {
         setSelect(select);
         return this;
@@ -1485,6 +1610,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         </p>
      *         </li>
      */
+
     public java.util.Map<String, Condition> getScanFilter() {
         return scanFilter;
     }
@@ -1646,6 +1772,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </p>
      *        </li>
      */
+
     public void setScanFilter(java.util.Map<String, Condition> scanFilter) {
         this.scanFilter = scanFilter;
     }
@@ -1809,6 +1936,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withScanFilter(
             java.util.Map<String, Condition> scanFilter) {
         setScanFilter(scanFilter);
@@ -1830,6 +1958,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into ScanFilter. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public ScanRequest clearScanFilterEntries() {
         this.scanFilter = null;
         return this;
@@ -1915,6 +2044,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        </p>
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(String conditionalOperator) {
         this.conditionalOperator = conditionalOperator;
     }
@@ -1998,6 +2128,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         </p>
      * @see ConditionalOperator
      */
+
     public String getConditionalOperator() {
         return this.conditionalOperator;
     }
@@ -2084,6 +2215,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public ScanRequest withConditionalOperator(String conditionalOperator) {
         setConditionalOperator(conditionalOperator);
         return this;
@@ -2167,10 +2299,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        This parameter does not support attributes of type List or Map.
      *        </p>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConditionalOperator
      */
+
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
         this.conditionalOperator = conditionalOperator.toString();
     }
@@ -2257,6 +2388,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ConditionalOperator
      */
+
     public ScanRequest withConditionalOperator(
             ConditionalOperator conditionalOperator) {
         setConditionalOperator(conditionalOperator);
@@ -2292,6 +2424,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         previous <i>Scan</i> returned the corresponding value of
      *         <i>LastEvaluatedKey</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExclusiveStartKey() {
         return exclusiveStartKey;
     }
@@ -2326,6 +2459,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        previous <i>Scan</i> returned the corresponding value of
      *        <i>LastEvaluatedKey</i>.
      */
+
     public void setExclusiveStartKey(
             java.util.Map<String, AttributeValue> exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
@@ -2363,6 +2497,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withExclusiveStartKey(
             java.util.Map<String, AttributeValue> exclusiveStartKey) {
         setExclusiveStartKey(exclusiveStartKey);
@@ -2385,6 +2520,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into ExclusiveStartKey. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ScanRequest clearExclusiveStartKeyEntries() {
         this.exclusiveStartKey = null;
         return this;
@@ -2394,6 +2530,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @param returnConsumedCapacity
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(String returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity;
     }
@@ -2402,6 +2539,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return
      * @see ReturnConsumedCapacity
      */
+
     public String getReturnConsumedCapacity() {
         return this.returnConsumedCapacity;
     }
@@ -2412,6 +2550,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public ScanRequest withReturnConsumedCapacity(String returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
         return this;
@@ -2419,10 +2558,9 @@ public class ScanRequest extends AmazonWebServiceRequest implements
 
     /**
      * @param returnConsumedCapacity
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public void setReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         this.returnConsumedCapacity = returnConsumedCapacity.toString();
@@ -2434,6 +2572,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ReturnConsumedCapacity
      */
+
     public ScanRequest withReturnConsumedCapacity(
             ReturnConsumedCapacity returnConsumedCapacity) {
         setReturnConsumedCapacity(returnConsumedCapacity);
@@ -2478,6 +2617,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        If you specify <i>TotalSegments</i>, you must also specify
      *        <i>Segment</i>.
      */
+
     public void setTotalSegments(Integer totalSegments) {
         this.totalSegments = totalSegments;
     }
@@ -2519,6 +2659,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         If you specify <i>TotalSegments</i>, you must also specify
      *         <i>Segment</i>.
      */
+
     public Integer getTotalSegments() {
         return this.totalSegments;
     }
@@ -2563,6 +2704,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withTotalSegments(Integer totalSegments) {
         setTotalSegments(totalSegments);
         return this;
@@ -2616,6 +2758,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        If you provide <i>Segment</i>, you must also provide
      *        <i>TotalSegments</i>.
      */
+
     public void setSegment(Integer segment) {
         this.segment = segment;
     }
@@ -2667,6 +2810,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         If you provide <i>Segment</i>, you must also provide
      *         <i>TotalSegments</i>.
      */
+
     public Integer getSegment() {
         return this.segment;
     }
@@ -2721,6 +2865,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withSegment(Integer segment) {
         setSegment(segment);
         return this;
@@ -2773,6 +2918,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <i>AttributesToGet</i> parameter.
      *        </p>
      */
+
     public void setProjectionExpression(String projectionExpression) {
         this.projectionExpression = projectionExpression;
     }
@@ -2823,6 +2969,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <i>AttributesToGet</i> parameter.
      *         </p>
      */
+
     public String getProjectionExpression() {
         return this.projectionExpression;
     }
@@ -2876,6 +3023,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withProjectionExpression(String projectionExpression) {
         setProjectionExpression(projectionExpression);
         return this;
@@ -2929,6 +3077,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <i>ConditionalOperator</i> parameters.
      *        </p>
      */
+
     public void setFilterExpression(String filterExpression) {
         this.filterExpression = filterExpression;
     }
@@ -2980,6 +3129,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <i>ConditionalOperator</i> parameters.
      *         </p>
      */
+
     public String getFilterExpression() {
         return this.filterExpression;
     }
@@ -3034,6 +3184,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withFilterExpression(String filterExpression) {
         setFilterExpression(filterExpression);
         return this;
@@ -3190,6 +3341,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB
      *         Developer Guide</i>.
      */
+
     public java.util.Map<String, String> getExpressionAttributeNames() {
         return expressionAttributeNames;
     }
@@ -3346,6 +3498,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         this.expressionAttributeNames = expressionAttributeNames;
@@ -3505,6 +3658,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withExpressionAttributeNames(
             java.util.Map<String, String> expressionAttributeNames) {
         setExpressionAttributeNames(expressionAttributeNames);
@@ -3527,6 +3681,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ScanRequest clearExpressionAttributeNamesEntries() {
         this.expressionAttributeNames = null;
         return this;
@@ -3592,6 +3747,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
+
     public java.util.Map<String, AttributeValue> getExpressionAttributeValues() {
         return expressionAttributeValues;
     }
@@ -3657,6 +3813,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
      *        Guide</i>.
      */
+
     public void setExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         this.expressionAttributeValues = expressionAttributeValues;
@@ -3725,6 +3882,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withExpressionAttributeValues(
             java.util.Map<String, AttributeValue> expressionAttributeValues) {
         setExpressionAttributeValues(expressionAttributeValues);
@@ -3748,6 +3906,7 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public ScanRequest clearExpressionAttributeValuesEntries() {
         this.expressionAttributeValues = null;
         return this;
@@ -3761,30 +3920,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
-     * eventually consistent reads. The data returned from <i>Scan</i> might not
-     * contain the results of other recently completed write operations
-     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.
+     * If <i>ConsistentRead</i> is <code>false</code>, then the data returned
+     * from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
-     * strongly consistent reads. All of the write operations that completed
-     * before the <i>Scan</i> began are guaranteed to be contained in the
-     * <i>Scan</i> response.
+     * If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to
+     * be contained in the <i>Scan</i> response.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
-     * meaning that eventually consistent reads will be used.
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>.
      * </p>
      * <p>
-     * Strongly consistent reads are not supported on global secondary indexes.
-     * If you scan a global secondary index with <i>ConsistentRead</i> set to
-     * true, you will receive a <i>ValidationException</i>.
+     * The <i>ConsistentRead</i> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <i>ConsistentRead</i>
+     * set to true, you will receive a <i>ValidationException</i>.
      * </p>
      * 
      * @param consistentRead
@@ -3793,33 +3948,31 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
-     *        will use eventually consistent reads. The data returned from
-     *        <i>Scan</i> might not contain the results of other recently
-     *        completed write operations (PutItem, UpdateItem or DeleteItem).
-     *        The <i>Scan</i> response might include some stale data.
+     *        If <i>ConsistentRead</i> is <code>false</code>, then the data
+     *        returned from <i>Scan</i> might not contain the results from other
+     *        recently completed write operations (PutItem, UpdateItem or
+     *        DeleteItem).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
-     *        will use strongly consistent reads. All of the write operations
-     *        that completed before the <i>Scan</i> began are guaranteed to be
-     *        contained in the <i>Scan</i> response.
+     *        If <i>ConsistentRead</i> is <code>true</code>, then all of the
+     *        write operations that completed before the <i>Scan</i> began are
+     *        guaranteed to be contained in the <i>Scan</i> response.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default setting for <i>ConsistentRead</i> is
-     *        <code>false</code>, meaning that eventually consistent reads will
-     *        be used.
+     *        <code>false</code>.
      *        </p>
      *        <p>
-     *        Strongly consistent reads are not supported on global secondary
-     *        indexes. If you scan a global secondary index with
+     *        The <i>ConsistentRead</i> parameter is not supported on global
+     *        secondary indexes. If you scan a global secondary index with
      *        <i>ConsistentRead</i> set to true, you will receive a
      *        <i>ValidationException</i>.
      */
+
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
@@ -3832,30 +3985,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
-     * eventually consistent reads. The data returned from <i>Scan</i> might not
-     * contain the results of other recently completed write operations
-     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.
+     * If <i>ConsistentRead</i> is <code>false</code>, then the data returned
+     * from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
-     * strongly consistent reads. All of the write operations that completed
-     * before the <i>Scan</i> began are guaranteed to be contained in the
-     * <i>Scan</i> response.
+     * If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to
+     * be contained in the <i>Scan</i> response.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
-     * meaning that eventually consistent reads will be used.
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>.
      * </p>
      * <p>
-     * Strongly consistent reads are not supported on global secondary indexes.
-     * If you scan a global secondary index with <i>ConsistentRead</i> set to
-     * true, you will receive a <i>ValidationException</i>.
+     * The <i>ConsistentRead</i> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <i>ConsistentRead</i>
+     * set to true, you will receive a <i>ValidationException</i>.
      * </p>
      * 
      * @return A Boolean value that determines the read consistency model during
@@ -3863,33 +4012,31 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <ul>
      *         <li>
      *         <p>
-     *         If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
-     *         will use eventually consistent reads. The data returned from
-     *         <i>Scan</i> might not contain the results of other recently
-     *         completed write operations (PutItem, UpdateItem or DeleteItem).
-     *         The <i>Scan</i> response might include some stale data.
+     *         If <i>ConsistentRead</i> is <code>false</code>, then the data
+     *         returned from <i>Scan</i> might not contain the results from
+     *         other recently completed write operations (PutItem, UpdateItem or
+     *         DeleteItem).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
-     *         will use strongly consistent reads. All of the write operations
-     *         that completed before the <i>Scan</i> began are guaranteed to be
-     *         contained in the <i>Scan</i> response.
+     *         If <i>ConsistentRead</i> is <code>true</code>, then all of the
+     *         write operations that completed before the <i>Scan</i> began are
+     *         guaranteed to be contained in the <i>Scan</i> response.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The default setting for <i>ConsistentRead</i> is
-     *         <code>false</code>, meaning that eventually consistent reads will
-     *         be used.
+     *         <code>false</code>.
      *         </p>
      *         <p>
-     *         Strongly consistent reads are not supported on global secondary
-     *         indexes. If you scan a global secondary index with
+     *         The <i>ConsistentRead</i> parameter is not supported on global
+     *         secondary indexes. If you scan a global secondary index with
      *         <i>ConsistentRead</i> set to true, you will receive a
      *         <i>ValidationException</i>.
      */
+
     public Boolean getConsistentRead() {
         return this.consistentRead;
     }
@@ -3902,30 +4049,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
-     * eventually consistent reads. The data returned from <i>Scan</i> might not
-     * contain the results of other recently completed write operations
-     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.
+     * If <i>ConsistentRead</i> is <code>false</code>, then the data returned
+     * from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
-     * strongly consistent reads. All of the write operations that completed
-     * before the <i>Scan</i> began are guaranteed to be contained in the
-     * <i>Scan</i> response.
+     * If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to
+     * be contained in the <i>Scan</i> response.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
-     * meaning that eventually consistent reads will be used.
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>.
      * </p>
      * <p>
-     * Strongly consistent reads are not supported on global secondary indexes.
-     * If you scan a global secondary index with <i>ConsistentRead</i> set to
-     * true, you will receive a <i>ValidationException</i>.
+     * The <i>ConsistentRead</i> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <i>ConsistentRead</i>
+     * set to true, you will receive a <i>ValidationException</i>.
      * </p>
      * 
      * @param consistentRead
@@ -3934,35 +4077,33 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *        <ul>
      *        <li>
      *        <p>
-     *        If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
-     *        will use eventually consistent reads. The data returned from
-     *        <i>Scan</i> might not contain the results of other recently
-     *        completed write operations (PutItem, UpdateItem or DeleteItem).
-     *        The <i>Scan</i> response might include some stale data.
+     *        If <i>ConsistentRead</i> is <code>false</code>, then the data
+     *        returned from <i>Scan</i> might not contain the results from other
+     *        recently completed write operations (PutItem, UpdateItem or
+     *        DeleteItem).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
-     *        will use strongly consistent reads. All of the write operations
-     *        that completed before the <i>Scan</i> began are guaranteed to be
-     *        contained in the <i>Scan</i> response.
+     *        If <i>ConsistentRead</i> is <code>true</code>, then all of the
+     *        write operations that completed before the <i>Scan</i> began are
+     *        guaranteed to be contained in the <i>Scan</i> response.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        The default setting for <i>ConsistentRead</i> is
-     *        <code>false</code>, meaning that eventually consistent reads will
-     *        be used.
+     *        <code>false</code>.
      *        </p>
      *        <p>
-     *        Strongly consistent reads are not supported on global secondary
-     *        indexes. If you scan a global secondary index with
+     *        The <i>ConsistentRead</i> parameter is not supported on global
+     *        secondary indexes. If you scan a global secondary index with
      *        <i>ConsistentRead</i> set to true, you will receive a
      *        <i>ValidationException</i>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ScanRequest withConsistentRead(Boolean consistentRead) {
         setConsistentRead(consistentRead);
         return this;
@@ -3976,30 +4117,26 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      * <ul>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i> will use
-     * eventually consistent reads. The data returned from <i>Scan</i> might not
-     * contain the results of other recently completed write operations
-     * (PutItem, UpdateItem or DeleteItem). The <i>Scan</i> response might
-     * include some stale data.
+     * If <i>ConsistentRead</i> is <code>false</code>, then the data returned
+     * from <i>Scan</i> might not contain the results from other recently
+     * completed write operations (PutItem, UpdateItem or DeleteItem).
      * </p>
      * </li>
      * <li>
      * <p>
-     * If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i> will use
-     * strongly consistent reads. All of the write operations that completed
-     * before the <i>Scan</i> began are guaranteed to be contained in the
-     * <i>Scan</i> response.
+     * If <i>ConsistentRead</i> is <code>true</code>, then all of the write
+     * operations that completed before the <i>Scan</i> began are guaranteed to
+     * be contained in the <i>Scan</i> response.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default setting for <i>ConsistentRead</i> is <code>false</code>,
-     * meaning that eventually consistent reads will be used.
+     * The default setting for <i>ConsistentRead</i> is <code>false</code>.
      * </p>
      * <p>
-     * Strongly consistent reads are not supported on global secondary indexes.
-     * If you scan a global secondary index with <i>ConsistentRead</i> set to
-     * true, you will receive a <i>ValidationException</i>.
+     * The <i>ConsistentRead</i> parameter is not supported on global secondary
+     * indexes. If you scan a global secondary index with <i>ConsistentRead</i>
+     * set to true, you will receive a <i>ValidationException</i>.
      * </p>
      * 
      * @return A Boolean value that determines the read consistency model during
@@ -4007,33 +4144,31 @@ public class ScanRequest extends AmazonWebServiceRequest implements
      *         <ul>
      *         <li>
      *         <p>
-     *         If <i>ConsistentRead</i> is <code>false</code>, then <i>Scan</i>
-     *         will use eventually consistent reads. The data returned from
-     *         <i>Scan</i> might not contain the results of other recently
-     *         completed write operations (PutItem, UpdateItem or DeleteItem).
-     *         The <i>Scan</i> response might include some stale data.
+     *         If <i>ConsistentRead</i> is <code>false</code>, then the data
+     *         returned from <i>Scan</i> might not contain the results from
+     *         other recently completed write operations (PutItem, UpdateItem or
+     *         DeleteItem).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If <i>ConsistentRead</i> is <code>true</code>, then <i>Scan</i>
-     *         will use strongly consistent reads. All of the write operations
-     *         that completed before the <i>Scan</i> began are guaranteed to be
-     *         contained in the <i>Scan</i> response.
+     *         If <i>ConsistentRead</i> is <code>true</code>, then all of the
+     *         write operations that completed before the <i>Scan</i> began are
+     *         guaranteed to be contained in the <i>Scan</i> response.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         The default setting for <i>ConsistentRead</i> is
-     *         <code>false</code>, meaning that eventually consistent reads will
-     *         be used.
+     *         <code>false</code>.
      *         </p>
      *         <p>
-     *         Strongly consistent reads are not supported on global secondary
-     *         indexes. If you scan a global secondary index with
+     *         The <i>ConsistentRead</i> parameter is not supported on global
+     *         secondary indexes. If you scan a global secondary index with
      *         <i>ConsistentRead</i> set to true, you will receive a
      *         <i>ValidationException</i>.
      */
+
     public Boolean isConsistentRead() {
         return this.consistentRead;
     }

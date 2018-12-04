@@ -60,6 +60,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param restApiId
      *        Specifies a delete integration response request's API identifier.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -71,6 +72,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a delete integration response request's API identifier.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -85,6 +87,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIntegrationResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -99,6 +102,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      *        Specifies a delete integration response request's resource
      *        identifier.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -111,6 +115,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Specifies a delete integration response request's resource
      *         identifier.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -126,6 +131,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIntegrationResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -139,6 +145,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param httpMethod
      *        Specifies a delete integration response request's HTTP method.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -150,6 +157,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a delete integration response request's HTTP method.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -164,6 +172,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIntegrationResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -177,6 +186,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @param statusCode
      *        Specifies a delete integration response request's status code.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -188,6 +198,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * 
      * @return Specifies a delete integration response request's status code.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -202,6 +213,7 @@ public class DeleteIntegrationResponseRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteIntegrationResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;

@@ -17,6 +17,8 @@
 package com.amazonaws.services.sns.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,8 @@ public class ListTopicsResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("Topics/member", targetDepth)) {
-                    listTopicsResult.getTopics().add(
-                            TopicStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listTopicsResult.withTopics(TopicStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

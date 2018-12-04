@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DescribeDatasetRequest Marshaller
@@ -47,6 +49,13 @@ public class DescribeDatasetRequestMarshaller implements
         Marshaller<Request<DescribeDatasetRequest>, DescribeDatasetRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DescribeDatasetRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DescribeDatasetRequest> marshall(
             DescribeDatasetRequest describeDatasetRequest) {
@@ -63,21 +72,27 @@ public class DescribeDatasetRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (describeDatasetRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (describeDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(describeDatasetRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         uriResourcePath = uriResourcePath.replace(
                 "{IdentityId}",
-                (describeDatasetRequest.getIdentityId() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getIdentityId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (describeDatasetRequest.getDatasetName() == null) ? ""
-                        : StringUtils.fromString(describeDatasetRequest
-                                .getDatasetName()));
+                (describeDatasetRequest.getIdentityId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(describeDatasetRequest
+                                        .getIdentityId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DatasetName}",
+                        (describeDatasetRequest.getDatasetName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(describeDatasetRequest
+                                                .getDatasetName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

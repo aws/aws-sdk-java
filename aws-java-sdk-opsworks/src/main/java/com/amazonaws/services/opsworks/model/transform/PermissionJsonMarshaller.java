@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PermissionMarshaller
@@ -39,38 +34,41 @@ import com.amazonaws.util.json.*;
 public class PermissionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Permission permission, JSONWriter jsonWriter) {
+    public void marshall(Permission permission,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (permission == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (permission.getStackId() != null) {
-                jsonWriter.key("StackId").value(permission.getStackId());
+                jsonGenerator.writeFieldName("StackId").writeValue(
+                        permission.getStackId());
             }
-
             if (permission.getIamUserArn() != null) {
-                jsonWriter.key("IamUserArn").value(permission.getIamUserArn());
+                jsonGenerator.writeFieldName("IamUserArn").writeValue(
+                        permission.getIamUserArn());
             }
-
             if (permission.getAllowSsh() != null) {
-                jsonWriter.key("AllowSsh").value(permission.getAllowSsh());
+                jsonGenerator.writeFieldName("AllowSsh").writeValue(
+                        permission.getAllowSsh());
             }
-
             if (permission.getAllowSudo() != null) {
-                jsonWriter.key("AllowSudo").value(permission.getAllowSudo());
+                jsonGenerator.writeFieldName("AllowSudo").writeValue(
+                        permission.getAllowSudo());
             }
-
             if (permission.getLevel() != null) {
-                jsonWriter.key("Level").value(permission.getLevel());
+                jsonGenerator.writeFieldName("Level").writeValue(
+                        permission.getLevel());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

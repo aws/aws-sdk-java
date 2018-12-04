@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetDomainNamesRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class GetDomainNamesRequestMarshaller implements
         Marshaller<Request<GetDomainNamesRequest>, GetDomainNamesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetDomainNamesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetDomainNamesRequest> marshall(
             GetDomainNamesRequest getDomainNamesRequest) {
@@ -65,16 +74,14 @@ public class GetDomainNamesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String position = (getDomainNamesRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getDomainNamesRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getDomainNamesRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getDomainNamesRequest.getPosition()));
         }
 
-        String limit = (getDomainNamesRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getDomainNamesRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getDomainNamesRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getDomainNamesRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

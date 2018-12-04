@@ -18,6 +18,8 @@ package com.amazonaws.services.codepipeline.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,35 +55,34 @@ public class ActionExecutionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    actionExecution.setStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionExecution.setStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("summary", targetDepth)) {
                     context.nextToken();
-                    actionExecution.setSummary(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionExecution.setSummary(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastStatusChange", targetDepth)) {
                     context.nextToken();
-                    actionExecution.setLastStatusChange(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionExecution.setLastStatusChange(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("externalExecutionId", targetDepth)) {
                     context.nextToken();
-                    actionExecution
-                            .setExternalExecutionId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionExecution.setExternalExecutionId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("externalExecutionUrl", targetDepth)) {
                     context.nextToken();
-                    actionExecution
-                            .setExternalExecutionUrl(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    actionExecution.setExternalExecutionUrl(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("percentComplete", targetDepth)) {
                     context.nextToken();
-                    actionExecution.setPercentComplete(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    actionExecution.setPercentComplete(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("errorDetails", targetDepth)) {
                     context.nextToken();

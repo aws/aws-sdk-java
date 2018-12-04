@@ -40,6 +40,7 @@ public class DescribeStackSummaryResult implements Serializable, Cloneable {
      * @param stackSummary
      *        A <code>StackSummary</code> object that contains the results.
      */
+
     public void setStackSummary(StackSummary stackSummary) {
         this.stackSummary = stackSummary;
     }
@@ -51,6 +52,7 @@ public class DescribeStackSummaryResult implements Serializable, Cloneable {
      * 
      * @return A <code>StackSummary</code> object that contains the results.
      */
+
     public StackSummary getStackSummary() {
         return this.stackSummary;
     }
@@ -65,6 +67,7 @@ public class DescribeStackSummaryResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStackSummaryResult withStackSummary(StackSummary stackSummary) {
         setStackSummary(stackSummary);
         return this;

@@ -44,18 +44,18 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * </p>
      * <ul>
      * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances, as an absolute value.</li>
+     * healthy instances as an absolute value.</li>
      * <li>FLEET_PERCENT: The value parameter represents the minimum number of
-     * healthy instances, as a percentage of the total number of instances in
-     * the deployment. If you specify FLEET_PERCENT, then at the start of the
-     * deployment AWS CodeDeploy converts the percentage to the equivalent
-     * number of instances and rounds fractional instances up.</li>
+     * healthy instances as a percentage of the total number of instances in the
+     * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
+     * AWS CodeDeploy converts the percentage to the equivalent number of
+     * instance and rounds up fractional instances.</li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
      * </p>
      * <p>
-     * For example, to set a minimum of 95% healthy instances, specify a type of
+     * For example, to set a minimum of 95% healthy instance, specify a type of
      * FLEET_PERCENT and a value of 95.
      * </p>
      */
@@ -69,6 +69,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * @param deploymentConfigName
      *        The name of the deployment configuration to create.
      */
+
     public void setDeploymentConfigName(String deploymentConfigName) {
         this.deploymentConfigName = deploymentConfigName;
     }
@@ -80,6 +81,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the deployment configuration to create.
      */
+
     public String getDeploymentConfigName() {
         return this.deploymentConfigName;
     }
@@ -94,6 +96,7 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentConfigRequest withDeploymentConfigName(
             String deploymentConfigName) {
         setDeploymentConfigName(deploymentConfigName);
@@ -111,18 +114,18 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * </p>
      * <ul>
      * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances, as an absolute value.</li>
+     * healthy instances as an absolute value.</li>
      * <li>FLEET_PERCENT: The value parameter represents the minimum number of
-     * healthy instances, as a percentage of the total number of instances in
-     * the deployment. If you specify FLEET_PERCENT, then at the start of the
-     * deployment AWS CodeDeploy converts the percentage to the equivalent
-     * number of instances and rounds fractional instances up.</li>
+     * healthy instances as a percentage of the total number of instances in the
+     * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
+     * AWS CodeDeploy converts the percentage to the equivalent number of
+     * instance and rounds up fractional instances.</li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
      * </p>
      * <p>
-     * For example, to set a minimum of 95% healthy instances, specify a type of
+     * For example, to set a minimum of 95% healthy instance, specify a type of
      * FLEET_PERCENT and a value of 95.
      * </p>
      * 
@@ -135,21 +138,22 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      *        </p>
      *        <ul>
      *        <li>HOST_COUNT: The value parameter represents the minimum number
-     *        of healthy instances, as an absolute value.</li>
+     *        of healthy instances as an absolute value.</li>
      *        <li>FLEET_PERCENT: The value parameter represents the minimum
-     *        number of healthy instances, as a percentage of the total number
-     *        of instances in the deployment. If you specify FLEET_PERCENT, then
-     *        at the start of the deployment AWS CodeDeploy converts the
-     *        percentage to the equivalent number of instances and rounds
-     *        fractional instances up.</li>
+     *        number of healthy instances as a percentage of the total number of
+     *        instances in the deployment. If you specify FLEET_PERCENT, at the
+     *        start of the deployment, AWS CodeDeploy converts the percentage to
+     *        the equivalent number of instance and rounds up fractional
+     *        instances.</li>
      *        </ul>
      *        <p>
      *        The value parameter takes an integer.
      *        </p>
      *        <p>
-     *        For example, to set a minimum of 95% healthy instances, specify a
+     *        For example, to set a minimum of 95% healthy instance, specify a
      *        type of FLEET_PERCENT and a value of 95.
      */
+
     public void setMinimumHealthyHosts(MinimumHealthyHosts minimumHealthyHosts) {
         this.minimumHealthyHosts = minimumHealthyHosts;
     }
@@ -165,18 +169,18 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * </p>
      * <ul>
      * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances, as an absolute value.</li>
+     * healthy instances as an absolute value.</li>
      * <li>FLEET_PERCENT: The value parameter represents the minimum number of
-     * healthy instances, as a percentage of the total number of instances in
-     * the deployment. If you specify FLEET_PERCENT, then at the start of the
-     * deployment AWS CodeDeploy converts the percentage to the equivalent
-     * number of instances and rounds fractional instances up.</li>
+     * healthy instances as a percentage of the total number of instances in the
+     * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
+     * AWS CodeDeploy converts the percentage to the equivalent number of
+     * instance and rounds up fractional instances.</li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
      * </p>
      * <p>
-     * For example, to set a minimum of 95% healthy instances, specify a type of
+     * For example, to set a minimum of 95% healthy instance, specify a type of
      * FLEET_PERCENT and a value of 95.
      * </p>
      * 
@@ -188,21 +192,22 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      *         </p>
      *         <ul>
      *         <li>HOST_COUNT: The value parameter represents the minimum number
-     *         of healthy instances, as an absolute value.</li>
+     *         of healthy instances as an absolute value.</li>
      *         <li>FLEET_PERCENT: The value parameter represents the minimum
-     *         number of healthy instances, as a percentage of the total number
-     *         of instances in the deployment. If you specify FLEET_PERCENT,
-     *         then at the start of the deployment AWS CodeDeploy converts the
-     *         percentage to the equivalent number of instances and rounds
-     *         fractional instances up.</li>
+     *         number of healthy instances as a percentage of the total number
+     *         of instances in the deployment. If you specify FLEET_PERCENT, at
+     *         the start of the deployment, AWS CodeDeploy converts the
+     *         percentage to the equivalent number of instance and rounds up
+     *         fractional instances.</li>
      *         </ul>
      *         <p>
      *         The value parameter takes an integer.
      *         </p>
      *         <p>
-     *         For example, to set a minimum of 95% healthy instances, specify a
+     *         For example, to set a minimum of 95% healthy instance, specify a
      *         type of FLEET_PERCENT and a value of 95.
      */
+
     public MinimumHealthyHosts getMinimumHealthyHosts() {
         return this.minimumHealthyHosts;
     }
@@ -218,18 +223,18 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      * </p>
      * <ul>
      * <li>HOST_COUNT: The value parameter represents the minimum number of
-     * healthy instances, as an absolute value.</li>
+     * healthy instances as an absolute value.</li>
      * <li>FLEET_PERCENT: The value parameter represents the minimum number of
-     * healthy instances, as a percentage of the total number of instances in
-     * the deployment. If you specify FLEET_PERCENT, then at the start of the
-     * deployment AWS CodeDeploy converts the percentage to the equivalent
-     * number of instances and rounds fractional instances up.</li>
+     * healthy instances as a percentage of the total number of instances in the
+     * deployment. If you specify FLEET_PERCENT, at the start of the deployment,
+     * AWS CodeDeploy converts the percentage to the equivalent number of
+     * instance and rounds up fractional instances.</li>
      * </ul>
      * <p>
      * The value parameter takes an integer.
      * </p>
      * <p>
-     * For example, to set a minimum of 95% healthy instances, specify a type of
+     * For example, to set a minimum of 95% healthy instance, specify a type of
      * FLEET_PERCENT and a value of 95.
      * </p>
      * 
@@ -242,23 +247,24 @@ public class CreateDeploymentConfigRequest extends AmazonWebServiceRequest
      *        </p>
      *        <ul>
      *        <li>HOST_COUNT: The value parameter represents the minimum number
-     *        of healthy instances, as an absolute value.</li>
+     *        of healthy instances as an absolute value.</li>
      *        <li>FLEET_PERCENT: The value parameter represents the minimum
-     *        number of healthy instances, as a percentage of the total number
-     *        of instances in the deployment. If you specify FLEET_PERCENT, then
-     *        at the start of the deployment AWS CodeDeploy converts the
-     *        percentage to the equivalent number of instances and rounds
-     *        fractional instances up.</li>
+     *        number of healthy instances as a percentage of the total number of
+     *        instances in the deployment. If you specify FLEET_PERCENT, at the
+     *        start of the deployment, AWS CodeDeploy converts the percentage to
+     *        the equivalent number of instance and rounds up fractional
+     *        instances.</li>
      *        </ul>
      *        <p>
      *        The value parameter takes an integer.
      *        </p>
      *        <p>
-     *        For example, to set a minimum of 95% healthy instances, specify a
+     *        For example, to set a minimum of 95% healthy instance, specify a
      *        type of FLEET_PERCENT and a value of 95.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDeploymentConfigRequest withMinimumHealthyHosts(
             MinimumHealthyHosts minimumHealthyHosts) {
         setMinimumHealthyHosts(minimumHealthyHosts);

@@ -29,6 +29,12 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the instance profile to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String instanceProfileName;
     /**
@@ -36,11 +42,19 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * The path to the instance profile. For more information about paths, see
      * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      */
     private String path;
@@ -49,10 +63,22 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the instance profile to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param instanceProfileName
-     *        The name of the instance profile to create.
+     *        The name of the instance profile to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -61,9 +87,21 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the instance profile to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the instance profile to create.
+     * @return The name of the instance profile to create.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -72,12 +110,24 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The name of the instance profile to create.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param instanceProfileName
-     *        The name of the instance profile to create.
+     *        The name of the instance profile to create.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
@@ -89,22 +139,39 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * The path to the instance profile. For more information about paths, see
      * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param path
      *        The path to the instance profile. For more information about
      *        paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -114,21 +181,38 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * The path to the instance profile. For more information about paths, see
      * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
      * 
      * @return The path to the instance profile. For more information about
      *         paths, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *         >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *         >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to
      *         a slash (/).
+     *         </p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of either
+     *         a forward slash (/) by itself or a string that must begin and end
+     *         with forward slashes, containing any ASCII character from the !
+     *         (\u0021) thru the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -138,24 +222,41 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest
      * The path to the instance profile. For more information about paths, see
      * <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     * >IAM Identifiers</a> in the <i>Using IAM</i> guide.
+     * >IAM Identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash
      * (/).
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of either a forward slash
+     * (/) by itself or a string that must begin and end with forward slashes,
+     * containing any ASCII character from the ! (\u0021) thru the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * 
      * @param path
      *        The path to the instance profile. For more information about
      *        paths, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
-     *        >IAM Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     *        >IAM Identifiers</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to
      *        a slash (/).
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of either
+     *        a forward slash (/) by itself or a string that must begin and end
+     *        with forward slashes, containing any ASCII character from the !
+     *        (\u0021) thru the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateInstanceProfileRequest withPath(String path) {
         setPath(path);
         return this;

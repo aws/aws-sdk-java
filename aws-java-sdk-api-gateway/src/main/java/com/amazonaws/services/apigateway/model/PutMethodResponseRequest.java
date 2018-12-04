@@ -81,6 +81,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -92,6 +93,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>RestApi</a> identifier for the <a>Method</a> resource.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -106,6 +108,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -119,6 +122,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param resourceId
      *        The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -130,6 +134,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -144,6 +149,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -157,6 +163,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param httpMethod
      *        The HTTP verb that identifies the <a>Method</a> resource.
      */
+
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
     }
@@ -168,6 +175,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The HTTP verb that identifies the <a>Method</a> resource.
      */
+
     public String getHttpMethod() {
         return this.httpMethod;
     }
@@ -182,6 +190,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withHttpMethod(String httpMethod) {
         setHttpMethod(httpMethod);
         return this;
@@ -195,6 +204,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @param statusCode
      *        The method response's status code.
      */
+
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
     }
@@ -206,6 +216,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * 
      * @return The method response's status code.
      */
+
     public String getStatusCode() {
         return this.statusCode;
     }
@@ -220,6 +231,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withStatusCode(String statusCode) {
         setStatusCode(statusCode);
         return this;
@@ -247,6 +259,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      *         specified here are available to the integration for mapping from
      *         integration response parameters.
      */
+
     public java.util.Map<String, Boolean> getResponseParameters() {
         return responseParameters;
     }
@@ -274,6 +287,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      *        specified here are available to the integration for mapping from
      *        integration response parameters.
      */
+
     public void setResponseParameters(
             java.util.Map<String, Boolean> responseParameters) {
         this.responseParameters = responseParameters;
@@ -304,6 +318,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withResponseParameters(
             java.util.Map<String, Boolean> responseParameters) {
         setResponseParameters(responseParameters);
@@ -326,6 +341,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into ResponseParameters. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodResponseRequest clearResponseParametersEntries() {
         this.responseParameters = null;
         return this;
@@ -343,6 +359,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      *         with a content type as the key and a <a>Model</a> name as the
      *         value.
      */
+
     public java.util.Map<String, String> getResponseModels() {
         return responseModels;
     }
@@ -360,6 +377,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      *        with a content type as the key and a <a>Model</a> name as the
      *        value.
      */
+
     public void setResponseModels(java.util.Map<String, String> responseModels) {
         this.responseModels = responseModels;
     }
@@ -379,6 +397,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutMethodResponseRequest withResponseModels(
             java.util.Map<String, String> responseModels) {
         setResponseModels(responseModels);
@@ -401,6 +420,7 @@ public class PutMethodResponseRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into ResponseModels. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public PutMethodResponseRequest clearResponseModelsEntries() {
         this.responseModels = null;
         return this;

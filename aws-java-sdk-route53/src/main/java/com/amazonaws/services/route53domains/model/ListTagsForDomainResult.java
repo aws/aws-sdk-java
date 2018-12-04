@@ -129,6 +129,7 @@ public class ListTagsForDomainResult implements Serializable, Cloneable {
      *         </p>
      *         </li>
      */
+
     public java.util.List<Tag> getTagList() {
         if (tagList == null) {
             tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -204,6 +205,7 @@ public class ListTagsForDomainResult implements Serializable, Cloneable {
      *        </p>
      *        </li>
      */
+
     public void setTagList(java.util.Collection<Tag> tagList) {
         if (tagList == null) {
             this.tagList = null;
@@ -289,6 +291,7 @@ public class ListTagsForDomainResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForDomainResult withTagList(Tag... tagList) {
         if (this.tagList == null) {
             setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -370,6 +373,7 @@ public class ListTagsForDomainResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForDomainResult withTagList(java.util.Collection<Tag> tagList) {
         setTagList(tagList);
         return this;

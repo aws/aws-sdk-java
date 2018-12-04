@@ -36,6 +36,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        A pagination token for obtaining the next page of results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -45,6 +46,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * 
      * @return A pagination token for obtaining the next page of results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -57,6 +59,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -68,6 +71,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * @param maxResults
      *        The maximum number of results to be returned.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -77,6 +81,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * 
      * @return The maximum number of results to be returned.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -89,6 +94,7 @@ public class ListIdentityPoolUsageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentityPoolUsageRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;

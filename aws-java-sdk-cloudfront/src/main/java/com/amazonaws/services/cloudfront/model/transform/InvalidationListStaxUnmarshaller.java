@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -81,9 +83,9 @@ public class InvalidationListStaxUnmarshaller implements
 
                 if (context.testExpression("Items/InvalidationSummary",
                         targetDepth)) {
-                    invalidationList.getItems().add(
-                            InvalidationSummaryStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    invalidationList
+                            .withItems(InvalidationSummaryStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

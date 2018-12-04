@@ -14,25 +14,36 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 
 /**
  * Successful response to {@link AmazonS3#deleteObjects(DeleteObjectsRequest)}.
  * If one or more objects couldn't be deleted as instructed, a
  * {@link MultiObjectDeleteException} is thrown instead.
- * 
+ *
  * @see AmazonS3#deleteObjects(DeleteObjectsRequest)
  */
-public class DeleteObjectsResult implements Serializable{
+public class DeleteObjectsResult implements Serializable, S3RequesterChargedResult {
 
     private final List<DeletedObject> deletedObjects = new ArrayList<DeleteObjectsResult.DeletedObject>();
-    
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
+
     public DeleteObjectsResult(List<DeletedObject> deletedObjects) {
+        this(deletedObjects, false);
+    }
+
+    public DeleteObjectsResult(List<DeletedObject> deletedObjects, boolean isRequesterCharged) {
         this.deletedObjects.addAll(deletedObjects);
+        this.setRequesterCharged(isRequesterCharged);
     }
 
     /**
@@ -42,6 +53,16 @@ public class DeleteObjectsResult implements Serializable{
      */
     public List<DeletedObject> getDeletedObjects() {
         return deletedObjects;
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 
     /**

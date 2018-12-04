@@ -51,6 +51,7 @@ public class DeleteSqlInjectionMatchSetResult implements Serializable,
      *        this value to query the status of the request. For more
      *        information, see <a>GetChangeTokenStatus</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -68,6 +69,7 @@ public class DeleteSqlInjectionMatchSetResult implements Serializable,
      *         this value to query the status of the request. For more
      *         information, see <a>GetChangeTokenStatus</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -88,6 +90,7 @@ public class DeleteSqlInjectionMatchSetResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteSqlInjectionMatchSetResult withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

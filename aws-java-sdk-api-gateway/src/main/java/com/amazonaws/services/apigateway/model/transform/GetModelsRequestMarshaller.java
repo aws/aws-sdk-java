@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetModelsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetModelsRequestMarshaller implements
         Marshaller<Request<GetModelsRequest>, GetModelsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetModelsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetModelsRequest> marshall(GetModelsRequest getModelsRequest) {
 
@@ -64,20 +72,19 @@ public class GetModelsRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelsRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getModelsRequest.getRestApiId()));
+                (getModelsRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getModelsRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String position = (getModelsRequest.getPosition() == null) ? null
-                : StringUtils.fromString(getModelsRequest.getPosition());
-        if (position != null) {
-            request.addParameter("position", position);
+        if (getModelsRequest.getPosition() != null) {
+            request.addParameter("position",
+                    StringUtils.fromString(getModelsRequest.getPosition()));
         }
 
-        String limit = (getModelsRequest.getLimit() == null) ? null
-                : StringUtils.fromInteger(getModelsRequest.getLimit());
-        if (limit != null) {
-            request.addParameter("limit", limit);
+        if (getModelsRequest.getLimit() != null) {
+            request.addParameter("limit",
+                    StringUtils.fromInteger(getModelsRequest.getLimit()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetStagesRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetStagesRequestMarshaller implements
         Marshaller<Request<GetStagesRequest>, GetStagesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetStagesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetStagesRequest> marshall(GetStagesRequest getStagesRequest) {
 
@@ -64,14 +72,14 @@ public class GetStagesRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getStagesRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getStagesRequest.getRestApiId()));
+                (getStagesRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getStagesRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String deploymentId = (getStagesRequest.getDeploymentId() == null) ? null
-                : StringUtils.fromString(getStagesRequest.getDeploymentId());
-        if (deploymentId != null) {
-            request.addParameter("deploymentId", deploymentId);
+        if (getStagesRequest.getDeploymentId() != null) {
+            request.addParameter("deploymentId",
+                    StringUtils.fromString(getStagesRequest.getDeploymentId()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

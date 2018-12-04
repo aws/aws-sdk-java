@@ -23,6 +23,7 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.ClassLoaderHelper;
+import com.amazonaws.util.StringUtils;
 
 /**
  * Factory for creating request/response handler chains.
@@ -33,11 +34,11 @@ public class HandlerChainFactory {
      * For backward compatibility, constructs a new request handler chain
      * adapted to {@link RequestHandler2} by analyzing the specified classpath
      * resource.
-     * 
+     *
      * @param resource
      *            The resource to load from the classpath containing the list of
      *            request handlers to instantiate.
-     * 
+     *
      * @return A list of request handlers based on the handlers referenced in
      *         the specified resource.
      */
@@ -68,13 +69,13 @@ public class HandlerChainFactory {
             InputStream input = getClass().getResourceAsStream(resource);
             if (input == null) return handlers;
 
-            reader = new BufferedReader(new InputStreamReader(input));
+            reader = new BufferedReader(new InputStreamReader(input, StringUtils.UTF8));
             while (true) {
                 String requestHandlerClassName = reader.readLine();
                 if (requestHandlerClassName == null)
                     break;
                 requestHandlerClassName = requestHandlerClassName.trim();
-                if (requestHandlerClassName.equals("")) 
+                if (requestHandlerClassName.equals(""))
                     continue;
                 Class<?> requestHandlerClass = ClassLoaderHelper.loadClass(
                     requestHandlerClassName,

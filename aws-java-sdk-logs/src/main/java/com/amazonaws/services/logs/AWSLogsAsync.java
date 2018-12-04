@@ -25,64 +25,48 @@ import com.amazonaws.services.logs.model.*;
  * <p>
  * <fullname>Amazon CloudWatch Logs API Reference</fullname>
  * <p>
- * This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch
- * Logs enables you to monitor, store, and access your system, application, and
- * custom log files. This guide provides detailed information about Amazon
- * CloudWatch Logs actions, data types, parameters, and errors. For detailed
- * information about Amazon CloudWatch Logs features and their associated API
- * calls, go to the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"
- * >Amazon CloudWatch Developer Guide</a>.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log
+ * files from Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon
+ * CloudTrail, or other sources. You can then retrieve the associated log data
+ * from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch Logs
+ * commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch Logs
- * API Reference</i>:
+ * You can use CloudWatch Logs to:
  * </p>
  * <ul>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html"
- * >Actions</a>: An alphabetical list of all Amazon CloudWatch Logs actions.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html"
- * >Data Types</a>: An alphabetical list of all Amazon CloudWatch Logs data
- * types.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html"
- * >Common Parameters</a>: Parameters that all Query actions can use.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html"
- * >Common Errors</a>: Client and server errors that all actions can return.</li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"
- * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
- * products.</li>
- * </ul>
+ * <li>
  * <p>
- * In addition to using the Amazon CloudWatch Logs API, you can also use the
- * following SDKs and third-party libraries to access Amazon CloudWatch Logs
- * programmatically.
+ * <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use
+ * CloudWatch Logs to monitor applications and systems using log data. For
+ * example, CloudWatch Logs can track the number of errors that occur in your
+ * application logs and send you a notification whenever the rate of errors
+ * exceeds a threshold you specify. CloudWatch Logs uses your log data for
+ * monitoring; so, no code changes are required. For example, you can monitor
+ * application logs for specific literal terms (such as
+ * "NullReferenceException") or count the number of occurrences of a literal
+ * term at a particular position in log data (such as "404" status codes in an
+ * Apache access log). When the term you are searching for is found, CloudWatch
+ * Logs reports the data to a Amazon CloudWatch metric that you specify.
  * </p>
- * <ul>
- * <li><a href="http://aws.amazon.com/documentation/sdkforjava/">AWS SDK for
- * Java Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkfornet/">AWS SDK for .NET
- * Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforphp/">AWS SDK for PHP
- * Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforruby/">AWS SDK for
- * Ruby Documentation</a></li>
- * </ul>
+ * </li>
+ * <li>
  * <p>
- * Developers in the AWS developer community also provide their own libraries,
- * which you can find at the following AWS developer centers:
+ * <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in
+ * Amazon CloudWatch and receive notifications of particular API activity as
+ * captured by CloudTrail and use the notification to perform troubleshooting.
  * </p>
- * <ul>
- * <li><a href="http://aws.amazon.com/java/">AWS Java Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/php/">AWS PHP Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/python/">AWS Python Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/ruby/">AWS Ruby Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/net/">AWS Windows and .NET Developer
- * Center</a></li>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data
+ * in highly durable storage. You can change the log retention setting so that
+ * any log events older than this setting are automatically deleted. The
+ * CloudWatch Logs agent makes it easy to quickly send both rotated and
+ * non-rotated log data off of a host and into the log service. You can then
+ * access the raw log data when you need it.
+ * </p>
+ * </li>
  * </ul>
  */
 public interface AWSLogsAsync extends AWSLogs {
@@ -94,9 +78,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
+     * @return A Java Future containing the result of the CancelExportTask
+     *         operation returned by the service.
      * @sample AWSLogsAsync.CancelExportTask
      */
-    java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest cancelExportTaskRequest);
 
     /**
@@ -111,11 +97,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelExportTask
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.CancelExportTask
      */
-    java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest cancelExportTaskRequest,
-            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -126,7 +114,9 @@ public interface AWSLogsAsync extends AWSLogs {
      * This is an asynchronous call. If all the required information is
      * provided, this API will initiate an export task and respond with the task
      * Id. Once started, <code>DescribeExportTasks</code> can be used to get the
-     * status of an export task.
+     * status of an export task. You can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time, per
+     * account.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to
@@ -152,7 +142,9 @@ public interface AWSLogsAsync extends AWSLogs {
      * This is an asynchronous call. If all the required information is
      * provided, this API will initiate an export task and respond with the task
      * Id. Once started, <code>DescribeExportTasks</code> can be used to get the
-     * status of an export task.
+     * status of an export task. You can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time, per
+     * account.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to
@@ -191,9 +183,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
+     * @return A Java Future containing the result of the CreateLogGroup
+     *         operation returned by the service.
      * @sample AWSLogsAsync.CreateLogGroup
      */
-    java.util.concurrent.Future<Void> createLogGroupAsync(
+    java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             CreateLogGroupRequest createLogGroupRequest);
 
     /**
@@ -217,11 +211,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLogGroup
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.CreateLogGroup
      */
-    java.util.concurrent.Future<Void> createLogGroupAsync(
+    java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             CreateLogGroupRequest createLogGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -238,9 +234,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
+     * @return A Java Future containing the result of the CreateLogStream
+     *         operation returned by the service.
      * @sample AWSLogsAsync.CreateLogStream
      */
-    java.util.concurrent.Future<Void> createLogStreamAsync(
+    java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             CreateLogStreamRequest createLogStreamRequest);
 
     /**
@@ -263,11 +261,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLogStream
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.CreateLogStream
      */
-    java.util.concurrent.Future<Void> createLogStreamAsync(
+    java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             CreateLogStreamRequest createLogStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -277,9 +277,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
+     * @return A Java Future containing the result of the DeleteDestination
+     *         operation returned by the service.
      * @sample AWSLogsAsync.DeleteDestination
      */
-    java.util.concurrent.Future<Void> deleteDestinationAsync(
+    java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             DeleteDestinationRequest deleteDestinationRequest);
 
     /**
@@ -295,11 +297,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDestination
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteDestination
      */
-    java.util.concurrent.Future<Void> deleteDestinationAsync(
+    java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             DeleteDestinationRequest deleteDestinationRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler);
 
     /**
      * <p>
@@ -308,9 +312,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
+     * @return A Java Future containing the result of the DeleteLogGroup
+     *         operation returned by the service.
      * @sample AWSLogsAsync.DeleteLogGroup
      */
-    java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             DeleteLogGroupRequest deleteLogGroupRequest);
 
     /**
@@ -325,11 +331,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLogGroup
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteLogGroup
      */
-    java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             DeleteLogGroupRequest deleteLogGroupRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -338,9 +346,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
+     * @return A Java Future containing the result of the DeleteLogStream
+     *         operation returned by the service.
      * @sample AWSLogsAsync.DeleteLogStream
      */
-    java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             DeleteLogStreamRequest deleteLogStreamRequest);
 
     /**
@@ -355,11 +365,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLogStream
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteLogStream
      */
-    java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             DeleteLogStreamRequest deleteLogStreamRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult> asyncHandler);
 
     /**
      * <p>
@@ -367,9 +379,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
+     * @return A Java Future containing the result of the DeleteMetricFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsync.DeleteMetricFilter
      */
-    java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             DeleteMetricFilterRequest deleteMetricFilterRequest);
 
     /**
@@ -383,11 +397,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMetricFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteMetricFilter
      */
-    java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             DeleteMetricFilterRequest deleteMetricFilterRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -396,9 +412,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
+     * @return A Java Future containing the result of the DeleteRetentionPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsync.DeleteRetentionPolicy
      */
-    java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest);
 
     /**
@@ -413,11 +431,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRetentionPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteRetentionPolicy
      */
-    java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -425,9 +445,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
+     * @return A Java Future containing the result of the
+     *         DeleteSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsync.DeleteSubscriptionFilter
      */
-    java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest);
 
     /**
@@ -441,11 +463,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the
+     *         DeleteSubscriptionFilter operation returned by the service.
      * @sample AWSLogsAsyncHandler.DeleteSubscriptionFilter
      */
-    java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -975,9 +999,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
+     * @return A Java Future containing the result of the PutDestinationPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsync.PutDestinationPolicy
      */
-    java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             PutDestinationPolicyRequest putDestinationPolicyRequest);
 
     /**
@@ -995,11 +1021,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDestinationPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutDestinationPolicy
      */
-    java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             PutDestinationPolicyRequest putDestinationPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1024,6 +1052,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <li>The log events in the batch must be in chronological ordered by their
      * <code class="code">timestamp</code>.</li>
      * <li>The maximum number of log events in a batch is 10,000.</li>
+     * <li>A batch of log events in a single PutLogEvents request cannot span
+     * more than 24 hours. Otherwise, the PutLogEvents operation will fail.</li>
      * </ul>
      * </p>
      * 
@@ -1058,6 +1088,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <li>The log events in the batch must be in chronological ordered by their
      * <code class="code">timestamp</code>.</li>
      * <li>The maximum number of log events in a batch is 10,000.</li>
+     * <li>A batch of log events in a single PutLogEvents request cannot span
+     * more than 24 hours. Otherwise, the PutLogEvents operation will fail.</li>
      * </ul>
      * </p>
      * 
@@ -1088,9 +1120,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
+     * @return A Java Future containing the result of the PutMetricFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsync.PutMetricFilter
      */
-    java.util.concurrent.Future<Void> putMetricFilterAsync(
+    java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             PutMetricFilterRequest putMetricFilterRequest);
 
     /**
@@ -1111,11 +1145,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetricFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutMetricFilter
      */
-    java.util.concurrent.Future<Void> putMetricFilterAsync(
+    java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             PutMetricFilterRequest putMetricFilterRequest,
-            com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -1125,9 +1161,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
+     * @return A Java Future containing the result of the PutRetentionPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsync.PutRetentionPolicy
      */
-    java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             PutRetentionPolicyRequest putRetentionPolicyRequest);
 
     /**
@@ -1143,11 +1181,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRetentionPolicy
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutRetentionPolicy
      */
-    java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             PutRetentionPolicyRequest putRetentionPolicyRequest,
-            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1157,10 +1197,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <code class="code">PutLogEvents</code> requests and have them delivered
      * to a specific destination. Currently, the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * <p>
@@ -1169,9 +1213,11 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
+     * @return A Java Future containing the result of the PutSubscriptionFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsync.PutSubscriptionFilter
      */
-    java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest);
 
     /**
@@ -1182,10 +1228,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <code class="code">PutLogEvents</code> requests and have them delivered
      * to a specific destination. Currently, the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * <p>
@@ -1199,11 +1249,13 @@ public interface AWSLogsAsync extends AWSLogs {
      *        request. Users can provide an implementation of the callback
      *        methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSubscriptionFilter
+     *         operation returned by the service.
      * @sample AWSLogsAsyncHandler.PutSubscriptionFilter
      */
-    java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest,
-            com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler);
+            com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult> asyncHandler);
 
     /**
      * <p>

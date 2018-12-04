@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ConfigurationRecorderMarshaller
@@ -39,34 +34,35 @@ import com.amazonaws.util.json.*;
 public class ConfigurationRecorderJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ConfigurationRecorder configurationRecorder,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (configurationRecorder == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (configurationRecorder.getName() != null) {
-                jsonWriter.key("name").value(configurationRecorder.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        configurationRecorder.getName());
             }
-
             if (configurationRecorder.getRoleARN() != null) {
-                jsonWriter.key("roleARN").value(
+                jsonGenerator.writeFieldName("roleARN").writeValue(
                         configurationRecorder.getRoleARN());
             }
-
             if (configurationRecorder.getRecordingGroup() != null) {
-                jsonWriter.key("recordingGroup");
+                jsonGenerator.writeFieldName("recordingGroup");
                 RecordingGroupJsonMarshaller.getInstance().marshall(
-                        configurationRecorder.getRecordingGroup(), jsonWriter);
+                        configurationRecorder.getRecordingGroup(),
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

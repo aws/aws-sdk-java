@@ -68,6 +68,7 @@ public class S3Origin implements Serializable, Cloneable {
      * @param domainName
      *        The DNS name of the S3 origin.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -77,6 +78,7 @@ public class S3Origin implements Serializable, Cloneable {
      * 
      * @return The DNS name of the S3 origin.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -89,6 +91,7 @@ public class S3Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Origin withDomainName(String domainName) {
         setDomainName(domainName);
         return this;
@@ -100,6 +103,7 @@ public class S3Origin implements Serializable, Cloneable {
      * @param originAccessIdentity
      *        Your S3 origin's origin access identity.
      */
+
     public void setOriginAccessIdentity(String originAccessIdentity) {
         this.originAccessIdentity = originAccessIdentity;
     }
@@ -109,6 +113,7 @@ public class S3Origin implements Serializable, Cloneable {
      * 
      * @return Your S3 origin's origin access identity.
      */
+
     public String getOriginAccessIdentity() {
         return this.originAccessIdentity;
     }
@@ -121,6 +126,7 @@ public class S3Origin implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public S3Origin withOriginAccessIdentity(String originAccessIdentity) {
         setOriginAccessIdentity(originAccessIdentity);
         return this;

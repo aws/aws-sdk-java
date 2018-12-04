@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateRestApiRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class UpdateRestApiRequestMarshaller implements
         Marshaller<Request<UpdateRestApiRequest>, UpdateRestApiRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateRestApiRequest> marshall(
             UpdateRestApiRequest updateRestApiRequest) {
@@ -65,37 +73,35 @@ public class UpdateRestApiRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (updateRestApiRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(updateRestApiRequest
-                                .getRestApiId()));
+                (updateRestApiRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(updateRestApiRequest
+                                .getRestApiId()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             java.util.List<PatchOperation> patchOperationsList = updateRestApiRequest
                     .getPatchOperations();
             if (patchOperationsList != null) {
-                jsonWriter.key("patchOperations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("patchOperations");
+                jsonGenerator.writeStartArray();
                 for (PatchOperation patchOperationsListValue : patchOperationsList) {
                     if (patchOperationsListValue != null) {
 
                         PatchOperationJsonMarshaller.getInstance().marshall(
-                                patchOperationsListValue, jsonWriter);
+                                patchOperationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

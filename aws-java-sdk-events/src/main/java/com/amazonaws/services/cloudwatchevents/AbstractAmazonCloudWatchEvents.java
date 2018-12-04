@@ -39,7 +39,7 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
-    public void deleteRule(DeleteRuleRequest request) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,12 +49,12 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
-    public void disableRule(DisableRuleRequest request) {
+    public DisableRuleResult disableRule(DisableRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void enableRule(EnableRuleRequest request) {
+    public EnableRuleResult enableRule(EnableRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

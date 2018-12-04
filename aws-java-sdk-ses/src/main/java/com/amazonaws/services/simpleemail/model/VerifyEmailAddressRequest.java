@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to begin email address
- * verification.
- * </p>
+ * 
  */
 public class VerifyEmailAddressRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -43,6 +40,7 @@ public class VerifyEmailAddressRequest extends AmazonWebServiceRequest
      * @param emailAddress
      *        The email address to be verified.
      */
+
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
@@ -54,6 +52,7 @@ public class VerifyEmailAddressRequest extends AmazonWebServiceRequest
      * 
      * @return The email address to be verified.
      */
+
     public String getEmailAddress() {
         return this.emailAddress;
     }
@@ -68,6 +67,7 @@ public class VerifyEmailAddressRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public VerifyEmailAddressRequest withEmailAddress(String emailAddress) {
         setEmailAddress(emailAddress);
         return this;

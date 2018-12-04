@@ -14,28 +14,32 @@
  */
 package com.amazonaws.http;
 
-import java.net.URI;
-import java.util.List;
-
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.internal.StaticCredentialsProvider;
-import org.apache.http.annotation.NotThreadSafe;
-
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.timers.client.ClientExecutionAbortTrackerTask;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetricsFullSupport;
+import org.apache.http.annotation.NotThreadSafe;
 
+import java.net.URI;
+import java.util.List;
+
+/**
+ * @NotThreadSafe This class should only be accessed by a single thread and be used throughout
+ *                a single request lifecycle.
+ */
 @NotThreadSafe
 public class ExecutionContext {
     private final AWSRequestMetrics awsRequestMetrics;
     private final List<RequestHandler2> requestHandler2s;
-    private String contextUserAgent;
     private final AmazonWebServiceClient awsClient;
+
+    private boolean retryCapacityConsumed;
 
     /**
      * Optional credentials to enable the runtime layer to handle signing requests (and resigning on
@@ -68,14 +72,6 @@ public class ExecutionContext {
         this.awsClient = awsClient;
     }
 
-    public String getContextUserAgent() {
-        return contextUserAgent;
-    }
-
-    public void setContextUserAgent(String contextUserAgent) {
-        this.contextUserAgent = contextUserAgent;
-    }
-
     public List<RequestHandler2> getRequestHandler2s() {
         return requestHandler2s;
     }
@@ -99,47 +95,26 @@ public class ExecutionContext {
     }
 
     /**
+     * Returns whether retry capacity was consumed during this request lifecycle.
+     * This can be inspected to determine whether capacity should be released if a retry succeeds.
+     *
+     * @return true if retry capacity was consumed
+     */
+    public boolean retryCapacityConsumed() { return retryCapacityConsumed; }
+
+    /**
+     * Marks that a retry during this request lifecycle has consumed retry capacity.  This is inspected
+     * when determining if capacity should be released if a retry succeeds.
+     */
+    public void markRetryCapacityConsumed() {
+        this.retryCapacityConsumed = true;
+    }
+
+    /**
      * Returns the signer for the given uri. Note S3 in particular overrides this method.
      */
     public Signer getSignerByURI(URI uri) {
         return awsClient == null ? null : awsClient.getSignerByURI(uri);
-    }
-
-    /**
-     * <p>
-     * Returns the credentials used to sign the associated request.
-     * </p>
-     * <p>
-     * This method is deprecated as the provider needs to be used every time we fetch the
-     * credentials.
-     * </p>
-     * 
-     * @return The credentials used to sign the associated request.
-     * @deprecated in favor of {@link #getCredentialsProvider}
-     */
-    @Deprecated
-    public AWSCredentials getCredentials() {
-        return credentialsProvider != null ? credentialsProvider.getCredentials() : null;
-    }
-
-    /**
-     * <p>
-     * Sets the credentials used to sign the associated request. If no credentials are specified as
-     * part of a request's ExecutionContext, then the runtime layer will not attempt to sign (or
-     * resign on retries) requests.
-     * </p>
-     * <p>
-     * This method is deprecated as the provider needs to be used every time we fetch the
-     * credentials.
-     * </p>
-     * 
-     * @param credentials
-     *            The optional credentials used to sign the associated request.
-     * @deprecated in favor of {@link #setCredentialsProvider(AWSCredentialsProvider)}
-     */
-    @Deprecated
-    public void setCredentials(AWSCredentials credentials) {
-        this.credentialsProvider = new StaticCredentialsProvider(credentials);
     }
 
     /**
@@ -180,7 +155,7 @@ public class ExecutionContext {
 
     /**
      * Sets the optional auth error retry strategy for this request execution.
-     * 
+     *
      * @see #getAuthErrorRetryStrategy()
      */
     public void setAuthErrorRetryStrategy(AuthErrorRetryStrategy authErrorRetryStrategy) {

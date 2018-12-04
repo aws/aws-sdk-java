@@ -48,6 +48,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * 
      * @return Lists the repositories called by the list repositories operation.
      */
+
     public java.util.List<RepositoryNameIdPair> getRepositories() {
         return repositories;
     }
@@ -60,6 +61,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * @param repositories
      *        Lists the repositories called by the list repositories operation.
      */
+
     public void setRepositories(
             java.util.Collection<RepositoryNameIdPair> repositories) {
         if (repositories == null) {
@@ -87,6 +89,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRepositoriesResult withRepositories(
             RepositoryNameIdPair... repositories) {
         if (this.repositories == null) {
@@ -109,6 +112,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRepositoriesResult withRepositories(
             java.util.Collection<RepositoryNameIdPair> repositories) {
         setRepositories(repositories);
@@ -129,6 +133,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      *        repository operations. When the client sends the token back to AWS
      *        CodeCommit, another page of 1,000 records is retrieved.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -146,6 +151,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      *         repository operations. When the client sends the token back to
      *         AWS CodeCommit, another page of 1,000 records is retrieved.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -166,6 +172,7 @@ public class ListRepositoriesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListRepositoriesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

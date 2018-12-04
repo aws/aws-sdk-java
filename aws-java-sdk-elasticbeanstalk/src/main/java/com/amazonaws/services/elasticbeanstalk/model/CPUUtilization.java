@@ -88,6 +88,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the <code>User</code>
      *        state over the last 10 seconds.
      */
+
     public void setUser(Double user) {
         this.user = user;
     }
@@ -101,6 +102,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>User</code> state over the last 10 seconds.
      */
+
     public Double getUser() {
         return this.user;
     }
@@ -117,6 +119,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withUser(Double user) {
         setUser(user);
         return this;
@@ -132,6 +135,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the <code>Nice</code>
      *        state over the last 10 seconds.
      */
+
     public void setNice(Double nice) {
         this.nice = nice;
     }
@@ -145,6 +149,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>Nice</code> state over the last 10 seconds.
      */
+
     public Double getNice() {
         return this.nice;
     }
@@ -161,6 +166,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withNice(Double nice) {
         setNice(nice);
         return this;
@@ -176,6 +182,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the
      *        <code>System</code> state over the last 10 seconds.
      */
+
     public void setSystem(Double system) {
         this.system = system;
     }
@@ -189,6 +196,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>System</code> state over the last 10 seconds.
      */
+
     public Double getSystem() {
         return this.system;
     }
@@ -205,6 +213,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withSystem(Double system) {
         setSystem(system);
         return this;
@@ -220,6 +229,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the <code>Idle</code>
      *        state over the last 10 seconds.
      */
+
     public void setIdle(Double idle) {
         this.idle = idle;
     }
@@ -233,6 +243,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>Idle</code> state over the last 10 seconds.
      */
+
     public Double getIdle() {
         return this.idle;
     }
@@ -249,6 +260,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withIdle(Double idle) {
         setIdle(idle);
         return this;
@@ -264,6 +276,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the
      *        <code>I/O Wait</code> state over the last 10 seconds.
      */
+
     public void setIOWait(Double iOWait) {
         this.iOWait = iOWait;
     }
@@ -277,6 +290,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>I/O Wait</code> state over the last 10 seconds.
      */
+
     public Double getIOWait() {
         return this.iOWait;
     }
@@ -293,6 +307,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withIOWait(Double iOWait) {
         setIOWait(iOWait);
         return this;
@@ -308,6 +323,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the <code>IRQ</code>
      *        state over the last 10 seconds.
      */
+
     public void setIRQ(Double iRQ) {
         this.iRQ = iRQ;
     }
@@ -321,6 +337,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the <code>IRQ</code>
      *         state over the last 10 seconds.
      */
+
     public Double getIRQ() {
         return this.iRQ;
     }
@@ -337,6 +354,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withIRQ(Double iRQ) {
         setIRQ(iRQ);
         return this;
@@ -352,6 +370,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      *        Percentage of time that the CPU has spent in the
      *        <code>SoftIRQ</code> state over the last 10 seconds.
      */
+
     public void setSoftIRQ(Double softIRQ) {
         this.softIRQ = softIRQ;
     }
@@ -365,6 +384,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Percentage of time that the CPU has spent in the
      *         <code>SoftIRQ</code> state over the last 10 seconds.
      */
+
     public Double getSoftIRQ() {
         return this.softIRQ;
     }
@@ -381,6 +401,7 @@ public class CPUUtilization implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CPUUtilization withSoftIRQ(Double softIRQ) {
         setSoftIRQ(softIRQ);
         return this;

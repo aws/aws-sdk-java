@@ -58,6 +58,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param accessKeyId
      *        The Access Key portion of the credentials.
      */
+
     public void setAccessKeyId(String accessKeyId) {
         this.accessKeyId = accessKeyId;
     }
@@ -69,6 +70,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The Access Key portion of the credentials.
      */
+
     public String getAccessKeyId() {
         return this.accessKeyId;
     }
@@ -83,6 +85,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withAccessKeyId(String accessKeyId) {
         setAccessKeyId(accessKeyId);
         return this;
@@ -96,6 +99,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param secretKey
      *        The Secret Access Key portion of the credentials
      */
+
     public void setSecretKey(String secretKey) {
         this.secretKey = secretKey;
     }
@@ -107,6 +111,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The Secret Access Key portion of the credentials
      */
+
     public String getSecretKey() {
         return this.secretKey;
     }
@@ -121,6 +126,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSecretKey(String secretKey) {
         setSecretKey(secretKey);
         return this;
@@ -134,6 +140,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param sessionToken
      *        The Session Token portion of the credentials
      */
+
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
     }
@@ -145,6 +152,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The Session Token portion of the credentials
      */
+
     public String getSessionToken() {
         return this.sessionToken;
     }
@@ -159,6 +167,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withSessionToken(String sessionToken) {
         setSessionToken(sessionToken);
         return this;
@@ -172,6 +181,7 @@ public class Credentials implements Serializable, Cloneable {
      * @param expiration
      *        The date at which these credentials will expire.
      */
+
     public void setExpiration(java.util.Date expiration) {
         this.expiration = expiration;
     }
@@ -183,6 +193,7 @@ public class Credentials implements Serializable, Cloneable {
      * 
      * @return The date at which these credentials will expire.
      */
+
     public java.util.Date getExpiration() {
         return this.expiration;
     }
@@ -197,6 +208,7 @@ public class Credentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Credentials withExpiration(java.util.Date expiration) {
         setExpiration(expiration);
         return this;

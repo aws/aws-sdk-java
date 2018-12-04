@@ -24,13 +24,41 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>ActivateGatewayInput$ActivationKey</a></li>
- * <li><a>GatewayName</a></li>
- * <li><a>ActivateGatewayInput$GatewayRegion</a></li>
- * <li><a>ActivateGatewayInput$GatewayTimezone</a></li>
- * <li><a>ActivateGatewayInput$GatewayType</a></li>
- * <li><a>ActivateGatewayInput$TapeDriveType</a></li>
- * <li><a>ActivateGatewayInput$MediumChangerType</a></li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$ActivationKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayName</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayRegion</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayTimezone</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$GatewayType</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$TapeDriveType</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ActivateGatewayInput$MediumChangerType</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
@@ -49,38 +77,42 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private String activationKey;
-
+    /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     */
     private String gatewayName;
     /**
      * <p>
-     * One of the values that indicates the time zone you want to set for the
-     * gateway. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The
+     * time zone is used, for example, for scheduling snapshots and your
+     * gateway's maintenance schedule.
      * </p>
      */
     private String gatewayTimezone;
     /**
      * <p>
-     * One of the values that indicates the region where you want to store the
-     * snapshot backups. The gateway region specified must be the same region as
-     * the region in your <code>Host</code> header in the request. For more
+     * A value that indicates the region where you want to store the snapshot
+     * backups. The gateway region specified must be the same region as the
+     * region in your <code>Host</code> header in the request. For more
      * information about available regions and endpoints for AWS Storage
      * Gateway, see <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      */
     private String gatewayRegion;
     /**
      * <p>
-     * One of the values that defines the type of gateway to activate. The type
-     * specified is critical to all later functions of the gateway and cannot be
-     * changed after activation. The default value is <code>STORED</code>.
+     * A value that defines the type of gateway to activate. The type specified
+     * is critical to all later functions of the gateway and cannot be changed
+     * after activation. The default value is <code>STORED</code>.
      * </p>
      */
     private String gatewayType;
@@ -90,7 +122,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      */
     private String tapeDriveType;
@@ -100,7 +132,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      */
     private String mediumChangerType;
@@ -128,6 +160,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *        <code>ActivateGateway</code> API call determine the actual
      *        configuration of your gateway.
      */
+
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
     }
@@ -154,6 +187,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      *         <code>ActivateGateway</code> API call determine the actual
      *         configuration of your gateway.
      */
+
     public String getActivationKey() {
         return this.activationKey;
     }
@@ -183,30 +217,48 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withActivationKey(String activationKey) {
         setActivationKey(activationKey);
         return this;
     }
 
     /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name you configured for your gateway.
      */
+
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
     }
 
     /**
-     * @return
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
+     * @return The name you configured for your gateway.
      */
+
     public String getGatewayName() {
         return this.gatewayName;
     }
 
     /**
+     * <p>
+     * The name you configured for your gateway.
+     * </p>
+     * 
      * @param gatewayName
+     *        The name you configured for your gateway.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayName(String gatewayName) {
         setGatewayName(gatewayName);
         return this;
@@ -214,49 +266,52 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One of the values that indicates the time zone you want to set for the
-     * gateway. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The
+     * time zone is used, for example, for scheduling snapshots and your
+     * gateway's maintenance schedule.
      * </p>
      * 
      * @param gatewayTimezone
-     *        One of the values that indicates the time zone you want to set for
-     *        the gateway. The time zone is used, for example, for scheduling
+     *        A value that indicates the time zone you want to set for the
+     *        gateway. The time zone is used, for example, for scheduling
      *        snapshots and your gateway's maintenance schedule.
      */
+
     public void setGatewayTimezone(String gatewayTimezone) {
         this.gatewayTimezone = gatewayTimezone;
     }
 
     /**
      * <p>
-     * One of the values that indicates the time zone you want to set for the
-     * gateway. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The
+     * time zone is used, for example, for scheduling snapshots and your
+     * gateway's maintenance schedule.
      * </p>
      * 
-     * @return One of the values that indicates the time zone you want to set
-     *         for the gateway. The time zone is used, for example, for
-     *         scheduling snapshots and your gateway's maintenance schedule.
+     * @return A value that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling
+     *         snapshots and your gateway's maintenance schedule.
      */
+
     public String getGatewayTimezone() {
         return this.gatewayTimezone;
     }
 
     /**
      * <p>
-     * One of the values that indicates the time zone you want to set for the
-     * gateway. The time zone is used, for example, for scheduling snapshots and
-     * your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The
+     * time zone is used, for example, for scheduling snapshots and your
+     * gateway's maintenance schedule.
      * </p>
      * 
      * @param gatewayTimezone
-     *        One of the values that indicates the time zone you want to set for
-     *        the gateway. The time zone is used, for example, for scheduling
+     *        A value that indicates the time zone you want to set for the
+     *        gateway. The time zone is used, for example, for scheduling
      *        snapshots and your gateway's maintenance schedule.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayTimezone(String gatewayTimezone) {
         setGatewayTimezone(gatewayTimezone);
         return this;
@@ -264,103 +319,106 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One of the values that indicates the region where you want to store the
-     * snapshot backups. The gateway region specified must be the same region as
-     * the region in your <code>Host</code> header in the request. For more
+     * A value that indicates the region where you want to store the snapshot
+     * backups. The gateway region specified must be the same region as the
+     * region in your <code>Host</code> header in the request. For more
      * information about available regions and endpoints for AWS Storage
      * Gateway, see <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
-     *        One of the values that indicates the region where you want to
-     *        store the snapshot backups. The gateway region specified must be
-     *        the same region as the region in your <code>Host</code> header in
-     *        the request. For more information about available regions and
+     *        A value that indicates the region where you want to store the
+     *        snapshot backups. The gateway region specified must be the same
+     *        region as the region in your <code>Host</code> header in the
+     *        request. For more information about available regions and
      *        endpoints for AWS Storage Gateway, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      *        >Regions and Endpoints</a> in the <i>Amazon Web Services
      *        Glossary</i>.</p>
      *        <p>
-     *        <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *        "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *        "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *        "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *        "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      */
+
     public void setGatewayRegion(String gatewayRegion) {
         this.gatewayRegion = gatewayRegion;
     }
 
     /**
      * <p>
-     * One of the values that indicates the region where you want to store the
-     * snapshot backups. The gateway region specified must be the same region as
-     * the region in your <code>Host</code> header in the request. For more
+     * A value that indicates the region where you want to store the snapshot
+     * backups. The gateway region specified must be the same region as the
+     * region in your <code>Host</code> header in the request. For more
      * information about available regions and endpoints for AWS Storage
      * Gateway, see <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
-     * @return One of the values that indicates the region where you want to
-     *         store the snapshot backups. The gateway region specified must be
-     *         the same region as the region in your <code>Host</code> header in
-     *         the request. For more information about available regions and
+     * @return A value that indicates the region where you want to store the
+     *         snapshot backups. The gateway region specified must be the same
+     *         region as the region in your <code>Host</code> header in the
+     *         request. For more information about available regions and
      *         endpoints for AWS Storage Gateway, see <a href=
      *         "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      *         >Regions and Endpoints</a> in the <i>Amazon Web Services
      *         Glossary</i>.</p>
      *         <p>
-     *         <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *         "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *         "ap-southeast-2", "sa-east-1"
+     *         Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *         "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *         "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      */
+
     public String getGatewayRegion() {
         return this.gatewayRegion;
     }
 
     /**
      * <p>
-     * One of the values that indicates the region where you want to store the
-     * snapshot backups. The gateway region specified must be the same region as
-     * the region in your <code>Host</code> header in the request. For more
+     * A value that indicates the region where you want to store the snapshot
+     * backups. The gateway region specified must be the same region as the
+     * region in your <code>Host</code> header in the request. For more
      * information about available regions and endpoints for AWS Storage
      * Gateway, see <a href=
      * "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      * >Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
-     * "eu-central-1", "ap-northeast-1", "ap-southeast-1", "ap-southeast-2",
-     * "sa-east-1"
+     * Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     * "eu-central-1", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+     * "ap-southeast-2", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
-     *        One of the values that indicates the region where you want to
-     *        store the snapshot backups. The gateway region specified must be
-     *        the same region as the region in your <code>Host</code> header in
-     *        the request. For more information about available regions and
+     *        A value that indicates the region where you want to store the
+     *        snapshot backups. The gateway region specified must be the same
+     *        region as the region in your <code>Host</code> header in the
+     *        request. For more information about available regions and
      *        endpoints for AWS Storage Gateway, see <a href=
      *        "http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region"
      *        >Regions and Endpoints</a> in the <i>Amazon Web Services
      *        Glossary</i>.</p>
      *        <p>
-     *        <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
-     *        "eu-west-1", "eu-central-1", "ap-northeast-1", "ap-southeast-1",
-     *        "ap-southeast-2", "sa-east-1"
+     *        Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1",
+     *        "eu-central-1", "ap-northeast-1", "ap-northeast-2",
+     *        "ap-southeast-1", "ap-southeast-2", "sa-east-1"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayRegion(String gatewayRegion) {
         setGatewayRegion(gatewayRegion);
         return this;
@@ -368,52 +426,55 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One of the values that defines the type of gateway to activate. The type
-     * specified is critical to all later functions of the gateway and cannot be
-     * changed after activation. The default value is <code>STORED</code>.
+     * A value that defines the type of gateway to activate. The type specified
+     * is critical to all later functions of the gateway and cannot be changed
+     * after activation. The default value is <code>STORED</code>.
      * </p>
      * 
      * @param gatewayType
-     *        One of the values that defines the type of gateway to activate.
-     *        The type specified is critical to all later functions of the
-     *        gateway and cannot be changed after activation. The default value
-     *        is <code>STORED</code>.
+     *        A value that defines the type of gateway to activate. The type
+     *        specified is critical to all later functions of the gateway and
+     *        cannot be changed after activation. The default value is
+     *        <code>STORED</code>.
      */
+
     public void setGatewayType(String gatewayType) {
         this.gatewayType = gatewayType;
     }
 
     /**
      * <p>
-     * One of the values that defines the type of gateway to activate. The type
-     * specified is critical to all later functions of the gateway and cannot be
-     * changed after activation. The default value is <code>STORED</code>.
+     * A value that defines the type of gateway to activate. The type specified
+     * is critical to all later functions of the gateway and cannot be changed
+     * after activation. The default value is <code>STORED</code>.
      * </p>
      * 
-     * @return One of the values that defines the type of gateway to activate.
-     *         The type specified is critical to all later functions of the
-     *         gateway and cannot be changed after activation. The default value
-     *         is <code>STORED</code>.
+     * @return A value that defines the type of gateway to activate. The type
+     *         specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
      */
+
     public String getGatewayType() {
         return this.gatewayType;
     }
 
     /**
      * <p>
-     * One of the values that defines the type of gateway to activate. The type
-     * specified is critical to all later functions of the gateway and cannot be
-     * changed after activation. The default value is <code>STORED</code>.
+     * A value that defines the type of gateway to activate. The type specified
+     * is critical to all later functions of the gateway and cannot be changed
+     * after activation. The default value is <code>STORED</code>.
      * </p>
      * 
      * @param gatewayType
-     *        One of the values that defines the type of gateway to activate.
-     *        The type specified is critical to all later functions of the
-     *        gateway and cannot be changed after activation. The default value
-     *        is <code>STORED</code>.
+     *        A value that defines the type of gateway to activate. The type
+     *        specified is critical to all later functions of the gateway and
+     *        cannot be changed after activation. The default value is
+     *        <code>STORED</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withGatewayType(String gatewayType) {
         setGatewayType(gatewayType);
         return this;
@@ -425,15 +486,16 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for
-     *        gateway-VTL. This field is optional. </p>
+     *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *        Valid Values: "IBM-ULT3580-TD5"
      */
+
     public void setTapeDriveType(String tapeDriveType) {
         this.tapeDriveType = tapeDriveType;
     }
@@ -444,14 +506,15 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @return The value that indicates the type of tape drive to use for
-     *         gateway-VTL. This field is optional. </p>
+     *         gateway-VTL. This field is optional.</p>
      *         <p>
-     *         <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *         Valid Values: "IBM-ULT3580-TD5"
      */
+
     public String getTapeDriveType() {
         return this.tapeDriveType;
     }
@@ -462,17 +525,18 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     * Valid Values: "IBM-ULT3580-TD5"
      * </p>
      * 
      * @param tapeDriveType
      *        The value that indicates the type of tape drive to use for
-     *        gateway-VTL. This field is optional. </p>
+     *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "IBM-ULT3580-TD5"
+     *        Valid Values: "IBM-ULT3580-TD5"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withTapeDriveType(String tapeDriveType) {
         setTapeDriveType(tapeDriveType);
         return this;
@@ -484,15 +548,16 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for
      *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public void setMediumChangerType(String mediumChangerType) {
         this.mediumChangerType = mediumChangerType;
     }
@@ -503,14 +568,15 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @return The value that indicates the type of medium changer to use for
      *         gateway-VTL. This field is optional.</p>
      *         <p>
-     *         <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
      */
+
     public String getMediumChangerType() {
         return this.mediumChangerType;
     }
@@ -521,17 +587,18 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest implements
      * gateway-VTL. This field is optional.
      * </p>
      * <p>
-     * <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for
      *        gateway-VTL. This field is optional.</p>
      *        <p>
-     *        <i>Valid Values</i>: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivateGatewayRequest withMediumChangerType(String mediumChangerType) {
         setMediumChangerType(mediumChangerType);
         return this;

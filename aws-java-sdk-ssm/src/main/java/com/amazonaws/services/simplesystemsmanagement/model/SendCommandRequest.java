@@ -25,44 +25,86 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SendCommandRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
 
-    /** Required. The instance IDs where the command should execute. */
+    /**
+     * <p>
+     * Required. The instance IDs where the command should execute.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
+     * <p>
      * Required. The name of the SSM document to execute. This can be an SSM
      * public document or a custom document.
+     * </p>
      */
     private String documentName;
     /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     */
+    private String documentHash;
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     */
+    private String documentHashType;
+    /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute.
+     * </p>
      */
     private Integer timeoutSeconds;
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      */
     private String comment;
     /**
+     * <p>
      * The required and optional parameters specified in the SSM document being
      * executed.
+     * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be
      * stored.
+     * </p>
      */
     private String outputS3BucketName;
     /**
+     * <p>
      * The directory structure within the S3 bucket where the responses should
      * be stored.
+     * </p>
      */
     private String outputS3KeyPrefix;
 
     /**
+     * <p>
      * Required. The instance IDs where the command should execute.
+     * </p>
      * 
      * @return Required. The instance IDs where the command should execute.
      */
+
     public java.util.List<String> getInstanceIds() {
         if (instanceIds == null) {
             instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -71,11 +113,14 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * Required. The instance IDs where the command should execute.
+     * </p>
      * 
      * @param instanceIds
      *        Required. The instance IDs where the command should execute.
      */
+
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
             this.instanceIds = null;
@@ -87,7 +132,9 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * Required. The instance IDs where the command should execute.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setInstanceIds(java.util.Collection)} or
@@ -100,6 +147,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withInstanceIds(String... instanceIds) {
         if (this.instanceIds == null) {
             setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,13 +160,16 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * Required. The instance IDs where the command should execute.
+     * </p>
      * 
      * @param instanceIds
      *        Required. The instance IDs where the command should execute.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withInstanceIds(
             java.util.Collection<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -126,31 +177,39 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
      * Required. The name of the SSM document to execute. This can be an SSM
      * public document or a custom document.
+     * </p>
      * 
      * @param documentName
      *        Required. The name of the SSM document to execute. This can be an
      *        SSM public document or a custom document.
      */
+
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
     }
 
     /**
+     * <p>
      * Required. The name of the SSM document to execute. This can be an SSM
      * public document or a custom document.
+     * </p>
      * 
      * @return Required. The name of the SSM document to execute. This can be an
      *         SSM public document or a custom document.
      */
+
     public String getDocumentName() {
         return this.documentName;
     }
 
     /**
+     * <p>
      * Required. The name of the SSM document to execute. This can be an SSM
      * public document or a custom document.
+     * </p>
      * 
      * @param documentName
      *        Required. The name of the SSM document to execute. This can be an
@@ -158,37 +217,233 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withDocumentName(String documentName) {
         setDocumentName(documentName);
         return this;
     }
 
     /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHash
+     *        The Sha256 or Sha1 hash created by the system when the document
+     *        was created. </p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     */
+
+    public void setDocumentHash(String documentHash) {
+        this.documentHash = documentHash;
+    }
+
+    /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @return The Sha256 or Sha1 hash created by the system when the document
+     *         was created. </p> <note>
+     *         <p>
+     *         Sha1 hashes have been deprecated.
+     *         </p>
+     */
+
+    public String getDocumentHash() {
+        return this.documentHash;
+    }
+
+    /**
+     * <p>
+     * The Sha256 or Sha1 hash created by the system when the document was
+     * created.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHash
+     *        The Sha256 or Sha1 hash created by the system when the document
+     *        was created. </p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public SendCommandRequest withDocumentHash(String documentHash) {
+        setDocumentHash(documentHash);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @see DocumentHashType
+     */
+
+    public void setDocumentHashType(String documentHashType) {
+        this.documentHashType = documentHashType;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @return Sha256 or Sha1.</p> <note>
+     *         <p>
+     *         Sha1 hashes have been deprecated.
+     *         </p>
+     * @see DocumentHashType
+     */
+
+    public String getDocumentHashType() {
+        return this.documentHashType;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DocumentHashType
+     */
+
+    public SendCommandRequest withDocumentHashType(String documentHashType) {
+        setDocumentHashType(documentHashType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @see DocumentHashType
+     */
+
+    public void setDocumentHashType(DocumentHashType documentHashType) {
+        this.documentHashType = documentHashType.toString();
+    }
+
+    /**
+     * <p>
+     * Sha256 or Sha1.
+     * </p>
+     * <note>
+     * <p>
+     * Sha1 hashes have been deprecated.
+     * </p>
+     * </note>
+     * 
+     * @param documentHashType
+     *        Sha256 or Sha1.</p> <note>
+     *        <p>
+     *        Sha1 hashes have been deprecated.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see DocumentHashType
+     */
+
+    public SendCommandRequest withDocumentHashType(
+            DocumentHashType documentHashType) {
+        setDocumentHashType(documentHashType);
+        return this;
+    }
+
+    /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute.
+     * </p>
      * 
      * @param timeoutSeconds
      *        If this time is reached and the command has not already started
      *        executing, it will not execute.
      */
+
     public void setTimeoutSeconds(Integer timeoutSeconds) {
         this.timeoutSeconds = timeoutSeconds;
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute.
+     * </p>
      * 
      * @return If this time is reached and the command has not already started
      *         executing, it will not execute.
      */
+
     public Integer getTimeoutSeconds() {
         return this.timeoutSeconds;
     }
 
     /**
+     * <p>
      * If this time is reached and the command has not already started
      * executing, it will not execute.
+     * </p>
      * 
      * @param timeoutSeconds
      *        If this time is reached and the command has not already started
@@ -196,37 +451,46 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withTimeoutSeconds(Integer timeoutSeconds) {
         setTimeoutSeconds(timeoutSeconds);
         return this;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
      *        description of what the command should do.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @return User-specified information about the command, such as a brief
      *         description of what the command should do.
      */
+
     public String getComment() {
         return this.comment;
     }
 
     /**
+     * <p>
      * User-specified information about the command, such as a brief description
      * of what the command should do.
+     * </p>
      * 
      * @param comment
      *        User-specified information about the command, such as a brief
@@ -234,38 +498,47 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withComment(String comment) {
         setComment(comment);
         return this;
     }
 
     /**
+     * <p>
      * The required and optional parameters specified in the SSM document being
      * executed.
+     * </p>
      * 
      * @return The required and optional parameters specified in the SSM
      *         document being executed.
      */
+
     public java.util.Map<String, java.util.List<String>> getParameters() {
         return parameters;
     }
 
     /**
+     * <p>
      * The required and optional parameters specified in the SSM document being
      * executed.
+     * </p>
      * 
      * @param parameters
      *        The required and optional parameters specified in the SSM document
      *        being executed.
      */
+
     public void setParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         this.parameters = parameters;
     }
 
     /**
+     * <p>
      * The required and optional parameters specified in the SSM document being
      * executed.
+     * </p>
      * 
      * @param parameters
      *        The required and optional parameters specified in the SSM document
@@ -273,6 +546,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withParameters(
             java.util.Map<String, java.util.List<String>> parameters) {
         setParameters(parameters);
@@ -295,37 +569,46 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Parameters. &lt;p> Returns a reference
      * to this object so that method calls can be chained together.
      */
+
     public SendCommandRequest clearParametersEntries() {
         this.parameters = null;
         return this;
     }
 
     /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be
      * stored.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The name of the S3 bucket where command execution responses should
      *        be stored.
      */
+
     public void setOutputS3BucketName(String outputS3BucketName) {
         this.outputS3BucketName = outputS3BucketName;
     }
 
     /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be
      * stored.
+     * </p>
      * 
      * @return The name of the S3 bucket where command execution responses
      *         should be stored.
      */
+
     public String getOutputS3BucketName() {
         return this.outputS3BucketName;
     }
 
     /**
+     * <p>
      * The name of the S3 bucket where command execution responses should be
      * stored.
+     * </p>
      * 
      * @param outputS3BucketName
      *        The name of the S3 bucket where command execution responses should
@@ -333,37 +616,46 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withOutputS3BucketName(String outputS3BucketName) {
         setOutputS3BucketName(outputS3BucketName);
         return this;
     }
 
     /**
+     * <p>
      * The directory structure within the S3 bucket where the responses should
      * be stored.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The directory structure within the S3 bucket where the responses
      *        should be stored.
      */
+
     public void setOutputS3KeyPrefix(String outputS3KeyPrefix) {
         this.outputS3KeyPrefix = outputS3KeyPrefix;
     }
 
     /**
+     * <p>
      * The directory structure within the S3 bucket where the responses should
      * be stored.
+     * </p>
      * 
      * @return The directory structure within the S3 bucket where the responses
      *         should be stored.
      */
+
     public String getOutputS3KeyPrefix() {
         return this.outputS3KeyPrefix;
     }
 
     /**
+     * <p>
      * The directory structure within the S3 bucket where the responses should
      * be stored.
+     * </p>
      * 
      * @param outputS3KeyPrefix
      *        The directory structure within the S3 bucket where the responses
@@ -371,6 +663,7 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendCommandRequest withOutputS3KeyPrefix(String outputS3KeyPrefix) {
         setOutputS3KeyPrefix(outputS3KeyPrefix);
         return this;
@@ -392,6 +685,10 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
             sb.append("InstanceIds: " + getInstanceIds() + ",");
         if (getDocumentName() != null)
             sb.append("DocumentName: " + getDocumentName() + ",");
+        if (getDocumentHash() != null)
+            sb.append("DocumentHash: " + getDocumentHash() + ",");
+        if (getDocumentHashType() != null)
+            sb.append("DocumentHashType: " + getDocumentHashType() + ",");
         if (getTimeoutSeconds() != null)
             sb.append("TimeoutSeconds: " + getTimeoutSeconds() + ",");
         if (getComment() != null)
@@ -425,6 +722,18 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getDocumentName() != null
                 && other.getDocumentName().equals(this.getDocumentName()) == false)
+            return false;
+        if (other.getDocumentHash() == null ^ this.getDocumentHash() == null)
+            return false;
+        if (other.getDocumentHash() != null
+                && other.getDocumentHash().equals(this.getDocumentHash()) == false)
+            return false;
+        if (other.getDocumentHashType() == null
+                ^ this.getDocumentHashType() == null)
+            return false;
+        if (other.getDocumentHashType() != null
+                && other.getDocumentHashType().equals(
+                        this.getDocumentHashType()) == false)
             return false;
         if (other.getTimeoutSeconds() == null
                 ^ this.getTimeoutSeconds() == null)
@@ -470,6 +779,14 @@ public class SendCommandRequest extends AmazonWebServiceRequest implements
         hashCode = prime
                 * hashCode
                 + ((getDocumentName() == null) ? 0 : getDocumentName()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDocumentHash() == null) ? 0 : getDocumentHash()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDocumentHashType() == null) ? 0 : getDocumentHashType()
                         .hashCode());
         hashCode = prime
                 * hashCode

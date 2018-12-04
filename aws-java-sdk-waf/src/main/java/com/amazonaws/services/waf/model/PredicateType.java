@@ -23,7 +23,9 @@ public enum PredicateType {
 
     IPMatch("IPMatch"),
     ByteMatch("ByteMatch"),
-    SqlInjectionMatch("SqlInjectionMatch");
+    SqlInjectionMatch("SqlInjectionMatch"),
+    SizeConstraint("SizeConstraint"),
+    XssMatch("XssMatch");
 
     private String value;
 
@@ -52,6 +54,10 @@ public enum PredicateType {
             return ByteMatch;
         } else if ("SqlInjectionMatch".equals(value)) {
             return SqlInjectionMatch;
+        } else if ("SizeConstraint".equals(value)) {
+            return SizeConstraint;
+        } else if ("XssMatch".equals(value)) {
+            return XssMatch;
         } else {
             throw new IllegalArgumentException("Cannot create enum from "
                     + value + " value!");

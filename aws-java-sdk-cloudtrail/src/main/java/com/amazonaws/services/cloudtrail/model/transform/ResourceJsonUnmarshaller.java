@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudtrail.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ResourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
-                    resource.setResourceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resource.setResourceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ResourceName", targetDepth)) {
                     context.nextToken();
-                    resource.setResourceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resource.setResourceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

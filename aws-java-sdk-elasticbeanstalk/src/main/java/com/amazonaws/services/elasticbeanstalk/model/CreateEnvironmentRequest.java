@@ -41,7 +41,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -59,7 +59,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      */
@@ -177,7 +177,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        application URL.
      *        </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns
@@ -211,6 +211,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        <code>CreateEnvironment</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -231,6 +232,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         <code>CreateEnvironment</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -254,6 +256,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -265,7 +268,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -281,7 +284,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A unique name for the deployment environment. Used in the
      *        application URL. </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns
@@ -292,6 +295,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        name becomes part of the CNAME, and therefore part of the visible
      *        URL for your application.
      */
+
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
@@ -302,7 +306,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -317,7 +321,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return A unique name for the deployment environment. Used in the
      *         application URL. </p>
      *         <p>
-     *         Constraint: Must be from 4 to 23 characters in length. The name
+     *         Constraint: Must be from 4 to 40 characters in length. The name
      *         can contain only letters, numbers, and hyphens. It cannot start
      *         or end with a hyphen. This name must be unique in your account.
      *         If the specified name already exists, AWS Elastic Beanstalk
@@ -328,6 +332,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         name becomes part of the CNAME, and therefore part of the visible
      *         URL for your application.
      */
+
     public String getEnvironmentName() {
         return this.environmentName;
     }
@@ -338,7 +343,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * URL.
      * </p>
      * <p>
-     * Constraint: Must be from 4 to 23 characters in length. The name can
+     * Constraint: Must be from 4 to 40 characters in length. The name can
      * contain only letters, numbers, and hyphens. It cannot start or end with a
      * hyphen. This name must be unique in your account. If the specified name
      * already exists, AWS Elastic Beanstalk returns an
@@ -354,7 +359,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A unique name for the deployment environment. Used in the
      *        application URL. </p>
      *        <p>
-     *        Constraint: Must be from 4 to 23 characters in length. The name
+     *        Constraint: Must be from 4 to 40 characters in length. The name
      *        can contain only letters, numbers, and hyphens. It cannot start or
      *        end with a hyphen. This name must be unique in your account. If
      *        the specified name already exists, AWS Elastic Beanstalk returns
@@ -367,6 +372,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withEnvironmentName(String environmentName) {
         setEnvironmentName(environmentName);
         return this;
@@ -377,7 +383,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -386,9 +392,10 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name
      *        parameter. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -398,7 +405,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -406,9 +413,10 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         Specify a group name only if the environment's name is specified
      *         in an environment manifest and not with the environment name
      *         parameter. See <a href=
-     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *         "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *         >Environment Manifest (env.yaml)</a> for details.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -418,7 +426,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a href=
-     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     * "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      * >Environment Manifest (env.yaml)</a> for details.
      * </p>
      * 
@@ -427,11 +435,12 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Specify a group name only if the environment's name is specified
      *        in an environment manifest and not with the environment name
      *        parameter. See <a href=
-     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html#environment-mgmt-compose-envyaml"
+     *        "http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html"
      *        >Environment Manifest (env.yaml)</a> for details.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -445,6 +454,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param description
      *        Describes this environment.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -456,6 +466,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return Describes this environment.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -470,6 +481,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -488,6 +500,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        automatically by appending a random alphanumeric string to the
      *        environment name.
      */
+
     public void setCNAMEPrefix(String cNAMEPrefix) {
         this.cNAMEPrefix = cNAMEPrefix;
     }
@@ -504,6 +517,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         automatically by appending a random alphanumeric string to the
      *         environment name.
      */
+
     public String getCNAMEPrefix() {
         return this.cNAMEPrefix;
     }
@@ -523,6 +537,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withCNAMEPrefix(String cNAMEPrefix) {
         setCNAMEPrefix(cNAMEPrefix);
         return this;
@@ -536,6 +551,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param tier
      *        This specifies the tier to use for creating this environment.
      */
+
     public void setTier(EnvironmentTier tier) {
         this.tier = tier;
     }
@@ -547,6 +563,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return This specifies the tier to use for creating this environment.
      */
+
     public EnvironmentTier getTier() {
         return this.tier;
     }
@@ -561,6 +578,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withTier(EnvironmentTier tier) {
         setTier(tier);
         return this;
@@ -573,6 +591,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * 
      * @return This specifies the tags applied to resources in the environment.
      */
+
     public java.util.List<Tag> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -588,6 +607,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @param tags
      *        This specifies the tags applied to resources in the environment.
      */
+
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
             this.tags = null;
@@ -613,6 +633,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withTags(Tag... tags) {
         if (this.tags == null) {
             setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
@@ -633,6 +654,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
@@ -663,6 +685,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        Default: If not specified, AWS Elastic Beanstalk attempts to
      *        launch the sample application in the container.
      */
+
     public void setVersionLabel(String versionLabel) {
         this.versionLabel = versionLabel;
     }
@@ -691,6 +714,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         Default: If not specified, AWS Elastic Beanstalk attempts to
      *         launch the sample application in the container.
      */
+
     public String getVersionLabel() {
         return this.versionLabel;
     }
@@ -722,6 +746,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withVersionLabel(String versionLabel) {
         setVersionLabel(versionLabel);
         return this;
@@ -754,6 +779,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        specify either, AWS Elastic Beanstalk returns a
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -784,6 +810,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         specify either, AWS Elastic Beanstalk returns a
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -817,6 +844,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withTemplateName(String templateName) {
         setTemplateName(templateName);
         return this;
@@ -849,6 +877,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        specify either, AWS Elastic Beanstalk returns a
      *        <code>MissingRequiredParameter</code> error.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -879,6 +908,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         specify either, AWS Elastic Beanstalk returns a
      *         <code>MissingRequiredParameter</code> error.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -912,6 +942,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -931,6 +962,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *         set for the new environment. These override the values obtained
      *         from the solution stack or the configuration template.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -952,6 +984,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        set for the new environment. These override the values obtained
      *        from the solution stack or the configuration template.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -985,6 +1018,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -1013,6 +1047,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
@@ -1028,6 +1063,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return A list of custom user-defined configuration options to remove
      *         from the configuration set for this new environment.
      */
+
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         if (optionsToRemove == null) {
             optionsToRemove = new com.amazonaws.internal.SdkInternalList<OptionSpecification>();
@@ -1045,6 +1081,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      *        A list of custom user-defined configuration options to remove from
      *        the configuration set for this new environment.
      */
+
     public void setOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {
@@ -1074,6 +1111,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withOptionsToRemove(
             OptionSpecification... optionsToRemove) {
         if (this.optionsToRemove == null) {
@@ -1098,6 +1136,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateEnvironmentRequest withOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         setOptionsToRemove(optionsToRemove);

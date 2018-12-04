@@ -40,6 +40,7 @@ public class GetBranchResult implements Serializable, Cloneable {
      * @param branch
      *        The name of the branch.
      */
+
     public void setBranch(BranchInfo branch) {
         this.branch = branch;
     }
@@ -51,6 +52,7 @@ public class GetBranchResult implements Serializable, Cloneable {
      * 
      * @return The name of the branch.
      */
+
     public BranchInfo getBranch() {
         return this.branch;
     }
@@ -65,6 +67,7 @@ public class GetBranchResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetBranchResult withBranch(BranchInfo branch) {
         setBranch(branch);
         return this;

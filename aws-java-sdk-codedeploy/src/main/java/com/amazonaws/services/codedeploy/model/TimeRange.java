@@ -27,62 +27,61 @@ public class TimeRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time range's start time.
+     * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's start time
-     * open-ended.</note>
+     * <note>Specify null to leave the start time open-ended.</note>
      */
     private java.util.Date start;
     /**
      * <p>
-     * The time range's end time.
+     * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's end time open-ended.</note>
+     * <note>Specify null to leave the end time open-ended.</note>
      */
     private java.util.Date end;
 
     /**
      * <p>
-     * The time range's start time.
+     * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's start time
-     * open-ended.</note>
+     * <note>Specify null to leave the start time open-ended.</note>
      * 
      * @param start
-     *        The time range's start time.</p> <note>Specify null to leave the
-     *        time range's start time open-ended.
+     *        The start time of the time range.</p> <note>Specify null to leave
+     *        the start time open-ended.
      */
+
     public void setStart(java.util.Date start) {
         this.start = start;
     }
 
     /**
      * <p>
-     * The time range's start time.
+     * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's start time
-     * open-ended.</note>
+     * <note>Specify null to leave the start time open-ended.</note>
      * 
-     * @return The time range's start time.</p> <note>Specify null to leave the
-     *         time range's start time open-ended.
+     * @return The start time of the time range.</p> <note>Specify null to leave
+     *         the start time open-ended.
      */
+
     public java.util.Date getStart() {
         return this.start;
     }
 
     /**
      * <p>
-     * The time range's start time.
+     * The start time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's start time
-     * open-ended.</note>
+     * <note>Specify null to leave the start time open-ended.</note>
      * 
      * @param start
-     *        The time range's start time.</p> <note>Specify null to leave the
-     *        time range's start time open-ended.
+     *        The start time of the time range.</p> <note>Specify null to leave
+     *        the start time open-ended.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeRange withStart(java.util.Date start) {
         setStart(start);
         return this;
@@ -90,43 +89,46 @@ public class TimeRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time range's end time.
+     * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's end time open-ended.</note>
+     * <note>Specify null to leave the end time open-ended.</note>
      * 
      * @param end
-     *        The time range's end time.</p> <note>Specify null to leave the
-     *        time range's end time open-ended.
+     *        The end time of the time range.</p> <note>Specify null to leave
+     *        the end time open-ended.
      */
+
     public void setEnd(java.util.Date end) {
         this.end = end;
     }
 
     /**
      * <p>
-     * The time range's end time.
+     * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's end time open-ended.</note>
+     * <note>Specify null to leave the end time open-ended.</note>
      * 
-     * @return The time range's end time.</p> <note>Specify null to leave the
-     *         time range's end time open-ended.
+     * @return The end time of the time range.</p> <note>Specify null to leave
+     *         the end time open-ended.
      */
+
     public java.util.Date getEnd() {
         return this.end;
     }
 
     /**
      * <p>
-     * The time range's end time.
+     * The end time of the time range.
      * </p>
-     * <note>Specify null to leave the time range's end time open-ended.</note>
+     * <note>Specify null to leave the end time open-ended.</note>
      * 
      * @param end
-     *        The time range's end time.</p> <note>Specify null to leave the
-     *        time range's end time open-ended.
+     *        The end time of the time range.</p> <note>Specify null to leave
+     *        the end time open-ended.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TimeRange withEnd(java.util.Date end) {
         setEnd(end);
         return this;

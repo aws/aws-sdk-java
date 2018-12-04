@@ -1,292 +1,332 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest) DescribeCacheClusters operation}.
  * <p>
- * The <i>DescribeCacheClusters</i> action returns information about all
- * provisioned cache clusters if no cache cluster identifier is
- * specified, or about a specific cache cluster if a cache cluster
- * identifier is supplied.
+ * Represents the input of a <i>DescribeCacheClusters</i> action.
  * </p>
- * <p>
- * By default, abbreviated information about the cache clusters(s) will
- * be returned. You can use the optional <i>ShowDetails</i> flag to
- * retrieve detailed information about the cache nodes associated with
- * the cache clusters. These details include the DNS address and port for
- * the cache node endpoint.
- * </p>
- * <p>
- * If the cluster is in the CREATING state, only cluster level
- * information will be displayed until all of the nodes are successfully
- * provisioned.
- * </p>
- * <p>
- * If the cluster is in the DELETING state, only cluster level
- * information will be displayed.
- * </p>
- * <p>
- * If cache nodes are currently being added to the cache cluster, node
- * endpoint information and creation time for the additional nodes will
- * not be displayed until they are completely provisioned. When the cache
- * cluster state is <i>available</i> , the cluster is ready for use.
- * </p>
- * <p>
- * If cache nodes are currently being removed from the cache cluster, no
- * endpoint information for the removed nodes is displayed.
- * </p>
- *
- * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest)
  */
-public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DescribeCacheClustersRequest extends AmazonWebServiceRequest
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The user-supplied cluster identifier. If this parameter is specified,
      * only information about that specific cache cluster is returned. This
      * parameter isn't case sensitive.
+     * </p>
      */
     private String cacheClusterId;
-
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is
+     * included in the response so that the remaining results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: minimum 20; maximum 100.
+     * </p>
      */
     private Integer maxRecords;
-
     /**
+     * <p>
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <i>MaxRecords</i>.
+     * pagination of results from this action. If this parameter is specified,
+     * the response includes only records beyond the marker, up to the value
+     * specified by <i>MaxRecords</i>.
+     * </p>
      */
     private String marker;
-
     /**
-     * An optional flag that can be included in the DescribeCacheCluster
-     * request to retrieve information about the individual cache nodes.
+     * <p>
+     * An optional flag that can be included in the DescribeCacheCluster request
+     * to retrieve information about the individual cache nodes.
+     * </p>
      */
     private Boolean showCacheNodeInfo;
 
     /**
-     * Default constructor for a new DescribeCacheClustersRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public DescribeCacheClustersRequest() {}
-    
-    /**
+     * <p>
      * The user-supplied cluster identifier. If this parameter is specified,
      * only information about that specific cache cluster is returned. This
      * parameter isn't case sensitive.
-     *
-     * @return The user-supplied cluster identifier. If this parameter is specified,
-     *         only information about that specific cache cluster is returned. This
-     *         parameter isn't case sensitive.
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The user-supplied cluster identifier. If this parameter is
+     *        specified, only information about that specific cache cluster is
+     *        returned. This parameter isn't case sensitive.
      */
-    public String getCacheClusterId() {
-        return cacheClusterId;
-    }
-    
-    /**
-     * The user-supplied cluster identifier. If this parameter is specified,
-     * only information about that specific cache cluster is returned. This
-     * parameter isn't case sensitive.
-     *
-     * @param cacheClusterId The user-supplied cluster identifier. If this parameter is specified,
-     *         only information about that specific cache cluster is returned. This
-     *         parameter isn't case sensitive.
-     */
+
     public void setCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
-    
+
     /**
+     * <p>
      * The user-supplied cluster identifier. If this parameter is specified,
      * only information about that specific cache cluster is returned. This
      * parameter isn't case sensitive.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheClusterId The user-supplied cluster identifier. If this parameter is specified,
-     *         only information about that specific cache cluster is returned. This
-     *         parameter isn't case sensitive.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The user-supplied cluster identifier. If this parameter is
+     *         specified, only information about that specific cache cluster is
+     *         returned. This parameter isn't case sensitive.
      */
+
+    public String getCacheClusterId() {
+        return this.cacheClusterId;
+    }
+
+    /**
+     * <p>
+     * The user-supplied cluster identifier. If this parameter is specified,
+     * only information about that specific cache cluster is returned. This
+     * parameter isn't case sensitive.
+     * </p>
+     * 
+     * @param cacheClusterId
+     *        The user-supplied cluster identifier. If this parameter is
+     *        specified, only information about that specific cache cluster is
+     *        returned. This parameter isn't case sensitive.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeCacheClustersRequest withCacheClusterId(String cacheClusterId) {
-        this.cacheClusterId = cacheClusterId;
+        setCacheClusterId(cacheClusterId);
         return this;
     }
 
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
-     *
-     * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is
+     * included in the response so that the remaining results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: minimum 20; maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        marker is included in the response so that the remaining results
+     *        can be retrieved.</p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: minimum 20; maximum 100.
      */
-    public Integer getMaxRecords() {
-        return maxRecords;
-    }
-    
-    /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
-     */
+
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
-    
+
     /**
-     * The maximum number of records to include in the response. If more
-     * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results can
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param maxRecords The maximum number of records to include in the response. If more
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is
+     * included in the response so that the remaining results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: minimum 20; maximum 100.
+     * </p>
+     * 
+     * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results can
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20; maximum 100.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         marker is included in the response so that the remaining results
+     *         can be retrieved.</p>
+     *         <p>
+     *         Default: 100
+     *         </p>
+     *         <p>
+     *         Constraints: minimum 20; maximum 100.
      */
+
+    public Integer getMaxRecords() {
+        return this.maxRecords;
+    }
+
+    /**
+     * <p>
+     * The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is
+     * included in the response so that the remaining results can be retrieved.
+     * </p>
+     * <p>
+     * Default: 100
+     * </p>
+     * <p>
+     * Constraints: minimum 20; maximum 100.
+     * </p>
+     * 
+     * @param maxRecords
+     *        The maximum number of records to include in the response. If more
+     *        records exist than the specified <code>MaxRecords</code> value, a
+     *        marker is included in the response so that the remaining results
+     *        can be retrieved.</p>
+     *        <p>
+     *        Default: 100
+     *        </p>
+     *        <p>
+     *        Constraints: minimum 20; maximum 100.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeCacheClustersRequest withMaxRecords(Integer maxRecords) {
-        this.maxRecords = maxRecords;
+        setMaxRecords(maxRecords);
         return this;
     }
 
     /**
+     * <p>
      * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <i>MaxRecords</i>.
-     *
-     * @return An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <i>MaxRecords</i>.
+     * pagination of results from this action. If this parameter is specified,
+     * the response includes only records beyond the marker, up to the value
+     * specified by <i>MaxRecords</i>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional marker returned from a prior request. Use this marker
+     *        for pagination of results from this action. If this parameter is
+     *        specified, the response includes only records beyond the marker,
+     *        up to the value specified by <i>MaxRecords</i>.
      */
-    public String getMarker() {
-        return marker;
-    }
-    
-    /**
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <i>MaxRecords</i>.
-     *
-     * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <i>MaxRecords</i>.
-     */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
-    
+
     /**
-     * An optional marker returned from a prior request. Use this marker for
-     * pagination of results from this action. If this parameter is
-     * specified, the response includes only records beyond the marker, up to
-     * the value specified by <i>MaxRecords</i>.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param marker An optional marker returned from a prior request. Use this marker for
-     *         pagination of results from this action. If this parameter is
-     *         specified, the response includes only records beyond the marker, up to
-     *         the value specified by <i>MaxRecords</i>.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified,
+     * the response includes only records beyond the marker, up to the value
+     * specified by <i>MaxRecords</i>.
+     * </p>
+     * 
+     * @return An optional marker returned from a prior request. Use this marker
+     *         for pagination of results from this action. If this parameter is
+     *         specified, the response includes only records beyond the marker,
+     *         up to the value specified by <i>MaxRecords</i>.
      */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this action. If this parameter is specified,
+     * the response includes only records beyond the marker, up to the value
+     * specified by <i>MaxRecords</i>.
+     * </p>
+     * 
+     * @param marker
+     *        An optional marker returned from a prior request. Use this marker
+     *        for pagination of results from this action. If this parameter is
+     *        specified, the response includes only records beyond the marker,
+     *        up to the value specified by <i>MaxRecords</i>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DescribeCacheClustersRequest withMarker(String marker) {
-        this.marker = marker;
+        setMarker(marker);
         return this;
     }
 
     /**
-     * An optional flag that can be included in the DescribeCacheCluster
-     * request to retrieve information about the individual cache nodes.
-     *
-     * @return An optional flag that can be included in the DescribeCacheCluster
-     *         request to retrieve information about the individual cache nodes.
+     * <p>
+     * An optional flag that can be included in the DescribeCacheCluster request
+     * to retrieve information about the individual cache nodes.
+     * </p>
+     * 
+     * @param showCacheNodeInfo
+     *        An optional flag that can be included in the DescribeCacheCluster
+     *        request to retrieve information about the individual cache nodes.
      */
-    public Boolean isShowCacheNodeInfo() {
-        return showCacheNodeInfo;
-    }
-    
-    /**
-     * An optional flag that can be included in the DescribeCacheCluster
-     * request to retrieve information about the individual cache nodes.
-     *
-     * @param showCacheNodeInfo An optional flag that can be included in the DescribeCacheCluster
-     *         request to retrieve information about the individual cache nodes.
-     */
+
     public void setShowCacheNodeInfo(Boolean showCacheNodeInfo) {
         this.showCacheNodeInfo = showCacheNodeInfo;
     }
-    
+
     /**
-     * An optional flag that can be included in the DescribeCacheCluster
-     * request to retrieve information about the individual cache nodes.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param showCacheNodeInfo An optional flag that can be included in the DescribeCacheCluster
+     * An optional flag that can be included in the DescribeCacheCluster request
+     * to retrieve information about the individual cache nodes.
+     * </p>
+     * 
+     * @return An optional flag that can be included in the DescribeCacheCluster
      *         request to retrieve information about the individual cache nodes.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public DescribeCacheClustersRequest withShowCacheNodeInfo(Boolean showCacheNodeInfo) {
-        this.showCacheNodeInfo = showCacheNodeInfo;
+
+    public Boolean getShowCacheNodeInfo() {
+        return this.showCacheNodeInfo;
+    }
+
+    /**
+     * <p>
+     * An optional flag that can be included in the DescribeCacheCluster request
+     * to retrieve information about the individual cache nodes.
+     * </p>
+     * 
+     * @param showCacheNodeInfo
+     *        An optional flag that can be included in the DescribeCacheCluster
+     *        request to retrieve information about the individual cache nodes.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DescribeCacheClustersRequest withShowCacheNodeInfo(
+            Boolean showCacheNodeInfo) {
+        setShowCacheNodeInfo(showCacheNodeInfo);
         return this;
     }
 
     /**
-     * An optional flag that can be included in the DescribeCacheCluster
-     * request to retrieve information about the individual cache nodes.
-     *
+     * <p>
+     * An optional flag that can be included in the DescribeCacheCluster request
+     * to retrieve information about the individual cache nodes.
+     * </p>
+     * 
      * @return An optional flag that can be included in the DescribeCacheCluster
      *         request to retrieve information about the individual cache nodes.
      */
-    public Boolean getShowCacheNodeInfo() {
-        return showCacheNodeInfo;
+
+    public Boolean isShowCacheNodeInfo() {
+        return this.showCacheNodeInfo;
     }
 
     /**
@@ -301,50 +341,76 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
-        if (isShowCacheNodeInfo() != null) sb.append("ShowCacheNodeInfo: " + isShowCacheNodeInfo() );
+        if (getCacheClusterId() != null)
+            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+        if (getMaxRecords() != null)
+            sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getMarker() != null)
+            sb.append("Marker: " + getMarker() + ",");
+        if (getShowCacheNodeInfo() != null)
+            sb.append("ShowCacheNodeInfo: " + getShowCacheNodeInfo());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeCacheClustersRequest == false)
+            return false;
+        DescribeCacheClustersRequest other = (DescribeCacheClustersRequest) obj;
+        if (other.getCacheClusterId() == null
+                ^ this.getCacheClusterId() == null)
+            return false;
+        if (other.getCacheClusterId() != null
+                && other.getCacheClusterId().equals(this.getCacheClusterId()) == false)
+            return false;
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
+            return false;
+        if (other.getMaxRecords() != null
+                && other.getMaxRecords().equals(this.getMaxRecords()) == false)
+            return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null
+                && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getShowCacheNodeInfo() == null
+                ^ this.getShowCacheNodeInfo() == null)
+            return false;
+        if (other.getShowCacheNodeInfo() != null
+                && other.getShowCacheNodeInfo().equals(
+                        this.getShowCacheNodeInfo()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
-        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
-        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
-        hashCode = prime * hashCode + ((isShowCacheNodeInfo() == null) ? 0 : isShowCacheNodeInfo().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCacheClusterId() == null) ? 0 : getCacheClusterId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
+        hashCode = prime * hashCode
+                + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getShowCacheNodeInfo() == null) ? 0
+                        : getShowCacheNodeInfo().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DescribeCacheClustersRequest == false) return false;
-        DescribeCacheClustersRequest other = (DescribeCacheClustersRequest)obj;
-        
-        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null) return false;
-        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
-        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
-        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
-        if (other.getMarker() == null ^ this.getMarker() == null) return false;
-        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
-        if (other.isShowCacheNodeInfo() == null ^ this.isShowCacheNodeInfo() == null) return false;
-        if (other.isShowCacheNodeInfo() != null && other.isShowCacheNodeInfo().equals(this.isShowCacheNodeInfo()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DescribeCacheClustersRequest clone() {
-        
-            return (DescribeCacheClustersRequest) super.clone();
+        return (DescribeCacheClustersRequest) super.clone();
     }
-
 }
-    

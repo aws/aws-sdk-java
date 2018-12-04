@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TestRoleRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class TestRoleRequestMarshaller implements
         Marshaller<Request<TestRoleRequest>, TestRoleRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TestRoleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TestRoleRequest> marshall(TestRoleRequest testRoleRequest) {
 
@@ -65,43 +73,40 @@ public class TestRoleRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (testRoleRequest.getRole() != null) {
-                jsonWriter.key("Role").value(testRoleRequest.getRole());
+                jsonGenerator.writeFieldName("Role").writeValue(
+                        testRoleRequest.getRole());
             }
-
             if (testRoleRequest.getInputBucket() != null) {
-                jsonWriter.key("InputBucket").value(
+                jsonGenerator.writeFieldName("InputBucket").writeValue(
                         testRoleRequest.getInputBucket());
             }
-
             if (testRoleRequest.getOutputBucket() != null) {
-                jsonWriter.key("OutputBucket").value(
+                jsonGenerator.writeFieldName("OutputBucket").writeValue(
                         testRoleRequest.getOutputBucket());
             }
 
             com.amazonaws.internal.SdkInternalList<String> topicsList = (com.amazonaws.internal.SdkInternalList<String>) testRoleRequest
                     .getTopics();
             if (!topicsList.isEmpty() || !topicsList.isAutoConstruct()) {
-                jsonWriter.key("Topics");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Topics");
+                jsonGenerator.writeStartArray();
                 for (String topicsListValue : topicsList) {
                     if (topicsListValue != null) {
-                        jsonWriter.value(topicsListValue);
+                        jsonGenerator.writeValue(topicsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

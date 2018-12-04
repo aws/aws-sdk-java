@@ -93,6 +93,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        The name of the sidecar caption file that you want Elastic
      *        Transcoder to include in the output file.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -106,6 +107,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return The name of the sidecar caption file that you want Elastic
      *         Transcoder to include in the output file.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -122,6 +124,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionSource withKey(String key) {
         setKey(key);
         return this;
@@ -168,6 +171,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        For more information on ISO language codes and language names, see
      *        the List of ISO 639-1 codes.
      */
+
     public void setLanguage(String language) {
         this.language = language;
     }
@@ -212,6 +216,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *         For more information on ISO language codes and language names,
      *         see the List of ISO 639-1 codes.
      */
+
     public String getLanguage() {
         return this.language;
     }
@@ -259,6 +264,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionSource withLanguage(String language) {
         setLanguage(language);
         return this;
@@ -282,6 +288,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        <p>
      *        Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      */
+
     public void setTimeOffset(String timeOffset) {
         this.timeOffset = timeOffset;
     }
@@ -303,6 +310,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *         <p>
      *         Specify the TimeOffset in the form [+-]SS.sss or [+-]HH:mm:SS.ss.
      */
+
     public String getTimeOffset() {
         return this.timeOffset;
     }
@@ -327,6 +335,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionSource withTimeOffset(String timeOffset) {
         setTimeOffset(timeOffset);
         return this;
@@ -344,6 +353,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        language. We recommend that you put the caption language name
      *        here, in the language of the captions.
      */
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -359,6 +369,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *         language. We recommend that you put the caption language name
      *         here, in the language of the captions.
      */
+
     public String getLabel() {
         return this.label;
     }
@@ -377,6 +388,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionSource withLabel(String label) {
         setLabel(label);
         return this;
@@ -392,6 +404,7 @@ public class CaptionSource implements Serializable, Cloneable {
      *        The encryption settings, if any, that you want Elastic Transcoder
      *        to apply to your caption sources.
      */
+
     public void setEncryption(Encryption encryption) {
         this.encryption = encryption;
     }
@@ -405,6 +418,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return The encryption settings, if any, that you want Elastic Transcoder
      *         to apply to your caption sources.
      */
+
     public Encryption getEncryption() {
         return this.encryption;
     }
@@ -421,6 +435,7 @@ public class CaptionSource implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CaptionSource withEncryption(Encryption encryption) {
         setEncryption(encryption);
         return this;

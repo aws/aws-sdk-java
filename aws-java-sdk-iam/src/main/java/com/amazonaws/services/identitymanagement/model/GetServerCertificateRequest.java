@@ -30,6 +30,12 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * The name of the server certificate you want to retrieve information
      * about.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String serverCertificateName;
 
@@ -48,7 +54,12 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * 
      * @param serverCertificateName
      *        The name of the server certificate you want to retrieve
-     *        information about.
+     *        information about.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
     public GetServerCertificateRequest(String serverCertificateName) {
         setServerCertificateName(serverCertificateName);
@@ -59,11 +70,23 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * The name of the server certificate you want to retrieve information
      * about.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
      *        The name of the server certificate you want to retrieve
-     *        information about.
+     *        information about.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setServerCertificateName(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
@@ -73,10 +96,22 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * The name of the server certificate you want to retrieve information
      * about.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @return The name of the server certificate you want to retrieve
-     *         information about.
+     *         information about.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getServerCertificateName() {
         return this.serverCertificateName;
     }
@@ -86,13 +121,25 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest
      * The name of the server certificate you want to retrieve information
      * about.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param serverCertificateName
      *        The name of the server certificate you want to retrieve
-     *        information about.
+     *        information about.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetServerCertificateRequest withServerCertificateName(
             String serverCertificateName) {
         setServerCertificateName(serverCertificateName);

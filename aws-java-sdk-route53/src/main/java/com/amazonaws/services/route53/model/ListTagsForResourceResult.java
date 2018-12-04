@@ -43,6 +43,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      *        A <code>ResourceTagSet</code> containing tags associated with the
      *        specified resource.
      */
+
     public void setResourceTagSet(ResourceTagSet resourceTagSet) {
         this.resourceTagSet = resourceTagSet;
     }
@@ -56,6 +57,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return A <code>ResourceTagSet</code> containing tags associated with the
      *         specified resource.
      */
+
     public ResourceTagSet getResourceTagSet() {
         return this.resourceTagSet;
     }
@@ -72,6 +74,7 @@ public class ListTagsForResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsForResourceResult withResourceTagSet(
             ResourceTagSet resourceTagSet) {
         setResourceTagSet(resourceTagSet);

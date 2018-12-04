@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,6 +17,8 @@
 package com.amazonaws.services.cloudsearchv2.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -27,44 +30,60 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 /**
- * Lat Lon Options StAX Unmarshaller
+ * LatLonOptions StAX Unmarshaller
  */
-public class LatLonOptionsStaxUnmarshaller implements Unmarshaller<LatLonOptions, StaxUnmarshallerContext> {
+public class LatLonOptionsStaxUnmarshaller implements
+        Unmarshaller<LatLonOptions, StaxUnmarshallerContext> {
 
-    public LatLonOptions unmarshall(StaxUnmarshallerContext context) throws Exception {
+    public LatLonOptions unmarshall(StaxUnmarshallerContext context)
+            throws Exception {
         LatLonOptions latLonOptions = new LatLonOptions();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
-        if (context.isStartOfDocument()) targetDepth += 2;
+        if (context.isStartOfDocument())
+            targetDepth += 1;
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return latLonOptions;
+            if (xmlEvent.isEndDocument())
+                return latLonOptions;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
                 if (context.testExpression("DefaultValue", targetDepth)) {
-                    latLonOptions.setDefaultValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setDefaultValue(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SourceField", targetDepth)) {
-                    latLonOptions.setSourceField(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setSourceField(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("FacetEnabled", targetDepth)) {
-                    latLonOptions.setFacetEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setFacetEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SearchEnabled", targetDepth)) {
-                    latLonOptions.setSearchEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setSearchEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("ReturnEnabled", targetDepth)) {
-                    latLonOptions.setReturnEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setReturnEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
+
                 if (context.testExpression("SortEnabled", targetDepth)) {
-                    latLonOptions.setSortEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    latLonOptions.setSortEnabled(BooleanStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
@@ -76,9 +95,10 @@ public class LatLonOptionsStaxUnmarshaller implements Unmarshaller<LatLonOptions
     }
 
     private static LatLonOptionsStaxUnmarshaller instance;
+
     public static LatLonOptionsStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new LatLonOptionsStaxUnmarshaller();
+        if (instance == null)
+            instance = new LatLonOptionsStaxUnmarshaller();
         return instance;
     }
 }
-    

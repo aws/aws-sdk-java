@@ -55,6 +55,9 @@ public enum SimpleEmailServiceActions implements Action {
     DescribeReceiptRuleSet("ses:DescribeReceiptRuleSet"),
     /** Action for the GetIdentityDkimAttributes operation. */
     GetIdentityDkimAttributes("ses:GetIdentityDkimAttributes"),
+    /** Action for the GetIdentityMailFromDomainAttributes operation. */
+    GetIdentityMailFromDomainAttributes(
+            "ses:GetIdentityMailFromDomainAttributes"),
     /** Action for the GetIdentityNotificationAttributes operation. */
     GetIdentityNotificationAttributes("ses:GetIdentityNotificationAttributes"),
     /** Action for the GetIdentityPolicies operation. */
@@ -92,6 +95,8 @@ public enum SimpleEmailServiceActions implements Action {
     /** Action for the SetIdentityFeedbackForwardingEnabled operation. */
     SetIdentityFeedbackForwardingEnabled(
             "ses:SetIdentityFeedbackForwardingEnabled"),
+    /** Action for the SetIdentityMailFromDomain operation. */
+    SetIdentityMailFromDomain("ses:SetIdentityMailFromDomain"),
     /** Action for the SetIdentityNotificationTopic operation. */
     SetIdentityNotificationTopic("ses:SetIdentityNotificationTopic"),
     /** Action for the SetReceiptRulePosition operation. */

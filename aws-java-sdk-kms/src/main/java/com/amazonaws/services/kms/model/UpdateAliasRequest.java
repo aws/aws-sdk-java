@@ -38,14 +38,21 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * Unique identifier of the customer master key to be mapped to the alias.
      * This value can be a globally unique identifier or the fully specified ARN
      * of a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * <p>
      * You can call <a>ListAliases</a> to verify that the alias is mapped to the
      * correct <code>TargetKeyId</code>.
@@ -65,6 +72,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *        name must start with the word "alias" followed by a forward slash
      *        (alias/). Aliases that begin with "alias/aws" are reserved.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -80,6 +88,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      *         name must start with the word "alias" followed by a forward slash
      *         (alias/). Aliases that begin with "alias/aws" are reserved.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -98,6 +107,7 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;
@@ -108,14 +118,21 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * Unique identifier of the customer master key to be mapped to the alias.
      * This value can be a globally unique identifier or the fully specified ARN
      * of a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * <p>
      * You can call <a>ListAliases</a> to verify that the alias is mapped to the
      * correct <code>TargetKeyId</code>.
@@ -124,19 +141,27 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @param targetKeyId
      *        Unique identifier of the customer master key to be mapped to the
      *        alias. This value can be a globally unique identifier or the fully
-     *        specified ARN of a key.
+     *        specified ARN of a key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        You can call <a>ListAliases</a> to verify that the alias is mapped
      *        to the correct <code>TargetKeyId</code>.
      */
+
     public void setTargetKeyId(String targetKeyId) {
         this.targetKeyId = targetKeyId;
     }
@@ -146,14 +171,21 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * Unique identifier of the customer master key to be mapped to the alias.
      * This value can be a globally unique identifier or the fully specified ARN
      * of a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * <p>
      * You can call <a>ListAliases</a> to verify that the alias is mapped to the
      * correct <code>TargetKeyId</code>.
@@ -161,19 +193,27 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * 
      * @return Unique identifier of the customer master key to be mapped to the
      *         alias. This value can be a globally unique identifier or the
-     *         fully specified ARN of a key.
+     *         fully specified ARN of a key.</p>
      *         <ul>
-     *         <li>Key ARN Example -
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678
-     *         -1234-1234-1234-123456789012</li>
-     *         <li>Globally Unique Key ID Example -
-     *         12345678-1234-1234-1234-123456789012</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         Key ARN Example -
+     *         arn:aws:kms:us-east-1:123456789012:key/12345678-
+     *         1234-1234-1234-123456789012
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Globally Unique Key ID Example -
+     *         12345678-1234-1234-1234-123456789012
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         You can call <a>ListAliases</a> to verify that the alias is
      *         mapped to the correct <code>TargetKeyId</code>.
      */
+
     public String getTargetKeyId() {
         return this.targetKeyId;
     }
@@ -183,14 +223,21 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * Unique identifier of the customer master key to be mapped to the alias.
      * This value can be a globally unique identifier or the fully specified ARN
      * of a key.
+     * </p>
      * <ul>
-     * <li>Key ARN Example -
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234
-     * -1234-1234-123456789012</li>
-     * <li>Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * <li>
+     * <p>
+     * Key ARN Example -
+     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234
+     * -1234-123456789012
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * </p>
      * </li>
      * </ul>
-     * </p>
      * <p>
      * You can call <a>ListAliases</a> to verify that the alias is mapped to the
      * correct <code>TargetKeyId</code>.
@@ -199,21 +246,29 @@ public class UpdateAliasRequest extends AmazonWebServiceRequest implements
      * @param targetKeyId
      *        Unique identifier of the customer master key to be mapped to the
      *        alias. This value can be a globally unique identifier or the fully
-     *        specified ARN of a key.
+     *        specified ARN of a key.</p>
      *        <ul>
-     *        <li>Key ARN Example -
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678
-     *        -1234-1234-1234-123456789012</li>
-     *        <li>Globally Unique Key ID Example -
-     *        12345678-1234-1234-1234-123456789012</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        Key ARN Example -
+     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234
+     *        -1234-1234-123456789012
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Globally Unique Key ID Example -
+     *        12345678-1234-1234-1234-123456789012
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        You can call <a>ListAliases</a> to verify that the alias is mapped
      *        to the correct <code>TargetKeyId</code>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAliasRequest withTargetKeyId(String targetKeyId) {
         setTargetKeyId(targetKeyId);
         return this;

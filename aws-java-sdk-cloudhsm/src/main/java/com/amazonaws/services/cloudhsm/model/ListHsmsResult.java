@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the output of the <a>ListHsms</a> action.
+ * Contains the output of the <a>ListHsms</a> operation.
  * </p>
  */
 public class ListHsmsResult implements Serializable, Cloneable {
@@ -46,6 +46,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * 
      * @return The list of ARNs that identify the HSMs.
      */
+
     public java.util.List<String> getHsmList() {
         if (hsmList == null) {
             hsmList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -61,6 +62,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * @param hsmList
      *        The list of ARNs that identify the HSMs.
      */
+
     public void setHsmList(java.util.Collection<String> hsmList) {
         if (hsmList == null) {
             this.hsmList = null;
@@ -87,6 +89,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHsmsResult withHsmList(String... hsmList) {
         if (this.hsmList == null) {
             setHsmList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -108,6 +111,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHsmsResult withHsmList(java.util.Collection<String> hsmList) {
         setHsmList(hsmList);
         return this;
@@ -123,6 +127,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      *        If not null, more results are available. Pass this value to
      *        <a>ListHsms</a> to retrieve the next set of items.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -136,6 +141,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * @return If not null, more results are available. Pass this value to
      *         <a>ListHsms</a> to retrieve the next set of items.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -152,6 +158,7 @@ public class ListHsmsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHsmsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -113,9 +115,9 @@ public class ManagedPolicyDetailStaxUnmarshaller implements
 
                 if (context.testExpression("PolicyVersionList/member",
                         targetDepth)) {
-                    managedPolicyDetail.getPolicyVersionList().add(
-                            PolicyVersionStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    managedPolicyDetail
+                            .withPolicyVersionList(PolicyVersionStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

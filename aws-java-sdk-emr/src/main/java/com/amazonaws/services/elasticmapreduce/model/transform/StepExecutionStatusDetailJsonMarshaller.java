@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StepExecutionStatusDetailMarshaller
@@ -39,44 +34,43 @@ import com.amazonaws.util.json.*;
 public class StepExecutionStatusDetailJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StepExecutionStatusDetail stepExecutionStatusDetail,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (stepExecutionStatusDetail == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stepExecutionStatusDetail.getState() != null) {
-                jsonWriter.key("State").value(
+                jsonGenerator.writeFieldName("State").writeValue(
                         stepExecutionStatusDetail.getState());
             }
-
             if (stepExecutionStatusDetail.getCreationDateTime() != null) {
-                jsonWriter.key("CreationDateTime").value(
+                jsonGenerator.writeFieldName("CreationDateTime").writeValue(
                         stepExecutionStatusDetail.getCreationDateTime());
             }
-
             if (stepExecutionStatusDetail.getStartDateTime() != null) {
-                jsonWriter.key("StartDateTime").value(
+                jsonGenerator.writeFieldName("StartDateTime").writeValue(
                         stepExecutionStatusDetail.getStartDateTime());
             }
-
             if (stepExecutionStatusDetail.getEndDateTime() != null) {
-                jsonWriter.key("EndDateTime").value(
+                jsonGenerator.writeFieldName("EndDateTime").writeValue(
                         stepExecutionStatusDetail.getEndDateTime());
             }
-
             if (stepExecutionStatusDetail.getLastStateChangeReason() != null) {
-                jsonWriter.key("LastStateChangeReason").value(
-                        stepExecutionStatusDetail.getLastStateChangeReason());
+                jsonGenerator.writeFieldName("LastStateChangeReason")
+                        .writeValue(
+                                stepExecutionStatusDetail
+                                        .getLastStateChangeReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

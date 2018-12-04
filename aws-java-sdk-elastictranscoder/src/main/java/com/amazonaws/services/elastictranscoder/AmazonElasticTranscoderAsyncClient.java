@@ -16,6 +16,7 @@
 package com.amazonaws.services.elastictranscoder;
 
 import com.amazonaws.services.elastictranscoder.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Elastic Transcoder asynchronously. Each
@@ -28,6 +29,7 @@ import com.amazonaws.services.elastictranscoder.model.*;
  * The AWS Elastic Transcoder Service.
  * </p>
  */
+@ThreadSafe
 public class AmazonElasticTranscoderAsyncClient extends
         AmazonElasticTranscoderClient implements AmazonElasticTranscoderAsync {
 
@@ -127,8 +129,7 @@ public class AmazonElasticTranscoderAsyncClient extends
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -220,9 +221,7 @@ public class AmazonElasticTranscoderAsyncClient extends
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

@@ -16,6 +16,7 @@
 package com.amazonaws.services.cloudwatch;
 
 import com.amazonaws.services.cloudwatch.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing CloudWatch asynchronously. Each asynchronous method
@@ -24,45 +25,27 @@ import com.amazonaws.services.cloudwatch.model.*;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * This is the <i>Amazon CloudWatch API Reference</i>. This guide provides
- * detailed information about Amazon CloudWatch actions, data types, parameters,
- * and errors. For detailed information about Amazon CloudWatch features and
- * their associated API calls, go to the <a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide"
- * >Amazon CloudWatch Developer Guide</a>.
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
+ * applications you run on AWS in real-time. You can use CloudWatch to collect
+ * and track metrics, which are the variables you want to measure for your
+ * resources and applications.
  * </p>
  * <p>
- * Amazon CloudWatch is a web service that enables you to publish, monitor, and
- * manage various metrics, as well as configure alarm actions based on data from
- * metrics. For more information about this product go to <a
- * href="http://aws.amazon.com/cloudwatch">http://aws.amazon.com/cloudwatch</a>.
+ * CloudWatch alarms send notifications or automatically make changes to the
+ * resources you are monitoring based on rules that you define. For example, you
+ * can monitor the CPU usage and disk reads and writes of your Amazon Elastic
+ * Compute Cloud (Amazon EC2) instances and then use this data to determine
+ * whether you should launch additional instances to handle increased load. You
+ * can also use this data to stop under-used instances to save money.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch API
- * Reference</i>:
+ * In addition to monitoring the built-in metrics that come with AWS, you can
+ * monitor your own custom metrics. With CloudWatch, you gain system-wide
+ * visibility into resource utilization, application performance, and
+ * operational health.
  * </p>
- * <ul>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Operations.html"
- * >Actions</a>: An alphabetical list of all Amazon CloudWatch actions.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Types.html"
- * >Data Types</a>: An alphabetical list of all Amazon CloudWatch data types.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html"
- * >Common Parameters</a>: Parameters that all Query actions can use.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html"
- * >Common Errors</a>: Client and server errors that all actions can return.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"
- * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
- * products.</li>
- * <li><a
- * href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl">WSDL
- * Location</a>: http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
- * </ul>
  */
+@ThreadSafe
 public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         implements AmazonCloudWatchAsync {
 
@@ -161,8 +144,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -254,9 +236,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -295,26 +275,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    public java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             DeleteAlarmsRequest request) {
 
         return deleteAlarmsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteAlarmsAsync(
+    public java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(
             final DeleteAlarmsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, DeleteAlarmsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteAlarmsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteAlarmsResult call() throws Exception {
+                        DeleteAlarmsResult result;
 
                         try {
-                            deleteAlarms(request);
-                            result = null;
+                            result = deleteAlarms(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -486,26 +465,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             DisableAlarmActionsRequest request) {
 
         return disableAlarmActionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableAlarmActionsAsync(
+    public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(
             final DisableAlarmActionsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DisableAlarmActionsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DisableAlarmActionsResult call() throws Exception {
+                        DisableAlarmActionsResult result;
 
                         try {
-                            disableAlarmActions(request);
-                            result = null;
+                            result = disableAlarmActions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -522,26 +500,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    public java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             EnableAlarmActionsRequest request) {
 
         return enableAlarmActionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableAlarmActionsAsync(
+    public java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(
             final EnableAlarmActionsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<EnableAlarmActionsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public EnableAlarmActionsResult call() throws Exception {
+                        EnableAlarmActionsResult result;
 
                         try {
-                            enableAlarmActions(request);
-                            result = null;
+                            result = enableAlarmActions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -652,26 +629,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    public java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             PutMetricAlarmRequest request) {
 
         return putMetricAlarmAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricAlarmAsync(
+    public java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(
             final PutMetricAlarmRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, PutMetricAlarmResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutMetricAlarmResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutMetricAlarmResult call() throws Exception {
+                        PutMetricAlarmResult result;
 
                         try {
-                            putMetricAlarm(request);
-                            result = null;
+                            result = putMetricAlarm(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -688,26 +664,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricDataAsync(
+    public java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             PutMetricDataRequest request) {
 
         return putMetricDataAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricDataAsync(
+    public java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(
             final PutMetricDataRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, PutMetricDataResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutMetricDataResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutMetricDataResult call() throws Exception {
+                        PutMetricDataResult result;
 
                         try {
-                            putMetricData(request);
-                            result = null;
+                            result = putMetricData(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -724,26 +699,25 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setAlarmStateAsync(
+    public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             SetAlarmStateRequest request) {
 
         return setAlarmStateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> setAlarmStateAsync(
+    public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(
             final SetAlarmStateRequest request,
-            final com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<SetAlarmStateResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public SetAlarmStateResult call() throws Exception {
+                        SetAlarmStateResult result;
 
                         try {
-                            setAlarmState(request);
-                            result = null;
+                            result = setAlarmState(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

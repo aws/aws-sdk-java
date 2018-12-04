@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,22 +57,24 @@ public class RejectedLogEventsInfoJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     rejectedLogEventsInfo
-                            .setTooNewLogEventStartIndex(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTooNewLogEventStartIndex(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
                 if (context.testExpression("tooOldLogEventEndIndex",
                         targetDepth)) {
                     context.nextToken();
                     rejectedLogEventsInfo
-                            .setTooOldLogEventEndIndex(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setTooOldLogEventEndIndex(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("expiredLogEventEndIndex",
                         targetDepth)) {
                     context.nextToken();
                     rejectedLogEventsInfo
-                            .setExpiredLogEventEndIndex(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setExpiredLogEventEndIndex(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class DestinationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("destinationName", targetDepth)) {
                     context.nextToken();
-                    destination.setDestinationName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    destination.setDestinationName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("targetArn", targetDepth)) {
                     context.nextToken();
-                    destination.setTargetArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    destination.setTargetArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
-                    destination.setRoleArn(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    destination.setRoleArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("accessPolicy", targetDepth)) {
                     context.nextToken();
-                    destination.setAccessPolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    destination.setAccessPolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    destination.setArn(StringJsonUnmarshaller.getInstance()
+                    destination.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    destination.setCreationTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    destination.setCreationTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

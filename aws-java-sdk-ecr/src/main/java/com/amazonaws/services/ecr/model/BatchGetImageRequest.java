@@ -60,6 +60,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      *        images to describe. If you do not specify a registry, the default
      *        registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -75,6 +76,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      *         images to describe. If you do not specify a registry, the default
      *         registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -93,6 +95,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -106,6 +109,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The repository that contains the images to describe.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -117,6 +121,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * 
      * @return The repository that contains the images to describe.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -131,6 +136,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -147,6 +153,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      *         describe. The format of the <code>imageIds</code> reference is
      *         <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
+
     public java.util.List<ImageIdentifier> getImageIds() {
         return imageIds;
     }
@@ -163,6 +170,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      *        describe. The format of the <code>imageIds</code> reference is
      *        <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
      */
+
     public void setImageIds(java.util.Collection<ImageIdentifier> imageIds) {
         if (imageIds == null) {
             this.imageIds = null;
@@ -192,6 +200,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageRequest withImageIds(ImageIdentifier... imageIds) {
         if (this.imageIds == null) {
             setImageIds(new java.util.ArrayList<ImageIdentifier>(
@@ -217,6 +226,7 @@ public class BatchGetImageRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchGetImageRequest withImageIds(
             java.util.Collection<ImageIdentifier> imageIds) {
         setImageIds(imageIds);

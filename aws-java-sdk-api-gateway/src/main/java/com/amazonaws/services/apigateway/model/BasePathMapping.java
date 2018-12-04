@@ -56,6 +56,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      *        The base path name that callers of the API must provide as part of
      *        the URL after the domain name.
      */
+
     public void setBasePath(String basePath) {
         this.basePath = basePath;
     }
@@ -69,6 +70,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @return The base path name that callers of the API must provide as part
      *         of the URL after the domain name.
      */
+
     public String getBasePath() {
         return this.basePath;
     }
@@ -85,6 +87,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BasePathMapping withBasePath(String basePath) {
         setBasePath(basePath);
         return this;
@@ -98,6 +101,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @param restApiId
      *        The name of the API.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -109,6 +113,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * 
      * @return The name of the API.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -123,6 +128,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BasePathMapping withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -136,6 +142,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @param stage
      *        The name of the API's stage.
      */
+
     public void setStage(String stage) {
         this.stage = stage;
     }
@@ -147,6 +154,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * 
      * @return The name of the API's stage.
      */
+
     public String getStage() {
         return this.stage;
     }
@@ -161,6 +169,7 @@ public class BasePathMapping implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BasePathMapping withStage(String stage) {
         setStage(stage);
         return this;

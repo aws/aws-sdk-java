@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -113,17 +115,17 @@ public class EvaluationResultStaxUnmarshaller implements
 
                 if (context.testExpression("MatchedStatements/member",
                         targetDepth)) {
-                    evaluationResult.getMatchedStatements().add(
-                            StatementStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    evaluationResult
+                            .withMatchedStatements(StatementStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("MissingContextValues/member",
                         targetDepth)) {
-                    evaluationResult.getMissingContextValues().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    evaluationResult
+                            .withMissingContextValues(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -131,15 +133,15 @@ public class EvaluationResultStaxUnmarshaller implements
                         targetDepth)) {
                     Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller
                             .getInstance().unmarshall(context);
-                    evaluationResult.getEvalDecisionDetails().put(
+                    evaluationResult.addEvalDecisionDetailsEntry(
                             entry.getKey(), entry.getValue());
                     continue;
                 }
 
                 if (context.testExpression("ResourceSpecificResults/member",
                         targetDepth)) {
-                    evaluationResult.getResourceSpecificResults().add(
-                            ResourceSpecificResultStaxUnmarshaller
+                    evaluationResult
+                            .withResourceSpecificResults(ResourceSpecificResultStaxUnmarshaller
                                     .getInstance().unmarshall(context));
                     continue;
                 }

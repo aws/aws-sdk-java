@@ -38,6 +38,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -53,6 +55,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * @param accountId
      *        A standard AWS account ID (9+ digits).
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -62,6 +65,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * 
      * @return A standard AWS account ID (9+ digits).
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -74,6 +78,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdRequest withAccountId(String accountId) {
         setAccountId(accountId);
         return this;
@@ -85,6 +90,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -94,6 +100,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -106,6 +113,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -120,6 +128,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -134,12 +144,16 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *         follows:
      *         <ul>
      *         <li>Facebook: <code>graph.facebook.com</code></li>
+     *         <li>Amazon Cognito Identity Provider:
+     *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *         </li>
      *         <li>Google: <code>accounts.google.com</code></li>
      *         <li>Amazon: <code>www.amazon.com</code></li>
      *         <li>Twitter: <code>api.twitter.com</code></li>
      *         <li>Digits: <code>www.digits.com</code></li>
      *         </ul>
      */
+
     public java.util.Map<String, String> getLogins() {
         return logins;
     }
@@ -153,6 +167,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -168,12 +184,16 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        follows:
      *        <ul>
      *        <li>Facebook: <code>graph.facebook.com</code></li>
+     *        <li>Amazon Cognito Identity Provider:
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
      *        <li>Twitter: <code>api.twitter.com</code></li>
      *        <li>Digits: <code>www.digits.com</code></li>
      *        </ul>
      */
+
     public void setLogins(java.util.Map<String, String> logins) {
         this.logins = logins;
     }
@@ -187,6 +207,8 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * The available provider names for <code>Logins</code> are as follows:
      * <ul>
      * <li>Facebook: <code>graph.facebook.com</code></li>
+     * <li>Amazon Cognito Identity Provider:
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li>
      * <li>Google: <code>accounts.google.com</code></li>
      * <li>Amazon: <code>www.amazon.com</code></li>
      * <li>Twitter: <code>api.twitter.com</code></li>
@@ -202,6 +224,9 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      *        follows:
      *        <ul>
      *        <li>Facebook: <code>graph.facebook.com</code></li>
+     *        <li>Amazon Cognito Identity Provider:
+     *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+     *        </li>
      *        <li>Google: <code>accounts.google.com</code></li>
      *        <li>Amazon: <code>www.amazon.com</code></li>
      *        <li>Twitter: <code>api.twitter.com</code></li>
@@ -210,6 +235,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdRequest withLogins(java.util.Map<String, String> logins) {
         setLogins(logins);
         return this;
@@ -230,6 +256,7 @@ public class GetIdRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Logins. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public GetIdRequest clearLoginsEntries() {
         this.logins = null;
         return this;

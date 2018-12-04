@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.opsworks.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BlockDeviceMappingMarshaller
@@ -39,40 +34,38 @@ import com.amazonaws.util.json.*;
 public class BlockDeviceMappingJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(BlockDeviceMapping blockDeviceMapping,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (blockDeviceMapping == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (blockDeviceMapping.getDeviceName() != null) {
-                jsonWriter.key("DeviceName").value(
+                jsonGenerator.writeFieldName("DeviceName").writeValue(
                         blockDeviceMapping.getDeviceName());
             }
-
             if (blockDeviceMapping.getNoDevice() != null) {
-                jsonWriter.key("NoDevice").value(
+                jsonGenerator.writeFieldName("NoDevice").writeValue(
                         blockDeviceMapping.getNoDevice());
             }
-
             if (blockDeviceMapping.getVirtualName() != null) {
-                jsonWriter.key("VirtualName").value(
+                jsonGenerator.writeFieldName("VirtualName").writeValue(
                         blockDeviceMapping.getVirtualName());
             }
-
             if (blockDeviceMapping.getEbs() != null) {
-                jsonWriter.key("Ebs");
+                jsonGenerator.writeFieldName("Ebs");
                 EbsBlockDeviceJsonMarshaller.getInstance().marshall(
-                        blockDeviceMapping.getEbs(), jsonWriter);
+                        blockDeviceMapping.getEbs(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

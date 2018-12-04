@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -71,6 +73,14 @@ public class HealthCheckStaxUnmarshaller implements
                 if (context.testExpression("HealthCheckVersion", targetDepth)) {
                     healthCheck.setHealthCheckVersion(LongStaxUnmarshaller
                             .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CloudWatchAlarmConfiguration",
+                        targetDepth)) {
+                    healthCheck
+                            .setCloudWatchAlarmConfiguration(CloudWatchAlarmConfigurationStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

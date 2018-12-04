@@ -49,6 +49,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return An account limit structure that contain a list of AWS
      *         CloudFormation account limits and their values.
      */
+
     public java.util.List<AccountLimit> getAccountLimits() {
         if (accountLimits == null) {
             accountLimits = new com.amazonaws.internal.SdkInternalList<AccountLimit>();
@@ -66,6 +67,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      *        An account limit structure that contain a list of AWS
      *        CloudFormation account limits and their values.
      */
+
     public void setAccountLimits(
             java.util.Collection<AccountLimit> accountLimits) {
         if (accountLimits == null) {
@@ -95,6 +97,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withAccountLimits(
             AccountLimit... accountLimits) {
         if (this.accountLimits == null) {
@@ -119,6 +122,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withAccountLimits(
             java.util.Collection<AccountLimit> accountLimits) {
         setAccountLimits(accountLimits);
@@ -136,6 +140,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      *        next page of limits. If no additional page exists, this value is
      *        null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -150,6 +155,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      *         next page of limits. If no additional page exists, this value is
      *         null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -167,6 +173,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

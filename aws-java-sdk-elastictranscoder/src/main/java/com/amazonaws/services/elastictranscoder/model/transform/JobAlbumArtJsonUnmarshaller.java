@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class JobAlbumArtJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("MergePolicy", targetDepth)) {
                     context.nextToken();
-                    jobAlbumArt.setMergePolicy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    jobAlbumArt.setMergePolicy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Artwork", targetDepth)) {
                     context.nextToken();

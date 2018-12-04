@@ -99,7 +99,7 @@ public final class AWS4SignerRequestParams {
      * Returns the signing date from the request.
      */
     private final long getSigningDate(SignableRequest<?> request) {
-        return System.currentTimeMillis() - request.getTimeOffset() * 1000;
+        return System.currentTimeMillis() - request.getTimeOffset() * 1000L;
     }
 
     /**

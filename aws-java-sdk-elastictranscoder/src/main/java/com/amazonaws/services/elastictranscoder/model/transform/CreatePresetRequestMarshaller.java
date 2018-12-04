@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreatePresetRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class CreatePresetRequestMarshaller implements
         Marshaller<Request<CreatePresetRequest>, CreatePresetRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreatePresetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreatePresetRequest> marshall(
             CreatePresetRequest createPresetRequest) {
@@ -66,48 +74,42 @@ public class CreatePresetRequestMarshaller implements
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (createPresetRequest.getName() != null) {
-                jsonWriter.key("Name").value(createPresetRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createPresetRequest.getName());
             }
-
             if (createPresetRequest.getDescription() != null) {
-                jsonWriter.key("Description").value(
+                jsonGenerator.writeFieldName("Description").writeValue(
                         createPresetRequest.getDescription());
             }
-
             if (createPresetRequest.getContainer() != null) {
-                jsonWriter.key("Container").value(
+                jsonGenerator.writeFieldName("Container").writeValue(
                         createPresetRequest.getContainer());
             }
-
             if (createPresetRequest.getVideo() != null) {
-                jsonWriter.key("Video");
+                jsonGenerator.writeFieldName("Video");
                 VideoParametersJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getVideo(), jsonWriter);
+                        createPresetRequest.getVideo(), jsonGenerator);
             }
-
             if (createPresetRequest.getAudio() != null) {
-                jsonWriter.key("Audio");
+                jsonGenerator.writeFieldName("Audio");
                 AudioParametersJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getAudio(), jsonWriter);
+                        createPresetRequest.getAudio(), jsonGenerator);
             }
-
             if (createPresetRequest.getThumbnails() != null) {
-                jsonWriter.key("Thumbnails");
+                jsonGenerator.writeFieldName("Thumbnails");
                 ThumbnailsJsonMarshaller.getInstance().marshall(
-                        createPresetRequest.getThumbnails(), jsonWriter);
+                        createPresetRequest.getThumbnails(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

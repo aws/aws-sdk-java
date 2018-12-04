@@ -40,6 +40,7 @@ public class DisassociateElasticIpRequest extends AmazonWebServiceRequest
      * @param elasticIp
      *        The Elastic IP address.
      */
+
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
     }
@@ -51,6 +52,7 @@ public class DisassociateElasticIpRequest extends AmazonWebServiceRequest
      * 
      * @return The Elastic IP address.
      */
+
     public String getElasticIp() {
         return this.elasticIp;
     }
@@ -65,6 +67,7 @@ public class DisassociateElasticIpRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DisassociateElasticIpRequest withElasticIp(String elasticIp) {
         setElasticIp(elasticIp);
         return this;

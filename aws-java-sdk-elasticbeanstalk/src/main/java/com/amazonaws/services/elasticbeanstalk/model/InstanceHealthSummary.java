@@ -93,6 +93,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param noData
      *        Grey.
      */
+
     public void setNoData(Integer noData) {
         this.noData = noData;
     }
@@ -105,6 +106,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Grey.
      */
+
     public Integer getNoData() {
         return this.noData;
     }
@@ -120,6 +122,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withNoData(Integer noData) {
         setNoData(noData);
         return this;
@@ -134,6 +137,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param unknown
      *        Grey.
      */
+
     public void setUnknown(Integer unknown) {
         this.unknown = unknown;
     }
@@ -146,6 +150,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Grey.
      */
+
     public Integer getUnknown() {
         return this.unknown;
     }
@@ -161,6 +166,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withUnknown(Integer unknown) {
         setUnknown(unknown);
         return this;
@@ -175,6 +181,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param pending
      *        Grey.
      */
+
     public void setPending(Integer pending) {
         this.pending = pending;
     }
@@ -187,6 +194,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Grey.
      */
+
     public Integer getPending() {
         return this.pending;
     }
@@ -202,6 +210,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withPending(Integer pending) {
         setPending(pending);
         return this;
@@ -216,6 +225,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param ok
      *        Green.
      */
+
     public void setOk(Integer ok) {
         this.ok = ok;
     }
@@ -228,6 +238,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Green.
      */
+
     public Integer getOk() {
         return this.ok;
     }
@@ -243,6 +254,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withOk(Integer ok) {
         setOk(ok);
         return this;
@@ -256,6 +268,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param info
      *        Green.
      */
+
     public void setInfo(Integer info) {
         this.info = info;
     }
@@ -267,6 +280,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Green.
      */
+
     public Integer getInfo() {
         return this.info;
     }
@@ -281,6 +295,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withInfo(Integer info) {
         setInfo(info);
         return this;
@@ -295,6 +310,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param warning
      *        Yellow.
      */
+
     public void setWarning(Integer warning) {
         this.warning = warning;
     }
@@ -307,6 +323,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Yellow.
      */
+
     public Integer getWarning() {
         return this.warning;
     }
@@ -322,6 +339,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withWarning(Integer warning) {
         setWarning(warning);
         return this;
@@ -336,6 +354,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param degraded
      *        Red.
      */
+
     public void setDegraded(Integer degraded) {
         this.degraded = degraded;
     }
@@ -348,6 +367,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Red.
      */
+
     public Integer getDegraded() {
         return this.degraded;
     }
@@ -363,6 +383,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withDegraded(Integer degraded) {
         setDegraded(degraded);
         return this;
@@ -377,6 +398,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @param severe
      *        Red.
      */
+
     public void setSevere(Integer severe) {
         this.severe = severe;
     }
@@ -389,6 +411,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * 
      * @return Red.
      */
+
     public Integer getSevere() {
         return this.severe;
     }
@@ -404,6 +427,7 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceHealthSummary withSevere(Integer severe) {
         setSevere(severe);
         return this;

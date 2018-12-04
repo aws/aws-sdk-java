@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RejectCertificateTransferRequest Marshaller
@@ -47,7 +49,14 @@ public class RejectCertificateTransferRequestMarshaller
         implements
         Marshaller<Request<RejectCertificateTransferRequest>, RejectCertificateTransferRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RejectCertificateTransferRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RejectCertificateTransferRequest> marshall(
             RejectCertificateTransferRequest rejectCertificateTransferRequest) {
@@ -67,15 +76,35 @@ public class RejectCertificateTransferRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{certificateId}",
-                        (rejectCertificateTransferRequest.getCertificateId() == null) ? ""
-                                : StringUtils
+                        (rejectCertificateTransferRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(rejectCertificateTransferRequest
-                                                .getCertificateId()));
+                                                .getCertificateId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+        try {
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
+
+            if (rejectCertificateTransferRequest.getRejectReason() != null) {
+                jsonGenerator.writeFieldName("rejectReason").writeValue(
+                        rejectCertificateTransferRequest.getRejectReason());
+            }
+
+            jsonGenerator.writeEndObject();
+
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
+            request.addHeader("Content-Length",
+                    Integer.toString(content.length));
+            if (!request.getHeaders().containsKey("Content-Type")) {
+                request.addHeader("Content-Type", DEFAULT_CONTENT_TYPE);
+            }
+        } catch (Throwable t) {
+            throw new AmazonClientException(
+                    "Unable to marshall request to JSON: " + t.getMessage(), t);
         }
 
         return request;

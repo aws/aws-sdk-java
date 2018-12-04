@@ -53,6 +53,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @param clientArn
      *        The ARN of the client.
      */
+
     public void setClientArn(String clientArn) {
         this.clientArn = clientArn;
     }
@@ -64,6 +65,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the client.
      */
+
     public String getClientArn() {
         return this.clientArn;
     }
@@ -78,6 +80,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigRequest withClientArn(String clientArn) {
         setClientArn(clientArn);
         return this;
@@ -92,6 +95,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      *        The client version.
      * @see ClientVersion
      */
+
     public void setClientVersion(String clientVersion) {
         this.clientVersion = clientVersion;
     }
@@ -104,6 +108,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @return The client version.
      * @see ClientVersion
      */
+
     public String getClientVersion() {
         return this.clientVersion;
     }
@@ -119,6 +124,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ClientVersion
      */
+
     public GetConfigRequest withClientVersion(String clientVersion) {
         setClientVersion(clientVersion);
         return this;
@@ -131,10 +137,9 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * 
      * @param clientVersion
      *        The client version.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ClientVersion
      */
+
     public void setClientVersion(ClientVersion clientVersion) {
         this.clientVersion = clientVersion.toString();
     }
@@ -150,6 +155,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ClientVersion
      */
+
     public GetConfigRequest withClientVersion(ClientVersion clientVersion) {
         setClientVersion(clientVersion);
         return this;
@@ -164,6 +170,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @return A list of ARNs that identify the high-availability partition
      *         groups that are associated with the client.
      */
+
     public java.util.List<String> getHapgList() {
         if (hapgList == null) {
             hapgList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -181,6 +188,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      *        A list of ARNs that identify the high-availability partition
      *        groups that are associated with the client.
      */
+
     public void setHapgList(java.util.Collection<String> hapgList) {
         if (hapgList == null) {
             this.hapgList = null;
@@ -209,6 +217,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigRequest withHapgList(String... hapgList) {
         if (this.hapgList == null) {
             setHapgList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -232,6 +241,7 @@ public class GetConfigRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetConfigRequest withHapgList(java.util.Collection<String> hapgList) {
         setHapgList(hapgList);
         return this;

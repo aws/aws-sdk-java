@@ -38,6 +38,7 @@ public class ConfirmSubscriptionResult implements Serializable, Cloneable {
      * @param subscriptionArn
      *        The ARN of the created subscription.
      */
+
     public void setSubscriptionArn(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
@@ -49,6 +50,7 @@ public class ConfirmSubscriptionResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the created subscription.
      */
+
     public String getSubscriptionArn() {
         return this.subscriptionArn;
     }
@@ -63,6 +65,7 @@ public class ConfirmSubscriptionResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfirmSubscriptionResult withSubscriptionArn(String subscriptionArn) {
         setSubscriptionArn(subscriptionArn);
         return this;

@@ -42,6 +42,7 @@ public class Query implements Serializable, Cloneable {
      * @return List of selectors that define the query. An object must satisfy
      *         all of the selectors to match the query.
      */
+
     public java.util.List<Selector> getSelectors() {
         if (selectors == null) {
             selectors = new com.amazonaws.internal.SdkInternalList<Selector>();
@@ -59,6 +60,7 @@ public class Query implements Serializable, Cloneable {
      *        List of selectors that define the query. An object must satisfy
      *        all of the selectors to match the query.
      */
+
     public void setSelectors(java.util.Collection<Selector> selectors) {
         if (selectors == null) {
             this.selectors = null;
@@ -87,6 +89,7 @@ public class Query implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Query withSelectors(Selector... selectors) {
         if (this.selectors == null) {
             setSelectors(new com.amazonaws.internal.SdkInternalList<Selector>(
@@ -110,6 +113,7 @@ public class Query implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Query withSelectors(java.util.Collection<Selector> selectors) {
         setSelectors(selectors);
         return this;

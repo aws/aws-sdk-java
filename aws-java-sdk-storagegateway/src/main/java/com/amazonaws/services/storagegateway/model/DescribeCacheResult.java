@@ -40,6 +40,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -47,6 +48,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -56,6 +58,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -64,6 +67,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<String> getDiskIds() {
         if (diskIds == null) {
             diskIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -74,6 +78,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param diskIds
      */
+
     public void setDiskIds(java.util.Collection<String> diskIds) {
         if (diskIds == null) {
             this.diskIds = null;
@@ -96,6 +101,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withDiskIds(String... diskIds) {
         if (this.diskIds == null) {
             setDiskIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -112,6 +118,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withDiskIds(java.util.Collection<String> diskIds) {
         setDiskIds(diskIds);
         return this;
@@ -120,6 +127,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param cacheAllocatedInBytes
      */
+
     public void setCacheAllocatedInBytes(Long cacheAllocatedInBytes) {
         this.cacheAllocatedInBytes = cacheAllocatedInBytes;
     }
@@ -127,6 +135,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Long getCacheAllocatedInBytes() {
         return this.cacheAllocatedInBytes;
     }
@@ -136,6 +145,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withCacheAllocatedInBytes(
             Long cacheAllocatedInBytes) {
         setCacheAllocatedInBytes(cacheAllocatedInBytes);
@@ -145,6 +155,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param cacheUsedPercentage
      */
+
     public void setCacheUsedPercentage(Double cacheUsedPercentage) {
         this.cacheUsedPercentage = cacheUsedPercentage;
     }
@@ -152,6 +163,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Double getCacheUsedPercentage() {
         return this.cacheUsedPercentage;
     }
@@ -161,6 +173,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withCacheUsedPercentage(
             Double cacheUsedPercentage) {
         setCacheUsedPercentage(cacheUsedPercentage);
@@ -170,6 +183,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param cacheDirtyPercentage
      */
+
     public void setCacheDirtyPercentage(Double cacheDirtyPercentage) {
         this.cacheDirtyPercentage = cacheDirtyPercentage;
     }
@@ -177,6 +191,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Double getCacheDirtyPercentage() {
         return this.cacheDirtyPercentage;
     }
@@ -186,6 +201,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withCacheDirtyPercentage(
             Double cacheDirtyPercentage) {
         setCacheDirtyPercentage(cacheDirtyPercentage);
@@ -195,6 +211,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param cacheHitPercentage
      */
+
     public void setCacheHitPercentage(Double cacheHitPercentage) {
         this.cacheHitPercentage = cacheHitPercentage;
     }
@@ -202,6 +219,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Double getCacheHitPercentage() {
         return this.cacheHitPercentage;
     }
@@ -211,6 +229,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withCacheHitPercentage(Double cacheHitPercentage) {
         setCacheHitPercentage(cacheHitPercentage);
         return this;
@@ -219,6 +238,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @param cacheMissPercentage
      */
+
     public void setCacheMissPercentage(Double cacheMissPercentage) {
         this.cacheMissPercentage = cacheMissPercentage;
     }
@@ -226,6 +246,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Double getCacheMissPercentage() {
         return this.cacheMissPercentage;
     }
@@ -235,6 +256,7 @@ public class DescribeCacheResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeCacheResult withCacheMissPercentage(
             Double cacheMissPercentage) {
         setCacheMissPercentage(cacheMissPercentage);

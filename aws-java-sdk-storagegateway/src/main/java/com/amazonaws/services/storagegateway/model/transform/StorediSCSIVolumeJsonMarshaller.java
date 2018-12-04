@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StorediSCSIVolumeMarshaller
@@ -39,71 +34,64 @@ import com.amazonaws.util.json.*;
 public class StorediSCSIVolumeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StorediSCSIVolume storediSCSIVolume,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (storediSCSIVolume == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (storediSCSIVolume.getVolumeARN() != null) {
-                jsonWriter.key("VolumeARN").value(
+                jsonGenerator.writeFieldName("VolumeARN").writeValue(
                         storediSCSIVolume.getVolumeARN());
             }
-
             if (storediSCSIVolume.getVolumeId() != null) {
-                jsonWriter.key("VolumeId").value(
+                jsonGenerator.writeFieldName("VolumeId").writeValue(
                         storediSCSIVolume.getVolumeId());
             }
-
             if (storediSCSIVolume.getVolumeType() != null) {
-                jsonWriter.key("VolumeType").value(
+                jsonGenerator.writeFieldName("VolumeType").writeValue(
                         storediSCSIVolume.getVolumeType());
             }
-
             if (storediSCSIVolume.getVolumeStatus() != null) {
-                jsonWriter.key("VolumeStatus").value(
+                jsonGenerator.writeFieldName("VolumeStatus").writeValue(
                         storediSCSIVolume.getVolumeStatus());
             }
-
             if (storediSCSIVolume.getVolumeSizeInBytes() != null) {
-                jsonWriter.key("VolumeSizeInBytes").value(
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
                         storediSCSIVolume.getVolumeSizeInBytes());
             }
-
             if (storediSCSIVolume.getVolumeProgress() != null) {
-                jsonWriter.key("VolumeProgress").value(
+                jsonGenerator.writeFieldName("VolumeProgress").writeValue(
                         storediSCSIVolume.getVolumeProgress());
             }
-
             if (storediSCSIVolume.getVolumeDiskId() != null) {
-                jsonWriter.key("VolumeDiskId").value(
+                jsonGenerator.writeFieldName("VolumeDiskId").writeValue(
                         storediSCSIVolume.getVolumeDiskId());
             }
-
             if (storediSCSIVolume.getSourceSnapshotId() != null) {
-                jsonWriter.key("SourceSnapshotId").value(
+                jsonGenerator.writeFieldName("SourceSnapshotId").writeValue(
                         storediSCSIVolume.getSourceSnapshotId());
             }
-
             if (storediSCSIVolume.getPreservedExistingData() != null) {
-                jsonWriter.key("PreservedExistingData").value(
-                        storediSCSIVolume.getPreservedExistingData());
+                jsonGenerator.writeFieldName("PreservedExistingData")
+                        .writeValue(
+                                storediSCSIVolume.getPreservedExistingData());
             }
-
             if (storediSCSIVolume.getVolumeiSCSIAttributes() != null) {
-                jsonWriter.key("VolumeiSCSIAttributes");
+                jsonGenerator.writeFieldName("VolumeiSCSIAttributes");
                 VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(
                         storediSCSIVolume.getVolumeiSCSIAttributes(),
-                        jsonWriter);
+                        jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -30,6 +30,7 @@ public class GetJobResult implements Serializable, Cloneable {
     /**
      * @param job
      */
+
     public void setJob(Job job) {
         this.job = job;
     }
@@ -37,6 +38,7 @@ public class GetJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Job getJob() {
         return this.job;
     }
@@ -46,6 +48,7 @@ public class GetJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetJobResult withJob(Job job) {
         setJob(job);
         return this;

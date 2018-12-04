@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.services.logs.model.transform.*;
@@ -44,66 +46,51 @@ import com.amazonaws.services.logs.model.transform.*;
  * <p>
  * <fullname>Amazon CloudWatch Logs API Reference</fullname>
  * <p>
- * This is the <i>Amazon CloudWatch Logs API Reference</i>. Amazon CloudWatch
- * Logs enables you to monitor, store, and access your system, application, and
- * custom log files. This guide provides detailed information about Amazon
- * CloudWatch Logs actions, data types, parameters, and errors. For detailed
- * information about Amazon CloudWatch Logs features and their associated API
- * calls, go to the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide"
- * >Amazon CloudWatch Developer Guide</a>.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log
+ * files from Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon
+ * CloudTrail, or other sources. You can then retrieve the associated log data
+ * from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch Logs
+ * commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch Logs
- * API Reference</i>:
+ * You can use CloudWatch Logs to:
  * </p>
  * <ul>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Operations.html"
- * >Actions</a>: An alphabetical list of all Amazon CloudWatch Logs actions.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Types.html"
- * >Data Types</a>: An alphabetical list of all Amazon CloudWatch Logs data
- * types.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html"
- * >Common Parameters</a>: Parameters that all Query actions can use.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonErrors.html"
- * >Common Errors</a>: Client and server errors that all actions can return.</li>
- * <li><a
- * href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html"
- * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
- * products.</li>
- * </ul>
+ * <li>
  * <p>
- * In addition to using the Amazon CloudWatch Logs API, you can also use the
- * following SDKs and third-party libraries to access Amazon CloudWatch Logs
- * programmatically.
+ * <b>Monitor Logs from Amazon EC2 Instances in Real-time</b>: You can use
+ * CloudWatch Logs to monitor applications and systems using log data. For
+ * example, CloudWatch Logs can track the number of errors that occur in your
+ * application logs and send you a notification whenever the rate of errors
+ * exceeds a threshold you specify. CloudWatch Logs uses your log data for
+ * monitoring; so, no code changes are required. For example, you can monitor
+ * application logs for specific literal terms (such as
+ * "NullReferenceException") or count the number of occurrences of a literal
+ * term at a particular position in log data (such as "404" status codes in an
+ * Apache access log). When the term you are searching for is found, CloudWatch
+ * Logs reports the data to a Amazon CloudWatch metric that you specify.
  * </p>
- * <ul>
- * <li><a href="http://aws.amazon.com/documentation/sdkforjava/">AWS SDK for
- * Java Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkfornet/">AWS SDK for .NET
- * Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforphp/">AWS SDK for PHP
- * Documentation</a></li>
- * <li><a href="http://aws.amazon.com/documentation/sdkforruby/">AWS SDK for
- * Ruby Documentation</a></li>
- * </ul>
+ * </li>
+ * <li>
  * <p>
- * Developers in the AWS developer community also provide their own libraries,
- * which you can find at the following AWS developer centers:
+ * <b>Monitor Amazon CloudTrail Logged Events</b>: You can create alarms in
+ * Amazon CloudWatch and receive notifications of particular API activity as
+ * captured by CloudTrail and use the notification to perform troubleshooting.
  * </p>
- * <ul>
- * <li><a href="http://aws.amazon.com/java/">AWS Java Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/php/">AWS PHP Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/python/">AWS Python Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/ruby/">AWS Ruby Developer Center</a></li>
- * <li><a href="http://aws.amazon.com/net/">AWS Windows and .NET Developer
- * Center</a></li>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Archive Log Data</b>: You can use CloudWatch Logs to store your log data
+ * in highly durable storage. You can change the log retention setting so that
+ * any log events older than this setting are automatically deleted. The
+ * CloudWatch Logs agent makes it easy to quickly send both rotated and
+ * non-rotated log data off of a host and into the log service. You can then
+ * access the raw log data when you need it.
+ * </p>
+ * </li>
  * </ul>
  */
+@ThreadSafe
 public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
@@ -117,10 +104,64 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     private static final String DEFAULT_ENDPOINT_PREFIX = "logs";
 
     /**
-     * List of exception unmarshallers for all Amazon CloudWatch Logs
-     * exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ResourceAlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ServiceUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidSequenceTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.InvalidSequenceTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.InvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidParameterException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("OperationAbortedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.OperationAbortedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "DataAlreadyAcceptedException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.logs.model.ResourceNotFoundException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch
@@ -140,8 +181,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSLogsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -183,8 +224,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *        authenticating with AWS services.
      */
     public AWSLogsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -225,8 +265,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *        authenticate requests with AWS services.
      */
     public AWSLogsClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -279,44 +318,6 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.ResourceAlreadyExistsException.class,
-                        "ResourceAlreadyExistsException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.logs.model.LimitExceededException.class,
-                "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.ServiceUnavailableException.class,
-                        "ServiceUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.InvalidSequenceTokenException.class,
-                        "InvalidSequenceTokenException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.InvalidOperationException.class,
-                        "InvalidOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.InvalidParameterException.class,
-                        "InvalidParameterException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.OperationAbortedException.class,
-                        "OperationAbortedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class,
-                        "DataAlreadyAcceptedException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.logs.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -337,6 +338,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param cancelExportTaskRequest
+     * @return Result of the CancelExportTask operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -348,18 +350,19 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.CancelExportTask
      */
     @Override
-    public void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) {
+    public CancelExportTaskResult cancelExportTask(
+            CancelExportTaskRequest cancelExportTaskRequest) {
         ExecutionContext executionContext = createExecutionContext(cancelExportTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CancelExportTaskRequest> request = null;
-        Response<Void> response = null;
+        Response<CancelExportTaskResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelExportTaskRequestMarshaller()
+                request = new CancelExportTaskRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
@@ -368,10 +371,14 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelExportTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelExportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -388,7 +395,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * This is an asynchronous call. If all the required information is
      * provided, this API will initiate an export task and respond with the task
      * Id. Once started, <code>DescribeExportTasks</code> can be used to get the
-     * status of an export task.
+     * status of an export task. You can only have one active (
+     * <code>RUNNING</code> or <code>PENDING</code>) export task at a time, per
+     * account.
      * </p>
      * <p>
      * You can export logs from multiple log groups or multiple time ranges to
@@ -428,7 +437,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateExportTaskRequestMarshaller()
+                request = new CreateExportTaskRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(createExportTaskRequest));
                 // Binds the request metrics to the current request.
@@ -437,9 +446,11 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateExportTaskResult> responseHandler = new JsonResponseHandler<CreateExportTaskResult>(
-                    new CreateExportTaskResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExportTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateExportTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -466,6 +477,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param createLogGroupRequest
+     * @return Result of the CreateLogGroup operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -481,29 +493,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.CreateLogGroup
      */
     @Override
-    public void createLogGroup(CreateLogGroupRequest createLogGroupRequest) {
+    public CreateLogGroupResult createLogGroup(
+            CreateLogGroupRequest createLogGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(createLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateLogGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateLogGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogGroupRequestMarshaller().marshall(super
-                        .beforeMarshalling(createLogGroupRequest));
+                request = new CreateLogGroupRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLogGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -526,6 +544,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param createLogStreamRequest
+     * @return Result of the CreateLogStream operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceAlreadyExistsException
@@ -537,29 +556,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.CreateLogStream
      */
     @Override
-    public void createLogStream(CreateLogStreamRequest createLogStreamRequest) {
+    public CreateLogStreamResult createLogStream(
+            CreateLogStreamRequest createLogStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(createLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateLogStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateLogStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLogStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(createLogStreamRequest));
+                request = new CreateLogStreamRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(createLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLogStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateLogStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -575,6 +600,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteDestinationRequest
+     * @return Result of the DeleteDestination operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -587,31 +614,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteDestination
      */
     @Override
-    public void deleteDestination(
+    public DeleteDestinationResult deleteDestination(
             DeleteDestinationRequest deleteDestinationRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteDestinationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteDestinationRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteDestinationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDestinationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteDestinationRequest));
+                request = new DeleteDestinationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDestinationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -626,6 +657,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteLogGroupRequest
+     * @return Result of the DeleteLogGroup operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -638,29 +670,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteLogGroup
      */
     @Override
-    public void deleteLogGroup(DeleteLogGroupRequest deleteLogGroupRequest) {
+    public DeleteLogGroupResult deleteLogGroup(
+            DeleteLogGroupRequest deleteLogGroupRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLogGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLogGroupRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteLogGroupResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogGroupRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteLogGroupRequest));
+                request = new DeleteLogGroupRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteLogGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLogGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -675,6 +713,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteLogStreamRequest
+     * @return Result of the DeleteLogStream operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -687,29 +726,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteLogStream
      */
     @Override
-    public void deleteLogStream(DeleteLogStreamRequest deleteLogStreamRequest) {
+    public DeleteLogStreamResult deleteLogStream(
+            DeleteLogStreamRequest deleteLogStreamRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteLogStreamRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteLogStreamRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteLogStreamResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLogStreamRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteLogStreamRequest));
+                request = new DeleteLogStreamRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(deleteLogStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLogStreamResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteLogStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -723,6 +768,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteMetricFilterRequest
+     * @return Result of the DeleteMetricFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -735,31 +782,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteMetricFilter
      */
     @Override
-    public void deleteMetricFilter(
+    public DeleteMetricFilterResult deleteMetricFilter(
             DeleteMetricFilterRequest deleteMetricFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteMetricFilterRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteMetricFilterResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMetricFilterRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteMetricFilterRequest));
+                request = new DeleteMetricFilterRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMetricFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteMetricFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -774,6 +825,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteRetentionPolicyRequest
+     * @return Result of the DeleteRetentionPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -786,31 +839,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteRetentionPolicy
      */
     @Override
-    public void deleteRetentionPolicy(
+    public DeleteRetentionPolicyResult deleteRetentionPolicy(
             DeleteRetentionPolicyRequest deleteRetentionPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRetentionPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRetentionPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRetentionPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteRetentionPolicyRequest));
+                request = new DeleteRetentionPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRetentionPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRetentionPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -824,6 +881,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param deleteSubscriptionFilterRequest
+     * @return Result of the DeleteSubscriptionFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -836,31 +895,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.DeleteSubscriptionFilter
      */
     @Override
-    public void deleteSubscriptionFilter(
+    public DeleteSubscriptionFilterResult deleteSubscriptionFilter(
             DeleteSubscriptionFilterRequest deleteSubscriptionFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteSubscriptionFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteSubscriptionFilterRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteSubscriptionFilterResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriptionFilterRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteSubscriptionFilterRequest));
+                request = new DeleteSubscriptionFilterRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSubscriptionFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DeleteSubscriptionFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -904,18 +967,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDestinationsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeDestinationsRequest));
+                request = new DescribeDestinationsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeDestinationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeDestinationsResult> responseHandler = new JsonResponseHandler<DescribeDestinationsResult>(
-                    new DescribeDestinationsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDestinationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeDestinationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -968,18 +1033,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeExportTasksRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeExportTasksRequest));
+                request = new DescribeExportTasksRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeExportTasksResult> responseHandler = new JsonResponseHandler<DescribeExportTasksResult>(
-                    new DescribeExportTasksResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExportTasksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeExportTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1026,18 +1093,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLogGroupsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeLogGroupsRequest));
+                request = new DescribeLogGroupsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeLogGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLogGroupsResult> responseHandler = new JsonResponseHandler<DescribeLogGroupsResult>(
-                    new DescribeLogGroupsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLogGroupsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeLogGroupsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1093,18 +1162,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLogStreamsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeLogStreamsRequest));
+                request = new DescribeLogStreamsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeLogStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeLogStreamsResult> responseHandler = new JsonResponseHandler<DescribeLogStreamsResult>(
-                    new DescribeLogStreamsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLogStreamsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeLogStreamsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1152,18 +1223,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMetricFiltersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeMetricFiltersRequest));
+                request = new DescribeMetricFiltersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeMetricFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeMetricFiltersResult> responseHandler = new JsonResponseHandler<DescribeMetricFiltersResult>(
-                    new DescribeMetricFiltersResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMetricFiltersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeMetricFiltersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1211,18 +1284,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubscriptionFiltersRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeSubscriptionFiltersRequest));
+                request = new DescribeSubscriptionFiltersRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeSubscriptionFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeSubscriptionFiltersResult> responseHandler = new JsonResponseHandler<DescribeSubscriptionFiltersResult>(
-                    new DescribeSubscriptionFiltersResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSubscriptionFiltersResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new DescribeSubscriptionFiltersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1278,17 +1353,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new FilterLogEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(filterLogEventsRequest));
+                request = new FilterLogEventsRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(filterLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<FilterLogEventsResult> responseHandler = new JsonResponseHandler<FilterLogEventsResult>(
-                    new FilterLogEventsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<FilterLogEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new FilterLogEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1340,17 +1418,19 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLogEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(getLogEventsRequest));
+                request = new GetLogEventsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetLogEventsResult> responseHandler = new JsonResponseHandler<GetLogEventsResult>(
-                    new GetLogEventsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetLogEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetLogEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1403,17 +1483,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDestinationRequestMarshaller().marshall(super
-                        .beforeMarshalling(putDestinationRequest));
+                request = new PutDestinationRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(putDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutDestinationResult> responseHandler = new JsonResponseHandler<PutDestinationResult>(
-                    new PutDestinationResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutDestinationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutDestinationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1434,6 +1517,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putDestinationPolicyRequest
+     * @return Result of the PutDestinationPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws OperationAbortedException
@@ -1444,31 +1529,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.PutDestinationPolicy
      */
     @Override
-    public void putDestinationPolicy(
+    public PutDestinationPolicyResult putDestinationPolicy(
             PutDestinationPolicyRequest putDestinationPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putDestinationPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutDestinationPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutDestinationPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDestinationPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putDestinationPolicyRequest));
+                request = new PutDestinationPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putDestinationPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutDestinationPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutDestinationPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1499,6 +1588,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <li>The log events in the batch must be in chronological ordered by their
      * <code class="code">timestamp</code>.</li>
      * <li>The maximum number of log events in a batch is 10,000.</li>
+     * <li>A batch of log events in a single PutLogEvents request cannot span
+     * more than 24 hours. Otherwise, the PutLogEvents operation will fail.</li>
      * </ul>
      * </p>
      * 
@@ -1530,17 +1621,19 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutLogEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(putLogEventsRequest));
+                request = new PutLogEventsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutLogEventsResult> responseHandler = new JsonResponseHandler<PutLogEventsResult>(
-                    new PutLogEventsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutLogEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutLogEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1564,6 +1657,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putMetricFilterRequest
+     * @return Result of the PutMetricFilter operation returned by the service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1579,29 +1673,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.PutMetricFilter
      */
     @Override
-    public void putMetricFilter(PutMetricFilterRequest putMetricFilterRequest) {
+    public PutMetricFilterResult putMetricFilter(
+            PutMetricFilterRequest putMetricFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutMetricFilterRequest> request = null;
-        Response<Void> response = null;
+        Response<PutMetricFilterResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutMetricFilterRequestMarshaller().marshall(super
-                        .beforeMarshalling(putMetricFilterRequest));
+                request = new PutMetricFilterRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(putMetricFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutMetricFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutMetricFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1617,6 +1717,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putRetentionPolicyRequest
+     * @return Result of the PutRetentionPolicy operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1629,31 +1731,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.PutRetentionPolicy
      */
     @Override
-    public void putRetentionPolicy(
+    public PutRetentionPolicyResult putRetentionPolicy(
             PutRetentionPolicyRequest putRetentionPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putRetentionPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutRetentionPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutRetentionPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRetentionPolicyRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putRetentionPolicyRequest));
+                request = new PutRetentionPolicyRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutRetentionPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRetentionPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1669,10 +1775,14 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <code class="code">PutLogEvents</code> requests and have them delivered
      * to a specific destination. Currently, the supported destinations are:
      * <ul>
-     * <li>A Amazon Kinesis stream belonging to the same account as the
+     * <li>An Amazon Kinesis stream belonging to the same account as the
      * subscription filter, for same-account delivery.</li>
      * <li>A logical destination (used via an ARN of <code>Destination</code>)
      * belonging to a different account, for cross-account delivery.</li>
+     * <li>An Amazon Kinesis Firehose stream belonging to the same account as
+     * the subscription filter, for same-account delivery.</li>
+     * <li>An AWS Lambda function belonging to the same account as the
+     * subscription filter, for same-account delivery.</li>
      * </ul>
      * </p>
      * <p>
@@ -1681,6 +1791,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * 
      * @param putSubscriptionFilterRequest
+     * @return Result of the PutSubscriptionFilter operation returned by the
+     *         service.
      * @throws InvalidParameterException
      *         Returned if a parameter of the request is incorrectly specified.
      * @throws ResourceNotFoundException
@@ -1696,31 +1808,35 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * @sample AWSLogs.PutSubscriptionFilter
      */
     @Override
-    public void putSubscriptionFilter(
+    public PutSubscriptionFilterResult putSubscriptionFilter(
             PutSubscriptionFilterRequest putSubscriptionFilterRequest) {
         ExecutionContext executionContext = createExecutionContext(putSubscriptionFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutSubscriptionFilterRequest> request = null;
-        Response<Void> response = null;
+        Response<PutSubscriptionFilterResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutSubscriptionFilterRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(putSubscriptionFilterRequest));
+                request = new PutSubscriptionFilterRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(putSubscriptionFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutSubscriptionFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutSubscriptionFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1756,7 +1872,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestMetricFilterRequestMarshaller()
+                request = new TestMetricFilterRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(testMetricFilterRequest));
                 // Binds the request metrics to the current request.
@@ -1765,9 +1881,11 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestMetricFilterResult> responseHandler = new JsonResponseHandler<TestMetricFilterResult>(
-                    new TestMetricFilterResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TestMetricFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TestMetricFilterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1801,33 +1919,48 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

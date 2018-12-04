@@ -53,6 +53,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * 
      * @return A list of grants.
      */
+
     public java.util.List<GrantListEntry> getGrants() {
         if (grants == null) {
             grants = new com.amazonaws.internal.SdkInternalList<GrantListEntry>();
@@ -68,6 +69,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * @param grants
      *        A list of grants.
      */
+
     public void setGrants(java.util.Collection<GrantListEntry> grants) {
         if (grants == null) {
             this.grants = null;
@@ -94,6 +96,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsResult withGrants(GrantListEntry... grants) {
         if (this.grants == null) {
             setGrants(new com.amazonaws.internal.SdkInternalList<GrantListEntry>(
@@ -115,6 +118,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsResult withGrants(
             java.util.Collection<GrantListEntry> grants) {
         setGrants(grants);
@@ -133,6 +137,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      *        contains the value to use for the <code>Marker</code> parameter in
      *        a subsequent pagination request.
      */
+
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
@@ -148,6 +153,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      *         contains the value to use for the <code>Marker</code> parameter
      *         in a subsequent pagination request.
      */
+
     public String getNextMarker() {
         return this.nextMarker;
     }
@@ -166,6 +172,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsResult withNextMarker(String nextMarker) {
         setNextMarker(nextMarker);
         return this;
@@ -184,6 +191,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      *        parameter to make a subsequent pagination request to retrieve more
      *        items in the list.
      */
+
     public void setTruncated(Boolean truncated) {
         this.truncated = truncated;
     }
@@ -200,6 +208,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean getTruncated() {
         return this.truncated;
     }
@@ -219,6 +228,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGrantsResult withTruncated(Boolean truncated) {
         setTruncated(truncated);
         return this;
@@ -236,6 +246,7 @@ public class ListGrantsResult implements Serializable, Cloneable {
      *         <code>Marker</code> parameter to make a subsequent pagination
      *         request to retrieve more items in the list.
      */
+
     public Boolean isTruncated() {
         return this.truncated;
     }

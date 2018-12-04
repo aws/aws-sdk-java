@@ -41,6 +41,7 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest
      * 
      * @return A list of delivery channel names.
      */
+
     public java.util.List<String> getDeliveryChannelNames() {
         if (deliveryChannelNames == null) {
             deliveryChannelNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -56,6 +57,7 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest
      * @param deliveryChannelNames
      *        A list of delivery channel names.
      */
+
     public void setDeliveryChannelNames(
             java.util.Collection<String> deliveryChannelNames) {
         if (deliveryChannelNames == null) {
@@ -83,6 +85,7 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelsRequest withDeliveryChannelNames(
             String... deliveryChannelNames) {
         if (this.deliveryChannelNames == null) {
@@ -105,6 +108,7 @@ public class DescribeDeliveryChannelsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeliveryChannelsRequest withDeliveryChannelNames(
             java.util.Collection<String> deliveryChannelNames) {
         setDeliveryChannelNames(deliveryChannelNames);

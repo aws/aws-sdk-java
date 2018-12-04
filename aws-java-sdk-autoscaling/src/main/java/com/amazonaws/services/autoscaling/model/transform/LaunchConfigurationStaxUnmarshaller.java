@@ -17,6 +17,8 @@
 package com.amazonaws.services.autoscaling.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -79,9 +81,9 @@ public class LaunchConfigurationStaxUnmarshaller implements
 
                 if (context
                         .testExpression("SecurityGroups/member", targetDepth)) {
-                    launchConfiguration.getSecurityGroups().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    launchConfiguration
+                            .withSecurityGroups(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -94,9 +96,9 @@ public class LaunchConfigurationStaxUnmarshaller implements
 
                 if (context.testExpression(
                         "ClassicLinkVPCSecurityGroups/member", targetDepth)) {
-                    launchConfiguration.getClassicLinkVPCSecurityGroups().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    launchConfiguration
+                            .withClassicLinkVPCSecurityGroups(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -126,9 +128,9 @@ public class LaunchConfigurationStaxUnmarshaller implements
 
                 if (context.testExpression("BlockDeviceMappings/member",
                         targetDepth)) {
-                    launchConfiguration.getBlockDeviceMappings().add(
-                            BlockDeviceMappingStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    launchConfiguration
+                            .withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

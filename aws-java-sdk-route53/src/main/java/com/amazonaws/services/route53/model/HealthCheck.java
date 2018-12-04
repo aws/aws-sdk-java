@@ -51,6 +51,14 @@ public class HealthCheck implements Serializable, Cloneable {
      * </p>
      */
     private Long healthCheckVersion;
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     */
+    private CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration;
 
     /**
      * <p>
@@ -60,6 +68,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @param id
      *        The ID of the specified health check.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -71,6 +80,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * 
      * @return The ID of the specified health check.
      */
+
     public String getId() {
         return this.id;
     }
@@ -85,6 +95,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withId(String id) {
         setId(id);
         return this;
@@ -99,6 +110,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        A unique string that identifies the request to create the health
      *        check.
      */
+
     public void setCallerReference(String callerReference) {
         this.callerReference = callerReference;
     }
@@ -111,6 +123,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return A unique string that identifies the request to create the health
      *         check.
      */
+
     public String getCallerReference() {
         return this.callerReference;
     }
@@ -126,6 +139,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withCallerReference(String callerReference) {
         setCallerReference(callerReference);
         return this;
@@ -139,6 +153,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @param healthCheckConfig
      *        A complex type that contains the health check configuration.
      */
+
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         this.healthCheckConfig = healthCheckConfig;
     }
@@ -150,6 +165,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * 
      * @return A complex type that contains the health check configuration.
      */
+
     public HealthCheckConfig getHealthCheckConfig() {
         return this.healthCheckConfig;
     }
@@ -164,6 +180,7 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
         setHealthCheckConfig(healthCheckConfig);
         return this;
@@ -181,6 +198,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *        value in a call to <code>UpdateHealthCheck</code> to prevent
      *        overwriting another change to the health check.
      */
+
     public void setHealthCheckVersion(Long healthCheckVersion) {
         this.healthCheckVersion = healthCheckVersion;
     }
@@ -196,6 +214,7 @@ public class HealthCheck implements Serializable, Cloneable {
      *         value in a call to <code>UpdateHealthCheck</code> to prevent
      *         overwriting another change to the health check.
      */
+
     public Long getHealthCheckVersion() {
         return this.healthCheckVersion;
     }
@@ -214,8 +233,64 @@ public class HealthCheck implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheck withHealthCheckVersion(Long healthCheckVersion) {
         setHealthCheckVersion(healthCheckVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @param cloudWatchAlarmConfiguration
+     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *        information about the CloudWatch alarm that you're associating
+     *        with the health check.
+     */
+
+    public void setCloudWatchAlarmConfiguration(
+            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+        this.cloudWatchAlarmConfiguration = cloudWatchAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @return For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *         information about the CloudWatch alarm that you're associating
+     *         with the health check.
+     */
+
+    public CloudWatchAlarmConfiguration getCloudWatchAlarmConfiguration() {
+        return this.cloudWatchAlarmConfiguration;
+    }
+
+    /**
+     * <p>
+     * For CLOUDWATCH_METRIC health checks, a complex type that contains
+     * information about the CloudWatch alarm that you're associating with the
+     * health check.
+     * </p>
+     * 
+     * @param cloudWatchAlarmConfiguration
+     *        For CLOUDWATCH_METRIC health checks, a complex type that contains
+     *        information about the CloudWatch alarm that you're associating
+     *        with the health check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public HealthCheck withCloudWatchAlarmConfiguration(
+            CloudWatchAlarmConfiguration cloudWatchAlarmConfiguration) {
+        setCloudWatchAlarmConfiguration(cloudWatchAlarmConfiguration);
         return this;
     }
 
@@ -238,7 +313,10 @@ public class HealthCheck implements Serializable, Cloneable {
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: " + getHealthCheckConfig() + ",");
         if (getHealthCheckVersion() != null)
-            sb.append("HealthCheckVersion: " + getHealthCheckVersion());
+            sb.append("HealthCheckVersion: " + getHealthCheckVersion() + ",");
+        if (getCloudWatchAlarmConfiguration() != null)
+            sb.append("CloudWatchAlarmConfiguration: "
+                    + getCloudWatchAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -278,6 +356,13 @@ public class HealthCheck implements Serializable, Cloneable {
                 && other.getHealthCheckVersion().equals(
                         this.getHealthCheckVersion()) == false)
             return false;
+        if (other.getCloudWatchAlarmConfiguration() == null
+                ^ this.getCloudWatchAlarmConfiguration() == null)
+            return false;
+        if (other.getCloudWatchAlarmConfiguration() != null
+                && other.getCloudWatchAlarmConfiguration().equals(
+                        this.getCloudWatchAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +385,10 @@ public class HealthCheck implements Serializable, Cloneable {
                 * hashCode
                 + ((getHealthCheckVersion() == null) ? 0
                         : getHealthCheckVersion().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloudWatchAlarmConfiguration() == null) ? 0
+                        : getCloudWatchAlarmConfiguration().hashCode());
         return hashCode;
     }
 

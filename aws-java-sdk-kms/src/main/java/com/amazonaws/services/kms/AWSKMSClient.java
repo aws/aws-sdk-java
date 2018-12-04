@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.services.kms.model.transform.*;
@@ -77,11 +79,11 @@ import com.amazonaws.services.kms.model.transform.*;
  * </p>
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We
- * strongly recommend that you <i>do not</i> use your AWS account access key ID
- * and secret key for everyday work with AWS KMS. Instead, use the access key ID
- * and secret access key for an IAM user, or you can use the AWS Security Token
- * Service to generate temporary security credentials that you can use to sign
- * requests.
+ * strongly recommend that you <i>do not</i> use your AWS account (root) access
+ * key ID and secret key for everyday work with AWS KMS. Instead, use the access
+ * key ID and secret access key for an IAM user, or you can use the AWS Security
+ * Token Service to generate temporary security credentials that you can use to
+ * sign requests.
  * </p>
  * <p>
  * All AWS KMS operations require <a href=
@@ -109,17 +111,31 @@ import com.amazonaws.services.kms.model.transform.*;
  * following:
  * </p>
  * <ul>
- * <li><a href=
+ * <li>
+ * <p>
+ * <a href=
  * "http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html"
  * >AWS Security Credentials</a> - This topic provides general information about
- * the types of credentials used for accessing AWS.</li>
- * <li><a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/">AWS Security
- * Token Service</a> - This guide describes how to create and use temporary
- * security credentials.</li>
- * <li><a href=
- * "http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html"
- * >Signing AWS API Requests</a> - This set of topics walks you through the
- * process of signing a request using an access key ID and a secret access key.</li>
+ * the types of credentials used for accessing AWS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html"
+ * >Temporary Security Credentials</a> - This section of the <i>IAM User
+ * Guide</i> describes how to create and use temporary security credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"
+ * >Signature Version 4 Signing Process</a> - This set of topics walks you
+ * through the process of signing a request using an access key ID and a secret
+ * access key.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>Commonly Used APIs</b>
@@ -130,12 +146,29 @@ import com.amazonaws.services.kms.model.transform.*;
  * as creating keys and assigning policies, by using the console.
  * </p>
  * <ul>
- * <li><a>Encrypt</a></li>
- * <li><a>Decrypt</a></li>
- * <li><a>GenerateDataKey</a></li>
- * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
+ * <li>
+ * <p>
+ * <a>Encrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>Decrypt</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKey</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GenerateDataKeyWithoutPlaintext</a>
+ * </p>
+ * </li>
  * </ul>
  */
+@ThreadSafe
 public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
@@ -149,9 +182,102 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     private static final String DEFAULT_ENDPOINT_PREFIX = "kms";
 
     /**
-     * List of exception unmarshallers for all KMS exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DependencyTimeoutException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidGrantIdException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidGrantIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidAliasNameException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "MalformedPolicyDocumentException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "UnsupportedOperationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidGrantTokenException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidMarkerException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("DisabledException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.DisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidCiphertextException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidCiphertextException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("AlreadyExistsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KMSInternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KMSInternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("NotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidKeyUsageException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KeyUnavailableException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("KMSInvalidStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.kms.model.KMSInvalidStateException.class)));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials
@@ -170,8 +296,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSKMSClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -211,8 +337,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *        authenticating with AWS services.
      */
     public AWSKMSClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -251,8 +376,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *        authenticate requests with AWS services.
      */
     public AWSKMSClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -303,68 +427,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.DependencyTimeoutException.class,
-                        "DependencyTimeoutException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidGrantIdException.class,
-                "InvalidGrantIdException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.LimitExceededException.class,
-                "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidAliasNameException.class,
-                        "InvalidAliasNameException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class,
-                        "MalformedPolicyDocumentException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.UnsupportedOperationException.class,
-                        "UnsupportedOperationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidGrantTokenException.class,
-                        "InvalidGrantTokenException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidMarkerException.class,
-                "InvalidMarkerException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.InvalidArnException.class,
-                "InvalidArnException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.DisabledException.class,
-                "DisabledException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidCiphertextException.class,
-                        "InvalidCiphertextException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.AlreadyExistsException.class,
-                "AlreadyExistsException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.KMSInternalException.class,
-                "KMSInternalException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.NotFoundException.class,
-                "NotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.InvalidKeyUsageException.class,
-                        "InvalidKeyUsageException"));
-        jsonErrorUnmarshallers.add(new JsonErrorUnmarshallerV2(
-                com.amazonaws.services.kms.model.KeyUnavailableException.class,
-                "KeyUnavailableException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.kms.model.KMSInvalidStateException.class,
-                        "KMSInvalidStateException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -385,8 +447,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * enable a CMK, use <a>EnableKey</a>.
      * </p>
      * <p>
-     * For more information about scheduling and canceling deletion of a CMK, go
-     * to <a href=
+     * For more information about scheduling and canceling deletion of a CMK,
+     * see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"
      * >Deleting Customer Master Keys</a> in the <i>AWS Key Management Service
      * Developer Guide</i>.
@@ -411,7 +473,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -430,18 +492,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelKeyDeletionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(cancelKeyDeletionRequest));
+                request = new CancelKeyDeletionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(cancelKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CancelKeyDeletionResult> responseHandler = new JsonResponseHandler<CancelKeyDeletionResult>(
-                    new CancelKeyDeletionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CancelKeyDeletionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CancelKeyDeletionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -471,6 +535,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param createAliasRequest
+     * @return Result of the CreateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -497,36 +562,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.CreateAlias
      */
     @Override
-    public void createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<CreateAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<CreateAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -575,7 +644,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -593,17 +662,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(createGrantRequest));
+                request = new CreateGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateGrantResult> responseHandler = new JsonResponseHandler<CreateGrantResult>(
-                    new CreateGrantResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateGrantResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -616,12 +687,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Creates a customer master key. Customer master keys can be used to
-     * encrypt small amounts of data (less than 4K) directly, but they are most
-     * commonly used to encrypt or envelope data keys that are then used to
-     * encrypt customer data. For more information about data keys, see
-     * <a>GenerateDataKey</a> and <a>GenerateDataKeyWithoutPlaintext</a>.
+     * Creates a customer master key (CMK).
      * </p>
+     * <p>
+     * You can use a CMK to encrypt small amounts of data (4 KiB or less)
+     * directly, but CMKs are more commonly used to encrypt data encryption keys
+     * (DEKs), which are used to encrypt raw data. For more information about
+     * DEKs and the difference between CMKs and DEKs, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <a>GenerateDataKey</a> operation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
+     * Key Management Service Concepts</a> in the <i>AWS Key Management Service
+     * Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createKeyRequest
      * @return Result of the CreateKey operation returned by the service.
@@ -659,17 +747,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(createKeyRequest));
+                request = new CreateKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<CreateKeyResult> responseHandler = new JsonResponseHandler<CreateKeyResult>(
-                    new CreateKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<CreateKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new CreateKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -689,12 +779,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Decrypts ciphertext. Ciphertext is plaintext that has been previously
      * encrypted by using any of the following functions:
-     * <ul>
-     * <li><a>GenerateDataKey</a></li>
-     * <li><a>GenerateDataKeyWithoutPlaintext</a></li>
-     * <li><a>Encrypt</a></li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>GenerateDataKey</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GenerateDataKeyWithoutPlaintext</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>Encrypt</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Note that if a caller has been granted access permissions to all keys
      * (through, for example, IAM user policies that grant <code>Decrypt</code>
@@ -735,7 +837,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -753,17 +855,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(decryptRequest));
+                request = new DecryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DecryptResult> responseHandler = new JsonResponseHandler<DecryptResult>(
-                    new DecryptResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DecryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DecryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -781,6 +885,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param deleteAliasRequest
+     * @return Result of the DeleteAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -795,36 +900,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DeleteAlias
      */
     @Override
-    public void deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -864,17 +973,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeKeyRequest));
+                request = new DescribeKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeKeyResult> responseHandler = new JsonResponseHandler<DescribeKeyResult>(
-                    new DescribeKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -887,15 +998,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Sets the state of a master key to disabled, thereby preventing its use
-     * for cryptographic operations. For more information about how key state
-     * affects the use of a master key, go to <a href=
+     * Sets the state of a customer master key (CMK) to disabled, thereby
+     * preventing its use for cryptographic operations. For more information
+     * about how key state affects the use of a CMK, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
      * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
      * Management Service Developer Guide</i>.
      * </p>
      * 
      * @param disableKeyRequest
+     * @return Result of the DisableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -912,36 +1024,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKey
      */
     @Override
-    public void disableKey(DisableKeyRequest disableKeyRequest) {
+    public DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(disableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableKeyRequest));
+                request = new DisableKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -955,6 +1071,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param disableKeyRotationRequest
+     * @return Result of the DisableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -974,38 +1092,42 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.DisableKeyRotation
      */
     @Override
-    public void disableKeyRotation(
+    public DisableKeyRotationResult disableKeyRotation(
             DisableKeyRotationRequest disableKeyRotationRequest) {
         ExecutionContext executionContext = createExecutionContext(disableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableKeyRotationRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableKeyRotationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRotationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(disableKeyRotationRequest));
+                request = new DisableKeyRotationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableKeyRotationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableKeyRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1019,6 +1141,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param enableKeyRequest
+     * @return Result of the EnableKey operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1041,36 +1164,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKey
      */
     @Override
-    public void enableKey(EnableKeyRequest enableKeyRequest) {
+    public EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest) {
         ExecutionContext executionContext = createExecutionContext(enableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableKeyRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableKeyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableKeyRequest));
+                request = new EnableKeyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1084,6 +1211,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param enableKeyRotationRequest
+     * @return Result of the EnableKeyRotation operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1103,38 +1232,42 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.EnableKeyRotation
      */
     @Override
-    public void enableKeyRotation(
+    public EnableKeyRotationResult enableKeyRotation(
             EnableKeyRotationRequest enableKeyRotationRequest) {
         ExecutionContext executionContext = createExecutionContext(enableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableKeyRotationRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableKeyRotationResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRotationRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(enableKeyRotationRequest));
+                request = new EnableKeyRotationRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableKeyRotationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableKeyRotationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -1146,16 +1279,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Encrypts plaintext into ciphertext by using a customer master key. The
      * <code>Encrypt</code> function has two primary use cases:
+     * </p>
      * <ul>
-     * <li>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a
-     * database password, or other sensitive customer information.</li>
-     * <li>If you are moving encrypted data from one region to another, you can
-     * use this API to encrypt in the new region the plaintext data key that was
+     * <li>
+     * <p>
+     * You can encrypt up to 4 KB of arbitrary data such as an RSA key, a
+     * database password, or other sensitive customer information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are moving encrypted data from one region to another, you can use
+     * this API to encrypt in the new region the plaintext data key that was
      * used to encrypt the data in the original region. This provides you with
      * an encrypted copy of the data key that can be decrypted in the new region
-     * and used there to decrypt the encrypted data.</li>
-     * </ul>
+     * and used there to decrypt the encrypted data.
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * Unless you are moving encrypted data from one region to another, you
      * don't use this function to encrypt a generated data key within a region.
@@ -1199,7 +1340,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1217,17 +1358,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EncryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(encryptRequest));
+                request = new EncryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<EncryptResult> responseHandler = new JsonResponseHandler<EncryptResult>(
-                    new EncryptResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<EncryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EncryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1255,10 +1398,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * (contained in the <code>CiphertextBlob</code> field) alongside of the
      * locally encrypted data.
      * </p>
-     * <note>You should not call the <code>Encrypt</code> function to re-encrypt
-     * your data keys within a region. <code>GenerateDataKey</code> always
-     * returns the data key encrypted and tied to the customer master key that
-     * will be used to decrypt it. There is no need to decrypt it twice. </note>
+     * <note>
+     * <p>
+     * You should not call the <code>Encrypt</code> function to re-encrypt your
+     * data keys within a region. <code>GenerateDataKey</code> always returns
+     * the data key encrypted and tied to the customer master key that will be
+     * used to decrypt it. There is no need to decrypt it twice.
+     * </p>
+     * </note>
      * <p>
      * If you decide to use the optional <code>EncryptionContext</code>
      * parameter, you must also store the context in full or at least store
@@ -1308,7 +1455,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1327,17 +1474,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyRequestMarshaller().marshall(super
-                        .beforeMarshalling(generateDataKeyRequest));
+                request = new GenerateDataKeyRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyResult> responseHandler = new JsonResponseHandler<GenerateDataKeyResult>(
-                    new GenerateDataKeyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateDataKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GenerateDataKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1386,7 +1536,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1405,7 +1555,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller()
+                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller(
+                        protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
@@ -1414,9 +1565,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult> responseHandler = new JsonResponseHandler<GenerateDataKeyWithoutPlaintextResult>(
-                    new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateDataKeyWithoutPlaintextResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1455,17 +1608,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateRandomRequestMarshaller().marshall(super
-                        .beforeMarshalling(generateRandomRequest));
+                request = new GenerateRandomRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GenerateRandomResult> responseHandler = new JsonResponseHandler<GenerateRandomResult>(
-                    new GenerateRandomResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GenerateRandomResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GenerateRandomResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1504,7 +1660,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1523,17 +1679,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(getKeyPolicyRequest));
+                request = new GetKeyPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyPolicyResult> responseHandler = new JsonResponseHandler<GetKeyPolicyResult>(
-                    new GetKeyPolicyResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetKeyPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetKeyPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1569,7 +1727,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1588,18 +1746,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyRotationStatusRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(getKeyRotationStatusRequest));
+                request = new GetKeyRotationStatusRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetKeyRotationStatusResult> responseHandler = new JsonResponseHandler<GetKeyRotationStatusResult>(
-                    new GetKeyRotationStatusResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetKeyRotationStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetKeyRotationStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1640,17 +1800,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListAliasesResult> responseHandler = new JsonResponseHandler<ListAliasesResult>(
-                    new ListAliasesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1692,7 +1854,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1710,17 +1872,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGrantsRequestMarshaller().marshall(super
-                        .beforeMarshalling(listGrantsRequest));
+                request = new ListGrantsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListGrantsResult> responseHandler = new JsonResponseHandler<ListGrantsResult>(
-                    new ListGrantsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListGrantsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1754,7 +1918,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -1773,17 +1937,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeyPoliciesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listKeyPoliciesRequest));
+                request = new ListKeyPoliciesRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeyPoliciesResult> responseHandler = new JsonResponseHandler<ListKeyPoliciesResult>(
-                    new ListKeyPoliciesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeyPoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListKeyPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1821,17 +1988,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeysRequestMarshaller().marshall(super
-                        .beforeMarshalling(listKeysRequest));
+                request = new ListKeysRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListKeysResult> responseHandler = new JsonResponseHandler<ListKeysResult>(
-                    new ListKeysResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeysResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListKeysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1889,18 +2058,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRetirableGrantsRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listRetirableGrantsRequest));
+                request = new ListRetirableGrantsRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listRetirableGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRetirableGrantsResult> responseHandler = new JsonResponseHandler<ListRetirableGrantsResult>(
-                    new ListRetirableGrantsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRetirableGrantsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRetirableGrantsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1913,10 +2084,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Attaches a policy to the specified key.
+     * Attaches a key policy to the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * For more information about key policies, see <a href=
+     * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"
+     * >Key Policies</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.
      * </p>
      * 
      * @param putKeyPolicyRequest
+     * @return Result of the PutKeyPolicy operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -1928,8 +2106,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
-     * @throws InvalidArnException
-     *         The request was rejected because a specified ARN was not valid.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not
      *         supported.
@@ -1947,36 +2123,41 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.PutKeyPolicy
      */
     @Override
-    public void putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
+    public PutKeyPolicyResult putKeyPolicy(
+            PutKeyPolicyRequest putKeyPolicyRequest) {
         ExecutionContext executionContext = createExecutionContext(putKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutKeyPolicyRequest> request = null;
-        Response<Void> response = null;
+        Response<PutKeyPolicyResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutKeyPolicyRequestMarshaller().marshall(super
-                        .beforeMarshalling(putKeyPolicyRequest));
+                request = new PutKeyPolicyRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<PutKeyPolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutKeyPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2033,7 +2214,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -2051,17 +2232,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReEncryptRequestMarshaller().marshall(super
-                        .beforeMarshalling(reEncryptRequest));
+                request = new ReEncryptRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ReEncryptResult> responseHandler = new JsonResponseHandler<ReEncryptResult>(
-                    new ReEncryptResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ReEncryptResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ReEncryptResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2078,12 +2261,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * clean up. You should revoke a grant when you intend to actively deny
      * operations that depend on it. The following are permitted to call this
      * API:
+     * </p>
      * <ul>
-     * <li>The account that created the grant</li>
-     * <li>The <code>RetiringPrincipal</code>, if present</li>
-     * <li>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a
-     * grantee operation</li>
+     * <li>
+     * <p>
+     * The account that created the grant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>RetiringPrincipal</code>, if present
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a
+     * grantee operation
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * The grant to retire must be identified by its grant token or by a
      * combination of the key ARN and the grant ID. A grant token is a unique
      * variable-length base64-encoded string. A grant ID is a 64 character
@@ -2092,6 +2289,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param retireGrantRequest
+     * @return Result of the RetireGrant operation returned by the service.
      * @throws InvalidGrantTokenException
      *         The request was rejected because a grant token provided as part
      *         of the request is invalid.
@@ -2112,36 +2310,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RetireGrant
      */
     @Override
-    public void retireGrant(RetireGrantRequest retireGrantRequest) {
+    public RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest) {
         ExecutionContext executionContext = createExecutionContext(retireGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RetireGrantRequest> request = null;
-        Response<Void> response = null;
+        Response<RetireGrantResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetireGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(retireGrantRequest));
+                request = new RetireGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RetireGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RetireGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2150,8 +2352,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     }
 
     @Override
-    public void retireGrant() {
-        retireGrant(new RetireGrantRequest());
+    public RetireGrantResult retireGrant() {
+        return retireGrant(new RetireGrantRequest());
     }
 
     /**
@@ -2161,6 +2363,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param revokeGrantRequest
+     * @return Result of the RevokeGrant operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -2180,36 +2383,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.RevokeGrant
      */
     @Override
-    public void revokeGrant(RevokeGrantRequest revokeGrantRequest) {
+    public RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest) {
         ExecutionContext executionContext = createExecutionContext(revokeGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<RevokeGrantRequest> request = null;
-        Response<Void> response = null;
+        Response<RevokeGrantResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeGrantRequestMarshaller().marshall(super
-                        .beforeMarshalling(revokeGrantRequest));
+                request = new RevokeGrantRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<RevokeGrantResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RevokeGrantResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2237,7 +2444,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </important>
      * <p>
-     * For more information about scheduling a CMK for deletion, go to <a href=
+     * For more information about scheduling a CMK for deletion, see <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html"
      * >Deleting Customer Master Keys</a> in the <i>AWS Key Management Service
      * Developer Guide</i>.
@@ -2262,7 +2469,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
@@ -2281,18 +2488,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScheduleKeyDeletionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(scheduleKeyDeletionRequest));
+                request = new ScheduleKeyDeletionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(scheduleKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ScheduleKeyDeletionResult> responseHandler = new JsonResponseHandler<ScheduleKeyDeletionResult>(
-                    new ScheduleKeyDeletionResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ScheduleKeyDeletionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ScheduleKeyDeletionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2325,6 +2534,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param updateAliasRequest
+     * @return Result of the UpdateAlias operation returned by the service.
      * @throws DependencyTimeoutException
      *         The system timed out while trying to fulfill the request. The
      *         request can be retried.
@@ -2339,36 +2549,40 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateAlias
      */
     @Override
-    public void updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateAliasRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateAliasResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller().marshall(super
-                        .beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2382,6 +2596,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * 
      * @param updateKeyDescriptionRequest
+     * @return Result of the UpdateKeyDescription operation returned by the
+     *         service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource
      *         could not be found.
@@ -2398,38 +2614,42 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         resource is not valid for this request.</p>
      *         <p>
      *         For more information about how key state affects the use of a
-     *         customer master key (CMK), go to <a href=
+     *         customer master key (CMK), see <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html"
      *         >How Key State Affects the Use of a Customer Master Key</a> in
      *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AWSKMS.UpdateKeyDescription
      */
     @Override
-    public void updateKeyDescription(
+    public UpdateKeyDescriptionResult updateKeyDescription(
             UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
         ExecutionContext executionContext = createExecutionContext(updateKeyDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<UpdateKeyDescriptionRequest> request = null;
-        Response<Void> response = null;
+        Response<UpdateKeyDescriptionResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateKeyDescriptionRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(updateKeyDescriptionRequest));
+                request = new UpdateKeyDescriptionRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateKeyDescriptionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new UpdateKeyDescriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -2460,33 +2680,48 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

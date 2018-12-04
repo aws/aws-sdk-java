@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,6 +53,12 @@ public class SNSActionStaxUnmarshaller implements
 
                 if (context.testExpression("TopicArn", targetDepth)) {
                     sNSAction.setTopicArn(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Encoding", targetDepth)) {
+                    sNSAction.setEncoding(StringStaxUnmarshaller.getInstance()
                             .unmarshall(context));
                     continue;
                 }

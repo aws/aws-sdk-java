@@ -35,8 +35,7 @@ import org.apache.commons.logging.LogFactory;
  * single thread.
  */
 public class SDKProgressPublisher {
-    protected static final boolean SYNC = false;  // for testing purposes only
-    protected static final boolean ASYNC = false; // for testing purposes only
+
     /**
      * Used for testing purposes only.
      */
@@ -44,7 +43,7 @@ public class SDKProgressPublisher {
 
     /**
      * Used to deliver a progress event to the given listener.
-     * 
+     *
      * @return the future of a submitted task; or null if the delivery is
      * synchronous with no future task involved.  Note a listener should never
      * block, and therefore returning null is the typical case.
@@ -61,16 +60,12 @@ public class SDKProgressPublisher {
 
     private static Future<?> deliverEvent(final ProgressListener listener,
             final ProgressEvent event) {
-        if (SYNC) { // forces all callbacks to be made synchronously
-            return quietlyCallListener(listener, event);
-        }
-        if (!ASYNC) { // forces all callbacks to be made asynchronously
-            if (listener instanceof DeliveryMode) {
-                DeliveryMode mode = (DeliveryMode) listener;
-                if (mode.isSyncCallSafe()) {
-                    // Safe to call the listener directly
-                    return quietlyCallListener(listener, event);
-                }
+
+        if (listener instanceof DeliveryMode) {
+            DeliveryMode mode = (DeliveryMode) listener;
+            if (mode.isSyncCallSafe()) {
+                // Safe to call the listener directly
+                return quietlyCallListener(listener, event);
             }
         }
         // Not safe to call the listener directly; so submit an async task.
@@ -101,7 +96,7 @@ public class SDKProgressPublisher {
     /**
      * Convenient method to publish a request content length event to the given
      * listener.
-     * 
+     *
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytes
@@ -116,7 +111,7 @@ public class SDKProgressPublisher {
     /**
      * Convenient method to publish a response content length event to the given
      * listener.
-     * 
+     *
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytes
@@ -131,7 +126,7 @@ public class SDKProgressPublisher {
     /**
      * Convenient method to publish a request byte transfer event to the given
      * listener.
-     * 
+     *
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytes
@@ -146,7 +141,7 @@ public class SDKProgressPublisher {
     /**
      * Convenient method to publish a response byte transfer event to the given
      * listener.
-     * 
+     *
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytes
@@ -169,7 +164,7 @@ public class SDKProgressPublisher {
 
     /**
      * Convenient method to publish a request reset event to the given listener.
-     * 
+     *
      * @param listener
      *            must not be null or else the publication will be skipped
      * @param bytesReset
@@ -224,7 +219,7 @@ public class SDKProgressPublisher {
     protected static ExecutorService getExecutorService() {
         return LazyHolder.executor;
     }
-    
+
     protected static Future<?> setLatestFutureTask(Future<?> f) {
         return latestFutureTask = f;
     }
@@ -273,7 +268,7 @@ public class SDKProgressPublisher {
      * either {@link SyncProgressListener} or
      * <code>S3SyncProgressListener</code>. That way, the progress publisher
      * (legacy) thread will never be activated in the first place.
-     * 
+     *
      * @param now true if shutdown now; false otherwise.
      */
     public static void shutdown(boolean now) {

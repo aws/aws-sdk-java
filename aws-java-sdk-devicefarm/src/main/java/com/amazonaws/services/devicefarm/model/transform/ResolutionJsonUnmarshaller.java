@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class ResolutionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("width", targetDepth)) {
                     context.nextToken();
-                    resolution.setWidth(IntegerJsonUnmarshaller.getInstance()
+                    resolution.setWidth(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("height", targetDepth)) {
                     context.nextToken();
-                    resolution.setHeight(IntegerJsonUnmarshaller.getInstance()
+                    resolution.setHeight(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

@@ -16,6 +16,7 @@ package com.amazonaws.util;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.ByteBuffer;
 import java.util.Date;
 import java.util.Stack;
 
@@ -113,6 +114,21 @@ public class XMLWriter {
      */
     public XMLWriter value(String s) {
         append(escapeXMLEntities(s));
+        return this;
+    }
+
+    /**
+     * Adds the specified value as Base64 encoded text to the current position of the in
+     * progress XML document.
+     *
+     * @param b
+     *            The binary data to add to the XML document.
+     *
+     * @return This XMLWriter so that additional method calls can be chained
+     *         together.
+     */
+    public XMLWriter value(ByteBuffer b) {
+        append(escapeXMLEntities(Base64.encodeAsString(BinaryUtils.copyBytesFrom(b))));
         return this;
     }
 

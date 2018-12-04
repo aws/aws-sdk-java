@@ -29,11 +29,23 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the instance profile to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String instanceProfileName;
     /**
      * <p>
      * The name of the role to remove.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String roleName;
@@ -42,10 +54,22 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the instance profile to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param instanceProfileName
-     *        The name of the instance profile to update.
+     *        The name of the instance profile to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setInstanceProfileName(String instanceProfileName) {
         this.instanceProfileName = instanceProfileName;
     }
@@ -54,9 +78,21 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the instance profile to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the instance profile to update.
+     * @return The name of the instance profile to update.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getInstanceProfileName() {
         return this.instanceProfileName;
     }
@@ -65,12 +101,24 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the instance profile to update.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param instanceProfileName
-     *        The name of the instance profile to update.
+     *        The name of the instance profile to update.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveRoleFromInstanceProfileRequest withInstanceProfileName(
             String instanceProfileName) {
         setInstanceProfileName(instanceProfileName);
@@ -81,10 +129,22 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the role to remove.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role to remove.
+     *        The name of the role to remove.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -93,9 +153,21 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the role to remove.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the role to remove.
+     * @return The name of the role to remove.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -104,12 +176,24 @@ public class RemoveRoleFromInstanceProfileRequest extends
      * <p>
      * The name of the role to remove.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role to remove.
+     *        The name of the role to remove.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveRoleFromInstanceProfileRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

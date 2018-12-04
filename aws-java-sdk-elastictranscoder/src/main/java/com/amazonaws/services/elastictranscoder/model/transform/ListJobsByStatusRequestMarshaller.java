@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListJobsByStatusRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class ListJobsByStatusRequestMarshaller implements
         Marshaller<Request<ListJobsByStatusRequest>, ListJobsByStatusRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListJobsByStatusRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListJobsByStatusRequest> marshall(
             ListJobsByStatusRequest listJobsByStatusRequest) {
@@ -65,23 +74,20 @@ public class ListJobsByStatusRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{Status}",
-                (listJobsByStatusRequest.getStatus() == null) ? ""
-                        : StringUtils.fromString(listJobsByStatusRequest
-                                .getStatus()));
+                (listJobsByStatusRequest.getStatus() != null) ? SdkHttpUtils
+                        .urlEncode(
+                                StringUtils.fromString(listJobsByStatusRequest
+                                        .getStatus()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String ascending = (listJobsByStatusRequest.getAscending() == null) ? null
-                : StringUtils
-                        .fromString(listJobsByStatusRequest.getAscending());
-        if (ascending != null) {
-            request.addParameter("Ascending", ascending);
+        if (listJobsByStatusRequest.getAscending() != null) {
+            request.addParameter("Ascending", StringUtils
+                    .fromString(listJobsByStatusRequest.getAscending()));
         }
 
-        String pageToken = (listJobsByStatusRequest.getPageToken() == null) ? null
-                : StringUtils
-                        .fromString(listJobsByStatusRequest.getPageToken());
-        if (pageToken != null) {
-            request.addParameter("PageToken", pageToken);
+        if (listJobsByStatusRequest.getPageToken() != null) {
+            request.addParameter("PageToken", StringUtils
+                    .fromString(listJobsByStatusRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

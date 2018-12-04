@@ -64,6 +64,7 @@ public class GetSessionTokenResult implements Serializable, Cloneable {
      *        less than 4096 bytes, but that can vary. Also, future updates to
      *        AWS might require larger sizes.
      */
+
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
@@ -90,6 +91,7 @@ public class GetSessionTokenResult implements Serializable, Cloneable {
      *         less than 4096 bytes, but that can vary. Also, future updates to
      *         AWS might require larger sizes.
      */
+
     public Credentials getCredentials() {
         return this.credentials;
     }
@@ -119,6 +121,7 @@ public class GetSessionTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSessionTokenResult withCredentials(Credentials credentials) {
         setCredentials(credentials);
         return this;

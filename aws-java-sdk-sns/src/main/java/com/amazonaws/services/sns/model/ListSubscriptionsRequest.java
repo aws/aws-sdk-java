@@ -62,6 +62,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
      *        Token returned by the previous <code>ListSubscriptions</code>
      *        request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -74,6 +75,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
      * @return Token returned by the previous <code>ListSubscriptions</code>
      *         request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -89,6 +91,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

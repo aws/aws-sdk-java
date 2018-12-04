@@ -40,6 +40,7 @@ public class TransferCertificateResult implements Serializable, Cloneable {
      * @param transferredCertificateArn
      *        The ARN of the certificate.
      */
+
     public void setTransferredCertificateArn(String transferredCertificateArn) {
         this.transferredCertificateArn = transferredCertificateArn;
     }
@@ -51,6 +52,7 @@ public class TransferCertificateResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the certificate.
      */
+
     public String getTransferredCertificateArn() {
         return this.transferredCertificateArn;
     }
@@ -65,6 +67,7 @@ public class TransferCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TransferCertificateResult withTransferredCertificateArn(
             String transferredCertificateArn) {
         setTransferredCertificateArn(transferredCertificateArn);

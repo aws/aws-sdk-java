@@ -18,6 +18,8 @@ package com.amazonaws.services.codedeploy.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,13 +57,13 @@ public class ListDeploymentsResultJsonUnmarshaller implements
                     context.nextToken();
                     listDeploymentsResult
                             .setDeployments(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
-                    listDeploymentsResult.setNextToken(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listDeploymentsResult.setNextToken(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

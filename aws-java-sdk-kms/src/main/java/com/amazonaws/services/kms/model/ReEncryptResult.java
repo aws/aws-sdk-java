@@ -53,11 +53,20 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param ciphertextBlob
      *        The re-encrypted data. If you are using the CLI, the value is
      *        Base64 encoded. Otherwise, it is not encoded.
      */
+
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         this.ciphertextBlob = ciphertextBlob;
     }
@@ -81,6 +90,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @return The re-encrypted data. If you are using the CLI, the value is
      *         Base64 encoded. Otherwise, it is not encoded.
      */
+
     public java.nio.ByteBuffer getCiphertextBlob() {
         return this.ciphertextBlob;
     }
@@ -97,6 +107,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptResult withCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
         setCiphertextBlob(ciphertextBlob);
         return this;
@@ -110,6 +121,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @param sourceKeyId
      *        Unique identifier of the key used to originally encrypt the data.
      */
+
     public void setSourceKeyId(String sourceKeyId) {
         this.sourceKeyId = sourceKeyId;
     }
@@ -121,6 +133,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the key used to originally encrypt the data.
      */
+
     public String getSourceKeyId() {
         return this.sourceKeyId;
     }
@@ -135,6 +148,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptResult withSourceKeyId(String sourceKeyId) {
         setSourceKeyId(sourceKeyId);
         return this;
@@ -148,6 +162,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @param keyId
      *        Unique identifier of the key used to re-encrypt the data.
      */
+
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
@@ -159,6 +174,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the key used to re-encrypt the data.
      */
+
     public String getKeyId() {
         return this.keyId;
     }
@@ -173,6 +189,7 @@ public class ReEncryptResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReEncryptResult withKeyId(String keyId) {
         setKeyId(keyId);
         return this;

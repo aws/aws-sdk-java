@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class MetricFilterJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("filterName", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setFilterName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricFilter.setFilterName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("filterPattern", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setFilterPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricFilter.setFilterPattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("metricTransformations", targetDepth)) {
@@ -71,8 +73,8 @@ public class MetricFilterJsonUnmarshaller implements
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    metricFilter.setCreationTime(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    metricFilter.setCreationTime(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

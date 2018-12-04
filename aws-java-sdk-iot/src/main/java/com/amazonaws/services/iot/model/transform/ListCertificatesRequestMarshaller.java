@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListCertificatesRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class ListCertificatesRequestMarshaller implements
         Marshaller<Request<ListCertificatesRequest>, ListCertificatesRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListCertificatesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListCertificatesRequest> marshall(
             ListCertificatesRequest listCertificatesRequest) {
@@ -65,24 +74,19 @@ public class ListCertificatesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String pageSize = (listCertificatesRequest.getPageSize() == null) ? null
-                : StringUtils
-                        .fromInteger(listCertificatesRequest.getPageSize());
-        if (pageSize != null) {
-            request.addParameter("pageSize", pageSize);
+        if (listCertificatesRequest.getPageSize() != null) {
+            request.addParameter("pageSize", StringUtils
+                    .fromInteger(listCertificatesRequest.getPageSize()));
         }
 
-        String marker = (listCertificatesRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listCertificatesRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listCertificatesRequest.getMarker() != null) {
+            request.addParameter("marker",
+                    StringUtils.fromString(listCertificatesRequest.getMarker()));
         }
 
-        String ascendingOrder = (listCertificatesRequest.getAscendingOrder() == null) ? null
-                : StringUtils.fromBoolean(listCertificatesRequest
-                        .getAscendingOrder());
-        if (ascendingOrder != null) {
-            request.addParameter("isAscendingOrder", ascendingOrder);
+        if (listCertificatesRequest.getAscendingOrder() != null) {
+            request.addParameter("isAscendingOrder", StringUtils
+                    .fromBoolean(listCertificatesRequest.getAscendingOrder()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

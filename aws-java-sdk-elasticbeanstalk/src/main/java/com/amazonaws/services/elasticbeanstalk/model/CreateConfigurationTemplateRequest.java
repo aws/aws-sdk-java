@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
+ * <p>
+ * Request to create a configuration template.
+ * </p>
  */
 public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -158,6 +160,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        template. If no application is found with this name, AWS Elastic
      *        Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -173,6 +176,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         template. If no application is found with this name, AWS Elastic
      *         Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -191,6 +195,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -219,6 +224,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        name, AWS Elastic Beanstalk returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -244,6 +250,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         name, AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -272,6 +279,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -320,6 +328,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        configuration parameter is specified, AWS Elastic Beanstalk uses
      *        the same solution stack as the source configuration template.
      */
+
     public void setSolutionStackName(String solutionStackName) {
         this.solutionStackName = solutionStackName;
     }
@@ -365,6 +374,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         configuration parameter is specified, AWS Elastic Beanstalk uses
      *         the same solution stack as the source configuration template.
      */
+
     public String getSolutionStackName() {
         return this.solutionStackName;
     }
@@ -413,6 +423,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withSolutionStackName(
             String solutionStackName) {
         setSolutionStackName(solutionStackName);
@@ -461,6 +472,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        solution stack name or else AWS Elastic Beanstalk returns an
      *        <code>InvalidParameterCombination</code> error.
      */
+
     public void setSourceConfiguration(SourceConfiguration sourceConfiguration) {
         this.sourceConfiguration = sourceConfiguration;
     }
@@ -506,6 +518,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         solution stack name or else AWS Elastic Beanstalk returns an
      *         <code>InvalidParameterCombination</code> error.
      */
+
     public SourceConfiguration getSourceConfiguration() {
         return this.sourceConfiguration;
     }
@@ -554,6 +567,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withSourceConfiguration(
             SourceConfiguration sourceConfiguration) {
         setSourceConfiguration(sourceConfiguration);
@@ -568,6 +582,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @param environmentId
      *        The ID of the environment used with this configuration template.
      */
+
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
@@ -579,6 +594,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the environment used with this configuration template.
      */
+
     public String getEnvironmentId() {
         return this.environmentId;
     }
@@ -593,6 +609,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withEnvironmentId(
             String environmentId) {
         setEnvironmentId(environmentId);
@@ -607,6 +624,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @param description
      *        Describes this configuration.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -618,6 +636,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * 
      * @return Describes this configuration.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -632,6 +651,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -649,6 +669,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         overrides the value obtained from the solution stack or the
      *         source configuration template.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -669,6 +690,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        overrides the value obtained from the solution stack or the source
      *        configuration template.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -701,6 +723,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -728,6 +751,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateConfigurationTemplateRequest withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);

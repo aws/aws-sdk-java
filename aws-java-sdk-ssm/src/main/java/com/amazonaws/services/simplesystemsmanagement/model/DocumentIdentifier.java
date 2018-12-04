@@ -31,7 +31,17 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * </p>
      */
     private String name;
-    /** The operating system platform. */
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
+     * The operating system platform.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> platformTypes;
 
     /**
@@ -42,6 +52,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,6 +64,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -67,17 +79,62 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DocumentIdentifier withName(String name) {
         setName(name);
         return this;
     }
 
     /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS user account of the person who created the document.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @return The AWS user account of the person who created the document.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The AWS user account of the person who created the document.
+     * </p>
+     * 
+     * @param owner
+     *        The AWS user account of the person who created the document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public DocumentIdentifier withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
      * The operating system platform.
+     * </p>
      * 
      * @return The operating system platform.
      * @see PlatformType
      */
+
     public java.util.List<String> getPlatformTypes() {
         if (platformTypes == null) {
             platformTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -86,12 +143,15 @@ public class DocumentIdentifier implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform.
+     * </p>
      * 
      * @param platformTypes
      *        The operating system platform.
      * @see PlatformType
      */
+
     public void setPlatformTypes(java.util.Collection<String> platformTypes) {
         if (platformTypes == null) {
             this.platformTypes = null;
@@ -103,7 +163,9 @@ public class DocumentIdentifier implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setPlatformTypes(java.util.Collection)} or
@@ -117,6 +179,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(String... platformTypes) {
         if (this.platformTypes == null) {
             setPlatformTypes(new com.amazonaws.internal.SdkInternalList<String>(
@@ -129,7 +192,9 @@ public class DocumentIdentifier implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform.
+     * </p>
      * 
      * @param platformTypes
      *        The operating system platform.
@@ -137,6 +202,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(
             java.util.Collection<String> platformTypes) {
         setPlatformTypes(platformTypes);
@@ -144,7 +210,9 @@ public class DocumentIdentifier implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The operating system platform.
+     * </p>
      * 
      * @param platformTypes
      *        The operating system platform.
@@ -152,6 +220,7 @@ public class DocumentIdentifier implements Serializable, Cloneable {
      *         chained together.
      * @see PlatformType
      */
+
     public DocumentIdentifier withPlatformTypes(PlatformType... platformTypes) {
         com.amazonaws.internal.SdkInternalList<String> platformTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
                 platformTypes.length);
@@ -180,6 +249,8 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         sb.append("{");
         if (getName() != null)
             sb.append("Name: " + getName() + ",");
+        if (getOwner() != null)
+            sb.append("Owner: " + getOwner() + ",");
         if (getPlatformTypes() != null)
             sb.append("PlatformTypes: " + getPlatformTypes());
         sb.append("}");
@@ -201,6 +272,11 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         if (other.getName() != null
                 && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null
+                && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         if (other.getPlatformTypes() == null ^ this.getPlatformTypes() == null)
             return false;
         if (other.getPlatformTypes() != null
@@ -216,6 +292,8 @@ public class DocumentIdentifier implements Serializable, Cloneable {
 
         hashCode = prime * hashCode
                 + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode
+                + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime
                 * hashCode
                 + ((getPlatformTypes() == null) ? 0 : getPlatformTypes()

@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * CreateDistributionRequest Marshaller
@@ -887,16 +890,24 @@ public class CreateDistributionRequestMarshaller
                 if (viewerCertificate != null) {
                     xmlWriter.startElement("ViewerCertificate");
 
-                    if (viewerCertificate.getCertificate() != null) {
-                        xmlWriter.startElement("Certificate")
-                                .value(viewerCertificate.getCertificate())
+                    if (viewerCertificate.getCloudFrontDefaultCertificate() != null) {
+                        xmlWriter
+                                .startElement("CloudFrontDefaultCertificate")
+                                .value(viewerCertificate
+                                        .getCloudFrontDefaultCertificate())
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getCertificateSource() != null) {
+                    if (viewerCertificate.getIAMCertificateId() != null) {
+                        xmlWriter.startElement("IAMCertificateId")
+                                .value(viewerCertificate.getIAMCertificateId())
+                                .endElement();
+                    }
+
+                    if (viewerCertificate.getACMCertificateArn() != null) {
                         xmlWriter
-                                .startElement("CertificateSource")
-                                .value(viewerCertificate.getCertificateSource())
+                                .startElement("ACMCertificateArn")
+                                .value(viewerCertificate.getACMCertificateArn())
                                 .endElement();
                     }
 
@@ -914,17 +925,16 @@ public class CreateDistributionRequestMarshaller
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getIAMCertificateId() != null) {
-                        xmlWriter.startElement("IAMCertificateId")
-                                .value(viewerCertificate.getIAMCertificateId())
+                    if (viewerCertificate.getCertificate() != null) {
+                        xmlWriter.startElement("Certificate")
+                                .value(viewerCertificate.getCertificate())
                                 .endElement();
                     }
 
-                    if (viewerCertificate.getCloudFrontDefaultCertificate() != null) {
+                    if (viewerCertificate.getCertificateSource() != null) {
                         xmlWriter
-                                .startElement("CloudFrontDefaultCertificate")
-                                .value(viewerCertificate
-                                        .getCloudFrontDefaultCertificate())
+                                .startElement("CertificateSource")
+                                .value(viewerCertificate.getCertificateSource())
                                 .endElement();
                     }
                     xmlWriter.endElement();

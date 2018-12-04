@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListChangeBatchesByRRSetRequest Marshaller
@@ -60,59 +63,47 @@ public class ListChangeBatchesByRRSetRequestMarshaller
         uriResourcePath = uriResourcePath
                 .replace(
                         "{Id}",
-                        (listChangeBatchesByRRSetRequest.getHostedZoneId() == null) ? ""
-                                : StringUtils
+                        (listChangeBatchesByRRSetRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(listChangeBatchesByRRSetRequest
-                                                .getHostedZoneId()));
+                                                .getHostedZoneId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
-        String name = (listChangeBatchesByRRSetRequest.getName() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getName());
-        if (name != null) {
-            request.addParameter("rrSet_name", name);
+        if (listChangeBatchesByRRSetRequest.getName() != null) {
+            request.addParameter("rrSet_name", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getName()));
         }
 
-        String type = (listChangeBatchesByRRSetRequest.getType() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getType());
-        if (type != null) {
-            request.addParameter("type", type);
+        if (listChangeBatchesByRRSetRequest.getType() != null) {
+            request.addParameter("type", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getType()));
         }
 
-        String setIdentifier = (listChangeBatchesByRRSetRequest
-                .getSetIdentifier() == null) ? null : StringUtils
-                .fromString(listChangeBatchesByRRSetRequest.getSetIdentifier());
-        if (setIdentifier != null) {
-            request.addParameter("identifier", setIdentifier);
+        if (listChangeBatchesByRRSetRequest.getSetIdentifier() != null) {
+            request.addParameter("identifier", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest
+                            .getSetIdentifier()));
         }
 
-        String startDate = (listChangeBatchesByRRSetRequest.getStartDate() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getStartDate());
-        if (startDate != null) {
-            request.addParameter("startDate", startDate);
+        if (listChangeBatchesByRRSetRequest.getStartDate() != null) {
+            request.addParameter("startDate", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getStartDate()));
         }
 
-        String endDate = (listChangeBatchesByRRSetRequest.getEndDate() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getEndDate());
-        if (endDate != null) {
-            request.addParameter("endDate", endDate);
+        if (listChangeBatchesByRRSetRequest.getEndDate() != null) {
+            request.addParameter("endDate", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getEndDate()));
         }
 
-        String maxItems = (listChangeBatchesByRRSetRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxItems", maxItems);
+        if (listChangeBatchesByRRSetRequest.getMaxItems() != null) {
+            request.addParameter("maxItems", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getMaxItems()));
         }
 
-        String marker = (listChangeBatchesByRRSetRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listChangeBatchesByRRSetRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listChangeBatchesByRRSetRequest.getMarker() != null) {
+            request.addParameter("marker", StringUtils
+                    .fromString(listChangeBatchesByRRSetRequest.getMarker()));
         }
 
         return request;

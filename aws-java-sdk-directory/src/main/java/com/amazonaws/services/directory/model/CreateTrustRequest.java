@@ -55,6 +55,8 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
     /** The trust relationship type. */
     private String trustType;
 
+    private com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrs;
+
     /**
      * The Directory ID of the Microsoft AD in the AWS cloud for which to
      * establish the trust relationship.
@@ -63,6 +65,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *        The Directory ID of the Microsoft AD in the AWS cloud for which to
      *        establish the trust relationship.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -74,6 +77,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return The Directory ID of the Microsoft AD in the AWS cloud for which
      *         to establish the trust relationship.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -88,6 +92,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrustRequest withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -101,6 +106,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *        The Fully Qualified Domain Name (FQDN) of the external domain for
      *        which to create the trust relationship.
      */
+
     public void setRemoteDomainName(String remoteDomainName) {
         this.remoteDomainName = remoteDomainName;
     }
@@ -112,6 +118,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return The Fully Qualified Domain Name (FQDN) of the external domain for
      *         which to create the trust relationship.
      */
+
     public String getRemoteDomainName() {
         return this.remoteDomainName;
     }
@@ -126,6 +133,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrustRequest withRemoteDomainName(String remoteDomainName) {
         setRemoteDomainName(remoteDomainName);
         return this;
@@ -139,6 +147,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *        The trust password. The must be the same password that was used
      *        when creating the trust relationship on the external domain.
      */
+
     public void setTrustPassword(String trustPassword) {
         this.trustPassword = trustPassword;
     }
@@ -150,6 +159,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return The trust password. The must be the same password that was used
      *         when creating the trust relationship on the external domain.
      */
+
     public String getTrustPassword() {
         return this.trustPassword;
     }
@@ -164,6 +174,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateTrustRequest withTrustPassword(String trustPassword) {
         setTrustPassword(trustPassword);
         return this;
@@ -176,6 +187,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *        The direction of the trust relationship.
      * @see TrustDirection
      */
+
     public void setTrustDirection(String trustDirection) {
         this.trustDirection = trustDirection;
     }
@@ -186,6 +198,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return The direction of the trust relationship.
      * @see TrustDirection
      */
+
     public String getTrustDirection() {
         return this.trustDirection;
     }
@@ -199,6 +212,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrustDirection
      */
+
     public CreateTrustRequest withTrustDirection(String trustDirection) {
         setTrustDirection(trustDirection);
         return this;
@@ -209,10 +223,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @param trustDirection
      *        The direction of the trust relationship.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustDirection
      */
+
     public void setTrustDirection(TrustDirection trustDirection) {
         this.trustDirection = trustDirection.toString();
     }
@@ -226,6 +239,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrustDirection
      */
+
     public CreateTrustRequest withTrustDirection(TrustDirection trustDirection) {
         setTrustDirection(trustDirection);
         return this;
@@ -238,6 +252,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *        The trust relationship type.
      * @see TrustType
      */
+
     public void setTrustType(String trustType) {
         this.trustType = trustType;
     }
@@ -248,6 +263,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * @return The trust relationship type.
      * @see TrustType
      */
+
     public String getTrustType() {
         return this.trustType;
     }
@@ -261,6 +277,7 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrustType
      */
+
     public CreateTrustRequest withTrustType(String trustType) {
         setTrustType(trustType);
         return this;
@@ -271,10 +288,9 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      * 
      * @param trustType
      *        The trust relationship type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see TrustType
      */
+
     public void setTrustType(TrustType trustType) {
         this.trustType = trustType.toString();
     }
@@ -288,8 +304,72 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see TrustType
      */
+
     public CreateTrustRequest withTrustType(TrustType trustType) {
         setTrustType(trustType);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getConditionalForwarderIpAddrs() {
+        if (conditionalForwarderIpAddrs == null) {
+            conditionalForwarderIpAddrs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return conditionalForwarderIpAddrs;
+    }
+
+    /**
+     * @param conditionalForwarderIpAddrs
+     */
+
+    public void setConditionalForwarderIpAddrs(
+            java.util.Collection<String> conditionalForwarderIpAddrs) {
+        if (conditionalForwarderIpAddrs == null) {
+            this.conditionalForwarderIpAddrs = null;
+            return;
+        }
+
+        this.conditionalForwarderIpAddrs = new com.amazonaws.internal.SdkInternalList<String>(
+                conditionalForwarderIpAddrs);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setConditionalForwarderIpAddrs(java.util.Collection)}
+     * or {@link #withConditionalForwarderIpAddrs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param conditionalForwarderIpAddrs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateTrustRequest withConditionalForwarderIpAddrs(
+            String... conditionalForwarderIpAddrs) {
+        if (this.conditionalForwarderIpAddrs == null) {
+            setConditionalForwarderIpAddrs(new com.amazonaws.internal.SdkInternalList<String>(
+                    conditionalForwarderIpAddrs.length));
+        }
+        for (String ele : conditionalForwarderIpAddrs) {
+            this.conditionalForwarderIpAddrs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param conditionalForwarderIpAddrs
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateTrustRequest withConditionalForwarderIpAddrs(
+            java.util.Collection<String> conditionalForwarderIpAddrs) {
+        setConditionalForwarderIpAddrs(conditionalForwarderIpAddrs);
         return this;
     }
 
@@ -314,7 +394,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
         if (getTrustDirection() != null)
             sb.append("TrustDirection: " + getTrustDirection() + ",");
         if (getTrustType() != null)
-            sb.append("TrustType: " + getTrustType());
+            sb.append("TrustType: " + getTrustType() + ",");
+        if (getConditionalForwarderIpAddrs() != null)
+            sb.append("ConditionalForwarderIpAddrs: "
+                    + getConditionalForwarderIpAddrs());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +440,13 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
         if (other.getTrustType() != null
                 && other.getTrustType().equals(this.getTrustType()) == false)
             return false;
+        if (other.getConditionalForwarderIpAddrs() == null
+                ^ this.getConditionalForwarderIpAddrs() == null)
+            return false;
+        if (other.getConditionalForwarderIpAddrs() != null
+                && other.getConditionalForwarderIpAddrs().equals(
+                        this.getConditionalForwarderIpAddrs()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +472,10 @@ public class CreateTrustRequest extends AmazonWebServiceRequest implements
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getTrustType() == null) ? 0 : getTrustType().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getConditionalForwarderIpAddrs() == null) ? 0
+                        : getConditionalForwarderIpAddrs().hashCode());
         return hashCode;
     }
 

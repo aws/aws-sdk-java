@@ -18,6 +18,8 @@ package com.amazonaws.services.cognitosync.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,12 +56,12 @@ public class PushSyncJsonUnmarshaller implements
                 if (context.testExpression("ApplicationArns", targetDepth)) {
                     context.nextToken();
                     pushSync.setApplicationArns(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
-                    pushSync.setRoleArn(StringJsonUnmarshaller.getInstance()
+                    pushSync.setRoleArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

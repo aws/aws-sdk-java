@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class ThrottleSettingsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("burstLimit", targetDepth)) {
                     context.nextToken();
-                    throttleSettings.setBurstLimit(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    throttleSettings.setBurstLimit(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("rateLimit", targetDepth)) {
                     context.nextToken();
-                    throttleSettings.setRateLimit(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    throttleSettings.setRateLimit(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -44,6 +44,7 @@ public class RefreshTrustedAdvisorCheckResult implements Serializable,
      *        The current refresh status for a check, including the amount of
      *        time until the check is eligible for refresh.
      */
+
     public void setStatus(TrustedAdvisorCheckRefreshStatus status) {
         this.status = status;
     }
@@ -57,6 +58,7 @@ public class RefreshTrustedAdvisorCheckResult implements Serializable,
      * @return The current refresh status for a check, including the amount of
      *         time until the check is eligible for refresh.
      */
+
     public TrustedAdvisorCheckRefreshStatus getStatus() {
         return this.status;
     }
@@ -73,6 +75,7 @@ public class RefreshTrustedAdvisorCheckResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RefreshTrustedAdvisorCheckResult withStatus(
             TrustedAdvisorCheckRefreshStatus status) {
         setStatus(status);

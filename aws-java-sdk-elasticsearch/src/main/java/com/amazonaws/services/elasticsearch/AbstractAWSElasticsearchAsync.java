@@ -30,15 +30,16 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsAsync(AddTagsRequest request) {
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest request) {
 
         return addTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsAsync(
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             AddTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<AddTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,16 +150,16 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsAsync(
+    public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest request) {
 
         return removeTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsAsync(
+    public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest request,
-            com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

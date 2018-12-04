@@ -47,6 +47,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
      *        <code>Rule</code> from a <code>WebACL</code>.
      * @see ChangeAction
      */
+
     public void setAction(String action) {
         this.action = action;
     }
@@ -61,6 +62,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
      *         <code>Rule</code> from a <code>WebACL</code>.
      * @see ChangeAction
      */
+
     public String getAction() {
         return this.action;
     }
@@ -78,6 +80,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public WebACLUpdate withAction(String action) {
         setAction(action);
         return this;
@@ -92,10 +95,9 @@ public class WebACLUpdate implements Serializable, Cloneable {
      * @param action
      *        Specifies whether to insert a <code>Rule</code> into or delete a
      *        <code>Rule</code> from a <code>WebACL</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeAction
      */
+
     public void setAction(ChangeAction action) {
         this.action = action.toString();
     }
@@ -113,6 +115,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeAction
      */
+
     public WebACLUpdate withAction(ChangeAction action) {
         setAction(action);
         return this;
@@ -121,6 +124,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
     /**
      * @param activatedRule
      */
+
     public void setActivatedRule(ActivatedRule activatedRule) {
         this.activatedRule = activatedRule;
     }
@@ -128,6 +132,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActivatedRule getActivatedRule() {
         return this.activatedRule;
     }
@@ -137,6 +142,7 @@ public class WebACLUpdate implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public WebACLUpdate withActivatedRule(ActivatedRule activatedRule) {
         setActivatedRule(activatedRule);
         return this;

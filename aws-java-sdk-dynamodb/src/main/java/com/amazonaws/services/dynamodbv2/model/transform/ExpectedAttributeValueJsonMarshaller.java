@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ExpectedAttributeValueMarshaller
@@ -39,50 +34,49 @@ import com.amazonaws.util.json.*;
 public class ExpectedAttributeValueJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ExpectedAttributeValue expectedAttributeValue,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (expectedAttributeValue == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (expectedAttributeValue.getValue() != null) {
-                jsonWriter.key("Value");
+                jsonGenerator.writeFieldName("Value");
                 AttributeValueJsonMarshaller.getInstance().marshall(
-                        expectedAttributeValue.getValue(), jsonWriter);
+                        expectedAttributeValue.getValue(), jsonGenerator);
             }
-
             if (expectedAttributeValue.getExists() != null) {
-                jsonWriter.key("Exists").value(
+                jsonGenerator.writeFieldName("Exists").writeValue(
                         expectedAttributeValue.getExists());
             }
-
             if (expectedAttributeValue.getComparisonOperator() != null) {
-                jsonWriter.key("ComparisonOperator").value(
+                jsonGenerator.writeFieldName("ComparisonOperator").writeValue(
                         expectedAttributeValue.getComparisonOperator());
             }
 
             java.util.List<AttributeValue> attributeValueListList = expectedAttributeValue
                     .getAttributeValueList();
             if (attributeValueListList != null) {
-                jsonWriter.key("AttributeValueList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("AttributeValueList");
+                jsonGenerator.writeStartArray();
                 for (AttributeValue attributeValueListListValue : attributeValueListList) {
                     if (attributeValueListListValue != null) {
 
                         AttributeValueJsonMarshaller.getInstance().marshall(
-                                attributeValueListListValue, jsonWriter);
+                                attributeValueListListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

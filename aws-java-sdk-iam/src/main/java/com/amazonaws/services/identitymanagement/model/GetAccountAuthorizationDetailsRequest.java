@@ -30,6 +30,11 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> filter;
     /**
@@ -64,11 +69,21 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @return A list of entity types (user, group, role, local managed policy,
-     *         or AWS managed policy) for filtering the results.
+     *         or AWS managed policy) for filtering the results.</p>
+     *         <p>
+     *         The format for this parameter is a comma-separated (if more than
+     *         one) list of strings. Each string value in the list must be one
+     *         of the valid values listed below.
      * @see EntityType
      */
+
     public java.util.List<String> getFilter() {
         if (filter == null) {
             filter = new com.amazonaws.internal.SdkInternalList<String>();
@@ -81,12 +96,22 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @see EntityType
      */
+
     public void setFilter(java.util.Collection<String> filter) {
         if (filter == null) {
             this.filter = null;
@@ -102,6 +127,11 @@ public class GetAccountAuthorizationDetailsRequest extends
      * managed policy) for filtering the results.
      * </p>
      * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setFilter(java.util.Collection)} or
      * {@link #withFilter(java.util.Collection)} if you want to override the
@@ -110,11 +140,16 @@ public class GetAccountAuthorizationDetailsRequest extends
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(String... filter) {
         if (this.filter == null) {
             setFilter(new com.amazonaws.internal.SdkInternalList<String>(
@@ -131,14 +166,24 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(
             java.util.Collection<String> filter) {
         setFilter(filter);
@@ -150,14 +195,24 @@ public class GetAccountAuthorizationDetailsRequest extends
      * A list of entity types (user, group, role, local managed policy, or AWS
      * managed policy) for filtering the results.
      * </p>
+     * <p>
+     * The format for this parameter is a comma-separated (if more than one)
+     * list of strings. Each string value in the list must be one of the valid
+     * values listed below.
+     * </p>
      * 
      * @param filter
      *        A list of entity types (user, group, role, local managed policy,
-     *        or AWS managed policy) for filtering the results.
+     *        or AWS managed policy) for filtering the results.</p>
+     *        <p>
+     *        The format for this parameter is a comma-separated (if more than
+     *        one) list of strings. Each string value in the list must be one of
+     *        the valid values listed below.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see EntityType
      */
+
     public GetAccountAuthorizationDetailsRequest withFilter(
             EntityType... filter) {
         com.amazonaws.internal.SdkInternalList<String> filterCopy = new com.amazonaws.internal.SdkInternalList<String>(
@@ -203,6 +258,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *        include in the subsequent call that tells the service where to
      *        continue from.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -237,6 +293,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         include in the subsequent call that tells the service where to
      *         continue from.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -273,6 +330,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -292,6 +350,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *        it to the value of the <code>Marker</code> element in the response
      *        that you received to indicate where the next call should start.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -310,6 +369,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      *         response that you received to indicate where the next call should
      *         start.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -330,6 +390,7 @@ public class GetAccountAuthorizationDetailsRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAccountAuthorizationDetailsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

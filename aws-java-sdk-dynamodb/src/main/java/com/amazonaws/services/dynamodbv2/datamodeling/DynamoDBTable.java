@@ -31,6 +31,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig.Table
  * 
  * @see TableNameOverride
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Inherited

@@ -42,6 +42,7 @@ public class DescribeDeploymentsResult implements Serializable, Cloneable {
      * @return An array of <code>Deployment</code> objects that describe the
      *         deployments.
      */
+
     public java.util.List<Deployment> getDeployments() {
         if (deployments == null) {
             deployments = new com.amazonaws.internal.SdkInternalList<Deployment>();
@@ -59,6 +60,7 @@ public class DescribeDeploymentsResult implements Serializable, Cloneable {
      *        An array of <code>Deployment</code> objects that describe the
      *        deployments.
      */
+
     public void setDeployments(java.util.Collection<Deployment> deployments) {
         if (deployments == null) {
             this.deployments = null;
@@ -87,6 +89,7 @@ public class DescribeDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsResult withDeployments(Deployment... deployments) {
         if (this.deployments == null) {
             setDeployments(new com.amazonaws.internal.SdkInternalList<Deployment>(
@@ -110,6 +113,7 @@ public class DescribeDeploymentsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeDeploymentsResult withDeployments(
             java.util.Collection<Deployment> deployments) {
         setDeployments(deployments);

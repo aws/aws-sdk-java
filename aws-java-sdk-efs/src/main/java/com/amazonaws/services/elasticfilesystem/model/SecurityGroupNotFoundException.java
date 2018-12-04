@@ -44,6 +44,7 @@ public class SecurityGroupNotFoundException extends AmazonServiceException {
     /**
      * @param errorCode
      */
+
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -51,6 +52,7 @@ public class SecurityGroupNotFoundException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getErrorCode() {
         return this.errorCode;
     }
@@ -60,6 +62,7 @@ public class SecurityGroupNotFoundException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SecurityGroupNotFoundException withErrorCode(String errorCode) {
         setErrorCode(errorCode);
         return this;

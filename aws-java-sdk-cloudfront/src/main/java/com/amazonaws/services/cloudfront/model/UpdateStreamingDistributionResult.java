@@ -35,6 +35,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      * @param streamingDistribution
      *        The streaming distribution's information.
      */
+
     public void setStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         this.streamingDistribution = streamingDistribution;
@@ -45,6 +46,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      * 
      * @return The streaming distribution's information.
      */
+
     public StreamingDistribution getStreamingDistribution() {
         return this.streamingDistribution;
     }
@@ -57,6 +59,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStreamingDistributionResult withStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         setStreamingDistribution(streamingDistribution);
@@ -70,6 +73,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      *        The current version of the configuration. For example:
      *        E2QWRUHAPOMQZL.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -80,6 +84,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      * @return The current version of the configuration. For example:
      *         E2QWRUHAPOMQZL.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -93,6 +98,7 @@ public class UpdateStreamingDistributionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateStreamingDistributionResult withETag(String eTag) {
         setETag(eTag);
         return this;

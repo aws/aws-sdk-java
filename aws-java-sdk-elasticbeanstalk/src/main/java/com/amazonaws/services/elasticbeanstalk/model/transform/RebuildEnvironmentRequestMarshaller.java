@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * RebuildEnvironmentRequest Marshaller

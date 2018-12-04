@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MetricFilterMatchRecordMarshaller
@@ -39,25 +34,25 @@ import com.amazonaws.util.json.*;
 public class MetricFilterMatchRecordJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MetricFilterMatchRecord metricFilterMatchRecord,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (metricFilterMatchRecord == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (metricFilterMatchRecord.getEventNumber() != null) {
-                jsonWriter.key("eventNumber").value(
+                jsonGenerator.writeFieldName("eventNumber").writeValue(
                         metricFilterMatchRecord.getEventNumber());
             }
-
             if (metricFilterMatchRecord.getEventMessage() != null) {
-                jsonWriter.key("eventMessage").value(
+                jsonGenerator.writeFieldName("eventMessage").writeValue(
                         metricFilterMatchRecord.getEventMessage());
             }
 
@@ -65,21 +60,23 @@ public class MetricFilterMatchRecordJsonMarshaller {
                     .getExtractedValues();
             if (!extractedValuesMap.isEmpty()
                     || !extractedValuesMap.isAutoConstruct()) {
-                jsonWriter.key("extractedValues");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("extractedValues");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> extractedValuesMapValue : extractedValuesMap
                         .entrySet()) {
                     if (extractedValuesMapValue.getValue() != null) {
-                        jsonWriter.key(extractedValuesMapValue.getKey());
+                        jsonGenerator.writeFieldName(extractedValuesMapValue
+                                .getKey());
 
-                        jsonWriter.value(extractedValuesMapValue.getValue());
+                        jsonGenerator.writeValue(extractedValuesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

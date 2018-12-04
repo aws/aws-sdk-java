@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,29 @@ public class GetRestApiResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setId(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    getRestApiResult.setId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getRestApiResult.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getRestApiResult.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    getRestApiResult.setCreatedDate(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getRestApiResult.setCreatedDate(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("warnings", targetDepth)) {
+                    context.nextToken();
+                    getRestApiResult.setWarnings(new ListUnmarshaller<String>(
+                            context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

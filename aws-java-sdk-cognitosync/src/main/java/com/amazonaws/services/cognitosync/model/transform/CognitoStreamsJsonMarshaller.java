@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.cognitosync.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CognitoStreamsMarshaller
@@ -39,32 +34,33 @@ import com.amazonaws.util.json.*;
 public class CognitoStreamsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(CognitoStreams cognitoStreams, JSONWriter jsonWriter) {
+    public void marshall(CognitoStreams cognitoStreams,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (cognitoStreams == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (cognitoStreams.getStreamName() != null) {
-                jsonWriter.key("StreamName").value(
+                jsonGenerator.writeFieldName("StreamName").writeValue(
                         cognitoStreams.getStreamName());
             }
-
             if (cognitoStreams.getRoleArn() != null) {
-                jsonWriter.key("RoleArn").value(cognitoStreams.getRoleArn());
+                jsonGenerator.writeFieldName("RoleArn").writeValue(
+                        cognitoStreams.getRoleArn());
             }
-
             if (cognitoStreams.getStreamingStatus() != null) {
-                jsonWriter.key("StreamingStatus").value(
+                jsonGenerator.writeFieldName("StreamingStatus").writeValue(
                         cognitoStreams.getStreamingStatus());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

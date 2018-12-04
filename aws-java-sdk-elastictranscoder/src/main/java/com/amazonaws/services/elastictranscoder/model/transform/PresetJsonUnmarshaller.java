@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,27 +54,27 @@ public class PresetJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
-                    preset.setId(StringJsonUnmarshaller.getInstance()
+                    preset.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
-                    preset.setArn(StringJsonUnmarshaller.getInstance()
+                    preset.setArn(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    preset.setName(StringJsonUnmarshaller.getInstance()
+                    preset.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
-                    preset.setDescription(StringJsonUnmarshaller.getInstance()
+                    preset.setDescription(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();
-                    preset.setContainer(StringJsonUnmarshaller.getInstance()
+                    preset.setContainer(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Audio", targetDepth)) {
@@ -92,7 +94,7 @@ public class PresetJsonUnmarshaller implements
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
-                    preset.setType(StringJsonUnmarshaller.getInstance()
+                    preset.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

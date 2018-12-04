@@ -88,6 +88,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setPath(String path) {
         this.path = path;
     }
@@ -104,6 +105,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getPath() {
         return this.path;
     }
@@ -123,6 +125,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withPath(String path) {
         setPath(path);
         return this;
@@ -136,6 +139,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @param groupName
      *        The friendly name that identifies the group.
      */
+
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
@@ -147,6 +151,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * 
      * @return The friendly name that identifies the group.
      */
+
     public String getGroupName() {
         return this.groupName;
     }
@@ -161,6 +166,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -180,6 +186,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *        >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
@@ -197,6 +204,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         >IAM Identifiers</a> in the <i>Using IAM</i> guide.
      */
+
     public String getGroupId() {
         return this.groupId;
     }
@@ -217,6 +225,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withGroupId(String groupId) {
         setGroupId(groupId);
         return this;
@@ -225,6 +234,7 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * @param arn
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -232,6 +242,7 @@ public class GroupDetail implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -241,6 +252,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withArn(String arn) {
         setArn(arn);
         return this;
@@ -256,6 +268,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO
      *        8601 date-time format</a>, when the group was created.
      */
+
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
@@ -270,6 +283,7 @@ public class GroupDetail implements Serializable, Cloneable {
      *         href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
      *         format</a>, when the group was created.
      */
+
     public java.util.Date getCreateDate() {
         return this.createDate;
     }
@@ -286,6 +300,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withCreateDate(java.util.Date createDate) {
         setCreateDate(createDate);
         return this;
@@ -298,6 +313,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * 
      * @return A list of the inline policies embedded in the group.
      */
+
     public java.util.List<PolicyDetail> getGroupPolicyList() {
         if (groupPolicyList == null) {
             groupPolicyList = new com.amazonaws.internal.SdkInternalList<PolicyDetail>();
@@ -313,6 +329,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @param groupPolicyList
      *        A list of the inline policies embedded in the group.
      */
+
     public void setGroupPolicyList(
             java.util.Collection<PolicyDetail> groupPolicyList) {
         if (groupPolicyList == null) {
@@ -340,6 +357,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withGroupPolicyList(PolicyDetail... groupPolicyList) {
         if (this.groupPolicyList == null) {
             setGroupPolicyList(new com.amazonaws.internal.SdkInternalList<PolicyDetail>(
@@ -361,6 +379,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withGroupPolicyList(
             java.util.Collection<PolicyDetail> groupPolicyList) {
         setGroupPolicyList(groupPolicyList);
@@ -374,6 +393,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * 
      * @return A list of the managed policies attached to the group.
      */
+
     public java.util.List<AttachedPolicy> getAttachedManagedPolicies() {
         if (attachedManagedPolicies == null) {
             attachedManagedPolicies = new com.amazonaws.internal.SdkInternalList<AttachedPolicy>();
@@ -389,6 +409,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @param attachedManagedPolicies
      *        A list of the managed policies attached to the group.
      */
+
     public void setAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         if (attachedManagedPolicies == null) {
@@ -416,6 +437,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withAttachedManagedPolicies(
             AttachedPolicy... attachedManagedPolicies) {
         if (this.attachedManagedPolicies == null) {
@@ -438,6 +460,7 @@ public class GroupDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GroupDetail withAttachedManagedPolicies(
             java.util.Collection<AttachedPolicy> attachedManagedPolicies) {
         setAttachedManagedPolicies(attachedManagedPolicies);

@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,18 +57,18 @@ public class ListKeyPoliciesResultJsonUnmarshaller implements
                     context.nextToken();
                     listKeyPoliciesResult
                             .setPolicyNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();
-                    listKeyPoliciesResult.setNextMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listKeyPoliciesResult.setNextMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Truncated", targetDepth)) {
                     context.nextToken();
-                    listKeyPoliciesResult.setTruncated(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listKeyPoliciesResult.setTruncated(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

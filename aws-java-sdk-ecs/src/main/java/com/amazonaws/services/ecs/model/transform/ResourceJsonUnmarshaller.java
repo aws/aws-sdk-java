@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,33 @@ public class ResourceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    resource.setName(StringJsonUnmarshaller.getInstance()
+                    resource.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    resource.setType(StringJsonUnmarshaller.getInstance()
+                    resource.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("doubleValue", targetDepth)) {
                     context.nextToken();
-                    resource.setDoubleValue(DoubleJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resource.setDoubleValue(context.getUnmarshaller(
+                            Double.class).unmarshall(context));
                 }
                 if (context.testExpression("longValue", targetDepth)) {
                     context.nextToken();
-                    resource.setLongValue(LongJsonUnmarshaller.getInstance()
+                    resource.setLongValue(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("integerValue", targetDepth)) {
                     context.nextToken();
-                    resource.setIntegerValue(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resource.setIntegerValue(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("stringSetValue", targetDepth)) {
                     context.nextToken();
                     resource.setStringSetValue(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

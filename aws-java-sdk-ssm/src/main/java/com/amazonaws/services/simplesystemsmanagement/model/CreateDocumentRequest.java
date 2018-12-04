@@ -27,10 +27,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      */
     private String content;
@@ -43,55 +40,40 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string. For more information about the contents of
-     *        this string, see <a href=
-     *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >SSM Document</a>.
+     *        A valid JSON string.
      */
+
     public void setContent(String content) {
         this.content = content;
     }
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
-     * @return A valid JSON string. For more information about the contents of
-     *         this string, see <a href=
-     *         "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *         >SSM Document</a>.
+     * @return A valid JSON string.
      */
+
     public String getContent() {
         return this.content;
     }
 
     /**
      * <p>
-     * A valid JSON string. For more information about the contents of this
-     * string, see <a href=
-     * "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     * >SSM Document</a>.
+     * A valid JSON string.
      * </p>
      * 
      * @param content
-     *        A valid JSON string. For more information about the contents of
-     *        this string, see <a href=
-     *        "http://docs.aws.amazon.com/ssm/latest/APIReference/aws-ssm-document.html"
-     *        >SSM Document</a>.
+     *        A valid JSON string.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDocumentRequest withContent(String content) {
         setContent(content);
         return this;
@@ -105,6 +87,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * @param name
      *        A name for the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -116,6 +99,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * 
      * @return A name for the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -130,6 +114,7 @@ public class CreateDocumentRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateDocumentRequest withName(String name) {
         setName(name);
         return this;

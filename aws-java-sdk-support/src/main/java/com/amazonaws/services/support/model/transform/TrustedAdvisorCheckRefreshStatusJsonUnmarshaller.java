@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,22 +55,21 @@ public class TrustedAdvisorCheckRefreshStatusJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("checkId", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckRefreshStatus
-                            .setCheckId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckRefreshStatus.setCheckId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
-                    trustedAdvisorCheckRefreshStatus
-                            .setStatus(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    trustedAdvisorCheckRefreshStatus.setStatus(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("millisUntilNextRefreshable",
                         targetDepth)) {
                     context.nextToken();
                     trustedAdvisorCheckRefreshStatus
-                            .setMillisUntilNextRefreshable(LongJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMillisUntilNextRefreshable(context
+                                    .getUnmarshaller(Long.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

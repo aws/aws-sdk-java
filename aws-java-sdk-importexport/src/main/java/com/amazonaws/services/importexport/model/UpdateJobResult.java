@@ -32,6 +32,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @param success
      */
+
     public void setSuccess(Boolean success) {
         this.success = success;
     }
@@ -39,6 +40,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean getSuccess() {
         return this.success;
     }
@@ -48,6 +50,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobResult withSuccess(Boolean success) {
         setSuccess(success);
         return this;
@@ -56,6 +59,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public Boolean isSuccess() {
         return this.success;
     }
@@ -63,6 +67,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @param warningMessage
      */
+
     public void setWarningMessage(String warningMessage) {
         this.warningMessage = warningMessage;
     }
@@ -70,6 +75,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getWarningMessage() {
         return this.warningMessage;
     }
@@ -79,6 +85,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobResult withWarningMessage(String warningMessage) {
         setWarningMessage(warningMessage);
         return this;
@@ -87,6 +94,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<Artifact> getArtifactList() {
         if (artifactList == null) {
             artifactList = new com.amazonaws.internal.SdkInternalList<Artifact>();
@@ -97,6 +105,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
     /**
      * @param artifactList
      */
+
     public void setArtifactList(java.util.Collection<Artifact> artifactList) {
         if (artifactList == null) {
             this.artifactList = null;
@@ -119,6 +128,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobResult withArtifactList(Artifact... artifactList) {
         if (this.artifactList == null) {
             setArtifactList(new com.amazonaws.internal.SdkInternalList<Artifact>(
@@ -135,6 +145,7 @@ public class UpdateJobResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateJobResult withArtifactList(
             java.util.Collection<Artifact> artifactList) {
         setArtifactList(artifactList);

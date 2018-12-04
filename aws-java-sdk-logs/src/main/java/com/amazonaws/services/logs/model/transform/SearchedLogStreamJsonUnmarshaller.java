@@ -18,6 +18,8 @@ package com.amazonaws.services.logs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,14 +55,14 @@ public class SearchedLogStreamJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("logStreamName", targetDepth)) {
                     context.nextToken();
-                    searchedLogStream.setLogStreamName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    searchedLogStream.setLogStreamName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("searchedCompletely", targetDepth)) {
                     context.nextToken();
                     searchedLogStream
-                            .setSearchedCompletely(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setSearchedCompletely(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

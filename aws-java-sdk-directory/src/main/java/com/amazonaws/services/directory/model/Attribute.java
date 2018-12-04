@@ -46,6 +46,7 @@ public class Attribute implements Serializable, Cloneable {
      * @param name
      *        The name of the attribute.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class Attribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class Attribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Attribute withName(String name) {
         setName(name);
         return this;
@@ -84,6 +87,7 @@ public class Attribute implements Serializable, Cloneable {
      * @param value
      *        The value of the attribute.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -95,6 +99,7 @@ public class Attribute implements Serializable, Cloneable {
      * 
      * @return The value of the attribute.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -109,6 +114,7 @@ public class Attribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Attribute withValue(String value) {
         setValue(value);
         return this;

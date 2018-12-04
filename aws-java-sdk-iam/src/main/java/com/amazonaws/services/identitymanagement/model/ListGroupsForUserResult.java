@@ -59,6 +59,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * 
      * @return A list of groups.
      */
+
     public java.util.List<Group> getGroups() {
         if (groups == null) {
             groups = new com.amazonaws.internal.SdkInternalList<Group>();
@@ -74,6 +75,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * @param groups
      *        A list of groups.
      */
+
     public void setGroups(java.util.Collection<Group> groups) {
         if (groups == null) {
             this.groups = null;
@@ -99,6 +101,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupsForUserResult withGroups(Group... groups) {
         if (this.groups == null) {
             setGroups(new com.amazonaws.internal.SdkInternalList<Group>(
@@ -120,6 +123,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupsForUserResult withGroups(java.util.Collection<Group> groups) {
         setGroups(groups);
         return this;
@@ -146,6 +150,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -170,6 +175,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -197,6 +203,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupsForUserResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -222,6 +229,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -238,6 +246,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -253,6 +262,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -271,6 +281,7 @@ public class ListGroupsForUserResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListGroupsForUserResult withMarker(String marker) {
         setMarker(marker);
         return this;

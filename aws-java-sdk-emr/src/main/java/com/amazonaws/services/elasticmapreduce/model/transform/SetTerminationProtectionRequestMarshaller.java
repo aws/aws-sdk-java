@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetTerminationProtectionRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class SetTerminationProtectionRequestMarshaller
         implements
         Marshaller<Request<SetTerminationProtectionRequest>, SetTerminationProtectionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetTerminationProtectionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetTerminationProtectionRequest> marshall(
             SetTerminationProtectionRequest setTerminationProtectionRequest) {
@@ -65,38 +66,37 @@ public class SetTerminationProtectionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalList<String> jobFlowIdsList = (com.amazonaws.internal.SdkInternalList<String>) setTerminationProtectionRequest
                     .getJobFlowIds();
             if (!jobFlowIdsList.isEmpty() || !jobFlowIdsList.isAutoConstruct()) {
-                jsonWriter.key("JobFlowIds");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("JobFlowIds");
+                jsonGenerator.writeStartArray();
                 for (String jobFlowIdsListValue : jobFlowIdsList) {
                     if (jobFlowIdsListValue != null) {
-                        jsonWriter.value(jobFlowIdsListValue);
+                        jsonGenerator.writeValue(jobFlowIdsListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (setTerminationProtectionRequest.getTerminationProtected() != null) {
-                jsonWriter.key("TerminationProtected").value(
-                        setTerminationProtectionRequest
-                                .getTerminationProtected());
+                jsonGenerator.writeFieldName("TerminationProtected")
+                        .writeValue(
+                                setTerminationProtectionRequest
+                                        .getTerminationProtected());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -19,38 +19,56 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Describes a filter for a specific list of instances.
+ * </p>
  */
 public class InstanceInformationFilter implements Serializable, Cloneable {
 
-    /** The name of the filter. */
+    /**
+     * <p>
+     * The name of the filter.
+     * </p>
+     */
     private String key;
-    /** The filter values. */
+    /**
+     * <p>
+     * The filter values.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> valueSet;
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
      * @see InstanceInformationFilterKey
      */
+
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @return The name of the filter.
      * @see InstanceInformationFilterKey
      */
+
     public String getKey() {
         return this.key;
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -58,26 +76,30 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public InstanceInformationFilter withKey(String key) {
         setKey(key);
         return this;
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public void setKey(InstanceInformationFilterKey key) {
         this.key = key.toString();
     }
 
     /**
+     * <p>
      * The name of the filter.
+     * </p>
      * 
      * @param key
      *        The name of the filter.
@@ -85,16 +107,20 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceInformationFilterKey
      */
+
     public InstanceInformationFilter withKey(InstanceInformationFilterKey key) {
         setKey(key);
         return this;
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @return The filter values.
      */
+
     public java.util.List<String> getValueSet() {
         if (valueSet == null) {
             valueSet = new com.amazonaws.internal.SdkInternalList<String>();
@@ -103,11 +129,14 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @param valueSet
      *        The filter values.
      */
+
     public void setValueSet(java.util.Collection<String> valueSet) {
         if (valueSet == null) {
             this.valueSet = null;
@@ -119,7 +148,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setValueSet(java.util.Collection)} or
@@ -132,6 +163,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformationFilter withValueSet(String... valueSet) {
         if (this.valueSet == null) {
             setValueSet(new com.amazonaws.internal.SdkInternalList<String>(
@@ -144,13 +176,16 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * The filter values.
+     * </p>
      * 
      * @param valueSet
      *        The filter values.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceInformationFilter withValueSet(
             java.util.Collection<String> valueSet) {
         setValueSet(valueSet);

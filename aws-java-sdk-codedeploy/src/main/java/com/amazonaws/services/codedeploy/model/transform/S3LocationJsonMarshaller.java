@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codedeploy.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codedeploy.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * S3LocationMarshaller
@@ -39,38 +34,41 @@ import com.amazonaws.util.json.*;
 public class S3LocationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(S3Location s3Location, JSONWriter jsonWriter) {
+    public void marshall(S3Location s3Location,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (s3Location == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (s3Location.getBucket() != null) {
-                jsonWriter.key("bucket").value(s3Location.getBucket());
+                jsonGenerator.writeFieldName("bucket").writeValue(
+                        s3Location.getBucket());
             }
-
             if (s3Location.getKey() != null) {
-                jsonWriter.key("key").value(s3Location.getKey());
+                jsonGenerator.writeFieldName("key").writeValue(
+                        s3Location.getKey());
             }
-
             if (s3Location.getBundleType() != null) {
-                jsonWriter.key("bundleType").value(s3Location.getBundleType());
+                jsonGenerator.writeFieldName("bundleType").writeValue(
+                        s3Location.getBundleType());
             }
-
             if (s3Location.getVersion() != null) {
-                jsonWriter.key("version").value(s3Location.getVersion());
+                jsonGenerator.writeFieldName("version").writeValue(
+                        s3Location.getVersion());
             }
-
             if (s3Location.getETag() != null) {
-                jsonWriter.key("eTag").value(s3Location.getETag());
+                jsonGenerator.writeFieldName("eTag").writeValue(
+                        s3Location.getETag());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

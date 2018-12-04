@@ -55,6 +55,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -66,6 +67,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -80,6 +82,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatePipelineRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -92,6 +95,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of parameter values to pass to the pipeline at activation.
      */
+
     public java.util.List<ParameterValue> getParameterValues() {
         if (parameterValues == null) {
             parameterValues = new com.amazonaws.internal.SdkInternalList<ParameterValue>();
@@ -107,6 +111,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @param parameterValues
      *        A list of parameter values to pass to the pipeline at activation.
      */
+
     public void setParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         if (parameterValues == null) {
@@ -134,6 +139,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatePipelineRequest withParameterValues(
             ParameterValue... parameterValues) {
         if (this.parameterValues == null) {
@@ -156,6 +162,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatePipelineRequest withParameterValues(
             java.util.Collection<ParameterValue> parameterValues) {
         setParameterValues(parameterValues);
@@ -172,6 +179,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      *        The date and time to resume the pipeline. By default, the pipeline
      *        resumes from the last completed execution.
      */
+
     public void setStartTimestamp(java.util.Date startTimestamp) {
         this.startTimestamp = startTimestamp;
     }
@@ -185,6 +193,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @return The date and time to resume the pipeline. By default, the
      *         pipeline resumes from the last completed execution.
      */
+
     public java.util.Date getStartTimestamp() {
         return this.startTimestamp;
     }
@@ -201,6 +210,7 @@ public class ActivatePipelineRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActivatePipelineRequest withStartTimestamp(
             java.util.Date startTimestamp) {
         setStartTimestamp(startTimestamp);

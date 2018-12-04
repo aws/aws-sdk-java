@@ -77,6 +77,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      *        communicate the result. Note that the <code>Id</code>s of a batch
      *        request need to be unique within the request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -92,6 +93,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      *         communicate the result. Note that the <code>Id</code>s of a batch
      *         request need to be unique within the request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -110,6 +112,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchRequestEntry withId(String id) {
         setId(id);
         return this;
@@ -123,6 +126,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param receiptHandle
      *        A receipt handle.
      */
+
     public void setReceiptHandle(String receiptHandle) {
         this.receiptHandle = receiptHandle;
     }
@@ -134,6 +138,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * 
      * @return A receipt handle.
      */
+
     public String getReceiptHandle() {
         return this.receiptHandle;
     }
@@ -148,6 +153,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteMessageBatchRequestEntry withReceiptHandle(String receiptHandle) {
         setReceiptHandle(receiptHandle);
         return this;

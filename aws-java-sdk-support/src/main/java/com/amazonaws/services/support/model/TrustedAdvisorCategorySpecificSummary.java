@@ -45,6 +45,7 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable,
      *        The summary information about cost savings for a Trusted Advisor
      *        check that is in the Cost Optimizing category.
      */
+
     public void setCostOptimizing(
             TrustedAdvisorCostOptimizingSummary costOptimizing) {
         this.costOptimizing = costOptimizing;
@@ -59,6 +60,7 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable,
      * @return The summary information about cost savings for a Trusted Advisor
      *         check that is in the Cost Optimizing category.
      */
+
     public TrustedAdvisorCostOptimizingSummary getCostOptimizing() {
         return this.costOptimizing;
     }
@@ -75,6 +77,7 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TrustedAdvisorCategorySpecificSummary withCostOptimizing(
             TrustedAdvisorCostOptimizingSummary costOptimizing) {
         setCostOptimizing(costOptimizing);

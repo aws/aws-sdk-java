@@ -30,8 +30,10 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the ARN of the trail from which tags should be removed. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String resourceId;
@@ -45,16 +47,19 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the ARN of the trail from which tags should be removed. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
      *        Specifies the ARN of the trail from which tags should be removed.
-     *        The format of a trail ARN is
+     *        The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -62,15 +67,18 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the ARN of the trail from which tags should be removed. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the ARN of the trail from which tags should be removed.
-     *         The format of a trail ARN is
+     *         The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -78,18 +86,21 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies the ARN of the trail from which tags should be removed. The
-     * format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceId
      *        Specifies the ARN of the trail from which tags should be removed.
-     *        The format of a trail ARN is
+     *        The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -102,6 +113,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Specifies a list of tags to be removed.
      */
+
     public java.util.List<Tag> getTagsList() {
         if (tagsList == null) {
             tagsList = new com.amazonaws.internal.SdkInternalList<Tag>();
@@ -117,6 +129,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @param tagsList
      *        Specifies a list of tags to be removed.
      */
+
     public void setTagsList(java.util.Collection<Tag> tagsList) {
         if (tagsList == null) {
             this.tagsList = null;
@@ -143,6 +156,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagsList(Tag... tagsList) {
         if (this.tagsList == null) {
             setTagsList(new com.amazonaws.internal.SdkInternalList<Tag>(
@@ -164,6 +178,7 @@ public class RemoveTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RemoveTagsRequest withTagsList(java.util.Collection<Tag> tagsList) {
         setTagsList(tagsList);
         return this;

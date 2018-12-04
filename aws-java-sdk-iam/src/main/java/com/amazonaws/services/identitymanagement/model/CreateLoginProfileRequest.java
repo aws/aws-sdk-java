@@ -27,13 +27,30 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user to create a password for.
+     * The name of the IAM user to create a password for. The user must already
+     * exist.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      */
     private String userName;
     /**
      * <p>
      * The new password for the user.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
      * </p>
      */
     private String password;
@@ -59,9 +76,26 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * object members.
      * 
      * @param userName
-     *        The name of the user to create a password for.
+     *        The name of the IAM user to create a password for. The user must
+     *        already exist.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @param password
      *        The new password for the user.
+     *        </p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of almost
+     *        any printable ASCII character from the space ( ) through the end
+     *        of the ASCII character range (\u00FF). You can also include the
+     *        tab ( ), line feed ( ), and carriage return ( ) characters.
+     *        Although any of these characters are valid in a password, note
+     *        that many tools, such as the AWS Management Console, might
+     *        restrict the ability to enter certain characters because they have
+     *        special meaning within that tool.
      */
     public CreateLoginProfileRequest(String userName, String password) {
         setUserName(userName);
@@ -70,37 +104,79 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user to create a password for.
+     * The name of the IAM user to create a password for. The user must already
+     * exist.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user to create a password for.
+     *        The name of the IAM user to create a password for. The user must
+     *        already exist.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
     /**
      * <p>
-     * The name of the user to create a password for.
+     * The name of the IAM user to create a password for. The user must already
+     * exist.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
-     * @return The name of the user to create a password for.
+     * @return The name of the IAM user to create a password for. The user must
+     *         already exist.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getUserName() {
         return this.userName;
     }
 
     /**
      * <p>
-     * The name of the user to create a password for.
+     * The name of the IAM user to create a password for. The user must already
+     * exist.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the user to create a password for.
+     *        The name of the IAM user to create a password for. The user must
+     *        already exist.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoginProfileRequest withUserName(String userName) {
         setUserName(userName);
         return this;
@@ -110,10 +186,31 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The new password for the user.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
      * @param password
-     *        The new password for the user.
+     *        The new password for the user.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of almost
+     *        any printable ASCII character from the space ( ) through the end
+     *        of the ASCII character range (\u00FF). You can also include the
+     *        tab ( ), line feed ( ), and carriage return ( ) characters.
+     *        Although any of these characters are valid in a password, note
+     *        that many tools, such as the AWS Management Console, might
+     *        restrict the ability to enter certain characters because they have
+     *        special meaning within that tool.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -122,9 +219,30 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The new password for the user.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
-     * @return The new password for the user.
+     * @return The new password for the user.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of almost
+     *         any printable ASCII character from the space ( ) through the end
+     *         of the ASCII character range (\u00FF). You can also include the
+     *         tab ( ), line feed ( ), and carriage return ( ) characters.
+     *         Although any of these characters are valid in a password, note
+     *         that many tools, such as the AWS Management Console, might
+     *         restrict the ability to enter certain characters because they
+     *         have special meaning within that tool.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -133,12 +251,33 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * <p>
      * The new password for the user.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of almost any printable
+     * ASCII character from the space ( ) through the end of the ASCII character
+     * range (\u00FF). You can also include the tab ( ), line feed ( ), and
+     * carriage return ( ) characters. Although any of these characters are
+     * valid in a password, note that many tools, such as the AWS Management
+     * Console, might restrict the ability to enter certain characters because
+     * they have special meaning within that tool.
+     * </p>
      * 
      * @param password
-     *        The new password for the user.
+     *        The new password for the user.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of almost
+     *        any printable ASCII character from the space ( ) through the end
+     *        of the ASCII character range (\u00FF). You can also include the
+     *        tab ( ), line feed ( ), and carriage return ( ) characters.
+     *        Although any of these characters are valid in a password, note
+     *        that many tools, such as the AWS Management Console, might
+     *        restrict the ability to enter certain characters because they have
+     *        special meaning within that tool.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoginProfileRequest withPassword(String password) {
         setPassword(password);
         return this;
@@ -154,6 +293,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      *        Specifies whether the user is required to set a new password on
      *        next sign-in.
      */
+
     public void setPasswordResetRequired(Boolean passwordResetRequired) {
         this.passwordResetRequired = passwordResetRequired;
     }
@@ -167,6 +307,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * @return Specifies whether the user is required to set a new password on
      *         next sign-in.
      */
+
     public Boolean getPasswordResetRequired() {
         return this.passwordResetRequired;
     }
@@ -183,6 +324,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateLoginProfileRequest withPasswordResetRequired(
             Boolean passwordResetRequired) {
         setPasswordResetRequired(passwordResetRequired);
@@ -198,6 +340,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest
      * @return Specifies whether the user is required to set a new password on
      *         next sign-in.
      */
+
     public Boolean isPasswordResetRequired() {
         return this.passwordResetRequired;
     }

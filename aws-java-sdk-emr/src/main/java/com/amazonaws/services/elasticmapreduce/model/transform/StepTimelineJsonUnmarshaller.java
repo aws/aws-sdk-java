@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class StepTimelineJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    stepTimeline.setCreationDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepTimeline.setCreationDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    stepTimeline.setStartDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepTimeline.setStartDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    stepTimeline.setEndDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepTimeline.setEndDateTime(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

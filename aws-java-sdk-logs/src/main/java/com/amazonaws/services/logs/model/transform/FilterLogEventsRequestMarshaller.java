@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FilterLogEventsRequest Marshaller
  */
 public class FilterLogEventsRequestMarshaller implements
         Marshaller<Request<FilterLogEventsRequest>, FilterLogEventsRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public FilterLogEventsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<FilterLogEventsRequest> marshall(
             FilterLogEventsRequest filterLogEventsRequest) {
@@ -63,13 +64,13 @@ public class FilterLogEventsRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (filterLogEventsRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         filterLogEventsRequest.getLogGroupName());
             }
 
@@ -77,54 +78,47 @@ public class FilterLogEventsRequestMarshaller implements
                     .getLogStreamNames();
             if (!logStreamNamesList.isEmpty()
                     || !logStreamNamesList.isAutoConstruct()) {
-                jsonWriter.key("logStreamNames");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("logStreamNames");
+                jsonGenerator.writeStartArray();
                 for (String logStreamNamesListValue : logStreamNamesList) {
                     if (logStreamNamesListValue != null) {
-                        jsonWriter.value(logStreamNamesListValue);
+                        jsonGenerator.writeValue(logStreamNamesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (filterLogEventsRequest.getStartTime() != null) {
-                jsonWriter.key("startTime").value(
+                jsonGenerator.writeFieldName("startTime").writeValue(
                         filterLogEventsRequest.getStartTime());
             }
-
             if (filterLogEventsRequest.getEndTime() != null) {
-                jsonWriter.key("endTime").value(
+                jsonGenerator.writeFieldName("endTime").writeValue(
                         filterLogEventsRequest.getEndTime());
             }
-
             if (filterLogEventsRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         filterLogEventsRequest.getFilterPattern());
             }
-
             if (filterLogEventsRequest.getNextToken() != null) {
-                jsonWriter.key("nextToken").value(
+                jsonGenerator.writeFieldName("nextToken").writeValue(
                         filterLogEventsRequest.getNextToken());
             }
-
             if (filterLogEventsRequest.getLimit() != null) {
-                jsonWriter.key("limit")
-                        .value(filterLogEventsRequest.getLimit());
+                jsonGenerator.writeFieldName("limit").writeValue(
+                        filterLogEventsRequest.getLimit());
             }
-
             if (filterLogEventsRequest.getInterleaved() != null) {
-                jsonWriter.key("interleaved").value(
+                jsonGenerator.writeFieldName("interleaved").writeValue(
                         filterLogEventsRequest.getInterleaved());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

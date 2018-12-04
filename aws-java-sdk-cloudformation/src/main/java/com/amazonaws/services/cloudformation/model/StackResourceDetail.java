@@ -100,6 +100,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param stackName
      *        The name associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -111,6 +112,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return The name associated with the stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -125,6 +127,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -138,6 +141,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param stackId
      *        Unique identifier of the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -149,6 +153,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return Unique identifier of the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -163,6 +168,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -176,6 +182,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param logicalResourceId
      *        The logical name of the resource specified in the template.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -187,6 +194,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return The logical name of the resource specified in the template.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -201,6 +209,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withLogicalResourceId(String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
         return this;
@@ -216,6 +225,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        The name or unique identifier that corresponds to a physical
      *        instance ID of a resource supported by AWS CloudFormation.
      */
+
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
@@ -229,6 +239,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return The name or unique identifier that corresponds to a physical
      *         instance ID of a resource supported by AWS CloudFormation.
      */
+
     public String getPhysicalResourceId() {
         return this.physicalResourceId;
     }
@@ -245,6 +256,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withPhysicalResourceId(String physicalResourceId) {
         setPhysicalResourceId(physicalResourceId);
         return this;
@@ -263,6 +275,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *        Guide.)
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -279,6 +292,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *         > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *         Guide.)
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -298,6 +312,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -311,6 +326,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param lastUpdatedTimestamp
      *        Time the status was updated.
      */
+
     public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
         this.lastUpdatedTimestamp = lastUpdatedTimestamp;
     }
@@ -322,6 +338,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return Time the status was updated.
      */
+
     public java.util.Date getLastUpdatedTimestamp() {
         return this.lastUpdatedTimestamp;
     }
@@ -336,6 +353,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withLastUpdatedTimestamp(
             java.util.Date lastUpdatedTimestamp) {
         setLastUpdatedTimestamp(lastUpdatedTimestamp);
@@ -351,6 +369,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        Current status of the resource.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
     }
@@ -363,6 +382,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Current status of the resource.
      * @see ResourceStatus
      */
+
     public String getResourceStatus() {
         return this.resourceStatus;
     }
@@ -378,6 +398,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResourceDetail withResourceStatus(String resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -390,10 +411,9 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @param resourceStatus
      *        Current status of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(ResourceStatus resourceStatus) {
         this.resourceStatus = resourceStatus.toString();
     }
@@ -409,6 +429,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackResourceDetail withResourceStatus(ResourceStatus resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -422,6 +443,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param resourceStatusReason
      *        Success/failure message associated with the resource.
      */
+
     public void setResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
     }
@@ -433,6 +455,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return Success/failure message associated with the resource.
      */
+
     public String getResourceStatusReason() {
         return this.resourceStatusReason;
     }
@@ -447,6 +470,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withResourceStatusReason(
             String resourceStatusReason) {
         setResourceStatusReason(resourceStatusReason);
@@ -461,6 +485,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @param description
      *        User defined description associated with the resource.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -472,6 +497,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * 
      * @return User defined description associated with the resource.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -486,6 +512,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withDescription(String description) {
         setDescription(description);
         return this;
@@ -505,6 +532,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html"
      *        >Metadata Attribute</a> in the AWS CloudFormation User Guide.
      */
+
     public void setMetadata(String metadata) {
         this.metadata = metadata;
     }
@@ -522,6 +550,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html"
      *         >Metadata Attribute</a> in the AWS CloudFormation User Guide.
      */
+
     public String getMetadata() {
         return this.metadata;
     }
@@ -542,6 +571,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackResourceDetail withMetadata(String metadata) {
         setMetadata(metadata);
         return this;

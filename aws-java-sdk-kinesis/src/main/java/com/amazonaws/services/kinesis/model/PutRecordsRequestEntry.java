@@ -68,6 +68,14 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param data
      *        The data blob to put into the record, which is base64-encoded when
@@ -75,6 +83,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      *        base64-encoding) is added to the partition key size, the total
      *        size must not exceed the maximum record size (1 MB).
      */
+
     public void setData(java.nio.ByteBuffer data) {
         this.data = data;
     }
@@ -102,6 +111,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      *         before base64-encoding) is added to the partition key size, the
      *         total size must not exceed the maximum record size (1 MB).
      */
+
     public java.nio.ByteBuffer getData() {
         return this.data;
     }
@@ -122,6 +132,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequestEntry withData(java.nio.ByteBuffer data) {
         setData(data);
         return this;
@@ -137,6 +148,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      *        The hash value used to determine explicitly the shard that the
      *        data record is assigned to by overriding the partition key hash.
      */
+
     public void setExplicitHashKey(String explicitHashKey) {
         this.explicitHashKey = explicitHashKey;
     }
@@ -150,6 +162,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * @return The hash value used to determine explicitly the shard that the
      *         data record is assigned to by overriding the partition key hash.
      */
+
     public String getExplicitHashKey() {
         return this.explicitHashKey;
     }
@@ -166,6 +179,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequestEntry withExplicitHashKey(String explicitHashKey) {
         setExplicitHashKey(explicitHashKey);
         return this;
@@ -195,6 +209,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      *        hashing mechanism, all data records with the same partition key
      *        map to the same shard within the stream.
      */
+
     public void setPartitionKey(String partitionKey) {
         this.partitionKey = partitionKey;
     }
@@ -222,6 +237,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      *         of this hashing mechanism, all data records with the same
      *         partition key map to the same shard within the stream.
      */
+
     public String getPartitionKey() {
         return this.partitionKey;
     }
@@ -252,6 +268,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public PutRecordsRequestEntry withPartitionKey(String partitionKey) {
         setPartitionKey(partitionKey);
         return this;

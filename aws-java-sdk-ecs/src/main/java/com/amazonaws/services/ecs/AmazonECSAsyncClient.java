@@ -16,6 +16,7 @@
 package com.amazonaws.services.ecs;
 
 import com.amazonaws.services.ecs.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon ECS asynchronously. Each asynchronous method
@@ -40,6 +41,7 @@ import com.amazonaws.services.ecs.model.*;
  * worry about scaling your management infrastructure.
  * </p>
  */
+@ThreadSafe
 public class AmazonECSAsyncClient extends AmazonECSClient implements
         AmazonECSAsync {
 
@@ -137,8 +139,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -230,9 +231,7 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**

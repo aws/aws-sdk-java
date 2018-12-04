@@ -77,6 +77,7 @@ public class GetWebACLResult implements Serializable, Cloneable {
      *        <code>RuleId</code></li>
      *        <li><code>Action</code>: Contains <code>Type</code></li>
      */
+
     public void setWebACL(WebACL webACL) {
         this.webACL = webACL;
     }
@@ -114,6 +115,7 @@ public class GetWebACLResult implements Serializable, Cloneable {
      *         <code>RuleId</code></li>
      *         <li><code>Action</code>: Contains <code>Type</code></li>
      */
+
     public WebACL getWebACL() {
         return this.webACL;
     }
@@ -154,6 +156,7 @@ public class GetWebACLResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetWebACLResult withWebACL(WebACL webACL) {
         setWebACL(webACL);
         return this;

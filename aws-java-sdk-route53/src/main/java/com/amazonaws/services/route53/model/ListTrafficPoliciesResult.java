@@ -73,6 +73,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *         element for each traffic policy that was created by the current
      *         AWS account.
      */
+
     public java.util.List<TrafficPolicySummary> getTrafficPolicySummaries() {
         if (trafficPolicySummaries == null) {
             trafficPolicySummaries = new com.amazonaws.internal.SdkInternalList<TrafficPolicySummary>();
@@ -91,6 +92,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *        for each traffic policy that was created by the current AWS
      *        account.
      */
+
     public void setTrafficPolicySummaries(
             java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
         if (trafficPolicySummaries == null) {
@@ -121,6 +123,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesResult withTrafficPolicySummaries(
             TrafficPolicySummary... trafficPolicySummaries) {
         if (this.trafficPolicySummaries == null) {
@@ -146,6 +149,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesResult withTrafficPolicySummaries(
             java.util.Collection<TrafficPolicySummary> trafficPolicySummaries) {
         setTrafficPolicySummaries(trafficPolicySummaries);
@@ -175,6 +179,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -201,6 +206,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -230,6 +236,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -257,6 +264,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -274,6 +282,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *        policy in the next group of <code>MaxItems</code> traffic
      *        policies.
      */
+
     public void setTrafficPolicyIdMarker(String trafficPolicyIdMarker) {
         this.trafficPolicyIdMarker = trafficPolicyIdMarker;
     }
@@ -290,6 +299,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *         policy in the next group of <code>MaxItems</code> traffic
      *         policies.
      */
+
     public String getTrafficPolicyIdMarker() {
         return this.trafficPolicyIdMarker;
     }
@@ -309,6 +319,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesResult withTrafficPolicyIdMarker(
             String trafficPolicyIdMarker) {
         setTrafficPolicyIdMarker(trafficPolicyIdMarker);
@@ -327,6 +338,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *        parameter in the call to <code>ListTrafficPolicies</code> that
      *        produced the current response.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -342,6 +354,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      *         parameter in the call to <code>ListTrafficPolicies</code> that
      *         produced the current response.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -360,6 +373,7 @@ public class ListTrafficPoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTrafficPoliciesResult withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;

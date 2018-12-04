@@ -35,8 +35,8 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
     private String thingName;
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      */
     private AttributePayload attributePayload;
@@ -49,6 +49,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * @param thingName
      *        The name of the thing.
      */
+
     public void setThingName(String thingName) {
         this.thingName = thingName;
     }
@@ -60,6 +61,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the thing.
      */
+
     public String getThingName() {
         return this.thingName;
     }
@@ -74,6 +76,7 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingRequest withThingName(String thingName) {
         setThingName(thingName);
         return this;
@@ -81,46 +84,49 @@ public class CreateThingRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload. Which consists of up to 3 name/value pairs
-     *        in a JSON document. For example:
-     *        {\"attributes\":{\"string1\":\"string2\"}}
+     *        The attribute payload, which consists of up to 3 name/value pairs
+     *        in a JSON document (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public void setAttributePayload(AttributePayload attributePayload) {
         this.attributePayload = attributePayload;
     }
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
-     * @return The attribute payload. Which consists of up to 3 name/value pairs
-     *         in a JSON document. For example:
-     *         {\"attributes\":{\"string1\":\"string2\"}}
+     * @return The attribute payload, which consists of up to 3 name/value pairs
+     *         in a JSON document (for example,
+     *         {\"attributes\":{\"string1\":\"string2\"}}).
      */
+
     public AttributePayload getAttributePayload() {
         return this.attributePayload;
     }
 
     /**
      * <p>
-     * The attribute payload. Which consists of up to 3 name/value pairs in a
-     * JSON document. For example: {\"attributes\":{\"string1\":\"string2\"}}
+     * The attribute payload, which consists of up to 3 name/value pairs in a
+     * JSON document (for example, {\"attributes\":{\"string1\":\"string2\"}}).
      * </p>
      * 
      * @param attributePayload
-     *        The attribute payload. Which consists of up to 3 name/value pairs
-     *        in a JSON document. For example:
-     *        {\"attributes\":{\"string1\":\"string2\"}}
+     *        The attribute payload, which consists of up to 3 name/value pairs
+     *        in a JSON document (for example,
+     *        {\"attributes\":{\"string1\":\"string2\"}}).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateThingRequest withAttributePayload(
             AttributePayload attributePayload) {
         setAttributePayload(attributePayload);

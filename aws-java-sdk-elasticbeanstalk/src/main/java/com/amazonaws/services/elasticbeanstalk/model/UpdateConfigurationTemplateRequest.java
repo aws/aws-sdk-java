@@ -127,6 +127,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        <code>UpdateConfigurationTemplate</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -149,6 +150,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         <code>UpdateConfigurationTemplate</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -174,6 +176,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withApplicationName(
             String applicationName) {
         setApplicationName(applicationName);
@@ -197,6 +200,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        <code>UpdateConfigurationTemplate</code> returns an
      *        <code>InvalidParameterValue</code> error.
      */
+
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
@@ -217,6 +221,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         <code>UpdateConfigurationTemplate</code> returns an
      *         <code>InvalidParameterValue</code> error.
      */
+
     public String getTemplateName() {
         return this.templateName;
     }
@@ -240,6 +245,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withTemplateName(
             String templateName) {
         setTemplateName(templateName);
@@ -254,6 +260,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @param description
      *        A new description for the configuration.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -265,6 +272,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * 
      * @return A new description for the configuration.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -279,6 +287,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withDescription(String description) {
         setDescription(description);
         return this;
@@ -293,6 +302,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return A list of configuration option settings to update with the new
      *         specified option value.
      */
+
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         if (optionSettings == null) {
             optionSettings = new com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>();
@@ -310,6 +320,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        A list of configuration option settings to update with the new
      *        specified option value.
      */
+
     public void setOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         if (optionSettings == null) {
@@ -339,6 +350,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withOptionSettings(
             ConfigurationOptionSetting... optionSettings) {
         if (this.optionSettings == null) {
@@ -363,6 +375,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withOptionSettings(
             java.util.Collection<ConfigurationOptionSetting> optionSettings) {
         setOptionSettings(optionSettings);
@@ -384,6 +397,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *         Constraint: You can remove only <code>UserDefined</code>
      *         configuration options.
      */
+
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         if (optionsToRemove == null) {
             optionsToRemove = new com.amazonaws.internal.SdkInternalList<OptionSpecification>();
@@ -407,6 +421,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      *        Constraint: You can remove only <code>UserDefined</code>
      *        configuration options.
      */
+
     public void setOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         if (optionsToRemove == null) {
@@ -442,6 +457,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withOptionsToRemove(
             OptionSpecification... optionsToRemove) {
         if (this.optionsToRemove == null) {
@@ -472,6 +488,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateConfigurationTemplateRequest withOptionsToRemove(
             java.util.Collection<OptionSpecification> optionsToRemove) {
         setOptionsToRemove(optionsToRemove);

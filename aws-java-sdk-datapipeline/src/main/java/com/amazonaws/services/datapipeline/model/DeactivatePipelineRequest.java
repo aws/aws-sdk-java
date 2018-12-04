@@ -51,6 +51,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -62,6 +63,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -76,6 +78,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeactivatePipelineRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -95,6 +98,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      *        <code>CANCELED</code>. If this value is false, the pipeline is
      *        deactivated after all running objects finish.
      */
+
     public void setCancelActive(Boolean cancelActive) {
         this.cancelActive = cancelActive;
     }
@@ -112,6 +116,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      *         <code>CANCELED</code>. If this value is false, the pipeline is
      *         deactivated after all running objects finish.
      */
+
     public Boolean getCancelActive() {
         return this.cancelActive;
     }
@@ -132,6 +137,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeactivatePipelineRequest withCancelActive(Boolean cancelActive) {
         setCancelActive(cancelActive);
         return this;
@@ -150,6 +156,7 @@ public class DeactivatePipelineRequest extends AmazonWebServiceRequest
      *         <code>CANCELED</code>. If this value is false, the pipeline is
      *         deactivated after all running objects finish.
      */
+
     public Boolean isCancelActive() {
         return this.cancelActive;
     }

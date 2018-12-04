@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.ecr.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.ecr.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ImageFailureMarshaller
@@ -39,34 +34,34 @@ import com.amazonaws.util.json.*;
 public class ImageFailureJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(ImageFailure imageFailure, JSONWriter jsonWriter) {
+    public void marshall(ImageFailure imageFailure,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (imageFailure == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (imageFailure.getImageId() != null) {
-                jsonWriter.key("imageId");
+                jsonGenerator.writeFieldName("imageId");
                 ImageIdentifierJsonMarshaller.getInstance().marshall(
-                        imageFailure.getImageId(), jsonWriter);
+                        imageFailure.getImageId(), jsonGenerator);
             }
-
             if (imageFailure.getFailureCode() != null) {
-                jsonWriter.key("failureCode").value(
+                jsonGenerator.writeFieldName("failureCode").writeValue(
                         imageFailure.getFailureCode());
             }
-
             if (imageFailure.getFailureReason() != null) {
-                jsonWriter.key("failureReason").value(
+                jsonGenerator.writeFieldName("failureReason").writeValue(
                         imageFailure.getFailureReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

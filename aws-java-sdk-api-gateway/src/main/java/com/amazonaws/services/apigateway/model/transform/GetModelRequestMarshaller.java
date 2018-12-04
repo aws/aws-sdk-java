@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * GetModelRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class GetModelRequestMarshaller implements
         Marshaller<Request<GetModelRequest>, GetModelRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public GetModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<GetModelRequest> marshall(GetModelRequest getModelRequest) {
 
@@ -64,18 +72,19 @@ public class GetModelRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (getModelRequest.getRestApiId() == null) ? "" : StringUtils
-                        .fromString(getModelRequest.getRestApiId()));
+                (getModelRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getModelRequest
+                                .getRestApiId()), false) : "");
         uriResourcePath = uriResourcePath.replace(
                 "{model_name}",
-                (getModelRequest.getModelName() == null) ? "" : StringUtils
-                        .fromString(getModelRequest.getModelName()));
+                (getModelRequest.getModelName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils.fromString(getModelRequest
+                                .getModelName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
-        String flatten = (getModelRequest.getFlatten() == null) ? null
-                : StringUtils.fromBoolean(getModelRequest.getFlatten());
-        if (flatten != null) {
-            request.addParameter("flatten", flatten);
+        if (getModelRequest.getFlatten() != null) {
+            request.addParameter("flatten",
+                    StringUtils.fromBoolean(getModelRequest.getFlatten()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

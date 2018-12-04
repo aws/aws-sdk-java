@@ -48,6 +48,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -59,6 +60,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -73,6 +75,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPolicyVersionRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;
@@ -86,6 +89,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * @param policyVersionId
      *        The policy version ID.
      */
+
     public void setPolicyVersionId(String policyVersionId) {
         this.policyVersionId = policyVersionId;
     }
@@ -97,6 +101,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * 
      * @return The policy version ID.
      */
+
     public String getPolicyVersionId() {
         return this.policyVersionId;
     }
@@ -111,6 +116,7 @@ public class GetPolicyVersionRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPolicyVersionRequest withPolicyVersionId(String policyVersionId) {
         setPolicyVersionId(policyVersionId);
         return this;

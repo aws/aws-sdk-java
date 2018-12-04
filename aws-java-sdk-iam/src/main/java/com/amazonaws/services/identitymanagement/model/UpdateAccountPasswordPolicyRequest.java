@@ -136,6 +136,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: 6
      */
+
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
@@ -153,6 +154,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: 6
      */
+
     public Integer getMinimumPasswordLength() {
         return this.minimumPasswordLength;
     }
@@ -173,6 +175,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withMinimumPasswordLength(
             Integer minimumPasswordLength) {
         setMinimumPasswordLength(minimumPasswordLength);
@@ -200,6 +203,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: false
      */
+
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
@@ -224,6 +228,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean getRequireSymbols() {
         return this.requireSymbols;
     }
@@ -251,6 +256,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withRequireSymbols(
             Boolean requireSymbols) {
         setRequireSymbols(requireSymbols);
@@ -277,6 +283,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean isRequireSymbols() {
         return this.requireSymbols;
     }
@@ -296,6 +303,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: false
      */
+
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
@@ -314,6 +322,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean getRequireNumbers() {
         return this.requireNumbers;
     }
@@ -335,6 +344,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withRequireNumbers(
             Boolean requireNumbers) {
         setRequireNumbers(requireNumbers);
@@ -355,6 +365,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean isRequireNumbers() {
         return this.requireNumbers;
     }
@@ -375,6 +386,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: false
      */
+
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
@@ -394,6 +406,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean getRequireUppercaseCharacters() {
         return this.requireUppercaseCharacters;
     }
@@ -416,6 +429,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withRequireUppercaseCharacters(
             Boolean requireUppercaseCharacters) {
         setRequireUppercaseCharacters(requireUppercaseCharacters);
@@ -437,6 +451,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean isRequireUppercaseCharacters() {
         return this.requireUppercaseCharacters;
     }
@@ -457,6 +472,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: false
      */
+
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
@@ -476,6 +492,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean getRequireLowercaseCharacters() {
         return this.requireLowercaseCharacters;
     }
@@ -498,6 +515,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withRequireLowercaseCharacters(
             Boolean requireLowercaseCharacters) {
         setRequireLowercaseCharacters(requireLowercaseCharacters);
@@ -519,6 +537,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean isRequireLowercaseCharacters() {
         return this.requireLowercaseCharacters;
     }
@@ -541,10 +560,11 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *        >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *        User Guide</i>. </p>
+     *        User Guide</i>.</p>
      *        <p>
      *        Default value: false
      */
+
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
@@ -566,10 +586,11 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *         >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *         User Guide</i>. </p>
+     *         User Guide</i>.</p>
      *         <p>
      *         Default value: false
      */
+
     public Boolean getAllowUsersToChangePassword() {
         return this.allowUsersToChangePassword;
     }
@@ -592,12 +613,13 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *        >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *        User Guide</i>. </p>
+     *        User Guide</i>.</p>
      *        <p>
      *        Default value: false
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withAllowUsersToChangePassword(
             Boolean allowUsersToChangePassword) {
         setAllowUsersToChangePassword(allowUsersToChangePassword);
@@ -621,10 +643,11 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html"
      *         >Letting IAM Users Change Their Own Passwords</a> in the <i>IAM
-     *         User Guide</i>. </p>
+     *         User Guide</i>.</p>
      *         <p>
      *         Default value: false
      */
+
     public Boolean isAllowUsersToChangePassword() {
         return this.allowUsersToChangePassword;
     }
@@ -644,6 +667,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: 0
      */
+
     public void setMaxPasswordAge(Integer maxPasswordAge) {
         this.maxPasswordAge = maxPasswordAge;
     }
@@ -662,6 +686,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: 0
      */
+
     public Integer getMaxPasswordAge() {
         return this.maxPasswordAge;
     }
@@ -683,6 +708,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withMaxPasswordAge(
             Integer maxPasswordAge) {
         setMaxPasswordAge(maxPasswordAge);
@@ -706,6 +732,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: 0
      */
+
     public void setPasswordReusePrevention(Integer passwordReusePrevention) {
         this.passwordReusePrevention = passwordReusePrevention;
     }
@@ -726,6 +753,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: 0
      */
+
     public Integer getPasswordReusePrevention() {
         return this.passwordReusePrevention;
     }
@@ -749,6 +777,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withPasswordReusePrevention(
             Integer passwordReusePrevention) {
         setPasswordReusePrevention(passwordReusePrevention);
@@ -770,6 +799,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *        <p>
      *        Default value: false
      */
+
     public void setHardExpiry(Boolean hardExpiry) {
         this.hardExpiry = hardExpiry;
     }
@@ -788,6 +818,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean getHardExpiry() {
         return this.hardExpiry;
     }
@@ -809,6 +840,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAccountPasswordPolicyRequest withHardExpiry(Boolean hardExpiry) {
         setHardExpiry(hardExpiry);
         return this;
@@ -828,6 +860,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest
      *         <p>
      *         Default value: false
      */
+
     public Boolean isHardExpiry() {
         return this.hardExpiry;
     }

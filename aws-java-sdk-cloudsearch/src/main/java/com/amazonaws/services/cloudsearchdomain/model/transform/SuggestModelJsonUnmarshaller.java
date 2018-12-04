@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudsearchdomain.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudsearchdomain.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,12 +55,12 @@ public class SuggestModelJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("query", targetDepth)) {
                     context.nextToken();
-                    suggestModel.setQuery(StringJsonUnmarshaller.getInstance()
+                    suggestModel.setQuery(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("found", targetDepth)) {
                     context.nextToken();
-                    suggestModel.setFound(LongJsonUnmarshaller.getInstance()
+                    suggestModel.setFound(context.getUnmarshaller(Long.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("suggestions", targetDepth)) {

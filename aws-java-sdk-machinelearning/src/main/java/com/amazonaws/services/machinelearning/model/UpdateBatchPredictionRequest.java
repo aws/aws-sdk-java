@@ -48,6 +48,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      *        The ID assigned to the <code>BatchPrediction</code> during
      *        creation.
      */
+
     public void setBatchPredictionId(String batchPredictionId) {
         this.batchPredictionId = batchPredictionId;
     }
@@ -60,6 +61,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return The ID assigned to the <code>BatchPrediction</code> during
      *         creation.
      */
+
     public String getBatchPredictionId() {
         return this.batchPredictionId;
     }
@@ -75,6 +77,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBatchPredictionRequest withBatchPredictionId(
             String batchPredictionId) {
         setBatchPredictionId(batchPredictionId);
@@ -91,6 +94,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      *        A new user-supplied name or description of the
      *        <code>BatchPrediction</code>.
      */
+
     public void setBatchPredictionName(String batchPredictionName) {
         this.batchPredictionName = batchPredictionName;
     }
@@ -104,6 +108,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return A new user-supplied name or description of the
      *         <code>BatchPrediction</code>.
      */
+
     public String getBatchPredictionName() {
         return this.batchPredictionName;
     }
@@ -120,6 +125,7 @@ public class UpdateBatchPredictionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateBatchPredictionRequest withBatchPredictionName(
             String batchPredictionName) {
         setBatchPredictionName(batchPredictionName);

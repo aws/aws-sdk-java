@@ -51,6 +51,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *        entity.
      * @see ActionOwner
      */
+
     public void setActionOwnerFilter(String actionOwnerFilter) {
         this.actionOwnerFilter = actionOwnerFilter;
     }
@@ -64,6 +65,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *         entity.
      * @see ActionOwner
      */
+
     public String getActionOwnerFilter() {
         return this.actionOwnerFilter;
     }
@@ -80,6 +82,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ActionOwner
      */
+
     public ListActionTypesRequest withActionOwnerFilter(String actionOwnerFilter) {
         setActionOwnerFilter(actionOwnerFilter);
         return this;
@@ -93,10 +96,9 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      * @param actionOwnerFilter
      *        Filters the list of action types to those created by a specified
      *        entity.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOwner
      */
+
     public void setActionOwnerFilter(ActionOwner actionOwnerFilter) {
         this.actionOwnerFilter = actionOwnerFilter.toString();
     }
@@ -113,6 +115,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see ActionOwner
      */
+
     public ListActionTypesRequest withActionOwnerFilter(
             ActionOwner actionOwnerFilter) {
         setActionOwnerFilter(actionOwnerFilter);
@@ -130,6 +133,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *        types call, which can be used to return the next set of action
      *        types in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -144,6 +148,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      *         types call, which can be used to return the next set of action
      *         types in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -161,6 +166,7 @@ public class ListActionTypesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListActionTypesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

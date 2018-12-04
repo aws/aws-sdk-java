@@ -43,6 +43,7 @@ public class DescribeMyUserProfileResult implements Serializable, Cloneable {
      *        A <code>UserProfile</code> object that describes the user's SSH
      *        information.
      */
+
     public void setUserProfile(SelfUserProfile userProfile) {
         this.userProfile = userProfile;
     }
@@ -56,6 +57,7 @@ public class DescribeMyUserProfileResult implements Serializable, Cloneable {
      * @return A <code>UserProfile</code> object that describes the user's SSH
      *         information.
      */
+
     public SelfUserProfile getUserProfile() {
         return this.userProfile;
     }
@@ -72,6 +74,7 @@ public class DescribeMyUserProfileResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeMyUserProfileResult withUserProfile(
             SelfUserProfile userProfile) {
         setUserProfile(userProfile);

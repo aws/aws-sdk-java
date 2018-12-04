@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ThirdPartyJobDetailsMarshaller
@@ -39,33 +34,34 @@ import com.amazonaws.util.json.*;
 public class ThirdPartyJobDetailsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ThirdPartyJobDetails thirdPartyJobDetails,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (thirdPartyJobDetails == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (thirdPartyJobDetails.getId() != null) {
-                jsonWriter.key("id").value(thirdPartyJobDetails.getId());
+                jsonGenerator.writeFieldName("id").writeValue(
+                        thirdPartyJobDetails.getId());
             }
-
             if (thirdPartyJobDetails.getData() != null) {
-                jsonWriter.key("data");
+                jsonGenerator.writeFieldName("data");
                 ThirdPartyJobDataJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobDetails.getData(), jsonWriter);
+                        thirdPartyJobDetails.getData(), jsonGenerator);
             }
-
             if (thirdPartyJobDetails.getNonce() != null) {
-                jsonWriter.key("nonce").value(thirdPartyJobDetails.getNonce());
+                jsonGenerator.writeFieldName("nonce").writeValue(
+                        thirdPartyJobDetails.getNonce());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

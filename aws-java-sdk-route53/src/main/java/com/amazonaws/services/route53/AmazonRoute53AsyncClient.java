@@ -16,6 +16,7 @@
 package com.amazonaws.services.route53;
 
 import com.amazonaws.services.route53.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Route 53 asynchronously. Each asynchronous method
@@ -23,6 +24,7 @@ import com.amazonaws.services.route53.model.*;
  * overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  */
+@ThreadSafe
 public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
         AmazonRoute53Async {
 
@@ -121,8 +123,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -214,9 +215,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -823,6 +822,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             GetChangeDetailsRequest request) {
 
@@ -830,6 +830,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangeDetailsResult> getChangeDetailsAsync(
             final GetChangeDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetChangeDetailsRequest, GetChangeDetailsResult> asyncHandler) {
@@ -1407,6 +1408,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             ListChangeBatchesByHostedZoneRequest request) {
 
@@ -1414,6 +1416,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByHostedZoneResult> listChangeBatchesByHostedZoneAsync(
             final ListChangeBatchesByHostedZoneRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByHostedZoneRequest, ListChangeBatchesByHostedZoneResult> asyncHandler) {
@@ -1443,6 +1446,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             ListChangeBatchesByRRSetRequest request) {
 
@@ -1450,6 +1454,7 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangeBatchesByRRSetResult> listChangeBatchesByRRSetAsync(
             final ListChangeBatchesByRRSetRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListChangeBatchesByRRSetRequest, ListChangeBatchesByRRSetResult> asyncHandler) {

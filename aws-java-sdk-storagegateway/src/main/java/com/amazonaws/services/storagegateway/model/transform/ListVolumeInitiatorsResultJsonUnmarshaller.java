@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,8 +56,8 @@ public class ListVolumeInitiatorsResultJsonUnmarshaller implements
                 if (context.testExpression("Initiators", targetDepth)) {
                     context.nextToken();
                     listVolumeInitiatorsResult
-                            .setInitiators(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setInitiators(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

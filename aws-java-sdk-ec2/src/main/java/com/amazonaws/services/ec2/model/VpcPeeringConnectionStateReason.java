@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -24,137 +26,135 @@ import java.io.Serializable;
 public class VpcPeeringConnectionStateReason implements Serializable, Cloneable {
 
     /**
-     * The status of the VPC peering connection.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
+     * The status of the VPC peering connection.
+     * </p>
      */
     private String code;
-
     /**
-     * A message that provides more information about the status, if
-     * applicable.
+     * <p>
+     * A message that provides more information about the status, if applicable.
+     * </p>
      */
     private String message;
 
     /**
-     * The status of the VPC peering connection.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
-     *
-     * @return The status of the VPC peering connection.
-     *
+     * The status of the VPC peering connection.
+     * </p>
+     * 
+     * @param code
+     *        The status of the VPC peering connection.
      * @see VpcPeeringConnectionStateReasonCode
      */
-    public String getCode() {
-        return code;
-    }
-    
-    /**
-     * The status of the VPC peering connection.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
-     *
-     * @param code The status of the VPC peering connection.
-     *
-     * @see VpcPeeringConnectionStateReasonCode
-     */
+
     public void setCode(String code) {
         this.code = code;
     }
-    
+
     /**
+     * <p>
      * The status of the VPC peering connection.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
-     *
-     * @param code The status of the VPC peering connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @return The status of the VPC peering connection.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * <p>
+     * The status of the VPC peering connection.
+     * </p>
+     * 
+     * @param code
+     *        The status of the VPC peering connection.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see VpcPeeringConnectionStateReasonCode
+     */
+
     public VpcPeeringConnectionStateReason withCode(String code) {
-        this.code = code;
+        setCode(code);
         return this;
     }
 
     /**
-     * The status of the VPC peering connection.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
-     *
-     * @param code The status of the VPC peering connection.
-     *
+     * The status of the VPC peering connection.
+     * </p>
+     * 
+     * @param code
+     *        The status of the VPC peering connection.
      * @see VpcPeeringConnectionStateReasonCode
      */
+
     public void setCode(VpcPeeringConnectionStateReasonCode code) {
         this.code = code.toString();
     }
-    
+
     /**
+     * <p>
      * The status of the VPC peering connection.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>initiating-request, pending-acceptance, active, deleted, rejected, failed, expired, provisioning, deleting
-     *
-     * @param code The status of the VPC peering connection.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param code
+     *        The status of the VPC peering connection.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see VpcPeeringConnectionStateReasonCode
      */
-    public VpcPeeringConnectionStateReason withCode(VpcPeeringConnectionStateReasonCode code) {
-        this.code = code.toString();
+
+    public VpcPeeringConnectionStateReason withCode(
+            VpcPeeringConnectionStateReasonCode code) {
+        setCode(code);
         return this;
     }
 
     /**
-     * A message that provides more information about the status, if
-     * applicable.
-     *
-     * @return A message that provides more information about the status, if
-     *         applicable.
+     * <p>
+     * A message that provides more information about the status, if applicable.
+     * </p>
+     * 
+     * @param message
+     *        A message that provides more information about the status, if
+     *        applicable.
      */
-    public String getMessage() {
-        return message;
-    }
-    
-    /**
-     * A message that provides more information about the status, if
-     * applicable.
-     *
-     * @param message A message that provides more information about the status, if
-     *         applicable.
-     */
+
     public void setMessage(String message) {
         this.message = message;
     }
-    
+
     /**
-     * A message that provides more information about the status, if
-     * applicable.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param message A message that provides more information about the status, if
+     * A message that provides more information about the status, if applicable.
+     * </p>
+     * 
+     * @return A message that provides more information about the status, if
      *         applicable.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * A message that provides more information about the status, if applicable.
+     * </p>
+     * 
+     * @param message
+     *        A message that provides more information about the status, if
+     *        applicable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public VpcPeeringConnectionStateReason withMessage(String message) {
-        this.message = message;
+        setMessage(message);
         return this;
     }
 
@@ -170,50 +170,57 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCode() != null) sb.append("Code: " + getCode() + ",");
-        if (getMessage() != null) sb.append("Message: " + getMessage() );
+        if (getCode() != null)
+            sb.append("Code: " + getCode() + ",");
+        if (getMessage() != null)
+            sb.append("Message: " + getMessage());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof VpcPeeringConnectionStateReason == false)
+            return false;
+        VpcPeeringConnectionStateReason other = (VpcPeeringConnectionStateReason) obj;
+        if (other.getCode() == null ^ this.getCode() == null)
+            return false;
+        if (other.getCode() != null
+                && other.getCode().equals(this.getCode()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null
+                && other.getMessage().equals(this.getMessage()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode()); 
-        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode
+                + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof VpcPeeringConnectionStateReason == false) return false;
-        VpcPeeringConnectionStateReason other = (VpcPeeringConnectionStateReason)obj;
-        
-        if (other.getCode() == null ^ this.getCode() == null) return false;
-        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false) return false; 
-        if (other.getMessage() == null ^ this.getMessage() == null) return false;
-        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public VpcPeeringConnectionStateReason clone() {
         try {
             return (VpcPeeringConnectionStateReason) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

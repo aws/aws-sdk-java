@@ -13,10 +13,13 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
-import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Contains the results of initiating a multipart upload, particularly the
@@ -24,7 +27,8 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  *
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
-public class InitiateMultipartUploadResult extends SSEResultBase implements Serializable {
+public class InitiateMultipartUploadResult extends SSEResultBase
+        implements S3RequesterChargedResult, Serializable {
 
     /** The name of the bucket in which the new multipart upload was initiated */
     private String bucketName;
@@ -34,6 +38,18 @@ public class InitiateMultipartUploadResult extends SSEResultBase implements Seri
 
     /** The unique ID of the new multipart upload */
     private String uploadId;
+
+    /** Date when multipart upload will become eligible for abort operation by lifecycle. */
+    private Date abortDate;
+
+    /** Id of the lifecycle rule that makes a multipart upload eligible for abort operation. */
+    private String abortRuleId;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Returns the name of the bucket in which the new multipart upload was
@@ -95,4 +111,52 @@ public class InitiateMultipartUploadResult extends SSEResultBase implements Seri
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by lifecycle.
+     *
+     * @return The date when the upload will be eligible for abort.
+     */
+    public Date getAbortDate() {
+        return abortDate;
+    }
+
+    /**
+     * Date when multipart upload will become eligible for abort operation by lifecycle.
+     *
+     * @param abortDate
+     *         The date when the upload will be eligible for abort.
+     */
+    public void setAbortDate(Date abortDate) {
+        this.abortDate = abortDate;
+    }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort operation.
+     *
+     * @return Rule ID
+     */
+    public String getAbortRuleId() {
+        return abortRuleId;
+    }
+
+    /**
+     * Id of the lifecycle rule that makes a multipart upload eligible for abort operation.
+     *
+     * @param abortRuleId Rule ID
+     */
+    public void setAbortRuleId(String abortRuleId) {
+        this.abortRuleId = abortRuleId;
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
+
 }

@@ -51,6 +51,12 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> openIdConnectProviderARNs;
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     */
+    private java.util.List<CognitoIdentityProvider> cognitoIdentityProviders;
 
     /**
      * An identity pool ID in the format REGION:GUID.
@@ -58,6 +64,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -67,6 +74,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -79,6 +87,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -92,6 +101,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @param identityPoolName
      *        A string that you provide.
      */
+
     public void setIdentityPoolName(String identityPoolName) {
         this.identityPoolName = identityPoolName;
     }
@@ -103,6 +113,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return A string that you provide.
      */
+
     public String getIdentityPoolName() {
         return this.identityPoolName;
     }
@@ -117,6 +128,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withIdentityPoolName(String identityPoolName) {
         setIdentityPoolName(identityPoolName);
         return this;
@@ -128,6 +140,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
      */
+
     public void setAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         this.allowUnauthenticatedIdentities = allowUnauthenticatedIdentities;
@@ -138,6 +151,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean getAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -150,6 +164,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withAllowUnauthenticatedIdentities(
             Boolean allowUnauthenticatedIdentities) {
         setAllowUnauthenticatedIdentities(allowUnauthenticatedIdentities);
@@ -161,6 +176,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
+
     public Boolean isAllowUnauthenticatedIdentities() {
         return this.allowUnauthenticatedIdentities;
     }
@@ -173,6 +189,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Optional key:value pairs mapping provider names to provider app
      *         IDs.
      */
+
     public java.util.Map<String, String> getSupportedLoginProviders() {
         return supportedLoginProviders;
     }
@@ -186,6 +203,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      *        Optional key:value pairs mapping provider names to provider app
      *        IDs.
      */
+
     public void setSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         this.supportedLoginProviders = supportedLoginProviders;
@@ -202,6 +220,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withSupportedLoginProviders(
             java.util.Map<String, String> supportedLoginProviders) {
         setSupportedLoginProviders(supportedLoginProviders);
@@ -225,6 +244,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public CreateIdentityPoolResult clearSupportedLoginProvidersEntries() {
         this.supportedLoginProviders = null;
         return this;
@@ -238,6 +258,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @param developerProviderName
      *        The "domain" by which Cognito will refer to your users.
      */
+
     public void setDeveloperProviderName(String developerProviderName) {
         this.developerProviderName = developerProviderName;
     }
@@ -249,6 +270,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return The "domain" by which Cognito will refer to your users.
      */
+
     public String getDeveloperProviderName() {
         return this.developerProviderName;
     }
@@ -263,6 +285,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withDeveloperProviderName(
             String developerProviderName) {
         setDeveloperProviderName(developerProviderName);
@@ -276,6 +299,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * 
      * @return A list of OpendID Connect provider ARNs.
      */
+
     public java.util.List<String> getOpenIdConnectProviderARNs() {
         return openIdConnectProviderARNs;
     }
@@ -288,6 +312,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @param openIdConnectProviderARNs
      *        A list of OpendID Connect provider ARNs.
      */
+
     public void setOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         if (openIdConnectProviderARNs == null) {
@@ -315,6 +340,7 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withOpenIdConnectProviderARNs(
             String... openIdConnectProviderARNs) {
         if (this.openIdConnectProviderARNs == null) {
@@ -337,9 +363,92 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateIdentityPoolResult withOpenIdConnectProviderARNs(
             java.util.Collection<String> openIdConnectProviderARNs) {
         setOpenIdConnectProviderARNs(openIdConnectProviderARNs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @return A list representing a Cognito User Identity Pool and its client
+     *         ID.
+     */
+
+    public java.util.List<CognitoIdentityProvider> getCognitoIdentityProviders() {
+        return cognitoIdentityProviders;
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     */
+
+    public void setCognitoIdentityProviders(
+            java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
+        if (cognitoIdentityProviders == null) {
+            this.cognitoIdentityProviders = null;
+            return;
+        }
+
+        this.cognitoIdentityProviders = new java.util.ArrayList<CognitoIdentityProvider>(
+                cognitoIdentityProviders);
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or
+     * {@link #withCognitoIdentityProviders(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateIdentityPoolResult withCognitoIdentityProviders(
+            CognitoIdentityProvider... cognitoIdentityProviders) {
+        if (this.cognitoIdentityProviders == null) {
+            setCognitoIdentityProviders(new java.util.ArrayList<CognitoIdentityProvider>(
+                    cognitoIdentityProviders.length));
+        }
+        for (CognitoIdentityProvider ele : cognitoIdentityProviders) {
+            this.cognitoIdentityProviders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list representing a Cognito User Identity Pool and its client ID.
+     * </p>
+     * 
+     * @param cognitoIdentityProviders
+     *        A list representing a Cognito User Identity Pool and its client
+     *        ID.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CreateIdentityPoolResult withCognitoIdentityProviders(
+            java.util.Collection<CognitoIdentityProvider> cognitoIdentityProviders) {
+        setCognitoIdentityProviders(cognitoIdentityProviders);
         return this;
     }
 
@@ -370,7 +479,10 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                     + ",");
         if (getOpenIdConnectProviderARNs() != null)
             sb.append("OpenIdConnectProviderARNs: "
-                    + getOpenIdConnectProviderARNs());
+                    + getOpenIdConnectProviderARNs() + ",");
+        if (getCognitoIdentityProviders() != null)
+            sb.append("CognitoIdentityProviders: "
+                    + getCognitoIdentityProviders());
         sb.append("}");
         return sb.toString();
     }
@@ -426,6 +538,13 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                 && other.getOpenIdConnectProviderARNs().equals(
                         this.getOpenIdConnectProviderARNs()) == false)
             return false;
+        if (other.getCognitoIdentityProviders() == null
+                ^ this.getCognitoIdentityProviders() == null)
+            return false;
+        if (other.getCognitoIdentityProviders() != null
+                && other.getCognitoIdentityProviders().equals(
+                        this.getCognitoIdentityProviders()) == false)
+            return false;
         return true;
     }
 
@@ -458,6 +577,10 @@ public class CreateIdentityPoolResult implements Serializable, Cloneable {
                 * hashCode
                 + ((getOpenIdConnectProviderARNs() == null) ? 0
                         : getOpenIdConnectProviderARNs().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCognitoIdentityProviders() == null) ? 0
+                        : getCognitoIdentityProviders().hashCode());
         return hashCode;
     }
 

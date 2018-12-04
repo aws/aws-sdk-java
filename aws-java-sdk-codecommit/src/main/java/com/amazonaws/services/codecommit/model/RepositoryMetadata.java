@@ -94,6 +94,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param accountId
      *        The ID of the AWS account associated with the repository.
      */
+
     public void setAccountId(String accountId) {
         this.accountId = accountId;
     }
@@ -105,6 +106,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS account associated with the repository.
      */
+
     public String getAccountId() {
         return this.accountId;
     }
@@ -119,6 +121,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withAccountId(String accountId) {
         setAccountId(accountId);
         return this;
@@ -132,6 +135,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param repositoryId
      *        The ID of the repository.
      */
+
     public void setRepositoryId(String repositoryId) {
         this.repositoryId = repositoryId;
     }
@@ -143,6 +147,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The ID of the repository.
      */
+
     public String getRepositoryId() {
         return this.repositoryId;
     }
@@ -157,6 +162,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withRepositoryId(String repositoryId) {
         setRepositoryId(repositoryId);
         return this;
@@ -170,6 +176,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param repositoryName
      *        The repository's name.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -181,6 +188,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The repository's name.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -195,6 +203,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -208,6 +217,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param repositoryDescription
      *        A comment or description about the repository.
      */
+
     public void setRepositoryDescription(String repositoryDescription) {
         this.repositoryDescription = repositoryDescription;
     }
@@ -219,6 +229,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return A comment or description about the repository.
      */
+
     public String getRepositoryDescription() {
         return this.repositoryDescription;
     }
@@ -233,6 +244,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withRepositoryDescription(
             String repositoryDescription) {
         setRepositoryDescription(repositoryDescription);
@@ -247,6 +259,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param defaultBranch
      *        The repository's default branch name.
      */
+
     public void setDefaultBranch(String defaultBranch) {
         this.defaultBranch = defaultBranch;
     }
@@ -258,6 +271,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The repository's default branch name.
      */
+
     public String getDefaultBranch() {
         return this.defaultBranch;
     }
@@ -272,6 +286,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withDefaultBranch(String defaultBranch) {
         setDefaultBranch(defaultBranch);
         return this;
@@ -286,6 +301,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      *        The date and time the repository was last modified, in timestamp
      *        format.
      */
+
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
@@ -298,6 +314,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return The date and time the repository was last modified, in timestamp
      *         format.
      */
+
     public java.util.Date getLastModifiedDate() {
         return this.lastModifiedDate;
     }
@@ -313,6 +330,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withLastModifiedDate(
             java.util.Date lastModifiedDate) {
         setLastModifiedDate(lastModifiedDate);
@@ -327,6 +345,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param creationDate
      *        The date and time the repository was created, in timestamp format.
      */
+
     public void setCreationDate(java.util.Date creationDate) {
         this.creationDate = creationDate;
     }
@@ -339,6 +358,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return The date and time the repository was created, in timestamp
      *         format.
      */
+
     public java.util.Date getCreationDate() {
         return this.creationDate;
     }
@@ -353,6 +373,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withCreationDate(java.util.Date creationDate) {
         setCreationDate(creationDate);
         return this;
@@ -366,6 +387,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param cloneUrlHttp
      *        The URL to use for cloning the repository over HTTPS.
      */
+
     public void setCloneUrlHttp(String cloneUrlHttp) {
         this.cloneUrlHttp = cloneUrlHttp;
     }
@@ -377,6 +399,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The URL to use for cloning the repository over HTTPS.
      */
+
     public String getCloneUrlHttp() {
         return this.cloneUrlHttp;
     }
@@ -391,6 +414,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withCloneUrlHttp(String cloneUrlHttp) {
         setCloneUrlHttp(cloneUrlHttp);
         return this;
@@ -404,6 +428,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param cloneUrlSsh
      *        The URL to use for cloning the repository over SSH.
      */
+
     public void setCloneUrlSsh(String cloneUrlSsh) {
         this.cloneUrlSsh = cloneUrlSsh;
     }
@@ -415,6 +440,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The URL to use for cloning the repository over SSH.
      */
+
     public String getCloneUrlSsh() {
         return this.cloneUrlSsh;
     }
@@ -429,6 +455,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withCloneUrlSsh(String cloneUrlSsh) {
         setCloneUrlSsh(cloneUrlSsh);
         return this;
@@ -442,6 +469,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @param arn
      *        The Amazon Resource Name (ARN) of the repository.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -453,6 +481,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the repository.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -467,6 +496,7 @@ public class RepositoryMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RepositoryMetadata withArn(String arn) {
         setArn(arn);
         return this;

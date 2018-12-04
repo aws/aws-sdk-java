@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * PutMetricFilterRequest Marshaller
  */
 public class PutMetricFilterRequestMarshaller implements
         Marshaller<Request<PutMetricFilterRequest>, PutMetricFilterRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public PutMetricFilterRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<PutMetricFilterRequest> marshall(
             PutMetricFilterRequest putMetricFilterRequest) {
@@ -63,23 +64,21 @@ public class PutMetricFilterRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (putMetricFilterRequest.getLogGroupName() != null) {
-                jsonWriter.key("logGroupName").value(
+                jsonGenerator.writeFieldName("logGroupName").writeValue(
                         putMetricFilterRequest.getLogGroupName());
             }
-
             if (putMetricFilterRequest.getFilterName() != null) {
-                jsonWriter.key("filterName").value(
+                jsonGenerator.writeFieldName("filterName").writeValue(
                         putMetricFilterRequest.getFilterName());
             }
-
             if (putMetricFilterRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         putMetricFilterRequest.getFilterPattern());
             }
 
@@ -87,27 +86,26 @@ public class PutMetricFilterRequestMarshaller implements
                     .getMetricTransformations();
             if (!metricTransformationsList.isEmpty()
                     || !metricTransformationsList.isAutoConstruct()) {
-                jsonWriter.key("metricTransformations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("metricTransformations");
+                jsonGenerator.writeStartArray();
                 for (MetricTransformation metricTransformationsListValue : metricTransformationsList) {
                     if (metricTransformationsListValue != null) {
 
                         MetricTransformationJsonMarshaller.getInstance()
                                 .marshall(metricTransformationsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

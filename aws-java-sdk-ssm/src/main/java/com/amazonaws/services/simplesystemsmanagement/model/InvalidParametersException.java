@@ -19,8 +19,10 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * You must specify values for all required parameters in the SSM document. You
  * can only supply values to parameters defined in the SSM document.
+ * </p>
  */
 public class InvalidParametersException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

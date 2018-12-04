@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetCognitoEventsRequest Marshaller
@@ -47,6 +49,13 @@ public class SetCognitoEventsRequestMarshaller implements
         Marshaller<Request<SetCognitoEventsRequest>, SetCognitoEventsRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetCognitoEventsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetCognitoEventsRequest> marshall(
             SetCognitoEventsRequest setCognitoEventsRequest) {
@@ -63,41 +72,42 @@ public class SetCognitoEventsRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/events";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (setCognitoEventsRequest.getIdentityPoolId() == null) ? ""
-                        : StringUtils.fromString(setCognitoEventsRequest
-                                .getIdentityPoolId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{IdentityPoolId}",
+                        (setCognitoEventsRequest.getIdentityPoolId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(setCognitoEventsRequest
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             com.amazonaws.internal.SdkInternalMap<String, String> eventsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) setCognitoEventsRequest
                     .getEvents();
             if (!eventsMap.isEmpty() || !eventsMap.isAutoConstruct()) {
-                jsonWriter.key("Events");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("Events");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> eventsMapValue : eventsMap
                         .entrySet()) {
                     if (eventsMapValue.getValue() != null) {
-                        jsonWriter.key(eventsMapValue.getKey());
+                        jsonGenerator.writeFieldName(eventsMapValue.getKey());
 
-                        jsonWriter.value(eventsMapValue.getValue());
+                        jsonGenerator.writeValue(eventsMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

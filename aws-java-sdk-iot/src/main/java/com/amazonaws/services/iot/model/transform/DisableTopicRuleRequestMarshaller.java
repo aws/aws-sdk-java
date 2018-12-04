@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DisableTopicRuleRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class DisableTopicRuleRequestMarshaller implements
         Marshaller<Request<DisableTopicRuleRequest>, DisableTopicRuleRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public DisableTopicRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<DisableTopicRuleRequest> marshall(
             DisableTopicRuleRequest disableTopicRuleRequest) {
@@ -65,9 +74,10 @@ public class DisableTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (disableTopicRuleRequest.getRuleName() == null) ? ""
-                        : StringUtils.fromString(disableTopicRuleRequest
-                                .getRuleName()));
+                (disableTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(disableTopicRuleRequest
+                                        .getRuleName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

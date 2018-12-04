@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ModifyHapgRequest Marshaller
  */
 public class ModifyHapgRequestMarshaller implements
         Marshaller<Request<ModifyHapgRequest>, ModifyHapgRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ModifyHapgRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ModifyHapgRequest> marshall(
             ModifyHapgRequest modifyHapgRequest) {
@@ -63,41 +63,41 @@ public class ModifyHapgRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (modifyHapgRequest.getHapgArn() != null) {
-                jsonWriter.key("HapgArn").value(modifyHapgRequest.getHapgArn());
+                jsonGenerator.writeFieldName("HapgArn").writeValue(
+                        modifyHapgRequest.getHapgArn());
             }
-
             if (modifyHapgRequest.getLabel() != null) {
-                jsonWriter.key("Label").value(modifyHapgRequest.getLabel());
+                jsonGenerator.writeFieldName("Label").writeValue(
+                        modifyHapgRequest.getLabel());
             }
 
             com.amazonaws.internal.SdkInternalList<String> partitionSerialListList = (com.amazonaws.internal.SdkInternalList<String>) modifyHapgRequest
                     .getPartitionSerialList();
             if (!partitionSerialListList.isEmpty()
                     || !partitionSerialListList.isAutoConstruct()) {
-                jsonWriter.key("PartitionSerialList");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("PartitionSerialList");
+                jsonGenerator.writeStartArray();
                 for (String partitionSerialListListValue : partitionSerialListList) {
                     if (partitionSerialListListValue != null) {
-                        jsonWriter.value(partitionSerialListListValue);
+                        jsonGenerator.writeValue(partitionSerialListListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

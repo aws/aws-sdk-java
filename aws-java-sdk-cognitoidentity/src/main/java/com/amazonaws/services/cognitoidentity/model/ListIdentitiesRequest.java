@@ -46,6 +46,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -55,6 +56,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -67,6 +69,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -78,6 +81,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @param maxResults
      *        The maximum number of identities to return.
      */
+
     public void setMaxResults(Integer maxResults) {
         this.maxResults = maxResults;
     }
@@ -87,6 +91,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of identities to return.
      */
+
     public Integer getMaxResults() {
         return this.maxResults;
     }
@@ -99,6 +104,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
         return this;
@@ -110,6 +116,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        A pagination token.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -119,6 +126,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * 
      * @return A pagination token.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -131,6 +139,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -148,6 +157,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *        identities. If omitted, the ListIdentities API will include
      *        disabled identities in the response.
      */
+
     public void setHideDisabled(Boolean hideDisabled) {
         this.hideDisabled = hideDisabled;
     }
@@ -163,6 +173,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *         identities. If omitted, the ListIdentities API will include
      *         disabled identities in the response.
      */
+
     public Boolean getHideDisabled() {
         return this.hideDisabled;
     }
@@ -181,6 +192,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withHideDisabled(Boolean hideDisabled) {
         setHideDisabled(hideDisabled);
         return this;
@@ -197,6 +209,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *         identities. If omitted, the ListIdentities API will include
      *         disabled identities in the response.
      */
+
     public Boolean isHideDisabled() {
         return this.hideDisabled;
     }

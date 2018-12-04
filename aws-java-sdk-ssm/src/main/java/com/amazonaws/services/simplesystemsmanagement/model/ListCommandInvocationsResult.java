@@ -23,19 +23,28 @@ import java.io.Serializable;
  */
 public class ListCommandInvocationsResult implements Serializable, Cloneable {
 
-    /** (Optional) A list of all invocations. */
+    /**
+     * <p>
+     * (Optional) A list of all invocations.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<CommandInvocation> commandInvocations;
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      */
     private String nextToken;
 
     /**
+     * <p>
      * (Optional) A list of all invocations.
+     * </p>
      * 
      * @return (Optional) A list of all invocations.
      */
+
     public java.util.List<CommandInvocation> getCommandInvocations() {
         if (commandInvocations == null) {
             commandInvocations = new com.amazonaws.internal.SdkInternalList<CommandInvocation>();
@@ -44,11 +53,14 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) A list of all invocations.
+     * </p>
      * 
      * @param commandInvocations
      *        (Optional) A list of all invocations.
      */
+
     public void setCommandInvocations(
             java.util.Collection<CommandInvocation> commandInvocations) {
         if (commandInvocations == null) {
@@ -61,7 +73,9 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) A list of all invocations.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setCommandInvocations(java.util.Collection)} or
@@ -74,6 +88,7 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsResult withCommandInvocations(
             CommandInvocation... commandInvocations) {
         if (this.commandInvocations == null) {
@@ -87,13 +102,16 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) A list of all invocations.
+     * </p>
      * 
      * @param commandInvocations
      *        (Optional) A list of all invocations.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsResult withCommandInvocations(
             java.util.Collection<CommandInvocation> commandInvocations) {
         setCommandInvocations(commandInvocations);
@@ -101,31 +119,39 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
      *        received this token from a previous call.)
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @return (Optional) The token for the next set of items to return. (You
      *         received this token from a previous call.)
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
+     * <p>
      * (Optional) The token for the next set of items to return. (You received
      * this token from a previous call.)
+     * </p>
      * 
      * @param nextToken
      *        (Optional) The token for the next set of items to return. (You
@@ -133,6 +159,7 @@ public class ListCommandInvocationsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListCommandInvocationsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

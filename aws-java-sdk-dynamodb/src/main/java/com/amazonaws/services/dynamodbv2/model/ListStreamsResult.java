@@ -60,6 +60,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return A list of stream descriptors associated with the current account
      *         and endpoint.
      */
+
     public java.util.List<Stream> getStreams() {
         return streams;
     }
@@ -74,6 +75,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      *        A list of stream descriptors associated with the current account
      *        and endpoint.
      */
+
     public void setStreams(java.util.Collection<Stream> streams) {
         if (streams == null) {
             this.streams = null;
@@ -101,6 +103,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withStreams(Stream... streams) {
         if (this.streams == null) {
             setStreams(new java.util.ArrayList<Stream>(streams.length));
@@ -123,6 +126,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withStreams(java.util.Collection<Stream> streams) {
         setStreams(streams);
         return this;
@@ -160,6 +164,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      *        only way to know when you have reached the end of the result set
      *        is when <code>LastEvaluatedStreamArn</code> is empty.
      */
+
     public void setLastEvaluatedStreamArn(String lastEvaluatedStreamArn) {
         this.lastEvaluatedStreamArn = lastEvaluatedStreamArn;
     }
@@ -195,6 +200,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      *         only way to know when you have reached the end of the result set
      *         is when <code>LastEvaluatedStreamArn</code> is empty.
      */
+
     public String getLastEvaluatedStreamArn() {
         return this.lastEvaluatedStreamArn;
     }
@@ -233,6 +239,7 @@ public class ListStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStreamsResult withLastEvaluatedStreamArn(
             String lastEvaluatedStreamArn) {
         setLastEvaluatedStreamArn(lastEvaluatedStreamArn);

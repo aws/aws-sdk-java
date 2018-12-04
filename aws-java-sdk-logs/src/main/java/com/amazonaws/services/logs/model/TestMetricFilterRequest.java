@@ -36,6 +36,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
     /**
      * @param filterPattern
      */
+
     public void setFilterPattern(String filterPattern) {
         this.filterPattern = filterPattern;
     }
@@ -43,6 +44,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getFilterPattern() {
         return this.filterPattern;
     }
@@ -52,6 +54,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestMetricFilterRequest withFilterPattern(String filterPattern) {
         setFilterPattern(filterPattern);
         return this;
@@ -64,6 +67,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
      * 
      * @return A list of log event messages to test.
      */
+
     public java.util.List<String> getLogEventMessages() {
         if (logEventMessages == null) {
             logEventMessages = new com.amazonaws.internal.SdkInternalList<String>();
@@ -79,6 +83,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
      * @param logEventMessages
      *        A list of log event messages to test.
      */
+
     public void setLogEventMessages(
             java.util.Collection<String> logEventMessages) {
         if (logEventMessages == null) {
@@ -106,6 +111,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestMetricFilterRequest withLogEventMessages(
             String... logEventMessages) {
         if (this.logEventMessages == null) {
@@ -128,6 +134,7 @@ public class TestMetricFilterRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TestMetricFilterRequest withLogEventMessages(
             java.util.Collection<String> logEventMessages) {
         setLogEventMessages(logEventMessages);

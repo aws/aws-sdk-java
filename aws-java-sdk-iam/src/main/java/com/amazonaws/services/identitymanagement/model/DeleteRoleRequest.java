@@ -29,6 +29,12 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      */
     private String roleName;
 
@@ -36,10 +42,22 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role to delete.
+     *        The name of the role to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      */
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
@@ -48,9 +66,21 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
-     * @return The name of the role to delete.
+     * @return The name of the role to delete.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *         for this parameter is a string of characters consisting of upper
+     *         and lowercase alphanumeric characters with no spaces. You can
+     *         also include any of the following characters: =,.@-
      */
+
     public String getRoleName() {
         return this.roleName;
     }
@@ -59,12 +89,24 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest implements
      * <p>
      * The name of the role to delete.
      * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this
+     * parameter is a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: =,.@-
+     * </p>
      * 
      * @param roleName
-     *        The name of the role to delete.
+     *        The name of the role to delete.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     *        for this parameter is a string of characters consisting of upper
+     *        and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRoleRequest withRoleName(String roleName) {
         setRoleName(roleName);
         return this;

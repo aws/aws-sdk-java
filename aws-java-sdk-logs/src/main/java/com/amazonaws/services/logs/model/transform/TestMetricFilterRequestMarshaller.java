@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TestMetricFilterRequest Marshaller
  */
 public class TestMetricFilterRequestMarshaller implements
         Marshaller<Request<TestMetricFilterRequest>, TestMetricFilterRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TestMetricFilterRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TestMetricFilterRequest> marshall(
             TestMetricFilterRequest testMetricFilterRequest) {
@@ -63,13 +64,13 @@ public class TestMetricFilterRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (testMetricFilterRequest.getFilterPattern() != null) {
-                jsonWriter.key("filterPattern").value(
+                jsonGenerator.writeFieldName("filterPattern").writeValue(
                         testMetricFilterRequest.getFilterPattern());
             }
 
@@ -77,24 +78,23 @@ public class TestMetricFilterRequestMarshaller implements
                     .getLogEventMessages();
             if (!logEventMessagesList.isEmpty()
                     || !logEventMessagesList.isAutoConstruct()) {
-                jsonWriter.key("logEventMessages");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("logEventMessages");
+                jsonGenerator.writeStartArray();
                 for (String logEventMessagesListValue : logEventMessagesList) {
                     if (logEventMessagesListValue != null) {
-                        jsonWriter.value(logEventMessagesListValue);
+                        jsonGenerator.writeValue(logEventMessagesListValue);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

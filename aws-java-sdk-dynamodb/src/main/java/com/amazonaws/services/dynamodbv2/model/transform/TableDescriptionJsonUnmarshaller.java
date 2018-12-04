@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class TableDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("TableName", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setTableName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setTableName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("KeySchema", targetDepth)) {
                     context.nextToken();
@@ -72,13 +74,14 @@ public class TableDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("TableStatus", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setTableStatus(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setTableStatus(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setCreationDateTime(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setCreationDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context
                         .testExpression("ProvisionedThroughput", targetDepth)) {
@@ -89,18 +92,18 @@ public class TableDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("TableSizeBytes", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setTableSizeBytes(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setTableSizeBytes(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("ItemCount", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setItemCount(LongJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setItemCount(context.getUnmarshaller(
+                            Long.class).unmarshall(context));
                 }
                 if (context.testExpression("TableArn", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setTableArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setTableArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LocalSecondaryIndexes", targetDepth)) {
@@ -126,14 +129,13 @@ public class TableDescriptionJsonUnmarshaller implements
                 }
                 if (context.testExpression("LatestStreamLabel", targetDepth)) {
                     context.nextToken();
-                    tableDescription
-                            .setLatestStreamLabel(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    tableDescription.setLatestStreamLabel(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("LatestStreamArn", targetDepth)) {
                     context.nextToken();
-                    tableDescription.setLatestStreamArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    tableDescription.setLatestStreamArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

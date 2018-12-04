@@ -37,8 +37,10 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListPresetsRequest Marshaller
@@ -46,7 +48,13 @@ import com.amazonaws.util.json.*;
 public class ListPresetsRequestMarshaller implements
         Marshaller<Request<ListPresetsRequest>, ListPresetsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListPresetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListPresetsRequest> marshall(
             ListPresetsRequest listPresetsRequest) {
@@ -65,16 +73,14 @@ public class ListPresetsRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String ascending = (listPresetsRequest.getAscending() == null) ? null
-                : StringUtils.fromString(listPresetsRequest.getAscending());
-        if (ascending != null) {
-            request.addParameter("Ascending", ascending);
+        if (listPresetsRequest.getAscending() != null) {
+            request.addParameter("Ascending",
+                    StringUtils.fromString(listPresetsRequest.getAscending()));
         }
 
-        String pageToken = (listPresetsRequest.getPageToken() == null) ? null
-                : StringUtils.fromString(listPresetsRequest.getPageToken());
-        if (pageToken != null) {
-            request.addParameter("PageToken", pageToken);
+        if (listPresetsRequest.getPageToken() != null) {
+            request.addParameter("PageToken",
+                    StringUtils.fromString(listPresetsRequest.getPageToken()));
         }
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

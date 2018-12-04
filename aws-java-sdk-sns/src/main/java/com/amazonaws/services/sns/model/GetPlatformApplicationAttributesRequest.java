@@ -42,6 +42,7 @@ public class GetPlatformApplicationAttributesRequest extends
      * @param platformApplicationArn
      *        PlatformApplicationArn for GetPlatformApplicationAttributesInput.
      */
+
     public void setPlatformApplicationArn(String platformApplicationArn) {
         this.platformApplicationArn = platformApplicationArn;
     }
@@ -53,6 +54,7 @@ public class GetPlatformApplicationAttributesRequest extends
      * 
      * @return PlatformApplicationArn for GetPlatformApplicationAttributesInput.
      */
+
     public String getPlatformApplicationArn() {
         return this.platformApplicationArn;
     }
@@ -67,6 +69,7 @@ public class GetPlatformApplicationAttributesRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPlatformApplicationAttributesRequest withPlatformApplicationArn(
             String platformApplicationArn) {
         setPlatformApplicationArn(platformApplicationArn);

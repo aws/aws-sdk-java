@@ -68,6 +68,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *        are limited to one of the values below.
      * @see ActionCategory
      */
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -84,6 +85,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         are limited to one of the values below.
      * @see ActionCategory
      */
+
     public String getCategory() {
         return this.category;
     }
@@ -103,6 +105,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         chained together.
      * @see ActionCategory
      */
+
     public ActionTypeId withCategory(String category) {
         setCategory(category);
         return this;
@@ -119,10 +122,9 @@ public class ActionTypeId implements Serializable, Cloneable {
      *        A category defines what kind of action can be taken in the stage,
      *        and constrains the provider type for the action. Valid categories
      *        are limited to one of the values below.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionCategory
      */
+
     public void setCategory(ActionCategory category) {
         this.category = category.toString();
     }
@@ -142,6 +144,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         chained together.
      * @see ActionCategory
      */
+
     public ActionTypeId withCategory(ActionCategory category) {
         setCategory(category);
         return this;
@@ -156,6 +159,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *        The creator of the action being called.
      * @see ActionOwner
      */
+
     public void setOwner(String owner) {
         this.owner = owner;
     }
@@ -168,6 +172,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * @return The creator of the action being called.
      * @see ActionOwner
      */
+
     public String getOwner() {
         return this.owner;
     }
@@ -183,6 +188,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOwner
      */
+
     public ActionTypeId withOwner(String owner) {
         setOwner(owner);
         return this;
@@ -195,10 +201,9 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @param owner
      *        The creator of the action being called.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOwner
      */
+
     public void setOwner(ActionOwner owner) {
         this.owner = owner.toString();
     }
@@ -214,6 +219,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOwner
      */
+
     public ActionTypeId withOwner(ActionOwner owner) {
         setOwner(owner);
         return this;
@@ -233,6 +239,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *        action in the Deploy category type might have a provider of AWS
      *        CodeDeploy, which would be specified as CodeDeploy.
      */
+
     public void setProvider(String provider) {
         this.provider = provider;
     }
@@ -250,6 +257,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      *         action in the Deploy category type might have a provider of AWS
      *         CodeDeploy, which would be specified as CodeDeploy.
      */
+
     public String getProvider() {
         return this.provider;
     }
@@ -270,6 +278,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeId withProvider(String provider) {
         setProvider(provider);
         return this;
@@ -283,6 +292,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * @param version
      *        A string that identifies the action type.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -294,6 +304,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * 
      * @return A string that identifies the action type.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -308,6 +319,7 @@ public class ActionTypeId implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionTypeId withVersion(String version) {
         setVersion(version);
         return this;

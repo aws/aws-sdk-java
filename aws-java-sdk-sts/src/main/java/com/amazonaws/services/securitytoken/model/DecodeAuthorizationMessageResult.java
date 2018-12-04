@@ -30,51 +30,47 @@ public class DecodeAuthorizationMessageResult implements Serializable,
 
     /**
      * <p>
-     * An XML document that contains the decoded message. For more information,
-     * see <code>DecodeAuthorizationMessage</code>.
+     * An XML document that contains the decoded message.
      * </p>
      */
     private String decodedMessage;
 
     /**
      * <p>
-     * An XML document that contains the decoded message. For more information,
-     * see <code>DecodeAuthorizationMessage</code>.
+     * An XML document that contains the decoded message.
      * </p>
      * 
      * @param decodedMessage
-     *        An XML document that contains the decoded message. For more
-     *        information, see <code>DecodeAuthorizationMessage</code>.
+     *        An XML document that contains the decoded message.
      */
+
     public void setDecodedMessage(String decodedMessage) {
         this.decodedMessage = decodedMessage;
     }
 
     /**
      * <p>
-     * An XML document that contains the decoded message. For more information,
-     * see <code>DecodeAuthorizationMessage</code>.
+     * An XML document that contains the decoded message.
      * </p>
      * 
-     * @return An XML document that contains the decoded message. For more
-     *         information, see <code>DecodeAuthorizationMessage</code>.
+     * @return An XML document that contains the decoded message.
      */
+
     public String getDecodedMessage() {
         return this.decodedMessage;
     }
 
     /**
      * <p>
-     * An XML document that contains the decoded message. For more information,
-     * see <code>DecodeAuthorizationMessage</code>.
+     * An XML document that contains the decoded message.
      * </p>
      * 
      * @param decodedMessage
-     *        An XML document that contains the decoded message. For more
-     *        information, see <code>DecodeAuthorizationMessage</code>.
+     *        An XML document that contains the decoded message.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DecodeAuthorizationMessageResult withDecodedMessage(
             String decodedMessage) {
         setDecodedMessage(decodedMessage);

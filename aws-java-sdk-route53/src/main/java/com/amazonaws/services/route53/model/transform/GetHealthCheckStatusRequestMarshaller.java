@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * GetHealthCheckStatusRequest Marshaller
@@ -57,11 +60,14 @@ public class GetHealthCheckStatusRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/status";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (getHealthCheckStatusRequest.getHealthCheckId() == null) ? ""
-                        : StringUtils.fromString(getHealthCheckStatusRequest
-                                .getHealthCheckId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{HealthCheckId}",
+                        (getHealthCheckStatusRequest.getHealthCheckId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(getHealthCheckStatusRequest
+                                                .getHealthCheckId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         return request;

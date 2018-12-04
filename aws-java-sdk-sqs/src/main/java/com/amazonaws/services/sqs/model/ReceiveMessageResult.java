@@ -19,7 +19,9 @@ package com.amazonaws.services.sqs.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A list of received messages.
+ * </p>
  */
 public class ReceiveMessageResult implements Serializable, Cloneable {
 
@@ -37,6 +39,7 @@ public class ReceiveMessageResult implements Serializable, Cloneable {
      * 
      * @return A list of messages.
      */
+
     public java.util.List<Message> getMessages() {
         if (messages == null) {
             messages = new com.amazonaws.internal.SdkInternalList<Message>();
@@ -52,6 +55,7 @@ public class ReceiveMessageResult implements Serializable, Cloneable {
      * @param messages
      *        A list of messages.
      */
+
     public void setMessages(java.util.Collection<Message> messages) {
         if (messages == null) {
             this.messages = null;
@@ -78,6 +82,7 @@ public class ReceiveMessageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageResult withMessages(Message... messages) {
         if (this.messages == null) {
             setMessages(new com.amazonaws.internal.SdkInternalList<Message>(
@@ -99,6 +104,7 @@ public class ReceiveMessageResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReceiveMessageResult withMessages(
             java.util.Collection<Message> messages) {
         setMessages(messages);

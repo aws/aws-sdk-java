@@ -34,7 +34,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      */
     private String certificateId;
@@ -59,6 +59,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @param certificateArn
      *        The ARN of the certificate.
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -70,6 +71,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * 
      * @return The ARN of the certificate.
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -84,6 +86,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeysAndCertificateResult withCertificateArn(
             String certificateArn) {
         setCertificateArn(certificateArn);
@@ -93,13 +96,14 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @param certificateId
      *        The ID of the certificate. AWS IoT issues a default subject name
-     *        for the certificate (e.g., AWS IoT Certificate).
+     *        for the certificate (for example, AWS IoT Certificate).
      */
+
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
@@ -107,12 +111,13 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @return The ID of the certificate. AWS IoT issues a default subject name
-     *         for the certificate (e.g., AWS IoT Certificate).
+     *         for the certificate (for example, AWS IoT Certificate).
      */
+
     public String getCertificateId() {
         return this.certificateId;
     }
@@ -120,15 +125,16 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
     /**
      * <p>
      * The ID of the certificate. AWS IoT issues a default subject name for the
-     * certificate (e.g., AWS IoT Certificate).
+     * certificate (for example, AWS IoT Certificate).
      * </p>
      * 
      * @param certificateId
      *        The ID of the certificate. AWS IoT issues a default subject name
-     *        for the certificate (e.g., AWS IoT Certificate).
+     *        for the certificate (for example, AWS IoT Certificate).
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeysAndCertificateResult withCertificateId(String certificateId) {
         setCertificateId(certificateId);
         return this;
@@ -142,6 +148,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @param certificatePem
      *        The certificate data, in PEM format.
      */
+
     public void setCertificatePem(String certificatePem) {
         this.certificatePem = certificatePem;
     }
@@ -153,6 +160,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * 
      * @return The certificate data, in PEM format.
      */
+
     public String getCertificatePem() {
         return this.certificatePem;
     }
@@ -167,6 +175,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeysAndCertificateResult withCertificatePem(
             String certificatePem) {
         setCertificatePem(certificatePem);
@@ -181,6 +190,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @param keyPair
      *        The generated key pair.
      */
+
     public void setKeyPair(KeyPair keyPair) {
         this.keyPair = keyPair;
     }
@@ -192,6 +202,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * 
      * @return The generated key pair.
      */
+
     public KeyPair getKeyPair() {
         return this.keyPair;
     }
@@ -206,6 +217,7 @@ public class CreateKeysAndCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateKeysAndCertificateResult withKeyPair(KeyPair keyPair) {
         setKeyPair(keyPair);
         return this;

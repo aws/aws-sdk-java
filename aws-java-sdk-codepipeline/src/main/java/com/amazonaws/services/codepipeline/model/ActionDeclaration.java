@@ -79,6 +79,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @param name
      *        The action declaration's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -90,6 +91,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @return The action declaration's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -104,6 +106,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withName(String name) {
         setName(name);
         return this;
@@ -117,6 +120,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @param actionTypeId
      *        The configuration information for the action type.
      */
+
     public void setActionTypeId(ActionTypeId actionTypeId) {
         this.actionTypeId = actionTypeId;
     }
@@ -128,6 +132,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @return The configuration information for the action type.
      */
+
     public ActionTypeId getActionTypeId() {
         return this.actionTypeId;
     }
@@ -142,6 +147,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withActionTypeId(ActionTypeId actionTypeId) {
         setActionTypeId(actionTypeId);
         return this;
@@ -155,6 +161,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @param runOrder
      *        The order in which actions are run.
      */
+
     public void setRunOrder(Integer runOrder) {
         this.runOrder = runOrder;
     }
@@ -166,6 +173,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @return The order in which actions are run.
      */
+
     public Integer getRunOrder() {
         return this.runOrder;
     }
@@ -180,6 +188,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withRunOrder(Integer runOrder) {
         setRunOrder(runOrder);
         return this;
@@ -192,6 +201,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * 
      * @return The action declaration's configuration.
      */
+
     public java.util.Map<String, String> getConfiguration() {
         return configuration;
     }
@@ -204,6 +214,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @param configuration
      *        The action declaration's configuration.
      */
+
     public void setConfiguration(java.util.Map<String, String> configuration) {
         this.configuration = configuration;
     }
@@ -218,6 +229,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withConfiguration(
             java.util.Map<String, String> configuration) {
         setConfiguration(configuration);
@@ -239,6 +251,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * Removes all the entries added into Configuration. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public ActionDeclaration clearConfigurationEntries() {
         this.configuration = null;
         return this;
@@ -253,6 +266,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return The name or ID of the result of the action declaration, such as a
      *         test or build artifact.
      */
+
     public java.util.List<OutputArtifact> getOutputArtifacts() {
         return outputArtifacts;
     }
@@ -267,6 +281,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      *        The name or ID of the result of the action declaration, such as a
      *        test or build artifact.
      */
+
     public void setOutputArtifacts(
             java.util.Collection<OutputArtifact> outputArtifacts) {
         if (outputArtifacts == null) {
@@ -296,6 +311,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withOutputArtifacts(
             OutputArtifact... outputArtifacts) {
         if (this.outputArtifacts == null) {
@@ -320,6 +336,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withOutputArtifacts(
             java.util.Collection<OutputArtifact> outputArtifacts) {
         setOutputArtifacts(outputArtifacts);
@@ -335,6 +352,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return The name or ID of the artifact consumed by the action, such as a
      *         test or build artifact.
      */
+
     public java.util.List<InputArtifact> getInputArtifacts() {
         return inputArtifacts;
     }
@@ -349,6 +367,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      *        The name or ID of the artifact consumed by the action, such as a
      *        test or build artifact.
      */
+
     public void setInputArtifacts(
             java.util.Collection<InputArtifact> inputArtifacts) {
         if (inputArtifacts == null) {
@@ -378,6 +397,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withInputArtifacts(InputArtifact... inputArtifacts) {
         if (this.inputArtifacts == null) {
             setInputArtifacts(new java.util.ArrayList<InputArtifact>(
@@ -401,6 +421,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withInputArtifacts(
             java.util.Collection<InputArtifact> inputArtifacts) {
         setInputArtifacts(inputArtifacts);
@@ -417,6 +438,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      *        The ARN of the IAM service role that will perform the declared
      *        action. This is assumed through the roleArn for the pipeline.
      */
+
     public void setRoleArn(String roleArn) {
         this.roleArn = roleArn;
     }
@@ -430,6 +452,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return The ARN of the IAM service role that will perform the declared
      *         action. This is assumed through the roleArn for the pipeline.
      */
+
     public String getRoleArn() {
         return this.roleArn;
     }
@@ -446,6 +469,7 @@ public class ActionDeclaration implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionDeclaration withRoleArn(String roleArn) {
         setRoleArn(roleArn);
         return this;

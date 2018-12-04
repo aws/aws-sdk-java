@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class SelfUserProfileJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("IamUserArn", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setIamUserArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    selfUserProfile.setIamUserArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    selfUserProfile.setName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshUsername", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setSshUsername(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    selfUserProfile.setSshUsername(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKey", targetDepth)) {
                     context.nextToken();
-                    selfUserProfile.setSshPublicKey(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    selfUserProfile.setSshPublicKey(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

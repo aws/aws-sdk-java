@@ -75,6 +75,10 @@ public class EmptyHttpRequest implements Request<Object> {
     }
 
     @Override
+    public void addParameters(String name, List<String> values) {
+    }
+
+    @Override
     public Map<String, List<String>> getParameters() {
         return Collections.emptyMap();
     }

@@ -1,12 +1,13 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -17,6 +18,8 @@ package com.amazonaws.services.lambda.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.lambda.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -26,11 +29,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Function Code Location JSON Unmarshaller
+ * FunctionCodeLocation JSON Unmarshaller
  */
-public class FunctionCodeLocationJsonUnmarshaller implements Unmarshaller<FunctionCodeLocation, JsonUnmarshallerContext> {
+public class FunctionCodeLocationJsonUnmarshaller implements
+        Unmarshaller<FunctionCodeLocation, JsonUnmarshallerContext> {
 
-    public FunctionCodeLocation unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public FunctionCodeLocation unmarshall(JsonUnmarshallerContext context)
+            throws Exception {
         FunctionCodeLocation functionCodeLocation = new FunctionCodeLocation();
 
         int originalDepth = context.getCurrentDepth();
@@ -38,37 +43,45 @@ public class FunctionCodeLocationJsonUnmarshaller implements Unmarshaller<Functi
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.getCurrentToken();
-        if (token == null) token = context.nextToken();
-        if (token == VALUE_NULL) return null;
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL)
+            return null;
 
         while (true) {
-            if (token == null) break;
+            if (token == null)
+                break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("RepositoryType", targetDepth)) {
                     context.nextToken();
-                    functionCodeLocation.setRepositoryType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    functionCodeLocation.setRepositoryType(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
                     context.nextToken();
-                    functionCodeLocation.setLocation(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    functionCodeLocation.setLocation(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
-                    if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null
+                        || context.getLastParsedParentElement().equals(
+                                currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
                 }
             }
-
             token = context.nextToken();
         }
-        
+
         return functionCodeLocation;
     }
 
     private static FunctionCodeLocationJsonUnmarshaller instance;
+
     public static FunctionCodeLocationJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new FunctionCodeLocationJsonUnmarshaller();
+        if (instance == null)
+            instance = new FunctionCodeLocationJsonUnmarshaller();
         return instance;
     }
 }
-    

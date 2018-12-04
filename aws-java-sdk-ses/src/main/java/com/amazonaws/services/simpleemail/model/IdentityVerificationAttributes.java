@@ -51,6 +51,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      *        "Failed", or "TemporaryFailure".
      * @see VerificationStatus
      */
+
     public void setVerificationStatus(String verificationStatus) {
         this.verificationStatus = verificationStatus;
     }
@@ -65,6 +66,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      *         "Failed", or "TemporaryFailure".
      * @see VerificationStatus
      */
+
     public String getVerificationStatus() {
         return this.verificationStatus;
     }
@@ -82,6 +84,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see VerificationStatus
      */
+
     public IdentityVerificationAttributes withVerificationStatus(
             String verificationStatus) {
         setVerificationStatus(verificationStatus);
@@ -97,10 +100,9 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @param verificationStatus
      *        The verification status of the identity: "Pending", "Success",
      *        "Failed", or "TemporaryFailure".
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see VerificationStatus
      */
+
     public void setVerificationStatus(VerificationStatus verificationStatus) {
         this.verificationStatus = verificationStatus.toString();
     }
@@ -118,6 +120,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      *         chained together.
      * @see VerificationStatus
      */
+
     public IdentityVerificationAttributes withVerificationStatus(
             VerificationStatus verificationStatus) {
         setVerificationStatus(verificationStatus);
@@ -134,6 +137,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      *        The verification token for a domain identity. Null for email
      *        address identities.
      */
+
     public void setVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;
     }
@@ -147,6 +151,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @return The verification token for a domain identity. Null for email
      *         address identities.
      */
+
     public String getVerificationToken() {
         return this.verificationToken;
     }
@@ -163,6 +168,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IdentityVerificationAttributes withVerificationToken(
             String verificationToken) {
         setVerificationToken(verificationToken);

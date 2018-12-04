@@ -44,6 +44,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * 
      * @return The scaling policies.
      */
+
     public java.util.List<ScalingPolicy> getScalingPolicies() {
         if (scalingPolicies == null) {
             scalingPolicies = new com.amazonaws.internal.SdkInternalList<ScalingPolicy>();
@@ -59,6 +60,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * @param scalingPolicies
      *        The scaling policies.
      */
+
     public void setScalingPolicies(
             java.util.Collection<ScalingPolicy> scalingPolicies) {
         if (scalingPolicies == null) {
@@ -86,6 +88,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesResult withScalingPolicies(
             ScalingPolicy... scalingPolicies) {
         if (this.scalingPolicies == null) {
@@ -108,6 +111,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesResult withScalingPolicies(
             java.util.Collection<ScalingPolicy> scalingPolicies) {
         setScalingPolicies(scalingPolicies);
@@ -124,6 +128,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      *        The token to use when requesting the next set of items. If there
      *        are no additional items to return, the string is empty.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -137,6 +142,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * @return The token to use when requesting the next set of items. If there
      *         are no additional items to return, the string is empty.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -153,6 +159,7 @@ public class DescribePoliciesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribePoliciesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

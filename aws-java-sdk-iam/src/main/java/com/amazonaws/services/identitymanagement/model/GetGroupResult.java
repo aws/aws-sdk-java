@@ -27,7 +27,7 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      */
     private Group group;
@@ -60,37 +60,40 @@ public class GetGroupResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure that contains details about the group.
      */
+
     public void setGroup(Group group) {
         this.group = group;
     }
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
-     * @return Information about the group.
+     * @return A structure that contains details about the group.
      */
+
     public Group getGroup() {
         return this.group;
     }
 
     /**
      * <p>
-     * Information about the group.
+     * A structure that contains details about the group.
      * </p>
      * 
      * @param group
-     *        Information about the group.
+     *        A structure that contains details about the group.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupResult withGroup(Group group) {
         setGroup(group);
         return this;
@@ -103,6 +106,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * 
      * @return A list of users in the group.
      */
+
     public java.util.List<User> getUsers() {
         if (users == null) {
             users = new com.amazonaws.internal.SdkInternalList<User>();
@@ -118,6 +122,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * @param users
      *        A list of users in the group.
      */
+
     public void setUsers(java.util.Collection<User> users) {
         if (users == null) {
             this.users = null;
@@ -143,6 +148,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupResult withUsers(User... users) {
         if (this.users == null) {
             setUsers(new com.amazonaws.internal.SdkInternalList<User>(
@@ -164,6 +170,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupResult withUsers(java.util.Collection<User> users) {
         setUsers(users);
         return this;
@@ -190,6 +197,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      *        <code>IsTruncated</code> after every call to ensure that you
      *        receive all of your results.
      */
+
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
@@ -214,6 +222,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean getIsTruncated() {
         return this.isTruncated;
     }
@@ -241,6 +250,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupResult withIsTruncated(Boolean isTruncated) {
         setIsTruncated(isTruncated);
         return this;
@@ -266,6 +276,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      *         <code>IsTruncated</code> after every call to ensure that you
      *         receive all of your results.
      */
+
     public Boolean isTruncated() {
         return this.isTruncated;
     }
@@ -282,6 +293,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      *        is present and contains the value to use for the
      *        <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -297,6 +309,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      *         is present and contains the value to use for the
      *         <code>Marker</code> parameter in a subsequent pagination request.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -315,6 +328,7 @@ public class GetGroupResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetGroupResult withMarker(String marker) {
         setMarker(marker);
         return this;

@@ -58,6 +58,7 @@ public class ActionState implements Serializable, Cloneable {
      * @param actionName
      *        The name of the action.
      */
+
     public void setActionName(String actionName) {
         this.actionName = actionName;
     }
@@ -69,6 +70,7 @@ public class ActionState implements Serializable, Cloneable {
      * 
      * @return The name of the action.
      */
+
     public String getActionName() {
         return this.actionName;
     }
@@ -83,6 +85,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionState withActionName(String actionName) {
         setActionName(actionName);
         return this;
@@ -91,6 +94,7 @@ public class ActionState implements Serializable, Cloneable {
     /**
      * @param currentRevision
      */
+
     public void setCurrentRevision(ActionRevision currentRevision) {
         this.currentRevision = currentRevision;
     }
@@ -98,6 +102,7 @@ public class ActionState implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionRevision getCurrentRevision() {
         return this.currentRevision;
     }
@@ -107,6 +112,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionState withCurrentRevision(ActionRevision currentRevision) {
         setCurrentRevision(currentRevision);
         return this;
@@ -115,6 +121,7 @@ public class ActionState implements Serializable, Cloneable {
     /**
      * @param latestExecution
      */
+
     public void setLatestExecution(ActionExecution latestExecution) {
         this.latestExecution = latestExecution;
     }
@@ -122,6 +129,7 @@ public class ActionState implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public ActionExecution getLatestExecution() {
         return this.latestExecution;
     }
@@ -131,6 +139,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionState withLatestExecution(ActionExecution latestExecution) {
         setLatestExecution(latestExecution);
         return this;
@@ -146,6 +155,7 @@ public class ActionState implements Serializable, Cloneable {
      *        A URL link for more information about the state of the action,
      *        such as a deployment group details page.
      */
+
     public void setEntityUrl(String entityUrl) {
         this.entityUrl = entityUrl;
     }
@@ -159,6 +169,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return A URL link for more information about the state of the action,
      *         such as a deployment group details page.
      */
+
     public String getEntityUrl() {
         return this.entityUrl;
     }
@@ -175,6 +186,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionState withEntityUrl(String entityUrl) {
         setEntityUrl(entityUrl);
         return this;
@@ -190,6 +202,7 @@ public class ActionState implements Serializable, Cloneable {
      *        A URL link for more information about the revision, such as a
      *        commit details page.
      */
+
     public void setRevisionUrl(String revisionUrl) {
         this.revisionUrl = revisionUrl;
     }
@@ -203,6 +216,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return A URL link for more information about the revision, such as a
      *         commit details page.
      */
+
     public String getRevisionUrl() {
         return this.revisionUrl;
     }
@@ -219,6 +233,7 @@ public class ActionState implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ActionState withRevisionUrl(String revisionUrl) {
         setRevisionUrl(revisionUrl);
         return this;

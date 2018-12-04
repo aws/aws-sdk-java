@@ -35,7 +35,7 @@ public class GlacierRequestHandler extends AbstractRequestHandler {
 
     	if (!startsWithUserId(request)) {
     		String resourcePath = request.getResourcePath();
-    		request.setResourcePath(resourcePath.replaceFirst("/", "/-/"));
+    		request.setResourcePath(resourcePath.replaceFirst("//", "/-/"));
     	}
 
         request.addHeader("x-amz-glacier-version", "2012-06-01");
@@ -77,7 +77,7 @@ public class GlacierRequestHandler extends AbstractRequestHandler {
 
 	private boolean startsWithUserId(Request<?> request) {
 		for (String parameter : PARAMETERS)
-			if (request.getResourcePath().startsWith("/" + parameter)) {
+			if (request.getResourcePath().startsWith("//" + parameter)) {
 				return false;
 			}
 		return true;

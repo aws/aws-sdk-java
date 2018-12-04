@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.cognitoidentity.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListIdentitiesRequest Marshaller
  */
 public class ListIdentitiesRequestMarshaller implements
         Marshaller<Request<ListIdentitiesRequest>, ListIdentitiesRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListIdentitiesRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListIdentitiesRequest> marshall(
             ListIdentitiesRequest listIdentitiesRequest) {
@@ -64,39 +65,35 @@ public class ListIdentitiesRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listIdentitiesRequest.getIdentityPoolId() != null) {
-                jsonWriter.key("IdentityPoolId").value(
+                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(
                         listIdentitiesRequest.getIdentityPoolId());
             }
-
             if (listIdentitiesRequest.getMaxResults() != null) {
-                jsonWriter.key("MaxResults").value(
+                jsonGenerator.writeFieldName("MaxResults").writeValue(
                         listIdentitiesRequest.getMaxResults());
             }
-
             if (listIdentitiesRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listIdentitiesRequest.getNextToken());
             }
-
             if (listIdentitiesRequest.getHideDisabled() != null) {
-                jsonWriter.key("HideDisabled").value(
+                jsonGenerator.writeFieldName("HideDisabled").writeValue(
                         listIdentitiesRequest.getHideDisabled());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

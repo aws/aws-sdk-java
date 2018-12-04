@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * CreateHealthCheckRequest Marshaller
@@ -160,6 +163,53 @@ public class CreateHealthCheckRequestMarshaller implements
                             xmlWriter.endElement();
                         }
                         xmlWriter.endElement();
+                    }
+
+                    if (healthCheckConfig.getEnableSNI() != null) {
+                        xmlWriter.startElement("EnableSNI")
+                                .value(healthCheckConfig.getEnableSNI())
+                                .endElement();
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<String> healthCheckConfigRegionsList = (com.amazonaws.internal.SdkInternalList<String>) healthCheckConfig
+                            .getRegions();
+                    if (!healthCheckConfigRegionsList.isEmpty()
+                            || !healthCheckConfigRegionsList.isAutoConstruct()) {
+                        xmlWriter.startElement("Regions");
+
+                        for (String healthCheckConfigRegionsListValue : healthCheckConfigRegionsList) {
+                            xmlWriter.startElement("Region");
+                            xmlWriter.value(healthCheckConfigRegionsListValue);
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    AlarmIdentifier alarmIdentifier = healthCheckConfig
+                            .getAlarmIdentifier();
+                    if (alarmIdentifier != null) {
+                        xmlWriter.startElement("AlarmIdentifier");
+
+                        if (alarmIdentifier.getRegion() != null) {
+                            xmlWriter.startElement("Region")
+                                    .value(alarmIdentifier.getRegion())
+                                    .endElement();
+                        }
+
+                        if (alarmIdentifier.getName() != null) {
+                            xmlWriter.startElement("Name")
+                                    .value(alarmIdentifier.getName())
+                                    .endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+
+                    if (healthCheckConfig.getInsufficientDataHealthStatus() != null) {
+                        xmlWriter
+                                .startElement("InsufficientDataHealthStatus")
+                                .value(healthCheckConfig
+                                        .getInsufficientDataHealthStatus())
+                                .endElement();
                     }
                     xmlWriter.endElement();
                 }

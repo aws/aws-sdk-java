@@ -35,6 +35,8 @@ public enum SecurityTokenServiceActions implements Action {
     AssumeRoleWithWebIdentity("sts:AssumeRoleWithWebIdentity"),
     /** Action for the DecodeAuthorizationMessage operation. */
     DecodeAuthorizationMessage("sts:DecodeAuthorizationMessage"),
+    /** Action for the GetCallerIdentity operation. */
+    GetCallerIdentity("sts:GetCallerIdentity"),
     /** Action for the GetFederationToken operation. */
     GetFederationToken("sts:GetFederationToken"),
     /** Action for the GetSessionToken operation. */

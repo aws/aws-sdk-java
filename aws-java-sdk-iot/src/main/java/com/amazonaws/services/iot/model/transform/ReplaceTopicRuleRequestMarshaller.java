@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ReplaceTopicRuleRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class ReplaceTopicRuleRequestMarshaller implements
         Marshaller<Request<ReplaceTopicRuleRequest>, ReplaceTopicRuleRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ReplaceTopicRuleRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ReplaceTopicRuleRequest> marshall(
             ReplaceTopicRuleRequest replaceTopicRuleRequest) {
@@ -65,54 +74,56 @@ public class ReplaceTopicRuleRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{ruleName}",
-                (replaceTopicRuleRequest.getRuleName() == null) ? ""
-                        : StringUtils.fromString(replaceTopicRuleRequest
-                                .getRuleName()));
+                (replaceTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(replaceTopicRuleRequest
+                                        .getRuleName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
             TopicRulePayload topicRulePayload = replaceTopicRuleRequest
                     .getTopicRulePayload();
             if (topicRulePayload != null) {
-                jsonWriter.object();
-
+                jsonGenerator.writeStartObject();
                 if (topicRulePayload.getSql() != null) {
-                    jsonWriter.key("sql").value(topicRulePayload.getSql());
+                    jsonGenerator.writeFieldName("sql").writeValue(
+                            topicRulePayload.getSql());
                 }
-
                 if (topicRulePayload.getDescription() != null) {
-                    jsonWriter.key("description").value(
+                    jsonGenerator.writeFieldName("description").writeValue(
                             topicRulePayload.getDescription());
                 }
 
                 java.util.List<Action> actionsList = topicRulePayload
                         .getActions();
                 if (actionsList != null) {
-                    jsonWriter.key("actions");
-                    jsonWriter.array();
+                    jsonGenerator.writeFieldName("actions");
+                    jsonGenerator.writeStartArray();
                     for (Action actionsListValue : actionsList) {
                         if (actionsListValue != null) {
 
                             ActionJsonMarshaller.getInstance().marshall(
-                                    actionsListValue, jsonWriter);
+                                    actionsListValue, jsonGenerator);
                         }
                     }
-                    jsonWriter.endArray();
+                    jsonGenerator.writeEndArray();
                 }
-
                 if (topicRulePayload.getRuleDisabled() != null) {
-                    jsonWriter.key("ruleDisabled").value(
+                    jsonGenerator.writeFieldName("ruleDisabled").writeValue(
                             topicRulePayload.getRuleDisabled());
                 }
-                jsonWriter.endObject();
+                if (topicRulePayload.getAwsIotSqlVersion() != null) {
+                    jsonGenerator.writeFieldName("awsIotSqlVersion")
+                            .writeValue(topicRulePayload.getAwsIotSqlVersion());
+                }
+                jsonGenerator.writeEndObject();
             }
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

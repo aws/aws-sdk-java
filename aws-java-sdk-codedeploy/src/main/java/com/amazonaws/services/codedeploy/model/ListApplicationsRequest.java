@@ -29,54 +29,55 @@ public class ListApplicationsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * An identifier that was returned from the previous list applications call,
-     * which can be used to return the next set of applications in the list.
+     * An identifier returned from the previous list applications call. It can
+     * be used to return the next set of applications in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An identifier that was returned from the previous list applications call,
-     * which can be used to return the next set of applications in the list.
+     * An identifier returned from the previous list applications call. It can
+     * be used to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list
-     *        applications call, which can be used to return the next set of
-     *        applications in the list.
+     *        An identifier returned from the previous list applications call.
+     *        It can be used to return the next set of applications in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * An identifier that was returned from the previous list applications call,
-     * which can be used to return the next set of applications in the list.
+     * An identifier returned from the previous list applications call. It can
+     * be used to return the next set of applications in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous list
-     *         applications call, which can be used to return the next set of
-     *         applications in the list.
+     * @return An identifier returned from the previous list applications call.
+     *         It can be used to return the next set of applications in the
+     *         list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * An identifier that was returned from the previous list applications call,
-     * which can be used to return the next set of applications in the list.
+     * An identifier returned from the previous list applications call. It can
+     * be used to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
-     *        An identifier that was returned from the previous list
-     *        applications call, which can be used to return the next set of
-     *        applications in the list.
+     *        An identifier returned from the previous list applications call.
+     *        It can be used to return the next set of applications in the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListApplicationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

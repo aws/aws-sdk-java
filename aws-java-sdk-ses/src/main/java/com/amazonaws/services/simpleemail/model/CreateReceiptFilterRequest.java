@@ -46,6 +46,7 @@ public class CreateReceiptFilterRequest extends AmazonWebServiceRequest
      *        which consists of a name, an IP address range, and whether to
      *        allow or block mail from it.
      */
+
     public void setFilter(ReceiptFilter filter) {
         this.filter = filter;
     }
@@ -61,6 +62,7 @@ public class CreateReceiptFilterRequest extends AmazonWebServiceRequest
      *         which consists of a name, an IP address range, and whether to
      *         allow or block mail from it.
      */
+
     public ReceiptFilter getFilter() {
         return this.filter;
     }
@@ -79,6 +81,7 @@ public class CreateReceiptFilterRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateReceiptFilterRequest withFilter(ReceiptFilter filter) {
         setFilter(filter);
         return this;

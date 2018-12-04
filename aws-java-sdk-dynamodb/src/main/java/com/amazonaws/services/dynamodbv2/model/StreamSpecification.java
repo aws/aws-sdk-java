@@ -90,6 +90,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      *        Indicates whether DynamoDB Streams is enabled (true) or disabled
      *        (false) on the table.
      */
+
     public void setStreamEnabled(Boolean streamEnabled) {
         this.streamEnabled = streamEnabled;
     }
@@ -103,6 +104,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      * @return Indicates whether DynamoDB Streams is enabled (true) or disabled
      *         (false) on the table.
      */
+
     public Boolean getStreamEnabled() {
         return this.streamEnabled;
     }
@@ -119,6 +121,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StreamSpecification withStreamEnabled(Boolean streamEnabled) {
         setStreamEnabled(streamEnabled);
         return this;
@@ -133,6 +136,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      * @return Indicates whether DynamoDB Streams is enabled (true) or disabled
      *         (false) on the table.
      */
+
     public Boolean isStreamEnabled() {
         return this.streamEnabled;
     }
@@ -229,6 +233,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      *        </li>
      * @see StreamViewType
      */
+
     public void setStreamViewType(String streamViewType) {
         this.streamViewType = streamViewType;
     }
@@ -324,6 +329,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      *         </li>
      * @see StreamViewType
      */
+
     public String getStreamViewType() {
         return this.streamViewType;
     }
@@ -422,6 +428,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamSpecification withStreamViewType(String streamViewType) {
         setStreamViewType(streamViewType);
         return this;
@@ -517,10 +524,9 @@ public class StreamSpecification implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StreamViewType
      */
+
     public void setStreamViewType(StreamViewType streamViewType) {
         this.streamViewType = streamViewType.toString();
     }
@@ -619,6 +625,7 @@ public class StreamSpecification implements Serializable, Cloneable {
      *         chained together.
      * @see StreamViewType
      */
+
     public StreamSpecification withStreamViewType(StreamViewType streamViewType) {
         setStreamViewType(streamViewType);
         return this;

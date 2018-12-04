@@ -53,6 +53,7 @@ public class Project implements Serializable, Cloneable {
      * @param arn
      *        The project's ARN.
      */
+
     public void setArn(String arn) {
         this.arn = arn;
     }
@@ -64,6 +65,7 @@ public class Project implements Serializable, Cloneable {
      * 
      * @return The project's ARN.
      */
+
     public String getArn() {
         return this.arn;
     }
@@ -78,6 +80,7 @@ public class Project implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Project withArn(String arn) {
         setArn(arn);
         return this;
@@ -91,6 +94,7 @@ public class Project implements Serializable, Cloneable {
      * @param name
      *        The project's name.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -102,6 +106,7 @@ public class Project implements Serializable, Cloneable {
      * 
      * @return The project's name.
      */
+
     public String getName() {
         return this.name;
     }
@@ -116,6 +121,7 @@ public class Project implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Project withName(String name) {
         setName(name);
         return this;
@@ -129,6 +135,7 @@ public class Project implements Serializable, Cloneable {
      * @param created
      *        When the project was created.
      */
+
     public void setCreated(java.util.Date created) {
         this.created = created;
     }
@@ -140,6 +147,7 @@ public class Project implements Serializable, Cloneable {
      * 
      * @return When the project was created.
      */
+
     public java.util.Date getCreated() {
         return this.created;
     }
@@ -154,6 +162,7 @@ public class Project implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Project withCreated(java.util.Date created) {
         setCreated(created);
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * JobAlbumArtMarshaller
@@ -39,38 +34,40 @@ import com.amazonaws.util.json.*;
 public class JobAlbumArtJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(JobAlbumArt jobAlbumArt, JSONWriter jsonWriter) {
+    public void marshall(JobAlbumArt jobAlbumArt,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (jobAlbumArt == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (jobAlbumArt.getMergePolicy() != null) {
-                jsonWriter.key("MergePolicy").value(
+                jsonGenerator.writeFieldName("MergePolicy").writeValue(
                         jobAlbumArt.getMergePolicy());
             }
 
             com.amazonaws.internal.SdkInternalList<Artwork> artworkList = (com.amazonaws.internal.SdkInternalList<Artwork>) jobAlbumArt
                     .getArtwork();
             if (!artworkList.isEmpty() || !artworkList.isAutoConstruct()) {
-                jsonWriter.key("Artwork");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Artwork");
+                jsonGenerator.writeStartArray();
                 for (Artwork artworkListValue : artworkList) {
                     if (artworkListValue != null) {
 
                         ArtworkJsonMarshaller.getInstance().marshall(
-                                artworkListValue, jsonWriter);
+                                artworkListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -40,6 +40,7 @@ public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest
      * @param sshPublicKey
      *        The user's SSH public key.
      */
+
     public void setSshPublicKey(String sshPublicKey) {
         this.sshPublicKey = sshPublicKey;
     }
@@ -51,6 +52,7 @@ public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest
      * 
      * @return The user's SSH public key.
      */
+
     public String getSshPublicKey() {
         return this.sshPublicKey;
     }
@@ -65,6 +67,7 @@ public class UpdateMyUserProfileRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateMyUserProfileRequest withSshPublicKey(String sshPublicKey) {
         setSshPublicKey(sshPublicKey);
         return this;

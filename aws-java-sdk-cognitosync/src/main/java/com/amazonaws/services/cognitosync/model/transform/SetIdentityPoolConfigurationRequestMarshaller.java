@@ -37,8 +37,10 @@ import com.amazonaws.services.cognitosync.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * SetIdentityPoolConfigurationRequest Marshaller
@@ -48,6 +50,13 @@ public class SetIdentityPoolConfigurationRequestMarshaller
         Marshaller<Request<SetIdentityPoolConfigurationRequest>, SetIdentityPoolConfigurationRequest> {
 
     private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public SetIdentityPoolConfigurationRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<SetIdentityPoolConfigurationRequest> marshall(
             SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
@@ -68,40 +77,38 @@ public class SetIdentityPoolConfigurationRequestMarshaller
                 .replace(
                         "{IdentityPoolId}",
                         (setIdentityPoolConfigurationRequest
-                                .getIdentityPoolId() == null) ? ""
-                                : StringUtils
+                                .getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
+                                StringUtils
                                         .fromString(setIdentityPoolConfigurationRequest
-                                                .getIdentityPoolId()));
+                                                .getIdentityPoolId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (setIdentityPoolConfigurationRequest.getPushSync() != null) {
-                jsonWriter.key("PushSync");
+                jsonGenerator.writeFieldName("PushSync");
                 PushSyncJsonMarshaller.getInstance().marshall(
                         setIdentityPoolConfigurationRequest.getPushSync(),
-                        jsonWriter);
+                        jsonGenerator);
             }
-
             if (setIdentityPoolConfigurationRequest.getCognitoStreams() != null) {
-                jsonWriter.key("CognitoStreams");
+                jsonGenerator.writeFieldName("CognitoStreams");
                 CognitoStreamsJsonMarshaller
                         .getInstance()
                         .marshall(
                                 setIdentityPoolConfigurationRequest
                                         .getCognitoStreams(),
-                                jsonWriter);
+                                jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

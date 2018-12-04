@@ -85,6 +85,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      * @param topicArn
      *        The ARN of the topic for which you wish to find subscriptions.
      */
+
     public void setTopicArn(String topicArn) {
         this.topicArn = topicArn;
     }
@@ -96,6 +97,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      * 
      * @return The ARN of the topic for which you wish to find subscriptions.
      */
+
     public String getTopicArn() {
         return this.topicArn;
     }
@@ -110,6 +112,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsByTopicRequest withTopicArn(String topicArn) {
         setTopicArn(topicArn);
         return this;
@@ -125,6 +128,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      *        Token returned by the previous
      *        <code>ListSubscriptionsByTopic</code> request.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +142,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      * @return Token returned by the previous
      *         <code>ListSubscriptionsByTopic</code> request.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -154,6 +159,7 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSubscriptionsByTopicRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

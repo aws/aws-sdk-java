@@ -86,6 +86,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        The resource type.
      * @see ResourceType
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -98,6 +99,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return The resource type.
      * @see ResourceType
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -113,6 +115,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResourceType
      */
+
     public GetResourceConfigHistoryRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -125,10 +128,9 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @param resourceType
      *        The resource type.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceType
      */
+
     public void setResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
     }
@@ -144,6 +146,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ResourceType
      */
+
     public GetResourceConfigHistoryRequest withResourceType(
             ResourceType resourceType) {
         setResourceType(resourceType);
@@ -158,6 +161,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @param resourceId
      *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
@@ -169,6 +173,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the resource (for example., <code>sg-xxxxxx</code>).
      */
+
     public String getResourceId() {
         return this.resourceId;
     }
@@ -183,6 +188,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
         return this;
@@ -198,6 +204,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        The time stamp that indicates a later time. If not specified,
      *        current time is taken.
      */
+
     public void setLaterTime(java.util.Date laterTime) {
         this.laterTime = laterTime;
     }
@@ -211,6 +218,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return The time stamp that indicates a later time. If not specified,
      *         current time is taken.
      */
+
     public java.util.Date getLaterTime() {
         return this.laterTime;
     }
@@ -227,6 +235,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryRequest withLaterTime(
             java.util.Date laterTime) {
         setLaterTime(laterTime);
@@ -246,6 +255,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        items that start from when the first configuration item was
      *        recorded.
      */
+
     public void setEarlierTime(java.util.Date earlierTime) {
         this.earlierTime = earlierTime;
     }
@@ -262,6 +272,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         items that start from when the first configuration item was
      *         recorded.
      */
+
     public java.util.Date getEarlierTime() {
         return this.earlierTime;
     }
@@ -281,6 +292,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryRequest withEarlierTime(
             java.util.Date earlierTime) {
         setEarlierTime(earlierTime);
@@ -298,6 +310,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        the results are listed in reverse chronological order.
      * @see ChronologicalOrder
      */
+
     public void setChronologicalOrder(String chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder;
     }
@@ -312,6 +325,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         default the results are listed in reverse chronological order.
      * @see ChronologicalOrder
      */
+
     public String getChronologicalOrder() {
         return this.chronologicalOrder;
     }
@@ -329,6 +343,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ChronologicalOrder
      */
+
     public GetResourceConfigHistoryRequest withChronologicalOrder(
             String chronologicalOrder) {
         setChronologicalOrder(chronologicalOrder);
@@ -344,10 +359,9 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @param chronologicalOrder
      *        The chronological order for configuration items listed. By default
      *        the results are listed in reverse chronological order.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChronologicalOrder
      */
+
     public void setChronologicalOrder(ChronologicalOrder chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder.toString();
     }
@@ -365,6 +379,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see ChronologicalOrder
      */
+
     public GetResourceConfigHistoryRequest withChronologicalOrder(
             ChronologicalOrder chronologicalOrder) {
         setChronologicalOrder(chronologicalOrder);
@@ -383,6 +398,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        The default is 10. You cannot specify a limit greater than 100. If
      *        you specify 0, AWS Config uses the default.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -398,6 +414,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         The default is 10. You cannot specify a limit greater than 100.
      *         If you specify 0, AWS Config uses the default.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -416,6 +433,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -431,6 +449,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *        The <code>nextToken</code> string returned on a previous page that
      *        you use to get the next page of results in a paginated response.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -445,6 +464,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      *         that you use to get the next page of results in a paginated
      *         response.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -461,6 +481,7 @@ public class GetResourceConfigHistoryRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetResourceConfigHistoryRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

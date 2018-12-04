@@ -65,6 +65,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @param width
      *        The detected width of the input file, in pixels.
      */
+
     public void setWidth(Integer width) {
         this.width = width;
     }
@@ -76,6 +77,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @return The detected width of the input file, in pixels.
      */
+
     public Integer getWidth() {
         return this.width;
     }
@@ -90,6 +92,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetectedProperties withWidth(Integer width) {
         setWidth(width);
         return this;
@@ -103,6 +106,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @param height
      *        The detected height of the input file, in pixels.
      */
+
     public void setHeight(Integer height) {
         this.height = height;
     }
@@ -114,6 +118,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @return The detected height of the input file, in pixels.
      */
+
     public Integer getHeight() {
         return this.height;
     }
@@ -128,6 +133,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetectedProperties withHeight(Integer height) {
         setHeight(height);
         return this;
@@ -141,6 +147,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @param frameRate
      *        The detected frame rate of the input file, in frames per second.
      */
+
     public void setFrameRate(String frameRate) {
         this.frameRate = frameRate;
     }
@@ -152,6 +159,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @return The detected frame rate of the input file, in frames per second.
      */
+
     public String getFrameRate() {
         return this.frameRate;
     }
@@ -166,6 +174,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetectedProperties withFrameRate(String frameRate) {
         setFrameRate(frameRate);
         return this;
@@ -179,6 +188,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @param fileSize
      *        The detected file size of the input file, in bytes.
      */
+
     public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
     }
@@ -190,6 +200,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @return The detected file size of the input file, in bytes.
      */
+
     public Long getFileSize() {
         return this.fileSize;
     }
@@ -204,6 +215,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetectedProperties withFileSize(Long fileSize) {
         setFileSize(fileSize);
         return this;
@@ -217,6 +229,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @param durationMillis
      *        The detected duration of the input file, in milliseconds.
      */
+
     public void setDurationMillis(Long durationMillis) {
         this.durationMillis = durationMillis;
     }
@@ -228,6 +241,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * 
      * @return The detected duration of the input file, in milliseconds.
      */
+
     public Long getDurationMillis() {
         return this.durationMillis;
     }
@@ -242,6 +256,7 @@ public class DetectedProperties implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DetectedProperties withDurationMillis(Long durationMillis) {
         setDurationMillis(durationMillis);
         return this;

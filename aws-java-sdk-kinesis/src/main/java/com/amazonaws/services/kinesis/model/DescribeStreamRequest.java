@@ -54,6 +54,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream to describe.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -65,6 +66,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream to describe.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -79,6 +81,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -92,6 +95,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @param limit
      *        The maximum number of shards to return.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -103,6 +107,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The maximum number of shards to return.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -117,6 +122,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStreamRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;
@@ -130,6 +136,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @param exclusiveStartShardId
      *        The shard ID of the shard to start with.
      */
+
     public void setExclusiveStartShardId(String exclusiveStartShardId) {
         this.exclusiveStartShardId = exclusiveStartShardId;
     }
@@ -141,6 +148,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The shard ID of the shard to start with.
      */
+
     public String getExclusiveStartShardId() {
         return this.exclusiveStartShardId;
     }
@@ -155,6 +163,7 @@ public class DescribeStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeStreamRequest withExclusiveStartShardId(
             String exclusiveStartShardId) {
         setExclusiveStartShardId(exclusiveStartShardId);

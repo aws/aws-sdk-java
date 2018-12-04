@@ -40,6 +40,7 @@ public class GetAuthorizationTokenResult implements Serializable, Cloneable {
      * @return A list of authorization token data objects that correspond to the
      *         <code>registryIds</code> values in the request.
      */
+
     public java.util.List<AuthorizationData> getAuthorizationData() {
         return authorizationData;
     }
@@ -54,6 +55,7 @@ public class GetAuthorizationTokenResult implements Serializable, Cloneable {
      *        A list of authorization token data objects that correspond to the
      *        <code>registryIds</code> values in the request.
      */
+
     public void setAuthorizationData(
             java.util.Collection<AuthorizationData> authorizationData) {
         if (authorizationData == null) {
@@ -83,6 +85,7 @@ public class GetAuthorizationTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizationTokenResult withAuthorizationData(
             AuthorizationData... authorizationData) {
         if (this.authorizationData == null) {
@@ -107,6 +110,7 @@ public class GetAuthorizationTokenResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetAuthorizationTokenResult withAuthorizationData(
             java.util.Collection<AuthorizationData> authorizationData) {
         setAuthorizationData(authorizationData);

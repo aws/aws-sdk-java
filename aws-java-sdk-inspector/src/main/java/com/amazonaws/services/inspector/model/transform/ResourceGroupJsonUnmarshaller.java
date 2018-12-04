@@ -18,6 +18,8 @@ package com.amazonaws.services.inspector.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -51,15 +53,22 @@ public class ResourceGroupJsonUnmarshaller implements
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("resourceGroupArn", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    resourceGroup.setResourceGroupArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceGroup.setArn(context.getUnmarshaller(String.class)
+                            .unmarshall(context));
                 }
-                if (context.testExpression("resourceGroupTags", targetDepth)) {
+                if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    resourceGroup.setResourceGroupTags(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    resourceGroup
+                            .setTags(new ListUnmarshaller<ResourceGroupTag>(
+                                    ResourceGroupTagJsonUnmarshaller
+                                            .getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    resourceGroup.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

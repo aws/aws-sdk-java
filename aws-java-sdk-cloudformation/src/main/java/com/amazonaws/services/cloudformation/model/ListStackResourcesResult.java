@@ -33,9 +33,8 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<StackResourceSummary> stackResourceSummaries;
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of stack resources. If no additional page exists, this value is
-     * null.
+     * If the output exceeds 1 MB, a string that identifies the next page of
+     * stack resources. If no additional page exists, this value is null.
      * </p>
      */
     private String nextToken;
@@ -47,6 +46,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * 
      * @return A list of <code>StackResourceSummary</code> structures.
      */
+
     public java.util.List<StackResourceSummary> getStackResourceSummaries() {
         if (stackResourceSummaries == null) {
             stackResourceSummaries = new com.amazonaws.internal.SdkInternalList<StackResourceSummary>();
@@ -62,6 +62,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @param stackResourceSummaries
      *        A list of <code>StackResourceSummary</code> structures.
      */
+
     public void setStackResourceSummaries(
             java.util.Collection<StackResourceSummary> stackResourceSummaries) {
         if (stackResourceSummaries == null) {
@@ -89,6 +90,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withStackResourceSummaries(
             StackResourceSummary... stackResourceSummaries) {
         if (this.stackResourceSummaries == null) {
@@ -111,6 +113,7 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withStackResourceSummaries(
             java.util.Collection<StackResourceSummary> stackResourceSummaries) {
         setStackResourceSummaries(stackResourceSummaries);
@@ -119,49 +122,49 @@ public class ListStackResourcesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of stack resources. If no additional page exists, this value is
-     * null.
+     * If the output exceeds 1 MB, a string that identifies the next page of
+     * stack resources. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of stack resources. If no additional page exists, this
-     *        value is null.
+     *        If the output exceeds 1 MB, a string that identifies the next page
+     *        of stack resources. If no additional page exists, this value is
+     *        null.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of stack resources. If no additional page exists, this value is
-     * null.
+     * If the output exceeds 1 MB, a string that identifies the next page of
+     * stack resources. If no additional page exists, this value is null.
      * </p>
      * 
-     * @return If the output exceeds 1 MB in size, a string that identifies the
-     *         next page of stack resources. If no additional page exists, this
-     *         value is null.
+     * @return If the output exceeds 1 MB, a string that identifies the next
+     *         page of stack resources. If no additional page exists, this value
+     *         is null.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * If the output exceeds 1 MB in size, a string that identifies the next
-     * page of stack resources. If no additional page exists, this value is
-     * null.
+     * If the output exceeds 1 MB, a string that identifies the next page of
+     * stack resources. If no additional page exists, this value is null.
      * </p>
      * 
      * @param nextToken
-     *        If the output exceeds 1 MB in size, a string that identifies the
-     *        next page of stack resources. If no additional page exists, this
-     *        value is null.
+     *        If the output exceeds 1 MB, a string that identifies the next page
+     *        of stack resources. If no additional page exists, this value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListStackResourcesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

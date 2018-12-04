@@ -14,9 +14,15 @@
  */
 package com.amazonaws.services.dynamodbv2.util;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
+import com.amazonaws.services.dynamodbv2.model.DeleteTableRequest;
 import com.amazonaws.services.dynamodbv2.model.DescribeTableRequest;
+import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
 import com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException;
 import com.amazonaws.services.dynamodbv2.model.TableDescription;
 import com.amazonaws.services.dynamodbv2.model.TableStatus;
@@ -51,6 +57,11 @@ public class TableUtils {
 
 	private static final int DEFAULT_WAIT_TIMEOUT = 10 * 60 * 1000;
 	private static final int DEFAULT_WAIT_INTERVAL = 20 * 1000;
+
+    /**
+     * The logging utility.
+     */
+    private static final Log LOG = LogFactory.getLog(TableUtils.class);
 
 	/**
 	 * Waits up to 10 minutes for a specified DynamoDB table to resolve,
@@ -212,4 +223,41 @@ public class TableUtils {
 		}
 		return table;
 	}
+
+    /**
+     * Creates the table and ignores any errors if it already exists.
+     * @param dynamo The Dynamo client to use.
+     * @param createTableRequest The create table request.
+     * @return True if created, false otherwise.
+     */
+    public static final boolean createTableIfNotExists(final AmazonDynamoDB dynamo, final CreateTableRequest createTableRequest) {
+        try {
+            dynamo.createTable(createTableRequest);
+            return true;
+        } catch (final ResourceInUseException e) {
+            if (LOG.isTraceEnabled()) {
+                LOG.trace("Table " + createTableRequest.getTableName() + " already exists", e);
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Deletes the table and ignores any errors if it doesn't exist.
+     * @param dynamo The Dynamo client to use.
+     * @param deleteTableRequest The delete table request.
+     * @return True if deleted, false otherwise.
+     */
+    public static final boolean deleteTableIfExists(final AmazonDynamoDB dynamo, final DeleteTableRequest deleteTableRequest) {
+        try {
+            dynamo.deleteTable(deleteTableRequest);
+            return true;
+        } catch (final ResourceNotFoundException e) {
+            if (LOG.isTraceEnabled()) {
+                LOG.trace("Table " + deleteTableRequest.getTableName() + " does not exist", e);
+            }
+        }
+        return false;
+    }
+
 }

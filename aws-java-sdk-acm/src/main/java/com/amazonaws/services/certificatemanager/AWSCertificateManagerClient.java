@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.services.certificatemanager.model.transform.*;
@@ -43,17 +45,19 @@ import com.amazonaws.services.certificatemanager.model.transform.*;
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) CLI Command Reference. This
- * guide provides descriptions, syntax, and usage examples for each ACM CLI
- * command. You can use AWS Certificate Manager to request ACM Certificates for
- * your AWS-based websites and applications. For general information about using
- * ACM and for more information about using the console, see the <a
- * href="url-acm-ug;acm-overview.html">AWS Certificate Manager User Guide</a>.
- * For more information about using the ACM API, see the <a
+ * Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide
+ * provides descriptions, syntax, and usage examples for each ACM command. You
+ * can use AWS Certificate Manager to request ACM Certificates for your
+ * AWS-based websites and applications. For general information about using ACM
+ * and for more information about using the console, see the <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
+ * Certificate Manager User Guide</a>. For more information about using the ACM
+ * API, see the <a
  * href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html"> AWS
  * Certificate Manager API Reference</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSCertificateManagerClient extends AmazonWebServiceClient
         implements AWSCertificateManager {
     /** Provider for AWS credentials. */
@@ -69,9 +73,61 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "acm";
 
     /**
-     * List of exception unmarshallers for all ACM exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidTagException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.InvalidTagException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("TooManyTagsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceInUseException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("RequestInProgressException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.RequestInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidStateException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.InvalidStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidDomainValidationOptionsException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InvalidArnException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.certificatemanager.model.LimitExceededException.class)));
 
     /**
      * Constructs a new client to invoke service methods on ACM. A credentials
@@ -90,8 +146,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AWSCertificateManagerClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -131,8 +187,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AWSCertificateManagerClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -172,8 +227,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      */
     public AWSCertificateManagerClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -226,37 +280,6 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.ResourceInUseException.class,
-                        "ResourceInUseException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.RequestInProgressException.class,
-                        "RequestInProgressException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.InvalidStateException.class,
-                        "InvalidStateException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException.class,
-                        "InvalidDomainValidationOptionsException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.InvalidArnException.class,
-                        "InvalidArnException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.certificatemanager.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -272,6 +295,87 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
 
     /**
      * <p>
+     * Adds one or more tags to an ACM Certificate. Tags are labels that you can
+     * use to identify and organize your AWS resources. Each tag consists of a
+     * <code>key</code> and an optional <code>value</code>. You specify the
+     * certificate on input by its Amazon Resource Name (ARN). You specify the
+     * tag by using a key-value pair.
+     * </p>
+     * <p>
+     * You can apply a tag to just one certificate if you want to identify a
+     * specific characteristic of that certificate, or you can apply the same
+     * tag to multiple certificates if you want to filter for a common
+     * relationship among those certificates. Similarly, you can apply the same
+     * tag to multiple resources if you want to specify a relationship among
+     * those resources. For example, you can add the same tag to an ACM
+     * Certificate and an Elastic Load Balancing load balancer to indicate that
+     * they are both used by the same website. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging
+     * ACM Certificates</a>.
+     * </p>
+     * <p>
+     * To remove one or more tags, use the <a>RemoveTagsFromCertificate</a>
+     * action. To view all of the tags that have been applied to the
+     * certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param addTagsToCertificateRequest
+     * @return Result of the AddTagsToCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @throws InvalidTagException
+     *         One or both of the values that make up the key-value pair is not
+     *         valid. For example, you cannot specify a tag value that begins
+     *         with <code>aws:</code>.
+     * @throws TooManyTagsException
+     *         The request contains too many tags. Try the request again with
+     *         fewer tags.
+     * @sample AWSCertificateManager.AddTagsToCertificate
+     */
+    @Override
+    public AddTagsToCertificateResult addTagsToCertificate(
+            AddTagsToCertificateRequest addTagsToCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(addTagsToCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTagsToCertificateRequest> request = null;
+        Response<AddTagsToCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTagsToCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(addTagsToCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddTagsToCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new AddTagsToCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an ACM Certificate and its associated private key. If this action
      * succeeds, the certificate no longer appears in the list of ACM
      * Certificates that can be displayed by calling the <a>ListCertificates</a>
@@ -283,6 +387,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * association must first be removed. </note>
      * 
      * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -295,31 +401,35 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * @sample AWSCertificateManager.DeleteCertificate
      */
     @Override
-    public void deleteCertificate(
+    public DeleteCertificateResult deleteCertificate(
             DeleteCertificateRequest deleteCertificateRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteCertificateRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteCertificateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -332,8 +442,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * Returns a list of the fields contained in the specified ACM Certificate.
      * For example, this action returns the certificate status, a flag that
      * indicates whether the certificate is associated with any other AWS
-     * service, and the date at which the certificate request was created. The
-     * ACM Certificate is specified on input by its Amazon Resource Name (ARN).
+     * service, and the date at which the certificate request was created. You
+     * specify the ACM Certificate on input by its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param describeCertificateRequest
@@ -360,18 +470,20 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(describeCertificateRequest));
+                request = new DescribeCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeCertificateResult> responseHandler = new JsonResponseHandler<DescribeCertificateResult>(
-                    new DescribeCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -420,17 +532,20 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCertificateRequestMarshaller().marshall(super
-                        .beforeMarshalling(getCertificateRequest));
+                request = new GetCertificateRequestMarshaller(protocolFactory)
+                        .marshall(super
+                                .beforeMarshalling(getCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<GetCertificateResult> responseHandler = new JsonResponseHandler<GetCertificateResult>(
-                    new GetCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<GetCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new GetCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -470,7 +585,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesRequestMarshaller()
+                request = new ListCertificatesRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
@@ -479,9 +594,133 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListCertificatesResult> responseHandler = new JsonResponseHandler<ListCertificatesResult>(
-                    new ListCertificatesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListCertificatesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListCertificatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags that have been applied to the ACM Certificate. Use the
+     * certificate ARN to specify the certificate. To add a tag to an ACM
+     * Certificate, use the <a>AddTagsToCertificate</a> action. To delete a tag,
+     * use the <a>RemoveTagsFromCertificate</a> action.
+     * </p>
+     * 
+     * @param listTagsForCertificateRequest
+     * @return Result of the ListTagsForCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @sample AWSCertificateManager.ListTagsForCertificate
+     */
+    @Override
+    public ListTagsForCertificateResult listTagsForCertificate(
+            ListTagsForCertificateRequest listTagsForCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(listTagsForCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForCertificateRequest> request = null;
+        Response<ListTagsForCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTagsForCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTagsForCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove one or more tags from an ACM Certificate. A tag consists of a
+     * key-value pair. If you do not specify the value portion of the tag when
+     * calling this function, the tag will be removed regardless of value. If
+     * you specify a value, the tag is removed only if it is associated with the
+     * specified value.
+     * </p>
+     * <p>
+     * To add tags to a certificate, use the <a>AddTagsToCertificate</a> action.
+     * To view all of the tags that have been applied to a specific ACM
+     * Certificate, use the <a>ListTagsForCertificate</a> action.
+     * </p>
+     * 
+     * @param removeTagsFromCertificateRequest
+     * @return Result of the RemoveTagsFromCertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's
+     *         account, or the caller's account cannot be found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an
+     *         existing resource.
+     * @throws InvalidTagException
+     *         One or both of the values that make up the key-value pair is not
+     *         valid. For example, you cannot specify a tag value that begins
+     *         with <code>aws:</code>.
+     * @sample AWSCertificateManager.RemoveTagsFromCertificate
+     */
+    @Override
+    public RemoveTagsFromCertificateResult removeTagsFromCertificate(
+            RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
+        ExecutionContext executionContext = createExecutionContext(removeTagsFromCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext
+                .getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTagsFromCertificateRequest> request = null;
+        Response<RemoveTagsFromCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTagsFromCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(
+                            new JsonOperationMetadata().withPayloadJson(true)
+                                    .withHasStreamingSuccessResponse(false),
+                            new RemoveTagsFromCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -513,8 +752,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      *         more domains than are allowed or you've requested too many
      *         certificates for your account. See the exception message returned
      *         by ACM to determine which limit you have violated. For more
-     *         information about ACM limits, see the <a
-     *         href="http://docs.amazon.com/acm/latest/userguide/limits.html"
+     *         information about ACM limits, see the <a href=
+     *         "http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html"
      *         >Limits</a> topic.
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure
@@ -534,18 +773,20 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestCertificateRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(requestCertificateRequest));
+                request = new RequestCertificateRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(requestCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RequestCertificateResult> responseHandler = new JsonResponseHandler<RequestCertificateResult>(
-                    new RequestCertificateResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RequestCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RequestCertificateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -571,6 +812,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * </p>
      * 
      * @param resendValidationEmailRequest
+     * @return Result of the ResendValidationEmail operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's
      *         account, or the caller's account cannot be found.
@@ -589,31 +832,35 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
      * @sample AWSCertificateManager.ResendValidationEmail
      */
     @Override
-    public void resendValidationEmail(
+    public ResendValidationEmailResult resendValidationEmail(
             ResendValidationEmailRequest resendValidationEmailRequest) {
         ExecutionContext executionContext = createExecutionContext(resendValidationEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<ResendValidationEmailRequest> request = null;
-        Response<Void> response = null;
+        Response<ResendValidationEmailResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendValidationEmailRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(resendValidationEmailRequest));
+                request = new ResendValidationEmailRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(resendValidationEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<ResendValidationEmailResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ResendValidationEmailResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -644,33 +891,48 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

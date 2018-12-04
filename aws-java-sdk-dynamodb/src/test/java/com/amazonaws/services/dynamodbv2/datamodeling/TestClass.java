@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-
+@DynamoDBTable(tableName="nonexisting-test-tablename")
 public class TestClass {
 
     public boolean getBoolean() { return false; }

@@ -33,6 +33,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @param snapshotId
      */
+
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
@@ -40,6 +41,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @return
      */
+
     public String getSnapshotId() {
         return this.snapshotId;
     }
@@ -49,6 +51,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotFromVolumeRecoveryPointResult withSnapshotId(
             String snapshotId) {
         setSnapshotId(snapshotId);
@@ -58,6 +61,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @param volumeARN
      */
+
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
@@ -65,6 +69,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @return
      */
+
     public String getVolumeARN() {
         return this.volumeARN;
     }
@@ -74,6 +79,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeARN(
             String volumeARN) {
         setVolumeARN(volumeARN);
@@ -83,6 +89,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @param volumeRecoveryPointTime
      */
+
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
         this.volumeRecoveryPointTime = volumeRecoveryPointTime;
     }
@@ -90,6 +97,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
     /**
      * @return
      */
+
     public String getVolumeRecoveryPointTime() {
         return this.volumeRecoveryPointTime;
     }
@@ -99,6 +107,7 @@ public class CreateSnapshotFromVolumeRecoveryPointResult implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSnapshotFromVolumeRecoveryPointResult withVolumeRecoveryPointTime(
             String volumeRecoveryPointTime) {
         setVolumeRecoveryPointTime(volumeRecoveryPointTime);

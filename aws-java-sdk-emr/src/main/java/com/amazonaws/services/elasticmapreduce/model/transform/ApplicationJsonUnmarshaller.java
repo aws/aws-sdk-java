@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,26 +55,27 @@ public class ApplicationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
-                    application.setName(StringJsonUnmarshaller.getInstance()
+                    application.setName(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
-                    application.setVersion(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    application.setVersion(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    application.setArgs(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    application
+                            .setArgs(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalInfo", targetDepth)) {
                     context.nextToken();
                     application
                             .setAdditionalInfo(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

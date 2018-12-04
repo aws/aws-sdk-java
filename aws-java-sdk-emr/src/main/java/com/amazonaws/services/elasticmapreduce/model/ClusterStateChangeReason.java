@@ -47,6 +47,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      *        The programmatic code for the state change reason.
      * @see ClusterStateChangeReasonCode
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -59,6 +60,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * @return The programmatic code for the state change reason.
      * @see ClusterStateChangeReasonCode
      */
+
     public String getCode() {
         return this.code;
     }
@@ -74,6 +76,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see ClusterStateChangeReasonCode
      */
+
     public ClusterStateChangeReason withCode(String code) {
         setCode(code);
         return this;
@@ -86,10 +89,9 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * 
      * @param code
      *        The programmatic code for the state change reason.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ClusterStateChangeReasonCode
      */
+
     public void setCode(ClusterStateChangeReasonCode code) {
         this.code = code.toString();
     }
@@ -105,6 +107,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      *         chained together.
      * @see ClusterStateChangeReasonCode
      */
+
     public ClusterStateChangeReason withCode(ClusterStateChangeReasonCode code) {
         setCode(code);
         return this;
@@ -118,6 +121,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * @param message
      *        The descriptive message for the state change reason.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -129,6 +133,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * 
      * @return The descriptive message for the state change reason.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -143,6 +148,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ClusterStateChangeReason withMessage(String message) {
         setMessage(message);
         return this;

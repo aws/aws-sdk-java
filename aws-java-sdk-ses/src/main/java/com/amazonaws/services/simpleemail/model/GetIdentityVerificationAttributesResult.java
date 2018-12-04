@@ -19,9 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents the verification attributes for a list of identities.
- * </p>
+ * 
  */
 public class GetIdentityVerificationAttributesResult implements Serializable,
         Cloneable {
@@ -40,6 +38,7 @@ public class GetIdentityVerificationAttributesResult implements Serializable,
      * 
      * @return A map of Identities to IdentityVerificationAttributes objects.
      */
+
     public java.util.Map<String, IdentityVerificationAttributes> getVerificationAttributes() {
         if (verificationAttributes == null) {
             verificationAttributes = new com.amazonaws.internal.SdkInternalMap<String, IdentityVerificationAttributes>();
@@ -55,6 +54,7 @@ public class GetIdentityVerificationAttributesResult implements Serializable,
      * @param verificationAttributes
      *        A map of Identities to IdentityVerificationAttributes objects.
      */
+
     public void setVerificationAttributes(
             java.util.Map<String, IdentityVerificationAttributes> verificationAttributes) {
         this.verificationAttributes = verificationAttributes == null ? null
@@ -72,6 +72,7 @@ public class GetIdentityVerificationAttributesResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetIdentityVerificationAttributesResult withVerificationAttributes(
             java.util.Map<String, IdentityVerificationAttributes> verificationAttributes) {
         setVerificationAttributes(verificationAttributes);
@@ -94,6 +95,7 @@ public class GetIdentityVerificationAttributesResult implements Serializable,
      * Removes all the entries added into VerificationAttributes. &lt;p> Returns
      * a reference to this object so that method calls can be chained together.
      */
+
     public GetIdentityVerificationAttributesResult clearVerificationAttributesEntries() {
         this.verificationAttributes = null;
         return this;

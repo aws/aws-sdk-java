@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,25 +55,23 @@ public class PutRecordsResultEntryJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("SequenceNumber", targetDepth)) {
                     context.nextToken();
-                    putRecordsResultEntry
-                            .setSequenceNumber(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putRecordsResultEntry.setSequenceNumber(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ShardId", targetDepth)) {
                     context.nextToken();
-                    putRecordsResultEntry.setShardId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putRecordsResultEntry.setShardId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorCode", targetDepth)) {
                     context.nextToken();
-                    putRecordsResultEntry.setErrorCode(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    putRecordsResultEntry.setErrorCode(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ErrorMessage", targetDepth)) {
                     context.nextToken();
-                    putRecordsResultEntry
-                            .setErrorMessage(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    putRecordsResultEntry.setErrorMessage(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

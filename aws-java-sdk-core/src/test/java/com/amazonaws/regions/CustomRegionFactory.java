@@ -17,6 +17,6 @@ package com.amazonaws.regions;
 public class CustomRegionFactory {
 
     public static Region getCustomRegion(String name, String domain) {
-        return new Region(name, domain);
+        return new Region(new InMemoryRegionImpl(name, domain));
     }
 }

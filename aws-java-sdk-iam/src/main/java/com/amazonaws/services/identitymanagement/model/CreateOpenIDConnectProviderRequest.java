@@ -110,13 +110,14 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *        path components are allowed but query parameters are not.
      *        Typically the URL consists of only a host name, like
-     *        "https://server.example.org" or "https://example.com". </p>
+     *        "https://server.example.org" or "https://example.com".</p>
      *        <p>
      *        You cannot register the same provider multiple times in a single
      *        AWS account. If you try to submit a URL that has already been used
      *        for an OpenID Connect provider in the AWS account, you will get an
      *        error.
      */
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -140,13 +141,14 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *         path components are allowed but query parameters are not.
      *         Typically the URL consists of only a host name, like
-     *         "https://server.example.org" or "https://example.com". </p>
+     *         "https://server.example.org" or "https://example.com".</p>
      *         <p>
      *         You cannot register the same provider multiple times in a single
      *         AWS account. If you try to submit a URL that has already been
      *         used for an OpenID Connect provider in the AWS account, you will
      *         get an error.
      */
+
     public String getUrl() {
         return this.url;
     }
@@ -171,7 +173,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        the provider's OpenID Connect ID tokens. Per the OIDC standard,
      *        path components are allowed but query parameters are not.
      *        Typically the URL consists of only a host name, like
-     *        "https://server.example.org" or "https://example.com". </p>
+     *        "https://server.example.org" or "https://example.com".</p>
      *        <p>
      *        You cannot register the same provider multiple times in a single
      *        AWS account. If you try to submit a URL that has already been used
@@ -180,6 +182,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withUrl(String url) {
         setUrl(url);
         return this;
@@ -207,7 +210,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         web app registers with an OpenID Connect provider, they establish
      *         a value that identifies the application. (This is the value
      *         that's sent as the <code>client_id</code> parameter on OAuth
-     *         requests.) </p>
+     *         requests.)</p>
      *         <p>
      *         You can register multiple client IDs with the same provider. For
      *         example, you might have multiple applications that use the same
@@ -219,6 +222,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         <code>CreateOpenIDConnectProviderRequest</code> action accepts
      *         client IDs up to 255 characters long.
      */
+
     public java.util.List<String> getClientIDList() {
         if (clientIDList == null) {
             clientIDList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -248,8 +252,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same
@@ -261,6 +265,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        <code>CreateOpenIDConnectProviderRequest</code> action accepts
      *        client IDs up to 255 characters long.
      */
+
     public void setClientIDList(java.util.Collection<String> clientIDList) {
         if (clientIDList == null) {
             this.clientIDList = null;
@@ -299,8 +304,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same
@@ -314,6 +319,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withClientIDList(
             String... clientIDList) {
         if (this.clientIDList == null) {
@@ -348,8 +354,8 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        A list of client IDs (also known as audiences). When a mobile or
      *        web app registers with an OpenID Connect provider, they establish
      *        a value that identifies the application. (This is the value that's
-     *        sent as the <code>client_id</code> parameter on OAuth requests.)
-     *        </p>
+     *        sent as the <code>client_id</code> parameter on OAuth
+     *        requests.)</p>
      *        <p>
      *        You can register multiple client IDs with the same provider. For
      *        example, you might have multiple applications that use the same
@@ -363,6 +369,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withClientIDList(
             java.util.Collection<String> clientIDList) {
         setClientIDList(clientIDList);
@@ -425,6 +432,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *         >Obtaining the Thumbprint for an OpenID Connect Provider</a> in
      *         the <i>IAM User Guide</i>.
      */
+
     public java.util.List<String> getThumbprintList() {
         if (thumbprintList == null) {
             thumbprintList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -489,6 +497,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      *        >Obtaining the Thumbprint for an OpenID Connect Provider</a> in
      *        the <i>IAM User Guide</i>.
      */
+
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
         if (thumbprintList == null) {
             this.thumbprintList = null;
@@ -564,6 +573,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withThumbprintList(
             String... thumbprintList) {
         if (this.thumbprintList == null) {
@@ -635,6 +645,7 @@ public class CreateOpenIDConnectProviderRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateOpenIDConnectProviderRequest withThumbprintList(
             java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.ecs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,8 +30,9 @@ import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RegisterTaskDefinitionRequest Marshaller
@@ -46,6 +40,13 @@ import com.amazonaws.util.json.*;
 public class RegisterTaskDefinitionRequestMarshaller
         implements
         Marshaller<Request<RegisterTaskDefinitionRequest>, RegisterTaskDefinitionRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public RegisterTaskDefinitionRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<RegisterTaskDefinitionRequest> marshall(
             RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
@@ -65,13 +66,13 @@ public class RegisterTaskDefinitionRequestMarshaller
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (registerTaskDefinitionRequest.getFamily() != null) {
-                jsonWriter.key("family").value(
+                jsonGenerator.writeFieldName("family").writeValue(
                         registerTaskDefinitionRequest.getFamily());
             }
 
@@ -79,42 +80,41 @@ public class RegisterTaskDefinitionRequestMarshaller
                     .getContainerDefinitions();
             if (!containerDefinitionsList.isEmpty()
                     || !containerDefinitionsList.isAutoConstruct()) {
-                jsonWriter.key("containerDefinitions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("containerDefinitions");
+                jsonGenerator.writeStartArray();
                 for (ContainerDefinition containerDefinitionsListValue : containerDefinitionsList) {
                     if (containerDefinitionsListValue != null) {
 
                         ContainerDefinitionJsonMarshaller.getInstance()
                                 .marshall(containerDefinitionsListValue,
-                                        jsonWriter);
+                                        jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             com.amazonaws.internal.SdkInternalList<Volume> volumesList = (com.amazonaws.internal.SdkInternalList<Volume>) registerTaskDefinitionRequest
                     .getVolumes();
             if (!volumesList.isEmpty() || !volumesList.isAutoConstruct()) {
-                jsonWriter.key("volumes");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("volumes");
+                jsonGenerator.writeStartArray();
                 for (Volume volumesListValue : volumesList) {
                     if (volumesListValue != null) {
 
                         VolumeJsonMarshaller.getInstance().marshall(
-                                volumesListValue, jsonWriter);
+                                volumesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

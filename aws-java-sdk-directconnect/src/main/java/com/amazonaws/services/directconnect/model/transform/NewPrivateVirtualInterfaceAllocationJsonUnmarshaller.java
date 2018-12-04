@@ -18,6 +18,8 @@ package com.amazonaws.services.directconnect.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directconnect.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,38 +57,37 @@ public class NewPrivateVirtualInterfaceAllocationJsonUnmarshaller
                 if (context.testExpression("virtualInterfaceName", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation
-                            .setVirtualInterfaceName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setVirtualInterfaceName(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("vlan", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation
-                            .setVlan(IntegerJsonUnmarshaller.getInstance()
+                            .setVlan(context.getUnmarshaller(Integer.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("asn", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation
-                            .setAsn(IntegerJsonUnmarshaller.getInstance()
+                            .setAsn(context.getUnmarshaller(Integer.class)
                                     .unmarshall(context));
                 }
                 if (context.testExpression("authKey", targetDepth)) {
                     context.nextToken();
-                    newPrivateVirtualInterfaceAllocation
-                            .setAuthKey(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    newPrivateVirtualInterfaceAllocation.setAuthKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("amazonAddress", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation
-                            .setAmazonAddress(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAmazonAddress(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("customerAddress", targetDepth)) {
                     context.nextToken();
                     newPrivateVirtualInterfaceAllocation
-                            .setCustomerAddress(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCustomerAddress(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
@@ -24,671 +26,737 @@ import java.io.Serializable;
 public class WorkflowExecutionInfo implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The workflow execution this information is about.
+     * </p>
      */
     private WorkflowExecution execution;
-
     /**
+     * <p>
      * The type of the workflow execution.
+     * </p>
      */
     private WorkflowType workflowType;
-
     /**
+     * <p>
      * The time when the execution was started.
+     * </p>
      */
     private java.util.Date startTimestamp;
-
     /**
+     * <p>
      * The time when the workflow execution was closed. Set only if the
      * execution status is CLOSED.
+     * </p>
      */
     private java.util.Date closeTimestamp;
-
     /**
-     * The current status of the execution.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
+     * The current status of the execution.
+     * </p>
      */
     private String executionStatus;
-
     /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
      */
     private String closeStatus;
-
     /**
-     * If this workflow execution is a child of another execution then
-     * contains the workflow execution that started this execution.
+     * <p>
+     * If this workflow execution is a child of another execution then contains
+     * the workflow execution that started this execution.
+     * </p>
      */
     private WorkflowExecution parent;
-
     /**
-     * The list of tags associated with the workflow execution. Tags can be
-     * used to identify and list workflow executions of interest through the
-     * visibility APIs. A workflow execution can have a maximum of 5 tags.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
+     * The list of tags associated with the workflow execution. Tags can be used
+     * to identify and list workflow executions of interest through the
+     * visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> tagList;
-
+    private java.util.List<String> tagList;
     /**
-     * Set to true if a cancellation is requested for this workflow
-     * execution.
+     * <p>
+     * Set to true if a cancellation is requested for this workflow execution.
+     * </p>
      */
     private Boolean cancelRequested;
 
     /**
+     * <p>
      * The workflow execution this information is about.
-     *
-     * @return The workflow execution this information is about.
+     * </p>
+     * 
+     * @param execution
+     *        The workflow execution this information is about.
      */
-    public WorkflowExecution getExecution() {
-        return execution;
-    }
-    
-    /**
-     * The workflow execution this information is about.
-     *
-     * @param execution The workflow execution this information is about.
-     */
+
     public void setExecution(WorkflowExecution execution) {
         this.execution = execution;
     }
-    
+
     /**
-     * The workflow execution this information is about.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param execution The workflow execution this information is about.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The workflow execution this information is about.
+     * </p>
+     * 
+     * @return The workflow execution this information is about.
      */
+
+    public WorkflowExecution getExecution() {
+        return this.execution;
+    }
+
+    /**
+     * <p>
+     * The workflow execution this information is about.
+     * </p>
+     * 
+     * @param execution
+     *        The workflow execution this information is about.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowExecutionInfo withExecution(WorkflowExecution execution) {
-        this.execution = execution;
+        setExecution(execution);
         return this;
     }
 
     /**
+     * <p>
      * The type of the workflow execution.
-     *
-     * @return The type of the workflow execution.
+     * </p>
+     * 
+     * @param workflowType
+     *        The type of the workflow execution.
      */
-    public WorkflowType getWorkflowType() {
-        return workflowType;
-    }
-    
-    /**
-     * The type of the workflow execution.
-     *
-     * @param workflowType The type of the workflow execution.
-     */
+
     public void setWorkflowType(WorkflowType workflowType) {
         this.workflowType = workflowType;
     }
-    
+
     /**
-     * The type of the workflow execution.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param workflowType The type of the workflow execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The type of the workflow execution.
+     * </p>
+     * 
+     * @return The type of the workflow execution.
      */
+
+    public WorkflowType getWorkflowType() {
+        return this.workflowType;
+    }
+
+    /**
+     * <p>
+     * The type of the workflow execution.
+     * </p>
+     * 
+     * @param workflowType
+     *        The type of the workflow execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowExecutionInfo withWorkflowType(WorkflowType workflowType) {
-        this.workflowType = workflowType;
+        setWorkflowType(workflowType);
         return this;
     }
 
     /**
+     * <p>
      * The time when the execution was started.
-     *
-     * @return The time when the execution was started.
+     * </p>
+     * 
+     * @param startTimestamp
+     *        The time when the execution was started.
      */
-    public java.util.Date getStartTimestamp() {
-        return startTimestamp;
-    }
-    
-    /**
-     * The time when the execution was started.
-     *
-     * @param startTimestamp The time when the execution was started.
-     */
+
     public void setStartTimestamp(java.util.Date startTimestamp) {
         this.startTimestamp = startTimestamp;
     }
-    
+
     /**
-     * The time when the execution was started.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param startTimestamp The time when the execution was started.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The time when the execution was started.
+     * </p>
+     * 
+     * @return The time when the execution was started.
      */
-    public WorkflowExecutionInfo withStartTimestamp(java.util.Date startTimestamp) {
-        this.startTimestamp = startTimestamp;
+
+    public java.util.Date getStartTimestamp() {
+        return this.startTimestamp;
+    }
+
+    /**
+     * <p>
+     * The time when the execution was started.
+     * </p>
+     * 
+     * @param startTimestamp
+     *        The time when the execution was started.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public WorkflowExecutionInfo withStartTimestamp(
+            java.util.Date startTimestamp) {
+        setStartTimestamp(startTimestamp);
         return this;
     }
 
     /**
+     * <p>
      * The time when the workflow execution was closed. Set only if the
      * execution status is CLOSED.
-     *
-     * @return The time when the workflow execution was closed. Set only if the
-     *         execution status is CLOSED.
+     * </p>
+     * 
+     * @param closeTimestamp
+     *        The time when the workflow execution was closed. Set only if the
+     *        execution status is CLOSED.
      */
-    public java.util.Date getCloseTimestamp() {
-        return closeTimestamp;
-    }
-    
-    /**
-     * The time when the workflow execution was closed. Set only if the
-     * execution status is CLOSED.
-     *
-     * @param closeTimestamp The time when the workflow execution was closed. Set only if the
-     *         execution status is CLOSED.
-     */
+
     public void setCloseTimestamp(java.util.Date closeTimestamp) {
         this.closeTimestamp = closeTimestamp;
     }
-    
+
     /**
+     * <p>
      * The time when the workflow execution was closed. Set only if the
      * execution status is CLOSED.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param closeTimestamp The time when the workflow execution was closed. Set only if the
+     * </p>
+     * 
+     * @return The time when the workflow execution was closed. Set only if the
      *         execution status is CLOSED.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public WorkflowExecutionInfo withCloseTimestamp(java.util.Date closeTimestamp) {
-        this.closeTimestamp = closeTimestamp;
+
+    public java.util.Date getCloseTimestamp() {
+        return this.closeTimestamp;
+    }
+
+    /**
+     * <p>
+     * The time when the workflow execution was closed. Set only if the
+     * execution status is CLOSED.
+     * </p>
+     * 
+     * @param closeTimestamp
+     *        The time when the workflow execution was closed. Set only if the
+     *        execution status is CLOSED.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public WorkflowExecutionInfo withCloseTimestamp(
+            java.util.Date closeTimestamp) {
+        setCloseTimestamp(closeTimestamp);
         return this;
     }
 
     /**
-     * The current status of the execution.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
-     *
-     * @return The current status of the execution.
-     *
+     * The current status of the execution.
+     * </p>
+     * 
+     * @param executionStatus
+     *        The current status of the execution.
      * @see ExecutionStatus
      */
-    public String getExecutionStatus() {
-        return executionStatus;
-    }
-    
-    /**
-     * The current status of the execution.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
-     *
-     * @param executionStatus The current status of the execution.
-     *
-     * @see ExecutionStatus
-     */
+
     public void setExecutionStatus(String executionStatus) {
         this.executionStatus = executionStatus;
     }
-    
+
     /**
+     * <p>
      * The current status of the execution.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
-     *
-     * @param executionStatus The current status of the execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @return The current status of the execution.
      * @see ExecutionStatus
      */
+
+    public String getExecutionStatus() {
+        return this.executionStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the execution.
+     * </p>
+     * 
+     * @param executionStatus
+     *        The current status of the execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see ExecutionStatus
+     */
+
     public WorkflowExecutionInfo withExecutionStatus(String executionStatus) {
-        this.executionStatus = executionStatus;
+        setExecutionStatus(executionStatus);
         return this;
     }
 
     /**
-     * The current status of the execution.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
-     *
-     * @param executionStatus The current status of the execution.
-     *
+     * The current status of the execution.
+     * </p>
+     * 
+     * @param executionStatus
+     *        The current status of the execution.
      * @see ExecutionStatus
      */
+
     public void setExecutionStatus(ExecutionStatus executionStatus) {
         this.executionStatus = executionStatus.toString();
     }
-    
+
     /**
+     * <p>
      * The current status of the execution.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>OPEN, CLOSED
-     *
-     * @param executionStatus The current status of the execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param executionStatus
+     *        The current status of the execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see ExecutionStatus
      */
-    public WorkflowExecutionInfo withExecutionStatus(ExecutionStatus executionStatus) {
-        this.executionStatus = executionStatus.toString();
+
+    public WorkflowExecutionInfo withExecutionStatus(
+            ExecutionStatus executionStatus) {
+        setExecutionStatus(executionStatus);
         return this;
     }
 
     /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
-     *
-     * @return If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     *         was successfully completed.</li> <li><code>CANCELED</code>: the
-     *         execution was canceled.Cancellation allows the implementation to
-     *         gracefully clean up before the execution is closed.</li>
-     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     *         <li><code>FAILED</code>: the execution failed to complete.</li>
-     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
-     *         alloted time and was automatically timed out.</li>
-     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     *         continued. This means the current execution was completed and a new
-     *         execution was started to carry on the workflow.</li> </ul>
-     *
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
+     * 
+     * @param closeStatus
+     *        If the execution status is closed then this specifies how the
+     *        execution was closed:</p>
+     *        <ul>
+     *        <li> <code>COMPLETED</code>: the execution was successfully
+     *        completed.</li>
+     *        <li> <code>CANCELED</code>: the execution was canceled.Cancellation
+     *        allows the implementation to gracefully clean up before the
+     *        execution is closed.</li>
+     *        <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     *        <li> <code>FAILED</code>: the execution failed to complete.</li>
+     *        <li> <code>TIMED_OUT</code>: the execution did not complete in the
+     *        alloted time and was automatically timed out.</li>
+     *        <li> <code>CONTINUED_AS_NEW</code>: the execution is logically
+     *        continued. This means the current execution was completed and a
+     *        new execution was started to carry on the workflow.</li>
      * @see CloseStatus
      */
-    public String getCloseStatus() {
-        return closeStatus;
-    }
-    
-    /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
-     *
-     * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     *         was successfully completed.</li> <li><code>CANCELED</code>: the
-     *         execution was canceled.Cancellation allows the implementation to
-     *         gracefully clean up before the execution is closed.</li>
-     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     *         <li><code>FAILED</code>: the execution failed to complete.</li>
-     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
-     *         alloted time and was automatically timed out.</li>
-     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     *         continued. This means the current execution was completed and a new
-     *         execution was started to carry on the workflow.</li> </ul>
-     *
-     * @see CloseStatus
-     */
+
     public void setCloseStatus(String closeStatus) {
         this.closeStatus = closeStatus;
     }
-    
+
     /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
-     *
-     * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     *         was successfully completed.</li> <li><code>CANCELED</code>: the
-     *         execution was canceled.Cancellation allows the implementation to
-     *         gracefully clean up before the execution is closed.</li>
-     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     *         <li><code>FAILED</code>: the execution failed to complete.</li>
-     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
+     * 
+     * @return If the execution status is closed then this specifies how the
+     *         execution was closed:</p>
+     *         <ul>
+     *         <li> <code>COMPLETED</code>: the execution was successfully
+     *         completed.</li>
+     *         <li> <code>CANCELED</code>: the execution was
+     *         canceled.Cancellation allows the implementation to gracefully
+     *         clean up before the execution is closed.</li>
+     *         <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     *         <li> <code>FAILED</code>: the execution failed to complete.</li>
+     *         <li> <code>TIMED_OUT</code>: the execution did not complete in the
      *         alloted time and was automatically timed out.</li>
-     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     *         continued. This means the current execution was completed and a new
-     *         execution was started to carry on the workflow.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     *         <li> <code>CONTINUED_AS_NEW</code>: the execution is logically
+     *         continued. This means the current execution was completed and a
+     *         new execution was started to carry on the workflow.</li>
      * @see CloseStatus
      */
+
+    public String getCloseStatus() {
+        return this.closeStatus;
+    }
+
+    /**
+     * <p>
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
+     * 
+     * @param closeStatus
+     *        If the execution status is closed then this specifies how the
+     *        execution was closed:</p>
+     *        <ul>
+     *        <li> <code>COMPLETED</code>: the execution was successfully
+     *        completed.</li>
+     *        <li> <code>CANCELED</code>: the execution was canceled.Cancellation
+     *        allows the implementation to gracefully clean up before the
+     *        execution is closed.</li>
+     *        <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     *        <li> <code>FAILED</code>: the execution failed to complete.</li>
+     *        <li> <code>TIMED_OUT</code>: the execution did not complete in the
+     *        alloted time and was automatically timed out.</li>
+     *        <li> <code>CONTINUED_AS_NEW</code>: the execution is logically
+     *        continued. This means the current execution was completed and a
+     *        new execution was started to carry on the workflow.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see CloseStatus
+     */
+
     public WorkflowExecutionInfo withCloseStatus(String closeStatus) {
-        this.closeStatus = closeStatus;
+        setCloseStatus(closeStatus);
         return this;
     }
 
     /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
-     *
-     * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     *         was successfully completed.</li> <li><code>CANCELED</code>: the
-     *         execution was canceled.Cancellation allows the implementation to
-     *         gracefully clean up before the execution is closed.</li>
-     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     *         <li><code>FAILED</code>: the execution failed to complete.</li>
-     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
-     *         alloted time and was automatically timed out.</li>
-     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     *         continued. This means the current execution was completed and a new
-     *         execution was started to carry on the workflow.</li> </ul>
-     *
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
+     * 
+     * @param closeStatus
+     *        If the execution status is closed then this specifies how the
+     *        execution was closed:</p>
+     *        <ul>
+     *        <li> <code>COMPLETED</code>: the execution was successfully
+     *        completed.</li>
+     *        <li> <code>CANCELED</code>: the execution was canceled.Cancellation
+     *        allows the implementation to gracefully clean up before the
+     *        execution is closed.</li>
+     *        <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     *        <li> <code>FAILED</code>: the execution failed to complete.</li>
+     *        <li> <code>TIMED_OUT</code>: the execution did not complete in the
+     *        alloted time and was automatically timed out.</li>
+     *        <li> <code>CONTINUED_AS_NEW</code>: the execution is logically
+     *        continued. This means the current execution was completed and a
+     *        new execution was started to carry on the workflow.</li>
      * @see CloseStatus
      */
+
     public void setCloseStatus(CloseStatus closeStatus) {
         this.closeStatus = closeStatus.toString();
     }
-    
+
     /**
-     * If the execution status is closed then this specifies how the
-     * execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     * was successfully completed.</li> <li><code>CANCELED</code>: the
-     * execution was canceled.Cancellation allows the implementation to
-     * gracefully clean up before the execution is closed.</li>
-     * <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     * <li><code>FAILED</code>: the execution failed to complete.</li>
-     * <li><code>TIMED_OUT</code>: the execution did not complete in the
-     * alloted time and was automatically timed out.</li>
-     * <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     * continued. This means the current execution was completed and a new
-     * execution was started to carry on the workflow.</li> </ul>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>COMPLETED, FAILED, CANCELED, TERMINATED, CONTINUED_AS_NEW, TIMED_OUT
-     *
-     * @param closeStatus If the execution status is closed then this specifies how the
-     *         execution was closed: <ul> <li><code>COMPLETED</code>: the execution
-     *         was successfully completed.</li> <li><code>CANCELED</code>: the
-     *         execution was canceled.Cancellation allows the implementation to
-     *         gracefully clean up before the execution is closed.</li>
-     *         <li><code>TERMINATED</code>: the execution was force terminated.</li>
-     *         <li><code>FAILED</code>: the execution failed to complete.</li>
-     *         <li><code>TIMED_OUT</code>: the execution did not complete in the
-     *         alloted time and was automatically timed out.</li>
-     *         <li><code>CONTINUED_AS_NEW</code>: the execution is logically
-     *         continued. This means the current execution was completed and a new
-     *         execution was started to carry on the workflow.</li> </ul>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * If the execution status is closed then this specifies how the execution
+     * was closed:
+     * </p>
+     * <ul>
+     * <li> <code>COMPLETED</code>: the execution was successfully completed.</li>
+     * <li> <code>CANCELED</code>: the execution was canceled.Cancellation allows
+     * the implementation to gracefully clean up before the execution is closed.
+     * </li>
+     * <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     * <li> <code>FAILED</code>: the execution failed to complete.</li>
+     * <li> <code>TIMED_OUT</code>: the execution did not complete in the alloted
+     * time and was automatically timed out.</li>
+     * <li> <code>CONTINUED_AS_NEW</code>: the execution is logically continued.
+     * This means the current execution was completed and a new execution was
+     * started to carry on the workflow.</li>
+     * </ul>
+     * 
+     * @param closeStatus
+     *        If the execution status is closed then this specifies how the
+     *        execution was closed:</p>
+     *        <ul>
+     *        <li> <code>COMPLETED</code>: the execution was successfully
+     *        completed.</li>
+     *        <li> <code>CANCELED</code>: the execution was canceled.Cancellation
+     *        allows the implementation to gracefully clean up before the
+     *        execution is closed.</li>
+     *        <li> <code>TERMINATED</code>: the execution was force terminated.</li>
+     *        <li> <code>FAILED</code>: the execution failed to complete.</li>
+     *        <li> <code>TIMED_OUT</code>: the execution did not complete in the
+     *        alloted time and was automatically timed out.</li>
+     *        <li> <code>CONTINUED_AS_NEW</code>: the execution is logically
+     *        continued. This means the current execution was completed and a
+     *        new execution was started to carry on the workflow.</li>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see CloseStatus
      */
+
     public WorkflowExecutionInfo withCloseStatus(CloseStatus closeStatus) {
-        this.closeStatus = closeStatus.toString();
+        setCloseStatus(closeStatus);
         return this;
     }
 
     /**
-     * If this workflow execution is a child of another execution then
-     * contains the workflow execution that started this execution.
-     *
-     * @return If this workflow execution is a child of another execution then
-     *         contains the workflow execution that started this execution.
+     * <p>
+     * If this workflow execution is a child of another execution then contains
+     * the workflow execution that started this execution.
+     * </p>
+     * 
+     * @param parent
+     *        If this workflow execution is a child of another execution then
+     *        contains the workflow execution that started this execution.
      */
-    public WorkflowExecution getParent() {
-        return parent;
-    }
-    
-    /**
-     * If this workflow execution is a child of another execution then
-     * contains the workflow execution that started this execution.
-     *
-     * @param parent If this workflow execution is a child of another execution then
-     *         contains the workflow execution that started this execution.
-     */
+
     public void setParent(WorkflowExecution parent) {
         this.parent = parent;
     }
-    
+
     /**
-     * If this workflow execution is a child of another execution then
-     * contains the workflow execution that started this execution.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param parent If this workflow execution is a child of another execution then
+     * If this workflow execution is a child of another execution then contains
+     * the workflow execution that started this execution.
+     * </p>
+     * 
+     * @return If this workflow execution is a child of another execution then
      *         contains the workflow execution that started this execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public WorkflowExecution getParent() {
+        return this.parent;
+    }
+
+    /**
+     * <p>
+     * If this workflow execution is a child of another execution then contains
+     * the workflow execution that started this execution.
+     * </p>
+     * 
+     * @param parent
+     *        If this workflow execution is a child of another execution then
+     *        contains the workflow execution that started this execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowExecutionInfo withParent(WorkflowExecution parent) {
-        this.parent = parent;
+        setParent(parent);
         return this;
     }
 
     /**
-     * The list of tags associated with the workflow execution. Tags can be
-     * used to identify and list workflow executions of interest through the
-     * visibility APIs. A workflow execution can have a maximum of 5 tags.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @return The list of tags associated with the workflow execution. Tags can be
-     *         used to identify and list workflow executions of interest through the
-     *         visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * The list of tags associated with the workflow execution. Tags can be used
+     * to identify and list workflow executions of interest through the
+     * visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * </p>
+     * 
+     * @return The list of tags associated with the workflow execution. Tags can
+     *         be used to identify and list workflow executions of interest
+     *         through the visibility APIs. A workflow execution can have a
+     *         maximum of 5 tags.
      */
+
     public java.util.List<String> getTagList() {
         return tagList;
     }
-    
+
     /**
-     * The list of tags associated with the workflow execution. Tags can be
-     * used to identify and list workflow executions of interest through the
-     * visibility APIs. A workflow execution can have a maximum of 5 tags.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param tagList The list of tags associated with the workflow execution. Tags can be
-     *         used to identify and list workflow executions of interest through the
-     *         visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * The list of tags associated with the workflow execution. Tags can be used
+     * to identify and list workflow executions of interest through the
+     * visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * </p>
+     * 
+     * @param tagList
+     *        The list of tags associated with the workflow execution. Tags can
+     *        be used to identify and list workflow executions of interest
+     *        through the visibility APIs. A workflow execution can have a
+     *        maximum of 5 tags.
      */
+
     public void setTagList(java.util.Collection<String> tagList) {
         if (tagList == null) {
             this.tagList = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
-        tagListCopy.addAll(tagList);
-        this.tagList = tagListCopy;
+
+        this.tagList = new java.util.ArrayList<String>(tagList);
     }
-    
+
     /**
-     * The list of tags associated with the workflow execution. Tags can be
-     * used to identify and list workflow executions of interest through the
+     * <p>
+     * The list of tags associated with the workflow execution. Tags can be used
+     * to identify and list workflow executions of interest through the
      * visibility APIs. A workflow execution can have a maximum of 5 tags.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setTagList(java.util.Collection)} or {@link
-     * #withTagList(java.util.Collection)} if you want to override the
+     * any). Use {@link #setTagList(java.util.Collection)} or
+     * {@link #withTagList(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param tagList The list of tags associated with the workflow execution. Tags can be
-     *         used to identify and list workflow executions of interest through the
-     *         visibility APIs. A workflow execution can have a maximum of 5 tags.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param tagList
+     *        The list of tags associated with the workflow execution. Tags can
+     *        be used to identify and list workflow executions of interest
+     *        through the visibility APIs. A workflow execution can have a
+     *        maximum of 5 tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public WorkflowExecutionInfo withTagList(String... tagList) {
-        if (getTagList() == null) setTagList(new java.util.ArrayList<String>(tagList.length));
-        for (String value : tagList) {
-            getTagList().add(value);
+        if (this.tagList == null) {
+            setTagList(new java.util.ArrayList<String>(tagList.length));
+        }
+        for (String ele : tagList) {
+            this.tagList.add(ele);
         }
         return this;
     }
-    
+
     /**
-     * The list of tags associated with the workflow execution. Tags can be
-     * used to identify and list workflow executions of interest through the
+     * <p>
+     * The list of tags associated with the workflow execution. Tags can be used
+     * to identify and list workflow executions of interest through the
      * visibility APIs. A workflow execution can have a maximum of 5 tags.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 5<br/>
-     *
-     * @param tagList The list of tags associated with the workflow execution. Tags can be
-     *         used to identify and list workflow executions of interest through the
-     *         visibility APIs. A workflow execution can have a maximum of 5 tags.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param tagList
+     *        The list of tags associated with the workflow execution. Tags can
+     *        be used to identify and list workflow executions of interest
+     *        through the visibility APIs. A workflow execution can have a
+     *        maximum of 5 tags.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public WorkflowExecutionInfo withTagList(java.util.Collection<String> tagList) {
-        if (tagList == null) {
-            this.tagList = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(tagList.size());
-            tagListCopy.addAll(tagList);
-            this.tagList = tagListCopy;
-        }
 
+    public WorkflowExecutionInfo withTagList(
+            java.util.Collection<String> tagList) {
+        setTagList(tagList);
         return this;
     }
 
     /**
-     * Set to true if a cancellation is requested for this workflow
-     * execution.
-     *
-     * @return Set to true if a cancellation is requested for this workflow
-     *         execution.
+     * <p>
+     * Set to true if a cancellation is requested for this workflow execution.
+     * </p>
+     * 
+     * @param cancelRequested
+     *        Set to true if a cancellation is requested for this workflow
+     *        execution.
      */
-    public Boolean isCancelRequested() {
-        return cancelRequested;
-    }
-    
-    /**
-     * Set to true if a cancellation is requested for this workflow
-     * execution.
-     *
-     * @param cancelRequested Set to true if a cancellation is requested for this workflow
-     *         execution.
-     */
+
     public void setCancelRequested(Boolean cancelRequested) {
         this.cancelRequested = cancelRequested;
     }
-    
+
     /**
-     * Set to true if a cancellation is requested for this workflow
-     * execution.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cancelRequested Set to true if a cancellation is requested for this workflow
+     * Set to true if a cancellation is requested for this workflow execution.
+     * </p>
+     * 
+     * @return Set to true if a cancellation is requested for this workflow
      *         execution.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public Boolean getCancelRequested() {
+        return this.cancelRequested;
+    }
+
+    /**
+     * <p>
+     * Set to true if a cancellation is requested for this workflow execution.
+     * </p>
+     * 
+     * @param cancelRequested
+     *        Set to true if a cancellation is requested for this workflow
+     *        execution.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public WorkflowExecutionInfo withCancelRequested(Boolean cancelRequested) {
-        this.cancelRequested = cancelRequested;
+        setCancelRequested(cancelRequested);
         return this;
     }
 
     /**
-     * Set to true if a cancellation is requested for this workflow
-     * execution.
-     *
+     * <p>
+     * Set to true if a cancellation is requested for this workflow execution.
+     * </p>
+     * 
      * @return Set to true if a cancellation is requested for this workflow
      *         execution.
      */
-    public Boolean getCancelRequested() {
-        return cancelRequested;
+
+    public Boolean isCancelRequested() {
+        return this.cancelRequested;
     }
 
     /**
@@ -703,78 +771,135 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");
-        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ",");
-        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");
-        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
-        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ",");
-        if (getParent() != null) sb.append("Parent: " + getParent() + ",");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");
-        if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() );
+        if (getExecution() != null)
+            sb.append("Execution: " + getExecution() + ",");
+        if (getWorkflowType() != null)
+            sb.append("WorkflowType: " + getWorkflowType() + ",");
+        if (getStartTimestamp() != null)
+            sb.append("StartTimestamp: " + getStartTimestamp() + ",");
+        if (getCloseTimestamp() != null)
+            sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");
+        if (getExecutionStatus() != null)
+            sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
+        if (getCloseStatus() != null)
+            sb.append("CloseStatus: " + getCloseStatus() + ",");
+        if (getParent() != null)
+            sb.append("Parent: " + getParent() + ",");
+        if (getTagList() != null)
+            sb.append("TagList: " + getTagList() + ",");
+        if (getCancelRequested() != null)
+            sb.append("CancelRequested: " + getCancelRequested());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof WorkflowExecutionInfo == false)
+            return false;
+        WorkflowExecutionInfo other = (WorkflowExecutionInfo) obj;
+        if (other.getExecution() == null ^ this.getExecution() == null)
+            return false;
+        if (other.getExecution() != null
+                && other.getExecution().equals(this.getExecution()) == false)
+            return false;
+        if (other.getWorkflowType() == null ^ this.getWorkflowType() == null)
+            return false;
+        if (other.getWorkflowType() != null
+                && other.getWorkflowType().equals(this.getWorkflowType()) == false)
+            return false;
+        if (other.getStartTimestamp() == null
+                ^ this.getStartTimestamp() == null)
+            return false;
+        if (other.getStartTimestamp() != null
+                && other.getStartTimestamp().equals(this.getStartTimestamp()) == false)
+            return false;
+        if (other.getCloseTimestamp() == null
+                ^ this.getCloseTimestamp() == null)
+            return false;
+        if (other.getCloseTimestamp() != null
+                && other.getCloseTimestamp().equals(this.getCloseTimestamp()) == false)
+            return false;
+        if (other.getExecutionStatus() == null
+                ^ this.getExecutionStatus() == null)
+            return false;
+        if (other.getExecutionStatus() != null
+                && other.getExecutionStatus().equals(this.getExecutionStatus()) == false)
+            return false;
+        if (other.getCloseStatus() == null ^ this.getCloseStatus() == null)
+            return false;
+        if (other.getCloseStatus() != null
+                && other.getCloseStatus().equals(this.getCloseStatus()) == false)
+            return false;
+        if (other.getParent() == null ^ this.getParent() == null)
+            return false;
+        if (other.getParent() != null
+                && other.getParent().equals(this.getParent()) == false)
+            return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null
+                && other.getTagList().equals(this.getTagList()) == false)
+            return false;
+        if (other.getCancelRequested() == null
+                ^ this.getCancelRequested() == null)
+            return false;
+        if (other.getCancelRequested() != null
+                && other.getCancelRequested().equals(this.getCancelRequested()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getExecution() == null) ? 0 : getExecution().hashCode()); 
-        hashCode = prime * hashCode + ((getWorkflowType() == null) ? 0 : getWorkflowType().hashCode()); 
-        hashCode = prime * hashCode + ((getStartTimestamp() == null) ? 0 : getStartTimestamp().hashCode()); 
-        hashCode = prime * hashCode + ((getCloseTimestamp() == null) ? 0 : getCloseTimestamp().hashCode()); 
-        hashCode = prime * hashCode + ((getExecutionStatus() == null) ? 0 : getExecutionStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getCloseStatus() == null) ? 0 : getCloseStatus().hashCode()); 
-        hashCode = prime * hashCode + ((getParent() == null) ? 0 : getParent().hashCode()); 
-        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode()); 
-        hashCode = prime * hashCode + ((isCancelRequested() == null) ? 0 : isCancelRequested().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getExecution() == null) ? 0 : getExecution().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getWorkflowType() == null) ? 0 : getWorkflowType()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getStartTimestamp() == null) ? 0 : getStartTimestamp()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloseTimestamp() == null) ? 0 : getCloseTimestamp()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getExecutionStatus() == null) ? 0 : getExecutionStatus()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCloseStatus() == null) ? 0 : getCloseStatus().hashCode());
+        hashCode = prime * hashCode
+                + ((getParent() == null) ? 0 : getParent().hashCode());
+        hashCode = prime * hashCode
+                + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCancelRequested() == null) ? 0 : getCancelRequested()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof WorkflowExecutionInfo == false) return false;
-        WorkflowExecutionInfo other = (WorkflowExecutionInfo)obj;
-        
-        if (other.getExecution() == null ^ this.getExecution() == null) return false;
-        if (other.getExecution() != null && other.getExecution().equals(this.getExecution()) == false) return false; 
-        if (other.getWorkflowType() == null ^ this.getWorkflowType() == null) return false;
-        if (other.getWorkflowType() != null && other.getWorkflowType().equals(this.getWorkflowType()) == false) return false; 
-        if (other.getStartTimestamp() == null ^ this.getStartTimestamp() == null) return false;
-        if (other.getStartTimestamp() != null && other.getStartTimestamp().equals(this.getStartTimestamp()) == false) return false; 
-        if (other.getCloseTimestamp() == null ^ this.getCloseTimestamp() == null) return false;
-        if (other.getCloseTimestamp() != null && other.getCloseTimestamp().equals(this.getCloseTimestamp()) == false) return false; 
-        if (other.getExecutionStatus() == null ^ this.getExecutionStatus() == null) return false;
-        if (other.getExecutionStatus() != null && other.getExecutionStatus().equals(this.getExecutionStatus()) == false) return false; 
-        if (other.getCloseStatus() == null ^ this.getCloseStatus() == null) return false;
-        if (other.getCloseStatus() != null && other.getCloseStatus().equals(this.getCloseStatus()) == false) return false; 
-        if (other.getParent() == null ^ this.getParent() == null) return false;
-        if (other.getParent() != null && other.getParent().equals(this.getParent()) == false) return false; 
-        if (other.getTagList() == null ^ this.getTagList() == null) return false;
-        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false) return false; 
-        if (other.isCancelRequested() == null ^ this.isCancelRequested() == null) return false;
-        if (other.isCancelRequested() != null && other.isCancelRequested().equals(this.isCancelRequested()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public WorkflowExecutionInfo clone() {
         try {
             return (WorkflowExecutionInfo) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

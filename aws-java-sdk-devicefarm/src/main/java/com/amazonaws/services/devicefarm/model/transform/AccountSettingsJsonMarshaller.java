@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AccountSettingsMarshaller
@@ -39,40 +34,65 @@ import com.amazonaws.util.json.*;
 public class AccountSettingsJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(AccountSettings accountSettings, JSONWriter jsonWriter) {
+    public void marshall(AccountSettings accountSettings,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (accountSettings == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (accountSettings.getAwsAccountNumber() != null) {
-                jsonWriter.key("awsAccountNumber").value(
+                jsonGenerator.writeFieldName("awsAccountNumber").writeValue(
                         accountSettings.getAwsAccountNumber());
             }
 
             java.util.Map<String, Integer> unmeteredDevicesMap = accountSettings
                     .getUnmeteredDevices();
             if (unmeteredDevicesMap != null) {
-                jsonWriter.key("unmeteredDevices");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("unmeteredDevices");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, Integer> unmeteredDevicesMapValue : unmeteredDevicesMap
                         .entrySet()) {
                     if (unmeteredDevicesMapValue.getValue() != null) {
-                        jsonWriter.key(unmeteredDevicesMapValue.getKey());
+                        jsonGenerator.writeFieldName(unmeteredDevicesMapValue
+                                .getKey());
 
-                        jsonWriter.value(unmeteredDevicesMapValue.getValue());
+                        jsonGenerator.writeValue(unmeteredDevicesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            java.util.Map<String, Integer> unmeteredRemoteAccessDevicesMap = accountSettings
+                    .getUnmeteredRemoteAccessDevices();
+            if (unmeteredRemoteAccessDevicesMap != null) {
+                jsonGenerator.writeFieldName("unmeteredRemoteAccessDevices");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, Integer> unmeteredRemoteAccessDevicesMapValue : unmeteredRemoteAccessDevicesMap
+                        .entrySet()) {
+                    if (unmeteredRemoteAccessDevicesMapValue.getValue() != null) {
+                        jsonGenerator
+                                .writeFieldName(unmeteredRemoteAccessDevicesMapValue
+                                        .getKey());
+
+                        jsonGenerator
+                                .writeValue(unmeteredRemoteAccessDevicesMapValue
+                                        .getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

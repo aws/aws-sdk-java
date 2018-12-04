@@ -43,6 +43,7 @@ public class ReadJobRequest extends AmazonWebServiceRequest implements
      *        The identifier of the job for which you want to get detailed
      *        information.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -55,6 +56,7 @@ public class ReadJobRequest extends AmazonWebServiceRequest implements
      * @return The identifier of the job for which you want to get detailed
      *         information.
      */
+
     public String getId() {
         return this.id;
     }
@@ -70,6 +72,7 @@ public class ReadJobRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReadJobRequest withId(String id) {
         setId(id);
         return this;

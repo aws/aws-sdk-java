@@ -59,6 +59,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @param id
      *        The id of an entry in a batch request.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -70,6 +71,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * 
      * @return The id of an entry in a batch request.
      */
+
     public String getId() {
         return this.id;
     }
@@ -84,6 +86,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchResultErrorEntry withId(String id) {
         setId(id);
         return this;
@@ -97,6 +100,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @param senderFault
      *        Whether the error happened due to the sender's fault.
      */
+
     public void setSenderFault(Boolean senderFault) {
         this.senderFault = senderFault;
     }
@@ -108,6 +112,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * 
      * @return Whether the error happened due to the sender's fault.
      */
+
     public Boolean getSenderFault() {
         return this.senderFault;
     }
@@ -122,6 +127,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchResultErrorEntry withSenderFault(Boolean senderFault) {
         setSenderFault(senderFault);
         return this;
@@ -134,6 +140,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * 
      * @return Whether the error happened due to the sender's fault.
      */
+
     public Boolean isSenderFault() {
         return this.senderFault;
     }
@@ -146,6 +153,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @param code
      *        An error code representing why the action failed on this entry.
      */
+
     public void setCode(String code) {
         this.code = code;
     }
@@ -157,6 +165,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * 
      * @return An error code representing why the action failed on this entry.
      */
+
     public String getCode() {
         return this.code;
     }
@@ -171,6 +180,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchResultErrorEntry withCode(String code) {
         setCode(code);
         return this;
@@ -184,6 +194,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @param message
      *        A message explaining why the action failed on this entry.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -195,6 +206,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * 
      * @return A message explaining why the action failed on this entry.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -209,6 +221,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public BatchResultErrorEntry withMessage(String message) {
         setMessage(message);
         return this;

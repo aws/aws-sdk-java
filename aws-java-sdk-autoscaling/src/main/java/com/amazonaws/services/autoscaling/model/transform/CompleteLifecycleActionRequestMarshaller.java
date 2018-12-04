@@ -27,6 +27,7 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.autoscaling.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 
 /**
  * CompleteLifecycleActionRequest Marshaller
@@ -72,6 +73,11 @@ public class CompleteLifecycleActionRequestMarshaller
             request.addParameter("LifecycleActionResult", StringUtils
                     .fromString(completeLifecycleActionRequest
                             .getLifecycleActionResult()));
+        }
+
+        if (completeLifecycleActionRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils
+                    .fromString(completeLifecycleActionRequest.getInstanceId()));
         }
 
         return request;

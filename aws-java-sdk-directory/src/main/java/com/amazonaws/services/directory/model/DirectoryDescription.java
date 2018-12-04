@@ -158,6 +158,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param directoryId
      *        The directory identifier.
      */
+
     public void setDirectoryId(String directoryId) {
         this.directoryId = directoryId;
     }
@@ -169,6 +170,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return The directory identifier.
      */
+
     public String getDirectoryId() {
         return this.directoryId;
     }
@@ -183,6 +185,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withDirectoryId(String directoryId) {
         setDirectoryId(directoryId);
         return this;
@@ -196,6 +199,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param name
      *        The fully-qualified name of the directory.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -207,6 +211,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return The fully-qualified name of the directory.
      */
+
     public String getName() {
         return this.name;
     }
@@ -221,6 +226,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withName(String name) {
         setName(name);
         return this;
@@ -234,6 +240,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param shortName
      *        The short name of the directory.
      */
+
     public void setShortName(String shortName) {
         this.shortName = shortName;
     }
@@ -245,6 +252,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return The short name of the directory.
      */
+
     public String getShortName() {
         return this.shortName;
     }
@@ -259,6 +267,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withShortName(String shortName) {
         setShortName(shortName);
         return this;
@@ -273,6 +282,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        The directory size.
      * @see DirectorySize
      */
+
     public void setSize(String size) {
         this.size = size;
     }
@@ -285,6 +295,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return The directory size.
      * @see DirectorySize
      */
+
     public String getSize() {
         return this.size;
     }
@@ -300,6 +311,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectorySize
      */
+
     public DirectoryDescription withSize(String size) {
         setSize(size);
         return this;
@@ -312,10 +324,9 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param size
      *        The directory size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectorySize
      */
+
     public void setSize(DirectorySize size) {
         this.size = size.toString();
     }
@@ -331,6 +342,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectorySize
      */
+
     public DirectoryDescription withSize(DirectorySize size) {
         setSize(size);
         return this;
@@ -348,6 +360,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        directory, the alias is the directory identifier, such as
      *        <code>d-XXXXXXXXXX</code>.
      */
+
     public void setAlias(String alias) {
         this.alias = alias;
     }
@@ -363,6 +376,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         directory, the alias is the directory identifier, such as
      *         <code>d-XXXXXXXXXX</code>.
      */
+
     public String getAlias() {
         return this.alias;
     }
@@ -381,6 +395,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withAlias(String alias) {
         setAlias(alias);
         return this;
@@ -402,6 +417,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
      *        directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
+
     public void setAccessUrl(String accessUrl) {
         this.accessUrl = accessUrl;
     }
@@ -421,6 +437,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         <code><![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]></code> is the
      *         directory identifier, such as <code>d-XXXXXXXXXX</code>.
      */
+
     public String getAccessUrl() {
         return this.accessUrl;
     }
@@ -443,6 +460,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withAccessUrl(String accessUrl) {
         setAccessUrl(accessUrl);
         return this;
@@ -456,6 +474,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param description
      *        The textual description for the directory.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -467,6 +486,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return The textual description for the directory.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -481,6 +501,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -502,6 +523,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         servers or domain controllers in the on-premises directory to
      *         which the AD Connector is connected.
      */
+
     public java.util.List<String> getDnsIpAddrs() {
         if (dnsIpAddrs == null) {
             dnsIpAddrs = new com.amazonaws.internal.SdkInternalList<String>();
@@ -526,6 +548,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        or domain controllers in the on-premises directory to which the AD
      *        Connector is connected.
      */
+
     public void setDnsIpAddrs(java.util.Collection<String> dnsIpAddrs) {
         if (dnsIpAddrs == null) {
             this.dnsIpAddrs = null;
@@ -561,6 +584,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withDnsIpAddrs(String... dnsIpAddrs) {
         if (this.dnsIpAddrs == null) {
             setDnsIpAddrs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -591,6 +615,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withDnsIpAddrs(
             java.util.Collection<String> dnsIpAddrs) {
         setDnsIpAddrs(dnsIpAddrs);
@@ -606,6 +631,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        The current stage of the directory.
      * @see DirectoryStage
      */
+
     public void setStage(String stage) {
         this.stage = stage;
     }
@@ -618,6 +644,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return The current stage of the directory.
      * @see DirectoryStage
      */
+
     public String getStage() {
         return this.stage;
     }
@@ -633,6 +660,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectoryStage
      */
+
     public DirectoryDescription withStage(String stage) {
         setStage(stage);
         return this;
@@ -645,10 +673,9 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param stage
      *        The current stage of the directory.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectoryStage
      */
+
     public void setStage(DirectoryStage stage) {
         this.stage = stage.toString();
     }
@@ -664,6 +691,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectoryStage
      */
+
     public DirectoryDescription withStage(DirectoryStage stage) {
         setStage(stage);
         return this;
@@ -677,6 +705,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param launchTime
      *        Specifies when the directory was created.
      */
+
     public void setLaunchTime(java.util.Date launchTime) {
         this.launchTime = launchTime;
     }
@@ -688,6 +717,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return Specifies when the directory was created.
      */
+
     public java.util.Date getLaunchTime() {
         return this.launchTime;
     }
@@ -702,6 +732,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withLaunchTime(java.util.Date launchTime) {
         setLaunchTime(launchTime);
         return this;
@@ -715,6 +746,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param stageLastUpdatedDateTime
      *        The date and time that the stage was last updated.
      */
+
     public void setStageLastUpdatedDateTime(
             java.util.Date stageLastUpdatedDateTime) {
         this.stageLastUpdatedDateTime = stageLastUpdatedDateTime;
@@ -727,6 +759,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return The date and time that the stage was last updated.
      */
+
     public java.util.Date getStageLastUpdatedDateTime() {
         return this.stageLastUpdatedDateTime;
     }
@@ -741,6 +774,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withStageLastUpdatedDateTime(
             java.util.Date stageLastUpdatedDateTime) {
         setStageLastUpdatedDateTime(stageLastUpdatedDateTime);
@@ -756,6 +790,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        The directory size.
      * @see DirectoryType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -768,6 +803,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return The directory size.
      * @see DirectoryType
      */
+
     public String getType() {
         return this.type;
     }
@@ -783,6 +819,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectoryType
      */
+
     public DirectoryDescription withType(String type) {
         setType(type);
         return this;
@@ -795,10 +832,9 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param type
      *        The directory size.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see DirectoryType
      */
+
     public void setType(DirectoryType type) {
         this.type = type.toString();
     }
@@ -814,6 +850,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see DirectoryType
      */
+
     public DirectoryDescription withType(DirectoryType type) {
         setType(type);
         return this;
@@ -831,6 +868,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        additional information about a directory. This member is only
      *        present if the directory is a Simple AD or Managed AD directory.
      */
+
     public void setVpcSettings(DirectoryVpcSettingsDescription vpcSettings) {
         this.vpcSettings = vpcSettings;
     }
@@ -846,6 +884,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         additional information about a directory. This member is only
      *         present if the directory is a Simple AD or Managed AD directory.
      */
+
     public DirectoryVpcSettingsDescription getVpcSettings() {
         return this.vpcSettings;
     }
@@ -864,6 +903,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withVpcSettings(
             DirectoryVpcSettingsDescription vpcSettings) {
         setVpcSettings(vpcSettings);
@@ -883,6 +923,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        member is only present if the directory is an AD Connector
      *        directory.
      */
+
     public void setConnectSettings(
             DirectoryConnectSettingsDescription connectSettings) {
         this.connectSettings = connectSettings;
@@ -900,6 +941,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         member is only present if the directory is an AD Connector
      *         directory.
      */
+
     public DirectoryConnectSettingsDescription getConnectSettings() {
         return this.connectSettings;
     }
@@ -919,6 +961,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withConnectSettings(
             DirectoryConnectSettingsDescription connectSettings) {
         setConnectSettings(connectSettings);
@@ -935,6 +978,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        A <a>RadiusSettings</a> object that contains information about the
      *        RADIUS server configured for this directory.
      */
+
     public void setRadiusSettings(RadiusSettings radiusSettings) {
         this.radiusSettings = radiusSettings;
     }
@@ -948,6 +992,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return A <a>RadiusSettings</a> object that contains information about
      *         the RADIUS server configured for this directory.
      */
+
     public RadiusSettings getRadiusSettings() {
         return this.radiusSettings;
     }
@@ -964,6 +1009,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withRadiusSettings(RadiusSettings radiusSettings) {
         setRadiusSettings(radiusSettings);
         return this;
@@ -978,6 +1024,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        The status of the RADIUS MFA server connection.
      * @see RadiusStatus
      */
+
     public void setRadiusStatus(String radiusStatus) {
         this.radiusStatus = radiusStatus;
     }
@@ -990,6 +1037,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return The status of the RADIUS MFA server connection.
      * @see RadiusStatus
      */
+
     public String getRadiusStatus() {
         return this.radiusStatus;
     }
@@ -1005,6 +1053,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see RadiusStatus
      */
+
     public DirectoryDescription withRadiusStatus(String radiusStatus) {
         setRadiusStatus(radiusStatus);
         return this;
@@ -1017,10 +1066,9 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @param radiusStatus
      *        The status of the RADIUS MFA server connection.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see RadiusStatus
      */
+
     public void setRadiusStatus(RadiusStatus radiusStatus) {
         this.radiusStatus = radiusStatus.toString();
     }
@@ -1036,6 +1084,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *         chained together.
      * @see RadiusStatus
      */
+
     public DirectoryDescription withRadiusStatus(RadiusStatus radiusStatus) {
         setRadiusStatus(radiusStatus);
         return this;
@@ -1049,6 +1098,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @param stageReason
      *        Additional information about the directory stage.
      */
+
     public void setStageReason(String stageReason) {
         this.stageReason = stageReason;
     }
@@ -1060,6 +1110,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * 
      * @return Additional information about the directory stage.
      */
+
     public String getStageReason() {
         return this.stageReason;
     }
@@ -1074,6 +1125,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withStageReason(String stageReason) {
         setStageReason(stageReason);
         return this;
@@ -1089,6 +1141,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      *        Indicates if single-sign on is enabled for the directory. For more
      *        information, see <a>EnableSso</a> and <a>DisableSso</a>.
      */
+
     public void setSsoEnabled(Boolean ssoEnabled) {
         this.ssoEnabled = ssoEnabled;
     }
@@ -1102,6 +1155,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Indicates if single-sign on is enabled for the directory. For
      *         more information, see <a>EnableSso</a> and <a>DisableSso</a>.
      */
+
     public Boolean getSsoEnabled() {
         return this.ssoEnabled;
     }
@@ -1118,6 +1172,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryDescription withSsoEnabled(Boolean ssoEnabled) {
         setSsoEnabled(ssoEnabled);
         return this;
@@ -1132,6 +1187,7 @@ public class DirectoryDescription implements Serializable, Cloneable {
      * @return Indicates if single-sign on is enabled for the directory. For
      *         more information, see <a>EnableSso</a> and <a>DisableSso</a>.
      */
+
     public Boolean isSsoEnabled() {
         return this.ssoEnabled;
     }

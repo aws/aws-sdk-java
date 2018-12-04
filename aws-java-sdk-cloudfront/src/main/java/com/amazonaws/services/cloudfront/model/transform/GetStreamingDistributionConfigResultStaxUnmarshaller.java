@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudfront.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -41,8 +43,10 @@ public class GetStreamingDistributionConfigResultStaxUnmarshaller
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            getStreamingDistributionConfigResult.setETag(context
-                    .getHeader("ETag"));
+            context.setCurrentHeader("ETag");
+            getStreamingDistributionConfigResult.setETag(StringStaxUnmarshaller
+                    .getInstance().unmarshall(context));
+
         }
 
         while (true) {

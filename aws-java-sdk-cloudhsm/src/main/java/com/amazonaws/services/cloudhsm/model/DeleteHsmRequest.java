@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Contains the inputs for the <a>DeleteHsm</a> action.
+ * Contains the inputs for the <a>DeleteHsm</a> operation.
  * </p>
  */
 public class DeleteHsmRequest extends AmazonWebServiceRequest implements
@@ -42,6 +42,7 @@ public class DeleteHsmRequest extends AmazonWebServiceRequest implements
      * @param hsmArn
      *        The ARN of the HSM to delete.
      */
+
     public void setHsmArn(String hsmArn) {
         this.hsmArn = hsmArn;
     }
@@ -53,6 +54,7 @@ public class DeleteHsmRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ARN of the HSM to delete.
      */
+
     public String getHsmArn() {
         return this.hsmArn;
     }
@@ -67,6 +69,7 @@ public class DeleteHsmRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteHsmRequest withHsmArn(String hsmArn) {
         setHsmArn(hsmArn);
         return this;

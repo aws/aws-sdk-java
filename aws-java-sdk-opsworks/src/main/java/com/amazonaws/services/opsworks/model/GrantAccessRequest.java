@@ -49,6 +49,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      * @param instanceId
      *        The instance's AWS OpsWorks ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -60,6 +61,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      * 
      * @return The instance's AWS OpsWorks ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -74,6 +76,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantAccessRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -93,6 +96,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      *        be able to use the credentials to log in. If the user is logged in
      *        at the time, he or she automatically will be logged out.
      */
+
     public void setValidForInMinutes(Integer validForInMinutes) {
         this.validForInMinutes = validForInMinutes;
     }
@@ -110,6 +114,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      *         be able to use the credentials to log in. If the user is logged
      *         in at the time, he or she automatically will be logged out.
      */
+
     public Integer getValidForInMinutes() {
         return this.validForInMinutes;
     }
@@ -130,6 +135,7 @@ public class GrantAccessRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantAccessRequest withValidForInMinutes(Integer validForInMinutes) {
         setValidForInMinutes(validForInMinutes);
         return this;

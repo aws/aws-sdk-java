@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,27 +55,27 @@ public class PredictionJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("predictedLabel", targetDepth)) {
                     context.nextToken();
-                    prediction.setPredictedLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    prediction.setPredictedLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("predictedValue", targetDepth)) {
                     context.nextToken();
-                    prediction.setPredictedValue(FloatJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    prediction.setPredictedValue(context.getUnmarshaller(
+                            Float.class).unmarshall(context));
                 }
                 if (context.testExpression("predictedScores", targetDepth)) {
                     context.nextToken();
                     prediction
                             .setPredictedScores(new MapUnmarshaller<String, Float>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    FloatJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(Float.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("details", targetDepth)) {
                     context.nextToken();
                     prediction.setDetails(new MapUnmarshaller<String, String>(
-                            StringJsonUnmarshaller.getInstance(),
-                            StringJsonUnmarshaller.getInstance())
+                            context.getUnmarshaller(String.class), context
+                                    .getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

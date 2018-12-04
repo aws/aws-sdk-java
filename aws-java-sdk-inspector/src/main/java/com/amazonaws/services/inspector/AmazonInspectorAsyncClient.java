@@ -16,6 +16,7 @@
 package com.amazonaws.services.inspector;
 
 import com.amazonaws.services.inspector.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Inspector asynchronously. Each asynchronous
@@ -25,13 +26,13 @@ import com.amazonaws.services.inspector.model.*;
  * <p>
  * <fullname>Amazon Inspector</fullname>
  * <p>
- * Amazon Inspector enables you to analyze the behavior of the applications you
- * run in AWS and to identify potential security issues. For more information,
- * see <a href=
- * "https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
+ * Amazon Inspector enables you to analyze the behavior of your AWS resources
+ * and to identify potential security issues. For more information, see <a href=
+ * "http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html"
  * > Amazon Inspector User Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
         AmazonInspectorAsync {
 
@@ -131,8 +132,7 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -224,9 +224,7 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -301,96 +299,61 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
-            AttachAssessmentAndRulesPackageRequest request) {
+    public java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
+            CreateAssessmentTargetRequest request) {
 
-        return attachAssessmentAndRulesPackageAsync(request, null);
+        return createAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<AttachAssessmentAndRulesPackageResult> attachAssessmentAndRulesPackageAsync(
-            final AttachAssessmentAndRulesPackageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AttachAssessmentAndRulesPackageRequest, AttachAssessmentAndRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<CreateAssessmentTargetResult> createAssessmentTargetAsync(
+            final CreateAssessmentTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAssessmentTargetRequest, CreateAssessmentTargetResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<AttachAssessmentAndRulesPackageResult>() {
+                .submit(new java.util.concurrent.Callable<CreateAssessmentTargetResult>() {
                     @Override
-                    public AttachAssessmentAndRulesPackageResult call()
+                    public CreateAssessmentTargetResult call() throws Exception {
+                        CreateAssessmentTargetResult result;
+
+                        try {
+                            result = createAssessmentTarget(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
+            CreateAssessmentTemplateRequest request) {
+
+        return createAssessmentTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(
+            final CreateAssessmentTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<CreateAssessmentTemplateResult>() {
+                    @Override
+                    public CreateAssessmentTemplateResult call()
                             throws Exception {
-                        AttachAssessmentAndRulesPackageResult result;
+                        CreateAssessmentTemplateResult result;
 
                         try {
-                            result = attachAssessmentAndRulesPackage(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            CreateApplicationRequest request) {
-
-        return createApplicationAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(
-            final CreateApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateApplicationResult>() {
-                    @Override
-                    public CreateApplicationResult call() throws Exception {
-                        CreateApplicationResult result;
-
-                        try {
-                            result = createApplication(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
-            CreateAssessmentRequest request) {
-
-        return createAssessmentAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAssessmentResult> createAssessmentAsync(
-            final CreateAssessmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<CreateAssessmentRequest, CreateAssessmentResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<CreateAssessmentResult>() {
-                    @Override
-                    public CreateAssessmentResult call() throws Exception {
-                        CreateAssessmentResult result;
-
-                        try {
-                            result = createAssessment(request);
+                            result = createAssessmentTemplate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -442,25 +405,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
-            DeleteApplicationRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
+            DeleteAssessmentRunRequest request) {
 
-        return deleteApplicationAsync(request, null);
+        return deleteAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(
-            final DeleteApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentRunResult> deleteAssessmentRunAsync(
+            final DeleteAssessmentRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRunRequest, DeleteAssessmentRunResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DeleteApplicationResult>() {
+                .submit(new java.util.concurrent.Callable<DeleteAssessmentRunResult>() {
                     @Override
-                    public DeleteApplicationResult call() throws Exception {
-                        DeleteApplicationResult result;
+                    public DeleteAssessmentRunResult call() throws Exception {
+                        DeleteAssessmentRunResult result;
 
                         try {
-                            result = deleteApplication(request);
+                            result = deleteAssessmentRun(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -477,25 +440,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
-            DeleteAssessmentRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
+            DeleteAssessmentTargetRequest request) {
 
-        return deleteAssessmentAsync(request, null);
+        return deleteAssessmentTargetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteAssessmentResult> deleteAssessmentAsync(
-            final DeleteAssessmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteAssessmentRequest, DeleteAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentTargetResult> deleteAssessmentTargetAsync(
+            final DeleteAssessmentTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTargetRequest, DeleteAssessmentTargetResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DeleteAssessmentResult>() {
+                .submit(new java.util.concurrent.Callable<DeleteAssessmentTargetResult>() {
                     @Override
-                    public DeleteAssessmentResult call() throws Exception {
-                        DeleteAssessmentResult result;
+                    public DeleteAssessmentTargetResult call() throws Exception {
+                        DeleteAssessmentTargetResult result;
 
                         try {
-                            result = deleteAssessment(request);
+                            result = deleteAssessmentTarget(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -512,25 +475,26 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
-            DeleteRunRequest request) {
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
+            DeleteAssessmentTemplateRequest request) {
 
-        return deleteRunAsync(request, null);
+        return deleteAssessmentTemplateAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteRunResult> deleteRunAsync(
-            final DeleteRunRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteRunRequest, DeleteRunResult> asyncHandler) {
+    public java.util.concurrent.Future<DeleteAssessmentTemplateResult> deleteAssessmentTemplateAsync(
+            final DeleteAssessmentTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAssessmentTemplateRequest, DeleteAssessmentTemplateResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DeleteRunResult>() {
+                .submit(new java.util.concurrent.Callable<DeleteAssessmentTemplateResult>() {
                     @Override
-                    public DeleteRunResult call() throws Exception {
-                        DeleteRunResult result;
+                    public DeleteAssessmentTemplateResult call()
+                            throws Exception {
+                        DeleteAssessmentTemplateResult result;
 
                         try {
-                            result = deleteRun(request);
+                            result = deleteAssessmentTemplate(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -547,25 +511,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
-            DescribeApplicationRequest request) {
+    public java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
+            DescribeAssessmentRunsRequest request) {
 
-        return describeApplicationAsync(request, null);
+        return describeAssessmentRunsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(
-            final DescribeApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeAssessmentRunsResult> describeAssessmentRunsAsync(
+            final DescribeAssessmentRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRunsRequest, DescribeAssessmentRunsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeApplicationResult>() {
+                .submit(new java.util.concurrent.Callable<DescribeAssessmentRunsResult>() {
                     @Override
-                    public DescribeApplicationResult call() throws Exception {
-                        DescribeApplicationResult result;
+                    public DescribeAssessmentRunsResult call() throws Exception {
+                        DescribeAssessmentRunsResult result;
 
                         try {
-                            result = describeApplication(request);
+                            result = describeAssessmentRuns(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -582,25 +546,62 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
-            DescribeAssessmentRequest request) {
+    public java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
+            DescribeAssessmentTargetsRequest request) {
 
-        return describeAssessmentAsync(request, null);
+        return describeAssessmentTargetsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeAssessmentResult> describeAssessmentAsync(
-            final DescribeAssessmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeAssessmentRequest, DescribeAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeAssessmentTargetsResult> describeAssessmentTargetsAsync(
+            final DescribeAssessmentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTargetsRequest, DescribeAssessmentTargetsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeAssessmentResult>() {
+                .submit(new java.util.concurrent.Callable<DescribeAssessmentTargetsResult>() {
                     @Override
-                    public DescribeAssessmentResult call() throws Exception {
-                        DescribeAssessmentResult result;
+                    public DescribeAssessmentTargetsResult call()
+                            throws Exception {
+                        DescribeAssessmentTargetsResult result;
 
                         try {
-                            result = describeAssessment(request);
+                            result = describeAssessmentTargets(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
+            DescribeAssessmentTemplatesRequest request) {
+
+        return describeAssessmentTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssessmentTemplatesResult> describeAssessmentTemplatesAsync(
+            final DescribeAssessmentTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssessmentTemplatesRequest, DescribeAssessmentTemplatesResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeAssessmentTemplatesResult>() {
+                    @Override
+                    public DescribeAssessmentTemplatesResult call()
+                            throws Exception {
+                        DescribeAssessmentTemplatesResult result;
+
+                        try {
+                            result = describeAssessmentTemplates(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -653,25 +654,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
-            DescribeFindingRequest request) {
+    public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
+            DescribeFindingsRequest request) {
 
-        return describeFindingAsync(request, null);
+        return describeFindingsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeFindingResult> describeFindingAsync(
-            final DescribeFindingRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeFindingRequest, DescribeFindingResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(
+            final DescribeFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFindingsRequest, DescribeFindingsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeFindingResult>() {
+                .submit(new java.util.concurrent.Callable<DescribeFindingsResult>() {
                     @Override
-                    public DescribeFindingResult call() throws Exception {
-                        DescribeFindingResult result;
+                    public DescribeFindingsResult call() throws Exception {
+                        DescribeFindingsResult result;
 
                         try {
-                            result = describeFinding(request);
+                            result = describeFindings(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -688,25 +689,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
-            DescribeResourceGroupRequest request) {
+    public java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
+            DescribeResourceGroupsRequest request) {
 
-        return describeResourceGroupAsync(request, null);
+        return describeResourceGroupsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeResourceGroupResult> describeResourceGroupAsync(
-            final DescribeResourceGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupRequest, DescribeResourceGroupResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeResourceGroupsResult> describeResourceGroupsAsync(
+            final DescribeResourceGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourceGroupsRequest, DescribeResourceGroupsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeResourceGroupResult>() {
+                .submit(new java.util.concurrent.Callable<DescribeResourceGroupsResult>() {
                     @Override
-                    public DescribeResourceGroupResult call() throws Exception {
-                        DescribeResourceGroupResult result;
+                    public DescribeResourceGroupsResult call() throws Exception {
+                        DescribeResourceGroupsResult result;
 
                         try {
-                            result = describeResourceGroup(request);
+                            result = describeResourceGroups(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -723,25 +724,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
-            DescribeRulesPackageRequest request) {
+    public java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
+            DescribeRulesPackagesRequest request) {
 
-        return describeRulesPackageAsync(request, null);
+        return describeRulesPackagesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRulesPackageResult> describeRulesPackageAsync(
-            final DescribeRulesPackageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeRulesPackageRequest, DescribeRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<DescribeRulesPackagesResult> describeRulesPackagesAsync(
+            final DescribeRulesPackagesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRulesPackagesRequest, DescribeRulesPackagesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeRulesPackageResult>() {
+                .submit(new java.util.concurrent.Callable<DescribeRulesPackagesResult>() {
                     @Override
-                    public DescribeRulesPackageResult call() throws Exception {
-                        DescribeRulesPackageResult result;
+                    public DescribeRulesPackagesResult call() throws Exception {
+                        DescribeRulesPackagesResult result;
 
                         try {
-                            result = describeRulesPackage(request);
+                            result = describeRulesPackages(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -758,25 +759,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
-            DescribeRunRequest request) {
+    public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
+            GetTelemetryMetadataRequest request) {
 
-        return describeRunAsync(request, null);
+        return getTelemetryMetadataAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeRunResult> describeRunAsync(
-            final DescribeRunRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DescribeRunRequest, DescribeRunResult> asyncHandler) {
+    public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(
+            final GetTelemetryMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTelemetryMetadataRequest, GetTelemetryMetadataResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DescribeRunResult>() {
+                .submit(new java.util.concurrent.Callable<GetTelemetryMetadataResult>() {
                     @Override
-                    public DescribeRunResult call() throws Exception {
-                        DescribeRunResult result;
+                    public GetTelemetryMetadataResult call() throws Exception {
+                        GetTelemetryMetadataResult result;
 
                         try {
-                            result = describeRun(request);
+                            result = getTelemetryMetadata(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -793,26 +794,26 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
-            DetachAssessmentAndRulesPackageRequest request) {
+    public java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
+            ListAssessmentRunAgentsRequest request) {
 
-        return detachAssessmentAndRulesPackageAsync(request, null);
+        return listAssessmentRunAgentsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<DetachAssessmentAndRulesPackageResult> detachAssessmentAndRulesPackageAsync(
-            final DetachAssessmentAndRulesPackageRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DetachAssessmentAndRulesPackageRequest, DetachAssessmentAndRulesPackageResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentRunAgentsResult> listAssessmentRunAgentsAsync(
+            final ListAssessmentRunAgentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssessmentRunAgentsRequest, ListAssessmentRunAgentsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<DetachAssessmentAndRulesPackageResult>() {
+                .submit(new java.util.concurrent.Callable<ListAssessmentRunAgentsResult>() {
                     @Override
-                    public DetachAssessmentAndRulesPackageResult call()
+                    public ListAssessmentRunAgentsResult call()
                             throws Exception {
-                        DetachAssessmentAndRulesPackageResult result;
+                        ListAssessmentRunAgentsResult result;
 
                         try {
-                            result = detachAssessmentAndRulesPackage(request);
+                            result = listAssessmentRunAgents(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -829,25 +830,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
-            GetAssessmentTelemetryRequest request) {
+    public java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
+            ListAssessmentRunsRequest request) {
 
-        return getAssessmentTelemetryAsync(request, null);
+        return listAssessmentRunsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<GetAssessmentTelemetryResult> getAssessmentTelemetryAsync(
-            final GetAssessmentTelemetryRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetAssessmentTelemetryRequest, GetAssessmentTelemetryResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentRunsResult> listAssessmentRunsAsync(
+            final ListAssessmentRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssessmentRunsRequest, ListAssessmentRunsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<GetAssessmentTelemetryResult>() {
+                .submit(new java.util.concurrent.Callable<ListAssessmentRunsResult>() {
                     @Override
-                    public GetAssessmentTelemetryResult call() throws Exception {
-                        GetAssessmentTelemetryResult result;
+                    public ListAssessmentRunsResult call() throws Exception {
+                        ListAssessmentRunsResult result;
 
                         try {
-                            result = getAssessmentTelemetry(request);
+                            result = listAssessmentRuns(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -864,25 +865,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            ListApplicationsRequest request) {
+    public java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
+            ListAssessmentTargetsRequest request) {
 
-        return listApplicationsAsync(request, null);
+        return listAssessmentTargetsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(
-            final ListApplicationsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentTargetsResult> listAssessmentTargetsAsync(
+            final ListAssessmentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssessmentTargetsRequest, ListAssessmentTargetsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<ListApplicationsResult>() {
+                .submit(new java.util.concurrent.Callable<ListAssessmentTargetsResult>() {
                     @Override
-                    public ListApplicationsResult call() throws Exception {
-                        ListApplicationsResult result;
+                    public ListAssessmentTargetsResult call() throws Exception {
+                        ListAssessmentTargetsResult result;
 
                         try {
-                            result = listApplications(request);
+                            result = listAssessmentTargets(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -899,96 +900,26 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
-            ListAssessmentAgentsRequest request) {
+    public java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
+            ListAssessmentTemplatesRequest request) {
 
-        return listAssessmentAgentsAsync(request, null);
+        return listAssessmentTemplatesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListAssessmentAgentsResult> listAssessmentAgentsAsync(
-            final ListAssessmentAgentsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListAssessmentAgentsRequest, ListAssessmentAgentsResult> asyncHandler) {
+    public java.util.concurrent.Future<ListAssessmentTemplatesResult> listAssessmentTemplatesAsync(
+            final ListAssessmentTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssessmentTemplatesRequest, ListAssessmentTemplatesResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<ListAssessmentAgentsResult>() {
+                .submit(new java.util.concurrent.Callable<ListAssessmentTemplatesResult>() {
                     @Override
-                    public ListAssessmentAgentsResult call() throws Exception {
-                        ListAssessmentAgentsResult result;
-
-                        try {
-                            result = listAssessmentAgents(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
-            ListAssessmentsRequest request) {
-
-        return listAssessmentsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAssessmentsResult> listAssessmentsAsync(
-            final ListAssessmentsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListAssessmentsRequest, ListAssessmentsResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListAssessmentsResult>() {
-                    @Override
-                    public ListAssessmentsResult call() throws Exception {
-                        ListAssessmentsResult result;
-
-                        try {
-                            result = listAssessments(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
-            ListAttachedAssessmentsRequest request) {
-
-        return listAttachedAssessmentsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAttachedAssessmentsResult> listAttachedAssessmentsAsync(
-            final ListAttachedAssessmentsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListAttachedAssessmentsRequest, ListAttachedAssessmentsResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListAttachedAssessmentsResult>() {
-                    @Override
-                    public ListAttachedAssessmentsResult call()
+                    public ListAssessmentTemplatesResult call()
                             throws Exception {
-                        ListAttachedAssessmentsResult result;
+                        ListAssessmentTemplatesResult result;
 
                         try {
-                            result = listAttachedAssessments(request);
+                            result = listAssessmentTemplates(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1005,26 +936,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
-            ListAttachedRulesPackagesRequest request) {
+    public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
+            ListEventSubscriptionsRequest request) {
 
-        return listAttachedRulesPackagesAsync(request, null);
+        return listEventSubscriptionsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<ListAttachedRulesPackagesResult> listAttachedRulesPackagesAsync(
-            final ListAttachedRulesPackagesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListAttachedRulesPackagesRequest, ListAttachedRulesPackagesResult> asyncHandler) {
+    public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(
+            final ListEventSubscriptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<ListAttachedRulesPackagesResult>() {
+                .submit(new java.util.concurrent.Callable<ListEventSubscriptionsResult>() {
                     @Override
-                    public ListAttachedRulesPackagesResult call()
-                            throws Exception {
-                        ListAttachedRulesPackagesResult result;
+                    public ListEventSubscriptionsResult call() throws Exception {
+                        ListEventSubscriptionsResult result;
 
                         try {
-                            result = listAttachedRulesPackages(request);
+                            result = listEventSubscriptions(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1111,41 +1041,6 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<ListRunsResult> listRunsAsync(
-            ListRunsRequest request) {
-
-        return listRunsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListRunsResult> listRunsAsync(
-            final ListRunsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListRunsRequest, ListRunsResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<ListRunsResult>() {
-                    @Override
-                    public ListRunsResult call() throws Exception {
-                        ListRunsResult result;
-
-                        try {
-                            result = listRuns(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             ListTagsForResourceRequest request) {
 
@@ -1181,61 +1076,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
-            LocalizeTextRequest request) {
+    public java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
+            PreviewAgentsRequest request) {
 
-        return localizeTextAsync(request, null);
+        return previewAgentsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<LocalizeTextResult> localizeTextAsync(
-            final LocalizeTextRequest request,
-            final com.amazonaws.handlers.AsyncHandler<LocalizeTextRequest, LocalizeTextResult> asyncHandler) {
+    public java.util.concurrent.Future<PreviewAgentsResult> previewAgentsAsync(
+            final PreviewAgentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PreviewAgentsRequest, PreviewAgentsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<LocalizeTextResult>() {
+                .submit(new java.util.concurrent.Callable<PreviewAgentsResult>() {
                     @Override
-                    public LocalizeTextResult call() throws Exception {
-                        LocalizeTextResult result;
+                    public PreviewAgentsResult call() throws Exception {
+                        PreviewAgentsResult result;
 
                         try {
-                            result = localizeText(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
-    public java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
-            PreviewAgentsForResourceGroupRequest request) {
-
-        return previewAgentsForResourceGroupAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PreviewAgentsForResourceGroupResult> previewAgentsForResourceGroupAsync(
-            final PreviewAgentsForResourceGroupRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PreviewAgentsForResourceGroupRequest, PreviewAgentsForResourceGroupResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<PreviewAgentsForResourceGroupResult>() {
-                    @Override
-                    public PreviewAgentsForResourceGroupResult call()
-                            throws Exception {
-                        PreviewAgentsForResourceGroupResult result;
-
-                        try {
-                            result = previewAgentsForResourceGroup(request);
+                            result = previewAgents(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1324,41 +1183,6 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
-            RunAssessmentRequest request) {
-
-        return runAssessmentAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RunAssessmentResult> runAssessmentAsync(
-            final RunAssessmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RunAssessmentRequest, RunAssessmentResult> asyncHandler) {
-
-        return executorService
-                .submit(new java.util.concurrent.Callable<RunAssessmentResult>() {
-                    @Override
-                    public RunAssessmentResult call() throws Exception {
-                        RunAssessmentResult result;
-
-                        try {
-                            result = runAssessment(request);
-                        } catch (Exception ex) {
-                            if (asyncHandler != null) {
-                                asyncHandler.onError(ex);
-                            }
-                            throw ex;
-                        }
-
-                        if (asyncHandler != null) {
-                            asyncHandler.onSuccess(request, result);
-                        }
-                        return result;
-                    }
-                });
-    }
-
-    @Override
     public java.util.concurrent.Future<SetTagsForResourceResult> setTagsForResourceAsync(
             SetTagsForResourceRequest request) {
 
@@ -1394,25 +1218,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
-            StartDataCollectionRequest request) {
+    public java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
+            StartAssessmentRunRequest request) {
 
-        return startDataCollectionAsync(request, null);
+        return startAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<StartDataCollectionResult> startDataCollectionAsync(
-            final StartDataCollectionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StartDataCollectionRequest, StartDataCollectionResult> asyncHandler) {
+    public java.util.concurrent.Future<StartAssessmentRunResult> startAssessmentRunAsync(
+            final StartAssessmentRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAssessmentRunRequest, StartAssessmentRunResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<StartDataCollectionResult>() {
+                .submit(new java.util.concurrent.Callable<StartAssessmentRunResult>() {
                     @Override
-                    public StartDataCollectionResult call() throws Exception {
-                        StartDataCollectionResult result;
+                    public StartAssessmentRunResult call() throws Exception {
+                        StartAssessmentRunResult result;
 
                         try {
-                            result = startDataCollection(request);
+                            result = startAssessmentRun(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1429,25 +1253,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
-            StopDataCollectionRequest request) {
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
+            StopAssessmentRunRequest request) {
 
-        return stopDataCollectionAsync(request, null);
+        return stopAssessmentRunAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<StopDataCollectionResult> stopDataCollectionAsync(
-            final StopDataCollectionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StopDataCollectionRequest, StopDataCollectionResult> asyncHandler) {
+    public java.util.concurrent.Future<StopAssessmentRunResult> stopAssessmentRunAsync(
+            final StopAssessmentRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopAssessmentRunRequest, StopAssessmentRunResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<StopDataCollectionResult>() {
+                .submit(new java.util.concurrent.Callable<StopAssessmentRunResult>() {
                     @Override
-                    public StopDataCollectionResult call() throws Exception {
-                        StopDataCollectionResult result;
+                    public StopAssessmentRunResult call() throws Exception {
+                        StopAssessmentRunResult result;
 
                         try {
-                            result = stopDataCollection(request);
+                            result = stopAssessmentRun(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1464,25 +1288,25 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
-            UpdateApplicationRequest request) {
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
+            SubscribeToEventRequest request) {
 
-        return updateApplicationAsync(request, null);
+        return subscribeToEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(
-            final UpdateApplicationRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+    public java.util.concurrent.Future<SubscribeToEventResult> subscribeToEventAsync(
+            final SubscribeToEventRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubscribeToEventRequest, SubscribeToEventResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<UpdateApplicationResult>() {
+                .submit(new java.util.concurrent.Callable<SubscribeToEventResult>() {
                     @Override
-                    public UpdateApplicationResult call() throws Exception {
-                        UpdateApplicationResult result;
+                    public SubscribeToEventResult call() throws Exception {
+                        SubscribeToEventResult result;
 
                         try {
-                            result = updateApplication(request);
+                            result = subscribeToEvent(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1499,25 +1323,60 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
-            UpdateAssessmentRequest request) {
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
+            UnsubscribeFromEventRequest request) {
 
-        return updateAssessmentAsync(request, null);
+        return unsubscribeFromEventAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<UpdateAssessmentResult> updateAssessmentAsync(
-            final UpdateAssessmentRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UpdateAssessmentRequest, UpdateAssessmentResult> asyncHandler) {
+    public java.util.concurrent.Future<UnsubscribeFromEventResult> unsubscribeFromEventAsync(
+            final UnsubscribeFromEventRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnsubscribeFromEventRequest, UnsubscribeFromEventResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<UpdateAssessmentResult>() {
+                .submit(new java.util.concurrent.Callable<UnsubscribeFromEventResult>() {
                     @Override
-                    public UpdateAssessmentResult call() throws Exception {
-                        UpdateAssessmentResult result;
+                    public UnsubscribeFromEventResult call() throws Exception {
+                        UnsubscribeFromEventResult result;
 
                         try {
-                            result = updateAssessment(request);
+                            result = unsubscribeFromEvent(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
+            UpdateAssessmentTargetRequest request) {
+
+        return updateAssessmentTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAssessmentTargetResult> updateAssessmentTargetAsync(
+            final UpdateAssessmentTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAssessmentTargetRequest, UpdateAssessmentTargetResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<UpdateAssessmentTargetResult>() {
+                    @Override
+                    public UpdateAssessmentTargetResult call() throws Exception {
+                        UpdateAssessmentTargetResult result;
+
+                        try {
+                            result = updateAssessmentTarget(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

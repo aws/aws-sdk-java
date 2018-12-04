@@ -24,10 +24,26 @@ import com.amazonaws.AmazonWebServiceRequest;
  * A JSON object containing one or more of the following fields:
  * </p>
  * <ul>
- * <li><a>UpdateChapCredentialsInput$InitiatorName</a></li>
- * <li><a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a></li>
- * <li><a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a></li>
- * <li><a>UpdateChapCredentialsInput$TargetARN</a></li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$InitiatorName</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateChapCredentialsInput$TargetARN</a>
+ * </p>
+ * </li>
  * </ul>
  */
 public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
@@ -46,8 +62,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      */
     private String secretToAuthenticateInitiator;
     /**
@@ -64,8 +83,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      */
     private String secretToAuthenticateTarget;
 
@@ -81,6 +103,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <a>DescribeStorediSCSIVolumes</a> operation to return the
      *        TargetARN for specified VolumeARN.
      */
+
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
@@ -96,6 +119,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *         the <a>DescribeStorediSCSIVolumes</a> operation to return the
      *         TargetARN for specified VolumeARN.
      */
+
     public String getTargetARN() {
         return this.targetARN;
     }
@@ -114,6 +138,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withTargetARN(String targetARN) {
         setTargetARN(targetARN);
         return this;
@@ -124,15 +149,22 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateInitiator
      *        The secret key that the initiator (for example, the Windows
      *        client) must provide to participate in mutual CHAP with the
-     *        target.</p> <note>The secret key must be between 12 and 16 bytes
-     *        when encoded in UTF-8.
+     *        target.</p> <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      */
+
     public void setSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -143,14 +175,21 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @return The secret key that the initiator (for example, the Windows
      *         client) must provide to participate in mutual CHAP with the
-     *         target.</p> <note>The secret key must be between 12 and 16 bytes
-     *         when encoded in UTF-8.
+     *         target.</p> <note>
+     *         <p>
+     *         The secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.
+     *         </p>
      */
+
     public String getSecretToAuthenticateInitiator() {
         return this.secretToAuthenticateInitiator;
     }
@@ -160,17 +199,24 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * The secret key that the initiator (for example, the Windows client) must
      * provide to participate in mutual CHAP with the target.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateInitiator
      *        The secret key that the initiator (for example, the Windows
      *        client) must provide to participate in mutual CHAP with the
-     *        target.</p> <note>The secret key must be between 12 and 16 bytes
-     *        when encoded in UTF-8.
+     *        target.</p> <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withSecretToAuthenticateInitiator(
             String secretToAuthenticateInitiator) {
         setSecretToAuthenticateInitiator(secretToAuthenticateInitiator);
@@ -185,6 +231,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @param initiatorName
      *        The iSCSI initiator that connects to the target.
      */
+
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
@@ -196,6 +243,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * 
      * @return The iSCSI initiator that connects to the target.
      */
+
     public String getInitiatorName() {
         return this.initiatorName;
     }
@@ -210,6 +258,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withInitiatorName(String initiatorName) {
         setInitiatorName(initiatorName);
         return this;
@@ -223,8 +272,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateTarget
      *        The secret key that the target must provide to participate in
@@ -232,9 +284,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *        </p>
-     *        <note>The secret key must be between 12 and 16 bytes when encoded
-     *        in UTF-8.
+     *        <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      */
+
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
     }
@@ -247,17 +303,24 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @return The secret key that the target must provide to participate in
      *         mutual CHAP with the initiator (e.g. Windows client).</p>
      *         <p>
      *         Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *         </p>
-     *         <note>The secret key must be between 12 and 16 bytes when encoded
-     *         in UTF-8.
+     *         <note>
+     *         <p>
+     *         The secret key must be between 12 and 16 bytes when encoded in
+     *         UTF-8.
+     *         </p>
      */
+
     public String getSecretToAuthenticateTarget() {
         return this.secretToAuthenticateTarget;
     }
@@ -270,8 +333,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      * <p>
      * Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      * </p>
-     * <note>The secret key must be between 12 and 16 bytes when encoded in
-     * UTF-8.</note>
+     * <note>
+     * <p>
+     * The secret key must be between 12 and 16 bytes when encoded in UTF-8.
+     * </p>
+     * </note>
      * 
      * @param secretToAuthenticateTarget
      *        The secret key that the target must provide to participate in
@@ -279,11 +345,15 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest
      *        <p>
      *        Byte constraints: Minimum bytes of 12. Maximum bytes of 16.
      *        </p>
-     *        <note>The secret key must be between 12 and 16 bytes when encoded
-     *        in UTF-8.
+     *        <note>
+     *        <p>
+     *        The secret key must be between 12 and 16 bytes when encoded in
+     *        UTF-8.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateChapCredentialsRequest withSecretToAuthenticateTarget(
             String secretToAuthenticateTarget) {
         setSecretToAuthenticateTarget(secretToAuthenticateTarget);

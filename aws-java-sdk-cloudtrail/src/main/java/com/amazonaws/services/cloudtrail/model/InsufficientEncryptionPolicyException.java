@@ -19,8 +19,10 @@ package com.amazonaws.services.cloudtrail.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
+ * <p>
  * This exception is thrown when the policy on the S3 bucket or KMS key is not
  * sufficient.
+ * </p>
  */
 public class InsufficientEncryptionPolicyException extends
         AmazonServiceException {

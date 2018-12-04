@@ -69,6 +69,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for the message in this batch.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -80,6 +81,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * 
      * @return An identifier for the message in this batch.
      */
+
     public String getId() {
         return this.id;
     }
@@ -94,6 +96,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResultEntry withId(String id) {
         setId(id);
         return this;
@@ -107,6 +110,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @param messageId
      *        An identifier for the message.
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -118,6 +122,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * 
      * @return An identifier for the message.
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -132,6 +137,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResultEntry withMessageId(String messageId) {
         setMessageId(messageId);
         return this;
@@ -155,6 +161,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      *        href="http://www.faqs.org/rfcs/rfc1321.html"
      *        >http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
+
     public void setMD5OfMessageBody(String mD5OfMessageBody) {
         this.mD5OfMessageBody = mD5OfMessageBody;
     }
@@ -177,6 +184,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      *         "http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs
      *         /rfc1321.html</a>.
      */
+
     public String getMD5OfMessageBody() {
         return this.mD5OfMessageBody;
     }
@@ -201,6 +209,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResultEntry withMD5OfMessageBody(
             String mD5OfMessageBody) {
         setMD5OfMessageBody(mD5OfMessageBody);
@@ -225,6 +234,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      *        href="http://www.faqs.org/rfcs/rfc1321.html"
      *        >http://www.faqs.org/rfcs/rfc1321.html</a>.
      */
+
     public void setMD5OfMessageAttributes(String mD5OfMessageAttributes) {
         this.mD5OfMessageAttributes = mD5OfMessageAttributes;
     }
@@ -247,6 +257,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      *         "http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs
      *         /rfc1321.html</a>.
      */
+
     public String getMD5OfMessageAttributes() {
         return this.mD5OfMessageAttributes;
     }
@@ -271,6 +282,7 @@ public class SendMessageBatchResultEntry implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendMessageBatchResultEntry withMD5OfMessageAttributes(
             String mD5OfMessageAttributes) {
         setMD5OfMessageAttributes(mD5OfMessageAttributes);

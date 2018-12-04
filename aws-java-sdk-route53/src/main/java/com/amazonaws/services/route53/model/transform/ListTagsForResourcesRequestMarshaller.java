@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListTagsForResourcesRequest Marshaller
@@ -57,11 +60,14 @@ public class ListTagsForResourcesRequestMarshaller
 
         String uriResourcePath = "/2013-04-01/tags/{ResourceType}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{ResourceType}",
-                (listTagsForResourcesRequest.getResourceType() == null) ? ""
-                        : StringUtils.fromString(listTagsForResourcesRequest
-                                .getResourceType()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{ResourceType}",
+                        (listTagsForResourcesRequest.getResourceType() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listTagsForResourcesRequest
+                                                .getResourceType()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -65,6 +65,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *        Specify <code>IPV4</code>.
      * @see IPSetDescriptorType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -77,6 +78,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * @return Specify <code>IPV4</code>.
      * @see IPSetDescriptorType
      */
+
     public String getType() {
         return this.type;
     }
@@ -92,6 +94,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *         chained together.
      * @see IPSetDescriptorType
      */
+
     public IPSetDescriptor withType(String type) {
         setType(type);
         return this;
@@ -104,10 +107,9 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * 
      * @param type
      *        Specify <code>IPV4</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IPSetDescriptorType
      */
+
     public void setType(IPSetDescriptorType type) {
         this.type = type.toString();
     }
@@ -123,6 +125,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *         chained together.
      * @see IPSetDescriptorType
      */
+
     public IPSetDescriptor withType(IPSetDescriptorType type) {
         setType(type);
         return this;
@@ -169,6 +172,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *        "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
      *        >Classless Inter-Domain Routing</a>.
      */
+
     public void setValue(String value) {
         this.value = value;
     }
@@ -213,6 +217,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      *         "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
      *         >Classless Inter-Domain Routing</a>.
      */
+
     public String getValue() {
         return this.value;
     }
@@ -260,6 +265,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public IPSetDescriptor withValue(String value) {
         setValue(value);
         return this;

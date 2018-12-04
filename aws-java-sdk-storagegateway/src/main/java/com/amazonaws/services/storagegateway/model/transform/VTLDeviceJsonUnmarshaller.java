@@ -18,6 +18,8 @@ package com.amazonaws.services.storagegateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,25 +55,24 @@ public class VTLDeviceJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VTLDeviceARN", targetDepth)) {
                     context.nextToken();
-                    vTLDevice.setVTLDeviceARN(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vTLDevice.setVTLDeviceARN(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceType", targetDepth)) {
                     context.nextToken();
-                    vTLDevice.setVTLDeviceType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vTLDevice.setVTLDeviceType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceVendor", targetDepth)) {
                     context.nextToken();
-                    vTLDevice.setVTLDeviceVendor(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    vTLDevice.setVTLDeviceVendor(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VTLDeviceProductIdentifier",
                         targetDepth)) {
                     context.nextToken();
-                    vTLDevice
-                            .setVTLDeviceProductIdentifier(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    vTLDevice.setVTLDeviceProductIdentifier(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("DeviceiSCSIAttributes", targetDepth)) {

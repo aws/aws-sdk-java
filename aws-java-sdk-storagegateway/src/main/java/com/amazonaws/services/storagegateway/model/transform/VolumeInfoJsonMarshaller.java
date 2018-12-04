@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * VolumeInfoMarshaller
@@ -39,26 +34,45 @@ import com.amazonaws.util.json.*;
 public class VolumeInfoJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(VolumeInfo volumeInfo, JSONWriter jsonWriter) {
+    public void marshall(VolumeInfo volumeInfo,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (volumeInfo == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (volumeInfo.getVolumeARN() != null) {
-                jsonWriter.key("VolumeARN").value(volumeInfo.getVolumeARN());
+                jsonGenerator.writeFieldName("VolumeARN").writeValue(
+                        volumeInfo.getVolumeARN());
             }
-
+            if (volumeInfo.getVolumeId() != null) {
+                jsonGenerator.writeFieldName("VolumeId").writeValue(
+                        volumeInfo.getVolumeId());
+            }
+            if (volumeInfo.getGatewayARN() != null) {
+                jsonGenerator.writeFieldName("GatewayARN").writeValue(
+                        volumeInfo.getGatewayARN());
+            }
+            if (volumeInfo.getGatewayId() != null) {
+                jsonGenerator.writeFieldName("GatewayId").writeValue(
+                        volumeInfo.getGatewayId());
+            }
             if (volumeInfo.getVolumeType() != null) {
-                jsonWriter.key("VolumeType").value(volumeInfo.getVolumeType());
+                jsonGenerator.writeFieldName("VolumeType").writeValue(
+                        volumeInfo.getVolumeType());
+            }
+            if (volumeInfo.getVolumeSizeInBytes() != null) {
+                jsonGenerator.writeFieldName("VolumeSizeInBytes").writeValue(
+                        volumeInfo.getVolumeSizeInBytes());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -46,6 +46,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * @param creationTime
      *        A point in time when the export task got created.
      */
+
     public void setCreationTime(Long creationTime) {
         this.creationTime = creationTime;
     }
@@ -57,6 +58,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * 
      * @return A point in time when the export task got created.
      */
+
     public Long getCreationTime() {
         return this.creationTime;
     }
@@ -71,6 +73,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTaskExecutionInfo withCreationTime(Long creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -84,6 +87,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * @param completionTime
      *        A point in time when the export task got completed.
      */
+
     public void setCompletionTime(Long completionTime) {
         this.completionTime = completionTime;
     }
@@ -95,6 +99,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * 
      * @return A point in time when the export task got completed.
      */
+
     public Long getCompletionTime() {
         return this.completionTime;
     }
@@ -109,6 +114,7 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ExportTaskExecutionInfo withCompletionTime(Long completionTime) {
         setCompletionTime(completionTime);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,57 +55,62 @@ public class IntegrationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
-                    integration.setType(StringJsonUnmarshaller.getInstance()
+                    integration.setType(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("httpMethod", targetDepth)) {
                     context.nextToken();
-                    integration.setHttpMethod(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    integration.setHttpMethod(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("uri", targetDepth)) {
                     context.nextToken();
-                    integration.setUri(StringJsonUnmarshaller.getInstance()
+                    integration.setUri(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("credentials", targetDepth)) {
                     context.nextToken();
-                    integration.setCredentials(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    integration.setCredentials(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("requestParameters", targetDepth)) {
                     context.nextToken();
                     integration
                             .setRequestParameters(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("requestTemplates", targetDepth)) {
                     context.nextToken();
                     integration
                             .setRequestTemplates(new MapUnmarshaller<String, String>(
-                                    StringJsonUnmarshaller.getInstance(),
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class),
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
+                }
+                if (context.testExpression("passthroughBehavior", targetDepth)) {
+                    context.nextToken();
+                    integration.setPassthroughBehavior(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheNamespace", targetDepth)) {
                     context.nextToken();
-                    integration.setCacheNamespace(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    integration.setCacheNamespace(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("cacheKeyParameters", targetDepth)) {
                     context.nextToken();
                     integration
                             .setCacheKeyParameters(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("integrationResponses", targetDepth)) {
                     context.nextToken();
                     integration
                             .setIntegrationResponses(new MapUnmarshaller<String, IntegrationResponse>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     IntegrationResponseJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }

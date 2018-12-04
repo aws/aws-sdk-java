@@ -20,7 +20,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified gate declaration was specified in an invalid format.
+ * Reserved for future use.
  * </p>
  */
 public class InvalidBlockerDeclarationException extends AmazonServiceException {

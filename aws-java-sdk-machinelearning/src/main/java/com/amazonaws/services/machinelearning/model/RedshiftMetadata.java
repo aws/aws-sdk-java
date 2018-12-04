@@ -40,6 +40,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     /**
      * @param redshiftDatabase
      */
+
     public void setRedshiftDatabase(RedshiftDatabase redshiftDatabase) {
         this.redshiftDatabase = redshiftDatabase;
     }
@@ -47,6 +48,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public RedshiftDatabase getRedshiftDatabase() {
         return this.redshiftDatabase;
     }
@@ -56,6 +58,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftMetadata withRedshiftDatabase(
             RedshiftDatabase redshiftDatabase) {
         setRedshiftDatabase(redshiftDatabase);
@@ -65,6 +68,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     /**
      * @param databaseUserName
      */
+
     public void setDatabaseUserName(String databaseUserName) {
         this.databaseUserName = databaseUserName;
     }
@@ -72,6 +76,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getDatabaseUserName() {
         return this.databaseUserName;
     }
@@ -81,6 +86,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftMetadata withDatabaseUserName(String databaseUserName) {
         setDatabaseUserName(databaseUserName);
         return this;
@@ -98,6 +104,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
      *        <a>CreateDataSourceFromRedshift</a>. Returns only if
      *        <code>Verbose</code> is true in GetDataSourceInput.
      */
+
     public void setSelectSqlQuery(String selectSqlQuery) {
         this.selectSqlQuery = selectSqlQuery;
     }
@@ -113,6 +120,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
      *         <a>CreateDataSourceFromRedshift</a>. Returns only if
      *         <code>Verbose</code> is true in GetDataSourceInput.
      */
+
     public String getSelectSqlQuery() {
         return this.selectSqlQuery;
     }
@@ -131,6 +139,7 @@ public class RedshiftMetadata implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftMetadata withSelectSqlQuery(String selectSqlQuery) {
         setSelectSqlQuery(selectSqlQuery);
         return this;

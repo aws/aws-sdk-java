@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
@@ -20,713 +22,873 @@ import java.io.Serializable;
  * <p>
  * Describes the launch specification for a Scheduled Instance.
  * </p>
+ * <p>
+ * If you are launching the Scheduled Instance in EC2-VPC, you must specify the
+ * ID of the subnet. You can specify the subnet using either
+ * <code>SubnetId</code> or <code>NetworkInterface</code>.
+ * </p>
  */
-public class ScheduledInstancesLaunchSpecification implements Serializable, Cloneable {
+public class ScheduledInstancesLaunchSpecification implements Serializable,
+        Cloneable {
 
     /**
+     * <p>
      * The ID of the Amazon Machine Image (AMI).
+     * </p>
      */
     private String imageId;
-
     /**
+     * <p>
      * The name of the key pair.
+     * </p>
      */
     private String keyName;
-
     /**
+     * <p>
      * The IDs of one or more security groups.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
-
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
+     * <p>
      * The base64-encoded MIME user data.
+     * </p>
      */
     private String userData;
-
     /**
+     * <p>
      * The placement information.
+     * </p>
      */
     private ScheduledInstancesPlacement placement;
-
     /**
+     * <p>
      * The ID of the kernel.
+     * </p>
      */
     private String kernelId;
-
     /**
+     * <p>
      * The instance type.
+     * </p>
      */
     private String instanceType;
-
     /**
+     * <p>
      * The ID of the RAM disk.
+     * </p>
      */
     private String ramdiskId;
-
     /**
+     * <p>
      * One or more block device mapping entries.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings;
-
+    private com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings;
     /**
+     * <p>
      * Enable or disable monitoring for the instances.
+     * </p>
      */
     private ScheduledInstancesMonitoring monitoring;
-
     /**
+     * <p>
      * The ID of the subnet in which to launch the instances.
+     * </p>
      */
     private String subnetId;
-
     /**
+     * <p>
      * One or more network interfaces.
+     * </p>
      */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface> networkInterfaces;
-
+    private com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface> networkInterfaces;
     /**
+     * <p>
      * The IAM instance profile.
+     * </p>
      */
     private ScheduledInstancesIamInstanceProfile iamInstanceProfile;
-
     /**
+     * <p>
      * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal EBS I/O performance.
-     * This optimization isn't available with all instance types. Additional
-     * usage charges apply when using an EBS-optimized instance. <p>Default:
-     * <code>false</code>
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage
+     * charges apply when using an EBS-optimized instance.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
      */
     private Boolean ebsOptimized;
 
     /**
+     * <p>
      * The ID of the Amazon Machine Image (AMI).
-     *
-     * @return The ID of the Amazon Machine Image (AMI).
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the Amazon Machine Image (AMI).
      */
-    public String getImageId() {
-        return imageId;
-    }
-    
-    /**
-     * The ID of the Amazon Machine Image (AMI).
-     *
-     * @param imageId The ID of the Amazon Machine Image (AMI).
-     */
+
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
-    
+
     /**
-     * The ID of the Amazon Machine Image (AMI).
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param imageId The ID of the Amazon Machine Image (AMI).
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the Amazon Machine Image (AMI).
+     * </p>
+     * 
+     * @return The ID of the Amazon Machine Image (AMI).
      */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Machine Image (AMI).
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the Amazon Machine Image (AMI).
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withImageId(String imageId) {
-        this.imageId = imageId;
+        setImageId(imageId);
         return this;
     }
 
     /**
+     * <p>
      * The name of the key pair.
-     *
-     * @return The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
      */
-    public String getKeyName() {
-        return keyName;
-    }
-    
-    /**
-     * The name of the key pair.
-     *
-     * @param keyName The name of the key pair.
-     */
+
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
-    
+
     /**
-     * The name of the key pair.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param keyName The name of the key pair.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the key pair.
+     * </p>
+     * 
+     * @return The name of the key pair.
      */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withKeyName(String keyName) {
-        this.keyName = keyName;
+        setKeyName(keyName);
         return this;
     }
 
     /**
+     * <p>
      * The IDs of one or more security groups.
-     *
+     * </p>
+     * 
      * @return The IDs of one or more security groups.
      */
+
     public java.util.List<String> getSecurityGroupIds() {
         if (securityGroupIds == null) {
-              securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
-              securityGroupIds.setAutoConstruct(true);
+            securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
         }
         return securityGroupIds;
     }
-    
+
     /**
+     * <p>
      * The IDs of one or more security groups.
-     *
-     * @param securityGroupIds The IDs of one or more security groups.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups.
      */
-    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+
+    public void setSecurityGroupIds(
+            java.util.Collection<String> securityGroupIds) {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
-        securityGroupIdsCopy.addAll(securityGroupIds);
-        this.securityGroupIds = securityGroupIdsCopy;
+
+        this.securityGroupIds = new com.amazonaws.internal.SdkInternalList<String>(
+                securityGroupIds);
     }
-    
+
     /**
+     * <p>
      * The IDs of one or more security groups.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or {@link
-     * #withSecurityGroupIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroupIds The IDs of one or more security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * any). Use {@link #setSecurityGroupIds(java.util.Collection)} or
+     * {@link #withSecurityGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(String... securityGroupIds) {
-        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
-        for (String value : securityGroupIds) {
-            getSecurityGroupIds().add(value);
+
+    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
+            String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new com.amazonaws.internal.SdkInternalList<String>(
+                    securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The IDs of one or more security groups.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param securityGroupIds The IDs of one or more security groups.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The IDs of one or more security groups.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        if (securityGroupIds == null) {
-            this.securityGroupIds = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
-            securityGroupIdsCopy.addAll(securityGroupIds);
-            this.securityGroupIds = securityGroupIdsCopy;
-        }
 
+    public ScheduledInstancesLaunchSpecification withSecurityGroupIds(
+            java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
         return this;
     }
 
     /**
+     * <p>
      * The base64-encoded MIME user data.
-     *
-     * @return The base64-encoded MIME user data.
+     * </p>
+     * 
+     * @param userData
+     *        The base64-encoded MIME user data.
      */
-    public String getUserData() {
-        return userData;
-    }
-    
-    /**
-     * The base64-encoded MIME user data.
-     *
-     * @param userData The base64-encoded MIME user data.
-     */
+
     public void setUserData(String userData) {
         this.userData = userData;
     }
-    
+
     /**
-     * The base64-encoded MIME user data.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param userData The base64-encoded MIME user data.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The base64-encoded MIME user data.
+     * </p>
+     * 
+     * @return The base64-encoded MIME user data.
      */
+
+    public String getUserData() {
+        return this.userData;
+    }
+
+    /**
+     * <p>
+     * The base64-encoded MIME user data.
+     * </p>
+     * 
+     * @param userData
+     *        The base64-encoded MIME user data.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withUserData(String userData) {
-        this.userData = userData;
+        setUserData(userData);
         return this;
     }
 
     /**
+     * <p>
      * The placement information.
-     *
-     * @return The placement information.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information.
      */
-    public ScheduledInstancesPlacement getPlacement() {
-        return placement;
-    }
-    
-    /**
-     * The placement information.
-     *
-     * @param placement The placement information.
-     */
+
     public void setPlacement(ScheduledInstancesPlacement placement) {
         this.placement = placement;
     }
-    
+
     /**
-     * The placement information.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param placement The placement information.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The placement information.
+     * </p>
+     * 
+     * @return The placement information.
      */
-    public ScheduledInstancesLaunchSpecification withPlacement(ScheduledInstancesPlacement placement) {
-        this.placement = placement;
+
+    public ScheduledInstancesPlacement getPlacement() {
+        return this.placement;
+    }
+
+    /**
+     * <p>
+     * The placement information.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ScheduledInstancesLaunchSpecification withPlacement(
+            ScheduledInstancesPlacement placement) {
+        setPlacement(placement);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the kernel.
-     *
-     * @return The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
      */
-    public String getKernelId() {
-        return kernelId;
-    }
-    
-    /**
-     * The ID of the kernel.
-     *
-     * @param kernelId The ID of the kernel.
-     */
+
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
-    
+
     /**
-     * The ID of the kernel.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param kernelId The ID of the kernel.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @return The ID of the kernel.
      */
+
+    public String getKernelId() {
+        return this.kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withKernelId(String kernelId) {
-        this.kernelId = kernelId;
+        setKernelId(kernelId);
         return this;
     }
 
     /**
+     * <p>
      * The instance type.
-     *
-     * @return The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
      */
-    public String getInstanceType() {
-        return instanceType;
-    }
-    
-    /**
-     * The instance type.
-     *
-     * @param instanceType The instance type.
-     */
+
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
-    
+
     /**
-     * The instance type.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param instanceType The instance type.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The instance type.
+     * </p>
+     * 
+     * @return The instance type.
      */
-    public ScheduledInstancesLaunchSpecification withInstanceType(String instanceType) {
-        this.instanceType = instanceType;
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ScheduledInstancesLaunchSpecification withInstanceType(
+            String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the RAM disk.
-     *
-     * @return The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
      */
-    public String getRamdiskId() {
-        return ramdiskId;
-    }
-    
-    /**
-     * The ID of the RAM disk.
-     *
-     * @param ramdiskId The ID of the RAM disk.
-     */
+
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
-    
+
     /**
-     * The ID of the RAM disk.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ramdiskId The ID of the RAM disk.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @return The ID of the RAM disk.
      */
+
+    public String getRamdiskId() {
+        return this.ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withRamdiskId(String ramdiskId) {
-        this.ramdiskId = ramdiskId;
+        setRamdiskId(ramdiskId);
         return this;
     }
 
     /**
+     * <p>
      * One or more block device mapping entries.
-     *
+     * </p>
+     * 
      * @return One or more block device mapping entries.
      */
+
     public java.util.List<ScheduledInstancesBlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
-              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping>();
-              blockDeviceMappings.setAutoConstruct(true);
+            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>();
         }
         return blockDeviceMappings;
     }
-    
+
     /**
+     * <p>
      * One or more block device mapping entries.
-     *
-     * @param blockDeviceMappings One or more block device mapping entries.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        One or more block device mapping entries.
      */
-    public void setBlockDeviceMappings(java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
+
+    public void setBlockDeviceMappings(
+            java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping>(blockDeviceMappings.size());
-        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
+
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(
+                blockDeviceMappings);
     }
-    
+
     /**
+     * <p>
      * One or more block device mapping entries.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setBlockDeviceMappings(java.util.Collection)} or
      * {@link #withBlockDeviceMappings(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings One or more block device mapping entries.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        One or more block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(ScheduledInstancesBlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<ScheduledInstancesBlockDeviceMapping>(blockDeviceMappings.length));
-        for (ScheduledInstancesBlockDeviceMapping value : blockDeviceMappings) {
-            getBlockDeviceMappings().add(value);
+
+    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
+            ScheduledInstancesBlockDeviceMapping... blockDeviceMappings) {
+        if (this.blockDeviceMappings == null) {
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>(
+                    blockDeviceMappings.length));
+        }
+        for (ScheduledInstancesBlockDeviceMapping ele : blockDeviceMappings) {
+            this.blockDeviceMappings.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * One or more block device mapping entries.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings One or more block device mapping entries.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        One or more block device mapping entries.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesBlockDeviceMapping>(blockDeviceMappings.size());
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-            this.blockDeviceMappings = blockDeviceMappingsCopy;
-        }
 
+    public ScheduledInstancesLaunchSpecification withBlockDeviceMappings(
+            java.util.Collection<ScheduledInstancesBlockDeviceMapping> blockDeviceMappings) {
+        setBlockDeviceMappings(blockDeviceMappings);
         return this;
     }
 
     /**
+     * <p>
      * Enable or disable monitoring for the instances.
-     *
-     * @return Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @param monitoring
+     *        Enable or disable monitoring for the instances.
      */
-    public ScheduledInstancesMonitoring getMonitoring() {
-        return monitoring;
-    }
-    
-    /**
-     * Enable or disable monitoring for the instances.
-     *
-     * @param monitoring Enable or disable monitoring for the instances.
-     */
+
     public void setMonitoring(ScheduledInstancesMonitoring monitoring) {
         this.monitoring = monitoring;
     }
-    
+
     /**
-     * Enable or disable monitoring for the instances.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param monitoring Enable or disable monitoring for the instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @return Enable or disable monitoring for the instances.
      */
-    public ScheduledInstancesLaunchSpecification withMonitoring(ScheduledInstancesMonitoring monitoring) {
-        this.monitoring = monitoring;
+
+    public ScheduledInstancesMonitoring getMonitoring() {
+        return this.monitoring;
+    }
+
+    /**
+     * <p>
+     * Enable or disable monitoring for the instances.
+     * </p>
+     * 
+     * @param monitoring
+     *        Enable or disable monitoring for the instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ScheduledInstancesLaunchSpecification withMonitoring(
+            ScheduledInstancesMonitoring monitoring) {
+        setMonitoring(monitoring);
         return this;
     }
 
     /**
+     * <p>
      * The ID of the subnet in which to launch the instances.
-     *
-     * @return The ID of the subnet in which to launch the instances.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet in which to launch the instances.
      */
-    public String getSubnetId() {
-        return subnetId;
-    }
-    
-    /**
-     * The ID of the subnet in which to launch the instances.
-     *
-     * @param subnetId The ID of the subnet in which to launch the instances.
-     */
+
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-    
+
     /**
-     * The ID of the subnet in which to launch the instances.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param subnetId The ID of the subnet in which to launch the instances.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the subnet in which to launch the instances.
+     * </p>
+     * 
+     * @return The ID of the subnet in which to launch the instances.
      */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet in which to launch the instances.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet in which to launch the instances.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ScheduledInstancesLaunchSpecification withSubnetId(String subnetId) {
-        this.subnetId = subnetId;
+        setSubnetId(subnetId);
         return this;
     }
 
     /**
+     * <p>
      * One or more network interfaces.
-     *
+     * </p>
+     * 
      * @return One or more network interfaces.
      */
+
     public java.util.List<ScheduledInstancesNetworkInterface> getNetworkInterfaces() {
         if (networkInterfaces == null) {
-              networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface>();
-              networkInterfaces.setAutoConstruct(true);
+            networkInterfaces = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>();
         }
         return networkInterfaces;
     }
-    
+
     /**
+     * <p>
      * One or more network interfaces.
-     *
-     * @param networkInterfaces One or more network interfaces.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces.
      */
-    public void setNetworkInterfaces(java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
+
+    public void setNetworkInterfaces(
+            java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface>(networkInterfaces.size());
-        networkInterfacesCopy.addAll(networkInterfaces);
-        this.networkInterfaces = networkInterfacesCopy;
+
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(
+                networkInterfaces);
     }
-    
+
     /**
+     * <p>
      * One or more network interfaces.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
      * any). Use {@link #setNetworkInterfaces(java.util.Collection)} or
      * {@link #withNetworkInterfaces(java.util.Collection)} if you want to
      * override the existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param networkInterfaces One or more network interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(ScheduledInstancesNetworkInterface... networkInterfaces) {
-        if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<ScheduledInstancesNetworkInterface>(networkInterfaces.length));
-        for (ScheduledInstancesNetworkInterface value : networkInterfaces) {
-            getNetworkInterfaces().add(value);
+
+    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
+            ScheduledInstancesNetworkInterface... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>(
+                    networkInterfaces.length));
+        }
+        for (ScheduledInstancesNetworkInterface ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * One or more network interfaces.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param networkInterfaces One or more network interfaces.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
-        if (networkInterfaces == null) {
-            this.networkInterfaces = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledInstancesNetworkInterface>(networkInterfaces.size());
-            networkInterfacesCopy.addAll(networkInterfaces);
-            this.networkInterfaces = networkInterfacesCopy;
-        }
 
+    public ScheduledInstancesLaunchSpecification withNetworkInterfaces(
+            java.util.Collection<ScheduledInstancesNetworkInterface> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
         return this;
     }
 
     /**
+     * <p>
      * The IAM instance profile.
-     *
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     */
+
+    public void setIamInstanceProfile(
+            ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
      * @return The IAM instance profile.
      */
+
     public ScheduledInstancesIamInstanceProfile getIamInstanceProfile() {
-        return iamInstanceProfile;
+        return this.iamInstanceProfile;
     }
-    
+
     /**
-     * The IAM instance profile.
-     *
-     * @param iamInstanceProfile The IAM instance profile.
-     */
-    public void setIamInstanceProfile(ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
-        this.iamInstanceProfile = iamInstanceProfile;
-    }
-    
-    /**
-     * The IAM instance profile.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param iamInstanceProfile The IAM instance profile.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ScheduledInstancesLaunchSpecification withIamInstanceProfile(ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
-        this.iamInstanceProfile = iamInstanceProfile;
+
+    public ScheduledInstancesLaunchSpecification withIamInstanceProfile(
+            ScheduledInstancesIamInstanceProfile iamInstanceProfile) {
+        setIamInstanceProfile(iamInstanceProfile);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal EBS I/O performance.
-     * This optimization isn't available with all instance types. Additional
-     * usage charges apply when using an EBS-optimized instance. <p>Default:
-     * <code>false</code>
-     *
-     * @return Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O performance.
-     *         This optimization isn't available with all instance types. Additional
-     *         usage charges apply when using an EBS-optimized instance. <p>Default:
-     *         <code>false</code>
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage
+     * charges apply when using an EBS-optimized instance.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param ebsOptimized
+     *        Indicates whether the instances are optimized for EBS I/O. This
+     *        optimization provides dedicated throughput to Amazon EBS and an
+     *        optimized configuration stack to provide optimal EBS I/O
+     *        performance. This optimization isn't available with all instance
+     *        types. Additional usage charges apply when using an EBS-optimized
+     *        instance.</p>
+     *        <p>
+     *        Default: <code>false</code>
      */
-    public Boolean isEbsOptimized() {
-        return ebsOptimized;
-    }
-    
-    /**
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal EBS I/O performance.
-     * This optimization isn't available with all instance types. Additional
-     * usage charges apply when using an EBS-optimized instance. <p>Default:
-     * <code>false</code>
-     *
-     * @param ebsOptimized Indicates whether the instances are optimized for EBS I/O. This
-     *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O performance.
-     *         This optimization isn't available with all instance types. Additional
-     *         usage charges apply when using an EBS-optimized instance. <p>Default:
-     *         <code>false</code>
-     */
+
     public void setEbsOptimized(Boolean ebsOptimized) {
         this.ebsOptimized = ebsOptimized;
     }
-    
+
     /**
-     * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal EBS I/O performance.
-     * This optimization isn't available with all instance types. Additional
-     * usage charges apply when using an EBS-optimized instance. <p>Default:
-     * <code>false</code>
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param ebsOptimized Indicates whether the instances are optimized for EBS I/O. This
+     * Indicates whether the instances are optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage
+     * charges apply when using an EBS-optimized instance.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return Indicates whether the instances are optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O performance.
-     *         This optimization isn't available with all instance types. Additional
-     *         usage charges apply when using an EBS-optimized instance. <p>Default:
-     *         <code>false</code>
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     *         optimized configuration stack to provide optimal EBS I/O
+     *         performance. This optimization isn't available with all instance
+     *         types. Additional usage charges apply when using an EBS-optimized
+     *         instance.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
-    public ScheduledInstancesLaunchSpecification withEbsOptimized(Boolean ebsOptimized) {
-        this.ebsOptimized = ebsOptimized;
+
+    public Boolean getEbsOptimized() {
+        return this.ebsOptimized;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances are optimized for EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage
+     * charges apply when using an EBS-optimized instance.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param ebsOptimized
+     *        Indicates whether the instances are optimized for EBS I/O. This
+     *        optimization provides dedicated throughput to Amazon EBS and an
+     *        optimized configuration stack to provide optimal EBS I/O
+     *        performance. This optimization isn't available with all instance
+     *        types. Additional usage charges apply when using an EBS-optimized
+     *        instance.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public ScheduledInstancesLaunchSpecification withEbsOptimized(
+            Boolean ebsOptimized) {
+        setEbsOptimized(ebsOptimized);
         return this;
     }
 
     /**
+     * <p>
      * Indicates whether the instances are optimized for EBS I/O. This
-     * optimization provides dedicated throughput to Amazon EBS and an
-     * optimized configuration stack to provide optimal EBS I/O performance.
-     * This optimization isn't available with all instance types. Additional
-     * usage charges apply when using an EBS-optimized instance. <p>Default:
-     * <code>false</code>
-     *
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This
+     * optimization isn't available with all instance types. Additional usage
+     * charges apply when using an EBS-optimized instance.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
      * @return Indicates whether the instances are optimized for EBS I/O. This
      *         optimization provides dedicated throughput to Amazon EBS and an
-     *         optimized configuration stack to provide optimal EBS I/O performance.
-     *         This optimization isn't available with all instance types. Additional
-     *         usage charges apply when using an EBS-optimized instance. <p>Default:
-     *         <code>false</code>
+     *         optimized configuration stack to provide optimal EBS I/O
+     *         performance. This optimization isn't available with all instance
+     *         types. Additional usage charges apply when using an EBS-optimized
+     *         instance.</p>
+     *         <p>
+     *         Default: <code>false</code>
      */
-    public Boolean getEbsOptimized() {
-        return ebsOptimized;
+
+    public Boolean isEbsOptimized() {
+        return this.ebsOptimized;
     }
 
     /**
@@ -741,98 +903,185 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
-        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() + ",");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
-        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
+        if (getImageId() != null)
+            sb.append("ImageId: " + getImageId() + ",");
+        if (getKeyName() != null)
+            sb.append("KeyName: " + getKeyName() + ",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getUserData() != null)
+            sb.append("UserData: " + getUserData() + ",");
+        if (getPlacement() != null)
+            sb.append("Placement: " + getPlacement() + ",");
+        if (getKernelId() != null)
+            sb.append("KernelId: " + getKernelId() + ",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getRamdiskId() != null)
+            sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getBlockDeviceMappings() != null)
+            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (getMonitoring() != null)
+            sb.append("Monitoring: " + getMonitoring() + ",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+        if (getIamInstanceProfile() != null)
+            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+        if (getEbsOptimized() != null)
+            sb.append("EbsOptimized: " + getEbsOptimized());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ScheduledInstancesLaunchSpecification == false)
+            return false;
+        ScheduledInstancesLaunchSpecification other = (ScheduledInstancesLaunchSpecification) obj;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null
+                && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null
+                && other.getKeyName().equals(this.getKeyName()) == false)
+            return false;
+        if (other.getSecurityGroupIds() == null
+                ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null
+                && other.getSecurityGroupIds().equals(
+                        this.getSecurityGroupIds()) == false)
+            return false;
+        if (other.getUserData() == null ^ this.getUserData() == null)
+            return false;
+        if (other.getUserData() != null
+                && other.getUserData().equals(this.getUserData()) == false)
+            return false;
+        if (other.getPlacement() == null ^ this.getPlacement() == null)
+            return false;
+        if (other.getPlacement() != null
+                && other.getPlacement().equals(this.getPlacement()) == false)
+            return false;
+        if (other.getKernelId() == null ^ this.getKernelId() == null)
+            return false;
+        if (other.getKernelId() != null
+                && other.getKernelId().equals(this.getKernelId()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null
+                && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
+            return false;
+        if (other.getRamdiskId() != null
+                && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+            return false;
+        if (other.getBlockDeviceMappings() == null
+                ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null
+                && other.getBlockDeviceMappings().equals(
+                        this.getBlockDeviceMappings()) == false)
+            return false;
+        if (other.getMonitoring() == null ^ this.getMonitoring() == null)
+            return false;
+        if (other.getMonitoring() != null
+                && other.getMonitoring().equals(this.getMonitoring()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null
+                && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getNetworkInterfaces() == null
+                ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null
+                && other.getNetworkInterfaces().equals(
+                        this.getNetworkInterfaces()) == false)
+            return false;
+        if (other.getIamInstanceProfile() == null
+                ^ this.getIamInstanceProfile() == null)
+            return false;
+        if (other.getIamInstanceProfile() != null
+                && other.getIamInstanceProfile().equals(
+                        this.getIamInstanceProfile()) == false)
+            return false;
+        if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
+            return false;
+        if (other.getEbsOptimized() != null
+                && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode()); 
-        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
-        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
-        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
-        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
-        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
-        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode()); 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
-        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
-        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
-        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode
+                + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getUserData() == null) ? 0 : getUserData().hashCode());
+        hashCode = prime * hashCode
+                + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode
+                + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceType() == null) ? 0 : getInstanceType()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getBlockDeviceMappings() == null) ? 0
+                        : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode
+                + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode());
+        hashCode = prime * hashCode
+                + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getNetworkInterfaces() == null) ? 0
+                        : getNetworkInterfaces().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getIamInstanceProfile() == null) ? 0
+                        : getIamInstanceProfile().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEbsOptimized() == null) ? 0 : getEbsOptimized()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ScheduledInstancesLaunchSpecification == false) return false;
-        ScheduledInstancesLaunchSpecification other = (ScheduledInstancesLaunchSpecification)obj;
-        
-        if (other.getImageId() == null ^ this.getImageId() == null) return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
-        if (other.getKeyName() == null ^ this.getKeyName() == null) return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false) return false; 
-        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
-        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
-        if (other.getUserData() == null ^ this.getUserData() == null) return false;
-        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
-        if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
-        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false) return false; 
-        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
-        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
-        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
-        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
-        if (other.getMonitoring() == null ^ this.getMonitoring() == null) return false;
-        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false) return false; 
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
-        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
-        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
-        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
-        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
-        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
-        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ScheduledInstancesLaunchSpecification clone() {
         try {
             return (ScheduledInstancesLaunchSpecification) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

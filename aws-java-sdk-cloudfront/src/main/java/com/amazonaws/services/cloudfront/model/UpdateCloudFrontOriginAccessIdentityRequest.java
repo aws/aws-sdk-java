@@ -70,6 +70,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @param cloudFrontOriginAccessIdentityConfig
      *        The identity's configuration information.
      */
+
     public void setCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
@@ -80,6 +81,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * 
      * @return The identity's configuration information.
      */
+
     public CloudFrontOriginAccessIdentityConfig getCloudFrontOriginAccessIdentityConfig() {
         return this.cloudFrontOriginAccessIdentityConfig;
     }
@@ -92,6 +94,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCloudFrontOriginAccessIdentityRequest withCloudFrontOriginAccessIdentityConfig(
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
@@ -104,6 +107,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @param id
      *        The identity's id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -113,6 +117,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * 
      * @return The identity's id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -125,6 +130,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCloudFrontOriginAccessIdentityRequest withId(String id) {
         setId(id);
         return this;
@@ -138,6 +144,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      *        The value of the ETag header you received when retrieving the
      *        identity's configuration. For example: E2QWRUHAPOMQZL.
      */
+
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
@@ -149,6 +156,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @return The value of the ETag header you received when retrieving the
      *         identity's configuration. For example: E2QWRUHAPOMQZL.
      */
+
     public String getIfMatch() {
         return this.ifMatch;
     }
@@ -163,6 +171,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateCloudFrontOriginAccessIdentityRequest withIfMatch(
             String ifMatch) {
         setIfMatch(ifMatch);

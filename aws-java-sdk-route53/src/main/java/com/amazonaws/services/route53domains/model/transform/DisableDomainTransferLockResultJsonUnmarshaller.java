@@ -18,6 +18,8 @@ package com.amazonaws.services.route53domains.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.route53domains.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,9 +55,8 @@ public class DisableDomainTransferLockResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("OperationId", targetDepth)) {
                     context.nextToken();
-                    disableDomainTransferLockResult
-                            .setOperationId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    disableDomainTransferLockResult.setOperationId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

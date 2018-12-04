@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesis.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * HashKeyRangeMarshaller
@@ -39,28 +34,29 @@ import com.amazonaws.util.json.*;
 public class HashKeyRangeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(HashKeyRange hashKeyRange, JSONWriter jsonWriter) {
+    public void marshall(HashKeyRange hashKeyRange,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (hashKeyRange == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (hashKeyRange.getStartingHashKey() != null) {
-                jsonWriter.key("StartingHashKey").value(
+                jsonGenerator.writeFieldName("StartingHashKey").writeValue(
                         hashKeyRange.getStartingHashKey());
             }
-
             if (hashKeyRange.getEndingHashKey() != null) {
-                jsonWriter.key("EndingHashKey").value(
+                jsonGenerator.writeFieldName("EndingHashKey").writeValue(
                         hashKeyRange.getEndingHashKey());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

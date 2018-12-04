@@ -43,7 +43,8 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      */
     private String type;
@@ -64,7 +65,9 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * A string to search for in the body of a health check response. Required
-     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53
+     * considers case when searching for <code>SearchString</code> in the
+     * response body.
      * </p>
      */
     private String searchString;
@@ -126,6 +129,42 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> childHealthChecks;
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     */
+    private Boolean enableSNI;
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> regions;
+    /**
+     * <p>
+     * A complex type that contains information to uniquely identify the
+     * CloudWatch alarm that you're associating with a Route 53 health check.
+     * </p>
+     */
+    private AlarmIdentifier alarmIdentifier;
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     */
+    private String insufficientDataHealthStatus;
 
     /**
      * <p>
@@ -135,6 +174,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param iPAddress
      *        IP Address of the instance being checked.
      */
+
     public void setIPAddress(String iPAddress) {
         this.iPAddress = iPAddress;
     }
@@ -146,6 +186,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * 
      * @return IP Address of the instance being checked.
      */
+
     public String getIPAddress() {
         return this.iPAddress;
     }
@@ -160,6 +201,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withIPAddress(String iPAddress) {
         setIPAddress(iPAddress);
         return this;
@@ -179,6 +221,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        is not specified. For HTTPS and HTTPS_STR_MATCH this defaults to
      *        443 if the port is not specified.
      */
+
     public void setPort(Integer port) {
         this.port = port;
     }
@@ -196,6 +239,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         port is not specified. For HTTPS and HTTPS_STR_MATCH this
      *         defaults to 443 if the port is not specified.
      */
+
     public Integer getPort() {
         return this.port;
     }
@@ -216,6 +260,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withPort(Integer port) {
         setPort(port);
         return this;
@@ -224,14 +269,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      * 
      * @param type
      *        The type of health check to be performed. Currently supported
-     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
+     *        CALCULATED and CLOUDWATCH_METRIC.
      * @see HealthCheckType
      */
+
     public void setType(String type) {
         this.type = type;
     }
@@ -239,13 +287,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      * 
      * @return The type of health check to be performed. Currently supported
-     *         types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     *         types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
+     *         CALCULATED and CLOUDWATCH_METRIC.
      * @see HealthCheckType
      */
+
     public String getType() {
         return this.type;
     }
@@ -253,16 +304,19 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      * 
      * @param type
      *        The type of health check to be performed. Currently supported
-     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
+     *        CALCULATED and CLOUDWATCH_METRIC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see HealthCheckType
      */
+
     public HealthCheckConfig withType(String type) {
         setType(type);
         return this;
@@ -271,16 +325,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      * 
      * @param type
      *        The type of health check to be performed. Currently supported
-     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
+     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
+     *        CALCULATED and CLOUDWATCH_METRIC.
      * @see HealthCheckType
      */
+
     public void setType(HealthCheckType type) {
         this.type = type.toString();
     }
@@ -288,16 +343,19 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The type of health check to be performed. Currently supported types are
-     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     * TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, CALCULATED and
+     * CLOUDWATCH_METRIC.
      * </p>
      * 
      * @param type
      *        The type of health check to be performed. Currently supported
-     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
+     *        types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH,
+     *        CALCULATED and CLOUDWATCH_METRIC.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      * @see HealthCheckType
      */
+
     public HealthCheckConfig withType(HealthCheckType type) {
         setType(type);
         return this;
@@ -316,6 +374,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        The HTTP request is issued to the instance on the given port and
      *        path.
      */
+
     public void setResourcePath(String resourcePath) {
         this.resourcePath = resourcePath;
     }
@@ -332,6 +391,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         The HTTP request is issued to the instance on the given port and
      *         path.
      */
+
     public String getResourcePath() {
         return this.resourcePath;
     }
@@ -351,6 +411,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withResourcePath(String resourcePath) {
         setResourcePath(resourcePath);
         return this;
@@ -364,6 +425,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @param fullyQualifiedDomainName
      *        Fully qualified domain name of the instance to be health checked.
      */
+
     public void setFullyQualifiedDomainName(String fullyQualifiedDomainName) {
         this.fullyQualifiedDomainName = fullyQualifiedDomainName;
     }
@@ -375,6 +437,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * 
      * @return Fully qualified domain name of the instance to be health checked.
      */
+
     public String getFullyQualifiedDomainName() {
         return this.fullyQualifiedDomainName;
     }
@@ -389,6 +452,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withFullyQualifiedDomainName(
             String fullyQualifiedDomainName) {
         setFullyQualifiedDomainName(fullyQualifiedDomainName);
@@ -398,13 +462,18 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * A string to search for in the body of a health check response. Required
-     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53
+     * considers case when searching for <code>SearchString</code> in the
+     * response body.
      * </p>
      * 
      * @param searchString
      *        A string to search for in the body of a health check response.
      *        Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     *        Amazon Route 53 considers case when searching for
+     *        <code>SearchString</code> in the response body.
      */
+
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
@@ -412,12 +481,17 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * A string to search for in the body of a health check response. Required
-     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53
+     * considers case when searching for <code>SearchString</code> in the
+     * response body.
      * </p>
      * 
      * @return A string to search for in the body of a health check response.
      *         Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     *         Amazon Route 53 considers case when searching for
+     *         <code>SearchString</code> in the response body.
      */
+
     public String getSearchString() {
         return this.searchString;
     }
@@ -425,15 +499,20 @@ public class HealthCheckConfig implements Serializable, Cloneable {
     /**
      * <p>
      * A string to search for in the body of a health check response. Required
-     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     * for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks. Amazon Route 53
+     * considers case when searching for <code>SearchString</code> in the
+     * response body.
      * </p>
      * 
      * @param searchString
      *        A string to search for in the body of a health check response.
      *        Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+     *        Amazon Route 53 considers case when searching for
+     *        <code>SearchString</code> in the response body.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withSearchString(String searchString) {
         setSearchString(searchString);
         return this;
@@ -458,6 +537,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        Each Amazon Route 53 health checker makes requests at this
      *        interval. Valid values are 10 and 30. The default value is 30.
      */
+
     public void setRequestInterval(Integer requestInterval) {
         this.requestInterval = requestInterval;
     }
@@ -480,6 +560,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         Each Amazon Route 53 health checker makes requests at this
      *         interval. Valid values are 10 and 30. The default value is 30.
      */
+
     public Integer getRequestInterval() {
         return this.requestInterval;
     }
@@ -505,6 +586,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withRequestInterval(Integer requestInterval) {
         setRequestInterval(requestInterval);
         return this;
@@ -532,6 +614,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        "How Amazon Route 53 Determines Whether an Endpoint Is Healthy" in
      *        the Amazon Route 53 Developer Guide.
      */
+
     public void setFailureThreshold(Integer failureThreshold) {
         this.failureThreshold = failureThreshold;
     }
@@ -557,6 +640,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         "How Amazon Route 53 Determines Whether an Endpoint Is Healthy"
      *         in the Amazon Route 53 Developer Guide.
      */
+
     public Integer getFailureThreshold() {
         return this.failureThreshold;
     }
@@ -585,6 +669,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withFailureThreshold(Integer failureThreshold) {
         setFailureThreshold(failureThreshold);
         return this;
@@ -604,6 +689,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        regions and your endpoint and to display CloudWatch latency graphs
      *        in the Amazon Route 53 console.
      */
+
     public void setMeasureLatency(Boolean measureLatency) {
         this.measureLatency = measureLatency;
     }
@@ -621,6 +707,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         regions and your endpoint and to display CloudWatch latency
      *         graphs in the Amazon Route 53 console.
      */
+
     public Boolean getMeasureLatency() {
         return this.measureLatency;
     }
@@ -641,6 +728,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withMeasureLatency(Boolean measureLatency) {
         setMeasureLatency(measureLatency);
         return this;
@@ -659,6 +747,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         regions and your endpoint and to display CloudWatch latency
      *         graphs in the Amazon Route 53 console.
      */
+
     public Boolean isMeasureLatency() {
         return this.measureLatency;
     }
@@ -677,6 +766,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *        considers the health check to be unhealthy.
      */
+
     public void setInverted(Boolean inverted) {
         this.inverted = inverted;
     }
@@ -694,6 +784,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *         considers the health check to be unhealthy.
      */
+
     public Boolean getInverted() {
         return this.inverted;
     }
@@ -714,6 +805,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withInverted(Boolean inverted) {
         setInverted(inverted);
         return this;
@@ -732,6 +824,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>Inverted</code> is <code>True</code>, then Amazon Route 53
      *         considers the health check to be unhealthy.
      */
+
     public Boolean isInverted() {
         return this.inverted;
     }
@@ -748,6 +841,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        Amazon Route 53 to consider the parent health check to be healthy.
      *        Valid values are integers between 0 and 256, inclusive.
      */
+
     public void setHealthThreshold(Integer healthThreshold) {
         this.healthThreshold = healthThreshold;
     }
@@ -763,6 +857,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         for Amazon Route 53 to consider the parent health check to be
      *         healthy. Valid values are integers between 0 and 256, inclusive.
      */
+
     public Integer getHealthThreshold() {
         return this.healthThreshold;
     }
@@ -781,6 +876,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withHealthThreshold(Integer healthThreshold) {
         setHealthThreshold(healthThreshold);
         return this;
@@ -796,6 +892,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *         <code>HealthCheckId</code> values for the associated child health
      *         checks.
      */
+
     public java.util.List<String> getChildHealthChecks() {
         if (childHealthChecks == null) {
             childHealthChecks = new com.amazonaws.internal.SdkInternalList<String>();
@@ -814,6 +911,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      *        <code>HealthCheckId</code> values for the associated child health
      *        checks.
      */
+
     public void setChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         if (childHealthChecks == null) {
@@ -844,6 +942,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withChildHealthChecks(String... childHealthChecks) {
         if (this.childHealthChecks == null) {
             setChildHealthChecks(new com.amazonaws.internal.SdkInternalList<String>(
@@ -868,9 +967,399 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public HealthCheckConfig withChildHealthChecks(
             java.util.Collection<String> childHealthChecks) {
         setChildHealthChecks(childHealthChecks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * 
+     * @param enableSNI
+     *        Specify whether you want Amazon Route 53 to send the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>client_hello</code> message during TLS negotiation. If you
+     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *        defaults to <code>true</code> when <code>Type</code> is
+     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
+     *        <code>false</code> when <code>Type</code> is any other value.
+     */
+
+    public void setEnableSNI(Boolean enableSNI) {
+        this.enableSNI = enableSNI;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * 
+     * @return Specify whether you want Amazon Route 53 to send the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *         <code>client_hello</code> message during TLS negotiation. If you
+     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *         defaults to <code>true</code> when <code>Type</code> is
+     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
+     *         to <code>false</code> when <code>Type</code> is any other value.
+     */
+
+    public Boolean getEnableSNI() {
+        return this.enableSNI;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * 
+     * @param enableSNI
+     *        Specify whether you want Amazon Route 53 to send the value of
+     *        <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *        <code>client_hello</code> message during TLS negotiation. If you
+     *        don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *        defaults to <code>true</code> when <code>Type</code> is
+     *        <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults to
+     *        <code>false</code> when <code>Type</code> is any other value.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public HealthCheckConfig withEnableSNI(Boolean enableSNI) {
+        setEnableSNI(enableSNI);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify whether you want Amazon Route 53 to send the value of
+     * <code>FullyQualifiedDomainName</code> to the endpoint in the
+     * <code>client_hello</code> message during TLS negotiation. If you don't
+     * specify a value for <code>EnableSNI</code>, Amazon Route 53 defaults to
+     * <code>true</code> when <code>Type</code> is <code>HTTPS</code> or
+     * <code>HTTPS_STR_MATCH</code> and defaults to <code>false</code> when
+     * <code>Type</code> is any other value.
+     * </p>
+     * 
+     * @return Specify whether you want Amazon Route 53 to send the value of
+     *         <code>FullyQualifiedDomainName</code> to the endpoint in the
+     *         <code>client_hello</code> message during TLS negotiation. If you
+     *         don't specify a value for <code>EnableSNI</code>, Amazon Route 53
+     *         defaults to <code>true</code> when <code>Type</code> is
+     *         <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> and defaults
+     *         to <code>false</code> when <code>Type</code> is any other value.
+     */
+
+    public Boolean isEnableSNI() {
+        return this.enableSNI;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     * 
+     * @return A list of <code>HealthCheckRegion</code> values that you want
+     *         Amazon Route 53 to use to perform health checks for the specified
+     *         endpoint. You must specify at least three regions.
+     * @see HealthCheckRegion
+     */
+
+    public java.util.List<String> getRegions() {
+        if (regions == null) {
+            regions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return regions;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that you want
+     *        Amazon Route 53 to use to perform health checks for the specified
+     *        endpoint. You must specify at least three regions.
+     * @see HealthCheckRegion
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new com.amazonaws.internal.SdkInternalList<String>(
+                regions);
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setRegions(java.util.Collection)} or
+     * {@link #withRegions(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that you want
+     *        Amazon Route 53 to use to perform health checks for the specified
+     *        endpoint. You must specify at least three regions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public HealthCheckConfig withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new com.amazonaws.internal.SdkInternalList<String>(
+                    regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that you want
+     *        Amazon Route 53 to use to perform health checks for the specified
+     *        endpoint. You must specify at least three regions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public HealthCheckConfig withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>HealthCheckRegion</code> values that you want Amazon
+     * Route 53 to use to perform health checks for the specified endpoint. You
+     * must specify at least three regions.
+     * </p>
+     * 
+     * @param regions
+     *        A list of <code>HealthCheckRegion</code> values that you want
+     *        Amazon Route 53 to use to perform health checks for the specified
+     *        endpoint. You must specify at least three regions.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see HealthCheckRegion
+     */
+
+    public HealthCheckConfig withRegions(HealthCheckRegion... regions) {
+        com.amazonaws.internal.SdkInternalList<String> regionsCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                regions.length);
+        for (HealthCheckRegion value : regions) {
+            regionsCopy.add(value.toString());
+        }
+        if (getRegions() == null) {
+            setRegions(regionsCopy);
+        } else {
+            getRegions().addAll(regionsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information to uniquely identify the
+     * CloudWatch alarm that you're associating with a Route 53 health check.
+     * </p>
+     * 
+     * @param alarmIdentifier
+     *        A complex type that contains information to uniquely identify the
+     *        CloudWatch alarm that you're associating with a Route 53 health
+     *        check.
+     */
+
+    public void setAlarmIdentifier(AlarmIdentifier alarmIdentifier) {
+        this.alarmIdentifier = alarmIdentifier;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information to uniquely identify the
+     * CloudWatch alarm that you're associating with a Route 53 health check.
+     * </p>
+     * 
+     * @return A complex type that contains information to uniquely identify the
+     *         CloudWatch alarm that you're associating with a Route 53 health
+     *         check.
+     */
+
+    public AlarmIdentifier getAlarmIdentifier() {
+        return this.alarmIdentifier;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information to uniquely identify the
+     * CloudWatch alarm that you're associating with a Route 53 health check.
+     * </p>
+     * 
+     * @param alarmIdentifier
+     *        A complex type that contains information to uniquely identify the
+     *        CloudWatch alarm that you're associating with a Route 53 health
+     *        check.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public HealthCheckConfig withAlarmIdentifier(AlarmIdentifier alarmIdentifier) {
+        setAlarmIdentifier(alarmIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     * 
+     * @param insufficientDataHealthStatus
+     *        The status of the health check when CloudWatch has insufficient
+     *        data about the state of associated alarm. Valid values are
+     *        <code>Healthy</code>, <code>Unhealthy</code> and
+     *        <code>LastKnownStatus</code>.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public void setInsufficientDataHealthStatus(
+            String insufficientDataHealthStatus) {
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     * 
+     * @return The status of the health check when CloudWatch has insufficient
+     *         data about the state of associated alarm. Valid values are
+     *         <code>Healthy</code>, <code>Unhealthy</code> and
+     *         <code>LastKnownStatus</code>.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public String getInsufficientDataHealthStatus() {
+        return this.insufficientDataHealthStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     * 
+     * @param insufficientDataHealthStatus
+     *        The status of the health check when CloudWatch has insufficient
+     *        data about the state of associated alarm. Valid values are
+     *        <code>Healthy</code>, <code>Unhealthy</code> and
+     *        <code>LastKnownStatus</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public HealthCheckConfig withInsufficientDataHealthStatus(
+            String insufficientDataHealthStatus) {
+        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     * 
+     * @param insufficientDataHealthStatus
+     *        The status of the health check when CloudWatch has insufficient
+     *        data about the state of associated alarm. Valid values are
+     *        <code>Healthy</code>, <code>Unhealthy</code> and
+     *        <code>LastKnownStatus</code>.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public void setInsufficientDataHealthStatus(
+            InsufficientDataHealthStatus insufficientDataHealthStatus) {
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus
+                .toString();
+    }
+
+    /**
+     * <p>
+     * The status of the health check when CloudWatch has insufficient data
+     * about the state of associated alarm. Valid values are
+     * <code>Healthy</code>, <code>Unhealthy</code> and
+     * <code>LastKnownStatus</code>.
+     * </p>
+     * 
+     * @param insufficientDataHealthStatus
+     *        The status of the health check when CloudWatch has insufficient
+     *        data about the state of associated alarm. Valid values are
+     *        <code>Healthy</code>, <code>Unhealthy</code> and
+     *        <code>LastKnownStatus</code>.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see InsufficientDataHealthStatus
+     */
+
+    public HealthCheckConfig withInsufficientDataHealthStatus(
+            InsufficientDataHealthStatus insufficientDataHealthStatus) {
+        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
         return this;
     }
 
@@ -910,7 +1399,16 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         if (getHealthThreshold() != null)
             sb.append("HealthThreshold: " + getHealthThreshold() + ",");
         if (getChildHealthChecks() != null)
-            sb.append("ChildHealthChecks: " + getChildHealthChecks());
+            sb.append("ChildHealthChecks: " + getChildHealthChecks() + ",");
+        if (getEnableSNI() != null)
+            sb.append("EnableSNI: " + getEnableSNI() + ",");
+        if (getRegions() != null)
+            sb.append("Regions: " + getRegions() + ",");
+        if (getAlarmIdentifier() != null)
+            sb.append("AlarmIdentifier: " + getAlarmIdentifier() + ",");
+        if (getInsufficientDataHealthStatus() != null)
+            sb.append("InsufficientDataHealthStatus: "
+                    + getInsufficientDataHealthStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -994,6 +1492,29 @@ public class HealthCheckConfig implements Serializable, Cloneable {
                 && other.getChildHealthChecks().equals(
                         this.getChildHealthChecks()) == false)
             return false;
+        if (other.getEnableSNI() == null ^ this.getEnableSNI() == null)
+            return false;
+        if (other.getEnableSNI() != null
+                && other.getEnableSNI().equals(this.getEnableSNI()) == false)
+            return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null
+                && other.getRegions().equals(this.getRegions()) == false)
+            return false;
+        if (other.getAlarmIdentifier() == null
+                ^ this.getAlarmIdentifier() == null)
+            return false;
+        if (other.getAlarmIdentifier() != null
+                && other.getAlarmIdentifier().equals(this.getAlarmIdentifier()) == false)
+            return false;
+        if (other.getInsufficientDataHealthStatus() == null
+                ^ this.getInsufficientDataHealthStatus() == null)
+            return false;
+        if (other.getInsufficientDataHealthStatus() != null
+                && other.getInsufficientDataHealthStatus().equals(
+                        this.getInsufficientDataHealthStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1042,6 +1563,18 @@ public class HealthCheckConfig implements Serializable, Cloneable {
                 * hashCode
                 + ((getChildHealthChecks() == null) ? 0
                         : getChildHealthChecks().hashCode());
+        hashCode = prime * hashCode
+                + ((getEnableSNI() == null) ? 0 : getEnableSNI().hashCode());
+        hashCode = prime * hashCode
+                + ((getRegions() == null) ? 0 : getRegions().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getAlarmIdentifier() == null) ? 0 : getAlarmIdentifier()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInsufficientDataHealthStatus() == null) ? 0
+                        : getInsufficientDataHealthStatus().hashCode());
         return hashCode;
     }
 

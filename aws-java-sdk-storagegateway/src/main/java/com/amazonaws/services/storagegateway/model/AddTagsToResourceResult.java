@@ -41,6 +41,7 @@ public class AddTagsToResourceResult implements Serializable, Cloneable {
      *        The Amazon Resource Name (ARN) of the resource you want to add
      *        tags to.
      */
+
     public void setResourceARN(String resourceARN) {
         this.resourceARN = resourceARN;
     }
@@ -53,6 +54,7 @@ public class AddTagsToResourceResult implements Serializable, Cloneable {
      * @return The Amazon Resource Name (ARN) of the resource you want to add
      *         tags to.
      */
+
     public String getResourceARN() {
         return this.resourceARN;
     }
@@ -68,6 +70,7 @@ public class AddTagsToResourceResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToResourceResult withResourceARN(String resourceARN) {
         setResourceARN(resourceARN);
         return this;

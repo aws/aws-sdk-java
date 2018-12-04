@@ -30,6 +30,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public java.util.List<LogStream> getLogStreams() {
         if (logStreams == null) {
             logStreams = new com.amazonaws.internal.SdkInternalList<LogStream>();
@@ -40,6 +41,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
     /**
      * @param logStreams
      */
+
     public void setLogStreams(java.util.Collection<LogStream> logStreams) {
         if (logStreams == null) {
             this.logStreams = null;
@@ -62,6 +64,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsResult withLogStreams(LogStream... logStreams) {
         if (this.logStreams == null) {
             setLogStreams(new com.amazonaws.internal.SdkInternalList<LogStream>(
@@ -78,6 +81,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsResult withLogStreams(
             java.util.Collection<LogStream> logStreams) {
         setLogStreams(logStreams);
@@ -87,6 +91,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
     /**
      * @param nextToken
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -94,6 +99,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -103,6 +109,7 @@ public class DescribeLogStreamsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeLogStreamsResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

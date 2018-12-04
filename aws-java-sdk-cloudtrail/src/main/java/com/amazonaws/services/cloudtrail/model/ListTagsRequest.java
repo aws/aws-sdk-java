@@ -30,8 +30,10 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * limit of 20 ARNs. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIdList;
@@ -45,15 +47,18 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * limit of 20 ARNs. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies a list of trail ARNs whose tags will be listed. The
-     *         list has a limit of 20 ARNs. The format of a trail ARN is
+     *         list has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *         <p>
      *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *         .
      */
+
     public java.util.List<String> getResourceIdList() {
         if (resourceIdList == null) {
             resourceIdList = new com.amazonaws.internal.SdkInternalList<String>();
@@ -64,16 +69,19 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * limit of 20 ARNs. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is
+     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      */
+
     public void setResourceIdList(java.util.Collection<String> resourceIdList) {
         if (resourceIdList == null) {
             this.resourceIdList = null;
@@ -87,8 +95,10 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * limit of 20 ARNs. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
@@ -99,12 +109,13 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @param resourceIdList
      *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is
+     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsRequest withResourceIdList(String... resourceIdList) {
         if (this.resourceIdList == null) {
             setResourceIdList(new com.amazonaws.internal.SdkInternalList<String>(
@@ -119,18 +130,21 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
     /**
      * <p>
      * Specifies a list of trail ARNs whose tags will be listed. The list has a
-     * limit of 20 ARNs. The format of a trail ARN is
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>.
+     * limit of 20 ARNs. The format of a trail ARN is:
+     * </p>
+     * <p>
+     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param resourceIdList
      *        Specifies a list of trail ARNs whose tags will be listed. The list
-     *        has a limit of 20 ARNs. The format of a trail ARN is
+     *        has a limit of 20 ARNs. The format of a trail ARN is:</p>
+     *        <p>
      *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
-     *        .
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsRequest withResourceIdList(
             java.util.Collection<String> resourceIdList) {
         setResourceIdList(resourceIdList);
@@ -145,6 +159,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        Reserved for future use.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -156,6 +171,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * 
      * @return Reserved for future use.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -170,6 +186,7 @@ public class ListTagsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListTagsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

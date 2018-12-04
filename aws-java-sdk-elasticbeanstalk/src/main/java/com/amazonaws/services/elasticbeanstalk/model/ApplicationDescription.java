@@ -71,6 +71,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @param applicationName
      *        The name of the application.
      */
+
     public void setApplicationName(String applicationName) {
         this.applicationName = applicationName;
     }
@@ -82,6 +83,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @return The name of the application.
      */
+
     public String getApplicationName() {
         return this.applicationName;
     }
@@ -96,6 +98,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withApplicationName(String applicationName) {
         setApplicationName(applicationName);
         return this;
@@ -109,6 +112,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @param description
      *        User-defined description of the application.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -120,6 +124,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @return User-defined description of the application.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -134,6 +139,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withDescription(String description) {
         setDescription(description);
         return this;
@@ -147,6 +153,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @param dateCreated
      *        The date when the application was created.
      */
+
     public void setDateCreated(java.util.Date dateCreated) {
         this.dateCreated = dateCreated;
     }
@@ -158,6 +165,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @return The date when the application was created.
      */
+
     public java.util.Date getDateCreated() {
         return this.dateCreated;
     }
@@ -172,6 +180,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withDateCreated(java.util.Date dateCreated) {
         setDateCreated(dateCreated);
         return this;
@@ -185,6 +194,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @param dateUpdated
      *        The date when the application was last modified.
      */
+
     public void setDateUpdated(java.util.Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
@@ -196,6 +206,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @return The date when the application was last modified.
      */
+
     public java.util.Date getDateUpdated() {
         return this.dateUpdated;
     }
@@ -210,6 +221,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withDateUpdated(java.util.Date dateUpdated) {
         setDateUpdated(dateUpdated);
         return this;
@@ -222,6 +234,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * 
      * @return The names of the versions for this application.
      */
+
     public java.util.List<String> getVersions() {
         if (versions == null) {
             versions = new com.amazonaws.internal.SdkInternalList<String>();
@@ -237,6 +250,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @param versions
      *        The names of the versions for this application.
      */
+
     public void setVersions(java.util.Collection<String> versions) {
         if (versions == null) {
             this.versions = null;
@@ -263,6 +277,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withVersions(String... versions) {
         if (this.versions == null) {
             setVersions(new com.amazonaws.internal.SdkInternalList<String>(
@@ -284,6 +299,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withVersions(
             java.util.Collection<String> versions) {
         setVersions(versions);
@@ -299,6 +315,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return The names of the configuration templates associated with this
      *         application.
      */
+
     public java.util.List<String> getConfigurationTemplates() {
         if (configurationTemplates == null) {
             configurationTemplates = new com.amazonaws.internal.SdkInternalList<String>();
@@ -316,6 +333,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      *        The names of the configuration templates associated with this
      *        application.
      */
+
     public void setConfigurationTemplates(
             java.util.Collection<String> configurationTemplates) {
         if (configurationTemplates == null) {
@@ -345,6 +363,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withConfigurationTemplates(
             String... configurationTemplates) {
         if (this.configurationTemplates == null) {
@@ -369,6 +388,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ApplicationDescription withConfigurationTemplates(
             java.util.Collection<String> configurationTemplates) {
         setConfigurationTemplates(configurationTemplates);

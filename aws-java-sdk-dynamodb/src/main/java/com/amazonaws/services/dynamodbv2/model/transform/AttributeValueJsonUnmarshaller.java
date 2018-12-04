@@ -18,6 +18,8 @@ package com.amazonaws.services.dynamodbv2.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,43 +55,45 @@ public class AttributeValueJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setS(StringJsonUnmarshaller.getInstance()
+                    attributeValue.setS(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("N", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setN(StringJsonUnmarshaller.getInstance()
+                    attributeValue.setN(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("B", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setB(ByteBufferJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    attributeValue.setB(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("SS", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setSS(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    attributeValue
+                            .setSS(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("NS", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setNS(new ListUnmarshaller<String>(
-                            StringJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    attributeValue
+                            .setNS(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
+                                    .unmarshall(context));
                 }
                 if (context.testExpression("BS", targetDepth)) {
                     context.nextToken();
                     attributeValue
                             .setBS(new ListUnmarshaller<java.nio.ByteBuffer>(
-                                    ByteBufferJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(java.nio.ByteBuffer.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("M", targetDepth)) {
                     context.nextToken();
                     attributeValue
                             .setM(new MapUnmarshaller<String, AttributeValue>(
-                                    StringJsonUnmarshaller.getInstance(),
+                                    context.getUnmarshaller(String.class),
                                     AttributeValueJsonUnmarshaller
                                             .getInstance()).unmarshall(context));
                 }
@@ -101,13 +105,13 @@ public class AttributeValueJsonUnmarshaller implements
                 }
                 if (context.testExpression("NULL", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setNULL(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    attributeValue.setNULL(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("BOOL", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setBOOL(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    attributeValue.setBOOL(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

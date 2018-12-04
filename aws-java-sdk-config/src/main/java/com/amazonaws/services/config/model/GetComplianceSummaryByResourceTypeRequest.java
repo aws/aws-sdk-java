@@ -60,6 +60,7 @@ public class GetComplianceSummaryByResourceTypeRequest extends
      *         resource type is an AWS account by specifying
      *         <code>AWS::::Account</code>.
      */
+
     public java.util.List<String> getResourceTypes() {
         if (resourceTypes == null) {
             resourceTypes = new com.amazonaws.internal.SdkInternalList<String>();
@@ -89,6 +90,7 @@ public class GetComplianceSummaryByResourceTypeRequest extends
      *        resource type is an AWS account by specifying
      *        <code>AWS::::Account</code>.
      */
+
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
         if (resourceTypes == null) {
             this.resourceTypes = null;
@@ -129,6 +131,7 @@ public class GetComplianceSummaryByResourceTypeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceSummaryByResourceTypeRequest withResourceTypes(
             String... resourceTypes) {
         if (this.resourceTypes == null) {
@@ -165,6 +168,7 @@ public class GetComplianceSummaryByResourceTypeRequest extends
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetComplianceSummaryByResourceTypeRequest withResourceTypes(
             java.util.Collection<String> resourceTypes) {
         setResourceTypes(resourceTypes);

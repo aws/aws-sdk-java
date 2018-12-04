@@ -54,6 +54,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @param pipelineId
      *        The ID of the pipeline.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -65,6 +66,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the pipeline.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -79,6 +81,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluateExpressionRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -92,6 +95,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @param objectId
      *        The ID of the object.
      */
+
     public void setObjectId(String objectId) {
         this.objectId = objectId;
     }
@@ -103,6 +107,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the object.
      */
+
     public String getObjectId() {
         return this.objectId;
     }
@@ -117,6 +122,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluateExpressionRequest withObjectId(String objectId) {
         setObjectId(objectId);
         return this;
@@ -130,6 +136,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @param expression
      *        The expression to evaluate.
      */
+
     public void setExpression(String expression) {
         this.expression = expression;
     }
@@ -141,6 +148,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * 
      * @return The expression to evaluate.
      */
+
     public String getExpression() {
         return this.expression;
     }
@@ -155,6 +163,7 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public EvaluateExpressionRequest withExpression(String expression) {
         setExpression(expression);
         return this;

@@ -19,11 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a list of <code>SendDataPoint</code> items returned from a
- * successful <code>GetSendStatistics</code> request. This list contains
- * aggregated data from the previous two weeks of sending activity.
- * </p>
+ * 
  */
 public class GetSendStatisticsResult implements Serializable, Cloneable {
 
@@ -42,6 +38,7 @@ public class GetSendStatisticsResult implements Serializable, Cloneable {
      * @return A list of data points, each of which represents 15 minutes of
      *         activity.
      */
+
     public java.util.List<SendDataPoint> getSendDataPoints() {
         if (sendDataPoints == null) {
             sendDataPoints = new com.amazonaws.internal.SdkInternalList<SendDataPoint>();
@@ -58,6 +55,7 @@ public class GetSendStatisticsResult implements Serializable, Cloneable {
      *        A list of data points, each of which represents 15 minutes of
      *        activity.
      */
+
     public void setSendDataPoints(
             java.util.Collection<SendDataPoint> sendDataPoints) {
         if (sendDataPoints == null) {
@@ -86,6 +84,7 @@ public class GetSendStatisticsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSendStatisticsResult withSendDataPoints(
             SendDataPoint... sendDataPoints) {
         if (this.sendDataPoints == null) {
@@ -109,6 +108,7 @@ public class GetSendStatisticsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSendStatisticsResult withSendDataPoints(
             java.util.Collection<SendDataPoint> sendDataPoints) {
         setSendDataPoints(sendDataPoints);

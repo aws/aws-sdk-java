@@ -37,6 +37,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * @param quantity
      *        The number of cache behaviors for this distribution.
      */
+
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
@@ -46,6 +47,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * 
      * @return The number of cache behaviors for this distribution.
      */
+
     public Integer getQuantity() {
         return this.quantity;
     }
@@ -58,6 +60,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehaviors withQuantity(Integer quantity) {
         setQuantity(quantity);
         return this;
@@ -70,6 +73,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * @return Optional: A complex type that contains cache behaviors for this
      *         distribution. If Quantity is 0, you can omit Items.
      */
+
     public java.util.List<CacheBehavior> getItems() {
         if (items == null) {
             items = new com.amazonaws.internal.SdkInternalList<CacheBehavior>();
@@ -85,6 +89,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      *        Optional: A complex type that contains cache behaviors for this
      *        distribution. If Quantity is 0, you can omit Items.
      */
+
     public void setItems(java.util.Collection<CacheBehavior> items) {
         if (items == null) {
             this.items = null;
@@ -111,6 +116,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehaviors withItems(CacheBehavior... items) {
         if (this.items == null) {
             setItems(new com.amazonaws.internal.SdkInternalList<CacheBehavior>(
@@ -132,6 +138,7 @@ public class CacheBehaviors implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CacheBehaviors withItems(java.util.Collection<CacheBehavior> items) {
         setItems(items);
         return this;

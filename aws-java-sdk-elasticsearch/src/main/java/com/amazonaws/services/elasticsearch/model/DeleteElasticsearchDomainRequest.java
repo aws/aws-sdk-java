@@ -45,6 +45,7 @@ public class DeleteElasticsearchDomainRequest extends AmazonWebServiceRequest
      *        The name of the Elasticsearch domain that you want to permanently
      *        delete.
      */
+
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
@@ -57,6 +58,7 @@ public class DeleteElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return The name of the Elasticsearch domain that you want to permanently
      *         delete.
      */
+
     public String getDomainName() {
         return this.domainName;
     }
@@ -72,6 +74,7 @@ public class DeleteElasticsearchDomainRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteElasticsearchDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
         return this;

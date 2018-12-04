@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -58,9 +60,9 @@ public class DescribeActiveReceiptRuleSetResultStaxUnmarshaller
                 }
 
                 if (context.testExpression("Rules/member", targetDepth)) {
-                    describeActiveReceiptRuleSetResult.getRules().add(
-                            ReceiptRuleStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeActiveReceiptRuleSetResult
+                            .withRules(ReceiptRuleStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

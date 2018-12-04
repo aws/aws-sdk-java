@@ -30,11 +30,8 @@ import java.io.Serializable;
  * </ul>
  * <p>
  * For more information, see <a href=
- * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingPendingState.html"
- * >Auto Scaling Pending State</a> and <a href=
- * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingTerminatingState.html"
- * >Auto Scaling Terminating State</a> in the <i>Auto Scaling Developer
- * Guide</i>.
+ * "http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html"
+ * >Auto Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
  * </p>
  */
 public class LifecycleHook implements Serializable, Cloneable {
@@ -95,9 +92,9 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      */
     private Integer heartbeatTimeout;
@@ -127,6 +124,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @param lifecycleHookName
      *        The name of the lifecycle hook.
      */
+
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
@@ -138,6 +136,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * 
      * @return The name of the lifecycle hook.
      */
+
     public String getLifecycleHookName() {
         return this.lifecycleHookName;
     }
@@ -152,6 +151,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withLifecycleHookName(String lifecycleHookName) {
         setLifecycleHookName(lifecycleHookName);
         return this;
@@ -165,6 +165,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @param autoScalingGroupName
      *        The name of the Auto Scaling group for the lifecycle hook.
      */
+
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
@@ -176,6 +177,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * 
      * @return The name of the Auto Scaling group for the lifecycle hook.
      */
+
     public String getAutoScalingGroupName() {
         return this.autoScalingGroupName;
     }
@@ -190,6 +192,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
@@ -207,6 +210,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        lifecycle hook. For a list of lifecycle hook types, see
      *        <a>DescribeLifecycleHookTypes</a>.
      */
+
     public void setLifecycleTransition(String lifecycleTransition) {
         this.lifecycleTransition = lifecycleTransition;
     }
@@ -222,6 +226,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *         lifecycle hook. For a list of lifecycle hook types, see
      *         <a>DescribeLifecycleHookTypes</a>.
      */
+
     public String getLifecycleTransition() {
         return this.lifecycleTransition;
     }
@@ -240,6 +245,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withLifecycleTransition(String lifecycleTransition) {
         setLifecycleTransition(lifecycleTransition);
         return this;
@@ -277,6 +283,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        <li>Lifecycle transition</li>
      *        <li>Notification metadata</li>
      */
+
     public void setNotificationTargetARN(String notificationTargetARN) {
         this.notificationTargetARN = notificationTargetARN;
     }
@@ -312,6 +319,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *         <li>Lifecycle transition</li>
      *         <li>Notification metadata</li>
      */
+
     public String getNotificationTargetARN() {
         return this.notificationTargetARN;
     }
@@ -350,6 +358,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withNotificationTargetARN(String notificationTargetARN) {
         setNotificationTargetARN(notificationTargetARN);
         return this;
@@ -365,6 +374,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        The ARN of the IAM role that allows the Auto Scaling group to
      *        publish to the specified notification target.
      */
+
     public void setRoleARN(String roleARN) {
         this.roleARN = roleARN;
     }
@@ -378,6 +388,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return The ARN of the IAM role that allows the Auto Scaling group to
      *         publish to the specified notification target.
      */
+
     public String getRoleARN() {
         return this.roleARN;
     }
@@ -394,6 +405,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withRoleARN(String roleARN) {
         setRoleARN(roleARN);
         return this;
@@ -409,6 +421,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        Additional information that you want to include any time Auto
      *        Scaling sends a message to the notification target.
      */
+
     public void setNotificationMetadata(String notificationMetadata) {
         this.notificationMetadata = notificationMetadata;
     }
@@ -422,6 +435,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Additional information that you want to include any time Auto
      *         Scaling sends a message to the notification target.
      */
+
     public String getNotificationMetadata() {
         return this.notificationMetadata;
     }
@@ -438,6 +452,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withNotificationMetadata(String notificationMetadata) {
         setNotificationMetadata(notificationMetadata);
         return this;
@@ -447,19 +462,19 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle
      *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the action defined
-     *        in the <code>DefaultResult</code> parameter. You can prevent the
-     *        lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        lifecycle hook times out, Auto Scaling performs the default
+     *        action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      */
+
     public void setHeartbeatTimeout(Integer heartbeatTimeout) {
         this.heartbeatTimeout = heartbeatTimeout;
     }
@@ -468,18 +483,18 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @return The maximum time, in seconds, that can elapse before the
      *         lifecycle hook times out. The default is 3600 seconds (1 hour).
      *         When the lifecycle hook times out, Auto Scaling performs the
-     *         action defined in the <code>DefaultResult</code> parameter. You
-     *         can prevent the lifecycle hook from timing out by calling
-     *         <a>RecordLifecycleActionHeartbeat</a>.
+     *         default action. You can prevent the lifecycle hook from timing
+     *         out by calling <a>RecordLifecycleActionHeartbeat</a>.
      */
+
     public Integer getHeartbeatTimeout() {
         return this.heartbeatTimeout;
     }
@@ -488,21 +503,21 @@ public class LifecycleHook implements Serializable, Cloneable {
      * <p>
      * The maximum time, in seconds, that can elapse before the lifecycle hook
      * times out. The default is 3600 seconds (1 hour). When the lifecycle hook
-     * times out, Auto Scaling performs the action defined in the
-     * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook
-     * from timing out by calling <a>RecordLifecycleActionHeartbeat</a>.
+     * times out, Auto Scaling performs the default action. You can prevent the
+     * lifecycle hook from timing out by calling
+     * <a>RecordLifecycleActionHeartbeat</a>.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time, in seconds, that can elapse before the lifecycle
      *        hook times out. The default is 3600 seconds (1 hour). When the
-     *        lifecycle hook times out, Auto Scaling performs the action defined
-     *        in the <code>DefaultResult</code> parameter. You can prevent the
-     *        lifecycle hook from timing out by calling
-     *        <a>RecordLifecycleActionHeartbeat</a>.
+     *        lifecycle hook times out, Auto Scaling performs the default
+     *        action. You can prevent the lifecycle hook from timing out by
+     *        calling <a>RecordLifecycleActionHeartbeat</a>.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withHeartbeatTimeout(Integer heartbeatTimeout) {
         setHeartbeatTimeout(heartbeatTimeout);
         return this;
@@ -520,6 +535,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
      *        The default is 172800 seconds (48 hours).
      */
+
     public void setGlobalTimeout(Integer globalTimeout) {
         this.globalTimeout = globalTimeout;
     }
@@ -535,6 +551,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *         <code>Pending:Wait</code> or <code>Terminating:Wait</code> state.
      *         The default is 172800 seconds (48 hours).
      */
+
     public Integer getGlobalTimeout() {
         return this.globalTimeout;
     }
@@ -553,6 +570,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withGlobalTimeout(Integer globalTimeout) {
         setGlobalTimeout(globalTimeout);
         return this;
@@ -572,6 +590,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *        The valid values are <code>CONTINUE</code> and
      *        <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
      */
+
     public void setDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
     }
@@ -589,6 +608,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      *         occurs. The valid values are <code>CONTINUE</code> and
      *         <code>ABANDON</code>. The default value is <code>CONTINUE</code>.
      */
+
     public String getDefaultResult() {
         return this.defaultResult;
     }
@@ -609,6 +629,7 @@ public class LifecycleHook implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public LifecycleHook withDefaultResult(String defaultResult) {
         setDefaultResult(defaultResult);
         return this;

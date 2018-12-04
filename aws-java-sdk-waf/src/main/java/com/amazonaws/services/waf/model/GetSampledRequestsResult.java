@@ -60,6 +60,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      * @return A complex type that contains detailed information about each of
      *         the requests in the sample.
      */
+
     public java.util.List<SampledHTTPRequest> getSampledRequests() {
         return sampledRequests;
     }
@@ -74,6 +75,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      *        A complex type that contains detailed information about each of
      *        the requests in the sample.
      */
+
     public void setSampledRequests(
             java.util.Collection<SampledHTTPRequest> sampledRequests) {
         if (sampledRequests == null) {
@@ -103,6 +105,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsResult withSampledRequests(
             SampledHTTPRequest... sampledRequests) {
         if (this.sampledRequests == null) {
@@ -127,6 +130,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsResult withSampledRequests(
             java.util.Collection<SampledHTTPRequest> sampledRequests) {
         setSampledRequests(sampledRequests);
@@ -149,6 +153,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      *        less than <code>MaxItems</code>, the sample includes every request
      *        that your AWS resource received during the specified time range.
      */
+
     public void setPopulationSize(Long populationSize) {
         this.populationSize = populationSize;
     }
@@ -169,6 +174,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      *         request that your AWS resource received during the specified time
      *         range.
      */
+
     public Long getPopulationSize() {
         return this.populationSize;
     }
@@ -191,6 +197,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsResult withPopulationSize(Long populationSize) {
         setPopulationSize(populationSize);
         return this;
@@ -213,6 +220,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      *        <code>GetSampledRequests</code> returns the time range for the
      *        first 5,000 requests.
      */
+
     public void setTimeWindow(TimeWindow timeWindow) {
         this.timeWindow = timeWindow;
     }
@@ -233,6 +241,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      *         <code>GetSampledRequests</code> returns the time range for the
      *         first 5,000 requests.
      */
+
     public TimeWindow getTimeWindow() {
         return this.timeWindow;
     }
@@ -256,6 +265,7 @@ public class GetSampledRequestsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSampledRequestsResult withTimeWindow(TimeWindow timeWindow) {
         setTimeWindow(timeWindow);
         return this;

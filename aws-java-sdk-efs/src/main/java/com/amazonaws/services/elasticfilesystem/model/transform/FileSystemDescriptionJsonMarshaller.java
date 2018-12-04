@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * FileSystemDescriptionMarshaller
@@ -39,59 +34,56 @@ import com.amazonaws.util.json.*;
 public class FileSystemDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(FileSystemDescription fileSystemDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (fileSystemDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (fileSystemDescription.getOwnerId() != null) {
-                jsonWriter.key("OwnerId").value(
+                jsonGenerator.writeFieldName("OwnerId").writeValue(
                         fileSystemDescription.getOwnerId());
             }
-
             if (fileSystemDescription.getCreationToken() != null) {
-                jsonWriter.key("CreationToken").value(
+                jsonGenerator.writeFieldName("CreationToken").writeValue(
                         fileSystemDescription.getCreationToken());
             }
-
             if (fileSystemDescription.getFileSystemId() != null) {
-                jsonWriter.key("FileSystemId").value(
+                jsonGenerator.writeFieldName("FileSystemId").writeValue(
                         fileSystemDescription.getFileSystemId());
             }
-
             if (fileSystemDescription.getCreationTime() != null) {
-                jsonWriter.key("CreationTime").value(
+                jsonGenerator.writeFieldName("CreationTime").writeValue(
                         fileSystemDescription.getCreationTime());
             }
-
             if (fileSystemDescription.getLifeCycleState() != null) {
-                jsonWriter.key("LifeCycleState").value(
+                jsonGenerator.writeFieldName("LifeCycleState").writeValue(
                         fileSystemDescription.getLifeCycleState());
             }
-
             if (fileSystemDescription.getName() != null) {
-                jsonWriter.key("Name").value(fileSystemDescription.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        fileSystemDescription.getName());
             }
-
             if (fileSystemDescription.getNumberOfMountTargets() != null) {
-                jsonWriter.key("NumberOfMountTargets").value(
-                        fileSystemDescription.getNumberOfMountTargets());
+                jsonGenerator
+                        .writeFieldName("NumberOfMountTargets")
+                        .writeValue(
+                                fileSystemDescription.getNumberOfMountTargets());
             }
-
             if (fileSystemDescription.getSizeInBytes() != null) {
-                jsonWriter.key("SizeInBytes");
+                jsonGenerator.writeFieldName("SizeInBytes");
                 FileSystemSizeJsonMarshaller.getInstance().marshall(
-                        fileSystemDescription.getSizeInBytes(), jsonWriter);
+                        fileSystemDescription.getSizeInBytes(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

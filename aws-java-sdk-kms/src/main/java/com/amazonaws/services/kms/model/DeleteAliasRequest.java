@@ -46,6 +46,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      *        followed by a forward slash (alias/). Aliases that begin with
      *        "alias/AWS" are reserved.
      */
+
     public void setAliasName(String aliasName) {
         this.aliasName = aliasName;
     }
@@ -61,6 +62,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      *         "alias" followed by a forward slash (alias/). Aliases that begin
      *         with "alias/AWS" are reserved.
      */
+
     public String getAliasName() {
         return this.aliasName;
     }
@@ -79,6 +81,7 @@ public class DeleteAliasRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteAliasRequest withAliasName(String aliasName) {
         setAliasName(aliasName);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.ecs.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.ecs.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,15 +56,15 @@ public class DeploymentConfigurationJsonUnmarshaller implements
                 if (context.testExpression("maximumPercent", targetDepth)) {
                     context.nextToken();
                     deploymentConfiguration
-                            .setMaximumPercent(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMaximumPercent(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("minimumHealthyPercent", targetDepth)) {
                     context.nextToken();
                     deploymentConfiguration
-                            .setMinimumHealthyPercent(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setMinimumHealthyPercent(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

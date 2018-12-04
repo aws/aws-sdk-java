@@ -18,6 +18,8 @@ package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class TopicRuleListItemJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ruleArn", targetDepth)) {
                     context.nextToken();
-                    topicRuleListItem.setRuleArn(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRuleListItem.setRuleArn(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleName", targetDepth)) {
                     context.nextToken();
-                    topicRuleListItem.setRuleName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRuleListItem.setRuleName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("topicPattern", targetDepth)) {
                     context.nextToken();
-                    topicRuleListItem.setTopicPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRuleListItem.setTopicPattern(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    topicRuleListItem.setCreatedAt(DateJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRuleListItem.setCreatedAt(context.getUnmarshaller(
+                            java.util.Date.class).unmarshall(context));
                 }
                 if (context.testExpression("ruleDisabled", targetDepth)) {
                     context.nextToken();
-                    topicRuleListItem.setRuleDisabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    topicRuleListItem.setRuleDisabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

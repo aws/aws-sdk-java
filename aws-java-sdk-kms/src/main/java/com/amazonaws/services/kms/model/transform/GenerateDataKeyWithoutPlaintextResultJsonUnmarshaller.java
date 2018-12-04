@@ -18,6 +18,8 @@ package com.amazonaws.services.kms.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kms.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,14 +57,14 @@ public class GenerateDataKeyWithoutPlaintextResultJsonUnmarshaller
                 if (context.testExpression("CiphertextBlob", targetDepth)) {
                     context.nextToken();
                     generateDataKeyWithoutPlaintextResult
-                            .setCiphertextBlob(ByteBufferJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCiphertextBlob(context.getUnmarshaller(
+                                    java.nio.ByteBuffer.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("KeyId", targetDepth)) {
                     context.nextToken();
-                    generateDataKeyWithoutPlaintextResult
-                            .setKeyId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    generateDataKeyWithoutPlaintextResult.setKeyId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

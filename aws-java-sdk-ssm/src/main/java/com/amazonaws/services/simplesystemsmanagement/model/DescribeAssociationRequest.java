@@ -33,7 +33,7 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      */
     private String instanceId;
@@ -46,6 +46,7 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +58,7 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -71,6 +73,7 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAssociationRequest withName(String name) {
         setName(name);
         return this;
@@ -78,37 +81,40 @@ public class DescribeAssociationRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
-     * @return The Windows Server instance ID.
+     * @return The instance ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
 
     /**
      * <p>
-     * The Windows Server instance ID.
+     * The instance ID.
      * </p>
      * 
      * @param instanceId
-     *        The Windows Server instance ID.
+     *        The instance ID.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAssociationRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

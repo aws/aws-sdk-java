@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ScheduleRunRequest Marshaller
  */
 public class ScheduleRunRequestMarshaller implements
         Marshaller<Request<ScheduleRunRequest>, ScheduleRunRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ScheduleRunRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ScheduleRunRequest> marshall(
             ScheduleRunRequest scheduleRunRequest) {
@@ -63,49 +63,45 @@ public class ScheduleRunRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (scheduleRunRequest.getProjectArn() != null) {
-                jsonWriter.key("projectArn").value(
+                jsonGenerator.writeFieldName("projectArn").writeValue(
                         scheduleRunRequest.getProjectArn());
             }
-
             if (scheduleRunRequest.getAppArn() != null) {
-                jsonWriter.key("appArn").value(scheduleRunRequest.getAppArn());
+                jsonGenerator.writeFieldName("appArn").writeValue(
+                        scheduleRunRequest.getAppArn());
             }
-
             if (scheduleRunRequest.getDevicePoolArn() != null) {
-                jsonWriter.key("devicePoolArn").value(
+                jsonGenerator.writeFieldName("devicePoolArn").writeValue(
                         scheduleRunRequest.getDevicePoolArn());
             }
-
             if (scheduleRunRequest.getName() != null) {
-                jsonWriter.key("name").value(scheduleRunRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        scheduleRunRequest.getName());
             }
-
             if (scheduleRunRequest.getTest() != null) {
-                jsonWriter.key("test");
+                jsonGenerator.writeFieldName("test");
                 ScheduleRunTestJsonMarshaller.getInstance().marshall(
-                        scheduleRunRequest.getTest(), jsonWriter);
+                        scheduleRunRequest.getTest(), jsonGenerator);
             }
-
             if (scheduleRunRequest.getConfiguration() != null) {
-                jsonWriter.key("configuration");
+                jsonGenerator.writeFieldName("configuration");
                 ScheduleRunConfigurationJsonMarshaller.getInstance().marshall(
-                        scheduleRunRequest.getConfiguration(), jsonWriter);
+                        scheduleRunRequest.getConfiguration(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

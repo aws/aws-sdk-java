@@ -122,6 +122,7 @@
       "type":"list",
       "member":{"shape":"DocumentServiceWarning"}
     },
+    "Double":{"type":"double"},
     "Expr":{"type":"string"},
     "Exprs":{
       "type":"map",
@@ -133,6 +134,44 @@
       "type":"map",
       "key":{"shape":"String"},
       "value":{"shape":"BucketInfo"}
+    },
+    "FieldStats":{
+      "type":"structure",
+      "members":{
+        "min":{
+          "shape":"String",
+          "documentation":"<p>The minimum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>min</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>min</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>"
+        },
+        "max":{
+          "shape":"String",
+          "documentation":"<p>The maximum value found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>max</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>max</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>"
+        },
+        "count":{
+          "shape":"Long",
+          "documentation":"<p>The number of documents that contain a value in the specified field in the result set.</p>"
+        },
+        "missing":{
+          "shape":"Long",
+          "documentation":"<p>The number of documents that do not contain a value in the specified field in the result set.</p>"
+        },
+        "sum":{
+          "shape":"Double",
+          "documentation":"<p>The sum of the field values across the documents in the result set. <code>null</code> for date fields.</p>"
+        },
+        "sumOfSquares":{
+          "shape":"Double",
+          "documentation":"<p>The sum of all field values in the result set squared.</p>"
+        },
+        "mean":{
+          "shape":"String",
+          "documentation":"<p>The average of the values found in the specified field in the result set.</p> <p>If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>, or <code>double-array</code>), <code>mean</code> is the string representation of a double-precision 64-bit floating point value. If the field is <code>date</code> or <code>date-array</code>, <code>mean</code> is the string representation of a date with the format specified in <a href=\"http://tools.ietf.org/html/rfc3339\">IETF RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.</p>"
+        },
+        "stddev":{
+          "shape":"Double",
+          "documentation":"<p>The standard deviation of the values in the specified field in the result set.</p>"
+        }
+      },
+      "documentation":"<p>The statistics for a field calculated in the request.</p>"
     },
     "FieldValue":{
       "type":"list",
@@ -304,6 +343,12 @@
           "documentation":"<p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html\">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
           "location":"querystring",
           "locationName":"start"
+        },
+        "stats":{
+          "shape":"Stat",
+          "documentation":"<p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{\"FIELD-A\":{},\"FIELD-B\":{}}</code> <p>There are currently no options supported for statistics.</p>",
+          "location":"querystring",
+          "locationName":"stats"
         }
       },
       "documentation":"<p>Container for the parameters to the <code>Search</code> request.</p>"
@@ -322,6 +367,10 @@
         "facets":{
           "shape":"Facets",
           "documentation":"<p>The requested facet information.</p>"
+        },
+        "stats":{
+          "shape":"Stats",
+          "documentation":"<p>The requested field statistics information.</p>"
         }
       },
       "documentation":"<p>The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.</p>"
@@ -343,6 +392,13 @@
     "Size":{"type":"long"},
     "Sort":{"type":"string"},
     "Start":{"type":"long"},
+    "Stat":{"type":"string"},
+    "Stats":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"FieldStats"},
+      "documentation":"<p>The statistics calculated in the request.</p>"
+    },
     "String":{"type":"string"},
     "SuggestModel":{
       "type":"structure",

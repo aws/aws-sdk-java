@@ -45,6 +45,7 @@ public class DirectoryLimitExceededException extends AmazonServiceException {
     /**
      * @param requestId
      */
+
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
@@ -52,6 +53,7 @@ public class DirectoryLimitExceededException extends AmazonServiceException {
     /**
      * @return
      */
+
     public String getRequestId() {
         return this.requestId;
     }
@@ -61,6 +63,7 @@ public class DirectoryLimitExceededException extends AmazonServiceException {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DirectoryLimitExceededException withRequestId(String requestId) {
         setRequestId(requestId);
         return this;

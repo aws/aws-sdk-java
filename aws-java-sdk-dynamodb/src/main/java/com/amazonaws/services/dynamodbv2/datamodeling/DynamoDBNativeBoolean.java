@@ -32,6 +32,7 @@ import java.lang.annotation.Target;
  * BOOL type will be unable to read items containing BOOLs, so don't use me
  * unless all readers of your table are using an updated version of the mapper.
  */
+@DynamoDB
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 public @interface DynamoDBNativeBoolean {

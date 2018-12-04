@@ -18,6 +18,8 @@ package com.amazonaws.services.config.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,14 +56,14 @@ public class ComplianceContributorCountJsonUnmarshaller implements
                 if (context.testExpression("CappedCount", targetDepth)) {
                     context.nextToken();
                     complianceContributorCount
-                            .setCappedCount(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCappedCount(context.getUnmarshaller(
+                                    Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("CapExceeded", targetDepth)) {
                     context.nextToken();
                     complianceContributorCount
-                            .setCapExceeded(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCapExceeded(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TransitionStateMarshaller
@@ -39,37 +34,37 @@ import com.amazonaws.util.json.*;
 public class TransitionStateJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TransitionState transitionState, JSONWriter jsonWriter) {
+    public void marshall(TransitionState transitionState,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (transitionState == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (transitionState.getEnabled() != null) {
-                jsonWriter.key("enabled").value(transitionState.getEnabled());
+                jsonGenerator.writeFieldName("enabled").writeValue(
+                        transitionState.getEnabled());
             }
-
             if (transitionState.getLastChangedBy() != null) {
-                jsonWriter.key("lastChangedBy").value(
+                jsonGenerator.writeFieldName("lastChangedBy").writeValue(
                         transitionState.getLastChangedBy());
             }
-
             if (transitionState.getLastChangedAt() != null) {
-                jsonWriter.key("lastChangedAt").value(
+                jsonGenerator.writeFieldName("lastChangedAt").writeValue(
                         transitionState.getLastChangedAt());
             }
-
             if (transitionState.getDisabledReason() != null) {
-                jsonWriter.key("disabledReason").value(
+                jsonGenerator.writeFieldName("disabledReason").writeValue(
                         transitionState.getDisabledReason());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

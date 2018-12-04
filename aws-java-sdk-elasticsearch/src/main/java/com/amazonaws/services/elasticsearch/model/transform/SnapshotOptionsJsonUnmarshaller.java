@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,8 +57,9 @@ public class SnapshotOptionsJsonUnmarshaller implements
                         targetDepth)) {
                     context.nextToken();
                     snapshotOptions
-                            .setAutomatedSnapshotStartHour(IntegerJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setAutomatedSnapshotStartHour(context
+                                    .getUnmarshaller(Integer.class).unmarshall(
+                                            context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

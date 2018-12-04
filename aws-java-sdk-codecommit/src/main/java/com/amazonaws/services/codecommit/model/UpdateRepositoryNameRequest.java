@@ -27,53 +27,96 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateRepositoryNameRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The existing name of the repository.
+     * </p>
+     */
     private String oldName;
-
+    /**
+     * <p>
+     * The new name for the repository.
+     * </p>
+     */
     private String newName;
 
     /**
+     * <p>
+     * The existing name of the repository.
+     * </p>
+     * 
      * @param oldName
+     *        The existing name of the repository.
      */
+
     public void setOldName(String oldName) {
         this.oldName = oldName;
     }
 
     /**
-     * @return
+     * <p>
+     * The existing name of the repository.
+     * </p>
+     * 
+     * @return The existing name of the repository.
      */
+
     public String getOldName() {
         return this.oldName;
     }
 
     /**
+     * <p>
+     * The existing name of the repository.
+     * </p>
+     * 
      * @param oldName
+     *        The existing name of the repository.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRepositoryNameRequest withOldName(String oldName) {
         setOldName(oldName);
         return this;
     }
 
     /**
+     * <p>
+     * The new name for the repository.
+     * </p>
+     * 
      * @param newName
+     *        The new name for the repository.
      */
+
     public void setNewName(String newName) {
         this.newName = newName;
     }
 
     /**
-     * @return
+     * <p>
+     * The new name for the repository.
+     * </p>
+     * 
+     * @return The new name for the repository.
      */
+
     public String getNewName() {
         return this.newName;
     }
 
     /**
+     * <p>
+     * The new name for the repository.
+     * </p>
+     * 
      * @param newName
+     *        The new name for the repository.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateRepositoryNameRequest withNewName(String newName) {
         setNewName(newName);
         return this;

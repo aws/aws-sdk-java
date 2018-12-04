@@ -39,6 +39,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
     /**
      * @param gatewayARN
      */
+
     public void setGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
     }
@@ -46,6 +47,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getGatewayARN() {
         return this.gatewayARN;
     }
@@ -55,6 +57,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelArchivalRequest withGatewayARN(String gatewayARN) {
         setGatewayARN(gatewayARN);
         return this;
@@ -70,6 +73,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
      *        The Amazon Resource Name (ARN) of the virtual tape you want to
      *        cancel archiving for.
      */
+
     public void setTapeARN(String tapeARN) {
         this.tapeARN = tapeARN;
     }
@@ -83,6 +87,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
      * @return The Amazon Resource Name (ARN) of the virtual tape you want to
      *         cancel archiving for.
      */
+
     public String getTapeARN() {
         return this.tapeARN;
     }
@@ -99,6 +104,7 @@ public class CancelArchivalRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CancelArchivalRequest withTapeARN(String tapeARN) {
         setTapeARN(tapeARN);
         return this;

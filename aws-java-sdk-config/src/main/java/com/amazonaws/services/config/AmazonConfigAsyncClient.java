@@ -16,6 +16,7 @@
 package com.amazonaws.services.config;
 
 import com.amazonaws.services.config.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Config Service asynchronously. Each asynchronous
@@ -59,6 +60,7 @@ import com.amazonaws.services.config.model.*;
  * >What Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonConfigAsyncClient extends AmazonConfigClient implements
         AmazonConfigAsync {
 
@@ -158,8 +160,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -251,9 +252,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -292,26 +291,25 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             DeleteConfigRuleRequest request) {
 
         return deleteConfigRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteConfigRuleAsync(
+    public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(
             final DeleteConfigRuleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteConfigRuleResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteConfigRuleResult call() throws Exception {
+                        DeleteConfigRuleResult result;
 
                         try {
-                            deleteConfigRule(request);
-                            result = null;
+                            result = deleteConfigRule(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -328,26 +326,25 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             DeleteDeliveryChannelRequest request) {
 
         return deleteDeliveryChannelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDeliveryChannelAsync(
+    public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(
             final DeleteDeliveryChannelRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<DeleteDeliveryChannelResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public DeleteDeliveryChannelResult call() throws Exception {
+                        DeleteDeliveryChannelResult result;
 
                         try {
-                            deleteDeliveryChannel(request);
-                            result = null;
+                            result = deleteDeliveryChannel(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1161,26 +1158,25 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigRuleAsync(
+    public java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             PutConfigRuleRequest request) {
 
         return putConfigRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigRuleAsync(
+    public java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(
             final PutConfigRuleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutConfigRuleResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutConfigRuleResult call() throws Exception {
+                        PutConfigRuleResult result;
 
                         try {
-                            putConfigRule(request);
-                            result = null;
+                            result = putConfigRule(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1197,26 +1193,26 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    public java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             PutConfigurationRecorderRequest request) {
 
         return putConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putConfigurationRecorderAsync(
+    public java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(
             final PutConfigurationRecorderRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutConfigurationRecorderResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutConfigurationRecorderResult call()
+                            throws Exception {
+                        PutConfigurationRecorderResult result;
 
                         try {
-                            putConfigurationRecorder(request);
-                            result = null;
+                            result = putConfigurationRecorder(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1233,26 +1229,25 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             PutDeliveryChannelRequest request) {
 
         return putDeliveryChannelAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDeliveryChannelAsync(
+    public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(
             final PutDeliveryChannelRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<PutDeliveryChannelResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public PutDeliveryChannelResult call() throws Exception {
+                        PutDeliveryChannelResult result;
 
                         try {
-                            putDeliveryChannel(request);
-                            result = null;
+                            result = putDeliveryChannel(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1304,26 +1299,26 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             StartConfigurationRecorderRequest request) {
 
         return startConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> startConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(
             final StartConfigurationRecorderRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StartConfigurationRecorderResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StartConfigurationRecorderResult call()
+                            throws Exception {
+                        StartConfigurationRecorderResult result;
 
                         try {
-                            startConfigurationRecorder(request);
-                            result = null;
+                            result = startConfigurationRecorder(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -1340,26 +1335,26 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             StopConfigurationRecorderRequest request) {
 
         return stopConfigurationRecorderAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> stopConfigurationRecorderAsync(
+    public java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(
             final StopConfigurationRecorderRequest request,
-            final com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<StopConfigurationRecorderResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public StopConfigurationRecorderResult call()
+                            throws Exception {
+                        StopConfigurationRecorderResult result;
 
                         try {
-                            stopConfigurationRecorder(request);
-                            result = null;
+                            result = stopConfigurationRecorder(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

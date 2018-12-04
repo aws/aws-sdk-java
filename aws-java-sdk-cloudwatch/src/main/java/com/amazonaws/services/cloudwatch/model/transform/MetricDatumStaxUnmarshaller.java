@@ -17,6 +17,8 @@
 package com.amazonaws.services.cloudwatch.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -56,9 +58,8 @@ public class MetricDatumStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("Dimensions/member", targetDepth)) {
-                    metricDatum.getDimensions().add(
-                            DimensionStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    metricDatum.withDimensions(DimensionStaxUnmarshaller
+                            .getInstance().unmarshall(context));
                     continue;
                 }
 

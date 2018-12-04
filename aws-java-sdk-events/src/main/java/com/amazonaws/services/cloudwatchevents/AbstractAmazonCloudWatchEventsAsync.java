@@ -30,16 +30,16 @@ public class AbstractAmazonCloudWatchEventsAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRuleAsync(
+    public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest request) {
 
         return deleteRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRuleAsync(
+    public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(
             DeleteRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -60,31 +60,31 @@ public class AbstractAmazonCloudWatchEventsAsync extends
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableRuleAsync(
+    public java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             DisableRuleRequest request) {
 
         return disableRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> disableRuleAsync(
+    public java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(
             DisableRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableRuleAsync(
+    public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             EnableRuleRequest request) {
 
         return enableRuleAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> enableRuleAsync(
+    public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(
             EnableRuleRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

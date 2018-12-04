@@ -29,16 +29,16 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request) {
 
         return cancelExportTaskAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> cancelExportTaskAsync(
+    public java.util.concurrent.Future<CancelExportTaskResult> cancelExportTaskAsync(
             CancelExportTaskRequest request,
-            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CancelExportTaskRequest, CancelExportTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,121 +59,121 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogGroupAsync(
+    public java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             CreateLogGroupRequest request) {
 
         return createLogGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogGroupAsync(
+    public java.util.concurrent.Future<CreateLogGroupResult> createLogGroupAsync(
             CreateLogGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateLogGroupRequest, CreateLogGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogStreamAsync(
+    public java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             CreateLogStreamRequest request) {
 
         return createLogStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> createLogStreamAsync(
+    public java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(
             CreateLogStreamRequest request,
-            com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+    public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             DeleteDestinationRequest request) {
 
         return deleteDestinationAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteDestinationAsync(
+    public java.util.concurrent.Future<DeleteDestinationResult> deleteDestinationAsync(
             DeleteDestinationRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteDestinationRequest, DeleteDestinationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    public java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             DeleteLogGroupRequest request) {
 
         return deleteLogGroupAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogGroupAsync(
+    public java.util.concurrent.Future<DeleteLogGroupResult> deleteLogGroupAsync(
             DeleteLogGroupRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteLogGroupRequest, DeleteLogGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    public java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             DeleteLogStreamRequest request) {
 
         return deleteLogStreamAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteLogStreamAsync(
+    public java.util.concurrent.Future<DeleteLogStreamResult> deleteLogStreamAsync(
             DeleteLogStreamRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteLogStreamRequest, DeleteLogStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    public java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             DeleteMetricFilterRequest request) {
 
         return deleteMetricFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteMetricFilterAsync(
+    public java.util.concurrent.Future<DeleteMetricFilterResult> deleteMetricFilterAsync(
             DeleteMetricFilterRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricFilterRequest, DeleteMetricFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest request) {
 
         return deleteRetentionPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteRetentionPolicyAsync(
+    public java.util.concurrent.Future<DeleteRetentionPolicyResult> deleteRetentionPolicyAsync(
             DeleteRetentionPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteRetentionPolicyRequest, DeleteRetentionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest request) {
 
         return deleteSubscriptionFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> deleteSubscriptionFilterAsync(
+    public java.util.concurrent.Future<DeleteSubscriptionFilterResult> deleteSubscriptionFilterAsync(
             DeleteSubscriptionFilterRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionFilterRequest, DeleteSubscriptionFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -364,16 +364,16 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    public java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             PutDestinationPolicyRequest request) {
 
         return putDestinationPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putDestinationPolicyAsync(
+    public java.util.concurrent.Future<PutDestinationPolicyResult> putDestinationPolicyAsync(
             PutDestinationPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutDestinationPolicyRequest, PutDestinationPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -394,46 +394,46 @@ public class AbstractAWSLogsAsync extends AbstractAWSLogs implements
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+    public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             PutMetricFilterRequest request) {
 
         return putMetricFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putMetricFilterAsync(
+    public java.util.concurrent.Future<PutMetricFilterResult> putMetricFilterAsync(
             PutMetricFilterRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutMetricFilterRequest, PutMetricFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             PutRetentionPolicyRequest request) {
 
         return putRetentionPolicyAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putRetentionPolicyAsync(
+    public java.util.concurrent.Future<PutRetentionPolicyResult> putRetentionPolicyAsync(
             PutRetentionPolicyRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutRetentionPolicyRequest, PutRetentionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    public java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest request) {
 
         return putSubscriptionFilterAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> putSubscriptionFilterAsync(
+    public java.util.concurrent.Future<PutSubscriptionFilterResult> putSubscriptionFilterAsync(
             PutSubscriptionFilterRequest request,
-            com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, Void> asyncHandler) {
+            com.amazonaws.handlers.AsyncHandler<PutSubscriptionFilterRequest, PutSubscriptionFilterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,297 +1,310 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.ec2.model;
 
 import java.io.Serializable;
-
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ImportInstanceRequestMarshaller;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest) ImportInstance operation}.
  * <p>
- * Creates an import instance task using metadata from the specified disk
- * image. <code>ImportInstance</code> only supports single-volume VMs. To
- * import multi-volume VMs, use ImportImage. After importing the image,
- * you then upload it using the <code>ec2-import-volume</code> command in
- * the EC2 command line tools. For more information, see
- * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html"> Using the Command Line Tools to Import Your Virtual Machine to Amazon EC2 </a>
- * in the <i>Amazon Elastic Compute Cloud User Guide</i> .
+ * Contains the parameters for ImportInstance.
  * </p>
- *
- * @see com.amazonaws.services.ec2.AmazonEC2#importInstance(ImportInstanceRequest)
  */
-public class ImportInstanceRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
+public class ImportInstanceRequest extends AmazonWebServiceRequest implements
+        Serializable, Cloneable, DryRunSupportedRequest<ImportInstanceRequest> {
 
     /**
+     * <p>
      * A description for the instance being imported.
+     * </p>
      */
     private String description;
-
     /**
+     * <p>
      * The launch specification.
+     * </p>
      */
     private ImportInstanceLaunchSpecification launchSpecification;
-
     /**
-     * The disk image.
-     */
-    private com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImages;
-
-    /**
-     * The instance operating system.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
+     * The disk image.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DiskImage> diskImages;
+    /**
+     * <p>
+     * The instance operating system.
+     * </p>
      */
     private String platform;
 
     /**
+     * <p>
      * A description for the instance being imported.
-     *
-     * @return A description for the instance being imported.
+     * </p>
+     * 
+     * @param description
+     *        A description for the instance being imported.
      */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * A description for the instance being imported.
-     *
-     * @param description A description for the instance being imported.
-     */
+
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * A description for the instance being imported.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description A description for the instance being imported.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * A description for the instance being imported.
+     * </p>
+     * 
+     * @return A description for the instance being imported.
      */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the instance being imported.
+     * </p>
+     * 
+     * @param description
+     *        A description for the instance being imported.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public ImportInstanceRequest withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
     /**
+     * <p>
      * The launch specification.
-     *
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     */
+
+    public void setLaunchSpecification(
+            ImportInstanceLaunchSpecification launchSpecification) {
+        this.launchSpecification = launchSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
      * @return The launch specification.
      */
+
     public ImportInstanceLaunchSpecification getLaunchSpecification() {
-        return launchSpecification;
+        return this.launchSpecification;
     }
-    
+
     /**
-     * The launch specification.
-     *
-     * @param launchSpecification The launch specification.
-     */
-    public void setLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
-        this.launchSpecification = launchSpecification;
-    }
-    
-    /**
-     * The launch specification.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param launchSpecification The launch specification.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The launch specification.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ImportInstanceRequest withLaunchSpecification(ImportInstanceLaunchSpecification launchSpecification) {
-        this.launchSpecification = launchSpecification;
+
+    public ImportInstanceRequest withLaunchSpecification(
+            ImportInstanceLaunchSpecification launchSpecification) {
+        setLaunchSpecification(launchSpecification);
         return this;
     }
 
     /**
+     * <p>
      * The disk image.
-     *
+     * </p>
+     * 
      * @return The disk image.
      */
+
     public java.util.List<DiskImage> getDiskImages() {
         if (diskImages == null) {
-              diskImages = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>();
-              diskImages.setAutoConstruct(true);
+            diskImages = new com.amazonaws.internal.SdkInternalList<DiskImage>();
         }
         return diskImages;
     }
-    
+
     /**
+     * <p>
      * The disk image.
-     *
-     * @param diskImages The disk image.
+     * </p>
+     * 
+     * @param diskImages
+     *        The disk image.
      */
+
     public void setDiskImages(java.util.Collection<DiskImage> diskImages) {
         if (diskImages == null) {
             this.diskImages = null;
             return;
         }
-        com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>(diskImages.size());
-        diskImagesCopy.addAll(diskImages);
-        this.diskImages = diskImagesCopy;
+
+        this.diskImages = new com.amazonaws.internal.SdkInternalList<DiskImage>(
+                diskImages);
     }
-    
+
     /**
+     * <p>
      * The disk image.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if
-     * any). Use {@link #setDiskImages(java.util.Collection)} or {@link
-     * #withDiskImages(java.util.Collection)} if you want to override the
+     * any). Use {@link #setDiskImages(java.util.Collection)} or
+     * {@link #withDiskImages(java.util.Collection)} if you want to override the
      * existing values.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param diskImages The disk image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param diskImages
+     *        The disk image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
+
     public ImportInstanceRequest withDiskImages(DiskImage... diskImages) {
-        if (getDiskImages() == null) setDiskImages(new java.util.ArrayList<DiskImage>(diskImages.length));
-        for (DiskImage value : diskImages) {
-            getDiskImages().add(value);
+        if (this.diskImages == null) {
+            setDiskImages(new com.amazonaws.internal.SdkInternalList<DiskImage>(
+                    diskImages.length));
+        }
+        for (DiskImage ele : diskImages) {
+            this.diskImages.add(ele);
         }
         return this;
     }
-    
+
     /**
+     * <p>
      * The disk image.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param diskImages The disk image.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @param diskImages
+     *        The disk image.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public ImportInstanceRequest withDiskImages(java.util.Collection<DiskImage> diskImages) {
-        if (diskImages == null) {
-            this.diskImages = null;
-        } else {
-            com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>(diskImages.size());
-            diskImagesCopy.addAll(diskImages);
-            this.diskImages = diskImagesCopy;
-        }
 
+    public ImportInstanceRequest withDiskImages(
+            java.util.Collection<DiskImage> diskImages) {
+        setDiskImages(diskImages);
         return this;
     }
 
     /**
-     * The instance operating system.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @return The instance operating system.
-     *
+     * The instance operating system.
+     * </p>
+     * 
+     * @param platform
+     *        The instance operating system.
      * @see PlatformValues
      */
-    public String getPlatform() {
-        return platform;
-    }
-    
-    /**
-     * The instance operating system.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The instance operating system.
-     *
-     * @see PlatformValues
-     */
+
     public void setPlatform(String platform) {
         this.platform = platform;
     }
-    
+
     /**
+     * <p>
      * The instance operating system.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The instance operating system.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @return The instance operating system.
      * @see PlatformValues
      */
+
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The instance operating system.
+     * </p>
+     * 
+     * @param platform
+     *        The instance operating system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     * @see PlatformValues
+     */
+
     public ImportInstanceRequest withPlatform(String platform) {
-        this.platform = platform;
+        setPlatform(platform);
         return this;
     }
 
     /**
-     * The instance operating system.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The instance operating system.
-     *
+     * The instance operating system.
+     * </p>
+     * 
+     * @param platform
+     *        The instance operating system.
      * @see PlatformValues
      */
+
     public void setPlatform(PlatformValues platform) {
         this.platform = platform.toString();
     }
-    
+
     /**
+     * <p>
      * The instance operating system.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>Windows
-     *
-     * @param platform The instance operating system.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
-     *
+     * </p>
+     * 
+     * @param platform
+     *        The instance operating system.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      * @see PlatformValues
      */
+
     public ImportInstanceRequest withPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        setPlatform(platform);
         return this;
     }
 
     /**
-     * This method is intended for internal use only.
-     * Returns the marshaled request configured with additional parameters to
-     * enable operation dry-run.
+     * This method is intended for internal use only. Returns the marshaled
+     * request configured with additional parameters to enable operation
+     * dry-run.
      */
     @Override
     public Request<ImportInstanceRequest> getDryRunRequest() {
-        Request<ImportInstanceRequest> request = new ImportInstanceRequestMarshaller().marshall(this);
+        Request<ImportInstanceRequest> request = new ImportInstanceRequestMarshaller()
+                .marshall(this);
         request.addParameter("DryRun", Boolean.toString(true));
         return request;
     }
-    
+
     /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
@@ -304,50 +317,74 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");
-        if (getDiskImages() != null) sb.append("DiskImages: " + getDiskImages() + ",");
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() );
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription() + ",");
+        if (getLaunchSpecification() != null)
+            sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");
+        if (getDiskImages() != null)
+            sb.append("DiskImages: " + getDiskImages() + ",");
+        if (getPlatform() != null)
+            sb.append("Platform: " + getPlatform());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ImportInstanceRequest == false)
+            return false;
+        ImportInstanceRequest other = (ImportInstanceRequest) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getLaunchSpecification() == null
+                ^ this.getLaunchSpecification() == null)
+            return false;
+        if (other.getLaunchSpecification() != null
+                && other.getLaunchSpecification().equals(
+                        this.getLaunchSpecification()) == false)
+            return false;
+        if (other.getDiskImages() == null ^ this.getDiskImages() == null)
+            return false;
+        if (other.getDiskImages() != null
+                && other.getDiskImages().equals(this.getDiskImages()) == false)
+            return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null
+                && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode()); 
-        hashCode = prime * hashCode + ((getDiskImages() == null) ? 0 : getDiskImages().hashCode()); 
-        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getLaunchSpecification() == null) ? 0
+                        : getLaunchSpecification().hashCode());
+        hashCode = prime * hashCode
+                + ((getDiskImages() == null) ? 0 : getDiskImages().hashCode());
+        hashCode = prime * hashCode
+                + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof ImportInstanceRequest == false) return false;
-        ImportInstanceRequest other = (ImportInstanceRequest)obj;
-        
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null) return false;
-        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false) return false; 
-        if (other.getDiskImages() == null ^ this.getDiskImages() == null) return false;
-        if (other.getDiskImages() != null && other.getDiskImages().equals(this.getDiskImages()) == false) return false; 
-        if (other.getPlatform() == null ^ this.getPlatform() == null) return false;
-        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public ImportInstanceRequest clone() {
-        
-            return (ImportInstanceRequest) super.clone();
+        return (ImportInstanceRequest) super.clone();
     }
-
 }
-    

@@ -39,7 +39,8 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
-    public void cancelExportTask(CancelExportTaskRequest request) {
+    public CancelExportTaskResult cancelExportTask(
+            CancelExportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -50,42 +51,46 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
-    public void createLogGroup(CreateLogGroupRequest request) {
+    public CreateLogGroupResult createLogGroup(CreateLogGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void createLogStream(CreateLogStreamRequest request) {
+    public CreateLogStreamResult createLogStream(CreateLogStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteDestination(DeleteDestinationRequest request) {
+    public DeleteDestinationResult deleteDestination(
+            DeleteDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteLogGroup(DeleteLogGroupRequest request) {
+    public DeleteLogGroupResult deleteLogGroup(DeleteLogGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteLogStream(DeleteLogStreamRequest request) {
+    public DeleteLogStreamResult deleteLogStream(DeleteLogStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteMetricFilter(DeleteMetricFilterRequest request) {
+    public DeleteMetricFilterResult deleteMetricFilter(
+            DeleteMetricFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteRetentionPolicy(DeleteRetentionPolicyRequest request) {
+    public DeleteRetentionPolicyResult deleteRetentionPolicy(
+            DeleteRetentionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void deleteSubscriptionFilter(DeleteSubscriptionFilterRequest request) {
+    public DeleteSubscriptionFilterResult deleteSubscriptionFilter(
+            DeleteSubscriptionFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,7 +156,8 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
-    public void putDestinationPolicy(PutDestinationPolicyRequest request) {
+    public PutDestinationPolicyResult putDestinationPolicy(
+            PutDestinationPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -161,17 +167,19 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
-    public void putMetricFilter(PutMetricFilterRequest request) {
+    public PutMetricFilterResult putMetricFilter(PutMetricFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putRetentionPolicy(PutRetentionPolicyRequest request) {
+    public PutRetentionPolicyResult putRetentionPolicy(
+            PutRetentionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public void putSubscriptionFilter(PutSubscriptionFilterRequest request) {
+    public PutSubscriptionFilterResult putSubscriptionFilter(
+            PutSubscriptionFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -54,6 +54,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        that you're creating. You can't change <code>Name</code> after you
      *        create the <code>SqlInjectionMatchSet</code>.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -70,6 +71,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *         change <code>Name</code> after you create the
      *         <code>SqlInjectionMatchSet</code>.
      */
+
     public String getName() {
         return this.name;
     }
@@ -88,6 +90,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSqlInjectionMatchSetRequest withName(String name) {
         setName(name);
         return this;
@@ -102,6 +105,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -114,6 +118,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -129,6 +134,7 @@ public class CreateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateSqlInjectionMatchSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;

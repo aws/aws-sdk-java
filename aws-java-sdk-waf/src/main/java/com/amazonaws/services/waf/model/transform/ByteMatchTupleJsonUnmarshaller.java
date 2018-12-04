@@ -18,6 +18,8 @@ package com.amazonaws.services.waf.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -58,19 +60,18 @@ public class ByteMatchTupleJsonUnmarshaller implements
                 }
                 if (context.testExpression("TargetString", targetDepth)) {
                     context.nextToken();
-                    byteMatchTuple.setTargetString(ByteBufferJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    byteMatchTuple.setTargetString(context.getUnmarshaller(
+                            java.nio.ByteBuffer.class).unmarshall(context));
                 }
                 if (context.testExpression("TextTransformation", targetDepth)) {
                     context.nextToken();
-                    byteMatchTuple.setTextTransformation(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    byteMatchTuple.setTextTransformation(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PositionalConstraint", targetDepth)) {
                     context.nextToken();
-                    byteMatchTuple
-                            .setPositionalConstraint(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    byteMatchTuple.setPositionalConstraint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

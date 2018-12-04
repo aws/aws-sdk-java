@@ -16,6 +16,7 @@
 package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.services.dynamodbv2.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing DynamoDB asynchronously. Each asynchronous method
@@ -25,15 +26,40 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <p>
  * <fullname>Amazon DynamoDB</fullname>
  * <p>
- * <b>Overview</b>
+ * This is the Amazon DynamoDB API Reference. This guide provides descriptions
+ * of the low-level DynamoDB API.
  * </p>
  * <p>
- * This is the Amazon DynamoDB API Reference. This guide provides descriptions
- * and samples of the low-level DynamoDB API. For information about DynamoDB
- * application development, see the <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/"
- * >Amazon DynamoDB Developer Guide</a>.
+ * This guide is intended for use with the following DynamoDB documentation:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href=
+ * "http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/"
+ * >Amazon DynamoDB Getting Started Guide</a> - provides hands-on exercises that
+ * help you learn the basics of working with DynamoDB. <i>If you are new to
+ * DynamoDB, we recommend that you begin with the Getting Started Guide.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">
+ * Amazon DynamoDB Developer Guide</a> - contains detailed information about
+ * DynamoDB concepts, usage, and best practices.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/dynamodbstreams/latest/APIReference/">
+ * Amazon DynamoDB Streams API Reference</a> - provides descriptions and samples
+ * of the DynamoDB Streams API. (For more information, see <a href=
+ * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html"
+ * >Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB
+ * Developer Guide.)
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * Instead of making the requests to the low-level DynamoDB API directly from
  * your application, we recommend that you use the AWS Software Development Kits
@@ -42,8 +68,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * care of request authentication, serialization, and connection management. For
  * more information, see <a href=
  * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html"
- * >Using the AWS SDKs with DynamoDB</a> in the <i>Amazon DynamoDB Developer
- * Guide</i>.
+ * >Using the AWS SDKs with DynamoDB</a> in the Amazon DynamoDB Developer Guide.
  * </p>
  * <p>
  * If you decide to code against the low-level DynamoDB API directly, you will
@@ -63,11 +88,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <li>
  * <p>
  * <i>CreateTable</i> - Creates a table with user-specified provisioned
- * throughput settings. You must designate one attribute as the hash primary key
- * for the table; you can optionally designate a second attribute as the range
- * primary key. DynamoDB creates indexes on these key attributes for fast data
- * access. Optionally, you can create one or more secondary indexes, which
- * provide fast data access using non-key attributes.
+ * throughput settings. You must define a primary key for the table - either a
+ * simple primary key (partition key), or a composite primary key (partition key
+ * and sort key). Optionally, you can create one or more secondary indexes,
+ * which provide fast data access using non-key attributes.
  * </p>
  * </li>
  * <li>
@@ -123,10 +147,10 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * <li>
  * <p>
  * <i>Query</i> - Returns one or more items from a table or a secondary index.
- * You must provide a specific hash key value. You can narrow the scope of the
- * query using comparison operators against a range key value, or on the index
- * key. <i>Query</i> supports either eventual or strong consistency. A single
- * response has a size limit of 1 MB.
+ * You must provide a specific value for the partition key. You can narrow the
+ * scope of the query using comparison operators against a sort key value, or on
+ * the index key. <i>Query</i> supports either eventual or strong consistency. A
+ * single response has a size limit of 1 MB.
  * </p>
  * </li>
  * <li>
@@ -193,6 +217,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
  * >Query and Scan Operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  */
+@ThreadSafe
 public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
         AmazonDynamoDBAsync {
 
@@ -291,8 +316,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .dynamoDefault(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -384,9 +408,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.dynamoDefault(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -815,6 +837,41 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements
 
         return deleteTableAsync(
                 new DeleteTableRequest().withTableName(tableName), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(
+            DescribeLimitsRequest request) {
+
+        return describeLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLimitsResult> describeLimitsAsync(
+            final DescribeLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLimitsRequest, DescribeLimitsResult> asyncHandler) {
+
+        return executorService
+                .submit(new java.util.concurrent.Callable<DescribeLimitsResult>() {
+                    @Override
+                    public DescribeLimitsResult call() throws Exception {
+                        DescribeLimitsResult result;
+
+                        try {
+                            result = describeLimits(request);
+                        } catch (Exception ex) {
+                            if (asyncHandler != null) {
+                                asyncHandler.onError(ex);
+                            }
+                            throw ex;
+                        }
+
+                        if (asyncHandler != null) {
+                            asyncHandler.onSuccess(request, result);
+                        }
+                        return result;
+                    }
+                });
     }
 
     @Override

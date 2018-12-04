@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudwatch.model.*;
 import com.amazonaws.services.cloudwatch.model.transform.*;
@@ -42,45 +44,27 @@ import com.amazonaws.services.cloudwatch.model.transform.*;
  * blocking, and will not return until the service call completes.
  * <p>
  * <p>
- * This is the <i>Amazon CloudWatch API Reference</i>. This guide provides
- * detailed information about Amazon CloudWatch actions, data types, parameters,
- * and errors. For detailed information about Amazon CloudWatch features and
- * their associated API calls, go to the <a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide"
- * >Amazon CloudWatch Developer Guide</a>.
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the
+ * applications you run on AWS in real-time. You can use CloudWatch to collect
+ * and track metrics, which are the variables you want to measure for your
+ * resources and applications.
  * </p>
  * <p>
- * Amazon CloudWatch is a web service that enables you to publish, monitor, and
- * manage various metrics, as well as configure alarm actions based on data from
- * metrics. For more information about this product go to <a
- * href="http://aws.amazon.com/cloudwatch">http://aws.amazon.com/cloudwatch</a>.
+ * CloudWatch alarms send notifications or automatically make changes to the
+ * resources you are monitoring based on rules that you define. For example, you
+ * can monitor the CPU usage and disk reads and writes of your Amazon Elastic
+ * Compute Cloud (Amazon EC2) instances and then use this data to determine
+ * whether you should launch additional instances to handle increased load. You
+ * can also use this data to stop under-used instances to save money.
  * </p>
  * <p>
- * Use the following links to get started using the <i>Amazon CloudWatch API
- * Reference</i>:
+ * In addition to monitoring the built-in metrics that come with AWS, you can
+ * monitor your own custom metrics. With CloudWatch, you gain system-wide
+ * visibility into resource utilization, application performance, and
+ * operational health.
  * </p>
- * <ul>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Operations.html"
- * >Actions</a>: An alphabetical list of all Amazon CloudWatch actions.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/API_Types.html"
- * >Data Types</a>: An alphabetical list of all Amazon CloudWatch data types.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html"
- * >Common Parameters</a>: Parameters that all Query actions can use.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html"
- * >Common Errors</a>: Client and server errors that all actions can return.</li>
- * <li><a href=
- * "http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"
- * >Regions and Endpoints</a>: Itemized regions and endpoints for all AWS
- * products.</li>
- * <li><a
- * href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl">WSDL
- * Location</a>: http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
- * </ul>
  */
+@ThreadSafe
 public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         AmazonCloudWatch {
     /** Provider for AWS credentials. */
@@ -95,7 +79,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
     private static final String DEFAULT_ENDPOINT_PREFIX = "monitoring";
 
     /**
-     * List of exception unmarshallers for all CloudWatch exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
+     */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    /**
+     * List of exception unmarshallers for all modeled exceptions
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
@@ -117,8 +107,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -159,8 +149,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      *        authenticating with AWS services.
      */
     public AmazonCloudWatchClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -199,8 +188,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      *        authenticate requests with AWS services.
      */
     public AmazonCloudWatchClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -286,18 +274,20 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param deleteAlarmsRequest
+     * @return Result of the DeleteAlarms operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @sample AmazonCloudWatch.DeleteAlarms
      */
     @Override
-    public void deleteAlarms(DeleteAlarmsRequest deleteAlarmsRequest) {
+    public DeleteAlarmsResult deleteAlarms(
+            DeleteAlarmsRequest deleteAlarmsRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteAlarmsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteAlarmsRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteAlarmsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -310,9 +300,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DeleteAlarmsResult> responseHandler = new StaxResponseHandler<DeleteAlarmsResult>(
+                    new DeleteAlarmsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -479,17 +471,19 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param disableAlarmActionsRequest
+     * @return Result of the DisableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.DisableAlarmActions
      */
     @Override
-    public void disableAlarmActions(
+    public DisableAlarmActionsResult disableAlarmActions(
             DisableAlarmActionsRequest disableAlarmActionsRequest) {
         ExecutionContext executionContext = createExecutionContext(disableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableAlarmActionsRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableAlarmActionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -503,9 +497,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<DisableAlarmActionsResult> responseHandler = new StaxResponseHandler<DisableAlarmActionsResult>(
+                    new DisableAlarmActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -519,17 +515,19 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param enableAlarmActionsRequest
+     * @return Result of the EnableAlarmActions operation returned by the
+     *         service.
      * @sample AmazonCloudWatch.EnableAlarmActions
      */
     @Override
-    public void enableAlarmActions(
+    public EnableAlarmActionsResult enableAlarmActions(
             EnableAlarmActionsRequest enableAlarmActionsRequest) {
         ExecutionContext executionContext = createExecutionContext(enableAlarmActionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableAlarmActionsRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableAlarmActionsResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -543,9 +541,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<EnableAlarmActionsResult> responseHandler = new StaxResponseHandler<EnableAlarmActionsResult>(
+                    new EnableAlarmActionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -557,12 +557,17 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * <p>
      * Gets statistics for the specified metric.
      * </p>
-     * <note> The maximum number of data points returned from a single
-     * <code>GetMetricStatistics</code> request is 1,440. If a request is made
+     * <p>
+     * The maximum number of data points that can be queried is 50,850, whereas
+     * the maximum number of data points returned from a single
+     * <code>GetMetricStatistics</code> request is 1,440. If you make a request
      * that generates more than 1,440 data points, Amazon CloudWatch returns an
-     * error. In such a case, alter the request by narrowing the specified time
-     * range or increasing the specified period. Alternatively, make multiple
-     * requests across adjacent time ranges. </note>
+     * error. In such a case, you can alter the request by narrowing the
+     * specified time range or increasing the specified period. Alternatively,
+     * you can make multiple requests across adjacent time ranges.
+     * <code>GetMetricStatistics</code> does not return the data in
+     * chronological order.
+     * </p>
      * <p>
      * Amazon CloudWatch aggregates data points based on the length of the
      * <code>period</code> that you specify. For example, if you request
@@ -571,8 +576,6 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * In such a case, the data points queried can greatly outnumber the data
      * points returned.
      * </p>
-     * <note> The maximum number of data points that can be queried is 50,850;
-     * whereas the maximum number of data points returned is 1,440. </note>
      * <p>
      * The following examples show various statistics allowed by the data point
      * query maximum of 50,850 when you call <code>GetMetricStatistics</code> on
@@ -583,6 +586,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * <li>Statistics for up to 35 instances over a span of 24 hours</li>
      * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
      * </ul>
+     * <p>
+     * For information about the namespace, metric names, and dimensions that
+     * other Amazon Web Services products use to send metrics to CloudWatch, go
+     * to <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html"
+     * >Amazon CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in
+     * the <i>Amazon CloudWatch Developer Guide</i>.
+     * </p>
      * 
      * @param getMetricStatisticsRequest
      * @return Result of the GetMetricStatistics operation returned by the
@@ -636,15 +647,16 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Returns a list of valid metrics stored for the AWS account owner.
-     * Returned metrics can be used with <code>GetMetricStatistics</code> to
-     * obtain statistical data for a given metric.
+     * Returned metrics can be used with <a>GetMetricStatistics</a> to obtain
+     * statistical data for a given metric.
      * </p>
      * <note> Up to 500 results are returned for any one call. To retrieve
      * further results, use returned <code>NextToken</code> values with
      * subsequent <code>ListMetrics</code> operations. </note> <note> If you
      * create a metric with the <a>PutMetricData</a> action, allow up to fifteen
      * minutes for the metric to appear in calls to the <code>ListMetrics</code>
-     * action. </note>
+     * action. Statistics about the metric, however, are available sooner using
+     * <a>GetMetricStatistics</a>. </note>
      * 
      * @param listMetricsRequest
      * @return Result of the ListMetrics operation returned by the service.
@@ -705,21 +717,57 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * the <code>StateValue</code> is then executed.
      * </p>
      * <note> When updating an existing alarm, its <code>StateValue</code> is
-     * left unchanged. </note>
+     * left unchanged. </note> <note> If you are using an AWS Identity and
+     * Access Management (IAM) account to create or modify an alarm, you must
+     * have the following Amazon EC2 permissions:
+     * <ul>
+     * <li><code>ec2:DescribeInstanceStatus</code> and
+     * <code>ec2:DescribeInstances</code> for all alarms on Amazon EC2 instance
+     * status metrics.</li>
+     * <li><code>ec2:StopInstances</code> for alarms with stop actions.</li>
+     * <li><code>ec2:TerminateInstances</code> for alarms with terminate
+     * actions.</li>
+     * <li><code>ec2:DescribeInstanceRecoveryAttribute</code>, and
+     * <code>ec2:RecoverInstances</code> for alarms with recover actions.</li>
+     * </ul>
+     * <p>
+     * If you have read/write permissions for Amazon CloudWatch but not for
+     * Amazon EC2, you can still create an alarm but the stop or terminate
+     * actions won't be performed on the Amazon EC2 instance. However, if you
+     * are later granted permission to use the associated Amazon EC2 APIs, the
+     * alarm actions you created earlier will be performed. For more information
+     * about IAM permissions, see <a href=
+     * "http://docs.aws.amazon.com//IAM/latest/UserGuide/PermissionsAndPolicies.html"
+     * >Permissions and Policies</a> in <i>Using IAM</i>.
+     * </p>
+     * <p>
+     * If you are using an IAM role (e.g., an Amazon EC2 instance profile), you
+     * cannot stop or terminate the instance using alarm actions. However, you
+     * can still see the alarm state and perform any other actions such as
+     * Amazon SNS notifications or Auto Scaling policies.
+     * </p>
+     * <p>
+     * If you are using temporary security credentials granted using the AWS
+     * Security Token Service (AWS STS), you cannot stop or terminate an Amazon
+     * EC2 instance using alarm actions.
+     * </p>
+     * </note>
      * 
      * @param putMetricAlarmRequest
+     * @return Result of the PutMetricAlarm operation returned by the service.
      * @throws LimitExceededException
      *         The quota for alarms for this customer has already been reached.
      * @sample AmazonCloudWatch.PutMetricAlarm
      */
     @Override
-    public void putMetricAlarm(PutMetricAlarmRequest putMetricAlarmRequest) {
+    public PutMetricAlarmResult putMetricAlarm(
+            PutMetricAlarmRequest putMetricAlarmRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricAlarmRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutMetricAlarmRequest> request = null;
-        Response<Void> response = null;
+        Response<PutMetricAlarmResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -732,9 +780,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutMetricAlarmResult> responseHandler = new StaxResponseHandler<PutMetricAlarmResult>(
+                    new PutMetricAlarmResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -744,24 +794,30 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch
+     * Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch
      * associates the data points with the specified metric. If the specified
-     * metric does not exist, Amazon CloudWatch creates the metric.
+     * metric does not exist, Amazon CloudWatch creates the metric. When Amazon
+     * CloudWatch creates a metric, it can take up to fifteen minutes for the
+     * metric to appear in calls to the <a>ListMetrics</a> action.
      * </p>
-     * <note> If you create a metric with the <code>PutMetricData</code> action,
-     * allow up to fifteen minutes for the metric to appear in calls to the
-     * <a>ListMetrics</a> action. </note>
      * <p>
-     * The size of a <function>PutMetricData</function> request is limited to 8
-     * KB for HTTP GET requests and 40 KB for HTTP POST requests.
+     * Each <code>PutMetricData</code> request is limited to 8 KB in size for
+     * HTTP GET requests and is limited to 40 KB in size for HTTP POST requests.
      * </p>
-     * <important> Although the <code>Value</code> parameter accepts numbers of
-     * type <code>Double</code>, Amazon CloudWatch truncates values with very
-     * large exponents. Values with base-10 exponents greater than 126 (1 x
-     * 10^126) are truncated. Likewise, values with base-10 exponents less than
-     * -130 (1 x 10^-130) are also truncated. </important>
+     * <important>Although the <code>Value</code> parameter accepts numbers of
+     * type <code>Double</code>, Amazon CloudWatch rejects values that are
+     * either too small or too large. Values must be in the range of
+     * 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * supported. </important>
+     * <p>
+     * Data that is timestamped 24 hours or more in the past may take in excess
+     * of 48 hours to become available from submission time using
+     * <code>GetMetricStatistics</code>.
+     * </p>
      * 
      * @param putMetricDataRequest
+     * @return Result of the PutMetricData operation returned by the service.
      * @throws InvalidParameterValueException
      *         Bad or out-of-range value was supplied for the input parameter.
      * @throws MissingRequiredParameterException
@@ -775,13 +831,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudWatch.PutMetricData
      */
     @Override
-    public void putMetricData(PutMetricDataRequest putMetricDataRequest) {
+    public PutMetricDataResult putMetricData(
+            PutMetricDataRequest putMetricDataRequest) {
         ExecutionContext executionContext = createExecutionContext(putMetricDataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<PutMetricDataRequest> request = null;
-        Response<Void> response = null;
+        Response<PutMetricDataResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -794,9 +851,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<PutMetricDataResult> responseHandler = new StaxResponseHandler<PutMetricDataResult>(
+                    new PutMetricDataResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -808,12 +867,18 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * <p>
      * Temporarily sets the state of an alarm. When the updated
      * <code>StateValue</code> differs from the previous value, the action
-     * configured for the appropriate state is invoked. This is not a permanent
-     * change. The next periodic alarm check (in about a minute) will set the
-     * alarm to its actual state.
+     * configured for the appropriate state is invoked. For example, if your
+     * alarm is configured to send an Amazon SNS message when an alarm is
+     * triggered, temporarily changing the alarm's state to <b>ALARM</b> will
+     * send an Amazon SNS message. This is not a permanent change. The next
+     * periodic alarm check (in about a minute) will set the alarm to its actual
+     * state. Because the alarm state change happens very quickly, it is
+     * typically only visibile in the alarm's <b>History</b> tab in the Amazon
+     * CloudWatch console or through <code>DescribeAlarmHistory</code>.
      * </p>
      * 
      * @param setAlarmStateRequest
+     * @return Result of the SetAlarmState operation returned by the service.
      * @throws ResourceNotFoundException
      *         The named resource does not exist.
      * @throws InvalidFormatException
@@ -821,13 +886,14 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
      * @sample AmazonCloudWatch.SetAlarmState
      */
     @Override
-    public void setAlarmState(SetAlarmStateRequest setAlarmStateRequest) {
+    public SetAlarmStateResult setAlarmState(
+            SetAlarmStateRequest setAlarmStateRequest) {
         ExecutionContext executionContext = createExecutionContext(setAlarmStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<SetAlarmStateRequest> request = null;
-        Response<Void> response = null;
+        Response<SetAlarmStateResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
@@ -840,9 +906,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<Void> responseHandler = new StaxResponseHandler<Void>(
-                    null);
-            invoke(request, responseHandler, executionContext);
+            StaxResponseHandler<SetAlarmStateResult> responseHandler = new StaxResponseHandler<SetAlarmStateResult>(
+                    new SetAlarmStateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -873,30 +941,45 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
-
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(
                 exceptionUnmarshallers);

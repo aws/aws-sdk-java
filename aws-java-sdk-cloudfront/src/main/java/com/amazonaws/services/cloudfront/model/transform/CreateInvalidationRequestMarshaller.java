@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * CreateInvalidationRequest Marshaller
@@ -57,11 +60,14 @@ public class CreateInvalidationRequestMarshaller
 
         String uriResourcePath = "/2016-01-28/distribution/{DistributionId}/invalidation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DistributionId}",
-                (createInvalidationRequest.getDistributionId() == null) ? ""
-                        : StringUtils.fromString(createInvalidationRequest
-                                .getDistributionId()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{DistributionId}",
+                        (createInvalidationRequest.getDistributionId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(createInvalidationRequest
+                                                .getDistributionId()), false)
+                                : "");
         request.setResourcePath(uriResourcePath);
 
         try {

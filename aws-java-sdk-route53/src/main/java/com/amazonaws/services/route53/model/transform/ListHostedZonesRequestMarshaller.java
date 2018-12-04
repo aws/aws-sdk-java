@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListHostedZonesRequest Marshaller
@@ -58,23 +61,19 @@ public class ListHostedZonesRequestMarshaller implements
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listHostedZonesRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listHostedZonesRequest.getMarker());
-        if (marker != null) {
-            request.addParameter("marker", marker);
+        if (listHostedZonesRequest.getMarker() != null) {
+            request.addParameter("marker",
+                    StringUtils.fromString(listHostedZonesRequest.getMarker()));
         }
 
-        String maxItems = (listHostedZonesRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listHostedZonesRequest.getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("maxitems", maxItems);
+        if (listHostedZonesRequest.getMaxItems() != null) {
+            request.addParameter("maxitems", StringUtils
+                    .fromString(listHostedZonesRequest.getMaxItems()));
         }
 
-        String delegationSetId = (listHostedZonesRequest.getDelegationSetId() == null) ? null
-                : StringUtils.fromString(listHostedZonesRequest
-                        .getDelegationSetId());
-        if (delegationSetId != null) {
-            request.addParameter("delegationsetid", delegationSetId);
+        if (listHostedZonesRequest.getDelegationSetId() != null) {
+            request.addParameter("delegationsetid", StringUtils
+                    .fromString(listHostedZonesRequest.getDelegationSetId()));
         }
 
         return request;

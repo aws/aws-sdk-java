@@ -46,6 +46,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * @param message
      *        A message about the unique problems' result.
      */
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -57,6 +58,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * 
      * @return A message about the unique problems' result.
      */
+
     public String getMessage() {
         return this.message;
     }
@@ -71,6 +73,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UniqueProblem withMessage(String message) {
         setMessage(message);
         return this;
@@ -83,6 +86,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * 
      * @return Information about the problems.
      */
+
     public java.util.List<Problem> getProblems() {
         return problems;
     }
@@ -95,6 +99,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * @param problems
      *        Information about the problems.
      */
+
     public void setProblems(java.util.Collection<Problem> problems) {
         if (problems == null) {
             this.problems = null;
@@ -120,6 +125,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UniqueProblem withProblems(Problem... problems) {
         if (this.problems == null) {
             setProblems(new java.util.ArrayList<Problem>(problems.length));
@@ -140,6 +146,7 @@ public class UniqueProblem implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UniqueProblem withProblems(java.util.Collection<Problem> problems) {
         setProblems(problems);
         return this;

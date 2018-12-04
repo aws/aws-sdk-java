@@ -30,9 +30,12 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudfront.model.*;
 import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.XMLWriter;
+import com.amazonaws.util.SdkHttpUtils;
 
 /**
  * ListStreamingDistributionsRequest Marshaller
@@ -59,18 +62,15 @@ public class ListStreamingDistributionsRequestMarshaller
 
         request.setResourcePath(uriResourcePath);
 
-        String marker = (listStreamingDistributionsRequest.getMarker() == null) ? null
-                : StringUtils.fromString(listStreamingDistributionsRequest
-                        .getMarker());
-        if (marker != null) {
-            request.addParameter("Marker", marker);
+        if (listStreamingDistributionsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils
+                    .fromString(listStreamingDistributionsRequest.getMarker()));
         }
 
-        String maxItems = (listStreamingDistributionsRequest.getMaxItems() == null) ? null
-                : StringUtils.fromString(listStreamingDistributionsRequest
-                        .getMaxItems());
-        if (maxItems != null) {
-            request.addParameter("MaxItems", maxItems);
+        if (listStreamingDistributionsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems",
+                    StringUtils.fromString(listStreamingDistributionsRequest
+                            .getMaxItems()));
         }
 
         return request;

@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.elasticache.model;
 
 import java.io.Serializable;
@@ -24,123 +26,153 @@ import java.io.Serializable;
 public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The name of the cache parameter group.
+     * </p>
      */
     private String cacheParameterGroupName;
-
     /**
+     * <p>
      * The name of the cache parameter group family that this cache parameter
      * group is compatible with.
+     * </p>
      */
     private String cacheParameterGroupFamily;
-
     /**
+     * <p>
      * The description for this cache parameter group.
+     * </p>
      */
     private String description;
 
     /**
+     * <p>
      * The name of the cache parameter group.
-     *
-     * @return The name of the cache parameter group.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group.
      */
-    public String getCacheParameterGroupName() {
-        return cacheParameterGroupName;
-    }
-    
-    /**
-     * The name of the cache parameter group.
-     *
-     * @param cacheParameterGroupName The name of the cache parameter group.
-     */
+
     public void setCacheParameterGroupName(String cacheParameterGroupName) {
         this.cacheParameterGroupName = cacheParameterGroupName;
     }
-    
+
     /**
-     * The name of the cache parameter group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheParameterGroupName The name of the cache parameter group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The name of the cache parameter group.
+     * </p>
+     * 
+     * @return The name of the cache parameter group.
      */
-    public CacheParameterGroup withCacheParameterGroupName(String cacheParameterGroupName) {
-        this.cacheParameterGroupName = cacheParameterGroupName;
+
+    public String getCacheParameterGroupName() {
+        return this.cacheParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the cache parameter group.
+     * </p>
+     * 
+     * @param cacheParameterGroupName
+     *        The name of the cache parameter group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CacheParameterGroup withCacheParameterGroupName(
+            String cacheParameterGroupName) {
+        setCacheParameterGroupName(cacheParameterGroupName);
         return this;
     }
 
     /**
+     * <p>
      * The name of the cache parameter group family that this cache parameter
      * group is compatible with.
-     *
-     * @return The name of the cache parameter group family that this cache parameter
-     *         group is compatible with.
+     * </p>
+     * 
+     * @param cacheParameterGroupFamily
+     *        The name of the cache parameter group family that this cache
+     *        parameter group is compatible with.
      */
-    public String getCacheParameterGroupFamily() {
-        return cacheParameterGroupFamily;
-    }
-    
-    /**
-     * The name of the cache parameter group family that this cache parameter
-     * group is compatible with.
-     *
-     * @param cacheParameterGroupFamily The name of the cache parameter group family that this cache parameter
-     *         group is compatible with.
-     */
+
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
         this.cacheParameterGroupFamily = cacheParameterGroupFamily;
     }
-    
+
     /**
+     * <p>
      * The name of the cache parameter group family that this cache parameter
      * group is compatible with.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param cacheParameterGroupFamily The name of the cache parameter group family that this cache parameter
-     *         group is compatible with.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The name of the cache parameter group family that this cache
+     *         parameter group is compatible with.
      */
-    public CacheParameterGroup withCacheParameterGroupFamily(String cacheParameterGroupFamily) {
-        this.cacheParameterGroupFamily = cacheParameterGroupFamily;
+
+    public String getCacheParameterGroupFamily() {
+        return this.cacheParameterGroupFamily;
+    }
+
+    /**
+     * <p>
+     * The name of the cache parameter group family that this cache parameter
+     * group is compatible with.
+     * </p>
+     * 
+     * @param cacheParameterGroupFamily
+     *        The name of the cache parameter group family that this cache
+     *        parameter group is compatible with.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public CacheParameterGroup withCacheParameterGroupFamily(
+            String cacheParameterGroupFamily) {
+        setCacheParameterGroupFamily(cacheParameterGroupFamily);
         return this;
     }
 
     /**
+     * <p>
      * The description for this cache parameter group.
-     *
-     * @return The description for this cache parameter group.
+     * </p>
+     * 
+     * @param description
+     *        The description for this cache parameter group.
      */
-    public String getDescription() {
-        return description;
-    }
-    
-    /**
-     * The description for this cache parameter group.
-     *
-     * @param description The description for this cache parameter group.
-     */
+
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     /**
-     * The description for this cache parameter group.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param description The description for this cache parameter group.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The description for this cache parameter group.
+     * </p>
+     * 
+     * @return The description for this cache parameter group.
      */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description for this cache parameter group.
+     * </p>
+     * 
+     * @param description
+     *        The description for this cache parameter group.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public CacheParameterGroup withDescription(String description) {
-        this.description = description;
+        setDescription(description);
         return this;
     }
 
@@ -156,54 +188,77 @@ public class CacheParameterGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
-        if (getDescription() != null) sb.append("Description: " + getDescription() );
+        if (getCacheParameterGroupName() != null)
+            sb.append("CacheParameterGroupName: "
+                    + getCacheParameterGroupName() + ",");
+        if (getCacheParameterGroupFamily() != null)
+            sb.append("CacheParameterGroupFamily: "
+                    + getCacheParameterGroupFamily() + ",");
+        if (getDescription() != null)
+            sb.append("Description: " + getDescription());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CacheParameterGroup == false)
+            return false;
+        CacheParameterGroup other = (CacheParameterGroup) obj;
+        if (other.getCacheParameterGroupName() == null
+                ^ this.getCacheParameterGroupName() == null)
+            return false;
+        if (other.getCacheParameterGroupName() != null
+                && other.getCacheParameterGroupName().equals(
+                        this.getCacheParameterGroupName()) == false)
+            return false;
+        if (other.getCacheParameterGroupFamily() == null
+                ^ this.getCacheParameterGroupFamily() == null)
+            return false;
+        if (other.getCacheParameterGroupFamily() != null
+                && other.getCacheParameterGroupFamily().equals(
+                        this.getCacheParameterGroupFamily()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null
+                && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
-        hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode()); 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getCacheParameterGroupName() == null) ? 0
+                        : getCacheParameterGroupName().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getCacheParameterGroupFamily() == null) ? 0
+                        : getCacheParameterGroupFamily().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof CacheParameterGroup == false) return false;
-        CacheParameterGroup other = (CacheParameterGroup)obj;
-        
-        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null) return false;
-        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false) return false; 
-        if (other.getCacheParameterGroupFamily() == null ^ this.getCacheParameterGroupFamily() == null) return false;
-        if (other.getCacheParameterGroupFamily() != null && other.getCacheParameterGroupFamily().equals(this.getCacheParameterGroupFamily()) == false) return false; 
-        if (other.getDescription() == null ^ this.getDescription() == null) return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public CacheParameterGroup clone() {
         try {
             return (CacheParameterGroup) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

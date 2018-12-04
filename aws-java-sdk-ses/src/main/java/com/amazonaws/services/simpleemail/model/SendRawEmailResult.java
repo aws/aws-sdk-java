@@ -19,10 +19,7 @@ package com.amazonaws.services.simpleemail.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Represents a unique message ID returned from a successful
- * <code>SendRawEmail</code> request.
- * </p>
+ * 
  */
 public class SendRawEmailResult implements Serializable, Cloneable {
 
@@ -44,6 +41,7 @@ public class SendRawEmailResult implements Serializable, Cloneable {
      *        The unique message identifier returned from the
      *        <code>SendRawEmail</code> action.
      */
+
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
@@ -57,6 +55,7 @@ public class SendRawEmailResult implements Serializable, Cloneable {
      * @return The unique message identifier returned from the
      *         <code>SendRawEmail</code> action.
      */
+
     public String getMessageId() {
         return this.messageId;
     }
@@ -73,6 +72,7 @@ public class SendRawEmailResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public SendRawEmailResult withMessageId(String messageId) {
         setMessageId(messageId);
         return this;

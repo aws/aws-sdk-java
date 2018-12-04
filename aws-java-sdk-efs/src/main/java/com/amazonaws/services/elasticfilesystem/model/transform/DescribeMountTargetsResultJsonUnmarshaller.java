@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticfilesystem.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticfilesystem.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,8 +55,8 @@ public class DescribeMountTargetsResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();
-                    describeMountTargetsResult.setMarker(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeMountTargetsResult.setMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MountTargets", targetDepth)) {
                     context.nextToken();
@@ -65,9 +67,8 @@ public class DescribeMountTargetsResultJsonUnmarshaller implements
                 }
                 if (context.testExpression("NextMarker", targetDepth)) {
                     context.nextToken();
-                    describeMountTargetsResult
-                            .setNextMarker(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeMountTargetsResult.setNextMarker(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

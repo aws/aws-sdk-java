@@ -31,12 +31,18 @@ public enum CloudFormationActions implements Action {
     CancelUpdateStack("cloudformation:CancelUpdateStack"),
     /** Action for the ContinueUpdateRollback operation. */
     ContinueUpdateRollback("cloudformation:ContinueUpdateRollback"),
+    /** Action for the CreateChangeSet operation. */
+    CreateChangeSet("cloudformation:CreateChangeSet"),
     /** Action for the CreateStack operation. */
     CreateStack("cloudformation:CreateStack"),
+    /** Action for the DeleteChangeSet operation. */
+    DeleteChangeSet("cloudformation:DeleteChangeSet"),
     /** Action for the DeleteStack operation. */
     DeleteStack("cloudformation:DeleteStack"),
     /** Action for the DescribeAccountLimits operation. */
     DescribeAccountLimits("cloudformation:DescribeAccountLimits"),
+    /** Action for the DescribeChangeSet operation. */
+    DescribeChangeSet("cloudformation:DescribeChangeSet"),
     /** Action for the DescribeStackEvents operation. */
     DescribeStackEvents("cloudformation:DescribeStackEvents"),
     /** Action for the DescribeStackResource operation. */
@@ -47,12 +53,16 @@ public enum CloudFormationActions implements Action {
     DescribeStacks("cloudformation:DescribeStacks"),
     /** Action for the EstimateTemplateCost operation. */
     EstimateTemplateCost("cloudformation:EstimateTemplateCost"),
+    /** Action for the ExecuteChangeSet operation. */
+    ExecuteChangeSet("cloudformation:ExecuteChangeSet"),
     /** Action for the GetStackPolicy operation. */
     GetStackPolicy("cloudformation:GetStackPolicy"),
     /** Action for the GetTemplate operation. */
     GetTemplate("cloudformation:GetTemplate"),
     /** Action for the GetTemplateSummary operation. */
     GetTemplateSummary("cloudformation:GetTemplateSummary"),
+    /** Action for the ListChangeSets operation. */
+    ListChangeSets("cloudformation:ListChangeSets"),
     /** Action for the ListStackResources operation. */
     ListStackResources("cloudformation:ListStackResources"),
     /** Action for the ListStacks operation. */

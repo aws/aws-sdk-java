@@ -69,6 +69,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      *        The identifier of the pipeline for which you want to change
      *        notification settings.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -82,6 +83,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      * @return The identifier of the pipeline for which you want to change
      *         notification settings.
      */
+
     public String getId() {
         return this.id;
     }
@@ -98,6 +100,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineNotificationsRequest withId(String id) {
         setId(id);
         return this;
@@ -150,6 +153,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      *        condition. This is the ARN that Amazon SNS returned when you
      *        created the topic.</li>
      */
+
     public void setNotifications(Notifications notifications) {
         this.notifications = notifications;
     }
@@ -200,6 +204,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      *         condition. This is the ARN that Amazon SNS returned when you
      *         created the topic.</li>
      */
+
     public Notifications getNotifications() {
         return this.notifications;
     }
@@ -253,6 +258,7 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdatePipelineNotificationsRequest withNotifications(
             Notifications notifications) {
         setNotifications(notifications);

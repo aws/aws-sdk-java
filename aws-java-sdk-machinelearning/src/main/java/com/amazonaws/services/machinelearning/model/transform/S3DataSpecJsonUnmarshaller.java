@@ -18,6 +18,8 @@ package com.amazonaws.services.machinelearning.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.machinelearning.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class S3DataSpecJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DataLocationS3", targetDepth)) {
                     context.nextToken();
-                    s3DataSpec.setDataLocationS3(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    s3DataSpec.setDataLocationS3(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataRearrangement", targetDepth)) {
                     context.nextToken();
-                    s3DataSpec.setDataRearrangement(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    s3DataSpec.setDataRearrangement(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchema", targetDepth)) {
                     context.nextToken();
-                    s3DataSpec.setDataSchema(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    s3DataSpec.setDataSchema(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("DataSchemaLocationS3", targetDepth)) {
                     context.nextToken();
-                    s3DataSpec.setDataSchemaLocationS3(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    s3DataSpec.setDataSchemaLocationS3(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

@@ -18,6 +18,8 @@ package com.amazonaws.services.apigateway.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,28 +55,28 @@ public class GetModelResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();
-                    getModelResult.setId(StringJsonUnmarshaller.getInstance()
+                    getModelResult.setId(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    getModelResult.setName(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    getModelResult.setName(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
-                    getModelResult.setDescription(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getModelResult.setDescription(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("schema", targetDepth)) {
                     context.nextToken();
-                    getModelResult.setSchema(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getModelResult.setSchema(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentType", targetDepth)) {
                     context.nextToken();
-                    getModelResult.setContentType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    getModelResult.setContentType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

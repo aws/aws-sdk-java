@@ -18,6 +18,8 @@ package com.amazonaws.services.opsworks.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.opsworks.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,18 +55,18 @@ public class BlockDeviceMappingJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("DeviceName", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setDeviceName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    blockDeviceMapping.setDeviceName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("NoDevice", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setNoDevice(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    blockDeviceMapping.setNoDevice(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VirtualName", targetDepth)) {
                     context.nextToken();
-                    blockDeviceMapping.setVirtualName(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    blockDeviceMapping.setVirtualName(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Ebs", targetDepth)) {
                     context.nextToken();

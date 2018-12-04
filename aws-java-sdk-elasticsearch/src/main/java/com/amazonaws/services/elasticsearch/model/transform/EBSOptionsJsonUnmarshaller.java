@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticsearch.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticsearch.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,22 +55,22 @@ public class EBSOptionsJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EBSEnabled", targetDepth)) {
                     context.nextToken();
-                    eBSOptions.setEBSEnabled(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eBSOptions.setEBSEnabled(context.getUnmarshaller(
+                            Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    eBSOptions.setVolumeType(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eBSOptions.setVolumeType(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("VolumeSize", targetDepth)) {
                     context.nextToken();
-                    eBSOptions.setVolumeSize(IntegerJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    eBSOptions.setVolumeSize(context.getUnmarshaller(
+                            Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Iops", targetDepth)) {
                     context.nextToken();
-                    eBSOptions.setIops(IntegerJsonUnmarshaller.getInstance()
+                    eBSOptions.setIops(context.getUnmarshaller(Integer.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

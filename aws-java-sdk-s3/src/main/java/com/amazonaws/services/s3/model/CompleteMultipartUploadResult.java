@@ -14,10 +14,10 @@
  */
 package com.amazonaws.services.s3.model;
 import java.io.Serializable;
-
 import java.util.Date;
 
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 import com.amazonaws.services.s3.internal.SSEResultBase;
 
 
@@ -25,7 +25,8 @@ import com.amazonaws.services.s3.internal.SSEResultBase;
  * The CompleteMultipartUploadResult contains all the information about the
  * CompleteMultipartUpload method.
  */
-public class CompleteMultipartUploadResult extends SSEResultBase implements ObjectExpirationResult,Serializable {
+public class CompleteMultipartUploadResult extends SSEResultBase
+        implements ObjectExpirationResult, S3RequesterChargedResult, Serializable {
 
     /** The name of the bucket containing the completed multipart upload. */
     private String bucketName;
@@ -53,6 +54,12 @@ public class CompleteMultipartUploadResult extends SSEResultBase implements Obje
 
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
+
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Returns the URL identifying the new multipart object.
@@ -186,5 +193,15 @@ public class CompleteMultipartUploadResult extends SSEResultBase implements Obje
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
+    }
+
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
     }
 }

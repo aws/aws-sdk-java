@@ -17,6 +17,8 @@
 package com.amazonaws.services.simpleemail.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -51,9 +53,9 @@ public class GetSendStatisticsResultStaxUnmarshaller implements
 
                 if (context
                         .testExpression("SendDataPoints/member", targetDepth)) {
-                    getSendStatisticsResult.getSendDataPoints().add(
-                            SendDataPointStaxUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    getSendStatisticsResult
+                            .withSendDataPoints(SendDataPointStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

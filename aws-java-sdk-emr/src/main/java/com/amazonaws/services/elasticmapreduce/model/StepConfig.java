@@ -75,6 +75,7 @@ public class StepConfig implements Serializable, Cloneable {
      * @param name
      *        The name of the job flow step.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -86,6 +87,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @return The name of the job flow step.
      */
+
     public String getName() {
         return this.name;
     }
@@ -100,6 +102,7 @@ public class StepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepConfig withName(String name) {
         setName(name);
         return this;
@@ -114,6 +117,7 @@ public class StepConfig implements Serializable, Cloneable {
      *        The action to take if the job flow step fails.
      * @see ActionOnFailure
      */
+
     public void setActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;
     }
@@ -126,6 +130,7 @@ public class StepConfig implements Serializable, Cloneable {
      * @return The action to take if the job flow step fails.
      * @see ActionOnFailure
      */
+
     public String getActionOnFailure() {
         return this.actionOnFailure;
     }
@@ -141,6 +146,7 @@ public class StepConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOnFailure
      */
+
     public StepConfig withActionOnFailure(String actionOnFailure) {
         setActionOnFailure(actionOnFailure);
         return this;
@@ -153,10 +159,9 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @param actionOnFailure
      *        The action to take if the job flow step fails.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ActionOnFailure
      */
+
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
         this.actionOnFailure = actionOnFailure.toString();
     }
@@ -172,6 +177,7 @@ public class StepConfig implements Serializable, Cloneable {
      *         chained together.
      * @see ActionOnFailure
      */
+
     public StepConfig withActionOnFailure(ActionOnFailure actionOnFailure) {
         setActionOnFailure(actionOnFailure);
         return this;
@@ -185,6 +191,7 @@ public class StepConfig implements Serializable, Cloneable {
      * @param hadoopJarStep
      *        The JAR file used for the job flow step.
      */
+
     public void setHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
         this.hadoopJarStep = hadoopJarStep;
     }
@@ -196,6 +203,7 @@ public class StepConfig implements Serializable, Cloneable {
      * 
      * @return The JAR file used for the job flow step.
      */
+
     public HadoopJarStepConfig getHadoopJarStep() {
         return this.hadoopJarStep;
     }
@@ -210,6 +218,7 @@ public class StepConfig implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepConfig withHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
         setHadoopJarStep(hadoopJarStep);
         return this;

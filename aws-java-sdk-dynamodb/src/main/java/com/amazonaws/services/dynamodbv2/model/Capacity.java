@@ -42,6 +42,7 @@ public class Capacity implements Serializable, Cloneable {
      *        The total number of capacity units consumed on a table or an
      *        index.
      */
+
     public void setCapacityUnits(Double capacityUnits) {
         this.capacityUnits = capacityUnits;
     }
@@ -54,6 +55,7 @@ public class Capacity implements Serializable, Cloneable {
      * @return The total number of capacity units consumed on a table or an
      *         index.
      */
+
     public Double getCapacityUnits() {
         return this.capacityUnits;
     }
@@ -69,6 +71,7 @@ public class Capacity implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Capacity withCapacityUnits(Double capacityUnits) {
         setCapacityUnits(capacityUnits);
         return this;

@@ -62,6 +62,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @param username
      *        The user name.
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -73,6 +74,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * 
      * @return The user name.
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -87,6 +89,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TemporaryCredential withUsername(String username) {
         setUsername(username);
         return this;
@@ -100,6 +103,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @param password
      *        The password.
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -111,6 +115,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * 
      * @return The password.
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -125,6 +130,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TemporaryCredential withPassword(String password) {
         setPassword(password);
         return this;
@@ -144,6 +150,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      *        be able to use the credentials to log in. If they are logged in at
      *        the time, they will be automatically logged out.
      */
+
     public void setValidForInMinutes(Integer validForInMinutes) {
         this.validForInMinutes = validForInMinutes;
     }
@@ -161,6 +168,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      *         be able to use the credentials to log in. If they are logged in
      *         at the time, they will be automatically logged out.
      */
+
     public Integer getValidForInMinutes() {
         return this.validForInMinutes;
     }
@@ -181,6 +189,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TemporaryCredential withValidForInMinutes(Integer validForInMinutes) {
         setValidForInMinutes(validForInMinutes);
         return this;
@@ -194,6 +203,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @param instanceId
      *        The instance's AWS OpsWorks ID.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -205,6 +215,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * 
      * @return The instance's AWS OpsWorks ID.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -219,6 +230,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public TemporaryCredential withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;

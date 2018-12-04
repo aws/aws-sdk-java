@@ -42,6 +42,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * @param policyName
      *        The name of the policy.
      */
+
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
@@ -53,6 +54,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the policy.
      */
+
     public String getPolicyName() {
         return this.policyName;
     }
@@ -67,6 +69,7 @@ public class GetPolicyRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetPolicyRequest withPolicyName(String policyName) {
         setPolicyName(policyName);
         return this;

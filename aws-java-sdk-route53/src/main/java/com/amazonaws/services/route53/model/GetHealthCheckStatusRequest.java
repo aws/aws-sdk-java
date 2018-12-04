@@ -259,6 +259,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *        check with those resource record sets, health check results will
      *        be unpredictable.
      */
+
     public void setHealthCheckId(String healthCheckId) {
         this.healthCheckId = healthCheckId;
     }
@@ -415,6 +416,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      *         the health check with those resource record sets, health check
      *         results will be unpredictable.
      */
+
     public String getHealthCheckId() {
         return this.healthCheckId;
     }
@@ -574,6 +576,7 @@ public class GetHealthCheckStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetHealthCheckStatusRequest withHealthCheckId(String healthCheckId) {
         setHealthCheckId(healthCheckId);
         return this;

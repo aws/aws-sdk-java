@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * BatchWriteItemRequest Marshaller
  */
 public class BatchWriteItemRequestMarshaller implements
         Marshaller<Request<BatchWriteItemRequest>, BatchWriteItemRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public BatchWriteItemRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<BatchWriteItemRequest> marshall(
             BatchWriteItemRequest batchWriteItemRequest) {
@@ -63,56 +64,58 @@ public class BatchWriteItemRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             java.util.Map<String, java.util.List<WriteRequest>> requestItemsMap = batchWriteItemRequest
                     .getRequestItems();
             if (requestItemsMap != null) {
-                jsonWriter.key("RequestItems");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("RequestItems");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, java.util.List<WriteRequest>> requestItemsMapValue : requestItemsMap
                         .entrySet()) {
                     if (requestItemsMapValue.getValue() != null) {
-                        jsonWriter.key(requestItemsMapValue.getKey());
+                        jsonGenerator.writeFieldName(requestItemsMapValue
+                                .getKey());
 
-                        jsonWriter.array();
+                        jsonGenerator.writeStartArray();
                         for (WriteRequest requestItemsMapValueList : requestItemsMapValue
                                 .getValue()) {
                             if (requestItemsMapValueList != null) {
 
                                 WriteRequestJsonMarshaller.getInstance()
                                         .marshall(requestItemsMapValueList,
-                                                jsonWriter);
+                                                jsonGenerator);
                             }
                         }
-                        jsonWriter.endArray();
+                        jsonGenerator.writeEndArray();
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (batchWriteItemRequest.getReturnConsumedCapacity() != null) {
-                jsonWriter.key("ReturnConsumedCapacity").value(
-                        batchWriteItemRequest.getReturnConsumedCapacity());
+                jsonGenerator.writeFieldName("ReturnConsumedCapacity")
+                        .writeValue(
+                                batchWriteItemRequest
+                                        .getReturnConsumedCapacity());
             }
-
             if (batchWriteItemRequest.getReturnItemCollectionMetrics() != null) {
-                jsonWriter.key("ReturnItemCollectionMetrics").value(
-                        batchWriteItemRequest.getReturnItemCollectionMetrics());
+                jsonGenerator.writeFieldName("ReturnItemCollectionMetrics")
+                        .writeValue(
+                                batchWriteItemRequest
+                                        .getReturnItemCollectionMetrics());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.0");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

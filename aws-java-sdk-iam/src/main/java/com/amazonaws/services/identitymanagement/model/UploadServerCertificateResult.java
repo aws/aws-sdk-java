@@ -43,6 +43,7 @@ public class UploadServerCertificateResult implements Serializable, Cloneable {
      *        The meta information of the uploaded server certificate without
      *        its certificate body, certificate chain, and private key.
      */
+
     public void setServerCertificateMetadata(
             ServerCertificateMetadata serverCertificateMetadata) {
         this.serverCertificateMetadata = serverCertificateMetadata;
@@ -57,6 +58,7 @@ public class UploadServerCertificateResult implements Serializable, Cloneable {
      * @return The meta information of the uploaded server certificate without
      *         its certificate body, certificate chain, and private key.
      */
+
     public ServerCertificateMetadata getServerCertificateMetadata() {
         return this.serverCertificateMetadata;
     }
@@ -73,6 +75,7 @@ public class UploadServerCertificateResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadServerCertificateResult withServerCertificateMetadata(
             ServerCertificateMetadata serverCertificateMetadata) {
         setServerCertificateMetadata(serverCertificateMetadata);

@@ -20,7 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p/>
  */
 public class ResendValidationEmailRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {
@@ -28,10 +28,10 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by <a>RequestCertificate</a> as
-     * soon as the request is made. By default, using this parameter causes
-     * email to be sent to all top-level domains you specified in the
-     * certificate request.
+     * certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By
+     * default, using this parameter causes email to be sent to all top-level
+     * domains you specified in the certificate request.
      * </p>
      * <p>
      * The ARN must be of the form:
@@ -59,11 +59,31 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      */
@@ -72,10 +92,10 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by <a>RequestCertificate</a> as
-     * soon as the request is made. By default, using this parameter causes
-     * email to be sent to all top-level domains you specified in the
-     * certificate request.
+     * certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By
+     * default, using this parameter causes email to be sent to all top-level
+     * domains you specified in the certificate request.
      * </p>
      * <p>
      * The ARN must be of the form:
@@ -86,9 +106,9 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * 
      * @param certificateArn
      *        String that contains the ARN of the requested certificate. The
-     *        certificate ARN is generated and returned by
-     *        <a>RequestCertificate</a> as soon as the request is made. By
-     *        default, using this parameter causes email to be sent to all
+     *        certificate ARN is generated and returned by the
+     *        <a>RequestCertificate</a> action as soon as the request is made.
+     *        By default, using this parameter causes email to be sent to all
      *        top-level domains you specified in the certificate request. </p>
      *        <p>
      *        The ARN must be of the form:
@@ -96,6 +116,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        <p>
      *        <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public void setCertificateArn(String certificateArn) {
         this.certificateArn = certificateArn;
     }
@@ -103,10 +124,10 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by <a>RequestCertificate</a> as
-     * soon as the request is made. By default, using this parameter causes
-     * email to be sent to all top-level domains you specified in the
-     * certificate request.
+     * certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By
+     * default, using this parameter causes email to be sent to all top-level
+     * domains you specified in the certificate request.
      * </p>
      * <p>
      * The ARN must be of the form:
@@ -116,9 +137,9 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @return String that contains the ARN of the requested certificate. The
-     *         certificate ARN is generated and returned by
-     *         <a>RequestCertificate</a> as soon as the request is made. By
-     *         default, using this parameter causes email to be sent to all
+     *         certificate ARN is generated and returned by the
+     *         <a>RequestCertificate</a> action as soon as the request is made.
+     *         By default, using this parameter causes email to be sent to all
      *         top-level domains you specified in the certificate request. </p>
      *         <p>
      *         The ARN must be of the form:
@@ -126,6 +147,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         <p>
      *         <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      */
+
     public String getCertificateArn() {
         return this.certificateArn;
     }
@@ -133,10 +155,10 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * String that contains the ARN of the requested certificate. The
-     * certificate ARN is generated and returned by <a>RequestCertificate</a> as
-     * soon as the request is made. By default, using this parameter causes
-     * email to be sent to all top-level domains you specified in the
-     * certificate request.
+     * certificate ARN is generated and returned by the
+     * <a>RequestCertificate</a> action as soon as the request is made. By
+     * default, using this parameter causes email to be sent to all top-level
+     * domains you specified in the certificate request.
      * </p>
      * <p>
      * The ARN must be of the form:
@@ -147,9 +169,9 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * 
      * @param certificateArn
      *        String that contains the ARN of the requested certificate. The
-     *        certificate ARN is generated and returned by
-     *        <a>RequestCertificate</a> as soon as the request is made. By
-     *        default, using this parameter causes email to be sent to all
+     *        certificate ARN is generated and returned by the
+     *        <a>RequestCertificate</a> action as soon as the request is made.
+     *        By default, using this parameter causes email to be sent to all
      *        top-level domains you specified in the certificate request. </p>
      *        <p>
      *        The ARN must be of the form:
@@ -159,6 +181,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
         return this;
@@ -174,6 +197,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        The Fully Qualified Domain Name (FQDN) of the certificate that
      *        needs to be validated.
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -187,6 +211,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return The Fully Qualified Domain Name (FQDN) of the certificate that
      *         needs to be validated.
      */
+
     public String getDomain() {
         return this.domain;
     }
@@ -203,6 +228,7 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withDomain(String domain) {
         setDomain(domain);
         return this;
@@ -219,11 +245,31 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -238,13 +284,34 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        registrant, technical contact, and administrative contact in WHOIS
      *        and the following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      */
+
     public void setValidationDomain(String validationDomain) {
         this.validationDomain = validationDomain;
     }
@@ -260,11 +327,31 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -278,13 +365,34 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *         registrant, technical contact, and administrative contact in
      *         WHOIS and the following five addresses:
      *         <ul>
-     *         <li>admin@subdomain.example.com</li>
-     *         <li>administrator@subdomain.example.com</li>
-     *         <li>hostmaster@subdomain.example.com</li>
-     *         <li>postmaster@subdomain.example.com</li>
-     *         <li>webmaster@subdomain.example.com</li>
+     *         <li>
+     *         <p>
+     *         admin@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         administrator@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         hostmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         postmaster@subdomain.example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         webmaster@subdomain.example.com
+     *         </p>
+     *         </li>
      *         </ul>
      */
+
     public String getValidationDomain() {
         return this.validationDomain;
     }
@@ -300,11 +408,31 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      * email to the domain registrant, technical contact, and administrative
      * contact in WHOIS and the following five addresses:
      * <ul>
-     * <li>admin@subdomain.example.com</li>
-     * <li>administrator@subdomain.example.com</li>
-     * <li>hostmaster@subdomain.example.com</li>
-     * <li>postmaster@subdomain.example.com</li>
-     * <li>webmaster@subdomain.example.com</li>
+     * <li>
+     * <p>
+     * admin@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * administrator@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * hostmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * postmaster@subdomain.example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * webmaster@subdomain.example.com
+     * </p>
+     * </li>
      * </ul>
      * </p>
      * 
@@ -319,15 +447,36 @@ public class ResendValidationEmailRequest extends AmazonWebServiceRequest
      *        registrant, technical contact, and administrative contact in WHOIS
      *        and the following five addresses:
      *        <ul>
-     *        <li>admin@subdomain.example.com</li>
-     *        <li>administrator@subdomain.example.com</li>
-     *        <li>hostmaster@subdomain.example.com</li>
-     *        <li>postmaster@subdomain.example.com</li>
-     *        <li>webmaster@subdomain.example.com</li>
+     *        <li>
+     *        <p>
+     *        admin@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        administrator@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        hostmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        postmaster@subdomain.example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        webmaster@subdomain.example.com
+     *        </p>
+     *        </li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ResendValidationEmailRequest withValidationDomain(
             String validationDomain) {
         setValidationDomain(validationDomain);

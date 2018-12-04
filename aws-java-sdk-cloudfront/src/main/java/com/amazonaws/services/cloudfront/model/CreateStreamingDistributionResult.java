@@ -42,6 +42,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * @param streamingDistribution
      *        The streaming distribution's information.
      */
+
     public void setStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         this.streamingDistribution = streamingDistribution;
@@ -52,6 +53,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * 
      * @return The streaming distribution's information.
      */
+
     public StreamingDistribution getStreamingDistribution() {
         return this.streamingDistribution;
     }
@@ -64,6 +66,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamingDistributionResult withStreamingDistribution(
             StreamingDistribution streamingDistribution) {
         setStreamingDistribution(streamingDistribution);
@@ -82,6 +85,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      *        https://cloudfront.amazonaws.com/2010-11
      *        -01/streaming-distribution/EGTXBD79H29TRA8.
      */
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -97,6 +101,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      *         https://cloudfront.amazonaws.com
      *         /2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
+
     public String getLocation() {
         return this.location;
     }
@@ -115,6 +120,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamingDistributionResult withLocation(String location) {
         setLocation(location);
         return this;
@@ -126,6 +132,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * @param eTag
      *        The current version of the streaming distribution created.
      */
+
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
@@ -135,6 +142,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * 
      * @return The current version of the streaming distribution created.
      */
+
     public String getETag() {
         return this.eTag;
     }
@@ -147,6 +155,7 @@ public class CreateStreamingDistributionResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateStreamingDistributionResult withETag(String eTag) {
         setETag(eTag);
         return this;

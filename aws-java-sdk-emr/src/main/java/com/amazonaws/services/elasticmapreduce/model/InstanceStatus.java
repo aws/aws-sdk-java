@@ -53,6 +53,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *        The current state of the instance.
      * @see InstanceState
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -65,6 +66,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return The current state of the instance.
      * @see InstanceState
      */
+
     public String getState() {
         return this.state;
     }
@@ -80,6 +82,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceState
      */
+
     public InstanceStatus withState(String state) {
         setState(state);
         return this;
@@ -92,10 +95,9 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @param state
      *        The current state of the instance.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see InstanceState
      */
+
     public void setState(InstanceState state) {
         this.state = state.toString();
     }
@@ -111,6 +113,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      *         chained together.
      * @see InstanceState
      */
+
     public InstanceStatus withState(InstanceState state) {
         setState(state);
         return this;
@@ -124,6 +127,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @param stateChangeReason
      *        The details of the status change reason for the instance.
      */
+
     public void setStateChangeReason(InstanceStateChangeReason stateChangeReason) {
         this.stateChangeReason = stateChangeReason;
     }
@@ -135,6 +139,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @return The details of the status change reason for the instance.
      */
+
     public InstanceStateChangeReason getStateChangeReason() {
         return this.stateChangeReason;
     }
@@ -149,6 +154,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withStateChangeReason(
             InstanceStateChangeReason stateChangeReason) {
         setStateChangeReason(stateChangeReason);
@@ -163,6 +169,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @param timeline
      *        The timeline of the instance status over time.
      */
+
     public void setTimeline(InstanceTimeline timeline) {
         this.timeline = timeline;
     }
@@ -174,6 +181,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * 
      * @return The timeline of the instance status over time.
      */
+
     public InstanceTimeline getTimeline() {
         return this.timeline;
     }
@@ -188,6 +196,7 @@ public class InstanceStatus implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InstanceStatus withTimeline(InstanceTimeline timeline) {
         setTimeline(timeline);
         return this;

@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.kinesisfirehose.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.kinesisfirehose.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * DeliveryStreamDescriptionMarshaller
@@ -39,69 +34,66 @@ import com.amazonaws.util.json.*;
 public class DeliveryStreamDescriptionJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(DeliveryStreamDescription deliveryStreamDescription,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (deliveryStreamDescription == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (deliveryStreamDescription.getDeliveryStreamName() != null) {
-                jsonWriter.key("DeliveryStreamName").value(
+                jsonGenerator.writeFieldName("DeliveryStreamName").writeValue(
                         deliveryStreamDescription.getDeliveryStreamName());
             }
-
             if (deliveryStreamDescription.getDeliveryStreamARN() != null) {
-                jsonWriter.key("DeliveryStreamARN").value(
+                jsonGenerator.writeFieldName("DeliveryStreamARN").writeValue(
                         deliveryStreamDescription.getDeliveryStreamARN());
             }
-
             if (deliveryStreamDescription.getDeliveryStreamStatus() != null) {
-                jsonWriter.key("DeliveryStreamStatus").value(
-                        deliveryStreamDescription.getDeliveryStreamStatus());
+                jsonGenerator.writeFieldName("DeliveryStreamStatus")
+                        .writeValue(
+                                deliveryStreamDescription
+                                        .getDeliveryStreamStatus());
             }
-
             if (deliveryStreamDescription.getVersionId() != null) {
-                jsonWriter.key("VersionId").value(
+                jsonGenerator.writeFieldName("VersionId").writeValue(
                         deliveryStreamDescription.getVersionId());
             }
-
             if (deliveryStreamDescription.getCreateTimestamp() != null) {
-                jsonWriter.key("CreateTimestamp").value(
+                jsonGenerator.writeFieldName("CreateTimestamp").writeValue(
                         deliveryStreamDescription.getCreateTimestamp());
             }
-
             if (deliveryStreamDescription.getLastUpdateTimestamp() != null) {
-                jsonWriter.key("LastUpdateTimestamp").value(
+                jsonGenerator.writeFieldName("LastUpdateTimestamp").writeValue(
                         deliveryStreamDescription.getLastUpdateTimestamp());
             }
 
             java.util.List<DestinationDescription> destinationsList = deliveryStreamDescription
                     .getDestinations();
             if (destinationsList != null) {
-                jsonWriter.key("Destinations");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Destinations");
+                jsonGenerator.writeStartArray();
                 for (DestinationDescription destinationsListValue : destinationsList) {
                     if (destinationsListValue != null) {
 
                         DestinationDescriptionJsonMarshaller.getInstance()
-                                .marshall(destinationsListValue, jsonWriter);
+                                .marshall(destinationsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (deliveryStreamDescription.getHasMoreDestinations() != null) {
-                jsonWriter.key("HasMoreDestinations").value(
+                jsonGenerator.writeFieldName("HasMoreDestinations").writeValue(
                         deliveryStreamDescription.getHasMoreDestinations());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

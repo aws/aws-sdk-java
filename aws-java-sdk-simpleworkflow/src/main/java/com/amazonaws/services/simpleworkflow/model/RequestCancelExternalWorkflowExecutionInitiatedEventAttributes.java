@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
@@ -22,242 +24,245 @@ import java.io.Serializable;
  * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
  * </p>
  */
-public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes implements Serializable, Cloneable {
+public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
+        implements Serializable, Cloneable {
 
     /**
+     * <p>
      * The <code>workflowId</code> of the external workflow execution to be
      * canceled.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * </p>
      */
     private String workflowId;
-
     /**
-     * The <code>runId</code> of the external workflow execution to be
-     * canceled.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
+     * The <code>runId</code> of the external workflow execution to be canceled.
+     * </p>
      */
     private String runId;
-
     /**
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     * to the decision task that resulted in the
+     * <p>
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
+     * the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
+     * </p>
      */
     private Long decisionTaskCompletedEventId;
-
     /**
+     * <p>
      * <i>Optional.</i> Data attached to the event that can be used by the
      * decider in subsequent workflow tasks.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32768<br/>
+     * </p>
      */
     private String control;
 
     /**
+     * <p>
      * The <code>workflowId</code> of the external workflow execution to be
      * canceled.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @return The <code>workflowId</code> of the external workflow execution to be
-     *         canceled.
+     * </p>
+     * 
+     * @param workflowId
+     *        The <code>workflowId</code> of the external workflow execution to
+     *        be canceled.
      */
-    public String getWorkflowId() {
-        return workflowId;
-    }
-    
-    /**
-     * The <code>workflowId</code> of the external workflow execution to be
-     * canceled.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param workflowId The <code>workflowId</code> of the external workflow execution to be
-     *         canceled.
-     */
+
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
-    
+
     /**
+     * <p>
      * The <code>workflowId</code> of the external workflow execution to be
      * canceled.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
-     *
-     * @param workflowId The <code>workflowId</code> of the external workflow execution to be
-     *         canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return The <code>workflowId</code> of the external workflow execution to
+     *         be canceled.
      */
-    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(String workflowId) {
-        this.workflowId = workflowId;
+
+    public String getWorkflowId() {
+        return this.workflowId;
+    }
+
+    /**
+     * <p>
+     * The <code>workflowId</code> of the external workflow execution to be
+     * canceled.
+     * </p>
+     * 
+     * @param workflowId
+     *        The <code>workflowId</code> of the external workflow execution to
+     *        be canceled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withWorkflowId(
+            String workflowId) {
+        setWorkflowId(workflowId);
         return this;
     }
 
     /**
-     * The <code>runId</code> of the external workflow execution to be
-     * canceled.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @return The <code>runId</code> of the external workflow execution to be
-     *         canceled.
+     * The <code>runId</code> of the external workflow execution to be canceled.
+     * </p>
+     * 
+     * @param runId
+     *        The <code>runId</code> of the external workflow execution to be
+     *        canceled.
      */
-    public String getRunId() {
-        return runId;
-    }
-    
-    /**
-     * The <code>runId</code> of the external workflow execution to be
-     * canceled.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @param runId The <code>runId</code> of the external workflow execution to be
-     *         canceled.
-     */
+
     public void setRunId(String runId) {
         this.runId = runId;
     }
-    
+
     /**
-     * The <code>runId</code> of the external workflow execution to be
-     * canceled.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 64<br/>
-     *
-     * @param runId The <code>runId</code> of the external workflow execution to be
+     * The <code>runId</code> of the external workflow execution to be canceled.
+     * </p>
+     * 
+     * @return The <code>runId</code> of the external workflow execution to be
      *         canceled.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
-    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withRunId(String runId) {
-        this.runId = runId;
+
+    public String getRunId() {
+        return this.runId;
+    }
+
+    /**
+     * <p>
+     * The <code>runId</code> of the external workflow execution to be canceled.
+     * </p>
+     * 
+     * @param runId
+     *        The <code>runId</code> of the external workflow execution to be
+     *        canceled.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withRunId(
+            String runId) {
+        setRunId(runId);
         return this;
     }
 
     /**
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     * to the decision task that resulted in the
+     * <p>
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
+     * the decision task that resulted in the
      * <code>RequestCancelExternalWorkflowExecution</code> decision for this
      * cancellation request. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.
-     *
-     * @return The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     *         to the decision task that resulted in the
-     *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
-     *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the chain of events leading up to this event.
+     * </p>
+     * 
+     * @param decisionTaskCompletedEventId
+     *        The ID of the <code>DecisionTaskCompleted</code> event
+     *        corresponding to the decision task that resulted in the
+     *        <code>RequestCancelExternalWorkflowExecution</code> decision for
+     *        this cancellation request. This information can be useful for
+     *        diagnosing problems by tracing back the chain of events leading up
+     *        to this event.
      */
+
+    public void setDecisionTaskCompletedEventId(
+            Long decisionTaskCompletedEventId) {
+        this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
+    }
+
+    /**
+     * <p>
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
+     * the decision task that resulted in the
+     * <code>RequestCancelExternalWorkflowExecution</code> decision for this
+     * cancellation request. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.
+     * </p>
+     * 
+     * @return The ID of the <code>DecisionTaskCompleted</code> event
+     *         corresponding to the decision task that resulted in the
+     *         <code>RequestCancelExternalWorkflowExecution</code> decision for
+     *         this cancellation request. This information can be useful for
+     *         diagnosing problems by tracing back the chain of events leading
+     *         up to this event.
+     */
+
     public Long getDecisionTaskCompletedEventId() {
-        return decisionTaskCompletedEventId;
+        return this.decisionTaskCompletedEventId;
     }
-    
+
     /**
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     * to the decision task that resulted in the
-     * <code>RequestCancelExternalWorkflowExecution</code> decision for this
-     * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.
-     *
-     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     *         to the decision task that resulted in the
-     *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
-     *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the chain of events leading up to this event.
-     */
-    public void setDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
-        this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
-    }
-    
-    /**
-     * The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     * to the decision task that resulted in the
-     * <code>RequestCancelExternalWorkflowExecution</code> decision for this
-     * cancellation request. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param decisionTaskCompletedEventId The ID of the <code>DecisionTaskCompleted</code> event corresponding
-     *         to the decision task that resulted in the
-     *         <code>RequestCancelExternalWorkflowExecution</code> decision for this
-     *         cancellation request. This information can be useful for diagnosing
-     *         problems by tracing back the chain of events leading up to this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * The ID of the <code>DecisionTaskCompleted</code> event corresponding to
+     * the decision task that resulted in the
+     * <code>RequestCancelExternalWorkflowExecution</code> decision for this
+     * cancellation request. This information can be useful for diagnosing
+     * problems by tracing back the chain of events leading up to this event.
+     * </p>
+     * 
+     * @param decisionTaskCompletedEventId
+     *        The ID of the <code>DecisionTaskCompleted</code> event
+     *        corresponding to the decision task that resulted in the
+     *        <code>RequestCancelExternalWorkflowExecution</code> decision for
+     *        this cancellation request. This information can be useful for
+     *        diagnosing problems by tracing back the chain of events leading up
+     *        to this event.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
      */
-    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(Long decisionTaskCompletedEventId) {
-        this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
+
+    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withDecisionTaskCompletedEventId(
+            Long decisionTaskCompletedEventId) {
+        setDecisionTaskCompletedEventId(decisionTaskCompletedEventId);
         return this;
     }
 
     /**
+     * <p>
      * <i>Optional.</i> Data attached to the event that can be used by the
      * decider in subsequent workflow tasks.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32768<br/>
-     *
-     * @return <i>Optional.</i> Data attached to the event that can be used by the
-     *         decider in subsequent workflow tasks.
+     * </p>
+     * 
+     * @param control
+     *        Optional.
      */
-    public String getControl() {
-        return control;
-    }
-    
-    /**
-     * <i>Optional.</i> Data attached to the event that can be used by the
-     * decider in subsequent workflow tasks.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32768<br/>
-     *
-     * @param control <i>Optional.</i> Data attached to the event that can be used by the
-     *         decider in subsequent workflow tasks.
-     */
+
     public void setControl(String control) {
         this.control = control;
     }
-    
+
     /**
+     * <p>
      * <i>Optional.</i> Data attached to the event that can be used by the
      * decider in subsequent workflow tasks.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32768<br/>
-     *
-     * @param control <i>Optional.</i> Data attached to the event that can be used by the
-     *         decider in subsequent workflow tasks.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return Optional.
      */
-    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withControl(String control) {
-        this.control = control;
+
+    public String getControl() {
+        return this.control;
+    }
+
+    /**
+     * <p>
+     * <i>Optional.</i> Data attached to the event that can be used by the
+     * decider in subsequent workflow tasks.
+     * </p>
+     * 
+     * @param control
+     *        Optional.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes withControl(
+            String control) {
+        setControl(control);
         return this;
     }
 
@@ -273,58 +278,81 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
-        if (getControl() != null) sb.append("Control: " + getControl() );
+        if (getWorkflowId() != null)
+            sb.append("WorkflowId: " + getWorkflowId() + ",");
+        if (getRunId() != null)
+            sb.append("RunId: " + getRunId() + ",");
+        if (getDecisionTaskCompletedEventId() != null)
+            sb.append("DecisionTaskCompletedEventId: "
+                    + getDecisionTaskCompletedEventId() + ",");
+        if (getControl() != null)
+            sb.append("Control: " + getControl());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RequestCancelExternalWorkflowExecutionInitiatedEventAttributes == false)
+            return false;
+        RequestCancelExternalWorkflowExecutionInitiatedEventAttributes other = (RequestCancelExternalWorkflowExecutionInitiatedEventAttributes) obj;
+        if (other.getWorkflowId() == null ^ this.getWorkflowId() == null)
+            return false;
+        if (other.getWorkflowId() != null
+                && other.getWorkflowId().equals(this.getWorkflowId()) == false)
+            return false;
+        if (other.getRunId() == null ^ this.getRunId() == null)
+            return false;
+        if (other.getRunId() != null
+                && other.getRunId().equals(this.getRunId()) == false)
+            return false;
+        if (other.getDecisionTaskCompletedEventId() == null
+                ^ this.getDecisionTaskCompletedEventId() == null)
+            return false;
+        if (other.getDecisionTaskCompletedEventId() != null
+                && other.getDecisionTaskCompletedEventId().equals(
+                        this.getDecisionTaskCompletedEventId()) == false)
+            return false;
+        if (other.getControl() == null ^ this.getControl() == null)
+            return false;
+        if (other.getControl() != null
+                && other.getControl().equals(this.getControl()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode()); 
-        hashCode = prime * hashCode + ((getRunId() == null) ? 0 : getRunId().hashCode()); 
-        hashCode = prime * hashCode + ((getDecisionTaskCompletedEventId() == null) ? 0 : getDecisionTaskCompletedEventId().hashCode()); 
-        hashCode = prime * hashCode + ((getControl() == null) ? 0 : getControl().hashCode()); 
+
+        hashCode = prime * hashCode
+                + ((getWorkflowId() == null) ? 0 : getWorkflowId().hashCode());
+        hashCode = prime * hashCode
+                + ((getRunId() == null) ? 0 : getRunId().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getDecisionTaskCompletedEventId() == null) ? 0
+                        : getDecisionTaskCompletedEventId().hashCode());
+        hashCode = prime * hashCode
+                + ((getControl() == null) ? 0 : getControl().hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof RequestCancelExternalWorkflowExecutionInitiatedEventAttributes == false) return false;
-        RequestCancelExternalWorkflowExecutionInitiatedEventAttributes other = (RequestCancelExternalWorkflowExecutionInitiatedEventAttributes)obj;
-        
-        if (other.getWorkflowId() == null ^ this.getWorkflowId() == null) return false;
-        if (other.getWorkflowId() != null && other.getWorkflowId().equals(this.getWorkflowId()) == false) return false; 
-        if (other.getRunId() == null ^ this.getRunId() == null) return false;
-        if (other.getRunId() != null && other.getRunId().equals(this.getRunId()) == false) return false; 
-        if (other.getDecisionTaskCompletedEventId() == null ^ this.getDecisionTaskCompletedEventId() == null) return false;
-        if (other.getDecisionTaskCompletedEventId() != null && other.getDecisionTaskCompletedEventId().equals(this.getDecisionTaskCompletedEventId()) == false) return false; 
-        if (other.getControl() == null ^ this.getControl() == null) return false;
-        if (other.getControl() != null && other.getControl().equals(this.getControl()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public RequestCancelExternalWorkflowExecutionInitiatedEventAttributes clone() {
         try {
-            return (RequestCancelExternalWorkflowExecutionInitiatedEventAttributes) super.clone();
-        
+            return (RequestCancelExternalWorkflowExecutionInitiatedEventAttributes) super
+                    .clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

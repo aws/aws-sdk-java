@@ -44,6 +44,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
      *        Represents a message whose visibility timeout has been changed
      *        successfully.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -57,6 +58,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
      * @return Represents a message whose visibility timeout has been changed
      *         successfully.
      */
+
     public String getId() {
         return this.id;
     }
@@ -73,6 +75,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeMessageVisibilityBatchResultEntry withId(String id) {
         setId(id);
         return this;

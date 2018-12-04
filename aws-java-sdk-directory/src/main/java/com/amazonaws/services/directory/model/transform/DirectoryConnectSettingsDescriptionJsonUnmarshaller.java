@@ -18,6 +18,8 @@ package com.amazonaws.services.directory.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.directory.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -54,41 +56,40 @@ public class DirectoryConnectSettingsDescriptionJsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VpcId", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettingsDescription
-                            .setVpcId(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    directoryConnectSettingsDescription.setVpcId(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription
-                            .setSubnetIds(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setSubnetIds(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription
-                            .setCustomerUserName(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setCustomerUserName(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("SecurityGroupId", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription
-                            .setSecurityGroupId(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setSecurityGroupId(context.getUnmarshaller(
+                                    String.class).unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription
                             .setAvailabilityZones(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("ConnectIps", targetDepth)) {
                     context.nextToken();
                     directoryConnectSettingsDescription
-                            .setConnectIps(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                            .setConnectIps(new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

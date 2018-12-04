@@ -81,6 +81,7 @@ public class Application implements Serializable, Cloneable {
      * @param name
      *        The name of the application.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -92,6 +93,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @return The name of the application.
      */
+
     public String getName() {
         return this.name;
     }
@@ -106,6 +108,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withName(String name) {
         setName(name);
         return this;
@@ -119,6 +122,7 @@ public class Application implements Serializable, Cloneable {
      * @param version
      *        The version of the application.
      */
+
     public void setVersion(String version) {
         this.version = version;
     }
@@ -130,6 +134,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @return The version of the application.
      */
+
     public String getVersion() {
         return this.version;
     }
@@ -144,6 +149,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withVersion(String version) {
         setVersion(version);
         return this;
@@ -156,6 +162,7 @@ public class Application implements Serializable, Cloneable {
      * 
      * @return Arguments for Amazon EMR to pass to the application.
      */
+
     public java.util.List<String> getArgs() {
         if (args == null) {
             args = new com.amazonaws.internal.SdkInternalList<String>();
@@ -171,6 +178,7 @@ public class Application implements Serializable, Cloneable {
      * @param args
      *        Arguments for Amazon EMR to pass to the application.
      */
+
     public void setArgs(java.util.Collection<String> args) {
         if (args == null) {
             this.args = null;
@@ -196,6 +204,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withArgs(String... args) {
         if (this.args == null) {
             setArgs(new com.amazonaws.internal.SdkInternalList<String>(
@@ -217,6 +226,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withArgs(java.util.Collection<String> args) {
         setArgs(args);
         return this;
@@ -233,6 +243,7 @@ public class Application implements Serializable, Cloneable {
      *         about third-party applications that third-party vendors use for
      *         testing purposes.
      */
+
     public java.util.Map<String, String> getAdditionalInfo() {
         if (additionalInfo == null) {
             additionalInfo = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -252,6 +263,7 @@ public class Application implements Serializable, Cloneable {
      *        about third-party applications that third-party vendors use for
      *        testing purposes.
      */
+
     public void setAdditionalInfo(java.util.Map<String, String> additionalInfo) {
         this.additionalInfo = additionalInfo == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -272,6 +284,7 @@ public class Application implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Application withAdditionalInfo(
             java.util.Map<String, String> additionalInfo) {
         setAdditionalInfo(additionalInfo);
@@ -293,6 +306,7 @@ public class Application implements Serializable, Cloneable {
      * Removes all the entries added into AdditionalInfo. &lt;p> Returns a
      * reference to this object so that method calls can be chained together.
      */
+
     public Application clearAdditionalInfoEntries() {
         this.additionalInfo = null;
         return this;

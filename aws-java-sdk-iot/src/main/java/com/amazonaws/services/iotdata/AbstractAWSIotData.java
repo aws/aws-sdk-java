@@ -50,7 +50,7 @@ public class AbstractAWSIotData implements AWSIotData {
     }
 
     @Override
-    public void publish(PublishRequest request) {
+    public PublishResult publish(PublishRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

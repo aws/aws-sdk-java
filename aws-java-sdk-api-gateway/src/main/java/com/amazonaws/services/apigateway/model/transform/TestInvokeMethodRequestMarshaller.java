@@ -37,8 +37,10 @@ import com.amazonaws.services.apigateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TestInvokeMethodRequest Marshaller
@@ -46,7 +48,14 @@ import com.amazonaws.util.json.*;
 public class TestInvokeMethodRequestMarshaller implements
         Marshaller<Request<TestInvokeMethodRequest>, TestInvokeMethodRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public TestInvokeMethodRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<TestInvokeMethodRequest> marshall(
             TestInvokeMethodRequest testInvokeMethodRequest) {
@@ -65,80 +74,84 @@ public class TestInvokeMethodRequestMarshaller implements
 
         uriResourcePath = uriResourcePath.replace(
                 "{restapi_id}",
-                (testInvokeMethodRequest.getRestApiId() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getRestApiId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (testInvokeMethodRequest.getResourceId() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getResourceId()));
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (testInvokeMethodRequest.getHttpMethod() == null) ? ""
-                        : StringUtils.fromString(testInvokeMethodRequest
-                                .getHttpMethod()));
+                (testInvokeMethodRequest.getRestApiId() != null) ? SdkHttpUtils
+                        .urlEncode(StringUtils
+                                .fromString(testInvokeMethodRequest
+                                        .getRestApiId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{resource_id}",
+                        (testInvokeMethodRequest.getResourceId() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeMethodRequest
+                                                .getResourceId()), false) : "");
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{http_method}",
+                        (testInvokeMethodRequest.getHttpMethod() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(testInvokeMethodRequest
+                                                .getHttpMethod()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
-
-            jsonWriter.object();
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
+            jsonGenerator.writeStartObject();
 
             if (testInvokeMethodRequest.getPathWithQueryString() != null) {
-                jsonWriter.key("pathWithQueryString").value(
+                jsonGenerator.writeFieldName("pathWithQueryString").writeValue(
                         testInvokeMethodRequest.getPathWithQueryString());
             }
-
             if (testInvokeMethodRequest.getBody() != null) {
-                jsonWriter.key("body").value(testInvokeMethodRequest.getBody());
+                jsonGenerator.writeFieldName("body").writeValue(
+                        testInvokeMethodRequest.getBody());
             }
 
             java.util.Map<String, String> headersMap = testInvokeMethodRequest
                     .getHeaders();
             if (headersMap != null) {
-                jsonWriter.key("headers");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("headers");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> headersMapValue : headersMap
                         .entrySet()) {
                     if (headersMapValue.getValue() != null) {
-                        jsonWriter.key(headersMapValue.getKey());
+                        jsonGenerator.writeFieldName(headersMapValue.getKey());
 
-                        jsonWriter.value(headersMapValue.getValue());
+                        jsonGenerator.writeValue(headersMapValue.getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
-
             if (testInvokeMethodRequest.getClientCertificateId() != null) {
-                jsonWriter.key("clientCertificateId").value(
+                jsonGenerator.writeFieldName("clientCertificateId").writeValue(
                         testInvokeMethodRequest.getClientCertificateId());
             }
 
             java.util.Map<String, String> stageVariablesMap = testInvokeMethodRequest
                     .getStageVariables();
             if (stageVariablesMap != null) {
-                jsonWriter.key("stageVariables");
-                jsonWriter.object();
+                jsonGenerator.writeFieldName("stageVariables");
+                jsonGenerator.writeStartObject();
 
                 for (Map.Entry<String, String> stageVariablesMapValue : stageVariablesMap
                         .entrySet()) {
                     if (stageVariablesMapValue.getValue() != null) {
-                        jsonWriter.key(stageVariablesMapValue.getKey());
+                        jsonGenerator.writeFieldName(stageVariablesMapValue
+                                .getKey());
 
-                        jsonWriter.value(stageVariablesMapValue.getValue());
+                        jsonGenerator.writeValue(stageVariablesMapValue
+                                .getValue());
                     }
                 }
-                jsonWriter.endObject();
+                jsonGenerator.writeEndObject();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
             if (!request.getHeaders().containsKey("Content-Type")) {

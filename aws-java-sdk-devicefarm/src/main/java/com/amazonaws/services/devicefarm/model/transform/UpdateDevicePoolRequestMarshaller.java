@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.devicefarm.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * UpdateDevicePoolRequest Marshaller
  */
 public class UpdateDevicePoolRequestMarshaller implements
         Marshaller<Request<UpdateDevicePoolRequest>, UpdateDevicePoolRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public UpdateDevicePoolRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<UpdateDevicePoolRequest> marshall(
             UpdateDevicePoolRequest updateDevicePoolRequest) {
@@ -64,46 +65,45 @@ public class UpdateDevicePoolRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (updateDevicePoolRequest.getArn() != null) {
-                jsonWriter.key("arn").value(updateDevicePoolRequest.getArn());
+                jsonGenerator.writeFieldName("arn").writeValue(
+                        updateDevicePoolRequest.getArn());
             }
-
             if (updateDevicePoolRequest.getName() != null) {
-                jsonWriter.key("name").value(updateDevicePoolRequest.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        updateDevicePoolRequest.getName());
             }
-
             if (updateDevicePoolRequest.getDescription() != null) {
-                jsonWriter.key("description").value(
+                jsonGenerator.writeFieldName("description").writeValue(
                         updateDevicePoolRequest.getDescription());
             }
 
             java.util.List<Rule> rulesList = updateDevicePoolRequest.getRules();
             if (rulesList != null) {
-                jsonWriter.key("rules");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("rules");
+                jsonGenerator.writeStartArray();
                 for (Rule rulesListValue : rulesList) {
                     if (rulesListValue != null) {
 
                         RuleJsonMarshaller.getInstance().marshall(
-                                rulesListValue, jsonWriter);
+                                rulesListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.storagegateway.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.storagegateway.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * AddTagsToResourceRequest Marshaller
  */
 public class AddTagsToResourceRequestMarshaller implements
         Marshaller<Request<AddTagsToResourceRequest>, AddTagsToResourceRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public AddTagsToResourceRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<AddTagsToResourceRequest> marshall(
             AddTagsToResourceRequest addTagsToResourceRequest) {
@@ -64,39 +65,38 @@ public class AddTagsToResourceRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (addTagsToResourceRequest.getResourceARN() != null) {
-                jsonWriter.key("ResourceARN").value(
+                jsonGenerator.writeFieldName("ResourceARN").writeValue(
                         addTagsToResourceRequest.getResourceARN());
             }
 
             com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) addTagsToResourceRequest
                     .getTags();
             if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
-                jsonWriter.key("Tags");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("Tags");
+                jsonGenerator.writeStartArray();
                 for (Tag tagsListValue : tagsList) {
                     if (tagsListValue != null) {
 
                         TagJsonMarshaller.getInstance().marshall(tagsListValue,
-                                jsonWriter);
+                                jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

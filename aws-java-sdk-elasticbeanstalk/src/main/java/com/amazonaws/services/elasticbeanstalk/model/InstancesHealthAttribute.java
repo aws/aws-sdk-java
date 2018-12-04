@@ -28,6 +28,9 @@ public enum InstancesHealthAttribute {
     RefreshedAt("RefreshedAt"),
     LaunchedAt("LaunchedAt"),
     System("System"),
+    Deployment("Deployment"),
+    AvailabilityZone("AvailabilityZone"),
+    InstanceType("InstanceType"),
     All("All");
 
     private String value;
@@ -65,6 +68,12 @@ public enum InstancesHealthAttribute {
             return LaunchedAt;
         } else if ("System".equals(value)) {
             return System;
+        } else if ("Deployment".equals(value)) {
+            return Deployment;
+        } else if ("AvailabilityZone".equals(value)) {
+            return AvailabilityZone;
+        } else if ("InstanceType".equals(value)) {
+            return InstanceType;
         } else if ("All".equals(value)) {
             return All;
         } else {

@@ -22,13 +22,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * To retrieve a list of your hosted zones, send a <code>GET</code> request to
- * the <code>2015-01-01/hostedzone</code> resource. The response to this request
- * includes a <code>HostedZones</code> element with zero or more
- * <code>HostedZone</code> child elements. By default, the list of hosted zones
- * is displayed on a single page. You can control the length of the page that is
- * displayed by using the <code>MaxItems</code> parameter. You can use the
- * <code>Marker</code> parameter to control the hosted zone that the list begins
- * with. For more information about listing hosted zones, see <a href=
+ * the <code>/<i>Route 53 API version</i>/hostedzone</code> resource. The
+ * response to this request includes a <code>HostedZones</code> element with
+ * zero or more <code>HostedZone</code> child elements. By default, the list of
+ * hosted zones is displayed on a single page. You can control the length of the
+ * page that is displayed by using the <code>MaxItems</code> parameter. You can
+ * use the <code>Marker</code> parameter to control the hosted zone that the
+ * list begins with. For more information about listing hosted zones, see <a
+ * href=
  * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ListInfoOnHostedZone.html"
  * >Listing the Hosted Zones for an AWS Account</a> in the <i>Amazon Route 53
  * Developer Guide</i>.
@@ -72,6 +73,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *        from the last response in the <code>marker</code> parameter to get
      *        the next page of results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -89,6 +91,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *         from the last response in the <code>marker</code> parameter to
      *         get the next page of results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -109,6 +112,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withMarker(String marker) {
         setMarker(marker);
         return this;
@@ -123,6 +127,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      *        Specify the maximum number of hosted zones to return per page of
      *        results.
      */
+
     public void setMaxItems(String maxItems) {
         this.maxItems = maxItems;
     }
@@ -135,6 +140,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Specify the maximum number of hosted zones to return per page of
      *         results.
      */
+
     public String getMaxItems() {
         return this.maxItems;
     }
@@ -150,6 +156,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withMaxItems(String maxItems) {
         setMaxItems(maxItems);
         return this;
@@ -158,6 +165,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     /**
      * @param delegationSetId
      */
+
     public void setDelegationSetId(String delegationSetId) {
         this.delegationSetId = delegationSetId;
     }
@@ -165,6 +173,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
     /**
      * @return
      */
+
     public String getDelegationSetId() {
         return this.delegationSetId;
     }
@@ -174,6 +183,7 @@ public class ListHostedZonesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListHostedZonesRequest withDelegationSetId(String delegationSetId) {
         setDelegationSetId(delegationSetId);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.devicefarm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.devicefarm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -52,17 +54,17 @@ public class CPUJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("frequency", targetDepth)) {
                     context.nextToken();
-                    cPU.setFrequency(StringJsonUnmarshaller.getInstance()
+                    cPU.setFrequency(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("architecture", targetDepth)) {
                     context.nextToken();
-                    cPU.setArchitecture(StringJsonUnmarshaller.getInstance()
+                    cPU.setArchitecture(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("clock", targetDepth)) {
                     context.nextToken();
-                    cPU.setClock(DoubleJsonUnmarshaller.getInstance()
+                    cPU.setClock(context.getUnmarshaller(Double.class)
                             .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {

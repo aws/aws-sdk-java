@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -57,17 +59,17 @@ public class GetOpenIDConnectProviderResultStaxUnmarshaller implements
                 }
 
                 if (context.testExpression("ClientIDList/member", targetDepth)) {
-                    getOpenIDConnectProviderResult.getClientIDList().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getOpenIDConnectProviderResult
+                            .withClientIDList(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context
                         .testExpression("ThumbprintList/member", targetDepth)) {
-                    getOpenIDConnectProviderResult.getThumbprintList().add(
-                            StringStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    getOpenIDConnectProviderResult
+                            .withThumbprintList(StringStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -118,6 +118,7 @@ public class Projection implements Serializable, Cloneable {
      *        </li>
      * @see ProjectionType
      */
+
     public void setProjectionType(String projectionType) {
         this.projectionType = projectionType;
     }
@@ -171,6 +172,7 @@ public class Projection implements Serializable, Cloneable {
      *         </li>
      * @see ProjectionType
      */
+
     public String getProjectionType() {
         return this.projectionType;
     }
@@ -227,6 +229,7 @@ public class Projection implements Serializable, Cloneable {
      *         chained together.
      * @see ProjectionType
      */
+
     public Projection withProjectionType(String projectionType) {
         setProjectionType(projectionType);
         return this;
@@ -280,10 +283,9 @@ public class Projection implements Serializable, Cloneable {
      *        the index.
      *        </p>
      *        </li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ProjectionType
      */
+
     public void setProjectionType(ProjectionType projectionType) {
         this.projectionType = projectionType.toString();
     }
@@ -340,6 +342,7 @@ public class Projection implements Serializable, Cloneable {
      *         chained together.
      * @see ProjectionType
      */
+
     public Projection withProjectionType(ProjectionType projectionType) {
         setProjectionType(projectionType);
         return this;
@@ -366,6 +369,7 @@ public class Projection implements Serializable, Cloneable {
      *         into two different indexes, this counts as two distinct
      *         attributes when determining the total.
      */
+
     public java.util.List<String> getNonKeyAttributes() {
         return nonKeyAttributes;
     }
@@ -392,6 +396,7 @@ public class Projection implements Serializable, Cloneable {
      *        into two different indexes, this counts as two distinct attributes
      *        when determining the total.
      */
+
     public void setNonKeyAttributes(
             java.util.Collection<String> nonKeyAttributes) {
         if (nonKeyAttributes == null) {
@@ -433,6 +438,7 @@ public class Projection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Projection withNonKeyAttributes(String... nonKeyAttributes) {
         if (this.nonKeyAttributes == null) {
             setNonKeyAttributes(new java.util.ArrayList<String>(
@@ -468,6 +474,7 @@ public class Projection implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Projection withNonKeyAttributes(
             java.util.Collection<String> nonKeyAttributes) {
         setNonKeyAttributes(nonKeyAttributes);

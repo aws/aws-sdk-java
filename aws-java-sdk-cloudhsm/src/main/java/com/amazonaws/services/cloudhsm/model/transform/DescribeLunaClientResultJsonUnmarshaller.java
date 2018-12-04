@@ -18,6 +18,8 @@ package com.amazonaws.services.cloudhsm.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.cloudhsm.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,34 +55,30 @@ public class DescribeLunaClientResultJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ClientArn", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult
-                            .setClientArn(StringJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    describeLunaClientResult.setClientArn(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Certificate", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult
-                            .setCertificate(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLunaClientResult.setCertificate(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CertificateFingerprint",
                         targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult
-                            .setCertificateFingerprint(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLunaClientResult.setCertificateFingerprint(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context
                         .testExpression("LastModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult
-                            .setLastModifiedTimestamp(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    describeLunaClientResult.setLastModifiedTimestamp(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
-                    describeLunaClientResult.setLabel(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    describeLunaClientResult.setLabel(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

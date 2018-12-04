@@ -48,6 +48,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityPoolId(String identityPoolId) {
         this.identityPoolId = identityPoolId;
     }
@@ -61,6 +62,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityPoolId() {
         return this.identityPoolId;
     }
@@ -77,6 +79,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityUsageRequest withIdentityPoolId(String identityPoolId) {
         setIdentityPoolId(identityPoolId);
         return this;
@@ -92,6 +95,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      *        us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *        Cognito. GUID generation is unique within a region.
      */
+
     public void setIdentityId(String identityId) {
         this.identityId = identityId;
     }
@@ -105,6 +109,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      *         us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
      *         Cognito. GUID generation is unique within a region.
      */
+
     public String getIdentityId() {
         return this.identityId;
     }
@@ -121,6 +126,7 @@ public class DescribeIdentityUsageRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeIdentityUsageRequest withIdentityId(String identityId) {
         setIdentityId(identityId);
         return this;

@@ -20,10 +20,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents a request instructing the service to list all identities for the
- * AWS Account.
- * </p>
+ * 
  */
 public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
         Serializable, Cloneable {
@@ -63,6 +60,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *        all identities will be listed.
      * @see IdentityType
      */
+
     public void setIdentityType(String identityType) {
         this.identityType = identityType;
     }
@@ -79,6 +77,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *         all identities will be listed.
      * @see IdentityType
      */
+
     public String getIdentityType() {
         return this.identityType;
     }
@@ -98,6 +97,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IdentityType
      */
+
     public ListIdentitiesRequest withIdentityType(String identityType) {
         setIdentityType(identityType);
         return this;
@@ -114,10 +114,9 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *        The type of the identities to list. Possible values are
      *        "EmailAddress" and "Domain". If this parameter is omitted, then
      *        all identities will be listed.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see IdentityType
      */
+
     public void setIdentityType(IdentityType identityType) {
         this.identityType = identityType.toString();
     }
@@ -137,6 +136,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *         chained together.
      * @see IdentityType
      */
+
     public ListIdentitiesRequest withIdentityType(IdentityType identityType) {
         setIdentityType(identityType);
         return this;
@@ -150,6 +150,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @param nextToken
      *        The token to use for pagination.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -161,6 +162,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The token to use for pagination.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -175,6 +177,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -190,6 +193,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      *        The maximum number of identities per page. Possible values are
      *        1-1000 inclusive.
      */
+
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
@@ -203,6 +207,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return The maximum number of identities per page. Possible values are
      *         1-1000 inclusive.
      */
+
     public Integer getMaxItems() {
         return this.maxItems;
     }
@@ -219,6 +224,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListIdentitiesRequest withMaxItems(Integer maxItems) {
         setMaxItems(maxItems);
         return this;

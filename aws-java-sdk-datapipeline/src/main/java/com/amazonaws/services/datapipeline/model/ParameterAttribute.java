@@ -46,6 +46,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * @param key
      *        The field identifier.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -57,6 +58,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * 
      * @return The field identifier.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -71,6 +73,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterAttribute withKey(String key) {
         setKey(key);
         return this;
@@ -84,6 +87,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * @param stringValue
      *        The field value, expressed as a String.
      */
+
     public void setStringValue(String stringValue) {
         this.stringValue = stringValue;
     }
@@ -95,6 +99,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * 
      * @return The field value, expressed as a String.
      */
+
     public String getStringValue() {
         return this.stringValue;
     }
@@ -109,6 +114,7 @@ public class ParameterAttribute implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ParameterAttribute withStringValue(String stringValue) {
         setStringValue(stringValue);
         return this;

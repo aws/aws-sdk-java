@@ -27,44 +27,47 @@ public class GetSSHPublicKeyResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the SSH public key.
+     * A structure containing details about the SSH public key.
      * </p>
      */
     private SSHPublicKey sSHPublicKey;
 
     /**
      * <p>
-     * Information about the SSH public key.
+     * A structure containing details about the SSH public key.
      * </p>
      * 
      * @param sSHPublicKey
-     *        Information about the SSH public key.
+     *        A structure containing details about the SSH public key.
      */
+
     public void setSSHPublicKey(SSHPublicKey sSHPublicKey) {
         this.sSHPublicKey = sSHPublicKey;
     }
 
     /**
      * <p>
-     * Information about the SSH public key.
+     * A structure containing details about the SSH public key.
      * </p>
      * 
-     * @return Information about the SSH public key.
+     * @return A structure containing details about the SSH public key.
      */
+
     public SSHPublicKey getSSHPublicKey() {
         return this.sSHPublicKey;
     }
 
     /**
      * <p>
-     * Information about the SSH public key.
+     * A structure containing details about the SSH public key.
      * </p>
      * 
      * @param sSHPublicKey
-     *        Information about the SSH public key.
+     *        A structure containing details about the SSH public key.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetSSHPublicKeyResult withSSHPublicKey(SSHPublicKey sSHPublicKey) {
         setSSHPublicKey(sSHPublicKey);
         return this;

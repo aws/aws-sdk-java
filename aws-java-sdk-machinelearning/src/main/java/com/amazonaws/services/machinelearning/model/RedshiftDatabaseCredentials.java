@@ -33,6 +33,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
     /**
      * @param username
      */
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -40,6 +41,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getUsername() {
         return this.username;
     }
@@ -49,6 +51,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDatabaseCredentials withUsername(String username) {
         setUsername(username);
         return this;
@@ -57,6 +60,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
     /**
      * @param password
      */
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -64,6 +68,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPassword() {
         return this.password;
     }
@@ -73,6 +78,7 @@ public class RedshiftDatabaseCredentials implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public RedshiftDatabaseCredentials withPassword(String password) {
         setPassword(password);
         return this;

@@ -18,6 +18,8 @@ package com.amazonaws.services.elastictranscoder.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elastictranscoder.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,13 +55,13 @@ public class CreateJobOutputJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setKey(StringJsonUnmarshaller.getInstance()
-                            .unmarshall(context));
+                    createJobOutput.setKey(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailPattern", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setThumbnailPattern(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobOutput.setThumbnailPattern(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ThumbnailEncryption", targetDepth)) {
                     context.nextToken();
@@ -69,18 +71,18 @@ public class CreateJobOutputJsonUnmarshaller implements
                 }
                 if (context.testExpression("Rotate", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setRotate(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobOutput.setRotate(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("PresetId", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setPresetId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobOutput.setPresetId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("SegmentDuration", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setSegmentDuration(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    createJobOutput.setSegmentDuration(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();

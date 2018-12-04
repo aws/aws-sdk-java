@@ -49,6 +49,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      *        further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a>
      *        operations.
      */
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -63,6 +64,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      *         further <a>UploadLayerPart</a> and <a>CompleteLayerUpload</a>
      *         operations.
      */
+
     public String getUploadId() {
         return this.uploadId;
     }
@@ -80,6 +82,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InitiateLayerUploadResult withUploadId(String uploadId) {
         setUploadId(uploadId);
         return this;
@@ -95,6 +98,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      *        The size, in bytes, that Amazon ECR expects future layer part
      *        uploads to be.
      */
+
     public void setPartSize(Long partSize) {
         this.partSize = partSize;
     }
@@ -108,6 +112,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      * @return The size, in bytes, that Amazon ECR expects future layer part
      *         uploads to be.
      */
+
     public Long getPartSize() {
         return this.partSize;
     }
@@ -124,6 +129,7 @@ public class InitiateLayerUploadResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public InitiateLayerUploadResult withPartSize(Long partSize) {
         setPartSize(partSize);
         return this;

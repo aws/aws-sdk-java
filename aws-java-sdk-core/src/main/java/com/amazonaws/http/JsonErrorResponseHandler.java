@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,121 +14,176 @@
  */
 package com.amazonaws.http;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
-import com.amazonaws.AmazonClientException;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.fasterxml.jackson.core.JsonFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
-import com.amazonaws.util.json.JSONObject;
+import com.amazonaws.internal.http.JsonErrorCodeParser;
+import com.amazonaws.internal.http.JsonErrorMessageParser;
+import com.amazonaws.util.IOUtils;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+@SdkInternalApi
 public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
 
-    /**
-     * Services using AWS JSON 1.1 protocol with HTTP binding send the error
-     * type information in the response headers, instead of the content.
-     */
-    private static final String X_AMZN_ERROR_TYPE = "x-amzn-ErrorType";
+    private static final Log LOG = LogFactory.getLog(JsonErrorResponseHandler.class);
 
-    /**
-     * The list of error response unmarshallers to try to apply to error
-     * responses.
-     */
-    private List<? extends JsonErrorUnmarshaller> unmarshallerList;
+    private final List<JsonErrorUnmarshaller> unmarshallers;
+    private final JsonErrorCodeParser errorCodeParser;
+    private final JsonErrorMessageParser errorMessageParser;
+    private final JsonFactory jsonFactory;
 
-    public JsonErrorResponseHandler(List<? extends JsonErrorUnmarshaller> exceptionUnmarshallers) {
-        this.unmarshallerList = exceptionUnmarshallers;
+    public JsonErrorResponseHandler(
+            List<JsonErrorUnmarshaller> errorUnmarshallers,
+            JsonErrorCodeParser errorCodeParser,
+            JsonErrorMessageParser errorMessageParser,
+            JsonFactory jsonFactory) {
+        this.unmarshallers = errorUnmarshallers;
+        this.errorCodeParser = errorCodeParser;
+        this.errorMessageParser = errorMessageParser;
+        this.jsonFactory = jsonFactory;
     }
 
-    public AmazonServiceException handle(HttpResponse response) throws Exception {
-        String streamContents = readStreamContents(response.getContent());
-        JSONObject jsonErrorMessage;
-        try {
-            String s = streamContents;
-            if (s.length() == 0 || s.trim().length() == 0) s = "{}";
-            jsonErrorMessage = new JSONObject(s);
-        } catch (Exception e) {
-            throw new AmazonClientException("Unable to parse error response: '" + streamContents + "'", e);
-        }
-
-        String errorTypeFromHeader = parseErrorTypeFromHeader(response);
-
-        AmazonServiceException ase = runErrorUnmarshallers(response, jsonErrorMessage, errorTypeFromHeader);
-        if (ase == null) return null;
-
-        ase.setServiceName(response.getRequest().getServiceName());
-        ase.setStatusCode(response.getStatusCode());
-        if (response.getStatusCode() < 500) {
-            ase.setErrorType(ErrorType.Client);
-        } else {
-            ase.setErrorType(ErrorType.Service);
-        }
-
-        for (Entry<String, String> headerEntry : response.getHeaders().entrySet()) {
-            if (headerEntry.getKey().equalsIgnoreCase("X-Amzn-RequestId")) {
-                ase.setRequestId(headerEntry.getValue());
-            }
-        }
-
-        return ase;
-    }
-
-    private AmazonServiceException runErrorUnmarshallers(HttpResponse errorResponse, JSONObject json, String errorTypeFromHeader) throws Exception {
-        /*
-         * We need to select which exception unmarshaller is the correct one to
-         * use from all the possible exceptions this operation can throw.
-         * Currently we rely on JsonErrorUnmarshaller.match(...) method which
-         * checks for the error type parsed either from response headers or the
-         * content.
-         */
-        for (JsonErrorUnmarshaller unmarshaller : unmarshallerList) {
-            if (unmarshaller.match(errorTypeFromHeader, json)) {
-                AmazonServiceException ase = unmarshaller.unmarshall(json);
-                ase.setStatusCode(errorResponse.getStatusCode());
-                return ase;
-            }
-        }
-
-        return null;
-    }
-
+    @Override
     public boolean needsConnectionLeftOpen() {
         return false;
     }
 
-    private String readStreamContents(final InputStream stream) {
-        try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-            StringBuilder sb = new StringBuilder();
-            while (true) {
-                String line = reader.readLine();
-                if (line == null) break;
-                sb.append(line);
-            }
+    @Override
+    public AmazonServiceException handle(HttpResponse response) throws Exception {
+        JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
+        String errorCode = errorCodeParser.parseErrorCode(response.getHeaders(), jsonContent.jsonNode);
+        AmazonServiceException ase = createException(errorCode, jsonContent);
 
-            return sb.toString();
-        } catch (Exception e) {
-            try {stream.close();} catch (Exception ex) {}
-            throw new AmazonClientException("Unable to read error response: " + e.getMessage(), e);
+        // Jackson has special-casing for 'message' values when deserializing
+        // Throwables, but sometimes the service passes the error message in
+        // other JSON fields - handle it here.
+        if (ase.getErrorMessage() == null) {
+            ase.setErrorMessage(errorMessageParser
+                    .parseErrorMessage(jsonContent.jsonNode));
         }
+
+        ase.setErrorCode(errorCode);
+        ase.setServiceName(response.getRequest().getServiceName());
+        ase.setStatusCode(response.getStatusCode());
+        ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
+        ase.setRawResponse(jsonContent.rawContent);
+        String requestId = getRequestIdFromHeaders(response.getHeaders());
+        if (requestId != null) {
+            ase.setRequestId(requestId);
+        }
+        return ase;
     }
 
     /**
-     * Attempt to parse the error type from the response headers.
-     * Returns null if such information is not available in the header.
+     * Create an AmazonServiceException using the chain of unmarshallers. This method will never
+     * return null, it will always return a valid AmazonServiceException
+     *
+     * @param errorCode
+     *            Error code to find an appropriate unmarshaller
+     * @param jsonContent
+     *            JsonContent of HTTP response
+     * @return AmazonServiceException
      */
-    private String parseErrorTypeFromHeader(HttpResponse response) {
-        String headerValue = response.getHeaders().get(X_AMZN_ERROR_TYPE);
-        if (headerValue != null) {
-            int separator = headerValue.indexOf(':');
-            if (separator != -1) {
-                headerValue  = headerValue.substring(0, separator);
+    private AmazonServiceException createException(String errorCode, JsonContent jsonContent) {
+        if (!jsonContent.isJsonValid()) {
+            return new AmazonServiceException("Unable to parse HTTP response content");
+        }
+        AmazonServiceException ase = unmarshallException(errorCode, jsonContent);
+        if (ase == null) {
+            ase = new AmazonServiceException("Unable to unmarshall exception response with the unmarshallers provided");
+        }
+        return ase;
+    }
+
+    private AmazonServiceException unmarshallException(String errorCode, JsonContent jsonContent) {
+        for (JsonErrorUnmarshaller unmarshaller : unmarshallers) {
+            if (unmarshaller.matchErrorCode(errorCode)) {
+                try {
+                    return unmarshaller.unmarshall(jsonContent.jsonNode);
+                } catch (Exception e) {
+                    LOG.info("Unable to unmarshall exception content", e);
+                    return null;
+                }
             }
         }
-        return headerValue;
+        return null;
+    }
+
+    private ErrorType getErrorTypeFromStatusCode(int statusCode) {
+        return statusCode < 500 ? ErrorType.Client : ErrorType.Service;
+    }
+
+    private String getRequestIdFromHeaders(Map<String, String> headers) {
+        for (Entry<String, String> headerEntry : headers.entrySet()) {
+            if (headerEntry.getKey().equalsIgnoreCase(X_AMZN_REQUEST_ID_HEADER)) {
+                return headerEntry.getValue();
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Simple struct like class to hold both the raw json string content and it's parsed JsonNode
+     */
+    private static class JsonContent {
+
+        public final byte[] rawContent;
+        public final JsonNode jsonNode;
+        private final ObjectMapper mapper;
+
+        /**
+         * Static factory method to create a JsonContent object from the contents of the
+         * HttpResponse provided
+         */
+        public static JsonContent createJsonContent(HttpResponse
+                                                            httpResponse,
+                                                    JsonFactory jsonFactory) {
+            byte[] rawJsonContent = null;
+            try {
+                if (httpResponse.getContent() != null) {
+                    rawJsonContent = IOUtils.toByteArray(httpResponse.getContent());
+                }
+            } catch (Exception e) {
+                LOG.info("Unable to read HTTP response content", e);
+            }
+            return new JsonContent(rawJsonContent, new ObjectMapper
+                    (jsonFactory).configure(JsonParser.Feature
+                    .ALLOW_COMMENTS, true));
+
+        }
+
+        private JsonContent(byte[] rawJsonContent, ObjectMapper mapper) {
+            this.rawContent = rawJsonContent;
+            this.jsonNode = parseJsonContent(rawJsonContent, mapper);
+            this.mapper = mapper;
+        }
+
+        private static JsonNode parseJsonContent(byte[] rawJsonContent,
+                                                 ObjectMapper mapper) {
+            if (rawJsonContent == null) {
+                return null;
+            }
+            try {
+                return mapper.readTree(rawJsonContent);
+            } catch (Exception e) {
+                LOG.info("Unable to parse HTTP response content", e);
+                return null;
+            }
+        }
+
+        public boolean isJsonValid() {
+            return jsonNode != null;
+        }
     }
 }

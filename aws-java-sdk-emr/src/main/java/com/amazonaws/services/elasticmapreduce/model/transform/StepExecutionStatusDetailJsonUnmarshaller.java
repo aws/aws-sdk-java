@@ -18,6 +18,8 @@ package com.amazonaws.services.elasticmapreduce.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.elasticmapreduce.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,33 +55,32 @@ public class StepExecutionStatusDetailJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail.setState(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    stepExecutionStatusDetail.setState(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreationDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail
-                            .setCreationDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    stepExecutionStatusDetail.setCreationDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("StartDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail
-                            .setStartDateTime(DateJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    stepExecutionStatusDetail.setStartDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context.testExpression("EndDateTime", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail
-                            .setEndDateTime(DateJsonUnmarshaller.getInstance()
-                                    .unmarshall(context));
+                    stepExecutionStatusDetail.setEndDateTime(context
+                            .getUnmarshaller(java.util.Date.class).unmarshall(
+                                    context));
                 }
                 if (context
                         .testExpression("LastStateChangeReason", targetDepth)) {
                     context.nextToken();
-                    stepExecutionStatusDetail
-                            .setLastStateChangeReason(StringJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                    stepExecutionStatusDetail.setLastStateChangeReason(context
+                            .getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

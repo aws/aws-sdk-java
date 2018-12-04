@@ -1,17 +1,19 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 package com.amazonaws.services.cloudsearchv2.model;
 
 import java.io.Serializable;
@@ -19,256 +21,282 @@ import java.io.Serializable;
 /**
  * <p>
  * Options for a field that contains an array of double-precision 64-bit
- * floating point values. Present if <code>IndexFieldType</code>
- * specifies the field is of type <code>double-array</code> . All
- * options are enabled by default.
+ * floating point values. Present if <code>IndexFieldType</code> specifies the
+ * field is of type <code>double-array</code>. All options are enabled by
+ * default.
  * </p>
  */
 public class DoubleArrayOptions implements Serializable, Cloneable {
 
     /**
-     * A value to use for the field if the field isn't specified for a
-     * document.
+     * A value to use for the field if the field isn't specified for a document.
      */
     private Double defaultValue;
-
     /**
-     * A list of source fields to map to the field.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
+     * A list of source fields to map to the field.
+     * </p>
      */
     private String sourceFields;
-
     /**
+     * <p>
      * Whether facet information can be returned for the field.
+     * </p>
      */
     private Boolean facetEnabled;
-
     /**
+     * <p>
      * Whether the contents of the field are searchable.
+     * </p>
      */
     private Boolean searchEnabled;
-
     /**
-     * Whether the contents of the field can be returned in the search
-     * results.
+     * <p>
+     * Whether the contents of the field can be returned in the search results.
+     * </p>
      */
     private Boolean returnEnabled;
 
     /**
-     * A value to use for the field if the field isn't specified for a
-     * document.
-     *
-     * @return A value to use for the field if the field isn't specified for a
-     *         document.
+     * A value to use for the field if the field isn't specified for a document.
+     * 
+     * @param defaultValue
+     *        A value to use for the field if the field isn't specified for a
+     *        document.
      */
-    public Double getDefaultValue() {
-        return defaultValue;
-    }
-    
-    /**
-     * A value to use for the field if the field isn't specified for a
-     * document.
-     *
-     * @param defaultValue A value to use for the field if the field isn't specified for a
-     *         document.
-     */
+
     public void setDefaultValue(Double defaultValue) {
         this.defaultValue = defaultValue;
     }
-    
+
     /**
-     * A value to use for the field if the field isn't specified for a
-     * document.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param defaultValue A value to use for the field if the field isn't specified for a
+     * A value to use for the field if the field isn't specified for a document.
+     * 
+     * @return A value to use for the field if the field isn't specified for a
      *         document.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public Double getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * A value to use for the field if the field isn't specified for a document.
+     * 
+     * @param defaultValue
+     *        A value to use for the field if the field isn't specified for a
+     *        document.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DoubleArrayOptions withDefaultValue(Double defaultValue) {
-        this.defaultValue = defaultValue;
+        setDefaultValue(defaultValue);
         return this;
     }
 
     /**
-     * A list of source fields to map to the field.
      * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
-     *
-     * @return A list of source fields to map to the field.
-     */
-    public String getSourceFields() {
-        return sourceFields;
-    }
-    
-    /**
      * A list of source fields to map to the field.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
-     *
-     * @param sourceFields A list of source fields to map to the field.
+     * </p>
+     * 
+     * @param sourceFields
+     *        A list of source fields to map to the field.
      */
+
     public void setSourceFields(String sourceFields) {
         this.sourceFields = sourceFields;
     }
-    
+
     /**
+     * <p>
      * A list of source fields to map to the field.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>\s*[a-z*][a-z0-9_]*\*?\s*(,\s*[a-z*][a-z0-9_]*\*?\s*)*<br/>
-     *
-     * @param sourceFields A list of source fields to map to the field.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * </p>
+     * 
+     * @return A list of source fields to map to the field.
      */
+
+    public String getSourceFields() {
+        return this.sourceFields;
+    }
+
+    /**
+     * <p>
+     * A list of source fields to map to the field.
+     * </p>
+     * 
+     * @param sourceFields
+     *        A list of source fields to map to the field.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DoubleArrayOptions withSourceFields(String sourceFields) {
-        this.sourceFields = sourceFields;
+        setSourceFields(sourceFields);
         return this;
     }
 
     /**
+     * <p>
      * Whether facet information can be returned for the field.
-     *
-     * @return Whether facet information can be returned for the field.
+     * </p>
+     * 
+     * @param facetEnabled
+     *        Whether facet information can be returned for the field.
      */
-    public Boolean isFacetEnabled() {
-        return facetEnabled;
-    }
-    
-    /**
-     * Whether facet information can be returned for the field.
-     *
-     * @param facetEnabled Whether facet information can be returned for the field.
-     */
+
     public void setFacetEnabled(Boolean facetEnabled) {
         this.facetEnabled = facetEnabled;
     }
-    
+
     /**
-     * Whether facet information can be returned for the field.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param facetEnabled Whether facet information can be returned for the field.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether facet information can be returned for the field.
+     * </p>
+     * 
+     * @return Whether facet information can be returned for the field.
      */
+
+    public Boolean getFacetEnabled() {
+        return this.facetEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether facet information can be returned for the field.
+     * </p>
+     * 
+     * @param facetEnabled
+     *        Whether facet information can be returned for the field.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DoubleArrayOptions withFacetEnabled(Boolean facetEnabled) {
-        this.facetEnabled = facetEnabled;
+        setFacetEnabled(facetEnabled);
         return this;
     }
 
     /**
+     * <p>
      * Whether facet information can be returned for the field.
-     *
+     * </p>
+     * 
      * @return Whether facet information can be returned for the field.
      */
-    public Boolean getFacetEnabled() {
-        return facetEnabled;
+
+    public Boolean isFacetEnabled() {
+        return this.facetEnabled;
     }
 
     /**
+     * <p>
      * Whether the contents of the field are searchable.
-     *
-     * @return Whether the contents of the field are searchable.
+     * </p>
+     * 
+     * @param searchEnabled
+     *        Whether the contents of the field are searchable.
      */
-    public Boolean isSearchEnabled() {
-        return searchEnabled;
-    }
-    
-    /**
-     * Whether the contents of the field are searchable.
-     *
-     * @param searchEnabled Whether the contents of the field are searchable.
-     */
+
     public void setSearchEnabled(Boolean searchEnabled) {
         this.searchEnabled = searchEnabled;
     }
-    
+
     /**
-     * Whether the contents of the field are searchable.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param searchEnabled Whether the contents of the field are searchable.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
+     * Whether the contents of the field are searchable.
+     * </p>
+     * 
+     * @return Whether the contents of the field are searchable.
      */
+
+    public Boolean getSearchEnabled() {
+        return this.searchEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether the contents of the field are searchable.
+     * </p>
+     * 
+     * @param searchEnabled
+     *        Whether the contents of the field are searchable.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DoubleArrayOptions withSearchEnabled(Boolean searchEnabled) {
-        this.searchEnabled = searchEnabled;
+        setSearchEnabled(searchEnabled);
         return this;
     }
 
     /**
+     * <p>
      * Whether the contents of the field are searchable.
-     *
+     * </p>
+     * 
      * @return Whether the contents of the field are searchable.
      */
-    public Boolean getSearchEnabled() {
-        return searchEnabled;
+
+    public Boolean isSearchEnabled() {
+        return this.searchEnabled;
     }
 
     /**
-     * Whether the contents of the field can be returned in the search
-     * results.
-     *
-     * @return Whether the contents of the field can be returned in the search
-     *         results.
+     * <p>
+     * Whether the contents of the field can be returned in the search results.
+     * </p>
+     * 
+     * @param returnEnabled
+     *        Whether the contents of the field can be returned in the search
+     *        results.
      */
-    public Boolean isReturnEnabled() {
-        return returnEnabled;
-    }
-    
-    /**
-     * Whether the contents of the field can be returned in the search
-     * results.
-     *
-     * @param returnEnabled Whether the contents of the field can be returned in the search
-     *         results.
-     */
+
     public void setReturnEnabled(Boolean returnEnabled) {
         this.returnEnabled = returnEnabled;
     }
-    
+
     /**
-     * Whether the contents of the field can be returned in the search
-     * results.
      * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param returnEnabled Whether the contents of the field can be returned in the search
+     * Whether the contents of the field can be returned in the search results.
+     * </p>
+     * 
+     * @return Whether the contents of the field can be returned in the search
      *         results.
-     *
-     * @return A reference to this updated object so that method calls can be chained
-     *         together.
      */
+
+    public Boolean getReturnEnabled() {
+        return this.returnEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether the contents of the field can be returned in the search results.
+     * </p>
+     * 
+     * @param returnEnabled
+     *        Whether the contents of the field can be returned in the search
+     *        results.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
     public DoubleArrayOptions withReturnEnabled(Boolean returnEnabled) {
-        this.returnEnabled = returnEnabled;
+        setReturnEnabled(returnEnabled);
         return this;
     }
 
     /**
-     * Whether the contents of the field can be returned in the search
-     * results.
-     *
+     * <p>
+     * Whether the contents of the field can be returned in the search results.
+     * </p>
+     * 
      * @return Whether the contents of the field can be returned in the search
      *         results.
      */
-    public Boolean getReturnEnabled() {
-        return returnEnabled;
+
+    public Boolean isReturnEnabled() {
+        return this.returnEnabled;
     }
 
     /**
@@ -283,62 +311,94 @@ public class DoubleArrayOptions implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");
-        if (getSourceFields() != null) sb.append("SourceFields: " + getSourceFields() + ",");
-        if (isFacetEnabled() != null) sb.append("FacetEnabled: " + isFacetEnabled() + ",");
-        if (isSearchEnabled() != null) sb.append("SearchEnabled: " + isSearchEnabled() + ",");
-        if (isReturnEnabled() != null) sb.append("ReturnEnabled: " + isReturnEnabled() );
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: " + getDefaultValue() + ",");
+        if (getSourceFields() != null)
+            sb.append("SourceFields: " + getSourceFields() + ",");
+        if (getFacetEnabled() != null)
+            sb.append("FacetEnabled: " + getFacetEnabled() + ",");
+        if (getSearchEnabled() != null)
+            sb.append("SearchEnabled: " + getSearchEnabled() + ",");
+        if (getReturnEnabled() != null)
+            sb.append("ReturnEnabled: " + getReturnEnabled());
         sb.append("}");
         return sb.toString();
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DoubleArrayOptions == false)
+            return false;
+        DoubleArrayOptions other = (DoubleArrayOptions) obj;
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+            return false;
+        if (other.getDefaultValue() != null
+                && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
+        if (other.getSourceFields() == null ^ this.getSourceFields() == null)
+            return false;
+        if (other.getSourceFields() != null
+                && other.getSourceFields().equals(this.getSourceFields()) == false)
+            return false;
+        if (other.getFacetEnabled() == null ^ this.getFacetEnabled() == null)
+            return false;
+        if (other.getFacetEnabled() != null
+                && other.getFacetEnabled().equals(this.getFacetEnabled()) == false)
+            return false;
+        if (other.getSearchEnabled() == null ^ this.getSearchEnabled() == null)
+            return false;
+        if (other.getSearchEnabled() != null
+                && other.getSearchEnabled().equals(this.getSearchEnabled()) == false)
+            return false;
+        if (other.getReturnEnabled() == null ^ this.getReturnEnabled() == null)
+            return false;
+        if (other.getReturnEnabled() != null
+                && other.getReturnEnabled().equals(this.getReturnEnabled()) == false)
+            return false;
+        return true;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int hashCode = 1;
-        
-        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode()); 
-        hashCode = prime * hashCode + ((getSourceFields() == null) ? 0 : getSourceFields().hashCode()); 
-        hashCode = prime * hashCode + ((isFacetEnabled() == null) ? 0 : isFacetEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((isSearchEnabled() == null) ? 0 : isSearchEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((isReturnEnabled() == null) ? 0 : isReturnEnabled().hashCode()); 
+
+        hashCode = prime
+                * hashCode
+                + ((getDefaultValue() == null) ? 0 : getDefaultValue()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSourceFields() == null) ? 0 : getSourceFields()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getFacetEnabled() == null) ? 0 : getFacetEnabled()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getSearchEnabled() == null) ? 0 : getSearchEnabled()
+                        .hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getReturnEnabled() == null) ? 0 : getReturnEnabled()
+                        .hashCode());
         return hashCode;
     }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null) return false;
 
-        if (obj instanceof DoubleArrayOptions == false) return false;
-        DoubleArrayOptions other = (DoubleArrayOptions)obj;
-        
-        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null) return false;
-        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false) return false; 
-        if (other.getSourceFields() == null ^ this.getSourceFields() == null) return false;
-        if (other.getSourceFields() != null && other.getSourceFields().equals(this.getSourceFields()) == false) return false; 
-        if (other.isFacetEnabled() == null ^ this.isFacetEnabled() == null) return false;
-        if (other.isFacetEnabled() != null && other.isFacetEnabled().equals(this.isFacetEnabled()) == false) return false; 
-        if (other.isSearchEnabled() == null ^ this.isSearchEnabled() == null) return false;
-        if (other.isSearchEnabled() != null && other.isSearchEnabled().equals(this.isSearchEnabled()) == false) return false; 
-        if (other.isReturnEnabled() == null ^ this.isReturnEnabled() == null) return false;
-        if (other.isReturnEnabled() != null && other.isReturnEnabled().equals(this.isReturnEnabled()) == false) return false; 
-        return true;
-    }
-    
     @Override
     public DoubleArrayOptions clone() {
         try {
             return (DoubleArrayOptions) super.clone();
-        
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(
                     "Got a CloneNotSupportedException from Object.clone() "
-                    + "even though we're Cloneable!",
-                    e);
+                            + "even though we're Cloneable!", e);
         }
-        
     }
-
 }
-    

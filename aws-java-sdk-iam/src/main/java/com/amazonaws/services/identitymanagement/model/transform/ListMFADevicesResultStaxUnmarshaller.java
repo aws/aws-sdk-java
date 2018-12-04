@@ -17,6 +17,8 @@
 package com.amazonaws.services.identitymanagement.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -50,9 +52,9 @@ public class ListMFADevicesResultStaxUnmarshaller implements
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
                 if (context.testExpression("MFADevices/member", targetDepth)) {
-                    listMFADevicesResult.getMFADevices().add(
-                            MFADeviceStaxUnmarshaller.getInstance().unmarshall(
-                                    context));
+                    listMFADevicesResult
+                            .withMFADevices(MFADeviceStaxUnmarshaller
+                                    .getInstance().unmarshall(context));
                     continue;
                 }
 

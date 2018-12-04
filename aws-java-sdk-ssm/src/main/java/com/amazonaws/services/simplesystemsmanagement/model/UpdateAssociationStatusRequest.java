@@ -52,6 +52,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @param name
      *        The name of the SSM document.
      */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -63,6 +64,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the SSM document.
      */
+
     public String getName() {
         return this.name;
     }
@@ -77,6 +79,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssociationStatusRequest withName(String name) {
         setName(name);
         return this;
@@ -90,6 +93,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @param instanceId
      *        The ID of the instance.
      */
+
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
@@ -101,6 +105,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The ID of the instance.
      */
+
     public String getInstanceId() {
         return this.instanceId;
     }
@@ -115,6 +120,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssociationStatusRequest withInstanceId(String instanceId) {
         setInstanceId(instanceId);
         return this;
@@ -128,6 +134,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @param associationStatus
      *        The association status.
      */
+
     public void setAssociationStatus(AssociationStatus associationStatus) {
         this.associationStatus = associationStatus;
     }
@@ -139,6 +146,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * 
      * @return The association status.
      */
+
     public AssociationStatus getAssociationStatus() {
         return this.associationStatus;
     }
@@ -153,6 +161,7 @@ public class UpdateAssociationStatusRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateAssociationStatusRequest withAssociationStatus(
             AssociationStatus associationStatus) {
         setAssociationStatus(associationStatus);

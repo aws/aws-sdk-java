@@ -77,6 +77,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      *        uploading layer parts to. If you do not specify a registry, the
      *        default registry is assumed.
      */
+
     public void setRegistryId(String registryId) {
         this.registryId = registryId;
     }
@@ -92,6 +93,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      *         uploading layer parts to. If you do not specify a registry, the
      *         default registry is assumed.
      */
+
     public String getRegistryId() {
         return this.registryId;
     }
@@ -110,6 +112,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withRegistryId(String registryId) {
         setRegistryId(registryId);
         return this;
@@ -123,6 +126,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The name of the repository that you are uploading layer parts to.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -134,6 +138,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the repository that you are uploading layer parts to.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -148,6 +153,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;
@@ -163,6 +169,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      *        The upload ID from a previous <a>InitiateLayerUpload</a> operation
      *        to associate with the layer part upload.
      */
+
     public void setUploadId(String uploadId) {
         this.uploadId = uploadId;
     }
@@ -176,6 +183,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return The upload ID from a previous <a>InitiateLayerUpload</a>
      *         operation to associate with the layer part upload.
      */
+
     public String getUploadId() {
         return this.uploadId;
     }
@@ -192,6 +200,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withUploadId(String uploadId) {
         setUploadId(uploadId);
         return this;
@@ -205,6 +214,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @param partFirstByte
      *        The integer value of the first byte of the layer part.
      */
+
     public void setPartFirstByte(Long partFirstByte) {
         this.partFirstByte = partFirstByte;
     }
@@ -216,6 +226,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @return The integer value of the first byte of the layer part.
      */
+
     public Long getPartFirstByte() {
         return this.partFirstByte;
     }
@@ -230,6 +241,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withPartFirstByte(Long partFirstByte) {
         setPartFirstByte(partFirstByte);
         return this;
@@ -243,6 +255,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @param partLastByte
      *        The integer value of the last byte of the layer part.
      */
+
     public void setPartLastByte(Long partLastByte) {
         this.partLastByte = partLastByte;
     }
@@ -254,6 +267,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @return The integer value of the last byte of the layer part.
      */
+
     public Long getPartLastByte() {
         return this.partLastByte;
     }
@@ -268,6 +282,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withPartLastByte(Long partLastByte) {
         setPartLastByte(partLastByte);
         return this;
@@ -282,10 +297,19 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * this request to AWS service by default. Users of the SDK should not
      * perform Base64 encoding on this field.
      * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the
+     * content or position of the byte buffer will be seen by all objects that
+     * have a reference to this object. It is recommended to call
+     * ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or
+     * reading from the buffer. This behavior will be changed in a future major
+     * version of the SDK.
+     * </p>
      * 
      * @param layerPartBlob
      *        The base64-encoded layer part payload.
      */
+
     public void setLayerPartBlob(java.nio.ByteBuffer layerPartBlob) {
         this.layerPartBlob = layerPartBlob;
     }
@@ -307,6 +331,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * 
      * @return The base64-encoded layer part payload.
      */
+
     public java.nio.ByteBuffer getLayerPartBlob() {
         return this.layerPartBlob;
     }
@@ -321,6 +346,7 @@ public class UploadLayerPartRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UploadLayerPartRequest withLayerPartBlob(
             java.nio.ByteBuffer layerPartBlob) {
         setLayerPartBlob(layerPartBlob);

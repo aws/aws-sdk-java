@@ -42,6 +42,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @param repositoryName
      *        The name of the repository to delete.
      */
+
     public void setRepositoryName(String repositoryName) {
         this.repositoryName = repositoryName;
     }
@@ -53,6 +54,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the repository to delete.
      */
+
     public String getRepositoryName() {
         return this.repositoryName;
     }
@@ -67,6 +69,7 @@ public class DeleteRepositoryRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteRepositoryRequest withRepositoryName(String repositoryName) {
         setRepositoryName(repositoryName);
         return this;

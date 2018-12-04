@@ -25,14 +25,9 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * <fullname>AWS Elastic Beanstalk</fullname>
  * <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed
- * information about AWS Elastic Beanstalk actions, data types, parameters, and
- * errors.
- * </p>
- * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy,
- * and manage scalable, fault-tolerant applications running on Amazon Web
- * Services cloud resources.
+ * AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage
+ * scalable, fault-tolerant applications running on the Amazon Web Services
+ * cloud.
  * </p>
  * <p>
  * For more information about this product, go to the <a
@@ -123,12 +118,14 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param abortEnvironmentUpdateRequest
+     * @return Result of the AbortEnvironmentUpdate operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.AbortEnvironmentUpdate
      */
-    void abortEnvironmentUpdate(
+    AbortEnvironmentUpdateResult abortEnvironmentUpdate(
             AbortEnvironmentUpdateRequest abortEnvironmentUpdateRequest);
 
     /**
@@ -136,7 +133,28 @@ public interface AWSElasticBeanstalk {
      *
      * @see #abortEnvironmentUpdate(AbortEnvironmentUpdateRequest)
      */
-    void abortEnvironmentUpdate();
+    AbortEnvironmentUpdateResult abortEnvironmentUpdate();
+
+    /**
+     * <p>
+     * Applies a scheduled managed action immediately. A managed action can be
+     * applied only if its status is <code>Scheduled</code>. Get the status and
+     * action ID of a managed action with
+     * <a>DescribeEnvironmentManagedActions</a>.
+     * </p>
+     * 
+     * @param applyEnvironmentManagedActionRequest
+     *        Request to execute a scheduled managed action immediately.
+     * @return Result of the ApplyEnvironmentManagedAction operation returned by
+     *         the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws ManagedActionInvalidStateException
+     *         Cannot modify the managed action in its current state.
+     * @sample AWSElasticBeanstalk.ApplyEnvironmentManagedAction
+     */
+    ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(
+            ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
 
     /**
      * <p>
@@ -165,6 +183,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param composeEnvironmentsRequest
+     *        Request to create or update a group of environments.
      * @return Result of the ComposeEnvironments operation returned by the
      *         service.
      * @throws TooManyEnvironmentsException
@@ -184,6 +203,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param createApplicationRequest
+     *        Request to create an application.
      * @return Result of the CreateApplication operation returned by the
      *         service.
      * @throws TooManyApplicationsException
@@ -237,11 +257,14 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param createConfigurationTemplateRequest
+     *        Request to create a configuration template.
      * @return Result of the CreateConfigurationTemplate operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @throws TooManyConfigurationTemplatesException
      *         The specified account has reached its limit of configuration
      *         templates.
@@ -309,13 +332,17 @@ public interface AWSElasticBeanstalk {
      * </note>
      * 
      * @param deleteApplicationRequest
+     *        Request to delete an application.
+     * @return Result of the DeleteApplication operation returned by the
+     *         service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
      * @sample AWSElasticBeanstalk.DeleteApplication
      */
-    void deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+    DeleteApplicationResult deleteApplication(
+            DeleteApplicationRequest deleteApplicationRequest);
 
     /**
      * <p>
@@ -325,6 +352,9 @@ public interface AWSElasticBeanstalk {
      * running environment.</note>
      * 
      * @param deleteApplicationVersionRequest
+     *        Request to delete an application version.
+     * @return Result of the DeleteApplicationVersion operation returned by the
+     *         service.
      * @throws SourceBundleDeletionException
      *         Unable to delete the Amazon S3 source bundle associated with the
      *         application version. The application version was deleted
@@ -341,7 +371,7 @@ public interface AWSElasticBeanstalk {
      *         the service is running.
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
      */
-    void deleteApplicationVersion(
+    DeleteApplicationVersionResult deleteApplicationVersion(
             DeleteApplicationVersionRequest deleteApplicationVersionRequest);
 
     /**
@@ -354,13 +384,16 @@ public interface AWSElasticBeanstalk {
      * environment.</note>
      * 
      * @param deleteConfigurationTemplateRequest
+     *        Request to delete a configuration template.
+     * @return Result of the DeleteConfigurationTemplate operation returned by
+     *         the service.
      * @throws OperationInProgressException
      *         Unable to perform the specified operation because another
      *         operation that effects an element in this activity is already in
      *         progress.
      * @sample AWSElasticBeanstalk.DeleteConfigurationTemplate
      */
-    void deleteConfigurationTemplate(
+    DeleteConfigurationTemplateResult deleteConfigurationTemplate(
             DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
 
     /**
@@ -378,9 +411,12 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param deleteEnvironmentConfigurationRequest
+     *        Request to delete a draft environment configuration.
+     * @return Result of the DeleteEnvironmentConfiguration operation returned
+     *         by the service.
      * @sample AWSElasticBeanstalk.DeleteEnvironmentConfiguration
      */
-    void deleteEnvironmentConfiguration(
+    DeleteEnvironmentConfigurationResult deleteEnvironmentConfiguration(
             DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest);
 
     /**
@@ -412,6 +448,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeApplicationsRequest
+     *        Request to describe one or more applications.
      * @return Result of the DescribeApplications operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeApplications
@@ -440,6 +477,8 @@ public interface AWSElasticBeanstalk {
      *        descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationOptions
      */
     DescribeConfigurationOptionsResult describeConfigurationOptions(
@@ -470,6 +509,8 @@ public interface AWSElasticBeanstalk {
      *        specified solution stack or configuration template.
      * @return Result of the DescribeConfigurationSettings operation returned by
      *         the service.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.DescribeConfigurationSettings
      */
     DescribeConfigurationSettingsResult describeConfigurationSettings(
@@ -498,10 +539,44 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Lists an environment's completed and failed managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionHistoryRequest
+     *        Request to list completed and failed managed actions.
+     * @return Result of the DescribeEnvironmentManagedActionHistory operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActionHistory
+     */
+    DescribeEnvironmentManagedActionHistoryResult describeEnvironmentManagedActionHistory(
+            DescribeEnvironmentManagedActionHistoryRequest describeEnvironmentManagedActionHistoryRequest);
+
+    /**
+     * <p>
+     * Lists an environment's upcoming and in-progress managed actions.
+     * </p>
+     * 
+     * @param describeEnvironmentManagedActionsRequest
+     *        Request to list an environment's upcoming and in-progress managed
+     *        actions.
+     * @return Result of the DescribeEnvironmentManagedActions operation
+     *         returned by the service.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribeEnvironmentManagedActions
+     */
+    DescribeEnvironmentManagedActionsResult describeEnvironmentManagedActions(
+            DescribeEnvironmentManagedActionsRequest describeEnvironmentManagedActionsRequest);
+
+    /**
+     * <p>
      * Returns AWS resources for this environment.
      * </p>
      * 
      * @param describeEnvironmentResourcesRequest
+     *        Request to describe the resources in an environment.
      * @return Result of the DescribeEnvironmentResources operation returned by
      *         the service.
      * @throws InsufficientPrivilegesException
@@ -518,6 +593,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeEnvironmentsRequest
+     *        Request to describe one or more environments.
      * @return Result of the DescribeEnvironments operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.DescribeEnvironments
@@ -537,10 +613,11 @@ public interface AWSElasticBeanstalk {
      * Returns list of event descriptions matching criteria up to the last 6
      * weeks.
      * </p>
-     * <note> This action returns the most recent 1,000 events from the
-     * specified <code>NextToken</code>. </note>
+     * <note>This action returns the most recent 1,000 events from the specified
+     * <code>NextToken</code>.</note>
      * 
      * @param describeEventsRequest
+     *        Request to retrieve a list of events for an environment.
      * @return Result of the DescribeEvents operation returned by the service.
      * @sample AWSElasticBeanstalk.DescribeEvents
      */
@@ -605,12 +682,15 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param rebuildEnvironmentRequest
+     * @return Result of the RebuildEnvironment operation returned by the
+     *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
      * @sample AWSElasticBeanstalk.RebuildEnvironment
      */
-    void rebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest);
+    RebuildEnvironmentResult rebuildEnvironment(
+            RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
     /**
      * <p>
@@ -639,9 +719,13 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param requestEnvironmentInfoRequest
+     *        Request to retrieve logs from an environment and store them in
+     *        your Elastic Beanstalk storage bucket.
+     * @return Result of the RequestEnvironmentInfo operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.RequestEnvironmentInfo
      */
-    void requestEnvironmentInfo(
+    RequestEnvironmentInfoResult requestEnvironmentInfo(
             RequestEnvironmentInfoRequest requestEnvironmentInfoRequest);
 
     /**
@@ -651,9 +735,11 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param restartAppServerRequest
+     * @return Result of the RestartAppServer operation returned by the service.
      * @sample AWSElasticBeanstalk.RestartAppServer
      */
-    void restartAppServer(RestartAppServerRequest restartAppServerRequest);
+    RestartAppServerResult restartAppServer(
+            RestartAppServerRequest restartAppServerRequest);
 
     /**
      * <p>
@@ -668,6 +754,8 @@ public interface AWSElasticBeanstalk {
      * </ul>
      * 
      * @param retrieveEnvironmentInfoRequest
+     *        Request to download logs retrieved with
+     *        <a>RequestEnvironmentInfo</a>.
      * @return Result of the RetrieveEnvironmentInfo operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.RetrieveEnvironmentInfo
@@ -682,9 +770,11 @@ public interface AWSElasticBeanstalk {
      * 
      * @param swapEnvironmentCNAMEsRequest
      *        Swaps the CNAMEs of two environments.
+     * @return Result of the SwapEnvironmentCNAMEs operation returned by the
+     *         service.
      * @sample AWSElasticBeanstalk.SwapEnvironmentCNAMEs
      */
-    void swapEnvironmentCNAMEs(
+    SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs(
             SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
 
     /**
@@ -692,7 +782,7 @@ public interface AWSElasticBeanstalk {
      *
      * @see #swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest)
      */
-    void swapEnvironmentCNAMEs();
+    SwapEnvironmentCNAMEsResult swapEnvironmentCNAMEs();
 
     /**
      * <p>
@@ -700,6 +790,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param terminateEnvironmentRequest
+     *        Request to terminate an environment.
      * @return Result of the TerminateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
@@ -719,6 +810,7 @@ public interface AWSElasticBeanstalk {
      * an empty string. </note>
      * 
      * @param updateApplicationRequest
+     *        Request to update an application.
      * @return Result of the UpdateApplication operation returned by the
      *         service.
      * @sample AWSElasticBeanstalk.UpdateApplication
@@ -766,6 +858,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateConfigurationTemplate
      */
     UpdateConfigurationTemplateResult updateConfigurationTemplate(
@@ -791,11 +885,14 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param updateEnvironmentRequest
+     *        Request to update an environment.
      * @return Result of the UpdateEnvironment operation returned by the
      *         service.
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.UpdateEnvironment
      */
     UpdateEnvironmentResult updateEnvironment(
@@ -819,6 +916,8 @@ public interface AWSElasticBeanstalk {
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one
      *         of more AWS services.
+     * @throws TooManyBucketsException
+     *         The specified account has reached its limit of Amazon S3 buckets.
      * @sample AWSElasticBeanstalk.ValidateConfigurationSettings
      */
     ValidateConfigurationSettingsResult validateConfigurationSettings(

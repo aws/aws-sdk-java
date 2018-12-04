@@ -68,6 +68,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @param enableWorkDocs
      *        Specifies if the directory is enabled for Amazon WorkDocs.
      */
+
     public void setEnableWorkDocs(Boolean enableWorkDocs) {
         this.enableWorkDocs = enableWorkDocs;
     }
@@ -79,6 +80,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * 
      * @return Specifies if the directory is enabled for Amazon WorkDocs.
      */
+
     public Boolean getEnableWorkDocs() {
         return this.enableWorkDocs;
     }
@@ -93,6 +95,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DefaultWorkspaceCreationProperties withEnableWorkDocs(
             Boolean enableWorkDocs) {
         setEnableWorkDocs(enableWorkDocs);
@@ -106,6 +109,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * 
      * @return Specifies if the directory is enabled for Amazon WorkDocs.
      */
+
     public Boolean isEnableWorkDocs() {
         return this.enableWorkDocs;
     }
@@ -120,6 +124,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      *        A public IP address will be attached to all WorkSpaces that are
      *        created or rebuilt.
      */
+
     public void setEnableInternetAccess(Boolean enableInternetAccess) {
         this.enableInternetAccess = enableInternetAccess;
     }
@@ -133,6 +138,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return A public IP address will be attached to all WorkSpaces that are
      *         created or rebuilt.
      */
+
     public Boolean getEnableInternetAccess() {
         return this.enableInternetAccess;
     }
@@ -149,6 +155,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DefaultWorkspaceCreationProperties withEnableInternetAccess(
             Boolean enableInternetAccess) {
         setEnableInternetAccess(enableInternetAccess);
@@ -164,6 +171,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return A public IP address will be attached to all WorkSpaces that are
      *         created or rebuilt.
      */
+
     public Boolean isEnableInternetAccess() {
         return this.enableInternetAccess;
     }
@@ -178,6 +186,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      *        The organizational unit (OU) in the directory that the WorkSpace
      *        machine accounts are placed in.
      */
+
     public void setDefaultOu(String defaultOu) {
         this.defaultOu = defaultOu;
     }
@@ -191,6 +200,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return The organizational unit (OU) in the directory that the WorkSpace
      *         machine accounts are placed in.
      */
+
     public String getDefaultOu() {
         return this.defaultOu;
     }
@@ -207,6 +217,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DefaultWorkspaceCreationProperties withDefaultOu(String defaultOu) {
         setDefaultOu(defaultOu);
         return this;
@@ -222,6 +233,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      *        The identifier of any custom security groups that are applied to
      *        the WorkSpaces when they are created.
      */
+
     public void setCustomSecurityGroupId(String customSecurityGroupId) {
         this.customSecurityGroupId = customSecurityGroupId;
     }
@@ -235,6 +247,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return The identifier of any custom security groups that are applied to
      *         the WorkSpaces when they are created.
      */
+
     public String getCustomSecurityGroupId() {
         return this.customSecurityGroupId;
     }
@@ -251,6 +264,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DefaultWorkspaceCreationProperties withCustomSecurityGroupId(
             String customSecurityGroupId) {
         setCustomSecurityGroupId(customSecurityGroupId);
@@ -265,6 +279,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @param userEnabledAsLocalAdministrator
      *        The WorkSpace user is an administrator on the WorkSpace.
      */
+
     public void setUserEnabledAsLocalAdministrator(
             Boolean userEnabledAsLocalAdministrator) {
         this.userEnabledAsLocalAdministrator = userEnabledAsLocalAdministrator;
@@ -277,6 +292,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * 
      * @return The WorkSpace user is an administrator on the WorkSpace.
      */
+
     public Boolean getUserEnabledAsLocalAdministrator() {
         return this.userEnabledAsLocalAdministrator;
     }
@@ -291,6 +307,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DefaultWorkspaceCreationProperties withUserEnabledAsLocalAdministrator(
             Boolean userEnabledAsLocalAdministrator) {
         setUserEnabledAsLocalAdministrator(userEnabledAsLocalAdministrator);
@@ -304,6 +321,7 @@ public class DefaultWorkspaceCreationProperties implements Serializable,
      * 
      * @return The WorkSpace user is an administrator on the WorkSpace.
      */
+
     public Boolean isUserEnabledAsLocalAdministrator() {
         return this.userEnabledAsLocalAdministrator;
     }

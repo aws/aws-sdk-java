@@ -60,6 +60,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      *        The maximum number of groups allowed for your AWS account. The
      *        default limit is 20 per region.
      */
+
     public void setMaxNumberOfAutoScalingGroups(
             Integer maxNumberOfAutoScalingGroups) {
         this.maxNumberOfAutoScalingGroups = maxNumberOfAutoScalingGroups;
@@ -74,6 +75,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return The maximum number of groups allowed for your AWS account. The
      *         default limit is 20 per region.
      */
+
     public Integer getMaxNumberOfAutoScalingGroups() {
         return this.maxNumberOfAutoScalingGroups;
     }
@@ -90,6 +92,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withMaxNumberOfAutoScalingGroups(
             Integer maxNumberOfAutoScalingGroups) {
         setMaxNumberOfAutoScalingGroups(maxNumberOfAutoScalingGroups);
@@ -106,6 +109,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      *        The maximum number of launch configurations allowed for your AWS
      *        account. The default limit is 100 per region.
      */
+
     public void setMaxNumberOfLaunchConfigurations(
             Integer maxNumberOfLaunchConfigurations) {
         this.maxNumberOfLaunchConfigurations = maxNumberOfLaunchConfigurations;
@@ -120,6 +124,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return The maximum number of launch configurations allowed for your AWS
      *         account. The default limit is 100 per region.
      */
+
     public Integer getMaxNumberOfLaunchConfigurations() {
         return this.maxNumberOfLaunchConfigurations;
     }
@@ -136,6 +141,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withMaxNumberOfLaunchConfigurations(
             Integer maxNumberOfLaunchConfigurations) {
         setMaxNumberOfLaunchConfigurations(maxNumberOfLaunchConfigurations);
@@ -150,6 +156,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @param numberOfAutoScalingGroups
      *        The current number of groups for your AWS account.
      */
+
     public void setNumberOfAutoScalingGroups(Integer numberOfAutoScalingGroups) {
         this.numberOfAutoScalingGroups = numberOfAutoScalingGroups;
     }
@@ -161,6 +168,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * 
      * @return The current number of groups for your AWS account.
      */
+
     public Integer getNumberOfAutoScalingGroups() {
         return this.numberOfAutoScalingGroups;
     }
@@ -175,6 +183,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withNumberOfAutoScalingGroups(
             Integer numberOfAutoScalingGroups) {
         setNumberOfAutoScalingGroups(numberOfAutoScalingGroups);
@@ -189,6 +198,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @param numberOfLaunchConfigurations
      *        The current number of launch configurations for your AWS account.
      */
+
     public void setNumberOfLaunchConfigurations(
             Integer numberOfLaunchConfigurations) {
         this.numberOfLaunchConfigurations = numberOfLaunchConfigurations;
@@ -201,6 +211,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * 
      * @return The current number of launch configurations for your AWS account.
      */
+
     public Integer getNumberOfLaunchConfigurations() {
         return this.numberOfLaunchConfigurations;
     }
@@ -215,6 +226,7 @@ public class DescribeAccountLimitsResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeAccountLimitsResult withNumberOfLaunchConfigurations(
             Integer numberOfLaunchConfigurations) {
         setNumberOfLaunchConfigurations(numberOfLaunchConfigurations);

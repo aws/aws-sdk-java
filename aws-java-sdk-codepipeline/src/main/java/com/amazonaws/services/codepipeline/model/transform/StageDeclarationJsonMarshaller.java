@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * StageDeclarationMarshaller
@@ -39,53 +34,55 @@ import com.amazonaws.util.json.*;
 public class StageDeclarationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(StageDeclaration stageDeclaration,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (stageDeclaration == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (stageDeclaration.getName() != null) {
-                jsonWriter.key("name").value(stageDeclaration.getName());
+                jsonGenerator.writeFieldName("name").writeValue(
+                        stageDeclaration.getName());
             }
 
             java.util.List<BlockerDeclaration> blockersList = stageDeclaration
                     .getBlockers();
             if (blockersList != null) {
-                jsonWriter.key("blockers");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("blockers");
+                jsonGenerator.writeStartArray();
                 for (BlockerDeclaration blockersListValue : blockersList) {
                     if (blockersListValue != null) {
 
                         BlockerDeclarationJsonMarshaller.getInstance()
-                                .marshall(blockersListValue, jsonWriter);
+                                .marshall(blockersListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<ActionDeclaration> actionsList = stageDeclaration
                     .getActions();
             if (actionsList != null) {
-                jsonWriter.key("actions");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("actions");
+                jsonGenerator.writeStartArray();
                 for (ActionDeclaration actionsListValue : actionsList) {
                     if (actionsListValue != null) {
 
                         ActionDeclarationJsonMarshaller.getInstance().marshall(
-                                actionsListValue, jsonWriter);
+                                actionsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

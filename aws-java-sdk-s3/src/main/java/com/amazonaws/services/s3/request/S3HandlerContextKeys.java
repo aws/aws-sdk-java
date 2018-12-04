@@ -30,4 +30,12 @@ public class S3HandlerContextKeys {
     public static final HandlerContextKey<Boolean> IS_CHUNKED_ENCODING_DISABLED = new HandlerContextKey<Boolean>(
             "IsChunkedEncodingDisabled");
 
+    /**
+     * Context provided to {@link AWSS3V4Signer} to determine whether payloads should be signed.  If enabled,
+     * payload hash will be computed when constructing the request.  This does incur a performance penalty.
+     * Derived from the value set in {@link S3ClientOptions}
+     */
+    public static final HandlerContextKey<Boolean> IS_PAYLOAD_SIGNING_ENABLED = new HandlerContextKey<Boolean>(
+            "IsPayloadSigningEnabled");
+
 }

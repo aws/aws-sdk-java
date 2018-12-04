@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.config.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.config.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * RelationshipMarshaller
@@ -39,38 +34,37 @@ import com.amazonaws.util.json.*;
 public class RelationshipJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(Relationship relationship, JSONWriter jsonWriter) {
+    public void marshall(Relationship relationship,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (relationship == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (relationship.getResourceType() != null) {
-                jsonWriter.key("resourceType").value(
+                jsonGenerator.writeFieldName("resourceType").writeValue(
                         relationship.getResourceType());
             }
-
             if (relationship.getResourceId() != null) {
-                jsonWriter.key("resourceId")
-                        .value(relationship.getResourceId());
+                jsonGenerator.writeFieldName("resourceId").writeValue(
+                        relationship.getResourceId());
             }
-
             if (relationship.getResourceName() != null) {
-                jsonWriter.key("resourceName").value(
+                jsonGenerator.writeFieldName("resourceName").writeValue(
                         relationship.getResourceName());
             }
-
             if (relationship.getRelationshipName() != null) {
-                jsonWriter.key("relationshipName").value(
+                jsonGenerator.writeFieldName("relationshipName").writeValue(
                         relationship.getRelationshipName());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

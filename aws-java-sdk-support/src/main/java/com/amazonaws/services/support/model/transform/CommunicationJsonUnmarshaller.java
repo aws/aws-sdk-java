@@ -18,6 +18,8 @@ package com.amazonaws.services.support.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.support.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -53,23 +55,23 @@ public class CommunicationJsonUnmarshaller implements
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("caseId", targetDepth)) {
                     context.nextToken();
-                    communication.setCaseId(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    communication.setCaseId(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("body", targetDepth)) {
                     context.nextToken();
-                    communication.setBody(StringJsonUnmarshaller.getInstance()
+                    communication.setBody(context.getUnmarshaller(String.class)
                             .unmarshall(context));
                 }
                 if (context.testExpression("submittedBy", targetDepth)) {
                     context.nextToken();
-                    communication.setSubmittedBy(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    communication.setSubmittedBy(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("timeCreated", targetDepth)) {
                     context.nextToken();
-                    communication.setTimeCreated(StringJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    communication.setTimeCreated(context.getUnmarshaller(
+                            String.class).unmarshall(context));
                 }
                 if (context.testExpression("attachmentSet", targetDepth)) {
                     context.nextToken();

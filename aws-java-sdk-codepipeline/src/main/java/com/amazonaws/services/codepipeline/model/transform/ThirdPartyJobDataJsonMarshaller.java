@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.codepipeline.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.codepipeline.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ThirdPartyJobDataMarshaller
@@ -39,84 +34,82 @@ import com.amazonaws.util.json.*;
 public class ThirdPartyJobDataJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(ThirdPartyJobData thirdPartyJobData,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (thirdPartyJobData == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (thirdPartyJobData.getActionTypeId() != null) {
-                jsonWriter.key("actionTypeId");
+                jsonGenerator.writeFieldName("actionTypeId");
                 ActionTypeIdJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobData.getActionTypeId(), jsonWriter);
+                        thirdPartyJobData.getActionTypeId(), jsonGenerator);
             }
-
             if (thirdPartyJobData.getActionConfiguration() != null) {
-                jsonWriter.key("actionConfiguration");
+                jsonGenerator.writeFieldName("actionConfiguration");
                 ActionConfigurationJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobData.getActionConfiguration(), jsonWriter);
+                        thirdPartyJobData.getActionConfiguration(),
+                        jsonGenerator);
             }
-
             if (thirdPartyJobData.getPipelineContext() != null) {
-                jsonWriter.key("pipelineContext");
+                jsonGenerator.writeFieldName("pipelineContext");
                 PipelineContextJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobData.getPipelineContext(), jsonWriter);
+                        thirdPartyJobData.getPipelineContext(), jsonGenerator);
             }
 
             java.util.List<Artifact> inputArtifactsList = thirdPartyJobData
                     .getInputArtifacts();
             if (inputArtifactsList != null) {
-                jsonWriter.key("inputArtifacts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("inputArtifacts");
+                jsonGenerator.writeStartArray();
                 for (Artifact inputArtifactsListValue : inputArtifactsList) {
                     if (inputArtifactsListValue != null) {
 
                         ArtifactJsonMarshaller.getInstance().marshall(
-                                inputArtifactsListValue, jsonWriter);
+                                inputArtifactsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
 
             java.util.List<Artifact> outputArtifactsList = thirdPartyJobData
                     .getOutputArtifacts();
             if (outputArtifactsList != null) {
-                jsonWriter.key("outputArtifacts");
-                jsonWriter.array();
+                jsonGenerator.writeFieldName("outputArtifacts");
+                jsonGenerator.writeStartArray();
                 for (Artifact outputArtifactsListValue : outputArtifactsList) {
                     if (outputArtifactsListValue != null) {
 
                         ArtifactJsonMarshaller.getInstance().marshall(
-                                outputArtifactsListValue, jsonWriter);
+                                outputArtifactsListValue, jsonGenerator);
                     }
                 }
-                jsonWriter.endArray();
+                jsonGenerator.writeEndArray();
             }
-
             if (thirdPartyJobData.getArtifactCredentials() != null) {
-                jsonWriter.key("artifactCredentials");
+                jsonGenerator.writeFieldName("artifactCredentials");
                 AWSSessionCredentialsJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobData.getArtifactCredentials(), jsonWriter);
+                        thirdPartyJobData.getArtifactCredentials(),
+                        jsonGenerator);
             }
-
             if (thirdPartyJobData.getContinuationToken() != null) {
-                jsonWriter.key("continuationToken").value(
+                jsonGenerator.writeFieldName("continuationToken").writeValue(
                         thirdPartyJobData.getContinuationToken());
             }
-
             if (thirdPartyJobData.getEncryptionKey() != null) {
-                jsonWriter.key("encryptionKey");
+                jsonGenerator.writeFieldName("encryptionKey");
                 EncryptionKeyJsonMarshaller.getInstance().marshall(
-                        thirdPartyJobData.getEncryptionKey(), jsonWriter);
+                        thirdPartyJobData.getEncryptionKey(), jsonGenerator);
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

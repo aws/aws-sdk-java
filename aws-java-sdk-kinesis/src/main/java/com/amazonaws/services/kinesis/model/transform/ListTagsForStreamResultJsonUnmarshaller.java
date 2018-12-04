@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -60,8 +62,8 @@ public class ListTagsForStreamResultJsonUnmarshaller implements
                 if (context.testExpression("HasMoreTags", targetDepth)) {
                     context.nextToken();
                     listTagsForStreamResult
-                            .setHasMoreTags(BooleanJsonUnmarshaller
-                                    .getInstance().unmarshall(context));
+                            .setHasMoreTags(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

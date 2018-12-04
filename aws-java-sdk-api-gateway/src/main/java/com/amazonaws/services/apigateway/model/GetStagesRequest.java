@@ -49,6 +49,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * @param restApiId
      *        The stages' API identifiers.
      */
+
     public void setRestApiId(String restApiId) {
         this.restApiId = restApiId;
     }
@@ -60,6 +61,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stages' API identifiers.
      */
+
     public String getRestApiId() {
         return this.restApiId;
     }
@@ -74,6 +76,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStagesRequest withRestApiId(String restApiId) {
         setRestApiId(restApiId);
         return this;
@@ -87,6 +90,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * @param deploymentId
      *        The stages' deployment identifiers.
      */
+
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
@@ -98,6 +102,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * 
      * @return The stages' deployment identifiers.
      */
+
     public String getDeploymentId() {
         return this.deploymentId;
     }
@@ -112,6 +117,7 @@ public class GetStagesRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetStagesRequest withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
         return this;

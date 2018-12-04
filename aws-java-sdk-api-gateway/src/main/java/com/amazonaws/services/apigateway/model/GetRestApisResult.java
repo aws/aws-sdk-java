@@ -37,6 +37,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
     /**
      * @param position
      */
+
     public void setPosition(String position) {
         this.position = position;
     }
@@ -44,6 +45,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
     /**
      * @return
      */
+
     public String getPosition() {
         return this.position;
     }
@@ -53,6 +55,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApisResult withPosition(String position) {
         setPosition(position);
         return this;
@@ -66,6 +69,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
      * @return An array of links to the current page of <a>RestApi</a>
      *         resources.
      */
+
     public java.util.List<RestApi> getItems() {
         return items;
     }
@@ -78,6 +82,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
      * @param items
      *        An array of links to the current page of <a>RestApi</a> resources.
      */
+
     public void setItems(java.util.Collection<RestApi> items) {
         if (items == null) {
             this.items = null;
@@ -103,6 +108,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApisResult withItems(RestApi... items) {
         if (this.items == null) {
             setItems(new java.util.ArrayList<RestApi>(items.length));
@@ -123,6 +129,7 @@ public class GetRestApisResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GetRestApisResult withItems(java.util.Collection<RestApi> items) {
         setItems(items);
         return this;

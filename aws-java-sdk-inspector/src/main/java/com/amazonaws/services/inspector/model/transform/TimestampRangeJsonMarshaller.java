@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.inspector.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.inspector.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * TimestampRangeMarshaller
@@ -39,26 +34,29 @@ import com.amazonaws.util.json.*;
 public class TimestampRangeJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
-    public void marshall(TimestampRange timestampRange, JSONWriter jsonWriter) {
+    public void marshall(TimestampRange timestampRange,
+            StructuredJsonGenerator jsonGenerator) {
+
         if (timestampRange == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
-            if (timestampRange.getMinimum() != null) {
-                jsonWriter.key("minimum").value(timestampRange.getMinimum());
+            if (timestampRange.getBeginDate() != null) {
+                jsonGenerator.writeFieldName("beginDate").writeValue(
+                        timestampRange.getBeginDate());
+            }
+            if (timestampRange.getEndDate() != null) {
+                jsonGenerator.writeFieldName("endDate").writeValue(
+                        timestampRange.getEndDate());
             }
 
-            if (timestampRange.getMaximum() != null) {
-                jsonWriter.key("maximum").value(timestampRange.getMaximum());
-            }
-
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

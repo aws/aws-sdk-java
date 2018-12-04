@@ -48,6 +48,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * @param streamName
      *        The name of the stream.
      */
+
     public void setStreamName(String streamName) {
         this.streamName = streamName;
     }
@@ -59,6 +60,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the stream.
      */
+
     public String getStreamName() {
         return this.streamName;
     }
@@ -73,6 +75,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToStreamRequest withStreamName(String streamName) {
         setStreamName(streamName);
         return this;
@@ -85,6 +88,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * 
      * @return The set of key-value pairs to use to create the tags.
      */
+
     public java.util.Map<String, String> getTags() {
         if (tags == null) {
             tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -100,6 +104,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * @param tags
      *        The set of key-value pairs to use to create the tags.
      */
+
     public void setTags(java.util.Map<String, String> tags) {
         this.tags = tags == null ? null
                 : new com.amazonaws.internal.SdkInternalMap<String, String>(
@@ -116,6 +121,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public AddTagsToStreamRequest withTags(java.util.Map<String, String> tags) {
         setTags(tags);
         return this;
@@ -136,6 +142,7 @@ public class AddTagsToStreamRequest extends AmazonWebServiceRequest implements
      * Removes all the entries added into Tags. &lt;p> Returns a reference to
      * this object so that method calls can be chained together.
      */
+
     public AddTagsToStreamRequest clearTagsEntries() {
         this.tags = null;
         return this;

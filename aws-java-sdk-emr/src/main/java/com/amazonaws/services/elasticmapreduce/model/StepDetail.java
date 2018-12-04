@@ -70,6 +70,7 @@ public class StepDetail implements Serializable, Cloneable {
      * @param stepConfig
      *        The step configuration.
      */
+
     public void setStepConfig(StepConfig stepConfig) {
         this.stepConfig = stepConfig;
     }
@@ -81,6 +82,7 @@ public class StepDetail implements Serializable, Cloneable {
      * 
      * @return The step configuration.
      */
+
     public StepConfig getStepConfig() {
         return this.stepConfig;
     }
@@ -95,6 +97,7 @@ public class StepDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepDetail withStepConfig(StepConfig stepConfig) {
         setStepConfig(stepConfig);
         return this;
@@ -108,6 +111,7 @@ public class StepDetail implements Serializable, Cloneable {
      * @param executionStatusDetail
      *        The description of the step status.
      */
+
     public void setExecutionStatusDetail(
             StepExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
@@ -120,6 +124,7 @@ public class StepDetail implements Serializable, Cloneable {
      * 
      * @return The description of the step status.
      */
+
     public StepExecutionStatusDetail getExecutionStatusDetail() {
         return this.executionStatusDetail;
     }
@@ -134,6 +139,7 @@ public class StepDetail implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StepDetail withExecutionStatusDetail(
             StepExecutionStatusDetail executionStatusDetail) {
         setExecutionStatusDetail(executionStatusDetail);

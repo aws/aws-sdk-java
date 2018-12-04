@@ -47,6 +47,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @param ruleSetName
      *        The name of the receipt rule set to reorder.
      */
+
     public void setRuleSetName(String ruleSetName) {
         this.ruleSetName = ruleSetName;
     }
@@ -58,6 +59,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * 
      * @return The name of the receipt rule set to reorder.
      */
+
     public String getRuleSetName() {
         return this.ruleSetName;
     }
@@ -72,6 +74,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReorderReceiptRuleSetRequest withRuleSetName(String ruleSetName) {
         setRuleSetName(ruleSetName);
         return this;
@@ -86,6 +89,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return A list of the specified receipt rule set's receipt rules in the
      *         order that you want to put them.
      */
+
     public java.util.List<String> getRuleNames() {
         if (ruleNames == null) {
             ruleNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -103,6 +107,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      *        A list of the specified receipt rule set's receipt rules in the
      *        order that you want to put them.
      */
+
     public void setRuleNames(java.util.Collection<String> ruleNames) {
         if (ruleNames == null) {
             this.ruleNames = null;
@@ -131,6 +136,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReorderReceiptRuleSetRequest withRuleNames(String... ruleNames) {
         if (this.ruleNames == null) {
             setRuleNames(new com.amazonaws.internal.SdkInternalList<String>(
@@ -154,6 +160,7 @@ public class ReorderReceiptRuleSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ReorderReceiptRuleSetRequest withRuleNames(
             java.util.Collection<String> ruleNames) {
         setRuleNames(ruleNames);

@@ -32,7 +32,9 @@ import com.amazonaws.metrics.*;
 import com.amazonaws.regions.*;
 import com.amazonaws.transform.*;
 import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
 
 import com.amazonaws.services.cloudwatchevents.model.*;
 import com.amazonaws.services.cloudwatchevents.model.transform.*;
@@ -65,6 +67,7 @@ import com.amazonaws.services.cloudwatchevents.model.transform.*;
  * CloudWatch Developer Guide</a>.
  * </p>
  */
+@ThreadSafe
 public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         implements AmazonCloudWatchEvents {
     /** Provider for AWS credentials. */
@@ -80,10 +83,42 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
     private static final String DEFAULT_ENDPOINT_PREFIX = "events";
 
     /**
-     * List of exception unmarshallers for all Amazon CloudWatch Events
-     * exceptions.
+     * Client configuration factory providing ClientConfigurations tailored to
+     * this client
      */
-    protected List<JsonErrorUnmarshallerV2> jsonErrorUnmarshallers = new ArrayList<JsonErrorUnmarshallerV2>();
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "ConcurrentModificationException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("LimitExceededException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(
+                                            "InvalidEventPatternException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ResourceNotFoundException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudwatchevents.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("InternalException")
+                                    .withModeledClass(
+                                            com.amazonaws.services.cloudwatchevents.model.InternalException.class)));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch
@@ -103,8 +138,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * @see DefaultAWSCredentialsProviderChain
      */
     public AmazonCloudWatchEventsClient() {
-        this(new DefaultAWSCredentialsProviderChain(),
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(new DefaultAWSCredentialsProviderChain(), configFactory
+                .getConfig());
     }
 
     /**
@@ -146,8 +181,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      *        authenticating with AWS services.
      */
     public AmazonCloudWatchEventsClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig());
+        this(awsCredentials, configFactory.getConfig());
     }
 
     /**
@@ -189,8 +223,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      */
     public AmazonCloudWatchEventsClient(
             AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig());
+        this(awsCredentialsProvider, configFactory.getConfig());
     }
 
     /**
@@ -245,29 +278,6 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
     }
 
     private void init() {
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException.class,
-                        "ConcurrentModificationException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class,
-                        "LimitExceededException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class,
-                        "InvalidEventPatternException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudwatchevents.model.ResourceNotFoundException.class,
-                        "ResourceNotFoundException"));
-        jsonErrorUnmarshallers
-                .add(new JsonErrorUnmarshallerV2(
-                        com.amazonaws.services.cloudwatchevents.model.InternalException.class,
-                        "InternalException"));
-        jsonErrorUnmarshallers
-                .add(JsonErrorUnmarshallerV2.DEFAULT_UNMARSHALLER);
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(DEFAULT_ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
@@ -287,13 +297,14 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * <a>RemoveTargets</a> before you can delete the rule.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might still continue to match to the deleted rule. Please allow a short
-     * period of time for changes to take effect.
+     * <b>Note:</b> When you delete a rule, incoming events might still continue
+     * to match to the deleted rule. Please allow a short period of time for
+     * changes to take effect.
      * </p>
      * 
      * @param deleteRuleRequest
      *        Container for the parameters to the <a>DeleteRule</a> operation.
+     * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
      *         This exception occurs if there is concurrent modification on rule
      *         or target.
@@ -302,29 +313,33 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * @sample AmazonCloudWatchEvents.DeleteRule
      */
     @Override
-    public void deleteRule(DeleteRuleRequest deleteRuleRequest) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DeleteRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<DeleteRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(deleteRuleRequest));
+                request = new DeleteRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -359,17 +374,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(describeRuleRequest));
+                request = new DescribeRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(describeRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<DescribeRuleResult> responseHandler = new JsonResponseHandler<DescribeRuleResult>(
-                    new DescribeRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DescribeRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -386,13 +403,14 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * self-trigger if it has a schedule expression.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might still continue to match to the disabled rule. Please allow a short
-     * period of time for changes to take effect.
+     * <b>Note:</b> When you disable a rule, incoming events might still
+     * continue to match to the disabled rule. Please allow a short period of
+     * time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
      *        Container for the parameters to the <a>DisableRule</a> operation.
+     * @return Result of the DisableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -403,29 +421,33 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * @sample AmazonCloudWatchEvents.DisableRule
      */
     @Override
-    public void disableRule(DisableRuleRequest disableRuleRequest) {
+    public DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(disableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<DisableRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<DisableRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(disableRuleRequest));
+                request = new DisableRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(disableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<DisableRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new DisableRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -438,13 +460,14 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * Enables a rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might not immediately start matching to a newly enabled rule. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you enable a rule, incoming events might not
+     * immediately start matching to a newly enabled rule. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
      *        Container for the parameters to the <a>EnableRule</a> operation.
+     * @return Result of the EnableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
@@ -455,29 +478,33 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * @sample AmazonCloudWatchEvents.EnableRule
      */
     @Override
-    public void enableRule(EnableRuleRequest enableRuleRequest) {
+    public EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest) {
         ExecutionContext executionContext = createExecutionContext(enableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext
                 .getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
         Request<EnableRuleRequest> request = null;
-        Response<Void> response = null;
+        Response<EnableRuleResult> response = null;
 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(enableRuleRequest));
+                request = new EnableRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(enableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(
-                    null);
-            responseHandler.setIsPayloadJson(true);
-            invoke(request, responseHandler, executionContext);
+            HttpResponseHandler<AmazonWebServiceResponse<EnableRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new EnableRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
 
         } finally {
 
@@ -487,13 +514,12 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Lists the names of the rules that the given target is put to. Using this
-     * action, you can find out which of the rules in Amazon CloudWatch Events
-     * can invoke a specific target in your account. If you have more rules in
-     * your account than the given limit, the results will be paginated. In that
-     * case, use the next token returned in the response and repeat the
-     * ListRulesByTarget action until the NextToken in the response is returned
-     * as null.
+     * Lists the names of the rules that the given target is put to. You can see
+     * which of the rules in Amazon CloudWatch Events can invoke a specific
+     * target in your account. If you have more rules in your account than the
+     * given limit, the results will be paginated. In that case, use the next
+     * token returned in the response and repeat ListRulesByTarget until the
+     * NextToken in the response is returned as null.
      * </p>
      * 
      * @param listRuleNamesByTargetRequest
@@ -518,18 +544,20 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRuleNamesByTargetRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listRuleNamesByTargetRequest));
+                request = new ListRuleNamesByTargetRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listRuleNamesByTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRuleNamesByTargetResult> responseHandler = new JsonResponseHandler<ListRuleNamesByTargetResult>(
-                    new ListRuleNamesByTargetResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRuleNamesByTargetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRuleNamesByTargetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -546,8 +574,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * list all the rules or you can provide a prefix to match to the rule
      * names. If you have more rules in your account than the given limit, the
      * results will be paginated. In that case, use the next token returned in
-     * the response and repeat the ListRules action until the NextToken in the
-     * response is returned as null.
+     * the response and repeat ListRules until the NextToken in the response is
+     * returned as null.
      * </p>
      * 
      * @param listRulesRequest
@@ -569,17 +597,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesRequestMarshaller().marshall(super
-                        .beforeMarshalling(listRulesRequest));
+                request = new ListRulesRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListRulesResult> responseHandler = new JsonResponseHandler<ListRulesResult>(
-                    new ListRulesResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListRulesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -619,18 +649,20 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTargetsByRuleRequestMarshaller()
-                        .marshall(super
-                                .beforeMarshalling(listTargetsByRuleRequest));
+                request = new ListTargetsByRuleRequestMarshaller(
+                        protocolFactory).marshall(super
+                        .beforeMarshalling(listTargetsByRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<ListTargetsByRuleResult> responseHandler = new JsonResponseHandler<ListTargetsByRuleResult>(
-                    new ListTargetsByRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<ListTargetsByRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new ListTargetsByRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -666,17 +698,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEventsRequestMarshaller().marshall(super
-                        .beforeMarshalling(putEventsRequest));
+                request = new PutEventsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutEventsResult> responseHandler = new JsonResponseHandler<PutEventsResult>(
-                    new PutEventsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutEventsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -694,9 +728,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * <a>DisableRule</a>.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, incoming events
-     * might not immediately start matching to new or updated rules. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you create or update a rule, incoming events might not
+     * immediately start matching to new or updated rules. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * <p>
      * A rule must contain at least an EventPattern or ScheduleExpression. Rules
@@ -740,17 +774,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRuleRequestMarshaller().marshall(super
-                        .beforeMarshalling(putRuleRequest));
+                request = new PutRuleRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutRuleResult> responseHandler = new JsonResponseHandler<PutRuleResult>(
-                    new PutRuleResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutRuleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -763,15 +799,42 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
 
     /**
      * <p>
-     * Adds target(s) to a rule. Updates the target(s) if they are already
-     * associated with the role. In other words, if there is already a target
-     * with the given target ID, then the target associated with that ID is
-     * updated.
+     * Adds target(s) to a rule. Targets are the resources that can be invoked
+     * when a rule is triggered. For example, AWS Lambda functions, Amazon
+     * Kinesis streams, and built-in targets. Updates the target(s) if they are
+     * already associated with the role. In other words, if there is already a
+     * target with the given target ID, then the target associated with that ID
+     * is updated.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, when the associated
-     * rule triggers, new or updated targets might not be immediately invoked.
-     * Please allow a short period of time for changes to take effect.
+     * In order to be able to make API calls against the resources you own,
+     * Amazon CloudWatch Events needs the appropriate permissions. For AWS
+     * Lambda and Amazon SNS resources, CloudWatch Events relies on
+     * resource-based policies. For Amazon Kinesis streams, CloudWatch Events
+     * relies on IAM roles. For more information, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html"
+     * >Permissions for Sending Events to Targets</a> in the <b><i>Amazon
+     * CloudWatch Developer Guide</i></b>.
+     * </p>
+     * <p>
+     * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional
+     * parameters of a target. When a rule is triggered due to a matched event,
+     * if for a target:
+     * </p>
+     * <ul>
+     * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the
+     * entire event is passed to the target in JSON form.</li>
+     * <li><b>InputPath</b> is specified in the form of JSONPath (e.g.
+     * <b>$.detail</b>), then only the part of the event specified in the path
+     * is passed to the target (e.g. only the detail part of the event is
+     * passed).</li>
+     * <li><b>Input</b> is specified in the form of a valid JSON, then the
+     * matched event is overridden with this constant.</li>
+     * </ul>
+     * <p>
+     * <b>Note:</b> When you add targets to a rule, when the associated rule
+     * triggers, new or updated targets might not be immediately invoked. Please
+     * allow a short period of time for changes to take effect.
      * </p>
      * 
      * @param putTargetsRequest
@@ -801,17 +864,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutTargetsRequestMarshaller().marshall(super
-                        .beforeMarshalling(putTargetsRequest));
+                request = new PutTargetsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(putTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<PutTargetsResult> responseHandler = new JsonResponseHandler<PutTargetsResult>(
-                    new PutTargetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<PutTargetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new PutTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -828,9 +893,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
      * targets will no longer be invoked.
      * </p>
      * <p>
-     * <b>Note:</b> When you make a change with this action, when the associated
-     * rule triggers, removed targets might still continue to be invoked. Please
-     * allow a short period of time for changes to take effect.
+     * <b>Note:</b> When you remove a target, when the associated rule triggers,
+     * removed targets might still continue to be invoked. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * 
      * @param removeTargetsRequest
@@ -859,17 +924,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTargetsRequestMarshaller().marshall(super
-                        .beforeMarshalling(removeTargetsRequest));
+                request = new RemoveTargetsRequestMarshaller(protocolFactory)
+                        .marshall(super.beforeMarshalling(removeTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<RemoveTargetsResult> responseHandler = new JsonResponseHandler<RemoveTargetsResult>(
-                    new RemoveTargetsResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTargetsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new RemoveTargetsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -915,7 +982,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestEventPatternRequestMarshaller()
+                request = new TestEventPatternRequestMarshaller(protocolFactory)
                         .marshall(super
                                 .beforeMarshalling(testEventPatternRequest));
                 // Binds the request metrics to the current request.
@@ -924,9 +991,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            JsonResponseHandler<TestEventPatternResult> responseHandler = new JsonResponseHandler<TestEventPatternResult>(
-                    new TestEventPatternResultJsonUnmarshaller());
-            responseHandler.setIsPayloadJson(true);
+            HttpResponseHandler<AmazonWebServiceResponse<TestEventPatternResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata()
+                            .withPayloadJson(true)
+                            .withHasStreamingSuccessResponse(false),
+                            new TestEventPatternResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -960,33 +1029,48 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient
         return client.getResponseMetadataForRequest(request);
     }
 
+    /**
+     * Normal invoke with authentication. Credentials are required and may be
+     * overriden at the request level.
+     **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils
+                .getCredentialsProvider(request.getOriginalRequest(),
+                        awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any
+     * credentials set on the client or request will be ignored for this
+     * operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(
+            Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack
+     * thereof) have been configured in the ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(
             Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
         request.setEndpoint(endpoint);
         request.setTimeOffset(timeOffset);
 
-        AWSRequestMetrics awsRequestMetrics = executionContext
-                .getAwsRequestMetrics();
-        AWSCredentials credentials;
-        awsRequestMetrics.startEvent(Field.CredentialsRequestTime);
-        try {
-            credentials = awsCredentialsProvider.getCredentials();
-        } finally {
-            awsRequestMetrics.endEvent(Field.CredentialsRequestTime);
-        }
-
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest != null
-                && originalRequest.getRequestCredentials() != null) {
-            credentials = originalRequest.getRequestCredentials();
-        }
-
-        executionContext.setCredentials(credentials);
-
-        JsonErrorResponseHandlerV2 errorResponseHandler = new JsonErrorResponseHandlerV2(
-                jsonErrorUnmarshallers);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory
+                .createErrorResponseHandler(new JsonErrorResponseMetadata());
 
         return client.execute(request, responseHandler, errorResponseHandler,
                 executionContext);

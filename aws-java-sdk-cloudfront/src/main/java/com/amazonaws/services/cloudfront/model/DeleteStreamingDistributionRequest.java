@@ -63,6 +63,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * @param id
      *        The distribution id.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -72,6 +73,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * 
      * @return The distribution id.
      */
+
     public String getId() {
         return this.id;
     }
@@ -84,6 +86,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStreamingDistributionRequest withId(String id) {
         setId(id);
         return this;
@@ -97,6 +100,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      *        The value of the ETag header you received when you disabled the
      *        streaming distribution. For example: E2QWRUHAPOMQZL.
      */
+
     public void setIfMatch(String ifMatch) {
         this.ifMatch = ifMatch;
     }
@@ -108,6 +112,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return The value of the ETag header you received when you disabled the
      *         streaming distribution. For example: E2QWRUHAPOMQZL.
      */
+
     public String getIfMatch() {
         return this.ifMatch;
     }
@@ -122,6 +127,7 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DeleteStreamingDistributionRequest withIfMatch(String ifMatch) {
         setIfMatch(ifMatch);
         return this;

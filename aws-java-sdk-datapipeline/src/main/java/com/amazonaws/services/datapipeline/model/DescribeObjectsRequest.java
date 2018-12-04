@@ -66,6 +66,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @param pipelineId
      *        The ID of the pipeline that contains the object definitions.
      */
+
     public void setPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
     }
@@ -77,6 +78,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * 
      * @return The ID of the pipeline that contains the object definitions.
      */
+
     public String getPipelineId() {
         return this.pipelineId;
     }
@@ -91,6 +93,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsRequest withPipelineId(String pipelineId) {
         setPipelineId(pipelineId);
         return this;
@@ -107,6 +110,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      *         be described. You can pass as many as 25 identifiers in a single
      *         call to <code>DescribeObjects</code>.
      */
+
     public java.util.List<String> getObjectIds() {
         if (objectIds == null) {
             objectIds = new com.amazonaws.internal.SdkInternalList<String>();
@@ -126,6 +130,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      *        described. You can pass as many as 25 identifiers in a single call
      *        to <code>DescribeObjects</code>.
      */
+
     public void setObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
             this.objectIds = null;
@@ -156,6 +161,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsRequest withObjectIds(String... objectIds) {
         if (this.objectIds == null) {
             setObjectIds(new com.amazonaws.internal.SdkInternalList<String>(
@@ -181,6 +187,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsRequest withObjectIds(
             java.util.Collection<String> objectIds) {
         setObjectIds(objectIds);
@@ -197,6 +204,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      *        Indicates whether any expressions in the object should be
      *        evaluated when the object descriptions are returned.
      */
+
     public void setEvaluateExpressions(Boolean evaluateExpressions) {
         this.evaluateExpressions = evaluateExpressions;
     }
@@ -210,6 +218,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Indicates whether any expressions in the object should be
      *         evaluated when the object descriptions are returned.
      */
+
     public Boolean getEvaluateExpressions() {
         return this.evaluateExpressions;
     }
@@ -226,6 +235,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsRequest withEvaluateExpressions(
             Boolean evaluateExpressions) {
         setEvaluateExpressions(evaluateExpressions);
@@ -241,6 +251,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Indicates whether any expressions in the object should be
      *         evaluated when the object descriptions are returned.
      */
+
     public Boolean isEvaluateExpressions() {
         return this.evaluateExpressions;
     }
@@ -260,6 +271,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      *        marker value from the previous call to retrieve the next set of
      *        results.
      */
+
     public void setMarker(String marker) {
         this.marker = marker;
     }
@@ -278,6 +290,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      *         marker value from the previous call to retrieve the next set of
      *         results.
      */
+
     public String getMarker() {
         return this.marker;
     }
@@ -299,6 +312,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeObjectsRequest withMarker(String marker) {
         setMarker(marker);
         return this;

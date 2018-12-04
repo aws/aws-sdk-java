@@ -83,6 +83,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param stackId
      *        Unique stack identifier.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -94,6 +95,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return Unique stack identifier.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -108,6 +110,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -121,6 +124,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param stackName
      *        The name associated with the stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -132,6 +136,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The name associated with the stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -146,6 +151,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -159,6 +165,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param templateDescription
      *        The template description of the template used to create the stack.
      */
+
     public void setTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
     }
@@ -171,6 +178,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return The template description of the template used to create the
      *         stack.
      */
+
     public String getTemplateDescription() {
         return this.templateDescription;
     }
@@ -185,6 +193,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withTemplateDescription(String templateDescription) {
         setTemplateDescription(templateDescription);
         return this;
@@ -198,6 +207,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param creationTime
      *        The time the stack was created.
      */
+
     public void setCreationTime(java.util.Date creationTime) {
         this.creationTime = creationTime;
     }
@@ -209,6 +219,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The time the stack was created.
      */
+
     public java.util.Date getCreationTime() {
         return this.creationTime;
     }
@@ -223,6 +234,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
         return this;
@@ -238,6 +250,7 @@ public class StackSummary implements Serializable, Cloneable {
      *        The time the stack was last updated. This field will only be
      *        returned if the stack has been updated at least once.
      */
+
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
@@ -251,6 +264,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return The time the stack was last updated. This field will only be
      *         returned if the stack has been updated at least once.
      */
+
     public java.util.Date getLastUpdatedTime() {
         return this.lastUpdatedTime;
     }
@@ -267,6 +281,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         setLastUpdatedTime(lastUpdatedTime);
         return this;
@@ -280,6 +295,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param deletionTime
      *        The time the stack was deleted.
      */
+
     public void setDeletionTime(java.util.Date deletionTime) {
         this.deletionTime = deletionTime;
     }
@@ -291,6 +307,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return The time the stack was deleted.
      */
+
     public java.util.Date getDeletionTime() {
         return this.deletionTime;
     }
@@ -305,6 +322,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withDeletionTime(java.util.Date deletionTime) {
         setDeletionTime(deletionTime);
         return this;
@@ -319,6 +337,7 @@ public class StackSummary implements Serializable, Cloneable {
      *        The current status of the stack.
      * @see StackStatus
      */
+
     public void setStackStatus(String stackStatus) {
         this.stackStatus = stackStatus;
     }
@@ -331,6 +350,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return The current status of the stack.
      * @see StackStatus
      */
+
     public String getStackStatus() {
         return this.stackStatus;
     }
@@ -346,6 +366,7 @@ public class StackSummary implements Serializable, Cloneable {
      *         chained together.
      * @see StackStatus
      */
+
     public StackSummary withStackStatus(String stackStatus) {
         setStackStatus(stackStatus);
         return this;
@@ -358,10 +379,9 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @param stackStatus
      *        The current status of the stack.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see StackStatus
      */
+
     public void setStackStatus(StackStatus stackStatus) {
         this.stackStatus = stackStatus.toString();
     }
@@ -377,6 +397,7 @@ public class StackSummary implements Serializable, Cloneable {
      *         chained together.
      * @see StackStatus
      */
+
     public StackSummary withStackStatus(StackStatus stackStatus) {
         setStackStatus(stackStatus);
         return this;
@@ -390,6 +411,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @param stackStatusReason
      *        Success/Failure message associated with the stack status.
      */
+
     public void setStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;
     }
@@ -401,6 +423,7 @@ public class StackSummary implements Serializable, Cloneable {
      * 
      * @return Success/Failure message associated with the stack status.
      */
+
     public String getStackStatusReason() {
         return this.stackStatusReason;
     }
@@ -415,6 +438,7 @@ public class StackSummary implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackSummary withStackStatusReason(String stackStatusReason) {
         setStackStatusReason(stackStatusReason);
         return this;

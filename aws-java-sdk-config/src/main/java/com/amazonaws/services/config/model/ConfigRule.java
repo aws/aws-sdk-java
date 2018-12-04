@@ -22,10 +22,8 @@ import java.io.Serializable;
  * <p>
  * An AWS Lambda function that evaluates configuration items to assess whether
  * your AWS resources comply with your desired configurations. This function can
- * run when AWS Config detects a configuration change or delivers a
- * configuration snapshot. This function can evaluate any resource in the
- * recording group. To define which of these are evaluated, specify a value for
- * the <code>Scope</code> key.
+ * run when AWS Config detects a configuration change to an AWS resource, or
+ * when it delivers a configuration snapshot of the resources in the account.
  * </p>
  * <p>
  * For more information about developing and using AWS Config rules, see <a
@@ -64,12 +62,12 @@ public class ConfigRule implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Defines which resources the AWS Config rule evaluates. The scope can
-     * include one or more resource types, a combination of a tag key and value,
-     * or a combination of one resource type and one or more resource IDs.
-     * Specify a scope to constrain the resources that are evaluated. If you do
-     * not specify a scope, the AWS Config Rule evaluates all resources in the
-     * recording group.
+     * Defines which resources can trigger an evaluation for the rule. The scope
+     * can include one or more resource types, a combination of one resource
+     * type and one resource ID, or a combination of a tag key and value.
+     * Specify a scope to constrain the resources that can trigger an evaluation
+     * for the rule. If you do not specify a scope, evaluations are triggered
+     * when any resource in the recording group changes.
      * </p>
      */
     private Scope scope;
@@ -132,6 +130,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *        The name that you assign to the AWS Config rule. The name is
      *        required if you are adding a new rule.
      */
+
     public void setConfigRuleName(String configRuleName) {
         this.configRuleName = configRuleName;
     }
@@ -145,6 +144,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return The name that you assign to the AWS Config rule. The name is
      *         required if you are adding a new rule.
      */
+
     public String getConfigRuleName() {
         return this.configRuleName;
     }
@@ -161,6 +161,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withConfigRuleName(String configRuleName) {
         setConfigRuleName(configRuleName);
         return this;
@@ -174,6 +175,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @param configRuleArn
      *        The Amazon Resource Name (ARN) of the AWS Config rule.
      */
+
     public void setConfigRuleArn(String configRuleArn) {
         this.configRuleArn = configRuleArn;
     }
@@ -185,6 +187,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @return The Amazon Resource Name (ARN) of the AWS Config rule.
      */
+
     public String getConfigRuleArn() {
         return this.configRuleArn;
     }
@@ -199,6 +202,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withConfigRuleArn(String configRuleArn) {
         setConfigRuleArn(configRuleArn);
         return this;
@@ -212,6 +216,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @param configRuleId
      *        The ID of the AWS Config rule.
      */
+
     public void setConfigRuleId(String configRuleId) {
         this.configRuleId = configRuleId;
     }
@@ -223,6 +228,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @return The ID of the AWS Config rule.
      */
+
     public String getConfigRuleId() {
         return this.configRuleId;
     }
@@ -237,6 +243,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withConfigRuleId(String configRuleId) {
         setConfigRuleId(configRuleId);
         return this;
@@ -250,6 +257,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @param description
      *        The description that you provide for the AWS Config rule.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -261,6 +269,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * 
      * @return The description that you provide for the AWS Config rule.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -275,6 +284,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withDescription(String description) {
         setDescription(description);
         return this;
@@ -282,67 +292,73 @@ public class ConfigRule implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Defines which resources the AWS Config rule evaluates. The scope can
-     * include one or more resource types, a combination of a tag key and value,
-     * or a combination of one resource type and one or more resource IDs.
-     * Specify a scope to constrain the resources that are evaluated. If you do
-     * not specify a scope, the AWS Config Rule evaluates all resources in the
-     * recording group.
+     * Defines which resources can trigger an evaluation for the rule. The scope
+     * can include one or more resource types, a combination of one resource
+     * type and one resource ID, or a combination of a tag key and value.
+     * Specify a scope to constrain the resources that can trigger an evaluation
+     * for the rule. If you do not specify a scope, evaluations are triggered
+     * when any resource in the recording group changes.
      * </p>
      * 
      * @param scope
-     *        Defines which resources the AWS Config rule evaluates. The scope
-     *        can include one or more resource types, a combination of a tag key
-     *        and value, or a combination of one resource type and one or more
-     *        resource IDs. Specify a scope to constrain the resources that are
-     *        evaluated. If you do not specify a scope, the AWS Config Rule
-     *        evaluates all resources in the recording group.
+     *        Defines which resources can trigger an evaluation for the rule.
+     *        The scope can include one or more resource types, a combination of
+     *        one resource type and one resource ID, or a combination of a tag
+     *        key and value. Specify a scope to constrain the resources that can
+     *        trigger an evaluation for the rule. If you do not specify a scope,
+     *        evaluations are triggered when any resource in the recording group
+     *        changes.
      */
+
     public void setScope(Scope scope) {
         this.scope = scope;
     }
 
     /**
      * <p>
-     * Defines which resources the AWS Config rule evaluates. The scope can
-     * include one or more resource types, a combination of a tag key and value,
-     * or a combination of one resource type and one or more resource IDs.
-     * Specify a scope to constrain the resources that are evaluated. If you do
-     * not specify a scope, the AWS Config Rule evaluates all resources in the
-     * recording group.
+     * Defines which resources can trigger an evaluation for the rule. The scope
+     * can include one or more resource types, a combination of one resource
+     * type and one resource ID, or a combination of a tag key and value.
+     * Specify a scope to constrain the resources that can trigger an evaluation
+     * for the rule. If you do not specify a scope, evaluations are triggered
+     * when any resource in the recording group changes.
      * </p>
      * 
-     * @return Defines which resources the AWS Config rule evaluates. The scope
-     *         can include one or more resource types, a combination of a tag
-     *         key and value, or a combination of one resource type and one or
-     *         more resource IDs. Specify a scope to constrain the resources
-     *         that are evaluated. If you do not specify a scope, the AWS Config
-     *         Rule evaluates all resources in the recording group.
+     * @return Defines which resources can trigger an evaluation for the rule.
+     *         The scope can include one or more resource types, a combination
+     *         of one resource type and one resource ID, or a combination of a
+     *         tag key and value. Specify a scope to constrain the resources
+     *         that can trigger an evaluation for the rule. If you do not
+     *         specify a scope, evaluations are triggered when any resource in
+     *         the recording group changes.
      */
+
     public Scope getScope() {
         return this.scope;
     }
 
     /**
      * <p>
-     * Defines which resources the AWS Config rule evaluates. The scope can
-     * include one or more resource types, a combination of a tag key and value,
-     * or a combination of one resource type and one or more resource IDs.
-     * Specify a scope to constrain the resources that are evaluated. If you do
-     * not specify a scope, the AWS Config Rule evaluates all resources in the
-     * recording group.
+     * Defines which resources can trigger an evaluation for the rule. The scope
+     * can include one or more resource types, a combination of one resource
+     * type and one resource ID, or a combination of a tag key and value.
+     * Specify a scope to constrain the resources that can trigger an evaluation
+     * for the rule. If you do not specify a scope, evaluations are triggered
+     * when any resource in the recording group changes.
      * </p>
      * 
      * @param scope
-     *        Defines which resources the AWS Config rule evaluates. The scope
-     *        can include one or more resource types, a combination of a tag key
-     *        and value, or a combination of one resource type and one or more
-     *        resource IDs. Specify a scope to constrain the resources that are
-     *        evaluated. If you do not specify a scope, the AWS Config Rule
-     *        evaluates all resources in the recording group.
+     *        Defines which resources can trigger an evaluation for the rule.
+     *        The scope can include one or more resource types, a combination of
+     *        one resource type and one resource ID, or a combination of a tag
+     *        key and value. Specify a scope to constrain the resources that can
+     *        trigger an evaluation for the rule. If you do not specify a scope,
+     *        evaluations are triggered when any resource in the recording group
+     *        changes.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withScope(Scope scope) {
         setScope(scope);
         return this;
@@ -359,6 +375,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *        and the events that cause the function to evaluate your AWS
      *        resources.
      */
+
     public void setSource(Source source) {
         this.source = source;
     }
@@ -373,6 +390,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         and the events that cause the function to evaluate your AWS
      *         resources.
      */
+
     public Source getSource() {
         return this.source;
     }
@@ -390,6 +408,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withSource(Source source) {
         setSource(source);
         return this;
@@ -405,6 +424,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *        A string in JSON format that is passed to the AWS Config rule
      *        Lambda function.
      */
+
     public void setInputParameters(String inputParameters) {
         this.inputParameters = inputParameters;
     }
@@ -418,6 +438,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return A string in JSON format that is passed to the AWS Config rule
      *         Lambda function.
      */
+
     public String getInputParameters() {
         return this.inputParameters;
     }
@@ -434,6 +455,7 @@ public class ConfigRule implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ConfigRule withInputParameters(String inputParameters) {
         setInputParameters(inputParameters);
         return this;
@@ -469,6 +491,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *        snapshots, use the <code>PutDeliveryChannel</code> action.
      * @see MaximumExecutionFrequency
      */
+
     public void setMaximumExecutionFrequency(String maximumExecutionFrequency) {
         this.maximumExecutionFrequency = maximumExecutionFrequency;
     }
@@ -502,6 +525,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         snapshots, use the <code>PutDeliveryChannel</code> action.
      * @see MaximumExecutionFrequency
      */
+
     public String getMaximumExecutionFrequency() {
         return this.maximumExecutionFrequency;
     }
@@ -538,6 +562,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public ConfigRule withMaximumExecutionFrequency(
             String maximumExecutionFrequency) {
         setMaximumExecutionFrequency(maximumExecutionFrequency);
@@ -572,10 +597,9 @@ public class ConfigRule implements Serializable, Cloneable {
      *        which is part of <code>ConfigSnapshotDeliveryProperties</code>. To
      *        update the frequency with which AWS Config delivers your
      *        snapshots, use the <code>PutDeliveryChannel</code> action.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public void setMaximumExecutionFrequency(
             MaximumExecutionFrequency maximumExecutionFrequency) {
         this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
@@ -613,6 +637,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         chained together.
      * @see MaximumExecutionFrequency
      */
+
     public ConfigRule withMaximumExecutionFrequency(
             MaximumExecutionFrequency maximumExecutionFrequency) {
         setMaximumExecutionFrequency(maximumExecutionFrequency);
@@ -652,6 +677,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *        the <code>DeleteConfigRule</code> request.
      * @see ConfigRuleState
      */
+
     public void setConfigRuleState(String configRuleState) {
         this.configRuleState = configRuleState;
     }
@@ -688,6 +714,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         the <code>DeleteConfigRule</code> request.
      * @see ConfigRuleState
      */
+
     public String getConfigRuleState() {
         return this.configRuleState;
     }
@@ -727,6 +754,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigRuleState
      */
+
     public ConfigRule withConfigRuleState(String configRuleState) {
         setConfigRuleState(configRuleState);
         return this;
@@ -763,10 +791,9 @@ public class ConfigRule implements Serializable, Cloneable {
      *        You cannot add a rule to AWS Config that has the state set to
      *        <code>DELETING</code>. If you want to delete a rule, you must use
      *        the <code>DeleteConfigRule</code> request.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ConfigRuleState
      */
+
     public void setConfigRuleState(ConfigRuleState configRuleState) {
         this.configRuleState = configRuleState.toString();
     }
@@ -806,6 +833,7 @@ public class ConfigRule implements Serializable, Cloneable {
      *         chained together.
      * @see ConfigRuleState
      */
+
     public ConfigRule withConfigRuleState(ConfigRuleState configRuleState) {
         setConfigRuleState(configRuleState);
         return this;

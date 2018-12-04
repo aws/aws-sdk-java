@@ -20,7 +20,9 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * Represents the request sent to retrieve the account settings.
+ * </p>
  */
 public class GetAccountSettingsRequest extends AmazonWebServiceRequest
         implements Serializable, Cloneable {

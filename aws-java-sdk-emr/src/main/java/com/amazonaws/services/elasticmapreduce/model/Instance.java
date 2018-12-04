@@ -67,6 +67,18 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private InstanceStatus status;
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     */
+    private String instanceGroupId;
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EbsVolume> ebsVolumes;
 
     /**
      * <p>
@@ -76,6 +88,7 @@ public class Instance implements Serializable, Cloneable {
      * @param id
      *        The unique identifier for the instance in Amazon EMR.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -87,6 +100,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The unique identifier for the instance in Amazon EMR.
      */
+
     public String getId() {
         return this.id;
     }
@@ -101,6 +115,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withId(String id) {
         setId(id);
         return this;
@@ -114,6 +129,7 @@ public class Instance implements Serializable, Cloneable {
      * @param ec2InstanceId
      *        The unique identifier of the instance in Amazon EC2.
      */
+
     public void setEc2InstanceId(String ec2InstanceId) {
         this.ec2InstanceId = ec2InstanceId;
     }
@@ -125,6 +141,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The unique identifier of the instance in Amazon EC2.
      */
+
     public String getEc2InstanceId() {
         return this.ec2InstanceId;
     }
@@ -139,6 +156,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withEc2InstanceId(String ec2InstanceId) {
         setEc2InstanceId(ec2InstanceId);
         return this;
@@ -152,6 +170,7 @@ public class Instance implements Serializable, Cloneable {
      * @param publicDnsName
      *        The public DNS name of the instance.
      */
+
     public void setPublicDnsName(String publicDnsName) {
         this.publicDnsName = publicDnsName;
     }
@@ -163,6 +182,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The public DNS name of the instance.
      */
+
     public String getPublicDnsName() {
         return this.publicDnsName;
     }
@@ -177,6 +197,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPublicDnsName(String publicDnsName) {
         setPublicDnsName(publicDnsName);
         return this;
@@ -190,6 +211,7 @@ public class Instance implements Serializable, Cloneable {
      * @param publicIpAddress
      *        The public IP address of the instance.
      */
+
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
@@ -201,6 +223,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The public IP address of the instance.
      */
+
     public String getPublicIpAddress() {
         return this.publicIpAddress;
     }
@@ -215,6 +238,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPublicIpAddress(String publicIpAddress) {
         setPublicIpAddress(publicIpAddress);
         return this;
@@ -228,6 +252,7 @@ public class Instance implements Serializable, Cloneable {
      * @param privateDnsName
      *        The private DNS name of the instance.
      */
+
     public void setPrivateDnsName(String privateDnsName) {
         this.privateDnsName = privateDnsName;
     }
@@ -239,6 +264,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The private DNS name of the instance.
      */
+
     public String getPrivateDnsName() {
         return this.privateDnsName;
     }
@@ -253,6 +279,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPrivateDnsName(String privateDnsName) {
         setPrivateDnsName(privateDnsName);
         return this;
@@ -266,6 +293,7 @@ public class Instance implements Serializable, Cloneable {
      * @param privateIpAddress
      *        The private IP address of the instance.
      */
+
     public void setPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
     }
@@ -277,6 +305,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The private IP address of the instance.
      */
+
     public String getPrivateIpAddress() {
         return this.privateIpAddress;
     }
@@ -291,6 +320,7 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withPrivateIpAddress(String privateIpAddress) {
         setPrivateIpAddress(privateIpAddress);
         return this;
@@ -304,6 +334,7 @@ public class Instance implements Serializable, Cloneable {
      * @param status
      *        The current status of the instance.
      */
+
     public void setStatus(InstanceStatus status) {
         this.status = status;
     }
@@ -315,6 +346,7 @@ public class Instance implements Serializable, Cloneable {
      * 
      * @return The current status of the instance.
      */
+
     public InstanceStatus getStatus() {
         return this.status;
     }
@@ -329,8 +361,131 @@ public class Instance implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Instance withStatus(InstanceStatus status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @param instanceGroupId
+     *        The identifier of the instance group to which this instance
+     *        belongs.
+     */
+
+    public void setInstanceGroupId(String instanceGroupId) {
+        this.instanceGroupId = instanceGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @return The identifier of the instance group to which this instance
+     *         belongs.
+     */
+
+    public String getInstanceGroupId() {
+        return this.instanceGroupId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the instance group to which this instance belongs.
+     * </p>
+     * 
+     * @param instanceGroupId
+     *        The identifier of the instance group to which this instance
+     *        belongs.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Instance withInstanceGroupId(String instanceGroupId) {
+        setInstanceGroupId(instanceGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @return The list of EBS volumes that are attached to this instance.
+     */
+
+    public java.util.List<EbsVolume> getEbsVolumes() {
+        if (ebsVolumes == null) {
+            ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>();
+        }
+        return ebsVolumes;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     */
+
+    public void setEbsVolumes(java.util.Collection<EbsVolume> ebsVolumes) {
+        if (ebsVolumes == null) {
+            this.ebsVolumes = null;
+            return;
+        }
+
+        this.ebsVolumes = new com.amazonaws.internal.SdkInternalList<EbsVolume>(
+                ebsVolumes);
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if
+     * any). Use {@link #setEbsVolumes(java.util.Collection)} or
+     * {@link #withEbsVolumes(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Instance withEbsVolumes(EbsVolume... ebsVolumes) {
+        if (this.ebsVolumes == null) {
+            setEbsVolumes(new com.amazonaws.internal.SdkInternalList<EbsVolume>(
+                    ebsVolumes.length));
+        }
+        for (EbsVolume ele : ebsVolumes) {
+            this.ebsVolumes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of EBS volumes that are attached to this instance.
+     * </p>
+     * 
+     * @param ebsVolumes
+     *        The list of EBS volumes that are attached to this instance.
+     * @return Returns a reference to this object so that method calls can be
+     *         chained together.
+     */
+
+    public Instance withEbsVolumes(java.util.Collection<EbsVolume> ebsVolumes) {
+        setEbsVolumes(ebsVolumes);
         return this;
     }
 
@@ -359,7 +514,11 @@ public class Instance implements Serializable, Cloneable {
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: " + getStatus() + ",");
+        if (getInstanceGroupId() != null)
+            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+        if (getEbsVolumes() != null)
+            sb.append("EbsVolumes: " + getEbsVolumes());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +572,17 @@ public class Instance implements Serializable, Cloneable {
         if (other.getStatus() != null
                 && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getInstanceGroupId() == null
+                ^ this.getInstanceGroupId() == null)
+            return false;
+        if (other.getInstanceGroupId() != null
+                && other.getInstanceGroupId().equals(this.getInstanceGroupId()) == false)
+            return false;
+        if (other.getEbsVolumes() == null ^ this.getEbsVolumes() == null)
+            return false;
+        if (other.getEbsVolumes() != null
+                && other.getEbsVolumes().equals(this.getEbsVolumes()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +615,12 @@ public class Instance implements Serializable, Cloneable {
                         .hashCode());
         hashCode = prime * hashCode
                 + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getInstanceGroupId() == null) ? 0 : getInstanceGroupId()
+                        .hashCode());
+        hashCode = prime * hashCode
+                + ((getEbsVolumes() == null) ? 0 : getEbsVolumes().hashCode());
         return hashCode;
     }
 

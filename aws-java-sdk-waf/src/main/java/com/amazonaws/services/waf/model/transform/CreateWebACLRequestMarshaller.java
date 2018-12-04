@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.waf.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,21 @@ import com.amazonaws.services.waf.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * CreateWebACLRequest Marshaller
  */
 public class CreateWebACLRequestMarshaller implements
         Marshaller<Request<CreateWebACLRequest>, CreateWebACLRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public CreateWebACLRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<CreateWebACLRequest> marshall(
             CreateWebACLRequest createWebACLRequest) {
@@ -63,39 +63,36 @@ public class CreateWebACLRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (createWebACLRequest.getName() != null) {
-                jsonWriter.key("Name").value(createWebACLRequest.getName());
+                jsonGenerator.writeFieldName("Name").writeValue(
+                        createWebACLRequest.getName());
             }
-
             if (createWebACLRequest.getMetricName() != null) {
-                jsonWriter.key("MetricName").value(
+                jsonGenerator.writeFieldName("MetricName").writeValue(
                         createWebACLRequest.getMetricName());
             }
-
             if (createWebACLRequest.getDefaultAction() != null) {
-                jsonWriter.key("DefaultAction");
+                jsonGenerator.writeFieldName("DefaultAction");
                 WafActionJsonMarshaller.getInstance().marshall(
-                        createWebACLRequest.getDefaultAction(), jsonWriter);
+                        createWebACLRequest.getDefaultAction(), jsonGenerator);
             }
-
             if (createWebACLRequest.getChangeToken() != null) {
-                jsonWriter.key("ChangeToken").value(
+                jsonGenerator.writeFieldName("ChangeToken").writeValue(
                         createWebACLRequest.getChangeToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

@@ -71,6 +71,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      *         or is a subset of this list, the grant allows the operation.
      *         Otherwise, the operation is not allowed.
      */
+
     public java.util.Map<String, String> getEncryptionContextSubset() {
         if (encryptionContextSubset == null) {
             encryptionContextSubset = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -95,6 +96,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      *        is a subset of this list, the grant allows the operation.
      *        Otherwise, the operation is not allowed.
      */
+
     public void setEncryptionContextSubset(
             java.util.Map<String, String> encryptionContextSubset) {
         this.encryptionContextSubset = encryptionContextSubset == null ? null
@@ -121,6 +123,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantConstraints withEncryptionContextSubset(
             java.util.Map<String, String> encryptionContextSubset) {
         setEncryptionContextSubset(encryptionContextSubset);
@@ -144,6 +147,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public GrantConstraints clearEncryptionContextSubsetEntries() {
         this.encryptionContextSubset = null;
         return this;
@@ -164,6 +168,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      *         includes an encryption context that matches this list, the grant
      *         allows the operation. Otherwise, the operation is not allowed.
      */
+
     public java.util.Map<String, String> getEncryptionContextEquals() {
         if (encryptionContextEquals == null) {
             encryptionContextEquals = new com.amazonaws.internal.SdkInternalMap<String, String>();
@@ -187,6 +192,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      *        an encryption context that matches this list, the grant allows the
      *        operation. Otherwise, the operation is not allowed.
      */
+
     public void setEncryptionContextEquals(
             java.util.Map<String, String> encryptionContextEquals) {
         this.encryptionContextEquals = encryptionContextEquals == null ? null
@@ -212,6 +218,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GrantConstraints withEncryptionContextEquals(
             java.util.Map<String, String> encryptionContextEquals) {
         setEncryptionContextEquals(encryptionContextEquals);
@@ -235,6 +242,7 @@ public class GrantConstraints implements Serializable, Cloneable {
      * Returns a reference to this object so that method calls can be chained
      * together.
      */
+
     public GrantConstraints clearEncryptionContextEqualsEntries() {
         this.encryptionContextEquals = null;
         return this;

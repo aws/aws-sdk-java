@@ -47,6 +47,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * 
      * @return Information about the samples.
      */
+
     public java.util.List<Sample> getSamples() {
         return samples;
     }
@@ -59,6 +60,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * @param samples
      *        Information about the samples.
      */
+
     public void setSamples(java.util.Collection<Sample> samples) {
         if (samples == null) {
             this.samples = null;
@@ -84,6 +86,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSamplesResult withSamples(Sample... samples) {
         if (this.samples == null) {
             setSamples(new java.util.ArrayList<Sample>(samples.length));
@@ -104,6 +107,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSamplesResult withSamples(java.util.Collection<Sample> samples) {
         setSamples(samples);
         return this;
@@ -122,6 +126,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      *        a subsequent call to this operation to return the next set of
      *        items in the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -138,6 +143,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      *         a subsequent call to this operation to return the next set of
      *         items in the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -157,6 +163,7 @@ public class ListSamplesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListSamplesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

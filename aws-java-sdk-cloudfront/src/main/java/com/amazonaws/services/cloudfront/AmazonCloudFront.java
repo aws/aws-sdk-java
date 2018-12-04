@@ -262,6 +262,8 @@ public interface AmazonCloudFront {
      * 
      * @param deleteCloudFrontOriginAccessIdentityRequest
      *        The request to delete a origin access identity.
+     * @return Result of the DeleteCloudFrontOriginAccessIdentity operation
+     *         returned by the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
@@ -275,7 +277,7 @@ public interface AmazonCloudFront {
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
      */
-    void deleteCloudFrontOriginAccessIdentity(
+    DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
             DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest);
 
     /**
@@ -283,6 +285,8 @@ public interface AmazonCloudFront {
      * 
      * @param deleteDistributionRequest
      *        The request to delete a distribution.
+     * @return Result of the DeleteDistribution operation returned by the
+     *         service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws DistributionNotDisabledException
@@ -296,13 +300,16 @@ public interface AmazonCloudFront {
      *         fields evaluated to false.
      * @sample AmazonCloudFront.DeleteDistribution
      */
-    void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
+    DeleteDistributionResult deleteDistribution(
+            DeleteDistributionRequest deleteDistributionRequest);
 
     /**
      * Delete a streaming distribution.
      * 
      * @param deleteStreamingDistributionRequest
      *        The request to delete a streaming distribution.
+     * @return Result of the DeleteStreamingDistribution operation returned by
+     *         the service.
      * @throws AccessDeniedException
      *         Access denied.
      * @throws StreamingDistributionNotDisabledException
@@ -316,7 +323,7 @@ public interface AmazonCloudFront {
      *         fields evaluated to false.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      */
-    void deleteStreamingDistribution(
+    DeleteStreamingDistributionResult deleteStreamingDistribution(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
 
     /**

@@ -16,15 +16,8 @@
 
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import static com.amazonaws.util.StringUtils.COMMA_SEPARATOR;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -37,14 +30,22 @@ import com.amazonaws.services.cloudtrail.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListPublicKeysRequest Marshaller
  */
 public class ListPublicKeysRequestMarshaller implements
         Marshaller<Request<ListPublicKeysRequest>, ListPublicKeysRequest> {
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListPublicKeysRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListPublicKeysRequest> marshall(
             ListPublicKeysRequest listPublicKeysRequest) {
@@ -64,34 +65,31 @@ public class ListPublicKeysRequestMarshaller implements
         request.setResourcePath("");
 
         try {
-            StringWriter stringWriter = new StringWriter();
-            JSONWriter jsonWriter = new JSONWriter(stringWriter);
+            final StructuredJsonGenerator jsonGenerator = protocolFactory
+                    .createGenerator();
 
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (listPublicKeysRequest.getStartTime() != null) {
-                jsonWriter.key("StartTime").value(
+                jsonGenerator.writeFieldName("StartTime").writeValue(
                         listPublicKeysRequest.getStartTime());
             }
-
             if (listPublicKeysRequest.getEndTime() != null) {
-                jsonWriter.key("EndTime").value(
+                jsonGenerator.writeFieldName("EndTime").writeValue(
                         listPublicKeysRequest.getEndTime());
             }
-
             if (listPublicKeysRequest.getNextToken() != null) {
-                jsonWriter.key("NextToken").value(
+                jsonGenerator.writeFieldName("NextToken").writeValue(
                         listPublicKeysRequest.getNextToken());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
 
-            String snippet = stringWriter.toString();
-            byte[] content = snippet.getBytes(UTF8);
-            request.setContent(new StringInputStream(snippet));
+            byte[] content = jsonGenerator.getBytes();
+            request.setContent(new ByteArrayInputStream(content));
             request.addHeader("Content-Length",
                     Integer.toString(content.length));
-            request.addHeader("Content-Type", "application/x-amz-json-1.1");
+            request.addHeader("Content-Type", jsonGenerator.getContentType());
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);

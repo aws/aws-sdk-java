@@ -33,10 +33,9 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> instanceNames;
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * on-premises instances call to return the next set of on-premises
-     * instances in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list on-premises instances call
+     * to return the next set of on-premises instances in the list.
      * </p>
      */
     private String nextToken;
@@ -48,6 +47,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * 
      * @return The list of matching on-premises instance names.
      */
+
     public java.util.List<String> getInstanceNames() {
         if (instanceNames == null) {
             instanceNames = new com.amazonaws.internal.SdkInternalList<String>();
@@ -63,6 +63,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @param instanceNames
      *        The list of matching on-premises instance names.
      */
+
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
         if (instanceNames == null) {
             this.instanceNames = null;
@@ -89,6 +90,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withInstanceNames(
             String... instanceNames) {
         if (this.instanceNames == null) {
@@ -111,6 +113,7 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withInstanceNames(
             java.util.Collection<String> instanceNames) {
         setInstanceNames(instanceNames);
@@ -119,55 +122,55 @@ public class ListOnPremisesInstancesResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * on-premises instances call to return the next set of on-premises
-     * instances in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list on-premises instances call
+     * to return the next set of on-premises instances in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list on-premises instances call to return the next set
-     *        of on-premises instances in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list on-premises
+     *        instances call to return the next set of on-premises instances in
+     *        the list.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * on-premises instances call to return the next set of on-premises
-     * instances in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list on-premises instances call
+     * to return the next set of on-premises instances in the list.
      * </p>
      * 
-     * @return If the amount of information that is returned is significantly
-     *         large, an identifier will also be returned, which can be used in
-     *         a subsequent list on-premises instances call to return the next
-     *         set of on-premises instances in the list.
+     * @return If a large amount of information is returned, an identifier is
+     *         also returned. It can be used in a subsequent list on-premises
+     *         instances call to return the next set of on-premises instances in
+     *         the list.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
 
     /**
      * <p>
-     * If the amount of information that is returned is significantly large, an
-     * identifier will also be returned, which can be used in a subsequent list
-     * on-premises instances call to return the next set of on-premises
-     * instances in the list.
+     * If a large amount of information is returned, an identifier is also
+     * returned. It can be used in a subsequent list on-premises instances call
+     * to return the next set of on-premises instances in the list.
      * </p>
      * 
      * @param nextToken
-     *        If the amount of information that is returned is significantly
-     *        large, an identifier will also be returned, which can be used in a
-     *        subsequent list on-premises instances call to return the next set
-     *        of on-premises instances in the list.
+     *        If a large amount of information is returned, an identifier is
+     *        also returned. It can be used in a subsequent list on-premises
+     *        instances call to return the next set of on-premises instances in
+     *        the list.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ListOnPremisesInstancesResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;

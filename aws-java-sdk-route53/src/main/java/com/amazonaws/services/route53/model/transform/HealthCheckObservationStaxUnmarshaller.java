@@ -17,6 +17,8 @@
 package com.amazonaws.services.route53.model.transform;
 
 import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
@@ -48,6 +50,12 @@ public class HealthCheckObservationStaxUnmarshaller implements
                 return healthCheckObservation;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("Region", targetDepth)) {
+                    healthCheckObservation.setRegion(StringStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
 
                 if (context.testExpression("IPAddress", targetDepth)) {
                     healthCheckObservation.setIPAddress(StringStaxUnmarshaller

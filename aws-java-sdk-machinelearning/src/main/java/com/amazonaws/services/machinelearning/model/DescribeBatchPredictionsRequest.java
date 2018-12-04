@@ -203,6 +203,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        (Amazon S3) bucket or directory.</li>
      * @see BatchPredictionFilterVariable
      */
+
     public void setFilterVariable(String filterVariable) {
         this.filterVariable = filterVariable;
     }
@@ -253,6 +254,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         (Amazon S3) bucket or directory.</li>
      * @see BatchPredictionFilterVariable
      */
+
     public String getFilterVariable() {
         return this.filterVariable;
     }
@@ -305,6 +307,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see BatchPredictionFilterVariable
      */
+
     public DescribeBatchPredictionsRequest withFilterVariable(
             String filterVariable) {
         setFilterVariable(filterVariable);
@@ -355,10 +358,9 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        file(s) used in the <code>BatchPrediction</code>. The URL can
      *        identify either a file or an Amazon Simple Storage Solution
      *        (Amazon S3) bucket or directory.</li>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see BatchPredictionFilterVariable
      */
+
     public void setFilterVariable(BatchPredictionFilterVariable filterVariable) {
         this.filterVariable = filterVariable.toString();
     }
@@ -411,6 +413,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see BatchPredictionFilterVariable
      */
+
     public DescribeBatchPredictionsRequest withFilterVariable(
             BatchPredictionFilterVariable filterVariable) {
         setFilterVariable(filterVariable);
@@ -429,6 +432,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values that exactly match
      *        the value specified with <code>EQ</code>.
      */
+
     public void setEQ(String eQ) {
         this.eQ = eQ;
     }
@@ -444,6 +448,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values that exactly match
      *         the value specified with <code>EQ</code>.
      */
+
     public String getEQ() {
         return this.eQ;
     }
@@ -462,6 +467,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withEQ(String eQ) {
         setEQ(eQ);
         return this;
@@ -479,6 +485,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values that are
      *        greater than the value specified with <code>GT</code>.
      */
+
     public void setGT(String gT) {
         this.gT = gT;
     }
@@ -494,6 +501,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         results will have <code>FilterVariable</code> values that are
      *         greater than the value specified with <code>GT</code>.
      */
+
     public String getGT() {
         return this.gT;
     }
@@ -512,6 +520,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withGT(String gT) {
         setGT(gT);
         return this;
@@ -529,6 +538,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        will have <code>FilterVariable</code> values that are less than
      *        the value specified with <code>LT</code>.
      */
+
     public void setLT(String lT) {
         this.lT = lT;
     }
@@ -544,6 +554,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         will have <code>FilterVariable</code> values that are less than
      *         the value specified with <code>LT</code>.
      */
+
     public String getLT() {
         return this.lT;
     }
@@ -562,6 +573,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withLT(String lT) {
         setLT(lT);
         return this;
@@ -580,6 +592,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        <code>FilterVariable</code> values that are greater than or equal
      *        to the value specified with <code>GE</code>.
      */
+
     public void setGE(String gE) {
         this.gE = gE;
     }
@@ -596,6 +609,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         <code>FilterVariable</code> values that are greater than or equal
      *         to the value specified with <code>GE</code>.
      */
+
     public String getGE() {
         return this.gE;
     }
@@ -615,6 +629,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withGE(String gE) {
         setGE(gE);
         return this;
@@ -633,6 +648,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        <code>FilterVariable</code> values that are less than or equal to
      *        the value specified with <code>LE</code>.
      */
+
     public void setLE(String lE) {
         this.lE = lE;
     }
@@ -649,6 +665,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         <code>FilterVariable</code> values that are less than or equal to
      *         the value specified with <code>LE</code>.
      */
+
     public String getLE() {
         return this.lE;
     }
@@ -668,6 +685,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withLE(String lE) {
         setLE(lE);
         return this;
@@ -685,6 +703,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        results will have <code>FilterVariable</code> values not equal to
      *        the value specified with <code>NE</code>.
      */
+
     public void setNE(String nE) {
         this.nE = nE;
     }
@@ -700,6 +719,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         results will have <code>FilterVariable</code> values not equal to
      *         the value specified with <code>NE</code>.
      */
+
     public String getNE() {
         return this.nE;
     }
@@ -718,6 +738,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withNE(String nE) {
         setNE(nE);
         return this;
@@ -780,6 +801,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      */
+
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
@@ -840,6 +862,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      */
+
     public String getPrefix() {
         return this.prefix;
     }
@@ -903,6 +926,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withPrefix(String prefix) {
         setPrefix(prefix);
         return this;
@@ -934,6 +958,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public void setSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
     }
@@ -963,6 +988,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         Results are sorted by <code>FilterVariable</code>.
      * @see SortOrder
      */
+
     public String getSortOrder() {
         return this.sortOrder;
     }
@@ -995,6 +1021,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeBatchPredictionsRequest withSortOrder(String sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1024,10 +1051,9 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see SortOrder
      */
+
     public void setSortOrder(SortOrder sortOrder) {
         this.sortOrder = sortOrder.toString();
     }
@@ -1060,6 +1086,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         chained together.
      * @see SortOrder
      */
+
     public DescribeBatchPredictionsRequest withSortOrder(SortOrder sortOrder) {
         setSortOrder(sortOrder);
         return this;
@@ -1073,6 +1100,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @param nextToken
      *        An ID of the page in the paginated results.
      */
+
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
@@ -1084,6 +1112,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * 
      * @return An ID of the page in the paginated results.
      */
+
     public String getNextToken() {
         return this.nextToken;
     }
@@ -1098,6 +1127,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
@@ -1114,6 +1144,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *        range of acceptable values is 1 through 100. The default value is
      *        100.
      */
+
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
@@ -1128,6 +1159,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      *         range of acceptable values is 1 through 100. The default value is
      *         100.
      */
+
     public Integer getLimit() {
         return this.limit;
     }
@@ -1145,6 +1177,7 @@ public class DescribeBatchPredictionsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeBatchPredictionsRequest withLimit(Integer limit) {
         setLimit(limit);
         return this;

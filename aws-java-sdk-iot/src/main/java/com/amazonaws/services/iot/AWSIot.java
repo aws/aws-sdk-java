@@ -111,11 +111,13 @@ public interface AWSIot {
      * 
      * @param acceptCertificateTransferRequest
      *        The input for the AcceptCertificateTransfer operation.
+     * @return Result of the AcceptCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -128,7 +130,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.AcceptCertificateTransfer
      */
-    void acceptCertificateTransfer(
+    AcceptCertificateTransferResult acceptCertificateTransfer(
             AcceptCertificateTransferRequest acceptCertificateTransferRequest);
 
     /**
@@ -139,6 +141,8 @@ public interface AWSIot {
      * 
      * @param attachPrincipalPolicyRequest
      *        The input for the AttachPrincipalPolicy operation.
+     * @return Result of the AttachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -155,7 +159,7 @@ public interface AWSIot {
      *         The number of attached entities exceeds the limit.
      * @sample AWSIot.AttachPrincipalPolicy
      */
-    void attachPrincipalPolicy(
+    AttachPrincipalPolicyResult attachPrincipalPolicy(
             AttachPrincipalPolicyRequest attachPrincipalPolicyRequest);
 
     /**
@@ -190,11 +194,11 @@ public interface AWSIot {
      * </p>
      * <p>
      * <b>Note</b> Only the transfer source account can use this operation to
-     * cancel a transfer (transfer destinations can use
-     * <a>RejectCertificateTransfer</a> instead). After transfer, AWS IoT
-     * returns the certificate to the source account in the INACTIVE state. Once
-     * the destination account has accepted the transfer, the transfer may no
-     * longer be cancelled.
+     * cancel a transfer. (Transfer destinations can use
+     * <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT
+     * returns the certificate to the source account in the INACTIVE state.
+     * After the destination account has accepted the transfer, the transfer
+     * cannot be cancelled.
      * </p>
      * <p>
      * After a certificate transfer is cancelled, the status of the certificate
@@ -203,11 +207,13 @@ public interface AWSIot {
      * 
      * @param cancelCertificateTransferRequest
      *        The input for the CancelCertificateTransfer operation.
+     * @return Result of the CancelCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -220,7 +226,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.CancelCertificateTransfer
      */
-    void cancelCertificateTransfer(
+    CancelCertificateTransferResult cancelCertificateTransfer(
             CancelCertificateTransferRequest cancelCertificateTransferRequest);
 
     /**
@@ -233,8 +239,8 @@ public interface AWSIot {
      * a distinct certificate.
      * </p>
      * <p>
-     * You can create multiple certificates in a batch by creating a directory
-     * and copying multiple .csr files into that directory and specifying that
+     * You can create multiple certificates in a batch by creating a directory,
+     * copying multiple .csr files into that directory, and then specifying that
      * directory on the command line. The following commands show how to create
      * a batch of certificates given a batch of CSRs.
      * </p>
@@ -244,7 +250,7 @@ public interface AWSIot {
      * </p>
      * &gt;
      * <p>
-     * On Linux and OSX, the command is:
+     * On Linux and OS X, the command is:
      * </p>
      * <p>
      * $ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr
@@ -252,7 +258,7 @@ public interface AWSIot {
      * </p>
      * <p>
      * This command lists all of the CSRs in my-csr-directory and pipes each CSR
-     * filename to the aws iot create-certificate-from-csr AWS CLI command to
+     * file name to the aws iot create-certificate-from-csr AWS CLI command to
      * create a certificate for the corresponding CSR.
      * </p>
      * <p>
@@ -273,7 +279,7 @@ public interface AWSIot {
      * --certificate-signing-request file://my-csr-directory/$_}
      * </p>
      * <p>
-     * On Windows Command Prompt, the command to create certificates for all
+     * On a Windows command prompt, the command to create certificates for all
      * CSRs in my-csr-directory is:
      * </p>
      * <p>
@@ -302,12 +308,12 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Creates a 2048 bit RSA key pair and issues an X.509 certificate using the
+     * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
      * issued public key.
      * </p>
      * <p>
      * <b>Note</b> This is the only time AWS IoT issues the private key for this
-     * certificate. It is important to keep track of the private key.
+     * certificate, so it is important to keep it in a secure location.
      * </p>
      * 
      * @param createKeysAndCertificateRequest
@@ -364,13 +370,14 @@ public interface AWSIot {
      * <p>
      * Creates a new version of the specified AWS IoT policy. To update a
      * policy, create a new policy version. A managed policy can have up to five
-     * versions. If the policy has five versions, you must delete an existing
-     * version using <a>DeletePolicyVersion</a> before you create a new version.
+     * versions. If the policy has five versions, you must use
+     * <a>DeletePolicyVersion</a> to delete an existing version before you
+     * create a new one.
      * </p>
      * <p>
      * Optionally, you can set the new version as the policy's default version.
-     * The default version is the operative version; that is, the version that
-     * is in effect for the certificates that the policy is attached to.
+     * The default version is the operative version (that is, the version that
+     * is in effect for the certificates to which the policy is attached).
      * </p>
      * 
      * @param createPolicyVersionRequest
@@ -400,7 +407,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Creates a thing in the thing registry.
+     * Creates a thing in the Thing Registry.
      * </p>
      * 
      * @param createThingRequest
@@ -424,11 +431,14 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Creates a rule.
+     * Creates a rule. Creating rules is an administrator-level action. Any user
+     * who has permission to create rules will be able to access data processed
+     * by the rule.
      * </p>
      * 
      * @param createTopicRuleRequest
      *        The input for the CreateTopicRule operation.
+     * @return Result of the CreateTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -441,7 +451,36 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @sample AWSIot.CreateTopicRule
      */
-    void createTopicRule(CreateTopicRuleRequest createTopicRuleRequest);
+    CreateTopicRuleResult createTopicRule(
+            CreateTopicRuleRequest createTopicRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a registered CA certificate.
+     * </p>
+     * 
+     * @param deleteCACertificateRequest
+     *        Input for the DeleteCACertificate operation.
+     * @return Result of the DeleteCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DeleteCACertificate
+     */
+    DeleteCACertificateResult deleteCACertificate(
+            DeleteCACertificateRequest deleteCACertificateRequest);
 
     /**
      * <p>
@@ -449,38 +488,51 @@ public interface AWSIot {
      * </p>
      * <p>
      * A certificate cannot be deleted if it has a policy attached to it or if
-     * its status is set to ACTIVE. To delete a certificate, first detach all
-     * policies using the <a>DetachPrincipalPolicy</a> API. Next use the
+     * its status is set to ACTIVE. To delete a certificate, first use the
+     * <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the
      * <a>UpdateCertificate</a> API to set the certificate to the INACTIVE
      * status.
      * </p>
      * 
      * @param deleteCertificateRequest
      *        The input for the DeleteCertificate operation.
+     * @return Result of the DeleteCertificate operation returned by the
+     *         service.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
-     * @throws CertificateStateException
-     *         The certificate operation is not allowed.
      * @sample AWSIot.DeleteCertificate
      */
-    void deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+    DeleteCertificateResult deleteCertificate(
+            DeleteCertificateRequest deleteCertificateRequest);
 
     /**
      * <p>
      * Deletes the specified policy.
      * </p>
      * <p>
-     * A policy cannot be deleted if it has non-default versions and/or it is
+     * A policy cannot be deleted if it has non-default versions or it is
      * attached to any certificate.
      * </p>
      * <p>
-     * To delete a policy, delete all non-default versions of the policy using
-     * the DeletePolicyVersion API, detach the policy from any certificate using
-     * the DetachPrincipalPolicy API, and then use the DeletePolicy API to
-     * delete the policy.
+     * To delete a policy, use the DeletePolicyVersion API to delete all
+     * non-default versions of the policy; use the DetachPrincipalPolicy API to
+     * detach the policy from any certificate; and then use the DeletePolicy API
+     * to delete the policy.
      * </p>
      * <p>
      * When a policy is deleted using DeletePolicy, its default version is
@@ -489,6 +541,7 @@ public interface AWSIot {
      * 
      * @param deletePolicyRequest
      *        The input for the DeletePolicy operation.
+     * @return Result of the DeletePolicy operation returned by the service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -506,7 +559,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DeletePolicy
      */
-    void deletePolicy(DeletePolicyRequest deletePolicyRequest);
+    DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest);
 
     /**
      * <p>
@@ -518,6 +571,8 @@ public interface AWSIot {
      * 
      * @param deletePolicyVersionRequest
      *        The input for the DeletePolicyVersion operation.
+     * @return Result of the DeletePolicyVersion operation returned by the
+     *         service.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or
      *         more resources.
@@ -535,8 +590,32 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DeletePolicyVersion
      */
-    void deletePolicyVersion(
+    DeletePolicyVersionResult deletePolicyVersion(
             DeletePolicyVersionRequest deletePolicyVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a CA certificate registration code.
+     * </p>
+     * 
+     * @param deleteRegistrationCodeRequest
+     *        The input for the DeleteRegistrationCode operation.
+     * @return Result of the DeleteRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteRegistrationCode
+     */
+    DeleteRegistrationCodeResult deleteRegistrationCode(
+            DeleteRegistrationCodeRequest deleteRegistrationCodeRequest);
 
     /**
      * <p>
@@ -569,6 +648,7 @@ public interface AWSIot {
      * 
      * @param deleteTopicRuleRequest
      *        The input for the DeleteTopicRule operation.
+     * @return Result of the DeleteTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -579,7 +659,34 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DeleteTopicRule
      */
-    void deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest);
+    DeleteTopicRuleResult deleteTopicRule(
+            DeleteTopicRuleRequest deleteTopicRuleRequest);
+
+    /**
+     * <p>
+     * Describes a registered CA certificate.
+     * </p>
+     * 
+     * @param describeCACertificateRequest
+     *        The input for the DescribeCACertificate operation.
+     * @return Result of the DescribeCACertificate operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.DescribeCACertificate
+     */
+    DescribeCACertificateResult describeCACertificate(
+            DescribeCACertificateRequest describeCACertificateRequest);
 
     /**
      * <p>
@@ -659,6 +766,8 @@ public interface AWSIot {
      * 
      * @param detachPrincipalPolicyRequest
      *        The input for the DetachPrincipalPolicy operation.
+     * @return Result of the DetachPrincipalPolicy operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -673,7 +782,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.DetachPrincipalPolicy
      */
-    void detachPrincipalPolicy(
+    DetachPrincipalPolicyResult detachPrincipalPolicy(
             DetachPrincipalPolicyRequest detachPrincipalPolicyRequest);
 
     /**
@@ -704,11 +813,12 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Disables the specified rule
+     * Disables the specified rule.
      * </p>
      * 
      * @param disableTopicRuleRequest
      *        The input for the DisableTopicRuleRequest operation.
+     * @return Result of the DisableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -719,7 +829,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DisableTopicRule
      */
-    void disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest);
+    DisableTopicRuleResult disableTopicRule(
+            DisableTopicRuleRequest disableTopicRuleRequest);
 
     /**
      * <p>
@@ -728,6 +839,7 @@ public interface AWSIot {
      * 
      * @param enableTopicRuleRequest
      *        The input for the EnableTopicRuleRequest operation.
+     * @return Result of the EnableTopicRule operation returned by the service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -738,7 +850,8 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.EnableTopicRule
      */
-    void enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest);
+    EnableTopicRuleResult enableTopicRule(
+            EnableTopicRuleRequest enableTopicRuleRequest);
 
     /**
      * <p>
@@ -812,6 +925,28 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets a registration code used to register a CA certificate with AWS IoT.
+     * </p>
+     * 
+     * @param getRegistrationCodeRequest
+     *        The input to the GetRegistrationCode operation.
+     * @return Result of the GetRegistrationCode operation returned by the
+     *         service.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.GetRegistrationCode
+     */
+    GetRegistrationCodeResult getRegistrationCode(
+            GetRegistrationCodeRequest getRegistrationCodeRequest);
+
+    /**
+     * <p>
      * Gets information about the specified rule.
      * </p>
      * 
@@ -832,11 +967,39 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists your certificates.
+     * Lists the CA certificates registered for your AWS account.
      * </p>
      * <p>
-     * The results are paginated with a default page size of 25. You can
-     * retrieve additional results using the returned marker.
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
+     * </p>
+     * 
+     * @param listCACertificatesRequest
+     *        Input for the ListCACertificates operation.
+     * @return Result of the ListCACertificates operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCACertificates
+     */
+    ListCACertificatesResult listCACertificates(
+            ListCACertificatesRequest listCACertificatesRequest);
+
+    /**
+     * <p>
+     * Lists the certificates registered in your AWS account.
+     * </p>
+     * <p>
+     * The results are paginated with a default page size of 25. You can use the
+     * returned marker to retrieve additional results.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -856,6 +1019,30 @@ public interface AWSIot {
      */
     ListCertificatesResult listCertificates(
             ListCertificatesRequest listCertificatesRequest);
+
+    /**
+     * <p>
+     * List the device certificates signed by the specified CA certificate.
+     * </p>
+     * 
+     * @param listCertificatesByCARequest
+     *        The input to the ListCertificatesByCA operation.
+     * @return Result of the ListCertificatesByCA operation returned by the
+     *         service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCertificatesByCA
+     */
+    ListCertificatesByCAResult listCertificatesByCA(
+            ListCertificatesByCARequest listCertificatesByCARequest);
 
     /**
      * <p>
@@ -909,9 +1096,9 @@ public interface AWSIot {
     /**
      * <p>
      * Lists the policies attached to the specified principal. If you use an
-     * Amazon Cognito identity, the ID needs to be in <a href=
+     * Cognito identity, the ID must be in <a href=
      * "http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax"
-     * >Amazon Cognito Identity format</a>.
+     * >AmazonCognito Identity format</a>.
      * </p>
      * 
      * @param listPrincipalPoliciesRequest
@@ -985,9 +1172,9 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists your things. You can pass an AttributeName and/or AttributeValue to
-     * filter your things. For example:
-     * "ListThings where AttributeName=Color and AttributeValue=Red"
+     * Lists your things. You can pass an AttributeName or AttributeValue to
+     * filter your things (for example,
+     * "ListThings where AttributeName=Color and AttributeValue=Red").
      * </p>
      * 
      * @param listThingsRequest
@@ -1028,27 +1215,106 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Registers a CA certificate with AWS IoT. This CA certificate can then be
+     * used to sign device certificates, which can be then registered with AWS
+     * IoT. You can register up to 10 CA certificates per AWS account that have
+     * the same subject field and public key. This enables you to have up to 10
+     * certificate authorities sign your device certificates. If you have more
+     * than one CA certificate registered, make sure you pass the CA certificate
+     * when you register your device certificates with the RegisterCertificate
+     * API.
+     * </p>
+     * 
+     * @param registerCACertificateRequest
+     *        The input to the RegisterCACertificate operation.
+     * @return Result of the RegisterCACertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws RegistrationCodeValidationException
+     *         The registration code is invalid.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws LimitExceededException
+     *         The number of attached entities exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCACertificate
+     */
+    RegisterCACertificateResult registerCACertificate(
+            RegisterCACertificateRequest registerCACertificateRequest);
+
+    /**
+     * <p>
+     * Registers a device certificate with AWS IoT. If you have more than one CA
+     * certificate that has the same subject field, you must specify the CA
+     * certificate that was used to sign the device certificate being
+     * registered.
+     * </p>
+     * 
+     * @param registerCertificateRequest
+     *        The input to the RegisterCertificate operation.
+     * @return Result of the RegisterCertificate operation returned by the
+     *         service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws CertificateValidationException
+     *         The certificate is invalid.
+     * @throws CertificateStateException
+     *         The certificate operation is not allowed.
+     * @throws CertificateConflictException
+     *         Unable to verify the CA certificate used to sign the device
+     *         certificate you are attempting to register. This is happens when
+     *         you have registered more than one CA certificate that has the
+     *         same subject field and public key.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.RegisterCertificate
+     */
+    RegisterCertificateResult registerCertificate(
+            RegisterCertificateRequest registerCertificateRequest);
+
+    /**
+     * <p>
      * Rejects a pending certificate transfer. After AWS IoT rejects a
      * certificate transfer, the certificate status changes from
-     * <b>PENDING_TRANFER</b> to <b>INACTIVE</b>.
+     * <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.
      * </p>
      * <p>
      * To check for pending certificate transfers, call <a>ListCertificates</a>
      * to enumerate your certificates.
      * </p>
      * <p>
-     * This operation can only be called by the transfer destination. Once
-     * called, the certificate will be returned to the source's account in the
-     * INACTIVE state.
+     * This operation can only be called by the transfer destination. After it
+     * is called, the certificate will be returned to the source's account in
+     * the INACTIVE state.
      * </p>
      * 
      * @param rejectCertificateTransferRequest
      *        The input for the RejectCertificateTransfer operation.
+     * @return Result of the RejectCertificateTransfer operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws TransferAlreadyCompletedException
-     *         You can't revert the certificate transfer because it has already
-     *         completed.
+     *         You can't revert the certificate transfer because the transfer is
+     *         already complete.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -1061,17 +1327,20 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.RejectCertificateTransfer
      */
-    void rejectCertificateTransfer(
+    RejectCertificateTransferResult rejectCertificateTransfer(
             RejectCertificateTransferRequest rejectCertificateTransferRequest);
 
     /**
      * <p>
      * Replaces the specified rule. You must specify all parameters for the new
+     * rule. Creating rules is an administrator-level action. Any user who has
+     * permission to create rules will be able to access data processed by the
      * rule.
      * </p>
      * 
      * @param replaceTopicRuleRequest
      *        The input for the ReplaceTopicRule operation.
+     * @return Result of the ReplaceTopicRule operation returned by the service.
      * @throws SqlParseException
      *         The Rule-SQL expression can't be parsed correctly.
      * @throws InternalException
@@ -1084,18 +1353,21 @@ public interface AWSIot {
      *         You are not authorized to perform this operation.
      * @sample AWSIot.ReplaceTopicRule
      */
-    void replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest);
+    ReplaceTopicRuleResult replaceTopicRule(
+            ReplaceTopicRuleRequest replaceTopicRuleRequest);
 
     /**
      * <p>
      * Sets the specified version of the specified policy as the policy's
-     * default (operative) version. This action affects all certificates that
-     * the policy is attached to. To list the principals the policy is attached
-     * to, use the ListPrincipalPolicy API.
+     * default (operative) version. This action affects all certificates to
+     * which the policy is attached. To list the principals the policy is
+     * attached to, use the ListPrincipalPolicy API.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
      *        The input for the SetDefaultPolicyVersion operation.
+     * @return Result of the SetDefaultPolicyVersion operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws InvalidRequestException
@@ -1110,7 +1382,7 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.SetDefaultPolicyVersion
      */
-    void setDefaultPolicyVersion(
+    SetDefaultPolicyVersionResult setDefaultPolicyVersion(
             SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest);
 
     /**
@@ -1120,6 +1392,8 @@ public interface AWSIot {
      * 
      * @param setLoggingOptionsRequest
      *        The input for the SetLoggingOptions operation.
+     * @return Result of the SetLoggingOptions operation returned by the
+     *         service.
      * @throws InternalException
      *         An unexpected error has occurred.
      * @throws InvalidRequestException
@@ -1128,7 +1402,8 @@ public interface AWSIot {
      *         The service is temporarily unavailable.
      * @sample AWSIot.SetLoggingOptions
      */
-    void setLoggingOptions(SetLoggingOptionsRequest setLoggingOptionsRequest);
+    SetLoggingOptionsResult setLoggingOptions(
+            SetLoggingOptionsRequest setLoggingOptionsRequest);
 
     /**
      * <p>
@@ -1138,16 +1413,16 @@ public interface AWSIot {
      * You can cancel the transfer until it is acknowledged by the recipient.
      * </p>
      * <p>
-     * No notification is sent to the transfer destination's account, it is up
+     * No notification is sent to the transfer destination's account. It is up
      * to the caller to notify the transfer target.
      * </p>
      * <p>
-     * The certificate being transferred must not be in the ACTIVE state. It can
-     * be deactivated using the UpdateCertificate API.
+     * The certificate being transferred must not be in the ACTIVE state. You
+     * can use the UpdateCertificate API to deactivate it.
      * </p>
      * <p>
-     * The certificate must not have any policies attached to it. These can be
-     * detached using the DetachPrincipalPolicy API.
+     * The certificate must not have any policies attached to it. You can use
+     * the DetachPrincipalPolicy API to detach them.
      * </p>
      * 
      * @param transferCertificateRequest
@@ -1161,8 +1436,8 @@ public interface AWSIot {
      * @throws CertificateStateException
      *         The certificate operation is not allowed.
      * @throws TransferConflictException
-     *         You can't transfer the the certificate because authorization
-     *         policies are still attached.
+     *         You can't transfer the certificate because authorization policies
+     *         are still attached.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -1178,13 +1453,39 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a registered CA certificate.
+     * </p>
+     * 
+     * @param updateCACertificateRequest
+     *        The input to the UpdateCACertificate operation.
+     * @return Result of the UpdateCACertificate operation returned by the
+     *         service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCACertificate
+     */
+    UpdateCACertificateResult updateCACertificate(
+            UpdateCACertificateRequest updateCACertificateRequest);
+
+    /**
+     * <p>
      * Updates the status of the specified certificate. This operation is
      * idempotent.
      * </p>
      * <p>
-     * Moving a cert from the ACTIVE state (including REVOKED) will NOT
-     * disconnect currently-connected devices, although these devices will be
-     * unable to reconnect.
+     * Moving a certificate from the ACTIVE state (including REVOKED) will not
+     * disconnect currently connected devices, but these devices will be unable
+     * to reconnect.
      * </p>
      * <p>
      * The ACTIVE state is required to authenticate devices connecting to AWS
@@ -1193,6 +1494,8 @@ public interface AWSIot {
      * 
      * @param updateCertificateRequest
      *        The input for the UpdateCertificate operation.
+     * @return Result of the UpdateCertificate operation returned by the
+     *         service.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws CertificateStateException
@@ -1209,7 +1512,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @sample AWSIot.UpdateCertificate
      */
-    void updateCertificate(UpdateCertificateRequest updateCertificateRequest);
+    UpdateCertificateResult updateCertificate(
+            UpdateCertificateRequest updateCertificateRequest);
 
     /**
      * <p>

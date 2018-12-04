@@ -16,6 +16,7 @@
 package com.amazonaws.services.elasticsearch;
 
 import com.amazonaws.services.elasticsearch.model.*;
+import com.amazonaws.annotation.ThreadSafe;
 
 /**
  * Interface for accessing Amazon Elasticsearch Service asynchronously. Each
@@ -36,6 +37,7 @@ import com.amazonaws.services.elasticsearch.model.*;
  * target="_blank">Regions and Endpoints</a>.
  * </p>
  */
+@ThreadSafe
 public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
         implements AWSElasticsearchAsync {
 
@@ -135,8 +137,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
             com.amazonaws.auth.AWSCredentials awsCredentials,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentials, com.amazonaws.PredefinedClientConfigurations
-                .defaultConfig(), executorService);
+        this(awsCredentials, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -228,9 +229,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
             com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider,
             java.util.concurrent.ExecutorService executorService) {
 
-        this(awsCredentialsProvider,
-                com.amazonaws.PredefinedClientConfigurations.defaultConfig(),
-                executorService);
+        this(awsCredentialsProvider, configFactory.getConfig(), executorService);
     }
 
     /**
@@ -269,25 +268,25 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsAsync(AddTagsRequest request) {
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
+            AddTagsRequest request) {
 
         return addTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> addTagsAsync(
+    public java.util.concurrent.Future<AddTagsResult> addTagsAsync(
             final AddTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<AddTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public AddTagsResult call() throws Exception {
+                        AddTagsResult result;
 
                         try {
-                            addTags(request);
-                            result = null;
+                            result = addTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);
@@ -554,26 +553,25 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsAsync(
+    public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             RemoveTagsRequest request) {
 
         return removeTagsAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<Void> removeTagsAsync(
+    public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(
             final RemoveTagsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, Void> asyncHandler) {
+            final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
 
         return executorService
-                .submit(new java.util.concurrent.Callable<Void>() {
+                .submit(new java.util.concurrent.Callable<RemoveTagsResult>() {
                     @Override
-                    public Void call() throws Exception {
-                        Void result;
+                    public RemoveTagsResult call() throws Exception {
+                        RemoveTagsResult result;
 
                         try {
-                            removeTags(request);
-                            result = null;
+                            result = removeTags(request);
                         } catch (Exception ex) {
                             if (asyncHandler != null) {
                                 asyncHandler.onError(ex);

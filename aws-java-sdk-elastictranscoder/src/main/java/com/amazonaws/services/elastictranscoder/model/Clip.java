@@ -41,6 +41,7 @@ public class Clip implements Serializable, Cloneable {
      * @param timeSpan
      *        Settings that determine when a clip begins and how long it lasts.
      */
+
     public void setTimeSpan(TimeSpan timeSpan) {
         this.timeSpan = timeSpan;
     }
@@ -52,6 +53,7 @@ public class Clip implements Serializable, Cloneable {
      * 
      * @return Settings that determine when a clip begins and how long it lasts.
      */
+
     public TimeSpan getTimeSpan() {
         return this.timeSpan;
     }
@@ -66,6 +68,7 @@ public class Clip implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Clip withTimeSpan(TimeSpan timeSpan) {
         setTimeSpan(timeSpan);
         return this;

@@ -65,7 +65,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      */
     private String destination;
@@ -85,6 +85,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @param taskName
      *        The name of the export task.
      */
+
     public void setTaskName(String taskName) {
         this.taskName = taskName;
     }
@@ -96,6 +97,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the export task.
      */
+
     public String getTaskName() {
         return this.taskName;
     }
@@ -110,6 +112,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withTaskName(String taskName) {
         setTaskName(taskName);
         return this;
@@ -123,6 +126,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @param logGroupName
      *        The name of the log group to export.
      */
+
     public void setLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
     }
@@ -134,6 +138,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * 
      * @return The name of the log group to export.
      */
+
     public String getLogGroupName() {
         return this.logGroupName;
     }
@@ -148,6 +153,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
         return this;
@@ -164,6 +170,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *        logStreamNamePrefix. If you don't specify a value, no prefix
      *        filter is applied.
      */
+
     public void setLogStreamNamePrefix(String logStreamNamePrefix) {
         this.logStreamNamePrefix = logStreamNamePrefix;
     }
@@ -178,6 +185,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *         logStreamNamePrefix. If you don't specify a value, no prefix
      *         filter is applied.
      */
+
     public String getLogStreamNamePrefix() {
         return this.logStreamNamePrefix;
     }
@@ -195,6 +203,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withLogStreamNamePrefix(
             String logStreamNamePrefix) {
         setLogStreamNamePrefix(logStreamNamePrefix);
@@ -214,6 +223,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *        the request. Events with a timestamp prior to this time will not
      *        be exported.
      */
+
     public void setFrom(Long from) {
         this.from = from;
     }
@@ -230,6 +240,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *         for the request. Events with a timestamp prior to this time will
      *         not be exported.
      */
+
     public Long getFrom() {
         return this.from;
     }
@@ -249,6 +260,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withFrom(Long from) {
         setFrom(from);
         return this;
@@ -267,6 +279,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *        the request. Events with a timestamp later than this time will not
      *        be exported.
      */
+
     public void setTo(Long to) {
         this.to = to;
     }
@@ -283,6 +296,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *         the request. Events with a timestamp later than this time will
      *         not be exported.
      */
+
     public Long getTo() {
         return this.to;
     }
@@ -302,6 +316,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withTo(Long to) {
         setTo(to);
         return this;
@@ -312,15 +327,16 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @param destination
      *        Name of Amazon S3 bucket to which the log data will be
      *        exported.</p>
      *        <p>
-     *        <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *        <b>Note:</b> Only buckets in the same AWS region are supported.
      */
+
     public void setDestination(String destination) {
         this.destination = destination;
     }
@@ -330,14 +346,15 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @return Name of Amazon S3 bucket to which the log data will be
      *         exported.</p>
      *         <p>
-     *         <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *         <b>Note:</b> Only buckets in the same AWS region are supported.
      */
+
     public String getDestination() {
         return this.destination;
     }
@@ -347,17 +364,18 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * Name of Amazon S3 bucket to which the log data will be exported.
      * </p>
      * <p>
-     * <b>NOTE: Only buckets in the same AWS region are supported</b>
+     * <b>Note:</b> Only buckets in the same AWS region are supported.
      * </p>
      * 
      * @param destination
      *        Name of Amazon S3 bucket to which the log data will be
      *        exported.</p>
      *        <p>
-     *        <b>NOTE: Only buckets in the same AWS region are supported</b>
+     *        <b>Note:</b> Only buckets in the same AWS region are supported.
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withDestination(String destination) {
         setDestination(destination);
         return this;
@@ -374,6 +392,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *        object exported. If not specified, this defaults to
      *        'exportedlogs'.
      */
+
     public void setDestinationPrefix(String destinationPrefix) {
         this.destinationPrefix = destinationPrefix;
     }
@@ -388,6 +407,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      *         object exported. If not specified, this defaults to
      *         'exportedlogs'.
      */
+
     public String getDestinationPrefix() {
         return this.destinationPrefix;
     }
@@ -405,6 +425,7 @@ public class CreateExportTaskRequest extends AmazonWebServiceRequest implements
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public CreateExportTaskRequest withDestinationPrefix(
             String destinationPrefix) {
         setDestinationPrefix(destinationPrefix);

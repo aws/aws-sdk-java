@@ -78,6 +78,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        The ID of the hosted zone that contains the resource record sets
      *        that you want to change.
      */
+
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
     }
@@ -91,6 +92,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      * @return The ID of the hosted zone that contains the resource record sets
      *         that you want to change.
      */
+
     public String getHostedZoneId() {
         return this.hostedZoneId;
     }
@@ -107,6 +109,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeResourceRecordSetsRequest withHostedZoneId(String hostedZoneId) {
         setHostedZoneId(hostedZoneId);
         return this;
@@ -122,6 +125,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      *        A complex type that contains an optional comment and the
      *        <code>Changes</code> element.
      */
+
     public void setChangeBatch(ChangeBatch changeBatch) {
         this.changeBatch = changeBatch;
     }
@@ -135,6 +139,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      * @return A complex type that contains an optional comment and the
      *         <code>Changes</code> element.
      */
+
     public ChangeBatch getChangeBatch() {
         return this.changeBatch;
     }
@@ -151,6 +156,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeResourceRecordSetsRequest withChangeBatch(
             ChangeBatch changeBatch) {
         setChangeBatch(changeBatch);

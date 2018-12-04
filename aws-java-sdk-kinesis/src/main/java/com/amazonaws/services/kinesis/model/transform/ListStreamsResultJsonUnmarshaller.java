@@ -18,6 +18,8 @@ package com.amazonaws.services.kinesis.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.*;
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.kinesis.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
@@ -55,13 +57,14 @@ public class ListStreamsResultJsonUnmarshaller implements
                     context.nextToken();
                     listStreamsResult
                             .setStreamNames(new ListUnmarshaller<String>(
-                                    StringJsonUnmarshaller.getInstance())
+                                    context.getUnmarshaller(String.class))
                                     .unmarshall(context));
                 }
                 if (context.testExpression("HasMoreStreams", targetDepth)) {
                     context.nextToken();
-                    listStreamsResult.setHasMoreStreams(BooleanJsonUnmarshaller
-                            .getInstance().unmarshall(context));
+                    listStreamsResult
+                            .setHasMoreStreams(context.getUnmarshaller(
+                                    Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null

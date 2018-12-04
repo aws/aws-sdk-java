@@ -23,6 +23,7 @@ import java.io.Serializable;
  * A complex type that lists the changes and information for a ChangeBatch.
  * </p>
  */
+@Deprecated
 public class ChangeBatchRecord implements Serializable, Cloneable {
 
     /**
@@ -85,6 +86,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        The ID of the request. Use this ID to track when the change has
      *        completed across all Amazon Route 53 DNS servers.
      */
+
     public void setId(String id) {
         this.id = id;
     }
@@ -98,6 +100,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return The ID of the request. Use this ID to track when the change has
      *         completed across all Amazon Route 53 DNS servers.
      */
+
     public String getId() {
         return this.id;
     }
@@ -114,6 +117,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withId(String id) {
         setId(id);
         return this;
@@ -134,6 +138,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        after the time indicates that the time is listed in Coordinated
      *        Universal Time (UTC).
      */
+
     public void setSubmittedAt(java.util.Date submittedAt) {
         this.submittedAt = submittedAt;
     }
@@ -152,6 +157,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *         after the time indicates that the time is listed in Coordinated
      *         Universal Time (UTC).
      */
+
     public java.util.Date getSubmittedAt() {
         return this.submittedAt;
     }
@@ -173,6 +179,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withSubmittedAt(java.util.Date submittedAt) {
         setSubmittedAt(submittedAt);
         return this;
@@ -195,6 +202,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * @see ChangeStatus
      */
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -215,6 +223,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *         Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * @see ChangeStatus
      */
+
     public String getStatus() {
         return this.status;
     }
@@ -238,6 +247,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeStatus
      */
+
     public ChangeBatchRecord withStatus(String status) {
         setStatus(status);
         return this;
@@ -258,10 +268,9 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        DNS servers.</p>
      *        <p>
      *        Valid Values: <code>PENDING</code> | <code>INSYNC</code>
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ChangeStatus
      */
+
     public void setStatus(ChangeStatus status) {
         this.status = status.toString();
     }
@@ -285,6 +294,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *         chained together.
      * @see ChangeStatus
      */
+
     public ChangeBatchRecord withStatus(ChangeStatus status) {
         setStatus(status);
         return this;
@@ -308,6 +318,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *        <a>GetChange</a> action to get detailed information about the
      *        change.
      */
+
     public void setComment(String comment) {
         this.comment = comment;
     }
@@ -329,6 +340,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      *         <a>GetChange</a> action to get detailed information about the
      *         change.
      */
+
     public String getComment() {
         return this.comment;
     }
@@ -353,6 +365,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withComment(String comment) {
         setComment(comment);
         return this;
@@ -366,6 +379,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @param submitter
      *        The AWS account ID attached to the changes.
      */
+
     public void setSubmitter(String submitter) {
         this.submitter = submitter;
     }
@@ -377,6 +391,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * 
      * @return The AWS account ID attached to the changes.
      */
+
     public String getSubmitter() {
         return this.submitter;
     }
@@ -391,6 +406,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withSubmitter(String submitter) {
         setSubmitter(submitter);
         return this;
@@ -403,6 +419,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * 
      * @return A list of changes made in the ChangeBatch.
      */
+
     public java.util.List<Change> getChanges() {
         if (changes == null) {
             changes = new com.amazonaws.internal.SdkInternalList<Change>();
@@ -418,6 +435,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @param changes
      *        A list of changes made in the ChangeBatch.
      */
+
     public void setChanges(java.util.Collection<Change> changes) {
         if (changes == null) {
             this.changes = null;
@@ -444,6 +462,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withChanges(Change... changes) {
         if (this.changes == null) {
             setChanges(new com.amazonaws.internal.SdkInternalList<Change>(
@@ -465,6 +484,7 @@ public class ChangeBatchRecord implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public ChangeBatchRecord withChanges(java.util.Collection<Change> changes) {
         setChanges(changes);
         return this;

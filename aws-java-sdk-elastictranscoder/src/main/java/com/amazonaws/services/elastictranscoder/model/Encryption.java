@@ -281,6 +281,7 @@ public class Encryption implements Serializable, Cloneable {
      *        them, you won't be able to unencrypt your data.
      *        </p>
      */
+
     public void setMode(String mode) {
         this.mode = mode;
     }
@@ -426,6 +427,7 @@ public class Encryption implements Serializable, Cloneable {
      *         lose them, you won't be able to unencrypt your data.
      *         </p>
      */
+
     public String getMode() {
         return this.mode;
     }
@@ -574,6 +576,7 @@ public class Encryption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Encryption withMode(String mode) {
         setMode(mode);
         return this;
@@ -606,6 +609,7 @@ public class Encryption implements Serializable, Cloneable {
      *        The key must also be encrypted by using the Amazon Key Management
      *        Service.
      */
+
     public void setKey(String key) {
         this.key = key;
     }
@@ -636,6 +640,7 @@ public class Encryption implements Serializable, Cloneable {
      *         The key must also be encrypted by using the Amazon Key Management
      *         Service.
      */
+
     public String getKey() {
         return this.key;
     }
@@ -669,6 +674,7 @@ public class Encryption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Encryption withKey(String key) {
         setKey(key);
         return this;
@@ -691,6 +697,7 @@ public class Encryption implements Serializable, Cloneable {
      *        must be base64-encoded, and it must be exactly 16 bytes long
      *        before being base64-encoded.
      */
+
     public void setKeyMd5(String keyMd5) {
         this.keyMd5 = keyMd5;
     }
@@ -711,6 +718,7 @@ public class Encryption implements Serializable, Cloneable {
      *         must be base64-encoded, and it must be exactly 16 bytes long
      *         before being base64-encoded.
      */
+
     public String getKeyMd5() {
         return this.keyMd5;
     }
@@ -734,6 +742,7 @@ public class Encryption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Encryption withKeyMd5(String keyMd5) {
         setKeyMd5(keyMd5);
         return this;
@@ -756,6 +765,7 @@ public class Encryption implements Serializable, Cloneable {
      *        base64-encoded, and it must be exactly 16 bytes long before being
      *        base64-encoded.
      */
+
     public void setInitializationVector(String initializationVector) {
         this.initializationVector = initializationVector;
     }
@@ -776,6 +786,7 @@ public class Encryption implements Serializable, Cloneable {
      *         base64-encoded, and it must be exactly 16 bytes long before being
      *         base64-encoded.
      */
+
     public String getInitializationVector() {
         return this.initializationVector;
     }
@@ -799,6 +810,7 @@ public class Encryption implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public Encryption withInitializationVector(String initializationVector) {
         setInitializationVector(initializationVector);
         return this;

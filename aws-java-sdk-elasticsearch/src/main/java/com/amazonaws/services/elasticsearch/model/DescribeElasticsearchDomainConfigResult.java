@@ -45,6 +45,7 @@ public class DescribeElasticsearchDomainConfigResult implements Serializable,
      *        The configuration information of the domain requested in the
      *        <code>DescribeElasticsearchDomainConfig</code> request.
      */
+
     public void setDomainConfig(ElasticsearchDomainConfig domainConfig) {
         this.domainConfig = domainConfig;
     }
@@ -58,6 +59,7 @@ public class DescribeElasticsearchDomainConfigResult implements Serializable,
      * @return The configuration information of the domain requested in the
      *         <code>DescribeElasticsearchDomainConfig</code> request.
      */
+
     public ElasticsearchDomainConfig getDomainConfig() {
         return this.domainConfig;
     }
@@ -74,6 +76,7 @@ public class DescribeElasticsearchDomainConfigResult implements Serializable,
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public DescribeElasticsearchDomainConfigResult withDomainConfig(
             ElasticsearchDomainConfig domainConfig) {
         setDomainConfig(domainConfig);

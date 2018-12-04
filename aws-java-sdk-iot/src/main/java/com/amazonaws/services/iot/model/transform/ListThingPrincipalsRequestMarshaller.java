@@ -37,8 +37,10 @@ import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.util.SdkHttpUtils;
+import com.amazonaws.protocol.json.*;
 
 /**
  * ListThingPrincipalsRequest Marshaller
@@ -47,7 +49,14 @@ public class ListThingPrincipalsRequestMarshaller
         implements
         Marshaller<Request<ListThingPrincipalsRequest>, ListThingPrincipalsRequest> {
 
-    private static final String DEFAULT_CONTENT_TYPE = "";
+    private static final String DEFAULT_CONTENT_TYPE = "application/x-amz-json-1.1";
+
+    private final SdkJsonProtocolFactory protocolFactory;
+
+    public ListThingPrincipalsRequestMarshaller(
+            SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
 
     public Request<ListThingPrincipalsRequest> marshall(
             ListThingPrincipalsRequest listThingPrincipalsRequest) {
@@ -64,11 +73,13 @@ public class ListThingPrincipalsRequestMarshaller
 
         String uriResourcePath = "/things/{thingName}/principals";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (listThingPrincipalsRequest.getThingName() == null) ? ""
-                        : StringUtils.fromString(listThingPrincipalsRequest
-                                .getThingName()));
+        uriResourcePath = uriResourcePath
+                .replace(
+                        "{thingName}",
+                        (listThingPrincipalsRequest.getThingName() != null) ? SdkHttpUtils
+                                .urlEncode(StringUtils
+                                        .fromString(listThingPrincipalsRequest
+                                                .getThingName()), false) : "");
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -76,6 +76,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        <a>CreateSqlInjectionMatchSet</a> and by
      *        <a>ListSqlInjectionMatchSets</a>.
      */
+
     public void setSqlInjectionMatchSetId(String sqlInjectionMatchSetId) {
         this.sqlInjectionMatchSetId = sqlInjectionMatchSetId;
     }
@@ -95,6 +96,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *         <a>CreateSqlInjectionMatchSet</a> and by
      *         <a>ListSqlInjectionMatchSets</a>.
      */
+
     public String getSqlInjectionMatchSetId() {
         return this.sqlInjectionMatchSetId;
     }
@@ -117,6 +119,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSqlInjectionMatchSetRequest withSqlInjectionMatchSetId(
             String sqlInjectionMatchSetId) {
         setSqlInjectionMatchSetId(sqlInjectionMatchSetId);
@@ -132,6 +135,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        The value returned by the most recent call to
      *        <a>GetChangeToken</a>.
      */
+
     public void setChangeToken(String changeToken) {
         this.changeToken = changeToken;
     }
@@ -144,6 +148,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return The value returned by the most recent call to
      *         <a>GetChangeToken</a>.
      */
+
     public String getChangeToken() {
         return this.changeToken;
     }
@@ -159,6 +164,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSqlInjectionMatchSetRequest withChangeToken(String changeToken) {
         setChangeToken(changeToken);
         return this;
@@ -191,6 +197,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *         <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *         <code>Type</code></li>
      */
+
     public java.util.List<SqlInjectionMatchSetUpdate> getUpdates() {
         return updates;
     }
@@ -223,6 +230,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      *        <li><a>FieldToMatch</a>: Contains <code>Data</code> and
      *        <code>Type</code></li>
      */
+
     public void setUpdates(
             java.util.Collection<SqlInjectionMatchSetUpdate> updates) {
         if (updates == null) {
@@ -270,6 +278,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSqlInjectionMatchSetRequest withUpdates(
             SqlInjectionMatchSetUpdate... updates) {
         if (this.updates == null) {
@@ -312,6 +321,7 @@ public class UpdateSqlInjectionMatchSetRequest extends AmazonWebServiceRequest
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public UpdateSqlInjectionMatchSetRequest withUpdates(
             java.util.Collection<SqlInjectionMatchSetUpdate> updates) {
         setUpdates(updates);

@@ -40,6 +40,7 @@ public class MetricGranularityType implements Serializable, Cloneable {
      * @param granularity
      *        The granularity. The only valid value is <code>1Minute</code>.
      */
+
     public void setGranularity(String granularity) {
         this.granularity = granularity;
     }
@@ -51,6 +52,7 @@ public class MetricGranularityType implements Serializable, Cloneable {
      * 
      * @return The granularity. The only valid value is <code>1Minute</code>.
      */
+
     public String getGranularity() {
         return this.granularity;
     }
@@ -65,6 +67,7 @@ public class MetricGranularityType implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public MetricGranularityType withGranularity(String granularity) {
         setGranularity(granularity);
         return this;

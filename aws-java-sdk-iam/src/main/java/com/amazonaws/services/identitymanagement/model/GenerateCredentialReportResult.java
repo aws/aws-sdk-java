@@ -48,6 +48,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      *        Information about the state of the credential report.
      * @see ReportStateType
      */
+
     public void setState(String state) {
         this.state = state;
     }
@@ -60,6 +61,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * @return Information about the state of the credential report.
      * @see ReportStateType
      */
+
     public String getState() {
         return this.state;
     }
@@ -75,6 +77,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      *         chained together.
      * @see ReportStateType
      */
+
     public GenerateCredentialReportResult withState(String state) {
         setState(state);
         return this;
@@ -87,10 +90,9 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * 
      * @param state
      *        Information about the state of the credential report.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ReportStateType
      */
+
     public void setState(ReportStateType state) {
         this.state = state.toString();
     }
@@ -106,6 +108,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      *         chained together.
      * @see ReportStateType
      */
+
     public GenerateCredentialReportResult withState(ReportStateType state) {
         setState(state);
         return this;
@@ -119,6 +122,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * @param description
      *        Information about the credential report.
      */
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -130,6 +134,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * 
      * @return Information about the credential report.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -144,6 +149,7 @@ public class GenerateCredentialReportResult implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public GenerateCredentialReportResult withDescription(String description) {
         setDescription(description);
         return this;

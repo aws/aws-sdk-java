@@ -97,6 +97,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param stackId
      *        The unique ID name of the instance of the stack.
      */
+
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
@@ -108,6 +109,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return The unique ID name of the instance of the stack.
      */
+
     public String getStackId() {
         return this.stackId;
     }
@@ -122,6 +124,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withStackId(String stackId) {
         setStackId(stackId);
         return this;
@@ -135,6 +138,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param eventId
      *        The unique ID of this event.
      */
+
     public void setEventId(String eventId) {
         this.eventId = eventId;
     }
@@ -146,6 +150,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return The unique ID of this event.
      */
+
     public String getEventId() {
         return this.eventId;
     }
@@ -160,6 +165,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withEventId(String eventId) {
         setEventId(eventId);
         return this;
@@ -173,6 +179,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param stackName
      *        The name associated with a stack.
      */
+
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
@@ -184,6 +191,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return The name associated with a stack.
      */
+
     public String getStackName() {
         return this.stackName;
     }
@@ -198,6 +206,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withStackName(String stackName) {
         setStackName(stackName);
         return this;
@@ -211,6 +220,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param logicalResourceId
      *        The logical name of the resource specified in the template.
      */
+
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
@@ -222,6 +232,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return The logical name of the resource specified in the template.
      */
+
     public String getLogicalResourceId() {
         return this.logicalResourceId;
     }
@@ -236,6 +247,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withLogicalResourceId(String logicalResourceId) {
         setLogicalResourceId(logicalResourceId);
         return this;
@@ -251,6 +263,7 @@ public class StackEvent implements Serializable, Cloneable {
      *        The name or unique identifier associated with the physical
      *        instance of the resource.
      */
+
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
@@ -264,6 +277,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return The name or unique identifier associated with the physical
      *         instance of the resource.
      */
+
     public String getPhysicalResourceId() {
         return this.physicalResourceId;
     }
@@ -280,6 +294,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withPhysicalResourceId(String physicalResourceId) {
         setPhysicalResourceId(physicalResourceId);
         return this;
@@ -298,6 +313,7 @@ public class StackEvent implements Serializable, Cloneable {
      *        > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *        Guide.)
      */
+
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
@@ -314,6 +330,7 @@ public class StackEvent implements Serializable, Cloneable {
      *         > AWS Resource Types Reference</a> in the AWS CloudFormation User
      *         Guide.)
      */
+
     public String getResourceType() {
         return this.resourceType;
     }
@@ -333,6 +350,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
@@ -346,6 +364,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param timestamp
      *        Time the status was updated.
      */
+
     public void setTimestamp(java.util.Date timestamp) {
         this.timestamp = timestamp;
     }
@@ -357,6 +376,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return Time the status was updated.
      */
+
     public java.util.Date getTimestamp() {
         return this.timestamp;
     }
@@ -371,6 +391,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withTimestamp(java.util.Date timestamp) {
         setTimestamp(timestamp);
         return this;
@@ -385,6 +406,7 @@ public class StackEvent implements Serializable, Cloneable {
      *        Current status of the resource.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
     }
@@ -397,6 +419,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Current status of the resource.
      * @see ResourceStatus
      */
+
     public String getResourceStatus() {
         return this.resourceStatus;
     }
@@ -412,6 +435,7 @@ public class StackEvent implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackEvent withResourceStatus(String resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -424,10 +448,9 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @param resourceStatus
      *        Current status of the resource.
-     * @return Returns a reference to this object so that method calls can be
-     *         chained together.
      * @see ResourceStatus
      */
+
     public void setResourceStatus(ResourceStatus resourceStatus) {
         this.resourceStatus = resourceStatus.toString();
     }
@@ -443,6 +466,7 @@ public class StackEvent implements Serializable, Cloneable {
      *         chained together.
      * @see ResourceStatus
      */
+
     public StackEvent withResourceStatus(ResourceStatus resourceStatus) {
         setResourceStatus(resourceStatus);
         return this;
@@ -456,6 +480,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param resourceStatusReason
      *        Success/failure message associated with the resource.
      */
+
     public void setResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
     }
@@ -467,6 +492,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return Success/failure message associated with the resource.
      */
+
     public String getResourceStatusReason() {
         return this.resourceStatusReason;
     }
@@ -481,6 +507,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withResourceStatusReason(String resourceStatusReason) {
         setResourceStatusReason(resourceStatusReason);
         return this;
@@ -494,6 +521,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @param resourceProperties
      *        BLOB of the properties used to create the resource.
      */
+
     public void setResourceProperties(String resourceProperties) {
         this.resourceProperties = resourceProperties;
     }
@@ -505,6 +533,7 @@ public class StackEvent implements Serializable, Cloneable {
      * 
      * @return BLOB of the properties used to create the resource.
      */
+
     public String getResourceProperties() {
         return this.resourceProperties;
     }
@@ -519,6 +548,7 @@ public class StackEvent implements Serializable, Cloneable {
      * @return Returns a reference to this object so that method calls can be
      *         chained together.
      */
+
     public StackEvent withResourceProperties(String resourceProperties) {
         setResourceProperties(resourceProperties);
         return this;

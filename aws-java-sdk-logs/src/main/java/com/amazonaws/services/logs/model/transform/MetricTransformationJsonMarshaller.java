@@ -16,12 +16,6 @@
 
 package com.amazonaws.services.logs.model.transform;
 
-import static com.amazonaws.util.StringUtils.UTF8;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.util.Map;
 import java.util.List;
 
@@ -30,8 +24,9 @@ import com.amazonaws.services.logs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
-import com.amazonaws.util.json.*;
+import com.amazonaws.protocol.json.*;
 
 /**
  * MetricTransformationMarshaller
@@ -39,34 +34,33 @@ import com.amazonaws.util.json.*;
 public class MetricTransformationJsonMarshaller {
 
     /**
-     * Marshall the given parameter object, and output to a JSONWriter
+     * Marshall the given parameter object, and output to a SdkJsonGenerator
      */
     public void marshall(MetricTransformation metricTransformation,
-            JSONWriter jsonWriter) {
+            StructuredJsonGenerator jsonGenerator) {
+
         if (metricTransformation == null) {
             throw new AmazonClientException(
                     "Invalid argument passed to marshall(...)");
         }
 
         try {
-            jsonWriter.object();
+            jsonGenerator.writeStartObject();
 
             if (metricTransformation.getMetricName() != null) {
-                jsonWriter.key("metricName").value(
+                jsonGenerator.writeFieldName("metricName").writeValue(
                         metricTransformation.getMetricName());
             }
-
             if (metricTransformation.getMetricNamespace() != null) {
-                jsonWriter.key("metricNamespace").value(
+                jsonGenerator.writeFieldName("metricNamespace").writeValue(
                         metricTransformation.getMetricNamespace());
             }
-
             if (metricTransformation.getMetricValue() != null) {
-                jsonWriter.key("metricValue").value(
+                jsonGenerator.writeFieldName("metricValue").writeValue(
                         metricTransformation.getMetricValue());
             }
 
-            jsonWriter.endObject();
+            jsonGenerator.writeEndObject();
         } catch (Throwable t) {
             throw new AmazonClientException(
                     "Unable to marshall request to JSON: " + t.getMessage(), t);
